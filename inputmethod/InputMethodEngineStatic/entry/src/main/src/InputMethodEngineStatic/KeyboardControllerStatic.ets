@@ -6,25 +6,25 @@ import windowManager from '@ohos.window';
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { util } from '@kit.ArkTs';
+import { util } from '@ohos.util';
 import { window } from '@kit.ArkUI';
 import Want from '@ohos.app.ability.Want';
-let domain: int = '0x0000';
+let domain: int = 0x0000;
 let TAG: string = 'keyboardControllerStatic';
 
 
-let inputMethodAbility: inputMethodEngine.InputMethodAbility = inputMethodEngine.getInputMethodAbility();
-let inputKeyboardDelegate: inputMethodEngine.KeyboardDelegate = inputMethodEngine.getKeyboardDelegate();
+let inputMethodAbility: inputMethodEngine.InputMethodAbility | null = inputMethodEngine.getInputMethodAbility();
+let inputKeyboardDelegate: inputMethodEngine.KeyboardDelegate | null = inputMethodEngine.getKeyboardDelegate();
 
 export class KeyboardControllerStatic {
   private mContext: InputMethodExtensionContext | undefined = undefined;
-  windowName = 'inputApp';
+  private windowName: string = 'inputApp';
   private windowHeight: int = 0;
   private windowWidth: int = 0;
   private nonBarPosition: int = 0;
-  private keyboardController: inputMethodEngine.keyboardController | undefined;
+  private keyboardController: inputMethodEngine.KeyboardController | undefined;
   private InputClient: inputMethodEngine.InputClient | undefined;
-  private capitalizeMode: inputMethodEngine.capitalizeMode | undefined;
+  private capitalizeMode: inputMethodEngine.CapitalizeMode | undefined;
   private placeholder: string = '';
   private abilityName: string = '';
   private display_info: display.Display | null = display.getDefaultDisplaySync();
@@ -52,15 +52,15 @@ export class KeyboardControllerStatic {
 
 
   private GetArrayBufferString = (buffer: ArrayBuffer): string => {
-     console.info(`${TAG} ====> GetArrayBufferString buffer: ${JSON.stringify(buffererr)}`);
+     console.info(`${TAG} ====> GetArrayBufferString buffer: ${JSON.stringify(buffer)}`);
      const decoder = util.TextDecoder.create('"utf-8"');
-     const str = decode.decodeToString(new Uint8Array(buffer));
+     const str = decoder.decodeToString(new Uint8Array(buffer));
      return str
   }
 
   private async testTemplete(testName: string, assertFunction: ()=> Promise<boolean>): Promise<void>{
     console.info(`${TAG} ====> receive: ${testName}`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData ={
+    let commonEventPublishData: commonEventManager.CommonEventPublishData ={
       data: 'FAILED'
     };
     try {
@@ -75,7 +75,7 @@ export class KeyboardControllerStatic {
           data: 'SUCCESS'
         };
       }
-      console.info(`${TAG} ====> ${testName} catch err: ${JSON.stringify(buffererr)}`);
+      console.info(`${TAG} ====> ${testName} catch err: ${JSON.stringify(err)}`);
     }
     commonEventManager.publish(testName, commonEventPublishData, this.publishCallback);
   }
@@ -88,12 +88,12 @@ export class KeyboardControllerStatic {
       flag: inputMethodEngine.PanelFlag.FLG_FIXED
     }
 
-    inputMethodAbility!.createPanel(this.mContext!, panelInfo, (err: BusinessError | null, panel: inputMethodEngine.Panel | null) => {
+    inputMethodAbility!.createPanel(this.mContext!, panelInfo, (err: BusinessError<void> | null, panel: inputMethodEngine.Panel | undefined) => {
       if(err !== undefined){
         console.info(`${TAG} ====> Failed to create panel. err: ${JSON.stringify(err)}`);
       }
       this.softkeyboardPanel = panel as inputMethodEngine.Panel;
-      this.softkeyboardPanel!.setUIContent('testability/pages/Second', async (err: BusinessError): void => {
+      this.softkeyboardPanel!.setUiContent('testability/pages/Second', async (err: BusinessError): void => {
         console.info(`${TAG} ====> Succeed in creating panel.  panel: ${JSON.stringify(panel)}`);
       })      
     })
@@ -155,8 +155,8 @@ export class KeyboardControllerStatic {
         }
       }
 
-      let commonEventSubscribeInfo: commonEventManager.commonEventSubscribeInfo = {
-        enents: ['keyboardControllerStatic']
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['keyboardControllerStatic']
       };
 
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -175,14 +175,14 @@ export class KeyboardControllerStatic {
       console.info(`${TAG} ====>createSubscriber err: ${JSON.stringify(err.message)}`);
     }
 
-    inputMethodAbility!.onInputStart((controller: inputMethodEngine.keyboardController, inputClient: inputMethodEngine.InputClient): void=>{
+    inputMethodAbility!.onInputStart((controller: inputMethodEngine.KeyboardController, inputClient: inputMethodEngine.InputClient): void=>{
       this.keyboardController = controller;
       this.InputClient = inputClient;
       console.info(`${TAG} ====> inputMethodAbility inputStart into!`);
     })    
   }
 
-  private publishCallback(err: BusinessError | null): void {
+  private publishCallback = (err: BusinessError | null): void => {
     if (err) {
       console.error(`${TAG} ====>publish failed: ${JSON.stringify(err)}`);
       return;
@@ -190,7 +190,7 @@ export class KeyboardControllerStatic {
     console.debug(`${TAG} ====>publish commonevent Succeed`);      
   }
 
-  private async wrapAssertWithTwoIn1Judgement(assertRunnable: () => Promise<boolean>): Promise<boolean>>{
+  private async wrapAssertWithTwoIn1Judgement(assertRunnable: () => Promise<boolean>): Promise<() => Promise<boolean>>{
     try{
       return ()=> assertRunnable();
     } catch (err) {
@@ -205,10 +205,10 @@ export class KeyboardControllerStatic {
   
   async inputMethodEngine_test_static_038(): Promise<void> {
     console.info(`${TAG} ====>receive inputMethodEngine_test_static_038`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     }
-    this.InputClient!getEditorAttribute((err: BusinessError, value)=>{
+    this.InputClient!getEditorAttribute((err: BusinessError, value: inputMethodEngine.EditorAttribute): void => {
       if (err){
         console.info(`${TAG} ====>receive inputMethodEngine_test_static_038 getEditorAttribute err: ${JSON.stringify(err)}`);
       } else {
@@ -224,16 +224,16 @@ export class KeyboardControllerStatic {
   }
 
   private async Sub_InputMethod_IME_createPanelCallback_static_0100(): Promise<void> {
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     }
     let panelInfo1: inputMethodEngine.PanelInfo = {
       type: inputMethodEngine.PanelType.STATUS_BAR,
-      flag: inputMethodEngine.PanelFlag.GLG_FLOATING
+      flag: inputMethodEngine.PanelFlag.FLG_FLOATING
     };
     console.info(`${TAG} ====>receive Sub_InputMethod_IME_createPanelCallback_static_0100`);
     try {
-      InputMethodAbility?.createPanel(this.mContext!, panelInfo1, (err: BusinessError<void> | null, panel: inputMethodEngine.Panel | undefined) => {
+      inputMethodAbility?.createPanel(this.mContext!, panelInfo1, (err: BusinessError<void> | null, panel: inputMethodEngine.Panel | undefined) => {
         console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel success!`);
         if (err) {
           console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel err: ${JSON.stringify(err)}`);          
@@ -244,7 +244,7 @@ export class KeyboardControllerStatic {
           console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel: ${JSON.stringify(panel)}`);
         };
         if (panel !== undefined) {
-          inputMethodAbility!.detroyPanel(panel);
+          inputMethodAbility!.destroyPanel(panel);
         }
         commonEventManager.publish('Sub_InputMethod_IME_createPanelCallback_static_0100', commonEventPublishData, this.publishCallback);
       })
@@ -256,10 +256,10 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_PrivateDateTransferred_static_0500(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0500`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
-    let record: Record<string, inputMethodEngine.CommonDataType> = {
+    let record: Record<string, inputMethodEngine.CommandDataType> = {
       "valueString1": "abcdefg",
       "valueString2": true,
       "valueString3": 500,
@@ -267,7 +267,7 @@ export class KeyboardControllerStatic {
       "valueString5": true,
     }
     try {
-      await this.InputClient!.sendPrivateCommond(record);
+      await this.InputClient!.sendPrivateCommand(record);
       console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0500 sendPrivateCommond success`);
       commonEventManager.publish('Sub_InputMethod_IME_PrivateDateTransferred_static_0500', commonEventPublishData, this.publishCallback); 
 
@@ -284,13 +284,13 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_PrivateDateTransferred_static_0600(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
-      await this.InputClient!.onPrivateCommond(async (record: Record<string, inputMethodEngine.CommonDataType>): void => {
+      inputMethodAbility!.onPrivateCommand(async (record: Record<string, inputMethodEngine.CommandDataType>): void => {
         console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600 onPrivateCommond into`);
-        inputMethodAbility!.offPrivateCommond();
+        inputMethodAbility!.offPrivateCommand();
       });
       console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600 sendPrivateCommond success`);
     } catch (err) {
@@ -306,7 +306,7 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_Custom_static_0900(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0900`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
@@ -332,7 +332,7 @@ export class KeyboardControllerStatic {
         data: 'SUCCESS'
       };
     } catch (error) {
-      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0900 recvMessage err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0900 recvMessage err: ${JSON.stringify(error)}`);
     }
     setTimeout(() => {
       commonEventManager.publish('Sub_InputMethod_IME_Custom_static_0900', commonEventPublishData, this.publishCallback);
@@ -341,7 +341,7 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_Custom_static_0200(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0200`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
@@ -350,7 +350,7 @@ export class KeyboardControllerStatic {
         onTerminated(): void {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0200 onTerminated`);
         },
-        onMessage(msgId: string): void {
+        onMessage(msgId: string, msgParam?: ArrayBuffer): void {
           let bufferString = that.GetArrayBufferString(msgParam as ArrayBuffer);
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0200 onMessage msgIdSize: ${msgId.length}`);
           if (msgId.length === 256 && msgParam?.byteLength === 131072) {
@@ -367,14 +367,14 @@ export class KeyboardControllerStatic {
         data: 'SUCCESS'
       };
     } catch (error) {
-      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0200 recvMessage err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0200 recvMessage err: ${JSON.stringify(error)}`);
     }
     commonEventManager.publish('Sub_InputMethod_IME_Custom_static_0200', commonEventPublishData, this.publishCallback);
   }
 
   private async Sub_InputMethod_IME_Custom_static_0800(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0800`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
@@ -383,7 +383,7 @@ export class KeyboardControllerStatic {
         onTerminated(): void {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0800 onTerminated`);
         },
-        onMessage(msgId: string): void {
+        onMessage(msgId: string, msgParam?: ArrayBuffer): void {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0800 onMessage msgIdSize: ${msgId.length}`);
           if (msgId.length === 0 && msgParam?.byteLength === 131072) {
             console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0800 start sendMessage`);
@@ -399,7 +399,7 @@ export class KeyboardControllerStatic {
         data: 'SUCCESS'
       };
     } catch (error) {
-      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0800 recvMessage err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0800 recvMessage err: ${JSON.stringify(error)}`);
     }
     setTimeout(() => {
       commonEventManager.publish('Sub_InputMethod_IME_Custom_static_0800', commonEventPublishData, this.publishCallback);
@@ -408,7 +408,7 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_Custom_static_0400(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0400`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
@@ -427,7 +427,7 @@ export class KeyboardControllerStatic {
         data: 'SUCCESS'
       };
     } catch (error) {
-      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0400 recvMessage err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0400 recvMessage err: ${JSON.stringify(error)}`);
     }
     setTimeout(() => {
       commonEventManager.publish('Sub_InputMethod_IME_Custom_static_0400', commonEventPublishData, this.publishCallback);
@@ -436,7 +436,7 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_Custom_static_0300(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0300`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
@@ -455,7 +455,7 @@ export class KeyboardControllerStatic {
         data: 'SUCCESS'
       };
     } catch (error) {
-      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0300 recvMessage err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0300 recvMessage err: ${JSON.stringify(error)}`);
     }
     setTimeout(() => {
       commonEventManager.publish('Sub_InputMethod_IME_Custom_static_0300', commonEventPublishData, this.publishCallback);
@@ -464,7 +464,7 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_Custom_static_1100(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_1100`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
@@ -473,7 +473,7 @@ export class KeyboardControllerStatic {
         onTerminated(): void {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_1100 onTerminated`);
         },
-        onMessage(msgId: string): void {
+        onMessage(msgId: string, msgParam?: ArrayBuffer): void {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_1100 onMessage msgIdSize: ${msgId.length}`);
           if (msgId.length === 256 && msgParam?.byteLength === undefined) {
             console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_1100 start sendMessage`);
@@ -489,7 +489,7 @@ export class KeyboardControllerStatic {
         data: 'SUCCESS'
       };
     } catch (error) {
-      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_1100 recvMessage err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_1100 recvMessage err: ${JSON.stringify(error)}`);
     }
     setTimeout(() => {
       commonEventManager.publish('Sub_InputMethod_IME_Custom_static_1100', commonEventPublishData, this.publishCallback);
@@ -498,7 +498,7 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_Custom_static_0901(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0901`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
@@ -512,7 +512,7 @@ export class KeyboardControllerStatic {
           data: 'SUCCESS'
         };
       }
-      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0901 recvMessage err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0901 recvMessage err: ${JSON.stringify(error)}`);
     }
     setTimeout(() => {
       commonEventManager.publish('Sub_InputMethod_IME_Custom_static_0901', commonEventPublishData, this.publishCallback);
@@ -521,7 +521,7 @@ export class KeyboardControllerStatic {
 
   private async Sub_InputMethod_IME_Custom_static_0902(): Promise<void> {
     console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0902`);
-    let commonEventPublishData: commonEventManager.commonEventPublishData = {
+    let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     };
     try {
@@ -535,7 +535,7 @@ export class KeyboardControllerStatic {
           data: 'SUCCESS'
         };
       }
-      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0902 recvMessage err: ${JSON.stringify(err)}`);
+      console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0902 recvMessage err: ${JSON.stringify(error)}`);
     }
     setTimeout(() => {
       commonEventManager.publish('Sub_InputMethod_IME_Custom_static_0902', commonEventPublishData, this.publishCallback);
