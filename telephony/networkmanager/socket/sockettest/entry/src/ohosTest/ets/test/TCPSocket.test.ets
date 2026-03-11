@@ -8417,8 +8417,8 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('testNetworkMgrSocketTCPSocketSetExtraOptions9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-          let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions9700';
+        it('testNetworkMgrSocketTCPSocketConnect9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+          let caseName: string = 'testNetworkMgrSocketTCPSocketConnect9700';
           try {
             let port: number = Math.round(1024 + Math.random() *5000 + Math.random() * 4000);
             let netAddress: socket.NetAddress = {
