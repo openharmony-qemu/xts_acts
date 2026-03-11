@@ -2217,7 +2217,7 @@ export default function requestDownloadJSUnit() {
       console.info("====>-----------------------SUB_Request_DownloadManagement_Download_0100 is starting-----------------------");
       let config:request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'https://gitee.com',
+        url: 'https://weibo.com',
         title: 'createTest',
         description: 'XTS download test!',
         saveas: './SUB_Request_DownloadManagement_Download_0100',
