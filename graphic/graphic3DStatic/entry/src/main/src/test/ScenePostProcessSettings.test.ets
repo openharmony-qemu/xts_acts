@@ -109,37 +109,37 @@ export default function scenePostProcessSettingsTest() {
     })
 
     /**
-     * @tc.name   testLightIntensity
+     * @tc.name   testLightIntensityPostProcess
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1030
-     * @tc.desc   Test Light.intensity property getter and setter
+     * @tc.desc   Test Light.intensity property getter and setter in PostProcessSettings context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLightIntensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testLightIntensity";
+    it('testLightIntensityPostProcess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testLightIntensityPostProcess";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
-        
+
         let rf: SceneResourceFactory = scene.getResourceFactory();
         let light: Light = await rf.createLight({ name: "TestLight" }, LightType.DIRECTIONAL);
         expect(light != null).assertTrue();
-        
+
         light.intensity = 1000.0;
         expect(light.intensity).assertEqual(1000.0);
         console.info(msg + " intensity set to 1000.0 successfully");
-        
+
         light.intensity = 0.0;
         expect(light.intensity).assertEqual(0.0);
         console.info(msg + " intensity set to 0.0 successfully");
-        
+
         light.intensity = 500.5;
         expect(light.intensity).assertEqual(500.5);
         console.info(msg + " intensity set to 500.5 successfully");
-        
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {

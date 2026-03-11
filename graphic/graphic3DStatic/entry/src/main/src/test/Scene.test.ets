@@ -87,15 +87,15 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.name   testGetNodeByPath
+     * @tc.name   testGetNodeByPathWithNodeType
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0020
-     * @tc.desc   Nodes are obtained from paths
+     * @tc.desc   Nodes are obtained from paths with optional NodeType filter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testGetNodeByPath";
+    it('testGetNodeByPathWithNodeType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testGetNodeByPathWithNodeType";
       console.info(msg + ' begin ');
       try {
         let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
@@ -112,7 +112,7 @@ export default function sceneTest() {
         expect(nullNode).assertNull();
         done();
       } catch (err) {
-        console.info(msg + " Failed in testGetNodeByPath " +
+        console.info(msg + " Failed in testGetNodeByPathWithNodeType " +
         JSON.stringify(err));
         expect().assertFail();
         done();
@@ -881,30 +881,30 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.name   testCreateEffect
+     * @tc.name   testCreateEffectWithEffectId
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1070
-     * @tc.desc   Test SceneResourceFactory.createEffect method
+     * @tc.desc   Test SceneResourceFactory.createEffect method and verify effectId property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCreateEffect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testCreateEffect";
+    it('testCreateEffectWithEffectId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateEffectWithEffectId";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
-        
+
         let rf: SceneResourceFactory = scene.getResourceFactory();
         expect(rf != null).assertTrue();
-        
+
         let effectParams: EffectParameters = { effectId: "test-effect-id" };
         let effect: Effect = await rf.createEffect(effectParams);
         expect(effect != null).assertTrue();
         expect(effect.effectId).assertEqual("test-effect-id");
         console.info(msg + " createEffect success");
-        
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -915,37 +915,37 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.name   testCameraGetViewMatrix
+     * @tc.name   testCameraGetViewMatrixWithStructure
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1080
-     * @tc.desc   Test Camera.getViewMatrix method
+     * @tc.desc   Test Camera.getViewMatrix method and verify matrix structure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCameraGetViewMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testCameraGetViewMatrix";
+    it('testCameraGetViewMatrixWithStructure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetViewMatrixWithStructure";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
-        
+
         let rf: SceneResourceFactory = scene.getResourceFactory();
         let camera: Camera = await rf.createCamera({ name: "TestCamera" });
         expect(camera != null).assertTrue();
-        
+
         let viewMatrix: Mat4x4 = camera.getViewMatrix();
         expect(viewMatrix != undefined).assertTrue();
         expect(viewMatrix != null).assertTrue();
         console.info(msg + " getViewMatrix succeeded");
-        
+
         // Verify matrix structure
         expect(viewMatrix.x.x).assertEqual(1);
         expect(viewMatrix.y.y).assertEqual(1);
         expect(viewMatrix.z.z).assertEqual(1);
         expect(viewMatrix.w.w).assertEqual(1);
         console.info(msg + " view matrix structure verified");
-        
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -956,35 +956,35 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.name   testCameraGetProjectionMatrix
+     * @tc.name   testCameraGetProjectionMatrixWithStructure
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1090
-     * @tc.desc   Test Camera.getProjectionMatrix method
+     * @tc.desc   Test Camera.getProjectionMatrix method and verify matrix structure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCameraGetProjectionMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testCameraGetProjectionMatrix";
+    it('testCameraGetProjectionMatrixWithStructure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetProjectionMatrixWithStructure";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
-        
+
         let rf: SceneResourceFactory = scene.getResourceFactory();
         let camera: Camera = await rf.createCamera({ name: "TestCamera" });
         expect(camera != null).assertTrue();
-        
+
         let projMatrix: Mat4x4 = camera.getProjectionMatrix();
         expect(projMatrix != undefined).assertTrue();
         expect(projMatrix != null).assertTrue();
         console.info(msg + " getProjectionMatrix succeeded");
-        
+
         // Verify matrix structure (should be perspective projection)
         expect(projMatrix.x.x).assertEqual(1);
         expect(projMatrix.w.w).assertEqual(1);
         console.info(msg + " projection matrix structure verified");
-        
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -1144,28 +1144,28 @@ export default function sceneTest() {
     })
 
     /**
-     * @tc.name   testCreateEffect
+     * @tc.name   testCreateEffectWithName
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1340
-     * @tc.desc   Test SceneResourceFactory.createEffect method
+     * @tc.desc   Test SceneResourceFactory.createEffect method and verify name property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCreateEffect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testCreateEffect";
+    it('testCreateEffectWithName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateEffectWithName";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
-        
+
         let rf: SceneResourceFactory = scene.getResourceFactory();
         let effectParams: EffectParameters = { effectId: "TestEffect" };
         let effect = await rf.createEffect(effectParams);
         expect(effect != null).assertTrue();
         expect(effect.name).assertEqual("TestEffect");
         console.info(msg + " createEffect succeeded");
-        
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {

@@ -59,15 +59,15 @@ export default function sceneNodeTest() {
     let directionalLight: DirectionalLight;
 
     /**
-     * @tc.name   testGetNodeByPath
+     * @tc.name   testGetNodeByPathFromRoot
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0100
-     * @tc.desc   Used to obtain the node according to the path, and return empty if it cannot be obtained
+     * @tc.desc   Used to obtain the node according to the path from scene.root, and return empty if it cannot be obtained
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testGetNodeByPath";
+    it('testGetNodeByPathFromRoot', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testGetNodeByPathFromRoot";
       console.info(msg + ' begin ');
       try {
         let sceneUri = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
@@ -1004,15 +1004,15 @@ export default function sceneNodeTest() {
     });
 
     /**
-     * @tc.name   testLightIntensity
+     * @tc.name   testLightIntensityDirectional
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1160
-     * @tc.desc   Test Light.intensity property getter and setter
+     * @tc.desc   Test Light.intensity property getter and setter for DIRECTIONAL light
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLightIntensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testLightIntensity";
+    it('testLightIntensityDirectional', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testLightIntensityDirectional";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
@@ -1119,15 +1119,15 @@ export default function sceneNodeTest() {
     });
 
     /**
-     * @tc.name   testCameraGetViewMatrix
+     * @tc.name   testCameraGetViewMatrixBasic
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1420
-     * @tc.desc   Test Camera.getViewMatrix method
+     * @tc.desc   Test Camera.getViewMatrix method returns valid Mat4x4
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCameraGetViewMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testCameraGetViewMatrix";
+    it('testCameraGetViewMatrixBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetViewMatrixBasic";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
@@ -1152,15 +1152,15 @@ export default function sceneNodeTest() {
     });
 
     /**
-     * @tc.name   testCameraGetProjectionMatrix
+     * @tc.name   testCameraGetProjectionMatrixBasic
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1430
-     * @tc.desc   Test Camera.getProjectionMatrix method
+     * @tc.desc   Test Camera.getProjectionMatrix method returns valid Mat4x4
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCameraGetProjectionMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testCameraGetProjectionMatrix";
+    it('testCameraGetProjectionMatrixBasic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetProjectionMatrixBasic";
       console.info(msg + ' begin ');
       try {
         let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
