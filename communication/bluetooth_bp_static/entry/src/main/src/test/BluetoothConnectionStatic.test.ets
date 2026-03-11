@@ -115,6 +115,7 @@ export default function bluetoothConnectionTest() {
         let name: string = connection.getRemoteDeviceName("00:11:22:33:44:55");
         hilog.info(domain, tag, "getRemoteDeviceName:" + name);
       } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code == 801) {
@@ -142,6 +143,7 @@ export default function bluetoothConnectionTest() {
         let aliasNames: string = connection.getRemoteDeviceName("00:11:22:33:44:55", false);
         hilog.info(domain, tag, "getRemoteDeviceName alias is false:" + aliasNames);
       } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getRemoteDeviceName alias get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code == 801) {
@@ -169,6 +171,7 @@ export default function bluetoothConnectionTest() {
         hilog.info(domain, tag, "getRemoteDeviceClass result majorClass:" + JSON.stringify(deviceClass.majorClass));
         hilog.info(domain, tag, "getRemoteDeviceClass result majorMinorClass:" + JSON.stringify(deviceClass.majorMinorClass));
       } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getRemoteDeviceClass get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code == 801) {
