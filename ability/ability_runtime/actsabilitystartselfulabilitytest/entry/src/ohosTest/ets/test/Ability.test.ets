@@ -666,7 +666,6 @@ export default function abilityTest() {
         context.startSelfUIAbilityInCurrentProcess(want, flag, undefined)
           .then(() => {
             hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
-            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -676,7 +675,7 @@ export default function abilityTest() {
             if(err.code == 801){
               expect(err?.code).assertEqual(801)
             } else {
-              expect(err.code).assertEqual(401);
+              expect().assertFail();
             }
             done();
           });
@@ -711,7 +710,6 @@ export default function abilityTest() {
         context.startSelfUIAbilityInCurrentProcess(want, flag, null)
           .then(() => {
             hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} startSelfUIAbilityInCurrentProcess succeed`);
-            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -721,7 +719,7 @@ export default function abilityTest() {
             if(err.code == 801){
               expect(err?.code).assertEqual(801)
             } else {
-              expect(err.code).assertEqual(401);
+              expect().assertFail();
             }
             done();
           });
