@@ -840,7 +840,7 @@ export default function LocalSocketTest() {
         done()
       }catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
-        expectTrue(error.code == =401)
+        expectTrue(error.code === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -858,7 +858,7 @@ export default function LocalSocketTest() {
       console.info(`${caseName} test start`);
       try {
         let client: socket.LocalSocket = socket.constructLocalSocketInstance()
-        let addrc: socket.LocalAddress = {
+        let addr: socket.LocalAddress = {
           address : ''
         }
         await client.bind(addr).then(() => {
@@ -873,7 +873,7 @@ export default function LocalSocketTest() {
         done()
       }catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
-        expectTrue(error.code == =401)
+        expectTrue(error.code === 401)
         console.info(`${caseName} test end`);
         done();
       }
