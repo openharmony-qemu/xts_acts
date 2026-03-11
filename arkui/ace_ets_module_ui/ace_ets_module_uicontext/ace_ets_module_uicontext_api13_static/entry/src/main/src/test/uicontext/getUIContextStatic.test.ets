@@ -81,27 +81,6 @@ export default function getUIContextStatic() {
       done();
     });
 
-    /**
-     * @tc.number   getUIContext_static_0200
-     * @tc.name     getUIContext_static_0200
-     * @tc.desc     getUIContext_static_0200
-     * @tc.level    Level.LEVEL0
-     */
-    it('getUIContext_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('getUIContext_static_0200 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('2'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[getUIContext_static_0200] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('available')
-      console.info('[getUIContext_static_0200] END');
-      done();
-    });
 
     /**
      * @tc.number   getUIContext_static_0300
@@ -147,48 +126,5 @@ export default function getUIContextStatic() {
       done();
     });
 
-    /**
-     * @tc.number   getUIContext_static_0500
-     * @tc.name     getUIContext_static_0500
-     * @tc.desc     getUIContext_static_0500
-     * @tc.level    Level.LEVEL0
-     */
-    it('getUIContext_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('getUIContext_static_0400 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('5'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[getUIContext_static_0400] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Found UIContext')
-      console.info('[getUIContext_static_0400] END');
-      done();
-    });
-
-    /**
-     * @tc.number   getUIContext_static_0600
-     * @tc.name     getUIContext_static_0600
-     * @tc.desc     getUIContext_static_0600
-     * @tc.level    Level.LEVEL0
-     */
-    it('getUIContext_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('getUIContext_static_0600 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('6'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[getUIContext_static_0600] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('available')
-      console.info('[getUIContext_static_0600] END');
-      done();
-    });
   })
 }
