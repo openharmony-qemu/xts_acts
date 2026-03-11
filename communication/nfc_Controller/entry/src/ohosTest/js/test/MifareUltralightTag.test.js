@@ -35,6 +35,20 @@ let mifareUltralightTaginfo = {
     "tagRfDiscId": 1,
 };
 
+let mifareUltralightTaginfo1 = {
+    "uid": [0x04],
+    "technology": [1, 9],
+    "extrasData": [
+        {
+            "Sak": 0x00, "Atqa": "B000",
+        },
+        {
+            "MifareUltralightC": "ture",
+        },
+    ],
+    "tagRfDiscId": 1,
+};
+
 let MifareUltralightType = {
     TYPE_UNKOWN : 0,
     TYPE_ULTRALIGHT : 1,
@@ -610,6 +624,26 @@ export default function nfcMifareUltralightTag() {
                 let getType = MifareUltralightTag.getType();
                 console.info("[NFC_test] mifareUltralight5 getType: " + getType);
                 expect(getType).assertEqual(MifareUltralightType.TYPE_UNKOWN);
+            } else {
+                console.info("[NFC_test]mifareUltralight5 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0501
+         * @tc.number SUB_Communication_NFC_mifareUltralight_0501
+         * @tc.desc   Gets the type of Mifare Ultralight label
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareUltralight_0501', Level.LEVEL0, function ()  {
+            let MifareUltralightTag1 = tag.getMifareUltralight(mifareUltralightTaginfo1);
+            if (MifareUltralightTag1 != null && MifareUltralightTag1 != undefined) {
+                let getType = MifareUltralightTag1.getType();
+                console.info("[NFC_test] mifareUltralight5 getType: " + getType);
+                expect(getType).assertEqual(MifareUltralightType.TYPE_ULTRALIGHT);
             } else {
                 console.info("[NFC_test]mifareUltralight5 = null & = undefined: ");
                 expect().assertFail();
