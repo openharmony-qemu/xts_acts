@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TextArea } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
 
@@ -20,20 +20,25 @@ import hilog from '@ohos.hilog'
 @Component
 struct MyStateSample {
   @State stateVar: string = 'state var';
-  message: string = 'var';
-  changeValue() {
-    this.stateVar+='~'
-  }
+  @State inputValue: string = 'inputMethodEngine1inputMethodEngine2inputMethodEngine3inputMethodEngine' +
+    'inputMethodEngine4inputMethodEngine5inputMethodEngine6inputMethodEngine7inputMethodEngine8inputMethodEn' +
+    'gine9inputMethodEngine10inputMethodEngine11inputMethodEngine12inputMethodEngine13inputMethodEngine14inputMet' +
+    'hodEngine15inputMethodEngine16inputMethodEngine17inputMethodEngine18inputMethodEngine19inputMethodEngine20input' +
+    'MethodEngine21inputMethodEngine22inputMethodEngine23inputMethodEngine24inputMethodEngine25inputMethodEngine26inp' +
+    'utMethodEngine27inputMethodEngine28inputMethodEngine29inputMethodEngine30inputMethodEngine31inputMethodEngine32i' +
+    'nputMethodEngine33inputMethodEngine34inputMethodEngine35inputMethodEngine36inputMethodEngine37inputMethodEngine3' +
+    '8inputMethodEngine39inputMethodEngine40inputMethodEngine41inputMethodEngine42inputMethodEngine43inputMethodEngine' +
+    '44inputMethodEngine45inputMethodEngine46inputMethodEngine47inputMethodEngine48inputMethodEngine49inputMethodEngi' +
+    'ne50';
+    
   build() {
     Column(undefined) {
-      Text('Hello World').fontSize(20)
-      Button(this.message).backgroundColor('#FFFF00FF')
-        .onClick((e: ClickEvent) => {
-          hilog.info(0x0000, 'testTag', 'On Click');
-          this.changeValue();
+      TextArea({ text: this.inputValue })
+        .height('90%')
+        .enablePreviewText(false)
+        .onChange((value: string) => {
+          this.inputValue = value;
         })
-      Text(this.stateVar).fontSize(20)
-      Child({stateVar: this.stateVar} as __Options_Child)
     }
   }
 }
