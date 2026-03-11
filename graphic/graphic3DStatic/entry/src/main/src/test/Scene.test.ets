@@ -1290,14 +1290,21 @@ export default function sceneTest() {
       let msg = "============================testGetAnimations";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let sceneUri: Resource = $rawfile("gltf/BrainStem/glTF/BrainStem.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
         
-        let animations = scene.animations;
-        expect(animations != null).assertTrue();
-        expect(typeof animations).assertEqual('object');
-        console.info(msg + " animations getter succeeded");
+        let anims = scene.animations;
+        expect(anims != null).assertTrue();
+        expect(anims != undefined).assertTrue();
+        console.info(msg + " animations property retrieved successfully, length: " + anims.length);
+        
+        let scene2 = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        let anims2 = scene2.animations;
+        expect(anims2 != null).assertTrue();
+        expect(anims2 != undefined).assertTrue();
+        expect(anims2.length).assertEqual(0);
+        console.info(msg + " animations property retrieved from scene without animations, length: " + anims2.length);
         
         console.info(msg + " test completed successfully");
         done();
