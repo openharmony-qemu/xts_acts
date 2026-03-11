@@ -153,5 +153,18 @@ export default function NativeCopyStyleTest() {
       expect(result).assertEqual(0);
     })
 
+     /**
+     * @tc.name   OHDrawingCopyTypographyStyle005
+     * @tc.number SUB_GRAPHIC_NAPI_OH_DRAWING_COPY_TYPOGRAPHY_STYLE_0500
+     * @tc.desc   test for copy text shadow: typographystyle->textstyle->shadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHDrawingCopyTypographyStyle004', Level.LEVEL0, () => {
+      const result = libGraphicDrawing.OHDrawingCopyTypographyStyle(4);
+      expect(result).assertEqual(0);
+    })
+
   })
 }

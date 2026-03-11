@@ -208,6 +208,9 @@ static napi_value OHDrawingCopyTypographyStyle(napi_env env, napi_callback_info 
             case CASE_NUM_3:
                 result = OHOS::OHDrawingCopyTypographyStyle004();
                 break;
+            case CASE_NUM_4:
+                result = OHOS::OHDrawingCopyTypographyStyle005();
+                break;
             default:
                 result = RESULT_ERROR;
                 break;

@@ -480,7 +480,7 @@ int OHDrawingCopyTypographyStyle004()
  */
 int OHDrawingCopyTypographyStyle005()
 {
-    typoStyle_ = OH_Drawing_CreateTypographyStyle();
+    OH_Drawing_TypographyStyle* typoStyle_ = OH_Drawing_CreateTypographyStyle();
     ASSERT_NE(typoStyle_, nullptr);
 
     std::vector<OH_Drawing_FontStyle> fontStyle = {
