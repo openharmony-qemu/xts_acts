@@ -18,44 +18,43 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
-export default function CreateAnimatorNullTest() {
-  describe('CreateAnimatorNullTest', () => {
+export default function BindControllerNullTest() {
+  describe('BindControllerNullTest', () => {
     beforeEach(async (done: Function) => {
-      console.info('CreateAnimatorNullTest beforeEach start');
+      console.info('BindControllerNullTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/ParamsNull/CreateAnimatorNullTest',
+        url: 'MainAbility/pages/ParamsNull/BindControllerNullTest',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get CreateAnimatorNullTest state pages:' + JSON.stringify(pages));
-        if (!('CreateAnimatorNullTest' == pages.name)) {
-          console.info('get CreateAnimatorNullTest pages.name:' + JSON.stringify(pages.name));
+        console.info('get BindControllerNullTest state pages:' + JSON.stringify(pages));
+        if (!('BindControllerNullTest' == pages.name)) {
+          console.info('get BindControllerNullTest pages.name:' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info('push CreateAnimatorNullTest page result:' + JSON.stringify(result));
+          console.info('push BindControllerNullTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push CreateAnimatorNullTest page error:' + err);
+        console.error('push BindControllerNullTest page error:' + err);
       }
-      console.info('CreateAnimatorNullTest beforeEach end');
+      console.info('BindControllerNullTest beforeEach end');
       done();
     });
     afterEach(async () => {
     });
 
     /**
-     * @tc.name   CreateAnimatorNullTest_0100
-     * @tc.number CreateAnimatorNullTest_0100
-     * @tc.desc   createAnimator null test
+     * @tc.name   BindControllerNullTest_0100
+     * @tc.number BindControllerNullTest_0100
+     * @tc.desc   bindController null test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('CreateAnimatorNullTest_0100', Level.LEVEL2, async (done: Function) => {
-      console.info('CreateAnimatorNullTest_0100 START');
+    it('BindControllerNullTest_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('BindControllerNullTest_0100 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
       expect(AppStorage.get('bindController1Null')).assertEqual(100023);
       expect(AppStorage.get('bindController2Null')).assertEqual(100023);
       expect(AppStorage.get('bindController1Undefined')).assertEqual(100023);
@@ -64,7 +63,7 @@ export default function CreateAnimatorNullTest() {
       AppStorage.delete('bindController2Null');
       AppStorage.delete('bindController1Undefined');
       AppStorage.delete('bindController2Undefined');
-      console.info('[CreateAnimatorNullTest_0100] END');
+      console.info('[BindControllerNullTest_0100] END');
       done();
     });
   })
