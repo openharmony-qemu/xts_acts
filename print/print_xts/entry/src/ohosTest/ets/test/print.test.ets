@@ -821,6 +821,7 @@ export default function printTest() {
         print.DocFlavor.BYTES
       ];
       console.log('docFlavors: ' + JSON.stringify(docFlavors));
+      expect(docFlavors.length).assertEqual(2);
     })
 
     /**
