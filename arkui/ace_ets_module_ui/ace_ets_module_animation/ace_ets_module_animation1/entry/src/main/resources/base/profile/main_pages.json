@@ -56,6 +56,7 @@
         "MainAbility/pages/global/AnimateToImmediatelyNullUndefined",
         "MainAbility/pages/global/AnimateToNullUndefined",
         "MainAbility/pages/nullandundefinedTest/BackgroundBlurStyleTest",
-        "MainAbility/pages/nullandundefinedTest/ForegroundBlurStyleTest"
+        "MainAbility/pages/nullandundefinedTest/ForegroundBlurStyleTest",
+        "MainAbility/pages/nullandundefinedTest/ImageBlurTest"
     ]
 }

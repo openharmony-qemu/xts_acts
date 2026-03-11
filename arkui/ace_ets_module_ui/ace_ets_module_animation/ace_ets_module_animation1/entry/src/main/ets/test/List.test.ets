@@ -65,6 +65,7 @@ import AnimateToImmediatelyNullUndefined from './global/AnimateToImmediatelyNull
 import AnimateToNullUndefined from './global/AnimateToNullUndefined.test';
 import ForegroundBlurStyleTest from './nullandundefinedTestTest/ForegroundBlurStyleTest.test';
 import BackgroundBlurStyleTest from './nullandundefinedTestTest/BackgroundBlurStyleTest.test';
+import ImageBlurTest from './nullandundefinedTestTest/ImageBlurTest.test';
 
 
 export default function testsuite() {
@@ -120,4 +121,5 @@ export default function testsuite() {
   AnimateToNullUndefined();
   BackgroundBlurStyleTest();
   ForegroundBlurStyleTest();
+  ImageBlurTest();
 }
