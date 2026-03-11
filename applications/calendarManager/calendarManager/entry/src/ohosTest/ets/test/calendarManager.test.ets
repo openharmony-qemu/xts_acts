@@ -5293,5 +5293,126 @@ export default function CalendarManagerTest() {
         });
 
       });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0300
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0300", Level.LEVEL0, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0300';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        attendee: [
+          {
+            name: '',
+            email: '',
+            role: calendarManager.AttendeeRole.ORGANIZER,
+            type: calendarManager.AttendeeType.REQUIRED,
+            status: calendarManager.AttendeeStatus.UNKNOWN
+          },
+          {
+            name: '1',
+            email: '1',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.OPTIONAL,
+            status: calendarManager.AttendeeStatus.TENTATIVE
+          },
+          {
+            name: '2',
+            email: '2',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.ACCEPTED
+          },
+          {
+            name: '3',
+            email: '3',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.DECLINED
+          },
+          {
+            name: '4',
+            email: '4',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.UNRESPONSIVE
+          },
+        ],
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+          excludedDates: [1,2],
+          daysOfWeek: [1,2],
+          daysOfMonth: [1,2],
+          daysOfYear: [1,2],
+          weeksOfMonth: [1,2],
+          weeksOfYear: [1,2],
+          monthsOfYear: [1,2],
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.REPAYMENT,
+          uri: '',
+          description: '',
+        },
+        isLunar: true
+
+      }
+
+      await calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        await Calendar.addEvent(Event).then(() => {
+          console.info(CaseName + "Succeeded in addEvents");
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          } else {
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+      });
+    });  
   });
 }
