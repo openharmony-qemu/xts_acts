@@ -49,7 +49,6 @@ export default function BackgroundBlurStyleTest() {
     afterAll(async () => {
     });
 
-    // ========== backgroundBlurStyle(value: BlurStyle, options?: BackgroundBlurStyleOptions): T; tests ==========
 
     /**
      * @tc.name   backgroundBlurStyleRegular_0100
