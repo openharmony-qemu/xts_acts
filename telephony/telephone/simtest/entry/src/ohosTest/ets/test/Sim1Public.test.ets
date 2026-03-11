@@ -394,17 +394,10 @@ export default function Sim1Public() {
           done();
         }
       }catch(err){
-        if (err.code == 401) {
-          console.info(`${caseName} successfully: Parameter error and return 401`);
-          ExpectTrue(true);
-          console.info(`${caseName} test end`);
-          done();
-        } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
-          ExpectFail();
-          console.info(`${caseName} test end`);
-          done();
-        }
+        console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
       }
     });
 
@@ -440,17 +433,10 @@ export default function Sim1Public() {
           done();
         }
       }catch(err){
-        if (err.code == 401) {
-          console.info(`${caseName} successfully: Parameter error and return 401`);
-          ExpectTrue(true);
-          console.info(`${caseName} test end`);
-          done();
-        } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
-          ExpectFail();
-          console.info(`${caseName} test end`);
-          done();
-        }
+        console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
       }
     });
 
