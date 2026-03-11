@@ -14,7 +14,7 @@
  */
  'use static'
 import InputMethodExtensionAbility from '@ohos.InputMethodExtensionAbility';
-import { KeyboardControllerStatic } from './KeyboardDelegate';
+import { KeyboardControllerStatic } from './KeyboardControllerStatic';
 import Want from '@ohos.app.ability.Want';
 
 export default class InputMethodControlService extends InputMethodExtensionAbility {
@@ -23,7 +23,7 @@ export default class InputMethodControlService extends InputMethodExtensionAbili
   onCreate(want: Want) {
     console.log(`====> onCrate start!`)
     this.keyboardControllerStatic = new KeyboardControllerStatic(this.context) as KeyboardControllerStatic;
-    this.keyboardControllerStatic.onCreate(); // 初始化窗口
+    this.keyboardControllerStatic!.onCreate(); // 初始化窗口
   }
 
   onDestroy() {
