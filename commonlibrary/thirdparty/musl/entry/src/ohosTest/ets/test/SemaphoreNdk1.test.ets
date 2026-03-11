@@ -32,9 +32,9 @@ export default function semaphoreNdk1Test() {
      * @tc.desc   test sem_unlink
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    //it('testMuslSemaphoreSemUnlink001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    //it('testMuslSemaphoreSemUnlink001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
     //  expect(semaphore.sem_unlink()).assertEqual(0);
     //  done()
     //});
