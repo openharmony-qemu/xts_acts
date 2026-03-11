@@ -5971,6 +5971,7 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
@@ -5982,6 +5983,7 @@ export default function CalendarManagerTest() {
             
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
@@ -6095,6 +6097,7 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
@@ -6106,6 +6109,7 @@ export default function CalendarManagerTest() {
             
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
@@ -6219,6 +6223,7 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
@@ -6230,6 +6235,7 @@ export default function CalendarManagerTest() {
             
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
@@ -6343,6 +6349,7 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
@@ -6352,6 +6359,7 @@ export default function CalendarManagerTest() {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
@@ -6466,6 +6474,7 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
@@ -6476,6 +6485,7 @@ export default function CalendarManagerTest() {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
@@ -6536,6 +6546,7 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
@@ -6546,6 +6557,7 @@ export default function CalendarManagerTest() {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
@@ -6605,6 +6617,8 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
           
@@ -6614,6 +6628,7 @@ export default function CalendarManagerTest() {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
@@ -6674,6 +6689,7 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
@@ -6684,6 +6700,7 @@ export default function CalendarManagerTest() {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
@@ -6743,6 +6760,7 @@ export default function CalendarManagerTest() {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         Calendar.addEvent(Event).then(() => {
           console.info(CaseName + "Succeeded in addEvent");
+          expect(data != 0).assertTrue();
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to addEvent, Code is ${err.code}, message is ${err.message}`);
@@ -6753,6 +6771,7 @@ export default function CalendarManagerTest() {
             console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
             done();
           } else {
+            expect(data != 0).assertTrue();
             console.info(`Succeeded in adding event, id -> ${data}`);
             done();
           }
