@@ -1,0 +1,569 @@
+'use static'
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import hilog from '@ohos.hilog';
+import Utils from './Util.test';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../hypium/index";
+import { commonEventManager } from '@kit.BasicServicesKit';
+import subtype from '@ohos.InputMethodSubtype';
+import inputMethod from '@ohos.inputMethod';
+import display from '@ohos.display';
+import { Driver, ON, MatchPattern, Component, Rect } from '@ohos.UiTest'
+import { BusinessError } from '@ohos.base'
+import { util } from '@kit.ArkTs'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+
+export default function InputMethodEngineStatic() {
+
+    describe('InputMethodEngineStatic', (): void => {
+        hilog.info(domain, tag, '%{public}s', 'describe start');
+        let driver = Driver.create();
+        let textArea: Component|null;
+        let rectInfo: Rect;
+        let runCmd = async (data:Rect) => {
+            let a = rectInfo.left + 20 + Math.floor(Math.random() * (rectInfo.right - rectInfo.left) * 0.7);
+            let b = rectInfo.top + 20 + Math.floor(Math.random() * (rectInfo.bottom - rectInfo.top) * 0.7);
+            let cursor_x = a as Int;
+            let cursor_y = b as Int;
+            console.info(`====>start click x: ${cursor_x}  y: ${cursor_y}`);
+            driver.click(cursor_x, cursor_y);
+        };
+
+        let newArrayBuffer = (str:string|undefined): ArrayBuffer => {
+            let arrayBuffer = new ArrayBuffer(0);
+            if (str === undefined) {
+              const view = new Uint8Array(arrayBuffer);
+            } else {
+              arrayBuffer = new ArrayBuffer(str.length);
+              const view = new Uint8Array(arrayBuffer);
+              for(let i = 0; i < str.length; i++){
+                view[i] = str.charCodeAt(i);
+              }
+            }
+            return arrayBuffer
+        };
+
+        let GetArrayBufferString = (buffer: ArrayBuffer): string => {
+            console.info('====>GetArrayBufferString: ' + JSON.stringify(buffer));
+            const decoder = util.TextDecoder.create('"utf-8"');
+            const str = decoder.decodeWithStream(new Uint8Array(buffer));
+            return str
+        }
+
+        let testTemplate: (testName: string, code: Int, done: () => void) => Promise<void> =
+            async (testName, code, done) => {
+                let subscriber: commonEventManager.CommonEventSubscriber | null | undefined = null;
+
+                let unSubscriberCallback = (err: BusinessError) => {
+                    console.info(`====>${testName} unSubscriberCallback start`);
+                    if (err) {
+                        console.info(`====>${testName} unSubscriberCallback failed: ${JSON.stringify(err)}`);
+                    } else {
+                        console.info(`====>${testName} unSubscriberCallback finsh`);
+                    }
+                };
+                let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+                    console.info(`====>${testName} subscriberCallback data:JSON.stringify(data)`);
+                    if (subscriber !== undefined) {
+                        const currentSubscriber = subscriber as commonEventManager.CommonEventManager;
+                        commonEventManager.unsubscribe(currentSubscriber);
+                        setTimeout(() => {
+                            try {
+                              expect(data?.data).assertEqual('SUCCESS');
+                              console.info(`====>${testName} end`);
+                              done();
+                            } catch (err) {
+                              console.info(`====>${testName} err: ${JSON.stringify(err)}`);
+                              done();
+                            }
+                        }, 500)
+                    }
+                };
+                let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+                    events: [testName]
+                };
+                commonEventManager.createSubscriber(commonEventSubscribeInfo, (err: BusinessError | null,
+                    data: commonEventManager.CommonEventSubscriber | undefined | null): void => {
+                        try{
+                            if (data !== undefined) {
+                                subscriber = data as commonEventManager.CommonEventSubscriber;
+                                commonEventManager.subscribe(subscriber, subscriberCallback);
+                                console.info(`====>${testName} subscribe finish====`);
+                            }
+                        } catch (err) {
+                            console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+                        }
+            
+                        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+                            code: code
+                        }
+                        commonEventManager.publish('keyboardControllerStatic', commonEventPublishData, (err: BusinessError | null) => {
+                            console.info(`====>${testName} publishCallback start`);
+                            if (err) {
+                              console.info(`====>${testName} publishCallback failed: ${JSON.stringify(err)}`);
+                            }
+                        });
+                  })
+            };
+
+        beforeAll(async (done: Function) => {
+            try {
+              let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+              await Utils.msSleep(2000);
+              abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.inputmethodEngine.test.static');
+              await Utils.msSleep(2000);
+              await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
+              await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodEngine.test.static');
+              console.info('====>beforeAll inputMethod_enable success');
+              await Utils.msSleep(1000);
+              textArea = await driver.findComponent(ON.type('TextArea'));
+              console.info('====>beforeAll inputMethodSwitch window textArea:' + JSON.stringify(textArea));
+              rectInfo = await textArea.getBounds();
+              console.info('====>beforeAll inputMethodSwitch textArea rectInfo:' + JSON.stringify(rectInfo));
+              await Utils.msSleep(1000);
+              await runCmd(rectInfo);
+              await Utils.msSleep(1000);
+              done();
+            } catch (err) {
+              console.info('====>beforeAll throw err:' + JSON.stringify(err.message));
+              done();
+            }
+        })
+
+        /**
+         * @tc.name   inputMethodEngine_test_static_038
+         * @tc.number inputMethodEngine_test_static_038
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('inputMethodEngine_test_static_038', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('inputMethodEngine_test_static_038', 1, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_createPanelCallback_static_0100
+         * @tc.number Sub_InputMethod_IME_createPanelCallback_static_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_createPanelCallback_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_createPanelCallback_static_0100', 2, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_PrivateDateTransferred_static_0500
+         * @tc.number Sub_InputMethod_IME_PrivateDateTransferred_static_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_PrivateDateTransferred_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_PrivateDateTransferred_static_0500', 3, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_PrivateDateTransferred_static_0600
+         * @tc.number Sub_InputMethod_IME_PrivateDateTransferred_static_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_PrivateDateTransferred_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            testTemplate('Sub_InputMethod_IME_PrivateDateTransferred_static_0600', 4, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0900
+         * @tc.number Sub_InputMethod_IME_Custom_static_0900
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0900', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+                inputAttribute:{
+                    textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+                }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            let msgHandler: inputMethod.MessageHandler = {
+                onTerminated(): void {
+                    console.info("====>Sub_InputMethod_IME_Custom_static_0900 onTerminated");
+                },
+                onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                    console.info('====>Sub_InputMethod_IME_Custom_static_0900 onMessage msgId: ' + msgId + ', msgParam: ' +
+                    GetArrayBufferString(msgParam!) + ', msgParamObj' + msgParam);
+                    expect(msgId).assertEqual('Sub_InputMethod_IME_Custom_static_0900');
+                    if (msgParam !== undefined) {
+                        expect(GetArrayBufferString(msgParam!)).assertEqual('SUCCESS')
+                    } else {
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            }
+            inputMethod.getController().recvMessage(msgHandler);
+            testTemplate('Sub_InputMethod_IME_Custom_static_0900', 5, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0200
+         * @tc.number Sub_InputMethod_IME_Custom_static_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+                inputAttribute:{
+                    textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+                }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            let msgHandler: inputMethod.MessageHandler = {
+                onTerminated(): void {
+                    console.info("====>Sub_InputMethod_IME_Custom_static_0200 onTerminated");
+                },
+                onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                    console.info('====>Sub_InputMethod_IME_Custom_static_0200 onMessage msgId: ' + msgId + ', msgParam: ' +
+                    GetArrayBufferString(msgParam!) + ', msgParamObj' + msgParam);
+                    expect(msgId).assertEqual('Sub_InputMethod_IME_Custom_static_0200');
+                    if (msgParam !== undefined) {
+                        expect(GetArrayBufferString(msgParam!)).assertEqual('SUCCESS')
+                    } else {
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            }
+            inputMethod.getController().recvMessage(msgHandler);
+            testTemplate('Sub_InputMethod_IME_Custom_static_0200', 6, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0800
+         * @tc.number Sub_InputMethod_IME_Custom_static_0800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+                inputAttribute:{
+                    textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+                }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            let msgHandler: inputMethod.MessageHandler = {
+                onTerminated(): void {
+                    console.info("====>Sub_InputMethod_IME_Custom_static_0800 onTerminated");
+                },
+                onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                    console.info('====>Sub_InputMethod_IME_Custom_static_0800 onMessage msgId: ' + msgId + ', msgParam: ' +
+                    GetArrayBufferString(msgParam!) + ', msgParamObj' + msgParam);
+                    expect(msgId).assertEqual('Sub_InputMethod_IME_Custom_static_0800');
+                    if (msgParam !== undefined) {
+                        expect(GetArrayBufferString(msgParam!)).assertEqual('SUCCESS')
+                    } else {
+                        expect().assertFail();
+                    }
+                    done();
+                }
+            }
+            inputMethod.getController().recvMessage(msgHandler);
+            testTemplate('Sub_InputMethod_IME_Custom_static_0800', 7, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0400
+         * @tc.number Sub_InputMethod_IME_Custom_static_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+                inputAttribute:{
+                    textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+                }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            let msgHandler: inputMethod.MessageHandler = {
+                onTerminated(): void {
+                    console.info("====>Sub_InputMethod_IME_Custom_static_0400 onTerminated");
+                },
+                onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                    console.info('====>Sub_InputMethod_IME_Custom_static_0400 onMessage msgId: ' + msgId + ', msgParam: ' +
+                    GetArrayBufferString(msgParam!) + ', msgParamObj' + msgParam);
+                    expect().assertFail();
+                    done();
+                }
+            }
+            inputMethod.getController().recvMessage(msgHandler);
+            testTemplate('Sub_InputMethod_IME_Custom_static_0400', 8, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0800
+         * @tc.number Sub_InputMethod_IME_Custom_static_0800
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+            inputAttribute: {
+                textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            
+            let msgHandler: inputMethod.MessageHandler = {
+            onTerminated(): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0800 onTerminated`);
+            },
+            onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0800 onMessage msgId: ${msgId}`);
+                expect(msgId).assertEqual('Sub_InputMethod_IME_Custom_static_0800');
+                if (msgParam !== undefined) {
+                expect(GetArrayBufferString(msgParam!)).assertEqual('SUCCESS')
+                } else {
+                expect().assertFail();
+                }
+                done();
+            }
+            };
+            inputMethod.getController().recvMessage(msgHandler);
+
+            testTemplate('Sub_InputMethod_IME_Custom_static_0800', 7, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0400
+         * @tc.number Sub_InputMethod_IME_Custom_static_0400
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+            inputAttribute: {
+                textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            
+            let msgHandler: inputMethod.MessageHandler = {
+            onTerminated(): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0400 onTerminated`);
+            },
+            onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0400 onMessage msgId: ${msgId}`);
+                expect().assertFail();
+                done();
+            }
+            };
+            inputMethod.getController().recvMessage(msgHandler);
+
+            testTemplate('Sub_InputMethod_IME_Custom_static_0400', 8, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0300
+         * @tc.number Sub_InputMethod_IME_Custom_static_0300
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+            inputAttribute: {
+                textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            
+            let msgHandler: inputMethod.MessageHandler = {
+            onTerminated(): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0300 onTerminated`);
+            },
+            onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0300 onMessage msgId: ${msgId}`);
+                expect(msgId).assertEqual('Sub_InputMethod_IME_Custom_static_0300');
+                expect().assertFail();
+                done();
+            }
+            };
+            inputMethod.getController().recvMessage(msgHandler);
+
+            testTemplate('Sub_InputMethod_IME_Custom_static_0300', 9, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_1100
+         * @tc.number Sub_InputMethod_IME_Custom_static_1100
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_1100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+            inputAttribute: {
+                textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            
+            let msgHandler: inputMethod.MessageHandler = {
+            onTerminated(): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_1100 onTerminated`);
+            },
+            onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                try {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_1100 onMessage msgId: ${msgId}`);
+                expect(msgId).assertEqual('Sub_InputMethod_IME_Custom_static_1100');
+                expect(typeof(msgParam)).assertEqual('undefined');
+                done();
+                } catch (err) {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_1100 catch err: ${err}`);
+                }
+            }
+            };
+            inputMethod.getController().recvMessage(msgHandler);
+
+            testTemplate('Sub_InputMethod_IME_Custom_static_1100', 10, done);
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0901
+         * @tc.number Sub_InputMethod_IME_Custom_static_0901
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0901', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+            inputAttribute: {
+                textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            await inputMethod.getController().hideTextInput();
+            
+            let msgHandler: inputMethod.MessageHandler = {
+            onTerminated(): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0901 onTerminated`);
+            },
+            onMessage(msgId: string, msgParam?: ArrayBuffer): void {
+                console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0901 onMessage msgId: ${msgId}, msgParam: ${GetArrayBufferString(msgParam!)}`);   
+                    
+            }
+            };
+            inputMethod.getController().recvMessage(msgHandler);
+            console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0901 recvMessage success`);
+            let testName:string = 'Sub_InputMethod_IME_Custom_static_0901';
+            let subscriber: commonEventManager.CommonEventSubscriber | null | undefined = null;
+
+            let unSubscriberCallback = (err: BusinessError) => {
+            console.info(`====>${testName} unSubscriberCallback start`);
+            if (err) {
+                console.info(`====>${testName} unSubscriberCallback failed: ${JSON.stringify(err)}`);
+            } else {
+                console.info(`====>${testName} unSubscriberCallback finish`)
+            }
+            }
+            let subscriberCallback = (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined | null) => {
+            console.info(`====>${testName} subscriberCallback data: ${JSON.stringify(data)}`);
+            if (subscriber != undefined) {
+                const currentSubscriber = subscriber as commonEventManager.CommonEventSubscriber;
+                commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+                setTimeout(() => {
+                try {
+                    expect(data.data).assertEqual("SUCCESS");
+                    console.info(`====>${testName} end`);
+                    done();
+                } catch (err) {
+                    console.info(`====>${testName} err: ${JSON.stringify(err)}`);
+                    clearTimeout(t);
+                    done();
+                }
+                }, 500)
+            }
+            }
+
+            let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+            events: [testName]
+            }
+            commonEventManager.createSubscriber(commonEventSubscribeInfo, (err: BusinessError | null, data: commonEventManager.CommonEventSubscriber | undefined | null): void => {
+            try {
+                if (data != undefined) {
+                subscriber = data as commonEventManager.CommonEventSubscriber;
+                commonEventManager.subscribe(subscriber, subscriberCallback);
+                console.info(`====>${testName} subscriber finish`);
+                }        
+            } catch (err) {
+                console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+            }
+
+            let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+                code: 11
+            }
+            commonEventManager.publish('keyboardControllerStatic', commonEventPublishData, (err: BusinessError | null) => {
+                console.info(`====>${testName} publishCallback start`);
+                if (err) {
+                console.info(`====>${testName} publishCallback failed: ${JSON.stringify(err)}`);
+                }
+            })
+            })
+        });
+
+        /**
+         * @tc.name   Sub_InputMethod_IME_Custom_static_0902
+         * @tc.number Sub_InputMethod_IME_Custom_static_0902
+         * @tc.desc   Switch current input method subtype.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IME_Custom_static_0902', Level.LEVEL2, async (done: () => void): Promise<void> => {
+            const ATTRIBUTE: inputMethod.TextConfig = {
+            inputAttribute: {
+                textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
+            }
+            }
+            await inputMethod.getController().attach(true, ATTRIBUTE);
+            testTemplate('Sub_InputMethod_IME_Custom_static_0902', 12, done)
+        });
+
+
+    })
+}
