@@ -254,6 +254,10 @@ export default function sceneTest() {
         scene.destroy();
         expect(scene.renderFrame()).assertFalse();
         console.info(msg + " Succeed in scene?.renderFrame() ");
+        
+        expect(scene.renderFrame({ alwaysRender: false }) != null).assertTrue();
+        console.info(msg + " Succeed in scene?.renderFrame({ alwaysRender: false }) ");
+
         done();
       } catch (err) {
         console.info(msg + " Failed in testSceneRenderFrame " + JSON.stringify(err));
@@ -713,9 +717,18 @@ export default function sceneTest() {
         expect(renderContext != null).assertTrue();
 
         if (renderContext != null) {
+          let pluginName = '74c2dde9-8134-4471-af49-66ea20993c41'
+          let plugin = await renderContext.loadPlugin(pluginName);
+          console.info(msg + ' plugin "' + pluginName + '" load result:', plugin);
+          expect(plugin).assertTrue();
+
           let loadFail = await renderContext.loadPlugin("NonExistentPlugin");
           console.info(msg + ' plugin "NonExistentPlugin" load result:', loadFail);
           expect(loadFail).assertFalse();
+
+          let loadEmpty = await renderContext.loadPlugin("");
+          console.info(msg + ' plugin "" (empty string) load result:', loadEmpty);
+          expect(loadEmpty).assertFalse();
         }
         console.info(msg + " test completed successfully");
         done();
@@ -754,6 +767,14 @@ export default function sceneTest() {
         expect(component != null).assertTrue();
         console.info(msg + ` component name:`, component?.name);
         expect(component.name).assertEqual(componentName);
+
+        try {
+          let emptyNameComponent: SceneComponent = await scene.createComponent(rootNode!, "");
+          console.info(msg + " createComponent with empty string name: " + JSON.stringify(emptyNameComponent));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createComponent with empty string name threw error: " + JSON.stringify(err));
+        }
 
         console.info(msg + " test completed successfully");
         done();
@@ -797,7 +818,15 @@ export default function sceneTest() {
 
         let missingComponent: SceneComponent | null = scene.getComponent(rootNode!, "NonExistentComponent");
         console.info(msg + " Attempted to retrieve missing component 'NonExistentComponent':", missingComponent);
-        expect(missingComponent == null).assertTrue();
+        expect(missingComponent).assertNull();
+
+        try {
+          let emptyNameComponent: SceneComponent | null = scene.getComponent(rootNode!, "");
+          console.info(msg + " getComponent with empty string name: " + JSON.stringify(emptyNameComponent));
+          expect(emptyNameComponent).assertNull();
+        } catch (err) {
+          console.info(msg + " getComponent with empty string name threw error: " + JSON.stringify(err));
+        }
 
         console.info(msg + " test completed successfully");
         done();

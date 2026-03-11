@@ -76,9 +76,16 @@ export default function sceneNodeTest() {
         console.info(msg + " get scene success ");
         node = scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') as Node;
         expect(node != null).assertTrue();
-        console.info(msg + " Succeed in scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') ");
+        console.info(msg + " Succeed in scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') ");
         let nullNode: Node | null = scene!.root!.getNodeByPath('Scene/1234/456');
         expect(nullNode).assertNull();
+        try {
+          let emptyStringNode: Node | null = scene!.root!.getNodeByPath("");
+          console.info(msg + " getNodeByPath with empty string: " + JSON.stringify(emptyStringNode));
+          expect(emptyStringNode != null).assertTrue();
+        } catch (emptyStringErr) {
+          console.info(msg + " getNodeByPath with empty string threw error: " + JSON.stringify(emptyStringErr));
+        }
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') " +
@@ -980,6 +987,12 @@ export default function sceneNodeTest() {
 
         expect(hit.hitPosition != null).assertTrue();
         console.info(msg + " Hit position:", JSON.stringify(hit.hitPosition));
+
+        scene.root?.children.clear();
+        raycastNode = scene.root as Node;
+        viewPos = {x: -1, y: 1};
+        results = await camera.raycast(viewPos, { rootNode: raycastNode });
+        expect(results.length).assertEqual(0);
 
         console.info(msg + " test completed successfully");
         done();

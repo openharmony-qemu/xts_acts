@@ -139,6 +139,10 @@ export default function sceneResourcesTest() {
       try {
         anim?.seek(0.3);
         console.info(msg + " Succeed in anim?.seek(0.3) ");
+        anim?.seek(0.0);
+        console.info(msg + " Succeed in anim?.seek(0.0) ");
+        anim?.seek(1.0);
+        console.info(msg + " Succeed in anim?.seek(1.0) ");
         done();
       } catch (err) {
         console.info(msg + " Failed in anim?.seek(0.3) " + JSON.stringify(err));
@@ -1476,7 +1480,7 @@ export default function sceneResourcesTest() {
         shader.setShaderInputs({ "input1": 1.0, "input2": { x: 1, y: 1, z: 1 }, "input3": { x: 1, y: 1, z: 1, w: 1 } });
         console.info(msg + " setShaderInputs succeeded");
 
-        let inputs = shader.getShaderInputs();
+        let inputs = shader.inputs;
         expect(inputs["input1"]).assertEqual(1.0);
         console.info(msg + " test completed successfully");
         done();
