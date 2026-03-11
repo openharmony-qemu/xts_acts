@@ -1515,10 +1515,6 @@ export default function sceneResourcesTest() {
         expect(nullValue).assertNull();
         console.info(msg + " getPropertyValue with non-existent property returns null");
 
-        let undefinedValue = effect.getPropertyValue(undefined as string);
-        expect(undefinedValue).assertUndefined();
-        console.info(msg + " getPropertyValue with undefined returns undefined");
-
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {

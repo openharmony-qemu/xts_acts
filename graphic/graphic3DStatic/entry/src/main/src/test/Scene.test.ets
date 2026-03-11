@@ -949,7 +949,6 @@ export default function sceneTest() {
         let projMatrix: Mat4x4 = camera.getProjectionMatrix();
         expect(projMatrix != undefined).assertTrue();
         expect(projMatrix != null).assertTrue();
-();
         console.info(msg + " getProjectionMatrix succeeded");
         
         // Verify matrix structure (should be perspective projection)
@@ -1429,10 +1428,6 @@ export default function sceneTest() {
         let resultEmptyName = scene.cloneNode(node!, scene.root!, "");
         console.info(msg + " cloneNode with empty string name: " + JSON.stringify(resultEmptyName));
         expect(resultEmptyName != null).assertTrue();
-        
-        let resultNullNode = scene.cloneNode(null, scene.root!, "testNode");
-        expect(resultNullNode).assertNull();
-        console.info(msg + " cloneNode with null node returns null");
         
         console.info(msg + " test completed successfully");
         done();

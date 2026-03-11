@@ -332,7 +332,7 @@ export default function sceneTypesTest() {
 
         customGeometry.indices = [];
         let emptyIndices = customGeometry.indices;
-        expect(emptyIndices.length).assertEqual(0);
+        expect(emptyIndices?.length == 0).assertTrue();
         console.info(msg + " empty array test succeeded");
 
         customGeometry.indices = undefined;
@@ -399,7 +399,7 @@ export default function sceneTypesTest() {
 
         customGeometry.normals = [];
         let emptyNormals = customGeometry.normals;
-        expect(emptyNormals.length).assertEqual(0);
+        expect(emptyNormals?.length == 0).assertTrue();
         console.info(msg + " empty array test succeeded");
 
         customGeometry.normals = undefined;
@@ -466,7 +466,7 @@ export default function sceneTypesTest() {
 
         customGeometry.uvs = [];
         let emptyUvs = customGeometry.uvs;
-        expect(emptyUvs.length).assertEqual(0);
+        expect(emptyUvs?.length == 0).assertTrue();
         console.info(msg + " empty array test succeeded");
 
         customGeometry.uvs = undefined;
@@ -533,7 +533,7 @@ export default function sceneTypesTest() {
 
         customGeometry.colors = [];
         let emptyColors = customGeometry.colors;
-        expect(emptyColors.length).assertEqual(0);
+        expect(emptyColors?.length == 0).assertTrue();
         console.info(msg + " empty array test succeeded");
 
         customGeometry.colors = undefined;
