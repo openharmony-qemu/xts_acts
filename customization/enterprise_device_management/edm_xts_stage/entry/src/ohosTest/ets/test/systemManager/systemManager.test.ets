@@ -625,7 +625,11 @@ function testNotifyUpdatePackages() {
     await systemManager.notifyUpdatePackages(SELFWANT, updatePackageInfo).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
-      expect(error.code == 9201004 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201004).assertTrue();
+      }
     }).finally(async () => {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     });
@@ -689,7 +693,11 @@ function testNotifyUpdatePackages() {
     await systemManager.notifyUpdatePackages(SELFWANT, updatePackageInfo).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
-      expect(error.code == 9201004 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201004).assertTrue();
+      }
     }).finally(async () => {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     });
@@ -876,7 +884,11 @@ function testSetAutoUnlockAfterReboot() {
       systemManager.setAutoUnlockAfterReboot(SELFWANT, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -895,7 +907,11 @@ function testSetAutoUnlockAfterReboot() {
       systemManager.setAutoUnlockAfterReboot(SELFWANT, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -965,7 +981,11 @@ function testSetAutoUnlockAfterReboot() {
       systemManager.setAutoUnlockAfterReboot(INVALID_WANT, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -987,7 +1007,11 @@ function testGetAutoUnlockAfterReboot() {
       systemManager.getAutoUnlockAfterReboot(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1006,7 +1030,11 @@ function testGetAutoUnlockAfterReboot() {
       systemManager.getAutoUnlockAfterReboot(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1027,7 +1055,11 @@ function testGetAutoUnlockAfterReboot() {
       systemManager.getAutoUnlockAfterReboot(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1049,7 +1081,11 @@ function testGetDisallowedNearLinkProtocols() {
       let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(SELFWANT,
         DEFAULT_USER_ID);
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1068,7 +1104,11 @@ function testGetDisallowedNearLinkProtocols() {
       let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(
         INVALID_WANT, DEFAULT_USER_ID);
     } catch (error) {
-      expect(error.code == 801 || error.code == 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1089,7 +1129,11 @@ function testGetDisallowedNearLinkProtocols() {
       let protocols: Array<systemManager.NearLinkProtocol> = systemManager.getDisallowedNearLinkProtocols(SELFWANT,
         DEFAULT_USER_ID);
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1145,7 +1189,11 @@ function testAddDisallowedNearLinkProtocols() {
       systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1167,7 +1215,11 @@ function testAddDisallowedNearLinkProtocols() {
       systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1215,7 +1267,11 @@ function testAddDisallowedNearLinkProtocols() {
     try {
       systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1236,7 +1292,11 @@ function testAddDisallowedNearLinkProtocols() {
     try {
       systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1261,7 +1321,11 @@ function testRemoveDisallowedNearLinkProtocols() {
       systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1283,7 +1347,11 @@ function testRemoveDisallowedNearLinkProtocols() {
       systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1330,7 +1398,11 @@ function testRemoveDisallowedNearLinkProtocols() {
     try {
       systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1351,7 +1423,11 @@ function testRemoveDisallowedNearLinkProtocols() {
     try {
       systemManager.removeDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1373,7 +1449,11 @@ function testSetInstallLocalEnterpriseAppEnabled() {
       systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1392,7 +1472,11 @@ function testSetInstallLocalEnterpriseAppEnabled() {
       systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1413,7 +1497,11 @@ function testSetInstallLocalEnterpriseAppEnabled() {
       systemManager.setInstallLocalEnterpriseAppEnabled(INVALID_WANT, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1460,7 +1548,11 @@ function testGetInstallLocalEnterpriseAppEnabled() {
     try {
       let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1478,7 +1570,11 @@ function testGetInstallLocalEnterpriseAppEnabled() {
     try {
       let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(INVALID_WANT);
     } catch (error) {
-      expect(error.code == 801 || error.code == 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1498,7 +1594,11 @@ function testGetInstallLocalEnterpriseAppEnabled() {
     try {
       let isDisallow: boolean = await systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1545,7 +1645,11 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1568,7 +1672,11 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1593,7 +1701,11 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(INVALID_WANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1617,7 +1729,11 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1642,7 +1758,11 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200010).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1665,7 +1785,11 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1685,7 +1809,11 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1707,7 +1835,11 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(INVALID_WANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1729,7 +1861,11 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200012).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1751,7 +1887,11 @@ function testGetKeyEventPolicies() {
       systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -1770,7 +1910,11 @@ function testGetKeyEventPolicies() {
       systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1791,7 +1935,11 @@ function testGetKeyEventPolicies() {
       systemManager.getKeyEventPolicies(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 401).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1909,7 +2057,11 @@ function testStartCollectLog() {
     await systemManager.startCollectLog(SELFWANT).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     });
     done();
   });
@@ -1927,7 +2079,11 @@ function testStartCollectLog() {
     await systemManager.startCollectLog(SELFWANT).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
@@ -2849,7 +3005,11 @@ function testFinishLogCollected() {
       systemManager.finishLogCollected(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -2868,7 +3028,11 @@ function testFinishLogCollected() {
       systemManager.finishLogCollected(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 801 || error.code == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

@@ -3008,7 +3008,11 @@ export default function bundleManagerTest() {
         await bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
         expect(false).assertTrue();
       } catch (error) {
-        expect((error.code == 9201002) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201002).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3029,7 +3033,11 @@ export default function bundleManagerTest() {
         await bundleManager.installMarketApps(SELFWANT, ERROR_MARKET_APPS);
         expect(false).assertTrue();
       } catch (error) {
-        expect((error.code == 9200012) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

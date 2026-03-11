@@ -842,7 +842,11 @@ export default function deviceSettingsTest() {
       let fd: number = fs.openSync(filePath, fs.OpenMode.READ_ONLY).fd;
       await deviceSettings.setHomeWallpaper(SELFWANT, fd).then(() => {
       }).catch((error: BusinessError) => {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       }).finally(async () => {
         await adminManager.disableAdmin(SELFWANT);
       });
@@ -902,7 +906,11 @@ export default function deviceSettingsTest() {
       let fd: number = fs.openSync(filePath, fs.OpenMode.READ_ONLY).fd;
       await deviceSettings.setUnlockWallpaper(SELFWANT, fd).then(() => {
       }).catch((error: BusinessError) => {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       }).finally(async () => {
         await adminManager.disableAdmin(SELFWANT);
       });
@@ -1889,9 +1897,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 9200001 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     });
@@ -1909,9 +1920,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 9200002 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1931,9 +1945,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.getValueForAccount(null, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 401 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1952,9 +1969,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 9200001 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     });
@@ -1972,9 +1992,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 9200002 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1994,9 +2017,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '2');
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 9200012 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2016,9 +2042,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.setValueForAccount(null, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 401 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
