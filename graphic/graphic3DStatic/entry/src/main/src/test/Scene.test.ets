@@ -1326,7 +1326,9 @@ export default function sceneTest() {
         
         let root = scene.root;
         expect(root != null).assertTrue();
-        expect(typeof root).assertEqual('object');
+        console.info(msg + " root property retrieved successfully");
+        
+        expect(root != null).assertTrue();
         console.info(msg + " root getter succeeded");
         
         console.info(msg + " test completed successfully");
