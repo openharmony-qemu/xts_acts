@@ -324,10 +324,22 @@ export default function sceneTypesTest() {
       try {
         let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
-        
+
         let indices = customGeometry.indices;
+        expect(indices != undefined).assertTrue();
+        expect(indices != null).assertTrue();
         console.info(msg + " indices getter succeeded");
-        
+
+        customGeometry.indices = [];
+        let emptyIndices = customGeometry.indices;
+        expect(emptyIndices.length).assertEqual(0);
+        console.info(msg + " empty array test succeeded");
+
+        customGeometry.indices = undefined;
+        let undefinedIndices = customGeometry.indices;
+        expect(undefinedIndices).assertUndefined();
+        console.info(msg + " undefined test succeeded");
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
