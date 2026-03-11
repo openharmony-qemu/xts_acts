@@ -528,6 +528,16 @@ export default function drawingTsPath3Test() {
         console.info(msg + `test getSegment 2. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
+      try {
+        let result3: boolean;
+        result3 = path.getSegment(true, 20.0, 10.0, false, dstPath)
+        console.info(msg + " getSegment 3 -----result2:  "+ result3);
+        expect(result3).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `test getSegment 3. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
     })
   })
 }
