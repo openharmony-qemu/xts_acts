@@ -227,9 +227,9 @@ export default function bluetoothProfilesTest() {
             }catch(err){
                
                 hilog.info(domain, tag, "connectionStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
+                    expect(err.code == 801).assertTrue();
                 } else {
                     expect().assertFail();
                 }
