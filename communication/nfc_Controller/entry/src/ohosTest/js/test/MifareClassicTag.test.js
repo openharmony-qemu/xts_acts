@@ -22,10 +22,10 @@ function sleep(delay) {
 }
 
 let MifareClassicType = {
-    TYPE_UNKNOWN : -1,
-    TYPE_CLASSIC : 0,
-    TYPE_PLUS : 1,
-    TYPE_PRO : 2,
+    TYPE_UNKNOWN : 0,
+    TYPE_CLASSIC : 1,
+    TYPE_PLUS : 2,
+    TYPE_PRO : 3,
 }
 
 let MifareTagSize = {
@@ -48,6 +48,35 @@ let mifareclassicTaginfo = {
     ],
     "tagRfDiscId": 1,
 };
+
+let mifareclassicTaginfo1 = {
+    "uid": [0x01, 0x02, 0x03, 0x04],
+    "technology": [1, 8],
+    "extrasData": [
+        {
+            "Sak": 0x10, "Atqa": "B000",
+        },
+        {
+            
+        },
+    ],
+    "tagRfDiscId": 1,
+};
+
+let mifareclassicTaginfo2 = {
+    "uid": [0x01, 0x02, 0x03, 0x04],
+    "technology": [1, 8],
+    "extrasData": [
+        {
+            "Sak": 0xB8, "Atqa": "B000",
+        },
+        {
+            
+        },
+    ],
+    "tagRfDiscId": 1,
+};
+
 let MifareClassicTag = null;
 export default function nfcMifareClassicTag() {
     describe('nfcMifareClassicTag', function () {
@@ -1921,7 +1950,57 @@ export default function nfcMifareClassicTag() {
                 try{
                     let getType = MifareClassicTag.getType();
                     console.info("[NFC_test] MifareClassicTag17 getType: " + getType);
+                    expect(getType == MifareClassicType.TYPE_CLASSIC).assertTrue();
+                } catch (error) {
+                    console.info('[NFC_test] MifareClassicTag17 getType error' + error)
+                    expect().assertFail();
+                }
+            } else {
+                console.info("[NFC_test]MifareClassicTag17 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1701
+         * @tc.number SUB_Communication_NFC_mifareClassic_js_1701
+         * @tc.desc   Test getType api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareClassic_js_1701', Level.LEVEL0, function ()  {
+            let MifareClassicTag1 = tag.getMifareClassic(mifareclassicTaginfo1);
+            if (MifareClassicTag1 != null && MifareClassicTag1 != undefined) {
+                try{
+                    let getType = MifareClassicTag1.getType();
+                    console.info("[NFC_test] MifareClassicTag17 getType: " + getType);
                     expect(getType == MifareClassicType.TYPE_PLUS).assertTrue();
+                } catch (error) {
+                    console.info('[NFC_test] MifareClassicTag17 getType error' + error)
+                    expect().assertFail();
+                }
+            } else {
+                console.info("[NFC_test]MifareClassicTag17 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_Communication_NFC_mifareClassic_js_1702
+         * @tc.number SUB_Communication_NFC_mifareClassic_js_1702
+         * @tc.desc   Test getType api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_mifareClassic_js_1702', Level.LEVEL0, function ()  {
+            let MifareClassicTag2 = tag.getMifareClassic(mifareclassicTaginfo2);
+            if (MifareClassicTag2 != null && MifareClassicTag2 != undefined) {
+                try{
+                    let getType = MifareClassicTag2.getType();
+                    console.info("[NFC_test] MifareClassicTag17 getType: " + getType);
+                    expect(getType == MifareClassicType.TYPE_PRO).assertTrue();
                 } catch (error) {
                     console.info('[NFC_test] MifareClassicTag17 getType error' + error)
                     expect().assertFail();
