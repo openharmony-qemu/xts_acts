@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import deviceInfo from '@ohos.deviceInfo';
 import runningLock from '@ohos.runningLock';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
@@ -1628,11 +1627,7 @@ export default function RunningLockTest() {
         let isRunningLockTypeSupported =
           await runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
         console.info(`${TAG} isRunningLockTypeSupported: ${isRunningLockTypeSupported}`);
-        if (deviceInfo.deviceType == '2in1') {
-          expect(isRunningLockTypeSupported).assertTrue();
-        } else {
-          expect(isRunningLockTypeSupported).assertFalse();
-        }
+        expect(isRunningLockTypeSupported).assertFalse();
       } catch (e) {
         console.error(`${TAG} error: ${JSON.stringify(e)}`);
         expect().assertFail();
@@ -1660,13 +1655,8 @@ export default function RunningLockTest() {
             done();
           } else {
             console.info(`${TAG} isRunningLockTypeSupported: ${isRunningLockTypeSupported}`);
-            if (deviceInfo.deviceType == '2in1') {
-              expect(isRunningLockTypeSupported).assertTrue();
-              done();
-            } else {
-              expect(isRunningLockTypeSupported).assertFalse();
-              done();
-            }
+            expect(isRunningLockTypeSupported).assertFalse();
+            done();
           }
         });
     })
@@ -2051,4 +2041,4 @@ export default function RunningLockTest() {
       }
     })
   })
-} 
+}
