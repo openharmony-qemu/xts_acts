@@ -5969,7 +5969,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvents");
           expect(data != 0).assertTrue();
           return;
@@ -6095,7 +6095,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvents");
           expect(data != 0).assertTrue();
           return;
@@ -6221,7 +6221,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvents");
           expect(data != 0).assertTrue();
           return;
@@ -6347,7 +6347,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvents");
           expect(data != 0).assertTrue();
           return;
@@ -6472,7 +6472,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvents");
           expect(data != 0).assertTrue();
           return;
@@ -6544,7 +6544,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then( (Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvents");
           expect(data != 0).assertTrue();
           return;
@@ -6615,7 +6615,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvents");
           expect(data != 0).assertTrue();
           return;
@@ -6687,7 +6687,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then( (Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvents");
           expect(data != 0).assertTrue();
           return;
@@ -6758,7 +6758,7 @@ export default function CalendarManagerTest() {
 
       calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        Calendar.addEvent(Event).then(() => {
+        Calendar.addEvent(Event).then((data:number) => {
           console.info(CaseName + "Succeeded in addEvent");
           expect(data != 0).assertTrue();
           return;
