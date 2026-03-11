@@ -20,6 +20,7 @@ import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -69,6 +70,12 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebConsoleMessageSource' })
+              console.log('push URL success')
+            }
           }
         })
       }

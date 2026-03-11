@@ -261,6 +261,7 @@ struct webResourceResponseSet {
           }
           return this.responseWeb
         })
+        .webFantasyFont('fantasy')
         .onHttpErrorReceive((event) => {
           if (event) {
             if (this.onHttpErrorReceive) {

@@ -15,7 +15,10 @@
 
 import webOnHttpErrorReceiveTest from './WebOnHttpErrorReceive.test'
 import WebViewJavaScriptProxyAndOnPageVisible from "./WebViewJavaScriptProxyAndOnPageVisible.test";
+import WebConsoleMessageSource from "./WebConsoleMessageSource.test";
+
 export default function testsuite() {
     webOnHttpErrorReceiveTest();
     WebViewJavaScriptProxyAndOnPageVisible();
+    WebConsoleMessageSource();
 }

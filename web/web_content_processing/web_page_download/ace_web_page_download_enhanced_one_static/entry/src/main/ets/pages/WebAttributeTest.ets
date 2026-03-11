@@ -21,7 +21,8 @@ import {
   Button,
   ClickEvent,
   Web,
-  OnDownloadStartEvent
+  OnDownloadStartEvent,
+  OverScrollMode
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { Callback, RecordData } from '@ohos.base'
@@ -92,6 +93,7 @@ struct WebAttributeTest {
           })
 
         Web({ src: 'www.example.com', controller: this.controller })
+          .overScrollMode(OverScrollMode.ALWAYS)
           .key('webView')
           .height('50%')
           .fileAccess(true)
@@ -104,10 +106,11 @@ struct WebAttributeTest {
           .databaseAccess(true)
           .blockNetwork(this.blockNetwork)
           .onDownloadStart((event: OnDownloadStartEvent):void => {
-            console.info('onDownloadStart==>' + event.url)
-            console.info('onDownloadStart==>' + event.contentDisposition)
-            console.info('onDownloadStart==>' + event.mimetype)
-            console.info('onDownloadStart==>' + event.contentLength)
+            console.info('onDownloadStart event.url ==>' + event.url)
+            console.info('onDownloadStart event.userAgent ==>' + event.userAgent)
+            console.info('onDownloadStart event.contentDisposition ==>' + event.contentDisposition)
+            console.info('onDownloadStart event.mimetype ==>' + event.mimetype)
+            console.info('onDownloadStart event.contentLength ==>' + event.contentLength)
             if (event) {
               if (this.isDownloadStart) {
                 console.info('isDownloadStart==>')
