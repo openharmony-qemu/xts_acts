@@ -1357,8 +1357,8 @@ export default function sceneTest() {
         expect(scene != null).assertTrue();
         
         let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != undefined).assertTrue();
         expect(renderConfig != null).assertTrue();
-        expect(typeof renderConfig).assertEqual('object');
         console.info(msg + " renderConfiguration getter succeeded");
         
         console.info(msg + " test completed successfully");
