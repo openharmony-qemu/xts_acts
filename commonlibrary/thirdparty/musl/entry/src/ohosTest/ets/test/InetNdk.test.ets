@@ -31,9 +31,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_addr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetAddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetAddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetAddr(0);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1346044170);
@@ -45,9 +45,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_addr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetAddr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetAddr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetAddr(1);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1677830336);
@@ -59,9 +59,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_addr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetAddr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetAddr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetAddr(2);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(23374016);
@@ -73,9 +73,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_aton
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetAton001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetAton001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetAton(0);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -87,9 +87,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_aton
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetAton002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetAton002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetAton(1);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -101,9 +101,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_aton
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetAton003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetAton003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetAton(2);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -115,9 +115,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_lnaof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetLnaof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetLnaof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetLnaof(1346044170);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(80720);
@@ -129,9 +129,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_lnaof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetLnaof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetLnaof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetLnaof(0);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -143,9 +143,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_lnaof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetLnaof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetLnaof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetLnaof(1677830336);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(100);
@@ -157,9 +157,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_makeaddr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetMakeaddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetMakeaddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetMakeaddr(0);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -171,9 +171,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_makeaddr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetMakeaddr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetMakeaddr002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetMakeaddr(1074644938);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1074644938);
@@ -185,9 +185,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_makeaddr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetMakeaddr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetMakeaddr003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetMakeaddr(1677830336);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1677830336);
@@ -199,9 +199,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_netof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNetof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNetof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNetof(1677830336);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(12625921);
@@ -213,9 +213,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_netof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNetof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNetof002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNetof(0);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -227,9 +227,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_netof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNetof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNetof003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNetof(1346044170);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(10);
@@ -241,9 +241,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_network
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNetwork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNetwork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNetwork(0);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(167852880);
@@ -255,9 +255,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_network
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNetwork002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNetwork002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNetwork(1);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(-1062706175);
@@ -269,9 +269,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_network
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNetwork003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNetwork003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNetwork(2);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(-1062731420);
@@ -283,9 +283,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_ntoa
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNtoa001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNtoa001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: string = inet.inetNtoa(1346044170);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual("10.1.59.80");
@@ -297,9 +297,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_ntoa
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNtoa002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNtoa002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: string = inet.inetNtoa(1677830336);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual("192.168.1.100");
@@ -311,9 +311,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_ntoa
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNtoa003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNtoa003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: string = inet.inetNtoa(23374016);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual("192.168.100.1");
@@ -325,9 +325,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_pton
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetPton001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetPton001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetPton(23374016);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -339,9 +339,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_pton
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetPton002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetPton002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetPton(1677830336);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -353,9 +353,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_pton
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetPton003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetPton003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetPton(1346044170);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -367,9 +367,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_ntop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNtop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNtop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNtop(23374016);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -381,9 +381,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_ntop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNtop002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNtop002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNtop(1677830336);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -395,9 +395,9 @@ export default function muslInetNdkTest() {
      * @tc.desc   test inet_ntop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInetInetNtop003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInetInetNtop003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inet.inetNtop(1346044170);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);

@@ -30,9 +30,9 @@ export default function dlfcnNdkTest() {
      * @tc.desc   test dlsym
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDlFcnDlSym001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDlFcnDlSym001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(dlfcnndk.dlsym()).assertEqual(0);
       done()
     });
@@ -42,9 +42,9 @@ export default function dlfcnNdkTest() {
      * @tc.desc   test dlvsym
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslDlFcnDlVSym001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslDlFcnDlVSym001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(dlfcnndk.dlvsym()).assertEqual(0);
       done()
     });

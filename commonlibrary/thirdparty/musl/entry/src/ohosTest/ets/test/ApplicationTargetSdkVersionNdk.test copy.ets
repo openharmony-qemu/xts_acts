@@ -30,9 +30,9 @@ export default function muslApplicationTargetSdkVersionNdkTest() {
      * @tc.desc   get_device_api_version
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslApplicationTargetSdkVersionGetApplicationTargetSdkVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslApplicationTargetSdkVersionGetApplicationTargetSdkVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = applicationTargetSdkVersion.getApplicationTargetSdkVersion();
       expect(a).assertEqual(0);
       done()

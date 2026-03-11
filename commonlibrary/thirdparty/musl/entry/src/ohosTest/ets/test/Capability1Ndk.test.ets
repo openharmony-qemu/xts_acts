@@ -30,9 +30,9 @@ export default function CapabilityNdk1Test() {
      * @tc.desc   test capget
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslCapabilityCapget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslCapabilityCapget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = capability.capget(0);
       expect(result).assertEqual(0);
       done()
@@ -44,9 +44,9 @@ export default function CapabilityNdk1Test() {
      * @tc.desc   test capget
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslCapabilityCapget002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslCapabilityCapget002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = capability.capget(-1);
       expect(result).assertEqual(-1);
       done()

@@ -30,9 +30,9 @@ export default function fnmatchNdk1Test() {
      * @tc.desc   test __cnd_timedwait_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslThreadsCndTimedWaitTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslThreadsCndTimedWaitTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk1.__cnd_timedwait_time64_One()).assertEqual(0);
       done()
     });
@@ -43,9 +43,9 @@ export default function fnmatchNdk1Test() {
      * @tc.desc   test __cnd_timedwait_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslThreadsCndTimedWaitTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslThreadsCndTimedWaitTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk1.__cnd_timedwait_time64_Two()).assertEqual(4);
       done()
     });
@@ -56,9 +56,9 @@ export default function fnmatchNdk1Test() {
      * @tc.desc   test __wait4_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWaitWait4Time64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWaitWait4Time64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk1.__wait4_time64_One()).assertEqual(0);
       done()
     });
@@ -69,9 +69,9 @@ export default function fnmatchNdk1Test() {
      * @tc.desc   test __wait4_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWaitWait4Time64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWaitWait4Time64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk1.__wait4_time64_Two()).assertEqual(0);
       done()
     });
@@ -82,9 +82,9 @@ export default function fnmatchNdk1Test() {
      * @tc.desc   test __pthread_cond_timedwait_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPthreadPthreadCondTimedWait64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPthreadPthreadCondTimedWait64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk1.__pthread_cond_timedwait_time64_One()).assertEqual(0);
       done()
     });
@@ -95,9 +95,9 @@ export default function fnmatchNdk1Test() {
      * @tc.desc   test __pthread_cond_timedwait_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPthreadPthreadCondTimedWait64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPthreadPthreadCondTimedWait64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk1.__pthread_cond_timedwait_time64_Two()).assertEqual(0);
       done()
     });
@@ -108,9 +108,9 @@ export default function fnmatchNdk1Test() {
      * @tc.desc   test __sem_timedwait_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSemaphoreSemTimedWaitTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSemaphoreSemTimedWaitTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk1.__sem_timedwait_time64()).assertEqual(0);
       done()
     });
