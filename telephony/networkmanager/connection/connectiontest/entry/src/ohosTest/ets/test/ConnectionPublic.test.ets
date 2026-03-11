@@ -18,7 +18,7 @@ import connection from '@ohos.net.connection';
 import { BusinessError } from '@ohos.base';
 import socket from '@ohos.net.socket';
 import {common } from '@kit.AbilityKit';
-import {policy } from '@kit.AbilityKit';
+import {policy } from '@kit.NetworkKit';
 
 const ExpectFail: () => void = () => {
   try {
