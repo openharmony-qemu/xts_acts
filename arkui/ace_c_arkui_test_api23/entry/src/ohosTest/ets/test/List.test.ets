@@ -60,6 +60,7 @@ import SelectedDragPreviewStyleTextTest from './SelectedDragPreviewStyleTest/Sel
 import SelectedDragPreviewStyleTextInputTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextInputTest.test'
 import SelectedDragPreviewStyleTextAreaTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextAreaTest.test'
 import SwiperFakeTest from './swiper/SwiperFakeTest.test'
+import TextLayoutManagerTest from './textLayoutManager/TextLayoutManager.test'
 
 export default function testsuite() {
   IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
@@ -110,4 +111,5 @@ export default function testsuite() {
   ControllerBaseCreatTest();
   ScrollToVisibleTest();
   SwiperFakeTest();
+  TextLayoutManagerTest();
 }
