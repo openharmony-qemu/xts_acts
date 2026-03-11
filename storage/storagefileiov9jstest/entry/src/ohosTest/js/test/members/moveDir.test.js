@@ -2396,7 +2396,7 @@ export default function fileIOMoveDir() {
     let dpath = await nextFileName('fileIO_test_moveDir_sync_066');
 
     try {
-      fileIO.moveDirSync(null, dpath.destDir, DIRMODE_FILE_REPLACE);
+      fileIO.moveDirSync(undefined, dpath.destDir, DIRMODE_FILE_REPLACE);
       expect(fileIO.accessSync(dpath)).assertFalse();
     } catch (e) {
       console.log('fileIO_test_moveDir_sync_066 has failed for ' + e.message + ', code: ' + e.code);
@@ -2456,7 +2456,7 @@ export default function fileIOMoveDir() {
     let dpath = await nextFileName('fileIO_test_moveDir_sync_069');
 
     try {
-      fileIO.moveDirSync(dpath.srcDir, null, DIRMODE_FILE_REPLACE);
+      fileIO.moveDirSync(dpath.srcDir, undefined, DIRMODE_FILE_REPLACE);
       expect(fileIO.accessSync(dpath)).assertFalse();
     } catch (e) {
       console.log('fileIO_test_moveDir_sync_069 has failed for ' + e.message + ', code: ' + e.code);

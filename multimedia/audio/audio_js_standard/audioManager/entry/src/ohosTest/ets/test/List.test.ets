@@ -20,6 +20,7 @@ import audioSessionManagerTest from './AudioSessionManager.test';
 import getAudioSceneApi12 from './GetAudioScene.test';
 import audioSpatializationManager from './AudioSpatializationManager.test';
 import audioLoopBack from './AudioLoopBack.test';
+import audioManagerOnInterrupt from './AudioManagerOnInterrupt.test';
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
@@ -70,4 +71,5 @@ export default function testsuite() {
   getAudioSceneApi12();
   audioSpatializationManager();
   audioLoopBack();
+  audioManagerOnInterrupt();
 }

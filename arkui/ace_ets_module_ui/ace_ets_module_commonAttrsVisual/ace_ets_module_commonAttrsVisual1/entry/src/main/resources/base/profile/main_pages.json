@@ -43,6 +43,7 @@
         "MainAbility/pages/ContrastTest",
         "MainAbility/pages/RectShapePage",
         "MainAbility/pages/TransitionEffectOpacity",
-        "MainAbility/pages/MaterialFilter"
+        "MainAbility/pages/MaterialFilter",
+        "MainAbility/pages/CommonNullUndefined"
     ]
 }

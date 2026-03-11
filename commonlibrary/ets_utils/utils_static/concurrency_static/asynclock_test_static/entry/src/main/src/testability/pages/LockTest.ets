@@ -325,7 +325,7 @@ export function abortTest(): Promise<string> {
   options.signal = s;
   let p: Promise<number | string> = lock.lockAsync<number, string>((): number => {
     hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', 'Test failed');
-    return 5;
+    return 10;
   }, AsyncLockMode.EXCLUSIVE, options);
   s.aborted = true;
   let p1 = p.then(

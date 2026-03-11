@@ -420,7 +420,6 @@ export default function WindowKeyBoardTest() {
             try {
                 mainWin.setWindowTransitionAnimation(window.WindowTransitionType.DESTROY, transitionAnimation).then(() => {
                     console.info(msgStr + 'Succeeded in setting window transition animation. Cause:');
-                    expect(true).assertTrue();
                     done();
                 }).catch((err:Error) :PromiseLike<void>|undefined => {
                     if (err.code != 801) {
@@ -694,7 +693,6 @@ export default function WindowKeyBoardTest() {
                         expect(keyboardInfo.config?.curve).assertEqual(1);
                         expect(keyboardInfo.config?.duration).assertLarger(0);
                         if (keyboardInfo.config?.param != null) {
-                            expect(true).assertTrue();
                         } else {
                             expect(true).assertFalse();
                         }

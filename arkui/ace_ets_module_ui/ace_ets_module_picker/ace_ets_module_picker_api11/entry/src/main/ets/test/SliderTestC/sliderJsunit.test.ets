@@ -44,6 +44,12 @@ import {
 } from "../../MainAbility/utils/MessageManagerC"
 const waitUiReadyMs = 1000
 
+function defaultStrokeWidth(sysWidth: Resource) {
+  let resourceStrokeWidth = getContext().resourceManager.getNumber(sysWidth.id)
+  let newStrokeWidth: string = Math.round(px2vp(resourceStrokeWidth)) + '.00vp'
+  return newStrokeWidth;
+}
+
 export default function sliderJsunitSliderTest() {
     describe("sliderJsunitSliderTestSliderTest", () => {
         beforeEach(async (done: Function) => {
@@ -338,7 +344,7 @@ export default function sliderJsunitSliderTest() {
                 )
                 expect(obj.$attrs.blockColor).assertEqual("#FFAACCEE")
                 expect(obj.$attrs.trackColor).assertEqual("#FFAACCEE")
-                expect(obj.$attrs.trackThickness).assertEqual("4.00vp")
+                expect(obj.$attrs.trackThickness).assertEqual(defaultStrokeWidth($r('sys.float.slider_outset_track_thickness')));
                 expect(obj.$attrs.selectedColor).assertEqual("#FFAACCEE")
                 done()
             }
@@ -605,7 +611,7 @@ export default function sliderJsunitSliderTest() {
                 expect(JSON.parse(obj.$attrs.linerGradientBlockColor)[0].color).assertEqual("#FF0A0A0A")
                 expect(JSON.parse(obj.$attrs.linerGradientBlockColor)[1].color).assertEqual("#FFFF0000")
                 expect(obj.$attrs.trackColor).assertEqual("#FFAACCEE")
-                expect(obj.$attrs.trackThickness).assertEqual("4.00vp")
+                expect(obj.$attrs.trackThickness).assertEqual(defaultStrokeWidth($r('sys.float.slider_outset_track_thickness')));
                 expect(obj.$attrs.selectedColor).assertEqual("#FFAACCEE")
                 done()
             }

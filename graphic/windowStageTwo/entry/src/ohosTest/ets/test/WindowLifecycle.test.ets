@@ -3301,7 +3301,7 @@ export default function WindowLifecycle() {
       let config: window.Configuration = {
         name: "testRestoreMainWindow_0300",
         windowType: window.WindowType.TYPE_FLOAT,
-        ctx: contextTest3
+        ctx: contextTest3,
       };
       try {
         window.createWindow(config).then(async (data) => {
@@ -3492,6 +3492,7 @@ export default function WindowLifecycle() {
         name: "testcreateWindowCallback1300002_0100",
         windowType: window.WindowType.TYPE_FLOAT,
         ctx: context,
+        decorEnabled:false,
       };
       try {
         window.createWindow(windowConfig, async (err, data) => {
@@ -3520,6 +3521,90 @@ export default function WindowLifecycle() {
         done()
       }
     });
+
+    /**
+    * @tc.name testcreateWindowCallback_0100
+    * @tc.number testcreateWindowCallback_0100
+    * @tc.desc testcreateWindowCallback_0100
+    * @tc.type FUNCTION
+    * @tc.size MEDIUMTEST
+    * @tc.level LEVEL3
+    */
+    it("testcreateWindowCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "testcreateWindowCallback_0100";
+      console.log(caseName + " begin");
+      let windowConfig: window.Configuration = {
+        name: "testcreateWindowCallback_0100",
+        windowType: window.WindowType.TYPE_MAIN,
+        ctx: context,
+        decorEnabled:true,
+        title:''
+
+      };
+      try {
+        window.createWindow(windowConfig, async (err, data) => {
+          const errCode: number = err!.code;
+          if (errCode) {
+            console.log(caseName + 'Failed to call createWindow1. Cause:' + JSON.stringify(err));
+            if (err!.code === 801) {
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          } else {
+            console.log(caseName + 'Succeeded in calling createWindow.');
+            expect(!!data).assertTrue();
+            await data.destroyWindow();
+            done();
+          }
+
+        });
+      } catch (exception) {
+        console.error(caseName + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+        expect(exception.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testcreateWindowPromise_0100
+     * @tc.number testcreateWindowPromise_0100
+     * @tc.desc   验证TYPE_MAIN window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testcreateWindowPromise_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = "testcreateWindowPromise_0100";
+      console.log(caseName + " begin");
+      let config: window.Configuration = {
+        name: "testRestoreMainWindow_0300",
+        windowType: window.WindowType.TYPE_MAIN,
+        ctx: context,
+        decorEnabled:false,
+      };
+      try {
+        window.createWindow(config).then(async (data) => {
+          expect(true).assertFail();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err!.code === 801) {
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done()
+      }
+    });
+
+    
     
 
   })

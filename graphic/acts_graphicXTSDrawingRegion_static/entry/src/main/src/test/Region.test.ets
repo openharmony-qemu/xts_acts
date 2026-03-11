@@ -1184,8 +1184,8 @@ export default function drawingTsRegionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testRegionGetBoundsMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testRegionGetBoundsMultipleCalls';
+    it('testRegionGetBoundsMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testRegionGetBoundsMultipleCallsStatic';
       let region = new drawing.Region();
       region.setRect(100, 100, 400, 400);
       for (let i = 0; i < 20; i += 1) {

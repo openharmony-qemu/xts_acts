@@ -163,7 +163,7 @@ struct OnAccessibilityActionIntercept {
   }
   build() {
     NavDestination() {
-      Column({ space: 10 }) {
+      Column() {
         Row() {
           Button() {
             Image($r('app.media.ic_public_back'))
@@ -191,173 +191,175 @@ struct OnAccessibilityActionIntercept {
         .backgroundColor(Color.Black)
         .width('100%')
         .justifyContent(FlexAlign.SpaceBetween)
-
-        Row({ space: 10 }) {
-          Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({ top: 20 })
-        }
-
-        Row({ space: 10 }) {
-          Column() {
-            Button(`不支持`)
-              .borderRadius(8)
-              .backgroundColor(0x317aff)
-              .width('30%')
-              .enabled(!this.yesEnable)
-              .opacity(!this.yesEnable ? 1 : 0.4)
-              .onClick(async () => {
-              })
+        .height('10%')
+        Column() {
+          Row({ space: 10 }) {
+            Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({ top: 20 })
           }
 
-          Column() {
-            Button(`支持`)
-              .borderRadius(8)
-              .backgroundColor(0x317aff)
-              .width('30%')
-              .onClick(async () => {
-                this.yesEnable = true
-                this.onAccessibilityHoverEnable = true
-              })
+          Row({ space: 10 }) {
+            Column() {
+              Button(`不支持`)
+                .borderRadius(8)
+                .backgroundColor(0x317aff)
+                .width('30%')
+                .enabled(!this.yesEnable)
+                .opacity(!this.yesEnable ? 1 : 0.4)
+                .onClick(async () => {
+                })
+            }
+
+            Column() {
+              Button(`支持`)
+                .borderRadius(8)
+                .backgroundColor(0x317aff)
+                .width('30%')
+                .onClick(async () => {
+                  this.yesEnable = true
+                  this.onAccessibilityHoverEnable = true
+                })
+            }
           }
-        }
 
 
-        Column(){
-          Text('accessibilityActionOptions({scrollStep:5})')
-          Row() {
-            Slider({
-              value: this.inSetValue1,
-              step: 10,
-              style: SliderStyle.InSet
-            })
-              .accessibilityActionOptions({scrollStep:5})
-              .blockColor('#191970')
-              .trackColor('#ADD8E6')
-              .selectedColor('#4169E1')
-              .showSteps(true)
-              .onChange((value: number, mode: SliderChangeMode) => {
-                this.inSetValue1 = value;
-                console.info('value:' + value + 'mode:' + mode.toString());
-                this.status1 = true;
-                if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
+          Column(){
+            Text('accessibilityActionOptions({scrollStep:5})')
+            Row() {
+              Slider({
+                value: this.inSetValue1,
+                step: 10,
+                style: SliderStyle.InSet
               })
-            Text(this.inSetValue1.toFixed(0)).fontSize(12)
+                .accessibilityActionOptions({scrollStep:5})
+                .blockColor('#191970')
+                .trackColor('#ADD8E6')
+                .selectedColor('#4169E1')
+                .showSteps(true)
+                .onChange((value: number, mode: SliderChangeMode) => {
+                  this.inSetValue1 = value;
+                  console.info('value:' + value + 'mode:' + mode.toString());
+                  this.status1 = true;
+                  if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+              Text(this.inSetValue1.toFixed(0)).fontSize(12)
+            }
+            .width('80%')
           }
-          .width('80%')
-        }
-        Column(){
-          Text('accessibilityActionOptions({scrollStep:0})')
-          Row() {
-            Slider({
-              value: this.inSetValue5,
-              step: 10,
-              style: SliderStyle.InSet
-            })
-              .accessibilityActionOptions({scrollStep:-1})
-              .blockColor('#191970')
-              .trackColor('#ADD8E6')
-              .selectedColor('#4169E1')
-              .showSteps(true)
-              .onChange((value: number, mode: SliderChangeMode) => {
-                this.inSetValue5 = value;
-                console.info('value:' + value + 'mode:' + mode.toString());
-                this.status5 = true;
-                if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
+          Column(){
+            Text('accessibilityActionOptions({scrollStep:0})')
+            Row() {
+              Slider({
+                value: this.inSetValue5,
+                step: 10,
+                style: SliderStyle.InSet
               })
-            Text(this.inSetValue5.toFixed(0)).fontSize(12)
+                .accessibilityActionOptions({scrollStep:-1})
+                .blockColor('#191970')
+                .trackColor('#ADD8E6')
+                .selectedColor('#4169E1')
+                .showSteps(true)
+                .onChange((value: number, mode: SliderChangeMode) => {
+                  this.inSetValue5 = value;
+                  console.info('value:' + value + 'mode:' + mode.toString());
+                  this.status5 = true;
+                  if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+              Text(this.inSetValue5.toFixed(0)).fontSize(12)
+            }
+            .width('80%')
           }
-          .width('80%')
-        }
-        Column(){
-          Text('accessibilityActionOptions({scrollStep:undefined})')
-          Row() {
-            Slider({
-              value: this.inSetValue2,
-              step: 10,
-              style: SliderStyle.InSet
-            })
-              .accessibilityActionOptions({scrollStep:undefined})
-              .blockColor('#191970')
-              .trackColor('#ADD8E6')
-              .selectedColor('#4169E1')
-              .showSteps(true)
-              .onChange((value: number, mode: SliderChangeMode) => {
-                this.inSetValue2 = value;
-                console.info('value:' + value + 'mode:' + mode.toString());
-                this.status2 = true;
-                if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
+          Column(){
+            Text('accessibilityActionOptions({scrollStep:undefined})')
+            Row() {
+              Slider({
+                value: this.inSetValue2,
+                step: 10,
+                style: SliderStyle.InSet
               })
-            Text(this.inSetValue2.toFixed(0)).fontSize(12)
+                .accessibilityActionOptions({scrollStep:undefined})
+                .blockColor('#191970')
+                .trackColor('#ADD8E6')
+                .selectedColor('#4169E1')
+                .showSteps(true)
+                .onChange((value: number, mode: SliderChangeMode) => {
+                  this.inSetValue2 = value;
+                  console.info('value:' + value + 'mode:' + mode.toString());
+                  this.status2 = true;
+                  if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+              Text(this.inSetValue2.toFixed(0)).fontSize(12)
+            }
+            .width('80%')
           }
-          .width('80%')
-        }
-        Column(){
-          Text('accessibilityActionOptions({scrollStep:null})')
-          Row() {
-            Slider({
-              value: this.inSetValue3,
-              step: 10,
-              style: SliderStyle.InSet
-            })
-              .accessibilityActionOptions({scrollStep:null})
-              .blockColor('#191970')
-              .trackColor('#ADD8E6')
-              .selectedColor('#4169E1')
-              .showSteps(true)
-              .onChange((value: number, mode: SliderChangeMode) => {
-                this.inSetValue3 = value;
-                console.info('value:' + value + 'mode:' + mode.toString());
-                this.status3 = true;
-                if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
+          Column(){
+            Text('accessibilityActionOptions({scrollStep:null})')
+            Row() {
+              Slider({
+                value: this.inSetValue3,
+                step: 10,
+                style: SliderStyle.InSet
               })
-            Text(this.inSetValue3.toFixed(0)).fontSize(12)
+                .accessibilityActionOptions({scrollStep:null})
+                .blockColor('#191970')
+                .trackColor('#ADD8E6')
+                .selectedColor('#4169E1')
+                .showSteps(true)
+                .onChange((value: number, mode: SliderChangeMode) => {
+                  this.inSetValue3 = value;
+                  console.info('value:' + value + 'mode:' + mode.toString());
+                  this.status3 = true;
+                  if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+              Text(this.inSetValue3.toFixed(0)).fontSize(12)
+            }
+            .width('80%')
           }
-          .width('80%')
-        }
-        Column(){
-          Text('modifier')
-          Row() {
-            Slider({
-              value: this.inSetValue4,
-              step: 10,
-              style: SliderStyle.InSet
-            })
-              .attributeModifier(this.modifier)
-              .blockColor('#191970')
-              .trackColor('#ADD8E6')
-              .selectedColor('#4169E1')
-              .showSteps(true)
-              .onChange((value: number, mode: SliderChangeMode) => {
-                this.inSetValue4 = value;
-                console.info('value:' + value + 'mode:' + mode.toString());
-                this.status4 = true;
-                if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
-                  this.vueStatus = true;
-                }else{
-                  this.vueStatus = false;
-                }
+          Column(){
+            Text('modifier')
+            Row() {
+              Slider({
+                value: this.inSetValue4,
+                step: 10,
+                style: SliderStyle.InSet
               })
-            Text(this.inSetValue4.toFixed(0)).fontSize(12)
+                .attributeModifier(this.modifier)
+                .blockColor('#191970')
+                .trackColor('#ADD8E6')
+                .selectedColor('#4169E1')
+                .showSteps(true)
+                .onChange((value: number, mode: SliderChangeMode) => {
+                  this.inSetValue4 = value;
+                  console.info('value:' + value + 'mode:' + mode.toString());
+                  this.status4 = true;
+                  if(this.status1 && this.status2 && this.status3 && this.status4 && this.status5){
+                    this.vueStatus = true;
+                  }else{
+                    this.vueStatus = false;
+                  }
+                })
+              Text(this.inSetValue4.toFixed(0)).fontSize(12)
+            }
+            .width('80%')
           }
-          .width('80%')
-        }
+        }.height('70%')
 
-        Row({ space: 10 }) {
+        Row() {
           this.PassBtn($r('app.string.btn_fullscreen'), true);
           Button() {
             Image($r('app.media.ic_public_help'))
@@ -386,6 +388,7 @@ struct OnAccessibilityActionIntercept {
         .width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor(Color.Black)
+        .height('10%')
       }.width('100%').height('100%')
     }
   }

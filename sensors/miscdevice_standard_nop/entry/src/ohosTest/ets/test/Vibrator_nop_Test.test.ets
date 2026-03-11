@@ -292,7 +292,7 @@ export default function vibrator_nop_Test() {
      * @tc.level  LEVEL3
      */
     it("SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      TAG = "====>SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_2100"; 
+      TAG = "====>SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_2100";
       console.info(TAG + 'start');
       let builder = new vibrator.VibratorPatternBuilder();
       try {
@@ -369,7 +369,7 @@ export default function vibrator_nop_Test() {
      * @tc.level  LEVEL3
      */
     it("SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      TAG = "====>SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1200"; 
+      TAG = "====>SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1200";
       console.info(TAG + 'start');
       try {
         vibrator.startVibration({
@@ -391,9 +391,9 @@ export default function vibrator_nop_Test() {
           }
         })
       } catch (error) {
-          console.info(TAG + `startVibration catch error ,error.code: ${error.code},error.message: ${error.message}`);
-          expect(false).assertTrue();
-          done();
+        console.info(TAG + `startVibration catch error ,error.code: ${error.code},error.message: ${error.message}`);
+        expect(false).assertTrue();
+        done();
       }
     })
 
@@ -406,7 +406,7 @@ export default function vibrator_nop_Test() {
      * @tc.level  LEVEL3
      */
     it("SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      TAG = "====>SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1400"; 
+      TAG = "====>SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1400";
       console.info(TAG + 'start');
       try {
         vibrator.vibrate(vibrator.EffectId.EFFECT_CLOCK_TIMER, (error) => {
@@ -421,9 +421,9 @@ export default function vibrator_nop_Test() {
           }
         })
       } catch (error) {
-          console.info(TAG + `vibrate catch error ,error.code: ${error.code},error.message: ${error.message}`);
-          expect(false).assertTrue();
-          done();
+        console.info(TAG + `vibrate catch error ,error.code: ${error.code},error.message: ${error.message}`);
+        expect(false).assertTrue();
+        done();
       }
     })
 
@@ -436,7 +436,7 @@ export default function vibrator_nop_Test() {
      * @tc.level  LEVEL3
      */
     it("SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      TAG = "====>SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1600"; 
+      TAG = "====>SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1600";
       console.info(TAG + 'start');
       const fileName: string = 'vibrator.json'
       try {
@@ -465,6 +465,95 @@ export default function vibrator_nop_Test() {
       } finally {
         baseContext.resourceManager.closeRawFdSync(fileName);
         console.info(TAG + ' closeRawFdSync success');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1700
+     * @tc.number SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1700
+     * @tc.desc   Test HapticFeedback effect constants to verify all predefined vibration effect types have correct string values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "SUB_SensorsSystem_SensorDFXCapability_Dfx_IDL_1700"
+      try {
+        let effect: vibrator.VibratePreset = {
+          type: "preset",
+          effectId: "haptic.clock.timer",
+          count: -1,
+          intensity: -500,
+        }
+        let attribute: vibrator.VibrateAttribute = {
+          id: -0,
+          usage: "unknown"
+        }
+        await vibrator.startVibration(effect, attribute);
+        try {
+          const effectId:string = "haptic.clock.timer";
+          const vibrators = vibrator.getVibratorInfoSync();
+          const vibratorInfoParam:vibrator.VibratorInfoParam = {
+            deviceId: vibrators[0].deviceId,
+            vibratorId: vibrators[0].vibratorId
+          };
+          const jsEffectInfo = vibrator.getEffectInfoSync(null, null);
+          if (!jsEffectInfo.isEffectSupported) {
+            done();
+          }
+          expect(jsEffectInfo.isEffectSupported).assertFalse();
+          done();
+        } catch (error) {
+          expect(false).assertTrue();
+          done();
+        }
+        try {
+          const effectId:string = "haptic.clock.timer";
+          const vibrators = vibrator.getVibratorInfoSync();
+          const vibratorInfoParam:vibrator.VibratorInfoParam = {
+            deviceId: vibrators[0].deviceId,
+            vibratorId: vibrators[0].vibratorId
+          };
+          const jsEffectInfo = vibrator.getEffectInfoSync(undefined, undefined);
+          if (!jsEffectInfo.isEffectSupported) {
+            done();
+          }
+          expect(jsEffectInfo.isEffectSupported).assertTrue();
+          done();
+        } catch (error) {
+          expect(false).assertTrue();
+          done();
+        }
+        let builder = new vibrator.VibratorPatternBuilder();
+        try {
+          let pattern = builder.build();
+          expect(builder.build().time === 1).assertTrue();
+          expect(builder.build().events[0].time === 1).assertTrue();
+          expect(builder.build().events[0].duration === 1).assertTrue();
+          expect(builder.build().events[0].intensity === 1).assertTrue();
+          expect(builder.build().events[0].frequency === 1).assertTrue();
+          expect(builder.build().events[0].index === 1).assertTrue();
+          done();
+        } catch (error) {
+          error = error as BusinessError;
+          expect(false).assertTrue();
+          done();
+        }
+        vibrator.on('vibratorStateChange',(data: vibrator.VibratorStatusEvent) => {
+          try {
+            expect(data.timestamp === 1).assertTrue();
+            expect(data.deviceId === 1).assertTrue();
+            expect(data.vibratorCount === 1).assertTrue();
+            expect(data.isVibratorOnline === false).assertTrue();
+            done();
+          } catch (error) {
+            expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+            done();
+          }
+        })
+      } catch (error) {
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
         done();
       }
     })

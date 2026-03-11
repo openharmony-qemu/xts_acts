@@ -92,7 +92,7 @@ export default function imageAniamtorJsunit() {
         if (!("imageAnimator" == pages.name)) {
           console.info("get imageAniamtorJsunit pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push imageAniamtorJsunit page result:" + JSON.stringify(result));
         }

@@ -2270,7 +2270,8 @@ export default function relationalStorePredicatesTest() {
     it('testOffset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:()=>void) : Promise<void> =>  {
       console.info(tag + "************* testOffset0001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.like("stringValue", "ABCDEFGHIJKLMN").limitAs(3).offsetAs(1);
+      let pr = predicates.like("stringValue", "ABCDEFGHIJKLMN").limitAs(3).offsetAs(1);
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(2).assertEqual(result?.rowCount);
       result.close();
@@ -2347,7 +2348,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testIn0001 start *************");
       let values: Array<relationalStore.ValueType> = [Number.MIN_VALUE];
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.inValues("doubleValue", values);
+      let pr = predicates.inValues("doubleValue", values);
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(1).assertEqual(result?.rowCount);
       result.close();
@@ -2427,7 +2429,8 @@ export default function relationalStorePredicatesTest() {
       console.info(tag + "************* testNotIn0001 start *************");
       let values: Array<relationalStore.ValueType> = [1 as long, -2147483648 as long];
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.notInValues("integerValue", values);
+      let pr = predicates.notInValues("integerValue", values);
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(1).assertEqual(result?.rowCount);
       result.close();
@@ -2522,7 +2525,8 @@ export default function relationalStorePredicatesTest() {
     it('testGroupBy0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:()=>void) : Promise<void> =>  {
       console.info(tag + "************* testGroupBy0001 start *************");
       let predicates = new relationalStore.RdbPredicates("AllDataType");
-      predicates.like("stringValue", "ABCDEFGHIJKLMN").groupBy(["characterValue"]);
+      let pr = predicates.like("stringValue", "ABCDEFGHIJKLMN").groupBy(["characterValue"]);
+      expect(typeof(pr) === "object").assertTrue();
       let result = await rdbStore!.query(predicates);
       expect(3).assertEqual(result?.rowCount);
       result.close();

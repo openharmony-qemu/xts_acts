@@ -43,7 +43,7 @@ export default function testsuite() {
 
   gestureDefine6();
   SwiperGestureHandlerTest();
-  //SwipeGestureExample03Test();
+  SwipeGestureExample03Test();
   SwipeGestureExample02Test();
   SwipeGestureExample01Test();
   onKeyPreImeTest();

@@ -11,6 +11,8 @@ import {
   RichEditor,
   TextRange,
   Column,
+  ColumnOptions,
+  Row,
   TextMenuItemId,
   $r,
   Button,
@@ -29,12 +31,16 @@ import {
 } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
-struct editMenuOptionsExample {
-  @State changeValue:boolean = true;
-  @State text: string = 'TextInput editMenuOptions';
+struct TextAreaExample {
+  @State text: string = 'As the sun begins to set, casting a warm golden hue across the sky,' +
+    'the world seems to slow down and breathe a sigh of relief. The sky is painted with hues of orange, ' +
+    ' pink, and lavender, creating a breathtaking tapestry that stretches as far as the eye can see.' +
+    'The air is filled with the sweet scent of blooming flowers, mingling with the earthy aroma of freshly turned soil.' +
+    'it casts a warm,' +
+    'golden hue that spreads like liquid amber across the vast expanse of the sky.' +
+    'The once-blue heavens gradually transform, ';
+  @State state: boolean = false;
   @State content: ResourceStr = '';
-  @State textAreaLabelInfo: ResourceStr | undefined = '';
-  @State searchLabelInfo: ResourceStr | undefined = '';
 
   onCreateMenu(menuItems: Array<TextMenuItem>) {
     let item1: TextMenuItem = {
@@ -66,59 +72,53 @@ struct editMenuOptionsExample {
 
 
   build() {
-    Column(undefined) {
-      Button(`${this.changeValue}`)
-        .id('button_ChangeValue')
-        .onClick((e:ClickEvent)=>{
-          this.changeValue = !this.changeValue;
-        })
-      Text('回调content:'+this.content)
-      Text(this.textAreaLabelInfo)
-        .id('textAreaLabelInfo')
-      Text(this.searchLabelInfo)
-        .id('searchLabelInfo')
+    Row() {
+      Column( { space: 10 } as ColumnOptions ) {
+        Text(`${this.content}`).id('Text')
+        Button(`editMenuOptions: ${this.state}`)
+          .id('button_editMenuOptions')
+          .width(240)
+          .fontSize(16)
+          .margin(10)
+          .onClick((e: ClickEvent)=>{
+            this.content = '';
+            this.state = ! this.state;
+          })
+        Search({value: ''})
+          .id('Search')
+        TextArea({text: this.text})
+          .editMenuOptions(this.state ? {
+                onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
+                if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
+                    console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
+                    this.content = menuItem.content
+                    return true;
+                }
+                if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
+                    console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
+                    this.content = menuItem.content
+                    return true;
+                }
+                if (menuItem.id.equals(TextMenuItemId.COPY)) {
+                    console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+
+                    'labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content);
+                    this.content = menuItem.content
+                    return true;
+                }
+                if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
+                    console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+
+                    'labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content);
+                    this.content = menuItem.content
+                    return false;
+                }
+                return true;
+                }
+            } as EditMenuOptions : undefined)
+          .height(56)
+          .id('TextArea')
 
-      TextArea({ text: this.text })
-        .width('95%')
-        .height(56)
-        .editMenuOptions(this.changeValue ? {
-          onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
-            if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
-              console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end );
-              this.content = menuItem.content;
-              this.textAreaLabelInfo = menuItem.labelInfo;
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end );
-              this.content = menuItem.content;
-              this.textAreaLabelInfo = menuItem.labelInfo;
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.COPY)) {
-              console.log('拦截 COPY start:' + textRange.start +
-                'end:'+textRange.end+'labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content);
-              this.content = menuItem.content;
-              this.textAreaLabelInfo = menuItem.labelInfo;
-              return true;
-            }
-            if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+
-                'labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content);
-              this.content = menuItem.content;
-              this.textAreaLabelInfo = menuItem.labelInfo;
-              return false;
-            }
-            return true;
-          }
-        } as EditMenuOptions : undefined)
-        .id('textArea')
-      Search()
-        .id('search2')
+      }.width('100%')
     }
-    .borderWidth(1)
-    .borderColor(Color.Red)
-    .width('100%')
     .height('100%')
   }
 }

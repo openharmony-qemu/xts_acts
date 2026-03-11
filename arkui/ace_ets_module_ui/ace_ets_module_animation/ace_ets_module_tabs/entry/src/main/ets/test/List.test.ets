@@ -80,6 +80,12 @@ import nestedScrollTest from './TabsTest/nestedScrollTest/nestedScrollTest.test'
 import nestedScroll01Test from './TabsTest/nestedScrollTest/nestedScroll01Test.test';
 import nestedScroll_CombinedTest from './TabsTest/nestedScrollTest/nestedScroll_CombinedTest.test';
 
+import TabContentSubTabBarStyleIndicatorNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleIndicatorNullUndefined.test';
+import TabContentSubTabBarStyleBoardNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleBoardNullUndefined.test';
+import TabContentSubTabBarStyleLabelStyleNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleLabelStyleNullUndefined.test';
+import TabContentSubTabBarStyleIdNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleIdNullUndefined.test';
+import TabContentSubTabBarStylePaddingNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStylePaddingNullUndefined.test';
+
 export default function testsuite() {
   tabsBarPositionJsunit();
   TabsApi();
@@ -141,4 +147,9 @@ export default function testsuite() {
   nestedScrollTest();
   nestedScroll01Test();
   nestedScroll_CombinedTest();
+  TabContentSubTabBarStyleIndicatorNullUndefinedTest();
+  TabContentSubTabBarStyleBoardNullUndefinedTest();
+  TabContentSubTabBarStyleLabelStyleNullUndefinedTest();
+  TabContentSubTabBarStyleIdNullUndefinedTest();
+  TabContentSubTabBarStylePaddingNullUndefinedTest();
   } 

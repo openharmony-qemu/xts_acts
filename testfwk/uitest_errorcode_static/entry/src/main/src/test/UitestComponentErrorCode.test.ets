@@ -867,5 +867,157 @@ export default function uitestComponentErrorTest() {
       }
       console.log(`${TestTag}, test_inputTextMode_17000004_static end`);
     })
+
+    /**
+     * @tc.name   test_scrollToTop_401_static
+     * @tc.number UitestComponentErrorTest_028
+     * @tc.desc   scrollToTop 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_scrollToTop_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `test_scrollToTop_401_static start`);
+      try {
+        const driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        hilog.info(domain, tag, `test_scrollToTop_401_static scrollBar is: ${JSON.stringify(scrollBar)}`);
+        await driver.delayMs(waitUiReadyMs);
+        if (scrollBar != null) {
+          await scrollBar.scrollToTop(-1);
+        }
+        expect().assertFail();
+      }catch (e) {
+        hilog.info(domain, tag, `test_scrollToTop_401_static error is: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `test_scrollToTop_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_scrollToBottom_401_static
+     * @tc.number UitestComponentErrorTest_029
+     * @tc.desc   scrollToBottom 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_scrollToBottom_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(TestTag, 'test_scrollToBottom_401_static start');
+      const driver = Driver.create();
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      let button = await driver.findComponent(ON.type('Scroll'));
+      await driver.delayMs(waitUiReadyMs);
+      try {
+        if (button != null) {
+          await button.scrollToBottom(-1);
+        }
+        console.log(`${TestTag}, test_scrollToBottom_401_static scrollToBottom success.`);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_scrollToBottom_401_static error is: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      await stopApplication('com.uitestScene.acts');
+      console.log(TestTag, 'test_scrollToBottom_401_static end');
+    })
+
+    /**
+     * @tc.name   test_scrollSearch_401_static
+     * @tc.number UitestComponentErrorTest_030
+     * @tc.desc   scrollSearch 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_scrollSearch_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(TestTag, 'test_scrollSearch_401_static start');
+      try {
+        const driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let button = await driver.findComponent(ON.type('Scroll'));
+        await driver.delayMs(waitUiReadyMs);
+        if (button != null) {
+          await button.scrollSearch(ON.text('next page'), true, -1);
+        }
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_scrollSearch_401_static error is: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      await Utils.msSleep(1000);
+      await stopApplication('com.uitestScene.acts');
+      console.log(TestTag, 'test_scrollSearch_401_static end');
+    })
+
+    /**
+     * @tc.name   test_pinchOut_401_static
+     * @tc.number UitestComponentErrorTest_031
+     * @tc.desc   pinchOut 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_pinchOut_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_pinchOut_401_static start`);
+      try {
+        let driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let button = await driver.findComponent(ON.text('MainPage'));
+        await driver.delayMs(waitUiReadyMs);
+        if (button != null) {
+          await button.pinchOut(0);
+        }
+        await driver.delayMs(waitUiReadyMs)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_pinchOut_401_static error is: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      await stopApplication('com.uitestScene.acts');
+      console.log(`${TestTag}, test_pinchOut_401_static end`);
+    })
+
+    /**
+     * @tc.name   test_pinchIn_401_static
+     * @tc.number UitestComponentErrorTest_032
+     * @tc.desc   pinchIn 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_pinchIn_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_pinchIn_401_static start`);
+      let driver = Driver.create();
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      let button = await driver.findComponent(ON.text('MainPage'));
+      await driver.delayMs(waitUiReadyMs);
+      try {
+        if (button != null) {
+          await button.pinchIn(-1);
+        }
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_pinchIn_401_static sc = -1 error is: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      try {
+        if (button != null) {
+          await button.pinchIn(2);
+        }
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_pinchIn_401_static sc = 2 error is: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ErrorCode);
+      }
+      console.log(`${TestTag}, test_pinchIn_401_static end`);
+    })
   })
 }

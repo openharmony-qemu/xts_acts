@@ -20,7 +20,7 @@ import prompt from '@system.prompt';
 struct MyNavigationTestStack1 {
   @Provider('navigationInfoProvider') navigationInfo: NavPathStack = new NavPathStack();
   @Local message: number = 0;
-
+  @Provider('logNum') logNum: number = 0;
   @Monitor('message')
   info() {
     console.info(`freeze-test MyNavigation message callback ${this.message}`);
@@ -44,6 +44,7 @@ struct MyNavigationTestStack1 {
         .onClick(() => {
           this.message++;
         })
+      Text(this.logNum.toString()).id('logNum_FreezeV2002')
       Navigation(this.navigationInfo) {
         Column() {
           Button('Next Page', { stateEffect: true, type: ButtonType.Capsule })
@@ -70,7 +71,7 @@ struct pageOneStack1 {
       Column() {
         NavigationContentMsgStack1({ message: this.message, index: this.index })
         Text('cur stack size:' + `${this.navigationInfo.size()}`)
-          .fontSize(9)
+          .height('5%')
         Button('Next Page', { stateEffect: true, type: ButtonType.Capsule })
           .onClick(() => {
             this.navigationInfo.pushPathByName('pageTwo', null);
@@ -95,13 +96,12 @@ struct pageTwoStack1 {
   @Consumer('navigationInfoProvider') navigationInfo: NavPathStack = new NavPathStack();
   @Local index: number = 2;
   @Param message: number = 0;
-
   build() {
     NavDestination() {
       Column() {
         NavigationContentMsgStack1({ message: this.message, index: this.index })
         Text('cur stack size:' + `${this.navigationInfo.size()}`)
-          .fontSize(9)
+          .height('5%')
         Button('Next Page', { stateEffect: true, type: ButtonType.Capsule })
           .onClick(() => {
             this.navigationInfo.pushPathByName('pageThree', null);
@@ -158,20 +158,21 @@ struct pageThreeStack1 {
 struct NavigationContentMsgStack1 {
   @Param message: number = 0;
   @Param index: number = 0;
-
+  @Local text1: string = '';
+  @Consumer('logNum') logNum: number = 0;
   @Monitor('message')
   info() {
-    prompt.showToast({ message: `NavigationContent message:${this.message} index:${this.index}`, duration: 500 })
+    this.logNum++;
+    this.text1 = `NavigationContent message:${this.message} index:${this.index}, logNum: ${this.logNum}`
   }
 
   build() {
     Column() {
       Text('msg:' + `${this.message}`)
-        .fontSize(9)
-        .fontWeight(FontWeight.Bold)
+        .height('5%')
       Text('index:' + `${this.index}`)
-        .fontSize(9)
-        .fontWeight(FontWeight.Bold)
+        .height('5%')
+      Text(this.text1).id('Freeze002_text1').height('5%')
     }
   }
 }

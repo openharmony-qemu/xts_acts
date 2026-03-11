@@ -36,6 +36,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { inputMethod } from '@kit.IMEKit';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -102,9 +103,9 @@ export default function searchOnWillDeleteModifier() {
       console.info("searchOnWillDeleteModifier beforeEach start8.2");
       await CommonFunc.sleep(3000);
       await driver.triggerKey(2055);
-      await CommonFunc.sleep(3000);
-      await driver.triggerKey(2070);
-      await CommonFunc.sleep(3000);
+      await CommonFunc.sleep(2000);
+      await inputMethod.getController().stopInputSession();
+      await CommonFunc.sleep(2000);
       console.info("searchOnWillDeleteModifier beforeEach start9");
       let strJsonNew = inspector.getInspectorByKey('key_search_OnWillDeleteModifier_001');
       console.info("searchOnWillDeleteModifier beforeEach start10");
@@ -132,9 +133,6 @@ export default function searchOnWillDeleteModifier() {
       await CommonFunc.sleep(3000);
       await driver.triggerKey(2055);
       console.info("button_onWillDeleteModifier1 beforeEach start12.4");
-      await CommonFunc.sleep(3000);
-      console.info("button_onWillDeleteModifier1 beforeEach start13");
-      await driver.triggerKey(2070);
       await CommonFunc.sleep(3000);
       let strJsonNew1 = inspector.getInspectorByKey('key_search_OnWillDeleteModifier_001');
       console.info('[' + tagName + '] Search OnWillDelete is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
