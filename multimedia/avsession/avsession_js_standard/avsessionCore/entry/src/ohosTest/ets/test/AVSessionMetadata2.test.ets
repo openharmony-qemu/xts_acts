@@ -716,14 +716,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_SETCALLMETADATA_PROMISE_0200
-     * @tc.number SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_SETCALLMETADATA_PROMISE_0200
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_SETCALLMETADATA_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_SETCALLMETADATA_PROMISE_0300
      * @tc.desc   test setCallMetadata-promise input param - invalid attribute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_SETCALLMETADATA_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_SETCALLMETADATA_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let TAG = '[SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_SETCALLMETADATA_PROMISE_0300]';
       interface CallData {
         name: string,
         phoneNumber: number
@@ -732,7 +733,6 @@ export default function abilityTest() {
         name: 'userName',
         phoneNumber: 65432111
       }
-      let TAG = '[SUB_MULTIMEDIA_AVSESSION_PARAM_TRAVERSE_SETCALLMETADATA_PROMISE_0200]';
       await session.setCallMetadata(metadata0).then(() => {
         console.info(`${TAG}TestLog: setCallMetadata done.`);
         expect(false).assertTrue();
