@@ -62,6 +62,9 @@ import TextContentControllerBaseMethodsTest from './TextControllerTest/TextConte
 import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
 import SetTextSelectionTest from './SetTextSelectionTest/SetTextSelectionTest.test';
 import TypeNodeTest from './TypeNode.test';
+import MagnifierTest from './Magnifier.test';
+import MeasureUtilsTest from './MeasureUtils.test';
+import TextMenuControllerTest from './TextMenuController.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -111,4 +114,7 @@ export default function testsuite() {
   SetTextSelectionTest()
   CustomKeyboardContinueTest();
   TypeNodeTest();
+  MagnifierTest();
+  MeasureUtilsTest();
+  TextMenuControllerTest();
 }

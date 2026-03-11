@@ -32,4 +32,5 @@ export const doblankless_INVALID_ARGS_GET_2049: (webName:string) => number;
 export const setCacheCapacity_1: (webName:string) => number;
 export const setCacheCapacity0: (webName:string) => number;
 export const setCacheCapacity50: (webName:string) => number;
+export const setCacheCapacity100: (webName:string) => number;
 export const setCacheCapacity101: (webName:string) => number;
