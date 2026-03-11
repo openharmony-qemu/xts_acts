@@ -540,17 +540,17 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.name SUB_GLONBAL_GetLocales_0100
-     * @tc.number SUB_GLONBAL_GetLocales_0100
+     * @tc.name SUB_GLOBAL_GetLocales_0100
+     * @tc.number SUB_GLOBAL_GetLocales_0100
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('SUB_GLONBAL_GetLocales_0100', Level.LEVEL3, () => {
+    it('SUB_GLOBAL_GetLocales_0100', Level.LEVEL3, () => {
       let value: Array<string> = res.getLocales(true);
-      console.log('SUB_GLONBAL_GetLocales_0100 value:', value);
-      expect(value.toSting()).assertContain('zh-CN');
+      console.log('SUB_GLOBAL_GetLocales_0100 value:', value);
+      expect(value.toString()).assertContain('zh-CN');
     })
 
     /**
@@ -565,11 +565,11 @@ export default function FivePointOne_resMgrStageTest() {
       let overrideConfigurationOne: resourceManager.Configuration = {
         mcc: 460,
         mnc: 101,
-        locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_TABLET,
+        locale: 'zh_Hans_CN',
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_TABLET,
         screenDensity: resourceManager.ScreenDensity.SCREEN_MDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager(overrideConfigurationOne);
       let result: Array<number> = [];
@@ -586,13 +586,14 @@ export default function FivePointOne_resMgrStageTest() {
       console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_0200 result:', result[3]);
       console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_0200 result:', result[4]);
       console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_0200 result:', result[5]);
+      console.log('SUB_GOLBAL_REMSGR_getOverrideResourceManager_0200 result:', resultString);
       expect(result[0]).assertEqual(0);
       expect(result[1]).assertEqual(0x01);
       expect(result[2]).assertEqual(160);
       expect(result[3]).assertEqual(0);
       expect(result[4]).assertEqual(101);
       expect(result[5]).assertEqual(460);
-      expect(resultString).assertEqual('en-US');
+      expect(resultString).assertEqual('zh_Hans_CN');
     })
 
     /**
@@ -608,10 +609,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_CAR,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_CAR,
         screenDensity: resourceManager.ScreenDensity.SCREEN_LDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager(overrideConfigurationTwo);
       let result: Array<number> = [];
@@ -642,10 +643,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_PC,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_PC,
         screenDensity: resourceManager.ScreenDensity.SCREEN_XLDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager(overrideConfigurationThree);
       let result: Array<number> = [];
@@ -676,10 +677,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_TV,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_TV,
         screenDensity: resourceManager.ScreenDensity.SCREEN_XXLDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager(overrideConfigurationFour);
       let result: Array<number> = [];
@@ -710,10 +711,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_WEARABLE,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_WEARABLE,
         screenDensity: resourceManager.ScreenDensity.SCREEN_XXXLDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager(overrideConfigurationFive);
       let result: Array<number> = [];
@@ -744,10 +745,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_2IN1,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_2IN1,
         screenDensity: resourceManager.ScreenDensity.SCREEN_XXXLDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager(overrideConfigurationSix);
       let result: Array<number> = [];
@@ -778,10 +779,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_TABLET,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_TABLET,
         screenDensity: resourceManager.ScreenDensity.SCREEN_MDPI,
-        colorMode: resourceManger.ColorMode.LIGHT
+        colorMode: resourceManager.ColorMode.LIGHT
       };
       let value = res.getOverrideResourceManager();
       value.updateOverrideConfiguration(overrideConfigurationOne);
@@ -813,10 +814,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_CAR,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_CAR,
         screenDensity: resourceManager.ScreenDensity.SCREEN_LDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager();
       value.updateOverrideConfiguration(overrideConfigurationTwo);
@@ -848,10 +849,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_PC,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_PC,
         screenDensity: resourceManager.ScreenDensity.SCREEN_XLDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager();
       value.updateOverrideConfiguration(overrideConfigurationThree);
@@ -883,10 +884,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_TV,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_TV,
         screenDensity: resourceManager.ScreenDensity.SCREEN_XXLDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager();
       value.updateOverrideConfiguration(overrideConfigurationFour);
@@ -918,10 +919,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_WEARABLE,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_WEARABLE,
         screenDensity: resourceManager.ScreenDensity.SCREEN_XXXLDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager();
       value.updateOverrideConfiguration(overrideConfigurationFive);
@@ -953,10 +954,10 @@ export default function FivePointOne_resMgrStageTest() {
         mcc: 460,
         mnc: 101,
         locale: 'en-US',
-        direction: resourceManger.Direction.DIRECTION_VERTICAL,
-        deviceType: resourceManger.DeviceType.DEVICE_TYPE_2IN1,
+        direction: resourceManager.Direction.DIRECTION_VERTICAL,
+        deviceType: resourceManager.DeviceType.DEVICE_TYPE_2IN1,
         screenDensity: resourceManager.ScreenDensity.SCREEN_XXXLDPI,
-        colorMode: resourceManger.ColorMode.DARK
+        colorMode: resourceManager.ColorMode.DARK
       };
       let value = res.getOverrideResourceManager();
       value.updateOverrideConfiguration(overrideConfigurationSix);
@@ -1477,16 +1478,16 @@ export default function FivePointOne_resMgrStageTest() {
     /**
      * @tc.name getConfigurationSync_stage_test_0100
      * @tc.number getConfigurationSync_stage_test_0100
-     * @tc.desc local
+     * @tc.desc locale
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
      */
     it('getConfigurationSync_stage_test_0100', Level.LEVEL2, () => {
       let value: resourceManager.Configuration = res.getConfigurationSync();
-      value.local = 'zh_Hans_CN';
-      console.log('getConfigurationSync_stage_test_0100 local:' + value.local);
-      expect(value.local).assertEqual('zh_Hans_CN');
+      value.locale = 'zh_Hans_CN';
+      console.log('getConfigurationSync_stage_test_0100 locale:' + value.locale);
+      expect(value.locale).assertEqual('zh_Hans_CN');
     })
 
     /**

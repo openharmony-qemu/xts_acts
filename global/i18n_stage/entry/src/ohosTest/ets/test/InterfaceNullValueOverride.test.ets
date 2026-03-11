@@ -6376,7 +6376,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('i18n_HolidayInfoItem_test_0100', Level.LEVEL3, () => {
       try {
-        let holiday = new i18n.HolidyManager('/system/lib/US.ics');
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
         let item = holiday.getHolidayInfoItemArray(2023);
         let value = JSON.stringify(item[0].baseName);
         console.log('i18n_HolidayInfoItem_test_0100 value:', value);
@@ -6397,7 +6397,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('i18n_HolidayInfoItem_test_0200', Level.LEVEL3, () => {
       try {
-        let holiday = new i18n.HolidyManager('/system/lib/US.ics');
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
         let item = holiday.getHolidayInfoItemArray(2023);
         let value = JSON.stringify(item[1].year);
         console.log('i18n_HolidayInfoItem_test_0200 value:', value);
@@ -6418,7 +6418,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('i18n_HolidayInfoItem_test_0300', Level.LEVEL3, () => {
       try {
-        let holiday = new i18n.HolidyManager('/system/lib/US.ics');
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
         let item = holiday.getHolidayInfoItemArray(2023);
         let value = JSON.stringify(item[2].month);
         console.log('i18n_HolidayInfoItem_test_0300 value:', value);
@@ -6439,7 +6439,7 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('i18n_HolidayInfoItem_test_0400', Level.LEVEL3, () => {
       try {
-        let holiday = new i18n.HolidyManager('/system/lib/US.ics');
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
         let item = holiday.getHolidayInfoItemArray(2023);
         let value = JSON.stringify(item[3].day);
         console.log('i18n_HolidayInfoItem_test_0400 value:', value);
@@ -6460,9 +6460,9 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('i18n_HolidayLocalName_test_0100', Level.LEVEL3, () => {
       try {
-        let holiday = new i18n.HolidyManager('/system/lib/US.ics');
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
         let item = holiday.getHolidayInfoItemArray(2023);
-        let value = JSON.stringify(item[0].localName![1].language);
+        let value = JSON.stringify(item[0].localNames![1].language);
         console.log('i18n_HolidayLocalName_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
@@ -6481,9 +6481,9 @@ export default function InterfaceNullValueOverrideTest() {
      */
     it('i18n_HolidayLocalName_test_0200', Level.LEVEL3, () => {
       try {
-        let holiday = new i18n.HolidyManager('/system/lib/US.ics');
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
         let item = holiday.getHolidayInfoItemArray(2023);
-        let value = JSON.stringify(item[0].localName![1].name);
+        let value = JSON.stringify(item[0].localNames![1].name);
         console.log('i18n_HolidayLocalName_test_0100 value:', value);
         expect(value).assertFail();
       } catch (e) {
@@ -6492,6 +6492,6 @@ export default function InterfaceNullValueOverrideTest() {
       }
     })
 
-    
+
   })
 }
