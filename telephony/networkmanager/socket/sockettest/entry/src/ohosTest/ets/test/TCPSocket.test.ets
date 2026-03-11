@@ -8297,5 +8297,70 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         done();
       }
     });
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions9500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_9500
+     * @tc.desc   Unsubscribe from the closing event of TCPSocket,After Subscribing multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketSetExtraOptions9500
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocket_SetExtraOptions_9500
+     * @tc.desc   Unsubscribe from the closing event of TCPSocket,After Subscribing multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketSetExtraOptions9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketSetExtraOptions9500';
+      console.info(`${caseName} test start`);
+      try {
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        expect(tcp).assertInstanceOf('Object');
+        let bindAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 9004
+        };
+        await tcp.bind(bindAddress).catch((err:BusinessError) => {
+          console.info('fail to bind' + err.code.toString());
+        });
+        let tcpExtraOptions: socket.TCPExtraOptions = {
+          keepAlive: true,
+          OOBInline: true,
+          TCPNoDelay: true,
+          socketLinger: {
+            on: true, linger: 10
+          },
+          receiveBufferSize: 1000,
+          sendBufferSize: 1000,
+          reuseAddress: true,
+          socketTimeout: 3000
+        };
+        let result = tcp.setExtraOptions(tcpExtraOptions)
+        console.info('${caseName} result : ${(result)}');
+        result.then((data) => {
+          console.info('${caseName} success : ${JSON.stringify(data)}');
+          expectSuccess();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info('${caseName} fail err : ${JSON.stringify(err)}');
+          expectFail();
+          done();
+        }).finally(async () =>{
+          await tcp.close().catch((err: BusinessError) => {
+            console.info('fail to close' + err.code.toString());
+          });
+          console.info('${caseName} test end')
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
   })
 }
