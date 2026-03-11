@@ -24,7 +24,7 @@ import {
 from '@ohos/hypium'
 
 export default function fileuri_test() {
-describe('file_uri_test', function () {
+describe('file_uri_testAdapt001', function () {
 
   const CONTENT = "Hello World!";
   /**
