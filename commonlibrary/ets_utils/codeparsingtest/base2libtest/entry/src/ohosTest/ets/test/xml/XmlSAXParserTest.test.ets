@@ -106,10 +106,10 @@ export default function XmlSAXParserTest() {
         endDocument() {
           endDocumentCalled = true;
         },
-        startElement(elementName: string, namespaceURI?: string, prefix?: string, attributes?: Map<string, string>) {
+        startElement(elementName: string, namespaceURI?: string, qName?: string, attributes?: Map<string, string>) {
           startElementCalled = true;
         },
-        endElement(elementName: string, namespaceURI?: string, prefix?: string) {
+        endElement(elementName: string, namespaceURI?: string, qName?: string) {
           endElementCalled = true;
         },
         characters(content: string) {
@@ -146,7 +146,7 @@ export default function XmlSAXParserTest() {
     it('XmlSAXParserParseTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let receivedElementName = '';
       let receivedNamespaceURI = '';
-      let receivedPrefix = '';
+      let receivedQName = '';
       let receivedAttributes: Map<string, string> | undefined;
 
       const saxHandler: xml.XmlSAXHandler = {
@@ -154,13 +154,13 @@ export default function XmlSAXParserTest() {
         },
         endDocument() {
         },
-        startElement(elementName: string, namespaceURI?: string, prefix?: string, attributes?: Map<string, string>) {
+        startElement(elementName: string, namespaceURI?: string, qName?: string, attributes?: Map<string, string>) {
           receivedElementName = elementName;
           receivedNamespaceURI = namespaceURI || '';
-          receivedPrefix = prefix || '';
+          receivedQName = qName || '';
           receivedAttributes = attributes;
         },
-        endElement(elementName: string, namespaceURI?: string, prefix?: string) {
+        endElement(elementName: string, namespaceURI?: string, qName?: string) {
         },
         characters(content: string) {
         }
@@ -179,7 +179,7 @@ export default function XmlSAXParserTest() {
 
       expect(receivedElementName).assertEqual('child');
       expect(receivedNamespaceURI).assertEqual('http://example.com/ns1');
-      expect(receivedPrefix).assertEqual('ns1');
+      expect(receivedQName).assertEqual('ns1:child');
       expect(receivedAttributes).assertInstanceOf('Map');
     });
 
@@ -200,11 +200,11 @@ export default function XmlSAXParserTest() {
         },
         endDocument() {
         },
-        startElement(elementName: string, namespaceURI?: string, prefix?: string, attributes?: Map<string, string>) {
+        startElement(elementName: string, namespaceURI?: string, qName?: string, attributes?: Map<string, string>) {
           elementCount++;
           elementNames.push(elementName);
         },
-        endElement(elementName: string, namespaceURI?: string, prefix?: string) {
+        endElement(elementName: string, namespaceURI?: string, qName?: string) {
         },
         characters(content: string) {
         }
@@ -246,14 +246,14 @@ export default function XmlSAXParserTest() {
         },
         endDocument() {
         },
-        startElement(elementName: string, namespaceURI?: string, prefix?: string, attributes?: Map<string, string>) {
+        startElement(elementName: string, namespaceURI?: string, qName?: string, attributes?: Map<string, string>) {
           if (attributes && attributes.size > 0) {
             attributesReceived = true;
             attrValue1 = attributes.get('id') || '';
             attrValue2 = attributes.get('name') || '';
           }
         },
-        endElement(elementName: string, namespaceURI?: string, prefix?: string) {
+        endElement(elementName: string, namespaceURI?: string, qName?: string) {
         },
         characters(content: string) {
         }
@@ -292,9 +292,9 @@ export default function XmlSAXParserTest() {
         endDocument() {
           parseSuccess = true;
         },
-        startElement(elementName: string, namespaceURI?: string, prefix?: string, attributes?: Map<string, string>) {
+        startElement(elementName: string, namespaceURI?: string, qName?: string, attributes?: Map<string, string>) {
         },
-        endElement(elementName: string, namespaceURI?: string, prefix?: string) {
+        endElement(elementName: string, namespaceURI?: string, qName?: string) {
         },
         characters(content: string) {
         }
@@ -331,13 +331,13 @@ export default function XmlSAXParserTest() {
         },
         endDocument() {
         },
-        startElement(elementName: string, namespaceURI?: string, prefix?: string, attributes?: Map<string, string>) {
+        startElement(elementName: string, namespaceURI?: string, qName?: string, attributes?: Map<string, string>) {
           currentDepth++;
           if (currentDepth > maxDepth) {
             maxDepth = currentDepth;
           }
         },
-        endElement(elementName: string, namespaceURI?: string, prefix?: string) {
+        endElement(elementName: string, namespaceURI?: string, qName?: string) {
           currentDepth--;
         },
         characters(content: string) {
