@@ -385,14 +385,14 @@ export default function scenePostProcessSettingsTest() {
         
         camera.postProcess = { vignette: { roundness: 0.5, intensity: 0.5 } };
         expect(camera.postProcess != null).assertTrue();
-        
+
         let vignette: VignetteSettings = camera.postProcess!.vignette!;
         expect(vignette != null).assertTrue();
         console.info(msg + " vignette getter succeeded");
-        
+
         let newVignette: VignetteSettings = { roundness: 0.8, intensity: 0.5 };
         camera.postProcess!.vignette = newVignette;
-        expect(postProcessSettings.vignette != null).assertTrue();
+        expect(camera.postProcess!.vignette != null).assertTrue();
         console.info(msg + " vignette setter succeeded");
         
         console.info(msg + " test completed successfully");
@@ -433,7 +433,7 @@ export default function scenePostProcessSettingsTest() {
         
         let newColorFringe: ColorFringeSettings = { intensity: 1.5 };
         camera.postProcess!.colorFringe = newColorFringe;
-        expect(postProcessSettings.colorFringe != null).assertTrue();
+        expect(camera.postProcess!.colorFringe != null).assertTrue();
         console.info(msg + " colorFringe setter succeeded");
         
         console.info(msg + " test completed successfully");

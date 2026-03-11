@@ -1080,7 +1080,7 @@ export default function sceneNodeTest() {
       let msg = "============================testSpotLightOuterAngle";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $raw("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
 
@@ -1117,7 +1117,7 @@ export default function sceneNodeTest() {
       let msg = "============================testCameraGetViewMatrix";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $raw("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
 
@@ -1150,7 +1150,7 @@ export default function sceneNodeTest() {
       let msg = "============================testCameraGetProjectionMatrix";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $raw("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
         let scene = await Scene.load(sceneUri);
         expect(scene != null).assertTrue();
 
@@ -1170,8 +1170,5 @@ export default function sceneNodeTest() {
         done();
       }
     })
-  })
-}
-    });
   })
 }

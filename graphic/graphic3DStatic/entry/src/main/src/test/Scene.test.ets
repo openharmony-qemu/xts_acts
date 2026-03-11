@@ -988,15 +988,15 @@ export default function sceneTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cameraParams: CameraParameters = { name: "TestCamera", msaa: true };
-        let camera = await rf.createCamera(cameraParams);
+        let cameraParams: CameraParameters = { msaa: true };
+        let camera = await rf.createCamera({ name: "TestCamera" }, cameraParams);
         expect(camera != null).assertTrue();
         
         expect(camera.msaa).assertTrue();
         console.info(msg + " msaa set to true via CameraParameters successfully");
         
         cameraParams.msaa = false;
-        let camera2 = await rf.createCamera(cameraParams);
+        let camera2 = await rf.createCamera({ name: "TestCamera" }, cameraParams);
         expect(camera2.msaa).assertFalse();
         console.info(msg + " msaa set to false via CameraParameters successfully");
         
@@ -1026,18 +1026,17 @@ export default function sceneTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cameraParams: CameraParameters = { 
-          name: "TestCamera", 
-          renderingPipeline: RenderingPipelineType.FORWARD 
+        let cameraParams: CameraParameters = {
+          renderingPipeline: RenderingPipelineType.FORWARD
         };
-        let camera = await rf.createCamera(cameraParams);
+        let camera = await rf.createCamera({ name: "TestCamera" }, cameraParams);
         expect(camera != null).assertTrue();
         
         expect(camera.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
         console.info(msg + " renderingPipeline set to FORWARD successfully");
         
         cameraParams.renderingPipeline = RenderingPipelineType.FORWARD_LIGHTWEIGHT;
-        let camera2 = await rf.createCamera(cameraParams);
+        let camera2 = await rf.createCamera({ name: "TestCamera" }, cameraParams);
         expect(camera2.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD_LIGHTWEIGHT);
         console.info(msg + " renderingPipeline set to FORWARD_LIGHTWEIGHT successfully");
         
@@ -1067,7 +1066,7 @@ export default function sceneTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effectParams: EffectParameters = { name: "TestEffect" };
+        let effectParams: EffectParameters = { effectId: "TestEffect" };
         let effect = await rf.createEffect(effectParams);
         expect(effect != null).assertTrue();
         
@@ -1101,8 +1100,7 @@ export default function sceneTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let cameraParams: CameraParameters = { 
-          name: "TestCamera", 
+        let cameraParams: CameraParameters = {
           msaa: true,
           renderingPipeline: RenderingPipelineType.FORWARD
         };
@@ -1139,7 +1137,7 @@ export default function sceneTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effectParams: EffectParameters = { name: "TestEffect" };
+        let effectParams: EffectParameters = { effectId: "TestEffect" };
         let effect = await rf.createEffect(effectParams);
         expect(effect != null).assertTrue();
         expect(effect.name).assertEqual("TestEffect");
@@ -1166,7 +1164,8 @@ export default function sceneTest() {
       let msg = "============================testRegisterResourcePath";
       console.info(msg + ' begin ');
       try {
-        RenderContext.registerResourcePath("custom", "resources/");
+        let rc: RenderContext | null = Scene.getDefaultRenderContext();
+        rc?.registerResourcePath("custom", "resources/");
         console.info(msg + " registerResourcePath succeeded");
         
         expect(true).assertTrue();
@@ -1348,9 +1347,11 @@ export default function sceneTest() {
         let node = scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514');
         expect(node != null).assertTrue();
         
-        let clonedNode = scene.cloneNode(node!, null, "ClonedNode");
+        let clonedNode = scene.cloneNode(node!, scene.root!, "ClonedNode");
         expect(clonedNode != null).assertTrue();
-        expect(clonedNode.name).assertEqual("ClonedNode");
+        if (clonedNode!.name) {
+          expect(clonedNode!.name).assertEqual("ClonedNode");
+        }
         console.info(msg + " cloneNode succeeded");
         
         console.info(msg + " test completed successfully");

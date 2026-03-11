@@ -1321,9 +1321,9 @@ export default function sceneResourcesTest() {
         let animations = scene.animations;
         expect(animations != null).assertTrue();
         
-        let animCount = animations.count();
+        let animCount = animations.length;
         if (animCount > 0) {
-          let anim: Animation = animations.get(0);
+          let anim: Animation = animations[0];
           expect(anim != null).assertTrue();
           
           expect(anim.duration != null).assertTrue();
@@ -1361,9 +1361,9 @@ export default function sceneResourcesTest() {
         let animations = scene.animations;
         expect(animations != null).assertTrue();
         
-        let animCount = animations.count();
+        let animCount = animations.length;
         if (animCount > 0) {
-          let anim: Animation = animations.get(0);
+          let anim: Animation = animations[0];
           expect(anim != null).assertTrue();
           
           expect(anim.progress != null).assertTrue();
@@ -1399,7 +1399,7 @@ export default function sceneResourcesTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effect: Effect = await rf.createEffect({ name: "TestEffect" });
+        let effect: Effect = await rf.createEffect({ effectId: "TestEffect" });
         expect(effect != null).assertTrue();
         
         effect.enabled = true;
@@ -1436,7 +1436,7 @@ export default function sceneResourcesTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effect: Effect = await rf.createEffect({ name: "TestEffect" });
+        let effect: Effect = await rf.createEffect({ effectId: "TestEffect" });
         expect(effect != null).assertTrue();
         
         expect(effect.effectId != null).assertTrue();
@@ -1472,7 +1472,7 @@ export default function sceneResourcesTest() {
         let shader: Shader = await rf.createShader({ name: "TestShader", uri: "shaders/test.shader" });
         expect(shader != null).assertTrue();
         
-        shader.setShaderInputs(["input1", "input2", "input3"]);
+        shader.setShaderInputs({ "input1": 1.0, "input2": { x: 1, y: 1, z: 1 }, "input3": { x: 1, y: 1, z: 1, w: 1 } });
         console.info(msg + " setShaderInputs succeeded");
         
         expect(true).assertTrue();
@@ -1502,7 +1502,7 @@ export default function sceneResourcesTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effect: Effect = await rf.createEffect({ name: "TestEffect" });
+        let effect: Effect = await rf.createEffect({ effectId: "TestEffect" });
         expect(effect != null).assertTrue();
         
         let value = effect.getPropertyValue("intensity");
@@ -1535,7 +1535,7 @@ export default function sceneResourcesTest() {
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effect: Effect = await rf.createEffect({ name: "TestEffect" });
+        let effect: Effect = await rf.createEffect({ effectId: "TestEffect" });
         expect(effect != null).assertTrue();
         
         effect.setPropertyValue("intensity", 0.5);
@@ -1570,7 +1570,7 @@ export default function sceneResourcesTest() {
         console.info(msg + " MaterialType.UNLIT = 3 verified");
         
         expect(MaterialType.UNLIT != MaterialType.SHADER).assertTrue();
-        expect(MaterialType.UNLIT != MaterialType.PBR).assertTrue();
+        expect(MaterialType.UNLIT != MaterialType.METALLIC_ROUGHNESS).assertTrue();
         console.info(msg + " MaterialType.UNLIT distinct from other types");
         
         console.info(msg + " test completed successfully");
