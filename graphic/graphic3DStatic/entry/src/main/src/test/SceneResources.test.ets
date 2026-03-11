@@ -17,6 +17,7 @@ import {
   Animation,
   CullMode,
   Effect,
+  EffectParameters,
   Environment,
   EnvironmentBackgroundType,
   Geometry,
@@ -1497,18 +1498,27 @@ export default function sceneResourcesTest() {
       let msg = "============================testEffectGetPropertyValue";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effect: Effect = await rf.createEffect({ effectId: "TestEffect" });
-        expect(effect != null).assertTrue();
-        
-        let value = effect.getPropertyValue("intensity");
+        let scene = await Scene.load();
+        let rf = scene.getResourceFactory();
+        let effectIdName: string = "89b83608-c910-433e-9fd8-22f3ef64eabd";
+        let effectParameters: EffectParameters = { effectId: effectIdName };
+        let effect: Effect = await rf.createEffect(effectParameters);
+
+        let emptyValue = effect.getPropertyValue("");
+        console.info(msg + " getPropertyValue with empty string: " + JSON.stringify(emptyValue));
+
+        let value = effect.getPropertyValue("enabled");
         expect(value != null).assertTrue();
         console.info(msg + " getPropertyValue succeeded");
-        
+
+        let nullValue = effect.getPropertyValue("nonExistentProperty");
+        expect(nullValue).assertNull();
+        console.info(msg + " getPropertyValue with non-existent property returns null");
+
+        let undefinedValue = effect.getPropertyValue(undefined as string);
+        expect(undefinedValue).assertUndefined();
+        console.info(msg + " getPropertyValue with undefined returns undefined");
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
