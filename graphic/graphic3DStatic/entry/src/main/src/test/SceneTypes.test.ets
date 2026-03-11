@@ -262,10 +262,17 @@ export default function sceneTypesTest() {
       try {
         let customGeometry = new CustomGeometry();
         expect(customGeometry != null).assertTrue();
-        
+
         let vertices = customGeometry.vertices;
+        expect(vertices != undefined).assertTrue();
+        expect(vertices != null).assertTrue();
         console.info(msg + " vertices getter succeeded");
-        
+
+        customGeometry.vertices = [];
+        let emptyVertices = customGeometry.vertices;
+        expect(emptyVertices.length).assertEqual(0);
+        console.info(msg + " empty array test succeeded");
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
