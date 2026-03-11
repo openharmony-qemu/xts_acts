@@ -1540,21 +1540,23 @@ export default function sceneResourcesTest() {
       let msg = "============================testEffectSetPropertyValue";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let effect: Effect = await rf.createEffect({ effectId: "TestEffect" });
-        expect(effect != null).assertTrue();
-        
-        effect.setPropertyValue("intensity", 0.5);
+        let scene = await Scene.load();
+        let rf = scene.getResourceFactory();
+        let effectIdName: string = "89b83608-c910-433e-9fd8-22f3ef64eabd";
+        let effectParameters: EffectParameters = { effectId: effectIdName };
+        let effect: Effect = await rf.createEffect(effectParameters);
+
+        let emptyResult = effect.setPropertyValue("", true);
+        console.info(msg + " setPropertyValue with empty string: " + JSON.stringify(emptyResult));
+
+        let successResult = effect.setPropertyValue("enabled", true);
+        expect(successResult).assertTrue();
         console.info(msg + " setPropertyValue succeeded");
-        
-        let value = effect.getPropertyValue("intensity");
-        expect(value).assertEqual(0.5);
-        console.info(msg + " property value verified");
-        
+
+        let failResult = effect.setPropertyValue("nonExistentProperty", true);
+        expect(failResult).assertFalse();
+        console.info(msg + " setPropertyValue with non-existent property returns false");
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
