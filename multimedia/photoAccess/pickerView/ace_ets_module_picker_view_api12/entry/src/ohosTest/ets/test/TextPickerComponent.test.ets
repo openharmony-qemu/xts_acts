@@ -2756,7 +2756,9 @@ export default function TextPicker() {
         selectedRecommendationType: 0,
         time: 1756371999125,
         version: 1.0,
-        gridLevel: 1
+        gridLevel: 1,
+        sortRule: '',
+        fileSize: 0
       };
       sheetPickerOptions.contextRecoveryInfo = contextRecoveryInfo;
       sheetPickerOptions.isMovingPhotoBadgeShown = true;
