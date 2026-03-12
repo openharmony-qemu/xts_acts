@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "loadHsp_test",
+    "type": "feature",
+    "deviceTypes": [
+      "default"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false
+  }
+}

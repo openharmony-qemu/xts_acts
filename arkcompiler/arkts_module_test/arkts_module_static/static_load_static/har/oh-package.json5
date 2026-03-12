@@ -1,0 +1,12 @@
+{
+  "name": "har",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "loadhar": "file:../loadHar",
+    "@test/library": "file:../library"
+  }
+}
