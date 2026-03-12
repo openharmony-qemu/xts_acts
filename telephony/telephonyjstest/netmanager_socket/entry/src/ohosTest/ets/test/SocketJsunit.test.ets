@@ -16,7 +16,6 @@
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import socket from '@ohos.net.socket'
 import { BusinessError } from '@ohos.base';
-import { expectTrue } from './utils';
 
 
 function sleep (time:number):Promise<string>{
@@ -28,6 +27,13 @@ function sleep (time:number):Promise<string>{
 function expectFalse() {
   try {
     expect().assertFail();
+  } catch (err) {
+    console.info('assertion failure');
+  }
+};
+function expectTrue(n : boolean) {
+  try {
+    expect(n).assertTrue();
   } catch (err) {
     console.info('assertion failure');
   }
