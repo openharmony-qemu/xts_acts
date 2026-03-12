@@ -16,7 +16,6 @@ import { describe, expect, it, Level, TestType, Size } from '@ohos/hypium';
 import call from '@ohos.telephony.call';
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import { common } from '@kit.AbilityKit';
 
 export function toString(data:object) {
   if (typeof data === 'object') {
@@ -78,7 +77,7 @@ export default function callJsunit() {
         done();
       } else {
         try {
-          let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+          let context: Context = AppStorage.get('context') as Context;
           call.makeCall(context,"").then((data) => {
             console.log("Telephony_Call_Call_MakeCall_0700 makeCall callback success"+ JSON.stringify(data));
             done();
@@ -289,7 +288,7 @@ export default function callJsunit() {
         done();
       } else {
         try {
-          let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+          let context: Context = AppStorage.get('context') as Context;
           call.makeCall(context,null).then((data) => {
             console.log("Telephony_Call_Call_MakeCall_1000 makeCall callback success"+ JSON.stringify(data));
             done();
@@ -325,7 +324,7 @@ export default function callJsunit() {
         done();
       } else {
         try {
-          let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+          let context: Context = AppStorage.get('context') as Context;
           call.makeCall(context,undefined).then((data) => {
             console.log("Telephony_Call_Call_MakeCall_1100 makeCall callback success"+ JSON.stringify(data));
             done();
