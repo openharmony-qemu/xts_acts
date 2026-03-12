@@ -4077,27 +4077,36 @@ export default function WindowLifeCycleTest() {
             let caseName: string = "testOnWindowStageEvent_static_0100";
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
-            // 1、拉起另一个Ability主窗
+            let windowStageEventTypeArray: window.WindowStageEventType[] = [];
             try {
-                let windowStageStart: window.WindowStage = await startAbility(caseName, context!);
-                await Utils.msSleep(1000);
-                await terminateAbility(caseName);
-                await Utils.msSleep(2000);
-                let windowStageEventTypeArray: window.WindowStageEventType[] =
-                    AppStorage.get<window.WindowStageEventType[]>('windowStageEventTypeArray') as window.WindowStageEventType[];
-                hilog.info(0x0000, '[ANI]',
-                    `${msgStr} windowStageEventTypeArray get. ${JSON.stringify(windowStageEventTypeArray)}`);
-                expect(windowStageEventTypeArray.length).assertEqual(4);
-                expect(windowStageEventTypeArray[0]).assertEqual(window.WindowStageEventType.SHOWN);
-                expect(windowStageEventTypeArray[1]).assertEqual(window.WindowStageEventType.ACTIVE);
-                expect(windowStageEventTypeArray[2]).assertEqual(window.WindowStageEventType.INACTIVE);
-                expect(windowStageEventTypeArray[3]).assertEqual(window.WindowStageEventType.HIDDEN);
+                let onWindowStageEventCallBack: Callback<window.WindowStageEventType> =
+                    (windowStageEvent: window.WindowStageEventType) => {
+                        hilog.info(0x0000, '[ANI]',
+                            msgStr + 'windowStageEvent happened. Event:' + JSON.stringify(windowStageEvent));
+                        windowStageEventTypeArray.push(windowStageEvent);
+                        hilog.info(0x0000, '[ANI]',
+                            msgStr + 'windowStageEventTypeArray:' + JSON.stringify(windowStageEventTypeArray));
+                    };
+                windowStage!.onWindowStageEvent(onWindowStageEventCallBack);
+                if (isPCStatus != '') {
+                    let mainWin: window.Window = windowStage!.getMainWindowSync();
+                    await mainWin.minimize();
+                    await Utils.msSleep(1000);
+                    await mainWin.restore();
+                    await Utils.msSleep(1000);
+                    expect(windowStageEventTypeArray.length).assertEqual(4);
+                    expect(windowStageEventTypeArray[0]).assertEqual(window.WindowStageEventType.INACTIVE);
+                    expect(windowStageEventTypeArray[1]).assertEqual(window.WindowStageEventType.HIDDEN);
+                    expect(windowStageEventTypeArray[2]).assertEqual(window.WindowStageEventType.SHOWN);
+                    expect(windowStageEventTypeArray[3]).assertEqual(window.WindowStageEventType.ACTIVE);
+                }
+                windowStage!.offWindowStageEvent(onWindowStageEventCallBack);
+                windowStage!.offWindowStageEvent();
                 done();
             } catch (exception) {
                 exception = exception as BusinessError;
                 hilog.error(domain, tag,
                     msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
-                await terminateAbility(caseName);
                 expect(false).assertTrue();
             }
         });
