@@ -183,6 +183,7 @@ export default function requestCacheDownloadStaticTest() {
             expect(downloadInfo!.performance.redirectTime !== undefined).assertTrue();
             cacheDownload.clearFileCache();
             cacheDownload.clearMemoryCache();
+            cacheDownload.cancel(url);
             done();
           }catch (err) {
             console.info(`====>SUB_Request_cacheDownload_Supplemental_Static_0300 onSuccessCallback error: ${JSON.stringify(err)}`);
