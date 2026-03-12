@@ -38,6 +38,7 @@ group("builtin_static") {
       "base_standard_test_static:ActsBaseStaticTest",
       "dataview_standard_test_static:ActsDataviewStaticTest",
       "builtinsupply_standard_test_static:ActsBuiltinsupplyStaticTest",
+      "builtinsarraytest_standard_test_static:ActsBuiltinsArrayTestStaticTest",
       "map_standard_test_static:ActsMapStaticTest",
       "set_standard_test_static:ActsSetStaticTest",
     ]
