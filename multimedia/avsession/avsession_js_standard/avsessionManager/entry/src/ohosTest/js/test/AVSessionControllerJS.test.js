@@ -1275,6 +1275,45 @@ export default function AVSessionControllerJsTest() {
 			done();
 		})
 
+/**
+     * @tc.name   SUB_MULTIMEDIA_CONTROLLER_GETOUTPUTDEVICE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CONTROLLER_GETOUTPUTDEVICE_PROMISE_0100
+     * @tc.desc   Testing call getOutputDevice(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+it("SUB_MULTIMEDIA_CONTROLLER_GETOUTPUTDEVICE_PROMISE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+	let TAG = "[SUB_MULTIMEDIA_CONTROLLER_GETOUTPUTDEVICE_PROMISE_0100]";
+
+	await controller.getOutputDevice().then((data) => {
+	  let deviceInfo = data.devices[0];
+	  console.info(`${TAG}estLog1 length = ${data.devices.length}`);
+	  expect(data.devices.length).assertEqual(1);
+	  console.info(`${TAG}TestLog1 castCategory = ${deviceInfo.castCategory}`);
+	  expect(deviceInfo.modelName).not().assertEqual(undefined);
+	  console.info(`${TAG}TestLog1 deviceId = ${deviceInfo.deviceId}`);
+	  expect(deviceInfo.deviceId).assertEqual("0");
+	  console.info(`${TAG}TestLog1 deviceName = ${deviceInfo.deviceName}`);
+	  expect(deviceInfo.deviceName).assertEqual("LocalDevice");
+	  console.info(`${TAG}TestLog1 deviceType = ${deviceInfo.deviceType}`);
+	  expect(deviceInfo.deviceType).assertEqual(0);
+	  console.info(`${TAG}TestLog1 modelName = ${deviceInfo.modelName}`);
+	  expect(deviceInfo.modelName).assertEqual("");
+	  console.info(`${TAG}TestLog1 supportedPullClients = ${deviceInfo.supportedPullClients}`);
+	  expect(deviceInfo.supportedPullClients).assertEqual(undefined);
+	  console.info(`${TAG}TestLog1 supportedProtocols = ${deviceInfo.supportedProtocols}`);
+	  expect(deviceInfo.supportedProtocols).assertEqual(0);
+	  console.info(`${TAG}TestLog1 supportedDrmCapabilities = ${deviceInfo.supportedDrmCapabilities}`);
+	  expect(deviceInfo.supportedDrmCapabilities).not().assertEqual(undefined);
+	}).catch((err) => {
+	  console.info(`${TAG}Get device BusinessError: ${err.code}, message: ${err.message}`);
+	  expect(false).assertTrue();
+	})
+	done();
+  })
+
+
   /**
    * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_0100
    * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_0100
