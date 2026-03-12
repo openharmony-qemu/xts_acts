@@ -675,9 +675,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: HasUppercaseCompare = { strings: ["test", "Test", "TEST"], filtered: [] };
       const json = JSON.stringify(obj);
       const parsed: HasUppercaseCompare = JSON.parse(json, (k: string, v: HasUppercaseCompare) => {
@@ -704,9 +704,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: AgeDiffCompare = {
         people: [{ name: "A", age: 25 }, { name: "B", age: 30 }],
         diffs: []
@@ -731,9 +731,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: SumCountCompare = { numbers: [1, 2, 3], sum: 0, count: 0 };
       const json = JSON.stringify(obj);
       const parsed: SumCountCompare = JSON.parse(json, (k: string, v: SumCountCompare) => {
@@ -754,9 +754,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: SentenceCompare = { words: ["I", "am", "happy"], sentence: "" };
       const json = JSON.stringify(obj);
       const parsed: SentenceCompare = JSON.parse(json, (k: string, v: SentenceCompare) => {
@@ -782,9 +782,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: PriceRangeCompare = {
         products: [
           { name: "A", price: 15 },
@@ -817,9 +817,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: PercentCompare = { ratios: [0.12, 0.345], percentages: [] };
       const json = JSON.stringify(obj);
       const parsed: PercentCompare = JSON.parse(json, (k: string, v: PercentCompare) => {
@@ -842,9 +842,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: CharFrequencyCompare = { strings: ["apple", "banana"], counts: [] };
       const json = JSON.stringify(obj);
       const parsed: CharFrequencyCompare = JSON.parse(json, (k: string, v: CharFrequencyCompare) => {
@@ -873,9 +873,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: GroupCountCompare = {
         items: [
           { category: "A" },
@@ -910,9 +910,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: CumulativeSumCompare = { numbers: [1, 2, 3], sums: [] };
       const json = JSON.stringify(obj);
       const parsed: CumulativeSumCompare = JSON.parse(json, (k: string, v: CumulativeSumCompare) => {
@@ -938,9 +938,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: TruncateCompare = { strings: ["apple", "cat", "banana"], truncated: [] };
       const json = JSON.stringify(obj);
       const parsed: TruncateCompare = JSON.parse(json, (k: string, v: TruncateCompare) => {
@@ -963,9 +963,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: InStockCompare = {
         products: [
           { name: "A", quantity: 5 },
@@ -997,9 +997,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: NumberToBoolCompare = { numbers: [0, 1, -5, 0], booleans: [] };
       const json = JSON.stringify(obj);
       const parsed: NumberToBoolCompare = JSON.parse(json, (k: string, v: NumberToBoolCompare) => {
@@ -1021,9 +1021,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: HasSubstringCompare = { strings: ["apple", "banana", "grape"], hasSub: [] };
       const json = JSON.stringify(obj);
       const parsed: HasSubstringCompare = JSON.parse(json, (k: string, v: HasSubstringCompare) => {
@@ -1045,9 +1045,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: TotalAmountCompare = {
         orders: [
           { id: 1, amount: 100 },
@@ -1073,9 +1073,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: OddEvenClassifyCompare = { numbers: [1, 2, 3, 4], odd: [], even: [] };
       const json = JSON.stringify(obj);
       const parsed: OddEvenClassifyCompare = JSON.parse(json, (k: string, v: OddEvenClassifyCompare) => {
@@ -1104,9 +1104,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: ReversedLengthCompare = { strings: ["abc", "de"], reversed: [] };
       const json = JSON.stringify(obj);
       const parsed: ReversedLengthCompare = JSON.parse(json, (k: string, v: ReversedLengthCompare) => {
@@ -1134,9 +1134,9 @@ export default function Json6Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json6Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json6Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: RoleFilterCompare = {
         users: [
           { name: "A", role: "admin" },

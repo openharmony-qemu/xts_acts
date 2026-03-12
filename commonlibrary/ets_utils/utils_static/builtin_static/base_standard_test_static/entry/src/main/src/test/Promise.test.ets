@@ -13,9 +13,9 @@ export default function promiseTest() {
      * @tc.desc Test the function by promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testPromise0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPromise0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let flag = true;
         let array: Array<string> = await dealPromise(flag);
@@ -30,9 +30,9 @@ export default function promiseTest() {
      * @tc.desc Test the function by promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testPromise0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPromise0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let flag = false;
         let array: Array<string> = await dealPromise(flag);
@@ -48,9 +48,9 @@ export default function promiseTest() {
      * @tc.desc Test the function by promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testPromise0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPromise0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let flag = false;
         let array: Array<string> = new Array<string>();
@@ -79,9 +79,9 @@ export default function promiseTest() {
      * @tc.desc Test the function by promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testPromise0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPromise0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let flag = true;
         let array: Array<string> = new Array<string>();
@@ -110,9 +110,9 @@ export default function promiseTest() {
      * @tc.desc Test the function by promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testPromise0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPromise0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let flag = true;
         let array: Array<string> = new Array<string>();
@@ -156,9 +156,9 @@ export default function promiseTest() {
      * @tc.desc Test the function by promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testPromise0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPromise0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let flag = true;
         let array: Array<string> = new Array<string>();

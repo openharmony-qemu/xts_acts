@@ -47,9 +47,9 @@ export default function StringBasicTest() {
      * @tc.desc   String equality with === operator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareEqual001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareEqual001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'hello';
       let str2: string = 'hello';
       let result: boolean = str1 === str2;
@@ -62,9 +62,9 @@ export default function StringBasicTest() {
      * @tc.desc   String inequality with === operator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareEqual002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareEqual002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'hello';
       let str2: string = 'world';
       let result: boolean = str1 === str2;
@@ -77,9 +77,9 @@ export default function StringBasicTest() {
      * @tc.desc   Case-sensitive string comparison
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareCaseSensitive001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareCaseSensitive001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'Hello';
       let str2: string = 'hello';
       let result: boolean = str1 === str2;
@@ -92,9 +92,9 @@ export default function StringBasicTest() {
      * @tc.desc   String less than comparison
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareLessThan001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareLessThan001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'apple';
       let str2: string = 'banana';
       let result: boolean = str1 < str2;
@@ -107,9 +107,9 @@ export default function StringBasicTest() {
      * @tc.desc   String greater than comparison
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareGreaterThan001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareGreaterThan001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'banana';
       let str2: string = 'apple';
       let result: boolean = str1 > str2;
@@ -251,9 +251,9 @@ export default function StringBasicTest() {
      * @tc.desc   Empty string comparison
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareEmpty001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareEmpty001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = '';
       let str2: string = '';
       let result: boolean = str1 === str2;
@@ -266,9 +266,9 @@ export default function StringBasicTest() {
      * @tc.desc   Empty string vs non-empty comparison
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareEmpty002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareEmpty002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = '';
       let str2: string = 'a';
       let result: boolean = str1 === str2;
@@ -281,9 +281,9 @@ export default function StringBasicTest() {
      * @tc.desc   String comparison by length
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareLength001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareLength001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'abc';
       let str2: string = 'abcdef';
       expect(str1.length < str2.length).assertEqual(true);
@@ -309,9 +309,9 @@ export default function StringBasicTest() {
      * @tc.desc   String comparison with numeric characters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareNumberInString001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareNumberInString001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = '123';
       let str2: string = '456';
       expect(str1 < str2).assertEqual(true);
@@ -323,9 +323,9 @@ export default function StringBasicTest() {
      * @tc.desc   Alphanumeric string comparison
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCompareAlphanumeric001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCompareAlphanumeric001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'abc123';
       let str2: string = 'abc124';
       expect(str1 < str2).assertEqual(true);
@@ -338,9 +338,9 @@ export default function StringBasicTest() {
      * @tc.desc   Empty string with single quotes
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEmpty001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEmpty001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '';
       expect(str.length).assertEqual(0);
       expect(str).assertEqual('');
@@ -352,9 +352,9 @@ export default function StringBasicTest() {
      * @tc.desc   Empty string with double quotes
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEmpty002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEmpty002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = "";
       expect(str.length).assertEqual(0);
       expect(str).assertEqual("");
@@ -366,9 +366,9 @@ export default function StringBasicTest() {
      * @tc.desc   Empty template literal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEmpty003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEmpty003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = ``;
       expect(str.length).assertEqual(0);
       expect(str).assertEqual(``);
@@ -427,9 +427,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert undefined to string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTypeConversion001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTypeConversion001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = String(undefined);
       expect(result).assertEqual('undefined');
     });
@@ -440,9 +440,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert null to string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTypeConversion002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTypeConversion002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = String(null);
       expect(result).assertEqual('null');
     });
@@ -453,9 +453,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert boolean to string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTypeConversion003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTypeConversion003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let t: string = String(true);
       let f: string = String(false);
       expect(t).assertEqual('true');
@@ -468,9 +468,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert number to string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTypeConversion004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTypeConversion004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let num: string = String(123);
       let nan: string = String(NaN);
       let inf: string = String(Infinity);
@@ -485,9 +485,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert array to string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTypeConversion005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTypeConversion005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let arr: number[] = [1, 2, 3];
       let result: string = String(arr);
       expect(result).assertEqual('1,2,3');
@@ -499,9 +499,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert empty array to string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTypeConversion006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTypeConversion006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let arr: number[] = [];
       let result: string = String(arr);
       expect(result).assertEqual('');
@@ -513,9 +513,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert object to string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTypeConversion007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTypeConversion007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       class TestObj {
       }
       let obj: Object = new TestObj();
@@ -529,9 +529,9 @@ export default function StringBasicTest() {
      * @tc.desc   String concatenation with number
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringConcatWithTypes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringConcatWithTypes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'Value: ' + 42;
       expect(str).assertEqual('Value: 42');
     });
@@ -542,9 +542,9 @@ export default function StringBasicTest() {
      * @tc.desc   String concatenation with boolean
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringConcatWithTypes002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringConcatWithTypes002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'Result: ' + true;
       expect(str).assertEqual('Result: true');
     });
@@ -555,9 +555,9 @@ export default function StringBasicTest() {
      * @tc.desc   String concatenation with null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringConcatWithTypes003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringConcatWithTypes003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'Value: ' + null;
       expect(str).assertEqual('Value: null');
     });
@@ -568,9 +568,9 @@ export default function StringBasicTest() {
      * @tc.desc   Template literal with number expression
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTemplateExpression001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTemplateExpression001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let a: number = 10;
       let b: number = 20;
       let str: string = `Sum: ${a + b}`;
@@ -615,9 +615,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped single quote in string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeQuote001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeQuote001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'It\'s a test';
       expect(str.length).assertEqual(11);
       expect(str.charAt(2)).assertEqual('\'');
@@ -629,9 +629,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped double quote in string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeQuote002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeQuote002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = "Say \"hello\"";
       expect(str.charAt(4)).assertEqual('"');
     });
@@ -642,9 +642,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped backslash in string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeBackslash001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeBackslash001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'path\\to\\file';
       expect(str).assertEqual('path\\to\\file');
     });
@@ -655,9 +655,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped newline character \n
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeNewline001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeNewline001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'line1\nline2';
       expect(str.length).assertEqual(11);
       expect(str.indexOf('\n')).assertEqual(5);
@@ -669,9 +669,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped carriage return character \r
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeCarriageReturn001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeCarriageReturn001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'text\rmore';
       expect(str.indexOf('\r')).assertEqual(4);
     });
@@ -682,9 +682,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped tab character \t
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeTab001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeTab001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'col1\tcol2';
       expect(str.indexOf('\t')).assertEqual(4);
     });
@@ -695,9 +695,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped null character \0
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeNull001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeNull001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'before\0after';
       expect(str.length).assertLarger(6);
     });
@@ -708,9 +708,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped backspace character \b
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeBackspace001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeBackspace001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'abc\bdef';
       expect(str.indexOf('\b')).assertEqual(3);
     });
@@ -721,9 +721,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped form feed character \f
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeFormFeed001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeFormFeed001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'page1\fpage2';
       expect(str.indexOf('\f')).assertEqual(5);
     });
@@ -734,9 +734,9 @@ export default function StringBasicTest() {
      * @tc.desc   Escaped vertical tab character \v
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEscapeVerticalTab001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEscapeVerticalTab001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'line1\vline2';
       expect(str.indexOf('\v')).assertEqual(5);
     });
@@ -826,9 +826,9 @@ export default function StringBasicTest() {
      * @tc.desc   Basic usage of single quotes string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringSingleQuotes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringSingleQuotes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       expect(str).assertEqual('hello world');
     });
@@ -839,9 +839,9 @@ export default function StringBasicTest() {
      * @tc.desc   Single quotes string containing double quotes
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringSingleQuotes002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringSingleQuotes002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'He said "hello"';
       expect(str).assertEqual('He said "hello"');
     });
@@ -852,9 +852,9 @@ export default function StringBasicTest() {
      * @tc.desc   Single quotes string with escaped single quote
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringSingleQuotes003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringSingleQuotes003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'It\'s a beautiful day';
       expect(str).assertEqual('It\'s a beautiful day');
     });
@@ -865,9 +865,9 @@ export default function StringBasicTest() {
      * @tc.desc   Empty string with single quotes
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringSingleQuotes004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringSingleQuotes004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '';
       expect(str.length).assertEqual(0);
     });
@@ -878,9 +878,9 @@ export default function StringBasicTest() {
      * @tc.desc   Basic usage of double quotes string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringDoubleQuotes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringDoubleQuotes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = "hello world";
       expect(str).assertEqual("hello world");
     });
@@ -891,9 +891,9 @@ export default function StringBasicTest() {
      * @tc.desc   Double quotes string containing single quotes
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringDoubleQuotes002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringDoubleQuotes002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = "It's a beautiful day";
       expect(str).assertEqual("It's a beautiful day");
     });
@@ -904,9 +904,9 @@ export default function StringBasicTest() {
      * @tc.desc   Double quotes string with escaped double quote
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringDoubleQuotes003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringDoubleQuotes003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = "He said \"hello\"";
       expect(str).assertEqual("He said \"hello\"");
     });
@@ -917,9 +917,9 @@ export default function StringBasicTest() {
      * @tc.desc   Empty string with double quotes
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringDoubleQuotes004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringDoubleQuotes004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = "";
       expect(str.length).assertEqual(0);
     });
@@ -930,9 +930,9 @@ export default function StringBasicTest() {
      * @tc.desc   Basic usage of template literals
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTemplateLiterals001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTemplateLiterals001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let name: string = 'world';
       let str: string = `hello ${name}`;
       expect(str).assertEqual('hello world');
@@ -944,9 +944,9 @@ export default function StringBasicTest() {
      * @tc.desc   Template literals with expression interpolation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTemplateLiterals002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTemplateLiterals002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let a: number = 10;
       let b: number = 20;
       let str: string = `The sum is ${a + b}`;
@@ -959,9 +959,9 @@ export default function StringBasicTest() {
      * @tc.desc   Template literals with nested quotes
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTemplateLiterals003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTemplateLiterals003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = `He said "It's beautiful"`;
       expect(str).assertEqual('He said "It\'s beautiful"');
     });
@@ -972,9 +972,9 @@ export default function StringBasicTest() {
      * @tc.desc   Empty template literals
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTemplateLiterals004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTemplateLiterals004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = ``;
       expect(str.length).assertEqual(0);
     });
@@ -985,9 +985,9 @@ export default function StringBasicTest() {
      * @tc.desc   String concatenation with + operator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringConcatenation001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringConcatenation001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'Hello';
       let str2: string = 'World';
       let result: string = str1 + ' ' + str2;
@@ -1000,9 +1000,9 @@ export default function StringBasicTest() {
      * @tc.desc   String concatenation with += operator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringConcatenation002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringConcatenation002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'Hello';
       str += ' World';
       expect(str).assertEqual('Hello World');
@@ -1014,9 +1014,9 @@ export default function StringBasicTest() {
      * @tc.desc   Mixed quote type concatenation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringConcatenation003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringConcatenation003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'Hello';
       let str2: string = "World";
       let result: string = str1 + ' ' + str2;
@@ -1030,9 +1030,9 @@ export default function StringBasicTest() {
      * @tc.desc   Get character at index
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCharAt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCharAt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello';
       let char: string = str.charAt(1);
       expect(char).assertEqual('e');
@@ -1044,9 +1044,9 @@ export default function StringBasicTest() {
      * @tc.desc   Get character at first index
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCharAt002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCharAt002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello';
       let char: string = str.charAt(0);
       expect(char).assertEqual('h');
@@ -1058,9 +1058,9 @@ export default function StringBasicTest() {
      * @tc.desc   Get character at last index
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCharAt003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCharAt003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello';
       let char: string = str.charAt(4);
       expect(char).assertEqual('o');
@@ -1072,9 +1072,9 @@ export default function StringBasicTest() {
      * @tc.desc   charAt with out of bounds index
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCharAt004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCharAt004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello';
       let char: string = str.charAt(10);
       expect(char).assertEqual('');
@@ -1086,9 +1086,9 @@ export default function StringBasicTest() {
      * @tc.desc   Get character code at index
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCharCodeAt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCharCodeAt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello';
       let code: number = str.charCodeAt(0);
       expect(code).assertEqual(104); // 'h' = 104
@@ -1113,9 +1113,9 @@ export default function StringBasicTest() {
      * @tc.desc   String concat method
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringConcat001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringConcat001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str1: string = 'Hello';
       let str2: string = 'World';
       let result: string = str1.concat(' ', str2);
@@ -1128,9 +1128,9 @@ export default function StringBasicTest() {
      * @tc.desc   Concat multiple strings
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringConcat002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringConcat002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'a'.concat('b', 'c', 'd');
       expect(str).assertEqual('abcd');
     });
@@ -1141,9 +1141,9 @@ export default function StringBasicTest() {
      * @tc.desc   Check if string includes substring
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringIncludes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringIncludes001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: boolean = str.includes('world');
       expect(result).assertEqual(true);
@@ -1155,9 +1155,9 @@ export default function StringBasicTest() {
      * @tc.desc   Check if string includes non-existent substring
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringIncludes002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringIncludes002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: boolean = str.includes('goodbye');
       expect(result).assertEqual(false);
@@ -1169,9 +1169,9 @@ export default function StringBasicTest() {
      * @tc.desc   Find index of substring
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringIndexOf001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringIndexOf001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let index: number = str.indexOf('world');
       expect(index).assertEqual(6);
@@ -1183,9 +1183,9 @@ export default function StringBasicTest() {
      * @tc.desc   Find index of non-existent substring
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringIndexOf002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringIndexOf002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let index: number = str.indexOf('xyz');
       expect(index).assertEqual(-1);
@@ -1197,9 +1197,9 @@ export default function StringBasicTest() {
      * @tc.desc   Slice string with start and end
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringSlice001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringSlice001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: string = str.slice(0, 5);
       expect(result).assertEqual('hello');
@@ -1225,9 +1225,9 @@ export default function StringBasicTest() {
      * @tc.desc   Substr with start and length
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringSubstr001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringSubstr001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: string = str.substr(6, 5);
       expect(result).assertEqual('world');
@@ -1239,9 +1239,9 @@ export default function StringBasicTest() {
      * @tc.desc   Substring with start and end
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringSubstring001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringSubstring001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: string = str.substring(6, 11);
       expect(result).assertEqual('world');
@@ -1253,9 +1253,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert string to lowercase
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringToLower001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringToLower001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'HELLO WORLD';
       let result: string = str.toLowerCase();
       expect(result).assertEqual('hello world');
@@ -1267,9 +1267,9 @@ export default function StringBasicTest() {
      * @tc.desc   Convert string to uppercase
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringToUpper001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringToUpper001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: string = str.toUpperCase();
       expect(result).assertEqual('HELLO WORLD');
@@ -1281,9 +1281,9 @@ export default function StringBasicTest() {
      * @tc.desc   Trim whitespace from both ends
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTrim001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTrim001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '  hello  ';
       let result: string = str.trim();
       expect(result).assertEqual('hello');
@@ -1295,9 +1295,9 @@ export default function StringBasicTest() {
      * @tc.desc   Trim whitespace from start
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTrimStart001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTrimStart001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '  hello  ';
       let result: string = str.trimStart();
       expect(result).assertEqual('hello  ');
@@ -1309,9 +1309,9 @@ export default function StringBasicTest() {
      * @tc.desc   Trim whitespace from end
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringTrimEnd001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringTrimEnd001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '  hello  ';
       let result: string = str.trimEnd();
       expect(result).assertEqual('  hello');
@@ -1323,9 +1323,9 @@ export default function StringBasicTest() {
      * @tc.desc   Replace first occurrence
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringReplace001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringReplace001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: string = str.replace('world', 'ArkTS');
       expect(result).assertEqual('hello ArkTS');
@@ -1337,9 +1337,9 @@ export default function StringBasicTest() {
      * @tc.desc   Split string by separator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringSplit001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringSplit001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'a,b,c';
       let arr: string[] = str.split(',');
       expect(arr.length).assertEqual(3);
@@ -1352,9 +1352,9 @@ export default function StringBasicTest() {
      * @tc.desc   Repeat string multiple times
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringRepeat001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringRepeat001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'ha';
       let result: string = str.repeat(3);
       expect(result).assertEqual('hahaha');
@@ -1366,9 +1366,9 @@ export default function StringBasicTest() {
      * @tc.desc   Check if string starts with prefix
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringStartsWith001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringStartsWith001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: boolean = str.startsWith('hello');
       expect(result).assertEqual(true);
@@ -1380,9 +1380,9 @@ export default function StringBasicTest() {
      * @tc.desc   Check if string ends with suffix
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEndsWith001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEndsWith001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       let result: boolean = str.endsWith('world');
       expect(result).assertEqual(true);
@@ -1394,9 +1394,9 @@ export default function StringBasicTest() {
      * @tc.desc   Pad string at start
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringPadStart001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringPadStart001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '5';
       let result: string = str.padStart(3, '0');
       expect(result).assertEqual('005');
@@ -1408,9 +1408,9 @@ export default function StringBasicTest() {
      * @tc.desc   Pad string at end
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringPadEnd001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringPadEnd001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '5';
       let result: string = str.padEnd(3, '0');
       expect(result).assertEqual('500');
@@ -1423,9 +1423,9 @@ export default function StringBasicTest() {
      * @tc.desc   Regular space character U+0020
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringWhitespace001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringWhitespace001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello world';
       expect(str.indexOf(' ')).assertEqual(5);
     });
@@ -1502,9 +1502,9 @@ export default function StringBasicTest() {
      * @tc.desc   Basic emoji from BMP range
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringEmojiBasic001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringEmojiBasic001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '☀️⭐';
       expect(str.length).assertLarger(0);
     });
@@ -1541,9 +1541,9 @@ export default function StringBasicTest() {
      * @tc.desc   English punctuation marks
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringPunctuation001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringPunctuation001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'Hello, World!';
       expect(str.indexOf(',')).assertEqual(5);
       expect(str.indexOf('!')).assertEqual(12);
@@ -1555,9 +1555,9 @@ export default function StringBasicTest() {
      * @tc.desc   Chinese punctuation marks
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringPunctuation002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringPunctuation002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '你好，世界！';
       expect(str.indexOf('，')).assertEqual(2);
       expect(str.indexOf('！')).assertEqual(5);
@@ -1569,9 +1569,9 @@ export default function StringBasicTest() {
      * @tc.desc   Mixed punctuation marks
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringPunctuation003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringPunctuation003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'Hello，世界！';
       expect(str.indexOf('，')).assertEqual(5);
       expect(str.indexOf('！')).assertEqual(8);
@@ -1583,9 +1583,9 @@ export default function StringBasicTest() {
      * @tc.desc   Basic mathematical operators
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringMathSymbols001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringMathSymbols001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '1 + 2 = 3';
       expect(str.indexOf('+')).assertEqual(2);
       expect(str.indexOf('=')).assertEqual(6);
@@ -1623,9 +1623,9 @@ export default function StringBasicTest() {
      * @tc.desc   Currency symbols
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringCurrency001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringCurrency001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '$100 €50 ¥1000';
       expect(str.indexOf('$')).assertEqual(0);
       expect(str.indexOf('€')).assertEqual(5);
@@ -1638,9 +1638,9 @@ export default function StringBasicTest() {
      * @tc.desc   Copyright and trademark symbols
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringOtherSymbols001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringOtherSymbols001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '©2024 Company®';
       expect(str.indexOf('©')).assertEqual(0);
       expect(str.indexOf('®')).assertEqual(13);
@@ -1692,9 +1692,9 @@ export default function StringBasicTest() {
      * @tc.desc   ASCII characters in Unicode range
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringUnicodeASCII001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringUnicodeASCII001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'ABCxyz123';
       expect(str.length).assertEqual(9);
       expect(str.charCodeAt(0)).assertEqual(65); // 'A'
@@ -1706,9 +1706,9 @@ export default function StringBasicTest() {
      * @tc.desc   Chinese characters in BMP range
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringUnicodeChinese001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringUnicodeChinese001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '你好世界';
       expect(str.length).assertEqual(4);
       expect(str.charCodeAt(0)).assertLarger(0x4E00); // Chinese character range
@@ -1815,9 +1815,9 @@ export default function StringBasicTest() {
      * @tc.desc   String length returns UTF-16 code units
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringLength001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringLength001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = 'hello';
       expect(str.length).assertEqual(5);
     });
@@ -1828,9 +1828,9 @@ export default function StringBasicTest() {
      * @tc.desc   Chinese string length in UTF-16
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('StringLength002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringLength002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let str: string = '你好';
       expect(str.length).assertEqual(2); // Each Chinese char = 1 UTF-16 code unit
     });

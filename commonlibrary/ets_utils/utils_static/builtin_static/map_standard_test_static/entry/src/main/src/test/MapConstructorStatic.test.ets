@@ -47,9 +47,9 @@ export default function MapConstructorTest() {
      * @tc.desc Create empty Map using constructor
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: Map<number, number> = new Map<number, number>();
       expect(map.size).assertEqual(0);
     });
@@ -60,9 +60,9 @@ export default function MapConstructorTest() {
      * @tc.desc Create Map from array of key-value pairs
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new Map<string, int>([['a', 1], ['b', 2]]);
       expect(map.size).assertEqual(2);
     });
@@ -73,9 +73,9 @@ export default function MapConstructorTest() {
      * @tc.desc Create Map from another Map
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const original = new Map<string, string>([['key', 'value']]);
       const map = new Map<string, string>(original);
       expect(map.get('key')).assertEqual('value');
@@ -87,9 +87,9 @@ export default function MapConstructorTest() {
      * @tc.desc Create Map with null as parameter
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new Map<string, string>(null);
       expect(map.size).assertEqual(0);
     });
@@ -100,9 +100,9 @@ export default function MapConstructorTest() {
      * @tc.desc Create Map with undefined as parameter
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new Map<string, string>(undefined);
       expect(map.size).assertEqual(0);
     });
@@ -113,9 +113,9 @@ export default function MapConstructorTest() {
      * @tc.desc Map with boolean keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new Map<boolean, string>([[true, 'yes'], [false, 'no']]);
       expect(map.get(true)).assertEqual('yes');
       expect(map.get(false)).assertEqual('no');
@@ -127,9 +127,9 @@ export default function MapConstructorTest() {
      * @tc.desc Map with number keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
       expect(map.get(1)).assertEqual('one');
       expect(map.get(2)).assertEqual('two');
@@ -141,9 +141,9 @@ export default function MapConstructorTest() {
      * @tc.desc Map with NaN as key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new Map<number, string>([[NaN, 'not a number']]);
       expect(map.get(NaN)).assertEqual('not a number');
     });
@@ -154,9 +154,9 @@ export default function MapConstructorTest() {
      * @tc.desc Map with duplicate primitive keys in iterable
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map = new Map<string, int>([['a', 1], ['a', 2], ['a', 3]]);
       expect(map.size).assertEqual(1);
       expect(map.get('a')).assertEqual(3);
@@ -168,9 +168,9 @@ export default function MapConstructorTest() {
      * @tc.desc Map with nested arrays as keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr1 = [1, 2];
       const arr2 = [1, 2];
       const map = new Map<Array<int>, string>([[arr1, 'val1'], [arr2, 'val2']]);
@@ -185,9 +185,9 @@ export default function MapConstructorTest() {
      * @tc.desc Check Map is instance of Map
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: Map<string, number> = new Map<string, number>();
       expect(map instanceof Map).assertEqual(true);
     });
@@ -198,9 +198,9 @@ export default function MapConstructorTest() {
      * @tc.desc Check Map is instance of Object
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapConstructorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapConstructorTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: Map<string, number> = new Map<string, number>();
       expect(map instanceof Object).assertEqual(true);
     });

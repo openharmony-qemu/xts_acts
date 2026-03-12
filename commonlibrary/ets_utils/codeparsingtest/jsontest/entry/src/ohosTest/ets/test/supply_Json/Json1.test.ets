@@ -48,9 +48,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "{}";
       const result: object = JSON.parse(jsonStr);
       expect(JSON.stringify(result)).assertEqual(JSON.stringify({}));
@@ -61,9 +61,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "true";
       const result: boolean = JSON.parse(jsonStr);
       expect(result).assertEqual(true);
@@ -74,9 +74,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"typescript"';
       const result: string = JSON.parse(jsonStr);
       expect(result).assertEqual("typescript");
@@ -88,9 +88,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "[10, 20, 30.5]";
       const result: number[] = JSON.parse(jsonStr);
       expect(JSON.stringify(result)).assertEqual(JSON.stringify([10, 20, 30.5]));
@@ -102,9 +102,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "null";
       const result: null = JSON.parse(jsonStr);
       expect(result).assertEqual(null);
@@ -116,9 +116,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Info {
         name: string;
         age: number
@@ -140,9 +140,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface NegNumData {
         negInt: number;
         negFloat: number;
@@ -159,9 +159,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a":1, "b":{"c":2, "d":{"e":3}}}';
       const keys: string[] = [];
       JSON.parse(jsonStr, (key: string) => {
@@ -177,9 +177,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "[1, 2, 3, ]";
       let isSyntaxError: boolean = false;
       try {
@@ -196,9 +196,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"key": "value", }';
       let isSyntaxError: boolean = false;
       try {
@@ -215,9 +215,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"line1\\nline2"';
       const result: string = JSON.parse(jsonStr);
       expect(result).assertEqual("line1\nline2");
@@ -229,9 +229,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "[]";
       const result: never[] = JSON.parse(jsonStr);
       expect(JSON.stringify(result)).assertEqual(JSON.stringify([]));
@@ -243,9 +243,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "false";
       const result: boolean = JSON.parse(jsonStr);
       expect(result).assertEqual(false);
@@ -257,9 +257,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface ChineseData {
         title: string;
         content: string;
@@ -276,9 +276,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "123";
       const result: number = JSON.parse(jsonStr);
       expect(result).assertEqual(123);
@@ -290,9 +290,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface FloatData {
         price: number;
       }
@@ -308,9 +308,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "[1, 2, 3, ]";
       let isSyntaxError: boolean = false;
       try {
@@ -327,9 +327,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "false";
       const result: boolean = JSON.parse(jsonStr);
       expect(result).assertEqual(false);
@@ -341,9 +341,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface SciData {
         value: number;
       }
@@ -359,9 +359,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '[null, "a", "b"]';
       const result: (null | string)[] = JSON.parse(jsonStr);
       expect(result[0]).assertEqual(null);
@@ -373,9 +373,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '[-1, -3, -5]';
       const result: number[] = JSON.parse(jsonStr);
       expect(result[2]).assertEqual(-5);
@@ -387,9 +387,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{key: "value"}';
       let isSyntaxError: boolean = false;
       try {
@@ -405,9 +405,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '"He said \\"JSON\\""';
       const result: string = JSON.parse(jsonStr);
       expect(result).assertEqual('He said "JSON"');
@@ -419,9 +419,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '[Infinity]';
       let isSyntaxError: boolean = false;
       try {
@@ -438,9 +438,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface LongNum {
         num: number;
       }
@@ -456,9 +456,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = '{"a": 1 "b": 2}';
       let isSyntaxError: boolean = false;
       try {
@@ -475,9 +475,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface NoReturn {
         x?: number;
         y: number;
@@ -494,9 +494,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface Key {
         key: String
       }
@@ -512,9 +512,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonStr: string = "123";
       const result: number = JSON.parse(jsonStr, (k: string, v: number) => k === "" ? (v as number) + 77 : v);
       expect(result).assertEqual(200);
@@ -526,9 +526,9 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       interface ArrWithObj {
         id: number;
         name: string;
@@ -545,7 +545,7 @@ export default function Json1Test() {
      * @tc.desc   test Json parse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
     it('Json1Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[5, 10]';
