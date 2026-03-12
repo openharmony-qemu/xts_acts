@@ -88,12 +88,20 @@ struct Index {
                 let e: BusinessError = error as BusinessError;
                 console.error(this.str + `ErrorCode: ${e.code},  Message: ${e.message}`);
                 if (e.code == 801) {
-                  Utils.emitEvent(true, 182020);
+                  console.info('test AdsBlockManager.setAdsBlockRules 801');
+
+                  Utils.emitEvent(true, 180020);
                 } else if (e.code == 401) {
-                  Utils.emitEvent(true, 182020);
+                  console.info('test AdsBlockManager.setAdsBlockRules 401');
+                  Utils.emitEvent(true, 180020);
                 } else {
-                  Utils.emitEvent(false, 182020);
+
+                  console.info('test AdsBlockManager.setAdsBlockRules else');
+
+                  Utils.emitEvent(false, 180020);
                 }
+                console.info('test AdsBlockManager.setAdsBlockRules end');
+
               }
               break;
             }
