@@ -18,7 +18,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 class DialogParams {
   text: string = '';
-  onClose?: () => void;
+  public onClose?: () => void;
 
   constructor(text: string, onClose?: () => void) {
     this.text = text;

@@ -23,24 +23,24 @@ struct keyboardShortcutNull {
       Column() {
         Text(this.message)
           .id('resultTextKeyboardShortcut')
-        Button("Test short cut 1").onClick((event: ClickEvent) => {
-          this.message = "I clicked Button 1";
+        Button('Test short cut 1').onClick((event: ClickEvent) => {
+          this.message = 'I clicked Button 1';
         }).keyboardShortcut(null, [ModifierKey.SHIFT, ModifierKey.CTRL, ModifierKey.ALT])
           .height('5%')
-        Button("Test short cut 2").onClick((event: ClickEvent) => {
-          this.message = "I clicked Button 2";
+        Button('Test short cut 2').onClick((event: ClickEvent) => {
+          this.message = 'I clicked Button 2';
 
         }).keyboardShortcut(undefined, [ModifierKey.CTRL]).height('5%')
-        Button("Test short cut 3").onClick((event: ClickEvent) => {
-          this.message = "I clicked Button 3";
+        Button('Test short cut 3').onClick((event: ClickEvent) => {
+          this.message = 'I clicked Button 3';
 
         }).keyboardShortcut('', [ModifierKey.SHIFT]).height('5%')
-        Button("Test short cut 4").onClick((event: ClickEvent) => {
-          this.message = "I clicked Button 4";
+        Button('Test short cut 4').onClick((event: ClickEvent) => {
+          this.message = 'I clicked Button 4';
 
         }).keyboardShortcut('a', null).height('5%')
-        Button("Test short cut 5").onClick((event: ClickEvent) => {
-          this.message = "I clicked Button 5";
+        Button('Test short cut 5').onClick((event: ClickEvent) => {
+          this.message = 'I clicked Button 5';
 
         }).keyboardShortcut('b', undefined).height('5%')
 

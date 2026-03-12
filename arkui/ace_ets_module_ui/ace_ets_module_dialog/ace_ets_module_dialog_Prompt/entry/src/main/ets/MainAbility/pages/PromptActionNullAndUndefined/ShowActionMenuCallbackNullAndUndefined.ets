@@ -211,13 +211,14 @@ struct ShowActionMenuCallbackNullAndUndefined {
 
             .onClick(() => {
               try {
-                this.promptAction.showActionMenu(null as ESObject, (err: BusinessError, data: promptAction.ActionMenuSuccessResponse) => {
-                  if (err) {
-                    this.resultText = 'options null error: ' + err.code;
-                  } else {
-                    this.resultText = 'options null success';
-                  }
-                });
+                this.promptAction.showActionMenu(null as ESObject,
+                  (err: BusinessError, data: promptAction.ActionMenuSuccessResponse) => {
+                    if (err) {
+                      this.resultText = 'options null error: ' + err.code;
+                    } else {
+                      this.resultText = 'options null success';
+                    }
+                  });
               } catch (err) {
                 this.resultText = 'options null catch: ' + ((err as BusinessError).code);
               }
@@ -229,13 +230,14 @@ struct ShowActionMenuCallbackNullAndUndefined {
 
             .onClick(() => {
               try {
-                this.promptAction.showActionMenu(undefined as ESObject, (err: BusinessError, data: promptAction.ActionMenuSuccessResponse) => {
-                  if (err) {
-                    this.resultText = 'options undefined error: ' + err.code;
-                  } else {
-                    this.resultText = 'options undefined success';
-                  }
-                });
+                this.promptAction.showActionMenu(undefined as ESObject,
+                  (err: BusinessError, data: promptAction.ActionMenuSuccessResponse) => {
+                    if (err) {
+                      this.resultText = 'options undefined error: ' + err.code;
+                    } else {
+                      this.resultText = 'options undefined success';
+                    }
+                  });
               } catch (err) {
                 this.resultText = 'options undefined catch: ' + ((err as BusinessError).code);
               }

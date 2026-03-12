@@ -18,7 +18,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 class DialogParams {
   text: string = '';
-  onClose?: () => void;
+  public onClose?: () => void;
+
   constructor(text: string, onClose?: () => void) {
     this.text = text;
     this.onClose = onClose;
@@ -37,7 +38,7 @@ function buildDialog(params: DialogParams) {
         if (params.onClose) {
           params.onClose();
         }
-      })      .height('50%').width('100%')
+      }).height('50%').width('100%')
   }.backgroundColor('#FFF0F0F0').height('5%').width('10%')
 }
 
@@ -51,8 +52,8 @@ struct OpenCustomDialogWithControllerNullAndUndefined {
   private dialogController: promptAction.DialogController = new promptAction.DialogController();
   private contentNode: ComponentContent<DialogParams> | null = null;
 
- aboutToAppear(): void {
-    this.contentNode = new ComponentContent(this.ctx, wrapBuilder(buildDialog), 
+  aboutToAppear(): void {
+    this.contentNode = new ComponentContent(this.ctx, wrapBuilder(buildDialog),
       new DialogParams('Test Dialog', () => {
         if (this.contentNode && this.promptAction) {
           this.promptAction.closeCustomDialog(this.contentNode);
@@ -348,12 +349,13 @@ struct OpenCustomDialogWithControllerNullAndUndefined {
 
             .onClick(() => {
               try {
-                this.promptAction.openCustomDialogWithController(this.contentNode!, this.dialogController, null as ESObject)
+                this.promptAction.openCustomDialogWithController(this.contentNode!, this.dialogController,
+                  null as ESObject)
                   .then(() => {
                     this.resultText = 'options null success';
                   }).catch((err: BusinessError) => {
-                    this.resultText = 'options null error: ' + err.code;
-                  });
+                  this.resultText = 'options null error: ' + err.code;
+                });
               } catch (err) {
                 this.resultText = 'options null catch: ' + ((err as BusinessError).code);
               }
@@ -365,12 +367,13 @@ struct OpenCustomDialogWithControllerNullAndUndefined {
 
             .onClick(() => {
               try {
-                this.promptAction.openCustomDialogWithController(this.contentNode!, this.dialogController, undefined as ESObject)
+                this.promptAction.openCustomDialogWithController(this.contentNode!, this.dialogController,
+                  undefined as ESObject)
                   .then(() => {
                     this.resultText = 'options undefined success';
                   }).catch((err: BusinessError) => {
-                    this.resultText = 'options undefined error: ' + err.code;
-                  });
+                  this.resultText = 'options undefined error: ' + err.code;
+                });
               } catch (err) {
                 this.resultText = 'options undefined catch: ' + ((err as BusinessError).code);
               }

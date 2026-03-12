@@ -17,7 +17,7 @@ import { PromptAction, UIContext, ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class PopupParams {
-  text: string = 'Test Popup';
+  public text: string = 'Test Popup';
   constructor(text: string) {
     this.text = text;
   }
