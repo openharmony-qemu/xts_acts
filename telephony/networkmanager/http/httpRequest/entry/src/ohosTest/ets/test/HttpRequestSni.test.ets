@@ -1,6 +1,5 @@
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { http } from '@kit.NetworkKit';
-import { expectFail, expectTrue } from './utils';
 
 const BASE_URL = "https://23.106.128.32";
 const EMPTY_MSG = "__SNI_EMPTY__";
@@ -11,6 +10,20 @@ interface ResponseData {
 
 function sleep(ms:number) {
   return new Promise<ESObject>(resolve => setTimeout(resolve, ms));
+}
+export function expectFail (info: string = ''): void {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info(${info} test failed);
+  }
+}
+export function expectTrue (exp:boolean, info: string = ''): void {
+  try {
+    expect(exp).assertTrue();
+  } catch (err) {
+    console.info(${info} test failed);
+  }
 }
 
 export default function SniTest() {
