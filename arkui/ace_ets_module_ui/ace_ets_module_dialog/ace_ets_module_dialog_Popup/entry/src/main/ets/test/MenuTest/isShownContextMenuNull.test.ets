@@ -18,24 +18,24 @@ import { Driver, On, ON, Component, Point } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
-export default function bindContextMenuNull(){
-  describe('bindContextMenuNull', () => {
+export default function isShownContextMenuNull(){
+  describe('isShownContextMenuNull', () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Menu/bindContextMenuNull',
+        url: 'MainAbility/pages/Menu/isShownContextMenuNull',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get bindContextMenuNull state pages: " + JSON.stringify(pages));
-        if (!("bindContextMenuNull" == pages.name)) {
-          console.info("get bindContextMenuNull state pages.name: " + JSON.stringify(pages.name));
+        console.info("get isShownContextMenuNull state pages: " + JSON.stringify(pages));
+        if (!("isShownContextMenuNull" == pages.name)) {
+          console.info("get isShownContextMenuNull state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push bindContextMenuNull success: " + JSON.stringify(result));
+          console.info("push isShownContextMenuNull success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push bindContextMenuNull page error: " + err);
+        console.error("push isShownContextMenuNull page error: " + err);
         expect().assertFail();
       }
       done();
