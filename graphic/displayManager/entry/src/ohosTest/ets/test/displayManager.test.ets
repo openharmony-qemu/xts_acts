@@ -3155,7 +3155,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3216,7 +3216,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3276,7 +3276,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3337,7 +3337,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
