@@ -1144,7 +1144,7 @@ export default function Sim2Public() {
           if (data) {
             hilog.info(domain, tag,
               `${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-            sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType | undefined) => {
+            sim.getCardType(0, (err: BusinessError<void> | null, cardtype: sim.CardType | undefined) => {
               if (err?.code === 0) {
                 const simStateAry: sim.CardType[] = [
                   sim.CardType.UNKNOWN_CARD,
@@ -1158,7 +1158,7 @@ export default function Sim2Public() {
                   sim.CardType.DUAL_MODE_UG_CARD,
                   sim.CardType.SINGLE_MODE_ISIM_CARD
                 ];
-                expect(data).assertEqual(simStateAry);
+                ExpectTrue(simStateAry.includes(cardtype));
                 hilog.info(domain, tag, `${caseName} getCardType true test end `);
                 done();
               }else {
@@ -1649,13 +1649,11 @@ export default function Sim2Public() {
               if (!data) {
                 hilog.info(domain, tag,
                   `${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-                expect(data).assertFalse();
-                ExpectTrue(true);
+                expect().assertFail();
                 hilog.info(domain, tag, `${caseName} test end `);
                 done();
               } else {
                 expect(data).assertTrue();
-                ExpectFail();
                 hilog.info(domain, tag, `${caseName} test end `);
                 done();
               }
@@ -1745,13 +1743,11 @@ export default function Sim2Public() {
                 if (!data) {
                   hilog.info(domain, tag,
                     `${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-                  expect(data).assertFalse();
-                  ExpectTrue(true);
+                  expect().assertFail();
                   hilog.info(domain, tag, `${caseName} test end `);
                   done();
                 } else {
                   expect(data).assertTrue();
-                  ExpectFail();
                   hilog.info(domain, tag, `${caseName} test end `);
                   done();
                 }
