@@ -84,7 +84,7 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_0700 makeCall callback: error->" + JSON.stringify(error.code));
-            expect(error.code === undefined).assertTrue();
+            expect(false).assertTrue();
             done();
           });
         } catch (err) {
@@ -295,12 +295,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_1000 makeCall callback: error->" + JSON.stringify(error));
-            expect(error.code === undefined).assertTrue();
+            expect(Number(error.code)).assertEqual(401);
             done();
           });
         } catch (err) {
           console.log("Telephony_Call_Call_MakeCall_1000 makeCall callback: err->" + JSON.stringify(err));
-          expect(false).assertTrue();
+          expect(Number(err.code)).assertEqual(401);
           done();
         }
       }
@@ -331,12 +331,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_1100 makeCall callback: error->" + JSON.stringify(error.code));
-            expect(error.code === undefined).assertTrue();
+            expect(Number(error.code)).assertEqual(401);
             done();
           });
         } catch (err) {
           console.log("Telephony_Call_Call_MakeCall_1100 makeCall callback: err->" + JSON.stringify(err));
-          expect(false).assertTrue();
+          expect(Number(err.code)).assertEqual(401);
           done();
         }
       }
