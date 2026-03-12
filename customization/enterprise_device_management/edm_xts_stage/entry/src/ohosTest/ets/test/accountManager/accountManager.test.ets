@@ -210,7 +210,6 @@ export default function accountManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null);
@@ -245,7 +244,6 @@ export default function accountManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT, DEFAULT_USER_ID);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null, DEFAULT_USER_ID);
@@ -289,7 +287,6 @@ export default function accountManagerTest() {
         localIds.push(localId);
         console.info(' --- disallowOsAccountAddition_test_008 newAccount.localId: ' + localId);
         accountManager.disallowOsAccountAddition(SELFWANT, true, localId);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT, localId);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null, localId);
@@ -348,10 +345,8 @@ export default function accountManagerTest() {
       console.info(' --- disallowOsAccountAddition_test_0010  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
-        accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
+        let ret = accountManager.disallowOsAccountAddition(SELFWANT, true);
+        expect(ret == null).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_0010 error is unexpected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -375,10 +370,8 @@ export default function accountManagerTest() {
       console.info(' --- disallowOsAccountAddition_test_0011  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
-        accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
+        let ret = accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
+        expect(ret == null).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_0011 error is unexpected, actually catch: ' + error.code);
         expect(false).assertTrue();
