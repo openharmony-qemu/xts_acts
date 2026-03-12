@@ -6,7 +6,7 @@ import windowManager from '@ohos.window';
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { util } from '@ohos.util';
+import util from '@ohos.util';
 import { window } from '@kit.ArkUI';
 import Want from '@ohos.app.ability.Want';
 let domain: int = 0x0000;
@@ -208,7 +208,7 @@ export class KeyboardControllerStatic {
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     }
-    this.InputClient!getEditorAttribute((err: BusinessError, value: inputMethodEngine.EditorAttribute): void => {
+    this.InputClient!getEditorAttribute((err, value) => {
       if (err){
         console.info(`${TAG} ====>receive inputMethodEngine_test_static_038 getEditorAttribute err: ${JSON.stringify(err)}`);
       } else {
@@ -272,6 +272,7 @@ export class KeyboardControllerStatic {
       commonEventManager.publish('Sub_InputMethod_IME_PrivateDateTransferred_static_0500', commonEventPublishData, this.publishCallback); 
 
     } catch (err) {
+      err = err as BusinessError;
       console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0500 catch err: ${JSON.stringify(err)}`);
       if (err.code === 12800010) {
         commonEventPublishData = {
@@ -289,11 +290,12 @@ export class KeyboardControllerStatic {
     };
     try {
       inputMethodAbility!.onPrivateCommand(async (record: Record<string, inputMethodEngine.CommandDataType>): void => {
-        console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600 onPrivateCommond into`);
+        console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600 onPrivateCommand into`);
         inputMethodAbility!.offPrivateCommand();
       });
       console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600 sendPrivateCommond success`);
     } catch (err) {
+      err = err as BusinessError;
       console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600 catch err: ${JSON.stringify(err)}`);
       if (err.code === 12800010) {
         commonEventPublishData = {
