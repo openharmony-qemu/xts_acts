@@ -194,8 +194,9 @@ static napi_value GetRawFileContent64(napi_env env, napi_callback_info info)
     if (offset != 0) {
         return nullptr;
     }
-
-    int size = OH_ResourceManager_SeekRawFile64(rawFile, 2, 0);
+    
+    int offsetValue = 2;
+    int size = OH_ResourceManager_SeekRawFile64(rawFile, offsetValue, 0);
     if (size == -1) {
         return nullptr;
     }
@@ -208,7 +209,7 @@ static napi_value GetRawFileContent64(napi_env env, napi_callback_info info)
 
     OH_ResourceManager_CloseRawFile64(rawFile);
     OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-    return CreateJsArrayValue(env, data, len-2);
+    return CreateJsArrayValue(env, data, len-offsetValue);
 }
 
 napi_value createJsFileDescriptor(napi_env env, RawFileDescriptor &descriptor)
