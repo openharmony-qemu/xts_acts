@@ -489,7 +489,7 @@ int OHDrawingCopyTypographyStyle005()
     };
     for (int i = 0; i < fontStyle.size(); i++) {
         OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, fontStyle[i]);
-        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        OH_Drawing_TypographyStyle* typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
         ASSERT_NE(typoStyleCopy_, nullptr);
         if (i % evenNumberDivisor == 0) {
             EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), fontStyle[0]);
@@ -502,7 +502,7 @@ int OHDrawingCopyTypographyStyle005()
     };
     for (int i = 0; i < textAlign.size(); i++) {
         OH_Drawing_SetTypographyTextAlign(typoStyle_, textAlign[i]);
-        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        OH_Drawing_TypographyStyle*typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
         ASSERT_NE(typoStyleCopy_, nullptr);
         EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), textAlign[i]);
     }
@@ -513,9 +513,10 @@ int OHDrawingCopyTypographyStyle005()
     };
     for (int i = 0; i < fontWeight.size(); i++) {
         OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, fontWeight[i]);
-        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        OH_Drawing_TypographyStyle* typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
         ASSERT_NE(typoStyleCopy_, nullptr);
         EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), fontWeight[i]);
     }
+    return TEST_SUCCESS_CODE;
 }
 } // namespace OHOS
