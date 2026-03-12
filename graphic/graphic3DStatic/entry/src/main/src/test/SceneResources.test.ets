@@ -43,6 +43,7 @@ import {
   Vec2,
   Vec4
 } from '@ohos.graphics.scene'
+import * as scene3d from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
 import { SceneResourceType } from 'graphics3d.SceneResources';
@@ -1399,19 +1400,71 @@ export default function sceneResourcesTest() {
       let msg = "============================testShaderSetShaderInputs";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
-        expect(scene != null).assertTrue();
-        
-        let rf: SceneResourceFactory = scene.getResourceFactory();
-        let shader: Shader = await rf.createShader({ name: "TestShader", uri: "shaders/test.shader" });
-        expect(shader != null).assertTrue();
-        
-        shader.setShaderInputs({ "input1": 1.0, "input2": { x: 1, y: 1, z: 1 }, "input3": { x: 1, y: 1, z: 1, w: 1 } });
-        console.info(msg + " setShaderInputs succeeded");
+        let scene: Scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
 
-        let inputs = shader.inputs;
-        expect(inputs["input1"]).assertEqual(1.0);
+        rf = scene.getResourceFactory();
+        expect(rf != undefined).assertTrue();
+        shader = await rf!.createShader({ name: "CustomShader", uri: $rawfile("shaders/custom_shader/custom_material_sample.shader")});
+        expect(shader != undefined).assertTrue();
+        console.info(msg + " shader created successfully");
+
+        material = await rf!.createMaterial({ name: "CustomMaterial" }, MaterialType.SHADER) as ShaderMaterial;
+        expect(material != null).assertTrue();
+        console.info(msg + " material created successfully");
+
+        if (material) {
+          console.info(msg + " material colorShader set start");
+          material!.colorShader = shader as Shader;
+        }
+
+        expect(material?.colorShader != null).assertTrue();
+        console.info(msg + " colorShader set successfully");
+
+        // Create a dummy image for testing
+        let testImage: scene3d.Image = await rf!.createImage({ name: "testImage", uri: $rawfile("gltf/Cube/glTF/Cube_BaseColor.png")});
+        console.info(msg + " createImage successfully");
+
+        // Test setShaderInputs with various input types
+        if (material && material!.colorShader) {
+          console.info(msg + " material && material!.colorShader == True");
+          material!.colorShader!.setShaderInputs({
+            "time": 1.5,
+            "vec_1": {x: 1.0, y: 1.0, z: -1.0, w: -1.0},
+            "vec_2": {x: 0.0, y: 0.0, z: 0.0},
+            "vec_3": {x: 0.0, y: 0.5},
+            "BASE_COLOR_Image": testImage
+          });
+          console.info(msg + " setShaderInputs called successfully");
+
+          console.info(msg + " material!.colorShader!.inputs[\"time\"]: " + material!.colorShader!.inputs["time"]);
+          console.info(msg + " material!.colorShader!.inputs[\"vec_1\"]: " + material!.colorShader!.inputs["vec_1"]);
+          console.info(msg + " material!.colorShader!.inputs[\"vec_2\"]: " + material!.colorShader!.inputs["vec_2"]);
+          console.info(msg + " material!.colorShader!.inputs[\"vec_3\"]: " + material!.colorShader!.inputs["vec_3"]);
+          console.info(msg + " material!.colorShader!.inputs[\"BASE_COLOR_Image\"]: " + material!.colorShader!.inputs["BASE_COLOR_Image"]);
+          // Verify inputs were set
+          expect(typeof material!.colorShader!.inputs["time"]).assertEqual('number');
+          expect(material!.colorShader!.inputs["time"]).assertEqual(1.5);
+          console.info(msg + " time input verified");
+
+          expect(material!.colorShader!.inputs["vec_1"] != null).assertTrue();
+          console.info(msg + " vec_1 input verified");
+
+          expect(material!.colorShader!.inputs["vec_2"] != null).assertTrue();
+          console.info(msg + " vec_2 input verified");
+
+          expect(material!.colorShader!.inputs["vec_3"] != null).assertTrue();
+          console.info(msg + " vec_3 input verified");
+
+          expect(material!.colorShader!.inputs["BASE_COLOR_Image"] != null).assertTrue();
+          console.info(msg + " BASE_COLOR_Image input verified");
+        }
+        else {
+          console.info(msg + " material && material!.colorShader == False");
+          expect(material && material!.colorShader).assertTrue();
+        }
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
