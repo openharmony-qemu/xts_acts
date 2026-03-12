@@ -208,7 +208,7 @@ export class KeyboardControllerStatic {
     let commonEventPublishData: commonEventManager.CommonEventPublishData = {
       data: 'FAILED'
     }
-    this.InputClient!getEditorAttribute((err, value) => {
+    this.InputClient!.getEditorAttribute((err, value) => {
       if (err){
         console.info(`${TAG} ====>receive inputMethodEngine_test_static_038 getEditorAttribute err: ${JSON.stringify(err)}`);
       } else {
