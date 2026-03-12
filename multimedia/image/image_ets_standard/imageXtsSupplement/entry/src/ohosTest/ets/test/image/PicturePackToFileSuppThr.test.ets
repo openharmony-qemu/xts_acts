@@ -53,6 +53,7 @@ let sleep = (ms: number = 66): Promise<string> => {
 
 export default function PicturePackToFileTestThrSupp() {
   describe('PicturePackToFileTestThrSupp', () => {
+    let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
     });
@@ -752,5 +753,351 @@ export default function PicturePackToFileTestThrSupp() {
         }
       })
     })
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_021
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_021
+     * @tc.desc       image.imageSource.packToFile,isEditable:true
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_021', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_021';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        const path: string = `${context.filesDir}/test_exif_v2.webp`;
+        image.createPixelMap(color, opts).then(async (pixelmap: image.PixelMap) => {
+          const packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 };
+          const file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+
+          imagePackerObj.packToFile(pixelmap, file.fd, packOpts, async (err: BusinessError) => {
+            try {
+              if (err) {
+                console.error(TAG, testName, `Failed to pack. code=${err.code}, msg=${err.message}`);
+                expect().assertFail();
+              } else {
+                console.info(TAG, testName, 'Packing succeeded. isEditable=', pixelmap.isEditable);
+                expect(pixelmap.isEditable).assertTrue();
+              }
+            } finally {
+              await pixelmap.release();
+              await imagePackerObj.release();
+              done();
+            }
+          });
+        });
+      } catch (err) {
+        console.error(TAG, testName, `Unexpected error: code=${err.code}, msg=${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_023
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_023
+     * @tc.desc       image.imageSource.packToFile,isEditable:false
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_023', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_023';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        const path: string = `${context.filesDir}/test_exif_v2.webp`;
+        image.createPixelMap(color, opts).then(async (pixelmap: image.PixelMap) => {
+          const packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 };
+          const file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+
+          imagePackerObj.packToFile(pixelmap, file.fd, packOpts, async (err: BusinessError) => {
+            try {
+              if (err) {
+                console.error(TAG, testName, `Failed to pack. code=${err.code}, msg=${err.message}`);
+                expect().assertFail();
+              } else {
+                console.info(TAG, testName, 'Packing succeeded. isEditable=', pixelmap.isEditable);
+                expect(pixelmap.isEditable).assertFalse();
+              }
+            } finally {
+              await pixelmap.release();
+              await imagePackerObj.release();
+              done();
+            }
+          });
+        });
+      } catch (err) {
+        console.error(TAG, testName, `Unexpected error: code=${err.code}, msg=${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_024
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_024
+     * @tc.desc       image.imageSource.packToFile,isEditable:false
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_024', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_024';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions =
+          { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        const path: string = context.filesDir + "/test_exif_v2.webp";
+        image.createPixelMap(color, opts).then(async (pixelmap: image.PixelMap) => {
+          let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
+          let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          await imagePackerObj.packToFile(pixelmap, file.fd, packOpts);
+          console.info(TAG, testName, 'Succeeded in packing the image to file.',pixelmap.isEditable);
+          expect(pixelmap.isEditable).assertFalse();
+          await imagePackerObj.release();
+          await pixelmap.release();
+        })
+        done();
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_026
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_026
+     * @tc.desc       image.imageSource.packToFile,isEditable:true
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_026', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_026';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions =
+          { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        const path: string = context.filesDir + "/test_exif_v2.webp";
+        image.createPixelMap(color, opts).then(async (pixelmap: image.PixelMap) => {
+          let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
+          let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          await imagePackerObj.packToFile(pixelmap, file.fd, packOpts);
+          console.info(TAG, testName, 'Succeeded in packing the image to file.',pixelmap.isEditable);
+          expect(pixelmap.isEditable).assertTrue();
+          await imagePackerObj.release();
+          await pixelmap.release();
+        })
+        done();
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_001
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_001
+     * @tc.desc       packing cover isEditable:true
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_001', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_001';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions =
+          { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
+          let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          imagePackerObj.packing(pixelMap, packOpts, async (err: BusinessError, data: ArrayBuffer) => {
+            if (err) {
+              console.error(TAG, testName, `Failed to pack the image.code ${err.code},message is ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
+              expect(pixelMap.isEditable).assertTrue();
+            }
+            await imagePackerObj.release();
+            await pixelMap.release();
+            done();
+          })
+        })
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_002
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_002
+     * @tc.desc       packing cover isEditable:false
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_002', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_002';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions =
+          { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
+          let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          imagePackerObj.packing(pixelMap, packOpts, async (err: BusinessError, data: ArrayBuffer) => {
+            if (err) {
+              console.error(TAG, testName, `Failed to pack the image.code ${err.code},message is ${err.message}`);
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
+              expect(pixelMap.isEditable).assertFalse();
+            }
+            await imagePackerObj.release();
+            await pixelMap.release();
+            done();
+          })
+        })
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_004
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_004
+     * @tc.desc       packing cover isEditable:true
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_004', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_004';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
+          let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          const packedData: ArrayBuffer = await imagePackerObj.packing(pixelMap, packOpts);
+          console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
+          expect(pixelMap.isEditable).assertTrue();
+          await imagePackerObj.release();
+          await pixelMap.release();
+          done();
+        })
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_005
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_005
+     * @tc.desc       packing cover isEditable:false
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_005', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_PACKING_PIXMAP_005';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
+        image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
+          let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          const packedData: ArrayBuffer = await imagePackerObj.packing(pixelMap, packOpts);
+          console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
+          expect(pixelMap.isEditable).assertFalse();
+          await imagePackerObj.release();
+          await pixelMap.release();
+          done();
+        })
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_packToData_PIXMAP_007
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_packToData_PIXMAP_007
+     * @tc.desc       packToData cover isEditable:true
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_packToData_PIXMAP_007', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_packToData_PIXMAP_007';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
+        image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
+          let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          const packedData: ArrayBuffer = await imagePackerObj.packToData(pixelMap, packOpts);
+          console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
+          expect(pixelMap.isEditable).assertTrue();
+          await imagePackerObj.release();
+          await pixelMap.release();
+          done();
+        })
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_packToData_PIXMAP_008
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_packToData_PIXMAP_008
+     * @tc.desc       packToData cover isEditable:false
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_packToData_PIXMAP_008', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_packToData_PIXMAP_008';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = { editable: false, pixelFormat: 3, size: { height: 4, width: 6 } }
+        image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
+          let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          const packedData: ArrayBuffer = await imagePackerObj.packToData(pixelMap, packOpts);
+          console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
+          expect(pixelMap.isEditable).assertFalse();
+          await imagePackerObj.release();
+          await pixelMap.release();
+          done();
+        })
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    })
+
+
   })
 }

@@ -685,5 +685,213 @@ export default function PicturePackingPictureTestSupp() {
       })
     })
 
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_017
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_017
+     * @tc.desc       packOpts.format cover []
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_017', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_017';
+      pictureCreatImageSource(done,testName ,'AllAuxiliaryPictures.jpg',(imageSource) => {
+        try {
+          let packOpts: image.PackingOption = {
+            format: "[]",
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            quality: 0
+          };
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          console.info(TAG, testName,'create imagePackerObj success.',imagePackerObj);
+          imagePackerObj.packing(imageSource, packOpts, (err: BusinessError, data: ArrayBuffer) => {
+            console.info(TAG, testName,' In imagePackerObj.packing callback ！！！.');
+            if (err) {
+              console.error(TAG, testName,`Failed to pack the image.code ${err.code},message is ${err.message}`);
+              expect(err.code).assertUndefined();
+            } else {
+              console.info(TAG, testName,'Succeeded in packing the image.',data);
+              expect().assertTrue();
+            }
+            imageSource.release();
+            imagePackerObj.release();
+            done();
+          })
+        }catch (err) {
+          console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+          expect().assertFail();
+        }
+      })
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_018
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_018
+     * @tc.desc       packOpts.format cover " "
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_018', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_018';
+      pictureCreatImageSource(done,testName ,'AllAuxiliaryPictures.jpg',(imageSource) => {
+        try {
+          let packOpts: image.PackingOption = {
+            format: " ",
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            quality: 0
+          };
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          console.info(TAG, testName,'create imagePackerObj success.',imagePackerObj);
+          imagePackerObj.packing(imageSource, packOpts, (err: BusinessError, data: ArrayBuffer) => {
+            console.info(TAG, testName,' In imagePackerObj.packing callback ！！！.');
+            if (err) {
+              console.error(TAG, testName,`Failed to pack the image.code ${err.code},message is ${err.message}`);
+              expect(err.code).assertUndefined();
+            } else {
+              console.info(TAG, testName,'Succeeded in packing the image.',data);
+              expect().assertTrue();
+            }
+            imageSource.release();
+            imagePackerObj.release();
+            done();
+          })
+        }catch (err) {
+          console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+          expect().assertFail();
+        }
+      })
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_019
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_019
+     * @tc.desc       packOpts.format cover "[image/jpeg]"
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_019', Level.LEVEL0, (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_019';
+      pictureCreatImageSource(done,testName ,'AllAuxiliaryPictures.jpg',(imageSource) => {
+        try {
+          let packOpts: image.PackingOption = {
+            format: "[image/jpeg]",
+            desiredDynamicRange: image.PackingDynamicRange.AUTO,
+            quality: 0
+          };
+          const imagePackerObj: image.ImagePacker = image.createImagePacker();
+          console.info(TAG, testName,'create imagePackerObj success.',imagePackerObj);
+          imagePackerObj.packing(imageSource, packOpts, (err: BusinessError, data: ArrayBuffer) => {
+            console.info(TAG, testName,' In imagePackerObj.packing callback ！！！.');
+            if (err) {
+              console.error(TAG, testName,`Failed to pack the image.code ${err.code},message is ${err.message}`);
+              expect(err.code).assertUndefined();
+            } else {
+              console.info(TAG, testName,'Succeeded in packing the image.',data);
+              expect().assertTrue();
+            }
+            imageSource.release();
+            imagePackerObj.release();
+            done();
+          })
+        }catch (err) {
+          console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+          expect().assertFail();
+        }
+      })
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_020
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_020
+     * @tc.desc       packOpts.format cover "[]"
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_020', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_020';
+      pictureCreatImageSource(done, testName, 'AllAuxiliaryPictures.jpg', async (imageSource) => {
+        let imagePackerObj: image.ImagePacker | null = null;
+        try {
+          imagePackerObj = image.createImagePacker();
+          console.info(TAG, testName, 'create imagePackerObj success.', imagePackerObj);
+          const packOpts: image.PackingOption = { format: "[]", quality: 98 };
+          const data: ArrayBuffer = await imagePackerObj.packing(imageSource, packOpts);
+          console.error(TAG, testName, 'Expected to fail but succeeded', data);
+          expect().assertFail();
+        } catch (err) {
+          console.info(TAG, testName, `Caught expected error: ${err.code}, ${err.message}`);
+          expect(err.code).assertUndefined();
+        } finally {
+          imageSource.release();
+          imagePackerObj?.release();
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_021
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_021
+     * @tc.desc       packOpts.format cover " "
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_021', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_021';
+      pictureCreatImageSource(done, testName, 'AllAuxiliaryPictures.jpg', async (imageSource) => {
+        let imagePackerObj: image.ImagePacker | null = null;
+        try {
+          imagePackerObj = image.createImagePacker();
+          console.info(TAG, testName, 'create imagePackerObj success.', imagePackerObj);
+          const packOpts: image.PackingOption = { format: " ", quality: 98 };
+          const data: ArrayBuffer = await imagePackerObj.packing(imageSource, packOpts);
+          console.error(TAG, testName, 'Expected to fail but succeeded', data);
+          expect().assertFail();
+        } catch (err) {
+          console.info(TAG, testName, `Caught expected error: ${err.code}, ${err.message}`);
+          expect(err.code).assertUndefined();
+        } finally {
+          imageSource.release();
+          imagePackerObj?.release();
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.number     SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_022
+     * @tc.name       SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_022
+     * @tc.desc       packOpts.format cover "[image/jpeg]"
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_022', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_022';
+      pictureCreatImageSource(done, testName, 'AllAuxiliaryPictures.jpg', async (imageSource) => {
+        let imagePackerObj: image.ImagePacker | null = null;
+        try {
+          imagePackerObj = image.createImagePacker();
+          console.info(TAG, testName, 'create imagePackerObj success.', imagePackerObj);
+          const packOpts: image.PackingOption = { format: "[image/jpeg]", quality: 98 };
+          const data: ArrayBuffer = await imagePackerObj.packing(imageSource, packOpts);
+          console.error(TAG, testName, 'Expected to fail but succeeded', data);
+          expect().assertFail();
+        } catch (err) {
+          console.info(TAG, testName, `Caught expected error: ${err.code}, ${err.message}`);
+          expect(err.code).assertUndefined();
+        } finally {
+          imageSource.release();
+          imagePackerObj?.release();
+          done();
+        }
+      })
+    })
+
+
   })
 }

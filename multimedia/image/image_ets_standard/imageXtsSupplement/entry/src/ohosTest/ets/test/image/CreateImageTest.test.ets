@@ -165,7 +165,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.UNKNOWN,
+          sourcePixelFormat: image.PixelMapFormat.UNKNOWN,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -191,7 +191,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.UNKNOWN,
+          sourcePixelFormat: image.PixelMapFormat.UNKNOWN,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -217,7 +217,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.UNKNOWN,
+          sourcePixelFormat: image.PixelMapFormat.UNKNOWN,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -243,7 +243,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.UNKNOWN,
+          sourcePixelFormat: image.PixelMapFormat.YCBCR_P010,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -269,7 +269,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.RGBA_8888,
+          sourcePixelFormat: image.PixelMapFormat.RGBA_8888,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -295,7 +295,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.NV21,
+          sourcePixelFormat: image.PixelMapFormat.NV21,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -321,7 +321,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.RGBA_1010102,
+          sourcePixelFormat: image.PixelMapFormat.RGBA_1010102,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -347,7 +347,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.YCBCR_P010,
+          sourcePixelFormat: image.PixelMapFormat.YCBCR_P010,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -373,7 +373,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.YCRCB_P010,
+          sourcePixelFormat: image.PixelMapFormat.YCRCB_P010,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
@@ -651,7 +651,7 @@ export default function CrateImageSupp() {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.UNKNOWN,
+          sourcePixelFormat: image.PixelMapFormat.UNKNOWN,
           sourceSize: { height: 4, width: 6 },
         };
         const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
@@ -681,7 +681,7 @@ export default function CrateImageSupp() {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.RGBA_8888,
+          sourcePixelFormat: image.PixelMapFormat.RGBA_8888,
           sourceSize: { height: 4, width: 6 },
         };
         const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
@@ -711,7 +711,7 @@ export default function CrateImageSupp() {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.NV21,
+          sourcePixelFormat: image.PixelMapFormat.NV21,
           sourceSize: { height: 4, width: 6 },
         };
         const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
@@ -741,7 +741,7 @@ export default function CrateImageSupp() {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.RGBA_1010102,
+          sourcePixelFormat: image.PixelMapFormat.RGBA_1010102,
           sourceSize: { height: 4, width: 6 },
         };
         const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
@@ -771,7 +771,7 @@ export default function CrateImageSupp() {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.YCBCR_P010,
+          sourcePixelFormat: image.PixelMapFormat.YCBCR_P010,
           sourceSize: { height: 4, width: 6 },
         };
         const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
@@ -801,7 +801,7 @@ export default function CrateImageSupp() {
         let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: PixelMapFormat.YCRCB_P010,
+          sourcePixelFormat: image.PixelMapFormat.YCRCB_P010,
           sourceSize: { height: 4, width: 6 },
         };
         const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
@@ -1496,6 +1496,95 @@ export default function CrateImageSupp() {
       }
       done();
     });
+    /**
+     * @tc.number     SUB_MEDIA_CREATE_IMAGE_SOURCE_TEST_058
+     * @tc.name       SUB_MEDIA_CREATE_IMAGE_SOURCE_TEST_058
+     * @tc.desc       createImageSource cover supportedFormats
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_CREATE_IMAGE_SOURCE_TEST_058', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_CREATE_IMAGE_SOURCE_TEST_058';
+      try {
+        const data: ArrayBuffer = new ArrayBuffer(112);
+        let sourceOptions: image.SourceOptions = {
+          sourceDensity: 120,
+          sourcePixelFormat: image.PixelMapFormat.UNKNOWN,
+          sourceSize: { height: 4, width: 6 },
+        };
+        const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
+        console.info(TAG, testName, 'succeed', JSON.stringify(imageSourceObj.supportedFormats));
+        expect(imageSourceObj.supportedFormats != null).assertTrue();
+      } catch (error) {
+        console.error(TAG, testName, `Failed to create ImageSource.code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_queueImage_TEST_001
+     * @tc.name       SUB_MEDIA_IMAGE_queueImage_TEST_001
+     * @tc.desc       queueImage cover null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_queueImage_TEST_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_queueImage_TEST_001';
+      let creator: image.ImageCreator | null = null;
+      try {
+        const size: image.Size = { height: 8192, width: 8192 };
+        creator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
+        creator?.queueImage(null, (err: BusinessError) => {
+          if (err) {
+            console.error(TAG, testName, `Failed to queue the Image.code ${err.code},message is ${err.message}`);
+            expect().assertFail();
+          } else {
+            console.info(TAG, testName, 'Succeeded in queuing the Image.');
+            expect().assertTrue();
+          }
+        })
+      } catch (error) {
+        console.error(TAG, testName, `Failed to create ImageSource.code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('1');
+      } finally {
+        await creator?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_queueImage_TEST_002
+     * @tc.name       SUB_MEDIA_IMAGE_queueImage_TEST_002
+     * @tc.desc       queueImage cover undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_queueImage_TEST_002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_queueImage_TEST_002';
+      let creator: image.ImageCreator | null = null;
+      try {
+        const size: image.Size = { height: 8192, width: 8192 };
+        creator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
+        creator?.queueImage(undefined, (err: BusinessError) => {
+          if (err) {
+            console.error(TAG, testName, `Failed to queue the Image.code ${err.code},message is ${err.message}`);
+            expect().assertFail();
+          } else {
+            console.info(TAG, testName, 'Succeeded in queuing the Image.');
+            expect().assertTrue();
+          }
+        })
+      } catch (error) {
+        console.error(TAG, testName, `Failed to create ImageSource.code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('1');
+      } finally {
+        await creator?.release();
+        done();
+      }
+    })
+
 
   })
 }

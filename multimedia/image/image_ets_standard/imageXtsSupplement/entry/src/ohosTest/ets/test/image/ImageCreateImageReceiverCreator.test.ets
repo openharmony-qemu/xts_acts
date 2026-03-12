@@ -203,6 +203,83 @@ export default function ImageCreateImageReceiverCreator() {
     })
 
     /**
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_008
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_008
+     * @tc.desc   Test createImageReceiver with capacity:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_008';
+      let size: image.Size = {
+        height: 8192,
+        width: 8192
+      }
+      const ImageFormat: image.ImageFormat = image.ImageFormat.JPEG;
+      try{
+        let receiver: image.ImageReceiver = image.createImageReceiver(size,ImageFormat, null);
+        console.info(TAG, testName,`receiver success`, receiver);
+        expect().assertFail();
+      }catch (error) {
+        console.error(TAG, testName,`failed; error: ${error},${error.code}`, testName);
+        expect(error.code).assertEqual('401');
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_009
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_009
+     * @tc.desc   Test createImageReceiver with capacity:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_009';
+      let size: image.Size = {
+        height: 8192,
+        width: 8192
+      }
+      const ImageFormat: image.ImageFormat = image.ImageFormat.JPEG;
+      try{
+        let receiver: image.ImageReceiver = image.createImageReceiver(size,ImageFormat, undefined);
+        console.info(TAG, testName,`receiver success`, receiver);
+        expect().assertFail();
+      }catch (error) {
+        console.error(TAG, testName,`failed; error: ${error},${error.code}`, testName);
+        expect(error.code).assertEqual('401');
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_010
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_010
+     * @tc.desc   Test createImageReceiver return size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_010';
+      let size: image.Size = {
+        height: 8192,
+        width: 8192
+      }
+      try{
+        let receiver: image.ImageReceiver = image.createImageReceiver(size,image.ImageFormat.JPEG, 8);
+        console.info(TAG, testName,`receiver success`, JSON.stringify(receiver.size));
+        expect(receiver.size.height).assertEqual(8192);
+        expect(receiver.size.width).assertEqual(8192);
+      }catch (error) {
+        console.error(TAG, testName,`failed; error: ${error},${error.code}`, testName);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
      * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_001
      * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_001
      * @tc.desc   Test createImageCreator with size ''
@@ -362,8 +439,6 @@ export default function ImageCreateImageReceiverCreator() {
       }
       done();
     })
-
-
 
 
   })
