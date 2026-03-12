@@ -48,10 +48,10 @@
       {
         "description": "NewEventDemo",
         "icon": "$media:startIcon",
-        "name": "InputMethodControlService",
+        "name": "InputMethodService",
         "srcEntry": "./src/InputMethodEngineStatic/InputMethodService.ets",
         "type": "inputMethod",
-        "visible": true
+        "exported": true
       }
     ],
     "requestPermissions": [
