@@ -1300,7 +1300,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0006', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       console.log(`${TagFrmwk}: Callback : isActive VOICE_CALL: NOTE: audio NOT PLAYING as VOICE_CALL for the test case to PASS`);
       streamManager.isActive(audio.AudioVolumeType.VOICE_CALL, (err, data) => {
         if (err) {
@@ -1324,7 +1324,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0007', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       console.log(`${TagFrmwk}: Callback : isActive RINGTONE: NOTE: audio NOT PLAYING as RINGTONE for the test case to PASS`);
       streamManager.isActive(audio.AudioVolumeType.RINGTONE, (err, data) => {
         if (err) {
@@ -1348,7 +1348,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0008', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       console.log(`${TagFrmwk}: Callback : isActive ALARM: NOTE: audio NOT PLAYING as ALARM for the test case to PASS`);
       streamManager.isActive(audio.AudioVolumeType.ALARM, (err, data) => {
         if (err) {
@@ -1372,7 +1372,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0009', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       console.log(`${TagFrmwk}: Callback : isActive ACCESSIBILITY: NOTE: audio NOT PLAYING as ACCESSIBILITY for the test case to PASS`);
       streamManager.isActive(audio.AudioVolumeType.ACCESSIBILITY, (err, data) => {
         if (err) {
@@ -1396,7 +1396,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0010', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       console.log(`${TagFrmwk}: Callback : isActive VOICE_ASSISTANT: NOTE: audio NOT PLAYING as VOICE_ASSISTANT for the test case to PASS`);
       streamManager.isActive(audio.AudioVolumeType.VOICE_ASSISTANT, (err, data) => {
         if (err) {
@@ -1421,7 +1421,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0200', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       console.log(`${TagFrmwk}: Callback : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
       streamManager.isActive(audioMedia, (err, data) => {
         if (err) {
@@ -1445,7 +1445,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_0100', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       console.log(`${TagFrmwk}: Callback : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
       try {
         let data = streamManager.isActiveSync(audioMedia)
@@ -1471,7 +1471,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_0200', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       try {
         let data = streamManager.isActiveSync(volConnectType);
         console.log(`${TagFrmwk}: isActiveSync data::${data}`);
@@ -1491,7 +1491,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_0300', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       try {
         let data = streamManager.isActiveSync(123);
         console.log(`${TagFrmwk}: isActiveSync data::${data}`);
@@ -1512,7 +1512,7 @@ export default function audioManagerApi9() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_0400', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       try {
         let data = streamManager.isActiveSync(strParams);
         console.log(`${TagFrmwk}: isActiveSync data::${data}`);
