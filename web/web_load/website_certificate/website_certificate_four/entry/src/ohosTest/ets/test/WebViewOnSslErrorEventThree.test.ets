@@ -94,6 +94,7 @@ export default function webViewOnSslErrorEventThree() {
     it('testOnSslErrorEventHandleConfirm', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnSslErrorEventHandleConfirm", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
+      expect(isReturn).toBe(0);
       Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", 'https://expired.badssl.com/', 26031021, ()=>{
         isReturn += 1;
       }, (backData: events_emitter.EventData, expected: Object) => {
@@ -126,7 +127,7 @@ export default function webViewOnSslErrorEventThree() {
       });
       sendEventByKey('OnSslErrorEventThreeButton', 10, '');
       if (await Utils.waitForExist(() => isReturn, 'testOnSslErrorEventHandleConfirm' + '_returnCheck', 6, 1000)) {
-        expect(isReturn).assertEqual(6);
+        expect(isReturn).toBe(6);
         done();
       }
     })

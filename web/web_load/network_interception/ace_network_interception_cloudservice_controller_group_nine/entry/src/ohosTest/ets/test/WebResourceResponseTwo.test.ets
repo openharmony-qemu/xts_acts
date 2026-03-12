@@ -70,6 +70,7 @@ export default function webResourceResponseTwo() {
     it('testOnInterceptRequestCallback01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnInterceptRequestCallback01', 12788);
       let isReturn = 0;
+      expect(isReturn).toBe(0);
       Utils.registerBaseEvent("testOnInterceptRequestCallback01", 'https://www.example.com/', 26031051, ()=>{
         isReturn += 1;
       }, (backData: events_emitter.EventData, expected: Object) => {
@@ -107,7 +108,7 @@ export default function webResourceResponseTwo() {
       });
       sendEventByKey('OnInterceptRequestButton', 10, '');
       if (await waitForExist(() => isReturn, 'testOnInterceptRequestCallback01' + '_returnCheck', 7, 1000)) {
-        expect(isReturn).assertEqual(7);
+        expect(isReturn).toBe(7);
         done();
       }
     })
@@ -122,6 +123,7 @@ export default function webResourceResponseTwo() {
     it('testOnInterceptRequestCallback02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitOnInterceptRequestCallback02', 12788);
       let isReturn = 0;
+      expect(isReturn).toBe(0);
       Utils.registerBaseEvent("testOnInterceptRequestCallback02", true, 26031058, ()=>{
         isReturn += 1;
       }, (backData: events_emitter.EventData, expected: Object) => {
@@ -159,7 +161,7 @@ export default function webResourceResponseTwo() {
       });
       sendEventByKey('OnInterceptRequestButton', 10, '');
       if (await waitForExist(() => isReturn, 'testOnInterceptRequestCallback01' + '_returnCheck', 7, 1000)) {
-        expect(isReturn).assertEqual(7);
+        expect(isReturn).toBe(7);
         done();
       }
     })

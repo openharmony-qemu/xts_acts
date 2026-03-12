@@ -69,6 +69,7 @@ export default function webViewOnOverrideUrlLoading() {
     it('testWebViewwebViewOnOverrideUrlLoadingGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewOnOverrideUrlLoading", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
+      expect(isReturn).toBe(0);
       Utils.registerBaseEvent("testWebViewwebViewOnOverrideUrlLoadingGroup", 'https://www.example.com/', 26031028, ()=>{
         isReturn += 1;
       }, (backData: events_emitter.EventData, expected: Object) => {
@@ -106,7 +107,7 @@ export default function webViewOnOverrideUrlLoading() {
       });
       sendEventByKey('webViewOnOverrideUrlLoading', 10, '');
       if (await Utils.waitForExist(() => isReturn, 'testWebViewwebViewOnOverrideUrlLoadingGroup' + '_returnCheck', 7, 1000)) {
-        expect(isReturn).assertEqual(7);
+        expect(isReturn).toBe(7);
         done();
       }
     })
