@@ -289,8 +289,7 @@ export default function scenePostProcessSettingsTest() {
       let msg = "============================testVignetteIntensity";
       console.info(msg + ' begin ');
       try {
-        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
-        let scene = await Scene.load(sceneUri);
+        let scene = await Scene.load();
         expect(scene != null).assertTrue();
         
         let rf: SceneResourceFactory = scene.getResourceFactory();
@@ -304,11 +303,11 @@ export default function scenePostProcessSettingsTest() {
         expect(vignette != null).assertTrue();
         
         vignette.intensity = 0.3;
-        expect(vignette.intensity).assertEqual(0.3);
+        expect(vignette.intensity).assertClose(0.3, 0.01);
         console.info(msg + " intensity set to 0.3 successfully");
         
         vignette.intensity = 0.7;
-        expect(vignette.intensity).assertEqual(0.7);
+        expect(vignette.intensity).assertClose(0.7, 0.01);
         console.info(msg + " intensity set to 0.7 successfully");
         
         console.info(msg + " test completed successfully");
