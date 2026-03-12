@@ -55,6 +55,7 @@ import MediaQueryMatchMediaNullUndefinedTest from './CommonCustom/MediaQueryMatc
 import MediaQueryMatchMediaSyncNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaSyncNullUndefinedTest.test';
 import pixelRoundNullUndefinedTest from './CommonCustom/pixelRoundNullUndefinedTest.test';
 import getContext2DFromDrawingContextNullUndefinedTest from './CommonCustom/getContext2DFromDrawingContextNullUndefinedTest.test';
+import CommonApiNullUndefinedTest from './CommonCustom/CommonApiNullUndefinedTest.test';
 
 export default function testsuite() {
   Calc01();
@@ -99,4 +100,5 @@ export default function testsuite() {
   MediaQueryMatchMediaSyncNullUndefinedTest();
   pixelRoundNullUndefinedTest();
   getContext2DFromDrawingContextNullUndefinedTest();
+  CommonApiNullUndefinedTest();
 }
