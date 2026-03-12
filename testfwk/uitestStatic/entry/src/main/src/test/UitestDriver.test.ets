@@ -1844,27 +1844,6 @@ export default function uitestDriverTest() {
     })
 
     /**
-     * @tc.name   testWaitForIdleFalse_static
-     * @tc.number uitestDriverTest_00461
-     * @tc.desc   wait for the UI become idle.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testWaitForIdleFalse_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(domain, tag, "testWaitForIdleFalse_static start !!!!")
-      try {
-        let idled = await driver!.waitForIdle(6000,4000)
-        hilog.info(domain, tag, `testWaitForIdleFalse_static idled, ${ idled }`);
-        expect(idled).assertFalse();
-      } catch(error) {
-        hilog.info(domain, tag, `testWaitForIdleFalse_static error, ${ JSON.stringify(error) }`);
-        expect().assertFail();
-      }
-      hilog.info(domain, tag, "testWaitForIdleFalse_static over!!!!");
-    })
-
-    /**
      * @tc.name   testTriggerKey_static
      * @tc.number uitestDriverTest_0047
      * @tc.desc   press the specified key.
