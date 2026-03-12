@@ -24,7 +24,7 @@ import { waitForExist } from '../../test/WaitTest.test';
 struct webMessageExtSetArrayBufferErrorCode {
   controller: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
-  @State str: string = ""
+  @State str: string = ''
   @State isReceive: number = -1;
 
   onPageShow() {
@@ -40,9 +40,9 @@ struct webMessageExtSetArrayBufferErrorCode {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
@@ -53,17 +53,17 @@ struct webMessageExtSetArrayBufferErrorCode {
   build() {
     Column() {
       Row() {
-        Button("WebMessageExt setArrayBuffer error code test").key('webMessageExtSetArrayBufferErrorCodeButton').onClick(async () => {
+        Button('WebMessageExt setArrayBuffer error code test').key('webMessageExtSetArrayBufferErrorCodeButton').onClick(async () => {
           await waitForExist(()=>this.isReceive, this.str, 0);
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           this.isReceive = -1
           switch (this.str) {
 
-            case "emitSetArrayBufferErrorCodeNull001": {
+            case 'emitSetArrayBufferErrorCodeNull001': {
               try {
-                console.info("test setArrayBuffer with null");
+                console.info('test setArrayBuffer with null');
                 this.message.setArrayBuffer(null);
-                Utils.emitEvent("success", 172110)
+                Utils.emitEvent('success', 172110)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -72,11 +72,11 @@ struct webMessageExtSetArrayBufferErrorCode {
               break;
             }
 
-            case "emitSetArrayBufferErrorCodeUndefined001": {
+            case 'emitSetArrayBufferErrorCodeUndefined001': {
               try {
-                console.info("test setArrayBuffer with undefined");
+                console.info('test setArrayBuffer with undefined');
                 this.message.setArrayBuffer(undefined);
-                Utils.emitEvent("success", 172120)
+                Utils.emitEvent('success', 172120)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -86,7 +86,7 @@ struct webMessageExtSetArrayBufferErrorCode {
             }
 
             default: {
-              console.info("unknown case: " + this.str);
+              console.info('unknown case: ' + this.str);
               break;
             }
           }

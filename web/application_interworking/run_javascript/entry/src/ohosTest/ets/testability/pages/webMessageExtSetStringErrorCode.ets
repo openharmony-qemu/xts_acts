@@ -24,7 +24,7 @@ import { waitForExist } from '../../test/WaitTest.test';
 struct webMessageExtSetStringErrorCode {
   controller: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
-  @State str: string = ""
+  @State str: string = ''
   @State isReceive: number = -1;
 
   onPageShow() {
@@ -40,9 +40,9 @@ struct webMessageExtSetStringErrorCode {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 0;
@@ -53,17 +53,17 @@ struct webMessageExtSetStringErrorCode {
   build() {
     Column() {
       Row() {
-        Button("WebMessageExt setString error code test").key('webMessageExtSetStringErrorCodeButton').onClick(async () => {
+        Button('WebMessageExt setString error code test').key('webMessageExtSetStringErrorCodeButton').onClick(async () => {
           await waitForExist(()=>this.isReceive, this.str, 0);
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           this.isReceive = -1;
           switch (this.str) {
 
-            case "emitSetStringErrorCodeEmptyString001": {
+            case 'emitSetStringErrorCodeEmptyString001': {
               try {
-                console.info("test setString with empty string");
-                this.message.setString("");
-                Utils.emitEvent("success", 172010)
+                console.info('test setString with empty string');
+                this.message.setString('');
+                Utils.emitEvent('success', 172010)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -72,11 +72,11 @@ struct webMessageExtSetStringErrorCode {
               break;
             }
 
-            case "emitSetStringErrorCodeNull001": {
+            case 'emitSetStringErrorCodeNull001': {
               try {
-                console.info("test setString with null");
+                console.info('test setString with null');
                 this.message.setString(null);
-                Utils.emitEvent("success", 172020)
+                Utils.emitEvent('success', 172020)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -85,11 +85,11 @@ struct webMessageExtSetStringErrorCode {
               break;
             }
 
-            case "emitSetStringErrorCodeUndefined001": {
+            case 'emitSetStringErrorCodeUndefined001': {
               try {
-                console.info("test setString with undefined");
+                console.info('test setString with undefined');
                 this.message.setString(undefined);
-                Utils.emitEvent("success", 172030)
+                Utils.emitEvent('success', 172030)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -99,7 +99,7 @@ struct webMessageExtSetStringErrorCode {
             }
 
             default: {
-              console.info("unknown case: " + this.str);
+              console.info('unknown case: ' + this.str);
               break;
             }
           }
