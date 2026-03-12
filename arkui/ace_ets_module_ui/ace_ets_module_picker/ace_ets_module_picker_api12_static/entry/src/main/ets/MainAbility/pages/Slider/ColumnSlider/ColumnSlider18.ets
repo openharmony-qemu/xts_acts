@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox, Position,XComponent,
-  Slider, XComponentParameters, SliderConfiguration,SurfaceRect,XComponentParameters,XComponentController,XComponentType,Slider,
+  Slider, XComponentParameters, SliderConfiguration,SurfaceRect,XComponentParameters,
+  XComponentController,XComponentType,Slider,
   ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign,RatingConfiguration,
   SliderChangeMode,WrappedBuilder,CustomBuilderT,wrapBuilder,ContentModifier
 } from '@ohos.arkui.component'

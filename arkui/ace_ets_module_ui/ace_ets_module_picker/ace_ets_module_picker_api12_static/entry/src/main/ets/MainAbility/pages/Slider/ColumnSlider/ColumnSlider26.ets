@@ -51,7 +51,6 @@ import { State } from '@ohos.arkui.stateManagement';
         .visibility((config.contentModifier as MySliderStyle26).showSlider?Visibility.Visible:Visibility.Hidden)
         .showSteps(true)
         .onChange((value: number, mode: SliderChangeMode) => {
-          // config.triggerChange(undefined, undefined)
         })
       Text('当前状态：'+ ((config.contentModifier as MySliderStyle26).sliderChangeMode==0?'Begin'
         :((config.contentModifier as MySliderStyle26).sliderChangeMode==1?'Moving'
