@@ -177,6 +177,12 @@ intptr_t g_externals[] = {
         return nullptr;
     }
 
+    status = OH_JSVM_DestroyVM(vm);
+    if (status != JSVM_OK) {
+        OH_JSVM_ThrowError(env, nullptr, "TestDestroyVMTest2: OH_JSVM_DestroyVM Failed");
+        return nullptr;
+    }
+
     bool result = true;
     JSVM_Value value = nullptr;
     OH_JSVM_GetBoolean(env, result, &value);
