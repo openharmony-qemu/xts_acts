@@ -1513,7 +1513,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_2900', 2, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       audioManager.setVolume(audio.AudioVolumeType.VOICE_CALL, highVol, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: failed to set volume: Callback: ENAME :  ${err.message}`);
@@ -1545,7 +1545,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3000', 2, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       audioManager.setVolume(audio.AudioVolumeType.ALARM, highVol, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: failed to set volume: Callback: ENAME :  ${err.message}`);
@@ -1577,7 +1577,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3100', 2, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       audioManager.setVolume(audio.AudioVolumeType.ACCESSIBILITY, highVol, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: failed to set volume: Callback: ENAME :  ${err.message}`);
@@ -1609,7 +1609,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3200', 2, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       audioManager.setVolume(audio.AudioVolumeType.VOICE_ASSISTANT, highVol, (err) => {
         if (err) {
           console.error(`${TagFrmwk}: failed to set volume: Callback: ENAME :  ${err.message}`);
@@ -1663,7 +1663,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0200', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       audioManager.getMaxVolume(audioMedia, (err, value) => {
         console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : value:${value}`);
         if (err) {
@@ -7951,17 +7951,17 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200
-     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0002
      * @tc.desc   isStreamActive STREAM_USAGE_UNKNOWN test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
         let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
-        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200 Status: ${ret}`);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0002 Status: ${ret}`);
         expect(ret).assertEqual(false);
       } catch (err) {
         let error = err as BusinessError;
@@ -10250,14 +10250,14 @@ export default function audioFramework() {
     });
 
     /**
-     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1359
-     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1359
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1418
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1418
      * @tc.desc   getSystemVolumeInDbSync with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1359', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1418', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.REMOTE_CAST);
         console.info(`${TagFrmwk}: FAIL`);
@@ -10270,14 +10270,14 @@ export default function audioFramework() {
     });
 
     /**
-     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1360
-     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1360
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1419
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1419
      * @tc.desc   getSystemVolumeInDbSync with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1419', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.BLUETOOTH_A2DP);
         console.info(`${TagFrmwk}: FAIL`);
@@ -12343,14 +12343,14 @@ export default function audioFramework() {
     })
 
     /**
-    * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100
-    * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100
+    * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0001
+    * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0001
     * @tc.desc   getVolume with ALARM test.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       audioVolumeGroupManager.getVolume(audio.AudioVolumeType.ALARM, (err, value) => {
         if (err) {
           console.info(`${TagFrmwk}: getVolume with ALARM: FAIL :${err.message}`);
@@ -12364,14 +12364,14 @@ export default function audioFramework() {
     })
 
     /**
-    * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100
-    * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100
+    * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0001
+    * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0001
     * @tc.desc   getVolume with ACCESSIBILITY test.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       audioVolumeGroupManager.getVolume(audio.AudioVolumeType.ACCESSIBILITY, (err, value) => {
         if (err) {
           console.info(`${TagFrmwk}: getVolume with ACCESSIBILITY: FAIL :${err.message}`);
@@ -12496,14 +12496,14 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0100
-     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0100
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0001
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0001
      * @tc.desc   getVolume with RINGTONE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         let value = audioVolumeGroupManager.getVolume(audio.AudioVolumeType.RINGTONE);
         console.info(`${TagFrmwk}: getVolume with RINGTONE: PASS`);
