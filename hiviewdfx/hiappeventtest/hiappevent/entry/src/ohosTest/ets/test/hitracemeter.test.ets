@@ -56,7 +56,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0001_start finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0001_start end");
@@ -77,7 +77,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0001_finish finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0001_finish end");
@@ -99,7 +99,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0001_start_null finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0001_start_null end");
@@ -121,7 +121,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0001_finish_null finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0001_finish_null end");
@@ -143,7 +143,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0001_start_undefined finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0001_start_undefined end");
@@ -164,7 +164,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0001_finish_undefined finishTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0001_finish_undefined end");
@@ -185,7 +185,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0002 traceByValue undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0002 end");
@@ -206,7 +206,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0002_null traceByValue undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0002_null end");
@@ -227,7 +227,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0002_undefined traceByValue undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0002_undefined end");
@@ -259,7 +259,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0003 finishAsyncTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0003 end");
@@ -295,7 +295,7 @@ export default function HitraceMeterTest() {
         done();
       }catch(err){
         console.error(`====>testHitraceMeter_0004 finishSyncTrace undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testHitraceMeter_0004 end");

@@ -21,7 +21,7 @@ import fs from '@ohos.file.fs';
 export default function HidebugTest() {
   describe('HidebugTest', () => {
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0001
      * @tc.number HidebugTest_0001
      * @tc.desc   startProfiling函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
@@ -44,7 +44,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0001 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0016
      * @tc.number HidebugTest_0016
      * @tc.desc   startProfiling函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
@@ -67,7 +67,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0016 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0017
      * @tc.number HidebugTest_0017
      * @tc.desc   startProfiling函数的异常值覆盖,空值覆盖
      * @tc.type   FUNCTION
@@ -90,7 +90,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0017 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0002
      * @tc.number HidebugTest_0002
      * @tc.desc   dumpHeapData函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
@@ -111,7 +111,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0002 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0018
      * @tc.number HidebugTest_0018
      * @tc.desc   dumpHeapData函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
@@ -132,7 +132,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0018 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0019
      * @tc.number HidebugTest_0019
      * @tc.desc   dumpHeapData函数的异常值覆盖,空值覆盖
      * @tc.type   FUNCTION
@@ -153,7 +153,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0019 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0003
      * @tc.number HidebugTest_0003
      * @tc.desc   startJsCpuProfiling函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
@@ -176,7 +176,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0003 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0020
      * @tc.number HidebugTest_0020
      * @tc.desc   startJsCpuProfiling函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
@@ -199,7 +199,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0020 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0021
      * @tc.number HidebugTest_0021
      * @tc.desc   startJsCpuProfiling函数的异常值覆盖,空值覆盖
      * @tc.type   FUNCTION
@@ -222,7 +222,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0021 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0004
      * @tc.number HidebugTest_0004
      * @tc.desc   dumpJsHeapData函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
@@ -243,7 +243,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0004 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0022
      * @tc.number HidebugTest_0022
      * @tc.desc   dumpJsHeapData函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
@@ -264,7 +264,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0022 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0023
      * @tc.number HidebugTest_0023
      * @tc.desc   dumpJsHeapData函数的异常值覆盖,""//null/undefined覆盖
      * @tc.type   FUNCTION
@@ -285,7 +285,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0023 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0014
      * @tc.number HidebugTest_0014
      * @tc.desc   getServiceDump函数的异常值覆盖,第1个参数的undefined覆盖
      * @tc.type   FUNCTION
@@ -309,7 +309,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0014 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0014
      * @tc.number HidebugTest_0014
      * @tc.desc   getServiceDump函数的异常值覆盖,第1个参数的undefined覆盖
      * @tc.type   FUNCTION
@@ -333,7 +333,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0024 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0005
      * @tc.number HidebugTest_0005
      * @tc.desc   getServiceDump函数的异常值覆盖,第2个参数的null覆盖
      * @tc.type   FUNCTION
@@ -356,7 +356,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0005 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0025
      * @tc.number HidebugTest_0025
      * @tc.desc   getServiceDump函数的异常值覆盖,第2个参数的undefined覆盖
      * @tc.type   FUNCTION
@@ -379,7 +379,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0025 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0015
      * @tc.number HidebugTest_0015
      * @tc.desc   getServiceDump函数的异常值覆盖,第3个参数的null
      * @tc.type   FUNCTION
@@ -403,7 +403,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0015 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0026
      * @tc.number HidebugTest_0026
      * @tc.desc   getServiceDump函数的异常值覆盖,第3个参数的undefined
      * @tc.type   FUNCTION
@@ -427,7 +427,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0026 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0027
      * @tc.number HidebugTest_0027
      * @tc.desc   getServiceDump函数的异常值覆盖,第3个参数的空值覆盖
      * @tc.type   FUNCTION
@@ -452,7 +452,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0027 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0006
      * @tc.number HidebugTest_0006
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第一个参数的undefined覆盖
      * @tc.type   FUNCTION
@@ -475,7 +475,7 @@ export default function HidebugTest() {
       }
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0028
      * @tc.number HidebugTest_0028
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第一个参数的null覆盖
      * @tc.type   FUNCTION
@@ -498,7 +498,7 @@ export default function HidebugTest() {
       }
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0029
      * @tc.number HidebugTest_0029
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第一个参数的空值覆盖
      * @tc.type   FUNCTION
@@ -522,7 +522,7 @@ export default function HidebugTest() {
       }
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0007
      * @tc.number HidebugTest_0007
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第3个参数的undefined覆盖
      * @tc.type   FUNCTION
@@ -545,7 +545,7 @@ export default function HidebugTest() {
       }
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0030
      * @tc.number HidebugTest_0030
      * @tc.desc   startAppTraceCapture函数的异常值覆盖,第3个参数的null覆盖
      * @tc.type   FUNCTION
@@ -568,7 +568,7 @@ export default function HidebugTest() {
       }
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0008
      * @tc.number HidebugTest_0008
      * @tc.desc   getVMRuntimeStat函数的异常值覆盖,undefined覆盖
      * @tc.type   FUNCTION
@@ -589,7 +589,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0008 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0031
      * @tc.number HidebugTest_0031
      * @tc.desc   getVMRuntimeStat函数的异常值覆盖,null覆盖
      * @tc.type   FUNCTION
@@ -610,7 +610,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0031 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0032
      * @tc.number HidebugTest_0032
      * @tc.desc   getVMRuntimeStat函数的异常值覆盖,空值覆盖
      * @tc.type   FUNCTION
@@ -631,7 +631,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0032 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0009
      * @tc.number HidebugTest_0009
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第1个参数的undefined覆盖
      * @tc.type   FUNCTION
@@ -654,7 +654,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0009 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0033
      * @tc.number HidebugTest_0033
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第1个参数的null覆盖
      * @tc.type   FUNCTION
@@ -677,7 +677,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0033 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0034
      * @tc.number HidebugTest_0034
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第1个参数的空值覆盖
      * @tc.type   FUNCTION
@@ -700,7 +700,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0034 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0010
      * @tc.number HidebugTest_0010
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第2个参数的undefined覆盖
      * @tc.type   FUNCTION
@@ -723,7 +723,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0010 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0035
      * @tc.number HidebugTest_0035
      * @tc.desc   setAppResourceLimit函数的异常值覆盖,第2个参数的null覆盖
      * @tc.type   FUNCTION
@@ -746,7 +746,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0035 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0011
      * @tc.number HidebugTest_0011
      * @tc.desc   dumpJsRawHeapData函数的值覆盖,第1个参数的true覆盖
      * @tc.type   FUNCTION
@@ -767,7 +767,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0011 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0036
      * @tc.number HidebugTest_0036
      * @tc.desc   dumpJsRawHeapData函数的值覆盖,第1个参数的false覆盖
      * @tc.type   FUNCTION
@@ -788,7 +788,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0036 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0012
      * @tc.number HidebugTest_0012
      * @tc.desc   enableGwpAsanGrayscale函数的值覆盖,第1个参数的null覆盖
      * @tc.type   FUNCTION
@@ -809,7 +809,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0012 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0037
      * @tc.number HidebugTest_0037
      * @tc.desc   enableGwpAsanGrayscale函数的值覆盖,第1个参数的undefined覆盖
      * @tc.type   FUNCTION
@@ -830,7 +830,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0037 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0013
      * @tc.number HidebugTest_0013
      * @tc.desc   enableGwpAsanGrayscale函数的值覆盖,第2个参数的null覆盖
      * @tc.type   FUNCTION
@@ -856,7 +856,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0013 end");
     });
     /**
-     * @tc.name   HidebugTest
+     * @tc.name   HidebugTest_0038
      * @tc.number HidebugTest_0038
      * @tc.desc   enableGwpAsanGrayscale函数的值覆盖,第2个参数的undefined覆盖
      * @tc.type   FUNCTION

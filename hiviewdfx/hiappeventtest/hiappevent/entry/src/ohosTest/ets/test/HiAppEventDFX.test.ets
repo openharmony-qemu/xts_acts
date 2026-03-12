@@ -24,10 +24,11 @@ export default function HiAppEvent1() {
         done();
       }catch (err) {
         hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx_removeWatcher_null_1
      * @tc.number SUB_hiAppEventdfx_removeWatcher_null_1
@@ -35,7 +36,6 @@ export default function HiAppEvent1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-
     it('hiAppEventdfx_removeWatcher_null_1', Level.LEVEL0, async (done: Function) => {
       let watcher: hiAppEventdfx.Watcher = {
         name: " ",
@@ -47,10 +47,11 @@ export default function HiAppEvent1() {
         done();
       }catch (err) {
         hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx_addWatcher_undefined_1
      * @tc.number SUB_hiAppEventdfx_addWatcher_undefined_1
@@ -70,10 +71,11 @@ export default function HiAppEvent1() {
         done();
       }catch (err) {
         hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx_removeWatcher_undefined_1
      * @tc.number SUB_hiAppEventdfx_removeWatcher_undefined_1
@@ -93,10 +95,11 @@ export default function HiAppEvent1() {
         done();
       }catch (err) {
         hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx2
      * @tc.number SUB_hiAppEventdfx2
@@ -106,10 +109,17 @@ export default function HiAppEvent1() {
      * @tc.level  LEVEL1
      */
     it('hiAppEventdfx2', Level.LEVEL2, async (done: Function) => {
-      let ret = hiAppEvent.clearData();
-      console.error("====>hiAppEventdfx2 err: " + ret)
-      done()
+      try {
+        let ret = hiAppEvent.clearData();
+        console.error("====>hiAppEventdfx2 err: " + ret)
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'hiAppEventdfx2', `failed to setUserId event, code=${error.code}`);
+        expect(false).assertTrue()
+        done();
+      }
     })
+
     /**
      * @tc.name   hiAppEventdfx3
      * @tc.number SUB_hiAppEventdfx3
@@ -129,6 +139,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   iAppEventdfx3_null
      * @tc.number SUB_iAppEventdfx3_null
@@ -148,6 +159,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx3_undefined
      * @tc.number SUB_hiAppEventdfx3_undefined
@@ -167,6 +179,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx4
      * @tc.number SUB_hiAppEventdfx4
@@ -189,6 +202,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx4_null
      * @tc.number SUB_hiAppEventdfx4_null
@@ -211,6 +225,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx4_undefined
      * @tc.number SUB_hiAppEventdfx4_undefined
@@ -233,6 +248,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx5
      * @tc.number SUB_hiAppEventdfx5
@@ -274,6 +290,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx5_undefined
      * @tc.number SUB_hiAppEventdfx5_undefined
@@ -294,6 +311,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx6
      * @tc.number SUB_hiAppEventdfx6
@@ -316,6 +334,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx6_null
      * @tc.number SUB_hiAppEventdfx6_null
@@ -361,6 +380,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx7_add_null
      * @tc.number SUB_hiAppEventdfx7_add_null
@@ -380,6 +400,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx7_add_undefined
      * @tc.number SUB_hiAppEventdfx7_add_undefined
@@ -399,6 +420,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx7_rme_null
      * @tc.number SUB_hiAppEventdfx7_rme_null
@@ -418,6 +440,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx7_rme_undefined
      * @tc.number SUB_hiAppEventdfx7_rme_undefined
@@ -437,6 +460,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx8
      * @tc.number SUB_hiAppEventdfx8
@@ -455,19 +479,20 @@ export default function HiAppEvent1() {
         done();
       });
       }catch (err) {
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
     })
+
     /**
-     * @tc.name   hiAppEventdfx8-test1
+     * @tc.name   SUB_hiAppEventdfx8_test1
      * @tc.number SUB_hiAppEventdfx8-test1
      * @tc.desc   addProcessorFromConfig函数的异常值覆盖,undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('hiAppEventdfx8test1', Level.LEVEL2, async (done: Function) => {
+    it('SUB_hiAppEventdfx8_test1', Level.LEVEL2, async (done: Function) => {
       try {
         hiAppEvent.addProcessorFromConfig(undefined).then((processorId) => {
           hilog.info(0x0000, 'hiAppEvent', `Succeeded in adding processor from config, processorId=${processorId}`);
@@ -477,10 +502,11 @@ export default function HiAppEvent1() {
           done();
         });
       }catch (err) {
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx9
      * @tc.number SUB_hiAppEventdfx9
@@ -505,19 +531,20 @@ export default function HiAppEvent1() {
         done();
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'hiAppEvent', `Failed to set main thread jank event policy. Code: ${err?.code}, message: ${err?.message}`);
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       });
     })
+
     /**
-     * @tc.name   hiAppEventdfx9-test1
+     * @tc.name   hiAppEventdfx9_test1
      * @tc.number SUB_hiAppEventdfx9-test1
      * @tc.desc   configEventPolicy函数的异常值覆盖 undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('hiAppEventdfx9test1', Level.LEVEL2, async (done:Function) => {
+    it('hiAppEventdfx9_test1', Level.LEVEL2, async (done:Function) => {
       let policy: hiAppEvent.EventPolicy = {
         "mainThreadJankPolicy":{
           "logType": 1,
@@ -533,10 +560,11 @@ export default function HiAppEvent1() {
         done();
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'hiAppEvent', `Failed to set main thread jank event policy. Code: ${err?.code}, message: ${err?.message}`);
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       });
     })
+
     /**
      * @tc.name   hiAppEventdfx10_size_null
      * @tc.number SUB_hiAppEventdfx10_size_null
@@ -559,6 +587,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx10_size_undefined
      * @tc.number SUB_hiAppEventdfx10_size_undefined
@@ -581,6 +610,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx10_row_null
      * @tc.number SUB_hiAppEventdfx10_row_null
@@ -603,6 +633,7 @@ export default function HiAppEvent1() {
         done();
       }
     })
+
     /**
      * @tc.name   hiAppEventdfx10_row_undefined
      * @tc.number SUB_hiAppEventdfx10_row_undefined
@@ -642,11 +673,12 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx11_null configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx11_null end");
-    });
+    })
+
     /**
      * @tc.name   HiAppEventTest_undefined
      * @tc.number HiAppEventTest_undefined
@@ -663,11 +695,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>HiAppEventTest_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("HiAppEventTest_undefined end");
-    });
+    })
 
     /**
      * @tc.name   hiAppEventdfx12test
@@ -696,11 +728,12 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx12test configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12test end");
-    });
+    })
+
     /**
      * @tc.name   hiAppEventdfx12test1
      * @tc.number hiAppEventdfx12test1
@@ -729,11 +762,12 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx12test1 configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12test1 end");
-    });
+    })
+
     /**
      * @tc.name   hiAppEventdfx12test2
      * @tc.number hiAppEventdfx12test2
@@ -762,12 +796,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx12test2 configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12test2 end");
-    });
-
+    })
 
     /**
      * @tc.name   hiAppEventdfx12_null
@@ -796,13 +829,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx12_null configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12_null end");
-    });
-
-
+    })
 
     /**
      * @tc.name   hiAppEventdfx12_undefined
@@ -831,11 +862,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx12_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12_undefined end");
-    });
+    })
 
     /**
      * @tc.name   hiAppEventdfx13_unll
@@ -853,12 +884,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx13_unll configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx13_unll end");
-    });
-
+    })
 
     /**
      * @tc.name   hiAppEventdfx13_undefined
@@ -876,11 +906,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx13_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx13_undefined end");
-    });
+    })
 
     /**
      * @tc.name   hiAppEventdfx14_null
@@ -898,11 +928,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx14_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx14_null end");
-    });
+    })
 
     /**
      * @tc.name   hiAppEventdfx14_undefined
@@ -920,11 +950,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx14_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx14_undefined end");
-    });
+    })
 
     /**
      * @tc.name   hiAppEventdfx15
@@ -945,11 +975,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx15 setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx15 end");
-    });
+    })
 
     /**
      * @tc.name   hiAppEventdfx15_null
@@ -970,13 +1000,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx15_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx15_null end");
-    });
-
-
+    })
 
     /**
      * @tc.name   hiAppEventdfx15_undefined
@@ -997,11 +1025,12 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx15_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx15_undefined end");
-    });
+    })
+
     /**
      * @tc.name   hiAppEventdfx16
      * @tc.number hiAppEventdfx16
@@ -1021,11 +1050,12 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx16 setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx16 end");
-    });
+    })
+
     /**
      * @tc.name   hiAppEventdfx16_null
      * @tc.number hiAppEventdfx16_null
@@ -1045,11 +1075,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx16_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx16_null end");
-    });
+    })
 
     /**
      * @tc.name   hiAppEventdfx16_undefined
@@ -1070,11 +1100,12 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx16_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx16_undefined end");
-    });
+    })
+
     /**
      * @tc.name   hiAppEventdfx17
      * @tc.number hiAppEventdfx17
@@ -1094,11 +1125,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx17 setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx17 end");
-    });
+    })
 
     /**
      * @tc.name   hiAppEventdfx17_null
@@ -1119,11 +1150,12 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx17_null setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx17_null end");
-    });
+    })
+
     /**
      * @tc.name   hiAppEventdfx17_undefined
      * @tc.number hiAppEventdfx17_undefined
@@ -1143,11 +1175,12 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx17_undefined setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx17_undefined end");
-    });
+    })
+
     /**
      * @tc.name   hiAppEventdfx18_null
      * @tc.number hiAppEventdfx18_null
@@ -1164,13 +1197,11 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx18_null setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx18_null end");
     })
-
-
 
     /**
      * @tc.name   hiAppEventdfx18_undefined
@@ -1188,7 +1219,7 @@ export default function HiAppEvent1() {
         done();
       }catch(err){
         console.error(`====>hiAppEventdfx18_undefined setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue()
+        expect(error.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx18_undefined end");

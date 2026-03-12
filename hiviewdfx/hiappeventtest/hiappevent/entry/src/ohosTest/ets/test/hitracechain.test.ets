@@ -74,7 +74,7 @@ export default function hiTraceChainTest() {
         done();
       }catch(err){
         console.error(`====>testhiTraceChain_0001 hiTraceChain undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testhiTraceChain_0001 end");
@@ -104,7 +104,7 @@ export default function hiTraceChainTest() {
         done();
       }catch(err){
         console.error(`====>testhiTraceChain_0002 setId undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testhiTraceChain_0002 end");
@@ -133,7 +133,7 @@ export default function hiTraceChainTest() {
         done();
       }catch(err){
         console.error(`====>testhiTraceChain_0003 createSpan undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testhiTraceChain_0003 end");
@@ -159,7 +159,7 @@ export default function hiTraceChainTest() {
         done();
       }catch(err){
         console.error(`====>testhiTraceChain_0004 tracepoint undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testhiTraceChain_0004 end");
@@ -183,7 +183,7 @@ export default function hiTraceChainTest() {
         done();
       }catch(err){
         console.error(`====>testhiTraceChain_0005 isValid undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testhiTraceChain_0005 end");
@@ -210,7 +210,7 @@ export default function hiTraceChainTest() {
         done();
       }catch(err){
         console.error(`====>testhiTraceChain_0006 isFlagEnabled undefined catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("testhiTraceChain_0006 end");

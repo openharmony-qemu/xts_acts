@@ -25,7 +25,7 @@ export default function ErrorObserver() {
         done();
       } catch (error) {
         console.error(`registerErrorObserver failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
-        expect(error.code == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -59,7 +59,7 @@ export default function ErrorObserver() {
         done();
       } catch (error) {
         console.error(`registerErrorObserver failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
-        expect(error == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })
@@ -92,7 +92,7 @@ export default function ErrorObserver() {
         done();
       } catch (error) {
         console.error(`registerErrorObserver failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
-        expect(error == 401).assertTrue();
+        expect(error.code === 401).assertTrue();
         done();
       }
     })

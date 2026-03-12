@@ -4,6 +4,7 @@ import hichecker from '@ohos.hichecker';
 
 export default function Hichecker() {
   describe('Hichecker', () => {
+
     /**
      * @tc.name   HicheckernulladdRule
      * @tc.number SUB_HicheckernulladdRule
@@ -19,10 +20,11 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   Hicheckernullcontains
      * @tc.number SUB_Hicheckernullcontains
@@ -38,10 +40,11 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   HicheckernullremoveRule
      * @tc.number SUB_HicheckernullremoveRule
@@ -57,10 +60,11 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   HicheckerundefinedaddRule
      * @tc.number SUB_HicheckerundefinedaddRule
@@ -76,10 +80,11 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   Hicheckerundefinedcontains
      * @tc.number SUB_Hicheckerundefinedcontains
@@ -95,10 +100,11 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   HicheckerundefinedremoveRule
      * @tc.number SUB_HicheckerundefinedremoveRule
@@ -114,10 +120,11 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   Hichecker01unlladdCheckRule
      * @tc.number SUB_Hichecker01unlladdCheckRule
@@ -126,20 +133,19 @@ export default function Hichecker() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-
     it('Hichecker01nulladdCheckRule', Level.LEVEL2, async (done: Function) => {
-
       try {
         console.info("====>Hichecker01addCheckRule  start");
         hichecker.addCheckRule(null);
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
 
     })
+
     /**
      * @tc.name   Hichecker01unllremoveCheckRule
      * @tc.number SUB_Hichecker01unllremoveCheckRule
@@ -148,21 +154,18 @@ export default function Hichecker() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-
     it('Hichecker01nullremoveCheckRule', Level.LEVEL2, async (done: Function) => {
-
-
       try {
         console.info("====>Hichecker01removeCheckRule  start");
         hichecker.removeCheckRule(null);
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
-
     })
+
     /**
      * @tc.name   Hichecker01getRule
      * @tc.number SUB_Hichecker01getRule
@@ -171,21 +174,18 @@ export default function Hichecker() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-
     it('Hichecker01getRule', Level.LEVEL2, async (done: Function) => {
-
-
       try {
         console.info("====>Hichecker01getRule  start");
         hichecker.getRule();
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
-
     })
+
     /**
      * @tc.name   Hichecker01undefinedaddCheckRule
      * @tc.number SUB_Hichecker01undefinedaddCheckRule
@@ -194,21 +194,18 @@ export default function Hichecker() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-
     it('Hichecker01undefinedaddCheckRule', Level.LEVEL2, async (done: Function) => {
-
-
       try {
         console.info("====>Hichecker01addCheckRule  start");
         hichecker.addCheckRule(undefined);
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
-
     })
+
     /**
      * @tc.name   Hichecker01undefinedremoveCheckRule
      * @tc.number SUB_Hichecker01undefinedremoveCheckRule
@@ -217,21 +214,19 @@ export default function Hichecker() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-
     it('Hichecker01undefinedremoveCheckRule', Level.LEVEL2, async (done: Function) => {
-
-
       try {
         console.info("====>Hichecker01removeCheckRule  start");
         hichecker.removeCheckRule(undefined);
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
 
     })
+
     /**
      * @tc.name   Hichecker02
      * @tc.number SUB_Hichecker02
@@ -248,10 +243,11 @@ export default function Hichecker() {
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   Hichecker03null
      * @tc.number SUB_Hichecker03null
@@ -267,10 +263,11 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   Hichecker03undefined
      * @tc.number SUB_Hichecker03undefined
@@ -286,7 +283,7 @@ export default function Hichecker() {
         done();
       } catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })

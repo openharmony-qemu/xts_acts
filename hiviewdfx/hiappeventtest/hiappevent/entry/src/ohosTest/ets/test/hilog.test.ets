@@ -18,7 +18,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilogtest1 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -37,7 +37,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilogtest2 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -56,7 +56,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilogtest3 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -75,7 +75,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog01test1 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -94,7 +94,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog01test2 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -113,7 +113,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog01test3 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -132,7 +132,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog02test1 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -151,7 +151,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog02test2 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -170,7 +170,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog02test3 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -189,7 +189,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog03test1 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -208,7 +208,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog03test2 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -227,7 +227,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog03test3 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -246,7 +246,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog04test1 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -265,7 +265,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog04test2 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -284,7 +284,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog04test3 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -303,7 +303,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog05test1 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -322,7 +322,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog05test2 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -341,7 +341,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog05test3 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -360,7 +360,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog06 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -379,7 +379,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog07test1 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -398,7 +398,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog07test2 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
@@ -417,7 +417,7 @@ export default function Hilog() {
         done();
       } catch (error) {
         console.error("====>Hilog07test3 - Test first null parameter caught error: " + error);
-        expect(error == 401).assertTrue();
+        expect(error === 401).assertTrue();
         done();
       }
     })
