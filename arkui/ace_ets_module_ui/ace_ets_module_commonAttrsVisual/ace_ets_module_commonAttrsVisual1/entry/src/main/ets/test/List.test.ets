@@ -71,6 +71,9 @@ import UnbindTabsFromScrollableNullTest from './ParamsNull/UnbindTabsFromScrolla
 import GetNodePropertyValueNullTest from './ParamsNull/GetNodePropertyValueNullTest.test';
 import BindControllerNullTest from './ParamsNull/BindControllerNullTest.test';
 
+import ColorMetricsNullUndefined from './select/ColorMetricsNullUndefined.test';
+import TransitionNullUndefinedTest from './select/TransitionNullUndefinedTest.test';
+
 export default function testsuite() {
   rotateAngleOptionsTest()
   gradientDirectionJsunit()
@@ -126,4 +129,7 @@ export default function testsuite() {
   UnbindTabsFromScrollableNullTest();
   GetNodePropertyValueNullTest();
   BindControllerNullTest();
+
+  ColorMetricsNullUndefined();
+  TransitionNullUndefinedTest();
 }

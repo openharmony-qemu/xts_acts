@@ -57,7 +57,9 @@
         "MainAbility/pages/ParamsNull/UnbindTabsFromNestedScrollableNullTest",
         "MainAbility/pages/ParamsNull/UnbindTabsFromScrollableNullTest",
         "MainAbility/pages/ParamsNull/GetNodePropertyValueNullTest",
-        "MainAbility/pages/ParamsNull/BindControllerNullTest"
+        "MainAbility/pages/ParamsNull/BindControllerNullTest",
+        "MainAbility/pages/select/TransitionNullUndefinedTest",
+        "MainAbility/pages/select/ColorMetricsNullUndefined"
 
     ]
 }
