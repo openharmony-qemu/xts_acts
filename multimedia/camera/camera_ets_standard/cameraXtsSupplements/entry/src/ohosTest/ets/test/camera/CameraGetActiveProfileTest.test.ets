@@ -1201,15 +1201,15 @@ export default function CameraGetActiveProfileTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001
-     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00001
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00001
      * @tc.desc   createPhotoOutput format CAMERA_FORMAT_RGBA_8888
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001';
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00001';
       try {
         if (mCameraDeviceArray.length > 0) {
           let cameraOutputCapability =
@@ -1241,15 +1241,15 @@ export default function CameraGetActiveProfileTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002
-     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00002
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00002
      * @tc.desc   createPhotoOutput format CAMERA_FORMAT_JPEG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002';
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00002', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00002';
       try {
         if (mCameraDeviceArray.length > 0) {
           let cameraOutputCapability =
@@ -1281,15 +1281,15 @@ export default function CameraGetActiveProfileTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003
-     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00003
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00003
      * @tc.desc   createPhotoOutput format CAMERA_FORMAT_YCBCR_P010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003';
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00003', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00003';
       try {
         if (mCameraDeviceArray.length > 0) {
           let cameraOutputCapability =
@@ -1321,15 +1321,15 @@ export default function CameraGetActiveProfileTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004
-     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00004
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00004
      * @tc.desc   createPhotoOutput format CAMERA_FORMAT_YCRCB_P010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004';
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00004', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00004';
       try {
         if (mCameraDeviceArray.length > 0) {
           let cameraOutputCapability =
