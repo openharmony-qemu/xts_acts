@@ -78,7 +78,7 @@ export default function toggleThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsToggleThemeColors_0100
+     * @tc.name   `ActsToggleThemeColors_0100`
      * @tc.number ActsToggleThemeColors_0100
      * @tc.desc   Check system colors values of the Toggle component
      * @tc.type   FUNCTION
@@ -119,7 +119,7 @@ export default function toggleThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsToggleThemeColors_0200
+     * @tc.name   `ActsToggleThemeColors_0200`
      * @tc.number ActsToggleThemeColors_0200
      * @tc.desc   Check custom colors values of the Toggle component
      * @tc.type   FUNCTION
@@ -161,7 +161,7 @@ export default function toggleThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsToggleThemeColors_0300
+     * @tc.name   `ActsToggleThemeColors_0300`
      * @tc.number ActsToggleThemeColors_0300
      * @tc.desc   Check custom colors values of the Toggle component
      * @tc.type   FUNCTION

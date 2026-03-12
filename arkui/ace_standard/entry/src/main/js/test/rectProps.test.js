@@ -542,14 +542,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testRectStrokeLineJoinPropOne
+         * @tc.name   testRectStrokeLineJoinPropOneAdapt001
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testRectStrokeLineJoinPropOne', Level.LEVEL0, async function(done) {
+        it('testRectStrokeLineJoinPropOneAdapt001', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeLineJoinPropOne START');
             console.info("[rectProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
 

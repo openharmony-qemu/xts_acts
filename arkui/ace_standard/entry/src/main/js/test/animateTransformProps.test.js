@@ -84,14 +84,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'IdProp
+         * @tc.name   testAnimateTransformIdProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'IdProp', Level.LEVEL0, async function(done) {
+        it('testAnimateTransformIdProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'IdProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -105,14 +105,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'AttributeNameProp
+         * @tc.name   testAdapt001AnimateTransformAttributeNameProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'AttributeNameProp', Level.LEVEL0, async function(done) {
+        it('testAdapt001AnimateTransformAttributeNameProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'AttributeNameProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -128,14 +128,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'AttributeNamePropNone
+         * @tc.name   testAdapt002AnimateTransformAttributeNamePropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'AttributeNamePropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt002AnimateTransformAttributeNamePropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'AttributeNamePropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -151,14 +151,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'BeginProp
+         * @tc.name   testAdapt003AnimateTransformBeginProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'BeginProp', Level.LEVEL0, async function(done) {
+        it('testAdapt003AnimateTransformBeginProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'BeginProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -174,14 +174,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'BeginPropNone
+         * @tc.name   testAdapt004AnimateTransformBeginPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'BeginPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt004AnimateTransformBeginPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'BeginPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -197,14 +197,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'DurProp
+         * @tc.name   testAdapt005AnimateTransformDurProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'DurProp', Level.LEVEL0, async function(done) {
+        it('testAdapt005AnimateTransformDurProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DurProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -220,14 +220,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'DurPropNone
+         * @tc.name   testAdapt006AnimateTransformDurPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'DurPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt006AnimateTransformDurPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DurPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -243,14 +243,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'EndProp
+         * @tc.name   testAdapt007AnimateTransformEndProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'EndProp', Level.LEVEL0, async function(done) {
+        it('testAdapt007AnimateTransformEndProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'EndProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -266,14 +266,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'EndPropNone
+         * @tc.name   testAdapt008AnimateTransformEndPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'EndPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt008AnimateTransformEndPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'EndPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -289,14 +289,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'RepeatCountProp
+         * @tc.name   testAdapt009AnimateTransformRepeatCountProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'RepeatCountProp', Level.LEVEL0, async function(done) {
+        it('testAdapt009AnimateTransformRepeatCountProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'RepeatCountProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -312,14 +312,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'RepeatCountPropNone
+         * @tc.name   testAdapt010AnimateTransformRepeatCountPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'RepeatCountPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt010AnimateTransformRepeatCountPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'RepeatCountPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -335,14 +335,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'FillPropFreeze
+         * @tc.name   testAdapt011AnimateTransformFillPropFreeze
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'FillPropFreeze', Level.LEVEL0, async function(done) {
+        it('testAdapt011AnimateTransformFillPropFreeze', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillPropFreeze START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -358,14 +358,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'FillPropRemove
+         * @tc.name   testAdapt012AnimateTransformFillPropRemove
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'FillPropRemove', Level.LEVEL0, async function(done) {
+        it('testAdapt012AnimateTransformFillPropRemove', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillPropRemove START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -381,14 +381,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'CalcModePropDiscrete
+         * @tc.name   testAdapt013AnimateTransformCalcModePropDiscrete
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'CalcModePropDiscrete', Level.LEVEL0, async function(done) {
+        it('testAdapt013AnimateTransformCalcModePropDiscrete', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'CalcModePropDiscrete START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -404,14 +404,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'CalcModePropLinear
+         * @tc.name   testAdapt014AnimateTransformCalcModePropLinear
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'CalcModePropLinear', Level.LEVEL0, async function(done) {
+        it('testAdapt014AnimateTransformCalcModePropLinear', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'CalcModePropLinear START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -427,14 +427,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'CalcModePropPaced
+         * @tc.name   testAdapt015AnimateTransformCalcModePropPaced
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'CalcModePropPaced', Level.LEVEL0, async function(done) {
+        it('testAdapt015AnimateTransformCalcModePropPaced', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'CalcModePropPaced START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -450,14 +450,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'CalcModePropSpline
+         * @tc.name   testAdapt016AnimateTransformCalcModePropSpline
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'CalcModePropSpline', Level.LEVEL0, async function(done) {
+        it('testAdapt016AnimateTransformCalcModePropSpline', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'CalcModePropSpline START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -473,14 +473,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'KeyTimesProp
+         * @tc.name   testAdapt017AnimateTransformKeyTimesProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'KeyTimesProp', Level.LEVEL0, async function(done) {
+        it('testAdapt017AnimateTransformKeyTimesProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'KeyTimesProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -496,14 +496,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'KeyTimesPropNone
+         * @tc.name   testAdapt018AnimateTransformKeyTimesPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'KeyTimesPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt018AnimateTransformKeyTimesPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'KeyTimesPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -519,14 +519,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'KeySplinesProp
+         * @tc.name   testAdapt019AnimateTransformKeySplinesProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'KeySplinesProp', Level.LEVEL0, async function(done) {
+        it('testAdapt019AnimateTransformKeySplinesProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'KeySplinesProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -542,14 +542,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'KeySplinesPropNone
+         * @tc.name   testAdapt020AnimateTransformKeySplinesPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'KeySplinesPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt020AnimateTransformKeySplinesPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'KeySplinesPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -565,14 +565,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'ByProp
+         * @tc.name   testAdapt021AnimateTransformByProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'ByProp', Level.LEVEL0, async function(done) {
+        it('testAdapt021AnimateTransformByProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ByProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -588,14 +588,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'ByPropNone
+         * @tc.name   testAdapt022AnimateTransformByPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'ByPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt022AnimateTransformByPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ByPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -611,14 +611,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'FromProp
+         * @tc.name   testAdapt023AnimateTransformFromProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'FromProp', Level.LEVEL0, async function(done) {
+        it('testAdapt023AnimateTransformFromProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FromProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -634,14 +634,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'FromPropNone
+         * @tc.name   testAdapt024AnimateTransformFromPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'FromPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt024AnimateTransformFromPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FromPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -657,14 +657,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'ToProp
+         * @tc.name   testAdapt025AnimateTransformToProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'ToProp', Level.LEVEL0, async function(done) {
+        it('testAdapt025AnimateTransformToProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ToProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -680,14 +680,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'ToPropNone
+         * @tc.name   testAdapt026AnimateTransformToPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'ToPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt026AnimateTransformToPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ToPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -703,14 +703,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'ValuesProp
+         * @tc.name   testAdapt027AnimateTransformValuesProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'ValuesProp', Level.LEVEL0, async function(done) {
+        it('testAdapt027AnimateTransformValuesProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ValuesProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -726,14 +726,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'ValuesPropNone
+         * @tc.name   testAdapt028AnimateTransformValuesPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'ValuesPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt028AnimateTransformValuesPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'ValuesPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -749,14 +749,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'TypePropTranslate
+         * @tc.name   testAdapt029AnimateTransformTypePropTranslate
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'TypePropTranslate', Level.LEVEL0, async function(done) {
+        it('testAdapt029AnimateTransformTypePropTranslate', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'TypePropTranslate START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -772,14 +772,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'TypePropScale
+         * @tc.name   testAdapt030AnimateTransformTypePropScale
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'TypePropScale', Level.LEVEL0, async function(done) {
+        it('testAdapt030AnimateTransformTypePropScale', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'TypePropScale START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -795,14 +795,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'TypePropRotate
+         * @tc.name   testAdapt031AnimateTransformTypePropRotate
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'TypePropRotate', Level.LEVEL0, async function(done) {
+        it('testAdapt031AnimateTransformTypePropRotate', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'TypePropRotate START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -818,14 +818,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'TypePropSkewX
+         * @tc.name   testAdapt032AnimateTransformTypePropSkewX
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'TypePropSkewX', Level.LEVEL0, async function(done) {
+        it('testAdapt032AnimateTransformTypePropSkewX', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'TypePropSkewX START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -841,14 +841,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'TypePropSkewY
+         * @tc.name   testAdapt033AnimateTransformTypePropSkewY
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'TypePropSkewY', Level.LEVEL0, async function(done) {
+        it('testAdapt033AnimateTransformTypePropSkewY', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'TypePropSkewY START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
