@@ -157,7 +157,6 @@
         "MainAbility/pages/ohosRouter/RouterMode",
         "MainAbility/pages/ohosRouter/RouterModeCall",
         "MainAbility/pages/ohosRouter/RouterCall",
-        "MainAbility/pages/animationCurveNullUndefined/animationCurveNullUndefined",
         "MainAbility/pages/UIContextRouterNullUndefined/UIContentRouterBackNullUndefined",
         "MainAbility/pages/UIContextRouterNullUndefined/UIContentRouterGetStateByUrlNullUndefined",
         "MainAbility/pages/UIContextRouterNullUndefined/UIContentRouterPushNamedRouteNullUndefined",
