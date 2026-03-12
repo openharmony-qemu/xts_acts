@@ -3403,5 +3403,74 @@ export default function windowErrCode401_3() {
       }
     })
 
+    /**
+     * @tc.name testGetLastWindow_0100
+     * @tc.number testGetLastWindow_0100
+     * @tc.desc testGetLastWindow_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testGetLastWindow_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testGetLastWindow_0100";
+      ohosWindow.getLastWindow(null, (err: BusinessError) => {
+        const errCode: number = err.code;
+        if (errCode) {
+          console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+          expect(errCode).assertEqual(1300002);
+          done();
+        } else {
+          console.log(caseName + ' success');
+          expect().assertFail();
+          done();
+        }
+      });
+      ohosWindow.getLastWindow(undefined, (err: BusinessError) => {
+        const errCode: number = err.code;
+        if (errCode) {
+          console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+          expect(errCode).assertEqual(1300002);
+          done();
+        } else {
+          console.log(caseName + ' success2');
+          expect().assertFail();
+          done();
+        }
+      });
+    })
+
+    /**
+     * @tc.name   testGetLastWindow_0200
+     * @tc.number testGetLastWindow_0200
+     * @tc.desc   testGetLastWindow_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetLastWindow_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testGetLastWindow_0200";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        await ohosWindow.getLastWindow(null);
+        console.info(msgStr + 'Succeeded');
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
+        expect(exception.code).assertEqual(1300002);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await ohosWindow.getLastWindow(undefined);
+        console.info(msgStr + 'Succeeded2.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
+        expect(exception.code).assertEqual(1300002);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
   })
 }
