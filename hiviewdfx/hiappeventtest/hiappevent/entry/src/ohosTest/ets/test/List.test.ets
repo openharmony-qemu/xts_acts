@@ -16,17 +16,17 @@
 import PerformanceAnalysisKit from './PerformanceAnalysisKit.test'
 import PerformanceAnalyhicollie from './PerformanceAnalyhicollie.test'
 import PerformanceTest from './PerformanceTest.test';
-import AppRecoveryTest from './apprecovery.test';
-import BytraceTest from './bytrace.test';
+import AppRecoveryTest from './AppRecovery.test';
+import BytraceTest from './ByTrace.test';
 import FaultLoggerTest from './FaultLogger.test';
-import HiAppeventTest from './hiAppEvent.test'
-import hiTraceChainTest from './hitracechain.test'
-import HitraceMeterTest from './hitracemeter.test'
+import HiAppEvent1 from './HiAppEventDfx.test'
+import hiTraceChainTest from './HiTraceChain.test'
+import HitraceMeterTest from './HiTraceMeter.test'
 import HiAppEvent from './HiAppEvent.test';
-import Hichecker from './hichecker.test';
-import Hilog from'./hilog.test'
+import Hichecker from './HiChecker.test';
+import Hilog from'./HiLog.test'
 import ErrorObserver from './ErrorObserver.test';
-import jsLeakWatcher from './jsLeakWatcher.test'
+import jsLeakWatcher from './JsLeakWatcher.test'
 
 export default function testsuite() {
   PerformanceAnalysisKit();
@@ -35,7 +35,7 @@ export default function testsuite() {
   AppRecoveryTest();
   BytraceTest();
   FaultLoggerTest();
-  HiAppeventTest();
+  HiAppEvent1();
   hiTraceChainTest();
   HitraceMeterTest();
   HiAppEvent();
