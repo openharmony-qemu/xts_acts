@@ -1145,36 +1145,29 @@ export default function Sim2Public() {
             hilog.info(domain, tag,
               `${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
             sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType | undefined) => {
-              const simStateAry: sim.CardType[] = [
-                sim.CardType.UNKNOWN_CARD,
-                sim.CardType.SINGLE_MODE_SIM_CARD,
-                sim.CardType.SINGLE_MODE_USIM_CARD,
-                sim.CardType.SINGLE_MODE_RUIM_CARD,
-                sim.CardType.DUAL_MODE_CG_CARD,
-                sim.CardType.CT_NATIONAL_ROAMING_CARD,
-                sim.CardType.CU_DUAL_MODE_CARD,
-                sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
-                sim.CardType.DUAL_MODE_UG_CARD,
-                sim.CardType.SINGLE_MODE_ISIM_CARD
-              ];
-              const isCard: boolean = simStateAry.includes(data);
-              if (isCard) {
-                ExpectTrue(true);
+              if (err?.code === 0) {
+                const simStateAry: sim.CardType[] = [
+                  sim.CardType.UNKNOWN_CARD,
+                  sim.CardType.SINGLE_MODE_SIM_CARD,
+                  sim.CardType.SINGLE_MODE_USIM_CARD,
+                  sim.CardType.SINGLE_MODE_RUIM_CARD,
+                  sim.CardType.DUAL_MODE_CG_CARD,
+                  sim.CardType.CT_NATIONAL_ROAMING_CARD,
+                  sim.CardType.CU_DUAL_MODE_CARD,
+                  sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+                  sim.CardType.DUAL_MODE_UG_CARD,
+                  sim.CardType.SINGLE_MODE_ISIM_CARD
+                ];
+                expect(data).assertEqual(simStateAry);
                 hilog.info(domain, tag, `${caseName} getCardType true test end `);
                 done();
-              } else {
+              }else {
                 ExpectFail();
                 hilog.info(domain, tag, `${caseName} getCardType else test end `);
                 done();
               }
-        }).catch((error:Error) => {
-          let err = error as  BusinessError;
-          hilog.info(domain, tag, `${caseName} getCardType failed, promise: err->${JSON.stringify(err)}`);
-          ExpectFail();
-          hilog.info(domain, tag, `${caseName} test end `);
-          done();
-        });
-        } else {
+            }); 
+        }else {
           ExpectFail();
           hilog.info(domain, tag, `${caseName} test end `);
           done();
