@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import dlpPermission from '@ohos.dlpPermission';
+import { common } from '@kit.AbilityKit';
 
 const TAG = "DLP_XTS ";
 interface ERRCODE{
@@ -445,6 +446,108 @@ export default function dlpErrorCodeTest() {
 
       console.info(curTag, "end");
       done();
+    })
+
+    /**
+     * @tc.name   testCancelRetentionState005
+     * @tc.number Test_cancelRetentionState_005
+     * @tc.desc   cancelRetentionState fail (Promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCancelRetentionState005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let curTag = TAG + "Test_cancelRetentionState_005";
+      console.info(curTag, "start");
+
+      try {
+        await dlpPermission.cancelRetentionState(null);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(curTag, `cancelRetentionState.null Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+      }
+
+      try {
+        await dlpPermission.cancelRetentionState(undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(curTag, `cancelRetentionState.undefined Code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(DLPErrCode.ERR_JS_PARAMETER_ERROR);
+      }
+
+      console.info(curTag, "end");
+    })
+
+    /**
+     * @tc.name   testStartDLPManagerForResult0200
+     * @tc.number SUB_SECURITY_DLP_startDLPManagerForResult_0200
+     * @tc.desc   test startDLPManagerForResult 19100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testStartDLPManagerForResult0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let curTag = TAG + "SUB_SECURITY_DLP_startDLPManagerForResult_0200";
+      console.info(curTag, "start");
+      let context: common.UIAbilityContext = globalThis.context; // 获取当前UIAbilityContext
+      let want: Want = {
+        "uri": "file://docs/storage/Users/currentUser/Desktop/1.txt",
+        "parameters": {
+          "displayName": "1.txt"
+        }
+      }; // 请求参数
+
+      let dlpProperty: dlpPermission.DLPProperty = {
+        ownerAccount: 'zhangsan',
+        ownerAccountType: dlpPermission.AccountType.DOMAIN_ACCOUNT,
+        authUserList: [],
+        contactAccount: 'zhangsan',
+        offlineAccess: true,
+        ownerAccountID: 'xxxxxxx',
+        everyoneAccessList: [],
+        extensionFields:{
+          'nickNameMask': '666'
+        }
+      };
+
+      try {
+        dlpPermission.startDLPManagerForResult(null, want).then((res) => {
+          expect(null).assertFail();
+        }); // 打开DLP权限管理应用。
+      } catch (err) {
+        console.error(curTag, 'startDLPManagerForResult 1null err:' + err.code + err.message);
+        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+      }
+
+      try {
+        dlpPermission.startDLPManagerForResult(undefined, want).then((res) => {
+          expect(null).assertFail();
+        }); // 打开DLP权限管理应用。
+      } catch (err) {
+        console.error(curTag, 'startDLPManagerForResult 1undefined err:' + err.code + err.message);
+        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+      }
+
+      try {
+        dlpPermission.startDLPManagerForResult(context, null).then((res) => {
+          expect(null).assertFail();
+        }); // 打开DLP权限管理应用。
+      } catch (err) {
+        console.error(curTag, 'startDLPManagerForResult 2null err:' + err.code + err.message);
+        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+      }
+
+      try {
+        dlpPermission.startDLPManagerForResult(context, undefined).then((res) => {
+          expect(null).assertFail();
+        }); // 打开DLP权限管理应用。
+      } catch (err) {
+        console.error(curTag, 'startDLPManagerForResult 2undefined err:' + err.code + err.message);
+        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+      }
+
+      console.info(curTag, "end");
     })
 
   })
