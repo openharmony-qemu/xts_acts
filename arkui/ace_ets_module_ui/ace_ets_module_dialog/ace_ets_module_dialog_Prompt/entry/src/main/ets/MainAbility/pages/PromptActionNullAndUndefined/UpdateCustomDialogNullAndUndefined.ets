@@ -17,7 +17,7 @@ import { PromptAction, promptAction, UIContext, ComponentContent, LevelMode, Imm
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class DialogParams {
-  text: string = '';
+  public text: string = '';
   public onClose?: () => void;
   constructor(text: string, onClose?: () => void) {
     this.text = text;
