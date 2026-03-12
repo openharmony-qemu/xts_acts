@@ -751,7 +751,7 @@ export default function actsWifiErrorCode401Test() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('Sub_Communication_WiFi_RemoveUntrustedConfig_Null_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+        it('Sub_Communication_WiFi_RemoveUntrustedConfig_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             let caseName = 'Sub_Communication_WiFi_RemoveUntrustedConfig_Null_001';
             console.info(`${caseName} test start`);
             try {
