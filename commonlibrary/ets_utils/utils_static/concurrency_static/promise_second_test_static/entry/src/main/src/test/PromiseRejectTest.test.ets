@@ -66,7 +66,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest0500';
         console.info(`${caseName} test start`);
@@ -117,7 +117,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest0800'
         console.info(`${caseName} test start`)
@@ -176,7 +176,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1100';
         console.info(`${caseName} test start`);
@@ -230,7 +230,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1200';
         console.info(`${caseName} test start`);
@@ -283,7 +283,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1300';
         console.info(`${caseName} test start`);
@@ -342,7 +342,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1400';
         console.info(`${caseName} test start`);
@@ -400,7 +400,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1500';
         console.info(`${caseName} test start`);
@@ -460,7 +460,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1600';
         console.info(`${caseName} test start`);
@@ -520,7 +520,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1700';
         console.info(`${caseName} test start`);
@@ -574,7 +574,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1800';
         console.info(`${caseName} test start`);
@@ -628,7 +628,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest1900';
         console.info(`${caseName} test start`);
@@ -684,7 +684,7 @@ export default function PromiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseRejectTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseRejectTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const caseName = 'PromiseRejectTest2000';
         console.info(`${caseName} test start`);

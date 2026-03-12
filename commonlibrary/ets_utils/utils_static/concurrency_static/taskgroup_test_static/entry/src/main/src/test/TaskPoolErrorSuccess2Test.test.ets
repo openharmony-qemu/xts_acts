@@ -58,7 +58,7 @@ export default function taskPoolErrorSuccess2Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskErrorSuccessSecondTest1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessSecondTest1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -98,7 +98,7 @@ export default function taskPoolErrorSuccess2Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskErrorSuccessSecondTest1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessSecondTest1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -138,7 +138,7 @@ export default function taskPoolErrorSuccess2Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskErrorSuccessSecondTest1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessSecondTest1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 
@@ -178,7 +178,7 @@ export default function taskPoolErrorSuccess2Test() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolTaskErrorSuccessSecondTest1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('taskPoolTaskErrorSuccessSecondTest1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
 

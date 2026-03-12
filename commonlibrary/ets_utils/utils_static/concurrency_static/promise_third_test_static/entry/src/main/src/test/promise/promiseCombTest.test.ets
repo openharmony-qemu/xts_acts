@@ -70,7 +70,7 @@ export default function promiseCombTest(){
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('AsyncAwaitCombTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('AsyncAwaitCombTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const validateUser = (token: string): Promise<boolean> => {
         return new Promise<boolean>((resolve, reject) => {
           setTimeout(() => {
@@ -110,9 +110,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 8-level nested parallel-sequential hybrid workflow
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 5
+     * @tc.level Level 2
      */
-    it('AsyncAwaitCombTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('AsyncAwaitCombTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const fetchData = (id: number, delay: int): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => resolve(id * 10), delay);
@@ -154,9 +154,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 9-level error propagation timing in nested calls
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 5
+     * @tc.level Level 2
      */
-    it('AsyncAwaitCombTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('AsyncAwaitCombTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const riskyStep = (level: number): Promise<number> => {
         return new Promise<number>((resolve, reject) => {
           setTimeout(() => {
@@ -195,9 +195,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level mixed promise types with timing constraints
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 6
+     * @tc.level Level 2
      */
-    it('AsyncAwaitCombTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('AsyncAwaitCombTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Mix of different promise types and delays
       const immediate = (val: number): Promise<number> => Promise.resolve(val);
       const shortDelay = (val: number): Promise<number> => new Promise<number>(resolve => {setTimeout(() => resolve(val), 10)});
@@ -227,9 +227,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level promise chain with alternating parallel/sequential steps
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 6
+     * @tc.level Level 2
      */
-    it('AsyncAwaitCombTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('AsyncAwaitCombTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const task = (id: number, delay: int): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => resolve(id), delay);
@@ -263,9 +263,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level deep nested promises with value accumulation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 6
+     * @tc.level Level 2
      */
-    it('AsyncAwaitCombTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('AsyncAwaitCombTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // 10-level nested function chain
       const level10 = (val: number): Promise<number> => new Promise<number>((resolve) => {
         setTimeout(() => resolve(val + 10), 10);
@@ -338,9 +338,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 8-level complex timing with mixed parallel/sequential and errors
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 6
+     * @tc.level Level 2
      */
-    it('AsyncAwaitCombTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('AsyncAwaitCombTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const reliableTask = (id: number, delay: int): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => resolve(id * delay), delay);
@@ -395,9 +395,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level nested sequential nested timing sequence with increasing delays
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 6
+     * @tc.level Level 2
      */
-    it('AsyncAwaitCombTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('AsyncAwaitCombTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       // Create 10-level nested promises with increasing delays
       const createTimedStep = (level: int): Promise<int> => {
         return new Promise<int>((resolve) => {
@@ -431,9 +431,9 @@ export default function promiseCombTest(){
      * @tc.desc test 3 levels with timeout pattern
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
 
       let timeout =(ms: int): Promise<never> =>{
         return new Promise<never>((resolve, reject) => {
@@ -472,7 +472,7 @@ export default function promiseCombTest(){
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let cache: Record<string, int> = {};
 
       let level4 = async (key: string): Promise<int> => {
@@ -513,7 +513,7 @@ export default function promiseCombTest(){
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let level5 = async (n: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           resolve(n <= 1 ? 1 : n * (n - 1));
@@ -551,7 +551,7 @@ export default function promiseCombTest(){
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let level6 = async (date: Date): Promise<Date> => {
         return new Promise<Date>((resolve) => {
           const newDate = new Date(date);
@@ -603,9 +603,9 @@ export default function promiseCombTest(){
      * @tc.desc test 8 levels with map and filter
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let level8 = async (numbers: number[]): Promise<number[]> => {
         return new Promise<number[]>((resolve) => {
           resolve(numbers.map(n => n * 2));
@@ -657,9 +657,9 @@ export default function promiseCombTest(){
      * @tc.desc test 10 levels with debounced operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let debounce = (func: () => Promise<number>, wait: int): () => Promise<number> => {
         let timeout = -1;
         return () => new Promise<number>((resolve) => {
@@ -731,9 +731,9 @@ export default function promiseCombTest(){
      * @tc.desc test 10 levels with sequential promise chain
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let level10 = async (value: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => resolve(value * 10), 1);
@@ -813,9 +813,9 @@ export default function promiseCombTest(){
      * @tc.desc test 2 levels with typed errors
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let level2 = async (input: string): Promise<string> => {
         return new Promise<string>((resolve, reject) => {
           if (input.length < 5) {
@@ -849,7 +849,7 @@ export default function promiseCombTest(){
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let attempt = 0;
 
       let level3 = async (): Promise<number> => {
@@ -892,7 +892,7 @@ export default function promiseCombTest(){
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const limiter = new RateLimiter(10);
 
       let level4 = async (id: number): Promise<number> => {
@@ -930,9 +930,9 @@ export default function promiseCombTest(){
      * @tc.desc test 10 levels with complex mathematical operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let level10 = async (n: number): Promise<number> =>{
         return new Promise<number>((resolve) => {
           resolve(Math.sin(n) * 10);
@@ -994,9 +994,9 @@ export default function promiseCombTest(){
      * @tc.desc test 10 levels with mixed parallel/sequential operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('PromiseAsyncAwaitTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAsyncAwaitTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let task = async (id: number, delay: int): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => resolve(id * delay), delay);
@@ -1073,9 +1073,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 5-level nested promises with async/await
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const level1 = (): Promise<number> => new Promise<number>((resolve) => resolve(1));
       const level2 = (val: number): Promise<number> => new Promise<number>((resolve) => resolve(val + 1));
       const level3 = (val: number): Promise<number> => new Promise<number>((resolve) => resolve(val + 1));
@@ -1097,9 +1097,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level sequential promise chain
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let currentLevel = 0;
       const createLevel = (): Promise<number> => {
         return new Promise<number>((resolve) => {
@@ -1129,9 +1129,9 @@ export default function promiseCombTest(){
      * @tc.desc Test nested promises with 3 levels of inner promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const outer = (): Promise<number> => {
         return new Promise<number>((resolve) => {
           const middle = (): Promise<number> => {
@@ -1154,9 +1154,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level math operation chain with async/await
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const multiply = (val: number): Promise<number> => new Promise<number>((resolve) => resolve(val * 2));
       const add = (val: number): Promise<number> => new Promise<number>((resolve) => resolve(val + 3));
 
@@ -1180,9 +1180,9 @@ export default function promiseCombTest(){
      * @tc.desc Test error propagation through 5 nested levels
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const level1 = (): Promise<void> => new Promise<void>((resolve, reject) => reject(new Error('Level 1 error')));
       const level2 = async (): Promise<void> => {
         await level1();
@@ -1213,9 +1213,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 6-level nested promises with mixed parallel/sequential
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const fetchData = (id: number): Promise<number> => new Promise<number>((resolve) => resolve(id * 10));
 
       const level1 = async (): Promise<number[]> => {
@@ -1242,9 +1242,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 4-level nested promises with data transformation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const level1 = (): Promise<string> => new Promise<string>((resolve) => resolve('start'));
 
       const level2 = (val: string): Promise<string[]> => {
@@ -1273,9 +1273,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 8-level mixed promise chain with error recovery
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const safeAdd = (val: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           if (val === 5) {
@@ -1305,9 +1305,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level promise chain with timeouts
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 5
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const timedStep = (level: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => resolve(level), 1);
@@ -1337,9 +1337,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level chained promises with conditional branching
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 5
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let stepCount = 0;
       const step = (val: number): Promise<number> => {
         return new Promise<number>((resolve) => {
@@ -1373,9 +1373,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 9-level error handling with partial recovery
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 5
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const riskyStep = (level: number): Promise<number> => {
         return new Promise<number>((resolve, reject) => {
           if (level === 5) {
@@ -1412,9 +1412,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 7-level mixed promises with async/await and .then()
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncStep = async (val: number): Promise<number> => val * 2;
       const thenStep = (val: number): Promise<number> => new Promise<number>((resolve) => resolve(val + 3));
       // Mixed usage of async/await and .then()
@@ -1437,9 +1437,9 @@ export default function promiseCombTest(){
      * @tc.desc Test 10-level sequential promises with varying delays
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 5
+     * @tc.level Level 2
      */
-    it('NestedPromiseTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('NestedPromiseTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const delayedStep = (level: int): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => resolve(level), level); // Increasing delay

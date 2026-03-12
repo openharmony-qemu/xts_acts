@@ -102,15 +102,15 @@ export default function taskPoolAsyncRunnerAbility2() {
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3100
-     * @tc.name taskPoolAsyncRunnerAbility3100
-     * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('taskPoolAsyncRunnerAbility3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3100
+      * @tc.name taskPoolAsyncRunnerAbility3100
+      * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 10 times
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
+      */
+    it('taskPoolAsyncRunnerAbility3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log('taskPoolAsyncRunnerAbility3100: begin');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -143,14 +143,14 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3200
-     * @tc.name taskPoolAsyncRunnerAbility3200
-     * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 5 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('taskPoolAsyncRunnerAbility3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3200
+      * @tc.name taskPoolAsyncRunnerAbility3200
+      * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 5 times,error
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
+      */
+    it('taskPoolAsyncRunnerAbility3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log('taskPoolAsyncRunnerAbility3200: begin');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);

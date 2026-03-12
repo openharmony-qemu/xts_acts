@@ -157,9 +157,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor003';
         console.info(`${TAG} test start`);
@@ -200,9 +200,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor004';
         console.info(`${TAG} test start`);
@@ -290,9 +290,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG = 'MessageConstructor006';
         console.info(`${TAG} test start`);
@@ -342,9 +342,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor007';
         console.info(`${TAG} test start`);
@@ -435,9 +435,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor009';
         console.info(`${TAG} test start`);
@@ -482,9 +482,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor010';
         console.info(`${TAG} test start`);
@@ -524,9 +524,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MessageConstructor011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MessageConstructor011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'MessageConstructor011';
         console.info(`${TAG} test start`);
@@ -686,9 +686,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks002';
         console.info(`${TAG} test start`);
@@ -778,9 +778,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks003';
         let flag: boolean = false;
@@ -827,9 +827,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks004';
         let flag: boolean = false;
@@ -876,9 +876,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks005';
         console.info(`${TAG} test start`);
@@ -925,9 +925,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks006';
         console.info(`${TAG} test start`);
@@ -974,9 +974,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasCallbacks008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasCallbacks008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasCallbacks007';
         console.info(`${TAG} test start`);
@@ -1097,9 +1097,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages003';
         console.info(`${TAG} test start`);
@@ -1129,9 +1129,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages004';
         console.info(`${TAG} test start`);
@@ -1183,9 +1183,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages005';
         console.info(`${TAG} test start`);
@@ -1220,9 +1220,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages006';
         console.info(`${TAG} test start`);
@@ -1259,9 +1259,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages007';
         console.info(`${TAG} test start`);
@@ -1311,9 +1311,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages008';
         console.info(`${TAG} test start`);
@@ -1355,9 +1355,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages009';
         console.info(`${TAG} test start`);
@@ -1407,9 +1407,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages010';
         console.info(`${TAG} test start`);
@@ -1451,9 +1451,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages011';
         console.info(`${TAG} test start`);
@@ -1490,9 +1490,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages012';
         console.info(`${TAG} test start`);
@@ -1532,9 +1532,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages013';
         console.info(`${TAG} test start`);
@@ -1575,9 +1575,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages014';
         console.info(`${TAG} test start`);
@@ -1617,9 +1617,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages015';
         console.info(`${TAG} test start`);
@@ -1660,9 +1660,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages016';
         console.info(`${TAG} test start`);
@@ -1699,9 +1699,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages017';
         console.info(`${TAG} test start`);
@@ -1754,9 +1754,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages018';
         console.info(`${TAG} test start`);
@@ -1792,9 +1792,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RemoveMessages019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages019';
         console.info(`${TAG} test start`);
@@ -1847,9 +1847,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RemoveMessages020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RemoveMessages020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'RemoveMessages020';
         console.info(`${TAG} test start`);
@@ -1885,9 +1885,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages001';
         console.info(`${TAG} test start`);
@@ -1922,9 +1922,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages002';
         console.info(`${TAG} test start`);
@@ -1963,9 +1963,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages003';
         console.info(`${TAG} test start`);
@@ -2004,9 +2004,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages004';
         console.info(`${TAG} test start`);
@@ -2045,9 +2045,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages005';
         console.info(`${TAG} test start`);
@@ -2086,9 +2086,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages006';
         console.info(`${TAG} test start`);
@@ -2127,9 +2127,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages007';
         console.info(`${TAG} test start`);
@@ -2169,9 +2169,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages008';
         console.info(`${TAG} test start`);
@@ -2211,9 +2211,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages009';
         console.info(`${TAG} test start`);
@@ -2253,9 +2253,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages010';
         console.info(`${TAG} test start`);
@@ -2295,9 +2295,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages011';
         console.info(`${TAG} test start`);
@@ -2337,9 +2337,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('HasMessages012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('HasMessages012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'HasMessages012';
         console.info(`${TAG} test start`);
@@ -2415,9 +2415,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('SendToTargetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SendToTargetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'SendToTargetTest002';
         console.info(`${TAG} test start`);
@@ -2450,9 +2450,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('SendToTargetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SendToTargetTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'SendToTargetTest003';
         console.info(`${TAG} test start`);
@@ -2485,9 +2485,9 @@ export default function MessageTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('SendToTargetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SendToTargetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'SendToTargetTest004';
         console.info(`${TAG} test start`);
