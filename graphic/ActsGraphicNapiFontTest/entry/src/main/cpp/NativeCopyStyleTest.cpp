@@ -483,7 +483,7 @@ int OHDrawingCopyTypographyStyle005()
     OH_Drawing_TypographyStyle* typoStyle_ = OH_Drawing_CreateTypographyStyle();
     ASSERT_NE(typoStyle_, nullptr);
 
-    const int EVEN_NUMBER_DIVISOR = 2;
+    const int evenNumberDivisor = 2;
     std::vector<OH_Drawing_FontStyle> fontStyle = {
         FONT_STYLE_NORMAL, FONT_STYLE_ITALIC, FONT_STYLE_OBLIQUE
     };
@@ -491,7 +491,7 @@ int OHDrawingCopyTypographyStyle005()
         OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, fontStyle[i]);
         typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
         ASSERT_NE(typoStyleCopy_, nullptr);
-        if (i % EVEN_NUMBER_DIVISOR == 0) {
+        if (i % evenNumberDivisor == 0) {
             EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), fontStyle[0]);
         } else {
             EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), fontStyle[i]);
