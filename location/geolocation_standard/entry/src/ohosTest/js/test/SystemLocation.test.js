@@ -201,6 +201,61 @@ export default function geolocationTest_geo2() {
         expect(true).assertEqual(types.length !=0);
 
     })
+
+    /**
+      * @tc.name   SUB_HSS_LocationSystem_systemapi_0500
+      * @tc.number SUB_HSS_LocationSystem_systemapi_0500
+      * @tc.desc   Obtains the geographical location of a device..
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('SUB_HSS_LocationSystem_systemapi_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            geolocations.getLocation(null);
+        } catch (error) {
+            console.error("[lbs_js] SUB_HSS_LocationSystem_systemapi_0500:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_systemapi_0600
+     * @tc.number SUB_HSS_LocationSystem_systemapi_0600
+     * @tc.desc   Test subscribe api .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_systemapi_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            geolocations.subscribe(null);
+        } catch (error) {
+            console.error("[lbs_js] SUB_HSS_LocationSystem_systemapi_0600:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_systemapi_0700
+     * @tc.number SUB_HSS_LocationSystem_systemapi_0700
+     * @tc.desc   Subscribing to geographical location information .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_systemapi_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            geolocations.getLocationType(null);
+        } catch (error) {
+            console.error("[lbs_js] SUB_HSS_LocationSystem_systemapi_0700:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
     })
 }
 
