@@ -1153,5 +1153,2422 @@ export default function audioCapturer() {
       await closeFileDescriptor(PLAY_FILE);
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0001
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_INVALID,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_UNKNOWN
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: []
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0002
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_11025,
+        channels: audio.AudioChannel.CHANNEL_3,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_U8,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_MONO
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_UNKNOWN]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0003
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_12000,
+        channels: audio.AudioChannel.CHANNEL_4,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_MEDIA]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0004
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
+        channels: audio.AudioChannel.CHANNEL_5,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO_DOWNMIX
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_MUSIC]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0005
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_22050,
+        channels: audio.AudioChannel.CHANNEL_6,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT1
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0006
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
+        channels: audio.AudioChannel.CHANNEL_7,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT0
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0007
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_32000,
+        channels: audio.AudioChannel.CHANNEL_8,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_SURROUND
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_ALARM]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0008
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0008
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_64000,
+        channels: audio.AudioChannel.CHANNEL_9,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT1
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0009
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0009
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_88200,
+        channels: audio.AudioChannel.CHANNEL_10,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_4POINT0
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0010
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0010
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_96000,
+        channels: audio.AudioChannel.CHANNEL_12,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_QUAD
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_RINGTONE]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0011
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0011
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_176400,
+        channels: audio.AudioChannel.CHANNEL_14,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_QUAD_SIDE
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_NOTIFICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0012
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0012
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT0POINT2
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0013
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0013
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_ACN_N3D
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_MOVIE]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0014
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0014
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_ACN_SN3D
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_GAME]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0015
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0015
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_4POINT1
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_NAVIGATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0016
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0016
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT0
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0017
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0017
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT0_BACK
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0018
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0018
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT1POINT2
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0019
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0019
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT0POINT2
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0020
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0020
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0021
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0021
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1_BACK
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0022
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0022
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT0
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0023
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0023
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_HEXAGONAL
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0024
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0024
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT1POINT2
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0025
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0025
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT0_FRONT
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0026
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0026
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0027
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0027
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1_BACK
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0028
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0028
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1_FRONT
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0029
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0029
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT0
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0030
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0030
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT0_FRONT
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0031
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0031
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0032
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0032
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_OCTAGONAL
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0033
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0033
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1POINT2
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0034
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0034
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1_WIDE
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0035
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0035
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1_WIDE_BACK
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0036
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0036
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_ACN_N3D
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0037
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0037
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_ACN_SN3D
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0038
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0038
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_FUMA
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0039
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0039
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1POINT4
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0040
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0040
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1POINT2
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0041
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0041
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1POINT4
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0042
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0042
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_10POINT2
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0043
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0043
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_9POINT1POINT4
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0044
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0044
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_9POINT1POINT6
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0045
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0045
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_HEXADECAGONAL
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0046
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0046
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_ACN_N3D
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0047
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0047
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_ACN_SN3D
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0048
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0048
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_FUMA
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0049
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0049
+     * @tc.desc   CreateAudioCapturer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_PROPERTY_0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_FUMA
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let playbackCaptureConfig: audio.AudioPlaybackCaptureConfig = {
+        filterOptions: {
+          usages: [audio.StreamUsage.STREAM_USAGE_AUDIOBOOK]
+        }
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo,
+        playbackCaptureConfig: playbackCaptureConfig
+      }
+      let audioCapPromise: ESObject = null;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          done();
+        });
+      } catch (err) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800301);
+        done();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
   })
 }
