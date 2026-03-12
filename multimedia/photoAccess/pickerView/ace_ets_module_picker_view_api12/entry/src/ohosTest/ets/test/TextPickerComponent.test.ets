@@ -103,25 +103,6 @@ async function routeToUrl(options: router.RouterOptions) {
   }
 }
 
-async function closePermissionDialog() {
-  let driver = Driver.create();
-
-  for (let i = 0; i < 5; i++) {
-    await driver.delayMs(500);
-
-    let allowBtn = await driver.findComponent(ON.text('Allow'));
-    if (!allowBtn) {
-      allowBtn = await driver.findComponent(ON.text('Deny'));
-    }
-
-    if (allowBtn) {
-      await allowBtn.click();
-      return;
-    }
-  }
-}
-
-
 function getSheetPickerOptions(): photoAccessHelper.PhotoSelectOptions {
   let sheetPickerOptions = new photoAccessHelper.PhotoSelectOptions();
   sheetPickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
