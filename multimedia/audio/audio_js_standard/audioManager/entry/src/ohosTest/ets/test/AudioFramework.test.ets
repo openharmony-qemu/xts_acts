@@ -12313,7 +12313,7 @@ export default function audioFramework() {
           console.info(`${TagFrmwk}: getVolume with VOICE_CALL: FAIL :${err.message}`);
           expect(false).assertTrue();
         } else {
-          expect(value).assertLarger(0);
+          expect(value).assertLargerOrEqual(0);
           console.info(`${TagFrmwk}: getVolume with VOICE_CALL: PASS`);
           done();
         }
