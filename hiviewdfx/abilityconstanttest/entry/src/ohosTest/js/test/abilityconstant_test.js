@@ -56,6 +56,7 @@ describe("ActsAbilityConstantTest", function () {
         console.info("DFX_DFR_AbilityConstant_Interface_0100 end");
     })
 
+    
     /**
      * @tc.name   DFX_DFR_AbilityConstant_Interface_0200
      * @tc.number DFX_DFR_AbilityConstant_Interface_0200
@@ -73,6 +74,7 @@ describe("ActsAbilityConstantTest", function () {
             expect(AbilityConstant.OnSaveResult.CONTINUATION_MISMATCH).assertEqual(2);
             expect(AbilityConstant.OnSaveResult.RECOVERY_AGREE).assertEqual(3);
             expect(AbilityConstant.OnSaveResult.RECOVERY_REJECT).assertEqual(4);
+        
         }catch(error){
             console.info("DFX_DFR_AbilityConstant_Interface_0200 err = " + error);
             expect(false).assertTrue();
