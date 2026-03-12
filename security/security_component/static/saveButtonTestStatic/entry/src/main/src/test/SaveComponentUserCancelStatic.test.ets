@@ -121,7 +121,7 @@ export default function saveComponentUserCancelStaticTest() {
         await UtilsTest.msSleep(500);
         console.info(`====>${testname} button is:` + JSON.stringify(button));
         await (button?.click() as Promise<void>);
-        await UtilsTest.msSleep(500);
+        await UtilsTest.msSleep(2000);
         let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
         console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
         if (titleTx !== null) {
