@@ -184,18 +184,18 @@ static napi_value GetRawFileContent64(napi_env env, napi_callback_info info)
     napi_get_value_string_utf8(env, argv[1], strBuf, sizeof(strBuf), &strSize);
     std::string filename(strBuf, strSize);
     RawFile64 *rawFile = OH_ResourceManager_OpenRawFile64(mNativeResMgr, filename.c_str());
-    if (rawFile != nullptr) {
+    if (rawFile == nullptr) {
         return nullptr;
     }
     long len = OH_ResourceManager_GetRawFileSize64(rawFile);
     std::unique_ptr<uint8_t[]> data = std::make_unique<uint8_t[]>(len);
 
     int64_t offset = OH_ResourceManager_GetRawFileOffset64(rawFile);
-    if (offset == 0) {
+    if (offset != 0) {
         return nullptr;
     }
 
-    int size = OH_ResourceManager_SeekRawFile64(rawFile, 1, 0);
+    int size = OH_ResourceManager_SeekRawFile64(rawFile, 2, 0);
     if (size == -1) {
         return nullptr;
     }
@@ -208,7 +208,7 @@ static napi_value GetRawFileContent64(napi_env env, napi_callback_info info)
 
     OH_ResourceManager_CloseRawFile64(rawFile);
     OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-    return CreateJsArrayValue(env, data, len);
+    return CreateJsArrayValue(env, data, len-2);
 }
 
 napi_value createJsFileDescriptor(napi_env env, RawFileDescriptor &descriptor)

@@ -6339,6 +6339,62 @@ export default function InterfaceNullValueOverrideTest() {
       }
     })
 
+    /**
+     * @tc.name i18n_removePreferredLanguage_NonePermissions_test_0100
+     * @tc.number i18n_removePreferredLanguage_NonePermissions_test_0100
+     * @tc.desc with NonePermissions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_removePreferredLanguage_NonePermissions_test_0100', Level.LEVEL3, () => {
+      try {
+        let value = i18n.removePreferredLanguage(0);
+        console.log('i18n_removePreferredLanguage_NonePermissions_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_removePreferredLanguage_NonePermissions_test_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(201);
+      }
+    })
+
+    /**
+     * @tc.name i18n_set24HourClock_NonePermissions_test_0100
+     * @tc.number i18n_set24HourClock_NonePermissions_test_0100
+     * @tc.desc with NonePermissions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_set24HourClock_NonePermissions_test_0100', Level.LEVEL3, () => {
+      try {
+        let value = i18n.set24HourClock(true);
+        console.log('i18n_set24HourClock_NonePermissions_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_set24HourClock_NonePermissions_test_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(201);
+      }
+    })
+
+    /**
+     * @tc.name i18n_addPreferredLanguage_NonePermissions_test_0100
+     * @tc.number i18n_addPreferredLanguage_NonePermissions_test_0100
+     * @tc.desc with NonePermissions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_addPreferredLanguage_NonePermissions_test_0100', Level.LEVEL3, () => {
+      try {
+        let value = i18n.addPreferredLanguage('zh');
+        console.log('i18n_addPreferredLanguage_NonePermissions_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_addPreferredLanguage_NonePermissions_test_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(201);
+      }
+    })
 
   })
 }
