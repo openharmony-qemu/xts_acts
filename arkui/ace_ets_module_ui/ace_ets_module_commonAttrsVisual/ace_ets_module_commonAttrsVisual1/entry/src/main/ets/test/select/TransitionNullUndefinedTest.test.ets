@@ -363,22 +363,22 @@ export default function TransitionNullUndefinedTest() {
     });
 
     /**
-     * @tc.name   TransitionNullUndefinedTest_010
-     * @tc.number TransitionNullUndefinedTest_010
+     * @tc.name   TransitionNullUndefinedTest_017
+     * @tc.number TransitionNullUndefinedTest_017
      * @tc.desc   To test theTransitionEffect.asymmetric undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('TransitionNullUndefinedTest_010', Level.LEVEL2, async (done: Function) => {
+    it('TransitionNullUndefinedTest_017', Level.LEVEL2, async (done: Function) => {
       await Utils.sleep(1000);
-      console.log('TransitionNullUndefinedTest_010 START')
+      console.log('TransitionNullUndefinedTest_017 START')
       let strJson = getInspectorByKey('TransitionEffectAsymmetricUndefined');
       let obj: ESObject = JSON.parse(strJson);
-      console.info("TransitionNullUndefinedTest_010 obj is: " + JSON.stringify(obj));
-      console.info("[TransitionNullUndefinedTest_010] type: " + obj.$type);
+      console.info("TransitionNullUndefinedTest_017 obj is: " + JSON.stringify(obj));
+      console.info("[TransitionNullUndefinedTest_017] type: " + obj.$type);
       expect(obj.$type).assertEqual('Image')
-      console.log('TransitionNullUndefinedTest_010 END')
+      console.log('TransitionNullUndefinedTest_017 END')
       done();
     });
 

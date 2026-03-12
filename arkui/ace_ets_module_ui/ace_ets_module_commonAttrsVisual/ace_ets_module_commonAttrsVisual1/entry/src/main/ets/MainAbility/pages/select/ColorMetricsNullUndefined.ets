@@ -21,21 +21,19 @@ struct ColorMetricsNullUndefinedSample {
   build() {
     Scroll(){
       Column(){
-        // ColorMetrics.rgba
+
         Text('ColorMetricsRgbaNull')
           .backgroundColor(ColorMetrics.rgba(null,null,null,null))
           .id('ColorMetricsRgbaNull')
         Text('ColorMetricsRgbaUndefined')
           .backgroundColor(ColorMetrics.rgba(undefined,undefined,undefined,undefined))
           .id('ColorMetricsRgbaUndefined')
-        // ColorMetrics.colorWithSpace
         Text('ColorMetricsColorWithSpaceNull')
           .backgroundColor(ColorMetrics.colorWithSpace(null,null,null,null,null))
           .id('ColorMetricsColorWithSpaceNull')
         Text('ColorMetricsColorWithSpaceUndefined')
           .backgroundColor(ColorMetrics.colorWithSpace(undefined,undefined,undefined,undefined,undefined))
           .id('ColorMetricsColorWithSpaceUndefined')
-        // ColorMetrics.resourceColor.blendColor
         Button('ColorMetricsResourceBlendColorNull').onClick(()=>{
           try {
             ColorMetrics.resourceColor(null).blendColor(null)

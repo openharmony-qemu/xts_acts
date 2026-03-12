@@ -70,6 +70,10 @@ import UnbindTabsFromNestedScrollableNullTest from './ParamsNull/UnbindTabsFromN
 import UnbindTabsFromScrollableNullTest from './ParamsNull/UnbindTabsFromScrollableNullTest.test';
 import GetNodePropertyValueNullTest from './ParamsNull/GetNodePropertyValueNullTest.test';
 import BindControllerNullTest from './ParamsNull/BindControllerNullTest.test';
+import InterpolateNullTest from './ParamsNull/InterpolateNullTest.test';
+import SetPolyToPolyNullTest from './ParamsNull/SetPolyToPolyNullTest.test';
+import CreateAnimationNullTest from './ParamsNull/CreateAnimationNullTest.test';
+import EnableBreathingAnimationFalseTest from './ParamsNull/EnableBreathingAnimationFalseTest.test';
 
 import ColorMetricsNullUndefined from './select/ColorMetricsNullUndefined.test';
 import TransitionNullUndefinedTest from './select/TransitionNullUndefinedTest.test';
@@ -129,6 +133,10 @@ export default function testsuite() {
   UnbindTabsFromScrollableNullTest();
   GetNodePropertyValueNullTest();
   BindControllerNullTest();
+  InterpolateNullTest();
+  SetPolyToPolyNullTest();
+  CreateAnimationNullTest();
+  EnableBreathingAnimationFalseTest();
 
   ColorMetricsNullUndefined();
   TransitionNullUndefinedTest();

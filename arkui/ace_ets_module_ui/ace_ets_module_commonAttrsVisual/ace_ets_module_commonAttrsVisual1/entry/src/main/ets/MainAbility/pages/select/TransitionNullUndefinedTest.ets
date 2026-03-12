@@ -18,7 +18,6 @@ struct TransitionNullUndefinedTest {
   build() {
     Scroll(){
       Column() {
-        //TransitionEffect.rotate
         Row(){
           Image($r('app.media.icon')).width('30%').margin({ top: 10 }).id('TransitionEffectRotateEmpty')
             .transition(TransitionEffect.rotate({centerX:'',centerY:'',angle:''}))
@@ -27,7 +26,6 @@ struct TransitionNullUndefinedTest {
           Image($r('app.media.icon')).width('30%').margin({ top: 10 }).id('TransitionEffectRotateUndefined')
             .transition(TransitionEffect.rotate(undefined))
         }
-        //TransitionEffect.scale
         Row(){
           Image($r('app.media.icon')).width('30%').margin({ top: 10 }).id('TransitionEffectScaleEmpty')
             .transition(TransitionEffect.scale({centerX:'',centerY:''}))
@@ -36,21 +34,18 @@ struct TransitionNullUndefinedTest {
           Image($r('app.media.icon')).width('30%').margin({ top: 10 }).id('TransitionEffectScaleUndefined')
             .transition(TransitionEffect.scale(undefined))
         }
-        //TransitionEffect.opacity
         Row(){
           Image($r('app.media.icon')).width('50%').margin({ top: 10 }).id('TransitionEffectOpacityNull')
             .transition(TransitionEffect.opacity(null))
           Image($r('app.media.icon')).width('50%').margin({ top: 10 }).id('TransitionEffectOpacityUndefined')
             .transition(TransitionEffect.opacity(undefined))
         }
-        //TransitionEffect.asymmetric
         Row(){
           Image($r('app.media.icon')).width('50%').margin({ top: 10 }).id('TransitionEffectAsymmetricNull')
             .transition(TransitionEffect.asymmetric(null,null))
           Image($r('app.media.icon')).width('50%').margin({ top: 10 }).id('TransitionEffectAsymmetricUndefined')
             .transition(TransitionEffect.asymmetric(undefined,undefined))
         }
-        //TransitionEffect.animation
         Row(){
           Image($r('app.media.icon')).width('25%').margin({ top: 10 }).id('TransitionEffectAnimationNull')
             .transition(TransitionEffect.OPACITY.animation(null))
@@ -61,7 +56,6 @@ struct TransitionNullUndefinedTest {
           Image($r('app.media.icon')).width('25%').margin({ top: 10 }).id('TransitionEffectAnimationEmpty2')
             .transition(TransitionEffect.OPACITY.animation({curve:'',finishCallbackType:FinishCallbackType.REMOVED}))
         }
-        //TransitionEffect.combine
         Row(){
           Image($r('app.media.icon')).width('50%').margin({ top: 10 }).id('TransitionEffectCombineNull')
             .transition(TransitionEffect.OPACITY.combine(null))

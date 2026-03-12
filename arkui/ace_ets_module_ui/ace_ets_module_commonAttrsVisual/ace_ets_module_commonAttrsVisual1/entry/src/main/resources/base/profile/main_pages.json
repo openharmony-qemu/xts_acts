@@ -58,6 +58,10 @@
         "MainAbility/pages/ParamsNull/UnbindTabsFromScrollableNullTest",
         "MainAbility/pages/ParamsNull/GetNodePropertyValueNullTest",
         "MainAbility/pages/ParamsNull/BindControllerNullTest",
+        "MainAbility/pages/ParamsNull/InterpolateNullTest",
+        "MainAbility/pages/ParamsNull/SetPolyToPolyNullTest",
+        "MainAbility/pages/ParamsNull/CreateAnimationNullTest",
+        "MainAbility/pages/ParamsNull/EnableBreathingAnimationFalseTest",
         "MainAbility/pages/select/TransitionNullUndefinedTest",
         "MainAbility/pages/select/ColorMetricsNullUndefined"
 
