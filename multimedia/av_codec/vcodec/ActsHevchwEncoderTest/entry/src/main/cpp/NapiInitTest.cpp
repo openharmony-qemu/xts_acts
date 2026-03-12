@@ -57,8 +57,7 @@ int DispatchByCaseNum(int caseNum, const PrepareFn* handlers, size_t count)
     return SUCCESS_CODE;
 }
 
-struct GenericAsyncContext
-{
+struct GenericAsyncContext {
     napi_env env;
     napi_async_work work;
     napi_deferred deferred;
@@ -106,34 +105,34 @@ static napi_value CreatePrepareFunc(napi_env env, napi_callback_info info, const
     return result;
 }
 
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_bframe_prepare_fun ={BframeFuncTest::SetUpTestCase,
+static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_bframe_prepare_fun = {BframeFuncTest::SetUpTestCase,
                                             nullptr,
                                             nullptr,
                                             BframeFuncTest::TearDown
 };
 
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_postSqr_prepare_fun ={PostSqrFuncTest::SetUpTestCase,
+static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_postSqr_prepare_fun = {PostSqrFuncTest::SetUpTestCase,
                                             nullptr,
                                             nullptr,
                                             PostSqrFuncTest::TearDown
 };
 
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_ptsApi_prepare_fun ={PtsApiTest::SetUpTestCase,
+static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_ptsApi_prepare_fun = {PtsApiTest::SetUpTestCase,
                                             nullptr,
                                             nullptr,
                                             PtsApiTest::TearDown
 };
 
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_roi_prepare_fun ={RoiFuncTest::SetUpTestCase,
+static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_roi_prepare_fun = {RoiFuncTest::SetUpTestCase,
                                             nullptr,
                                             nullptr,
                                             RoiFuncTest::TearDown
 };
 
-static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_sqr_prepare_fun ={SqrFuncTest::SetUpTestCase,
+static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_sqr_prepare_fun = {SqrFuncTest::SetUpTestCase,
                                             nullptr,
                                             nullptr,
-                                            SqrFuncTest::TearDown,
+                                            SqrFuncTest::TearDown
 };
 
 static napi_value CreateAsyncTest(napi_env env,
@@ -158,8 +157,8 @@ static napi_value CreateAsyncTest(napi_env env,
     napi_value resourceName;
     napi_create_string_utf8(env, resourceNameStr, NAPI_AUTO_LENGTH, &resourceName);
     napi_create_async_work(
-         env, nullptr, resourceName, ExecuteGenericWork, CompleteGenericWork, context, &context->work);
- 	     napi_queue_async_work(env, context->work);
+        env, nullptr, resourceName, ExecuteGenericWork, CompleteGenericWork, context, &context->work);
+ 	    api_queue_async_work(env, context->work);
     return promise;
 }
 
@@ -202,40 +201,50 @@ static const std::array<TestHandler, SQR_FUNC_TEST_COUNT> g_sqrFunc_test_Handler
 };
 
 inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
- 	 {
- 	     return { name, nullptr, cb, nullptr, nullptr, nullptr, napi_default, nullptr };
- 	 }
+{
+    return { name, nullptr, cb, nullptr, nullptr, nullptr, napi_default, nullptr };
+}
 
 #define DECL_NAPI_DESC(fn) /* NOLINT(G.PRE.02-CPP) */ MakeNapiDesc(#fn, fn)
 
 static napi_value Bframe_Func_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-        env, info, g_bframeFunc_test_Handlers.data(), g_bframeFunc_test_Handlers.size(), "Bframe_Func_Test");
+        env, info, g_bframeFunc_test_Handlers.data(),
+        g_bframeFunc_test_Handlers.size(),
+        "Bframe_Func_Test");
 }
 
 static napi_value Post_Sqr_Func_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-        env, info, g_postSqrFunc_test_Handlers.data(), g_postSqrFunc_test_Handlers.size(), "Post_Sqr_Func_Test");
+        env, info, g_postSqrFunc_test_Handlers.data(),
+        g_postSqrFunc_test_Handlers.size(),
+        "Post_Sqr_Func_Test");
 }
 
 static napi_value Pts_Api_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-        env, info, g_ptsApi_test_Handlers.data(), g_ptsApi_test_Handlers.size(), "Pts_Api_Test");
+        env, info, g_ptsApi_test_Handlers.data(),
+        g_ptsApi_test_Handlers.size(),
+        "Pts_Api_Test");
 }
 
 static napi_value Roi_Func_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-    env, info, g_roiFunc_test_Handlers.data(), g_roiFunc_test_Handlers.size(), "Roi_Func_Test");
+    env, info, g_roiFunc_test_Handlers.data(),
+    g_roiFunc_test_Handlers.size(),
+    "Roi_Func_Test");
 }
 
 static napi_value Sqr_Func_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-    env, info, g_sqrFunc_test_Handlers.data(), g_sqrFunc_test_Handlers.size(), "Sqr_Func_Test");
+    env, info, g_sqrFunc_test_Handlers.data(),
+    g_sqrFunc_test_Handlers.size(),
+    "Sqr_Func_Test");
 }
 
 static napi_value Bframe_Func_Test_Prepare(napi_env env, napi_callback_info info)
