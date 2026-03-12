@@ -77,7 +77,7 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_Select:ActsAceEtsModuleSelectTest",
       "ace_ets_module_dialog_Select_static:ActsAceEtsModuleDialogSelectStaticTest",
       "ace_ets_module_dialog_Slider:ActsAceEtsModuleSliderTest",
-      "ace_ets_module_dialog_Slider_static:ActsAceEtsModuleSliderStaticTest"
+      "ace_ets_module_dialog_Slider_static:ActsAceEtsModuleSliderStaticTest",
       "ace_ets_module_dialog_nowear_api11_static:ActsAceEtsModuleDialogNoWearApi11StaticTest",
       #"ace_ets_module_dialog_nowear_api12_static:ActsAceEtsModuleDialogNoWearApi12StaticTest",
       "ace_ets_module_dialog_nowear_api15_static:ActsAceEtsModuleDialogNoWearApi15StaticTest",
