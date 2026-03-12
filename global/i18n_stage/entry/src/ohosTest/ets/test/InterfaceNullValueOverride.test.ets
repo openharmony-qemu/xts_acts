@@ -6354,7 +6354,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('i18n_removePreferredLanguage_NonePermissions_test_0100 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(201);
+        expect(e.code).assertEqual(201);
       }
     })
 
@@ -6373,7 +6373,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('i18n_set24HourClock_NonePermissions_test_0100 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(201);
+        expect(e.code).assertEqual(201);
       }
     })
 
@@ -6392,7 +6392,7 @@ export default function InterfaceNullValueOverrideTest() {
         expect(value).assertFail();
       } catch (e) {
         console.log('i18n_addPreferredLanguage_NonePermissions_test_0100 code&message:', e.code + e.message);
-        expect(Number(e.code)).assertEqual(201);
+        expect(e.code).assertEqual(201);
       }
     })
 
