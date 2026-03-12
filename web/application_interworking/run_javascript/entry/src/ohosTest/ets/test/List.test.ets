@@ -29,6 +29,13 @@ import adsBlockManagerRemoveAdsBlockAllowedListParam from './AdsBlockManagerRemo
 import adsBlockManagerAddAdsBlockAllowedListParam from './AdsBlockManagerAddAdsBlockAllowedListParam.test';
 import adsBlockManagerRemoveAdsBlockDisallowedListParam from './AdsBlockManagerRemoveAdsBlockDisallowedListParam.test';
 
+import backForwardListGetItemAtIndexNullUndefined from './BackForwardListGetItemAtIndexNullUndefined.test';
+import proxyConfigInsertProxyRuleParam from './ProxyConfigInsertProxyRuleParam.test';
+import proxyConfigInsertBypassRuleParam from './ProxyConfigInsertBypassRuleParam.test';
+import proxyConfigInsertDirectRuleParam from './ProxyConfigInsertDirectRuleParam.test';
+import proxyControllerApplyProxyOverrideParam from './ProxyControllerApplyProxyOverrideParam.test';
+import webDownloadItemDeserializeParam from './WebDownloadItemDeserializeParam.test';
+
 export default function testsuite() {
   webJsunit()
   webJsunitTwo()
@@ -45,4 +52,12 @@ export default function testsuite() {
   adsBlockManagerAddAdsBlockDisallowedListParam()
   adsBlockManagerAddAdsBlockAllowedListParam()
   adsBlockManagerRemoveAdsBlockDisallowedListParam()
+
+  backForwardListGetItemAtIndexNullUndefined()
+  proxyConfigInsertBypassRuleParam()
+  proxyConfigInsertDirectRuleParam()
+  proxyConfigInsertProxyRuleParam()
+  proxyControllerApplyProxyOverrideParam()
+  webDownloadItemDeserializeParam()
+
 }

@@ -13,6 +13,12 @@
       "testability/pages/adsBlockManagerAddAdsBlockAllowedListParam",
       "testability/pages/adsBlockManagerAddAdsBlockDisallowedListParam",
       "testability/pages/adsBlockManagerRemoveAdsBlockAllowedListParam",
-      "testability/pages/adsBlockManagerRemoveAdsBlockDisallowedListParam"
+      "testability/pages/adsBlockManagerRemoveAdsBlockDisallowedListParam",
+      "testability/pages/backForwardListGetItemAtIndexNullUndefined",
+      "testability/pages/proxyConfigInsertBypassRuleParam",
+      "testability/pages/proxyConfigInsertDirectRuleParam",
+      "testability/pages/proxyConfigInsertProxyRuleParam",
+      "testability/pages/proxyControllerApplyProxyOverrideParam",
+      "testability/pages/webDownloadItemDeserializeParam"
   ]
 }
