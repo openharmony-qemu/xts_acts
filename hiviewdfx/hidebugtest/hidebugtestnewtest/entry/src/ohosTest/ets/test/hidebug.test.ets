@@ -309,8 +309,8 @@ export default function HidebugTest() {
       console.info("HidebugTest_0014 end");
     });
     /**
-     * @tc.name   HidebugTest_0014
-     * @tc.number HidebugTest_0014
+     * @tc.name   HidebugTest_0024
+     * @tc.number HidebugTest_0024
      * @tc.desc   getServiceDump函数的异常值覆盖,第1个参数的undefined覆盖
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

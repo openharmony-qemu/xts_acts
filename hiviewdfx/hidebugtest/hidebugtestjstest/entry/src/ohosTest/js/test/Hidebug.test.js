@@ -522,6 +522,7 @@ describe('HidebugJsTest', function () {
         } catch (error) {
             console.info(error.code);
             console.info(error.message);
+            expect(false).assertTrue();
         }
         console.log('************* DFX_DFR_Hiprofiler_Interface_2000 Test end*************');
     });
