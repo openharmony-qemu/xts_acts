@@ -1170,7 +1170,7 @@ export default function Sim2Public() {
               ];
               const isCard: boolean = simStateAry.includes(data);
               if (isCard) {
-                ExpectTrue(True);
+                ExpectTrue(true);
                 hilog.info(domain, tag, `${caseName} getCardType true test end `);
                 done();
               } else {
