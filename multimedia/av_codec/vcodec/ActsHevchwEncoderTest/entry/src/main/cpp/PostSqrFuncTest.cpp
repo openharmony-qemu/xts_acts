@@ -97,14 +97,13 @@ void TearDown()
 int VIDEO_HW_ENCODE_FUNC_SQR_001()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
-    if (!isSupported)
-    {
+    if (!isSupported) {
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case01.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case01.h265";
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
@@ -144,7 +143,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_002()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case02.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case02.h265";
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
@@ -184,7 +183,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_003()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case03.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case03.h265";
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
@@ -222,7 +221,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_004()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case04.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case04.h265";
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
@@ -260,7 +259,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_005()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case05.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case05.h265";
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
@@ -300,7 +299,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_006()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case06.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case06.h265";
     vEncSample->modeEnable = true;
     vEncSample->enableParameter = true;
     vEncSample->maxbiteEnableRun = true;
@@ -336,7 +335,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_007()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case07.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case07.h265";
     vEncSample->modeEnable = true;
     vEncSample->enableParameter = true;
     vEncSample->factorEnableRun = true;
@@ -370,7 +369,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_008()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case08.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case08.h265";
     vEncSample->modeEnable = true;
     vEncSample->enableParameter = true;
     vEncSample->maxbiteEnableRun = true;
@@ -404,7 +403,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_009()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case09.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_buffer_case09.h265";
     vEncSample->qualityEnableRun = true;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;

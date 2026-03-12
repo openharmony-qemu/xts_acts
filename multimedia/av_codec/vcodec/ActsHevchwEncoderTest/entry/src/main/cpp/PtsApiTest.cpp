@@ -93,11 +93,11 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
         bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
-    snprintf(input, 1024, "%s", inputDir.c_str());
-    snprintf(output, 1024, "%s", outputDir.c_str());
+    OHPrintf(input, 1024, "%s", inputDir.c_str());
+    OHPrintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->OUT_DIR = output;
+    vEncSample->outDir = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
@@ -143,11 +143,11 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
         bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
-    snprintf(input, 1024, "%s", inputDir.c_str());
-    snprintf(output, 1024, "%s", outputDir.c_str());
+    OHPrintf(input, 1024, "%s", inputDir.c_str());
+    OHPrintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->OUT_DIR = output;
+    vEncSample->outDir = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
@@ -188,15 +188,16 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
-     bitrateMode, bitRate, surfaceMode);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir,
+        outputDir, width, height,
+        bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
-    snprintf(input, 1024, "%s", inputDir.c_str());
-    snprintf(output, 1024, "%s", outputDir.c_str());
+    OHPrintf(input, 1024, "%s", inputDir.c_str());
+    OHPrintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->OUT_DIR = output;
+    vEncSample->outDir = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
@@ -242,11 +243,11 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
         bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
-    snprintf(input, 1024, "%s", inputDir.c_str());
-    snprintf(output, 1024, "%s", outputDir.c_str());
+    OHPrintf(input, 1024, "%s", inputDir.c_str());
+    OHPrintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->OUT_DIR = output;
+    vEncSample->outDir = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
@@ -292,11 +293,11 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
         bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
-    snprintf(input, 1024, "%s", inputDir.c_str());
-    snprintf(output, 1024, "%s", outputDir.c_str());
+    OHPrintf(input, 1024, "%s", inputDir.c_str());
+    OHPrintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->OUT_DIR = output;
+    vEncSample->outDir = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
@@ -342,11 +343,11 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
         bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
-    snprintf(input, 1024, "%s", inputDir.c_str());
-    snprintf(output, 1024, "%s", outputDir.c_str());
+    OHPrintf(input, 1024, "%s", inputDir.c_str());
+    OHPrintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->OUT_DIR = output;
+    vEncSample->outDir = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;

@@ -19,7 +19,8 @@ add_library(entry SHARED
     PtsApiTest.cpp
     RoiFuncTest.cpp
     SqrFuncTest.cpp
-    VideoencApi11Test.cpp)
+    VideoencApi11Test.cpp
+)
 
 target_link_libraries(entry PUBLIC
     libace_napi.z.so
@@ -28,5 +29,6 @@ target_link_libraries(entry PUBLIC
     libnative_image.so
     libnative_window.so
     libnative_buffer.so
+    libhilog_ndk.z.so
     libnative_media_venc.so
-    libhilog_ndk.z.so)
+)

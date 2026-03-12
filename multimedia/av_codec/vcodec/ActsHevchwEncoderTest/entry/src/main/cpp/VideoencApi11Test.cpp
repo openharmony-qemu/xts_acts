@@ -796,7 +796,7 @@ void VEncAPI11Sample::OutputFuncFail()
 
 void VEncAPI11Sample::OutputFunc()
 {
-    FILE *outFile = fopen(OUT_DIR, "wb");
+    FILE *outFile = fopen(outDir, "wb");
     while (g_flagValue) {
         if (!isRunning_.load()) {
             break;

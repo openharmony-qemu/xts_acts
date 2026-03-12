@@ -100,7 +100,7 @@ int VIDEO_HW_ENCODE_B_FUNC_001()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1280_720_YUV420_01.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_01.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->DEFAULT_BITRATE_MODE = CBR;
@@ -137,7 +137,7 @@ int VIDEO_HW_ENCODE_B_FUNC_002()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1280_720_YUV420_02.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_02.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->DEFAULT_BITRATE_MODE = CBR;
@@ -174,7 +174,7 @@ int VIDEO_HW_ENCODE_B_FUNC_003()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1280_720_YUV420_03.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_03.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->DEFAULT_BITRATE_MODE = CBR;
@@ -212,7 +212,7 @@ int VIDEO_HW_ENCODE_B_FUNC_004()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
     vEncSample->surfInput = true;
     vEncSample->bEnable = true;
     vEncSample->modeEnable = true;
@@ -251,7 +251,7 @@ int VIDEO_HW_ENCODE_B_FUNC_005()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->surfInput = true;
@@ -290,7 +290,7 @@ int VIDEO_HW_ENCODE_B_FUNC_006()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->OUT_DIR = "/data/storage/el2/base/files/1080_1920_nv12_04.h265";
+    vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_04.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->surfInput = true;
