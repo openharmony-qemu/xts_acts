@@ -1178,12 +1178,6 @@ export default function Sim2Public() {
                 hilog.info(domain, tag, `${caseName} getCardType else test end `);
                 done();
               }
-            });
-          } else {
-            ExpectFail();
-            hilog.info(domain, tag, `${caseName} test end `);
-            done();
-          }
         }).catch((error:Error) => {
           let err = error as  BusinessError;
           hilog.info(domain, tag, `${caseName} getCardType failed, promise: err->${JSON.stringify(err)}`);
