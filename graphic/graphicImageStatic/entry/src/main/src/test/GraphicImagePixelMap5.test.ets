@@ -1368,13 +1368,15 @@ export default function graphicImagePixelMap5() {
         image.createPixelMap(color, opts, (error: BusinessError | null, pixelMap: image.PixelMap | undefined) => {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
-            expect(Number(error.code)).assertEqual(62980096);
+            expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
-            expect().assertFail();
+            expect(pixelMap?.isEditable).assertTrue();
+            expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -1400,10 +1402,11 @@ export default function graphicImagePixelMap5() {
         try {
           let pixelMap = await image.createPixelMap(color, opts)
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
-          expect().assertFail();
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
         } catch(err){
           console.error(msgStr + ` Failed to create pixelmap. code is ${err.code}`);
-          expect(Number(err.code)).assertEqual(62980096);
+          expect().assertFail();
         }
         done();
       })
@@ -1492,16 +1495,16 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap5_static_4400
-     * @tc.number graphicImagePixelMap5_static_4400
+     * @tc.name   graphicImagePixelMap5_static_1400
+     * @tc.number graphicImagePixelMap5_static_1400
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap5_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = '=====www data graphicImagePixelMap5_static_4400=====';
+        let msg = '=====www data graphicImagePixelMap5_static_1400=====';
         const color: ArrayBuffer = new ArrayBuffer(16);
         let bufferArr = new Uint8Array(color);
         for (let i = 0; i < bufferArr.length; i += 4) {
@@ -1541,16 +1544,16 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap5_static_4500
-     * @tc.number graphicImagePixelMap5_static_4500
+     * @tc.name   graphicImagePixelMap5_static_1500
+     * @tc.number graphicImagePixelMap5_static_1500
      * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap5_static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = "www data  =graphicImagePixelMap5_static_4500= "
+        let msg = "www data  =graphicImagePixelMap5_static_1500= "
         console.log(" www data 3" + msg + " begin ")
         const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
         let bufferArr = new Uint8Array(color);
@@ -1593,16 +1596,16 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap5_static_4600
-     * @tc.number graphicImagePixelMap5_static_4600
+     * @tc.name   graphicImagePixelMap5_static_1600
+     * @tc.number graphicImagePixelMap5_static_1600
      * @tc.desc   The transparent channel premultiplied mode of PixelMap is changed to non-premultiplied mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap5_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg = "www data =graphicImagePixelMap5_static_4600= "
+        let msg = "www data =graphicImagePixelMap5_static_1600= "
         console.log(" www data 4" + msg + " begin ")
         const color: ArrayBuffer = new ArrayBuffer(16); // 16为需要创建的像素buffer大小，取值为：height * width *4
         let bufferArr = new Uint8Array(color);
@@ -1643,42 +1646,42 @@ export default function graphicImagePixelMap5() {
       })
 
     /**
-     * @tc.name   graphicImagePixelMap5_static_4700
-     * @tc.number graphicImagePixelMap5_static_4700
+     * @tc.name   graphicImagePixelMap5_static_1700
+     * @tc.number graphicImagePixelMap5_static_1700
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap5_static_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
         try {
           let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync('123', region);
-          console.info('www data succeed in graphicImagePixelMap5_static_4700');
+          console.info('www data succeed in graphicImagePixelMap5_static_1700');
           expect(pixelMap !== null).assertTrue();
           // Verify basic properties
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertTrue();
-          console.info(`www data graphicImagePixelMap5_static_4700 success`);
+          console.info(`www data graphicImagePixelMap5_static_1700 success`);
           expect().assertFail();
         } catch (err) {
           err = err as BusinessError;
-          console.error(`www data graphicImagePixelMap5_static_4700 error: ${err}, code: ${err.code}`);
+          console.error(`www data graphicImagePixelMap5_static_1700 error: ${err}, code: ${err.code}`);
           expect(Number(err.code) == 62980178).assertTrue();
         }
         done();
       })
 
     /**
-     * @tc.name   graphicImagePixelMap5_static_4800
-     * @tc.number graphicImagePixelMap5_static_4800
+     * @tc.name   graphicImagePixelMap5_static_1800
+     * @tc.number graphicImagePixelMap5_static_1800
      * @tc.desc   image API ArkTS1.2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('graphicImagePixelMap5_static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('graphicImagePixelMap5_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let pixelMap: image.PixelMap = image.createPixelMapFromSurfaceSync('123456');
@@ -1689,25 +1692,25 @@ export default function graphicImagePixelMap5() {
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
 
-          console.info(`www data graphicImagePixelMap5_static_4800 success`);
+          console.info(`www data graphicImagePixelMap5_static_0400 success`);
           expect().assertFail();
         } catch (err) {
           err = err as BusinessError;
-          console.error(`www data graphicImagePixelMap5_static_4800 error: ${err}, code: ${err.code}`);
+          console.error(`www data graphicImagePixelMap5_static_0400 error: ${err}, code: ${err.code}`);
           expect(Number(err.code) == 62980178).assertTrue();
         }
         done();
       })
 
     /**
-     * @tc.name    graphicImagePixelMap5_static_4900
-     * @tc.number  graphicImagePixelMap5_static_4900
+     * @tc.name    graphicImagePixelMap5_static_1900
+     * @tc.number  graphicImagePixelMap5_static_1900
      * @tc.desc    createPixelMapFromSurface function test.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('graphicImagePixelMap5_static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('graphicImagePixelMap5_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
           // Test with valid parameters
@@ -1716,33 +1719,33 @@ export default function graphicImagePixelMap5() {
 
           const pixelMap = await image.createPixelMapFromSurface(surfaceId);
 
-          console.info(`www data graphicImagePixelMap5_static_4900 pixelMap: ${pixelMap}`);
+          console.info(`www data graphicImagePixelMap5_static_1900 pixelMap: ${pixelMap}`);
           expect(pixelMap !== null).assertTrue();
 
           // Verify basic properties
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
 
-          console.info(`www data graphicImagePixelMap5_static_4900 success`);
+          console.info(`www data graphicImagePixelMap5_static_1900 success`);
           expect(false).assertTrue();
           done();
         } catch (error) {
           const err = error as BusinessError;
-          console.error(`www data graphicImagePixelMap5_static_4900 error: ${error}, code: ${err.code}`);
+          console.error(`www data graphicImagePixelMap5_static_1900 error: ${error}, code: ${err.code}`);
           expect(error.code).assertEqual(62980178);
           done();
         }
       });
 
     /**
-     * @tc.name    graphicImagePixelMap5_static_5000
-     * @tc.number  graphicImagePixelMap5_static_5000
+     * @tc.name    graphicImagePixelMap5_static_2000
+     * @tc.number  graphicImagePixelMap5_static_2000
      * @tc.desc    createPixelMapFromSurface function test.
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('graphicImagePixelMap5_static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('graphicImagePixelMap5_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         try {
           // Test with valid parameters
@@ -1750,23 +1753,36 @@ export default function graphicImagePixelMap5() {
 
           const pixelMap = await image.createPixelMapFromSurface('');
 
-          console.info(`www data graphicImagePixelMap5_static_5000 pixelMap: ${pixelMap}`);
+          console.info(`www data graphicImagePixelMap5_static_1900 pixelMap: ${pixelMap}`);
           expect(pixelMap !== null).assertTrue();
 
           // Verify basic properties
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertTrue();
 
-          console.info(`www data graphicImagePixelMap5_static_5000 success`);
+          console.info(`www data graphicImagePixelMap5_static_1900 success`);
           expect(false).assertTrue();
           done();
         } catch (error) {
           const err = error as BusinessError;
-          console.error(`www data graphicImagePixelMap5_static_5000 error: ${error}, code: ${err.code}`);
+          console.error(`www data graphicImagePixelMap5_static_1900 error: ${error}, code: ${err.code}`);
           expect(error.code).assertEqual(62980178);
           done();
         }
       });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   })
 }
