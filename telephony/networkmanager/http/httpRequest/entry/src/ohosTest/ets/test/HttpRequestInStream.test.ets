@@ -1,7 +1,7 @@
-import type { BusinessError } from "@ohos:base";
-import http from "@ohos:net.http";
-import { describe, expect, it, Level, Size, TestType } from "@package:pkg_modules/.ohpm/@ohos+hypium@1.0.6/pkg_modules/@ohos/hypium/index";
-import connection from "@ohos:net.connection";
+import type { BusinessError } from "@ohos.base";
+import http from "@ohos.net.http";
+import { describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import connection from "@ohos.net.connection";
 export const ADDR_TEST_ILLEGAL: string = "abc";
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
 const ExpectFail = () => {
