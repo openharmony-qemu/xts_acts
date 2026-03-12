@@ -512,7 +512,7 @@ export default function ArrayPopTest() {
      * @tc.level Level 1
      */
     it('testArrayPop0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: number[] = new Array<number>(3).fill(5);
+      const arr: number[] = Array.create<number>(3, 5);
       const popped: number | undefined = arr.pop();
       expect(popped === undefined).assertEqual(false);
       expect(popped!).assertEqual(5);
@@ -827,7 +827,7 @@ export default function ArrayPopTest() {
      * @tc.level Level 1
      */
     it('testArrayPop0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: number[] = new Array<number>(3).fill(9);
+      const arr: number[] = Array.create<number>(3, 9);
       const popped: number | undefined = arr.pop();
       expect(popped).assertEqual(9);
       expect(arr.length).assertEqual(2);

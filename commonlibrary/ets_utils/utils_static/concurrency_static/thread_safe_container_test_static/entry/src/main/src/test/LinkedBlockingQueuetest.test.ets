@@ -999,10 +999,7 @@ export default function LinkedBlockingQueuetest() {
          */
         it("linked_Blocking_Queue_Test_static_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let queueIntPop1 = new containers.LinkedBlockingQueue<int | Array<int>>(10);
-            let arr = new Array<int>(10);
-            for (let i:int = 0; i < 10; i++) {
-                arr[i] = i;
-            }
+            let arr = new Array<int>(10, (i: int) => i);
             queueIntPop1.add(arr);
             let res1 = queueIntPop1.size;
             expect(String(res1)).assertEqual('1');
@@ -1278,7 +1275,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(0);
+            let arr = new Array<int>();
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10, iter)
             let res = queueIntPop1.capacity;
@@ -1294,7 +1291,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(0);
+            let arr = new Array<int>();
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
             let res = queueIntPop1.size;
@@ -1310,7 +1307,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(0);
+            let arr = new Array<int>();
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
             let res = queueIntPop1.isEmpty();
@@ -1374,8 +1371,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(1);
-            arr[0] = 0;
+            let arr = new Array<int>(1, (i) => 0);
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(10, iter)
             let res = queueIntPop1.capacity;
@@ -1391,8 +1387,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(1);
-            arr[0] = 0;
+            let arr = new Array<int>(1, (i) => 0);
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
             let res = queueIntPop1.size;
@@ -1408,8 +1403,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(1);
-            arr[0] = 0;
+            let arr = new Array<int>(1, (i) => 0);
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
             let res = queueIntPop1.isEmpty();
@@ -1425,8 +1419,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(1);
-            arr[0] = 0;
+            let arr = new Array<int>(1, (i) => 0);
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
             let res = queueIntPop1.getFirst();
@@ -1442,8 +1435,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(1);
-            arr[0] = 0;
+            let arr = new Array<int>(1, (i) => 0);
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
             queueIntPop1.poll();
@@ -1460,10 +1452,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(1000);
-            for (let i:int = 0; i < 1000; i++) {
-                arr[i] = i;
-            }
+            let arr = new Array<int>(1000, (i: int) => i);
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(1000, iter)
             let res = queueIntPop1.capacity;
@@ -1479,10 +1468,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<int>(1000);
-            for (let i:int = 0; i < 1000; i++) {
-                arr[i] = i;
-            }
+            let arr = new Array<int>(1000, (i: int) => i);
             let iter = arr.values();
             let queueIntPop1: containers.LinkedBlockingQueue<int> = new containers.LinkedBlockingQueue<int>(iter);
             let res = queueIntPop1.size;
@@ -1498,7 +1484,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterTest_static_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<null>(0);
+            let arr = new Array<null>();
             let queueIntPop1 = new containers.LinkedBlockingQueue<null>(arr);
             let res = queueIntPop1.size;
             expect(String(res)).assertEqual('0');
@@ -1513,7 +1499,7 @@ export default function LinkedBlockingQueuetest() {
          * @tc.level Level 0
          */
         it("linked_Blocking_Queue_NoParameterUndefinedTest_static_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            let arr = new Array<undefined>(0);
+            let arr = new Array<undefined>();
             let queueIntPop1 = new containers.LinkedBlockingQueue<undefined>(arr);
             let res = queueIntPop1.size;
             expect(String(res)).assertEqual('0');
@@ -2025,7 +2011,7 @@ export default function LinkedBlockingQueuetest() {
          */
         it("linked_Blocking_Queue_PerformanceTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const totalCount: int = 100;
-            const numbers: Array<int> = new Array<int>(100);
+            const numbers: Array<int> = Array.create<int>(100, 0);
             for (let i:int = 0; i < totalCount; i++) {
                 numbers.push(i);
             }
@@ -2052,7 +2038,7 @@ export default function LinkedBlockingQueuetest() {
          */
         it("linked_Blocking_Queue_PerformanceTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             const totalCount: int = 100;
-            const numbers: Array<int> = new Array<int>(100);
+            const numbers: Array<int> = Array.create<int>(100, 0);
             for (let i:int = 0; i < totalCount; i++) {
                 numbers.push(i);
             }

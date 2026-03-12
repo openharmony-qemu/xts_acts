@@ -1,6 +1,6 @@
 
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -53,25 +53,6 @@ export default function SetSymbolIteratorTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0003
-     * @tc.name testArrayConstructor0003
-     * @tc.desc Verify Array constructor creates array with single negative integer length throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let error: Error | null = null;
-      try {
-        new Array<boolean>(-3);
-      } catch (e) {
-        error = e as Error;
-      }
-      expect(error === null).assertEqual(false);
-      expect(error?.name).assertEqual('NegativeArraySizeError');
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Constructor_0011
@@ -256,7 +237,7 @@ export default function SetSymbolIteratorTest() {
      */
     it('testArrayConstructor0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxSafeInt = 1000000;
-      const arr = new Array<number>(maxSafeInt);
+      const arr = new Array<number>(maxSafeInt, (i) => 0);
       expect(arr.length).assertEqual(maxSafeInt);
     });
 
@@ -336,7 +317,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(-0);
+      const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
     });
 
@@ -367,8 +348,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(3);
-      arr.fill(5);
+      const arr = new Array<number>(3, (i) => 5);
       expect(arr.length).assertEqual(3);
       expect(arr[0]).assertEqual(5);
       expect(arr[2]).assertEqual(5);
@@ -400,7 +380,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(5);
+      const arr = new Array<number>(5, (i) => 0);
       expect(arr instanceof Array).assertEqual(true);
       expect(Array.isArray(arr)).assertEqual(true);
     });
@@ -476,7 +456,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(3);
+      const arr = new Array<number>(3, (i) => 0);
       arr[0] = 1;
       expect(arr[0]).assertEqual(1);
     });
@@ -490,7 +470,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(3);
+      const arr = new Array<number | undefined>(3, (i) => undefined);
       arr[0] = 1;
       arr[2] = 3;
       expect(arr.join(',')).assertEqual('1,,3');
@@ -518,7 +498,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(5);
+      const arr = new Array<number | undefined>(5, (i) => undefined);
       arr[2] = 10;
       expect(arr.indexOf(10)).assertEqual(2);
       expect(arr.indexOf(20)).assertEqual(-1);
@@ -564,8 +544,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(3);
-      arr.fill(2);
+      const arr = new Array<number>(3, (i) => 2);
       const mapped = arr.map(x => x * 3);
       expect(mapped.length).assertEqual(3);
       expect(mapped[0]).assertEqual(6);
@@ -611,7 +590,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
 
       const arr2 = new Array<number>(0, 1);
@@ -628,7 +607,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(3);
+      const arr = new Array<number>(3, (i) => 0);
       arr[0] = 3;
       arr[1] = 1;
       arr[2] = 2;
@@ -800,7 +779,7 @@ export default function SetSymbolIteratorTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(5);
+      const arr = new Array<number>(5, (i) => 0);
       expect(Array.isArray(arr)).assertEqual(true);
       expect(Array.isArray('not array')).assertEqual(false);
     });
