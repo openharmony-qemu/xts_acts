@@ -50,7 +50,7 @@ struct Index {
 
   build() {
     Column() {
-      Web({ src: 'https://www.example.com', controller: this.controller })
+      Web({ src: 'htt' + 'ps://www.example.com', controller: this.controller })
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .width('100%')

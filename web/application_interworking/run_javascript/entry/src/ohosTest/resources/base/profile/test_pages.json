@@ -19,6 +19,11 @@
       "testability/pages/proxyConfigInsertDirectRuleParam",
       "testability/pages/proxyConfigInsertProxyRuleParam",
       "testability/pages/proxyControllerApplyProxyOverrideParam",
-      "testability/pages/webDownloadItemDeserializeParam"
+      "testability/pages/webDownloadItemDeserializeParam",
+      "testability/pages/webMessageExtSetStringErrorCode",
+      "testability/pages/webMessageExtSetNumberNullUndefined",
+      "testability/pages/webMessageExtSetArrayBufferErrorCode",
+      "testability/pages/webMessageExtSetErrorErrorCode",
+      "testability/pages/webMessagePortPostMessageEventExtErrorCode"
   ]
 }

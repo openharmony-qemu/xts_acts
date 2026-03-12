@@ -36,6 +36,12 @@ import proxyConfigInsertDirectRuleParam from './ProxyConfigInsertDirectRuleParam
 import proxyControllerApplyProxyOverrideParam from './ProxyControllerApplyProxyOverrideParam.test';
 import webDownloadItemDeserializeParam from './WebDownloadItemDeserializeParam.test';
 
+import webMessageExtSetStringErrorCode from './WebMessageExtSetStringErrorCode.test';
+import webMessageExtSetArrayBufferErrorCode from './WebMessageExtSetArrayBufferErrorCode.test';
+import webMessageExtSetErrorErrorCode from './WebMessageExtSetErrorErrorCode.test';
+import webMessageExtSetNumberNullUndefined from './WebMessageExtSetNumberNullUndefined.test';
+import webMessagePortPostMessageEventExtErrorCode from './WebMessagePortPostMessageEventExtErrorCode.test';
+
 export default function testsuite() {
   webJsunit()
   webJsunitTwo()
@@ -59,5 +65,11 @@ export default function testsuite() {
   proxyConfigInsertProxyRuleParam()
   proxyControllerApplyProxyOverrideParam()
   webDownloadItemDeserializeParam()
+
+  webMessageExtSetStringErrorCode()
+  webMessageExtSetArrayBufferErrorCode()
+  webMessageExtSetErrorErrorCode()
+  webMessageExtSetNumberNullUndefined()
+  webMessagePortPostMessageEventExtErrorCode()
 
 }
