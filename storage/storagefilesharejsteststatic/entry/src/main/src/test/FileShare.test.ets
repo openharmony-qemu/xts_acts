@@ -518,7 +518,38 @@ export default function FileShare_test() {
       }
     });
 
+    /**
+     * @tc.name   FileShare_persistPermission_static_001
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0100
+     * @tc.desc   Test persistPermission() interfaces with empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('FileShare_persistPermission_static_001',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_001 START');
+        try {
+          let policies: Array<fileShare.PolicyInfo> = [];
+          await fileShare.persistPermission(policies);
+          hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_001 success');
+          done();
+        } catch (e) {
+          hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_001 has failed for ' + e);
+          let err = e as BusinessError;
+          if (err.code === 801) {
+            expect(err.message === "The device doesn't support this api").assertTrue();
+          }
+          if (err.code == 401) {
+            expect(err.message == 'The input parameter is invalid').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_001 END');
+      });
   })
   hilog.info(domain, tag, '%{public}s', 'FileShare_test end');
-
 }
