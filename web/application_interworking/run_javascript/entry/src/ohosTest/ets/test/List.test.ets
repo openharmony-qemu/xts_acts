@@ -51,6 +51,13 @@ import webSchemeHandlerResponseSetHeaderByNameParam from './WebSchemeHandlerResp
 import webSchemeHandlerResponseSetNetErrorCodeParam from './WebSchemeHandlerResponseSetNetErrorCodeParam.test';
 import webSchemeHandlerResponseGetHeaderByNameParam from './WebSchemeHandlerResponseGetHeaderByNameParam.test';
 
+import webResourceResponseSetResponseDataParam from './WebResourceResponseSetResponseDataParam.test';
+import webResourceResponseSetResponseEncodingParam from './WebResourceResponseSetResponseEncodingParam.test';
+import webResourceResponseSetResponseMimeTypeParam from './WebResourceResponseSetResponseMimeTypeParam.test';
+import webResourceResponseSetResponseHeaderParam from './WebResourceResponseSetResponseHeaderParam.test';
+import webResourceResponseSetReasonMessageParam from './WebResourceResponseSetReasonMessageParam.test';
+import webResourceResponseSetResponseCodeParam from './WebResourceResponseSetResponseCodeParam.test';
+
 export default function testsuite() {
   webJsunit()
   webJsunitTwo()
@@ -89,5 +96,12 @@ export default function testsuite() {
   webSchemeHandlerResponseSetEncodingParam()
   webSchemeHandlerResponseSetNetErrorCodeParam()
   webSchemeHandlerResponseGetHeaderByNameParam()
+
+  webResourceResponseSetReasonMessageParam()
+  webResourceResponseSetResponseDataParam()
+  webResourceResponseSetResponseEncodingParam()
+  webResourceResponseSetResponseMimeTypeParam()
+  webResourceResponseSetResponseHeaderParam()
+  webResourceResponseSetResponseCodeParam()
 
 }
