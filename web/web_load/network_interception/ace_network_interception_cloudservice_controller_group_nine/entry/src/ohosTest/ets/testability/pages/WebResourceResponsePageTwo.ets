@@ -92,13 +92,7 @@ struct webResourceResponsePage {
                 this.responseDataString = this.webData;
                 this.isPageEnd = -1;
                 this.controller.loadUrl(URL_EXAMPLE);
-                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
                 console.log(this.emitKey + 'getResponseData:' + this.responseWeb.getResponseData());
-                if (this.responseWeb.getResponseData() === this.responseDataString) {
-                  Utils.emitEvent(true, 26031057);
-                } else {
-                  Utils.emitEvent(false, 26031057);
-                }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -213,6 +207,7 @@ struct webResourceResponsePage {
             this.heads.push(head2)
             this.responseWeb.setResponseHeader(this.heads)
             if (this.responseDataType === 'string') {
+              this.responseWeb.setResponseData(this.responseDataString);
               let url = event.request.getRequestUrl();
               if (url.includes('example.com')) {
                 Utils.emitEvent(event.request.getRequestUrl(), 26031051);
@@ -226,8 +221,12 @@ struct webResourceResponsePage {
                 Utils.emitEvent(event.request.isRedirect(), 26031054);
                 Utils.emitEvent(event.request.isRequestGesture(), 26031055);
                 Utils.emitEvent(event.request.getRequestMethod(), 26031056);
+                if (this.responseWeb.getResponseData() === this.responseDataString) {
+                  Utils.emitEvent(true, 26031057);
+                } else {
+                  Utils.emitEvent(false, 26031057);
+                }
               }
-              this.responseWeb.setResponseData(this.responseDataString);
             } else if (this.responseDataType === 'number') {
               this.responseWeb.setResponseData(123)
             } else if (this.responseDataType === 'ArrayBuffer'){

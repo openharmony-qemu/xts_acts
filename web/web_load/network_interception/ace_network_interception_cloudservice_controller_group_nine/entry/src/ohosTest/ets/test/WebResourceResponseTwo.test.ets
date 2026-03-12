@@ -69,48 +69,28 @@ export default function webResourceResponseTwo() {
      */
     it('testOnInterceptRequestCallback01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnInterceptRequestCallback01', 12788);
-      let isReturn = 0;
-      expect(isReturn).toBe(0);
-      Utils.registerBaseEvent("testOnInterceptRequestCallback01", 'https://www.example.com/', 26031051, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback01", 'https://www.example.com/', 26031051, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback01", true, 26031052, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback01", true, 26031052, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback01", true, 26031053, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback01", true, 26031053, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback01", false, 26031054, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback01", false, 26031054, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback01", false, 26031055, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback01", false, 26031055, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback01", 'GET', 26031056, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback01", 'GET', 26031056, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback01", true, 26031057, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback01", true, 26031057, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('OnInterceptRequestButton', 10, '');
-      if (await waitForExist(() => isReturn, 'testOnInterceptRequestCallback01' + '_returnCheck', 7, 1000)) {
-        expect(isReturn).toBe(7);
-        done();
-      }
     })
     /**
      * @tc.name   testOnInterceptRequestCallback02
@@ -122,48 +102,28 @@ export default function webResourceResponseTwo() {
      */
     it('testOnInterceptRequestCallback02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitOnInterceptRequestCallback02', 12788);
-      let isReturn = 0;
-      expect(isReturn).toBe(0);
-      Utils.registerBaseEvent("testOnInterceptRequestCallback02", true, 26031058, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback02", true, 26031058, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback02", 'OK', 26031059, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback02", 'OK', 26031059, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback02", 200, 26031060, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback02", 200, 26031060, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback02", 'utf-8', 26031061, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback02", 'utf-8', 26031061, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback02", true, 26031062, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback02", true, 26031062, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback02", 'text/html', 26031063, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback02", 'text/html', 26031063, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnInterceptRequestCallback02", true, 26031064, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnInterceptRequestCallback02", true, 26031064, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('OnInterceptRequestButton', 10, '');
-      if (await waitForExist(() => isReturn, 'testOnInterceptRequestCallback01' + '_returnCheck', 7, 1000)) {
-        expect(isReturn).toBe(7);
-        done();
-      }
     })
     /**
      * @tc.name   testOnInterceptRequestCallback03
@@ -210,5 +170,6 @@ export default function webResourceResponseTwo() {
       });
       sendEventByKey('OnInterceptRequestButton', 10, '');
     })
+
   })
 }

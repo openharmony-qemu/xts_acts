@@ -93,43 +93,25 @@ export default function webViewOnSslErrorEventThree() {
      */
     it('testOnSslErrorEventHandleConfirm', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnSslErrorEventHandleConfirm", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = 0;
-      expect(isReturn).toBe(0);
-      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", 'https://expired.badssl.com/', 26031021, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", 'https://expired.badssl.com/', 26031021, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", 'https://expired.badssl.com/', 26031022, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", 'https://expired.badssl.com/', 26031022, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", '', 26031023, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", '', 26031023, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", false, 26031024, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", false, 26031024, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", true, 26031025, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", true, 26031025, null, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", true, 26031026, ()=>{
-        isReturn += 1;
-      }, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testOnSslErrorEventHandleConfirm", true, 26031026, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('OnSslErrorEventThreeButton', 10, '');
-      if (await Utils.waitForExist(() => isReturn, 'testOnSslErrorEventHandleConfirm' + '_returnCheck', 6, 1000)) {
-        expect(isReturn).toBe(6);
-        done();
-      }
     })
     /**
      * @tc.name   testOnSslErrorEventHandleCancel

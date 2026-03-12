@@ -66,6 +66,7 @@ struct webViewOnMetaOnOverriderUrlLoading {
                   await Utils.waitForExist(()=>this.isReceive, 'webViewOnOverrideUrlLoadingIsReceive', 1, 1000);
                   console.info("key==>" + this.str);
                   this.isReceive = -1;
+                  this.isPageEnd = -1;
                   switch (this.str) {
                     case "emitWebViewOnOverrideUrlLoading": {
                         this.controller.runJavaScript("jump()", (error, result) => {
@@ -75,6 +76,14 @@ struct webViewOnMetaOnOverriderUrlLoading {
                             Utils.emitEvent(result, 201360)
                         })
                         break;
+                    }
+                    case 'emitWebViewOnOverrideUrlLoading02': {
+                      this.controller.runJavaScript('jump()', (error, result) => {
+                      })
+                      this.controller.runJavaScript('isOnOverrideUrlLoading()', (error, result) => {
+                        console.log('>>>>>isOnOverrideUrlLoading:' + result);
+                      })
+                      break;
                     }
                 }
               })
