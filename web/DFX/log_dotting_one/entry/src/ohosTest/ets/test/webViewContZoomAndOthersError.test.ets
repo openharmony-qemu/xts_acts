@@ -69,7 +69,7 @@ export default function webViewContZoomAndOthersError() {
     it('testZoomInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitZoomInitErr";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testZoomInitErr", "17100001", 112340, null);
+      Utils.registerEvent("testZoomInitErr", "17100001", 112340, done);
       Utils.registerEvent("testZoomInitErr", "Init error. The WebviewController must be associated with a Web component", 112350, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
@@ -326,6 +326,34 @@ export default function webViewContZoomAndOthersError() {
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testGetPageHeightInitErr", "17100001", 112680, null);
       Utils.registerEvent("testGetPageHeightInitErr", "Init error. The WebviewController must be associated with a Web component", 112690, done);
+      await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
+    })
+    /**
+     * @tc.name   testZoomInitNull
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5100
+     * @tc.desc   test interface of zoom with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testZoomInitNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitZoomInitNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testZoomInitNull", "401", 112700, done);
+      await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
+    })
+    /**
+     * @tc.name   testZoomInitUndefined
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5200
+     * @tc.desc   test interface of zoom with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testZoomInitUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitZoomInitUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testZoomInitUndefined", "401", 112720, done);
       await Utils.waitAndClickComponent(driver, "webViewContZoomAndOthersError");
     })
   })
