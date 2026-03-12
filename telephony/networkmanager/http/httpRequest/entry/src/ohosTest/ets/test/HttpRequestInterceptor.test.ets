@@ -1646,13 +1646,13 @@ export default function HttpRequestInterceptor() {
         httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
           if (err) {
             hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-            httpRequest.destory();
+            httpRequest.destroy();
             ExpectFail();
             done();
           } else {
             hilog.info(0x0000, 'testTag', `${caseName} res: ${JSON.stringify(res)}`);
             hilog.info(0x0000, 'testTag', `${caseName} finallyResponse: ${JSON.stringify(finallyResponse)}`);
-            httpRequest.destory();
+            httpRequest.destroy();
             ExpectTrue(finallyResponse.responseCode === res.responseCode)
             ExpectTrue(finallyResponse.cookies === res.cookies)
             ExpectTrue(JSON.stringify(finallyResponse.header) === JSON.stringify(res.header))
@@ -1696,13 +1696,13 @@ export default function HttpRequestInterceptor() {
         httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
           if (err) {
             hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-            httpRequest.destory();
+            httpRequest.destroy();
             ExpectFail();
             done();
           } else {
             hilog.info(0x0000, 'testTag', `${caseName} res: ${JSON.stringify(res)}`);
             hilog.info(0x0000, 'testTag', `${caseName} finallyResponse: ${JSON.stringify(finallyResponse)}`);
-            httpRequest.destory();
+            httpRequest.destroy();
             done();
           }
         });
@@ -1746,13 +1746,13 @@ export default function HttpRequestInterceptor() {
         httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
           if (err) {
             hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-            httpRequest.destory();
+            httpRequest.destroy();
             ExpectFail();
             done();
           } else {
             hilog.info(0x0000, 'testTag', `${caseName} res: ${JSON.stringify(res)}`);
             hilog.info(0x0000, 'testTag', `${caseName} finallyResponse: ${JSON.stringify(finallyResponse)}`);
-            httpRequest.destory();
+            httpRequest.destroy();
             ExpectTrue(finallyResponse.responseCode === res.responseCode)
             ExpectTrue(finallyResponse.cookies === res.cookies)
             ExpectTrue(JSON.stringify(finallyResponse.header) === JSON.stringify(res.header))
