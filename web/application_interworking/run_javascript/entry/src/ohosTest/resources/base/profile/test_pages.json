@@ -8,6 +8,11 @@
       "testability/pages/runJavaScriptErrorCode",
       "testability/pages/jsMessageExtTwo",
       "testability/pages/jsMessageExtThree",
-      "testability/pages/jsMessageExtFour"
+      "testability/pages/jsMessageExtFour",
+      "testability/pages/adsBlockManagerSetAdsBlockRulesParam",
+      "testability/pages/adsBlockManagerAddAdsBlockAllowedListParam",
+      "testability/pages/adsBlockManagerAddAdsBlockDisallowedListParam",
+      "testability/pages/adsBlockManagerRemoveAdsBlockAllowedListParam",
+      "testability/pages/adsBlockManagerRemoveAdsBlockDisallowedListParam"
   ]
 }

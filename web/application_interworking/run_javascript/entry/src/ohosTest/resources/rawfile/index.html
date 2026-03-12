@@ -62,5 +62,18 @@
     function gettitle(){
         return document.title;
     }
+    function triggerPostRequest(){
+        fetch('http://localhost/test', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({test: 'data'})
+        }).then(response => {
+            console.log('POST request sent');
+        }).catch(error => {
+            console.log('POST request error: ' + error);
+        });
+    }
 </script>
 </html>

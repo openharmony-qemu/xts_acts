@@ -23,6 +23,12 @@ import jsMessageExtTwo from './JsMessageExtTwo.test';
 import jsMessageExtThree from './JsMessageExtThree.test';
 import jsMessageExtFour from './JsMessageExtFour.test';
 
+import adsBlockManagerSetAdsBlockRulesParam from './AdsBlockManagerSetAdsBlockRulesParam.test';
+import adsBlockManagerAddAdsBlockDisallowedListParam from './AdsBlockManagerAddAdsBlockDisallowedListParam.test';
+import adsBlockManagerRemoveAdsBlockAllowedListParam from './AdsBlockManagerRemoveAdsBlockAllowedListParam.test';
+import adsBlockManagerAddAdsBlockAllowedListParam from './AdsBlockManagerAddAdsBlockAllowedListParam.test';
+import adsBlockManagerRemoveAdsBlockDisallowedListParam from './AdsBlockManagerRemoveAdsBlockDisallowedListParam.test';
+
 export default function testsuite() {
   webJsunit()
   webJsunitTwo()
@@ -33,4 +39,10 @@ export default function testsuite() {
   jsMessageExtTwo()
   jsMessageExtThree()
   jsMessageExtFour()
+
+  adsBlockManagerRemoveAdsBlockAllowedListParam()
+  adsBlockManagerSetAdsBlockRulesParam()
+  adsBlockManagerAddAdsBlockDisallowedListParam()
+  adsBlockManagerAddAdsBlockAllowedListParam()
+  adsBlockManagerRemoveAdsBlockDisallowedListParam()
 }
