@@ -1656,7 +1656,7 @@ export default function TextPicker() {
         try {
           let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
 
-          await closePermissionDialog();
+          await driveFn();
 
           let result = await createPromise;
           expect(result).not().assertUndefined();
