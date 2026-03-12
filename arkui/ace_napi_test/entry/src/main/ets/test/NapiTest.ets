@@ -3749,14 +3749,14 @@ export default function napiApiTest() {
     });
 
     /**
-     * @tc.name   testStrictEquals0004
+     * @tc.name   testStrictEquals0004Adapt001
      * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_STRICTEQUALS_0400
      * @tc.desc   Testing IsDate NAPI interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStrictEquals0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testStrictEquals0004Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testStrictEquals0004 START');
       try {
         let value = napitest.strictEqualsResultNull();
@@ -7138,14 +7138,14 @@ export default function napiApiTest() {
       });
 
       /**
-       * @tc.name   testNapiRefThreadsafeFunction0002
+       * @tc.name   testNapiRefThreadsafeFunction0002Adapt001
        * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_CREATE_DATE_0200
        * @tc.desc   Testing napi_create_date interface.
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL0
        */
-      it('testNapiRefThreadsafeFunction0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      it('testNapiRefThreadsafeFunction0002Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let TAG = "testNapiRefThreadsafeFunction0002";
         console.info(`${TAG} START`);
         try {
@@ -7160,14 +7160,14 @@ export default function napiApiTest() {
       });
 
       /**
-       * @tc.name   testNapiRefThreadsafeFunction0003
+       * @tc.name   testNapiRefThreadsafeFunction0003Adapt001
        * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_CREATE_DATE_0300
        * @tc.desc   Testing napi_create_date interface.
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL0
        */
-      it('testNapiRefThreadsafeFunction0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      it('testNapiRefThreadsafeFunction0003Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let TAG = "testNapiRefThreadsafeFunction0003";
         console.info(`${TAG} START`);
         try {
@@ -14086,14 +14086,14 @@ export default function napiApiTest() {
     });
 
     /**
-     * @tc.name   testNapiWrapEnhanceTest0001
+     * @tc.name   testNapiWrapEnhanceTest0001Adapt001
      * @tc.number SUB_RUNTIME_LANGUAGE_NAPI_NAPIWRAPENHANCETEST_0100
      * @tc.desc   Testing NapiWrapEnhanceTest synchronize binding of string type object test cases.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNapiWrapEnhanceTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testNapiWrapEnhanceTest0001Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testNapiWrapEnhanceTest0001 START');
       try {
         let value = napitest.NapiWrapEnhanceTest1();

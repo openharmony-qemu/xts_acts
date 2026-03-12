@@ -1227,40 +1227,40 @@ export default function StringRawBasicTest() {
     });
 
     /**
-     * @tc.name   StringRaw_RegexPattern_001
+     * @tc.name   StringRaw_RegexPattern_001Adapt001
      * @tc.number SUB_BUILTINS_STRING_RAW_SPECIAL_REGEX_0100
      * @tc.desc   Test String.raw for regex pattern avoiding double escape
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('StringRaw_RegexPattern_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringRaw_RegexPattern_001Adapt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let pattern: string = testRegexPattern();
       expect(pattern).assertEqual('\\d{3}-\\d{3}-\\d{4}');
     });
 
     /**
-     * @tc.name   StringRaw_RegexPattern_002
+     * @tc.name   StringRaw_RegexPattern_002Adapt001
      * @tc.number SUB_BUILTINS_STRING_RAW_SPECIAL_REGEX_0200
      * @tc.desc   Test regex pattern length
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('StringRaw_RegexPattern_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringRaw_RegexPattern_002Adapt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let length: number = testRegexPatternLength();
       expect(length).assertEqual(17);
     });
 
     /**
-     * @tc.name   StringRaw_RegexPattern_003
+     * @tc.name   StringRaw_RegexPattern_003Adapt001
      * @tc.number SUB_BUILTINS_STRING_RAW_SPECIAL_REGEX_0300
      * @tc.desc   Test String.raw with simple regex digits pattern
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('StringRaw_RegexPattern_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringRaw_RegexPattern_003Adapt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let pattern: string = String.raw`\d+`;
       expect(pattern).assertEqual('\\d+');
     });

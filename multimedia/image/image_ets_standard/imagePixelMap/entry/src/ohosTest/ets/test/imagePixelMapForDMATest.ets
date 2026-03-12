@@ -2217,14 +2217,14 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200Adapt001
      * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200
      * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200Adapt001', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200");
       let buffer: ESObject = await getBuffer("test.webp");
       let decodingOptions: image.DecodingOptions = {

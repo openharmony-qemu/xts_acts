@@ -1595,14 +1595,14 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDisallowedUninstallBundlesSync_003
+     * @tc.name   test_addDisallowedUninstallBundlesSync_003Adapt001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_007
      * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDisallowedUninstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
+    it("test_addDisallowedUninstallBundlesSync_003Adapt001", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         bundleManager.addDisallowedUninstallBundlesSync(null, APP_IDS_1);

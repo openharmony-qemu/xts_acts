@@ -1755,14 +1755,14 @@ export default function ActsNotificationManagerPublishTest() {
 
 
     /**
-     * @tc.name   testPublishPictureExpandedTitleForNull
+     * @tc.name   testPublishPictureExpandedTitleForNullAdapt001
      * @tc.number Sub_Notification_Ans_Publish_Publish_2110
      * @tc.desc   test publish fail
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testPublishPictureExpandedTitleForNull', Level.LEVEL2, async function (done) {
+    it('testPublishPictureExpandedTitleForNullAdapt001', Level.LEVEL2, async function (done) {
       const TEST_CASE_NAME = 'testPublishPicturepictureForNull';
 
       const color = new ArrayBuffer(60000);

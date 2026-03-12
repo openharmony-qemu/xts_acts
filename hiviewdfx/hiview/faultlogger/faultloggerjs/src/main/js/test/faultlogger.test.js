@@ -571,14 +571,14 @@ describe("FaultlogJsTest", function () {
     })
 
     /**
-     * @tc.name   DFX_DFR_Faultlogger_Interface_1200
+     * @tc.name   DFX_DFR_Faultlogger_Interface_1200Adapt001
      * @tc.number test_1300
      * @tc.desc   检验query函数入参为空时程序是否会崩溃,校验错误码返回801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('DFX_DFR_Faultlogger_Interface_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('DFX_DFR_Faultlogger_Interface_1200Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info("---------------------------DFX_DFR_Faultlogger_Interface_1300----------------------------------");
         function queryFaultLogCallback(error, ret) {
             if (error) {

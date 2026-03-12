@@ -1355,14 +1355,14 @@ export default function image10bitPixelMap() {
     })  
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800Adapt001
      * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800
      * @tc.desc   1.create imagesource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_8800Adapt001', Level.LEVEL0, async (done: Function) => {
       const surfaceId = null; 
       const region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
       try {
@@ -1376,14 +1376,14 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000Adapt001
      * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
      * @tc.desc   1.create imagesource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000Adapt001', Level.LEVEL0, async (done: Function) => {
       const surfaceId = null; 
       try {
         let pixelMap: image.PixelMap = await image.createPixelMapFromSurface(surfaceId);
@@ -1397,14 +1397,14 @@ export default function image10bitPixelMap() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800Adapt001
      * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
      * @tc.desc   SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0800Adapt001', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0200"
       const color = new ArrayBuffer(96);
       let opts: image.InitializationOptions = {
@@ -1427,14 +1427,14 @@ export default function image10bitPixelMap() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000Adapt002
      * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_GET_COLOR_SPACE_0900
      * @tc.desc   SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000', Level.LEVEL0 , async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_9000Adapt002', Level.LEVEL0 , async (done: Function) => {
       let receiver: image.ImageReceiver = image.createImageReceiver(8192, 8, image.ImageFormat.JPEG, 8);
       let callbackFunc = ()=>{
         console.info('Listening succeeded')
