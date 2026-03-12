@@ -171,6 +171,14 @@ it('GridRowJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       console.info('[GridRowJsunit_static_0300] START');
       await CommonFunc.sleep(200);
       AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
+        name: 'gutter', value: {
+          x: -10,
+          y: -10
+          
+        } as GutterOption
+      })
+      await CommonFunc.sleep(200);
+      AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
         name: 'columns',
         value: '-5'
       })

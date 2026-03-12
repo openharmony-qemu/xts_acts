@@ -116,10 +116,10 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0100', Level.LEVEL0, async (done: () => 
         .assertTrue();
 
       expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) -
-      Math.round(UIContext.resolveUIContext()!.vp2px(-10))) <= 1)
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
 
