@@ -1840,6 +1840,137 @@ export default function fileIOMoveDir() {
       }
     });
 
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_035
+     * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_3500
+     * @tc.desc   Test moveDir() interface with empty string as src parameter. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_moveDir_async_static_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_moveDir_async_static_035');
+      let ddpath = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath);
+      try {
+        fs.moveDir("", ddpath, DIRMODE_FILE_THROW_ERR, (err: BusinessError<void> | null) => {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_035 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_035 should throw error with empty string src');
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_035 end error: ' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_036
+     * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_3600
+     * @tc.desc   Test moveDir() interface with empty string as src parameter. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_moveDir_async_static_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_moveDir_async_static_036');
+      let ddpath = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath);
+      try {
+        fs.moveDir(ddpath, "", DIRMODE_FILE_THROW_ERR, (err: BusinessError<void> | null) => {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_036 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_036 should throw error with empty string src');
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_036 end error: ' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_037
+     * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_3700
+     * @tc.desc   Test moveDirWithConflictFiles() interface with empty string as src parameter. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_moveDir_async_static_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_moveDir_async_static_037');
+      let ddpath = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath);
+      try {
+        fs.moveDirWithConflictFiles("", ddpath, DIRMODE_FILE_THROW_ERR, (err: BusinessError<Array<ConflictFiles>> | null) => {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_037 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_037 should throw error with empty string src');
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_037 end error: ' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_moveDir_async_static_038
+     * @tc.number SUB_DF_FILEIO_MOVEDIRASYNC_3800
+     * @tc.desc   Test moveDirWithConflictFiles() interface with empty string as dest parameter. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_moveDir_async_static_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_moveDir_async_static_038');
+      let ddpath = dpath + '/srcDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath);
+      try {
+        fs.moveDirWithConflictFiles(ddpath, "", DIRMODE_FILE_THROW_ERR, (err: BusinessError<Array<ConflictFiles>> | null) => {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_038 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_038 should throw error with empty string dest');
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_038 end error: ' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_moveDir end');
 

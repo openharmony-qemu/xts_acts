@@ -1250,6 +1250,31 @@ export default function fileIOOpen() {
       }
     });
 
+    /**
+     * @tc.name   fileIO_test_open_async_static_033
+     * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_3300
+     * @tc.desc   Test open() Promise interface with empty path. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_open_async_static_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_033 start');
+      try {
+        fs.open("", fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, (err: BusinessError | null, file: fs.File | undefined) => {
+          if(err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_033 error: {message: ' + err?.message + ', code: ' + err?.code + '}');
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_033 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_open end');
 

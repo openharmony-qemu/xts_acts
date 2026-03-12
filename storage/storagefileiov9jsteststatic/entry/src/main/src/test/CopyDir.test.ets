@@ -1328,6 +1328,244 @@ export default function fileIOCopyDir() {
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_022
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2200
+     * @tc.desc   Test copyDir() interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_022');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+      try {
+        fs.copyDir("", ddpath2, (err: BusinessError<void>|null): void => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_022 err package ' + err?.message);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_022 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_023
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2300
+     * @tc.desc   Test copyDir() interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_023');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+      try {
+        fs.copyDir(ddpath2, "", (err: BusinessError<void>|null): void => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_023 err package ' + err?.message);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_023 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_024
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2400
+     * @tc.desc   Test copyDir() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_024');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+      try {
+        fs.copyDirWithConflictFiles("", ddpath2,(err: BusinessError<Array<ConflictFiles>>|null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_024 err package ' + err?.message);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_024 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_025
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2500
+     * @tc.desc   Test copyDir() interface.Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_025');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+      try {
+        fs.copyDirWithConflictFiles(ddpath2, "",(err: BusinessError<Array<ConflictFiles>>|null) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_025 err package ' + err?.message);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_025 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_026
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2600
+     * @tc.desc   Test copyDir() interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_026');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+      try {
+        fs.copyDir("", ddpath2, DIRMODE_FILE_COPY_REPLACE, (err: BusinessError<void>|null): void => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_026 err package ' + err?.message);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_026 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_027
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2700
+     * @tc.desc   Test copyDir() interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_027');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+      try {
+        fs.copyDir(ddpath2, "", DIRMODE_FILE_COPY_REPLACE, (err: BusinessError<void>|null): void => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_027 err package ' + err?.message);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_027 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_028
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2800
+     * @tc.desc   Test copyDir() interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_028');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+      try {
+        fs.copyDirWithConflictFiles("", ddpath2, DIRMODE_FILE_COPY_REPLACE, (err: BusinessError<void>|null): void => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_028 err package ' + err?.message);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_028 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_copyDir_async_static_029
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2900
+     * @tc.desc   Test copyDir() interfaces with first parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_copyDir_async_static_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_copyDir_async_static_029');
+      let ddpath2 = dpath + '/destDir';
+      fs.mkdirSync(dpath);
+      fs.mkdirSync(ddpath2);
+      try {
+        fs.copyDirWithConflictFiles(ddpath2, "", DIRMODE_FILE_COPY_REPLACE, (err: BusinessError<void>|null): void => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_029 err package ' + err?.message);
+            expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_029 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'fileIO_fs_copyDir end');
 
