@@ -85,7 +85,7 @@ struct webFantasyFont {
               this.family=''
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(CopyOptions.None, 150140)
+              Utils.emitEvent(CopyOptions.None, 121000)
               break;
             }
             case "emitWebFantasyFont003": {
@@ -93,7 +93,7 @@ struct webFantasyFont {
               this.family=null
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(true, 150150)
+              Utils.emitEvent(true, 121010)
               break;
             }
             case "emitWebFantasyFont004": {
@@ -101,7 +101,7 @@ struct webFantasyFont {
               this.family=undefined
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(true, 150160)
+              Utils.emitEvent(true, 121020)
               break;
             }
             case "emitWebCursiveFont005": {
@@ -109,7 +109,7 @@ struct webFantasyFont {
               this.family2=''
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(true, 150170)
+              Utils.emitEvent(true, 121030)
               break;
             }
             case "emitWebCursiveFont006": {
@@ -117,7 +117,7 @@ struct webFantasyFont {
               this.family2=null
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(true, 150180)
+              Utils.emitEvent(true, 121040)
               break;
             }
             case "emitWebCursiveFont007": {
@@ -125,7 +125,7 @@ struct webFantasyFont {
               this.family2=undefined
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(true, 150190)
+              Utils.emitEvent(true, 121050)
               break;
             }
 
@@ -136,7 +136,7 @@ struct webFantasyFont {
               this.selectionMenuOptions = null
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(true, 150200)
+              Utils.emitEvent(true, 121060)
               break;
             }
 
@@ -145,7 +145,7 @@ struct webFantasyFont {
               this.selectionMenuOptions = undefined
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(true, 150210)
+              Utils.emitEvent(true, 121070)
               break;
             }
           }

@@ -156,7 +156,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont007", 150140)
-      Utils.registerEvent("testWebStandardFont007", true, 150210, done);
+      Utils.registerEvent("testWebStandardFont007", true, 111000, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -171,7 +171,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont008", 150140)
-      Utils.registerEvent("testWebStandardFont008", true, 150220, done);
+      Utils.registerEvent("testWebStandardFont008", true, 111010, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -186,7 +186,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont009", 150140)
-      Utils.registerEvent("testWebStandardFont009", true, 150230, done);
+      Utils.registerEvent("testWebStandardFont009", true, 111020, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -202,7 +202,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont010", 150140)
-      Utils.registerEvent("testWebStandardFont010", true, 150240, done);
+      Utils.registerEvent("testWebStandardFont010", true, 111030, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -217,7 +217,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont011", 150140)
-      Utils.registerEvent("testWebStandardFont011", true, 150250, done);
+      Utils.registerEvent("testWebStandardFont011", true, 111040, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -232,7 +232,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont012", 150140)
-      Utils.registerEvent("testWebStandardFont012", true, 150260, done);
+      Utils.registerEvent("testWebStandardFont012", true, 111050, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -247,7 +247,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont013", 150140)
-      Utils.registerEvent("testWebStandardFont013", true, 150270, done);
+      Utils.registerEvent("testWebStandardFont013", true, 111060, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -262,7 +262,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont014", 150140)
-      Utils.registerEvent("testWebStandardFont014", true, 150280, done);
+      Utils.registerEvent("testWebStandardFont014", true, 111070, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -277,7 +277,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont015", 150140)
-      Utils.registerEvent("testWebStandardFont015", true, 150290, done);
+      Utils.registerEvent("testWebStandardFont015", true, 111200, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -292,7 +292,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont016", 150140)
-      Utils.registerEvent("testWebStandardFont016", true, 150300, done);
+      Utils.registerEvent("testWebStandardFont016", true, 111210, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -307,7 +307,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont017", 150140)
-      Utils.registerEvent("testWebStandardFont017", true, 150310, done);
+      Utils.registerEvent("testWebStandardFont017", true, 111220, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -322,7 +322,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont018", 150140)
-      Utils.registerEvent("testWebStandardFont018", true, 150320, done);
+      Utils.registerEvent("testWebStandardFont018", true, 111230, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -337,7 +337,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont019", 150140)
-      Utils.registerEvent("testWebStandardFont019", true, 150330, done);
+      Utils.registerEvent("testWebStandardFont019", true, 111240, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -352,7 +352,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont020", 150140)
-      Utils.registerEvent("testWebStandardFont020", true, 150340, done);
+      Utils.registerEvent("testWebStandardFont020", true, 111250, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -367,7 +367,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont021", 150140)
-      Utils.registerEvent("testWebStandardFont021", true, 150340, done);
+      Utils.registerEvent("testWebStandardFont021", true, 111260, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -382,7 +382,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont022", 150140)
-      Utils.registerEvent("testWebStandardFont022", true, 150350, done);
+      Utils.registerEvent("testWebStandardFont022", true, 111270, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -397,7 +397,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont023", 150140)
-      Utils.registerEvent("testWebStandardFont023", true, 150360, done);
+      Utils.registerEvent("testWebStandardFont023", true, 111300, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -412,7 +412,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont024", 150140)
-      Utils.registerEvent("testWebStandardFont024", true, 150370, done);
+      Utils.registerEvent("testWebStandardFont024", true, 111310, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -427,7 +427,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont025", 150140)
-      Utils.registerEvent("testWebStandardFont025", true, 150380, done);
+      Utils.registerEvent("testWebStandardFont025", true, 111320, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -442,7 +442,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont026", 150140)
-      Utils.registerEvent("testWebStandardFont026", true, 150390, done);
+      Utils.registerEvent("testWebStandardFont026", true, 111330, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -457,7 +457,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont027", 150140)
-      Utils.registerEvent("testWebStandardFont027", true, 150400, done);
+      Utils.registerEvent("testWebStandardFont027", true, 111340, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -472,7 +472,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont028", 150140)
-      Utils.registerEvent("testWebStandardFont028", true, 150410, done);
+      Utils.registerEvent("testWebStandardFont028", true, 111350, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -487,7 +487,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont029", 150140)
-      Utils.registerEvent("testWebStandardFont029", true, 150420, done);
+      Utils.registerEvent("testWebStandardFont029", true, 111360, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -502,7 +502,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont030", 150140)
-      Utils.registerEvent("testWebStandardFont030", true, 150430, done);
+      Utils.registerEvent("testWebStandardFont030", true, 111370, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -517,7 +517,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont031", 150140)
-      Utils.registerEvent("testWebStandardFont031", true, 150440, done);
+      Utils.registerEvent("testWebStandardFont031", true, 111400, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -532,7 +532,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont032", 150140)
-      Utils.registerEvent("testWebStandardFont032", true, 150450, done);
+      Utils.registerEvent("testWebStandardFont032", true, 111410, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -547,7 +547,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont033", 150140)
-      Utils.registerEvent("testWebStandardFont033", true, 150460, done);
+      Utils.registerEvent("testWebStandardFont033", true, 111420, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -563,7 +563,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont034", 150140)
-      Utils.registerEvent("testWebStandardFont034", true, 150470, done);
+      Utils.registerEvent("testWebStandardFont034", true, 111430, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -579,7 +579,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont035", 150140)
-      Utils.registerEvent("testWebStandardFont035", true, 150480, done);
+      Utils.registerEvent("testWebStandardFont035", true, 111440, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -594,7 +594,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont036", 150140)
-      Utils.registerEvent("testWebStandardFont036", true, 150490, done);
+      Utils.registerEvent("testWebStandardFont036", true, 111450, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -609,7 +609,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont037", 150140)
-      Utils.registerEvent("testWebStandardFont037", true, 150500, done);
+      Utils.registerEvent("testWebStandardFont037", true, 111460, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -624,7 +624,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont038", 150140)
-      Utils.registerEvent("testWebStandardFont038", true, 150510, done);
+      Utils.registerEvent("testWebStandardFont038", true, 111470, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -639,7 +639,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont039", 150140)
-      Utils.registerEvent("testWebStandardFont039", true, 150520, done);
+      Utils.registerEvent("testWebStandardFont039", true, 111500, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -654,7 +654,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont040", 150140)
-      Utils.registerEvent("testWebStandardFont040", true, 150530, done);
+      Utils.registerEvent("testWebStandardFont040", true, 111510, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -669,7 +669,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont041", 150140)
-      Utils.registerEvent("testWebStandardFont041", true, 150540, done);
+      Utils.registerEvent("testWebStandardFont041", true, 111520, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -684,7 +684,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont042", 150140)
-      Utils.registerEvent("testWebStandardFont042", true, 150550, done);
+      Utils.registerEvent("testWebStandardFont042", true, 111530, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -699,7 +699,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont043", 150140)
-      Utils.registerEvent("testWebStandardFont043", true, 150560, done);
+      Utils.registerEvent("testWebStandardFont043", true, 111540, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -714,7 +714,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont044", 150140)
-      Utils.registerEvent("testWebStandardFont044", true, 150570, done);
+      Utils.registerEvent("testWebStandardFont044", true, 111550, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -729,7 +729,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont045", 150140)
-      Utils.registerEvent("testWebStandardFont045", true, 150580, done);
+      Utils.registerEvent("testWebStandardFont045", true, 111560, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -744,7 +744,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont046", 150140)
-      Utils.registerEvent("testWebStandardFont046", true, 150590, done);
+      Utils.registerEvent("testWebStandardFont046", true, 111570, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -759,7 +759,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont047", 150140)
-      Utils.registerEvent("testWebStandardFont047", true, 150600, done);
+      Utils.registerEvent("testWebStandardFont047", true, 111600, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
@@ -774,7 +774,7 @@ export default function webFontTest() {
      */
     it('testWebStandardFont048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebStandardFont048", 150140)
-      Utils.registerEvent("testWebStandardFont048", true, 150610, done);
+      Utils.registerEvent("testWebStandardFont048", true, 111610, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
     })
