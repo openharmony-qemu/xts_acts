@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -345,7 +345,7 @@ export default function EsMathTest(){
     it('ESMathTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const caseName = 'ESMathTest0019';
       console.info(`${caseName}, test start`);
-      let vals = new Array<number>(7);
+      let vals = Array.create<number>(7, NaN);
       vals[0] = -Infinity;
       vals[1] = -0.000000000000001;
       vals[2] = -0;
@@ -354,7 +354,7 @@ export default function EsMathTest(){
       vals[5] = +Infinity;
       vals[6] = NaN;
       let valnum = 7;
-      let args = new Array<number>(2);
+      let args = Array.create<number>(2, NaN);
       for (let i = 0; i < 2; i++)
       {
         args[i] = NaN;
@@ -380,7 +380,7 @@ export default function EsMathTest(){
       const caseName = 'ESMathTest0020';
       console.info(`${caseName}, test start`);
       let x = +Infinity;
-      let y = new Array<number>(3);
+      let y = Array.create<number>(3, NaN);
       y[0] = 0.000000000000001;
       y[1] = 1;
       y[2] = 1.7976931348623157E308;
@@ -404,7 +404,7 @@ export default function EsMathTest(){
       const caseName = 'ESMathTest0021';
       console.info(`${caseName}, test start`);
       let x = +Infinity;
-      let y = new Array<number>(3);
+      let y = Array.create<number>(3, NaN);
       y[0] = -0.000000000000001;
       y[1] = -1;
       y[2] = -1.7976931348623157E308;
@@ -428,7 +428,7 @@ export default function EsMathTest(){
       const caseName = 'ESMathTest0022';
       console.info(`${caseName}, test start`);
       let y = +0;
-      let x = new Array<number>(3);
+      let x = Array.create<number>(3, NaN);
       x[0] = 0.000000000000001;
       x[2] = +Infinity;
       x[1] = 1;
@@ -467,7 +467,7 @@ export default function EsMathTest(){
       const caseName = 'ESMathTest0024';
       console.info(`${caseName}, test start`);
       let y = -0;
-      let x = new Array<number>(3);
+      let x = Array.create<number>(3, NaN);
       x[0] = 0.000000000000001;
       x[2] = +Infinity;
       x[1] = 1;
@@ -1431,7 +1431,7 @@ export default function EsMathTest(){
       const caseName = 'ESMathTest0075';
       console.info(`${caseName}, test start`);
       expect(Number.isNaN(Math.max(NaN))).assertEqual(Number.isNaN(NaN));
-      let vals:Array<number> = new Array<number>(7);
+      let vals:Array<number> = Array.create<number>(7, NaN);
       vals[0] = -Infinity;
       vals[1] = -0.000000000000001;
       vals[2] = -0;
@@ -1440,7 +1440,7 @@ export default function EsMathTest(){
       vals[5] = +Infinity;
       vals[6] = NaN;
       let valnum = 7;
-      let args:Array<number> = new Array<number>(3);
+      let args:Array<number> = Array.create<number>(3, NaN);
       for (let i = 0; i <= 1; i++) {
         args[i] = NaN;
         for (let j = 0; j < valnum; j++) {
@@ -1497,7 +1497,7 @@ export default function EsMathTest(){
       const caseName = 'ESMathTest0077';
       console.info(`${caseName}, test start`);
       expect(Number.isNaN(Math.min(NaN))).assertEqual(Number.isNaN(NaN));
-      let vals:Array<number> = new Array<number>(7);
+      let vals: Array<number> = Array.create<number>(7, NaN);
       vals[0] = -Infinity;
       vals[1] = -0.000000000000001;
       vals[2] = -0;
@@ -1506,7 +1506,7 @@ export default function EsMathTest(){
       vals[5] = +Infinity;
       vals[6] = NaN;
       let valnum = 7;
-      let args:Array<number> = new Array<number>(3);
+      let args:Array<number> = Array.create<number>(3, NaN);
       for (let i = 0; i <= 1; i++) {
         args[i] = NaN;
         for (let j = 0; j < valnum; j++) {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,12 +39,12 @@ export class SimpleSendable{
 
 // @Sendable
 class SendableArrayClass {
-  public arr: Array<number> = new Array<number>(100);
+  public arr: Array<number> = Array.create<number>(100, NaN);
 }
 
 // @Sendable
 function sendableArrayFunc() : number {
-  let arr: number[] = new Array<number>(100);
+  let arr: number[] = Array.create<number>(100, NaN);
   return arr[0];
 }
 

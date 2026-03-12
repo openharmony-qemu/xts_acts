@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -1609,7 +1609,7 @@ export default function builtinsForTest() {
       async (done: () => void): Promise<void> => {
         const Tag = 'builtinsStatementForTest_7900';
         console.info(`${Tag}`, '%{public}s', 'it begin');
-        let counts = new Array<number>(10).fill(0);
+        let counts = Array.create<number>(10, 0);
         for (let i1 = 1; i1 <= 3; i1++) {
           counts[0]++;
           for (let i2 = 1; i2 <= 3; i2++) {
