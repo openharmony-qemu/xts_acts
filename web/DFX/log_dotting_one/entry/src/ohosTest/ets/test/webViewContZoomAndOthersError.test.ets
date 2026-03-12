@@ -330,7 +330,7 @@ export default function webViewContZoomAndOthersError() {
     })
     /**
      * @tc.name   testZoomInitNull
-     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5100
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_Zoom_Init_Null_0010
      * @tc.desc   test interface of zoom with not been associated with specific Web Components
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -344,7 +344,7 @@ export default function webViewContZoomAndOthersError() {
     })
     /**
      * @tc.name   testZoomInitUndefined
-     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_5200
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERROR_Zoom_Init_Undefined_0100
      * @tc.desc   test interface of zoom with not been associated with specific Web Components
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
