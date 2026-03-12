@@ -126,6 +126,7 @@ export default function webViewOnSslErrorEventThree() {
       });
       sendEventByKey('OnSslErrorEventThreeButton', 10, '');
       if (await Utils.waitForExist(() => isReturn, 'testOnSslErrorEventHandleConfirm' + '_returnCheck', 6, 1000)) {
+        expect(isReturn).assertEqual(6);
         done();
       }
     })

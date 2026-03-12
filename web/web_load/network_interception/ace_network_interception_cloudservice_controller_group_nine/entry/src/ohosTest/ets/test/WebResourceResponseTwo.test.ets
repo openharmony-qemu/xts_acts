@@ -107,6 +107,7 @@ export default function webResourceResponseTwo() {
       });
       sendEventByKey('OnInterceptRequestButton', 10, '');
       if (await waitForExist(() => isReturn, 'testOnInterceptRequestCallback01' + '_returnCheck', 7, 1000)) {
+        expect(isReturn).assertEqual(7);
         done();
       }
     })
@@ -158,6 +159,7 @@ export default function webResourceResponseTwo() {
       });
       sendEventByKey('OnInterceptRequestButton', 10, '');
       if (await waitForExist(() => isReturn, 'testOnInterceptRequestCallback01' + '_returnCheck', 7, 1000)) {
+        expect(isReturn).assertEqual(7);
         done();
       }
     })

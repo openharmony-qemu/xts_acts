@@ -106,6 +106,7 @@ export default function webViewOnOverrideUrlLoading() {
       });
       sendEventByKey('webViewOnOverrideUrlLoading', 10, '');
       if (await Utils.waitForExist(() => isReturn, 'testWebViewwebViewOnOverrideUrlLoadingGroup' + '_returnCheck', 7, 1000)) {
+        expect(isReturn).assertEqual(7);
         done();
       }
     })
