@@ -9052,8 +9052,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          flags = true;
-          expect(flags).assertEqual(true);
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
