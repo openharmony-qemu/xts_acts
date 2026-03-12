@@ -202,7 +202,7 @@ describe("FaultlogJsTest", function () {
             let ret = await faultlogger.querySelfFaultLog(faultlogger.FaultType.JS_CRASH);
             console.info("DFX_DFR_Faultlogger_Interface_0500 ret == " + ret.length);
             if (ret.length > 0) {
-                expect(true).assertTrue();
+                console.info("--------DFX_DFR_Faultlogger_Interface_0500 4" + "----------");
             } else {
                 expect(false).assertTrue();
             }
@@ -257,7 +257,6 @@ describe("FaultlogJsTest", function () {
                 console.info("faultloggertestsummary04 " + i + " fullLog.length " + ret[i].fullLog.length);
                 if (ret[i].fullLog.indexOf("faultloggertestsummary04 " + (loopTimes - 1 - i)) != -1) {
                     console.info("DFX_DFR_Faultlogger_Interface_0300 " + ret[i].fullLog.length);
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
@@ -425,7 +424,7 @@ describe("FaultlogJsTest", function () {
             let ret = await faultlogger.query(faultlogger.FaultType.JS_CRASH);
             console.info("DFX_DFR_Faultlogger_Interface_0900 ret == " + ret.length);
             if (ret.length > 0) {
-                expect(true).assertTrue();
+                console.info("--------DFX_DFR_Faultlogger_Interface_0900 4" + "----------");
             } else {
                 expect(false).assertTrue();
             }
@@ -479,7 +478,6 @@ describe("FaultlogJsTest", function () {
                 console.info("faultloggertestsummary09 " + i + " fullLog.length " + ret[i].fullLog.length);
                 if (ret[i].fullLog.indexOf("faultloggertestsummary09 " + (loopTimes - 1 - i)) != -1) {
                     console.info("DFX_DFR_Faultlogger_Interface_1000 " + ret[i].fullLog.length);
-                    expect(true).assertTrue();
                 } else {
                     expect(false).assertTrue();
                 }
