@@ -40,15 +40,6 @@ import isShownContextMenuNull from './MenuTest/isShownContextMenuNull.test';
 import bindContentCoverNullUndefined from './MenuTest/bindContentCoverNullUndefined.test';
 
 export default function testsuite() {
-  PopupAJsunit();
-  bindPopupJsunit();
-  bindPopupOffsetTest();
-  arrowOffset();
-  isVisible();
-  bindTips1Test();
-  bindTips2Test();
-  bindPopupNullUndefined();
-  openPopupNullUndefinedTest();
   showActionMenuNullAndUndefinedTest();
   showActionMenuCallbackNullAndUndefinedTest();
   showActionMenuAsyncCallbackNullAndUndefinedTest();
@@ -60,7 +51,15 @@ export default function testsuite() {
   presentCustomDialogNullAndUndefinedTest();
   updatePopupNullAndUndefinedTest();
   closePopupNullAndUndefinedTest();
-  
+  PopupAJsunit();
+  bindPopupJsunit();
+  bindPopupOffsetTest();
+  arrowOffset();
+  isVisible();
+  bindTips1Test();
+  bindTips2Test();
+  bindPopupNullUndefined();
+  openPopupNullUndefinedTest();
   bindMenuNullUndefined();
   bindContextMenuNull();
   bindContextResponseNull();
