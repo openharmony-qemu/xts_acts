@@ -101,17 +101,6 @@
     "MainAbility/pages/prompt/promptNullUndefined",
     "MainAbility/pages/customDialog/customdialog4",
     "MainAbility/pages/promptAction/closeToastTest2",
-    "MainAbility/pages/prompt/PromptActionShowActionMenuNullTest",
-    "MainAbility/pages/PromptActionNullAndUndefined/ShowActionMenuNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/ShowActionMenuCallbackNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/ShowActionMenuAsyncCallbackNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/OpenCustomDialogNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/OpenCustomDialogWithControllerNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/UpdateCustomDialogNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/CloseCustomDialogByContentNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/CloseCustomDialogByIdNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/PresentCustomDialogNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/UpdatePopupNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/ClosePopupNullAndUndefined"
+    "MainAbility/pages/prompt/PromptActionShowActionMenuNullTest"
   ]
 }

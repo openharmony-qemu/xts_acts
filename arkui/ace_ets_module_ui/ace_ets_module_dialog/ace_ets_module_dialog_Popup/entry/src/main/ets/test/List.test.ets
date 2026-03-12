@@ -21,6 +21,17 @@ import isVisible from './popup/isVisible.test';
 import bindTips1Test from './bindTipsTest/bindTipsTest1.test';
 import bindTips2Test from './bindTipsTest/bindTipsTest2.test';
 import openPopupNullUndefinedTest from './popupNullUndefined/openPopup.test';
+import showActionMenuNullAndUndefinedTest from './PromptActionNullAndUndefined/showActionMenuNullAndUndefinedTest.test';
+import showActionMenuCallbackNullAndUndefinedTest from './PromptActionNullAndUndefined/showActionMenuCallbackNullAndUndefinedTest.test';
+import showActionMenuAsyncCallbackNullAndUndefinedTest from './PromptActionNullAndUndefined/showActionMenuAsyncCallbackNullAndUndefinedTest.test';
+import openCustomDialogNullAndUndefinedTest from './PromptActionNullAndUndefined/openCustomDialogNullAndUndefinedTest.test';
+import openCustomDialogWithControllerNullAndUndefinedTest from './PromptActionNullAndUndefined/openCustomDialogWithControllerNullAndUndefinedTest.test';
+import updateCustomDialogNullAndUndefinedTest from './PromptActionNullAndUndefined/updateCustomDialogNullAndUndefinedTest.test';
+import closeCustomDialogByContentNullAndUndefinedTest from './PromptActionNullAndUndefined/closeCustomDialogByContentNullAndUndefinedTest.test';
+import closeCustomDialogByIdNullAndUndefinedTest from './PromptActionNullAndUndefined/closeCustomDialogByIdNullAndUndefinedTest.test';
+import presentCustomDialogNullAndUndefinedTest from './PromptActionNullAndUndefined/presentCustomDialogNullAndUndefinedTest.test';
+import updatePopupNullAndUndefinedTest from './PromptActionNullAndUndefined/updatePopupNullAndUndefinedTest.test';
+import closePopupNullAndUndefinedTest from './PromptActionNullAndUndefined/closePopupNullAndUndefinedTest.test';
 
 export default function testsuite() {
   PopupAJsunit();
@@ -31,7 +42,17 @@ export default function testsuite() {
   bindTips1Test();
   bindTips2Test();
   openPopupNullUndefinedTest();
-
+  showActionMenuNullAndUndefinedTest();
+  showActionMenuCallbackNullAndUndefinedTest();
+  showActionMenuAsyncCallbackNullAndUndefinedTest();
+  openCustomDialogNullAndUndefinedTest();
+  openCustomDialogWithControllerNullAndUndefinedTest();
+  updateCustomDialogNullAndUndefinedTest();
+  closeCustomDialogByContentNullAndUndefinedTest();
+  closeCustomDialogByIdNullAndUndefinedTest();
+  presentCustomDialogNullAndUndefinedTest();
+  updatePopupNullAndUndefinedTest();
+  closePopupNullAndUndefinedTest();
 
 
 
