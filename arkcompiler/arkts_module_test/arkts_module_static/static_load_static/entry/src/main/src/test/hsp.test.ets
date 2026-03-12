@@ -46,15 +46,15 @@ export default function staticLoadHsp() {
     })
 
     /**
-     * @tc.number  SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0100
-     * @tc.name    testStaticLoadHsp01
+     * @tc.number  SUB_COMPILER_RUNTIME_STATIC_LOAD_HSP_0200
+     * @tc.name    testStaticLoadHsp02
      * @tc.desc    Test static loading of the source HSP, invoking the files exported with relative paths ./xxx.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
      */
-    it('testStaticLoadHsp01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const caseName: string = "testStaticLoadHsp01";
+    it('testStaticLoadHsp02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const caseName: string = "testStaticLoadHsp02";
       try {
         expect(addLoadHsp(3, 2)).assertEqual(5);
       } catch (error) {
@@ -125,8 +125,7 @@ export default function staticLoadHsp() {
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 0
-     */
-    
+     */    
     it("testStaticLoadHsp08", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const caseName: string = "testStaticLoadHsp08";
       try {

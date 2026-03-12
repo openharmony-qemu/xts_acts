@@ -95,7 +95,7 @@ export default function staticImport() {
 
     /**
      * @tc.number  SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0600
-     * @tc.name    testOhosRes
+     * @tc.name    testAniFunction002
      * @tc.desc    Import System Native Module
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -114,7 +114,7 @@ export default function staticImport() {
     })
     /**
      * @tc.number  SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0700
-     * @tc.name    testOhosRes
+     * @tc.name    testAniFunction003
      * @tc.desc    Import System Native Module
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -132,7 +132,7 @@ export default function staticImport() {
     })
     /**
      * @tc.number  SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0800
-     * @tc.name    testOhosRes
+     * @tc.name    testAniFunction004
      * @tc.desc    Import System Native Module
      * @tc.size    MediumTest
      * @tc.type    Function

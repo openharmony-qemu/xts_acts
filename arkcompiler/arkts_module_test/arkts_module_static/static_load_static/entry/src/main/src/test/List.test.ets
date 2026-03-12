@@ -17,7 +17,7 @@
 import staticExport from './Export.test';
 import staticLoadHap from './Hap.test';
 import staticLoadSourceHar from './SourceHar.test';
-import staticLoadHsp from './hsp.test';
+import staticLoadHsp from './Hsp.test';
 import staticLoadRemoteHar from './RemoteHar.test';
 import staticImport from './StaticImport.test';
 
