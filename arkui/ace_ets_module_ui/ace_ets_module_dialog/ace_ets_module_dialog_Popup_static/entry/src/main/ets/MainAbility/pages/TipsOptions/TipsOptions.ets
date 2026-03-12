@@ -40,7 +40,7 @@ struct TipsExample {
       Button('Hover Tips')
         .key('tips1')
         .margin({ bottom:20 })
-        .bindTips("Tips", {
+        .bindTips('Tips', {
           appearingTime: 700,
           disappearingTime: 300,
           appearingTimeWithContinuousOperation: 300,
@@ -51,7 +51,7 @@ struct TipsExample {
 
       Button('Hover Tips')
         .key('tips2')
-        .bindTips("Tips", {
+        .bindTips('Tips', {
           appearingTime: 700,
           disappearingTime: 300,
           appearingTimeWithContinuousOperation: 300,
