@@ -15,23 +15,35 @@ UniversalAttributesTest.test.ets/**
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { router } from '@kit.ArkUI';
-// import CommonFunc from '../../../../main/ets/common/Common';
-import { sleep, startPage } from '../../../uiutils/commonUtils';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function QueryNavDestinationInfoTest() {
   describe('QueryNavDestinationInfoTest', () => {
-    beforeAll(async () => {
-      await startPage('MainAbility/pages/nullandundefinedTest/QueryNavDestinationInfoTest')
-      await sleep(1000)
-    })
-
-    beforeEach(() => {
+    beforeEach(async (done: Function) => {
+      console.info('QueryNavDestinationInfoTest beforeEach start');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/nullandundefinedTest/QueryNavDestinationInfoTest',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get QueryNavDestinationInfoTest state pages: ' + JSON.stringify(pages));
+        if (!('QueryNavDestinationInfoTest' == pages.name)) {
+          console.info('get QueryNavDestinationInfoTest  state pages.name: ' + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options)
+          await CommonFunc.sleep(3000);
+          console.info('push QueryNavDestinationInfoTest  success: ' + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error('push QueryNavDestinationInfoTest page error:' + err);
+      }
+      console.info('QueryNavDestinationInfoTest beforeEach end');
+      done();
     });
 
-    afterEach(() => {
-    });
-
-    afterAll(async () => {
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info('QueryNavDestinationInfoTest after each called');
     });
 
     /**

@@ -23,7 +23,7 @@ struct ImageBlurTest {
 
         // Test 1.1: blur with value parameter
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_value_positive')
@@ -34,7 +34,7 @@ struct ImageBlurTest {
 
         // Test 1.2: blur with value parameter (zero)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_value_zero')
@@ -45,7 +45,7 @@ struct ImageBlurTest {
 
         // Test 1.3: blur with value parameter (large value)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_value_large')
@@ -56,7 +56,7 @@ struct ImageBlurTest {
 
         // Test 1.4: blur with value parameter (null)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_value_null')
@@ -67,7 +67,7 @@ struct ImageBlurTest {
 
         // Test 1.5: blur with value parameter (undefined)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_value_undefined')
@@ -78,7 +78,7 @@ struct ImageBlurTest {
 
         // Test 1.6: blur with value and options parameters
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_value_options')
@@ -89,7 +89,7 @@ struct ImageBlurTest {
 
         // Test 1.7: blur with value and options parameters (null)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_value_options_null')
@@ -100,7 +100,7 @@ struct ImageBlurTest {
 
         // Test 1.8: blur with value and options parameters (undefined)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_value_options_undefined')
@@ -113,7 +113,7 @@ struct ImageBlurTest {
 
         // Test 2.1: blur with blurRadius parameter (positive)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_positive')
@@ -124,7 +124,7 @@ struct ImageBlurTest {
 
         // Test 2.2: blur with blurRadius parameter (zero)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_zero')
@@ -135,7 +135,7 @@ struct ImageBlurTest {
 
         // Test 2.3: blur with blurRadius parameter (null)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_null')
@@ -146,7 +146,7 @@ struct ImageBlurTest {
 
         // Test 2.4: blur with blurRadius parameter (undefined)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_undefined')
@@ -157,7 +157,7 @@ struct ImageBlurTest {
 
         // Test 2.5: blur with blurRadius and options parameters (positive)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_options_positive')
@@ -168,7 +168,7 @@ struct ImageBlurTest {
 
         // Test 2.6: blur with blurRadius and options parameters (null)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_options_null')
@@ -179,7 +179,7 @@ struct ImageBlurTest {
 
         // Test 2.7: blur with blurRadius and options parameters (undefined)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_options_undefined')
@@ -190,7 +190,7 @@ struct ImageBlurTest {
 
         // Test 2.8: blur with blurRadius and options parameters (both null)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_options_both_null')
@@ -201,7 +201,7 @@ struct ImageBlurTest {
 
         // Test 2.9: blur with blurRadius and options parameters (both undefined)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_blurRadius_options_both_undefined')
@@ -214,7 +214,7 @@ struct ImageBlurTest {
 
         // Test 3.1: blur with blurRadius parameter (positive)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_positive')
@@ -225,7 +225,7 @@ struct ImageBlurTest {
 
         // Test 3.2: blur with blurRadius parameter (zero)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_zero')
@@ -236,7 +236,7 @@ struct ImageBlurTest {
 
         // Test 3.3: blur with blurRadius parameter (null)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_null')
@@ -247,7 +247,7 @@ struct ImageBlurTest {
 
         // Test 3.4: blur with blurRadius parameter (undefined)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_undefined')
@@ -258,7 +258,7 @@ struct ImageBlurTest {
 
         // Test 3.5: blur with blurRadius and options parameters (positive)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_options_positive')
@@ -269,7 +269,7 @@ struct ImageBlurTest {
 
         // Test 3.6: blur with blurRadius and options parameters (null)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_options_null')
@@ -280,7 +280,7 @@ struct ImageBlurTest {
 
         // Test 3.7: blur with blurRadius and options parameters (undefined)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_options_undefined')
@@ -291,7 +291,7 @@ struct ImageBlurTest {
 
         // Test 3.8: blur with blurRadius, options and sysOptions parameters (positive)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_all_positive')
@@ -302,7 +302,7 @@ struct ImageBlurTest {
 
         // Test 3.9: blur with blurRadius, options and sysOptions parameters (disableSystemAdaptation: false)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_disable_false')
@@ -313,7 +313,7 @@ struct ImageBlurTest {
 
         // Test 3.10: blur with blurRadius, options and sysOptions parameters (all null)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_all_null')
@@ -324,7 +324,7 @@ struct ImageBlurTest {
 
         // Test 3.11: blur with blurRadius, options and sysOptions parameters (all undefined)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_all_undefined')
@@ -335,7 +335,7 @@ struct ImageBlurTest {
 
         // Test 3.12: blur with blurRadius and sysOptions parameters (disableSystemAdaptation: true)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_sysOptions_true')
@@ -346,7 +346,7 @@ struct ImageBlurTest {
 
         // Test 3.13: blur with blurRadius and sysOptions parameters (disableSystemAdaptation: false)
         Stack() {
-          Image($r('app.media.startIcon'))
+          Image($r('app.media.icon'))
             .width('90%')
             .height('5%')
             .id('blur_three_sysOptions_false')

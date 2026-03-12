@@ -15,8 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { router } from '@kit.ArkUI';
-import CommonFunc from '../../../../main/ets/common/Common';
-import { sleep, startPage } from '../../../uiutils/commonUtils';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function BackgroundBlurStyleTest() {
   describe('BackgroundBlurStyleTest', () => {
@@ -35,18 +34,10 @@ export default function BackgroundBlurStyleTest() {
         console.error('push BackgroundBlurStyleTest page error:' + err);
       }
     });
-    // beforeAll(async () => {
-    //   await startPage('pages/backgroundBlurStyle/BackgroundBlurStyleTest')
-    //   await sleep(1000)
-    // })
 
-    beforeEach(() => {
-    });
-
-    afterEach(() => {
-    });
-
-    afterAll(async () => {
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info('BackdropBlurTest after each called');
     });
 
 

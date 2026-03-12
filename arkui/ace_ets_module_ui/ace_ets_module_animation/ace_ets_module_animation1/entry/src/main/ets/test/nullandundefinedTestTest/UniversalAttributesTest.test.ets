@@ -15,22 +15,34 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { router } from '@kit.ArkUI';
-import { sleep, startPage } from '../../../uiutils/commonUtils';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function UniversalAttributesTest() {
   describe('UniversalAttributesTest', () => {
-    beforeAll(async () => {
-      await startPage('MainAbility/pages/nullandundefinedTest/UniversalAttributesTest')
-      await sleep(1000)
-    })
-
-    beforeEach(() => {
+    beforeEach(async (done: Function) => {
+      console.info('UniversalAttributesTest beforeEach start');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/nullandundefinedTest/UniversalAttributesTest',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get UniversalAttributesTest state pages: ' + JSON.stringify(pages));
+        if (!('UniversalAttributesTest' == pages.name)) {
+          console.info('get UniversalAttributesTest  state pages.name: ' + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options)
+          await CommonFunc.sleep(3000);
+          console.info('push UniversalAttributesTest  success: ' + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error('push UniversalAttributesTest page error:' + err);
+      }
+      console.info('UniversalAttributesTest beforeEach end');
+      done();
     });
-
-    afterEach(() => {
-    });
-
-    afterAll(async () => {
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info('UniversalAttributesTest after each called');
     });
 
     // ========== freeze(value: boolean) tests ==========

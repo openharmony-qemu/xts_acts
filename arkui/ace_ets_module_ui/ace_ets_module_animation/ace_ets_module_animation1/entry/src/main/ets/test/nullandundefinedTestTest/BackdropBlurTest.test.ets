@@ -15,23 +15,35 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { router } from '@kit.ArkUI';
-// import CommonFunc from '../../../../main/ets/common/Common';
-import { sleep, startPage } from '../../../uiutils/commonUtils';
+import CommonFunc from '../../MainAbility/common/Common';
+
 
 export default function BackdropBlurTest() {
   describe('BackdropBlurTest', () => {
-    beforeAll(async () => {
-      await startPage('MainAbility/pages/nullandundefinedTest/BackdropBlurTest')
-      await sleep(1000)
-    })
-
-    beforeEach(() => {
+    beforeEach(async (done: Function) => {
+      console.info('BackdropBlurTest beforeEach start');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/nullandundefinedTest/BackdropBlurTest',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get BackdropBlurTest state pages: ' + JSON.stringify(pages));
+        if (!('BackdropBlurTest' == pages.name)) {
+          console.info('get BackdropBlurTest  state pages.name: ' + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options)
+          await CommonFunc.sleep(3000);
+          console.info('push BackdropBlurTest  success: ' + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error('push BackdropBlurTest page error:' + err);
+      }
+      console.info('BackdropBlurTest beforeEach end');
+      done();
     });
-
-    afterEach(() => {
-    });
-
-    afterAll(async () => {
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info('BackdropBlurTest after each called');
     });
 
     // ========== backdropBlur(value: number, options?: BlurOptions): T; tests ==========
