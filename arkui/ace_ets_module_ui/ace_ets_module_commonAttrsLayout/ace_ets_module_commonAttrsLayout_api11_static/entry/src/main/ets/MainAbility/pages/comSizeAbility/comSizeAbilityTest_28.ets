@@ -40,7 +40,7 @@ import {
   Ellipse,
   Entry,
   ForEach,
-  Gauge;
+  Gauge,
   Grid,
   GridCol,
   GridItem,
