@@ -411,49 +411,6 @@ export default function XComponentSliderTest() {
     });
 
     /**
-     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_042
-     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_042
-     * @tc.desc   style:SliderStyle.InSet
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    // it('SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_042', Level.LEVEL3, async (done: Function) => {
-      // await routerPush("XcomponentSlider17")
-      // await Utils.sleep(2000);
-      // let driver = Driver.create();
-      // await Utils.sleep(1000);
-// 
-      // let slider = await driver.findComponent(ON.id('XSlider17'));
-      // let rect = await slider.getBounds();
-      // console.info(`rect is: ` + JSON.stringify(rect))
-      // await driver.click(rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2))
-      // console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2))
-      // await Utils.sleep(1000);
-      // let strJson1 = getInspectorByKey('XSlider17');
-      // let obj1: ESObject = JSON.parse(strJson1);
-      // await Utils.sleep(1000);
-      // console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_042] obj1.$attrs.constructor is: " + JSON.stringify(obj1.$attrs.constructor));
-      // expect(obj1.$attrs.constructor.value).assertEqual('10.000000');
-      // await Utils.sleep(1000);
-      // await driver.drag(rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2),rect.left+Math.ceil((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),600)
-      // console.info(`drag is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2),rect.left+Math.ceil((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),600)
-      // let strJson2 = getInspectorByKey('XSlider17');
-      // let obj2: ESObject = JSON.parse(strJson2);
-      // await Utils.sleep(1000);
-      // console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_042] obj2.$attrs.constructor is: " + JSON.stringify(obj2.$attrs.constructor));
-      // expect(obj2.$attrs.constructor.value).assertEqual('20.000000');
-      // await driver.drag(rect.left+Math.round((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),rect.left,Math.round((rect.top+rect.bottom)/2),600)
-      // console.info(`drag is: `,rect.left+Math.round((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),rect.left,Math.round((rect.top+rect.bottom)/2),600)
-      // let strJson3 = getInspectorByKey('XSlider17');
-      // let obj3: ESObject = JSON.parse(strJson3);
-      // await Utils.sleep(1000);
-      // console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_042] obj3.$attrs.constructor is: " + JSON.stringify(obj3.$attrs.constructor));
-      // expect(obj3.$attrs.constructor.value).assertEqual('0.000000');
-      // done();
-    // });
-
-    /**
      * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010
      * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CUSTOMIZING_0010
      * @tc.desc   sliderBuilder {value：-1,min:-1,max:-1,step:-1}
