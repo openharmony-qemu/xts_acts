@@ -68,6 +68,12 @@ async function exitInputMethod() {
     if (softKeyBoard != null) {
         await driver.pressBack()
     }
+    await driver.delayMs(2000)
+    let window = await driver.findWindow({ bundleName: 'com.huawei.hmos.inputmethod' })
+    console.log(`${TestTag},window: ${JSON.stringify(window)}`);
+    if (window != null) {
+        await driver.pressBack()
+    }
 }
 
 async function getInputMethodPermission() {
