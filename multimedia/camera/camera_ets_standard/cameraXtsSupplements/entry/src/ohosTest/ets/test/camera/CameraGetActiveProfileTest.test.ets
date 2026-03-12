@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { common, ErrorCode } from '@kit.AbilityKit';
+import { image, sendableImage } from '@kit.ImageKit';
 import { camera } from '@kit.CameraKit';
 import {
   closeFd,
@@ -35,6 +36,7 @@ const TAG = "CameraXtsGetActiveProfileSuppTest";
 let mCameraManager: camera.CameraManager;
 let mCameraDeviceArray: Array<camera.CameraDevice>;
 let mSupportedModes: Array<camera.SceneMode>;
+let mReceiverSurfaceId: string;
 let mCameraInput: camera.CameraInput;
 let mPreviewOutput: camera.PreviewOutput;
 let mPhotoOutput: camera.PhotoOutput;
@@ -43,6 +45,7 @@ let mVideoSurfaceId: string;
 let mPhotoSession: camera.PhotoSession;
 let mVideoSession: camera.VideoSession;
 let mAVRecorder: media.AVRecorder;
+let receiver : image.ImageReceiver;
 let fdNumber: number;
 let fdPath: string;
 let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -1077,6 +1080,283 @@ export default function CameraGetActiveProfileTest() {
         expect().assertFail()
       }finally{
         await releaseVideoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00001
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00001
+     * @tc.desc   createVideoOutput profile Parameter missing null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00001';
+      try {
+        if(mCameraDeviceArray.length > 0) {
+          let profile: camera.VideoProfile = {
+            frameRateRange: { min: 0, max: 100 },
+            format: camera.CameraFormat.CAMERA_FORMAT_RGBA_8888,
+            size: { height: 10, width: 0 }
+          }
+          await getVideoSurfaceId();
+          console.info(TAG, 'profile')
+          await mCameraManager.createVideoOutput(null, indexSurfaceId);
+          console.info(TAG, "success createVideoOutput")
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect(Number(error.code)).assertEqual(7400101);
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00002
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00002
+     * @tc.desc   createVideoOutput profile Parameter missing undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00002', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_VIDEO_OUTPUT_00002';
+      try {
+        if(mCameraDeviceArray.length > 0) {
+          let profile: camera.VideoProfile = {
+            frameRateRange: { min: 0, max: 100 },
+            format: camera.CameraFormat.CAMERA_FORMAT_RGBA_8888,
+            size: { height: 10, width: 0 }
+          }
+          await getVideoSurfaceId();
+          console.info(TAG, 'profile')
+          await mCameraManager.createVideoOutput(undefined, indexSurfaceId);
+          console.info(TAG, "success createVideoOutput")
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect(Number(error.code)).assertEqual(7400101);
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000001
+     * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000001
+     * @tc.desc   getCameraDevices position CAMERA_POSITION_FOLD_INNER Camera service fatal error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000001';
+      try {
+        if(mCameraDeviceArray.length > 0) {
+          let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
+          console.info(TAG, testName, 'position');
+          let connectType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN;
+          console.info(TAG, 'connectType')
+          let types = camera.CameraType.CAMERA_TYPE_DEFAULT;
+          console.info(TAG, testName, 'type');
+          let device = mCameraManager.getCameraDevices(position, [types], connectType)
+          console.info(TAG, testName, 'device');
+          expect().assertFail()
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect(Number(error.code)).assertEqual(7400201);
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000002
+     * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000002
+     * @tc.desc   getCameraDevices [] Camera service fatal error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000002', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000002';
+      try {
+        if(mCameraDeviceArray.length > 0) {
+          let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
+          console.info(TAG, testName, 'position');
+          let connectType = camera.ConnectionType.CAMERA_CONNECTION_BUILT_IN;
+          console.info(TAG, 'connectType')
+          let types = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
+          console.info(TAG, testName, 'type');
+          let device = mCameraManager.getCameraDevices(position, [], connectType)
+          console.info(TAG, testName, 'device');
+          expect().assertFail()
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect(Number(error.code)).assertEqual(7400201);
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001
+     * @tc.desc   createPhotoOutput format CAMERA_FORMAT_RGBA_8888
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001';
+      try {
+        if (mCameraDeviceArray.length > 0) {
+          let cameraOutputCapability =
+            mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
+          console.info(TAG, testName, "getSupportedOutputCapability ok:", cameraOutputCapability);
+          for (let i = 0; i < cameraOutputCapability.photoProfiles.length; i++) {
+            if (camera.CameraFormat.CAMERA_FORMAT_RGBA_8888 == cameraOutputCapability.photoProfiles[i].format) {
+              let size: image.Size = {
+                height: 8192,
+                width: 8
+              }
+              let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+              mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+              let mPhotoOutput =
+                mCameraManager.createPhotoOutput(cameraOutputCapability.photoProfiles[i], mReceiverSurfaceId);
+              console.info(TAG, testName, "mPhotoOutput ok:", mPhotoOutput);
+              expect(mPhotoOutput != null).assertTrue();
+              break;
+            } else {
+              console.info(TAG, testName, "该设备不支持:");
+            }
+          }
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002
+     * @tc.desc   createPhotoOutput format CAMERA_FORMAT_JPEG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002';
+      try {
+        if (mCameraDeviceArray.length > 0) {
+          let cameraOutputCapability =
+            mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
+          console.info(TAG, testName, "getSupportedOutputCapability ok:", cameraOutputCapability);
+          for (let i = 0; i < cameraOutputCapability.photoProfiles.length; i++) {
+            if (camera.CameraFormat.CAMERA_FORMAT_JPEG == cameraOutputCapability.photoProfiles[i].format) {
+              let size: image.Size = {
+                height: 8192,
+                width: 8
+              }
+              let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+              mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+              let mPhotoOutput =
+                mCameraManager.createPhotoOutput(cameraOutputCapability.photoProfiles[i], mReceiverSurfaceId);
+              console.info(TAG, testName, "mPhotoOutput ok:", mPhotoOutput);
+              expect(mPhotoOutput != null).assertTrue();
+              break;
+            } else {
+              console.info(TAG, testName, "该设备不支持:");
+            }
+          }
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003
+     * @tc.desc   createPhotoOutput format CAMERA_FORMAT_YCBCR_P010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003';
+      try {
+        if (mCameraDeviceArray.length > 0) {
+          let cameraOutputCapability =
+            mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
+          console.info(TAG, testName, "getSupportedOutputCapability ok:", cameraOutputCapability);
+          for (let i = 0; i < cameraOutputCapability.photoProfiles.length; i++) {
+            if (camera.CameraFormat.CAMERA_FORMAT_YCBCR_P010 == cameraOutputCapability.photoProfiles[i].format) {
+              let size: image.Size = {
+                height: 8192,
+                width: 8
+              }
+              let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+              mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+              let mPhotoOutput =
+                mCameraManager.createPhotoOutput(cameraOutputCapability.photoProfiles[i], mReceiverSurfaceId);
+              console.info(TAG, testName, "mPhotoOutput ok:", mPhotoOutput);
+              expect(mPhotoOutput != null).assertTrue();
+              break;
+            } else {
+              console.info(TAG, testName, "该设备不支持:");
+            }
+          }
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004
+     * @tc.desc   createPhotoOutput format CAMERA_FORMAT_YCRCB_P010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004';
+      try {
+        if (mCameraDeviceArray.length > 0) {
+          let cameraOutputCapability =
+            mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
+          console.info(TAG, testName, "getSupportedOutputCapability ok:", cameraOutputCapability);
+          for (let i = 0; i < cameraOutputCapability.photoProfiles.length; i++) {
+            if (camera.CameraFormat.CAMERA_FORMAT_YCRCB_P010 == cameraOutputCapability.photoProfiles[i].format) {
+              let size: image.Size = {
+                height: 8192,
+                width: 8
+              }
+              let receiver: image.ImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+              mReceiverSurfaceId = await receiver.getReceivingSurfaceId();
+              let mPhotoOutput =
+                mCameraManager.createPhotoOutput(cameraOutputCapability.photoProfiles[i], mReceiverSurfaceId);
+              console.info(TAG, testName, "mPhotoOutput ok:", mPhotoOutput);
+              expect(mPhotoOutput != null).assertTrue();
+              break;
+            } else {
+              console.info(TAG, testName, "该设备不支持:");
+            }
+          }
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect().assertFail();
         done();
       }
     })
