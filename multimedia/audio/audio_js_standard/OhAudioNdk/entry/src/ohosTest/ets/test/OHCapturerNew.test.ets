@@ -724,12 +724,12 @@ export default function OhRendererTest() {
       Utils.sleep(sleep1000);
       expect(re).assertEqual(CODE_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_NEW || re === AUDIOSTREAM_STATE_PREPARED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_NEW && re !== AUDIOSTREAM_STATE_PREPARED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererStart();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_RUNNING || re === AUDIOSTREAM_STATE_STOPPED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_RUNNING && re !== AUDIOSTREAM_STATE_STOPPED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererPause();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
@@ -758,12 +758,12 @@ export default function OhRendererTest() {
       Utils.sleep(sleep1000);
       expect(re).assertEqual(CODE_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_NEW || re === AUDIOSTREAM_STATE_PREPARED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_NEW && re !== AUDIOSTREAM_STATE_PREPARED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererStart();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_RUNNING || re === AUDIOSTREAM_STATE_STOPPED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_RUNNING && re !== AUDIOSTREAM_STATE_STOPPED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererPause();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
@@ -797,12 +797,12 @@ export default function OhRendererTest() {
       Utils.sleep(sleep1000);
       expect(re).assertEqual(CODE_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_NEW || re === AUDIOSTREAM_STATE_PREPARED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_NEW && re !== AUDIOSTREAM_STATE_PREPARED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererStart();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_RUNNING || re === AUDIOSTREAM_STATE_STOPPED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_RUNNING && re !== AUDIOSTREAM_STATE_STOPPED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererPause();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
@@ -817,7 +817,7 @@ export default function OhRendererTest() {
       re = testStreamBuilder.OHAudioRendererStart();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_RUNNING || re === AUDIOSTREAM_STATE_STOPPED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_RUNNING && re !== AUDIOSTREAM_STATE_STOPPED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererRelease();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
@@ -841,12 +841,12 @@ export default function OhRendererTest() {
       Utils.sleep(sleep1000);
       expect(re).assertEqual(CODE_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_NEW || re === AUDIOSTREAM_STATE_PREPARED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_NEW && re !== AUDIOSTREAM_STATE_PREPARED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererStart();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_RUNNING || re === AUDIOSTREAM_STATE_STOPPED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_RUNNING && re !== AUDIOSTREAM_STATE_STOPPED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererPause();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
@@ -861,7 +861,7 @@ export default function OhRendererTest() {
       re = testStreamBuilder.OHAudioRendererStart();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_RUNNING || re === AUDIOSTREAM_STATE_STOPPED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_RUNNING && re !== AUDIOSTREAM_STATE_STOPPED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererPause();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
@@ -890,12 +890,12 @@ export default function OhRendererTest() {
       Utils.sleep(sleep1000);
       expect(re).assertEqual(CODE_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_NEW || re === AUDIOSTREAM_STATE_PREPARED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_NEW && re !== AUDIOSTREAM_STATE_PREPARED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererStart();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_RUNNING || re === AUDIOSTREAM_STATE_STOPPED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_RUNNING && re !== AUDIOSTREAM_STATE_STOPPED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererPause();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
@@ -910,7 +910,7 @@ export default function OhRendererTest() {
       re = testStreamBuilder.OHAudioRendererStart();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);
       re = testStreamBuilder.OHAudioRendererGetCurrentState();
-      expect(re === AUDIOSTREAM_STATE_RUNNING || re === AUDIOSTREAM_STATE_STOPPED).assertTrue();
+      expect(re !== AUDIOSTREAM_STATE_RUNNING && re !== AUDIOSTREAM_STATE_STOPPED).assertFalse();
 
       re = testStreamBuilder.OHAudioRendererStop();
       expect(re).assertEqual(AUDIOSTREAM_SUCCESS);

@@ -14877,62 +14877,62 @@ export default function audioRendererTest() {
               expect(true).assertFalse();
             } else {
               console.info('Renderer start success.');
+              data.getRendererInfo((err: BusinessError, audioRendererInfo: audio.AudioRendererInfo) => {
+                if (err) {
+                  console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
+                  expect(true).assertFalse();
+                } else {
+                  expect(audio.SourceType.SOURCE_TYPE_CAMCORDER).assertEqual(13);
+                  console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
+                  data.getStreamInfo((err: BusinessError, streamInfo: audio.AudioStreamInfo) => {
+                    if (err) {
+                      console.error(`Failed to get StreamInfo info. Code: ${err.code}, message: ${err.message}`);
+                      expect(true).assertFalse();
+                    } else {
+                      console.info('Renderer GetStreamInfo:');
+                      console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
+                      console.info(`Renderer channel: ${streamInfo.channels}`);
+                      console.info(`Renderer format: ${streamInfo.sampleFormat}`);
+                      console.info(`Renderer encoding type: ${streamInfo.encodingType}`);
+                      data.getBufferSize((err: BusinessError, value: number) => {
+                        if (err) {
+                          console.error('getBufferSize error');
+                          expect(true).assertFalse();
+                        } else {
+                          bufferSize = value;
+                          console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${value}`);
+                          data.drain((err: BusinessError) => {
+                            if (err) {
+                              console.error('Renderer drain failed');
+                              expect(true).assertFalse();
+                            } else {
+                              console.info('Renderer drained.');
+                              data.stop((err: BusinessError) => {
+                                if (err) {
+                                  console.error('Renderer stop failed');
+                                  expect(true).assertFalse();
+                                } else {
+                                  console.info('Renderer stopped.');
+                                  data.release((err: BusinessError) => {
+                                    if (err) {
+                                      console.error('Renderer release failed');
+                                      expect(true).assertFalse();
+                                    } else {
+                                      console.info('Renderer released.');
+                                    }
+                                  });
+                                }
+                              });
+                            }
+                          });
+                        }
+                      });
+                    }
+                  });
+                }
+              });
             }
-          });
-          data.getRendererInfo((err: BusinessError, audioRendererInfo: audio.AudioRendererInfo) => {
-            if (err) {
-              console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
-              expect(true).assertFalse();
-            } else {
-              expect(audio.SourceType.SOURCE_TYPE_CAMCORDER).assertEqual(13);
-              console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
-            }
-          });
-          data.getStreamInfo((err: BusinessError, streamInfo: audio.AudioStreamInfo) => {
-            if (err) {
-              console.error(`Failed to get StreamInfo info. Code: ${err.code}, message: ${err.message}`);
-              expect(true).assertFalse();
-            } else {
-              console.info('Renderer GetStreamInfo:');
-              console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
-              console.info(`Renderer channel: ${streamInfo.channels}`);
-              console.info(`Renderer format: ${streamInfo.sampleFormat}`);
-              console.info(`Renderer encoding type: ${streamInfo.encodingType}`);
-            }
-          });
-          data.getBufferSize((err: BusinessError, value: number) => {
-            if (err) {
-              console.error('getBufferSize error');
-              expect(true).assertFalse();
-            } else {
-              bufferSize = value;
-              console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${value}`);
-            }
-          });
-          data.drain((err: BusinessError) => {
-            if (err) {
-              console.error('Renderer drain failed');
-              expect(true).assertFalse();
-            } else {
-              console.info('Renderer drained.');
-            }
-          });
-          data.stop((err: BusinessError) => {
-            if (err) {
-              console.error('Renderer stop failed');
-              expect(true).assertFalse();
-            } else {
-              console.info('Renderer stopped.');
-            }
-          });
-          data.release((err: BusinessError) => {
-            if (err) {
-              console.error('Renderer release failed');
-              expect(true).assertFalse();
-            } else {
-              console.info('Renderer released.');
-            }
-          });
+          });          
         }
       });
       done();
@@ -14994,23 +14994,23 @@ export default function audioRendererTest() {
                 console.info(`set app volume success.`);
               });
               audioVolumeManager.off('appVolumeChange', appVolumeChangeCallback);
-            }
-          });
-          audioRenderer.getAudioTime((err: BusinessError, timestamp: number) => {
-            if (err) {
-              console.error(`Failed to get AudioTime. Code: ${err.code}, message: ${err.message}`);
-              expect(true).assertFalse();
-            } else {
-              console.info(`Current timestamp: ${timestamp}`);
-              expect(timestamp).assertLargerOrEqual(0);
-            }
-          });
-          audioRenderer.release((err: BusinessError) => {
-            if (err) {
-              console.error('Renderer release failed');
-              expect(true).assertFalse();
-            } else {
-              console.info('Renderer released.');
+              audioRenderer.getAudioTime((err: BusinessError, timestamp: number) => {
+                if (err) {
+                  console.error(`Failed to get AudioTime. Code: ${err.code}, message: ${err.message}`);
+                  expect(true).assertFalse();
+                } else {
+                  console.info(`Current timestamp: ${timestamp}`);
+                  expect(timestamp).assertLargerOrEqual(0);
+                  audioRenderer.release((err: BusinessError) => {
+                    if (err) {
+                      console.error('Renderer release failed');
+                      expect(true).assertFalse();
+                    } else {
+                      console.info('Renderer released.');
+                    }
+                  });
+                }
+              });
             }
           });
         }
