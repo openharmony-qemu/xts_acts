@@ -134,6 +134,42 @@ static void InitCapabilities()
 }
 } // namespace
 
+static constexpr int kExpectedVideoFrameCount = 100;
+
+static int GetSurfaceAndStartVideoDecEnc(VDecEncNdkSample* sample, OH_AVFormat* /* format */)
+{
+    if (sample->GetSurface() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->SetOutputSurface() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->PrepareEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->PrepareDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->StartEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->StartDec() != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
+static int ConfigureAndStartVideoDecEnc(VDecEncNdkSample* sample, OH_AVFormat* format)
+{
+    if (sample->ConfigureDec(format) != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->ConfigureEnc(format) != AV_ERR_OK) {
+        return -1;
+    }
+    return GetSurfaceAndStartVideoDecEnc(sample, format);
+}
+
 int SubMultimediaMediaVideoDecEncFunction0100()
 {
     InitCapabilities();
@@ -204,32 +240,7 @@ int SubMultimediaMediaVideoDecEncFunction0100()
         return -1;
     }
 
-    if (vDecEncSample->GetSurface() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->SetOutputSurface() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StartDec() != AV_ERR_OK) {
+    if (GetSurfaceAndStartVideoDecEnc(vDecEncSample, VideoFormat) != 0) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
@@ -409,42 +420,7 @@ int SubMultimediaMediaVideoDecEncFunction0300()
     OH_AVFormat* VideoFormat = createFormat();
     OH_AVFormat_SetIntValue(VideoFormat, OH_MD_KEY_PROFILE, AVC_PROFILE_BASELINE);
 
-    if (vDecEncSample->ConfigureDec(VideoFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->ConfigureEnc(VideoFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->GetSurface() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->SetOutputSurface() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StartDec() != AV_ERR_OK) {
+    if (ConfigureAndStartVideoDecEnc(vDecEncSample, VideoFormat) != 0) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
@@ -503,48 +479,13 @@ int SubMultimediaMediaVideoDecEncFunction0400()
     OH_AVFormat* VideoFormat = createFormat();
     OH_AVFormat_SetIntValue(VideoFormat, OH_MD_KEY_PROFILE, AVC_PROFILE_HIGH);
 
-    if (vDecEncSample->ConfigureDec(VideoFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->ConfigureEnc(VideoFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->GetSurface() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->SetOutputSurface() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StartDec() != AV_ERR_OK) {
+    if (ConfigureAndStartVideoDecEnc(vDecEncSample, VideoFormat) != 0) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
     }
 
-    while (vDecEncSample->GetFrameCount() < 100) {
+    while (vDecEncSample->GetFrameCount() < kExpectedVideoFrameCount) {
     };
     if (vDecEncSample->FlushDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(VideoFormat);
@@ -797,7 +738,7 @@ int SubMultimediaMediaVideoDecEncFunction0600()
         return -1;
     }
 
-    while (vDecEncSample->GetFrameCount() < 100) {
+    while (vDecEncSample->GetFrameCount() < kExpectedVideoFrameCount) {
     };
     if (vDecEncSample->StopDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(VideoFormat);

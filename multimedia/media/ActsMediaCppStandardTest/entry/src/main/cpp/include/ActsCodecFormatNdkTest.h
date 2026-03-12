@@ -13,6 +13,10 @@
  * limitations under the License.
  */
 
+/**
+ * @file Codec format test declarations (native media API).
+ */
+
 #ifndef ACTSMEDIACPPSTANDARDTEST_ACTS_CODEC_FORMAT_NDK_TEST_H
 #define ACTSMEDIACPPSTANDARDTEST_ACTS_CODEC_FORMAT_NDK_TEST_H
 

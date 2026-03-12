@@ -65,6 +65,77 @@ static int WaitForEncEosWithTimeout(ADecEncNdkSample* sample, int timeoutSeconds
     return 0;
 }
 
+static int StartEncDecWithParams(ADecEncNdkSample* sample, OH_AVFormat* format)
+{
+    if (sample->StartEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->SetParameterEnc(format) != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->StartDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->SetParameterDec(format) != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
+static int WaitEosStopAndRelease(ADecEncNdkSample* sample)
+{
+    if (WaitForEncEosWithTimeout(sample, EOS_WAIT_TIMEOUT_SEC) != 0) {
+        return -1;
+    }
+    if (sample->StopDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->StopEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->ReleaseDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->ReleaseEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
+static int WaitEosResetAndRelease(ADecEncNdkSample* sample)
+{
+    if (WaitForEncEosWithTimeout(sample, EOS_WAIT_TIMEOUT_SEC) != 0) {
+        return -1;
+    }
+    if (sample->ResetEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->ResetDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->ReleaseDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->ReleaseEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
+static int WaitEosAndRelease(ADecEncNdkSample* sample)
+{
+    if (WaitForEncEosWithTimeout(sample, EOS_WAIT_TIMEOUT_SEC) != 0) {
+        return -1;
+    }
+    if (sample->ReleaseDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->ReleaseEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
 static bool CheckDecDesc(map<string, int> InDesc, OH_AVFormat* OutDesc)
 {
     int32_t out;
@@ -126,126 +197,90 @@ int SubMultimediaMediaAudioDecEncFunction0100()
         { OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE },
         { OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE },
     };
-    OH_AVFormat* AudioFormat = OH_AVFormat_Create();
-    if (AudioFormat == nullptr) {
+    OH_AVFormat* audioFormat = OH_AVFormat_Create();
+    if (audioFormat == nullptr) {
         delete aDecEncSample;
         return -1;
     }
-    if (!SetFormat(AudioFormat, AudioParam)) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (!SetFormat(audioFormat, AudioParam)) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat_SetStringValue(AudioFormat, OH_MD_KEY_CODEC_MIME, OH_AVCODEC_MIMETYPE_AUDIO_AAC);
+    OH_AVFormat_SetStringValue(audioFormat, OH_MD_KEY_CODEC_MIME, OH_AVCODEC_MIMETYPE_AUDIO_AAC);
 
     struct OH_AVCodec* audDec = aDecEncSample->CreateAudioDecoderByName(DECODER_AAC);
     if (audDec == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureDec(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     OH_AVFormat* OutDescDec = OH_AudioDecoder_GetOutputDescription(audDec);
     if (OutDescDec == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (!CheckDecDesc(AudioParam, OutDescDec)) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
     struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByName(ENCODER_AAC);
     if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureEnc(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     OH_AVFormat* OutDescEnc = OH_AudioEncoder_GetOutputDescription(audEnc);
     if (OutDescEnc == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (!CheckDecDesc(AudioParam, OutDescEnc)) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
     aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out1.aac");
-    if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (StartEncDecWithParams(aDecEncSample, audioFormat) != 0) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->SetParameterEnc(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->SetParameterDec(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-
-    if (WaitForEncEosWithTimeout(aDecEncSample, EOS_WAIT_TIMEOUT_SEC) != 0) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->StopDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->StopEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ReleaseDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (WaitEosStopAndRelease(aDecEncSample) != 0) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     audDec = nullptr;
-    if (aDecEncSample->ReleaseEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
     audEnc = nullptr;
-    OH_AVFormat_Destroy(AudioFormat);
-    AudioFormat = nullptr;
+    OH_AVFormat_Destroy(audioFormat);
+    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
     if (calcuErr != AV_ERR_OK) {
@@ -275,40 +310,40 @@ int SubMultimediaMediaAudioDecEncFunction0200()
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat* AudioFormat = OH_AVFormat_Create();
-    if (AudioFormat == nullptr) {
+    OH_AVFormat* audioFormat = OH_AVFormat_Create();
+    if (audioFormat == nullptr) {
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_TRACK_TYPE, MEDIA_TYPE_AUD);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_TRACK_TYPE, MEDIA_TYPE_AUD);
 
-    if (aDecEncSample->ConfigureDec(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
     struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByMime(MIME_TYPE_AAC);
     if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureEnc(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -316,44 +351,24 @@ int SubMultimediaMediaAudioDecEncFunction0200()
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out2.aac");
 
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (WaitForEncEosWithTimeout(aDecEncSample, EOS_WAIT_TIMEOUT_SEC) != 0) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ResetEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ResetDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ReleaseDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (WaitEosResetAndRelease(aDecEncSample) != 0) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     audDec = nullptr;
-    if (aDecEncSample->ReleaseEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
     audEnc = nullptr;
-    OH_AVFormat_Destroy(AudioFormat);
-    AudioFormat = nullptr;
+    OH_AVFormat_Destroy(audioFormat);
+    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
     if (calcuErr != AV_ERR_OK) {
@@ -383,40 +398,40 @@ int SubMultimediaMediaAudioDecEncFunction0300()
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat* AudioFormat = OH_AVFormat_Create();
-    if (AudioFormat == nullptr) {
+    OH_AVFormat* audioFormat = OH_AVFormat_Create();
+    if (audioFormat == nullptr) {
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_PROFILE, AAC_PROFILE_LC);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_PROFILE, AAC_PROFILE_LC);
 
-    if (aDecEncSample->ConfigureDec(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
     struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByMime(MIME_TYPE_AAC);
     if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureEnc(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -424,34 +439,24 @@ int SubMultimediaMediaAudioDecEncFunction0300()
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out3.aac");
 
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (WaitForEncEosWithTimeout(aDecEncSample, EOS_WAIT_TIMEOUT_SEC) != 0) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ReleaseDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (WaitEosAndRelease(aDecEncSample) != 0) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     audDec = nullptr;
-    if (aDecEncSample->ReleaseEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
     audEnc = nullptr;
-    OH_AVFormat_Destroy(AudioFormat);
-    AudioFormat = nullptr;
+    OH_AVFormat_Destroy(audioFormat);
+    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
     if (calcuErr != AV_ERR_OK) {
@@ -481,38 +486,38 @@ int SubMultimediaMediaAudioDecEncFunction0400()
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat* AudioFormat = OH_AVFormat_Create();
-    if (AudioFormat == nullptr) {
+    OH_AVFormat* audioFormat = OH_AVFormat_Create();
+    if (audioFormat == nullptr) {
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
-    if (aDecEncSample->ConfigureDec(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
+    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
     struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByMime(MIME_TYPE_AAC);
     if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureEnc(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -521,24 +526,24 @@ int SubMultimediaMediaAudioDecEncFunction0400()
     aDecEncSample->SetEosState(false);
 
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     while (aDecEncSample->GetFrameCount() < 50) {
     };
     if (aDecEncSample->FlushDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->FlushEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -548,35 +553,25 @@ int SubMultimediaMediaAudioDecEncFunction0400()
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out4_2.aac");
     aDecEncSample->SetEosState(true);
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
-    if (WaitForEncEosWithTimeout(aDecEncSample, EOS_WAIT_TIMEOUT_SEC) != 0) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ReleaseDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (WaitEosAndRelease(aDecEncSample) != 0) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     audDec = nullptr;
-    if (aDecEncSample->ReleaseEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
     audEnc = nullptr;
-    OH_AVFormat_Destroy(AudioFormat);
-    AudioFormat = nullptr;
+    OH_AVFormat_Destroy(audioFormat);
+    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
     if (calcuErr != AV_ERR_OK) {
@@ -606,38 +601,38 @@ int SubMultimediaMediaAudioDecEncFunction0500()
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat* AudioFormat = OH_AVFormat_Create();
-    if (AudioFormat == nullptr) {
+    OH_AVFormat* audioFormat = OH_AVFormat_Create();
+    if (audioFormat == nullptr) {
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
-    if (aDecEncSample->ConfigureDec(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
+    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
     struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByMime(MIME_TYPE_AAC);
     if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureEnc(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -646,12 +641,12 @@ int SubMultimediaMediaAudioDecEncFunction0500()
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out5.aac");
 
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -659,17 +654,17 @@ int SubMultimediaMediaAudioDecEncFunction0500()
     };
     cout << "aDecEncSample->GetDecEosState() is " << aDecEncSample->GetDecEosState() << endl;
     if (aDecEncSample->CalcuError() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->FlushDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->FlushEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -678,36 +673,26 @@ int SubMultimediaMediaAudioDecEncFunction0500()
     aDecEncSample->ResetEncParam();
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out5_2.aac");
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     aDecEncSample->SetEosState(true);
 
-    if (WaitForEncEosWithTimeout(aDecEncSample, EOS_WAIT_TIMEOUT_SEC) != 0) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ReleaseDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (WaitEosAndRelease(aDecEncSample) != 0) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     audDec = nullptr;
-    if (aDecEncSample->ReleaseEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
     audEnc = nullptr;
-    OH_AVFormat_Destroy(AudioFormat);
-    AudioFormat = nullptr;
+    OH_AVFormat_Destroy(audioFormat);
+    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
     if (calcuErr != AV_ERR_OK) {
@@ -737,38 +722,38 @@ int SubMultimediaMediaAudioDecEncFunction0600()
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat* AudioFormat = OH_AVFormat_Create();
-    if (AudioFormat == nullptr) {
+    OH_AVFormat* audioFormat = OH_AVFormat_Create();
+    if (audioFormat == nullptr) {
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
-    if (aDecEncSample->ConfigureDec(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
+    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
     struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByMime(MIME_TYPE_AAC);
     if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureEnc(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -777,24 +762,24 @@ int SubMultimediaMediaAudioDecEncFunction0600()
     aDecEncSample->SetEosState(false);
 
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     while (aDecEncSample->GetFrameCount() < 50) {
     };
     if (aDecEncSample->StopDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StopEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -804,40 +789,30 @@ int SubMultimediaMediaAudioDecEncFunction0600()
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out6_2.aac");
     aDecEncSample->SetEosState(true);
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->CalcuError() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
-    if (WaitForEncEosWithTimeout(aDecEncSample, EOS_WAIT_TIMEOUT_SEC) != 0) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ReleaseDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (WaitEosAndRelease(aDecEncSample) != 0) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     audDec = nullptr;
-    if (aDecEncSample->ReleaseEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
     audEnc = nullptr;
-    OH_AVFormat_Destroy(AudioFormat);
-    AudioFormat = nullptr;
+    OH_AVFormat_Destroy(audioFormat);
+    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
     if (calcuErr != AV_ERR_OK) {
@@ -867,38 +842,38 @@ int SubMultimediaMediaAudioDecEncFunction0700()
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat* AudioFormat = OH_AVFormat_Create();
-    if (AudioFormat == nullptr) {
+    OH_AVFormat* audioFormat = OH_AVFormat_Create();
+    if (audioFormat == nullptr) {
         delete aDecEncSample;
         return -1;
     }
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
-    OH_AVFormat_SetIntValue(AudioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
-    if (aDecEncSample->ConfigureDec(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
+    OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
+    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
     struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByMime(MIME_TYPE_AAC);
     if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureEnc(AudioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -907,29 +882,29 @@ int SubMultimediaMediaAudioDecEncFunction0700()
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out7.aac");
 
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     while (!aDecEncSample->GetDecEosState()) {
     };
     if (aDecEncSample->StopDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->FlushEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->CalcuError() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
@@ -940,35 +915,25 @@ int SubMultimediaMediaAudioDecEncFunction0700()
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out7_2.aac");
     aDecEncSample->SetEosState(true);
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
 
-    if (WaitForEncEosWithTimeout(aDecEncSample, EOS_WAIT_TIMEOUT_SEC) != 0) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ReleaseDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
+    if (WaitEosAndRelease(aDecEncSample) != 0) {
+        OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     audDec = nullptr;
-    if (aDecEncSample->ReleaseEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(AudioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
     audEnc = nullptr;
-    OH_AVFormat_Destroy(AudioFormat);
-    AudioFormat = nullptr;
+    OH_AVFormat_Destroy(audioFormat);
+    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
     if (calcuErr != AV_ERR_OK) {

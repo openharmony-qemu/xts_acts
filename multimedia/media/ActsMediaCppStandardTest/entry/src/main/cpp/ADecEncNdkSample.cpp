@@ -40,14 +40,14 @@ void AdecAsyncStreamChanged(OH_AVCodec* codec, OH_AVFormat* format, void* userDa
 
 void AdecAsyncNeedInputData(OH_AVCodec* codec, uint32_t index, OH_AVMemory* data, void* userData)
 {
-    ADecEncSignal* acodecSignal_ = static_cast<ADecEncSignal*>(userData);
-    unique_lock<mutex> lock(acodecSignal_->inMutexDec_);
-    if (acodecSignal_->isFlushing_.load()) {
+    ADecEncSignal* acodecSignal = static_cast<ADecEncSignal*>(userData);
+    unique_lock<mutex> lock(acodecSignal->inMutexDec_);
+    if (acodecSignal->isFlushing_.load()) {
         return;
     }
-    acodecSignal_->inQueueDec_.push(index);
-    acodecSignal_->inBufferQueueDec_.push(data);
-    acodecSignal_->inCondDec_.notify_all();
+    acodecSignal->inQueueDec_.push(index);
+    acodecSignal->inBufferQueueDec_.push(data);
+    acodecSignal->inCondDec_.notify_all();
 }
 
 void AdecAsyncNewOutputData(OH_AVCodec* codec,
@@ -56,24 +56,24 @@ void AdecAsyncNewOutputData(OH_AVCodec* codec,
                             OH_AVCodecBufferAttr* attr,
                             void* userData)
 {
-    ADecEncSignal* acodecSignal_ = static_cast<ADecEncSignal*>(userData);
-    unique_lock<mutex> lock(acodecSignal_->inMutexEnc_);
-    if (acodecSignal_->isFlushing_.load()) {
+    ADecEncSignal* acodecSignal = static_cast<ADecEncSignal*>(userData);
+    unique_lock<mutex> lock(acodecSignal->inMutexEnc_);
+    if (acodecSignal->isFlushing_.load()) {
         cout << "DEC OutputAvailable: isFlushing_.load() is true, return" << endl;
         return;
     }
-    acodecSignal_->outQueueDec_.push(index);
-    acodecSignal_->sizeQueueDec_.push(attr->size);
-    acodecSignal_->flagQueueDec_.push(attr->flags);
-    acodecSignal_->outBufferQueueDec_.push(data);
-    acodecSignal_->inCondEnc_.notify_all();
+    acodecSignal->outQueueDec_.push(index);
+    acodecSignal->sizeQueueDec_.push(attr->size);
+    acodecSignal->flagQueueDec_.push(attr->flags);
+    acodecSignal->outBufferQueueDec_.push(data);
+    acodecSignal->inCondEnc_.notify_all();
 }
 
 void AencAsyncError(OH_AVCodec* codec, int32_t errorCode, void* userData)
 {
-    ADecEncSignal* acodecSignal_ = static_cast<ADecEncSignal*>(userData);
+    ADecEncSignal* acodecSignal = static_cast<ADecEncSignal*>(userData);
     cout << "ENC Error errorCode=" << errorCode << endl;
-    acodecSignal_->errorNum_ += 1;
+    acodecSignal->errorNum_ += 1;
 }
 
 void AencAsyncStreamChanged(OH_AVCodec* codec, OH_AVFormat* format, void* userData)
@@ -83,14 +83,14 @@ void AencAsyncStreamChanged(OH_AVCodec* codec, OH_AVFormat* format, void* userDa
 
 void AencAsyncNeedInputData(OH_AVCodec* codec, uint32_t index, OH_AVMemory* data, void* userData)
 {
-    ADecEncSignal* acodecSignal_ = static_cast<ADecEncSignal*>(userData);
-    unique_lock<mutex> lock(acodecSignal_->inMutexEnc_);
-    if (acodecSignal_->isFlushing_.load()) {
+    ADecEncSignal* acodecSignal = static_cast<ADecEncSignal*>(userData);
+    unique_lock<mutex> lock(acodecSignal->inMutexEnc_);
+    if (acodecSignal->isFlushing_.load()) {
         return;
     }
-    acodecSignal_->inQueueEnc_.push(index);
-    acodecSignal_->inBufferQueueEnc_.push(data);
-    acodecSignal_->inCondEnc_.notify_all();
+    acodecSignal->inQueueEnc_.push(index);
+    acodecSignal->inBufferQueueEnc_.push(data);
+    acodecSignal->inCondEnc_.notify_all();
 }
 
 void AencAsyncNewOutputData(OH_AVCodec* codec,
@@ -99,16 +99,16 @@ void AencAsyncNewOutputData(OH_AVCodec* codec,
                             OH_AVCodecBufferAttr* attr,
                             void* userData)
 {
-    ADecEncSignal* acodecSignal_ = static_cast<ADecEncSignal*>(userData);
-    unique_lock<mutex> lock(acodecSignal_->outMutexEnc_);
-    if (acodecSignal_->isFlushing_.load()) {
+    ADecEncSignal* acodecSignal = static_cast<ADecEncSignal*>(userData);
+    unique_lock<mutex> lock(acodecSignal->outMutexEnc_);
+    if (acodecSignal->isFlushing_.load()) {
         return;
     }
-    acodecSignal_->outQueueEnc_.push(index);
-    acodecSignal_->sizeQueueEnc_.push(attr->size);
-    acodecSignal_->flagQueueEnc_.push(attr->flags);
-    acodecSignal_->outBufferQueueEnc_.push(data);
-    acodecSignal_->outCondEnc_.notify_all();
+    acodecSignal->outQueueEnc_.push(index);
+    acodecSignal->sizeQueueEnc_.push(attr->size);
+    acodecSignal->flagQueueEnc_.push(attr->flags);
+    acodecSignal->outBufferQueueEnc_.push(data);
+    acodecSignal->outCondEnc_.notify_all();
 }
 
 void clearIntqueue(std::queue<uint32_t>& q)
@@ -190,7 +190,7 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioDecoderByMime(std::string mimety
     cbDec_.onNeedInputData = AdecAsyncNeedInputData;
     cbDec_.onNeedOutputData = AdecAsyncNewOutputData;
     int32_t ret = OH_AudioDecoder_SetCallback(adec_, cbDec_, static_cast<void*>(acodecSignal_));
-    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, NULL, "Fatal: OH_AudioDecoder_SetCallback");
+    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, nullptr, "Fatal: OH_AudioDecoder_SetCallback");
     return adec_;
 }
 
@@ -207,7 +207,7 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioDecoderByName(std::string name)
     cbDec_.onNeedInputData = AdecAsyncNeedInputData;
     cbDec_.onNeedOutputData = AdecAsyncNewOutputData;
     int32_t ret = OH_AudioDecoder_SetCallback(adec_, cbDec_, static_cast<void*>(acodecSignal_));
-    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, NULL, "Fatal: OH_AudioDecoder_SetCallback");
+    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, nullptr, "Fatal: OH_AudioDecoder_SetCallback");
     return adec_;
 }
 
@@ -477,7 +477,7 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioEncoderByMime(std::string mimety
     cbEnc_.onNeedInputData = AencAsyncNeedInputData;
     cbEnc_.onNeedOutputData = AencAsyncNewOutputData;
     int32_t ret = OH_AudioEncoder_SetCallback(aenc_, cbEnc_, static_cast<void*>(acodecSignal_));
-    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, NULL, "Fatal: OH_AudioEncoder_SetCallback");
+    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, nullptr, "Fatal: OH_AudioEncoder_SetCallback");
     return aenc_;
 }
 
@@ -490,7 +490,7 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioEncoderByName(std::string name)
     cbEnc_.onNeedInputData = AencAsyncNeedInputData;
     cbEnc_.onNeedOutputData = AencAsyncNewOutputData;
     int32_t ret = OH_AudioEncoder_SetCallback(aenc_, cbEnc_, static_cast<void*>(acodecSignal_));
-    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, NULL, "Fatal: OH_AudioEncoder_SetCallback");
+    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, nullptr, "Fatal: OH_AudioEncoder_SetCallback");
     return aenc_;
 }
 
@@ -795,9 +795,9 @@ void ADecEncNdkSample::OutputFuncEnc()
     }
 }
 
-void ADecEncNdkSample::SetReadPath(const char* inp_path, uint32_t es[], uint32_t length)
+void ADecEncNdkSample::SetReadPath(const char* inpPath, uint32_t es[], uint32_t length)
 {
-    INP_FILE = inp_path;
+    INP_FILE = inpPath;
     ES = es;
     ES_LENGTH = length;
 }
@@ -821,9 +821,9 @@ void ADecEncNdkSample::SetEosState(bool needSetEos)
     setEos = needSetEos;
 }
 
-void ADecEncNdkSample::SetSavePath(const char* outp_path)
+void ADecEncNdkSample::SetSavePath(const char* outpPath)
 {
-    OUT_FILE = outp_path;
+    OUT_FILE = outpPath;
 }
 
 int32_t ADecEncNdkSample::CalcuError()

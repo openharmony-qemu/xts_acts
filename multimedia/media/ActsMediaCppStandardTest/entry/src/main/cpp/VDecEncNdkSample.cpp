@@ -253,7 +253,7 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoDecoderByMime(std::string mimety
     cbDec_.onNeedInputData = VdecAsyncNeedInputData;
     cbDec_.onNeedOutputData = VdecAsyncNewOutputData;
     int32_t ret = OH_VideoDecoder_SetCallback(vdec_, cbDec_, static_cast<void*>(vcodecSignal_));
-    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, NULL, "Fatal: OH_VideoDecoder_SetCallback");
+    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, nullptr, "Fatal: OH_VideoDecoder_SetCallback");
     return vdec_;
 }
 
@@ -270,7 +270,7 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoDecoderByName(std::string name)
     cbDec_.onNeedInputData = VdecAsyncNeedInputData;
     cbDec_.onNeedOutputData = VdecAsyncNewOutputData;
     int32_t ret = OH_VideoDecoder_SetCallback(vdec_, cbDec_, static_cast<void*>(vcodecSignal_));
-    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, NULL, "Fatal: OH_VideoDecoder_SetCallback");
+    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, nullptr, "Fatal: OH_VideoDecoder_SetCallback");
     return vdec_;
 }
 
@@ -580,7 +580,7 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoEncoderByMime(std::string mimety
     cbEnc_.onStreamChanged = VencAsyncStreamChanged;
     cbEnc_.onNeedOutputData = VencAsyncNewOutputData;
     int32_t ret = OH_VideoEncoder_SetCallback(venc_, cbEnc_, static_cast<void*>(vcodecSignal_));
-    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, NULL, "Fatal: OH_VideoEncoder_SetCallback");
+    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, nullptr, "Fatal: OH_VideoEncoder_SetCallback");
     return venc_;
 }
 
@@ -597,7 +597,7 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoEncoderByName(std::string name)
     cbEnc_.onStreamChanged = VencAsyncStreamChanged;
     cbEnc_.onNeedOutputData = VencAsyncNewOutputData;
     int32_t ret = OH_VideoEncoder_SetCallback(venc_, cbEnc_, static_cast<void*>(vcodecSignal_));
-    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, NULL, "Fatal: OH_VideoEncoder_SetCallback");
+    NDK_CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, nullptr, "Fatal: OH_VideoEncoder_SetCallback");
     return venc_;
 }
 

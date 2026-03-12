@@ -14,7 +14,8 @@
  */
 
 #include "include/SecurecTest.h"
-#include <cstring>
+#include <algorithm>
+#include <cstddef>
 
 extern "C" {
 
@@ -26,7 +27,8 @@ int SecureMemset(void* dest, size_t destMax, int c, size_t count)
     if (count > destMax || destMax > SECUREC_MEM_MAX_LEN) {
         return ERANGE;
     }
-    memset(dest, c, count);
+    unsigned char* p = static_cast<unsigned char*>(dest);
+    std::fill_n(p, count, static_cast<unsigned char>(c));
     return EOK;
 }
 

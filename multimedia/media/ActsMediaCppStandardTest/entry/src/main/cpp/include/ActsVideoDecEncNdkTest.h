@@ -13,6 +13,10 @@
  * limitations under the License.
  */
 
+/**
+ * @file Video decode/encode test declarations (native media API).
+ */
+
 #ifndef ACTSMEDIACPPSTANDARDTEST_ACTS_VIDEO_DEC_ENC_NDK_TEST_H
 #define ACTSMEDIACPPSTANDARDTEST_ACTS_VIDEO_DEC_ENC_NDK_TEST_H
 
