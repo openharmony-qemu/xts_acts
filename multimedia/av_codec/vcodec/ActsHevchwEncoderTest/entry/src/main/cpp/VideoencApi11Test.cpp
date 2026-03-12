@@ -149,7 +149,7 @@ int32_t VEncAPI11Sample::ConfigureVideoEncoderSqr()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIX_FMT);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, defaultFrameRate);
     if (modeEnable) {
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, DEFAULT_BITRATE_MODE);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, defaultBitrateMode);
     }
     if (setbirate) {
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, defaultBitrate);
@@ -197,7 +197,7 @@ int32_t VEncAPI11Sample::ConfigureVideoEncoder()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIX_FMT);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, defaultFrameRate);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, defaultKeyFrameInterval);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, DEFAULT_BITRATE_MODE);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, defaultBitrateMode);
     if (enablePTSBasedRateControl) {
         std::cout << "enablePTSBasedRateControl var frame!!!!" << std::endl;
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_ENABLE_PTS_BASED_RATECONTROL, 1);
@@ -397,8 +397,9 @@ uint32_t VEncAPI11Sample::ReadOneFrameYUV420SP(uint8_t *dst)
     // copy Y
     for (uint32_t i = 0; i < defaultHeight; i++) {
         inFile_->read(reinterpret_cast<char *>(dst), defaultWidth);
-        if (!ReturnZeroIfEOS(defaultWidth))
+        if (!ReturnZeroIfEOS(defaultWidth)) {
             return 0;
+        }
         dst += stride_;
     }
     // copy UV
@@ -738,7 +739,7 @@ int32_t VEncAPI11Sample::SetParameter()
         return AV_ERR_UNKNOWN;
     }
     if (modeEnableRun) {
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, DEFAULT_BITRATE_MODE_RUN);
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, defaultBitrateModeRun);
     }
     if (iframeEnableRun) {
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_I_FRAME_INTERVAL, defaultIntervalRun);
@@ -898,9 +899,7 @@ void VEncAPI11Sample::StopOutloop()
     }
 }
 
-int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &inputDir,
-                                           std::string &outputDir, uint32_t &w, uint32_t &h,
-                                           uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode)
+int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, EncoderConfig &config)
 {
     std::ifstream file(filePath);
     if (!file.is_open()) {
@@ -910,37 +909,37 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, std::string &in
     int32_t num = 0;
     while (getline(file, temp)) {
         if (num == ZERO) {
-            inputDir = temp;
+            config.inputDir = temp;
             num++;
             continue;
         }
         if (num == ONE) {
-            outputDir = temp;
+            config.outputDir = temp;
             num++;
             continue;
         }
         if (num == TWO) {
-            w = stoi(temp);
+            config.width = stoi(temp);
             num++;
             continue;
         }
         if (num == THREE) {
-            h = stoi(temp);
+            config.height = stoi(temp);
             num++;
             continue;
         }
         if (num == FOUR) {
-            bitrateMode = stoi(temp);
+            config.bitrateMode = stoi(temp);
             num++;
             continue;
         }
         if (num == FIVE) {
-            bitRate = stoi(temp);
+            config.bitRate = stoi(temp);
             num++;
             continue;
         }
         if (num == SIX) {
-            surfaceMode = stoi(temp) == 1 ? true : false;
+            config.surfaceMode = stoi(temp) == 1 ? true : false;
             num++;
             continue;
         }

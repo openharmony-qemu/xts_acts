@@ -102,7 +102,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_001()
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = VBR;
+    vEncSample->defaultBitrateMode = VBR;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_20000000;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_20000000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
@@ -177,7 +177,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_003()
     vEncSample->surfInput = true;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -209,7 +209,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_004()
     vEncSample->outDir = outDir;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -245,7 +245,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_005()
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -279,7 +279,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_006()
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -315,7 +315,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_007()
     vEncSample->maxbiteEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -353,7 +353,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_008()
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_100;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -393,7 +393,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_009()
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
     vEncSample->defaultQuality = DEFAULT_QUALITY_28;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -432,7 +432,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_010()
     vEncSample->factorEnable = true;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_50000000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_30;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(codecNameAvc));
@@ -468,7 +468,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_011()
     vEncSample->surfInput = true;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -500,7 +500,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_012()
     vEncSample->outDir = outDir;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -536,7 +536,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_013()
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -570,7 +570,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_014()
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));

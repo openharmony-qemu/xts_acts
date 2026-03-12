@@ -66,7 +66,7 @@ public:
     uint32_t defaultFrameRateRun = 30;
     uint64_t defaultMaxBitrateRun =  50000000;
     uint32_t defaultIntervalRun = 1000;
-    uint32_t DEFAULT_BITRATE_MODE_RUN = CBR;
+    uint32_t defaultBitrateModeRun = CBR;
     uint32_t defaultBframe = 1;
     uint32_t defaultMaxBFrames = 3;
     bool setbirate = false;
@@ -84,7 +84,7 @@ public:
     bool modeEnableRun = false;
     bool enablePTSBasedRateControl = false;
     bool maxbframesEnable = false;
-    uint32_t DEFAULT_BITRATE_MODE = CBR;
+    uint32_t defaultBitrateMode = CBR;
     OH_AVPixelFormat DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     uint32_t defaultKeyFrameInterval = 1000;
     std::vector<time_t> timeList;
@@ -127,9 +127,16 @@ public:
     void ReadMultiFilesFunc();
     int32_t GetBframes(OH_AVFormat *format);
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
-    int32_t LoadTimeStampData(std::string filePath, std::string &inputDir,
-                            std::string &outputDir, uint32_t &w, uint32_t &h,
-                            uint32_t &bitrateMode, uint32_t &bitRate, bool &surfaceMode);
+    struct EncoderConfig {
+        std::string inputDir = "";      // 输入目录
+        std::string outputDir = "";     // 输出目录
+        uint32_t width = 0;             // 视频宽度（默认值）
+        uint32_t height = 0;            // 视频高度（默认值）
+        uint32_t bitrateMode = 0;       // 码率模式（默认值）
+        uint32_t bitRate = 0;           // 码率值（默认值）
+        bool surfaceMode = false;       // 表面模式（默认值）
+    }
+    int32_t LoadTimeStampData(std::string filePath, EncoderConfig &config);
     VEncAPI11Signal *signal_;
     uint32_t errCount = 0;
     uint32_t outCount = 0;

@@ -103,7 +103,7 @@ int VIDEO_HW_ENCODE_B_FUNC_001()
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_01.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
-    vEncSample->DEFAULT_BITRATE_MODE = CBR;
+    vEncSample->defaultBitrateMode = CBR;
     vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
@@ -140,7 +140,7 @@ int VIDEO_HW_ENCODE_B_FUNC_002()
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_02.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
-    vEncSample->DEFAULT_BITRATE_MODE = CBR;
+    vEncSample->defaultBitrateMode = CBR;
     vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
@@ -177,7 +177,7 @@ int VIDEO_HW_ENCODE_B_FUNC_003()
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_03.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
-    vEncSample->DEFAULT_BITRATE_MODE = CBR;
+    vEncSample->defaultBitrateMode = CBR;
     vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
@@ -216,7 +216,7 @@ int VIDEO_HW_ENCODE_B_FUNC_004()
     vEncSample->surfInput = true;
     vEncSample->bEnable = true;
     vEncSample->modeEnable = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -255,7 +255,7 @@ int VIDEO_HW_ENCODE_B_FUNC_005()
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultBframe = DEFAULT_BFRAME_AUTO;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -294,7 +294,7 @@ int VIDEO_HW_ENCODE_B_FUNC_006()
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultBframe = DEFAULT_BFRAME_UNLIMITED;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;

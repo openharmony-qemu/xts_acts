@@ -101,7 +101,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_001()
                       "700,710-820,1000=-4";
     vEncSample->outDir = outDir;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
-    vEncSample->DEFAULT_BITRATE_MODE = CBR;
+    vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = INP_DIR_1920_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -132,7 +132,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_002()
     vEncSample->roiInfo = "440,1272-1080,1920=-51";
     vEncSample->outDir = outDir;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
-    vEncSample->DEFAULT_BITRATE_MODE = VBR;
+    vEncSample->defaultBitrateMode = VBR;
     vEncSample->inpDir = INP_DIR_1920_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -197,7 +197,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_004()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->roiInfo = "0,0-500,500;500,500-600,600;600,500-700,600";
     vEncSample->outDir = outDir;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
@@ -233,7 +233,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_005()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1080;
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
     vEncSample->outDir = outDir;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = INP_DIR_1920_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
@@ -267,7 +267,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_006()
                         "700,710-80,1000=-4";
     vEncSample->outDir = outDir;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = CBR;
+    vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -298,7 +298,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_007()
     vEncSample->roiInfo = "400,1272-1080,1920=-51";
     vEncSample->outDir = outDir;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = VBR;
+    vEncSample->defaultBitrateMode = VBR;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -329,7 +329,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
     vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,650=51";
     vEncSample->outDir = outDir;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = CBR;
+    vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -365,7 +365,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_009()
     vEncSample->roiInfo = "0,0-500,500;500,500-600,600;600,500-700,600";
     vEncSample->outDir = outDir;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
@@ -402,7 +402,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_010()
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
     vEncSample->outDir = outDir;
     vEncSample->surfInput = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));

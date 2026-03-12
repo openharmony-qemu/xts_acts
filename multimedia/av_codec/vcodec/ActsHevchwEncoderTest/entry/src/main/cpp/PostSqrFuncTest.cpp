@@ -110,7 +110,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_001()
     vEncSample->enableParameter = true;
     vEncSample->maxbiteEnableRun = true;
     vEncSample->factorEnableRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
     vEncSample->defaultMaxBitrateRun = DEFAULT_MAX_BITRATE_RUN;
@@ -150,7 +150,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_002()
     vEncSample->enableParameter = true;
     vEncSample->maxbiteEnableRun = true;
     vEncSample->factorEnableRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
     vEncSample->defaultMaxBitrateRun = DEFAULT_MAX_BITRATE_RUN;
@@ -189,7 +189,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_003()
     vEncSample->modeEnable = true;
     vEncSample->enableParameter = true;
     vEncSample->factorEnableRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
     vEncSample->defaultSqrFactorRun = DEFAULT_SQR_FACTOR_RUN_51;
@@ -227,7 +227,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_004()
     vEncSample->modeEnable = true;
     vEncSample->enableParameter = true;
     vEncSample->maxbiteEnableRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
     vEncSample->defaultMaxBitrateRun = DEFAULT_MAX_BITRATE_RUN;
@@ -266,7 +266,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_005()
     vEncSample->enableParameter = true;
     vEncSample->maxbiteEnableRun = true;
     vEncSample->factorEnableRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_51;
     vEncSample->defaultMaxBitrateRun = DEFAULT_MAX_BITRATE_RUN;
@@ -304,7 +304,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_006()
     vEncSample->enableParameter = true;
     vEncSample->maxbiteEnableRun = true;
     vEncSample->factorEnableRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultMaxBitrateRun = DEFAULT_MAX_BITRATE_RUN_4000000;
     vEncSample->defaultSqrFactorRun = DEFAULT_SQR_FACTOR_RUN_28;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
@@ -339,7 +339,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_007()
     vEncSample->modeEnable = true;
     vEncSample->enableParameter = true;
     vEncSample->factorEnableRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultSqrFactorRun = DEFAULT_SQR_FACTOR_RUN;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -373,7 +373,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_008()
     vEncSample->modeEnable = true;
     vEncSample->enableParameter = true;
     vEncSample->maxbiteEnableRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultMaxBitrateRun = DEFAULT_MAX_BITRATE_RUN_200000000;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -412,7 +412,7 @@ int VIDEO_HW_ENCODE_FUNC_SQR_009()
     vEncSample->maxbiteEnableRun = true;
     vEncSample->factorEnableRun = true;
     vEncSample->setbirateRun = true;
-    vEncSample->DEFAULT_BITRATE_MODE = SQR;
+    vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_400000;
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_28;
     vEncSample->defaultMaxBitrateRun = DEFAULT_MAX_BITRATE_RUN_1000000;
