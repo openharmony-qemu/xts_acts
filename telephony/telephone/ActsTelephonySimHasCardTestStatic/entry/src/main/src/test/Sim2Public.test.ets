@@ -200,7 +200,7 @@ export default function Sim2Public() {
           console.info(`${caseName} test end `);
           done();
         }
-      });
+      });imState
     });
 
     /**
@@ -375,24 +375,18 @@ export default function Sim2Public() {
       sim.hasSimCard(0, (err: BusinessError | null, data: boolean | undefined) => {
         if (data) {
           console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-          sim.getSimStatesync(0, (err: BusinessError| null, data: sim.SimState | undefined) => {
-            const simStateAry: number[] = [
-              sim.SimState.SIM_STATE_UNKNOWN,
-              sim.SimState.SIM_STATE_LOCKED,
-              sim.SimState.SIM_STATE_NOT_PRESENT,
-              sim.SimState.SIM_STATE_NOT_READY,
-              sim.SimState.SIM_STATE_LOADED,
-              sim.SimState.SIM_STATE_READY
-            ]
-            ExpectTrue(simStateAry.includes(data));
-            console.info(`${caseName} test end `);
-            done();
-          }).catch((err: Error): void => {
-            console.info(`${caseName}getSimState failed, promise: err->${JSON.stringify(err)}`);
-            ExpectFail();
-            console.info(`${caseName} test end `);
-            done();
-          });
+          sim.getSimStateSync(0);
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]  
+          ExpectTrue(simStateAry.includes(data));
+          console.info(`${caseName} test end `);
+          done();
         }else {
           ExpectFail();
           console.info(`${caseName} test end `);
