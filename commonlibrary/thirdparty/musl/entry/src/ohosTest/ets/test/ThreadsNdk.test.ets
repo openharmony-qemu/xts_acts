@@ -30,9 +30,9 @@ export default function threadsNdkTest() {
      * @tc.desc   test cnd_timedwait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslThreadsCndTimedWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslThreadsCndTimedWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(threads.cnd_timedwait()).assertEqual(1);
       done()
     });

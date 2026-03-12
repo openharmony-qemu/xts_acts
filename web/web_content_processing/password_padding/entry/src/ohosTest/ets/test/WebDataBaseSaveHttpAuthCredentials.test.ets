@@ -202,6 +202,28 @@ export default function WebDataBaseSaveHttpAuthCredentialsTest() {
       });
 
     /**
+     * @tc.name testSaveHttpAuthCredentialsEmptyRealm
+     * @tc.number SUB_WEB_WEBDATABASE_SAVE_HTTP_AUTH_CREDENTIALS_EMPTY_REALM_007
+     * @tc.desc Test saveHttpAuthCredentials with empty realm
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testSaveHttpAuthCredentialsEmptyRealm', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        emitKey = 'testSaveHttpAuthCredentialsEmptyRealm';
+        let tcName = 'testSaveHttpAuthCredentialsEmptyRealm';
+        let isReturn = false;
+        Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+        Utils.registerEvent(tcName, "empty_realm", 20260246, () => {
+          isReturn = true
+        });
+        Utils.waitAndClickComponent(driver, "saveHttpAuthCredentialsClick", tcName);
+        await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        done();
+      });
+
+    /**
      * @tc.name testSaveHttpAuthCredentialsNullRealm
      * @tc.number SUB_WEB_WEBDATABASE_SAVE_HTTP_AUTH_CREDENTIALS_NULL_REALM_008
      * @tc.desc Test saveHttpAuthCredentials with null realm
@@ -311,6 +333,27 @@ export default function WebDataBaseSaveHttpAuthCredentialsTest() {
         done();
       });
 
+    /**
+     * @tc.name testSaveHttpAuthCredentialsEmptyPassword
+     * @tc.number SUB_WEB_WEBDATABASE_SAVE_HTTP_AUTH_CREDENTIALS_EMPTY_PASSWORD_013
+     * @tc.desc Test saveHttpAuthCredentials with empty password
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testSaveHttpAuthCredentialsEmptyPassword', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        emitKey = 'testSaveHttpAuthCredentialsEmptyPassword';
+        let tcName = 'testSaveHttpAuthCredentialsEmptyPassword';
+        let isReturn = false;
+        Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+        Utils.registerEvent(tcName, "empty_password", 20260252, () => {
+          isReturn = true
+        });
+        Utils.waitAndClickComponent(driver, "saveHttpAuthCredentialsClick", tcName);
+        await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        done();
+      });
 
     /**
      * @tc.name testSaveHttpAuthCredentialsNullPassword

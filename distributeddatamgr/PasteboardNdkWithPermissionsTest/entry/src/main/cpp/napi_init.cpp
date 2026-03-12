@@ -82,6 +82,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress001(napi_env env, napi_callba
     const char *uri = "file://com.acts.Pastboard.ndkWithPermissionstest/data/storage/el2/base/files/haps/";
     
     Pasteboard_GetDataParams* params = OH_Pasteboard_GetDataParams_Create();
+    NAPI_ASSERT(env, params != nullptr, "OH_Pasteboard_GetDataParams_Create is fail.");
     
     OH_Pasteboard_GetDataParams_SetDestUri(params, uri, strlen(uri));
     OH_Pasteboard_GetDataParams_SetFileConflictOptions(params, PASTEBOARD_SKIP);
@@ -131,6 +132,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress002(napi_env env, napi_callba
     const char *uri = "file://com.acts.Pastboard.ndkWithPermissionstest/data/storage/el2/base/files/haps/daily/";
 
     Pasteboard_GetDataParams* params = OH_Pasteboard_GetDataParams_Create();
+    NAPI_ASSERT(env, params != nullptr, "OH_Pasteboard_GetDataParams_Create is fail.");
     
     OH_Pasteboard_GetDataParams_SetDestUri(params, uri, strlen(uri));
     OH_Pasteboard_GetDataParams_SetFileConflictOptions(params, PASTEBOARD_SKIP);
@@ -179,6 +181,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress003(napi_env env, napi_callba
     
     const char *uri1 = "file://com.acts.Pastboard.ndkWithPermissionstest/data/storage/el2/base/files/haps11/";
     Pasteboard_GetDataParams* params = OH_Pasteboard_GetDataParams_Create();
+    NAPI_ASSERT(env, params != nullptr, "OH_Pasteboard_GetDataParams_Create is fail.");
     
     OH_Pasteboard_GetDataParams_SetDestUri(params, uri1, strlen(uri1));
     OH_Pasteboard_GetDataParams_SetFileConflictOptions(params, PASTEBOARD_SKIP);

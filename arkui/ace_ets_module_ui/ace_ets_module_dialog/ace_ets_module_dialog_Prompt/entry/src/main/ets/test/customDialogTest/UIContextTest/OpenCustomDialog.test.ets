@@ -47,7 +47,7 @@ export default function openCustomDialogTest() {
 
     /**
      * @tc.number    openCustomDialogTest
-     * @tc.name      testBack
+     * @tc.name      openCustomDialogTest_001
      * @tc.desc      Return specified page by index value
      * @tc.level     Level 3
      * @tc.type

@@ -73,7 +73,7 @@ export default function dividerThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsDividerThemeColors_0100
+     * @tc.name   `ActsDividerThemeColors_0100`
      * @tc.number ActsDividerThemeColors_0100
      * @tc.desc   check system colors values of the Divider component
      * @tc.type   FUNCTION
@@ -91,7 +91,7 @@ export default function dividerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDividerThemeColors_0200
+     * @tc.name   `ActsDividerThemeColors_0200`
      * @tc.number ActsDividerThemeColors_0200
      * @tc.desc   check custom colors values of the Divider component
      * @tc.type   FUNCTION
@@ -110,7 +110,7 @@ export default function dividerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDividerThemeColors_0300
+     * @tc.name   `ActsDividerThemeColors_0300`
      * @tc.number ActsDividerThemeColors_0300
      * @tc.desc   check system colors values of the Divider component
      * @tc.type   FUNCTION
@@ -131,7 +131,7 @@ export default function dividerThemeTest() {
     });
 
     /**
-     * @tc.name   ActsDividerThemeColors_0400
+     * @tc.name   `ActsDividerThemeColors_0400`
      * @tc.number ActsDividerThemeColors_0400
      * @tc.desc   check custom colors values of the Divider component
      * @tc.type   FUNCTION
@@ -151,7 +151,7 @@ export default function dividerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDividerThemeColors_0500
+     * @tc.name   `ActsDividerThemeColors_0500`
      * @tc.number ActsDividerThemeColors_0500
      * @tc.desc   check system colors values of the Divider component
      * @tc.type   FUNCTION

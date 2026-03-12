@@ -32,9 +32,9 @@ export default function muslGetoptNdkTest() {
      * @tc.desc   test getopt_long_only
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslGetoptGetoptLongOnly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslGetoptGetoptLongOnly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = getopt.getoptLongOnly();
       expect(result).assertEqual(0)
       done()

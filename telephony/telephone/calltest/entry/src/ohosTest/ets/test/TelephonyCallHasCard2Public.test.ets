@@ -820,6 +820,54 @@ export default function HasCard2PublicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3700
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3700
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3700';
+      console.info(`${caseName} test start`);
+      const phoneNumber: string = "110";
+      call.isEmergencyPhoneNumber(phoneNumber, null).then((data: boolean) => {
+        console.info(`${caseName} isEmergencyPhoneNumber,promise data->${JSON.stringify(data)}`);
+        ExpectTrue(data == true);
+        done();
+      }).catch((err: BusinessError) => {
+        console.info(`${caseName} isEmergencyPhoneNumber fail,promise err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      });
+      console.info(`${caseName} test end`);
+    });
+ 
+    /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3800
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3800
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerIsEmergencyPhoneNumber3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3800';
+      console.info(`${caseName} test start`);
+      const phoneNumber: string = "110";
+      call.isEmergencyPhoneNumber(phoneNumber, undefined).then((data: boolean) => {
+        console.info(`${caseName} isEmergencyPhoneNumber,promise data->${JSON.stringify(data)}`);
+        ExpectTrue(data == true);
+        done();
+      }).catch((err: BusinessError) => {
+        console.info(`${caseName} isEmergencyPhoneNumber fail,promise err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      });
+      console.info(`${caseName} test end`);
+    });
+
+    /**
      * @tc.name   testTelephonyCallManagerFormatPhoneNumber0100
      * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_0100
      * @tc.desc   Formatting the phone numbers. Use the callback asynchronous callback api7+.
@@ -1533,6 +1581,64 @@ export default function HasCard2PublicTest() {
       }
       console.info(`${caseName} test end`);
     });
+
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber2500
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_2500
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('testTelephonyCallManagerFormatPhoneNumber2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2500';
+       console.info(`${caseName} test start`);
+      try {
+        call.formatPhoneNumber(phoneNumber, null).then((data: string) => {
+          console.info(`${caseName} formatPhoneNumber finish + ${JSON.stringify(data)}`);
+          ExpectTrue(true);
+           done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} formatPhoneNumber fail promise, err->${JSON.stringify(err)}`);
+          ExpectFail();
+           done();
+         });
+      } catch (err) {
+        console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
+         ExpectFail();
+         done();
+       }
+       console.info(`${caseName} test end`);
+     });
+
+    /**
+     * @tc.name   testTelephonyCallManagerFormatPhoneNumber2600
+     * @tc.number SUB_Telephony_CallManager_FormatPhoneNumber_2600
+     * @tc.desc   Format the phone number, and you can set the formatting parameters. Use the Promise asynchronous callback api7+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerFormatPhoneNumber2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2600';
+       console.info(`${caseName} test start`);
+      try {
+        call.formatPhoneNumber(phoneNumber, undefined).then((data: string) => {
+          console.info(`${caseName} formatPhoneNumber finish + ${JSON.stringify(data)}`);
+          ExpectTrue(true);
+           done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} formatPhoneNumber fail promise, err->${JSON.stringify(err)}`);
+          ExpectFail();
+           done();
+         });
+      } catch (err) {
+        console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
+         ExpectFail();
+         done();
+       }
+       console.info(`${caseName} test end`);
+     });
 
   });
 }

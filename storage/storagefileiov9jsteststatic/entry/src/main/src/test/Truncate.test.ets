@@ -391,6 +391,108 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_014
+     * @tc.number SUB_DF_fileIO_truncate_async_static_1400
+     * @tc.desc   Test the truncate() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_truncate_async_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      try {
+        let truncateLen = 2;
+        await fs.truncate("", truncateLen);
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_014 has failed for' + e.code);
+        expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_truncate_async_static_015
+     * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1500
+     * @tc.desc   Test the truncate() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_truncate_async_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      try {
+        let truncateLen = 5;
+        fs.truncate("", truncateLen, (err: BusinessError<void> | null) => {
+          if(err?.code != 0){
+            hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_015 err' + err?.code);
+            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_015 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_truncate_async_static_016
+     * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1600
+     * @tc.desc   Test the truncate() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_truncate_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      try {
+        fs.truncate("", (err: BusinessError<void> | null) => {
+          if(err?.code != 0){
+            hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_016 err' + err?.code);
+            expect(err?.code == 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_016 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_truncate_async_static_017
+     * @tc.number SUB_DF_fileIO_truncate_async_static_1700
+     * @tc.desc   Test the truncate() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_truncate_async_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_017 start');
+      try {
+        let fpath = await Utils.nextFileName('fileIO_truncate_async_static_017');
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_017 fpath: ' + fpath);
+        expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+        let truncateLen = 0;
+        fs.truncate(fpath, (err: BusinessError<void> | null) => {
+          let file = fs.openSync(fpath,fs.OpenMode.READ_WRITE);
+          let res = await Utils.isIntNum(file.fd);
+          hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_017 res: ' + res);
+          expect(res).assertTrue();
+          let readLen = fs.readSync(file.fd, new ArrayBuffer(4096));
+          expect(readLen == truncateLen).assertTrue();
+          fs.closeSync(file);
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_017 has failed for' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_truncate_sync_static_000
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0000
      * @tc.desc   Test the truncateSync() interface.

@@ -123,10 +123,10 @@ static napi_value OHScanExit(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value CreateScanEnumType()
+static napi_value OHScanCreateEnum(napi_env env, napi_callback_info info)
 {
-    Scan_ErrorCode errorCode = Scan_ErrorCode::SCAN_ERROR_NONE;
-    errorCode = Scan_ErrorCode::SCAN_ERROR_NO_PERMISSION;
+    napi_value result = nullptr;
+    Scan_ErrorCode errorCode = Scan_ErrorCode::SCAN_ERROR_NO_PERMISSION;
     errorCode = Scan_ErrorCode::SCAN_ERROR_INVALID_PARAMETER;
     errorCode = Scan_ErrorCode::SCAN_ERROR_GENERIC_FAILURE;
     errorCode = Scan_ErrorCode::SCAN_ERROR_RPC_FAILURE;
@@ -140,4 +140,7 @@ static napi_value CreateScanEnumType()
     errorCode = Scan_ErrorCode::SCAN_ERROR_COVER_OPEN;
     errorCode = Scan_ErrorCode::SCAN_ERROR_IO_ERROR;
     errorCode = Scan_ErrorCode::SCAN_ERROR_NO_MEMORY;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_NONE;
+    napi_create_int32(env, static_cast<int32_t>(errorCode), &result);
+    return result;
 }

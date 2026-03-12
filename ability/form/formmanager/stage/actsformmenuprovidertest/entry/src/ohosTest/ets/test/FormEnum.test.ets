@@ -57,6 +57,7 @@ export default function formEnumTest() {
     it('SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100';
       hilog.info(domain, tag, `${itName} start`);
+      expect(3).assertEqual(formInfo.LaunchReason.FORM_SIZE_CHANGE);
       expect(2).assertEqual(formInfo.LaunchReason.FORM_SHARE);
       expect(1).assertEqual(formInfo.LaunchReason.FORM_DEFAULT);
       hilog.info(domain, tag, `${itName} end`);
@@ -73,6 +74,7 @@ export default function formEnumTest() {
     it('SUB_ABILITY_FORM_FWK_FORM_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_PARAM_0100';
       hilog.info(domain, tag, `${itName} start`);
+      expect('ohos.extra.param.key.original_form_id').assertEqual(formInfo.FormParam.ORIGINAL_FORM_KEY );
       expect('ohos.extra.param.key.permission_granted').assertEqual(formInfo.FormParam.FORM_PERMISSION_GRANTED_KEY);
       expect('ohos.extra.param.key.permission_name').assertEqual(formInfo.FormParam.FORM_PERMISSION_NAME_KEY);
       expect('ohos.extra.param.key.host_bg_inverse_color').assertEqual(formInfo.FormParam.HOST_BG_INVERSE_COLOR_KEY);

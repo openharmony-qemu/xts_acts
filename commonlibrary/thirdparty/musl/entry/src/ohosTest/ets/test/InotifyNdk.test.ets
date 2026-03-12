@@ -31,9 +31,9 @@ export default function inotifyNdkTest() {
      * @tc.desc   test inotify_init
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInotifyInotifyInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInotifyInotifyInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inotify.inotifyInit();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -45,9 +45,9 @@ export default function inotifyNdkTest() {
      * @tc.desc   test inotify_init
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInotifyInotifyInit1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInotifyInotifyInit1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inotify.inotifyInit1(0);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -59,9 +59,9 @@ export default function inotifyNdkTest() {
      * @tc.desc   test inotify_init
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInotifyInotifyInit1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInotifyInotifyInit1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inotify.inotifyInit1(1);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -73,9 +73,9 @@ export default function inotifyNdkTest() {
      * @tc.desc   test inotify_init
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInotifyInotifyInit1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInotifyInotifyInit1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inotify.inotifyInit1(2);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -87,9 +87,9 @@ export default function inotifyNdkTest() {
      * @tc.desc   test inotify_add_watch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInotifyInotifyAddWatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInotifyInotifyAddWatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inotify.inotifyAddWatch();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -101,9 +101,9 @@ export default function inotifyNdkTest() {
      * @tc.desc   test inotify_rm_watch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInotifyInotifyRmWatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInotifyInotifyRmWatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inotify.inotifyRmWatch();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);

@@ -312,11 +312,11 @@ beforeEach(async () => {
     
 /**
      * @tc.number   testImageAniMator010
-     * @tc.name     testImageAniMator010
+     * @tc.name     testImageAniMator010Adapt001
      * @tc.desc     testImageAniMator010
      * @tc.level    Level.LEVEL1
      */
-    it('testImageAniMator010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testImageAniMator010Adapt001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       expect(libUtil.testImageAniMator011()).assertEqual(1)
       done()
     }) 

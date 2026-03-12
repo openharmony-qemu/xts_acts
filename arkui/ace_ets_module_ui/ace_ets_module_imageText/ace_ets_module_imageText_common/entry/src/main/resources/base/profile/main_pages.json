@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
 		"MainAbility/pages/Preset/InputPreset",
         "MainAbility/pages/TextControllerTest/TextControllerTest",
+        "MainAbility/pages/TextControllerTest/TextContentControllerBaseMethodsTest",
         "MainAbility/pages/Font/APIgetUIFontConfig",
         "MainAbility/pages/Font/Font",
         "MainAbility/pages/Font/FontJsunit",
@@ -49,6 +50,10 @@
         "MainAbility/pages/TextDelete/TextAreaDelete",
         "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest",
         "MainAbility/pages/SetTextSelectionTest/SetTextSelectionTest",
-        "MainAbility/pages/CustomKeyboardContinueTest"
+        "MainAbility/pages/CustomKeyboardContinueTest",
+        "MainAbility/pages/TypeNodeTestPage",
+        "MainAbility/pages/MagnifierTestPage",
+        "MainAbility/pages/MeasureUtilsTestPage",
+        "MainAbility/pages/TextMenuControllerTestPage"
     ]
 }

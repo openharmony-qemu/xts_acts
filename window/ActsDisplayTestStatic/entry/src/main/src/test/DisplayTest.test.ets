@@ -1886,10 +1886,14 @@ export default function DisplayTest() {
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync ScreenShape: ' + displayClass!.screenShape);
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync x: ' + displayClass!.x);
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync y: ' + displayClass!.y);
-        expect(sourceMode !=null ).assertTrue();
+        expect(sourceMode).assertEqual(1);
         expect(displayClass!.screenShape !=null ).assertTrue();
+        expect(displayClass!.x).assertLargerOrEqual(0);
+        expect(displayClass!.y).assertLargerOrEqual(0);
+        
         done();
       });
+
       /**
          * @tc.number    SUB_BASIC_DMS_JS_0200
          * @tc.name      test_getPrimaryDisplaySync_static_0100
@@ -2476,7 +2480,7 @@ export default function DisplayTest() {
                 let region:display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
                 hilog.info(domain, tag,`${caseName} region: ${JSON.stringify(region)}`);
                 expect(region.displayId).assertEqual(0)
-                if (result && isExpand === 1) {
+                if (result) {
                     if (region.creaseRects.length === 0) {
                         done();
                     } else {
@@ -3030,8 +3034,8 @@ export default function DisplayTest() {
             index2++;
             console.info(caseName + ' callback2 index2: ' + index2);
         }
-        display.onChangeWithAttribute(['width'], callback1);
-        display.onChangeWithAttribute(['height'], callback2);
+        display.onChange(callback1);
+        display.onChange(callback2);
         await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
         await Utils.msSleep(3000);
         console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
@@ -3419,6 +3423,116 @@ export default function DisplayTest() {
         }
         };
     })
+
+    /**
+     * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_JUST_STATIC_0100
+     * @tc.name   testonChangeWithAttribute_setPreferOrientation_static_just_0100
+     * @tc.desc   旋转后屏幕改变精细化监听，空参覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testonChangeWithAttribute_setPreferOrientation_static_just_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testonChangeWithAttribute_setPreferOrientation_static_just_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let windowClass:window.Window = windowStage!.getMainWindowSync();
+        try {
+            if(isSupportRotate === true){
+                let index = 0;
+                const callback = (res: long)=>{
+                    console.info(caseName + ' callback res: ' + res);
+                    index++;
+                    console.info(caseName + ' callback index: ' + index);
+                }
+                display.onChangeWithAttribute([], callback);
+                await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+                await Utils.msSleep(3000);
+                console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index);
+                expect(index).assertEqual(0);
+                display.offChange(callback);
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                await Utils.msSleep(3000);
+                console.info(caseName + ' setOrientation index1: ' + index);
+                expect(index).assertEqual(0);
+                done();
+            }else{
+                done();
+            }
+
+        } catch (e) {
+            console.error(`${caseName} Failed. Cause: ` + e!.code);
+            if (e.code === 801) {
+                done();
+            } else {
+                expect().assertFail();
+                done();
+            }
+        }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_static_0200
+     * @tc.name       testOnBrightnessInfoChange_Single_static_0100
+     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testOnBrightnessInfoChange_Single_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName:string =  'testOnBrightnessInfoChange_Single_static_0100';
+        try {
+            let windowClass:window.Window = windowStage!.getMainWindowSync();
+            console.info(`${caseName} getMainWindowSync success`);
+            await windowClass.setWindowBrightness(1);
+            console.info(`${caseName} setWindowBrightness 1 success`);
+            await Utils.msSleep(100);
+            let brightnessChangeCount1:number = 0;
+            let callback1Triggered:boolean = false;
+
+            const callback1 = (displayId: Long, brightnessInfo: display.BrightnessInfo) => {
+                console.info(caseName + ' Callback1 triggered');
+                console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+                brightnessChangeCount1 = brightnessChangeCount1 + 1;
+                callback1Triggered = true;
+                expect(displayId).assertEqual(0);
+                expect(brightnessInfo.sdrNits).assertLarger(0);
+                expect(brightnessInfo.currentHeadroom).assertLarger(0);
+                expect(brightnessInfo.maxHeadroom).assertLarger(0);
+                console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            };
+            display.onBrightnessInfoChange(callback1);
+            console.info(caseName + ' Brightness change listeners registered successfully');
+            await windowClass.setWindowBrightness(0);
+            await Utils.msSleep(100);
+            while (!callback1Triggered) {
+                await Utils.msSleep(100);
+            }
+            console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            expect(brightnessChangeCount1).assertLarger(0);
+            display.offBrightnessInfoChange(callback1);
+            brightnessChangeCount1 = 0;
+            await windowClass.setWindowBrightness(1);
+            await Utils.msSleep(3000);
+            console.info(`${caseName} after off brightnessChangeCount1 = ${brightnessChangeCount1}`);
+            expect(brightnessChangeCount1).assertEqual(0);
+            await windowClass.setWindowBrightness(-1);
+            await Utils.msSleep(100);
+            done();
+        } catch (e) {
+            e = e as BusinessError;
+            console.error(`${caseName} Failed. Cause: ${e}`);
+            if (e.code == 801) {
+                done()
+            } else {
+                display.offBrightnessInfoChange();
+                expect(false).assertTrue();
+                done();
+            }
+        }
+    });
+
+
 
 
 

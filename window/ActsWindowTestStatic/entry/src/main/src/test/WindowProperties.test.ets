@@ -776,7 +776,6 @@ export default function WindowPropertiesTest() {
             hilog.error(0x0000, '[ANI]',
                 msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
             if (exception.code === 1300002) {
-                expect(true).assertTrue()
                 done()
             } else {
                 expect(false).assertTrue();
@@ -1080,7 +1079,6 @@ export default function WindowPropertiesTest() {
                 windowClass.onWindowVisibilityChange((flag:boolean) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Window visibility changed, isVisible=' + flag);
                 });
-                expect(true).assertTrue();
                 windowClass.offWindowVisibilityChange();
                 done();
             } catch (error) {
@@ -3605,7 +3603,6 @@ export default function WindowPropertiesTest() {
                 console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + JSON.stringify(err));
                 if (err.code === 801) {
                     expect(err.message !== null).assertTrue();
-                    expect(true).assertTrue()
                 } else {
                     expect(err.code).assertEqual(1300003)
                 }

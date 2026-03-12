@@ -30,9 +30,9 @@ export default function localeNdkTest() {
      * @tc.desc   test uselocale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLocaleUselocale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLocaleUselocale002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 1;
       let uselocaleResult: number = locale.uselocale(b);
       console.info("Test uselocaleResult = " + uselocaleResult);
@@ -46,9 +46,9 @@ export default function localeNdkTest() {
      * @tc.desc   test duplocale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLocaleDupLocale001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLocaleDupLocale001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(locale.duplocale()).assertEqual(0);
       done()
     });
@@ -58,9 +58,9 @@ export default function localeNdkTest() {
      * @tc.desc   ：testMuslLocale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLocaleLocaleconv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLocaleLocaleconv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = locale.localeconv();
       expect(result).assertEqual(0)
       done()
@@ -72,9 +72,9 @@ export default function localeNdkTest() {
      * @tc.desc   test newlocale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLocaleNewlocale001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLocaleNewlocale001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = locale.newlocale();
       expect(result).assertEqual(0)
       done()
@@ -85,9 +85,9 @@ export default function localeNdkTest() {
      * @tc.desc   test freelocale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslLocaleFreelocale001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslLocaleFreelocale001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = locale.freelocale();
       expect(result).assertEqual(0)
       done()

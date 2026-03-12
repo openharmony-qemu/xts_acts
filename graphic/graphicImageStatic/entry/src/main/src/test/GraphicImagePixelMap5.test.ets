@@ -1368,13 +1368,15 @@ export default function graphicImagePixelMap5() {
         image.createPixelMap(color, opts, (error: BusinessError | null, pixelMap: image.PixelMap | undefined) => {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
-            expect(Number(error.code)).assertEqual(62980096);
+            expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
-            expect().assertFail();
+            expect(pixelMap?.isEditable).assertTrue();
+            expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -1400,10 +1402,11 @@ export default function graphicImagePixelMap5() {
         try {
           let pixelMap = await image.createPixelMap(color, opts)
           console.info(msgStr + ' success', pixelMap.isEditable, pixelMap.isStrideAlignment);
-          expect().assertFail();
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
         } catch(err){
           console.error(msgStr + ` Failed to create pixelmap. code is ${err.code}`);
-          expect(Number(err.code)).assertEqual(62980096);
+          expect().assertFail();
         }
         done();
       })

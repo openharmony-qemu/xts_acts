@@ -31,9 +31,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getprotoent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetProtoEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetProtoEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getProtoEnt();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -45,9 +45,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getprotobyname
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetProtoByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetProtoByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: string = netdb.getProtoByName("tcp");
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual("tcp");
@@ -59,9 +59,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getprotobynumber
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetProtoByName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetProtoByName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: string = netdb.getProtoByName("ipv6");
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual("ipv6");
@@ -73,9 +73,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getprotobyname
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetProtoByName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetProtoByName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: string = netdb.getProtoByName("esp");
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual("esp");
@@ -87,9 +87,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getprotobynumber
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetProtoByNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetProtoByNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: string = netdb.getProtoByNumber(6);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual("tcp");
@@ -101,9 +101,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getprotobynumber
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetProtoByNumber002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetProtoByNumber002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: string = netdb.getProtoByNumber(17);
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual("udp");
@@ -115,9 +115,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getservbyname
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetServByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetServByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getServByName();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -129,9 +129,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getservbyport
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetServByPort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetServByPort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getServByPort();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -143,9 +143,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test gethostbyaddr_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetHostByAddrR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetHostByAddrR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getHostByAddrR();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -157,9 +157,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getnameinfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetNameInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetNameInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getNameInfo();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -171,9 +171,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test gethostent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetHostEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetHostEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getHostEnt();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -185,9 +185,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getservent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetServEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetServEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getServEnt();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -199,9 +199,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getnetent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetNetEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetNetEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getNetEnt();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -213,9 +213,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test gethostbyaddr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetHostByAddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetHostByAddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getHostByAddr();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -227,9 +227,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test gethostbyname_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetHostByNameR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetHostByNameR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getHostByNameR();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -241,9 +241,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test gethostbyname2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetHostByName2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetHostByName2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getHostByName2();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -255,9 +255,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test gethostbyname2_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetHostByName2R001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetHostByName2R001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getHostByName2R();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -269,9 +269,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test hstrerror
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbHstrerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbHstrerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.hstrerror();
       expect(data).assertEqual(0);
       done()
@@ -283,9 +283,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test herror
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbHerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbHerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.herror();
       expect(data).assertEqual(0);
       done()
@@ -297,9 +297,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getservbyport
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGetHostByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGetHostByName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = netdb.getHostByName();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(1);
@@ -312,9 +312,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test sethostent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbSethostent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbSethostent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = netdb.sethostent();
       expect(a).assertEqual(0);
       done()
@@ -326,9 +326,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test setnetent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbSetnetent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbSetnetent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = netdb.setnetent();
       expect(a).assertEqual(0);
       done()
@@ -340,9 +340,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test setprotoent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbSetprotoent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbSetprotoent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = netdb.setprotoent();
       expect(a).assertEqual(0);
       done()
@@ -354,9 +354,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test setservent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbSetservent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbSetservent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = netdb.setservent();
       expect(a).assertEqual(0);
       done()
@@ -368,9 +368,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test endservent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbEndServEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbEndServEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(netdb.endservent()).assertEqual(0);
       done()
     });
@@ -381,9 +381,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test endprotoent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbEndProToEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbEndProToEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(netdb.endprotoent()).assertEqual(0);
       done()
     });
@@ -394,9 +394,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test endnetent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbEndNetEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbEndNetEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(netdb.endnetent()).assertEqual(0);
       done()
     });
@@ -407,9 +407,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test endhostent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbEndHostEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbEndHostEnt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(netdb.endhostent()).assertEqual(0);
       done()
     });
@@ -420,9 +420,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test gai_strerror
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetDbGaiStrerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetDbGaiStrerror001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = 1;
       let data: number = netdb.gaiStrerror();
       expect(data).assertEqual(result);
@@ -435,9 +435,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test freeaddrinfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbFreeaddrinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbFreeaddrinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data : number = netdb.freeaddrinfo();
       expect(data).assertEqual(0);
       done()
@@ -449,9 +449,9 @@ export default function muslNetdbNdkTest() {
      * @tc.desc   test getaddrinfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNetdbGetaddrinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNetdbGetaddrinfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data:number = netdb.getaddrinfo();
       expect(data).assertEqual(0);
       done()

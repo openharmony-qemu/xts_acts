@@ -92,7 +92,7 @@ export default function sliderThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsSliderThemeColors_0100
+     * @tc.name   `ActsSliderThemeColors_0100`
      * @tc.number ActsSliderThemeColors_0100
      * @tc.desc   Check Slider system colors
      * @tc.type   FUNCTION
@@ -109,7 +109,7 @@ export default function sliderThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsSliderThemeColors_0200
+     * @tc.name   `ActsSliderThemeColors_0200`
      * @tc.number ActsSliderThemeColors_0200
      * @tc.desc   Check custom colors values of the Slider
      * @tc.type   FUNCTION
@@ -127,7 +127,7 @@ export default function sliderThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsSliderThemeColors_0300
+     * @tc.name   `ActsSliderThemeColors_0300`
      * @tc.number ActsSliderThemeColors_0300
      * @tc.desc   Check custom colors values of the Slider
      * @tc.type   FUNCTION
@@ -146,7 +146,7 @@ export default function sliderThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsSliderThemeColors_0400
+     * @tc.name   `ActsSliderThemeColors_0400`
      * @tc.number ActsSliderThemeColors_0400
      * @tc.desc   Check system colors values of the Slider
      * @tc.type   FUNCTION

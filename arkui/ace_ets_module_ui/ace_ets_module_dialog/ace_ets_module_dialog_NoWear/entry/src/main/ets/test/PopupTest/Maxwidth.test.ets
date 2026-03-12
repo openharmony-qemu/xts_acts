@@ -43,7 +43,7 @@ export default function MaxwidthTest() {
     });
     /**
      * @tc.number: popup_maxWidth_0101
-     * @tc.name  : popup_maxWidth_0101
+     * @tc.name  popup_maxWidth_0101
      * @tc.desc  : Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
      * @tc.level : Level 3
      * @tc.type
@@ -64,7 +64,7 @@ export default function MaxwidthTest() {
   
       /**
        * @tc.number: popup_maxWidth_0102
-       * @tc.name  : popup_maxWidth_0102
+       * @tc.name  popup_maxWidth_0102
        * @tc.desc  : Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
        * @tc.level : Level 3
        * @tc.type
@@ -96,7 +96,7 @@ export default function MaxwidthTest() {
   
       /**
        * @tc.number: popup_maxWidth_0103
-       * @tc.name  : popup_maxWidth_0103
+       * @tc.name  popup_maxWidth_0103
        * @tc.desc  : Test the width of the maxwidth interface of the popup component when a custom normal value is passed in
        * @tc.level : Level 3
        * @tc.type

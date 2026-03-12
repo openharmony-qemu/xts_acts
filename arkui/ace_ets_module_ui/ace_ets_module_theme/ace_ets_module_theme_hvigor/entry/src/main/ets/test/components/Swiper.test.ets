@@ -69,7 +69,7 @@ export default function swiperThemeTest() {
     });
 
     /**
-     * @tc.name   ActsSwiperThemeColors_0100
+     * @tc.name   `ActsSwiperThemeColors_0100`
      * @tc.number ActsSwiperThemeColors_0100
      * @tc.desc   Check system colors values of Swiper component
      * @tc.type   FUNCTION
@@ -121,7 +121,7 @@ export default function swiperThemeTest() {
     });
 
     /**
-     * @tc.name   ActsSwiperThemeColors_0200
+     * @tc.name   `ActsSwiperThemeColors_0200`
      * @tc.number ActsSwiperThemeColors_0200
      * @tc.desc   Check custom colors values of Swiper component
      * @tc.type   FUNCTION
@@ -175,7 +175,7 @@ export default function swiperThemeTest() {
     });
 
     /**
-     * @tc.name   ActsSwiperThemeColors_0300
+     * @tc.name   `ActsSwiperThemeColors_0300`
      * @tc.number ActsSwiperThemeColors_0300
      * @tc.desc   Check custom colors values of Swiper component
      * @tc.type   FUNCTION

@@ -30,9 +30,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test getpriority
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetPriority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetPriority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.getPriority1();
       expect(result).assertEqual(0);
       done()
@@ -44,9 +44,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test getpriority
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetPriority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetPriority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.getPriority2();
       expect(result).assertEqual(-1);
       done()
@@ -58,9 +58,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test setpriority
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceSetpriority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceSetpriority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.setpriority1();
       expect(result).assertEqual(0);
       done()
@@ -72,9 +72,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test setpriority
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceSetpriority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceSetpriority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.setpriority2();
       expect(result).assertEqual(-1);
       done()
@@ -86,9 +86,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test getrlimit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetRLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetRLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.getRLimit1();
       expect(result).assertEqual(0);
       done()
@@ -100,9 +100,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test getrlimit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetRLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetRLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.getRLimit2();
       expect(result).assertEqual(-1);
       done()
@@ -114,9 +114,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test getrlimit64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetrlimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetrlimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.getrlimit641();
       expect(result).assertEqual(0);
       done()
@@ -128,9 +128,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test getrlimit64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetrlimit64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetrlimit64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.getrlimit642();
       expect(result).assertEqual(-1);
       done()
@@ -142,9 +142,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test getrusage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetRUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetRUsage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.getRUsage1();
       expect(result).assertEqual(0);
       done()
@@ -156,9 +156,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test getrusage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetRUsage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetRUsage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.getRUsage2();
       expect(result).assertEqual(-1);
       done()
@@ -170,9 +170,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test prlimit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceprLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceprLimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.prLimit1();
       expect(result).assertEqual(0);
       done()
@@ -184,9 +184,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test prlimit64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceprLimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceprLimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.prLimit641();
       expect(result).assertEqual(0);
       done()
@@ -198,9 +198,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test setrlimit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceSetrlimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceSetrlimit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.setrlimit1();
       expect(result).assertEqual(0);
       done()
@@ -212,9 +212,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test setrlimit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceSetrlimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceSetrlimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.setrlimit2();
       expect(result).assertEqual(-1);
       done()
@@ -226,9 +226,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test setrlimit64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceSetrlimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceSetrlimit64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.setrlimit641();
       expect(result).assertEqual(0);
       done()
@@ -240,9 +240,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test setrlimit64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceSetrlimit64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceSetrlimit64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.setrlimit642();
       expect(result).assertEqual(-1);
       done()
@@ -254,9 +254,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test prlimit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceprLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceprLimit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.prLimit2();
       expect(result).assertEqual(-1);
       done()
@@ -268,9 +268,9 @@ export default function muslResourceNdk1Test() {
      * @tc.desc   test prlimit64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceprLimit64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceprLimit64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = resource.prLimit642();
       expect(result).assertEqual(-1);
       done()

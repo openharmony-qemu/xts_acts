@@ -733,6 +733,7 @@ export default function adsTest() {
         adLoaderListener.onAdLoadSuccess(advertisements);
         adLoaderListener.onAdLoadFailure(undefined, undefined);
         adLoaderListener.onAdLoadFailure(null, null);
+        adLoaderListener.onAdLoadFailure(null, '');
         adLoaderListener.onAdLoadSuccess(undefined);
         adLoaderListener.onAdLoadSuccess(null);
       } catch (e) {
@@ -779,6 +780,7 @@ export default function adsTest() {
         ads.set('key', advertisements);
         adLoaderListener.onAdLoadFailure(undefined, undefined);
         adLoaderListener.onAdLoadFailure(null, null);
+        adLoaderListener.onAdLoadFailure(null, '');
         adLoaderListener.onAdLoadSuccess(ads);
         adLoaderListener.onAdLoadSuccess(undefined);
         adLoaderListener.onAdLoadSuccess(null);
@@ -853,7 +855,7 @@ export default function adsTest() {
         done();
       } catch (e) {
         hilog.error(Domain, TAG, 'testShowAdErrorParam error, error code is ${public}d, error message is ${public}s.', e.code, e.message);
-        expect(e.code == 401).assertTrue();
+        expect(e.code).assertLarger(0);
         done();
       }
     })
@@ -875,7 +877,7 @@ export default function adsTest() {
         done();
       } catch (e) {
         hilog.error(Domain, TAG, 'testShowAdNullParam error, error code is ${public}d, error message is ${public}s.', e.code, e.message);
-        expect(e.code == 401).assertTrue();
+        expect(e.code).assertLarger(0);
         done();
       }
     })

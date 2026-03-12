@@ -607,14 +607,14 @@ export default function stackSizeChange() {
     });
 
     /**
-     * @tc.name   testStackEqualAlignContentBottomStart
+     * @tc.name   testStackEqualAlignContentBottomStartAdapt001
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1600
      * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'BottomStart'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStackEqualAlignContentBottomStart',  Level.LEVEL0, async (done: Function) => {
+    it('testStackEqualAlignContentBottomStartAdapt001',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentBottomStart START');
       globalThis.value.message.notify({
         name: 'alignContent', value: Alignment.BottomStart

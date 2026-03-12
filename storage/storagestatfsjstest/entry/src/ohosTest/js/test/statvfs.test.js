@@ -707,7 +707,7 @@ describe('statvfs_test', function () {
   it('statvfs_test_get_total_size_async_009', Level.LEVEL0, async function (done) {
 
     try {
-      statvfs.getTotalSize(null, (err) => {
+      statvfs.getTotalSize(undefined, (err) => {
         if (err) {
           console.log(
             'statvfs_test_get_total_size_async_009 error package: {' + err.message + ', code: ' + err.code + '}');

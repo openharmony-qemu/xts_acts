@@ -134,7 +134,13 @@ import TextInputCompressLeadingPunctuationModifier from './TextInputTest/TextInp
 import TextInputPropertiesNullUndefinedTest from './TextInputTest/TextInputPropertiesNullUndefined.test';
 import TextInputPropertiesNullUndefined02Test from './TextInputTest/TextInputPropertiesNullUndefined02.test';
 import TextInputPropertiesNullUndefined03Test from './TextInputTest/TextInputPropertiesNullUndefined03.test';
+import TextInputEnableKeyboardOnFocusNullUndefinedTest from './TextInputTest/TextInputEnableKeyboardOnFocusNullUndefined.test';
+import TextInputEnterKeyTypeNullUndefinedTest from './TextInputTest/TextInputEnterKeyTypeNullUndefined.test';
+import TextInputInputTypeNullUndefinedTest from './TextInputTest/TextInputInputTypeNullUndefined.test';
+import TextInputSelectAllNullUndefinedTest from './TextInputTest/TextInputSelectAllNullUndefined.test';
+import TextInputSelectionMenuHiddenNullUndefinedTest from './TextInputTest/TextInputSelectionMenuHiddenNullUndefined.test';
 import TextInputTypeParamTest from './TextInputTest/TextInputTypeParam.test';
+import TextInputContentTypeParamTest from './TextInputTest/TextInputContentTypeParam.test';
 
 import TextAreaPropertiesNullUndefinedTest from './TextAreaTest/TextAreaPropertiesNullUndefined.test';
 import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaPropertiesNullUndefined02.test';
@@ -272,4 +278,10 @@ export default function testsuite() {
   TextAreaControllerMethodsNullTest();
   TextInputMethodsNullTest();
   TextInputControllerMethodsNullTest();
+  TextInputEnableKeyboardOnFocusNullUndefinedTest();
+  TextInputEnterKeyTypeNullUndefinedTest();
+  TextInputInputTypeNullUndefinedTest();
+  TextInputSelectAllNullUndefinedTest();
+  TextInputSelectionMenuHiddenNullUndefinedTest();
+  TextInputContentTypeParamTest();
 }

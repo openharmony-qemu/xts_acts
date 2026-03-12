@@ -90,6 +90,8 @@ async function tryToEnableBt() {
 const receivedDataCallback = (dataInfo: proxyChannelManager.DataInfo) => {
   console.info(logTag +'receivedDataCallback, data is '+ JSON.stringify(dataInfo.data));
   console.info(logTag +'receivedDataCallback, channelId is ' + JSON.stringify(dataInfo.channelId));
+  expect(typeof(dataInfo.data)).assertEqual('ArrayBuffer');
+  expect(typeof(dataInfo.channelId)).assertEqual('number');
 }
 
 
@@ -100,15 +102,19 @@ const receivedStatusCallback = (channelStateInfo: proxyChannelManager.ChannelSta
   switch (channelStateInfo.state) {
     case proxyChannelManager.ChannelState.CHANNEL_WAIT_RESUME:
       console.info(logTag +'connection has been disconnected, the channel is unavailable');
+      expect(channelStateInfo.state).assertEqual(proxyChannelManager.ChannelState.CHANNEL_WAIT_RESUME);
       break;
     case proxyChannelManager.ChannelState.CHANNEL_RESUME:
       console.info(logTag +'connection has been restored, the channel is available');
+      expect(channelStateInfo.state).assertEqual(proxyChannelManager.ChannelState.CHANNEL_RESUME);
       break;
     case proxyChannelManager.ChannelState.CHANNEL_EXCEPTION_SOFTWARE_FAILED:
       console.info(logTag +'other software errors caused the channel to be unavailable');
+      expect(channelStateInfo.state).assertEqual(proxyChannelManager.ChannelState.CHANNEL_EXCEPTION_SOFTWARE_FAILED);
       break;
     case proxyChannelManager.ChannelState.CHANNEL_BR_NO_PAIRED:
       console.info(logTag +'bluetooth pairing relationship has been deleted, the channel is unavailable');
+      expect(channelStateInfo.state).assertEqual(proxyChannelManager.ChannelState.CHANNEL_BR_NO_PAIRED);
       break;
     default:
       console.info(logTag +'channelStateInfo state is invalid');
@@ -1927,6 +1933,7 @@ export default function proxyChannelMgr() {
           .then((channelId: number) => {
             chlId = channelId;
             console.info(logTag+"SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900 openProxyChannel chlId:" + chlId);
+            expect(typeof(channelId)).assertEqual('number');
           })
           .catch((error: BusinessError) => {
             flag = true;
@@ -1968,6 +1975,7 @@ export default function proxyChannelMgr() {
           .then((channelId: number) => {
             chlId = channelId;
             console.info(logTag+"SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 openProxyChannel chlId:" + chlId);
+            expect(typeof(channelId)).assertEqual('number');
           })
           .catch((error: BusinessError) => {
             flag = true;

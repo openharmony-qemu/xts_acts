@@ -82,7 +82,7 @@ describe('fileIO_fs_access', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_FileIO_Access_Sync_002 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -255,7 +255,7 @@ describe('fileIO_fs_access', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_FileIO_Access_Sync_009 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -274,7 +274,7 @@ describe('fileIO_fs_access', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_FileIO_Access_Sync_010 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -601,7 +601,7 @@ describe('fileIO_fs_access', function () {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_FileIO_Access_Async_004 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -622,7 +622,7 @@ describe('fileIO_fs_access', function () {
         });
       } catch (e) {
         console.log('test_FileIO_Access_Async_005 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -755,7 +755,7 @@ describe('fileIO_fs_access', function () {
         done();
       } catch (e) {
         console.log('test_FileIO_Access_Async_010 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -776,7 +776,7 @@ describe('fileIO_fs_access', function () {
         done();
       } catch (e) {
         console.log('test_FileIO_Access_Async_011 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -797,7 +797,7 @@ describe('fileIO_fs_access', function () {
         });
       } catch (e) {
         console.log('test_FileIO_Access_Async_012 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -818,7 +818,7 @@ describe('fileIO_fs_access', function () {
         });
       } catch (e) {
         console.log('test_FileIO_Access_Async_013 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
       }
     });

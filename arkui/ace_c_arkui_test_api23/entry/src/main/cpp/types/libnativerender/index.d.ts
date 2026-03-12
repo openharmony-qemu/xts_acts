@@ -73,3 +73,21 @@ export const TextInputTest: (a: string) => void;
 export const TextAreaTest: (a: string) => void;
 
 export const CreateNativeSwiperNode: (a: string) => void;
+
+export const TextLayoutManagerTest001: (a: string) => void;
+
+export const TextLayoutManagerTest002: (a: string) => void;
+
+export const check_TextLayoutManagerTest002: (a: string) => void;
+
+export const TextLayoutManagerTest003: (a: string) => void;
+
+export const TextLayoutManagerTest004: (a: string) => void;
+
+export const TextLayoutManagerTest005: (a: string) => void;
+
+export const check_g_GetRectsForRange_ret: (a: string) => void;
+
+export const check_g_GetGlyphPositionAtCoordinate_ret: (a: string) => void;
+
+export const check_g_GetLineMetrics_ret: (a: string) => void;

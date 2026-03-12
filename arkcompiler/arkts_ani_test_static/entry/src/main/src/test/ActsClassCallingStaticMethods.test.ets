@@ -17,6 +17,7 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { Foo } from '../ets/Index'
+import {hidebug} from '@kit.PerformanceAnalysisKit'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -29,6 +30,9 @@ export default function callingStaticMethodsTest() {
     } catch (e) {
       console.log('loadFailed', e.message);
     }
+
+    let vmMemory1: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
+    console.info(`testTag heapUsed callingStaticMethodsTest begin: ${vmMemory1.heapUsed}`)
 
     /**
     * @tc.number      Class_CallStaticMethodByName_Boolean_0100
@@ -979,5 +983,10 @@ export default function callingStaticMethodsTest() {
         done();
         console.log('Class_CallStaticMethod_Boolean_V_0100 end');
       })
+
+    let vmMemory2: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
+    console.info(`testTag heapUsed callingStaticMethodsTest end: ${vmMemory2.heapUsed}`)
+    let sum = vmMemory2.heapUsed - vmMemory1.heapUsed;
+    console.info(`testTag heapUsed callingStaticMethodsTest total: ${sum}`)
   })
 }

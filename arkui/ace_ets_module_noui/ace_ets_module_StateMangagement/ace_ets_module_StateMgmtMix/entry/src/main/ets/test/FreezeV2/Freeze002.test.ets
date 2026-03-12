@@ -71,183 +71,27 @@ export default function FreezeV2Test03() {
       await nextPage0.click();
       await sleep(1);
       await changeMessage.click();
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:2 index:1').assertTrue();
-          expect(UiElementInfo.type == 'Toast').assertTrue();
-        } catch (err) {
-          console.info(err);
-        }
-      }
-      observer1.once('toastShow', callback1)
-
-      console.info('FreezeTest001 END');
-    });
-
-    /**
-     * @tc.name   FreezeTest002
-     * @tc.number SUB_ACE_BASIC_ETS_API_0002
-     * @tc.desc   aceEtsTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('FreezeTest002', Level.LEVEL1, async () => {
-      console.info('FreezeTest002 START');
-      let driver = await Driver.create();
-      let changeMessage = await driver.findComponent(ON.id('changeMessage'));
-      await changeMessage.click();
-      let nextPage0 = await driver.findComponent(ON.id('NextPage0'));
-      await nextPage0.click();
       await sleep(1);
-      await changeMessage.click();
+      let text1 = await (await driver.findComponent(ON.id('Freeze002_text1'))).getText();
+      expect(text1).assertEqual('NavigationContent message:2 index:1, logNum: 1');
+      //跳转页面3，修改message，预期不触发导航2页面的监听方法，通过logNum作为标识
       let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
       await nextPage1.click();
       await sleep(1);
       await changeMessage.click();
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:3 index:2').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-
-      console.info('FreezeTest002 END');
-    });
-
-    /**
-     * @tc.name   FreezeTest003
-     * @tc.number SUB_ACE_BASIC_ETS_API_0003
-     * @tc.desc   aceEtsTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('FreezeTest003', Level.LEVEL1, async () => {
-      console.info('FreezeTest003 START');
-      let driver = await Driver.create();
-      let changeMessage = await driver.findComponent(ON.id('changeMessage'));
-      await changeMessage.click();
-      let nextPage0 = await driver.findComponent(ON.id('NextPage0'));
-      await nextPage0.click();
       await sleep(1);
       await changeMessage.click();
-      let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
-      await nextPage1.click();
       await sleep(1);
-      await changeMessage.click();
-      let nextPage2 = await driver.findComponent(ON.id('NextPage2'));
-      await nextPage2.click();
-      await sleep(1);
-      await changeMessage.click();
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:4 index:3').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-
-      console.info('FreezeTest003 END');
-    });
-
-    /**
-     * @tc.name   FreezeTest004
-     * @tc.number SUB_ACE_BASIC_ETS_API_0004
-     * @tc.desc   aceEtsTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('FreezeTest004', Level.LEVEL1, async () => {
-      console.info('FreezeTest004 START');
-      let driver = await Driver.create();
-      let changeMessage = await driver.findComponent(ON.id('changeMessage'));
-      await changeMessage.click();
-      let nextPage0 = await driver.findComponent(ON.id('NextPage0'));
-      await nextPage0.click();
-      await sleep(1);
-      await changeMessage.click();
-      let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
-      await nextPage1.click();
-      await sleep(1);
-      await changeMessage.click();
-      let nextPage2 = await driver.findComponent(ON.id('NextPage2'));
-      await nextPage2.click();
-      await sleep(1);
-      await changeMessage.click();
-      let backPage3 = await driver.findComponent(ON.id('BackPage3'));
-      await backPage3.click();
-      await sleep(1);
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:4 index:2').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
-
-      console.info('FreezeTest004 END');
-    });
-
-    /**
-     * @tc.name   FreezeTest005
-     * @tc.number SUB_ACE_BASIC_ETS_API_0005
-     * @tc.desc   aceEtsTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('FreezeTest005', Level.LEVEL1, async () => {
-      console.info('FreezeTest005 START');
-      let driver = await Driver.create();
-      let changeMessage = await driver.findComponent(ON.id('changeMessage'));
-      await changeMessage.click();
-      let nextPage0 = await driver.findComponent(ON.id('NextPage0'));
-      await nextPage0.click();
-      await sleep(1);
-      await changeMessage.click();
-      let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
-      await nextPage1.click();
-      await sleep(1);
-      await changeMessage.click();
-      let nextPage2 = await driver.findComponent(ON.id('NextPage2'));
-      await nextPage2.click();
-      await sleep(1);
-      await changeMessage.click();
-      let backPage3 = await driver.findComponent(ON.id('BackPage3'));
-      await backPage3.click();
-      await sleep(1);
+      //上一个页面的监听函数未触发
+      let text2 = await (await driver.findComponent(ON.id('logNum_FreezeV2002'))).getText();
+      expect(text2).assertEqual('3');
+      //返回上一页面，监听函数触发
       let backPage2 = await driver.findComponent(ON.id('BackPage2'));
       await backPage2.click();
       await sleep(1);
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'NavigationContent message:4 index:1').assertTrue()
-          expect(UiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1);
-      console.info('FreezeTest005 END');
+      let text3 = await (await driver.findComponent(ON.id('logNum_FreezeV2002'))).getText();
+      expect(text3).assertEqual('4');
+      console.info('FreezeTest001 END');
     });
   })
 }

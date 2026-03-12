@@ -439,9 +439,7 @@ describe('fileIO_fs_lseek', function () {
 
     try {
       fileIO.lseek(file.fd, null);
-      expect(false).assertFalse();
-      fileIO.closeSync(file);
-      fileIO.unlinkSync(fpath);
+      expect(false).assertTrue();
     } catch (e) {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);
@@ -465,9 +463,7 @@ describe('fileIO_fs_lseek', function () {
 
     try {
       fileIO.lseek(file.fd, undefined);
-      expect(false).assertFalse();
-      fileIO.closeSync(file);
-      fileIO.unlinkSync(fpath);
+      expect(false).assertTrue();
     } catch (e) {
       fileIO.closeSync(file);
       fileIO.unlinkSync(fpath);

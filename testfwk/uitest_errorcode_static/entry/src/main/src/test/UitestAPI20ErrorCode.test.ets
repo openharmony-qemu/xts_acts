@@ -227,45 +227,52 @@ export default function uitestDriverErrorTest() {
     it('test_driver_swipeBetween_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_driver_swipeBetween_17000007_static start`);
       try {
-        await driver!.swipeBetween({x: -1, y:100}, {x: 100, y: 100});
+        await driver!.swipeBetween({x: -1, y:100}, {x: 100, y: 100}, 600);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, test_driver_swipeBetween_17000007_static from.x=-1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.swipeBetween({x: 100, y:-1}, {x: 100, y: 100});
+        await driver!.swipeBetween({x: 100, y:-1}, {x: 100, y: 100}, 600);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, test_driver_swipeBetween_17000007_static from.y=-1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.swipeBetween({x: 100, y:100, displayId: -1}, {x: 100, y: 100});
+        await driver!.swipeBetween({x: 100, y:100, displayId: -1}, {x: 100, y: 100}, 600);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, test_driver_swipeBetween_17000007_static from.displayId=-1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.swipeBetween({x: 100, y:100}, {x:-1, y: 100});
+        await driver!.swipeBetween({x: 100, y:100}, {x:-1, y: 100}, 600);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, test_driver_swipeBetween_17000007_static to.x=-1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.swipeBetween({x: 100, y:100}, {x:100, y: -1});
+        await driver!.swipeBetween({x: 100, y:100}, {x:100, y: -1}, 600);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, test_driver_swipeBetween_17000007_static to.y=-1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.swipeBetween({x: 100, y:100}, {x:100, y: 100, displayId: -1});
+        await driver!.swipeBetween({x: 100, y:100}, {x:100, y: 100, displayId: -1}, 600);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, test_driver_swipeBetween_17000007_static to.displayId=-1 error is: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver!.swipeBetween({x: 100, y:100, displayId: 0}, {x:100, y: 100, displayId: 1}, 600);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, test_driver_swipeBetween_17000007_static diff error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
@@ -276,11 +283,16 @@ export default function uitestDriverErrorTest() {
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.swipeBetween({x: 100, y:100, displayId: 0}, {x:100, y: 100, displayId: 1});
-        expect().assertFail();
+        await driver!.swipeBetween({x: 100, y:100, displayId: 0}, {x:100, y: 100, displayId: 0}, 199);
       }catch (e) {
-        console.log(`${TestTag}, test_driver_swipeBetween_17000007_static diff error is: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
+        console.log(`${TestTag}, test_driver_swipeBetween_17000007_static speed = 199 error is: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver!.swipeBetween({x: 100, y:100, displayId: 0}, {x:100, y: 100, displayId: 0}, 40001);
+      }catch (e) {
+        console.log(`${TestTag}, test_driver_swipeBetween_17000007_static speed = 40001 error is: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
       console.log(`${TestTag}, test_driver_swipeBetween_17000007_static end`);
     })
@@ -308,6 +320,12 @@ export default function uitestDriverErrorTest() {
       }catch (e) {
         console.log(`${TestTag}, test_driver_crownRotate_17000007_static speed=-1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code == 801 || e.code == 17000007).assertTrue();
+      }
+      try {
+        await driver!.crownRotate(1, 501);
+      }catch (e) {
+        console.log(`${TestTag}, test_driver_crownRotate_17000007_static speed=-1 error is: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code == 801).assertTrue();
       }
       console.log(`${TestTag}, test_driver_crownRotate_17000007_static end`);
     })
@@ -384,53 +402,65 @@ export default function uitestDriverErrorTest() {
     it('test_driver_dragBetween_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_driver_dragBetween_17000007_static start`);
       try {
-        await driver!.dragBetween({x: -1, y: 100}, {x: 200, y: 200});
+        await driver!.dragBetween({x: -1, y: 100}, {x: 200, y: 200}, 600);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static, from.x = -1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.dragBetween({x: 100, y: -1}, {x: 200, y: 200});
+        await driver!.dragBetween({x: 100, y: -1}, {x: 200, y: 200}, 600, 1500);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static, from.y = -1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.dragBetween({x: 100, y: 100, displayId: -1}, {x: 200, y: 200});
+        await driver!.dragBetween({x: 100, y: 100, displayId: -1}, {x: 200, y: 200}, 600, 1500);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static, from.displayId = -1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.dragBetween({x: 100, y: 100}, {x: -1, y: 200});
+        await driver!.dragBetween({x: 100, y: 100}, {x: -1, y: 200}, 600, 1500);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static, to.x = -1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: -1});
+        await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: -1}, 600, 1500);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static, to.y = -1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: 100, displayId: -1});
+        await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: 100, displayId: -1}, 600, 1500);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static, to.displayId = -1 error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.dragBetween({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1});
+        await driver!.dragBetween({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 600, 1500);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static,diff error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, 199, 1500);
+      }catch (e) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static,speed = 199 is: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, 40001, 1500);
+      }catch (e) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static,speed = 40001 is: ${JSON.stringify(e)}`);
+        expect().assertFail();
       }
       try {
         await driver!.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, 600, 1499);

@@ -40,11 +40,6 @@ const ERROR_CODE_16000005: int = 16000005;
 const ERROR_CODE_16000010: int = 16000010;
 const ERROR_CODE_16000019: int = 16000019;
 const ERROR_CODE_16000050: int = 16000050;
-const ERROR_CODE_16000072: int = 16000072;
-const ERROR_CODE_16000073: int = 16000073;
-const ERROR_CODE_16000076: int = 16000076;
-const ERROR_CODE_16000078: int = 16000078;
-const ERROR_CODE_16000080: int = 16000080;
 const ERROR_CODE_16000200: int = 16000200;
 
 async function stopAppServiceExtAbility(want: Want, context: common.UIAbilityContext|null, testCaseName: string) {
@@ -411,7 +406,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
       hilog.info(DOMAIN, TAG, `${tcNumber} Begin`);
       let want: Want = {
         bundleName: "test1111",
-        abilityName: 'AppServiceExtAbility'  //
+        abilityName: 'AppServiceExtAbility'
       };
       connectId = context?.connectAppServiceExtensionAbility(want, {
         onConnect: (elementName: ElementName |  null,
@@ -447,7 +442,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
       hilog.info(DOMAIN, TAG, `${tcNumber} Begin`);
       let want: Want = {
         bundleName: BUNDLE_NAME,
-        abilityName: 'MyUIAbility'
+        abilityName: 'MyUIAbility2'
       };
 
       try {
@@ -617,7 +612,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const tcNumber: string = 'SUB_AA_ABILITY_NewRule_AppServiceExtension_static_0500';
       hilog.info(DOMAIN, TAG, `${tcNumber} Begin`);
-      context?.disconnectAppServiceExtensionAbility(1).then((): void => {
+      context?.disconnectAppServiceExtensionAbility(-1).then((): void => {
         hilog.info(DOMAIN, TAG, `${tcNumber} disconnectAppServiceExtensionAbility success`);
         expect().assertFail();
         done();
@@ -651,7 +646,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
       };
 
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['connectServiceExtensionAbilityStatic_0700']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber} createSubscriber success`);
@@ -709,7 +704,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
       };
 
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['connectServiceExtensionAbilityStatic_3200']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
@@ -767,7 +762,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
       };
 
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['connectServiceExtensionAbilityStatic_3300']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
@@ -817,16 +812,12 @@ export default function ActsAppServiceExtensionContextStaticTest() {
       let want: Want = {
         bundleName: BUNDLE_NAME,
         abilityName: 'AppServiceExtAbility',
-        parameters: { 
-          'keyFd': { 
-            'type': 'FD',
-            'value': -1
-          } as Record<string, RecordData>,        
+        parameters: {      
           'caseTag': tcNumber
         } as Record<string, RecordData>
       };
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['connectServiceExtensionAbilityStatic_3400']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
 
@@ -884,7 +875,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
         } as Record<string, RecordData>
       };
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['disconnectServiceExtensionAbilityStatic_0800']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
@@ -935,67 +926,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
       let want : Want = {
         bundleName: BUNDLE_NAME,
         abilityName: 'AppServiceExtAbility',
-        parameters: { 
-          'keyFd': { 
-            'type': 'FD',
-            'value': -1
-          } as Record<string, RecordData>,        
-          'caseTag': tcNumber
-        } as Record<string, RecordData>
-      };
-      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['startAbilityStatic_2000']
-      };
-      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-        hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
-        commonEventManager.subscribe(subscriber, (err: BusinessError<void>|null,
-          eventData: commonEventManager.CommonEventData|undefined) => {
-          hilog.info(DOMAIN, TAG, `${tcNumber}  subscribe callback result: ${err?.code}`);
-          let result: int = 0;
-          if (eventData?.parameters?.[TEST_RESULT_KEY]) {
-            result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
-          }
-          hilog.info(DOMAIN, TAG, `${tcNumber} subscribeCB result:` + result);
-          expect(result).assertEqual(ERROR_CODE_16000001);
-          stopAppServiceExtAbility(want, context, tcNumber);
-          commonEventManager.unsubscribe(subscriber, (err, data) => {
-            done();
-          });
-        });
-        try {
-          context?.startAppServiceExtensionAbility(want).then(() => {
-            hilog.info(DOMAIN, TAG, `${tcNumber}  startAppServiceExtensionAbility success`);
-          }).catch((error: Error) => {
-            let err = error as BusinessError;
-            hilog.info(DOMAIN, TAG, `startAppServiceExtensionAbility, code is ${err.code}`);
-            if (err.code !== ERROR_CODE_801) {
-              expect().assertFail();
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(DOMAIN, TAG, `${tcNumber} startAppServiceExtensionAbility failed: ${(err as BusinessError).code}`);
-          expect().assertFail();
-          done();
-        }
-      })
-    })
-
-    /**
-     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_static_2300
-     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_static_2300
-     * @tc.desc   AppServiceExtensionContext startAbility  expect 16000002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const tcNumber: string = 'SUB_AA_ABILITY_NewRule_AppServiceExtension_static_2300';
-      hilog .info(DOMAIN, TAG, `${tcNumber} Begin`);
-      let want : Want = {
-        bundleName: BUNDLE_NAME,
-        abilityName: 'AppServiceExtAbility',
-        parameters: {
+        parameters: {       
           'caseTag': tcNumber
         } as Record<string, RecordData>
       };
@@ -1012,7 +943,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
             result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
           }
           hilog.info(DOMAIN, TAG, `${tcNumber} subscribeCB result:` + result);
-          expect(result).assertEqual(ERROR_CODE_16000002);
+          expect(result).assertEqual(ERROR_CODE_16000001);
           stopAppServiceExtAbility(want, context, tcNumber);
           commonEventManager.unsubscribe(subscriber, (err, data) => {
             done();
@@ -1051,16 +982,12 @@ export default function ActsAppServiceExtensionContextStaticTest() {
       let want : Want = {
         bundleName: BUNDLE_NAME,
         abilityName: 'AppServiceExtAbility',
-        parameters: { 
-          'keyFd': { 
-            'type': 'FD',
-            'value': -1
-          } as Record<string, RecordData>,        
+        parameters: {     
           'caseTag': tcNumber
         } as Record<string, RecordData>
       };
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['startAbilityStatic_2400']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
@@ -1116,7 +1043,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
         } as Record<string, RecordData>
       };
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['startAbilityStatic_2500']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
@@ -1174,7 +1101,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
         } as Record<string, RecordData>
       };
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['AppServiceExtensionStatic_2100']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
@@ -1233,7 +1160,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
         } as Record<string, RecordData>
       };
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['AppServiceExtensionStatic_2200']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
@@ -1292,7 +1219,7 @@ export default function ActsAppServiceExtensionContextStaticTest() {
         } as Record<string, RecordData>
       };
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['AppServiceExtensionStatic_2600']
+        events: [tcNumber]
       };
       await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
         hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
@@ -1305,296 +1232,6 @@ export default function ActsAppServiceExtensionContextStaticTest() {
           }
           hilog.info(DOMAIN, TAG, `${tcNumber} subscribeCB result:` + result);
           expect(result).assertEqual(ERROR_CODE_16000010);
-          stopAppServiceExtAbility(want, context, tcNumber);
-          commonEventManager.unsubscribe(subscriber, (err, data) => {
-            done();
-          });
-        });
-        try {
-          context?.startAppServiceExtensionAbility(want).then(() => {
-            hilog.info(DOMAIN, TAG, `${tcNumber}  startAppServiceExtensionAbility success`);
-          }).catch((error: Error) => {
-            let err = error as BusinessError;
-            hilog.info(DOMAIN, TAG, `startAppServiceExtensionAbility, code is ${err.code}`);
-            if (err.code !== ERROR_CODE_801) {
-              expect().assertFail();
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(DOMAIN, TAG, `${tcNumber} startAppServiceExtensionAbility failed: ${(err as BusinessError).code}`);
-          expect().assertFail();
-          done();
-        }
-      })
-    })
-
-    /**
-     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3500
-     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3500
-     * @tc.desc   AppServiceExtensionContext startAbility 16000072.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      const tcNumber: string = 'SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3500';
-      hilog.info(DOMAIN, TAG, `${tcNumber} Begin`);
-      let want: Want = {
-        bundleName: BUNDLE_NAME,
-        abilityName: 'AppServiceExtAbility',
-        parameters: {
-          'caseTag': tcNumber
-        } as Record<string, RecordData>
-      };
-      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['AppServiceExtensionStatic_3500']
-      };
-      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-        hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
-        commonEventManager.subscribe(subscriber, (err: BusinessError<void>|null,
-          eventData: commonEventManager.CommonEventData|undefined) => {
-          hilog.info(DOMAIN, TAG, `${tcNumber}  subscribe callback result: ${err?.code}`);
-          let result: int = 0;
-          if (eventData?.parameters?.[TEST_RESULT_KEY]) {
-            result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
-          }
-          hilog.info(DOMAIN, TAG, `${tcNumber} subscribeCB result:` + result);
-          expect(result).assertEqual(ERROR_CODE_16000072);
-          stopAppServiceExtAbility(want, context, tcNumber);
-          commonEventManager.unsubscribe(subscriber, (err, data) => {
-            done();
-          });
-        });
-        try {
-          context?.startAppServiceExtensionAbility(want).then(() => {
-            hilog.info(DOMAIN, TAG, `${tcNumber}  startAppServiceExtensionAbility success`);
-          }).catch((error: Error) => {
-            let err = error as BusinessError;
-            hilog.info(DOMAIN, TAG, `startAppServiceExtensionAbility, code is ${err.code}`);
-            if (err.code !== ERROR_CODE_801) {
-              expect().assertFail();
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(DOMAIN, TAG, `${tcNumber} startAppServiceExtensionAbility failed: ${(err as BusinessError).code}`);
-          expect().assertFail();
-          done();
-        }
-      })
-    })
-
-    /**
-     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3600
-     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3600
-     * @tc.desc   AppServiceExtensionContext startAbility 16000080.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3600',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      const tcNumber: string = 'SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3600';
-      hilog.info(DOMAIN, TAG, `${tcNumber} Begin`);
-      let want: Want = {
-        bundleName: BUNDLE_NAME,
-        abilityName: 'AppServiceExtAbility',
-        parameters: {
-          'caseTag': tcNumber
-        } as Record<string, RecordData>
-      };
-      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['AppServiceExtensionStatic_3600']
-      };
-      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-        hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
-        commonEventManager.subscribe(subscriber, (err: BusinessError<void>|null,
-          eventData: commonEventManager.CommonEventData|undefined) => {
-          hilog.info(DOMAIN, TAG, `${tcNumber}  subscribe callback result: ${err?.code}`);
-          let result: int = 0;
-          if (eventData?.parameters?.[TEST_RESULT_KEY]) {
-            result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
-          }
-          hilog.info(DOMAIN, TAG, `${tcNumber} subscribeCB result:` + result);
-          expect(result).assertEqual(ERROR_CODE_16000080);
-          stopAppServiceExtAbility(want, context, tcNumber);
-          commonEventManager.unsubscribe(subscriber, (err, data) => {
-            done();
-          });
-        });
-        try {
-          context?.startAppServiceExtensionAbility(want).then(() => {
-            hilog.info(DOMAIN, TAG, `${tcNumber}  startAppServiceExtensionAbility success`);
-          }).catch((error: Error) => {
-            let err = error as BusinessError;
-            hilog.info(DOMAIN, TAG, `startAppServiceExtensionAbility, code is ${err.code}`);
-            if (err.code !== ERROR_CODE_801) {
-              expect().assertFail();
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(DOMAIN, TAG, `${tcNumber} startAppServiceExtensionAbility failed: ${(err as BusinessError).code}`);
-          expect().assertFail();
-          done();
-        }
-      })
-    })
-
-    /**
-     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3700
-     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3700
-     * @tc.desc   AppServiceExtensionContext startAbility 16000078.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      const tcNumber: string = 'SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3700';
-      hilog.info(DOMAIN, TAG, `${tcNumber} Begin`);
-      let want: Want = {
-        bundleName: BUNDLE_NAME,
-        abilityName: 'AppServiceExtAbility',
-        parameters: {
-          'caseTag': tcNumber
-        } as Record<string, RecordData>
-      };
-      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['AppServiceExtensionStatic_3700']
-      };
-      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-        hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
-        commonEventManager.subscribe(subscriber, (err: BusinessError<void>|null,
-          eventData: commonEventManager.CommonEventData|undefined) => {
-          hilog.info(DOMAIN, TAG, `${tcNumber}  subscribe callback result: ${err?.code}`);
-          let result: int = 0;
-          if (eventData?.parameters?.[TEST_RESULT_KEY]) {
-            result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
-          }
-          hilog.info(DOMAIN, TAG, `${tcNumber} subscribeCB result:` + result);
-          expect(result).assertEqual(ERROR_CODE_16000078);
-          stopAppServiceExtAbility(want, context, tcNumber);
-          commonEventManager.unsubscribe(subscriber, (err, data) => {
-            done();
-          });
-        });
-        try {
-          context?.startAppServiceExtensionAbility(want).then(() => {
-            hilog.info(DOMAIN, TAG, `${tcNumber}  startAppServiceExtensionAbility success`);
-          }).catch((error: Error) => {
-            let err = error as BusinessError;
-            hilog.info(DOMAIN, TAG, `startAppServiceExtensionAbility, code is ${err?.code}`);
-            if (err.code !== ERROR_CODE_801) {
-              expect().assertFail();
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(DOMAIN, TAG, `${tcNumber} startAppServiceExtensionAbility failed: ${(err as BusinessError).code}`);
-          expect().assertFail();
-          done();
-        }
-      })
-    })
-
-    /**
-     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3900
-     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3900
-     * @tc.desc   AppServiceExtensionContext startAbility 16000076.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      const tcNumber: string = 'SUB_AA_ABILITY_NewRule_AppServiceExtension_static_3900';
-      hilog.info(DOMAIN, TAG, `${tcNumber} Begin`);
-      let want: Want = {
-        bundleName: BUNDLE_NAME,
-        abilityName: 'AppServiceExtAbility',
-        parameters: {
-          'caseTag': tcNumber
-        } as Record<string, RecordData>
-      };
-      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['AppServiceExtensionStatic_3900']
-      };
-      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-        hilog.info(DOMAIN, TAG, `${tcNumber}  createSubscriber success`);
-        commonEventManager.subscribe(subscriber, (err: BusinessError<void>|null,
-          eventData: commonEventManager.CommonEventData|undefined) => {
-          hilog.info(DOMAIN, TAG, `${tcNumber}  subscribe callback result: ${err?.code}`);
-          let result: int = 0;
-          if (eventData?.parameters?.[TEST_RESULT_KEY]) {
-            result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
-          }
-          hilog.info(DOMAIN, TAG, `${tcNumber} subscribeCB result:` + result);
-          expect(result).assertEqual(ERROR_CODE_16000076);
-          stopAppServiceExtAbility(want, context, tcNumber);
-          commonEventManager.unsubscribe(subscriber, (err, data) => {
-            done();
-          });
-        });
-        try {
-          context?.startAppServiceExtensionAbility(want).then(() => {
-            hilog.info(DOMAIN, TAG, `${tcNumber}  startAppServiceExtensionAbility success`);
-          }).catch((error: Error) => {
-            let err = error as BusinessError;
-            hilog.info(DOMAIN, TAG, `startAppServiceExtensionAbility, code is ${err?.code}`);
-            if (err.code !== ERROR_CODE_801) {
-              expect().assertFail();
-            }
-            done();
-          });
-        } catch (err) {
-          hilog.info(DOMAIN, TAG, `${tcNumber} startAppServiceExtensionAbility failed: ${(err as BusinessError).code}`);
-          expect().assertFail();
-          done();
-        }
-      })
-    })
-
-    /**
-     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_static_4000
-     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_static_4000
-     * @tc.desc   AppServiceExtensionContext startAbility 16000073.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_static_4000',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      const tcNumber: string = 'SUB_AA_ABILITY_NewRule_AppServiceExtension_static_4000';
-      hilog.info(DOMAIN, TAG, `${tcNumber} Begin`);
-      let want: Want = {
-        bundleName: BUNDLE_NAME,
-        abilityName: 'AppServiceExtAbility',
-        parameters: {
-          'caseTag': tcNumber
-        } as Record<string, RecordData>
-      };
-      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['AppServiceExtensionStatic_4000']
-      };
-      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-        hilog.info(DOMAIN, TAG, `${tcNumber} createSubscriber success`);
-        commonEventManager.subscribe(subscriber, (err: BusinessError<void>|null,
-          eventData: commonEventManager.CommonEventData|undefined) => {
-          hilog.info(DOMAIN, TAG, `${tcNumber} subscribe callback result: ${err?.code}`);
-          let result: int = 0;
-          if (eventData?.parameters?.[TEST_RESULT_KEY]) {
-            result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
-          }
-          hilog.info(DOMAIN, TAG, `${tcNumber} subscribeCB result:` + result);
-          expect(result).assertEqual(ERROR_CODE_16000073);
           stopAppServiceExtAbility(want, context, tcNumber);
           commonEventManager.unsubscribe(subscriber, (err, data) => {
             done();

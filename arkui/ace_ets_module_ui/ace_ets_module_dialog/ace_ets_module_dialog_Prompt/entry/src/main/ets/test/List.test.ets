@@ -119,6 +119,7 @@ import showDialogBackgroundEffectTest from './promptActionTest/showDialogBackgro
 import showDialogBlurStyleOptionsTest from './promptActionTest/showDialogBlurStyleOptions1.test'
 import showDialogCallbackBackgroundEffectTest from './promptActionTest/showDialogBackgroundEffect2.test'
 import showDialogCallbackBlurStyleOptionsTest from './promptActionTest/showDialogBlurStyleOptions2.test'
+import promptNullUndefined from './prompt/promptNullUndefined.test'
 
 import customDialogGetstateTest from './customDialogTest/customdialog4.test';
 import closeToastTest from './promptActionTest/closeToastTest2.test';
@@ -219,6 +220,7 @@ export default function testsuite() {
 	showDialogBlurStyleOptionsTest()
 	showDialogCallbackBackgroundEffectTest()
 	showDialogCallbackBlurStyleOptionsTest()
+	promptNullUndefined()
 	customDialogGetstateTest()
 	closeToastTest()
 	getDialogControllerReturnTest()
