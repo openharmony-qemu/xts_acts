@@ -1,8 +1,8 @@
-import { describe, expect, it, Level, Size, TestType } from "@package:pkg_modules/.ohpm/@ohos+hypium@1.0.6/pkg_modules/@ohos/hypium/index";
-import http from "@ohos:net.http";
-import type { BusinessError } from "@ohos:base";
-import fs from "@ohos:file.fs";
-import { GlobalContext } from "@bundle:com.acts.httprequest/entry_test/ets/testability/GlobalContext";
+import { describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import http from "@ohos.net.http";
+import type { BusinessError } from "@ohos.base";
+import fs from "@ohos.file.fs";
+
 const ExpectFail = () => {
     try {
         expect().assertFail();
