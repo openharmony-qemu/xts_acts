@@ -554,7 +554,7 @@ export default function HttpRequestDataCATest() {
       let port = 9000+Math.round(Math.random()*5000);
       let tlsSocketServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
       try{
-        let tlsConnOptions = getWrongTlsConnOptions(port, 0);
+        let tlsConnOptions = getTlsConnOptions(port, 0);
         await tlsSocketServer.listen(tlsConnOptions).then( async ()=> {
           let listenAddr: socket.NetAddress =  await tlsSocketServer.getLocalAddress();
           console.info(`${caseName} tlsSocketServer listen address: `+JSON.stringify(listenAddr.address) +' port: '+JSON.stringify(listenAddr.port));
@@ -625,7 +625,7 @@ export default function HttpRequestDataCATest() {
       let port = 9000+Math.round(Math.random()*5000);
       let tlsSocketServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
       try{
-        let tlsConnOptions = getWrongTlsConnOptions(port, 0);
+        let tlsConnOptions = getTlsConnOptions(port, 0);
         await tlsSocketServer.listen(tlsConnOptions).then( async ()=> {
           let listenAddr: socket.NetAddress =  await tlsSocketServer.getLocalAddress();
           console.info(`${caseName} tlsSocketServer listen address: `+JSON.stringify(listenAddr.address) +' port: '+JSON.stringify(listenAddr.port));
@@ -660,7 +660,7 @@ export default function HttpRequestDataCATest() {
           priority: 1,
           caData: ""
         };
-        httpRequest.request("https://localhost:"+ port, options, (err: BusinessError, responseCode: number) => {
+        httpRequest.requestInStream("https://localhost:"+ port, options, (err: BusinessError, responseCode: number) => {
           if (!err) {
             console.info(`${caseName} request success,responseCode is `+ responseCode);
             ExpectFail();
@@ -692,7 +692,7 @@ export default function HttpRequestDataCATest() {
       let port = 9000+Math.round(Math.random()*5000);
       let tlsSocketServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
       try{
-        let tlsConnOptions = getWrongTlsConnOptions(port, 0);
+        let tlsConnOptions = getTlsConnOptions(port, 0);
         await tlsSocketServer.listen(tlsConnOptions).then( async ()=> {
           let listenAddr: socket.NetAddress =  await tlsSocketServer.getLocalAddress();
           console.info(`${caseName} tlsSocketServer listen address: `+JSON.stringify(listenAddr.address) +' port: '+JSON.stringify(listenAddr.port));
