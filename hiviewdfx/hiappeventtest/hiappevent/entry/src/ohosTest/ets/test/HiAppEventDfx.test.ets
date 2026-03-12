@@ -22,9 +22,9 @@ export default function HiAppEvent1() {
         hiAppEvent.addWatcher(null);
         console.info("====>hiAppEventdfx1 error end 02");
         done();
-      }catch (error) {
-        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${error.code}, message: ${error.message}`);
-        expect(error.code === 401).assertTrue()
+      }catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -45,9 +45,9 @@ export default function HiAppEvent1() {
         hiAppEvent.removeWatcher(null);
         console.info("====>hiAppEventdfx1 error end 03");
         done();
-      }catch (error) {
-        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${error.code}, message: ${error.message}`);
-        expect(error.code === 401).assertTrue()
+      }catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -69,9 +69,9 @@ export default function HiAppEvent1() {
         hiAppEvent.addWatcher(undefined);
         console.info("====>hiAppEventdfx1 error end 04");
         done();
-      }catch (error) {
-        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${error.code}, message: ${error.message}`);
-        expect(error.code === 401).assertTrue()
+      }catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -93,9 +93,9 @@ export default function HiAppEvent1() {
         hiAppEvent.removeWatcher(undefined);
         console.info("====>hiAppEventdfx1 error end 02");
         done();
-      }catch (error) {
-        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${error.code}, message: ${error.message}`);
-        expect(error.code === 401).assertTrue()
+      }catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx1', `failed to write event, code: ${err.code}, message: ${err.message}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -113,8 +113,8 @@ export default function HiAppEvent1() {
         let ret = hiAppEvent.clearData();
         console.error("====>hiAppEventdfx2 err: " + ret)
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEventdfx2', `failed to setUserId event, code=${error.code}`);
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx2', `failed to setUserId event, code=${err.code}`);
         expect(false).assertTrue()
         done();
       }
@@ -133,9 +133,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx3 error start");
         hiAppEvent.setUserId(' ', ' ');
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEventdfx3', `failed to setUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx3', `failed to setUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -153,9 +153,9 @@ export default function HiAppEvent1() {
         console.info("====>iAppEventdfx3_null error start");
         hiAppEvent.setUserId(null, null);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'iAppEventdfx3_null', `failed to setUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'iAppEventdfx3_null', `failed to setUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -173,9 +173,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx3_undefined error start");
         hiAppEvent.setUserId(undefined, undefined);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEventdfx3_undefined', `failed to setUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEventdfx3_undefined', `failed to setUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -196,9 +196,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx4 error end 01");
         hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value}`);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -219,9 +219,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx4_null error end 01");
         hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value}`);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -242,9 +242,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx4_undefined error end 01");
         hilog.info(0x0000, 'hiAppEvent', `getUserId event was successful, userId=${value}`);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -263,9 +263,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setUserProperty(' ', ' ');
         console.info("====>hiAppEventdfx5 error end 02");
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -284,9 +284,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setUserProperty(null, null);
         console.info("====>hiAppEventdfx5_null error end 02");
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -305,9 +305,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setUserProperty(undefined, undefined);
         console.info("====>hiAppEventdfx5_undefined error end 02");
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to setUserId event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -328,9 +328,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx6 error end 01");
         hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value}`);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -351,9 +351,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx6 error end 01");
         hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value}`);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -374,9 +374,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx6_undefined error end 01");
         hilog.info(0x0000, 'hiAppEvent', `getUserProperty event was successful, userProperty=${value}`);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to getUserProperty event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -394,9 +394,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx7_add_null error start");
         let id: number = hiAppEvent.addProcessor(null);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -414,9 +414,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx7_add_undefined error start");
         let id1: number = hiAppEvent.addProcessor(undefined);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -434,9 +434,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx7_rme_null error start");
         hiAppEvent.removeProcessor(null);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -454,9 +454,9 @@ export default function HiAppEvent1() {
         console.info("====>hiAppEventdfx7_rme_undefined error start");
         hiAppEvent.removeProcessor(undefined);
         done();
-      } catch (error) {
-        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${error.code}`);
-        expect(error.code === 401).assertTrue()
+      } catch (err) {
+        hilog.error(0x0000, 'hiAppEvent', `failed to removeProcessor event, code=${err.code}`);
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -475,11 +475,11 @@ export default function HiAppEvent1() {
         hilog.info(0x0000, 'hiAppEvent', `Succeeded in adding processor from config, processorId=${processorId}`);
         done();
       }).catch((err: BusinessError) => {
-        hilog.error(0x0000, 'hiAppEvent', `Failed to add processor from config, code: ${error.code}, message: ${error.message}`);
+        hilog.error(0x0000, 'hiAppEvent', `Failed to add processor from config, code: ${err.code}, message: ${err.message}`);
         done();
       });
-      }catch (error) {
-        expect(error.code === 401).assertTrue()
+      }catch (err) {
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -498,11 +498,11 @@ export default function HiAppEvent1() {
           hilog.info(0x0000, 'hiAppEvent', `Succeeded in adding processor from config, processorId=${processorId}`);
           done();
         }).catch((err: BusinessError) => {
-          hilog.error(0x0000, 'hiAppEvent', `Failed to add processor from config, code: ${error.code}, message: ${error.message}`);
+          hilog.error(0x0000, 'hiAppEvent', `Failed to add processor from config, code: ${err.code}, message: ${err.message}`);
           done();
         });
-      }catch (error) {
-        expect(error.code === 401).assertTrue()
+      }catch (err) {
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -531,7 +531,7 @@ export default function HiAppEvent1() {
         done();
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'hiAppEvent', `Failed to set main thread jank event policy. Code: ${err?.code}, message: ${err?.message}`);
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       });
     })
@@ -560,7 +560,7 @@ export default function HiAppEvent1() {
         done();
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'hiAppEvent', `Failed to set main thread jank event policy. Code: ${err?.code}, message: ${err?.message}`);
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       });
     })
@@ -581,9 +581,9 @@ export default function HiAppEvent1() {
         console.info("====> hiAppEventdfx10_size_null write undefined end 01");
         done();
 
-      }catch(error){
-        console.error(`====>hiAppEventdfx10_size_null setId write catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertFalse();
+      }catch(err){
+        console.error(`====>hiAppEventdfx10_size_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertFalse();
         done();
       }
     })
@@ -604,9 +604,9 @@ export default function HiAppEvent1() {
         console.info("====> hiAppEventdfx10_size_undefined write undefined end 01");
         done();
 
-      }catch(error){
-        console.error(`====>hiAppEventdfx10_size_undefined setId write catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertFalse();
+      }catch(err){
+        console.error(`====>hiAppEventdfx10_size_undefined setId write catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertFalse();
         done();
       }
     })
@@ -627,9 +627,9 @@ export default function HiAppEvent1() {
         console.info("====> hiAppEventdfx10_row_null write undefined end 01");
         done();
 
-      }catch(error){
-        console.error(`====>hiAppEventdfx10_row_null setId write catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertFalse();
+      }catch(err){
+        console.error(`====>hiAppEventdfx10_row_null setId write catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertFalse();
         done();
       }
     })
@@ -650,9 +650,9 @@ export default function HiAppEvent1() {
         console.info("====> hiAppEventdfx10_row_undefined write undefined end 01");
         done();
 
-      }catch(error){
-        console.error(`====>hiAppEventdfx10_row_undefined setId write catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertFalse();
+      }catch(err){
+        console.error(`====>hiAppEventdfx10_row_undefined setId write catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertFalse();
         done();
       }
     })
@@ -671,9 +671,9 @@ export default function HiAppEvent1() {
         hiAppEvent.configure(null);
         console.info("====> hiAppEventdfx11_null configure null ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx11_null configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx11_null configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx11_null end");
@@ -693,9 +693,9 @@ export default function HiAppEvent1() {
         hiAppEvent.configure(undefined);
         console.info("====> HiAppEventTest_undefined configure undefined ");
         done();
-      }catch(error){
-        console.error(`====>HiAppEventTest_undefined configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>HiAppEventTest_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("HiAppEventTest_undefined end");
@@ -726,9 +726,9 @@ export default function HiAppEvent1() {
         hiAppEvent.write(eventInfo);
         console.info("====> hiAppEventdfx12test write STATISTIC ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx12test configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx12test configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12test end");
@@ -760,9 +760,9 @@ export default function HiAppEvent1() {
         hiAppEvent.write(eventInfo);
         console.info("====> hiAppEventdfx12test1 write SECURITY ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx12test1 configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx12test1 configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12test1 end");
@@ -794,9 +794,9 @@ export default function HiAppEvent1() {
         hiAppEvent.write(eventInfo);
         console.info("====> hiAppEventdfx12test2 write BEHAVIOR ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx12test2 configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx12test2 configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12test2 end");
@@ -827,9 +827,9 @@ export default function HiAppEvent1() {
         hiAppEvent.write(null);
         console.info("====> hiAppEventdfx12_null write null ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx12_null configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx12_null configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12_null end");
@@ -860,9 +860,9 @@ export default function HiAppEvent1() {
         hiAppEvent.write(undefined);
         console.info("====> hiAppEventdfx12_undefined write undefined ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx12_undefined configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx12_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx12_undefined end");
@@ -882,9 +882,9 @@ export default function HiAppEvent1() {
         hiAppEvent.write(null, null);
         console.info("====> hiAppEventdfx13_unll write null ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx13_unll configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx13_unll configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx13_unll end");
@@ -904,9 +904,9 @@ export default function HiAppEvent1() {
         hiAppEvent.write(undefined, undefined);
         console.info("====> hiAppEventdfx13_undefined write undefined ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx13_undefined configure catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx13_undefined configure catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx13_undefined end");
@@ -926,9 +926,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventParam(null, "test_domain", "test_name");
         console.info("====> hiAppEventdfx14_null setEventParam null ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx14_null setEventParam catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx14_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx14_null end");
@@ -948,9 +948,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventParam(undefined, "test_domain", "test_name");
         console.info("====> hiAppEventdfx14_undefined setEventParam undefined ");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx14_undefined setEventParam catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx14_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx14_undefined end");
@@ -973,9 +973,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventParam(eventParams, "", "test_name");
         console.info("====> hiAppEventdfx15 setEventParam empty");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx15 setEventParam catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx15 setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx15 end");
@@ -998,9 +998,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventParam(eventParams, null, "test_name");
         console.info("====> hiAppEventdfx15_null setEventParam null");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx15_null setEventParam catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx15_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx15_null end");
@@ -1023,9 +1023,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventParam(eventParams, undefined, "test_name");
         console.info("====> hiAppEventdfx15_undefined setEventParam undefined");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx15_undefined setEventParam catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx15_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx15_undefined end");
@@ -1048,9 +1048,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventParam(eventParams, "test_domain", "");
         console.info("====> hiAppEventdfx16 setEventParam empty");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx16 setEventParam catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx16 setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx16 end");
@@ -1073,9 +1073,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventParam(eventParams, "test_domain", null);
         console.info("====> hiAppEventdfx16_null setEventParam null");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx16_null setEventParam catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx16_null setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx16_null end");
@@ -1098,9 +1098,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventParam(eventParams, "test_domain", undefined);
         console.info("====> hiAppEventdfx16_undefined setEventParam undefined");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx16_undefined setEventParam catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx16_undefined setEventParam catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx16_undefined end");
@@ -1123,9 +1123,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventConfig("",eventParams);
         console.info("====> hiAppEventdfx17 setEventConfig empty");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx17 setEventConfig catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx17 setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx17 end");
@@ -1148,9 +1148,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventConfig(null,eventParams);
         console.info("====> hiAppEventdfx17_null setEventConfig null");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx17_null setEventConfig catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx17_null setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx17_null end");
@@ -1173,9 +1173,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventConfig(undefined,eventParams);
         console.info("====> hiAppEventdfx17_undefined setEventConfig undefined");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx17_undefined setEventConfig catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx17_undefined setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx17_undefined end");
@@ -1195,9 +1195,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT,null);
         console.info("====> hiAppEventdfx18_null setEventConfig null");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx18_null setEventConfig catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx18_null setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx18_null end");
@@ -1217,9 +1217,9 @@ export default function HiAppEvent1() {
         hiAppEvent.setEventConfig(hiAppEvent.event.RESOURCE_OVERLIMIT,undefined);
         console.info("====> hiAppEventdfx18_undefined setEventConfig undefined");
         done();
-      }catch(error){
-        console.error(`====>hiAppEventdfx18_undefined setEventConfig catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertTrue()
+      }catch(err){
+        console.error(`====>hiAppEventdfx18_undefined setEventConfig catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
         done();
       }
       console.info("hiAppEventdfx18_undefined end");
