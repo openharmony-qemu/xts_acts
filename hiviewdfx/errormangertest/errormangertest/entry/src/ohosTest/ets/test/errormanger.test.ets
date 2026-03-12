@@ -227,7 +227,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`testErrorManger_0400 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -254,7 +254,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`testErrorManger_0500 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -281,7 +281,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`testErrorManger_0600 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -405,7 +405,7 @@ export default function ErrormangerTest() {
         done();
       } catch (error) {
         console.info("====>testErrorManger_1000 catch error: " + JSON.stringify(error));
-        expect(error.code == 16200001).assertTrue();
+        expect(err.code == 16200001).assertTrue();
         done();
       }
     })
@@ -739,7 +739,7 @@ export default function ErrormangerTest() {
         console.info("====>testErrorManger_2200_on_null error end 01 " + observerId.toString());
       } catch (err) {
         console.error(`====>testErrorManger_2200_on_null error catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -773,7 +773,7 @@ export default function ErrormangerTest() {
         console.info("====>testErrorManger_2200_off_null error end 01 " + observerId.toString());
       } catch (err) {
         console.error(`====>testErrorManger_2200_off_null error catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -806,7 +806,7 @@ export default function ErrormangerTest() {
         console.info("====>testErrorManger_2200_on_undefined error end 01 " + observerId.toString());
       } catch (err) {
         console.error(`====>testErrorManger_2200_on_undefined error catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -838,7 +838,7 @@ export default function ErrormangerTest() {
         console.info("====>testErrorManger_2200_off_undefined error end 01 " + observerId.toString());
       } catch (err) {
         console.error(`====>testErrorManger_2200_off_undefined error catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -858,7 +858,7 @@ export default function ErrormangerTest() {
         console.info("====>testErrorManger_2300_null error end 01");
       } catch (err) {
         console.error(`====>testErrorManger_2300_null error catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -877,7 +877,7 @@ export default function ErrormangerTest() {
         console.info("====>testErrorManger_2300_undefined error end 01");
       } catch (err) {
         console.error(`====>testErrorManger_2300_undefined error catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -899,7 +899,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_2400_on_null loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -921,7 +921,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_2400_on_undefined loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -942,7 +942,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_2400_off_null loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -965,7 +965,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_2400_off_undefined loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -985,7 +985,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`testErrorManger_2500_on_null unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -1006,7 +1006,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`testErrorManger_2500_on_undefined unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -1027,7 +1027,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`testErrorManger_2500_off_null unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -1048,7 +1048,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`testErrorManger_2500_off_undefined unhandledRejection catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue()
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -1069,7 +1069,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_2600_on_null globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -1089,7 +1089,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_2600_off_null globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -1109,7 +1109,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_2600_on_undefined globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -1129,7 +1129,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_2600_off_undefined globalErrorOccurred catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(error.code === 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -1149,7 +1149,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.info("====> testErrorManger_2700_on_null freeze catch: " + JSON.stringify(err));
-        expect(error.code === 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -1169,7 +1169,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.info("====> testErrorManger_2700_on_undefined freeze catch: " + JSON.stringify(err));
-        expect(error.code === 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -1189,7 +1189,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.info("====> testErrorManger_2700_off_null freeze catch: " + JSON.stringify(err));
-        expect(error.code === 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
@@ -1209,7 +1209,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.info("====> testErrorManger_2700_off_undefined freeze catch: " + JSON.stringify(err));
-        expect(error.code === 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
     })
