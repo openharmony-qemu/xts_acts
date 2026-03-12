@@ -1071,10 +1071,11 @@ export default function AVMetadata() {
     it('SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0300', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + "SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0300  is success");
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
-      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
       await avMetadataExtractor.fetchAlbumCover((err, PixelMap) => {
         if (err) {
           console.error(TAG, `fetchMetadata callback failed, err = ${JSON.stringify(err)}`);
+          done();
           return;
         }
         console.info(TAG, `fetchMetadata callback success video PixelMap :${PixelMap}}`);
@@ -1094,7 +1095,7 @@ export default function AVMetadata() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0400', Level.LEVEL0,async (done: Function) => {
-      console.info(TAG + "SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0300  is success");
+      console.info(TAG + "SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0400  is success");
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       await avMetadataExtractor.fetchAlbumCover((err, PixelMap) => {
