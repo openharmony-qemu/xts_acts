@@ -93,9 +93,7 @@ export class KeyboardControllerStatic {
         console.info(`${TAG} ====> Failed to create panel. err: ${JSON.stringify(err)}`);
       }
       this.softkeyboardPanel = panel as inputMethodEngine.Panel;
-      this.softkeyboardPanel!.setUiContent('testability/pages/Second', async (err: BusinessError): void => {
-        console.info(`${TAG} ====> Succeed in creating panel.  panel: ${JSON.stringify(panel)}`);
-      })      
+      console.info(`${TAG} ====> Succeed in creating panel.  panel: ${JSON.stringify(this.softkeyboardPanel)}`);
     })
 
     try{
