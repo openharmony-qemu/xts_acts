@@ -61,10 +61,10 @@ export default function StepperItemApiNullUndefinedTest() {
       expect(JSON.parse(strJson1).$type).assertEqual('StepperItem');
       expect(JSON.parse(strJson2).$type).assertEqual('StepperItem');
 
-      expect(TransitionType.All).assertEqual(All);
-      expect(TransitionType.Insert).assertEqual(Insert);
-      expect(TitleHeight.MainOnly).assertEqual(MainOnly);
-      expect(TitleHeight.MainWithSub).assertEqual(MainWithSub);
+      expect(TransitionType.All).assertEqual('All');
+      expect(TransitionType.Insert).assertEqual('Insert');
+      expect(TitleHeight.MainOnly).assertEqual('MainOnly');
+      expect(TitleHeight.MainWithSub).assertEqual('MainWithSub');
       expect(VisibilityChangeReason.APP_STATE).assertEqual(2);
       
       console.info('[StepperItemApiNullUndefinedTest_0100] END');

@@ -41,6 +41,7 @@
 
         "MainAbility/pages/CommonCustom/MediaQueryMatchMediaNullUndefined",
         "MainAbility/pages/CommonCustom/MediaQueryMatchMediaSyncNullUndefined",
-        "MainAbility/pages/CommonCustom/pixelRoundNullUndefined"
+        "MainAbility/pages/CommonCustom/pixelRoundNullUndefined",
+        "MainAbility/pages/CommonCustom/getContext2DFromDrawingContextNullUndefined"
     ]
 }

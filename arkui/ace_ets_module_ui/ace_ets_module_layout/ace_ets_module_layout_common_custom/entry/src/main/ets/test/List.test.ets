@@ -54,6 +54,7 @@ import ExpandSafeAreaNullUndefinedTest from './CommonAttrs/ExpandSafeAreaNullUnd
 import MediaQueryMatchMediaNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaNullUndefinedTest.test';
 import MediaQueryMatchMediaSyncNullUndefinedTest from './CommonCustom/MediaQueryMatchMediaSyncNullUndefinedTest.test';
 import pixelRoundNullUndefinedTest from './CommonCustom/pixelRoundNullUndefinedTest.test';
+import getContext2DFromDrawingContextNullUndefinedTest from './CommonCustom/getContext2DFromDrawingContextNullUndefinedTest.test';
 
 export default function testsuite() {
   Calc01();
@@ -97,4 +98,5 @@ export default function testsuite() {
   MediaQueryMatchMediaNullUndefinedTest();
   MediaQueryMatchMediaSyncNullUndefinedTest();
   pixelRoundNullUndefinedTest();
+  getContext2DFromDrawingContextNullUndefinedTest();
 }
