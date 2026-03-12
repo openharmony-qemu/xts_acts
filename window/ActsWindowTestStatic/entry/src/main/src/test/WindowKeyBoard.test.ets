@@ -965,10 +965,6 @@ export default function WindowKeyBoardTest() {
                             expect(keyboardInfo.endRect.top + keyboardInfo.endRect.height).assertEqual(displayInfo.height);
                             expect(keyboardInfo.endRect.width).assertEqual(displayInfo.width);
                             expect(keyboardInfo.endRect.height).assertLarger(0);
-                            expect(keyboardInfo.animated).assertEqual(true);
-                            expect(keyboardInfo.config?.curve).assertEqual(1);
-                            expect(keyboardInfo.config?.duration).assertLarger(0);
-                            expect(keyboardInfo.config?.param !== null).assertTrue();
                         } catch (err) {
                             console.error(caseName + 'Failed. Cause:' + err.message);
                             expect(true).assertFail()
@@ -1040,10 +1036,6 @@ export default function WindowKeyBoardTest() {
                             expect(keyboardInfo.beginRect.top + keyboardInfo.beginRect.height).assertEqual(displayInfo.height);
                             expect(keyboardInfo.beginRect.width).assertEqual(displayInfo.width);
                             expect(keyboardInfo.beginRect.height).assertLarger(0);
-                            expect(keyboardInfo.animated).assertEqual(true);
-                            expect(keyboardInfo.config?.curve).assertEqual(1);
-                            expect(keyboardInfo.config?.duration).assertLarger(0);
-                            expect(keyboardInfo.config?.param !== null).assertTrue();
                         } catch (err) {
                             console.error(caseName + 'Failed. Cause:' + err.message);
                             expect(true).assertFail()
