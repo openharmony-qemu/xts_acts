@@ -238,7 +238,7 @@ export default function abilityTest() {
         onFailed(code, errMsg) {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
-            expect(Number(code)).assertEqual(201);
+            expect(Number(code)).assertEqual(17100203);
             hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag201','444');
           } else {
             expect(Number(code)).assertEqual(801);
