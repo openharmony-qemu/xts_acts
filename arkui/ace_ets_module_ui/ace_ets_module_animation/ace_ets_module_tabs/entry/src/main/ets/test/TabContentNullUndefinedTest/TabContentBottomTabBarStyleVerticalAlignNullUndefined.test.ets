@@ -18,42 +18,42 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
-export default function TabContentSubTabBarStyleVerticalAlignNullUndefinedTest() {
-  describe('TabContentSubTabBarStyleVerticalAlignNullUndefinedTest', () => {
+export default function TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest() {
+  describe('TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest', () => {
     beforeEach(async (done: Function) => {
-      console.info("TabContentSubTabBarStyleVerticalAlignNullUndefinedTest beforeEach start");
+      console.info("TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStyleVerticalAlignNullUndefined',
+        url: 'MainAbility/pages/TabContentNullUndefined/TabContentBottomTabBarStyleVerticalAlignNullUndefined',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get TabContentSubTabBarStyleVerticalAlignNullUndefinedTest state pages:" + JSON.stringify(pages));
-        if (!("TabContentSubTabBarStyleVerticalAlignNullUndefined" == pages.name)) {
-          console.info("get TabContentSubTabBarStyleVerticalAlignNullUndefinedTest pages.name:" + JSON.stringify(pages.name));
+        console.info("get TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest state pages:" + JSON.stringify(pages));
+        if (!("TabContentBottomTabBarStyleVerticalAlignNullUndefined" == pages.name)) {
+          console.info("get TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TabContentSubTabBarStyleVerticalAlignNullUndefinedTest page result:" + JSON.stringify(result));
+          console.info("push TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push TabContentSubTabBarStyleVerticalAlignNullUndefinedTest page error:" + err);
+        console.error("push TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest page error:" + err);
       }
-      console.info("TabContentSubTabBarStyleVerticalAlignNullUndefinedTest beforeEach end");
+      console.info("TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest beforeEach end");
       done();
     });
     afterEach(async () => {
     });
 
     /**
-     * @tc.name   TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001
-     * @tc.number TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001
-     * @tc.desc   测试TabContent的SubTabBarStyleVerticalAlign属性 - undefined
+     * @tc.name   TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001
+     * @tc.number TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001
+     * @tc.desc   测试TabContent的BottomTabBarStyleVerticalAlign属性 - undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001', Level.LEVEL2, async (done: Function) => {
-      console.info('[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001] START');
+    it('TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001', Level.LEVEL2, async (done: Function) => {
+      console.info('[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001] START');
       await CommonFunc.sleep(1000);
       // 获取默认值组件的属性
       let strJsonCompare: string = getInspectorByKey('tabContentBottomTabBarStyleVerticalAlignDefault');
@@ -63,29 +63,29 @@ export default function TabContentSubTabBarStyleVerticalAlignNullUndefinedTest()
       let strJson: string = getInspectorByKey('tabContentBottomTabBarStyleVerticalAlignUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001] default tabBar value is: " + JSON.stringify(objCompare.$attrs.tabBar));
-      console.info("[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001] undefined tabBar value is: " + JSON.stringify(obj.$attrs.tabBar));
+      console.info("[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001] default tabBar value is: " + JSON.stringify(objCompare.$attrs.tabBar));
+      console.info("[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001] undefined tabBar value is: " + JSON.stringify(obj.$attrs.tabBar));
 
-      console.info("[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001] default tabBar verticalAlign value is: " + JSON.stringify(objCompare.$attrs.tabBar.verticalAlign));
-      console.info("[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001] undefined tabBar verticalAlign value is: " + JSON.stringify(obj.$attrs.tabBar.verticalAlign));
+      console.info("[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001] default tabBar verticalAlign value is: " + JSON.stringify(objCompare.$attrs.tabBar.verticalAlign));
+      console.info("[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001] undefined tabBar verticalAlign value is: " + JSON.stringify(obj.$attrs.tabBar.verticalAlign));
 
       // undefined 应该恢复为默认值
       expect(JSON.stringify(obj.$attrs.tabBar.verticalAlign)).assertEqual(JSON.stringify(objCompare.$attrs.tabBar.verticalAlign));;
 
-      console.info('[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_001] END');
+      console.info('[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_001] END');
       done();
     });
 
     /**
-     * @tc.name   TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002
-     * @tc.number TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002
-     * @tc.desc   测试TabContent的SubTabBarStyleVerticalAlign属性 - null
+     * @tc.name   TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002
+     * @tc.number TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002
+     * @tc.desc   测试TabContent的BottomTabBarStyleVerticalAlign属性 - null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002', Level.LEVEL2, async (done: Function) => {
-      console.info('[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002] START');
+    it('TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002', Level.LEVEL2, async (done: Function) => {
+      console.info('[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002] START');
       await CommonFunc.sleep(1000);
       // 获取默认值组件的属性
       let strJsonCompare: string = getInspectorByKey('tabContentBottomTabBarStyleVerticalAlignDefault');
@@ -95,16 +95,16 @@ export default function TabContentSubTabBarStyleVerticalAlignNullUndefinedTest()
       let strJson: string = getInspectorByKey('tabContentBottomTabBarStyleVerticalAlignNull');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002] default tabBar value is: " + JSON.stringify(objCompare.$attrs.tabBar));
-      console.info("[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002] null tabBar value is: " + JSON.stringify(obj.$attrs.tabBar));
+      console.info("[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002] default tabBar value is: " + JSON.stringify(objCompare.$attrs.tabBar));
+      console.info("[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002] null tabBar value is: " + JSON.stringify(obj.$attrs.tabBar));
 
-      console.info("[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002] default tabBar verticalAlign value is: " + JSON.stringify(objCompare.$attrs.tabBar.verticalAlign));
-      console.info("[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002] null tabBar verticalAlign value is: " + JSON.stringify(obj.$attrs.tabBar.verticalAlign));
+      console.info("[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002] default tabBar verticalAlign value is: " + JSON.stringify(objCompare.$attrs.tabBar.verticalAlign));
+      console.info("[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002] null tabBar verticalAlign value is: " + JSON.stringify(obj.$attrs.tabBar.verticalAlign));
 
       // undefined 应该恢复为默认值
       expect(JSON.stringify(obj.$attrs.tabBar.verticalAlign)).assertEqual(JSON.stringify(objCompare.$attrs.tabBar.verticalAlign));
 
-      console.info('[TabContentSubTabBarStyleVerticalAlignNullUndefinedTest_002] END');
+      console.info('[TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest_002] END');
       done();
     });
   })

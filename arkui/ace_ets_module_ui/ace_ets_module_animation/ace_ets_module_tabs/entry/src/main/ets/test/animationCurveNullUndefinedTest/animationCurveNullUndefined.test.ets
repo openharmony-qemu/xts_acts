@@ -61,7 +61,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0001 END');
       done();
     });
@@ -84,7 +85,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0002' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0002 END');
       done();
     });
@@ -107,7 +109,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0003' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0003 END');
       done();
     });
@@ -130,7 +133,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0004' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0004 END');
       done();
     });
@@ -153,7 +157,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0005' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0005 END');
       done();
     });
@@ -176,7 +181,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0006' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0006 END');
       done();
     });
@@ -199,7 +205,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0007' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0007 END');
       done();
     });
@@ -222,7 +229,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0008' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0008 END');
       done();
     });
@@ -245,7 +253,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0009' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0009 END');
       done();
     });
@@ -268,7 +277,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0010' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0010 END');
       done();
     });
@@ -291,7 +301,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0011' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0011 END');
       done();
     });
@@ -314,7 +325,8 @@ export default function animationCurveNullUndefinedTest() {
       let strJson = getInspectorByKey('animationCurveNullUndefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info('animationCurveNullUndefinedTest_0012' + JSON.stringify(obj.$attrs.width));
-      expect(obj.$attrs.width > 0).assertTrue();
+      console.info('animationCurveNullUndefinedTest_0001' + JSON.stringify(obj.$attrs.animationCurve));
+      expect(obj.$attrs.animationCurve).assertEqual('steps(1,end)');
       console.info('animationCurveNullUndefinedTest_0012 END');
       done();
     });
