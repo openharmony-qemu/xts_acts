@@ -157,18 +157,22 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative succeed`);
         }).catch((err: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative error: ${JSON.stringify(err)}`);
-          expect().assertFail();
+          if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
+            expect(Number(err.code)).assertEqual(17100203);
+            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag17100203','111');
+          } else {
+            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag801','222');
+            expect(Number(err.code)).assertEqual(801);
+          }
           done();
         });
         connId = 0;
       } catch (err) {
         hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
         connId = 0;
-        if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
-          expect(Number(err.code)).assertEqual(17100203);
-        } else {
-          expect(Number(err.code)).assertEqual(801);
-        }
+        hilog.info(0x0000, 'pbbtestTag801','333');
+        expect(Number(err.code)).assertEqual(801);
+
         done();
       }
     })
@@ -233,6 +237,13 @@ export default function abilityTest() {
         },
         onFailed(code, errMsg) {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
+          if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
+            expect(Number(code)).assertEqual(201);
+            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag201','444');
+          } else {
+            expect(Number(code)).assertEqual(801);
+            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag801','555');
+          }
           done();
         }
       };
@@ -244,8 +255,10 @@ export default function abilityTest() {
         hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
         if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
           expect(Number(err.code)).assertEqual(17100203);
+          hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag17100203','666');
         } else {
           expect(Number(err.code)).assertEqual(801);
+          hilog.info(0x0000, 'assertEqual801','777');
         }
 
         done();
@@ -313,8 +326,10 @@ export default function abilityTest() {
         hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
         if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
           expect(Number(err.code)).assertEqual(17100203);
+          hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0300testTag17100203','999');
         } else {
           expect(Number(err.code)).assertEqual(801);
+          hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0300testTag801','888');
         }
         done();
       }
@@ -391,8 +406,10 @@ export default function abilityTest() {
         hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
         if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
           expect(Number(err.code)).assertEqual(17100203);
+          hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0400testTag17100203','101010');
         } else {
           expect(Number(err.code)).assertEqual(801);
+          hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0400testTag801','202020');
         }
         done();
       }
