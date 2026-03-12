@@ -200,7 +200,7 @@ export default function Sim2Public() {
           console.info(`${caseName} test end `);
           done();
         }
-      });imState
+      });
     });
 
     /**
