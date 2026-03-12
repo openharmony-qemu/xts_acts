@@ -31,8 +31,8 @@ namespace {
 OH_AVCodec* gVenc = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
 const char* CODEC_NAME = "";
-constexpr double DEFAULTFrameRate = 30.0;
-constexpr uint32_t DEFAULTKeyFrameInterval = 2000;
+constexpr double DEFAULT_FRAME_RATE = 30.0;
+constexpr uint32_t DEFAULT_KEY_FRAME_INTERVAL = 2000;
 } // namespace
 
 namespace OHOS {
@@ -88,22 +88,23 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
-    bitrateMode, bitRate, surfaceMode);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir,
+        outputDir, width, height,
+        bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->OUT_DIR = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
     vEncSample->defaultMaxBitrate = bitRate;
-    vEncSample->defaultFrameRate = DEFAULTFrameRate;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULTKeyFrameInterval;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -137,22 +138,23 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
-    bitrateMode, bitRate, surfaceMode);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir,
+        outputDir, width, height,
+        bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->OUT_DIR = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
     vEncSample->defaultMaxBitrate = bitRate;
-    vEncSample->defaultFrameRate = DEFAULTFrameRate;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULTKeyFrameInterval;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -194,14 +196,14 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->OUT_DIR = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
     vEncSample->defaultMaxBitrate = bitRate;
-    vEncSample->defaultFrameRate = DEFAULTFrameRate;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULTKeyFrameInterval;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -235,22 +237,23 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
-     bitrateMode, bitRate, surfaceMode);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir,
+        outputDir, width, height,
+        bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->OUT_DIR = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
     vEncSample->defaultMaxBitrate = bitRate;
-    vEncSample->defaultFrameRate = DEFAULTFrameRate;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULTKeyFrameInterval;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -284,22 +287,23 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
-    bitrateMode, bitRate, surfaceMode);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir,
+        outputDir, width, height,
+        bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->OUT_DIR = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
     vEncSample->defaultMaxBitrate = bitRate;
-    vEncSample->defaultFrameRate = DEFAULTFrameRate;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULTKeyFrameInterval;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -333,22 +337,23 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
     uint32_t bitrateMode = 0;
     uint32_t bitRate = 0;
     bool surfaceMode = false;
-    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir, outputDir, width, height,
-    bitrateMode, bitRate, surfaceMode);
+    vEncSample->LoadTimeStampData(timeStampFilePath, inputDir,
+        outputDir, width, height,
+        bitrateMode, bitRate, surfaceMode);
     char *input = new char[1024];
     char *output = new char[1024];
     snprintf(input, 1024, "%s", inputDir.c_str());
     snprintf(output, 1024, "%s", outputDir.c_str());
     vEncSample->maxbiteEnable = true;
     vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->OUT_DIR = output;
     vEncSample->defaultWidth = width;
     vEncSample->defaultHeight = height;
     vEncSample->DEFAULT_BITRATE_MODE = bitrateMode;
     vEncSample->defaultMaxBitrate = bitRate;
-    vEncSample->defaultFrameRate = DEFAULTFrameRate;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
     vEncSample->surfInput = surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULTKeyFrameInterval;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());

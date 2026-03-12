@@ -132,7 +132,7 @@ int64_t VEncAPI11Sample::GetSystemTimeUs()
 {
     struct timespec now;
     (void)clock_gettime(CLOCK_BOOTTIME, &now);
-    int64_t nanoTime = (int64_t)now.tv_sec * NANOS_IN_SECOND + now.tv_nsec;
+    int64_t nanoTime = static_cast<int64_t>(now.tv_sec) * NANOS_IN_SECOND + now.tv_nsec;
 
     return nanoTime / NANOS_IN_MICRO;
 }
@@ -524,9 +524,9 @@ int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
         isRunning_.store(false);
         return 0;
     }
-    dst = (uint8_t *)virAddr;
+    dst = reinterpret_cast<uint8_t *>(virAddr);
     int32_t stride = defaultWidth;
-    if (dst == nullptr || stride < (int32_t)defaultWidth) {
+    if (dst == nullptr || stride < static_cast<int32_t>(defaultWidth)) {
         cout << "invalid va or stride=" << stride << endl;
         err = 0;
         isRunning_.store(false);
@@ -581,7 +581,7 @@ void VEncAPI11Sample::RepeatStartBeforeEOS()
 bool VEncAPI11Sample::RandomEOS(uint32_t index)
 {
     uint32_t randomEos;
-    if (RandBytes((unsigned char*)&randomEos, sizeof(randomEos)) != false) {
+    if (RandBytes(reinterpret_cast<unsigned char*>(&randomEos), sizeof(randomEos)) != false) {
         return false;
     }
     const uint32_t maxEosValue = 25;
@@ -796,7 +796,7 @@ void VEncAPI11Sample::OutputFuncFail()
 
 void VEncAPI11Sample::OutputFunc()
 {
-    FILE *outFile = fopen(outDir, "wb");
+    FILE *outFile = fopen(OUT_DIR, "wb");
     while (g_flagValue) {
         if (!isRunning_.load()) {
             break;

@@ -11,8 +11,8 @@
  "kits": [
    {
      "test-file-name": [
-       "ActsHevchwEncoderTest.hap",
-       "ActsHevchwEncoderTest.hap"
+       "ActsHevchwEncoderHapTest.hap",
+       "ActsHevchwEncoderMainTest.hap"
      ],
      "type": "AppInstallKit",
      "cleanup-apps": true

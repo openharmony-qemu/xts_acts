@@ -51,7 +51,7 @@ public:
     VEncAPI11Sample() = default;
     ~VEncAPI11Sample();
     const char *inpDir = "/data/storage/el2/base/files/1280_720_nv.yuv";
-    const char *outDir = "/data/storage/el2/base/files/VEncTest.h265";
+    const char *OUT_DIR = "/data/storage/el2/base/files/VEncTest.h265";
     const char *roiInfo = "0,0-128,64=-4;100,200-300,400=3";
     uint32_t defaultWidth = 1280;
     uint32_t defaultHeight = 720;

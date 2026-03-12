@@ -106,33 +106,33 @@ static napi_value CreatePrepareFunc(napi_env env, napi_callback_info info, const
 }
 
 static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_bframe_prepare_fun = {BframeFuncTest::SetUpTestCase,
-                                            nullptr,
-                                            nullptr,
-                                            BframeFuncTest::TearDown
+    nullptr,
+    nullptr,
+    BframeFuncTest::TearDown
 };
 
 static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_postSqr_prepare_fun = {PostSqrFuncTest::SetUpTestCase,
-                                            nullptr,
-                                            nullptr,
-                                            PostSqrFuncTest::TearDown
+    nullptr,
+    nullptr,
+    PostSqrFuncTest::TearDown
 };
 
 static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_ptsApi_prepare_fun = {PtsApiTest::SetUpTestCase,
-                                            nullptr,
-                                            nullptr,
-                                            PtsApiTest::TearDown
+    nullptr,
+    nullptr,
+    PtsApiTest::TearDown
 };
 
 static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_roi_prepare_fun = {RoiFuncTest::SetUpTestCase,
-                                            nullptr,
-                                            nullptr,
-                                            RoiFuncTest::TearDown
+    nullptr,
+    nullptr,
+    RoiFuncTest::TearDown
 };
 
 static const std::array<PrepareFn, PREPARE_FUNC_COUNT> g_sqr_prepare_fun = {SqrFuncTest::SetUpTestCase,
-                                            nullptr,
-                                            nullptr,
-                                            SqrFuncTest::TearDown
+    nullptr,
+    nullptr,
+    SqrFuncTest::TearDown
 };
 
 static napi_value CreateAsyncTest(napi_env env,
