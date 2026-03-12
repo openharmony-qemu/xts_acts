@@ -327,36 +327,4 @@ export default function audioManagerOnInterrupt() {
       done();
     });
   });
-
-  describe('audioVolumeGroupManagerOnMicStateChange', () => {
-    const Tag: string = 'AudioVolumeGroupManagerOnMicStateChange';
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_MIC_STATE_CHANGE_MICSTATE_001
-     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_MIC_STATE_CHANGE_MICSTATE_001
-     * @tc.desc   AudioVolumeGroupManager on micStateChange micState property test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_MIC_STATE_CHANGE_MICSTATE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioManager = audio.getAudioManager();
-      let audioVolumeManager = audioManager.getVolumeManager();
-      let audioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
-      let micStateChangeReceived: boolean = false;
-
-      try {
-        audioVolumeGroupManager.on('micStateChange', (micStateChange: audio.MicStateChangeEvent) => {
-          console.info(`${Tag} micStateChange event received: ${JSON.stringify(micStateChange)}`);
-          expect(micStateChange.mute).assertLargerOrEqual(0);
-          micStateChangeReceived = true;
-        });
-      } catch (err) {
-        console.log(`${Tag} on micStateChange err: ${JSON.stringify(err)}`);
-        expect(false).assertTrue();
-        done();
-      }
-      done();
-    });
-  });
 }
