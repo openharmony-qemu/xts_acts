@@ -22,6 +22,7 @@ import runJavaScriptErrorCode from './RunJavaScriptErrorCode.test';
 import jsMessageExtTwo from './JsMessageExtTwo.test';
 import jsMessageExtThree from './JsMessageExtThree.test';
 import jsMessageExtFour from './JsMessageExtFour.test';
+import runJavaScriptExt from './RunJavaScriptExt.test';
 
 export default function testsuite() {
   webJsunit()
@@ -33,4 +34,5 @@ export default function testsuite() {
   jsMessageExtTwo()
   jsMessageExtThree()
   jsMessageExtFour()
+  runJavaScriptExt()
 }

@@ -8,6 +8,7 @@
       "testability/pages/runJavaScriptErrorCode",
       "testability/pages/jsMessageExtTwo",
       "testability/pages/jsMessageExtThree",
-      "testability/pages/jsMessageExtFour"
+      "testability/pages/jsMessageExtFour",
+      "testability/pages/runJavaScriptExt"
   ]
 }

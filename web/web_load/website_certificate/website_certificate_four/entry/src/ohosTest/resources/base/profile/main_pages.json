@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/webViewOnSslErrorEvent",
-    "testability/pages/webViewOnSslErrorEventTwo"
+    "testability/pages/webViewOnSslErrorEventTwo",
+    "testability/pages/webViewOnSslErrorEventThree"
   ]
 }

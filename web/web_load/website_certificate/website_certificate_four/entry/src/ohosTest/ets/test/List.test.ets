@@ -15,8 +15,10 @@
 
 import webViewOnSslErrorEvent from './webViewOnSslErrorEvent.test';
 import webViewOnSslErrorEventTwo from './WebViewOnSslErrorEventTwo.test';
+import webViewOnSslErrorEventThree from './WebViewOnSslErrorEventThree.test';
 
 export default function testsuite() {
        webViewOnSslErrorEvent()
        webViewOnSslErrorEventTwo()
+       webViewOnSslErrorEventThree()
 }

@@ -86,13 +86,30 @@ struct webViewOnMetaOnOverriderUrlLoading {
                 .domStorageAccess(this.domStorageAccess)
                 .onlineImageAccess(this.onlineImageAccess)
                 .databaseAccess(this.databaseAccess)
-                
                 .onOverrideUrlLoading((webResourceRequest: WebResourceRequest) => {
-                    if (webResourceRequest && webResourceRequest.getRequestUrl() == "https://www.example.com/") {
-                        console.log('== abort')
-                        return true;
+                  if (webResourceRequest && webResourceRequest.getRequestUrl() == "https://www.example.com/") {
+                    console.log('onOverrideUrlLoading getRequestUrl==>' + webResourceRequest.getRequestUrl());
+                    console.log('onOverrideUrlLoading getRequestHeader==>' + webResourceRequest.getRequestHeader());
+                    console.log('onOverrideUrlLoading isMainFrame==>' + webResourceRequest.isMainFrame());
+                    console.log('onOverrideUrlLoading isRedirect==>' + webResourceRequest.isRedirect());
+                    console.log('onOverrideUrlLoading isRequestGesture==>' + webResourceRequest.isRequestGesture());
+                    console.log('onOverrideUrlLoading getRequestMethod==>' + webResourceRequest.getRequestMethod());
+                    console.log('== abort')
+                    Utils.emitEvent(webResourceRequest.getRequestUrl(), 26031028);
+                    let headerArr = webResourceRequest.getRequestHeader();
+                    if (headerArr && headerArr.length >0 ) {
+                      Utils.emitEvent(true, 26031029);
                     }
-                    return false;
+                    Utils.emitEvent(webResourceRequest.isMainFrame(), 26031030);
+                    Utils.emitEvent(webResourceRequest.isRedirect(), 26031031);
+                    Utils.emitEvent(webResourceRequest.isRequestGesture(), 26031032);
+                    let methodValue = webResourceRequest.getRequestMethod();
+                    if (methodValue === 'GET') {
+                      Utils.emitEvent(true, 26031033);
+                    }
+                    return true;
+                  }
+                  return false;
                 })
                 .onPageEnd((event) => {
                   console.log('onPageEnd url:' + event.url);
