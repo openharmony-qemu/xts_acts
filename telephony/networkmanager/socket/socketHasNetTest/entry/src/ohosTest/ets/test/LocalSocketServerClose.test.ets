@@ -595,7 +595,7 @@ export default function LocalSocketServerCloseTest() {
         let listenAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        localServer.on('connect', async (localSocketConnection: socket.localSocketConnection) => {
+        localServer.on('connect', async (localSocketConnection: socket.LocalSocketConnection) => {
           console.info(`${caseName} localServer on  connect`);
           localServer.close().then(()=>{
             console.info(`${caseName} localServer close success`);
@@ -628,7 +628,7 @@ export default function LocalSocketServerCloseTest() {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
-          address: LocalAddress,
+          address: localAddress,
         }
         await localClient.connect(connectOpt).then(() => {
           console.info(`${caseName} localClient connect success`);
@@ -672,7 +672,7 @@ export default function LocalSocketServerCloseTest() {
         let listenAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        localServer.on('connect', async (localSocketConnection: socket.localSocketConnection) => {
+        localServer.on('connect', async (localSocketConnection: socket.LocalSocketConnection) => {
           console.info(`${caseName} localServer on  connect`);
           localServer.close().then(()=>{
             console.info(`${caseName} localServer close success`);
@@ -689,9 +689,10 @@ export default function LocalSocketServerCloseTest() {
           console.info(`${caseName} localServer listen success`);
           localServer.getExtraOptions().then((options: socket.ExtraOptionsBase) => {
             console.info(`options `+JSON.stringify(options));
-            ExpectTrue(options.isBound != null);
-            ExpectTrue(options.isClose != null);
-            ExpectTrue(options.isConnected == null);
+            ExpectTrue(options.receiveBufferSize != null);
+            ExpectTrue(options.sendBufferSize != null);
+            ExpectTrue(options.reuseAddress != null);
+            ExpectTrue(options.socketTimeout == null);
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
@@ -705,7 +706,7 @@ export default function LocalSocketServerCloseTest() {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
-          address: LocalAddress,
+          address: localAddress,
         }
         await localClient.connect(connectOpt).then(() => {
           console.info(`${caseName} localClient connect success`);
@@ -750,7 +751,7 @@ export default function LocalSocketServerCloseTest() {
         let listenAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        localServer.on('connect', async (localSocketConnection: socket.localSocketConnection) => {
+        localServer.on('connect', async (localSocketConnection: socket.LocalSocketConnection) => {
           console.info(`${caseName} localServer on  connect`);
           localServer.close().then(()=>{
             console.info(`${caseName} localServer close success`);
@@ -774,7 +775,7 @@ export default function LocalSocketServerCloseTest() {
           address: sandboxPath
         }
         let connectOpt: socket.LocalConnectOptions = {
-          address: LocalAddress,
+          address: localAddress,
         }
         await localClient.connect(connectOpt).then(() => {
           console.info(`${caseName} localClient connect success`);
