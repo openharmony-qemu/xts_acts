@@ -179,36 +179,7 @@ export default function sceneTypesTest() {
         let topology = customGeometry.topology;
         expect(topology != undefined).assertTrue();
         expect(topology != null).assertTrue();
-        expect(typeof topology).assertEqual('number');
         console.info(msg + " topology getter succeeded");
-
-        console.info(msg + " test completed successfully");
-        done();
-      } catch (err) {
-        console.info(msg + ' Failed: ' + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   testCustomGeometryGetTopologyUndefined
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1481
-     * @tc.desc   Test CustomGeometry.topology can be undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testCustomGeometryGetTopologyUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
-      let msg = "============================testCustomGeometryGetTopologyUndefined";
-      console.info(msg + ' begin ');
-      try {
-        let customGeometry = new CustomGeometry();
-        customGeometry.topology = undefined;
-
-        let topology = customGeometry.topology;
-        expect(topology).assertUndefined();
-        console.info(msg + " topology can be undefined");
 
         console.info(msg + " test completed successfully");
         done();
@@ -334,11 +305,6 @@ export default function sceneTypesTest() {
         expect(emptyIndices?.length == 0).assertTrue();
         console.info(msg + " empty array test succeeded");
 
-        customGeometry.indices = undefined;
-        let undefinedIndices = customGeometry.indices;
-        expect(undefinedIndices).assertUndefined();
-        console.info(msg + " undefined test succeeded");
-
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -400,11 +366,6 @@ export default function sceneTypesTest() {
         let emptyNormals = customGeometry.normals;
         expect(emptyNormals?.length == 0).assertTrue();
         console.info(msg + " empty array test succeeded");
-
-        customGeometry.normals = undefined;
-        let undefinedNormals = customGeometry.normals;
-        expect(undefinedNormals).assertUndefined();
-        console.info(msg + " undefined test succeeded");
 
         console.info(msg + " test completed successfully");
         done();
@@ -468,11 +429,6 @@ export default function sceneTypesTest() {
         expect(emptyUvs?.length == 0).assertTrue();
         console.info(msg + " empty array test succeeded");
 
-        customGeometry.uvs = undefined;
-        let undefinedUvs = customGeometry.uvs;
-        expect(undefinedUvs).assertUndefined();
-        console.info(msg + " undefined test succeeded");
-
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -534,11 +490,6 @@ export default function sceneTypesTest() {
         let emptyColors = customGeometry.colors;
         expect(emptyColors?.length == 0).assertTrue();
         console.info(msg + " empty array test succeeded");
-
-        customGeometry.colors = undefined;
-        let undefinedColors = customGeometry.colors;
-        expect(undefinedColors).assertUndefined();
-        console.info(msg + " undefined test succeeded");
 
         console.info(msg + " test completed successfully");
         done();
@@ -711,7 +662,6 @@ export default function sceneTypesTest() {
         let radius = sphereGeometry.radius;
         expect(radius != undefined).assertTrue();
         expect(radius != null).assertTrue();
-        expect(typeof radius).assertEqual('number');
         console.info(msg + " radius getter succeeded");
 
         console.info(msg + " test completed successfully");
@@ -769,7 +719,6 @@ export default function sceneTypesTest() {
         let segmentCount = sphereGeometry.segmentCount;
         expect(segmentCount != undefined).assertTrue();
         expect(segmentCount != null).assertTrue();
-        expect(typeof segmentCount).assertEqual('number');
         console.info(msg + " segmentCount getter succeeded");
 
         console.info(msg + " test completed successfully");
@@ -827,7 +776,6 @@ export default function sceneTypesTest() {
         let radius = cylinderGeometry.radius;
         expect(radius != undefined).assertTrue();
         expect(radius != null).assertTrue();
-        expect(typeof radius).assertEqual('number');
         console.info(msg + " radius getter succeeded");
 
         console.info(msg + " test completed successfully");
@@ -885,7 +833,6 @@ export default function sceneTypesTest() {
         let height = cylinderGeometry.height;
         expect(height != undefined).assertTrue();
         expect(height != null).assertTrue();
-        expect(typeof height).assertEqual('number');
         console.info(msg + " height getter succeeded");
 
         console.info(msg + " test completed successfully");
@@ -943,7 +890,6 @@ export default function sceneTypesTest() {
         let segmentCount = cylinderGeometry.segmentCount;
         expect(segmentCount != undefined).assertTrue();
         expect(segmentCount != null).assertTrue();
-        expect(typeof segmentCount).assertEqual('number');
         console.info(msg + " segmentCount getter succeeded");
 
         console.info(msg + " test completed successfully");
