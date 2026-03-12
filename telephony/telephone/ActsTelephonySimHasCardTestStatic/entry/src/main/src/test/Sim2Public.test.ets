@@ -375,7 +375,7 @@ export default function Sim2Public() {
       sim.hasSimCard(0, (err: BusinessError | null, data: boolean | undefined) => {
         if (data) {
           console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-          let simsate:sim.simsate=sim.getSimStateSync(0);
+          let simsate:sim.SimState=sim.getSimStateSync(0);
           const simStateAry: number[] = [
             sim.SimState.SIM_STATE_UNKNOWN,
             sim.SimState.SIM_STATE_LOCKED,
