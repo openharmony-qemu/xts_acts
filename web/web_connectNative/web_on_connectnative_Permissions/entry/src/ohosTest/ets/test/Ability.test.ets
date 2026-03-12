@@ -155,13 +155,7 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative succeed`);
         }).catch((err: BusinessError) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative error: ${JSON.stringify(err)}`);
-          if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
-            expect(Number(err.code)).assertEqual(201);
-            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag17100203','111');
-          } else {
-            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag801','222');
-            expect(Number(err.code)).assertEqual(801);
-          }
+          expect(Number(err.code)).assertEqual(201);
           done();
         });
         connId = 0;
