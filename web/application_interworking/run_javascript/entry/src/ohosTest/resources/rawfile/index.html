@@ -16,53 +16,53 @@
     <div id="pageHeight"></div>
 </body>
 <script>
-    function getUserAgent(){
+    function getUserAgent() {
         return navigator.userAgent;
     }
-    function test(){
-        backToEts.test("backToEts");
+    function test() {
+        backToEts.test('backToEts');
     }
-    function testRunJavaScript(){
-        return "testRunJavaScript";
+    function testRunJavaScript() {
+        return 'testRunJavaScript';
     }
-    function getPageHeight(){
-        let height=document.body.scrollHeight;
+    function getPageHeight() {
+        let height = document.body.scrollHeight;
         return height;
     }
-    function proxy(){
-        objName.register("backToEts");
+    function proxy() {
+        objName.register('backToEts');
     }
-    function registerTest(){
-        let str=objName.register();
+    function registerTest() {
+        let str = objName.register();
         console.log(str);
         return str;
     }
-    function jsAccess(){
-        console.log("web111");
+    function jsAccess() {
+        console.log('web111');
     }
-    function consoleTest(){
-        console.log("console test");
+    function consoleTest() {
+        console.log('console test');
     }
-    function alertTest(){
+    function alertTest() {
         alert('alert test');
     }
-    function confirmTest(){
-        confirm("confirm test");
+    function confirmTest() {
+        confirm('confirm test');
     }
-    function getImgResult(){
+    function getImgResult() {
         return loadImage;
     }
-    function toPrompt(){
-        let result=prompt("age","20");
-        console.log("result:"+result);
+    function toPrompt() {
+        let result = prompt('age', '20');
+        console.log('result:' + result);
     }
-    function openRawFile(){
-        document.getElementById("fileAccess").click();
+    function openRawFile() {
+        document.getElementById('fileAccess').click();
     }
-    function gettitle(){
+    function gettitle() {
         return document.title;
     }
-    function triggerPostRequest(){
+    function triggerPostRequest() {
         fetch('http://localhost/test', {
             method: 'POST',
             headers: {

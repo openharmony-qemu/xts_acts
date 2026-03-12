@@ -108,7 +108,7 @@ struct Index {
             case 'emitRemoveAdsBlockDisallowedListValidArray001': {
               try {
                 console.info('test AdsBlockManager.removeAdsBlockDisallowedList with valid non-empty array');
-                let domainSuffixes: Array<string> = ['example.com', 'test.com', 'ads.example.org'];
+                let domainSuffixes: string[] = ['example.com', 'test.com', 'ads.example.org'];
                 webView.AdsBlockManager.removeAdsBlockDisallowedList(domainSuffixes);
                 Utils.emitEvent(true, 182030);
               } catch (error) {
