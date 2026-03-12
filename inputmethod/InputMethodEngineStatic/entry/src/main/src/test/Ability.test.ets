@@ -120,7 +120,7 @@ export default function inputMethodEngineStatic() {
                   })
             };
 
-        beforeAll(async (done: ()=> void)) => {
+        beforeAll(async (done: ()=> void) => {
             try {
               let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
               await Utils.msSleep(2000);
