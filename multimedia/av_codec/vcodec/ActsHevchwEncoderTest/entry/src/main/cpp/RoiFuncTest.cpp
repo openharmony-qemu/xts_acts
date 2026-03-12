@@ -24,10 +24,10 @@
 #include "include/BframeFuncTest.h"
 
 namespace {
-OH_AVCodec *gVenc = nullptr;
+OH_AVCodec *g_venc = nullptr;
 OH_AVCapability *g_capHevc = nullptr;
-OH_AVCapability *gCap = nullptr;
-const char *outDir = "/data/storage/el2/base/files/VIDEO_ENCODE_FILE_ROI.h265";
+OH_AVCapability *g_cap = nullptr;
+const char *OUT_DIR = "/data/storage/el2/base/files/VIDEO_ENCODE_FILE_ROI.h265";
 const char *CODEC_NAME = "";
 const char *CODEC_HEVC = "";
 constexpr int32_t SQR = 2; // CQ mode
@@ -63,8 +63,8 @@ using namespace OHOS::Media;
 namespace RoiFuncTest {
 void SetUpTestCase()
 {
-    gCap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    CODEC_NAME = OH_AVCapability_GetName(gCap);
+    g_cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    CODEC_NAME = OH_AVCapability_GetName(g_cap);
     cout << "codecname: " << CODEC_NAME << endl;
     g_capHevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     CODEC_HEVC = OH_AVCapability_GetName(g_capHevc);
@@ -72,9 +72,9 @@ void SetUpTestCase()
 }
 void TearDown()
 {
-    if (gVenc != NULL) {
-        OH_VideoEncoder_Destroy(gVenc);
-        gVenc = nullptr;
+    if (g_venc != NULL) {
+        OH_VideoEncoder_Destroy(g_venc);
+        g_venc = nullptr;
     }
 }
 } // RoiFuncTest
@@ -99,7 +99,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_001()
     vEncSample->roiInfo = "10,10-100,100=-8;100,1-200,200=-4;"
                       "300,350-430,440=-4;510,54050,690=-4;"
                       "700,710-820,1000=-4";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = INP_DIR_1920_30;
@@ -130,7 +130,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_002()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1920;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1080;
     vEncSample->roiInfo = "440,1272-1080,1920=-51";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->defaultBitrateMode = VBR;
     vEncSample->inpDir = INP_DIR_1920_30;
@@ -161,7 +161,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_003()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,650=51";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
@@ -196,7 +196,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_004()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->roiInfo = "0,0-500,500;500,500-600,600;600,500-700,600";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -232,7 +232,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_005()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1920;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1080;
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = INP_DIR_1920_30;
@@ -265,7 +265,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_006()
     vEncSample->roiInfo = "10,10-100,100=-8;100,10-200,200=-4;"
                         "300,350-430,440=-4;510,540650,690=-4;"
                         "700,710-80,1000=-4";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -296,7 +296,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_007()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->roiInfo = "400,1272-1080,1920=-51";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = VBR;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -327,7 +327,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,650=51";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -363,7 +363,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_009()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->roiInfo = "0,0-500,500;500,500-600,600;600,500-700,600";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
@@ -400,7 +400,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_010()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;

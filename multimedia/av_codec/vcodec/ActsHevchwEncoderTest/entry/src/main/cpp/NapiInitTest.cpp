@@ -210,7 +210,9 @@ inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 static napi_value Bframe_Func_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-        env, info, g_bframeFunc_test_Handlers.data(),
+        env,
+        info,
+        g_bframeFunc_test_Handlers.data(),
         g_bframeFunc_test_Handlers.size(),
         "Bframe_Func_Test");
 }
@@ -218,7 +220,9 @@ static napi_value Bframe_Func_Test(napi_env env, napi_callback_info info)
 static napi_value Post_Sqr_Func_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-        env, info, g_postSqrFunc_test_Handlers.data(),
+        env,
+        info,
+        g_postSqrFunc_test_Handlers.data(),
         g_postSqrFunc_test_Handlers.size(),
         "Post_Sqr_Func_Test");
 }
@@ -226,7 +230,9 @@ static napi_value Post_Sqr_Func_Test(napi_env env, napi_callback_info info)
 static napi_value Pts_Api_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-        env, info, g_ptsApi_test_Handlers.data(),
+        env,
+        info,
+        g_ptsApi_test_Handlers.data(),
         g_ptsApi_test_Handlers.size(),
         "Pts_Api_Test");
 }
@@ -234,21 +240,21 @@ static napi_value Pts_Api_Test(napi_env env, napi_callback_info info)
 static napi_value Roi_Func_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-    env,
-    info,
-    g_roiFunc_test_Handlers.data(),
-    g_roiFunc_test_Handlers.size(),
-    "Roi_Func_Test");
+        env,
+        info,
+        g_roiFunc_test_Handlers.data(),
+        g_roiFunc_test_Handlers.size(),
+        "Roi_Func_Test");
 }
 
 static napi_value Sqr_Func_Test(napi_env env, napi_callback_info info)
 {
     return CreateAsyncTest(
-    env,
-    info,
-    g_sqrFunc_test_Handlers.data(),
-    g_sqrFunc_test_Handlers.size(),
-    "Sqr_Func_Test");
+        env,
+        info,
+        g_sqrFunc_test_Handlers.data(),
+        g_sqrFunc_test_Handlers.size(),
+        "Sqr_Func_Test");
 }
 
 static napi_value Bframe_Func_Test_Prepare(napi_env env, napi_callback_info info)

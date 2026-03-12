@@ -29,11 +29,11 @@ using namespace OHOS;
 using namespace OHOS::Media;
 
 namespace {
-OH_AVCodec *gVenc = nullptr;
-OH_AVCapability* gCap = nullptr;
+OH_AVCodec *g_venc = nullptr;
+OH_AVCapability* g_cap = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
 const char* CODEC_NAME = "";
-const char* outDir = "/data/storage/el2/base/files/videoEncodeFileRoi.h265";
+const char* OUT_DIR = "/data/storage/el2/base/files/videoEncodeFileRoi.h265";
 constexpr int32_t SQR = 2; // CQ mode
 constexpr int32_t DEFAULT_WIDTH_1080 = 1080;
 constexpr int32_t DEFAULT_HEIGHT_1920 = 1920;
@@ -72,9 +72,9 @@ void SetUpTestCase()
 }
 void TearDown()
 {
-    if (gVenc != nullptr) {
-        OH_VideoEncoder_Destroy(gVenc);
-        gVenc = nullptr;
+    if (g_venc != nullptr) {
+        OH_VideoEncoder_Destroy(g_venc);
+        g_venc = nullptr;
     }
 }
 } //SqrFuncTest
@@ -96,7 +96,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_001()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
@@ -134,7 +134,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_002()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
@@ -170,7 +170,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_003()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
@@ -206,7 +206,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_004()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
@@ -238,7 +238,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_005()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
     vEncSample->surfInput = true;
@@ -274,7 +274,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_006()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
@@ -308,7 +308,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_007()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
@@ -344,7 +344,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_008()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
@@ -382,7 +382,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_009()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
@@ -419,13 +419,13 @@ int VIDEO_HW_ENCODE_SQR_FUNC_010()
     if (!isSupported) {
         return 0;
     }
-    gCap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    const char *codecNameAvc = OH_AVCapability_GetName(gCap);
+    g_cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    const char *codecNameAvc = OH_AVCapability_GetName(g_cap);
     cout << "codecNameAvc: " << codecNameAvc << endl;
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->maxbiteEnable = true;
@@ -461,7 +461,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_011()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
@@ -497,7 +497,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_012()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
@@ -529,7 +529,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_013()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
     vEncSample->surfInput = true;
@@ -565,7 +565,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_014()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
-    vEncSample->outDir = outDir;
+    vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;

@@ -30,7 +30,7 @@ using namespace OHOS;
 using namespace OHOS::Media;
 
 namespace {
-OH_AVCodec* gVenc = nullptr;
+OH_AVCodec* g_venc = nullptr;
 const char* CODEC_NAME = "";
 OH_AVCapability* g_capEnc = nullptr;
 OH_AVFormat* gFormat = nullptr;
@@ -75,9 +75,9 @@ void SetUpTestCase()
 }
 void TearDown()
 {
-    if (gVenc != NULL) {
-        OH_VideoEncoder_Destroy(gVenc);
-        gVenc = nullptr;
+    if (g_venc != NULL) {
+        OH_VideoEncoder_Destroy(g_venc);
+        g_venc = nullptr;
     }
     if (gFormat != nullptr) {
         OH_AVFormat_Destroy(gFormat);

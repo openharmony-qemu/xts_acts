@@ -28,7 +28,7 @@ using namespace OHOS;
 using namespace OHOS::Media;
 
 namespace {
-OH_AVCodec* gVenc = nullptr;
+OH_AVCodec* g_venc = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
 const char* CODEC_NAME = "";
 constexpr double DEFAULT_FRAME_RATE = 30.0;
@@ -59,9 +59,9 @@ void SetUpTestCase()
 }
 void TearDown()
 {
-    if (gVenc != NULL) {
-        OH_VideoEncoder_Destroy(gVenc);
-        gVenc = nullptr;
+    if (g_venc != NULL) {
+        OH_VideoEncoder_Destroy(g_venc);
+        g_venc = nullptr;
     }
 }
 } // PtsApiTest
