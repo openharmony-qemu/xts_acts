@@ -1637,13 +1637,13 @@ export default function HttpRequestInterceptor() {
         chain.addChain(null)
         let cs : http.HttpInterceptor[] = chain.getChain();
         hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
-        cahin.apply(httpRequest)
+        chain.apply(httpRequest)
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
           header: HEADER,
           extraData: BODY_NO_CHANGE,
         };
-        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpRequest) => {
+        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
           if (err) {
             hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
             httpRequest.destory();
@@ -1693,7 +1693,7 @@ export default function HttpRequestInterceptor() {
           header: HEADER,
           extraData: BODY_NO_CHANGE,
         };
-        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpRequest) => {
+        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
           if (err) {
             hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
             httpRequest.destory();
@@ -1743,7 +1743,7 @@ export default function HttpRequestInterceptor() {
           header: HEADER,
           extraData: BODY_NO_CHANGE,
         };
-        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpRequest) => {
+        httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
           if (err) {
             hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
             httpRequest.destory();
