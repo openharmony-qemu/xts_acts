@@ -105,7 +105,96 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_WEB_WebNativeMessagingExtension_0100', Level.LEVEL0, async (done: Function) => {
+      // 我没找到方法让每个任务间隔几秒，来保证上一次的环境已经断开销毁。。
+      await sleep(3000);
       const tcNumber = `SUB_WEB_WebNativeMessagingExtension_0100`;
+      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+      try {
+        pipeRead = testNapi.createPipe();
+        pipeWrite = testNapi.createPipe();
+      } catch(err) {
+        hilog.info(0x0000, 'testTag', `${tcNumber} create pipe error: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+
+      //先注册监听事件
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['webNativeMessaging1_startAbility_200']
+      };
+      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+        sub = subscriber;
+        hilog.info(0x0000, 'testTag', `${tcNumber} createSubscriber succeed`);
+        commonEventManager.subscribe(sub, (err, commonEventData) => {
+          hilog.info(0x0000, 'testTag', `${tcNumber} subscribe callback result: ${JSON.stringify(err)}`);
+          hilog.info(0x0000, 'testTag',
+            `${tcNumber} subscribe callback commonEventData: ${JSON.stringify(commonEventData)}`);
+          expect(commonEventData.parameters?.result).assertEqual(200);
+          done();
+        });
+      });
+
+      let want: Want = {
+        bundleName: 'com.acts.context.webonconnectnativerelypermission',
+        abilityName: 'WebNativeExtensionExtAbility1',
+        parameters:{
+          "ohos.arkweb.extensionOrigin":"testOrigin",
+          "ohos.arkweb.messageReadPipe":{'type':'FD', 'value':pipeWrite.readFd},
+          "ohos.arkweb.messageWritePipe":{'type':'FD', 'value':pipeRead.writeFd}
+        }
+      };
+
+      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+        onConnect(connection) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect connectionId: ${JSON.stringify(connection.connectionId)} ${pipeWrite.writeFd} bundleName:${connection.bundleName}  `);
+          SendCommand("startAbility", pipeWrite.writeFd);
+        },
+        onDisconnect(connection) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect connectionId: ${JSON.stringify(connection.connectionId)}`);
+        },
+        onFailed(code, errMsg) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
+          if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
+            expect(Number(code)).assertEqual(17100203);
+            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag201','444');
+          } else {
+            expect(Number(code)).assertEqual(801);
+            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag801','555');
+          }
+          done();
+        }
+      };
+
+      try {
+        connId = webNativeMessagingExtensionManager.connectNative(context, want, callback);
+        hilog.info(0x0000, 'testTag', `${tcNumber} connectNative: ${connId}`);
+      } catch (err) {
+        hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
+        if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
+          expect(Number(err.code)).assertEqual(17100203);
+          hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag17100203','666');
+        } else {
+          expect(Number(err.code)).assertEqual(801);
+          hilog.info(0x0000, 'assertEqual801','777');
+        }
+
+        done();
+      }
+    })
+   
+
+    // 拉起webNativeExtension后发送命令让其拉起他的主页面，并通过commonEvent来确认拉起结果
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_0200
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_0200
+     * @tc.desc   SUB_WEB_WebNativeMessagingExtension_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_WEB_WebNativeMessagingExtension_0200', Level.LEVEL0, async (done: Function) => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_0200`;
       hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
       try {
@@ -159,9 +248,9 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative error: ${JSON.stringify(err)}`);
           if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
             expect(Number(err.code)).assertEqual(17100203);
-            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag17100203','111');
+            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag17100203','111');
           } else {
-            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0100testTag801','222');
+            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag801','222');
             expect(Number(err.code)).assertEqual(801);
           }
           done();
@@ -177,93 +266,6 @@ export default function abilityTest() {
       }
     })
 
-    // 拉起webNativeExtension后发送命令让其拉起他的主页面，并通过commonEvent来确认拉起结果
-    /**
-     * @tc.name   SUB_WEB_WebNativeMessagingExtension_0200
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_0200
-     * @tc.desc   SUB_WEB_WebNativeMessagingExtension_0200
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_WEB_WebNativeMessagingExtension_0200', Level.LEVEL0, async (done: Function) => {
-      // 我没找到方法让每个任务间隔几秒，来保证上一次的环境已经断开销毁。。
-      await sleep(3000);
-      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_0200`;
-      hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
-
-      try {
-        pipeRead = testNapi.createPipe();
-        pipeWrite = testNapi.createPipe();
-      } catch(err) {
-        hilog.info(0x0000, 'testTag', `${tcNumber} create pipe error: ${JSON.stringify(err)}`);
-        expect().assertFail();
-        done();
-      }
-
-      //先注册监听事件
-      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ['webNativeMessaging1_startAbility_200']
-      };
-      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
-        sub = subscriber;
-        hilog.info(0x0000, 'testTag', `${tcNumber} createSubscriber succeed`);
-        commonEventManager.subscribe(sub, (err, commonEventData) => {
-          hilog.info(0x0000, 'testTag', `${tcNumber} subscribe callback result: ${JSON.stringify(err)}`);
-          hilog.info(0x0000, 'testTag',
-            `${tcNumber} subscribe callback commonEventData: ${JSON.stringify(commonEventData)}`);
-          expect(commonEventData.parameters?.result).assertEqual(200);
-          done();
-        });
-      });
-
-      let want: Want = {
-        bundleName: 'com.acts.context.webonconnectnativerelypermission',
-        abilityName: 'WebNativeExtensionExtAbility1',
-        parameters:{
-          "ohos.arkweb.extensionOrigin":"testOrigin",
-          "ohos.arkweb.messageReadPipe":{'type':'FD', 'value':pipeWrite.readFd},
-          "ohos.arkweb.messageWritePipe":{'type':'FD', 'value':pipeRead.writeFd}
-        }
-      };
-
-      let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
-        onConnect(connection) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} onConnect connectionId: ${JSON.stringify(connection.connectionId)} ${pipeWrite.writeFd} bundleName:${connection.bundleName}  `);
-          SendCommand("startAbility", pipeWrite.writeFd);
-        },
-        onDisconnect(connection) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect connectionId: ${JSON.stringify(connection.connectionId)}`);
-        },
-        onFailed(code, errMsg) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
-          if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
-            expect(Number(code)).assertEqual(17100203);
-            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag201','444');
-          } else {
-            expect(Number(code)).assertEqual(801);
-            hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag801','555');
-          }
-          done();
-        }
-      };
-
-      try {
-        connId = webNativeMessagingExtensionManager.connectNative(context, want, callback);
-        hilog.info(0x0000, 'testTag', `${tcNumber} connectNative: ${connId}`);
-      } catch (err) {
-        hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
-        if(canIUse('SystemCapability.EnterpriseSpace.ServiceManage')) {
-          expect(Number(err.code)).assertEqual(17100203);
-          hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0200testTag17100203','666');
-        } else {
-          expect(Number(err.code)).assertEqual(801);
-          hilog.info(0x0000, 'assertEqual801','777');
-        }
-
-        done();
-      }
-    })
 
     // 拉起webNativeExtension后发送命令让其拉起他的主页面，并通过commonEvent来确认拉起结果
     /**
