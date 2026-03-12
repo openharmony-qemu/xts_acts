@@ -602,6 +602,855 @@ export default function actsWifiErrorCode401Test() {
             }
             done();
         })
+
+        /**
+         * @tc.name   Sub_Communication_WiFi_GetSignalLevel_Null_Nop_001
+         * @tc.number Sub_Communication_WiFi_GetSignalLevel_Null_Nop_001
+         * @tc.desc   Test getSignalLevel API with null rssi parameter(已废弃接口，无错误码，结果返回false)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_GetSignalLevel_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_GetSignalLevel_Null_Nop_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = wifi.getSignalLevel(null, null);
+            console.log(`${caseName} get result success `, JSON.stringify(result));
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_GetSignalLevel_Undefined_Nop_001
+         * @tc.number Sub_Communication_WiFi_GetSignalLevel_Undefined_Nop_001
+         * @tc.desc   Test getSignalLevel API with undefined rssi parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_GetSignalLevel_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_GetSignalLevel_Undefined_Nop_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = wifi.getSignalLevel(undefined, undefined);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_IsFeatureSupported_Null_Nop_001
+         * @tc.number Sub_Communication_WiFi_IsFeatureSupported_Null_Nop_001
+         * @tc.desc   Test isFeatureSupported API with null featureId parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_IsFeatureSupported_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_IsFeatureSupported_Null_Nop_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = wifi.isFeatureSupported(null);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_IsFeatureSupported_Undefined_Nop_001
+         * @tc.number Sub_Communication_WiFi_IsFeatureSupported_Undefined_Nop_001
+         * @tc.desc   Test isFeatureSupported API with undefined featureId parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_IsFeatureSupported_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_IsFeatureSupported_Undefined_Nop_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = wifi.isFeatureSupported(undefined);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_AddUntrustedConfig_Null_001
+         * @tc.number Sub_Communication_WiFi_AddUntrustedConfig_Null_001
+         * @tc.desc   Test addUntrustedConfig API with null parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_AddUntrustedConfig_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_AddUntrustedConfig_Null_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = await wifi.addUntrustedConfig(null);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_AddUntrustedConfig_Undefined_001
+         * @tc.number Sub_Communication_WiFi_AddUntrustedConfig_Undefined_001
+         * @tc.desc   Test addUntrustedConfig API with undefined parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_AddUntrustedConfig_Undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_AddUntrustedConfig_Undefined_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = await wifi.addUntrustedConfig(undefined);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_RemoveUntrustedConfig_Null_001
+         * @tc.number Sub_Communication_WiFi_RemoveUntrustedConfig_Null_001
+         * @tc.desc   Test removeUntrustedConfig API with null parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_RemoveUntrustedConfig_Null_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_RemoveUntrustedConfig_Null_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = await wifi.removeUntrustedConfig(null);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_RemoveUntrustedConfig_Undefined_001
+         * @tc.number Sub_Communication_WiFi_RemoveUntrustedConfig_Undefined_001
+         * @tc.desc   Test removeUntrustedConfig API with undefined parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_RemoveUntrustedConfig_Undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_RemoveUntrustedConfig_Undefined_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = await wifi.removeUntrustedConfig(undefined);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_CreateGroup_Null_001
+         * @tc.number Sub_Communication_WiFi_CreateGroup_Null_001
+         * @tc.desc   Test createGroup API with null parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_CreateGroup_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_CreateGroup_Null_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = wifi.createGroup(null);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_CreateGroup_Undefined_001
+         * @tc.number Sub_Communication_WiFi_CreateGroup_Undefined_001
+         * @tc.desc   Test createGroup API with undefined parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_CreateGroup_Undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_CreateGroup_Undefined_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = wifi.createGroup(undefined);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_P2pConnect_Null_001
+         * @tc.number Sub_Communication_WiFi_P2pConnect_Null_001
+         * @tc.desc   Test p2pConnect API with null parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_P2pConnect_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_P2pConnect_Null_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = wifi.p2pConnect(null);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+    
+        /**
+         * @tc.name   Sub_Communication_WiFi_P2pConnect_Undefined_001
+         * @tc.number Sub_Communication_WiFi_P2pConnect_Undefined_001
+         * @tc.desc   Test p2pConnect API with undefined parameter
+         * @tc.type   FUNCTION
+         * @tc.size   M
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Communication_WiFi_P2pConnect_Undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+            let caseName = 'Sub_Communication_WiFi_P2pConnect_Undefined_001';
+            console.info(`${caseName} test start`);
+            try {
+            let result = wifi.p2pConnect(undefined);
+            console.log(`${caseName} get result success `, result);
+            expect(result).assertEqual(false);
+            } catch (error) {
+            console.info(`${caseName} error`, JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+            }
+            console.info(`${caseName} test end`);
+            done();
+        });
+
+        /**
+             * @tc.name   Sub_Communication_WiFiManager_GetSignalLevel_Null_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_GetSignalLevel_Null_Nop_001
+             * @tc.desc   Test getSignalLevel API with null rssi parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_GetSignalLevel_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManagerManager_GetSignalLevel_Null_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                let result = wifiMg.getSignalLevel(null, null);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_001
+             * @tc.desc   Test getSignalLevel API with undefined rssi parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_GetSignalLevel_Undefined_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                let result = wifiMg.getSignalLevel(undefined, undefined);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error.code),JSON.stringify(error.message));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_IsFeatureSupported_Null_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_IsFeatureSupported_Null_Nop_001
+             * @tc.desc   Test isFeatureSupported API with null featureId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_IsFeatureSupported_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_IsFeatureSupported_Null_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                let result = wifiMg.isFeatureSupported(null);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_001
+             * @tc.desc   Test isFeatureSupported API with undefined featureId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_IsFeatureSupported_Undefined_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                let result = wifiMg.isFeatureSupported(undefined);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_001
+             * @tc.desc   Test removeCandidateConfig Promise API with null networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                let result = await wifiMg.removeCandidateConfig(null);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_001
+             * @tc.desc   Test removeCandidateConfig Promise API with undefined networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                let result = await wifiMg.removeCandidateConfig(undefined);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_002
+             * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_002
+             * @tc.desc   Test removeCandidateConfig callback API with null networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Null_Nop_002'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.removeCandidateConfig(null, (err, data) => {
+                  if (err) {
+                    console.info(`${caseName} callback error`, JSON.stringify(err));
+                    ExpectTrue(Number(err.code) === 401);
+                    done();
+                    return;
+                  }
+                  console.log(`${caseName} callback success `, data);
+                  expect().assertFail();
+                  done();
+                });
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+                done();
+              }
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_002
+             * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_002
+             * @tc.desc   Test removeCandidateConfig callback API with undefined networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Undefined_Nop_002'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.removeCandidateConfig(undefined, (err, data) => {
+                  if (err) {
+                    console.info(`${caseName} callback error`, JSON.stringify(err));
+                    ExpectTrue(Number(err.code) === 401);
+                    done();
+                    return;
+                  }
+                  console.log(`${caseName} callback success `, data);
+                  expect().assertFail();
+                  done();
+                });
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+                done();
+              }
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_001
+             * @tc.desc   Test connectToCandidateConfig API with null networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_ConnectToCandidateConfig_Null_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.connectToCandidateConfig(null);
+                console.log(`${caseName} get result success`);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_001
+             * @tc.desc   Test connectToCandidateConfig API with undefined networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_ConnectToCandidateConfig_Undefined_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.connectToCandidateConfig(undefined);
+                console.log(`${caseName} get result success`);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_001
+             * @tc.desc   Test connectToCandidateConfigWithUserAction API with null networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Null_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.connectToCandidateConfigWithUserAction(null);
+                console.log(`${caseName} get result success`);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_001
+             * @tc.desc   Test connectToCandidateConfigWithUserAction API with undefined networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_connectToCandidateConfigWithUserAction_Undefined_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.connectToCandidateConfigWithUserAction(undefined);
+                console.log(`${caseName} get result success`);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_ConnectToNetwork_Null_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_ConnectToNetwork_Null_Nop_001
+             * @tc.desc   Test connectToNetwork API with null networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_ConnectToNetwork_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_ConnectToNetwork_Null_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.connectToNetwork(null);
+                console.log(`${caseName} get result success`);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_001
+             * @tc.desc   Test connectToNetwork API with undefined networkId parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_ConnectToNetwork_Undefined_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.connectToNetwork(undefined);
+                console.log(`${caseName} get result success`);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_RemoveDevice_Null_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_RemoveDevice_Null_Nop_001
+             * @tc.desc   Test removeDevice API with null id parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_RemoveDevice_Null_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_RemoveDevice_Null_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.removeDevice(null);
+                console.log(`${caseName} get result success`);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_RemoveDevice_Undefined_Nop_001
+             * @tc.number Sub_Communication_WiFiManager_RemoveDevice_Undefined_Nop_001
+             * @tc.desc   Test removeDevice API with undefined id parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_RemoveDevice_Undefined_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_RemoveDevice_Undefined_Nop_001'
+              console.info(`${caseName} test start`);
+              try {
+                wifiMg.removeDevice(undefined);
+                console.log(`${caseName} get result success`);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_AddDeviceConfig_Null_001
+             * @tc.number Sub_Communication_WiFiManager_AddDeviceConfig_Null_001
+             * @tc.desc   Test addDeviceConfig API with null parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_AddDeviceConfig_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_AddDeviceConfig_Null_001';
+              console.info(`${caseName} test start`);
+              try {
+                let result = await wifiMg.addDeviceConfig(null);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_AddDeviceConfig_Undefined_001
+             * @tc.number Sub_Communication_WiFiManager_AddDeviceConfig_Undefined_001
+             * @tc.desc   Test addDeviceConfig API with undefined parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_AddDeviceConfig_Undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_AddDeviceConfig_Undefined_001';
+              console.info(`${caseName} test start`);
+              try {
+                let result = await wifiMg.addDeviceConfig(undefined);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_AddCandidateConfig_Null_001
+             * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_Null_001
+             * @tc.desc   Test addCandidateConfig API with null parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_AddCandidateConfig_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_Null_001';
+              console.info(`${caseName} test start`);
+              try {
+                let result = await wifiMg.addCandidateConfig(null);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_AddCandidateConfig_Undefined_001
+             * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_Undefined_001
+             * @tc.desc   Test addCandidateConfig API with undefined parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_AddCandidateConfig_Undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_Undefined_001';
+              console.info(`${caseName} test start`);
+              try {
+                let result = await wifiMg.addCandidateConfig(undefined);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_CreateGroup_Null_001
+             * @tc.number Sub_Communication_WiFiManager_CreateGroup_Null_001
+             * @tc.desc   Test createGroup API with null parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_CreateGroup_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_CreateGroup_Null_001';
+              console.info(`${caseName} test start`);
+              try {
+                let result = wifiMg.createGroup(null);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_CreateGroup_Undefined_001
+             * @tc.number Sub_Communication_WiFiManager_CreateGroup_Undefined_001
+             * @tc.desc   Test createGroup API with undefined parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_CreateGroup_Undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_CreateGroup_Undefined_001';
+              console.info(`${caseName} test start`);
+              try {
+                let result = wifiMg.createGroup(undefined);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_P2pConnect_Null_001
+             * @tc.number Sub_Communication_WiFiManager_P2pConnect_Null_001
+             * @tc.desc   Test p2pConnect API with null parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_P2pConnect_Null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_P2pConnect_Null_001';
+              console.info(`${caseName} test start`);
+              try {
+                let result = wifiMg.p2pConnect(null);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
+        
+            /**
+             * @tc.name   Sub_Communication_WiFiManager_P2pConnect_Undefined_001
+             * @tc.number Sub_Communication_WiFiManager_P2pConnect_Undefined_001
+             * @tc.desc   Test p2pConnect API with undefined parameter
+             * @tc.type   FUNCTION
+             * @tc.size   MEDIUMTEST
+             * @tc.level  LEVEL2
+             */
+            it('Sub_Communication_WiFiManager_P2pConnect_Undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+              let caseName = 'Sub_Communication_WiFiManager_P2pConnect_Undefined_001';
+              console.info(`${caseName} test start`);
+              try {
+                let result = wifiMg.p2pConnect(undefined);
+                console.log(`${caseName} get result success `, result);
+                expect().assertFail();
+              } catch (error) {
+                console.info(`${caseName} error`, JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+              }
+              console.info(`${caseName} test end`);
+              done();
+            });
         console.log("*************[wifi_test] start wifi js unit test end*************");
     })
 }
