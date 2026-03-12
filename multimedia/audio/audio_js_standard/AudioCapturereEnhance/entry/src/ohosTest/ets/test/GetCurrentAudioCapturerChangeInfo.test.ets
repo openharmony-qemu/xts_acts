@@ -348,6 +348,7 @@ export default function audioCapturerEnhanceTest() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`${Tag} outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`Determine if this is a default device`)
@@ -356,6 +357,8 @@ export default function audioCapturerEnhanceTest() {
         );
       if (detecteDevice) {
           console.info(`this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }

@@ -5134,6 +5134,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -5142,6 +5143,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -5170,6 +5173,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -5178,6 +5182,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -5206,6 +5212,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -5214,6 +5221,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -5249,6 +5258,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETMICROPHONEMUTE_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -5257,6 +5267,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -5292,6 +5304,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -5300,6 +5313,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -5346,6 +5361,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -5354,6 +5370,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -5384,6 +5402,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let flags: boolean = false;
       let flag: boolean | null = null;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
@@ -5393,6 +5412,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flags = true;
+          expect(flags).assertEqual(true);
           done();
           return;
       }
@@ -5439,6 +5460,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_SETDEVICEACTIVE_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -5447,6 +5469,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -8896,6 +8920,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISMICROPHONEMUTE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISMICROPHONEMUTE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -8904,6 +8929,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -8961,6 +8988,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let flags: boolean = false;
       let flag: boolean | null = null;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
@@ -8970,6 +8998,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flags = true;
+          expect(flags).assertEqual(true);
           done();
           return;
       }
@@ -9013,6 +9043,7 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -9021,6 +9052,8 @@ export default function audioFramework() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
+          flags = true;
+          expect(flags).assertEqual(true);
           done();
           return;
       }
