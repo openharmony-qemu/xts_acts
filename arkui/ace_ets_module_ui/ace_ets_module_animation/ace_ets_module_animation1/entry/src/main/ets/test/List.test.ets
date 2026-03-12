@@ -66,6 +66,9 @@ import AnimateToNullUndefined from './global/AnimateToNullUndefined.test';
 import ForegroundBlurStyleTest from './nullandundefinedTestTest/ForegroundBlurStyleTest.test';
 import BackgroundBlurStyleTest from './nullandundefinedTestTest/BackgroundBlurStyleTest.test';
 import ImageBlurTest from './nullandundefinedTestTest/ImageBlurTest.test';
+import BackdropBlurTest from './nullandundefinedTestTest/BackdropBlurTest.test';
+import UniversalAttributesTest from './nullandundefinedTestTest/UniversalAttributesTest.test';
+import QueryNavDestinationInfoTest from './nullandundefinedTestTest/QueryNavDestinationInfoTest.test';
 
 
 export default function testsuite() {
@@ -122,4 +125,7 @@ export default function testsuite() {
   BackgroundBlurStyleTest();
   ForegroundBlurStyleTest();
   ImageBlurTest();
+  BackdropBlurTest();
+  UniversalAttributesTest();
+  QueryNavDestinationInfoTest();
 }
