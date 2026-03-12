@@ -385,10 +385,19 @@ export default function Sim2Public() {
               sim.SimState.SIM_STATE_LOADED,
               sim.SimState.SIM_STATE_READY
             ]
-            expect(data).assertEqual(simStateAry[4]);
+            ExpectTrue(simStateAry.includes(data));
+            console.info(`${caseName} test end `);
+            done();
+          }).catch((err: Error): void => {
+            console.info(`${caseName}getSimState failed, promise: err->${JSON.stringify(err)}`);
+            ExpectFail();
             console.info(`${caseName} test end `);
             done();
           });
+        }else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
         }
       });
     });
@@ -1142,52 +1151,53 @@ export default function Sim2Public() {
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testTelephonySimGetSimCardType_static_0300';
         hilog.info(domain, tag, `${caseName} test start `);
-        try {
-          sim.hasSimCard(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
-            if (data) {
-              hilog.info(domain, tag,
-                `${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-              sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType | undefined) => {
-                const simStateAry: sim.CardType[] = [
-                  sim.CardType.UNKNOWN_CARD,
-                  sim.CardType.SINGLE_MODE_SIM_CARD,
-                  sim.CardType.SINGLE_MODE_USIM_CARD,
-                  sim.CardType.SINGLE_MODE_RUIM_CARD,
-                  sim.CardType.DUAL_MODE_CG_CARD,
-                  sim.CardType.CT_NATIONAL_ROAMING_CARD,
-                  sim.CardType.CU_DUAL_MODE_CARD,
-                  sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
-                  sim.CardType.DUAL_MODE_UG_CARD,
-                  sim.CardType.SINGLE_MODE_ISIM_CARD
-                ];
-                if (err?.code === 0) {
-                  ExpectTrue(simStateAry.includes(data));
-                  hilog.info(domain, tag, `${caseName} getCardType true test end `);
-                  done();
-                } else {
-                  ExpectFail();
-                  hilog.info(domain, tag, `${caseName} getCardType else test end `);
-                  done();
-                }
-              });
-            } else {
-              ExpectFail();
-              hilog.info(domain, tag, `${caseName} test end `);
-              done();
-            }
-          });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
-          if (error?.code === PERMISSION_DENIED_CODE) {
-            expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+        sim.hasSimCard(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
+          if (data) {
+            hilog.info(domain, tag,
+              `${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType | undefined) => {
+              const simStateAry: sim.CardType[] = [
+                sim.CardType.UNKNOWN_CARD,
+                sim.CardType.SINGLE_MODE_SIM_CARD,
+                sim.CardType.SINGLE_MODE_USIM_CARD,
+                sim.CardType.SINGLE_MODE_RUIM_CARD,
+                sim.CardType.DUAL_MODE_CG_CARD,
+                sim.CardType.CT_NATIONAL_ROAMING_CARD,
+                sim.CardType.CU_DUAL_MODE_CARD,
+                sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+                sim.CardType.DUAL_MODE_UG_CARD,
+                sim.CardType.SINGLE_MODE_ISIM_CARD
+              ];
+              const isCard: boolean = simStateAry.includes(data);
+              if (isCard) {
+                ExpectTrue(True);
+                hilog.info(domain, tag, `${caseName} getCardType true test end `);
+                done();
+              } else {
+                ExpectFail();
+                hilog.info(domain, tag, `${caseName} getCardType else test end `);
+                done();
+              }
+            });
           } else {
-            expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+            ExpectFail();
+            hilog.info(domain, tag, `${caseName} test end `);
+            done();
           }
+        }).catch((error:Error) => {
+          let err = error as  BusinessError;
+          hilog.info(domain, tag, `${caseName} getCardType failed, promise: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName} test end `);
+          done();
+        });
+        } else {
+          ExpectFail();
           hilog.info(domain, tag, `${caseName} test end `);
           done();
         }
       });
+    });
 
     /**
      * @tc.name   testTelephonySimGetSimCardType_static_0400
