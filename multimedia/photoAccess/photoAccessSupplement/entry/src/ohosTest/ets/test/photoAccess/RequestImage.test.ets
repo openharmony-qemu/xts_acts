@@ -5039,59 +5039,5 @@ export default function requestImageTest() {
         done();
       }
     });
-    /**
-     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001
-     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001
-     * @tc.desc      requestMovingPhoto-photoAsset-第二个参数属性覆盖-photoType为IMAGE
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001', Level.LEVEL0, async (done: Function) => {
-      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001';
-      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      let photoAsset = {uri : '',photoType:1,displayName:''} as photoAccessHelper.PhotoAsset;
-      let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
-      };
-      const handler = new MovingPhotoHandler();
-      try {
-        let requestId: string = await photoAccessHelper.MediaAssetManager.requestMovingPhoto(testContext, photoAsset, requestOptions, handler);
-        expect().assertFail();
-        done();
-      }
-      catch (error) {
-        console.error(TAG,`${testNum} failed; error: ${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000002
-     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000002
-     * @tc.desc      requestMovingPhoto-photoAsset-第二个参数属性覆盖-photoType为VIDEO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000002', Level.LEVEL0, async (done: Function) => {
-      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000002';
-      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      let photoAsset = {uri : '',photoType:2,displayName:''} as photoAccessHelper.PhotoAsset;
-      let requestOptions: photoAccessHelper.RequestOptions = {
-        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
-      };
-      const handler = new MovingPhotoHandler();
-      try {
-        let requestId: string = await photoAccessHelper.MediaAssetManager.requestMovingPhoto(testContext, photoAsset, requestOptions, handler);
-        expect().assertFail();
-        done();
-      }
-      catch (error) {
-        console.error(TAG,`${testNum} failed; error: ${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
-        done();
-      }
-    });
     });
   }

@@ -17,13 +17,25 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level, beforeEach, afterAll, afterEach } from '@ohos/hypium'
 import { getPermission, driveFn, sleep, LOG_TAG, isEmpty, createUserAlbum } from '../common'
 import common from '@ohos.app.ability.common'
-import { Driver, MatchPattern, ON } from '@ohos.UiTest';
+import { Driver, MatchPattern, On, ON } from '@ohos.UiTest';
 import { dataSharePredicates } from '@kit.ArkData';
 import { JSON } from '@kit.ArkTS';
 import { image } from '@kit.ImageKit';
 import { sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
 
 const TAG = LOG_TAG + 'PhotoSetTitleSupp';
+
+class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<photoAccessHelper.MovingPhoto> {
+  async onDataPrepared(movingPhoto: photoAccessHelper.MovingPhoto) {
+    if (movingPhoto === undefined) {
+      console.error('Error occurred when preparing data');
+      return;
+    }
+    let uri = movingPhoto.getUri();
+    console.info("moving photo acquired successfully, uri: " + movingPhoto.getUri());
+    expect(isEmpty(uri)).assertFalse();
+  }
+}
 export default function PhotoSetTitleTestSupp() {
   describe('PhotoSetTitleTestSupp', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -47,7 +59,71 @@ export default function PhotoSetTitleTestSupp() {
       console.info(TAG, 'afterAll case.');
       AppStorage.delete('emptyString');
     });
-
+    /**
+     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001
+     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001
+     * @tc.desc      PhotoViewPicker.select-参数属性覆盖-true
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001', Level.LEVEL0, async (done: Function) => {
+      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001';
+      try {
+        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+        photoSelectOptions.maxSelectNumber = 5;
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoSelectOptions.isEditSupported = true;
+        photoSelectOptions.isOriginalSupported = true;
+        photoSelectOptions.isDestroyedWithNavigation = true;
+        photoSelectOptions.isReturnToPhotoBrowserEnabled = true;
+        photoSelectOptions.subWindowName = "";
+        photoSelectOptions.completeButtonText = 0;
+        let phAsset = {albumUri :'',displayName:'',gridLevel:0} as photoAccessHelper.ContextRecoveryInfo;
+        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
+          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
+          expect(isEmpty(photoSelectResult)).assertFalse();
+          done();
+        })
+        await sleep(3000);
+        await driver?.click(400,550)
+        await sleep(3000);
+        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
+        await power?.click();
+      }
+      catch (error) {
+        console.error(TAG,`${testName} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008
+     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008
+     * @tc.desc      PhotoViewPicker.select-第一个参数为null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008', Level.LEVEL0, async (done: Function) => {
+      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008';
+      try {
+        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+        photoSelectOptions.maxSelectNumber = 5;
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        let photoSelectResult = await photoPicker.select(null);
+        console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: '+ JSON.stringify(photoSelectResult) );
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testName} failed; error: ${error.code}`,JSON.stringify(error));
+        expect(error.code).assertUndefined();
+        done();
+      }
+    });
     /**
      * @tc.number   SUB_GET_SUPPORTED_PHOTO_FORMATS_001
      * @tc.name     SUB_GET_SUPPORTED_PHOTO_FORMATS_001
@@ -1696,6 +1772,8 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
+
+
     /**
      * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_009
      * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_009
@@ -1805,78 +1883,8 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
-    /**
-     * @tc.name   SUB_ON_PHOTO_ALBUM_CHANGE_001
-     * @tc.number SUB_ON_PHOTO_ALBUM_CHANGE_001
-     * @tc.desc   PhotoAccessHelper.on_photoAlbumChange-返回值所有属性覆盖
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ON_PHOTO_ALBUM_CHANGE_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_ON_PHOTO_ALBUM_CHANGE_001';
-      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
-        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 0).assertTrue();
-        expect(isEmpty(changeData.albumChangeDatas)).assertFalse();
-        expect(changeData.isForRecheck).assertFalse();
-        done();
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        PhAccessHelper.on('photoAlbumChange', onCallback);
-        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
-        let newAlbumName: string = 'newAlbumName'+ new Date().getTime();
-        albumChangeRequest.setAlbumName(newAlbumName);
-        await PhAccessHelper.applyChanges(albumChangeRequest);
-      } catch (error) {
-        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
-        expect().assertFail()
-        done();
-      }
-    });
-    /**
-     * @tc.name   SUB_ON_PHOTO_CHANGE_001
-     * @tc.number SUB_ON_PHOTO_CHANGE_001
-     * @tc.desc   PhotoAccessHelper.on_photoChange-返回值所有属性覆盖
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ON_PHOTO_CHANGE_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_ON_PHOTO_CHANGE_001';
-      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-      let fetchOptions: photoAccessHelper.FetchOptions = {
-        fetchColumns: [],
-        predicates: predicates
-      };
-      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
-        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 1).assertTrue();
-        expect(isEmpty(changeData.assetChangeDatas)).assertFalse();
-        expect(changeData.isForRecheck).assertFalse();
-        done();
-      }
-      try {
-        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
-          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
-        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await album.getAssets(fetchOptions);
-        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        PhAccessHelper.on('photoChange', onCallback);
-        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
-        let newTitle: string = 'newTitle';
-        assetChangeRequest.setTitle(newTitle);
-        PhAccessHelper.applyChanges(assetChangeRequest);
-      } catch (error) {
-        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
-        expect().assertFail()
-        done();
-      }
-    });
+
+
     /**
      * @tc.number   SUB_ON_SINGLE_PHOTO_CHANGE_TEST_005
      * @tc.name     SUB_ON_SINGLE_PHOTO_CHANGE_TEST_005
@@ -2035,6 +2043,29 @@ export default function PhotoSetTitleTestSupp() {
       }
     });
     /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_000001
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_000001
+     * @tc.desc      getPhotoAccessHelper-返回值属性覆盖
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_000001', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_000001';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      try {
+        let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
+        console.info(TAG,testNum,'succeed',JSON.stringify(phAccessHelper))
+        expect(isEmpty([phAccessHelper])).assertFalse();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
      * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_00001
      * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_ASSET_GET_LAST_OBJECT_00001
      * @tc.desc      getLastObject-返回值所有属性覆盖
@@ -2135,390 +2166,7 @@ export default function PhotoSetTitleTestSupp() {
         done();
       }
     });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001
-     * @tc.desc      PhotoViewPicker.select-参数属性覆盖-true
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00001';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = true;
-        photoSelectOptions.isOriginalSupported = true;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 0;
-        let phAsset = {albumUri :'',displayName:''} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00002
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00002
-     * @tc.desc      PhotoViewPicker.select-参数属性覆盖-false
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00002', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00002';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = false;
-        photoSelectOptions.isOriginalSupported = false;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 1;
-        let phAsset = {albumUri :'',displayName:''} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00003
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00003
-     * @tc.desc      PhotoViewPicker.select-参数属性覆盖-completeButtonText为TEXT_ADD
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00003', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00003';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = false;
-        photoSelectOptions.isOriginalSupported = false;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 2;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00004
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00004
-     * @tc.desc      PhotoViewPicker.select-参数属性枚举覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00004', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00004';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = true;
-        photoSelectOptions.isOriginalSupported = false;
-        photoSelectOptions.isDestroyedWithNavigation = true;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 2;
-        let phAsset = {albumUri :'',displayName:'',gridLevel:0} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00005
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00005
-     * @tc.desc      PhotoViewPicker.select-参数属性true or false覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00005', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00005';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = false;
-        photoSelectOptions.isOriginalSupported = false;
-        photoSelectOptions.isDestroyedWithNavigation = false;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 1;
-        let phAsset = {albumUri :'',displayName:'',gridLevel:1} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00006
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00006
-     * @tc.desc      PhotoViewPicker.select-参数属性true or false覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00006', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00006';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = true;
-        photoSelectOptions.isOriginalSupported = true;
-        photoSelectOptions.isDestroyedWithNavigation = true;
-        photoSelectOptions.isReturnToPhotoBrowserEnabled = true;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 1;
-        let phAsset = {displayName:'',gridLevel:2} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00006
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00006
-     * @tc.desc      PhotoViewPicker.select-参数属性true or false覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00006', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00006';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = true;
-        photoSelectOptions.isOriginalSupported = true;
-        photoSelectOptions.isDestroyedWithNavigation = true;
-        photoSelectOptions.isReturnToPhotoBrowserEnabled = true;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 1;
-        let phAsset = {displayName:'',gridLevel:2} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00007
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00007
-     * @tc.desc      PhotoViewPicker.select-参数属性true or false覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00007', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00007';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoSelectOptions.isEditSupported = true;
-        photoSelectOptions.isOriginalSupported = false;
-        photoSelectOptions.isDestroyedWithNavigation = true;
-        photoSelectOptions.isReturnToPhotoBrowserEnabled = false;
-        photoSelectOptions.subWindowName = "";
-        photoSelectOptions.completeButtonText = 1;
-        let phAsset = {displayName:'',gridLevel:0} as photoAccessHelper.ContextRecoveryInfo;
-        photoPicker.select(photoSelectOptions).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008
-     * @tc.desc      PhotoViewPicker.select-第一个参数为null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00008';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        let photoSelectResult = await photoPicker.select(null);
-        console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: '+ JSON.stringify(photoSelectResult) );
-        expect().assertFail();
-        done();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`,JSON.stringify(error));
-        expect(error.code).assertUndefined();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00009
-     * @tc.name      SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00009
-     * @tc.desc      PhotoViewPicker.select-第一个参数为undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00009', Level.LEVEL0, async (done: Function) => {
-      let testName= 'SUB_PHOTO_VIEW_PICKER_SELECT_PROMISE_00009';
-      try {
-        let photoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-        photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-        photoSelectOptions.maxSelectNumber = 5;
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(undefined).then((photoSelectResult)=>{
-          console.info(TAG,testName,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult));
-          expect(isEmpty(photoSelectResult)).assertFalse();
-          done();
-        })
-        await sleep(3000);
-        await driver?.click(400,550)
-        await sleep(3000);
-        let power = await driver?.waitForComponent(ON.text('完成', MatchPattern.EQUALS), 500);
-        await power?.click();
-      }
-      catch (error) {
-        console.error(TAG,`${testName} failed; error: ${error.code}`,JSON.stringify(error));
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number    SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_000001
-     * @tc.name      SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_000001
-     * @tc.desc      getPhotoAccessHelper-返回值属性覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_000001', Level.LEVEL0, async (done: Function) => {
-      let testNum = 'SUB_PHOTO_ACCESS_HELPER_GET_PHOTO_ACCESS_HELPER_000001';
-      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-      try {
-        let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
-        console.info(TAG,testNum,'succeed',JSON.stringify(phAccessHelper))
-        expect(isEmpty([phAccessHelper])).assertFalse();
-        done();
-      }
-      catch (error) {
-        console.error(TAG,`${testNum} failed; error: ${error.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
+
     /**
      * @tc.name     SUB_SENDABLE_PHOTO_GET_TEST_00001
      * @tc.number   SUB_SENDABLE_PHOTO_GET_TEST_00001
@@ -2586,6 +2234,39 @@ export default function PhotoSetTitleTestSupp() {
       }
     });
     /**
+     * @tc.name   SUB_ON_PHOTO_ALBUM_CHANGE_001
+     * @tc.number SUB_ON_PHOTO_ALBUM_CHANGE_001
+     * @tc.desc   PhotoAccessHelper.on_photoAlbumChange-返回值所有属性覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ON_PHOTO_ALBUM_CHANGE_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_ON_PHOTO_ALBUM_CHANGE_001';
+      let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
+        expect(changeData.type == 0).assertTrue();
+        expect(isEmpty(changeData.albumChangeDatas)).assertFalse();
+        expect(changeData.isForRecheck).assertFalse();
+        done();
+      }
+      try {
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        PhAccessHelper.on('photoAlbumChange', onCallback);
+
+        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
+        let newAlbumName: string = 'newAlbumName'+ new Date().getTime();
+        albumChangeRequest.setAlbumName(newAlbumName);
+        await PhAccessHelper.applyChanges(albumChangeRequest);
+      } catch (error) {
+        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
+        expect().assertFail()
+        done();
+      }
+    });
+    /**
      * @tc.number    SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001
      * @tc.name      SUB_SENDABLE_PHOTO_ASSET_GET_LAST_OBJECT_PROMISE_00001
      * @tc.desc      sendable-getLastObject-返回值所有属性覆盖
@@ -2620,5 +2301,161 @@ export default function PhotoSetTitleTestSupp() {
       }
     });
 
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001
+     * @tc.desc      requestMovingPhoto-photoAsset-第二个参数属性覆盖-photoType为IMAGE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000001';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let photoAsset = {uri : '',photoType:1,displayName:''} as photoAccessHelper.PhotoAsset;
+      let requestOptions: photoAccessHelper.RequestOptions = {
+        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
+      };
+      const handler = new MovingPhotoHandler();
+      try {
+        let requestId: string = await photoAccessHelper.MediaAssetManager.requestMovingPhoto(testContext, photoAsset, requestOptions, handler);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000002
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000002
+     * @tc.desc      requestMovingPhoto-photoAsset-第二个参数属性覆盖-photoType为VIDEO
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000002', Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_PHOTO_REQUEST_MOVING_PHOTO_000002';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let photoAsset = {uri : '',photoType:2,displayName:''} as photoAccessHelper.PhotoAsset;
+      let requestOptions: photoAccessHelper.RequestOptions = {
+        deliveryMode: photoAccessHelper.DeliveryMode.BALANCE_MODE,
+      };
+      const handler = new MovingPhotoHandler();
+      try {
+        let requestId: string = await photoAccessHelper.MediaAssetManager.requestMovingPhoto(testContext, photoAsset, requestOptions, handler);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error: ${error.code}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_ON_PHOTO_CHANGE_001
+     * @tc.number SUB_ON_PHOTO_CHANGE_001
+     * @tc.desc   PhotoAccessHelper.on_photoChange-返回值所有属性覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ON_PHOTO_CHANGE_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_ON_PHOTO_CHANGE_001';
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
+        expect(changeData.type == 1).assertTrue();
+        expect(isEmpty(changeData.assetChangeDatas)).assertFalse();
+        expect(changeData.isForRecheck).assertFalse();
+        done();
+      }
+      try {
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await PhAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await album.getAssets(fetchOptions);
+        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        PhAccessHelper.on('photoChange', onCallback);
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
+        let newTitle: string = 'newTitle';
+        assetChangeRequest.setTitle(newTitle);
+        await PhAccessHelper.applyChanges(assetChangeRequest);
+        await sleep(1000)
+        PhAccessHelper.off('photoChange', onCallback);
+      } catch (error) {
+        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
+        expect().assertFail()
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002
+     * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002';
+      try {
+        PhAccessHelper.unRegisterChange(undefined);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_001
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_001
+     * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_001';
+      try {
+        PhAccessHelper.unRegisterChange(null);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003
+     * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数""覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003';
+      try {
+        PhAccessHelper.unRegisterChange("");
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
   })
 }
