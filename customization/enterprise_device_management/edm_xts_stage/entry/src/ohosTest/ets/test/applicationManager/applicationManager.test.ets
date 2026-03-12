@@ -1475,7 +1475,7 @@ export default function applicationManagerTest() {
       }
       done();
     })
-
+    
     /**
      * @tc.name   test_addUserNonStopApps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_001
@@ -2304,6 +2304,31 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAutoStartAppsByIsHiddenStart_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_ISHIDDENSTART_001
+     * @tc.desc   test addAutoStartAppsByIsHiddenStart method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAutoStartAppsByIsHiddenStart_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let edmAutoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAutoStartApps(SELFWANT, edmAutoStartApps, DEFAULT_USER_ID, true);
+        let autoStartApps = applicationManager.getAutoStartApps(SELFWANT);
+        expect(autoStartApps.length == 2).assertTrue();
+        expect(autoStartApps[0].parameters?.isHiddenStart).assertFalse();
+        expect(autoStartApps[1].parameters?.isHiddenStart).assertFalse();
+      } catch (error) {
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
