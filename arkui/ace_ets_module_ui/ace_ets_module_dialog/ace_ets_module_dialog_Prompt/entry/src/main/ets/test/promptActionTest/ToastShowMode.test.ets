@@ -44,7 +44,7 @@ export default function ToastShowMode() {
     });
     /* *
     * @tc.number: ToastShowMode_0100
-    * @tc.name  : ToastShowMode_0100
+    * @tc.name  ToastShowMode_0100
     * @tc.desc  : Set whether the pop-up window is displayed on the app.
     * @tc.level : Level 2
     * @tc.type :
@@ -67,7 +67,7 @@ export default function ToastShowMode() {
     });
     /* *
     * @tc.number: ToastShowMode_0200
-    * @tc.name  : ToastShowMode_0200
+    * @tc.name  ToastShowMode_0200
     * @tc.desc  : Set whether the pop-up window is displayed on the app.
     * @tc.level : Level 2
     * @tc.type :

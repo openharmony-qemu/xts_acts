@@ -381,7 +381,7 @@ export default function uiOpenCustomDialogMode() {
 
     /**
      * @tc.number    uiOpenCustomDialogMode_0800
-     * @tc.name      uiOpenCustomDialogMode_0700
+     * @tc.name      uiOpenCustomDialogMode_0800
      * @tc.desc      set levelMode: null,levelUniqueId: Normal value
      * @tc.level:    Level 1
      * @tc.type :

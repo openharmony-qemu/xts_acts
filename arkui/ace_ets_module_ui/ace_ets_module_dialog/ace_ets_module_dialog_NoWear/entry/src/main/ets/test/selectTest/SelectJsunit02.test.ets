@@ -42,7 +42,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_Layout_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_Layout_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -59,7 +59,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_Space_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_Space_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -76,7 +76,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_selected_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_selected_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -93,7 +93,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_value_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_value_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -110,7 +110,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_font_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_font_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -127,7 +127,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_fontColor_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_fontColor_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -144,7 +144,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_selectedOptionFont_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_selectedOptionFont_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -161,7 +161,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_selectedOptionFontColor_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_selectedOptionFontColor_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -177,7 +177,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_selectedOptionFontColor_0200
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_selectedOptionFontColor_0200
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -193,7 +193,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_selectedOptionBgColor_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_selectedOptionBgColor_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -210,7 +210,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_optionBgColor_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_optionBgColor_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -227,7 +227,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_optionFont_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_optionFont_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -244,7 +244,7 @@ export default function SelectJsunit02() {
 
     /**
      * @tc.number ArkUI_Stage_Select_optionFontColor_0100
-     * @tc.name   Test the properties of components
+     * @tc.name   ArkUI_Stage_Select_optionFontColor_0100
      * @tc.desc   Set attribute values
      * @tc.size   MediumTest
      * @tc.type   Function

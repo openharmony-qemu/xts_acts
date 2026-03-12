@@ -46,7 +46,7 @@ export default function selectApiTest1() {
 
     /**
      * @tc.number selectApi1_0100
-     * @tc.name   testFocus
+     * @tc.name   selectApi1_0100
      * @tc.desc
      */
     it('selectApi1_0100', Level.LEVEL1, async (done: Function) => {

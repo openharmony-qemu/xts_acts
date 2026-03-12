@@ -80,7 +80,7 @@ export default function RadioThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsRadioThemeColors_0100
+     * @tc.name   `ActsRadioThemeColors_0100`
      * @tc.number ActsRadioThemeColors_0100
      * @tc.desc   Сheck system colors values of the Radio
      * @tc.type   FUNCTION
@@ -97,7 +97,7 @@ export default function RadioThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsRadioThemeColors_0200
+     * @tc.name   `ActsRadioThemeColors_0200`
      * @tc.number ActsRadioThemeColors_0200
      * @tc.desc   Сheck custom colors values of the Radio
      * @tc.type   FUNCTION
@@ -115,7 +115,7 @@ export default function RadioThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsRadioThemeColors_0300
+     * @tc.name   `ActsRadioThemeColors_0300`
      * @tc.number ActsRadioThemeColors_0300
      * @tc.desc   Сheck custom colors values of the Radio
      * @tc.type   FUNCTION
@@ -134,7 +134,7 @@ export default function RadioThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsRadioThemeColors_0400
+     * @tc.name   `ActsRadioThemeColors_0400`
      * @tc.number ActsRadioThemeColors_0400
      * @tc.desc   Сheck system colors values of the Radio
      * @tc.type   FUNCTION

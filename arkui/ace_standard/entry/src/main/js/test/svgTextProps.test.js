@@ -84,14 +84,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   test' + nameA + 'IdProp
+         * @tc.name   testToolbarIdProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('test' + nameA + 'IdProp', Level.LEVEL0, async function(done) {
+        it('testToolbarIdProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'IdProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -105,14 +105,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt001
+         * @tc.name   testAdapt001ToolbarXPropLength
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt001' + nameA + 'XPropLength', Level.LEVEL0, async function(done) {
+        it('testAdapt001ToolbarXPropLength', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'XPropLength START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -128,14 +128,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt002
+         * @tc.name   testAdapt002ToolbarXPropPercentage
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt002' + nameA + 'XPropPercentage', Level.LEVEL0, async function(done) {
+        it('testAdapt002ToolbarXPropPercentage', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'XPropPercentage START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -151,14 +151,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt003
+         * @tc.name   testAdapt003ToolbarXPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt003' + nameA + 'XPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt003ToolbarXPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'XPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -174,14 +174,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt004
+         * @tc.name   testAdapt004ToolbarYPropLength
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt004' + nameA + 'YPropLength', Level.LEVEL0, async function(done) {
+        it('testAdapt004ToolbarYPropLength', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'YPropLength START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -197,14 +197,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt005
+         * @tc.name   testAdapt005ToolbarYPropPercentage
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt005' + nameA + 'YPropPercentage', Level.LEVEL0, async function(done) {
+        it('testAdapt005ToolbarYPropPercentage', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'YPropPercentage START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -220,14 +220,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt006
+         * @tc.name   testAdapt006ToolbarYPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt006' + nameA + 'YPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt006ToolbarYPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'YPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -243,14 +243,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt007
+         * @tc.name   testAdapt007ToolbarDxPropLength
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt007' + nameA + 'DxPropLength', Level.LEVEL0, async function(done) {
+        it('testAdapt007ToolbarDxPropLength', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DxPropLength START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -266,14 +266,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt008
+         * @tc.name   testAdapt008ToolbarDxPropPercentage
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt008' + nameA + 'DxPropPercentage', Level.LEVEL0, async function(done) {
+        it('testAdapt008ToolbarDxPropPercentage', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DxPropPercentage START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -289,14 +289,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt009
+         * @tc.name   testAdapt009ToolbarDxPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt009' + nameA + 'DxPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt009ToolbarDxPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DxPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -312,14 +312,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt010
+         * @tc.name   testAdapt010ToolbarDyPropLength
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt010' + nameA + 'DyPropLength', Level.LEVEL0, async function(done) {
+        it('testAdapt010ToolbarDyPropLength', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DyPropLength START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -335,14 +335,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt011
+         * @tc.name   testAdapt011ToolbarDyPropPercentage
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt011' + nameA + 'DyPropPercentage', Level.LEVEL0, async function(done) {
+        it('testAdapt011ToolbarDyPropPercentage', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DyPropPercentage START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -358,14 +358,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt012
+         * @tc.name   testAdapt012ToolbarDyPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt012' + nameA + 'DyPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt012ToolbarDyPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DyPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -381,14 +381,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt013
+         * @tc.name   testAdapt013ToolbarRotateProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt013' + nameA + 'RotateProp', Level.LEVEL0, async function(done) {
+        it('testAdapt013ToolbarRotateProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'RotateProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -404,14 +404,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt014
+         * @tc.name   testAdapt014ToolbarRotatePropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt014' + nameA + 'RotatePropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt014ToolbarRotatePropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'RotatePropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -427,14 +427,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt015
+         * @tc.name   testAdapt015ToolbarFontSizeProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt015' + nameA + 'FontSizeProp', Level.LEVEL0, async function(done) {
+        it('testAdapt015ToolbarFontSizeProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FontSizeProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -450,14 +450,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt016
+         * @tc.name   testAdapt016ToolbarFontSizePropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt016' + nameA + 'FontSizePropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt016ToolbarFontSizePropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FontSizePropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -473,14 +473,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt017
+         * @tc.name   testAdapt017ToolbarFillProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt017' + nameA + 'FillProp', Level.LEVEL0, async function(done) {
+        it('testAdapt017ToolbarFillProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -496,14 +496,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt018
+         * @tc.name   testAdapt018ToolbarFillPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt018' + nameA + 'FillPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt018ToolbarFillPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -519,14 +519,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt019
+         * @tc.name   testAdapt019ToolbarFillOpacityProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt019' + nameA + 'FillOpacityProp', Level.LEVEL0, async function(done) {
+        it('testAdapt019ToolbarFillOpacityProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillOpacityProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -542,14 +542,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt020
+         * @tc.name   testAdapt020ToolbarFillOpacityPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt020' + nameA + 'FillOpacityPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt020ToolbarFillOpacityPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillOpacityPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -565,14 +565,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt021
+         * @tc.name   testAdapt021ToolbarOpacityProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt021' + nameA + 'OpacityProp', Level.LEVEL0, async function(done) {
+        it('testAdapt021ToolbarOpacityProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'OpacityProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -588,14 +588,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt022
+         * @tc.name   testAdapt022ToolbarOpacityPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt022' + nameA + 'OpacityPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt022ToolbarOpacityPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'OpacityPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -611,14 +611,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt023
+         * @tc.name   testAdapt023ToolbarStrokeProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt023' + nameA + 'StrokeProp', Level.LEVEL0, async function(done) {
+        it('testAdapt023ToolbarStrokeProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -634,14 +634,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt024
+         * @tc.name   testAdapt024ToolbarStrokePropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt024' + nameA + 'StrokePropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt024ToolbarStrokePropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokePropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -657,14 +657,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt025
+         * @tc.name   testAdapt025ToolbarStrokeWidthProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt025' + nameA + 'StrokeWidthProp', Level.LEVEL0, async function(done) {
+        it('testAdapt025ToolbarStrokeWidthProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeWidthProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -680,14 +680,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt026
+         * @tc.name   testAdapt026ToolbarStrokeWidthPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt026' + nameA + 'StrokeWidthPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt026ToolbarStrokeWidthPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeWidthPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -703,14 +703,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt027
+         * @tc.name   testAdapt027ToolbarStrokeOpacityProp
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt027' + nameA + 'StrokeOpacityProp', Level.LEVEL0, async function(done) {
+        it('testAdapt027ToolbarStrokeOpacityProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeOpacityProp START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 
@@ -726,14 +726,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testAdapt028
+         * @tc.name   testAdapt028ToolbarStrokeOpacityPropNone
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testAdapt028' + nameA + 'StrokeOpacityPropNone', Level.LEVEL0, async function(done) {
+        it('testAdapt028ToolbarStrokeOpacityPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeOpacityPropNone START');
             console.info("[" + name + "Props] get globalThis.value is: " + JSON.stringify(globalThis.value));
 

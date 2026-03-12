@@ -48,7 +48,7 @@ export default function CustomDialog3() {
     });
     /* *
     * @tc.number: CustomDialog3_0100
-    * @tc.name  : CustomDialog3_0100
+    * @tc.name  CustomDialog3_0100
     * @tc.desc  : To test that the Provide decorator supports union types.
     * @tc.level : Level 2
     */
@@ -79,7 +79,7 @@ export default function CustomDialog3() {
     });
     /* *
     * @tc.number: CustomDialog3_0200
-    * @tc.name  : CustomDialog3_0200
+    * @tc.name  CustomDialog3_0200
     * @tc.desc  : To test that the Provide decorator supports union types.
     * @tc.level : Level 2
     */

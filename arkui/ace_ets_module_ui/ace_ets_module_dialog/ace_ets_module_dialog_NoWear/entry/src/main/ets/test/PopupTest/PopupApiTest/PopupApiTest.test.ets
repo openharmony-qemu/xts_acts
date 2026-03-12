@@ -47,7 +47,7 @@ export default function PopupOptionsTest() {
 
     /**
      * @tc.number    PopupOptionsTest_001
-     * @tc.name      testBack
+     * @tc.name      PopupOptionsTest_001
      * @tc.desc      Return specified page by index value
      * @tc.level     Level 3
      * @tc.type
