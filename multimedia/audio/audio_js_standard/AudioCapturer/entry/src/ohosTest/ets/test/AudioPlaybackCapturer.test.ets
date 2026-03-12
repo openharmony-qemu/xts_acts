@@ -3603,9 +3603,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -3655,9 +3654,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -3707,9 +3705,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -3760,9 +3757,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -3813,9 +3809,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -3918,9 +3913,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -3971,9 +3965,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4024,9 +4017,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4077,9 +4069,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4130,9 +4121,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4183,9 +4173,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4236,9 +4225,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4290,9 +4278,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4345,9 +4332,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4398,9 +4384,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4451,9 +4436,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4504,9 +4488,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4558,9 +4541,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4612,9 +4594,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4666,9 +4647,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4719,9 +4699,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4772,9 +4751,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4826,9 +4804,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4879,9 +4856,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4932,9 +4908,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -4985,9 +4960,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5038,9 +5012,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5091,9 +5064,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5144,9 +5116,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5197,9 +5168,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5251,9 +5221,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5305,9 +5274,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5359,9 +5327,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5413,9 +5380,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5467,9 +5433,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5521,9 +5486,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5629,9 +5593,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5682,9 +5645,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5735,9 +5697,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5788,9 +5749,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5841,9 +5801,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5894,9 +5853,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -5947,9 +5905,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -6000,9 +5957,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -6054,9 +6010,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -6107,9 +6062,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -6160,9 +6114,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            expect(false).assertTrue();
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
