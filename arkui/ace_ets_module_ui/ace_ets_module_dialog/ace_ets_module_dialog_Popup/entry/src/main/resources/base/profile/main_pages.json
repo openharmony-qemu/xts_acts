@@ -19,6 +19,13 @@
     "MainAbility/pages/PromptActionNullAndUndefined/CloseCustomDialogByIdNullAndUndefined",
     "MainAbility/pages/PromptActionNullAndUndefined/PresentCustomDialogNullAndUndefined",
     "MainAbility/pages/PromptActionNullAndUndefined/UpdatePopupNullAndUndefined",
-    "MainAbility/pages/PromptActionNullAndUndefined/ClosePopupNullAndUndefined"
+    "MainAbility/pages/PromptActionNullAndUndefined/ClosePopupNullAndUndefined",
+    "MainAbility/pages/bindTips/bindPopupNullUndefined",
+    "MainAbility/pages/popupNullUndefined/openPopup",
+    "MainAbility/pages/Menu/bindMenuNullUndefined",
+    "MainAbility/pages/Menu/bindContextMenuNull",
+    "MainAbility/pages/Menu/bindContextResponseNull",
+    "MainAbility/pages/Menu/isShownContextMenuNull",
+    "MainAbility/pages/Menu/bindContentCoverNullUndefined"
   ]
 }

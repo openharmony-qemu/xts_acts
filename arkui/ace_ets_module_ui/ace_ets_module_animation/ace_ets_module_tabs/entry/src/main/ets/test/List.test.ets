@@ -47,23 +47,23 @@ import tabsJsunit from './TabsTest/Tabs3Jsunit.test.ets';
 import tabsBarPositionJsunit1 from './TabsTest/tabs.test';
 
 import tabIconJsunit from './TabsTest/tabIconJsunit.test';
-import preloadErrorTabs from './TabsTest/preloadErrorTabs.test'; 
-import symbolTabs from './TabsTest/symbolTabs.test'; 
+import preloadErrorTabs from './TabsTest/preloadErrorTabs.test';
+import symbolTabs from './TabsTest/symbolTabs.test';
 import TabsAp1 from './TabsTest/TabsAp1.test';
 import tabsAnimationMode from './TabsTest/tabsAnimationMode.test';
 import tabsAnimationDuration from './TabsTest/tabsAnimationDuration.test';
-import tabsOpacityJsunit from './TabsTest/tabsOpacityJsunit.test'; 
+import tabsOpacityJsunit from './TabsTest/tabsOpacityJsunit.test';
 import bindTabsScroll from './TabsTest/bindTabsScroll.test';
 
-import tabBarModifier from './TabsTest/tabBarModifier.test'; 
+import tabBarModifier from './TabsTest/tabBarModifier.test';
 import tabsModeTest from './TabsTest/tabsModeTest.test';
-import tabsPageMode from './TabsTest/tabsPageMode.test'; 
+import tabsPageMode from './TabsTest/tabsPageMode.test';
 
 import TabBarComponentContent from './TabsTest/TabBarComponentContent.test';
 import TabsOnSelected from './TabsTest/TabsOnSelected.test';
 
 import iconTabs from './TabsTest/iconTabs.test';
-import onSelectedTabs from './TabsTest/onSelectedTabs.test'; 
+import onSelectedTabs from './TabsTest/onSelectedTabs.test';
 import barBackground from './TabsTest/barBackground.test';
 
 import barHeightNoMinHeightLimit from './TabsTest/barHeightNoMinHeightLimit.test';
@@ -85,6 +85,13 @@ import TabContentSubTabBarStyleBoardNullUndefinedTest from './TabContentNullUnde
 import TabContentSubTabBarStyleLabelStyleNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleLabelStyleNullUndefined.test';
 import TabContentSubTabBarStyleIdNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleIdNullUndefined.test';
 import TabContentSubTabBarStylePaddingNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStylePaddingNullUndefined.test';
+
+import TabContentBottomTabBarStyleIconStyleNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleIconStyleNullUndefined.test';
+import TabContentBottomTabBarStyleIdNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleIdNullUndefined.test';
+import TabContentBottomTabBarStyleLabelStyleNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleLabelStyleNullUndefined.test';
+import TabContentBottomTabBarStylePaddingNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStylePaddingNullUndefined.test';
+import TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleVerticalAlignNullUndefined.test';
+import animationCurveNullUndefinedTest from './animationCurveNullUndefinedTest/animationCurveNullUndefined.test';
 
 export default function testsuite() {
   tabsBarPositionJsunit();
@@ -143,7 +150,7 @@ export default function testsuite() {
   tabs_undefinedTest();
   DrawableTabBarIndicatorPage();
   withoutIdTest();
-  withIdTest(); 
+  withIdTest();
   nestedScrollTest();
   nestedScroll01Test();
   nestedScroll_CombinedTest();
@@ -152,4 +159,10 @@ export default function testsuite() {
   TabContentSubTabBarStyleLabelStyleNullUndefinedTest();
   TabContentSubTabBarStyleIdNullUndefinedTest();
   TabContentSubTabBarStylePaddingNullUndefinedTest();
-  } 
+  TabContentBottomTabBarStyleIconStyleNullUndefinedTest();
+  TabContentBottomTabBarStyleIdNullUndefinedTest();
+  TabContentBottomTabBarStyleLabelStyleNullUndefinedTest();
+  TabContentBottomTabBarStylePaddingNullUndefinedTest();
+  TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest();
+  animationCurveNullUndefinedTest();
+} 

@@ -65,7 +65,9 @@ let metadata0: avSession.AVMetadata = {
   filter: 2,
   drmSchemes: ['123123','456456'],
   skipIntervals: 10,
-  displayTags: 1
+  displayTags: 1,
+  rewindSkipIntervals: 10,
+  fastForwardSkipIntervals: 10
 };
 
 let playbackState0: avSession.AVPlaybackState = {
@@ -206,7 +208,9 @@ export default function abilityTest() {
         filter: 0,
         drmSchemes: ['123123','456456'],
         skipIntervals: 10,
-        displayTags: 1
+        displayTags: 1,
+        rewindSkipIntervals: 10,
+        fastForwardSkipIntervals: 10
       };
 
       await session.setAVMetadata(metadata1).then(() => {
@@ -240,6 +244,8 @@ export default function abilityTest() {
         expect(JSON.stringify(data.drmSchemes)).assertEqual(JSON.stringify(metadata1.drmSchemes));
         expect(data.skipIntervals).assertEqual(metadata1.skipIntervals);
         expect(data.displayTags).assertEqual(metadata1.displayTags);
+        expect(data.rewindSkipIntervals).assertEqual(metadata1.rewindSkipIntervals);
+        expect(data.fastForwardSkipIntervals).assertEqual(metadata1.fastForwardSkipIntervals);
       }).catch((err:BusinessError) => {
         console.info(`${TAG}TestLog: Business error occurred, error code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
@@ -284,7 +290,9 @@ export default function abilityTest() {
         filter: 4,
         drmSchemes: [''],
         skipIntervals: 15,
-        displayTags: 1
+        displayTags: 1,
+        rewindSkipIntervals: 15,
+        fastForwardSkipIntervals: 15
       };
 
       await session.setAVMetadata(metadata1).then(() => {
@@ -306,6 +314,8 @@ export default function abilityTest() {
         expect(JSON.stringify(data.drmSchemes)).assertEqual(JSON.stringify(metadata1.drmSchemes));
         expect(data.skipIntervals).assertEqual(metadata1.skipIntervals);
         expect(data.displayTags).assertEqual(metadata1.displayTags);
+        expect(data.rewindSkipIntervals).assertEqual(metadata1.rewindSkipIntervals);
+        expect(data.fastForwardSkipIntervals).assertEqual(metadata1.fastForwardSkipIntervals);
       }).catch((err:BusinessError) => {
         console.info(`${TAG}TestLog: Business error occurred, error code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();

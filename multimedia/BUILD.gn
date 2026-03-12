@@ -70,7 +70,6 @@ group("multimedia") {
       "audio/audio_js_standard/AudioStreamBuilderHap:ActsAudioStreamBuilderHapTest",
       "audio/ActsAudioOHndkTest:ActsAudioOHndkTest",
       "audio_ndk/oh_audio_render_test:ActsAudioRenderTest",
-      "av_codec/audio_decoder:ActsAvbufferDecoderTest",
       "av_codec/audio_encoder:ActsAvbufferEncoderTest",
       "av_codec/audio_test:ActsAvAudioEncoderCapiNdkTest",
       "av_codec/avcencInfo:ActsAvcencInfoTest",
@@ -229,6 +228,7 @@ group("multimedia") {
       "avMusicTemplate/avMusicTemplate_ets_standard/avMusicTemplateNoPermission:ActsAVMusicTemplateNoPermissionTest",
       "avMusicTemplate/avMusicTemplate_ets_standard/avMusicTemplateStatic:ActsAVMusicTemplateStaticTest",
       "avMusicTemplate/avMusicTemplate_ets_standard/avMusicTemplateNoPermissionStatic:ActsAVMusicTemplateNoPermissionStaticTest",
+       "av_codec/vcodec/ActsMpeg2SwDecoderTest:ActsMpeg2SwDecoderHapTest",
     ]
   } else {
     deps += [

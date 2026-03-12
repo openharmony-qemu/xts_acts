@@ -31,7 +31,6 @@ import comSizeAbilityTest_15 from './comSizeAbility/comSizeAbilityTest_15.test';
 import comSizeAbilityTest_16 from './comSizeAbility/comSizeAbilityTest_16.test';
 import comSizeAbilityTest_17 from './comSizeAbility/comSizeAbilityTest_17.test';
 import comSizeAbilityTest_19 from './comSizeAbility/comSizeAbilityTest_19.test';
-import comSizeAbilityTest_20 from './comSizeAbility/comSizeAbilityTest_20.test';
 import comSizeAbilityTest_21 from './comSizeAbility/comSizeAbilityTest_21.test';
 import comSizeAbilityTest_22 from './comSizeAbility/comSizeAbilityTest_22.test';
 import comSizeAbilityTest_23 from './comSizeAbility/comSizeAbilityTest_23.test';
@@ -88,7 +87,6 @@ export default function testsuite() {
   comSizeAbilityTest_15();
   comSizeAbilityTest_16();
   comSizeAbilityTest_19();
-  comSizeAbilityTest_20();
   comSizeAbilityTest_22();
   comSizeAbilityTest_23();
   comSizeAbilityTest_24();

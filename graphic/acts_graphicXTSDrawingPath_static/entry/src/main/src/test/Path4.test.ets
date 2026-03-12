@@ -129,6 +129,22 @@ export default function drawingTsPath4Test() {
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
+      try {
+        const path = new drawing.Path();
+        let matrix: drawing.Matrix;
+        matrix = new drawing.Matrix();
+        path.moveTo(0, 10);
+        path.lineTo(80, 10);
+        let flag: boolean;
+        flag = path.getMatrix(true, 20, matrix, drawing.PathMeasureMatrixFlags.GET_POSITION_MATRIX);
+        console.info(msg + 'getMatrix 12 successes flag is: ' + flag );
+        expect(flag).assertTrue();
+        console.info(msg + 'reset successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
     })
     /**
      * @tc.name   testPathGetMatrixMultipleCallsStatic

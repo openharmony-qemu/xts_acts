@@ -24,6 +24,12 @@ import TabsControllerNullUndefined from './TabsNullUndefined/TabsControllerNullU
 import TabsAttributeNullUndefined from './TabsNullUndefined/TabsAttributeNullUndefined.test';
 import AlphabetIndexerPropertiesNullUndefined from './AlphabetIndexNullUndefined/AlphabetIndexerPropertiesNullUndefined.test';
 
+import routerApiNullUndefinedTest from './Router/routerApiNullUndefinedTest.test'
+import ParticleApiNullUndefinedTest from './Router/ParticleApiNullUndefinedTest.test'
+import IndicatorComponentNullUndefinedTest from './Router/IndicatorComponentNullUndefinedTest.test'
+import SideBarContainerControlButtonNullUndefinedTest from './Router/SideBarContainerControlButtonNullUndefinedTest.test'
+import StepperItemApiNullUndefinedTest from './Router/StepperItemApiNullUndefinedTest.test'
+
 export default function testsuite() {
   GetStackSize()
   RouterPageSizeChange()
@@ -36,4 +42,10 @@ export default function testsuite() {
   TabsControllerNullUndefined()
   TabsAttributeNullUndefined()
   AlphabetIndexerPropertiesNullUndefined()
+
+  routerApiNullUndefinedTest()
+  ParticleApiNullUndefinedTest()
+  IndicatorComponentNullUndefinedTest()
+  SideBarContainerControlButtonNullUndefinedTest()
+  StepperItemApiNullUndefinedTest()
 }
