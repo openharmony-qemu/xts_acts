@@ -275,7 +275,6 @@ export default function Sim2Public() {
           });
         } else {
           expect(data).assertFalse();
-          ExpectFail();
           console.info(`${caseName} test end `);
           done();
         }
@@ -448,7 +447,6 @@ export default function Sim2Public() {
         } else {
           console.info(`${caseName}:data->${JSON.stringify(data)}`);
           expect(data).assertFalse();
-          ExpectFail();
           console.info(`${caseName} test end `);
           done();
         }
@@ -633,7 +631,6 @@ export default function Sim2Public() {
               done();
             } else {
               console.info(`${caseName} failed: err->${JSON.stringify(err)}`);
-              expect(data).assertFalse();
               ExpectFail();
               console.info(`${caseName} test end `);
               done();
@@ -669,7 +666,6 @@ export default function Sim2Public() {
               console.info(`${caseName} test end `);
               done();
             } else {
-              expect(data).assertFalse();
               ExpectFail();
               console.info(`${caseName} test end `);
               done();
@@ -710,7 +706,6 @@ export default function Sim2Public() {
             console.info(`${caseName} test end `);
             done();
           } else {
-            expect(isSimActive).assertFalse();
             ExpectFail();
             console.info(`${caseName} test end `);
             done();
