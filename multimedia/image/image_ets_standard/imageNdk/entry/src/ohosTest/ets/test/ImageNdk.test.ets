@@ -5293,14 +5293,14 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100
      * @tc.desc   1.createImageSource（by Fd/Uri）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100Adapt001', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0100';
       const filename = 'test_exif_v2.jpg'
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Fd')
@@ -5327,14 +5327,14 @@ export default function imageNdkTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200Adapt001
      * @tc.number SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200
      * @tc.desc   1.createImageSource（by Fd/Uri）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200Adapt001', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NDK_GET_IMAGE_PROPERTY_0200';
       const filename = 'test_exif_v2.jpg'
       let imageSourceApi: image.ImageSource = await getImageSource(filename, 'Uri')

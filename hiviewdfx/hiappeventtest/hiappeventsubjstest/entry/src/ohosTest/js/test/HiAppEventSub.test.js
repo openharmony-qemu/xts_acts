@@ -2392,14 +2392,14 @@ describe('HiAppEventSubTest', function () {
     })
 
     /**
-     * @tc.name   HiAppEventSub28
+     * @tc.name   HiAppEventSub28Adapt001
      * @tc.number DFX_DFT_HiAppEvent_Sub_2700
      * @tc.desc   HiAppEvent write interface test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('HiAppEventSub28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('HiAppEventSub28Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub28 start')
         try {
             HiAppEventV9.removeWatcher(true);
@@ -2412,14 +2412,14 @@ describe('HiAppEventSubTest', function () {
     })
 
     /**
-     * @tc.name   HiAppEventSub29
+     * @tc.name   HiAppEventSub29Adapt001
      * @tc.number DFX_DFT_HiAppEvent_Sub_2900
      * @tc.desc   HiAppEvent write interface test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('HiAppEventSub29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it('HiAppEventSub29Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub29 start')
         try {
             HiAppEventV9.removeWatcher(123);

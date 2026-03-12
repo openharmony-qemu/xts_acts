@@ -1138,14 +1138,14 @@ describe("SensorJsTest_sensor_41", function () {
     })
 
     /**
-     * @tc.name   newAmbientLight_SensorJsTest025
+     * @tc.name   newAmbientLight_SensorJsTest025Adapt001
      * @tc.number SUB_SensorsSystem_NEWAMBIENT_LIGHT_JSTest_0250
      * @tc.desc   Verification results of the incorrect parameters of the test interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("newAmbientLight_SensorJsTest025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it("newAmbientLight_SensorJsTest025Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAmbientLight_SensorJsTest025--------------');
         TAG = 'newAmbientLight_SensorJsTest025'
         try{

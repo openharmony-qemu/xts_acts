@@ -617,14 +617,14 @@ export default function OhRendererTest() {
     });
 
     /**
-     * @tc.name   testOHAudioCapturerGetCurrentState001
+     * @tc.name   testOHAudioCapturerGetCurrentState001Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_OHAUDIOCapturerGETCURRENTSTATE_0200
      * @tc.desc   ：Query the current output audio stream status.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('testOHAudioCapturerGetCurrentState001', 0, async (done: Function) => {
+    it('testOHAudioCapturerGetCurrentState001Adapt001', 0, async (done: Function) => {
       console.log(`testOHAudioRendererGetCurrentState001 test start `);
       testStreamBuilder.OHAudioRendererStart();
       let state: number | null = testStreamBuilder.OHAudioRendererGetCurrentState();
