@@ -108,7 +108,6 @@ export default function selectionTest() {
         let panel: selectionManager.Panel = await selectionManager.createPanel(context, panelInfo)
         if (panel !== undefined) {
           await selectionManager.destroyPanel(panel);
-          expect(true).assertTrue();
           console.info('************* selectionfwk_createPanel_001 Test end*************');
           done();
         }
@@ -197,7 +196,6 @@ export default function selectionTest() {
             console.info(`selectionfwk_panel_moveToGlobalDisplay_001 promise success`);
             await selectionManager.destroyPanel(panel);
             panel = undefined;
-            expect(true).assertTrue();
         }
       } catch (error) {
         console.info(`selectionfwk_panel_moveToGlobalDisplay_001 throw error: [${error.code}, ${error.message}]`);
@@ -219,8 +217,8 @@ export default function selectionTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('selectionfwk_panel_moveToGlobalDisplay_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.info('************* selectionfwk_panel_moveToGlobalDisplay_001 Test start*************');
+    it('selectionfwk_panel_moveToGlobalDisplay_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('************* selectionfwk_panel_moveToGlobalDisplay_002 Test start*************');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       let context = abilityDelegator.getAppContext();
@@ -243,7 +241,7 @@ export default function selectionTest() {
           expect(false).assertTrue();
         }
       } catch (error) {
-        console.info(`selectionfwk_panel_moveToGlobalDisplay_001 throw error: [${error.code}, ${error.message}]`);
+        console.info(`selectionfwk_panel_moveToGlobalDisplay_002 throw error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(33600002);
       } finally {
         if (!bDestroyed) {
@@ -251,7 +249,7 @@ export default function selectionTest() {
             await selectionManager.destroyPanel(panel);
           }
         }
-        console.info('************* selectionfwk_panel_moveToGlobalDisplay_001 Test end*************');
+        console.info('************* selectionfwk_panel_moveToGlobalDisplay_002 Test end*************');
         done();
       }
     });
@@ -417,7 +415,6 @@ export default function selectionTest() {
         if (panel !== undefined) {
           await selectionManager.destroyPanel(panel);
           console.info(`selectionfwk_destroyPanel_001 promise success`);
-          expect(true).assertTrue();
           console.info('************* selectionfwk_destroyPanel_001 Test end*************');
           done();
         }
@@ -501,7 +498,6 @@ export default function selectionTest() {
           panel.offDestroy();
           await selectionManager.destroyPanel(panel);
           panel = undefined;
-          expect(true).assertTrue();
         }
       } catch(error) {
         console.info(`selectionfwk_destroyPanel_001 throw error: [${error.code}, ${error.message}]`);
@@ -584,7 +580,6 @@ export default function selectionTest() {
         if (panel !== undefined) {
           panel.onHide(()=>{});
           panel.offHide();
-          expect(true).assertTrue();
         }
       } catch(error) {
         console.info(`selectionfwk_panel_off_hidden_001 throw error: [${error.code}, ${error.message}]`);
@@ -596,34 +591,6 @@ export default function selectionTest() {
         console.info('************* selectionfwk_panel_off_hidden_001 Test end*************');
         done();
       }
-    });
-
-    /**
-     * @tc.name   selectionfwk_SelectionInfo_001
-     * @tc.number SUB_Driver_Seletion_StaticAPIFunc_1500
-     * @tc.desc   verify SelectionInfo result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('selectionfwk_SelectionInfo_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('************* selectionfwk_SelectionInfo_001 Test start*************');
-      let sel : selectionManager.SelectionInfo = {
-        selectionType: selectionManager.SelectionType.MOUSE_MOVE,
-        startDisplayX: 10,
-        startDisplayY: 10,
-        endDisplayX: 510,
-        endDisplayY: 610,
-        startWindowX: 0,
-        startWindowY: 0,
-        endWindowX: 500,
-        endWindowY: 600,
-        displayID: 100,
-        windowID: 101,
-        bundleName: "com.acts.selection.test"
-      }
-      console.info('************* selectionfwk_SelectionInfo_001 Test end*************');
-      done();
     });
 
     /**
