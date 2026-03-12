@@ -507,7 +507,7 @@ export default function HttpRequestGmssl() {
             try {
                 let httpRequest: http.HttpRequest = http.createHttp();
                 httpRequest.request(TLS_TARGET_URL, options)
-                    .then((res) => {
+                    .then((res: http.HttpResponse) => {
                         console.info(`${caseName} data: --- ${JSON.stringify(res)}`);
                         ExpectTrue(res.responseCode === 200);
                         console.info(`${caseName} res.performanceTiming: ${JSON.stringify(res.performanceTiming)}`);
@@ -520,7 +520,7 @@ export default function HttpRequestGmssl() {
                     httpRequest.destroy();
                     done();
                 });
-            } catch (err) {
+            } catch (error) {
                 console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
                 done();
