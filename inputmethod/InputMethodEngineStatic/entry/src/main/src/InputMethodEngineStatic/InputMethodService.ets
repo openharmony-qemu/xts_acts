@@ -17,7 +17,7 @@ import InputMethodExtensionAbility from '@ohos.InputMethodExtensionAbility';
 import { KeyboardControllerStatic } from './KeyboardControllerStatic';
 import Want from '@ohos.app.ability.Want';
 
-export default class InputMethodControlService extends InputMethodExtensionAbility {
+export default class InputMethodService extends InputMethodExtensionAbility {
   private keyboardControllerStatic: KeyboardControllerStatic | undefined;
 
   onCreate(want: Want) {
