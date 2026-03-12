@@ -24,6 +24,14 @@
       "testability/pages/webMessageExtSetNumberNullUndefined",
       "testability/pages/webMessageExtSetArrayBufferErrorCode",
       "testability/pages/webMessageExtSetErrorErrorCode",
-      "testability/pages/webMessagePortPostMessageEventExtErrorCode"
+      "testability/pages/webMessagePortPostMessageEventExtErrorCode",
+      "testability/pages/webSchemeHandlerResponseSetUrlParam",
+      "testability/pages/webSchemeHandlerResponseSetNetErrorCodeParam",
+      "testability/pages/webSchemeHandlerResponseSetStatusParam",
+      "testability/pages/webSchemeHandlerResponseSetStatusTextParam",
+      "testability/pages/webSchemeHandlerResponseSetMimeTypeParam",
+      "testability/pages/webSchemeHandlerResponseSetEncodingParam",
+      "testability/pages/webSchemeHandlerResponseSetHeaderByNameParam",
+      "testability/pages/webSchemeHandlerResponseGetHeaderByNameParam"
   ]
 }

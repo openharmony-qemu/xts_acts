@@ -42,6 +42,15 @@ import webMessageExtSetErrorErrorCode from './WebMessageExtSetErrorErrorCode.tes
 import webMessageExtSetNumberNullUndefined from './WebMessageExtSetNumberNullUndefined.test';
 import webMessagePortPostMessageEventExtErrorCode from './WebMessagePortPostMessageEventExtErrorCode.test';
 
+import webSchemeHandlerResponseSetMimeTypeParam from './WebSchemeHandlerResponseSetMimeTypeParam.test';
+import webSchemeHandlerResponseSetEncodingParam from './WebSchemeHandlerResponseSetEncodingParam.test';
+import webSchemeHandlerResponseSetUrlParam from './WebSchemeHandlerResponseSetUrlParam.test';
+import webSchemeHandlerResponseSetStatusParam from './WebSchemeHandlerResponseSetStatusParam.test';
+import webSchemeHandlerResponseSetStatusTextParam from './WebSchemeHandlerResponseSetStatusTextParam.test';
+import webSchemeHandlerResponseSetHeaderByNameParam from './WebSchemeHandlerResponseSetHeaderByNameParam.test';
+import webSchemeHandlerResponseSetNetErrorCodeParam from './WebSchemeHandlerResponseSetNetErrorCodeParam.test';
+import webSchemeHandlerResponseGetHeaderByNameParam from './WebSchemeHandlerResponseGetHeaderByNameParam.test';
+
 export default function testsuite() {
   webJsunit()
   webJsunitTwo()
@@ -71,5 +80,14 @@ export default function testsuite() {
   webMessageExtSetErrorErrorCode()
   webMessageExtSetNumberNullUndefined()
   webMessagePortPostMessageEventExtErrorCode()
+
+  webSchemeHandlerResponseSetUrlParam()
+  webSchemeHandlerResponseSetStatusParam()
+  webSchemeHandlerResponseSetStatusTextParam()
+  webSchemeHandlerResponseSetHeaderByNameParam()
+  webSchemeHandlerResponseSetMimeTypeParam()
+  webSchemeHandlerResponseSetEncodingParam()
+  webSchemeHandlerResponseSetNetErrorCodeParam()
+  webSchemeHandlerResponseGetHeaderByNameParam()
 
 }
