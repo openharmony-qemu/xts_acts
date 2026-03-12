@@ -27,7 +27,7 @@ export class KeyboardControllerStatic {
   private capitalizeMode: inputMethodEngine.CapitalizeMode | undefined;
   private placeholder: string = '';
   private abilityName: string = '';
-  private display_info: display.Display | null = display.getDefaultDisplaySync();
+  private displayInfo: display.Display | null = display.getDefaultDisplaySync();
   private softkeyboardPanel: inputMethodEngine.Panel | null = null;
   private immersive: int = 0;
 
@@ -99,61 +99,62 @@ export class KeyboardControllerStatic {
     })
 
     try{
-      let subscriberCallback = (err: BusinessError | null, data: commonEventManager.CommonEventData | undefined | null) => {
-        console.info(`${TAG} ====> receive event data.  panel: ${JSON.stringify(data)}`);
-        if(data != undefined) {
-          switch (data.code) {
-            case 1:
-              console.info(`${TAG} ====> inputMethodEngine_test_static_038 event: ${JSON.stringify(data.event)}`);
-              that.inputMethodEngine_test_static_038();
-              break;
-            case 2:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_createPanelCallback_static_0100 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_createPanelCallback_static_0100();
-              break;
-            case 3:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_PrivateDateTransferred_static_0500 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_PrivateDateTransferred_static_0500();
-              break;
-            case 4:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_PrivateDateTransferred_static_0600 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_PrivateDateTransferred_static_0600();
-              break;
-            case 5:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0900 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_Custom_static_0900();
-              break;
-            case 6:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0200 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_Custom_static_0200();
-              break;
-            case 7:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0800 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_Custom_static_0800();
-              break;
-            case 8:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0400 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_Custom_static_0400();
-              break;
-            case 9:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0300 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_Custom_static_0300();
-              break;
-            case 10:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_1100 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_Custom_static_1100();
-              break;
-            case 11:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0901 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_Custom_static_0901();
-              break;
-            case 12:
-              console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0902 event: ${JSON.stringify(data.event)}`);
-              that.Sub_InputMethod_IME_Custom_static_0902();
-              break;            
+      let subscriberCallback = (err: BusinessError | null,
+        data: commonEventManager.CommonEventData | undefined | null) => {
+          console.info(`${TAG} ====> receive event data.  panel: ${JSON.stringify(data)}`);
+          if(data != undefined) {
+            switch (data.code) {
+              case 1:
+                console.info(`${TAG} ====> inputMethodEngine_test_static_038 event: ${JSON.stringify(data.event)}`);
+                that.inputMethodEngine_test_static_038();
+                break;
+              case 2:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_createPanelCallback_static_0100 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_createPanelCallback_static_0100();
+                break;
+              case 3:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_PrivateDateTransferred_static_0500 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_PrivateDateTransferred_static_0500();
+                break;
+              case 4:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_PrivateDateTransferred_static_0600 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_PrivateDateTransferred_static_0600();
+                break;
+              case 5:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0900 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_Custom_static_0900();
+                break;
+              case 6:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0200 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_Custom_static_0200();
+                break;
+              case 7:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0800 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_Custom_static_0800();
+                break;
+              case 8:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0400 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_Custom_static_0400();
+                break;
+              case 9:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0300 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_Custom_static_0300();
+                break;
+              case 10:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_1100 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_Custom_static_1100();
+                break;
+              case 11:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0901 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_Custom_static_0901();
+                break;
+              case 12:
+                console.info(`${TAG} ====> Sub_InputMethod_IME_Custom_static_0902 event: ${JSON.stringify(data.event)}`);
+                that.Sub_InputMethod_IME_Custom_static_0902();
+                break;            
+            }
           }
         }
-      }
 
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['keyboardControllerStatic']
@@ -175,11 +176,12 @@ export class KeyboardControllerStatic {
       console.info(`${TAG} ====>createSubscriber err: ${JSON.stringify(err.message)}`);
     }
 
-    inputMethodAbility!.onInputStart((controller: inputMethodEngine.KeyboardController, inputClient: inputMethodEngine.InputClient): void=>{
-      this.keyboardController = controller;
-      this.InputClient = inputClient;
-      console.info(`${TAG} ====> inputMethodAbility inputStart into!`);
-    })    
+    inputMethodAbility!.onInputStart((controller: inputMethodEngine.KeyboardController,
+      inputClient: inputMethodEngine.InputClient): void=>{
+        this.keyboardController = controller;
+        this.InputClient = inputClient;
+        console.info(`${TAG} ====> inputMethodAbility inputStart into!`);
+      })    
   }
 
   private publishCallback = (err: BusinessError | null): void => {
@@ -233,21 +235,22 @@ export class KeyboardControllerStatic {
     };
     console.info(`${TAG} ====>receive Sub_InputMethod_IME_createPanelCallback_static_0100`);
     try {
-      inputMethodAbility?.createPanel(this.mContext!, panelInfo1, (err: BusinessError<void> | null, panel: inputMethodEngine.Panel | undefined) => {
-        console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel success!`);
-        if (err) {
-          console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel err: ${JSON.stringify(err)}`);          
-        } else {
-          commonEventPublishData = {
-            data: 'SUCCESS'
+      inputMethodAbility?.createPanel(this.mContext!, panelInfo1, (err: BusinessError<void> | null,
+        panel: inputMethodEngine.Panel | undefined) => {
+          console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel success!`);
+          if (err) {
+            console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel err: ${JSON.stringify(err)}`);
+          } else {
+            commonEventPublishData = {
+              data: 'SUCCESS'
+            };
+            console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel: ${JSON.stringify(panel)}`);
           };
-          console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 createPanel: ${JSON.stringify(panel)}`);
-        };
-        if (panel !== undefined) {
-          inputMethodAbility!.destroyPanel(panel);
-        }
-        commonEventManager.publish('Sub_InputMethod_IME_createPanelCallback_static_0100', commonEventPublishData, this.publishCallback);
-      })
+          if (panel !== undefined) {
+            inputMethodAbility!.destroyPanel(panel);
+          }
+          commonEventManager.publish('Sub_InputMethod_IME_createPanelCallback_static_0100', commonEventPublishData, this.publishCallback);
+        })
     } catch (error) {
       console.info(`${TAG} ====>Sub_InputMethod_IME_createPanelCallback_static_0100 catch err: ${JSON.stringify(error)}`);
       commonEventManager.publish('Sub_InputMethod_IME_createPanelCallback_static_0100', commonEventPublishData, this.publishCallback);
@@ -260,11 +263,11 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     let record: Record<string, inputMethodEngine.CommandDataType> = {
-      "valueString1": "abcdefg",
-      "valueString2": true,
-      "valueString3": 500,
-      "valueString4": "abcdefgg",
-      "valueString5": true,
+      'valueString1': 'abcdefg',
+      'valueString2': true,
+      'valueString3': 500,
+      'valueString4': 'abcdefgg',
+      'valueString5': true,
     }
     try {
       await this.InputClient!.sendPrivateCommand(record);
@@ -320,11 +323,11 @@ export class KeyboardControllerStatic {
         onMessage(msgId: string): void {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0900 onMessage msgId: ${msgId}`);
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0900 onMessage msgIdSize: ${msgId.length}`);
-          if (msgId === "Sub_InputMethod_IME_Custom_static_0900") {
+          if (msgId === 'Sub_InputMethod_IME_Custom_static_0900') {
             console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0900 start sendMessage`);
-            that.InputClient!.sendMessage("Sub_InputMethod_IME_Custom_static_0900", that.newArrayBuffer('SUCCESS'));
+            that.InputClient!.sendMessage('Sub_InputMethod_IME_Custom_static_0900', that.newArrayBuffer('SUCCESS'));
           } else {
-            that.InputClient!.sendMessage("Sub_InputMethod_IME_Custom_static_0900", that.newArrayBuffer('FAILED'));
+            that.InputClient!.sendMessage('Sub_InputMethod_IME_Custom_static_0900', that.newArrayBuffer('FAILED'));
           }
           that.InputClient!.recvMessage();
         }
@@ -357,9 +360,9 @@ export class KeyboardControllerStatic {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0200 onMessage msgIdSize: ${msgId.length}`);
           if (msgId.length === 256 && msgParam?.byteLength === 131072) {
             console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0200 start sendMessage`);
-            that.InputClient!.sendMessage("Sub_InputMethod_IME_Custom_static_0200", that.newArrayBuffer('SUCCESS'));
+            that.InputClient!.sendMessage('Sub_InputMethod_IME_Custom_static_0200', that.newArrayBuffer('SUCCESS'));
           } else {
-            that.InputClient!.sendMessage("Sub_InputMethod_IME_Custom_static_0200", that.newArrayBuffer('FAILED'));
+            that.InputClient!.sendMessage('Sub_InputMethod_IME_Custom_static_0200', that.newArrayBuffer('FAILED'));
           }
           that.InputClient!.recvMessage();
         }
@@ -389,9 +392,9 @@ export class KeyboardControllerStatic {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0800 onMessage msgIdSize: ${msgId.length}`);
           if (msgId.length === 0 && msgParam?.byteLength === 131072) {
             console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0800 start sendMessage`);
-            that.InputClient!.sendMessage("Sub_InputMethod_IME_Custom_static_0800", that.newArrayBuffer('SUCCESS'));
+            that.InputClient!.sendMessage('Sub_InputMethod_IME_Custom_static_0800', that.newArrayBuffer('SUCCESS'));
           } else {
-            that.InputClient!.sendMessage("Sub_InputMethod_IME_Custom_static_0800", that.newArrayBuffer('FAILED'));
+            that.InputClient!.sendMessage('Sub_InputMethod_IME_Custom_static_0800', that.newArrayBuffer('FAILED'));
           }
           that.InputClient!.recvMessage();
         }
@@ -479,9 +482,9 @@ export class KeyboardControllerStatic {
           console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_1100 onMessage msgIdSize: ${msgId.length}`);
           if (msgId.length === 256 && msgParam?.byteLength === undefined) {
             console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_1100 start sendMessage`);
-            that.InputClient!.sendMessage("Sub_InputMethod_IME_Custom_static_1100", that.newArrayBuffer('SUCCESS'));
+            that.InputClient!.sendMessage('Sub_InputMethod_IME_Custom_static_1100', that.newArrayBuffer('SUCCESS'));
           } else {
-            that.InputClient!.sendMessage("Sub_InputMethod_IME_Custom_static_1100", that.newArrayBuffer('FAILED'));
+            that.InputClient!.sendMessage('Sub_InputMethod_IME_Custom_static_1100', that.newArrayBuffer('FAILED'));
           }
           that.InputClient!.recvMessage();
         }
@@ -504,7 +507,7 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      let msgId: string = "testMsgId";
+      let msgId: string = 'testMsgId';
       let msgParam: ArrayBuffer = new ArrayBuffer(128);
       await this.InputClient!.sendMessage(msgId, msgParam);
       console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0901 sendMessage success`);
@@ -527,7 +530,7 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      let msgId: string = "testMsgId";
+      let msgId: string = 'testMsgId';
       let msgParam: ArrayBuffer = new ArrayBuffer(128);
       await this.InputClient!.sendMessage(msgId, msgParam);
       console.info(`${TAG} ====>Sub_InputMethod_IME_Custom_static_0902 sendMessage success`);
