@@ -28,6 +28,7 @@
         "MainAbility/pages/PatternLock/PatternLockActivateCircleStyle1",
         "MainAbility/pages/PatternLock/PatternLockPage",
         "MainAbility/pages/PatternLock/PatternLockPropertiesNullUndefined",
+        "MainAbility/pages/PatternLock/PatternLockEnableForeground",
 
         "MainAbility/pages/QRCode/QRCodeApiTest",
         "MainAbility/pages/QRCode/QRCodeAttrTest",
