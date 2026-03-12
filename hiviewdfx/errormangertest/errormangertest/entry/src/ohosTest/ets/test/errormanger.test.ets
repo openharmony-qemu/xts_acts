@@ -405,7 +405,7 @@ export default function ErrormangerTest() {
         done();
       } catch (error) {
         console.info("====>testErrorManger_1000 catch error: " + JSON.stringify(error));
-        expect(err.code == 16200001).assertTrue();
+        expect(error.code == 16200001).assertTrue();
         done();
       }
     })
