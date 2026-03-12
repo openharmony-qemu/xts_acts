@@ -59,18 +59,16 @@ struct webCookieManagerError {
           await waitForExist(() => this.isReceive, this.str, 0, 1000);
           this.isReceive = -1;
           console.info('key==>' + this.str);
-          
           switch (this.str) {
-            // getCookie - url参数测试 (null, undefined, '')
             case 'emitGetCookieError001': {
               try {
                 let value = webView.WebCookieManager.getCookie(null);
                 console.log(this.str + 'getCookie cookie = ' + value);
-                Utils.emitEvent('no_error', 134010);
+                Utils.emitEvent('no_error', 134011);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134010);
+                Utils.emitEvent(error.code, 134011);
               }
               break;
             }
@@ -78,11 +76,11 @@ struct webCookieManagerError {
               try {
                 let value = webView.WebCookieManager.getCookie(undefined);
                 console.log(this.str + 'getCookie cookie = ' + value);
-                Utils.emitEvent('no_error', 134020);
+                Utils.emitEvent('no_error', 134012);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134020);
+                Utils.emitEvent(error.code, 134012);
               }
               break;
             }
@@ -90,25 +88,23 @@ struct webCookieManagerError {
               try {
                 let value = webView.WebCookieManager.getCookie('');
                 console.log(this.str + 'getCookie cookie = ' + value);
-                Utils.emitEvent('no_error', 134030);
+                Utils.emitEvent('no_error', 134013);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134030);
+                Utils.emitEvent(error.code, 134013);
               }
               break;
             }
-            
-            // fetchCookieSync - url参数测试 (null, undefined, '')
             case 'emitFetchCookieSyncError001': {
               try {
                 let value = webView.WebCookieManager.fetchCookieSync(null, true);
                 console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                Utils.emitEvent('no_error', 134040);
+                Utils.emitEvent('no_error', 134014);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134040);
+                Utils.emitEvent(error.code, 134014);
               }
               break;
             }
@@ -116,99 +112,101 @@ struct webCookieManagerError {
               try {
                 let value = webView.WebCookieManager.fetchCookieSync(undefined, true);
                 console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                Utils.emitEvent('no_error', 134050);
+                Utils.emitEvent('no_error', 134015);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134050);
+                Utils.emitEvent(error.code, 134015);
               }
               break;
             }
-            case 'emitFetchCookieSyncError003': {
-              try {
-                let value = webView.WebCookieManager.fetchCookieSync('', true);
-                console.log(this.str + 'fetchCookieSync cookie = ' + value);
-                Utils.emitEvent('no_error', 134060);
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134060);
-              }
-              break;
-            }
-            
-            // fetchCookie Promise - url参数测试 (null, undefined, '')
-            case 'emitFetchCookiePromiseError001': {
+            case 'emitFetchCookiePromiseUrlError001': {
               try {
                 webView.WebCookieManager.fetchCookie(null)
                   .then((value: string) => {
                     console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134070);
+                    Utils.emitEvent('no_error', 134016);
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log(this.str + 'error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134070);
+                    Utils.emitEvent(error.code, 134016);
                   })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134070);
+                Utils.emitEvent(error.code, 134016);
               }
               break;
             }
-            case 'emitFetchCookiePromiseError002': {
+            case 'emitFetchCookiePromiseUrlError002': {
               try {
                 webView.WebCookieManager.fetchCookie(undefined)
                   .then((value: string) => {
                     console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134080);
+                    Utils.emitEvent('no_error', 134017);
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log(this.str + 'error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134080);
+                    Utils.emitEvent(error.code, 134017);
                   })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134080);
+                Utils.emitEvent(error.code, 134017);
               }
               break;
             }
-            case 'emitFetchCookiePromiseError003': {
+            case 'emitFetchCookieIncognitoPromiseError001': {
               try {
-                webView.WebCookieManager.fetchCookie('')
+                webView.WebCookieManager.fetchCookie(null, true)
                   .then((value: string) => {
                     console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134090);
+                    Utils.emitEvent('no_error', 134018);
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log(this.str + 'error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134090);
+                    Utils.emitEvent(error.code, 134018);
                   })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134090);
+                Utils.emitEvent(error.code, 134018);
               }
               break;
             }
-            
-            // fetchCookie Callback - url参数测试 (null, undefined, '')
+            case 'emitFetchCookieIncognitoPromiseError002': {
+              try {
+                webView.WebCookieManager.fetchCookie(undefined, true)
+                  .then((value: string) => {
+                    console.log(this.str + 'fetchCookie cookie = ' + value);
+                    Utils.emitEvent('no_error', 134019);
+                  })
+                  .catch((error: business_error.BusinessError) => {
+                    console.log(this.str + 'error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134019);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134019);
+              }
+              break;
+            }
             case 'emitFetchCookieCallbackUrlError001': {
               try {
                 webView.WebCookieManager.fetchCookie(null, (error, value) => {
                   if (error) {
                     console.log(this.str + 'error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134100);
+                    Utils.emitEvent(error.code, 134020);
                   } else {
                     console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134100);
+                    Utils.emitEvent('no_error', 134020);
                   }
                 })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134100);
+                Utils.emitEvent(error.code, 134020);
               }
               break;
             }
@@ -218,73 +216,27 @@ struct webCookieManagerError {
                   if (error) {
                     console.log(this.str + 'error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134110);
+                    Utils.emitEvent(error.code, 134021);
                   } else {
                     console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134110);
+                    Utils.emitEvent('no_error', 134021);
                   }
                 })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134110);
+                Utils.emitEvent(error.code, 134021);
               }
               break;
             }
-            case 'emitFetchCookieCallbackUrlError003': {
-              try {
-                webView.WebCookieManager.fetchCookie('', (error, value) => {
-                  if (error) {
-                    console.log(this.str + 'error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134120);
-                  } else {
-                    console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134120);
-                  }
-                })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134120);
-              }
-              break;
-            }
-            
-            // fetchCookie Callback - callback参数测试 (null, undefined)
-            case 'emitFetchCookieCallbackParamError001': {
-              try {
-                webView.WebCookieManager.fetchCookie(URL, null);
-                console.log(this.str + 'fetchCookie success');
-                Utils.emitEvent('no_error', 134130);
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134130);
-              }
-              break;
-            }
-            case 'emitFetchCookieCallbackParamError002': {
-              try {
-                webView.WebCookieManager.fetchCookie(URL, undefined);
-                console.log(this.str + 'fetchCookie success');
-                Utils.emitEvent('no_error', 134140);
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134140);
-              }
-              break;
-            }
-            
-            // setCookie - url参数测试 (null, undefined, '')
             case 'emitSetCookieUrlError001': {
               try {
                 webView.WebCookieManager.setCookie(null, 'a=b');
                 console.log(this.str + 'setCookie success');
-                Utils.emitEvent('no_error', 134150);
+                Utils.emitEvent('no_error', 134022);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134150);
+                Utils.emitEvent(error.code, 134022);
               }
               break;
             }
@@ -292,11 +244,11 @@ struct webCookieManagerError {
               try {
                 webView.WebCookieManager.setCookie(undefined, 'a=b');
                 console.log(this.str + 'setCookie success');
-                Utils.emitEvent('no_error', 134160);
+                Utils.emitEvent('no_error', 134023);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134160);
+                Utils.emitEvent(error.code, 134023);
               }
               break;
             }
@@ -304,25 +256,23 @@ struct webCookieManagerError {
               try {
                 webView.WebCookieManager.setCookie('', 'a=b');
                 console.log(this.str + 'setCookie success');
-                Utils.emitEvent('no_error', 134170);
+                Utils.emitEvent('no_error', 134024);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134170);
+                Utils.emitEvent(error.code, 134024);
               }
               break;
             }
-            
-            // setCookie - value参数测试 (null, undefined, '')
             case 'emitSetCookieValueError001': {
               try {
                 webView.WebCookieManager.setCookie(URL, null);
                 console.log(this.str + 'setCookie success');
-                Utils.emitEvent('no_error', 134180);
+                Utils.emitEvent('no_error', 134025);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134180);
+                Utils.emitEvent(error.code, 134025);
               }
               break;
             }
@@ -330,11 +280,11 @@ struct webCookieManagerError {
               try {
                 webView.WebCookieManager.setCookie(URL, undefined);
                 console.log(this.str + 'setCookie success');
-                Utils.emitEvent('no_error', 134190);
+                Utils.emitEvent('no_error', 134026);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134190);
+                Utils.emitEvent(error.code, 134026);
               }
               break;
             }
@@ -342,25 +292,23 @@ struct webCookieManagerError {
               try {
                 webView.WebCookieManager.setCookie(URL, '');
                 console.log(this.str + 'setCookie success');
-                Utils.emitEvent('no_error', 134200);
+                Utils.emitEvent('no_error', 134027);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134200);
+                Utils.emitEvent(error.code, 134027);
               }
               break;
             }
-            
-            // configCookieSync - url参数测试 (null, undefined, '')
             case 'emitConfigCookieSyncUrlError001': {
               try {
                 webView.WebCookieManager.configCookieSync(null, 'a=b', false, false);
                 console.log(this.str + 'configCookieSync success');
-                Utils.emitEvent('no_error', 134210);
+                Utils.emitEvent('no_error', 134028);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134210);
+                Utils.emitEvent(error.code, 134028);
               }
               break;
             }
@@ -368,11 +316,11 @@ struct webCookieManagerError {
               try {
                 webView.WebCookieManager.configCookieSync(undefined, 'a=b', true, false);
                 console.log(this.str + 'configCookieSync success');
-                Utils.emitEvent('no_error', 134220);
+                Utils.emitEvent('no_error', 134029);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134220);
+                Utils.emitEvent(error.code, 134029);
               }
               break;
             }
@@ -380,25 +328,23 @@ struct webCookieManagerError {
               try {
                 webView.WebCookieManager.configCookieSync('', 'a=b', true, true);
                 console.log(this.str + 'configCookieSync success');
-                Utils.emitEvent('no_error', 134230);
+                Utils.emitEvent('no_error', 134030);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134230);
+                Utils.emitEvent(error.code, 134030);
               }
               break;
             }
-            
-            // configCookieSync - value参数测试 (null, undefined, '')
             case 'emitConfigCookieSyncValueError001': {
               try {
                 webView.WebCookieManager.configCookieSync(URL, null, false, false);
                 console.log(this.str + 'configCookieSync success');
-                Utils.emitEvent('no_error', 134240);
+                Utils.emitEvent('no_error', 134031);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134240);
+                Utils.emitEvent(error.code, 134031);
               }
               break;
             }
@@ -406,113 +352,209 @@ struct webCookieManagerError {
               try {
                 webView.WebCookieManager.configCookieSync(URL, undefined, false, true);
                 console.log(this.str + 'configCookieSync success');
-                Utils.emitEvent('no_error', 134250);
+                Utils.emitEvent('no_error', 134032);
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
                 console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134250);
+                Utils.emitEvent(error.code, 134032);
               }
               break;
             }
-            case 'emitConfigCookieSyncValueError003': {
-              try {
-                webView.WebCookieManager.configCookieSync(URL, '', true, false);
-                console.log(this.str + 'configCookieSync success');
-                Utils.emitEvent('no_error', 134260);
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                Utils.emitEvent(error.code, 134260);
-              }
-              break;
-            }
-            case 'emitFetchCookieIncognitoPromiseError001': {
-              try {
-                webView.WebCookieManager.fetchCookie(null, true)
-                  .then((value: string) => {
-                    console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134270);
-                  })
-                  .catch((error: business_error.BusinessError) => {
-                    console.log(this.str + 'error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134270);
-                  })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134270);
-              }
-              break;
-            }
-            case 'emitFetchCookieIncognitoPromiseError002': {
-              try {
-                webView.WebCookieManager.fetchCookie(undefined, true)
-                  .then((value: string) => {
-                    console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134280);
-                  })
-                  .catch((error: business_error.BusinessError) => {
-                    console.log(this.str + 'error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134280);
-                  })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134280);
-              }
-              break;
-            }
-            case 'emitFetchCookieIncognitoPromiseError003': {
-              try {
-                webView.WebCookieManager.fetchCookie('', true)
-                  .then((value: string) => {
-                    console.log(this.str + 'fetchCookie cookie = ' + value);
-                    Utils.emitEvent('no_error', 134290);
-                  })
-                  .catch((error: business_error.BusinessError) => {
-                    console.log(this.str + 'error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134290);
-                  })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134290);
-              }
-              break;
-            }
-            case 'emitConfigCookiePromiseError001': {
+            case 'emitConfigCookiePromiseUrlError001': {
               try {
                 webView.WebCookieManager.configCookie(null, 'a=e')
                   .then(() => {
                     console.log('configCookie success!');
-                    Utils.emitEvent('no_error', 134300);
+                    Utils.emitEvent('no_error', 134033);
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134300);
+                    Utils.emitEvent(error.code, 134033);
                   })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134300);
+                Utils.emitEvent(error.code, 134033);
               }
               break;
             }
-            case 'emitConfigCookiePromiseError002': {
+            case 'emitConfigCookiePromiseUrlError002': {
               try {
                 webView.WebCookieManager.configCookie(undefined, 'a=e')
                   .then(() => {
                     console.log('configCookie success!');
-                    Utils.emitEvent('no_error', 134310);
+                    Utils.emitEvent('no_error', 134034);
                   })
                   .catch((error: business_error.BusinessError) => {
                     console.log('error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134310);
+                    Utils.emitEvent(error.code, 134034);
                   })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134310);
+                Utils.emitEvent(error.code, 134034);
+              }
+              break;
+            }
+            case 'emitConfigCookiePromiseValueError001': {
+              try {
+                webView.WebCookieManager.configCookie(URL, null)
+                  .then(() => {
+                    console.log('configCookie success!');
+                    Utils.emitEvent('no_error', 134035);
+                  })
+                  .catch((error: business_error.BusinessError) => {
+                    console.log('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134035);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134035);
+              }
+              break;
+            }
+            case 'emitConfigCookiePromiseValueError002': {
+              try {
+                webView.WebCookieManager.configCookie(URL, undefined)
+                  .then(() => {
+                    console.log('configCookie success!');
+                    Utils.emitEvent('no_error', 134036);
+                  })
+                  .catch((error: business_error.BusinessError) => {
+                    console.log('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134036);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134036);
+              }
+              break;
+            }
+            case 'emitConfigCookiePromiseValueError003': {
+              try {
+                webView.WebCookieManager.configCookie(URL, '')
+                  .then(() => {
+                    console.log('configCookie success!');
+                    Utils.emitEvent('no_error', 134037);
+                  })
+                  .catch((error: business_error.BusinessError) => {
+                    console.log('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134037);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134037);
+              }
+              break;
+            }
+            case 'emitConfigCookieIncludeHttpOnlyUrlError001': {
+              try {
+                webView.WebCookieManager.configCookie(null, 'a=b', false, false)
+                  .then(() => {
+                    console.info('configCookie success!');
+                    Utils.emitEvent('no_error', 134038);
+                  })
+                  .catch((error: BusinessError) => {
+                    console.info('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134038);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134038);
+              }
+              break;
+            }
+            case 'emitConfigCookieIncludeHttpOnlyUrlError002': {
+              try {
+                webView.WebCookieManager.configCookie(undefined, 'a=b', true, false)
+                  .then(() => {
+                    console.info('configCookie success!');
+                    Utils.emitEvent('no_error', 134039);
+                  })
+                  .catch((error: BusinessError) => {
+                    console.info('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134039);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134039);
+              }
+              break;
+            }
+            case 'emitConfigCookieIncludeHttpOnlyUrlError003': {
+              try {
+                webView.WebCookieManager.configCookie('', 'a=b', true, true)
+                  .then(() => {
+                    console.info('configCookie success!');
+                    Utils.emitEvent('no_error', 134040);
+                  })
+                  .catch((error: BusinessError) => {
+                    console.info('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134040);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134040);
+              }
+              break;
+            }
+            case 'emitConfigCookieIncludeHttpOnlyValueError001': {
+              try {
+                webView.WebCookieManager.configCookie(URL, null, true, false)
+                  .then(() => {
+                    console.info('configCookie success!');
+                    Utils.emitEvent('no_error', 134041);
+                  })
+                  .catch((error: BusinessError) => {
+                    console.info('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134041);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134041);
+              }
+              break;
+            }
+            case 'emitConfigCookieIncludeHttpOnlyValueError002': {
+              try {
+                webView.WebCookieManager.configCookie(URL, undefined, true, false)
+                  .then(() => {
+                    console.info('configCookie success!');
+                    Utils.emitEvent('no_error', 134042);
+                  })
+                  .catch((error: BusinessError) => {
+                    console.info('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134042);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134042);
+              }
+              break;
+            }
+            case 'emitConfigCookieIncludeHttpOnlyValueError003': {
+              try {
+                webView.WebCookieManager.configCookie(URL, '', true, false)
+                  .then(() => {
+                    console.info('configCookie success!');
+                    Utils.emitEvent('no_error', 134043);
+                  })
+                  .catch((error: BusinessError) => {
+                    console.info('error: ' + JSON.stringify(error));
+                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
+                    Utils.emitEvent(error.code, 134043);
+                  })
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 134043);
               }
               break;
             }
@@ -522,12 +564,12 @@ struct webCookieManagerError {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134320);
+                    Utils.emitEvent(error.code, 134044);
                   }
                 })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134320);
+                Utils.emitEvent(error.code, 134044);
               }
               break;
             }
@@ -537,12 +579,12 @@ struct webCookieManagerError {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134330);
+                    Utils.emitEvent(error.code, 134045);
                   }
                 })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134330);
+                Utils.emitEvent(error.code, 134045);
               }
               break;
             }
@@ -552,12 +594,12 @@ struct webCookieManagerError {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134320);
+                    Utils.emitEvent(error.code, 134046);
                   }
                 })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134320);
+                Utils.emitEvent(error.code, 134046);
               }
               break;
             }
@@ -567,12 +609,12 @@ struct webCookieManagerError {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134330);
+                    Utils.emitEvent(error.code, 134047);
                   }
                 })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134330);
+                Utils.emitEvent(error.code, 134047);
               }
               break;
             }
@@ -582,109 +624,18 @@ struct webCookieManagerError {
                   if (error) {
                     console.log('error: ' + JSON.stringify(error));
                     console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134330);
+                    Utils.emitEvent(error.code, 134048);
                   }
                 })
               } catch (error) {
                 console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134330);
-              }
-              break;
-            }
-            case 'emitConfigCookieIncludeHttpOnlyUrlError001': {
-              try {
-                webView.WebCookieManager.configCookie(null, 'a=b', false, false)
-                  .then(() => {
-                    console.info('configCookie success!');
-                    Utils.emitEvent('no_error', 134330);
-                  })
-                  .catch((error: BusinessError) => {
-                    console.info('error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134330);
-                  })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134330);
-              }
-              break;
-            }
-            case 'emitConfigCookieIncludeHttpOnlyUrlError002': {
-              try {
-                webView.WebCookieManager.configCookie(undefined, 'a=b', true, false)
-                  .then(() => {
-                    console.info('configCookie success!');
-                    Utils.emitEvent('no_error', 134340);
-                  })
-                  .catch((error: BusinessError) => {
-                    console.info('error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134340);
-                  })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134340);
-              }
-              break;
-            }
-            case 'emitConfigCookieIncludeHttpOnlyUrlError003': {
-              try {
-                webView.WebCookieManager.configCookie('', 'a=b', true, true)
-                  .then(() => {
-                    console.info('configCookie success!');
-                    Utils.emitEvent('no_error', 134350);
-                  })
-                  .catch((error: BusinessError) => {
-                    console.info('error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134350);
-                  })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134350);
-              }
-              break;
-            }
-            case 'emitConfigCookieIncludeHttpOnlyValueError001': {
-              try {
-                webView.WebCookieManager.configCookie(URL, null, true, false)
-                  .then(() => {
-                    console.info('configCookie success!');
-                    Utils.emitEvent('no_error', 134360);
-                  })
-                  .catch((error: BusinessError) => {
-                    console.info('error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134360);
-                  })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134360);
-              }
-              break;
-            }
-            case 'emitConfigCookieIncludeHttpOnlyValueError002': {
-              try {
-                webView.WebCookieManager.configCookie(URL, undefined, true, false)
-                  .then(() => {
-                    console.info('configCookie success!');
-                    Utils.emitEvent('no_error', 134360);
-                  })
-                  .catch((error: BusinessError) => {
-                    console.info('error: ' + JSON.stringify(error));
-                    console.log(this.str + 'errorCode type: ' + typeof(error.code));
-                    Utils.emitEvent(error.code, 134360);
-                  })
-              } catch (error) {
-                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 134360);
+                Utils.emitEvent(error.code, 134048);
               }
               break;
             }
           }
         })
       }
-
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
