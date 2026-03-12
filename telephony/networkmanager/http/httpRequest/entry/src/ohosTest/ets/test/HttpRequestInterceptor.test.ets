@@ -1687,7 +1687,7 @@ export default function HttpRequestInterceptor() {
         chain.addChain([]);
         let cs :  http.HttpInterceptor[] = chain.getChain();
         hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
-        cahin.apply(httpRequest)
+        chain.apply(httpRequest)
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
           header: HEADER,
