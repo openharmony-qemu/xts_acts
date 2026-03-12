@@ -2047,14 +2047,14 @@ export default function AudioHapticTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200
-     * @tc.number SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0002
      * @tc.desc   AudioHapticPlayer_on_audioInterrupt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0002", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let id = 0;
       let audioFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
       let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
