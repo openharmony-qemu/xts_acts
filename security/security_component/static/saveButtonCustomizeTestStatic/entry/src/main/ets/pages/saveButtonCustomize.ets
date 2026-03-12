@@ -85,7 +85,8 @@ struct saveButtonCustomize {
   @State iconSizeW: number | undefined = undefined
   @State iconSizeH: number | undefined = undefined
 
-  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = 
+    (eventData: events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       const data = eventData.data as Record<String, RecordData>
       console.info('====>page_saveButtonCustomize page state change called:' + JSON.stringify(eventData.data));

@@ -73,7 +73,8 @@ struct saveButtonUserCancel {
   @State clipSet: boolean | undefined = false
   @State sbAlign: Alignment | undefined = Alignment.Center
   @State userEvent: boolean | undefined = false
-  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = 
+    (eventData: events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       const data = eventData.data as Record<String, RecordData>
       console.info('====>page_saveButtonUserCancel page state change called:' + JSON.stringify(eventData.data));

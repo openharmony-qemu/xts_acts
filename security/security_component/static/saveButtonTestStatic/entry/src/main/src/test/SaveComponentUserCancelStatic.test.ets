@@ -240,6 +240,11 @@ export default function saveComponentUserCancelStaticTest() {
         console.info(`====>${TCNAME} change component data error: ` + err.message);
       }
       await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySaveCancel');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
+      expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
+      await UtilsTest.msSleep(1000);
       cancelCallback(TCNAME, done);
       let driver = Driver.create();
       let targetBut = '取消';
@@ -272,6 +277,11 @@ export default function saveComponentUserCancelStaticTest() {
       } catch (err) {
         console.info(`====>${TCNAME} change component data error: ` + err.message);
       }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySaveCancel');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
+      expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       await UtilsTest.msSleep(1000);
       sucCallback(TCNAME, done);
       let driver = Driver.create();

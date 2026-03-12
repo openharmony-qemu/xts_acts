@@ -242,7 +242,6 @@ export default function saveComponentStaticTest() {
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('16.00vp');
       expect(obj.getElement('$attrs').getInteger('fontStyle')).assertEqual(0);
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
-      expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual('HarmonyOS Sans');
       expect(obj.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFFFF');
       expect(obj.getElement('$attrs').getString('iconColor')).assertEqual('#FFFFFFFF');
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF007DFF');

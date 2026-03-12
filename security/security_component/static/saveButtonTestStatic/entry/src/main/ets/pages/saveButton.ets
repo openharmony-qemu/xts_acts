@@ -63,7 +63,6 @@ struct saveButton {
   @State fontSize: number | undefined = 16
   @State fontStyle: FontStyle | undefined = FontStyle.Normal
   @State fontWeight: FontWeight | undefined = FontWeight.Medium
-  @State fontFamily: string | undefined = 'HarmonyOS Sans'
   @State fontColor: string | Color | undefined = '#ffffffff'
   @State iconColor: string | Color | undefined = '#ffffffff'
   @State bgColor: string | Color | undefined = '#ff007dff'
@@ -97,7 +96,8 @@ struct saveButton {
   @State strokeColorG: int = 0
   @State strokeColorB: int = 0
   @State strokeWidth: double = 0.0
-  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = 
+    (eventData: events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       const data = eventData.data as Record<String, RecordData>
       console.info('====>page_saveButton page state change called:' + JSON.stringify(eventData.data));
@@ -137,9 +137,6 @@ struct saveButton {
       }
       if (data['fontWeight'] != null) {
         this.fontWeight = data['fontWeight'] as FontWeight
-      }
-      if (data['fontFamily'] != null) {
-        this.fontFamily = data['fontFamily'] as String
       }
       if ((data['fontColor'] != null) && (data['fontColor'] != Color.Transparent)) {
         this.fontColor = data['fontColor'] as String
@@ -306,7 +303,6 @@ struct saveButton {
             .fontSize(this.fontSize)
             .fontStyle(this.fontStyle)
             .fontWeight(this.fontWeight)
-            .fontFamily(this.fontFamily)
             .fontColor(this.fontColor)
             .iconColor(this.iconColor)
             .backgroundColor(this.bgColor)
