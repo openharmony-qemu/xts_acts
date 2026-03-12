@@ -5369,6 +5369,27 @@ function testAddDisallowedListForAccountPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_add_disallowed_list_for_account_0901
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_LIST_FOR_ACCOUNT_JS_0901
+   * @tc.desc   test restrictions addDisallowedListForAccount with empty accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_disallowed_list_for_account_0901", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let valueList: Array<string> = [];
+      restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, valueList, DEFAULT_USER_ID);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testRemoveDisallowedListForAccountPolicy() {
