@@ -22,17 +22,19 @@ async function normalProcess(cipherAlgName: string, isSpec:boolean, spec: cpFw.A
   let agreementKeyPair: cpFw.KeyPair;
   let agreement = cpFw.createKeyAgreement(cipherAlgName);
   return new Promise<boolean>((resolve, reject) => {
-    agreementKeyPair = await keyGenCallbackFunc.genKeyPair(isSpec, spec, algName);
-    console.log("[Callback] genKeyPair agreement success.");
-    agreement.generateSecret(agreementKeyPair.priKey, agreementKeyPair.pubKey, (err: BusinessError<void>|null) => {
-      if (err) { // success: error is null, failed: data is undefined
-        console.log("[Callback] agreementCallbackNormalProcess agreement fail.");
-        reject(err as Error);
-      } else {
-        console.log("[Callback] agreementCallbackNormalProcess agreement success.");
-        resolve(true);
-      }
-    });
+    waitForCompletion(async () => {
+      agreementKeyPair = await keyGenCallbackFunc.genKeyPair(isSpec, spec, algName);
+      console.log("[Callback] genKeyPair agreement success.");
+      agreement.generateSecret(agreementKeyPair.priKey, agreementKeyPair.pubKey, (err: BusinessError<void>|null) => {
+        if (err) { // success: error is null, failed: data is undefined
+          console.log("[Callback] agreementCallbackNormalProcess agreement fail.");
+          reject(err as Error);
+        } else {
+          console.log("[Callback] agreementCallbackNormalProcess agreement success.");
+          resolve(true);
+        }
+      });
+    })
   });
 }
 

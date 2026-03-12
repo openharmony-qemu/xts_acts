@@ -48,7 +48,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -527,11 +527,14 @@ export default function WindowAnimationTest() {
         };
         try {
           (subWin as window.Window).setWindowTransitionAnimation(window.WindowTransitionType.DESTROY, transitionAnimation).then(() => {
+            waitForCompletion(async () => {
             console.info(msgStr + 'Succeeded in setting window transition animation. Cause:');
             expect().assertFail();
             await (subWin as window.Window).destroyWindow();
             done();
+            })
           }).catch((err: Error) => {
+            waitForCompletion(async () => {
             if (err.code != 801) {
               console.error(msgStr + `Failed to set window transition animation. Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(1300004);
@@ -542,6 +545,7 @@ export default function WindowAnimationTest() {
             }
             await (subWin as window.Window).destroyWindow();
             done();
+            })
           });
         } catch (err) {
           if (isFreeWindowMode) {

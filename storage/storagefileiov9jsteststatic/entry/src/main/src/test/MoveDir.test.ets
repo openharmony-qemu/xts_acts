@@ -37,8 +37,10 @@ interface Dir {
 
 export async function readyFiles(testNum: string) : Promise<Dir> {
   return new Promise<Dir>((resolve, reject) => {
+    waitForCompletion(async () => {
     let dpath = await Utils.nextFileName(testNum);
     () => {
+    waitForCompletion(async () => {
     try {
         let ddpath1 = dpath + '/srcDir';
         let ddpath2 = dpath + '/destDir';
@@ -90,7 +92,9 @@ export async function readyFiles(testNum: string) : Promise<Dir> {
         }
         resolve(alldir);
       }
+      })
       }()
+    })
   })
 }
 

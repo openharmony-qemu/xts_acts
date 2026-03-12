@@ -70,7 +70,7 @@ async function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetPar
         }
       });
       userAuthInstance.start();
-      await Utils.msSleep(2000);
+      waitForCompletion(async () => {await Utils.msSleep(2000);})
     } catch (e) {
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
@@ -104,7 +104,7 @@ async function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.Widge
         }
       });
       userAuthInstance.start();
-      await Utils.msSleep(2000);
+      waitForCompletion(async () => {await Utils.msSleep(2000);})
     } catch (e) {
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
