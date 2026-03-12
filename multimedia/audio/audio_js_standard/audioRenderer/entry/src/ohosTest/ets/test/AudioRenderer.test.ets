@@ -16008,6 +16008,42 @@ export default function audioRendererTest() {
     })
 
     /**
+    * @tc.name   AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_DOUBLE_0100
+    * @tc.number AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_DOUBLE_0100
+    * @tc.desc   setRenderRate with RENDER_RATE_DOUBLE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_RENDERER_SET_RENDER_RATE_RENDER_RATE_DOUBLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      audioRenderer.setRenderRate(audio.AudioRendererRate.RENDER_RATE_DOUBLE, (err) => {
+        if (err) {
+          console.info(`${TagFrmwk}: setRenderRate with RENDER_RATE_DOUBLE: FAIL :${err.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: setRenderRate with RENDER_RATE_DOUBLE: PASS`);
+          done();
+        }
+        done();
+      })
+    })
+
+    /**
     * @tc.name   AUDIO_RENDERER_SET_INTERRUPT_MODE_SYNC_INDEPENDENT_MODE_0100
     * @tc.number AUDIO_RENDERER_SET_INTERRUPT_MODE_SYNC_INDEPENDENT_MODE_0100
     * @tc.desc   setInterruptModeSync with INDEPENDENT_MODE test.
