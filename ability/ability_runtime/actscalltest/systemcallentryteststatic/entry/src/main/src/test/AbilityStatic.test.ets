@@ -123,6 +123,30 @@ export default function AbilityStaticTest() {
       })
     })
 
+    /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0301
+     * @tc.number ACTS_CommonComponent_Call_Static_0301
+     * @tc.desc   test callWithResult ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_CommonComponent_Call_Static_0301', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const itName = 'ACTS_CommonComponent_Call_Static_0301';
+      hilog.info(domain, tag, `${itName} start`);
+      const data = new CustomParcelable();
+      caller?.callWithResult('', data).then((message: rpc.MessageSequence) => {
+        hilog.info(domain, tag, `${itName} caller call success`);
+        expect().assertFail();
+      }).catch((e: Error) => {
+        const err = e as BusinessError;
+        hilog.info(domain, tag, `${itName} caller callWithResult fail error code: ${err?.code}, msg: ${err?.message}`);
+        expect(`${err?.code}`).assertEqual('401');
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      })
+    })
+
 
     /**
      * @tc.name   ACTS_CommonComponent_Call_Static_0400

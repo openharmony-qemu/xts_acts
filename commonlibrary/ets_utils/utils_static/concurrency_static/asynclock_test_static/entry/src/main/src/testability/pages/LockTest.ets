@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -325,7 +325,7 @@ export function abortTest(): Promise<string> {
   options.signal = s;
   let p: Promise<number | string> = lock.lockAsync<number, string>((): number => {
     hilog.info(0x0000, 'ActsConcurrencyBaseJSTest', 'Test failed');
-    return 5;
+    return 10;
   }, AsyncLockMode.EXCLUSIVE, options);
   s.aborted = true;
   let p1 = p.then(
@@ -470,11 +470,11 @@ export async function multipleWakeupTest(): Promise<string> {
     await sleep(100)
   }
   let count = 10;
-   let promises: Promise<void>[] = new Array<Promise<void>>(count);
+   let promises: Promise<void>[] = [];
   let lock = AsyncLock.request(lockName);
   for (let i = 0; i < count; ++i) {
-    promises[i] = lock.lockAsync<void>(async (): Promise<void> => {
-    }, AsyncLockMode.SHARED);
+    promises.push(lock.lockAsync<void>(async (): Promise<void> => {
+    }, AsyncLockMode.SHARED));
   }
   await p;
   return check('multipleWakeupTest', Promise.all(promises));
@@ -788,7 +788,7 @@ function fourThreadsApplyForSameLockImpl(mode: AsyncLockMode): Promise<Array<Any
   let lockName = 'fourThreadsApplyForSameLock' + (mode == AsyncLockMode.EXCLUSIVE ? '_exclusive' : 'shared');
   let tidBuf = createInt();
   tidBuf[0] = 0;
-  let promises = new Array<Promise<Any>>(4);
+  let promises: Promise<Any>[] = [];
   for (let i: int = 0; i < 4; ++i) {
     promises.push(taskpool.execute(applyLockJob, lockName, mode, tidBuf, 0));
   }
@@ -923,11 +923,11 @@ export function pressureTest(): Promise<string> {
     taskBuf[i] = 0;
   }
   let lockName = 'pressureLock';
-  let promises = new Array<Promise<Any>>(100);
+  let promises: Promise<Any>[] = [];
   for (let i = 0; i < taskBuf.length; ++i) {
     let timeout = i % 10;
     let p = taskpool.execute(pressureWorker, lockName, timeout, taskBuf) as Promise<Any>;
-    promises[i] = p;
+    promises.push(p);
   }
   return check('pressureTest', Promise.all(promises));
 }

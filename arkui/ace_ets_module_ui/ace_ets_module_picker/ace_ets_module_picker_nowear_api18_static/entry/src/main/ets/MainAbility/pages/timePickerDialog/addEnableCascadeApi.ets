@@ -31,7 +31,7 @@ struct TimePickerPage {
   @State minute: number = 0
   @State mode: boolean = true
   messageManager: MessageManager = new MessageManager()
-  @State enableCascade: boolean | undefined | null = true
+  @State enableCascade: boolean | undefined = true
 
   onPageShow() {
     console.info('TimePicker onPageShow')
@@ -131,42 +131,7 @@ struct TimePickerPage {
             }
           })
         })
-      Button('TimePickerDialog3')
-        .key('TimePickerDialog3')
-        .margin(20)
-        .onClick((e: ClickEvent) => {
-          this.getUIContext().showTimePickerDialog({
-            selected: this.selectedTime,
-            useMilitaryTime: this.isMilitaryTime,
-            disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
-            textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
-            selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
-            onAccept: (value: TimePickerResult) => {
-              if (value.hour != undefined && value.minute != undefined) {
-                this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
-                console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
-              }
-            },
-            onCancel: () => {
-              console.info('TimePickerDialog:onCancel()')
-            },
-            onChange: (value: TimePickerResult) => {
-              console.info('TimePickerDialog:onChange()' + JSON.stringify(value))
-            },
-            onDidAppear: () => {
-              console.info('TimePickerDialog:onDidAppear()')
-            },
-            onDidDisappear: () => {
-              console.info('TimePickerDialog:onDidDisappear()')
-            },
-            onWillAppear: () => {
-              console.info('TimePickerDialog:onWillAppear()')
-            },
-            onWillDisappear: () => {
-              console.info('TimePickerDialog:onWillDisappear()')
-            }
-          })
-        })
+     
       Button('TimePickerDialog4')
         .key('TimePickerDialog4')
         .margin(20)

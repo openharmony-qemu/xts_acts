@@ -1323,7 +1323,7 @@ export default function atomicsIsLockFreeTest() {
     it('atomicsIsLockFreeTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const taskCount: int = 3;
       // Create multiple parallel tasks checking 1-byte size
-      const parallelTasks = Array.from(new Array<int>(taskCount), async () => {
+      const parallelTasks = Array.from(Array.create<int>(taskCount, 0), async () => {
         await new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve(undefined)

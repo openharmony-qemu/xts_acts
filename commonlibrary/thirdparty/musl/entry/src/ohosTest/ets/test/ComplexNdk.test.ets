@@ -30,9 +30,9 @@ export default function complexNdkTest() {
      * @tc.desc   test creal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCReal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCReal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = firstParam;
@@ -47,9 +47,9 @@ export default function complexNdkTest() {
      * @tc.desc   test crealf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCRealF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCRealF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = firstParam;
@@ -64,9 +64,9 @@ export default function complexNdkTest() {
      * @tc.desc   test creall
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCRealL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCRealL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = firstParam;
@@ -81,9 +81,9 @@ export default function complexNdkTest() {
      * @tc.desc   test conj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexConj001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexConj001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(2.00,-1.00)";
@@ -98,9 +98,9 @@ export default function complexNdkTest() {
      * @tc.desc   test conjf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexConjF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexConjF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(2.00,-1.00)";
@@ -115,9 +115,9 @@ export default function complexNdkTest() {
      * @tc.desc   test conjl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexConjL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexConjL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(2.00,-1.00)";
@@ -132,9 +132,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cpow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCPow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCPow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let thirdParam = 1;
@@ -151,9 +151,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cpowf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCPowF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCPowF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let thirdParam = 1;
@@ -170,9 +170,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cpowl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCPowL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCPowL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let thirdParam = 1;
@@ -189,9 +189,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cproj
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCProj001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCProj001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(2.00,1.00)";
@@ -206,9 +206,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cprojf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCProjF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCProjF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(2.00,1.00)";
@@ -223,9 +223,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cprojl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCProjL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCProjL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(2.00,1.00)";
@@ -240,9 +240,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.40,-0.49)";
@@ -257,9 +257,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csinf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSinF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.40,-0.49)";
@@ -274,9 +274,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csinl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSinL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.40,-0.49)";
@@ -291,9 +291,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csinh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSinH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSinH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.96,3.17)";
@@ -308,9 +308,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csinhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSinHf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSinHf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.40,-0.49)";
@@ -325,9 +325,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csinhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSinHl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSinHl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.96,3.17)";
@@ -342,9 +342,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csqrt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.46,0.34)";
@@ -359,9 +359,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csqrtf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSqrtF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSqrtF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.46,0.34)";
@@ -376,9 +376,9 @@ export default function complexNdkTest() {
      * @tc.desc   test csqrtl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCSqrtL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCSqrtL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.46,0.34)";
@@ -393,9 +393,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ctan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCTan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCTan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(-0.24,1.17)";
@@ -410,9 +410,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ctanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCTanF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCTanF001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(-0.24,1.17)";
@@ -427,9 +427,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ctanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCTanL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCTanL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(-0.24,1.17)";
@@ -444,9 +444,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ctanh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCTanH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCTanH001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.01,0.03)";
@@ -461,9 +461,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ctanhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCTanHf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCTanHf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(-0.24,1.17)";
@@ -478,9 +478,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ctanhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCTanHl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCTanHl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let firstParam = 2;
       let secondParam = 1;
       let expectValue = "(1.01,0.03)";
@@ -495,9 +495,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 3;
       let param_image = 4;
       let resultValue = 5;
@@ -512,9 +512,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 3;
       let param_image = -4;
       let resultValue = 5;
@@ -529,9 +529,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -3;
       let param_image = 4;
       let resultValue = 5;
@@ -546,9 +546,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabs004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabs004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -3;
       let param_image = -4;
       let resultValue = 5;
@@ -563,9 +563,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabsf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabsf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabsf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 3;
       let param_image = 4;
       let resultValue = 5;
@@ -580,9 +580,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabsf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabsf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabsf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 3;
       let param_image = -4;
       let resultValue = 5;
@@ -597,9 +597,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabsf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabsf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabsf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -3;
       let param_image = 4;
       let resultValue = 5;
@@ -614,9 +614,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabsf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabsf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabsf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -3;
       let param_image = -4;
       let resultValue = 5;
@@ -631,9 +631,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabsl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabsl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabsl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 3;
       let param_image = 4;
       let resultValue = 5;
@@ -648,9 +648,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabsl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabsl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabsl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 3;
       let param_image = -4;
       let resultValue = 5;
@@ -665,9 +665,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabsl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabsl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabsl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -3;
       let param_image = 4;
       let resultValue = 5;
@@ -682,9 +682,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cabsl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCabsl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCabsl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -3;
       let param_image = -4;
       let resultValue = 5;
@@ -699,9 +699,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.00,-1.98)";
@@ -716,9 +716,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.57,0.00)";
@@ -733,9 +733,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.00,-1.98)";
@@ -750,9 +750,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.57,0.00)";
@@ -767,9 +767,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.00,-1.98)";
@@ -784,9 +784,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.57,0.00)";
@@ -802,9 +802,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.98,1.00)";
@@ -819,9 +819,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(-0.00,1.57)";
@@ -836,9 +836,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacoshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacoshf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacoshf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.98,1.00)";
@@ -853,9 +853,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacoshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacoshf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacoshf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(-0.00,1.57)";
@@ -870,9 +870,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacoshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacoshl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacoshl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.98,1.00)";
@@ -887,9 +887,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cacoshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCacoshl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCacoshl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(-0.00,1.57)";
@@ -904,9 +904,9 @@ export default function complexNdkTest() {
      * @tc.desc   test carg
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCarg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCarg001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 1;
       let param_image = 2;
       let resultValue = 1;
@@ -921,9 +921,9 @@ export default function complexNdkTest() {
      * @tc.desc   test carg
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCarg002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCarg002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -2;
       let param_image = -2;
       let resultValue = 1;
@@ -938,9 +938,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cargl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCargl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCargl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 1;
       let param_image = 2;
       let resultValue = 1;
@@ -955,9 +955,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cargl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCargl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCargl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -2;
       let param_image = -2;
       let resultValue = 1;
@@ -972,9 +972,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cargf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCargf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCargf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 1;
       let param_image = 2;
       let resultValue = 1;
@@ -989,9 +989,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cargf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCargf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCargf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = -2;
       let param_image = -2;
       let resultValue = 1;
@@ -1006,9 +1006,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(0.57,1.98)";
@@ -1023,9 +1023,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,-0.00)";
@@ -1040,9 +1040,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(0.57,1.98)";
@@ -1057,9 +1057,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,-0.00)";
@@ -1074,9 +1074,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(0.57,1.98)";
@@ -1091,9 +1091,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,-0.00)";
@@ -1109,9 +1109,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.97,0.96)";
@@ -1126,9 +1126,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(-0.00,-0.00)";
@@ -1143,9 +1143,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.97,0.96)";
@@ -1160,9 +1160,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(-0.00,-0.00)";
@@ -1177,9 +1177,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.97,0.96)";
@@ -1194,9 +1194,9 @@ export default function complexNdkTest() {
      * @tc.desc   test casinhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCasinhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCasinhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(-0.00,-0.00)";
@@ -1211,9 +1211,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.41,0.23)";
@@ -1228,9 +1228,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,0.00)";
@@ -1245,9 +1245,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.41,0.23)";
@@ -1262,9 +1262,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,0.00)";
@@ -1279,9 +1279,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.41,0.23)";
@@ -1296,9 +1296,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,0.00)";
@@ -1314,9 +1314,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(0.15,1.34)";
@@ -1331,9 +1331,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,0.00)";
@@ -1348,9 +1348,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanhf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(0.15,1.34)";
@@ -1365,9 +1365,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanhf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanhf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,0.00)";
@@ -1382,9 +1382,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanhl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(0.15,1.34)";
@@ -1399,9 +1399,9 @@ export default function complexNdkTest() {
      * @tc.desc   test catanhl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCatanhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCatanhl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(0.00,0.00)";
@@ -1416,9 +1416,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-4.19,-9.11)";
@@ -1433,9 +1433,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccos
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,-0.00)";
@@ -1450,9 +1450,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcosf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-4.19,-9.11)";
@@ -1467,9 +1467,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccosf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcosf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,-0.00)";
@@ -1484,9 +1484,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcosl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-4.19,-9.11)";
@@ -1501,9 +1501,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccosl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcosl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,-0.00)";
@@ -1519,9 +1519,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-3.72,0.51)";
@@ -1536,9 +1536,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccosh
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,0.00)";
@@ -1553,9 +1553,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccoshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcoshf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcoshf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-3.72,0.51)";
@@ -1570,9 +1570,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccoshf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcoshf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcoshf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,0.00)";
@@ -1587,9 +1587,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccoshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcoshl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcoshl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-3.72,0.51)";
@@ -1604,9 +1604,9 @@ export default function complexNdkTest() {
      * @tc.desc   test ccoshl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCcoshl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCcoshl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,0.00)";
@@ -1621,9 +1621,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCexp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-7.32,1.04)";
@@ -1638,9 +1638,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cexp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCexp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,0.00)";
@@ -1655,9 +1655,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCexpf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCexpf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-7.32,1.04)";
@@ -1672,9 +1672,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cexpf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCexpf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,0.00)";
@@ -1689,9 +1689,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCexpl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(-7.32,1.04)";
@@ -1706,9 +1706,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cexpl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCexpl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 0;
       let param_image = 0;
       let resultValue = "(1.00,0.00)";
@@ -1723,9 +1723,9 @@ export default function complexNdkTest() {
      * @tc.desc   test clog
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexClog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexClog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.28,0.98)";
@@ -1740,9 +1740,9 @@ export default function complexNdkTest() {
      * @tc.desc   test clogl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexClogl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexClogl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.28,0.98)";
@@ -1757,9 +1757,9 @@ export default function complexNdkTest() {
      * @tc.desc   test clogf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexClogf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexClogf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = "(1.28,0.98)";
@@ -1774,9 +1774,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cimag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCimag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCimag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = 3;
@@ -1791,9 +1791,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cimagl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCimagl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCimagl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = 3;
@@ -1808,9 +1808,9 @@ export default function complexNdkTest() {
      * @tc.desc   test cimagf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslComplexCimagf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslComplexCimagf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let param_real = 2;
       let param_image = 3;
       let resultValue = 3;

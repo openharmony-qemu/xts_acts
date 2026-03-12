@@ -17,7 +17,7 @@ import router from '@system.router';
 import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 export default function sliderPropsJsTest() {
-    describe('sliderPropsJsTest', function() {
+    describe('sliderPropsJsTestAdapt001', function() {
 
         async function sleep(time) {
             return new Promise((resolve, reject) => {

@@ -166,14 +166,14 @@ describe('fileio_ftruncate', function () {
   });
 
   /**
-   * @tc.name   fileio_test_ftruncate_async_004
+   * @tc.name   fileio_test_ftruncate_async_004Adapt001
    * @tc.number SUB_DF_FILEIO_FTRUNCATE_ASYNC_0400
    * @tc.desc   Test ftruncate() interfaces. Promise.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('fileio_test_ftruncate_async_004', Level.LEVEL3, async function (done) {
+  it('fileio_test_ftruncate_async_004Adapt001', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_ftruncate_async_004');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 

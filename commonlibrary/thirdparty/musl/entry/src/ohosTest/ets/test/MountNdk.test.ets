@@ -30,9 +30,9 @@ export default function mountNdkTest() {
      * @tc.desc   test umount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMountUmount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMountUmount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = mount.umount();
       console.info("Test result= " + result);
       expect(result).assertEqual(0);
@@ -45,9 +45,9 @@ export default function mountNdkTest() {
      * @tc.desc   test umount2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMountUmount2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMountUmount2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = mount.umount2();
       console.info("Test result= " + result);
       expect(result).assertEqual(0);

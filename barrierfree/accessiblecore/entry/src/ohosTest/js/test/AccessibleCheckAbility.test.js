@@ -17,7 +17,7 @@ import accessibility from '@ohos.accessibility'
 import { Driver } from '@ohos.UiTest';
 
 export default function AccessibleCheckAbility() {
-describe('AccessibleCheckAbility', function () {
+describe('AccessibleCheckAbilityAdapt001', function () {
     const TIMEOUT = 1000;
     beforeAll(async function (done) {
         let driver = Driver.create();

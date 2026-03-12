@@ -1477,5 +1477,98 @@ it('fileIO_copy_copy_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, a
     done();
   }
 });
-});
+
+/**
+   * @tc.name   fileIO_copy_async_046
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_4600
+   * @tc.desc   Test copy() interfaces.Promise with srcUri as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+it('fileIO_copy_async_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+  let fpathTarget = await nextFileName('dst');
+  expect(prepareFile(fpathTarget, CONTENT)).assertTrue();
+  let dstDirUriLocal = fileUri.getUriFromPath(fpathTarget);
+
+  let progressListener = (progress) => {
+    console.info(`progressSize: ${progress.processedSize}, totalSize: ${progress.totalSize}`);
+  };
+  let options = {
+    "progressListener" : progressListener
+  }
+  try {
+    await fileIO.copy('', dstDirUriLocal, options);
+    expect().assertFail();
+    done();
+  } catch (e) {
+    fileIO.unlinkSync(fpathTarget);
+    console.log('fileIO_copy_async_046 has failed for ' + e.message + ', code: ' + e.code);
+    expect(e.code === 401 && e.message == 'The input parameter is invalid').assertTrue();
+    done();
+  }
+ });
+
+/**
+ * @tc.name   fileIO_copy_async_047
+ * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_4700
+ * @tc.desc   Test copy() interfaces.Promise with destUri as empty string.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('fileIO_copy_async_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+  let fpath = await nextFileName('fileIO_copy_async_025');
+  expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  let srcDirUriLocal = fileUri.getUriFromPath(fpath);
+
+  let progressListener = (progress) => {
+    console.info(`progressSize: ${progress.processedSize}, totalSize: ${progress.totalSize}`);
+  };
+  let options = {
+    "progressListener" : progressListener
+  }
+  try {
+    await fileIO.copy(srcDirUriLocal, '', options);
+    expect().assertFail();
+    done();
+  } catch (e) {
+    fileIO.unlinkSync(fpath);
+    console.log('fileIO_copy_async_047 has failed for ' + e.message + ', code: ' + e.code);
+    expect(e.code === 401 && e.message == 'The input parameter is invalid').assertTrue();
+    done();
+  }
+ });
+
+/**
+     * @tc.name   fileIO_copy_async_048
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIo_Copy_ASYNC_4800
+     * @tc.desc   Test copy() interfaces.Promise with srcUri as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_copy_async_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpathTarget = await nextFileName('dst');
+      expect(prepareFile(fpathTarget, CONTENT)).assertTrue();
+      let dstDirUriLocal = fileUri.getUriFromPath(fpathTarget);
+  
+      let progressListener = (progress) => {
+        console.info(`progressSize: ${progress.processedSize}, totalSize: ${progress.totalSize}`);
+      };
+      let options = {
+        "progressListener" : progressListener
+      }
+      try {
+        await fileIO.copy('', dstDirUriLocal, options);
+        expect().assertFail();
+        done();
+      } catch (e) {
+        fileIO.unlinkSync(fpathTarget);
+        console.log('fileIO_copy_async_048 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 401 && e.message == 'The input parameter is invalid').assertTrue();
+        done();
+      }
+     });
+   });
 }

@@ -29,7 +29,7 @@ import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function bindTips1Test() {
-  describe('ActsbindTips', () => {
+  describe('ActsbindTipsAdapt001', () => {
 
     beforeAll(async (): Promise<void> => {
 

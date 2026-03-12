@@ -6,6 +6,7 @@
         "MainAbility/pages/ContainerSpan/APITextBackgroundStyle",
         "MainAbility/pages/ContainerSpan/ContainerSpanModifier",
         "MainAbility/pages/ContainerSpan/ContainerSpanModifierTest1",
+        "MainAbility/pages/ContainerSpan/ContainerSpanPropertiesNullUndefinedTest",
 
         "MainAbility/pages/ImageSpan/ImageLoadResult",
         "MainAbility/pages/ImageSpan/ImageSpanAlignment",

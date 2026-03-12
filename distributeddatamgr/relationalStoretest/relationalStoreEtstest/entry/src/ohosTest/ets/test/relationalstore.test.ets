@@ -705,6 +705,25 @@ export default function relationalStoreInterfaceTest() {
         expect("401").assertEqual(String(err.code))
         done()
       }
+
+       try {
+        rdbStore.setLocale(null)
+        console.log(TAG + "relationalStoreTest020");
+        done()
+      } catch (err) {
+        console.log(TAG + "err"+ err.code + err.message);
+        expect("401").assertEqual(String(err.code))
+        done()
+      }
+         try {
+        rdbStore.setLocale("")
+        console.log(TAG + "relationalStoreTest020");
+        done()
+      } catch (err) {
+        console.log(TAG + "err"+ err.code + err.message);
+        expect("14800001").assertEqual(String(err.code))
+        done()
+      }
       console.info(TAG + "************* relationalStoreTest020 end *************");
     })
     /**

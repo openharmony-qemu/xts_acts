@@ -17,6 +17,7 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import { Foo } from '../ets/Index'
+import {hidebug} from '@kit.PerformanceAnalysisKit'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -29,6 +30,9 @@ export default function versionInfoTest() {
     } catch (e) {
       console.log('loadFailed', e.message);
     }
+
+    let vmMemory1: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
+    console.info(`testTag heapUsed versionInfoTest begin: ${vmMemory1.heapUsed}`)
 
     /**
      * @tc.number    SUB_ANI_GETVERSIONINFO_STATIC_0100
@@ -105,5 +109,9 @@ export default function versionInfoTest() {
         done();
         console.log('test_GetVersionInfo_Static_0004 end');
       });
+    let vmMemory2: hidebug.VMMemoryInfo = hidebug.getAppVMMemoryInfo();
+    console.info(`testTag heapUsed versionInfoTest end: ${vmMemory2.heapUsed}`)
+    let sum = vmMemory2.heapUsed - vmMemory1.heapUsed;
+    console.info(`testTag heapUsed versionInfoTest total: ${sum}`)
   })
 }

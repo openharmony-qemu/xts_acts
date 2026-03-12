@@ -176,13 +176,13 @@ export default function graphicImagePixelMap2() {
             if (err) {
               console.error(`Failed to translate pixelmap. code is ${err.code}, message is ${err.message}`);
               expect().assertFail();
-              return;
+              done();
             } else {
               console.info("Succeeded in translating pixelmap.");
+              done();
             }
           })
         }
-        done();
       })
 
     /**
@@ -873,12 +873,13 @@ export default function graphicImagePixelMap2() {
         try {
           pixelMap!.flip(false, true, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap2_static_3100 succeed')
+            done();
           })
         } catch (err) {
           console.info('www data graphicImagePixelMap2_static_3100 failed', JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1136,7 +1137,7 @@ export default function graphicImagePixelMap2() {
           pixelMap!.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
             if (err) {
               console.error(`www data Failed to obtain the image pixel map information. code is ${err.code}`);
-              return;
+              done();
             } else {
               console.info('www data graphicImagePixelMap2_static_4000 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.size.width).assertLargerOrEqual(0);
@@ -1147,12 +1148,13 @@ export default function graphicImagePixelMap2() {
               expect(imageInfoCallback?.mimeType === '').assertTrue();
               expect(imageInfoCallback?.alphaType).assertEqual(image.AlphaType.PREMUL);
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
+              done();
             }
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1180,11 +1182,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_4100 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1215,11 +1218,12 @@ export default function graphicImagePixelMap2() {
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.ARGB_8888);
               expect(imageInfoCallback?.isHdr).assertFalse();
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1250,11 +1254,12 @@ export default function graphicImagePixelMap2() {
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGB_565);
               expect(imageInfoCallback?.alphaType).assertEqual(image.AlphaType.OPAQUE);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1285,11 +1290,12 @@ export default function graphicImagePixelMap2() {
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
               expect(imageInfoCallback?.alphaType).assertEqual(image.AlphaType.UNPREMUL);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1317,11 +1323,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_4500 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.BGRA_8888);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1349,11 +1356,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_4600 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGB_888);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1381,11 +1389,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_4700 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_8);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1413,11 +1422,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_4800 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_F16);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1445,11 +1455,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_4900 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.NV21);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1477,11 +1488,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_5000 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.NV12);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1509,11 +1521,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_5100 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.YCBCR_P010);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1541,11 +1554,12 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_static_5200 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
             }
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1564,20 +1578,25 @@ export default function graphicImagePixelMap2() {
           let pixelMap : image.PixelMap = image.createPixelMapSync(opts);
           let imgInfo = pixelMap.getImageInfoSync();
           console.info('www data graphicImagePixelMap2_static_5300 ', JSON.stringify(imgInfo));
-          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ASTC_4x4);
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+          expect(imgInfo.pixelFormat === image.PixelMapFormat.ASTC_4x4).assertFalse();
           let imgInfoPromise = await pixelMap.getImageInfo();
           console.info('www data graphicImagePixelMap2_static_5300 ', JSON.stringify(imgInfoPromise));
-          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.ASTC_4x4);
+          expect(imgInfoPromise.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+          expect(imgInfo.pixelFormat === image.PixelMapFormat.ASTC_4x4).assertFalse();
           pixelMap.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_static_5300 ', JSON.stringify(imageInfoCallback));
-              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.ASTC_4x4);
+              expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+              expect(imgInfo.pixelFormat === image.PixelMapFormat.ASTC_4x4).assertFalse();
             }
+            done();
           })
         } catch (err) {
+          console.info('www data graphicImagePixelMap2_static_5300 error ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**

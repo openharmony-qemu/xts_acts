@@ -69,7 +69,7 @@ export default function textThemeTest() {
     });
 
     /**
-     * @tc.name   ActsTextThemeColors_0100
+     * @tc.name   `ActsTextThemeColors_0100`
      * @tc.number ActsTextThemeColors_0100
      * @tc.desc   Check system colors values of Text component
      * @tc.type   FUNCTION
@@ -88,7 +88,7 @@ export default function textThemeTest() {
     });
 
     /**
-     * @tc.name   ActsTextThemeColors_0200
+     * @tc.name   `ActsTextThemeColors_0200`
      * @tc.number ActsTextThemeColors_0200
      * @tc.desc   Check custom colors values of Text component
      * @tc.type   FUNCTION
@@ -109,7 +109,7 @@ export default function textThemeTest() {
     })
 
     /**
-     * @tc.name   ActsTextThemeColors_0300
+     * @tc.name   `ActsTextThemeColors_0300`
      * @tc.number ActsTextThemeColors_0300
      * @tc.desc   Check custom colors values of Text component
      * @tc.type   FUNCTION

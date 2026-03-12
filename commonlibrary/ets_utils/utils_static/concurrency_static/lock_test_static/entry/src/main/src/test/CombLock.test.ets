@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1252,22 +1252,20 @@ export default function CombLockTest() {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Job<void>>(coroutines);
-        let workers = new Array<EAWorker>(coroutines);
+        let jobs = new Array<Job<void>>();
+        let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
-          const id = i;
-          workers[i] = new EAWorker(`Worker-${id}`);
           workers[i].start();
 
-          jobs[i] = workers[i].run<void>(() => {
+          jobs.push(workers[i].run<void>(() => {
             for (let j = 0; j < workload; ++j) {
               mutexLock.lock();
               // 临界区资源
               count++;
               mutexLock.unlock();
             }
-          });
+          }));
         }
         // 等待所有任务完成
         let sharedJob = new SharedJob<Job<void>>(jobs);
@@ -1299,22 +1297,20 @@ export default function CombLockTest() {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Job<void>>(coroutines);
-        let workers = new Array<EAWorker>(coroutines);
+        let jobs = new Array<Job<void>>();
+        let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
-          const id = i.toInt();
-          workers[i] = new EAWorker(`Worker-${id}`);
           workers[i].start();
 
-          jobs[id] = workers[i].run<void>(() => {
+          jobs.push(workers[i].run<void>(() => {
             for (let j = 0; j < workload; ++j) {
               readLock.lock();
               //临界区资源
               count++;
               readLock.unlock();
             }
-          });
+          }));
         }
 
         // 等待所有任务完成
@@ -1346,22 +1342,20 @@ export default function CombLockTest() {
         const workload = 1000;
 
         let count = 0;
-        let jobs = new Array<Job<void>>(coroutines);
-        let workers = new Array<EAWorker>(coroutines);
+        let jobs = new Array<Job<void>>();
+        let workers = new Array<EAWorker>(coroutines, (i: int) => new EAWorker(`Worker-${i}`));
 
         for (let i = 0; i < coroutines; ++i) {
-          const id = i.toInt();
-          workers[i] = new EAWorker(`Worker-${id}`);
           workers[i].start();
 
-          jobs[id] = workers[i].run<void>(() => {
+          jobs.push(workers[i].run<void>(() => {
             for (let j = 0; j < workload; ++j) {
               writeLock.lock();
               //临界区资源
               count++;
               writeLock.unlock();
             }
-          });
+          }));
         }
 
         // 等待所有任务完成

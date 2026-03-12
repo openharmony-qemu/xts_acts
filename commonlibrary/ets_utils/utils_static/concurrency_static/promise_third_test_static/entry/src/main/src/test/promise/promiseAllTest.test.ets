@@ -224,9 +224,8 @@ export default function promiseAllTest(){
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseAllTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      const promises: Promise<int>[] = new Array<number>(10)
-        .fill(0)
+    it('PromiseAllTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const promises: Promise<int>[] = Array.create<number>(10, 0)
         .map((_, i: int) => Promise.resolve(i));
 
       const result = await Promise.all(promises);

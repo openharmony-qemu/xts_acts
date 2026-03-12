@@ -636,6 +636,7 @@ export default function WindowZindexTest() {
             await subWin.showWindow();
             await Utils.msSleep(300);
             await subWin.destroyWindow();
+            await Utils.msSleep(300);
             try {
                 subWin.setWindowTopmost(true).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowTopmost.');
@@ -892,7 +893,11 @@ export default function WindowZindexTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-                expect(err.code == 1300004 || err.code == 801).assertTrue();
+                if (err.code === 1300004) {
+                    expect(err.code).assertEqual(1300004);
+                } else {
+                    expect(err.code).assertEqual(801);
+                }
                 done();
             }
         });

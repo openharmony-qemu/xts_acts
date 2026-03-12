@@ -47,6 +47,7 @@ import CameraSessionBandSuppTest from './camera/CameraSessionBandSupp.test';
 import CameraCaptureSessionTest from './camera/CameraCaptureSessionTest.test';
 import CameraPhotoSessionTest from './camera/CameraPhotoSessionTest.test';
 import CameraTest from './camera/CameraTest.test';
+import CameraPickerPickTest from './camera/CameraPickerPickTest.test';
 
 
 export default function testsuite() {
@@ -97,6 +98,7 @@ export default function testsuite() {
   CameraPhotoSessionTest();
   CameraCaptureSessionTest();
   CameraTest()
+  CameraPickerPickTest();
   CameraManagerGetSupportedOutputCapabilityTest();
 
 }

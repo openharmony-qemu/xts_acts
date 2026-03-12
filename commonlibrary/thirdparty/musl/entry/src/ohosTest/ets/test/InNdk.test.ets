@@ -30,9 +30,9 @@ export default function inNdkTest() {
      * @tc.desc   test ntohl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInNtohl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInNtohl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inndk.ntohl();
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(2018915346);
@@ -45,9 +45,9 @@ export default function inNdkTest() {
      * @tc.desc   test ntohs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInNtohs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInNtohs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inndk.ntohs();
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(13330);
@@ -60,9 +60,9 @@ export default function inNdkTest() {
      * @tc.desc   test htonl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInHtonl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInHtonl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inndk.htonl();
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(1);
@@ -74,9 +74,9 @@ export default function inNdkTest() {
      * @tc.desc   test htons
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInHtons001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInHtons001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inndk.htons();
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(1);
@@ -89,9 +89,9 @@ export default function inNdkTest() {
      * @tc.desc   test __in6addr_any
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIn6addrAny001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIn6addrAny001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = inndk.in6addrAny();
       console.info("Test result = " + JSON.stringify(result));
       expect(result).assertEqual(0);
@@ -104,9 +104,9 @@ export default function inNdkTest() {
      * @tc.desc   test __in6addr_loopback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIn6addrLoopback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIn6addrLoopback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = inndk.in6addrLoopback();
       console.info("Test result = " + JSON.stringify(result));
       expect(result).assertEqual(0);

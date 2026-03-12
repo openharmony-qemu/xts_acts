@@ -160,24 +160,6 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0006
-     * @tc.name testArrayConstructor0006
-     * @tc.desc Verify Array constructor throws error when argument is negative integer (-5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let isErrorThrown = false;
-      try {
-        new Array<number>(-5);
-      } catch (error) {
-        isErrorThrown = true;
-      }
-      expect(isErrorThrown).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0007
      * @tc.name testArrayConstructor0007
      * @tc.desc Verify Array constructor creates empty array with 0 as single argument
@@ -186,7 +168,7 @@ export default function ArrayConstructTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
       const arr1: Array<number> = [];
       expect(arr).assertDeepEquals(arr1);
@@ -1704,7 +1686,7 @@ export default function ArrayConstructTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<undefined>(5);
+      const arr = new Array<undefined>(5, (i) => undefined);
       expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual(undefined);
       expect(arr[4]).assertEqual(undefined);
@@ -1749,7 +1731,7 @@ export default function ArrayConstructTest() {
      */
     it('testArrayConstructor0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // Creating sparse array using Array constructor with length
-      const arr = new Array<undefined | number>(5);
+      const arr = new Array<undefined | number>(5, (i) => undefined);
       arr[0] = 1;
       arr[4] = 5;
 

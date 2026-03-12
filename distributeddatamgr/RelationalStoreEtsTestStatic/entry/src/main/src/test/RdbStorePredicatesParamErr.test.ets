@@ -787,6 +787,32 @@ export default function rdbStorePredicatesParamErrTest() {
         console.info(tag + "************* testOrder0002 end *************");
     })
 
+    /**
+     * @tc.name   testIsNotNull0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesParamErrTest_2000
+     * @tc.desc   predicates isNull normal test with ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testIsNotNull0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+        console.info(tag + "************* testIsNotNull0001 start *************");
+        try {
+          let predicates = new relationalStore.RdbPredicates("AllDataType");
+          predicates.isNotNull("");
+          let result = await rdbStore!.query(predicates);
+          expect(0).assertEqual(result?.rowCount);
+          result.close();
+          done();
+        } catch (err) {
+             expect(err.code).assertEqual(14800000); 
+          console.info(tag + "testIsNotNull0001 err.code:" + err.code + " err.msg:" + err.message);
+          done();
+        }
+        
+        console.info(tag + "************* testIsNull0001 end *************");
+      })
+
 
     console.log(tag + "*************Unit Test End*************");
 

@@ -57,6 +57,25 @@ let profile: eap.EthEapProfile = {
   eapSubId: 1
 };
 
+let validProfile: eap.EthEapProfile = {
+  eapMethod: eap.EapMethod.EAP_TTLS,
+  phase2Method: eap.Phase2Method.PHASE2_AKA_PRIME,
+  identity: "identity",
+  anonymousIdentity: "anonymousIdentity",
+  password: "password",
+  caCertAliases: "caCertAliases",
+  caPath: "caPath",
+  clientCertAliases: "clientCertAliases",
+  certEntry: new Uint8Array([5,6,7,8,9,10]),
+  certPassword: "certPassword",
+  altSubjectMatch: "altSubjectMatch",
+  domainSuffixMatch: "domainSuffixMatch",
+  realm: "realm",
+  plmn: "plmn",
+  eapSubId: 9999999
+};
+
+
 let netId = 100;
 
 export default function eapNoPTest() {
@@ -192,5 +211,56 @@ export default function eapNoPTest() {
       }
     })
     
+    /**
+     * @tc.name   testCommunicationEapLogOffEthEapErrorCode0600
+     * @tc.number SUB_Communication_Eap_LogOffEthEap_ErrorCode_0600
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapLogOffEthEapErrorCode0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapLogOffEthEapErrorCode0600";
+      console.info(`${caseName}---start`);
+      try {
+        eap.logOffEthEap(1);
+        console.info(`${caseName } logOffEthEap success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 201);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapStartEthEapErrorCode0700
+     * @tc.number SUB_Communication_Eap_StartEthEap_ErrorCode_0700
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapStartEthEapErrorCode0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapStartEthEapErrorCode0700";
+      console.info(`${caseName}---start`);
+      try {
+        eap.startEthEap(1, validProfile);
+        console.info(`${caseName } startEthEap success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 201);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+    
+
   })
 }

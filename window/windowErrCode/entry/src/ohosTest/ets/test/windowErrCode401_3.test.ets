@@ -809,6 +809,100 @@ export default function windowErrCode401_3() {
         done()
       }
     })
+     /**
+     * @tc.name   testCreateSubWindowWithOptionsPromiseErrCode401_0200
+     * @tc.number testCreateSubWindowWithOptionsPromiseErrCode401_0200
+     * @tc.desc   testCreateSubWindowWithOptionsPromiseErrCode401_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCreateSubWindowWithOptionsPromiseErrCode401_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testCreateSubWindowWithOptionsPromiseErrCode401_0200";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let mainWindow: ohosWindow.Window | undefined;
+      await windowStage.getMainWindow().then((data) => {
+        mainWindow = data;
+        console.info(caseName + ' ' + 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+      }).catch((err: BusinessError) => {
+        console.error(caseName + ' ' + 'Failed in obtaining the main window. Cuase: ' + JSON.stringify(err));
+        done()
+      });
+      expect(!!mainWindow).assertTrue();
+      let options: ohosWindow.SubWindowOptions = {
+        title: 'title',
+        decorEnabled: true,
+        isModal: true
+      };
+      try {
+        await mainWindow!.createSubWindowWithOptions(null, null).then(async () => {
+          console.info(msgStr + 'Succeeded in calling createSubWindowWithOptions.');
+          expect().assertFail();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to call createSubWindowWithOptions. Cause: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+        });
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        if (exception.code === undefined) {
+          console.info(msgStr + '此设备不支持createSubWindowWithOptions能力.');
+        } else {
+          expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        }
+        done()
+      }
+    })
+    /**
+     * @tc.name   testCreateSubWindowWithOptionsPromiseErrCode401_0300
+     * @tc.number testCreateSubWindowWithOptionsPromiseErrCode401_0300
+     * @tc.desc   testCreateSubWindowWithOptionsPromiseErrCode401_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCreateSubWindowWithOptionsPromiseErrCode401_0300', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testCreateSubWindowWithOptionsPromiseErrCode401_0300";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let mainWindow: ohosWindow.Window | undefined;
+      await windowStage.getMainWindow().then((data) => {
+        mainWindow = data;
+        console.info(caseName + ' ' + 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+      }).catch((err: BusinessError) => {
+        console.error(caseName + ' ' + 'Failed in obtaining the main window. Cuase: ' + JSON.stringify(err));
+        done()
+      });
+      expect(!!mainWindow).assertTrue();
+      let options: ohosWindow.SubWindowOptions = {
+        title: 'title',
+        decorEnabled: true,
+        isModal: true
+      };
+      try {
+        await mainWindow!.createSubWindowWithOptions(undefined, undefined).then(async () => {
+          console.info(msgStr + 'Succeeded in calling createSubWindowWithOptions.');
+          expect().assertFail();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to call createSubWindowWithOptions. Cause: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(401);
+        expect(err.message!=null).assertTrue();
+        });
+        done()
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        if (exception.code === undefined) {
+          console.info(msgStr + '此设备不支持createSubWindowWithOptions能力.');
+        } else {
+          expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        }
+        done()
+      }
+    })
     /**
      * @tc.name   testLoadContentByNameCallbackErrCode401_0300
      * @tc.number testLoadContentByNameCallbackErrCode401_0300
@@ -3306,6 +3400,75 @@ export default function windowErrCode401_3() {
         console.error(caseName + ' failed4. Caused: err.code '+ err.code +' ,err.message: '+err.message);
         expect().assertFail();
         done();
+      }
+    })
+
+    /**
+     * @tc.name testGetLastWindow_0100
+     * @tc.number testGetLastWindow_0100
+     * @tc.desc testGetLastWindow_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testGetLastWindow_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testGetLastWindow_0100";
+      ohosWindow.getLastWindow(null, (err: BusinessError) => {
+        const errCode: number = err.code;
+        if (errCode) {
+          console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+          expect(errCode).assertEqual(1300002);
+          done();
+        } else {
+          console.log(caseName + ' success');
+          expect().assertFail();
+          done();
+        }
+      });
+      ohosWindow.getLastWindow(undefined, (err: BusinessError) => {
+        const errCode: number = err.code;
+        if (errCode) {
+          console.error(caseName + ' failed2, err: ' + JSON.stringify(err));
+          expect(errCode).assertEqual(1300002);
+          done();
+        } else {
+          console.log(caseName + ' success2');
+          expect().assertFail();
+          done();
+        }
+      });
+    })
+
+    /**
+     * @tc.name   testGetLastWindow_0200
+     * @tc.number testGetLastWindow_0200
+     * @tc.desc   testGetLastWindow_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetLastWindow_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testGetLastWindow_0200";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      try {
+        await ohosWindow.getLastWindow(null);
+        console.info(msgStr + 'Succeeded');
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
+        expect(exception.code).assertEqual(1300002);
+        expect(exception.message!=null).assertTrue();
+      }
+      try {
+        await ohosWindow.getLastWindow(undefined);
+        console.info(msgStr + 'Succeeded2.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
+        expect(exception.code).assertEqual(1300002);
+        expect(exception.message!=null).assertTrue();
+        done()
       }
     })
 

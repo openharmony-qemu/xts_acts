@@ -30,9 +30,9 @@ export default function ftwNdk1Test() {
      * @tc.desc   test ftw
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFtwFtw002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFtwFtw002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = ftw.ftw(-1);
       expect(result).assertEqual(-1);
       done()
@@ -44,9 +44,9 @@ export default function ftwNdk1Test() {
      * @tc.desc   test ftw64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFtwFtw64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFtwFtw64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = ftw.ftw64(-1);
       expect(result).assertEqual(-1);
       done()
@@ -58,9 +58,9 @@ export default function ftwNdk1Test() {
      * @tc.desc   nftw
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFtwNftw002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFtwNftw002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = ftw.nftw(-1);
       expect(result).assertEqual(-1);
       done()
@@ -72,9 +72,9 @@ export default function ftwNdk1Test() {
      * @tc.desc   nftw64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFtwNftw64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFtwNftw64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = ftw.nftw64(-1);
       expect(result).assertEqual(-1);
       done()

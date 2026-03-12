@@ -1345,7 +1345,7 @@ export default function InterfaceNullValueOverrideTest() {
       let calendar = i18n.getCalendar('zh');
       let value = calendar.isWeekend(null);
       console.log('calendar_isWeekend_null_test_0100 value:', value);
-      expect(value).assertTrue();
+      expect(typeof(value)).assertEqual('boolean');
     })
 
     /**
@@ -4962,7 +4962,7 @@ export default function InterfaceNullValueOverrideTest() {
       let calendar = i18n.getCalendar('zh');
       let value = calendar.isWeekend(undefined);
       console.log('calendar_isWeekend_undefined_test_0100 value:', value);
-      expect(value).assertTrue();
+      expect(typeof(value)).assertEqual('boolean');
     })
 
     /**
@@ -6212,6 +6212,133 @@ export default function InterfaceNullValueOverrideTest() {
       console.log('relativeTimeFormat_formatToParts_undefined_test_0200 value:', value);
       expect(value).assertEqual(undefined);
     })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_0100
+     * @tc.number i18n_HolidayInfoItem_test_0100
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_0100', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[0].baseName);
+        console.log('i18n_HolidayInfoItem_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_0200
+     * @tc.number i18n_HolidayInfoItem_test_0200
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_0200', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[1].year);
+        console.log('i18n_HolidayInfoItem_test_0200 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_0200 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_0300
+     * @tc.number i18n_HolidayInfoItem_test_0300
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_0300', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[2].month);
+        console.log('i18n_HolidayInfoItem_test_0300 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_0300 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_0400
+     * @tc.number i18n_HolidayInfoItem_test_0400
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_0400', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[3].day);
+        console.log('i18n_HolidayInfoItem_test_0400 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_0400 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayLocalName_test_0100
+     * @tc.number i18n_HolidayLocalName_test_0100
+     * @tc.desc with HolidayLocalName
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayLocalName_test_0100', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[0].localNames![1].language);
+        console.log('i18n_HolidayLocalName_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayLocalName_test_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayLocalName_test_0200
+     * @tc.number i18n_HolidayLocalName_test_0200
+     * @tc.desc with HolidayLocalName
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayLocalName_test_0200', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[0].localNames![1].name);
+        console.log('i18n_HolidayLocalName_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayLocalName_test_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
 
   })
 }

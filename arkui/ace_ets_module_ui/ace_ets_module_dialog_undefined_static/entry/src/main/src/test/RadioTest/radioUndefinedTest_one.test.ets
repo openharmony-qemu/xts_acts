@@ -40,7 +40,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function radioUndefinedTest() {
-  describe('radioUndefinedTest', () => {
+  describe('radioUndefinedTestAdapt001', () => {
     beforeAll(async ():Promise<void> => {
       console.info("radioUndefinedTest beforeAll start");
 

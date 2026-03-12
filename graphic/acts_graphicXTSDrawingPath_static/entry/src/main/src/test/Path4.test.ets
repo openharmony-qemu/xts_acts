@@ -129,6 +129,22 @@ export default function drawingTsPath4Test() {
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
+      try {
+        const path = new drawing.Path();
+        let matrix: drawing.Matrix;
+        matrix = new drawing.Matrix();
+        path.moveTo(0, 10);
+        path.lineTo(80, 10);
+        let flag: boolean;
+        flag = path.getMatrix(true, 20, matrix, drawing.PathMeasureMatrixFlags.GET_POSITION_MATRIX);
+        console.info(msg + 'getMatrix 12 successes flag is: ' + flag );
+        expect(flag).assertTrue();
+        console.info(msg + 'reset successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
     })
     /**
      * @tc.name   testPathGetMatrixMultipleCallsStatic
@@ -747,6 +763,524 @@ export default function drawingTsPath4Test() {
       }
     })
     /**
+     * @tc.name   testPathSetNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3300
+     * @tc.desc   testPathSetNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathSetNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testPathSetNormalStatic';
+      let path = new drawing.Path();
+      let path1 = new drawing.Path();
+      try {
+        path1.set(path);
+        console.info(msg + ` path1 1 set success`);
+
+        let rect = path.getBounds();
+        console.info(msg + " 1 test rect.left: " + rect!.left);
+        console.info(msg + " 1 test rect.top: " + rect!.top);
+        console.info(msg + " 1 test rect.right: " + rect!.right);
+        console.info(msg + " 1 test rect.bottom: " + rect!.bottom);
+        let rect1 = path1.getBounds();
+        console.info(msg + " 1 test rect1.left: " + rect1!.left);
+        console.info(msg + " 1 test rect1.top: " + rect1!.top);
+        console.info(msg + " 1 test rect1.right: " + rect1!.right);
+        console.info(msg + " 1 test rect1.bottom: " + rect1!.bottom);
+        expect(rect!.left).assertEqual(rect1!.left);
+        expect(rect!.top).assertEqual(rect1!.top);
+        expect(rect!.right).assertEqual(rect1!.right);
+        expect(rect!.bottom).assertEqual(rect1!.bottom);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` path1 1 set error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      path.moveTo(100, 100)
+      path.lineTo(100, 300);
+      path.lineTo(300, 300);
+      try {
+        path1.set(path);
+        console.info(msg + ` path1 2 set success`);
+        let rect = path.getBounds();
+        console.info(msg + " 2 test rect.left: " + rect!.left);
+        console.info(msg + " 2 test rect.top: " + rect!.top);
+        console.info(msg + " 2 test rect.right: " + rect!.right);
+        console.info(msg + " 2 test rect.bottom: " + rect!.bottom);
+        let rect1 = path1.getBounds();
+        console.info(msg + " 2 test rect1.left: " + rect1!.left);
+        console.info(msg + " 2 test rect1.top: " + rect1!.top);
+        console.info(msg + " 2 test rect1.right: " + rect1!.right);
+        console.info(msg + " 2 test rect1.bottom: " + rect1!.bottom);
+        expect(rect!.left).assertEqual(rect1!.left);
+        expect(rect!.top).assertEqual(rect1!.top);
+        expect(rect!.right).assertEqual(rect1!.right);
+        expect(rect!.bottom).assertEqual(rect1!.bottom);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` path1 2 set error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      path.rQuadTo(10.5, 0.5, 100.5, 100.5);
+      path.rMoveTo(10, 10);
+      path.rQuadTo(100, 100, 200, 100);
+      path.rMoveTo(10, 10);
+      path.rQuadTo(-60, -60, -100, -60);
+      path.rMoveTo(10, 10);
+      path.rQuadTo(5000, 5000, 10000, 5000);
+      try {
+        path1.set(path);
+        console.info(msg + `path1 3 set success`);
+
+        let rect = path.getBounds();
+        console.info(msg + " 3 test rect.left: " + rect!.left);
+        console.info(msg + " 3 test rect.top: " + rect!.top);
+        console.info(msg + " 3 test rect.right: " + rect!.right);
+        console.info(msg + " 3 test rect.bottom: " + rect!.bottom);
+        let rect1 = path1.getBounds();
+        console.info(msg + " 3 test rect1.left: " + rect1!.left);
+        console.info(msg + " 3 test rect1.top: " + rect1!.top);
+        console.info(msg + " 3 test rect1.right: " + rect1!.right);
+        console.info(msg + " 3 test rect1.bottom: " + rect1!.bottom);
+        expect(rect!.left).assertEqual(rect1!.left);
+        expect(rect!.top).assertEqual(rect1!.top);
+        expect(rect!.right).assertEqual(rect1!.right);
+        expect(rect!.bottom).assertEqual(rect1!.bottom);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path1 3 set error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+    })
+    /**
+     * @tc.name   testPathSetMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3301
+     * @tc.desc   testPathSetMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathSetMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathSetMultipleCallsStatic';
+      let path = new drawing.Path();
+      let path1 = new drawing.Path();
+      path.moveTo(100, 100)
+      path.lineTo(100, 300);
+      path.lineTo(300, 300);
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          path1.set(path);
+          console.info(msg + `path1 set success step: ` + i);
+
+          let rect = path.getBounds();
+          console.info(msg + "  test rect.left: " + rect!.left + " step: " + i);
+          console.info(msg + "  test rect.top: " + rect!.top + " step: " + i);
+          console.info(msg + "  test rect.right: " + rect!.right + " step: " + i);
+          console.info(msg + "  test rect.bottom: " + rect!.bottom + " step: " + i);
+          let rect1 = path1.getBounds();
+          console.info(msg + "  test rect1.left: " + rect1!.left + " step: " + i);
+          console.info(msg + "  test rect1.top: " + rect1!.top + " step: " + i);
+          console.info(msg + "  test rect1.right: " + rect1!.right + " step: " + i);
+          console.info(msg + "  test rect1.bottom: " + rect1!.bottom + " step: " + i);
+          expect(rect!.left).assertEqual(rect1!.left);
+          expect(rect!.top).assertEqual(rect1!.top);
+          expect(rect!.right).assertEqual(rect1!.right);
+          expect(rect!.bottom).assertEqual(rect1!.bottom);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `path1 set error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    })
+    /**
+     * @tc.name   testPathSetLastPointNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3400
+     * @tc.desc   testPathSetLastPointNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathSetLastPointNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testPathSetLastPointNormalStatic';
+      let path = new drawing.Path();
+      path.moveTo(100, 100)
+      path.lineTo(100, 300);
+      path.lineTo(300, 300);
+      path.rQuadTo(5000, 5000, 10000, 5000);
+      try {
+        path.setLastPoint(50, 50);
+        console.info(msg + `path 1 setLastPoint  success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 1 setLastPoint error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      path.arcTo(300, 850, 400, 900, 0, 90);
+      try {
+        path.setLastPoint(600.25, 450.258);
+        console.info(msg + `path 2 setLastPoint success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 2 setLastPoint error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.setLastPoint(0, 0);
+        console.info(msg + `path 3 setLastPoint success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 3 setLastPoint error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.setLastPoint(-100, -50.23522);
+        console.info(msg + `path 4 setLastPoint success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 4 setLastPoint error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.setLastPoint(700, 500);
+        console.info(msg + `path 5 setLastPoint success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 5 setLastPoint error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.setLastPoint(Number.MAX_VALUE, Number.MAX_VALUE);
+        console.info(msg + `path 6 setLastPoint success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 6 setLastPoint error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+    })
+    /**
+     * @tc.name   testPathSetLastPointMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3401
+     * @tc.desc   testPathSetLastPointMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathSetLastPointMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathSetLastPointMultipleCallsStatic';
+      let path = new drawing.Path();
+      path.moveTo(100, 100)
+      path.lineTo(100, 300);
+      path.lineTo(300, 300);
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          path.setLastPoint(Math.random() *100, Math.random() *300)
+          console.info(msg + `path setLastPoint success step: ` + i);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `path setLastPoint error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    })
+    /**
+     * @tc.name   testPathGetFillTypeNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3500
+     * @tc.desc   testPathGetFillTypeNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathGetFillTypeNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testPathGetFillTypeNormalStatic';
+      let path = new drawing.Path();
+      try {
+        let getFillType = path.getFillType();
+        if(getFillType == undefined){
+          console.info(msg + `path 1 getFillType  failed`);
+          expect().assertFail();
+        } else{
+          console.info(msg + `path 1 getFillType  success`);
+          expect(getFillType).assertEqual(drawing.PathFillType.WINDING);
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 1 getFillType error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.setFillType(drawing.PathFillType.EVEN_ODD);
+        console.info(msg + `path setFillType  EVEN_ODD success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path setFillType EVEN_ODD error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        let getFillType2 = path.getFillType();
+        if(getFillType2 == undefined){
+          console.info(msg + `path getFillType2 failed`);
+          expect().assertFail();
+        } else {
+          console.info(msg + `path 1 getFillType2  success`);
+          expect(getFillType2).assertEqual(drawing.PathFillType.EVEN_ODD);
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 1 getFillType2 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.setFillType(drawing.PathFillType.WINDING);
+        console.info(msg + `path setFillType  WINDING success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path setFillType WINDING error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        let getFillType3 = path.getFillType();
+        if(getFillType3 == undefined){
+          console.info(msg + `path getFillType3 failed`);
+          expect().assertFail();
+        } else {
+          console.info(msg + `path 1 getFillType3  success`);
+          expect(getFillType3).assertEqual(drawing.PathFillType.WINDING);
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 1 getFillType3 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.setFillType(drawing.PathFillType.INVERSE_WINDING);
+        console.info(msg + `path setFillType  INVERSE_WINDING success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path setFillType INVERSE_WINDING error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        let getFillType4 = path.getFillType();
+        if(getFillType4 == undefined){
+          console.info(msg + `path getFillType4 failed`);
+          expect().assertFail();
+        } else{
+          console.info(msg + `path 1 getFillType4  success`);
+          expect(getFillType4).assertEqual(drawing.PathFillType.INVERSE_WINDING);
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 1 getFillType4 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.setFillType(drawing.PathFillType.INVERSE_EVEN_ODD);
+        console.info(msg + `path setFillType  INVERSE_EVEN_ODD success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path setFillType INVERSE_EVEN_ODD error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        let getFillType5 = path.getFillType();
+        if(getFillType5 == undefined){
+          console.info(msg + `path getFillType5 failed`);
+          expect().assertFail();
+        } else {
+          console.info(msg + `path 1 getFillType5  success`);
+          expect(getFillType5).assertEqual(drawing.PathFillType.INVERSE_EVEN_ODD);
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path 1 getFillType5 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+    })
+    /**
+     * @tc.name   testPathGetFillTypeMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3501
+     * @tc.desc   testPathGetFillTypeMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetFillTypeMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathGetFillTypeMultipleCallsStatic';
+      let path = new drawing.Path();
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          path.setFillType(drawing.PathFillType.INVERSE_EVEN_ODD);
+          console.info(msg + `path setFillType  INVERSE_EVEN_ODD success step: ` + i);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `path setFillType INVERSE_EVEN_ODD error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+        try {
+          let getFillType5 = path.getFillType();
+          if(getFillType5 == undefined){
+            console.info(msg + `path getFillType5  failed ` + i);
+            expect().assertFail();
+          } else{
+            console.info(msg + `path getFillType5  success step: ` + i);
+            expect(getFillType5).assertEqual(drawing.PathFillType.INVERSE_EVEN_ODD);
+          }
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `path  getFillType5 error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    })
+    /**
+     * @tc.name   testPathRewindNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3600
+     * @tc.desc   testPathRewindNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathRewindNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testPathRewindNormalStatic';
+      let path = new drawing.Path();
+      try {
+        path.rewind();
+        console.info(msg + `path rewind  success`);
+        let empty = path.isEmpty();
+        console.info(msg + 'empty : ', empty);
+        expect(empty).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path rewind 1 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      path.moveTo(100, 100)
+      path.lineTo(100, 300);
+      path.lineTo(300, 300);
+      try {
+        path.rewind();
+        console.info(msg + `path 2 rewind  success`);
+        let empty2 = path.isEmpty();
+        console.info(msg + 'empty2 : ', empty2);
+        expect(empty2).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path rewind 2 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+    })
+    /**
+     * @tc.name   testPathRewindMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3601
+     * @tc.desc   testPathRewindMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathRewindMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathRewindMultipleCallsStatic';
+      let path = new drawing.Path();
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          path.rewind()
+          console.info(msg + `path rewind success step: ` + i);
+          let empty = path.isEmpty();
+          console.info(msg + 'empty : ', empty + 'step: ' + i);
+          expect(empty).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `path rewind error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    })
+    /**
+     * @tc.name   testPathIsEmptyNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3700
+     * @tc.desc   testPathIsEmptyNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathIsEmptyNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testPathIsEmptyNormalStatic';
+      let path = new drawing.Path();
+      try {
+        let empty = path.isEmpty();
+        console.info(msg + `path isEmpty success`);
+        console.info(msg + 'empty : ', empty);
+        expect(empty).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path isEmpty error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      path.moveTo(100, 100)
+      path.lineTo(100, 300);
+      path.lineTo(300, 300);
+      try {
+        let empty2 = path.isEmpty();
+        console.info(msg + `path empty2 success`);
+        console.info(msg + 'empty2 : ', empty2);
+        expect(empty2).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path empty2 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        path.rewind()
+        let empty3 = path.isEmpty();
+        console.info(msg + `path empty3 success`);
+        console.info(msg + 'empty3 : ', empty3);
+        expect(empty3).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path empty3 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      path.moveTo(100, 100)
+      path.lineTo(100, 300);
+      path.lineTo(300, 300);
+      path.close()
+      try {
+        let empty4 = path.isEmpty();
+        console.info(msg + `path empty4 success`);
+        console.info(msg + 'empty4 : ', empty4);
+        expect(empty4).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `path empty4 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+    })
+    /**
+     * @tc.name   testPathIsEmptyMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3701
+     * @tc.desc   testPathIsEmptyMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathIsEmptyMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathIsEmptyMultipleCallsStatic';
+      let path = new drawing.Path();
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          let empty = path.isEmpty();
+          console.info(msg + `path isEmpty success step: ` + i);
+          console.info(msg + 'empty : ', empty + 'step: ' + i);
+          expect(empty).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `path isEmpty error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    })
+    /**
      * @tc.name   testPathIsRectNormalStatic
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3800
      * @tc.desc   testPathIsRectNormalStatic
@@ -821,25 +1355,29 @@ export default function drawingTsPath4Test() {
       }
     })
     /**
-     * @tc.name   testPenSetAndGetColor4fNormalStatic
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PEN_STATIC_2500
-     * @tc.desc   Test for testPenSetAndGetColor4fNormalStatic.
+     * @tc.name   testPathIsRectMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_3801
+     * @tc.desc   testPathIsRectMultipleCallsStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testPenSetAndGetColor4fNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testPenSetAndGetColor4fNormalStatic';
-      try {
-        let color4f: common2D.Color4f = {
-          alpha: 0.8,
-          red: 0.5,
-          green: 0.4,
-          blue: 0.7
-        };
-      } catch (e) {
-        console.info(msg + `color4f error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect().assertFail()
+    it('testPathIsRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testPathIsRectMultipleCallsStatic';
+      let path = new drawing.Path();
+      let rect: common2D.Rect = { left : 0, top : 125, right : 100, bottom : 225 };
+      path.addRect(rect);
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          let isRect = path.isRect(rect);
+          console.info(msg + `path isRect success step: ` + i);
+          console.info(msg + 'isRect : ', isRect + 'step: ' + i);
+          expect(isRect).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `path isRect error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
       }
     })
   })

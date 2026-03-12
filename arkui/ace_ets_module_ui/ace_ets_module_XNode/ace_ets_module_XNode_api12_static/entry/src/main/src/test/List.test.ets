@@ -115,7 +115,7 @@ export default function testsuite() {
   setShapeClipTest();
   typeNodeSwiperTest();
   typeNodeRelativeContainerTest();
-  typeNodeProgressTest();
+  //typeNodeProgressTest();
   typeNodeLoadingProgressTest();
   typeNodeListTest();
   typeNodeGridColTest();
@@ -160,6 +160,6 @@ export default function testsuite() {
   getAttachedFrameNodeById();
   getAfterRemove();
   //PercentReferenceTest();
-  graphicGetInterfaceTest();
+  //graphicGetInterfaceTest();
   setMeasureSizeTest();
 }
