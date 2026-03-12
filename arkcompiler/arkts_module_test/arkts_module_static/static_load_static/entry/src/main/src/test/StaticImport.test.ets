@@ -76,7 +76,7 @@ export default function staticImport() {
     })
     /**
      * @tc.number  SUB_ARKCOMPILER_ETSRUNTIME_BasicScenario_StaticImport_0500
-     * @tc.name    testOhosRes
+     * @tc.name    testAniFunction001
      * @tc.desc    Import System Native Module
      * @tc.size    MediumTest
      * @tc.type    Function
