@@ -17,7 +17,7 @@
 struct bindContextMenuNullUndefinedExample {
 
   @Builder
-  MyMenu1() {
+  MyMenu() {
     Menu() {
       MenuItem({ content: '菜单1' }).id('bindContextMenu_nullUn')
       MenuItem({ content: '菜单2' })
@@ -41,27 +41,27 @@ struct bindContextMenuNullUndefinedExample {
       Row(){
         Button('null2')
           .id('bindContextMenu_responseType_null')
-          .bindContextMenu(this.MyMenu1, null)
+          .bindContextMenu(this.MyMenu, null)
 
         Button('undefined2')
           .id('bindContextMenu_responseType_undefined')
-          .bindContextMenu(this.MyMenu1, undefined)
+          .bindContextMenu(this.MyMenu, undefined)
       }.height('10%')
 
       Row(){
         Button('null3')
           .id('bindContextMenu_options_null')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, null)
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, null)
 
         Button('undefined3')
           .id('bindContextMenu_options_undefined')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, undefined)
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, undefined)
       }.height('10%')
 
       Row(){
-        Text('isShow1').margin({right:3})
+        Text('enum1').margin({right:3})
           .id('bindContextMenu_enum_1')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             enableArrow: false,
             preview: MenuPreviewMode.NONE,
             previewAnimationOptions: {
@@ -78,16 +78,16 @@ struct bindContextMenuNullUndefinedExample {
             },
             enableHoverMode: false,
             hapticFeedbackMode: HapticFeedbackMode.DISABLED,
-            mask: false,
+            mask: { backgroundBlurStyle: BlurStyle.Regular },
             modalMode: ModalMode.AUTO,
             previewScaleMode: PreviewScaleMode.AUTO,
             availableLayoutArea: AvailableLayoutArea.SAFE_AREA,
             keyboardAvoidMode: MenuKeyboardAvoidMode.NONE,
           })
 
-        Text('isShow2').margin({right:3})
+        Text('enum2').margin({right:3})
           .id('bindContextMenu_enum_2')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             enableArrow: true,
             preview: MenuPreviewMode.IMAGE,
             previewAnimationOptions: {
@@ -104,16 +104,16 @@ struct bindContextMenuNullUndefinedExample {
             },
             enableHoverMode: true,
             hapticFeedbackMode: HapticFeedbackMode.AUTO,
-            mask: true,
+            mask: { backgroundBlurStyle: BlurStyle.Thick },
             modalMode: ModalMode.NONE,
             previewScaleMode: PreviewScaleMode.CONSTANT,
             availableLayoutArea: AvailableLayoutArea.SAFE_AREA,
             keyboardAvoidMode: MenuKeyboardAvoidMode.TRANSLATE_AND_RESIZE,
           })
 
-        Text('isShow3')
+        Text('enum3')
           .id('bindContextMenu_enum_3')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.BACKGROUND_THIN,
             backgroundBlurStyleOptions: {
               policy: BlurStyleActivePolicy.ALWAYS_INACTIVE,
@@ -130,91 +130,91 @@ struct bindContextMenuNullUndefinedExample {
       }.height('10%')
 
       Row(){
-        Text('isShow4').margin({right:3})
+        Text('enum4').margin({right:3})
           .id('bindContextMenu_enum_4')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.BACKGROUND_REGULAR,
             mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_REGULAR }
           })
 
-        Text('isShow5').margin({right:3})
+        Text('enum5').margin({right:3})
           .id('bindContextMenu_enum_5')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.BACKGROUND_THICK,
             mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_THICK }
           })
 
-        Text('isShow6')
+        Text('enum6')
           .id('bindContextMenu_enum_6')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.BACKGROUND_ULTRA_THICK,
             mask: { backgroundBlurStyle: BlurStyle.BACKGROUND_ULTRA_THICK }
           })
       }.height('10%')
 
       Row(){
-        Text('isShow7').margin({right:3})
+        Text('enum7').margin({right:3})
           .id('bindContextMenu_enum_7')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.NONE,
             mask: { backgroundBlurStyle: BlurStyle.NONE }
           })
 
-        Text('isShow8').margin({right:3})
+        Text('enum8').margin({right:3})
           .id('bindContextMenu_enum_8')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THIN,
             mask: { backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THIN }
           })
 
-        Text('isShow9')
+        Text('enum9')
           .id('bindContextMenu_enum_9')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.COMPONENT_THIN,
             mask: { backgroundBlurStyle: BlurStyle.COMPONENT_THIN }
           })
       }.height('10%')
 
       Row(){
-        Text('isShow10').margin({right:3})
+        Text('enum10').margin({right:3})
           .id('bindContextMenu_enum_10')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.COMPONENT_REGULAR,
             mask: { backgroundBlurStyle: BlurStyle.COMPONENT_REGULAR }
           })
 
-        Text('isShow11').margin({right:3})
+        Text('enum11').margin({right:3})
           .id('bindContextMenu_enum_11')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.COMPONENT_THICK,
             mask: { backgroundBlurStyle: BlurStyle.COMPONENT_THICK }
           })
 
-        Text('isShow12')
+        Text('enum12')
           .id('bindContextMenu_enum_12')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK,
             mask: { backgroundBlurStyle: BlurStyle.COMPONENT_ULTRA_THICK }
           })
       }.height('10%')
 
       Row(){
-        Text('isShow13').margin({right:3})
+        Text('enum13').margin({right:3})
           .id('bindContextMenu_enum_13')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
             mask: { backgroundBlurStyle: BlurStyle.Thin }
           })
 
-        Text('isShow14').margin({right:3})
+        Text('enum14').margin({right:3})
           .id('bindContextMenu_enum_14')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
-            mask: { backgroundBlurStyle: BlurStyle.Regular }
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
+            mask: true
           })
 
-        Text('isShow15')
+        Text('enum15')
           .id('bindContextMenu_enum_15')
-          .bindContextMenu(this.MyMenu1, ResponseType.LongPress, {
-            mask: { backgroundBlurStyle: BlurStyle.Thick }
+          .bindContextMenu(this.MyMenu, ResponseType.LongPress, {
+            mask: false
           })
       }.height('10%')
 

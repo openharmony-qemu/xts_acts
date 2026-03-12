@@ -11,6 +11,9 @@
     "MainAbility/pages/bindTips/bindPopupNullUndefined",
     "MainAbility/pages/popupNullUndefined/openPopup",
     "MainAbility/pages/Menu/bindMenuNullUndefined",
-    "MainAbility/pages/Menu/bindContextMenuNull"
+    "MainAbility/pages/Menu/bindContextMenuNull",
+    "MainAbility/pages/Menu/bindContextResponseNull",
+    "MainAbility/pages/Menu/isShownContextMenuNull",
+    "MainAbility/pages/Menu/bindContentCoverNullUndefined"
   ]
 }

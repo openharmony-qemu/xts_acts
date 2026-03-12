@@ -546,7 +546,7 @@ export default function bindContextMenuNull(){
       let driver: Driver = await Driver.create();
       let button = await driver.findComponent(ON.id('bindContextMenu_enum_15'));
       await button.longClick();
-      await CommonFunc.sleep(1500);
+      await CommonFunc.sleep(2000);
 
       let menuText = await driver.findComponent(ON.id('bindContextMenu_nullUn'));
       console.info("bindContextMenuNullUndefined_2100 menuText: " + JSON.stringify(menuText));
@@ -554,6 +554,7 @@ export default function bindContextMenuNull(){
       await menuText?.click();
       await CommonFunc.sleep(2000);
       console.info('[bindContextMenuNullUndefined_2100] END');
+      done();
     });
   })
 }

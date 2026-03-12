@@ -18,8 +18,8 @@ import router from '@ohos.router';
 import { Driver, On, ON, Component, Point } from '@ohos.UiTest';
 import CommonFunc from "../../MainAbility/common/Common";
 
-export default function bindTips1Test() {
-  describe('ActsbindTips', () => {
+export default function bindPopupNullUndefined() {
+  describe('bindPopupNullUndefined', () => {
 
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
@@ -28,18 +28,19 @@ export default function bindTips1Test() {
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get bindPopup state success " + JSON.stringify(pages));
+        console.info("get bindPopupNullUndefined state success " + JSON.stringify(pages));
         if (!("bindPopupNullUndefined" == pages.name)) {
-          console.info("get bindPopup state success " + JSON.stringify(pages.name));
+          console.info("get bindPopupNullUndefined state success " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info("push bindPopup page success " + JSON.stringify(result));
+          console.info("push bindPopupNullUndefined page success " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push bindPopup page error: " + err);
+        console.error("push bindPopupNullUndefined page error: " + err);
       }
       done()
     });
+    
     // ========== bindTips tests ==========
     /**
      * @tc.name   bindTipsNullUndefined_0100

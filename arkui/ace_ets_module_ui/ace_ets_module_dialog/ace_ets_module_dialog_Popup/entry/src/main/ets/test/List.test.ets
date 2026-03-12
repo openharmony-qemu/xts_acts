@@ -24,6 +24,9 @@ import bindPopupNullUndefined from './bindTipsTest/bindPopupNullUndefined.test';
 import openPopupNullUndefinedTest from './popupNullUndefined/openPopup.test';
 import bindMenuNullUndefined from './MenuTest/bindMenuNullUndefined.test';
 import bindContextMenuNull from './MenuTest/bindContextMenuNull.test';
+import bindContextResponseNull from './MenuTest/bindContextResponseNull.test';
+import isShownContextMenuNull from './MenuTest/isShownContextMenuNull.test';
+import bindContentCoverNullUndefined from './MenuTest/bindContentCoverNullUndefined.test';
 
 export default function testsuite() {
   PopupAJsunit();
@@ -37,9 +40,9 @@ export default function testsuite() {
   openPopupNullUndefinedTest();
   bindMenuNullUndefined();
   bindContextMenuNull();
-
-
-
+  bindContextResponseNull();
+  isShownContextMenuNull();
+  bindContentCoverNullUndefined();
 
 
 
