@@ -491,14 +491,14 @@ describe('fileio_readtext', function () {
   });
 
   /**
-   * @tc.name   fileio_test_readtext_async_006
+   * @tc.name   fileio_test_readtext_async_006Adapt001
    * @tc.number SUB_DF_FILEIO_READ_TEXT_ASYNC_0600
    * @tc.desc   Test readtext() interfaces. Promise.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL3
    */
-  it('fileio_test_readtext_async_006', Level.LEVEL3, async function (done) {
+  it('fileio_test_readtext_async_006Adapt001', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_readtext_async_006');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
