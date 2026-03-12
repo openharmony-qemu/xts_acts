@@ -15,14 +15,14 @@ export function expectFail (info: string = ''): void {
   try {
     expect().assertFail();
   } catch (err) {
-    console.info(${info} test failed);
+    console.info('${info} test failed');
   }
 }
 export function expectTrue (exp:boolean, info: string = ''): void {
   try {
     expect(exp).assertTrue();
   } catch (err) {
-    console.info(${info} test failed);
+    console.info('${info} test failed');
   }
 }
 
