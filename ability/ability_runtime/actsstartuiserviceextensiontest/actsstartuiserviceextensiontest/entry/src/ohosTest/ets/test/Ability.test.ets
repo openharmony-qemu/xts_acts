@@ -342,7 +342,7 @@ export default function abilityTest() {
             console.info(tag + '====> startUIServiceExtensionAbility not support: ' + JSON.stringify(err));
           } else {
             try {
-              expect(err?.code).assertEqual(16000001);
+              expect(err?.code).assertEqual(16000019);
             } catch {
             }
           }
@@ -833,7 +833,7 @@ export default function abilityTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              expect(commonEventData.parameters?.result).assertEqual(16000001);
+              expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
             commonEventManager.unsubscribe(subscriber, (err, data) => {
@@ -933,7 +933,7 @@ export default function abilityTest() {
             hilog.info(0x0000, tag, '%{public}s',
               `SecondAbility want:  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              expect(commonEventData.parameters?.result).assertEqual(16000001);
+              expect(commonEventData.parameters?.result).assertEqual(401);
             } catch {
             }
             commonEventManager.unsubscribe(subscriber, (err, data) => {

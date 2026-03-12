@@ -24,4 +24,8 @@ ohos_js_app_suite("ActsAAppServiceExtensionConTest") {
 
   # 子系统名称，真实数据，需要部件对应
   subsystem_name = "ability"
+  deps = [ 
+    "../actsactsaappserviceextensionrely:ActsAAppServiceExtensionContextRelyTest"
+    "../actsactsaappserviceextensionrely2:ActsAAppServiceExtensionContextRelyTest2"
+  ]
 }

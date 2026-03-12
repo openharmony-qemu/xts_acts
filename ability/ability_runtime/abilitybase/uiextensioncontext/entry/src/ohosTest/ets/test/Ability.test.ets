@@ -2605,7 +2605,7 @@ export default function ActsUIExtensionContextMethodTest() {
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback` + JSON.stringify(commonEventData));
             hilog.info(0x0000, tag, '%{public}s', `tag subscribecllback  ${JSON.stringify(commonEventData.parameters?.data)}`);
             try {
-              expect(commonEventData.parameters?.result).assertEqual(401);
+              expect(commonEventData.parameters?.result).assertEqual(16000050);
             } catch {
             }
             commonEventManager.publish("teminate",() => {});
