@@ -41,7 +41,7 @@ let gContext: common.UIAbilityContext;
 export default function saveComponentStaticTest() {
   describe('saveComponentStaticTest', () => {
     console.info('====>saveComponentStaticTest start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'pages/saveButton',
       }

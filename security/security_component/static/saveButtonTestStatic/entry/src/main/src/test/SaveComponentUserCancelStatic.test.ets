@@ -38,7 +38,7 @@ import {
 export default function saveComponentUserCancelStaticTest() {
   describe('saveComponentUserCancelStaticTest', () => {
     console.info('====>saveComponentUserCancelStaticTest start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility('com.example.securitycomponent.static', 'EntryAbility')
       await UtilsTest.msSleep(2000);
       let options: router.RouterOptions = {
