@@ -521,7 +521,7 @@ export default function HttpRequestGmssl() {
                     done();
                 });
             } catch (error) {
-                console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} trycatch err: ${JSON.stringify(error)}`);
                 ExpectFail();
                 done();
             }
