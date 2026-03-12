@@ -12,6 +12,12 @@
         "MainAbility/pages/navDestination/NavDestinationAttributeNullUndefined",
         "MainAbility/pages/TabsNullUndefined/TabsControllerNullUndefined",
         "MainAbility/pages/TabsNullUndefined/TabsAttributeNullUndefined",
-        "MainAbility/pages/AlphabetIndexNullUndefined/AlphabetIndexerPropertiesNullUndefined"
+        "MainAbility/pages/AlphabetIndexNullUndefined/AlphabetIndexerPropertiesNullUndefined",
+
+        "MainAbility/pages/Router/routerApiNullUndefined",
+        "MainAbility/pages/Router/ParticleApiNullUndefined",
+        "MainAbility/pages/Router/IndicatorComponentNullUndefined",
+        "MainAbility/pages/Router/SideBarContainerControlButtonNullUndefined",
+        "MainAbility/pages/Router/StepperItemApiNullUndefined"
     ]
 }
