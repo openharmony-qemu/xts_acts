@@ -637,9 +637,8 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_ASSETS_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_ASSETS_CALLBACK_001';
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-      let extension: string = null as ESObject;
       try {
-        PhAccessHelper.createAsset(photoType, extension, (error) => {
+        PhAccessHelper.createAsset(photoType, null, () => {
           console.info(TAG, testName, 'createAsset successfully');
           expect().assertFail();
           done();
@@ -661,9 +660,8 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_ASSETS_CALLBACK_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_ASSETS_CALLBACK_002';
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-      let extension: string = undefined as ESObject;
       try {
-        PhAccessHelper.createAsset(photoType, extension, (error) => {
+        PhAccessHelper.createAsset(photoType, undefined, () => {
           console.info(TAG, testName, 'createAsset successfully');
           expect().assertFail();
           done();
@@ -685,9 +683,8 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_CREATE_ASSETS_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_CREATE_ASSETS_CALLBACK_003';
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
-      let extension: string = "";
       try {
-        PhAccessHelper.createAsset(photoType, extension, (error) => {
+        PhAccessHelper.createAsset(photoType, "", () => {
           console.info(TAG, testName, 'createAsset successfully');
           expect().assertFail();
           done();
@@ -2567,7 +2564,6 @@ export default function PhotoGetAssetsTestSupp() {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
         let extension: string = 'jpg';
-        let title: string = 'testPhoto';
         let uri: string = await PhAccessHelper.createPhotoAsset(photoType, extension, AppStorage.get('emptyString'));
         console.info(TAG, testName, 'createPhotoAsset uri' + uri);
         console.info(TAG, testName, 'createPhotoAsset successfully');
@@ -2592,7 +2588,6 @@ export default function PhotoGetAssetsTestSupp() {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
         let extension: string = 'jpg';
-        let title: string = 'testPhoto';
         let uri: string = await PhAccessHelper.createPhotoAsset(photoType, extension, null);
         console.info(TAG, testName, 'createPhotoAsset uri' + uri);
         console.info(TAG, testName, 'createPhotoAsset successfully');
@@ -2617,7 +2612,6 @@ export default function PhotoGetAssetsTestSupp() {
       try {
         let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
         let extension: string = 'jpg';
-        let title: string = 'testPhoto';
         let uri: string = await PhAccessHelper.createPhotoAsset(photoType, extension, undefined);
         console.info(TAG, testName, 'createPhotoAsset uri' + uri);
         console.info(TAG, testName, 'createPhotoAsset successfully');
@@ -2728,6 +2722,199 @@ export default function PhotoGetAssetsTestSupp() {
         done();
       }
     });
-
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_003
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_003
+     * @tc.desc   PhotoAccessHelper.registerChange-第1个参数""覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_003';
+      try {
+        let onCallback = (changeData: photoAccessHelper.ChangeData) => {
+          console.info(TAG,testName,'onCallback success, changeData: ' + JSON.stringify(changeData));
+        }
+        PhAccessHelper.registerChange("", false, onCallback);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_001
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_001
+     * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数null覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_001';
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let onCallback = (changeData: photoAccessHelper.ChangeData) => {
+          console.info(TAG,testName,'onCallback success, changeData: ' + JSON.stringify(changeData));
+          done();
+        }
+        PhAccessHelper.registerChange(photoAsset.uri, false, onCallback);
+        PhAccessHelper.unRegisterChange(null, onCallback);
+      } catch (error) {
+        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002
+     * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_002';
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let onCallback = (changeData: photoAccessHelper.ChangeData) => {
+          console.info(TAG,testName,'onCallback success, changeData: ' + JSON.stringify(changeData));
+          done();
+        }
+        PhAccessHelper.registerChange(photoAsset.uri, false, onCallback);
+        PhAccessHelper.unRegisterChange(undefined, onCallback);
+      } catch (error) {
+        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(13900020);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003
+     * @tc.desc   PhotoAccessHelper.unRegisterChange-第1个参数""覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003';
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOptions);
+      let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+      try {
+        let onCallback = (changeData: photoAccessHelper.ChangeData) => {
+          console.info(TAG,testName,'onCallback success, changeData: ' + JSON.stringify(changeData));
+          done();
+        }
+        PhAccessHelper.registerChange(photoAsset.uri, false, onCallback);
+        PhAccessHelper.unRegisterChange("", onCallback);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_EX_007
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_EX_007
+     * @tc.desc   PhotoAccessHelper.showAssetsCreationDialogEx-第1个参数空数组覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_EX_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_EX_007';
+      try {
+        let srcFileUris: Array<string> = [];
+        let creationSettings: Array<photoAccessHelper.CreationSetting> = [
+          {
+            title: 'test2',
+            fileNameExtension: 'jpg',
+            photoType: photoAccessHelper.PhotoType.IMAGE
+          }
+        ];
+        let desFileUris: Array<string> = await PhAccessHelper.showAssetsCreationDialogEx(srcFileUris, creationSettings);
+        console.info('showAssetsCreationDialogEx success, data is ' + desFileUris);
+        expect().assertFail()
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_EX_008
+     * @tc.number SUB_PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_EX_008
+     * @tc.desc   PhotoAccessHelper.showAssetsCreationDialogEx-第2个参数空数组覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_EX_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_EX_008';
+      try {
+        let srcFileUris: Array<string> = ['sss'];
+        let creationSettings: Array<photoAccessHelper.CreationSetting> = [];
+        let desFileUris: Array<string> = await PhAccessHelper.showAssetsCreationDialogEx(srcFileUris, creationSettings);
+        console.info('showAssetsCreationDialogEx success, data is ' + desFileUris);
+        expect().assertFail()
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(401);
+        done();
+      }
+    });
+    /**
+     * @tc.number   CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_002
+     * @tc.name     CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_002
+     * @tc.desc     createAssetWithShortTermPermission-第1个参数属性photoType枚举覆盖IMAGE
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_002", Level.LEVEL0, (done: Function) => {
+      const testName = "CREATE_ASSET_WITH_SHORT_TERM_PERMISSION_002";
+      let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
+        title: '123456',
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+      };
+      try {
+        let res = PhAccessHelper.createAssetWithShortTermPermission(photoCreationConfig);
+        console.info(TAG, testName, 'successfully', res);
+        expect(isEmpty(res)).assertFalse();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed createAssetWithShortTermPermission', JSON.stringify(error), error.code);
+        expect().assertFail();
+        done();
+      } finally {
+        done();
+      }
+    });
   })
 }
