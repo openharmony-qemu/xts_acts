@@ -106,7 +106,7 @@ struct promptActionPage {
   build() {
     Row() {
       Column() {
-        Button("click me")
+        Button('click me')
           .id('btnOpenDialog')
           .margin({ bottom: 36, top: 20 })
           .onClick(() => {
@@ -136,7 +136,7 @@ struct promptActionPage {
             this.stateInfo = '' + this.dialogController.getState();
           })
 
-        Button("Show ActionMenu")
+        Button('Show ActionMenu')
           .id('btnShowActionMenu')
           .margin({ top: 20, bottom: 20 })
           .onClick(() => {

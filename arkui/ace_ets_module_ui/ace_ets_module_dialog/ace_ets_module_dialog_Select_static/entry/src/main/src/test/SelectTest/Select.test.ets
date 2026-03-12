@@ -62,7 +62,6 @@ export default function SelectTest() {
         if (pages.name !== "SelectIndex") {
           routerInstance.replaceUrl(options);
         }
-        // Wait for page to load
         await Utils.sleep(500);
       } catch (err) {
         console.error("SelectTest replaceUrl error: " + err);
@@ -90,15 +89,12 @@ export default function SelectTest() {
         const driver = Driver.create();
         const select = await driver.findComponent(ON.id('selectAllProperties'));
         expect(!!select).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('selectAllProperties'));
         logLongString('SelectTest: selectShowInSubWindow node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         let attrs = node.getElement('$attrs');
         let showInSubWindow = attrs.getString('showInSubWindow');
         expect(showInSubWindow).assertEqual('false');
-        
         console.info('SelectTest execute: selectShowInSubWindow END');
         done();
       } catch (error) {
@@ -123,15 +119,12 @@ export default function SelectTest() {
         const driver = Driver.create();
         const select = await driver.findComponent(ON.id('selectAllProperties'));
         expect(!!select).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('selectAllProperties'));
         logLongString('SelectTest: selectShowDefaultSelectedIcon node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         let attrs = node.getElement('$attrs');
         let showDefaultSelectedIcon = attrs.getString('showDefaultSelectedIcon');
         expect(showDefaultSelectedIcon).assertEqual('false');
-        
         console.info('SelectTest execute: selectShowDefaultSelectedIcon END');
         done();
       } catch (error) {
@@ -156,11 +149,9 @@ export default function SelectTest() {
         const driver = Driver.create();
         const select = await driver.findComponent(ON.id('selectAllProperties'));
         expect(!!select).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('selectAllProperties'));
         logLongString('SelectTest: selectKeyboardAvoidMode node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         console.info('SelectTest execute: selectKeyboardAvoidMode END');
         done();
       } catch (error) {
@@ -185,11 +176,9 @@ export default function SelectTest() {
         const driver = Driver.create();
         const select = await driver.findComponent(ON.id('selectAllProperties'));
         expect(!!select).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('selectAllProperties'));
         logLongString('SelectTest: selectMinKeyboardAvoidDistance node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         console.info('SelectTest execute: selectMinKeyboardAvoidDistance END');
         done();
       } catch (error) {

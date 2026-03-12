@@ -88,7 +88,6 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuMask'));
         expect(!!button).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
         logLongString('ContextMenuOptionsTest: btnContextMenuMask node =', JSON.stringifyJsonElement(buttonNode));
         if(button){
@@ -100,7 +99,6 @@ export default function ContextMenuOptionsTest() {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
           logLongString('ContextMenuOptionsTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsMask END');
@@ -127,21 +125,17 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuModalMode'));
         expect(!!button).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuModalMode'));
         logLongString('ContextMenuOptionsTest: btnContextMenuModalMode node =', JSON.stringifyJsonElement(buttonNode));
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const menuItem = await driver.findComponent(ON.id('Menu1'));
         if (menuItem !== undefined) {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
           logLongString('ContextMenuOptionsTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsModalMode END');
@@ -168,21 +162,17 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuPreviewScaleMode'));
         expect(!!button).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuPreviewScaleMode'));
         logLongString('ContextMenuOptionsTest: btnContextMenuPreviewScaleMode node =', JSON.stringifyJsonElement(buttonNode));
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const menuItem = await driver.findComponent(ON.id('Menu1'));
         if (menuItem !== undefined) {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
           logLongString('ContextMenuOptionsTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsPreviewScaleMode END');
@@ -209,21 +199,17 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuAvailableLayoutArea'));
         expect(!!button).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuAvailableLayoutArea'));
         logLongString('ContextMenuOptionsTest: btnContextMenuAvailableLayoutArea node =', JSON.stringifyJsonElement(buttonNode));
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const menuItem = await driver.findComponent(ON.id('Menu1'));
         if (menuItem !== undefined) {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
           logLongString('ContextMenuOptionsTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsAvailableLayoutArea END');
@@ -250,21 +236,17 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuAnchorPosition'));
         expect(!!button).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuAnchorPosition'));
         logLongString('ContextMenuOptionsTest: btnContextMenuAnchorPosition node =', JSON.stringifyJsonElement(buttonNode));
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const menuItem = await driver.findComponent(ON.id('Menu1'));
         if (menuItem !== undefined) {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
           logLongString('ContextMenuOptionsTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsAnchorPosition END');
@@ -291,21 +273,17 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuKeyboardAvoidMode'));
         expect(!!button).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuKeyboardAvoidMode'));
         logLongString('ContextMenuOptionsTest: btnContextMenuKeyboardAvoidMode node =', JSON.stringifyJsonElement(buttonNode));
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const menuItem = await driver.findComponent(ON.id('Menu1'));
         if (menuItem !== undefined) {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
           logLongString('ContextMenuOptionsTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsKeyboardAvoidMode END');
@@ -343,7 +321,6 @@ export default function ContextMenuOptionsTest() {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
           logLongString('ContextMenuOptionsTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsMinKeyboardAvoidDistance END');
@@ -370,17 +347,14 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuLifecycle'));
         expect(!!button).assertEqual(true);
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const onWillAppearNode = JSON.parseJsonElement(inspector.getInspectorByKey('onWillAppearResultContextMenu'));
         const onWillAppearValue = onWillAppearNode.getElement('$attrs').getString('content');
         console.info('ContextMenuOptionsTest execute: onWillAppear result = ' + onWillAppearValue);
         expect(onWillAppearValue).assertEqual('onWillAppear_called');
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsOnWillAppear END');
@@ -407,17 +381,14 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuLifecycle'));
         expect(!!button).assertEqual(true);
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const onDidAppearNode = JSON.parseJsonElement(inspector.getInspectorByKey('onDidAppearResultContextMenu'));
         const onDidAppearValue = onDidAppearNode.getElement('$attrs').getString('content');
         console.info('ContextMenuOptionsTest execute: onDidAppear result = ' + onDidAppearValue);
         expect(onDidAppearValue).assertEqual('onDidAppear_called');
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsOnDidAppear END');
@@ -444,20 +415,16 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuLifecycle'));
         expect(!!button).assertEqual(true);
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         await driver.pressBack();
         await Utils.sleep(500);
-        
         const onWillDisappearNode = JSON.parseJsonElement(inspector.getInspectorByKey('onWillDisappearResultContextMenu'));
         const onWillDisappearValue = onWillDisappearNode.getElement('$attrs').getString('content');
         console.info('ContextMenuOptionsTest execute: onWillDisappear result = ' + onWillDisappearValue);
         expect(onWillDisappearValue).assertEqual('onWillDisappear_called');
-        
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsOnWillDisappear END');
         done();
       } catch (error) {
@@ -482,20 +449,16 @@ export default function ContextMenuOptionsTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnContextMenuLifecycle'));
         expect(!!button).assertEqual(true);
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         await driver.pressBack();
         await Utils.sleep(500);
-        
         const onDidDisappearNode = JSON.parseJsonElement(inspector.getInspectorByKey('onDidDisappearResultContextMenu'));
         const onDidDisappearValue = onDidDisappearNode.getElement('$attrs').getString('content');
         console.info('ContextMenuOptionsTest execute: onDidDisappear result = ' + onDidDisappearValue);
         expect(onDidDisappearValue).assertEqual('onDidDisappear_called');
-        
         console.info('ContextMenuOptionsTest execute: contextMenuOptionsOnDidDisappear END');
         done();
       } catch (error) {

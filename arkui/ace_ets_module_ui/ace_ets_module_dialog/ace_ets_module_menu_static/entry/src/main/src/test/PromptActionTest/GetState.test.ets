@@ -47,7 +47,6 @@ export default function GetStateTest() {
         if (pages.name !== "CustomDialogUser") {
           routerInstance.replaceUrl(options);
         }
-        // Wait for page to load
         await Utils.sleep(500);
       } catch (err) {
         console.error("GetStateTest replaceUrl error: " + err);
@@ -83,7 +82,6 @@ export default function GetStateTest() {
         console.info('GetStateTest: getStateTest - found btnGetCustomState button component');
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
-        console.info('GetStateTest: getStateTest - clicked btnGetCustomState, waiting for state update');
         await Utils.sleep(500);
         const customText = await driver.findComponent(ON.id('customText'));
         console.info('GetStateTest: getStateTest - found customText component');

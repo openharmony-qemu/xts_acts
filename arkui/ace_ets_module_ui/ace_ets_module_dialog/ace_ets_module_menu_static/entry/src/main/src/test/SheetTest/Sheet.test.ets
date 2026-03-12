@@ -90,13 +90,10 @@ export default function SheetTest() {
         const driver = Driver.create();
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('bindSheet'));
         logLongString('SheetTest: bindSheet node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         expect(SheetType.SIDE).assertEqual(3);
-        
         console.info('SheetTest execute : sheetTypeSide END');
         done();
       } catch (error) {
@@ -121,13 +118,10 @@ export default function SheetTest() {
         const driver = Driver.create();
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('bindSheet'));
         logLongString('SheetTest: bindSheet node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         expect(SheetType.CONTENT_COVER).assertEqual(4);
-        
         console.info('SheetTest execute : sheetTypeContentCover END');
         done();
       } catch (error) {
@@ -152,13 +146,10 @@ export default function SheetTest() {
         const driver = Driver.create();
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('bindSheet'));
         logLongString('SheetTest: bindSheet node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         expect(SheetKeyboardAvoidMode.POPUP_SHEET).assertEqual(4);
-        
         console.info('SheetTest execute : sheetKeyboardAvoidModePopupSheet END');
         done();
       } catch (error) {
@@ -209,11 +200,9 @@ export default function SheetTest() {
         const driver = Driver.create();
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('bindSheet'));
         logLongString('SheetTest: bindSheet node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         console.info('SheetTest execute : sheetOptionsModalTransition END');
         done();
       } catch (error) {

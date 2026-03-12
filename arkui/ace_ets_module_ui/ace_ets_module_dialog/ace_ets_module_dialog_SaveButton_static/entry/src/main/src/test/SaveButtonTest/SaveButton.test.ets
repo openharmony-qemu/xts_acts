@@ -63,7 +63,6 @@ export default function SaveButtonTest() {
         if (pages.name !== "SaveButtonIndex") {
           routerInstance.replaceUrl(options);
         }
-        // Wait for page to load
         await Utils.sleep(500);
       } catch (err) {
         console.error("SaveButtonTest replaceUrl error: " + err);
@@ -91,11 +90,9 @@ export default function SaveButtonTest() {
         const driver = Driver.create();
         const saveButton = await driver.findComponent(ON.id('saveButton'));
         expect(!!saveButton).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('saveButton'));
         logLongString('SaveButtonTest: saveButtonSetIcon node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SaveButtonTest execute: saveButtonSetIcon END');
         done();
       } catch (error) {
@@ -120,11 +117,9 @@ export default function SaveButtonTest() {
         const driver = Driver.create();
         const saveButton = await driver.findComponent(ON.id('saveButton'));
         expect(!!saveButton).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('saveButton'));
         logLongString('SaveButtonTest: saveButtonSetText node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SaveButtonTest execute: saveButtonSetText END');
         done();
       } catch (error) {
@@ -149,27 +144,20 @@ export default function SaveButtonTest() {
         const driver = Driver.create();
         const saveButton = await driver.findComponent(ON.id('saveButton'));
         expect(!!saveButton).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('saveButton'));
         logLongString('SaveButtonTest: saveButtonIconBorderRadius node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         let attrs = node.getElement('$attrs');
         let iconBorderRadius = attrs.getElement('iconBorderRadius');
         expect(iconBorderRadius != null).assertTrue();
-
         let topLeft = iconBorderRadius.getString('topLeft');
         expect(topLeft).assertEqual('6.00vp');
-
         let topRight = iconBorderRadius.getString('topRight');
         expect(topRight).assertEqual('6.00vp');
-
         let bottomLeft = iconBorderRadius.getString('bottomLeft');
         expect(bottomLeft).assertEqual('6.00vp');
-
         let bottomRight = iconBorderRadius.getString('bottomRight');
         expect(bottomRight).assertEqual('6.00vp');
-
         console.info('SaveButtonTest execute: saveButtonIconBorderRadius END');
         done();
       } catch (error) {
@@ -194,15 +182,12 @@ export default function SaveButtonTest() {
         const driver = Driver.create();
         const saveButton = await driver.findComponent(ON.id('saveButton'));
         expect(!!saveButton).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('saveButton'));
         logLongString('SaveButtonTest: saveButtonStateEffect node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         let attrs = node.getElement('$attrs');
         let stateEffect = attrs.getBoolean('stateEffect');
         expect(stateEffect).assertEqual(false);
-
         console.info('SaveButtonTest execute: saveButtonStateEffect END');
         done();
       } catch (error) {
@@ -227,11 +212,9 @@ export default function SaveButtonTest() {
         const driver = Driver.create();
         const saveButton = await driver.findComponent(ON.id('saveButton'));
         expect(!!saveButton).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('saveButton'));
         logLongString('SaveButtonTest: saveButtonUserCancelEvent node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SaveButtonTest execute: saveButtonUserCancelEvent END');
         done();
       } catch (error) {

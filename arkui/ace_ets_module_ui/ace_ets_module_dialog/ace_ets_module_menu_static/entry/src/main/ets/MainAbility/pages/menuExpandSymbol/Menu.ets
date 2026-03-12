@@ -58,11 +58,11 @@ struct Index {
     Menu() {
       MenuItem({
         symbolStartIcon: this.startIconModifier,
-        content: "图标"
+        content: '图标'
       })
       MenuItem({
         symbolStartIcon: this.startIconModifier,
-        content: "列表"
+        content: '列表'
       })
     }.backgroundColor(Color.Grey)
   }
@@ -73,17 +73,17 @@ struct Index {
       MenuItem({
         symbolStartIcon: this.startIconModifier,
         symbolEndIcon: this.endIconModifier,
-        content: "新建文件夹",
+        content: '新建文件夹',
         builder: (): void => this.SubMenu(),
       })
       MenuItem({
         symbolStartIcon: this.startIconModifier,
-        content: "排序方式",
+        content: '排序方式',
         builder: (): void => this.SubMenu(),
       })
       MenuItem({
         symbolStartIcon: this.startIconModifier,
-        content: "查看方式",
+        content: '查看方式',
         builder: (): void => this.SubMenu(),
       })
     }

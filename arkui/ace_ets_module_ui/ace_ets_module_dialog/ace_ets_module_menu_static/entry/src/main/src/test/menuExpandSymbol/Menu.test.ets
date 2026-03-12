@@ -62,7 +62,6 @@ export default function MenuTest() {
         if (pages.name !== "Index") {
           routerInstance.replaceUrl(options);
         }
-        // Wait for page to load
         await Utils.sleep(500);
       } catch (err) {
         console.error("MenuTest replaceUrl error: " + err);
@@ -88,27 +87,18 @@ export default function MenuTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
-        
-        // 查找并点击 Button 来显示 Menu
         const button = await driver.findComponent(ON.text('click to show menu', MatchPattern.EQUALS));
         expect(!!button).assertEqual(true);
         await (button?.click() as Promise<void>);
-        
-        // 等待 Menu 出现
         await Utils.sleep(1000);
-        
-        // 查找 Menu 组件（通过 key）
         const menu = await driver.findComponent(ON.id('subMenuExpandingMode'));
         if (menu !== undefined) {
           let node = JSON.parseJsonElement(inspector.getInspectorByKey('subMenuExpandingMode'));
           logLongString('MenuTest: menuSubMenuExpandSymbol node =', JSON.stringifyJsonElement(node));
           expect(node != null).assertTrue();
         }
-        
-        // 关闭 Menu
         await driver.pressBack();
         await Utils.sleep(200);
-        
         console.info('MenuTest execute: menuSubMenuExpandSymbol END');
         done();
       } catch (error) {

@@ -44,7 +44,7 @@ import { LengthUnit, LengthMetrics } from '@ohos.arkui.node';
 @Entry
 @Component
 struct SelectIndex {
-  @State text: string = "TTTTT";
+  @State text: string = 'TTTTT';
   @State index: Int = -1;
   @State arrowPosition: ArrowPosition = ArrowPosition.END;
 
@@ -61,10 +61,10 @@ struct SelectIndex {
     Scroll() {
       Column({ space: 20 } as ColumnOptions) {
         // Select - 包含所有4个属性：showInSubWindow, showDefaultSelectedIcon, keyboardAvoidMode, minKeyboardAvoidDistance
-        Select([{ value: 'aaa', icon: $r("app.media.icon") },
-          { value: 'bbb', icon: $r("app.media.icon") },
-          { value: 'ccc', icon: $r("app.media.icon") },
-          { value: 'ddd', icon: $r("app.media.icon") }])
+        Select([{ value: 'aaa', icon: $r('app.media.icon') },
+          { value: 'bbb', icon: $r('app.media.icon') },
+          { value: 'ccc', icon: $r('app.media.icon') },
+          { value: 'ddd', icon: $r('app.media.icon') }])
           .id('selectAllProperties')
           .margin({top:20})
           .width(200)

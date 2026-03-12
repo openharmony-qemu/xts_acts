@@ -88,16 +88,12 @@ export default function CustomPopupOptionsTest() {
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenCustomPopupNew'));
         expect(!!openPopupButton).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        
         await (openPopupButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsAvoidTarget END');
@@ -124,16 +120,12 @@ export default function CustomPopupOptionsTest() {
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenCustomPopupNew'));
         expect(!!openPopupButton).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        
         await (openPopupButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsOutlineWidth END');
@@ -160,16 +152,12 @@ export default function CustomPopupOptionsTest() {
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenCustomPopupNew'));
         expect(!!openPopupButton).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        
         await (openPopupButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsBorderWidth END');
@@ -196,16 +184,12 @@ export default function CustomPopupOptionsTest() {
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenCustomPopupNew'));
         expect(!!openPopupButton).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        
         await (openPopupButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsOutlineLinearGradient END');
@@ -232,16 +216,12 @@ export default function CustomPopupOptionsTest() {
         const driver = Driver.create();
         const openPopupButton = await driver.findComponent(ON.id('btnOpenCustomPopupNew'));
         expect(!!openPopupButton).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnOpenCustomPopupNew'));
         logLongString('CustomPopupOptionsTest: btnOpenCustomPopupNew node =', JSON.stringifyJsonElement(buttonNode));
-        
         await (openPopupButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const popupContent = await driver.findComponent(ON.id('customPopupContentNew'));
         expect(!!popupContent).assertEqual(true);
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('CustomPopupOptionsTest execute: customPopupOptionsBorderLinearGradient END');

@@ -90,22 +90,17 @@ export default function HoverScaleInterruptionTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnHoverScaleInterruptionTrue'));
         expect(!!button).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnHoverScaleInterruptionTrue'));
         logLongString('HoverScaleInterruptionTest: btnHoverScaleInterruptionTrue node =', JSON.stringifyJsonElement(buttonNode));
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const menuItem = await driver.waitForComponent(ON.id('HoverMenu1'), 1000);
-
         if (menuItem !== undefined) {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnHoverScaleInterruptionTrue'));
           logLongString('HoverScaleInterruptionTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('HoverScaleInterruptionTest execute: hoverScaleInterruptionTrue END');
@@ -132,21 +127,17 @@ export default function HoverScaleInterruptionTest() {
         const driver = Driver.create();
         const button = await driver.findComponent(ON.id('btnHoverScaleInterruptionFalse'));
         expect(!!button).assertEqual(true);
-        
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnHoverScaleInterruptionFalse'));
         logLongString('HoverScaleInterruptionTest: btnHoverScaleInterruptionFalse node =', JSON.stringifyJsonElement(buttonNode));
-        
         if(button){
           await button.longClick();
           await Utils.sleep(1500);
         }
-        
         const menuItem = await driver.waitForComponent(ON.id('HoverMenu1'), 1000);
         if (menuItem !== undefined) {
           let menuNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnHoverScaleInterruptionFalse'));
           logLongString('HoverScaleInterruptionTest: menu node =', JSON.stringifyJsonElement(menuNode));
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('HoverScaleInterruptionTest execute: hoverScaleInterruptionFalse END');

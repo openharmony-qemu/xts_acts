@@ -89,11 +89,9 @@ export default function SliderTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderColorMetricsStop'));
         expect(!!slider).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderColorMetricsStop'));
         logLongString('SliderTest: sliderColorMetricsStop node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SliderTest execute: colorMetricsStopColor END');
         done();
       } catch (error) {
@@ -118,11 +116,9 @@ export default function SliderTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderColorMetricsStop'));
         expect(!!slider).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderColorMetricsStop'));
         logLongString('SliderTest: sliderColorMetricsStop node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SliderTest execute: colorMetricsStopOffset END');
         done();
       } catch (error) {
@@ -147,11 +143,9 @@ export default function SliderTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderStepItemAccessibility'));
         expect(!!slider).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderStepItemAccessibility'));
         logLongString('SliderTest: sliderStepItemAccessibility node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SliderTest execute: sliderStepItemAccessibilityText END');
         done();
       } catch (error) {
@@ -176,11 +170,9 @@ export default function SliderTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderShowStepOptions'));
         expect(!!slider).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderShowStepOptions'));
         logLongString('SliderTest: sliderShowStepOptions node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SliderTest execute: sliderShowStepOptionsStepsAccessibility END');
         done();
       } catch (error) {
@@ -205,11 +197,9 @@ export default function SliderTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderCustomContentAccessibilityText'));
         expect(!!slider).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderCustomContentAccessibilityText'));
         logLongString('SliderTest: sliderCustomContentAccessibilityText node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SliderTest execute: sliderCustomContentOptionsAccessibilityText END');
         done();
       } catch (error) {
@@ -234,11 +224,9 @@ export default function SliderTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderAttributePrefix'));
         expect(!!slider).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderAttributePrefix'));
         logLongString('SliderTest: sliderAttributePrefix node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         console.info('SliderTest execute: sliderAttributePrefix END');
         done();
       } catch (error) {
@@ -263,11 +251,9 @@ export default function SliderTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderAttributeSuffix'));
         expect(!!slider).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderAttributeSuffix'));
         logLongString('SliderTest: sliderAttributeSuffix node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         console.info('SliderTest execute: sliderAttributeSuffix END');
         done();
       } catch (error) {
@@ -292,11 +278,9 @@ export default function SliderTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderAttributeTrackColorMetrics'));
         expect(!!slider).assertEqual(true);
-        
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderAttributeTrackColorMetrics'));
         logLongString('SliderTest: sliderAttributeTrackColorMetrics node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         console.info('SliderTest execute: sliderAttributeTrackColorMetrics END');
         done();
       } catch (error) {

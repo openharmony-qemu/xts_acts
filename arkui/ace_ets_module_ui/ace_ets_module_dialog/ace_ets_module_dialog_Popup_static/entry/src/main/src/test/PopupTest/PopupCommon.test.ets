@@ -91,14 +91,12 @@ export default function PopupCommonTest() {
         expect(!!openPopupButton).assertEqual(true);
         await (openPopupButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const popupContent = await driver.findComponent(ON.id('popupContent'));
         if (popupContent !== undefined) {
           let node = JSON.parseJsonElement(inspector.getInspectorByKey('popupContent'));
           logLongString('PopupCommonTest: popupContent node =', JSON.stringifyJsonElement(node));
           expect(node != null).assertTrue();
         }
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('PopupCommonTest execute: popupCommonOptionsAvoidTarget END');

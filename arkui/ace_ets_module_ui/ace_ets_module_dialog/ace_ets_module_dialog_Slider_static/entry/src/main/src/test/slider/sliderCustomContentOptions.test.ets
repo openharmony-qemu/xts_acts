@@ -62,7 +62,6 @@ export default function SliderCustomContentOptionsTest() {
         if (pages.name !== "SliderCustomContentOptionsIndex") {
           routerInstance.replaceUrl(options);
         }
-        // Wait for page to load
         await Utils.sleep(500);
       } catch (err) {
         console.error("SliderCustomContentOptionsTest replaceUrl error: " + err);
@@ -90,11 +89,9 @@ export default function SliderCustomContentOptionsTest() {
         const driver = Driver.create();
         const slider = await driver.findComponent(ON.id('sliderDescription'));
         expect(!!slider).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderDescription'));
         logLongString('SliderCustomContentOptionsTest: sliderCustomContentAccessibilityDescription node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-
         console.info('SliderCustomContentOptionsTest execute: sliderCustomContentOptionsAccessibilityDescription END');
         done();
       } catch (error) {
@@ -122,15 +119,12 @@ export default function SliderCustomContentOptionsTest() {
           console.info('SliderCustomContentOptionsTest sliderCustomContentOptionsAccessibilityLevel get slider success');
         }
         expect(!!slider).assertEqual(true);
-
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('sliderLevel'));
         logLongString('SliderCustomContentOptionsTest: sliderCustomContentAccessibilityLevel node =', JSON.stringifyJsonElement(node));
         expect(node != null).assertTrue();
-        
         let attrs = node.getElement('$attrs');
         let accessibilityLevel = attrs.getString('accessibilityLevel');
         expect(accessibilityLevel).assertEqual('auto');
-
         console.info('SliderCustomContentOptionsTest execute: sliderCustomContentOptionsAccessibilityLevel END');
         done();
       } catch (error) {

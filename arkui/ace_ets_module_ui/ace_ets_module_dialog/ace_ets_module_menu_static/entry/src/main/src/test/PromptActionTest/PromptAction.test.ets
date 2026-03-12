@@ -79,7 +79,6 @@ export default function PromptActionTest() {
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
         await Utils.sleep(100);
-        
         const stateInfoNode = JSON.parseJsonElement(inspector.getInspectorByKey('stateInfo'));
         const stateValue = parseInt(stateInfoNode.getElement('$attrs').getString('content'));
         console.info('PromptActionTest execute : dialog state = ' + stateValue);
@@ -127,20 +126,16 @@ export default function PromptActionTest() {
         const driver = Driver.create();
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
-        
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(100);
-        
         const getStateButton = await driver.findComponent(ON.id('btnGetStateOpen'));
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const stateInfoNode = JSON.parseJsonElement(inspector.getInspectorByKey('stateText'));
         const stateValue = parseInt(stateInfoNode.getElement('$attrs').getString('content'));
         console.info('PromptActionTest execute : dialog state after opening = ' + stateValue);
         expect(stateValue).assertEqual(2);
-
         const closeDialogButton = await driver.findComponent(ON.id('btnCloseDialog'));
         expect(!!closeDialogButton).assertEqual(true);
         await (closeDialogButton?.click() as Promise<void>);
@@ -167,20 +162,16 @@ export default function PromptActionTest() {
         const driver = Driver.create();
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
-        
         await (openDialogButton?.click() as Promise<void>);
         await CommonFunc.sleep(DIALOG_ANIMATION_TIME + 500);
-        
         const getStateButton = await driver.findComponent(ON.id('btnGetStateOpen'));
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
         await Utils.sleep(100);
-        
         const stateInfoNode = JSON.parseJsonElement(inspector.getInspectorByKey('stateText'));
         const stateValue = parseInt(stateInfoNode.getElement('$attrs').getString('content'));
         console.info('PromptActionTest execute : dialog state after 3 seconds = ' + stateValue);
         expect(stateValue).assertEqual(3);
-
         const closeDialogButton = await driver.findComponent(ON.id('btnCloseDialog'));
         expect(!!closeDialogButton).assertEqual(true);
         await (closeDialogButton?.click() as Promise<void>);
@@ -207,20 +198,16 @@ export default function PromptActionTest() {
         const driver = Driver.create();
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
-        
         await (openDialogButton?.click() as Promise<void>);
         await CommonFunc.sleep(DIALOG_ANIMATION_TIME + 500);
-        
         const closeDialogButton = await driver.findComponent(ON.id('btnCloseDialog'));
         expect(!!closeDialogButton).assertEqual(true);
         await (closeDialogButton?.click() as Promise<void>);
         await Utils.sleep(100);
-        
         const getStateButton = await driver.findComponent(ON.id('btnGetState'));
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
         await Utils.sleep(100);
-        
         const stateInfoNode = JSON.parseJsonElement(inspector.getInspectorByKey('stateInfo'));
         const stateValue = parseInt(stateInfoNode.getElement('$attrs').getString('content'));
         console.info('PromptActionTest execute : dialog state after closing = ' + stateValue);
@@ -248,20 +235,16 @@ export default function PromptActionTest() {
         const driver = Driver.create();
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
-        
         await (openDialogButton?.click() as Promise<void>);
         await CommonFunc.sleep(DIALOG_ANIMATION_TIME + 500);
-        
         const closeDialogButton = await driver.findComponent(ON.id('btnCloseDialog'));
         expect(!!closeDialogButton).assertEqual(true);
         await (closeDialogButton?.click() as Promise<void>);
         await CommonFunc.sleep(DIALOG_ANIMATION_TIME + 500);
-        
         const getStateButton = await driver.findComponent(ON.id('btnGetState'));
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
         await Utils.sleep(100);
-        
         const stateInfoNode = JSON.parseJsonElement(inspector.getInspectorByKey('stateInfo'));
         const stateValue = parseInt(stateInfoNode.getElement('$attrs').getString('content'));
         console.info('PromptActionTest execute : dialog state after 3 seconds of closing = ' + stateValue);
@@ -287,14 +270,11 @@ export default function PromptActionTest() {
       console.info('PromptActionTest execute : dialogControllerAppStorage START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
-        
         const dialogController = AppStorage.get<promptAction.DialogController>('dialogController') as promptAction.DialogController;
         expect(dialogController != null).assertTrue();
-        
         const state = dialogController.getState();
         console.info('PromptActionTest execute : dialog state from AppStorage = ' + state);
         expect(state).assertEqual(promptAction.CommonState.DISAPPEARED);
-        
         console.info('PromptActionTest execute : dialogControllerAppStorage END');
         done();
       } catch (error) {
@@ -317,17 +297,14 @@ export default function PromptActionTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
-        
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const onWillAppearNode = JSON.parseJsonElement(inspector.getInspectorByKey('onWillAppearResult'));
         const onWillAppearValue = onWillAppearNode.getElement('$attrs').getString('content');
         console.info('PromptActionTest execute : onWillAppear result = ' + onWillAppearValue);
         expect(onWillAppearValue).assertEqual('onWillAppear_called');
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('PromptActionTest execute : actionMenuOnWillAppear END');
@@ -352,17 +329,14 @@ export default function PromptActionTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
-        
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         const onDidAppearNode = JSON.parseJsonElement(inspector.getInspectorByKey('onDidAppearResult'));
         const onDidAppearValue = onDidAppearNode.getElement('$attrs').getString('content');
         console.info('PromptActionTest execute : onDidAppear result = ' + onDidAppearValue);
         expect(onDidAppearValue).assertEqual('onDidAppear_called');
-        
         await driver.pressBack();
         await Utils.sleep(200);
         console.info('PromptActionTest execute : actionMenuOnDidAppear END');
@@ -387,20 +361,16 @@ export default function PromptActionTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
-        
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         await driver.pressBack();
         await Utils.sleep(200);
-        
         const onWillDisappearNode = JSON.parseJsonElement(inspector.getInspectorByKey('onWillDisappearResult'));
         const onWillDisappearValue = onWillDisappearNode.getElement('$attrs').getString('content');
         console.info('PromptActionTest execute : onWillDisappear result = ' + onWillDisappearValue);
         expect(onWillDisappearValue).assertEqual('onWillDisappear_called');
-        
         console.info('PromptActionTest execute : actionMenuOnWillDisappear END');
         done();
       } catch (error) {
@@ -427,15 +397,12 @@ export default function PromptActionTest() {
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
         await Utils.sleep(500);
-        
         await driver.pressBack();
         await Utils.sleep(200);
-        
         const onDidDisappearNode = JSON.parseJsonElement(inspector.getInspectorByKey('onDidDisappearResult'));
         const onDidDisappearValue = onDidDisappearNode.getElement('$attrs').getString('content');
         console.info('PromptActionTest execute : onDidDisappear result = ' + onDidDisappearValue);
         expect(onDidDisappearValue).assertEqual('onDidDisappear_called');
-        
         console.info('PromptActionTest execute : actionMenuOnDidDisappear END');
         done();
       } catch (error) {
