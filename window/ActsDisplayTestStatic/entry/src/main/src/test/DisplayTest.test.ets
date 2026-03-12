@@ -1888,12 +1888,9 @@ export default function DisplayTest() {
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync y: ' + displayClass!.y);
         expect(sourceMode).assertEqual(1);
         expect(displayClass!.screenShape !=null ).assertTrue();
-        if (displayClass!.x != undefined) {
-            expect(displayClass!.x).assertLargerOrEqual(0);
-        }
-        if (displayClass!.y != undefined) {
-            expect(displayClass!.y).assertLargerOrEqual(0);
-        }
+        expect(displayClass!.x).assertLargerOrEqual(0);
+        expect(displayClass!.y).assertLargerOrEqual(0);
+        
         done();
       });
 
@@ -2483,7 +2480,7 @@ export default function DisplayTest() {
                 let region:display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
                 hilog.info(domain, tag,`${caseName} region: ${JSON.stringify(region)}`);
                 expect(region.displayId).assertEqual(0)
-                if (result && isExpand === 1) {
+                if (result) {
                     if (region.creaseRects.length === 0) {
                         done();
                     } else {
