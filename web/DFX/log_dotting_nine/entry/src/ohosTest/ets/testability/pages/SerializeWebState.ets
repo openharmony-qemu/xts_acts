@@ -17,7 +17,6 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import testsuite from '../../test/List.test';
-import { waitForExist } from '../../test/WaitTest.test';
 const EVENT_ID_SET_RESULT_KEY = 133250;
 
 @Entry
