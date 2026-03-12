@@ -274,7 +274,7 @@ export default function Sim2Public() {
             }
           });
         } else {
-          expect(data).assertFalse();
+          ExpectFail();
           console.info(`${caseName} test end `);
           done();
         }
@@ -446,7 +446,7 @@ export default function Sim2Public() {
           done();
         } else {
           console.info(`${caseName}:data->${JSON.stringify(data)}`);
-          expect(data).assertFalse();
+          ExpectFail();
           console.info(`${caseName} test end `);
           done();
         }
@@ -1875,7 +1875,6 @@ export default function Sim2Public() {
         done();
       } else {
         hilog.info(domain, tag, `${caseName} false has not sim card1: ` + hasSimCard);
-        expect(hasSimCard).assertFalse();
         ExpectFail();
         hilog.info(domain, tag, `${caseName} test end `);
         done();
