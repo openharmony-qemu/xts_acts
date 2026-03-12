@@ -8368,6 +8368,8 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
             console.info(`${caseName} test start`);
             let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
             expect(tcp).assertInstanceOf('Object');
+            let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+            expect(tcpServer).assertInstanceOf('Object');
             let listenAddress: socket.NetAddress = {
               address: '127.0.0.1',
               port: 4017
