@@ -14,7 +14,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { router } from '@kit.ArkUI';
+import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
 
