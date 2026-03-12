@@ -101,9 +101,9 @@ struct WebFontTest {
         Button("WebFontTestButton")
           .key('WebFontTestButton')
           .onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
-          this.isReceive = -1;
+            await waitForExist(() => this.isPageEnd, this.str, 0);
+            await waitForExist(() => this.isReceive, this.str, 0);
+            this.isReceive = -1;
             console.info("key==>" + this.str)
             switch (this.str) {
               case "testWebStandardFont001": {
@@ -265,7 +265,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150210)
+                      Utils.emitEvent(true, 150210)
                     }
                   })
                 } catch (error) {
@@ -289,7 +289,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150220)
+                      Utils.emitEvent(true, 150220)
                     }
                   })
                 } catch (error) {
@@ -315,7 +315,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150230)
+                      Utils.emitEvent(true, 150230)
                     }
                   })
                 } catch (error) {
@@ -340,7 +340,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150240)
+                      Utils.emitEvent(true, 150240)
                     }
                   })
                 } catch (error) {
@@ -365,7 +365,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150250)
+                      Utils.emitEvent(true, 150250)
                     }
                   })
                 } catch (error) {
@@ -390,7 +390,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150260)
+                      Utils.emitEvent(true, 150260)
                     }
                   })
                 } catch (error) {
@@ -415,7 +415,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150270)
+                      Utils.emitEvent(true, 150270)
                     }
                   })
                 } catch (error) {
@@ -440,7 +440,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150280)
+                      Utils.emitEvent(true, 150280)
                     }
                   })
                 } catch (error) {
@@ -465,7 +465,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150290)
+                      Utils.emitEvent(true, 150290)
                     }
                   })
                 } catch (error) {
@@ -491,7 +491,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.fixedFont = 'monospace'
-                      Utils.emitEvent(result, 150300)
+                      Utils.emitEvent(true, 150300)
                     }
                   })
                 } catch (error) {
@@ -516,7 +516,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150310)
+                      Utils.emitEvent(true, 150310)
                     }
                   })
                 } catch (error) {
@@ -541,7 +541,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150320)
+                      Utils.emitEvent(true, 150320)
                     }
                   })
                 } catch (error) {
@@ -567,7 +567,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.webSerifFont = 'serif'
-                      Utils.emitEvent(result, 150330)
+                      Utils.emitEvent(true, 150330)
                     }
                   })
                 } catch (error) {
@@ -592,7 +592,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150340)
+                      Utils.emitEvent(true, 150340)
                     }
                   })
                 } catch (error) {
@@ -617,7 +617,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150340)
+                      Utils.emitEvent(true, 150340)
                     }
                   })
                 } catch (error) {
@@ -642,7 +642,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150350)
+                      Utils.emitEvent(true, 150350)
                     }
                   })
                 } catch (error) {
@@ -668,7 +668,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.webSerifFont = 'serif'
-                      Utils.emitEvent(result, 150360)
+                      Utils.emitEvent(true, 150360)
                     }
                   })
                 } catch (error) {
@@ -694,7 +694,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.forceDisplayScrollBar = true
-                      Utils.emitEvent(result, 150370)
+                      Utils.emitEvent(true, 150370)
                     }
                   })
                 } catch (error) {
@@ -720,7 +720,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.horizontalScrollBarAccess = true
-                      Utils.emitEvent(result, 150380)
+                      Utils.emitEvent(true, 150380)
                     }
                   })
                 } catch (error) {
@@ -746,7 +746,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.verticalScrollBar = true
-                      Utils.emitEvent(result, 150390)
+                      Utils.emitEvent(true, 150390)
                     }
                   })
                 } catch (error) {
@@ -772,7 +772,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.pinchSmooth = true
-                      Utils.emitEvent(result, 150400)
+                      Utils.emitEvent(true, 150400)
                     }
                   })
                 } catch (error) {
@@ -797,7 +797,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150410)
+                      Utils.emitEvent(true, 150410)
                     }
                   })
                 } catch (error) {
@@ -826,7 +826,7 @@ struct WebFontTest {
                         scrollForward: NestedScrollMode.SELF_FIRST,
                         scrollBackward: NestedScrollMode.SELF_FIRST,
                       }
-                      Utils.emitEvent(result, 150420)
+                      Utils.emitEvent(true, 150420)
                     }
                   })
                 } catch (error) {
@@ -852,7 +852,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150430)
+                      Utils.emitEvent(true, 150430)
                     }
                   })
                 } catch (error) {
@@ -878,7 +878,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150440)
+                      Utils.emitEvent(true, 150440)
                     }
                   })
                 } catch (error) {
@@ -906,7 +906,7 @@ struct WebFontTest {
                       console.info('getFontFamily() return result: ' + result)
                       this.tag = 'object';
                       this.type = 'native'
-                      Utils.emitEvent(result, 150450)
+                      Utils.emitEvent(true, 150450)
                     }
                   })
                 } catch (error) {
@@ -931,7 +931,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150460)
+                      Utils.emitEvent(true, 150460)
                     }
                   })
                 } catch (error) {
@@ -957,7 +957,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.copyOptions = CopyOptions.None;
-                      Utils.emitEvent(result, 150470)
+                      Utils.emitEvent(true, 150470)
                     }
                   })
                 } catch (error) {
@@ -983,7 +983,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.textAutosizing = true
-                      Utils.emitEvent(result, 150480)
+                      Utils.emitEvent(true, 150480)
                     }
                   })
                 } catch (error) {
@@ -1008,7 +1008,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150490)
+                      Utils.emitEvent(true, 150490)
                     }
                   })
                 } catch (error) {
@@ -1034,7 +1034,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.enableNativeMediaPlayer ={enable: true, shouldOverlay: false}
-                      Utils.emitEvent(result, 150500)
+                      Utils.emitEvent(true, 150500)
                     }
                   })
                 } catch (error) {
@@ -1060,7 +1060,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.editMenuOptions = null
-                      Utils.emitEvent(result, 150510)
+                      Utils.emitEvent(true, 150510)
                     }
                   })
                 } catch (error) {
@@ -1086,7 +1086,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.avoidMode = WebKeyboardAvoidMode.RESIZE_VISUAL
-                      Utils.emitEvent(result, 150520)
+                      Utils.emitEvent(true, 150520)
                     }
                   })
                 } catch (error) {
@@ -1115,7 +1115,7 @@ struct WebFontTest {
                       console.info('getFontFamily() return result: ' + result)
                       this.customBuilder = null
                       this.selectionMenuOptionsExt = null
-                      Utils.emitEvent(result, 150530)
+                      Utils.emitEvent(true, 150530)
                     }
                   })
                 } catch (error) {
@@ -1141,7 +1141,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
 
-                      Utils.emitEvent(result, 150540)
+                      Utils.emitEvent(true, 150540)
                     }
                   })
                 } catch (error) {
@@ -1166,19 +1166,19 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                    this.dataDetectorConfig =   {
+                      this.dataDetectorConfig =   {
                         types: [
                           TextDataDetectorType.PHONE_NUMBER,
                           TextDataDetectorType.EMAIL
                         ],
                         color: Color.Red,
-                      decoration: {
-                        type: TextDecorationType.LineThrough,
-                        color: Color.Green,
-                        style: TextDecorationStyle.WAVY
+                        decoration: {
+                          type: TextDecorationType.LineThrough,
+                          color: Color.Green,
+                          style: TextDecorationStyle.WAVY
+                        }
                       }
-                      }
-                      Utils.emitEvent(result, 150550)
+                      Utils.emitEvent(true, 150550)
                     }
                   })
                 } catch (error) {
@@ -1209,7 +1209,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150560)
+                      Utils.emitEvent(true, 150560)
                     }
                   })
                 } catch (error) {
@@ -1234,7 +1234,7 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                      Utils.emitEvent(result, 150570)
+                      Utils.emitEvent(true, 150570)
                     }
                   })
                 } catch (error) {
@@ -1259,13 +1259,13 @@ struct WebFontTest {
                     }
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
-                    this.detectConfig =  {
-                      enable: true,
-                      detectionTiming: [2, 4, 6, 8],
-                      contentfulNodesCountThreshold: 4,
-                      detectionMethods:[BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
-                    }
-                      Utils.emitEvent(result, 150580)
+                      this.detectConfig =  {
+                        enable: true,
+                        detectionTiming: [2, 4, 6, 8],
+                        contentfulNodesCountThreshold: 4,
+                        detectionMethods:[BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
+                      }
+                      Utils.emitEvent(true, 150580)
                     }
                   })
                 } catch (error) {
@@ -1291,7 +1291,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
 
-                      Utils.emitEvent(result, 150590)
+                      Utils.emitEvent(true, 150590)
                     }
                   })
                 } catch (error) {
@@ -1317,7 +1317,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
 
-                      Utils.emitEvent(result, 150600)
+                      Utils.emitEvent(true, 150600)
                     }
                   })
                 } catch (error) {
@@ -1343,7 +1343,7 @@ struct WebFontTest {
                     if (result) {
                       console.info('getFontFamily() return result: ' + result)
                       this.embedOptions = {supportDefaultIntrinsicSize: true}
-                      Utils.emitEvent(result, 150610)
+                      Utils.emitEvent(true, 150610)
                     }
                   })
                 } catch (error) {

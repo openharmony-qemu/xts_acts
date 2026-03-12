@@ -47,7 +47,7 @@ export default function webFantasyFont() {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
@@ -94,7 +94,7 @@ export default function webFantasyFont() {
      */
     it('emitWebFantasyFont003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebFantasyFont003", 150120)
-      Utils.registerEvent("emitWebFantasyFont003", 0, 150150, done);
+      Utils.registerEvent("emitWebFantasyFont003", true, 150150, done);
       let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
       await component.click();
     })
@@ -109,7 +109,7 @@ export default function webFantasyFont() {
      */
     it('emitWebFantasyFont004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebFantasyFont004", 150120)
-      Utils.registerEvent("emitWebFantasyFont004", 0, 150160, done);
+      Utils.registerEvent("emitWebFantasyFont004", true, 150160, done);
       let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
       await component.click();
     })
@@ -124,7 +124,7 @@ export default function webFantasyFont() {
      */
     it('emitWebCursiveFont005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebCursiveFont005", 150120)
-      Utils.registerEvent("emitWebCursiveFont005", 0, 150170, done);
+      Utils.registerEvent("emitWebCursiveFont005", true, 150170, done);
       let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
       await component.click();
     })
@@ -139,7 +139,7 @@ export default function webFantasyFont() {
      */
     it('emitWebCursiveFont006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebCursiveFont006", 150120)
-      Utils.registerEvent("emitWebCursiveFont006", 0, 150180, done);
+      Utils.registerEvent("emitWebCursiveFont006", true, 150180, done);
       let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
       await component.click();
     })
@@ -154,7 +154,7 @@ export default function webFantasyFont() {
      */
     it('emitWebCursiveFont007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebCursiveFont007", 150120)
-      Utils.registerEvent("emitWebCursiveFont007", 0, 150190, done);
+      Utils.registerEvent("emitWebCursiveFont007", true, 150190, done);
       let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
       await component.click();
     })
@@ -169,7 +169,7 @@ export default function webFantasyFont() {
      */
     it('emitWebCursiveFont008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebCursiveFont008", 150120)
-      Utils.registerEvent("emitWebCursiveFont008", 0, 150200, done);
+      Utils.registerEvent("emitWebCursiveFont008", true, 150200, done);
       let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
       await component.click();
     })
@@ -184,7 +184,7 @@ export default function webFantasyFont() {
      */
     it('emitWebCursiveFont009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebCursiveFont009", 150120)
-      Utils.registerEvent("emitWebCursiveFont009", 0, 150210, done);
+      Utils.registerEvent("emitWebCursiveFont009", true, 150210, done);
       let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
       await component.click();
     })

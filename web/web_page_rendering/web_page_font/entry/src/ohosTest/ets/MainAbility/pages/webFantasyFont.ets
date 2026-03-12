@@ -93,7 +93,7 @@ struct webFantasyFont {
               this.family=null
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(CopyOptions.None, 150150)
+              Utils.emitEvent(true, 150150)
               break;
             }
             case "emitWebFantasyFont004": {
@@ -101,7 +101,7 @@ struct webFantasyFont {
               this.family=undefined
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(CopyOptions.None, 150160)
+              Utils.emitEvent(true, 150160)
               break;
             }
             case "emitWebCursiveFont005": {
@@ -109,7 +109,7 @@ struct webFantasyFont {
               this.family2=''
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(CopyOptions.None, 150170)
+              Utils.emitEvent(true, 150170)
               break;
             }
             case "emitWebCursiveFont006": {
@@ -117,7 +117,7 @@ struct webFantasyFont {
               this.family2=null
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(CopyOptions.None, 150180)
+              Utils.emitEvent(true, 150180)
               break;
             }
             case "emitWebCursiveFont007": {
@@ -125,7 +125,7 @@ struct webFantasyFont {
               this.family2=undefined
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(CopyOptions.None, 150190)
+              Utils.emitEvent(true, 150190)
               break;
             }
 
@@ -136,7 +136,7 @@ struct webFantasyFont {
               this.selectionMenuOptions = null
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(CopyOptions.None, 150200)
+              Utils.emitEvent(true, 150200)
               break;
             }
 
@@ -145,7 +145,7 @@ struct webFantasyFont {
               this.selectionMenuOptions = undefined
               this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              Utils.emitEvent(CopyOptions.None, 150210)
+              Utils.emitEvent(true, 150210)
               break;
             }
           }
@@ -158,11 +158,11 @@ struct webFantasyFont {
         .copyOptions(CopyOptions.None)
         .selectionMenuOptions(this.selectionMenuOptions)
         .onPageEnd((event) => {
-            if (event) {
-              this.isPageEnd = 0;
-              console.log('onPageEnd url:' + event.url);
-            }
-          })
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('onPageEnd url:' + event.url);
+          }
+        })
 
     }
   }
