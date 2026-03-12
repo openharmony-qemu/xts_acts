@@ -1671,7 +1671,7 @@ export default function RunningLockTest() {
      */
     it('testRunningLockTest_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'testRunningLockTest_5900';
-      if (runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE)) {
+      if (runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE)) {
         try {
           let lock = await runningLock.createRunningLock(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
           console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
@@ -1791,7 +1791,7 @@ export default function RunningLockTest() {
      */
     it('testRunningLockTest_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'testRunningLockTest_6400';
-      if (runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE)) {
+      if (runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE)) {
         runningLock.createRunningLock(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE, (error, lock) => {
           if (error) {
             console.error(`${TAG} error: ${JSON.stringify(error)}`);
