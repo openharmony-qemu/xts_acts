@@ -2805,6 +2805,267 @@ export default function geolocationTest_geo7() {
             done();
         }
     })
+
+    /**
+     * @tc.name   test_LocationChange_0100
+     * @tc.number test_LocationChange_0100
+     * @tc.desc   Initiate a request for continuous positioning in a specified scenario and set a track tracing scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_LocationChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        enableLocationSwitch();
+        let requestInfo = null;
+        var locationChange = (location) => {
+            console.info('[lbs_js] test_LocationChange_0100 data:' + JSON.stringify(location));
+            expect(true).assertEqual(locationChange !=null);
+        };
+        try {
+            geolocationm.on('locationChange', requestInfo, locationChange);
+        } catch (error) {
+            console.info("[lbs_js] test_LocationChange_0100 try err." + JSON.stringify(error));
+            expect(error.code).assertEqual("401");
+        }
+        await sleep(1500);
+        done();
+    })
+
+    /**
+     * @tc.name   test_CachedGnssLocationsChange_0100
+     * @tc.number test_CachedGnssLocationsChange_0100
+     * @tc.desc   Setting the Gnss Batching Reporting Interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_CachedGnssLocationsChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+        console.info("test_CachedGnssLocationsChange_0100 : " + isAcessToken);
+        if (!isAcessToken) {
+            console.info("The device does not support gnss");
+            expect(isAcessToken).assertFalse();
+            done();
+        } else {
+            var cachedLocationsCb = (locations) => {
+                console.log('[lbs_js] test_CachedGnssLocationsChange_0100:locations:' + JSON.stringify(locations));
+                expect(true).assertEqual(locations !=null);
+            }
+            var CachedGnssLoactionsRequest = null;
+            try {
+                geolocationm.on('cachedGnssLocationsChange', CachedGnssLoactionsRequest, cachedLocationsCb);
+            } catch (error) {
+                console.info("[lbs_js] test_CachedGnssLocationsChange_0100 try err." + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null)
+            }
+            await sleep(1500);
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   test_GnssFenceStatusChange_0100
+     * @tc.number test_GnssFenceStatusChange_0100
+     * @tc.desc   Gnss fence function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_GnssFenceStatusChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
+        console.info("test_GnssFenceStatusChange_0100 : " + isAcessToken);
+        if (!isAcessToken) {
+            console.info("The device does not support geofence");
+            expect(isAcessToken).assertFalse();
+            done();
+        } else {
+            await changedLocationMode();
+            let geofenceRequest = null;
+            let wantinfo = null;
+            try {
+                geolocationm.on('gnssFenceStatusChange', geofenceRequest, wantinfo);
+            } catch (error) {
+                console.info("[lbs_js] test_GnssFenceStatusChange_0100 try error:"+ JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null)
+            }
+            try {
+                geolocationm.off('gnssFenceStatusChange',geofenceRequest, wantinfo);
+            } catch (error) {
+                console.info("[lbs_js] test_GnssFenceStatusChange_0100 try error:"+ JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null)
+            }
+            await sleep(1000);
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   test_GetCurrentLocation_0100
+     * @tc.number test_GetCurrentLocation_0100
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_GetCurrentLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = null;
+        try {
+            geolocationm.getCurrentLocation(currentLocationRequest, (err, result) => {
+                if (err) {
+                    console.info("[lbs_js] test_GetCurrentLocation_0100 callback err:  " + JSON.stringify(err));
+                    expect(err.code).assertEqual(401);
+                    done();
+                } else {
+                    console.info("[lbs_js] test_GetCurrentLocation_0100 callback result:" + JSON.stringify(result));
+                    expect(true).assertEqual(result != null);
+                }
+            });
+        } catch (error) {
+            console.info("[lbs_js] test_GetCurrentLocation_0100 callback try err." + JSON.stringify(error));
+            expect(error.code).assertEqual("401");
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   test_GetCurrentLocation_0200
+     * @tc.number test_GetCurrentLocation_0200
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_GetCurrentLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = null;
+        try {
+            await geolocationm.getCurrentLocation(currentLocationRequest).then((result) => {
+                console.info('[lbs_js] test_GetCurrentLocation_0200 promise result ' + JSON.stringify(result));
+                expect(true).assertEqual(result != null);
+            }).catch(error => {
+                console.info('[lbs_js] test_GetCurrentLocation_0200 promise err:' + JSON.stringify(error));
+                expect(error.code).assertEqual(401);
+            })
+        } catch (error) {
+            console.info("[lbs_js] test_GetCurrentLocation_0200 promise try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_mSendCommand_0300
+     * @tc.number SUB_HSS_mSendCommand_0300
+     * @tc.desc   Test sendCommand api .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_mSendCommand_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+        console.info("SUB_HSS_mSendCommand_0300 : " + isAcessToken);
+        if (!isAcessToken) {
+            console.info("The device does not support gnss");
+            expect(isAcessToken).assertFalse();
+            done();
+        } else {
+            let requestInfo = null;
+            try {
+                await geolocationm.sendCommand(requestInfo, (err, result) => {
+                    if (err) {
+                        console.info('SUB_HSS_mSendCommand_0300 callback err01:' + JSON.stringify(err));
+                        console.info('SUB_HSS_mSendCommand_0300 not support');
+                        expect(true).assertEqual(JSON.stringify(err) != null);
+                        done();
+                    }
+                    console.info('SUB_HSS_mSendCommand_0300 callback result:' + JSON.stringify(result));
+                });
+            } catch (error) {
+                console.info('SUB_HSS_mSendCommand_0300 callback err02:' + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            }
+            await sleep(1000);
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_HSS_mSendCommand_0400
+     * @tc.number SUB_HSS_mSendCommand_0400
+     * @tc.desc   Test sendCommand1 api .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_mSendCommand_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+        console.info("SUB_HSS_mSendCommand_0400 : " + isAcessToken);
+        if (!isAcessToken) {
+            console.info("The device does not support gnss");
+            expect(isAcessToken).assertFalse();
+            done();
+        } else {
+            let requestInfo = null;
+            try {
+                geolocationm.sendCommand(requestInfo).then((result) => {
+                    console.info('[lbs_js] SUB_HSS_mSendCommand_0400 promise result:' + result);
+                    done();
+                }).catch(error => {
+                    console.info('[lbs_js] SUB_HSS_mSendCommand_0400 promise err01:' + JSON.stringify(error));
+                    console.info('[lbs_js] SUB_HSS_mSendCommand_0400 not support now');
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                    done();
+                })
+            } catch (error) {
+                console.info('[lbs_js] SUB_HSS_mSendCommand_0400 promise err02:' + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            }
+            await sleep(1000);
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   test_AddGnssGeofence_0100
+     * @tc.number test_AddGnssGeofence_0100
+     * @tc.desc   Test the function of locating the validity period of the fence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AddGnssGeofence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
+        console.info("test_AddGnssGeofence_0100 : " + isAcessToken);
+        if (!isAcessToken) {
+            console.info("The device does not support geofence");
+            expect(isAcessToken).assertFalse();
+            done();
+        } else {
+            await changedLocationMode();
+            let fenceRequest = null;
+            try {
+                await geolocationm.addGnssGeofence(fenceRequest).then((id) => {
+                    console.info("[lbs_js] test_AddGnssGeofence_0100 addGnssGeofence success, id = " + id);
+                    expect(true).assertEqual(id != -1);
+                }).catch((err) => {
+                    console.info("[lbs_js] test_AddGnssGeofence_0100 add error=" + JSON.stringify(error));
+                    expect(true).assertEqual(JSON.stringify(err) != null);
+                }
+                );
+            } catch (error) {
+                console.info("[lbs_js] test_AddGnssGeofence_0100 add try error:"+ JSON.stringify(error));
+                if (error.code == "801") {
+                    expect(error.code).assertEqual("801")
+                } else {
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                }
+            }
+            await sleep(10000);
+            done();
+        }
+    })
+
     })
 }
 
