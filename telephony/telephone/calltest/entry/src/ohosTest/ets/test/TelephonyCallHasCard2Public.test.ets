@@ -842,7 +842,7 @@ export default function HasCard2PublicTest() {
       });
       console.info(`${caseName} test end`);
     });
- 
+
     /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber3800
      * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_3800
@@ -1590,26 +1590,26 @@ export default function HasCard2PublicTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-     it('testTelephonyCallManagerFormatPhoneNumber2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testTelephonyCallManagerFormatPhoneNumber2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2500';
-       console.info(`${caseName} test start`);
+      console.info(`${caseName} test start`);
       try {
         call.formatPhoneNumber(phoneNumber, null).then((data: string) => {
           console.info(`${caseName} formatPhoneNumber finish + ${JSON.stringify(data)}`);
           ExpectTrue(true);
-           done();
+          done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} formatPhoneNumber fail promise, err->${JSON.stringify(err)}`);
           ExpectFail();
-           done();
-         });
+          done();
+        });
       } catch (err) {
         console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
-         ExpectFail();
-         done();
-       }
-       console.info(`${caseName} test end`);
-     });
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
 
     /**
      * @tc.name   testTelephonyCallManagerFormatPhoneNumber2600
@@ -1621,24 +1621,130 @@ export default function HasCard2PublicTest() {
      */
     it('testTelephonyCallManagerFormatPhoneNumber2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerFormatPhoneNumber2600';
-       console.info(`${caseName} test start`);
+      console.info(`${caseName} test start`);
       try {
         call.formatPhoneNumber(phoneNumber, undefined).then((data: string) => {
           console.info(`${caseName} formatPhoneNumber finish + ${JSON.stringify(data)}`);
           ExpectTrue(true);
-           done();
+          done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} formatPhoneNumber fail promise, err->${JSON.stringify(err)}`);
           ExpectFail();
-           done();
-         });
+          done();
+        });
       } catch (err) {
         console.info(`${caseName}  fail, err->${JSON.stringify(err)}`);
-         ExpectFail();
-         done();
-       }
-       console.info(`${caseName} test end`);
-     });
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
 
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCall_0100
+     * @tc.number Telephony_Call_Call_MakeCall_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Telephony_Call_Call_MakeCall_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCall_0100";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      let simState: sim.SimState = sim.getSimStateSync(0);
+      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
+        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          await call.makeCall("", (error) => {
+            if (error) {
+              console.log("makeCall callback: err->" + JSON.stringify(error));
+              expect(false).assertTrue();
+              done();
+            }
+            console.log("makeCall callback success");
+            done();
+          });
+        } catch (err) {
+          console.log("makeCall callback: err->" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCall_0200
+     * @tc.number Telephony_Call_Call_MakeCall_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Telephony_Call_Call_MakeCall_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCall_0200";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      let simState: sim.SimState = sim.getSimStateSync(0);
+      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
+        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          await call.makeCall("").then(() => {
+            console.log("makeCall callback success");
+            done();
+          }).catch((error: BusinessError) => {
+            console.log("makeCall callback: err->" + JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        } catch (err) {
+          console.log("makeCall callback: err->" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
+    /**
+     * @tc.name   Telephony_Call_Call_MakeCall_0600
+     * @tc.number Telephony_Call_Call_MakeCall_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Telephony_Call_Call_MakeCall_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "Telephony_Call_Call_MakeCall_0600";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      let simState: sim.SimState = sim.getSimStateSync(0);
+      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
+        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          call.makeCall(undefined).then(() => {
+            console.log("makeCall callback success");
+            done();
+          }).catch((error: BusinessError) => {
+            console.log("makeCall callback: err->" + JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          });
+        } catch (err) {
+          console.log("makeCall callback: err->" + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
+      }
+      console.log(`==========> ${caseName} Test end ==========>`);
+    });
+    
   });
 }
