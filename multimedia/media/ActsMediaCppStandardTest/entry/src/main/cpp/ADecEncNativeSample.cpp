@@ -425,6 +425,7 @@ int32_t ADecEncNativeSample::PushInbufferDec(uint32_t index, uint32_t bufferSize
 
 void ADecEncNativeSample::InputFuncDec()
 {
+    /* G.CTL.03: loop exits via break when !isDecRunning_, EOF, or memcpy error. */
     while (true) {
         if (!isDecRunning_.load()) {
             break;

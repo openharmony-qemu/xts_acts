@@ -24,7 +24,7 @@
  */
 #include <stdbool.h>
 
-bool canIUse(const char* cap) /* G.NAM.03: name fixed by syscap API */
+bool canIUse(const char* cap) /* NOLINT(readability-identifier-naming) - API name fixed by syscap SDK */
 {
     (void)cap;
     return true;

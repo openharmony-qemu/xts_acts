@@ -126,12 +126,17 @@ static napi_value RunTestAsync(napi_env env,
     napi_value resName;
     napi_create_string_utf8(env, resourceName, NAPI_AUTO_LENGTH, &resName);
 
-    if (napi_create_async_work(
-            env, nullptr, resName, ExecuteAsyncWork, CompleteAsyncWork, workData, &workData->asyncWork) != napi_ok ||
-        napi_queue_async_work(env, workData->asyncWork) != napi_ok) {
-        if (workData->asyncWork) {
-            napi_delete_async_work(env, workData->asyncWork);
-        }
+    napi_status createStatus = napi_create_async_work(
+        env, nullptr, resName, ExecuteAsyncWork, CompleteAsyncWork, workData, &workData->asyncWork);
+    if (createStatus != napi_ok) {
+        delete workData;
+        napi_throw_error(env, nullptr, "Failed to create async work");
+        return nullptr;
+    }
+
+    napi_status queueStatus = napi_queue_async_work(env, workData->asyncWork);
+    if (queueStatus != napi_ok) {
+        napi_delete_async_work(env, workData->asyncWork);
         delete workData;
         napi_throw_error(env, nullptr, "Failed to queue async work");
         return nullptr;

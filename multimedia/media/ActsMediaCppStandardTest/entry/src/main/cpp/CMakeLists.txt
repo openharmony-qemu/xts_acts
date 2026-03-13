@@ -22,12 +22,13 @@ add_library(mediacppstandard_test SHARED
 
 target_link_libraries(mediacppstandard_test PUBLIC
     libace_napi.z.so
-    libhilog_ndk.z.so  # System-provided; WordsTool.143 waived
+    libhilog_ndk.z.so
     libnative_media_codecbase.so
     libnative_media_core.so
     libnative_media_adec.so
     libnative_media_aenc.so
     libnative_media_vdec.so
     libnative_media_venc.so
+    libdeviceinfo_ndk.z.so
     libnative_window.so)
 
