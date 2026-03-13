@@ -2300,7 +2300,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let algName: string = "RSA1024";
         let signAlgName: string = "RSA1024|NoPadding|NoHash|OnlySign";
