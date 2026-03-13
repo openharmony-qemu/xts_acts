@@ -18,9 +18,9 @@ import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { Driver, ON } from '@kit.TestKit';
-// import { accessibility, config } from '@kit.AccessibilityKit';
-// const CAPABILITY: accessibility.Capability[] = ['retrieve', 'gesture'];
-// const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+import { accessibility, config } from '@kit.AccessibilityKit';
+const CAPABILITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let driver = Driver.create();
 
 export default function webviewControllerAddIntelligentTrackingParam() {
@@ -50,21 +50,11 @@ export default function webviewControllerAddIntelligentTrackingParam() {
     });
 
     beforeEach(async (done: Function) => {
-
-
-      // config.enableAbility(BUNDLE_NAME, CAPABILITY).then(() => {
-
-
-      //   console.info(`enable success`);
-
-
-      // }).catch((err: object) => {
-
-
-      //   console.error(`failed to enable, ${err}`);
-
-
-      // })
+      config.enableAbility(BUNDLE_NAME, CAPABILITY).then(() => {
+        console.info(`enable success`);
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
       console.info('webviewControllerAddIntelligentTrackingParam beforeEach start');
       done();
     })

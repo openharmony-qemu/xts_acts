@@ -15,6 +15,32 @@
 import webviewNetworkProxy from './webviewNetworkProxy.test'
 import WebCookieManager from './WebCookieManager.test'
 
+import webviewControllerPostMessageParam from './WebviewControllerPostMessageParam.test';
+import webviewControllerSearchAllAsyncParam from './WebviewControllerSearchAllAsyncParam.test';
+import webviewControllerRunJavaScriptErrorCode from './WebviewControllerRunJavaScriptErrorCode.test';
+import webviewControllerRunJavaScriptExtParam from './WebviewControllerRunJavaScriptExtParam.test';
+import webviewControllerRunJavaScriptExtErrorCode from './WebviewControllerRunJavaScriptExtErrorCode.test';
+import webviewControllerRemoveAllCacheParam from './WebviewControllerRemoveAllCacheParam.test';
+import webviewControllerSetCustomUserAgentParam from './WebviewControllerSetCustomUserAgentParam.test';
+import webviewControllerPrepareForPageLoadParam from './WebviewControllerPrepareForPageLoadParam.test';
+import webviewControllerSetConnectionTimeoutParam from './WebviewControllerSetConnectionTimeoutParam.test';
+import webviewControllerStartDownloadParam from './WebviewControllerStartDownloadParam.test';
+import webviewControllerPostUrlParam from './WebviewControllerPostUrlParam.test';
+import webviewControllerSetWebSchemeHandlerParam from './WebviewControllerSetWebSchemeHandlerParam.test';
+import webviewControllerSetServiceWorkerWebSchemeHandlerParam from './WebviewControllerSetServiceWorkerWebSchemeHandlerParam.test';
+import webviewControllerRemoveIntelligentTrackingPreventionBypassingListParam from './WebviewControllerRemoveIntelligentTrackingPreventionBypassingListParam.test';
+import webviewControllerSetDownloadDelegateParam from './WebviewControllerSetDownloadDelegateParam.test';
+import webviewControllerSetHostIPParam from './WebviewControllerSetHostIPParam.test';
+import webviewControllerSetUrlTrustListParam from './WebviewControllerSetUrlTrustListParam.test';
+import webviewControllerSetAppCustomUserAgentParam from './WebviewControllerSetAppCustomUserAgentParam.test';
+import webviewControllerSetSocketIdleTimeoutParam from './WebviewControllerSetSocketIdleTimeoutParam.test';
+import webviewControllerWarmupServiceWorkerParam from './WebviewControllerWarmupServiceWorkerParam.test';
+import webviewControllerSetBackForwardCacheOptionsParam from './WebviewControllerSetBackForwardCacheOptionsParam.test';
+import webviewControllerSetUserAgentForHostsParam from './WebviewControllerSetUserAgentForHostsParam.test';
+import webviewControllerSetWebDebuggingAccessParamFalse from './WebviewControllerSetWebDebuggingAccessParamFalse.test';
+import webviewControllerRegisterJavaScriptProxyParam from './WebviewControllerRegisterJavaScriptProxyParam.test';
+import webviewControllerLoadDataParam from './WebviewControllerLoadDataParam.test';
+import webviewControllerLoadUrlParam from './WebviewControllerLoadUrlParam.test';
 import webDownloadManagerSetDownloadDelegateParam from './WebDownloadManagerSetDownloadDelegateParam.test';
 import webDownloadManagerResumeDownloadParam from './WebDownloadManagerResumeDownloadParam.test';
 import webviewControllerAddIntelligentTrackingParam from './WebviewControllerAddIntelligentTrackingParam.test';
@@ -26,6 +52,14 @@ import webviewControllerEnableBackForwardCacheParam from './WebviewControllerEna
 export default function testsuite() {
   webviewNetworkProxy()
   WebCookieManager()
+  webviewControllerPostMessageParam()
+  webviewControllerSearchAllAsyncParam()
+  webviewControllerRunJavaScriptErrorCode()
+  webviewControllerRunJavaScriptExtParam()
+  webviewControllerRunJavaScriptExtErrorCode()
+  webviewControllerRemoveAllCacheParam()
+  webviewControllerSetCustomUserAgentParam()
+  webviewControllerPrepareForPageLoadParam()
   webDownloadManagerSetDownloadDelegateParam()
   webDownloadManagerResumeDownloadParam()
   webviewControllerAddIntelligentTrackingParam()
@@ -33,4 +67,22 @@ export default function testsuite() {
   webviewControllerClearHostIPParam()
   webviewControllerDeleteJavaScriptRegisterParam()
   webviewControllerEnableBackForwardCacheParam()
+  webviewControllerSetConnectionTimeoutParam()
+  webviewControllerSetDownloadDelegateParam()
+  webviewControllerPostUrlParam()
+  webviewControllerSetWebSchemeHandlerParam()
+  webviewControllerSetServiceWorkerWebSchemeHandlerParam()
+  webviewControllerRemoveIntelligentTrackingPreventionBypassingListParam()
+  webviewControllerStartDownloadParam()
+  webviewControllerSetHostIPParam()
+  webviewControllerWarmupServiceWorkerParam()
+  webviewControllerSetUrlTrustListParam()
+  webviewControllerSetBackForwardCacheOptionsParam()
+  webviewControllerSetAppCustomUserAgentParam()
+  webviewControllerSetUserAgentForHostsParam()
+  webviewControllerSetSocketIdleTimeoutParam()
+  webviewControllerSetWebDebuggingAccessParamFalse()
+  webviewControllerRegisterJavaScriptProxyParam()
+  webviewControllerLoadDataParam()
+  webviewControllerLoadUrlParam()
 }
