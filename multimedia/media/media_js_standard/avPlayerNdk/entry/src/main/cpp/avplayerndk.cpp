@@ -3210,7 +3210,7 @@ static napi_value NAPI_Global_AvFormatSetUint1(napi_env env, napi_callback_info 
     napi_value args[PARAM_2] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int backParam = FAIL;
-    OH_AVFormat* format = OH_AVFormat_Create();
+    OH_AVFormat* format = nullptr;
     uint32_t value;
     napi_get_value_uint32(env, args[PARAM_1], &value);
     const char* key;
