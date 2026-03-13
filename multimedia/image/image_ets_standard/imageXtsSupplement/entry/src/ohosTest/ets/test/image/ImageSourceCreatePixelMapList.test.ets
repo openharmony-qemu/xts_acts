@@ -1347,7 +1347,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         expect().assertTrue();
       } catch (err) {
         console.error(TAG, testName, `Error: ${err.message}, Code: ${err.code}`);
-        expect(err.code).assertEqual('7700201');
+        expect(Number(err.code)).assertEqual(7700201);
       } finally {
         await pixelmap?.release();
         await imageSourceApi?.release();
