@@ -4430,8 +4430,8 @@ export default function abilityTest() {
             }
         })
         /**
-         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_OPTIONALDATA
-         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_OPTIONALDATA
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_NULLARR_OPTIONALDATA
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_NULLARR_OPTIONALDATA
          * @tc.desc   generateMediaKeyRequest传入undefined OptionsData
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
