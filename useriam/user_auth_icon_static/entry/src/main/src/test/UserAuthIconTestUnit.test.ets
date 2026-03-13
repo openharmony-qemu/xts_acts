@@ -15,7 +15,7 @@
 import  hilog  from '@ohos.hilog';
 import { describe, it, expect, Level, TestType, Size } from '../../../hypium/index';
 import { Driver,ON, Component } from '@ohos.UiTest';
-import Utils from './Utils.test';
+import Utils from './Util.test';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
