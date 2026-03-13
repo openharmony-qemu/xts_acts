@@ -450,6 +450,52 @@ int32_t VDecEncNativeSample::PushInbufferDec(uint32_t index, uint32_t bufferSize
     return OH_VideoDecoder_PushInputData(vdec_, index, attr);
 }
 
+bool VDecEncNativeSample::ProcessOneInputDecFrame(uint32_t index, OH_AVMemory* buffer)
+{
+    if (vcodecSignal_->isVdecFlushing_.load() || isDecInputEOS || buffer == nullptr) {
+        PopInqueueDec();
+        return true;
+    }
+    if (testFile_ == nullptr || !testFile_->is_open()) {
+        (void)printf("Fatal: open file fail\n");
+        return false;
+    }
+    uint32_t bufferSize = 0;
+    if (decInCnt_ < ES_LENGTH) {
+        bufferSize = ES[decInCnt_];
+        char* fileBuffer = (char*)malloc(sizeof(char) * bufferSize + 1);
+        if (fileBuffer == nullptr) {
+            (void)printf("Fatal: malloc fail\n");
+            return false;
+        }
+        (void)testFile_->read(fileBuffer, bufferSize);
+        if (testFile_->eof()) {
+            free(fileBuffer);
+            cout << "Finish (EOF), sending decoder EOS" << endl;
+            decInCnt_ = ES_LENGTH;
+            PushInbufferDec(index, 0);
+            PopInqueueDec();
+            return false; /* EOF: exit loop */
+        }
+        if (SecureMemcpy(OH_AVMemory_GetAddr(buffer), OH_AVMemory_GetSize(buffer), fileBuffer, bufferSize) != EOK ||
+            buffer == nullptr) {
+            free(fileBuffer);
+            PopInqueueDec();
+            return true; /* memcpy fail: continue loop */
+        }
+        free(fileBuffer);
+    }
+    if (PushInbufferDec(index, bufferSize) != AV_ERR_OK) {
+        cout << "Fatal: OH_VideoDecoder_PushInputData fail, exit" << endl;
+        vcodecSignal_->errorNum_ += 1;
+    } else {
+        decInCnt_++;
+    }
+    timeStampDec_ += SAMPLE_DURATION_US;
+    PopInqueueDec();
+    return true;
+}
+
 void VDecEncNativeSample::InputFuncDec()
 {
     while (isDecRunning_.load()) {
@@ -464,44 +510,11 @@ void VDecEncNativeSample::InputFuncDec()
         if (!isDecRunning_.load()) {
             break;
         }
-
         uint32_t index = vcodecSignal_->inQueueDec_.front();
         OH_AVMemory* buffer = reinterpret_cast<OH_AVMemory*>(vcodecSignal_->inBufferQueueDec_.front());
-        if (vcodecSignal_->isVdecFlushing_.load() || isDecInputEOS || buffer == nullptr) {
-            PopInqueueDec();
-            continue;
+        if (!ProcessOneInputDecFrame(index, buffer)) {
+            break; /* EOF */
         }
-        NAPI_CHECK_AND_RETURN_LOG(testFile_ != nullptr && testFile_->is_open(), "Fatal: open file fail");
-        uint32_t bufferSize = 0;
-        if (decInCnt_ < ES_LENGTH) {
-            bufferSize = ES[decInCnt_];
-            char* fileBuffer = (char*)malloc(sizeof(char) * bufferSize + 1);
-            NAPI_CHECK_AND_RETURN_LOG(fileBuffer != nullptr, "Fatal: malloc fail");
-            (void)testFile_->read(fileBuffer, bufferSize);
-            if (testFile_->eof()) {
-                free(fileBuffer);
-                cout << "Finish (EOF), sending decoder EOS" << endl;
-                decInCnt_ = ES_LENGTH;
-                PushInbufferDec(index, 0);
-                PopInqueueDec();
-                break;
-            }
-            if (SecureMemcpy(OH_AVMemory_GetAddr(buffer), OH_AVMemory_GetSize(buffer), fileBuffer, bufferSize) != EOK ||
-                buffer == nullptr) {
-                free(fileBuffer);
-                PopInqueueDec();
-                continue;
-            }
-            free(fileBuffer);
-        }
-        if (PushInbufferDec(index, bufferSize) != AV_ERR_OK) {
-            cout << "Fatal: OH_VideoDecoder_PushInputData fail, exit" << endl;
-            vcodecSignal_->errorNum_ += 1;
-        } else {
-            decInCnt_++;
-        }
-        timeStampDec_ += SAMPLE_DURATION_US;
-        PopInqueueDec();
     }
 }
 

@@ -776,12 +776,14 @@ int32_t ADecEncNativeSample::WriteToFile()
 
 void ADecEncNativeSample::OutputFuncEnc()
 {
-    while (true) {
-        if (!isEncRunning_.load()) {
-            break;
-        }
+    while (isEncRunning_.load()) {
         unique_lock<mutex> lock(acodecSignal_->outMutexEnc_);
-        acodecSignal_->outCondEnc_.wait(lock, [this]() { return acodecSignal_->outQueueEnc_.size() > 0; });
+        bool woke = acodecSignal_->outCondEnc_.wait_for(lock, std::chrono::seconds(1), [this]() {
+            return acodecSignal_->outQueueEnc_.size() > 0 || !isEncRunning_.load();
+        });
+        if (!woke) {
+            break; /* G.CTL.03: timeout, exit to avoid permanent block */
+        }
         if (!isEncRunning_.load()) {
             break;
         }

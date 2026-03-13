@@ -117,6 +117,7 @@ private:
     OHNativeWindow *nativeWindow_;
     struct OH_AVCodec* vdec_;
     void InputFuncDec();
+    bool ProcessOneInputDecFrame(uint32_t index, OH_AVMemory* buffer);
     void OutputFuncDec();
     int32_t WriteToFile();
     std::atomic<bool> isDecRunning_{false};

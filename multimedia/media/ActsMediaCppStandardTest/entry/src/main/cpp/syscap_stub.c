@@ -21,10 +21,14 @@
  * Returns true so capability checks pass; individual tests may still fail
  * on devices without the actual capability.
  * Name canIUse kept for capability API compatibility (G.NAM.03).
+ *
+ * G.NAM.03-CPP waiver: canIUse is the official syscap API symbol from HarmonyOS SDK
+ * (syscap_ndk.h). Renaming to CanIUse would break ABI and cause undefined symbol at link.
  */
 #include <stdbool.h>
 
-bool canIUse(const char* cap) /* NOLINT(readability-identifier-naming) - API name fixed by syscap SDK */
+/* G.NAM.03-CPP: name mandated by syscap SDK, do not rename */
+bool canIUse(const char* cap)
 {
     (void)cap;
     return true;
