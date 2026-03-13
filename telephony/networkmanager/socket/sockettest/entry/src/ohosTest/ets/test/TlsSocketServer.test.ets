@@ -2895,11 +2895,11 @@ export default function TLSSocketServerTest() {
             tlsServer.listen(null).then(() => {
               done();
             }).catch((err: BusinessError) => {
-              expectTrue(err.code === 401);
+              expectTrue(Number(err.code) === 401);
               done();
             });
           } catch (err) {
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           }
           console.info(`${caseName} test end `);
@@ -2919,11 +2919,11 @@ export default function TLSSocketServerTest() {
             tlsServer.listen(undefined).then(() => {
               done();
             }).catch((err: BusinessError) => {
-              expectTrue(err.code === 401);
+              expectTrue(Number(err.code) === 401);
               done();
             });
           } catch (err) {
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           }
           console.info(`${caseName} test end `);
@@ -3313,11 +3313,11 @@ export default function TLSSocketServerTest() {
               if (err) {
                 expectFail(false);
               }
-              expectTrue(err.code === 401);
+              expectTrue(Number(err.code) === 401);
               done();
             })
           } catch(err) {
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           }
           console.info(`${caseName} test end `);
@@ -3338,11 +3338,11 @@ export default function TLSSocketServerTest() {
               if (err) {
                 expectFail(false);
               }
-              expectTrue(err.code === 401);
+              expectTrue(Number(err.code) === 401);
               done();
             })
           } catch(err) {
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           }
           console.info(`${caseName} test end `);
