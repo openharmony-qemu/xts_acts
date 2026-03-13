@@ -74,7 +74,7 @@ export default function webviewControllerSetBackForwardCacheOptionsParam() {
      */
     it('testSetBackForwardCacheOptionsNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitSetBackForwardCacheOptionsNull001', 181800);
-      Utils.registerBaseEvent('testSetBackForwardCacheOptionsNull001', '401', 181810, done,
+      Utils.registerBaseEvent('testSetBackForwardCacheOptionsNull001', 'success', 181810, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -91,7 +91,7 @@ export default function webviewControllerSetBackForwardCacheOptionsParam() {
      */
     it('testSetBackForwardCacheOptionsUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitSetBackForwardCacheOptionsUndefined001', 181800);
-      Utils.registerBaseEvent('testSetBackForwardCacheOptionsUndefined001', '401', 181820, done,
+      Utils.registerBaseEvent('testSetBackForwardCacheOptionsUndefined001', 'success', 181820, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

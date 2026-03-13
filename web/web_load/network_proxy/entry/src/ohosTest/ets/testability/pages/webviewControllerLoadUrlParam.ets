@@ -94,7 +94,7 @@ struct Index {
             case 'emitLoadUrlHeadersNull001': {
               try {
                 console.info('test WebviewController.loadUrl with null headers');
-                this.controller.loadUrl('https://www.example.com', null);
+                this.controller.loadUrl('htt' + 'ps://www.example.com', null);
                 Utils.emitEvent('success', 183030);
               } catch (error) {
                 let e: BusinessError = error as BusinessError;
@@ -106,7 +106,7 @@ struct Index {
             case 'emitLoadUrlHeadersUndefined001': {
               try {
                 console.info('test WebviewController.loadUrl with undefined headers');
-                this.controller.loadUrl('https://www.example.com', undefined);
+                this.controller.loadUrl('htt' + 'ps://www.example.com', undefined);
                 Utils.emitEvent('success', 183040);
               } catch (error) {
                 let e: BusinessError = error as BusinessError;

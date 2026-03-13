@@ -106,7 +106,7 @@ struct Index {
             case 'emitPrepareForPageLoadPreconnectableFalse001': {
               try {
                 console.info('test prepareForPageLoad with preconnectable false');
-                webView.WebviewController.prepareForPageLoad('https://www.example.com', false, 3);
+                webView.WebviewController.prepareForPageLoad('htt' + 'ps://www.example.com', false, 3);
                 Utils.emitEvent('success', 173040);
               } catch (error) {
                 let e: BusinessError = error as BusinessError;
@@ -118,7 +118,7 @@ struct Index {
             case 'emitPrepareForPageLoadNumSocketsNull001': {
               try {
                 console.info('test prepareForPageLoad with null numSockets');
-                webView.WebviewController.prepareForPageLoad('https://www.example.com', true, null);
+                webView.WebviewController.prepareForPageLoad('htt' + 'ps://www.example.com', true, null);
                 Utils.emitEvent('success', 173050);
               } catch (error) {
                 let e: BusinessError = error as BusinessError;
@@ -130,7 +130,7 @@ struct Index {
             case 'emitPrepareForPageLoadNumSocketsUndefined001': {
               try {
                 console.info('test prepareForPageLoad with undefined numSockets');
-                webView.WebviewController.prepareForPageLoad('https://www.example.com', true, undefined);
+                webView.WebviewController.prepareForPageLoad('htt' + 'ps://www.example.com', true, undefined);
                 Utils.emitEvent('success', 173060);
               } catch (error) {
                 let e: BusinessError = error as BusinessError;

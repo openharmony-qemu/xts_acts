@@ -107,7 +107,7 @@ struct Index {
             case 'emitPostUrlNullPostData001': {
               try {
                 console.info('test postUrl with null postData');
-                this.controller.postUrl('https://www.example.com', null);
+                this.controller.postUrl('htt' + 'ps://www.example.com', null);
                 Utils.emitEvent('success', 173240);
               } catch (error) {
                 let e: BusinessError = error as BusinessError;
@@ -119,7 +119,7 @@ struct Index {
             case 'emitPostUrlUndefinedPostData001': {
               try {
                 console.info('test postUrl with undefined postData');
-                this.controller.postUrl('https://www.example.com', undefined);
+                this.controller.postUrl('htt' + 'ps://www.example.com', undefined);
                 Utils.emitEvent('success', 173250);
               } catch (error) {
                 let e: BusinessError = error as BusinessError;

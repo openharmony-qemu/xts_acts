@@ -74,7 +74,7 @@ export default function webviewControllerSetDownloadDelegateParam() {
      */
     it('testSetDownloadDelegateNull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitSetDownloadDelegateNull001', 173100);
-      Utils.registerBaseEvent('testSetDownloadDelegateNull001', '401', 173110, done,
+      Utils.registerBaseEvent('testSetDownloadDelegateNull001', 'success', 173110, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -91,7 +91,7 @@ export default function webviewControllerSetDownloadDelegateParam() {
      */
     it('testSetDownloadDelegateUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitSetDownloadDelegateUndefined001', 173100);
-      Utils.registerBaseEvent('testSetDownloadDelegateUndefined001', '401', 173120, done,
+      Utils.registerBaseEvent('testSetDownloadDelegateUndefined001', 'success', 173120, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

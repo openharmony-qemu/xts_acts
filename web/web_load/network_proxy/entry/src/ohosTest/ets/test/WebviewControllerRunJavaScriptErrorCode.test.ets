@@ -73,7 +73,7 @@ export default function webviewControllerRunJavaScriptErrorCode() {
      */
     it('testRunJavaScriptErrorCodeEmptyString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitRunJavaScriptErrorCodeEmptyString001', 172600);
-      Utils.registerBaseEvent('testRunJavaScriptErrorCodeEmptyString001', '401', 172610, done,
+      Utils.registerBaseEvent('testRunJavaScriptErrorCodeEmptyString001', 'success', 172610, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

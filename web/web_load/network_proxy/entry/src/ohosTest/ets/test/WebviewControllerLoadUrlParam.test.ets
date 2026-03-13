@@ -18,9 +18,9 @@ import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { Driver, ON } from '@kit.TestKit';
-// import { accessibility, config } from '@kit.AccessibilityKit';
-// const CAPABILITY: accessibility.Capability[] = ['retrieve', 'gesture'];
-// const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+import { accessibility, config } from '@kit.AccessibilityKit';
+const CAPABILITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let driver = Driver.create();
 
 export default function webviewControllerLoadUrlParam() {

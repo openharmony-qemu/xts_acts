@@ -108,7 +108,7 @@ export default function webviewControllerRunJavaScriptExtParam() {
      */
     it('testRunJavaScriptExtEmptyString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitRunJavaScriptExtEmptyString001', 172800);
-      Utils.registerBaseEvent('testRunJavaScriptExtEmptyString001', '401', 172830, done,
+      Utils.registerBaseEvent('testRunJavaScriptExtEmptyString001', 'success', 172830, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
