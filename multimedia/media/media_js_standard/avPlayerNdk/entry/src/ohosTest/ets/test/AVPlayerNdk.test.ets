@@ -2317,7 +2317,7 @@ export default function AVPlayerNdkTest() {
      * @tc.level  Level 0
      */
     it('testOhAvFormatSetUint002', Level.LEVEL0, async (done: Function) => {
-      let result: number = avplayer.avFormatSetUintWithBull("test", 123);
+      let result: number = avplayer.avFormatSetUintWithNull("test", 123);
       console.info(`testOhAvFormatSetUint002 result = ${result}`);
       expect(result).assertEqual(1);
       done();
