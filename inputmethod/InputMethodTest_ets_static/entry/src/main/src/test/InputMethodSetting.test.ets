@@ -767,15 +767,16 @@ export default function inputMethodSettingTest() {
                 id: inputM.id,
                 extra: {}
             };
-            inputMethod.switchInputMethod(inputMethodProperty).then((data: boolean) => {
+            try {
+                let data = await inputMethod.switchInputMethod(inputMethodProperty);
                 console.info(`====>${testName} success. data: ${data}`);
                 expect().assertFail();
                 done();
-            }).catch((err: BusinessError): void => {
-                console.info(`${testName} catch. errcode: ${err.code},message: ${err.message}`);
+            } catch (err) {
+                console.info(`====>${testName} catch. errcode: ${err.code},message: ${err.message}`);
                 expect(err.code).assertEqual(201);
                 done();
-            });
+            }
         });
 
         /**
