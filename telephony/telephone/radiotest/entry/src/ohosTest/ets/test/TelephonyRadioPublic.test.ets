@@ -1889,6 +1889,101 @@ export default function telephonyRadioPublicTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Telephony_radio_getSignalInformationSync_2100
+     * @tc.number SUB_Telephony_radio_getSignalInformationSync_2100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Telephony_radio_getSignalInformationSync_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_Telephony_radio_getSignalInformationSync_2100';
+      let simState: sim.SimState = await sim.getSimStateSync(0);
+      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
+        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        let slotId = undefined;
+        radio.isRadioOn((err, data) => {
+          if (err) {
+            try {
+              console.info("SUB_Telephony_radio_getSignalInformationSync_2100 111  " +
+              radio.getSignalInformationSync(slotId));
+              expect(radio.getSignalInformationSync(slotId).length).assertEqual(0);
+              done();
+            } catch (err) {
+              console.info("SUB_Telephony_radio_getSignalInformationSync_2100 err " + JSON.stringify(err));
+              expect(true).assertFalse();
+              done();
+            }
+          } else {
+            try {
+              console.info("SUB_Telephony_radio_getSignalInformationSync_2100 " +
+              radio.getSignalInformationSync(slotId));
+              expect(radio.getSignalInformationSync(slotId).length == 0).assertTrue();
+              done();
+            } catch (err) {
+              console.info("SUB_Telephony_radio_getSignalInformationSync_2100 err " + JSON.stringify(err));
+              expect(true).assertFalse();
+              done();
+            }
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioisNrSupported1200
+     * @tc.number SUB_Telephony_Radio_isNrSupported_1200
+     * @tc.desc   Deprecated. Determine if the current device supports 5G (NR).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioisNrSupported1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioisNrSupported1200';
+      console.info(`${caseName} test start`);
+      try {
+        let result: boolean = radio.isNrSupported(SLOT_5);
+        console.info(`${caseName} success: " ${result} "`);
+        ExpectTrue(true);
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} failed: " ${err} "`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioisNrSupported1300
+     * @tc.number SUB_Telephony_Radio_isNrSupported_1300
+     * @tc.desc   Deprecated. Determine if the current device supports 5G (NR).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioisNrSupported1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioisNrSupported1300';
+      console.info(`${caseName} test start`);
+      try {
+        let result: boolean = radio.isNrSupported(SLOT_6);
+        console.info(`${caseName} success: " ${result} "`);
+        ExpectTrue(true);
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} failed: " ${err} "`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
     afterAll(async () => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
