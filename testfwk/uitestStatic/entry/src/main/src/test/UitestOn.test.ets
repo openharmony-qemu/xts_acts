@@ -506,6 +506,12 @@ export default function uitestOnTest() {
           hilog.info(domain, tag, `testScrollable_static scrollable2, ${ JSON.stringify(scrollable2) }`);
           expect(scrollable2).assertTrue();
         }
+        let scrollBar3 = await driver.findComponent(ON.type('Button').scrollable(false))
+        expect(scrollBar3 != null).assertTrue();
+        if (scrollBar3 != null) {
+          let scrollable3 = await scrollBar3.isScrollable()
+          expect(scrollable3).assertFalse()
+        }
       } catch(error) {
         hilog.info(domain, tag, `testScrollable_static error, ${ JSON.stringify(error) }`);
         expect().assertFail();
@@ -558,6 +564,18 @@ export default function uitestOnTest() {
           let isCheckable2 = await button2.isCheckable();
           hilog.info(domain, tag, `testCheckable_static isCheckable2, ${ JSON.stringify(isCheckable2) }`);
           expect(isCheckable2).assertTrue();
+        }
+        let button3 = await driver.findComponent(ON.checkable(false).type('Button'))
+        if (button3 == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          if (scroll != null) {
+            button3 = await scroll.scrollSearch(ON.type('Checkbox').checkable(false))
+          }
+        }
+        expect(button3 != null).assertTrue();
+        if (button3 != null) {
+          let checkable3 = await button3.isCheckable()
+          expect(checkable3).assertFalse()
         }
       } catch(error) {
         hilog.info(domain, tag, `testCheckable_static error, ${ JSON.stringify(error) }`);
@@ -673,6 +691,12 @@ export default function uitestOnTest() {
         let button2 = await driver.findComponent(ON.text('next page').selected(true));
         hilog.info(domain, tag, `testSelected_static button2, ${ JSON.stringify(button2) }`);
         expect(button2 == null).assertTrue();
+        let button4 = await driver.findComponent(ON.id('enableFalse').selected(true))
+        expect(button4 != null).assertTrue();
+        if (button4 != null) {
+          let selected4 = await button4.isSelected()
+          expect(selected4).assertTrue()
+        }
       } catch(error) {
         hilog.info(domain, tag, `testSelected_static error, ${ JSON.stringify(error)}`);
         expect().assertFail();
@@ -786,6 +810,12 @@ export default function uitestOnTest() {
       let button2 = await driver.findComponent(ON.text('next page').focused(true));
       hilog.info(domain, tag, `testFocused_static button2, ${ JSON.stringify(button2) }`);
       expect(button2 == null).assertTrue();
+      let button3 = await driver.findComponent(ON.focused(true))
+      expect(button3 != null).assertTrue();
+      if (button3 != null) {
+        let focused3 = await button3.isFocused()
+        expect(focused3).assertTrue()
+      }
       hilog.info(domain, tag, "testFocused_static over!!!!!!!!!");
       await stopApplication('com.uitestScene.acts');
     })
@@ -822,6 +852,12 @@ export default function uitestOnTest() {
         hilog.info(domain, tag, `testEnabled_static enable2, ${ JSON.stringify(enable2) }`);
         expect(enable2).assertTrue();
       }
+      let button3 = await driver.findComponent(ON.text('enableFalse').enabled(false))
+      expect(button3 != null).assertTrue();
+      if (button3 != null) {
+        let enable3 = await button3.isEnabled()
+        expect(enable3).assertFalse()
+      }
       hilog.info(domain, tag, "testEnabled_static over!!!!!!!!!");
       await stopApplication('com.uitestScene.acts');
     })
@@ -851,9 +887,15 @@ export default function uitestOnTest() {
       if (button2 != null) {
         let clickable2 = await button2.isClickable();
         hilog.info(domain, tag, `testClickable_static clickable2, ${ JSON.stringify(clickable2) }`);
-        expect(!clickable2).assertTrue();
+        expect(clickable2).assertFalse();
         let msg2 = await button2.getText();
         hilog.info(domain, tag, `testClickable_static msg2, ${ JSON.stringify(msg2) }`);
+      }
+      let button4 = await driver.findComponent(ON.text('toast').clickable(true))
+      expect(button4 != null).assertTrue()
+      if (button4 != null) {
+        let clickable4 = await button4.isClickable()
+        expect(clickable4).assertTrue()
       }
       hilog.info(domain, tag, "testClickable_static over!!!!!!!!!");
       await stopApplication('com.uitestScene.acts');
@@ -878,7 +920,7 @@ export default function uitestOnTest() {
       if (button != null) {
         let checked = await button.isChecked();
         hilog.info(domain, tag, `testChecked_static checked, ${ JSON.stringify(checked) }`);
-        expect(!checked).assertTrue();
+        expect(checked).assertFalse();
       }
       let button1 = await driver.findComponent(ON.type('Checkbox').checked(true));
       hilog.info(domain, tag, `testChecked_static button1, ${ JSON.stringify(button1) }`);
@@ -928,6 +970,11 @@ export default function uitestOnTest() {
         expect(longClickable2).assertFalse();
         let msg2 =  await button2.getText();
         hilog.info(domain, tag, `testLongClickable_static msg2, ${ JSON.stringify(msg2) }`);
+      }
+      let button3 = await driver.findComponent(ON.type('Button').longClickable(true))
+      if (button3 != null) {
+        let longClickable3 = await button3.isLongClickable()
+        expect(longClickable3).assertTrue()
       }
       hilog.info(domain, tag, "testLongClickable_static end !!!!!");
       await stopApplication('com.uitestScene.acts');
