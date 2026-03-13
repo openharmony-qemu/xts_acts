@@ -39,9 +39,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Test Simultaneous use taskpool and worker
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ss: worker.ThreadWorker = new worker.ThreadWorker("../workers/worker.ts")
       let res:number = 0
       let flag:boolean = false
@@ -64,9 +64,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = await taskpool.execute(Sum, 10, 20);
       expect(result).assertEqual(30);
       done();
@@ -78,9 +78,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass003
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:boolean = await taskpool.execute(Add, true, true) as boolean;
       expect(result).assertEqual(true);
       done();
@@ -92,9 +92,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: string = await taskpool.execute(StrCat, "abc", "def") as string;
       expect(result).assertEqual("abcdef");
       done();
@@ -106,9 +106,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: string = await taskpool.execute(StrCat, "abc", "def") as string;
       result = await taskpool.execute(StrCat, "abc", "def") as string;
       expect(result).assertEqual("abcdef");
@@ -121,9 +121,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass006
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: string = await taskpool.execute(funcStrCat, "abc", "def", "hello") as string;
       expect(result).assertEqual("abcdefhello");
       done();
@@ -135,9 +135,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Array<number> = await taskpool.execute(arraySum, [1,2], [3,4]) as Array<number>;
       expect(result[0]).assertEqual(4);
       expect(result[1]).assertEqual(6);
@@ -150,9 +150,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass008
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let aa: A = new A();
       aa.a = 1;
       aa.b = 2;
@@ -170,9 +170,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass009
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = await taskpool.execute(Sum, 10) as number;
       expect(result.toString()).assertEqual("NaN");
       done();
@@ -184,9 +184,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = await taskpool.execute(Sum, 10, 20, 30) as number;
       expect(result).assertEqual(30);
       done();
@@ -198,9 +198,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result1: number = await taskpool.execute(Sum, 10, 20) as number;
       let result2: number = await taskpool.execute(Sum, 30, 40) as number;
       expect(result1).assertEqual(30);
@@ -214,9 +214,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass012
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result1: number = await taskpool.execute(Sum, 10, 20) as number;
       let result2: number = await taskpool.execute(Sum, 10, 20) as number;
       expect(result1).assertEqual(30);
@@ -230,9 +230,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass013
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result1: number = await taskpool.execute(Sum, 10, 20) as number;
       let result2: number = await taskpool.execute(Multi, 10, 20) as number;
       let result3: number = await taskpool.execute(Sum, 10, 30) as number;
@@ -250,9 +250,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass014
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 10, 20);
       let result: number = await taskpool.execute(task) as number;
       expect(result).assertEqual(30);
@@ -265,9 +265,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass015
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Add, true, true);
       let result: boolean = await taskpool.execute(task)  as boolean;
       expect(result).assertEqual(true);
@@ -280,9 +280,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass016
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(StrCat, "abc", "def");
       let result: string = await taskpool.execute(task) as string;
       expect(result).assertEqual("abcdef");
@@ -295,9 +295,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass017
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(funcStrCat, "abc", "def", "hello");
       let result: string = await taskpool.execute(task) as string;
       expect(result).assertEqual("abcdefhello");
@@ -310,9 +310,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(arraySum, [1,2], [3,4]);
       let result: Array<number> = await taskpool.execute(task) as Array<number>;
       expect(result[0]).assertEqual(4);
@@ -326,9 +326,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass019
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let aa: A = new A();
       aa.a = 1;
       aa.b = 2;
@@ -347,9 +347,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass020
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 10);
       let result: number = await taskpool.execute(task) as number;
       expect(result.toString()).assertEqual("NaN");
@@ -362,9 +362,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass021
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 10, 20, 30);
       let result: number = await taskpool.execute(task) as number;
       expect(result).assertEqual(30);
@@ -377,9 +377,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass022
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 10, 20);
       let result1: number = await taskpool.execute(task) as number;
       let result2: number = await taskpool.execute(task) as number;
@@ -394,9 +394,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass023
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(Sum, 10, 20);
       let task2: taskpool.Task = new taskpool.Task(Sum, 30, 40);
       let result1: number = await taskpool.execute(task1) as number;
@@ -412,9 +412,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass024
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(Sum, 10, 20);
       let task2: taskpool.Task = new taskpool.Task(Sum, 10, 20);
       let result1: number = await taskpool.execute(task1) as number;
@@ -430,9 +430,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass025
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(Sum, 10, 20);
       let result1: number = await taskpool.execute(task1) as number;
       let task2: taskpool.Task = new taskpool.Task(Multi, 10, 20);
@@ -454,9 +454,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass026
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = 0;
       let isTerminate: boolean = false;
       let task: taskpool.Task = new taskpool.Task(Sum, 10, 20)
@@ -477,9 +477,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass027
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Add, true, true)
       let result: boolean = false;
       let isTerminate: boolean = false;
@@ -500,9 +500,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass028
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(StrCat, "abc", "def")
       let result: string = '';
       let isTerminate: boolean = false;
@@ -523,9 +523,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass029
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(funcStrCat, "abc", "def", "hello");
       let result: string = '';
       let isTerminate: boolean = false;
@@ -546,9 +546,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass030
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(arraySum, [1,2], [3,4]);
       let isTerminate: boolean = false;
       let result: Array<number> = [];
@@ -570,9 +570,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass031
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let aa: A = new A();
       aa.a = 1;
       aa.b = 2;
@@ -599,9 +599,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass032
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 10);
       let result: number = 0;
       let isTerminate: boolean = false;
@@ -622,9 +622,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass033
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 10, 20, 30);
       let result: number = 0;
       let isTerminate: boolean = false;
@@ -645,9 +645,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass034
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let task1: taskpool.Task = new taskpool.Task(Sum, 10, 20);
@@ -677,9 +677,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass035
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let result1: number = 0;
@@ -709,9 +709,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass036
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let result1: number = 0;
@@ -739,9 +739,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass037
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let isTerminate3: boolean = false;
@@ -788,9 +788,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass038
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let result: number = 0;
       taskpool.execute(Sum, 10, 20).then((ret) => {
@@ -810,9 +810,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass039
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let result: boolean = false;
       taskpool.execute(Add, true, true).then((ret) => {
@@ -832,9 +832,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass040
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let result: string = '';
       taskpool.execute(StrCat, "abc", "def").then((ret) => {
@@ -854,9 +854,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass041
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let result: string = '';
       taskpool.execute(funcStrCat, "abc", "def", "hello").then((ret) => {
@@ -876,9 +876,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass042
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let result: Array<number> = [];
       taskpool.execute(arraySum, [1,2], [3,4]).then((ret) => {
@@ -899,9 +899,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass043
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let aa: A = new A();
       aa.a = 1;
       aa.b = 2;
@@ -927,9 +927,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass044
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let result: number = 0;
       taskpool.execute(Sum, 10).then((ret) => {
@@ -949,9 +949,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass045
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let result: number = 0;
       taskpool.execute(Sum, 10, 20, 30).then((ret) => {
@@ -971,9 +971,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass046
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let result1: number = 0;
@@ -1000,9 +1000,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass047
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let result1: number = 0;
@@ -1029,9 +1029,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass048
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let isTerminate3: boolean = false;
@@ -1074,9 +1074,9 @@ export default function TaskPoolTest() {
      * @tc.desc   TaskPoolTestClass049
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         await taskpool.execute(Sum) as number;
       } catch(e) {
@@ -1521,9 +1521,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Get the taskPoolInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let highCount: number = 0;
       let mediumCount: number = 0;
       let lowCount: number = 0;
@@ -1594,9 +1594,9 @@ export default function TaskPoolTest() {
      * @tc.desc   exeute task at taskpool thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let outerTask1 = new taskpool.Task(outerTaskFunc, "001")
       let res1: string = await taskpool.execute(outerTask1) as string;
       expect(res1).assertEqual("outerTaskRes-001");
@@ -1619,9 +1619,9 @@ export default function TaskPoolTest() {
      * @tc.desc   transfer SharedArrayBuffer with taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let sab: SharedArrayBuffer = new SharedArrayBuffer(20);
       let int32 = new Uint32Array(sab);
       let task: taskpool.Task = new taskpool.Task(transferArrayBuffer, int32);
@@ -1638,9 +1638,9 @@ export default function TaskPoolTest() {
      * @tc.desc   transfer SharedArrayBuffer and Atomics with taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let sab: SharedArrayBuffer = new SharedArrayBuffer(20);
       let int32 = new Int32Array(sab);
 
@@ -1663,9 +1663,9 @@ export default function TaskPoolTest() {
      * @tc.desc   sendData and onReceiveData for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 1, 3);
       task.onReceiveData(printArgs);
       taskpool.execute(task)
@@ -1683,9 +1683,9 @@ export default function TaskPoolTest() {
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let taskname: string = "taskName";
       let task: taskpool.Task = new taskpool.Task(taskname, Sum, 10, 20);
       let name: string = task.name;
@@ -1699,9 +1699,9 @@ export default function TaskPoolTest() {
      * @tc.desc   add name of taskGroup for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let taskGroupName: string = "groupName";
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup(taskGroupName);
       taskGroup.addTask(printArgs, 10);
@@ -1724,9 +1724,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel tasks that have not been executed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(delaySum, 1, 1, 1000);
       let task2: taskpool.Task = new taskpool.Task(delaySum, 2, 2, 1000);
       let task3: taskpool.Task = new taskpool.Task(delaySum, 3, 3, 1000);
@@ -1742,7 +1742,7 @@ export default function TaskPoolTest() {
         continue;
       }
       taskpool.cancel(task4);;
-      expect(taskpool.Task.isCanceled() == false);
+      expect(taskpool.Task.isCanceled() == false).assertTrue();
       done();
     })
 
@@ -1752,9 +1752,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the task in progress
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
@@ -1784,9 +1784,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the executed task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
@@ -1810,9 +1810,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel nonexistent task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
@@ -1835,9 +1835,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Canceling unexecuted tasks multiple times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
@@ -1861,9 +1861,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel all tasks in sequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
@@ -1902,9 +1902,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the taskGroup in progress
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let i: number = 10;
       let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup1.addTask(AdditionDelay, 10);
@@ -1934,9 +1934,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the taskGroup that have not been executed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let i: number = 10;
       let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup1.addTask(AdditionDelay, 10);
@@ -1966,9 +1966,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the non-existent taskGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskpool.cancel(taskGroup);
@@ -1984,9 +1984,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the executed taskGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup1.addTask(printArgs, 10);
@@ -2025,9 +2025,9 @@ export default function TaskPoolTest() {
      * @tc.desc   add setclonelist of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let arr: Array<number> = [1, 2, 3, 4];
       let arrayBuffer: ArrayBuffer = new ArrayBuffer(16);
       let arrayInt: Int32Array = new Int32Array(arrayBuffer);
@@ -2048,9 +2048,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskGroup cannot add groupTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2070,9 +2070,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskGroup cannot add seqRunnerTask or executedTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         taskpool.execute(task);
@@ -2091,9 +2091,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskGroup cannot add seqRunnerTask or executedTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         taskpool.executeDelayed(100, task);
@@ -2112,9 +2112,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskGroup cannot add seqRunnerTask or executedTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -2134,9 +2134,9 @@ export default function TaskPoolTest() {
      * @tc.desc   dependent task not allowed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -2156,9 +2156,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskgroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
@@ -2184,9 +2184,9 @@ export default function TaskPoolTest() {
      * @tc.desc   SequenceRunner cannot execute groupTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2207,9 +2207,9 @@ export default function TaskPoolTest() {
      * @tc.desc   SequenceRunner cannot execute seqRunnerTask or executedTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         taskpool.execute(task);
@@ -2229,9 +2229,9 @@ export default function TaskPoolTest() {
      * @tc.desc   SequenceRunner cannot execute seqRunnerTask or executedTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         taskpool.executeDelayed(100, task);
@@ -2251,9 +2251,9 @@ export default function TaskPoolTest() {
      * @tc.desc   dependent task not allowed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -2273,9 +2273,9 @@ export default function TaskPoolTest() {
      * @tc.desc   SequenceRunner cannot execute seqRunnerTask or executedTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner1: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -2297,9 +2297,9 @@ export default function TaskPoolTest() {
      * @tc.desc   groupTask cannot addDependency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2319,9 +2319,9 @@ export default function TaskPoolTest() {
      * @tc.desc   groupTask cannot be relied on
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2341,9 +2341,9 @@ export default function TaskPoolTest() {
      * @tc.desc   seqRunnerTask or executedTask cannot be relied on
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -2362,9 +2362,9 @@ export default function TaskPoolTest() {
      * @tc.desc   seqRunnerTask or executedTask cannot be relied on
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -2383,9 +2383,9 @@ export default function TaskPoolTest() {
      * @tc.desc   seqRunnerTask or executedTask cannot addDependency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -2404,9 +2404,9 @@ export default function TaskPoolTest() {
      * @tc.desc   seqRunnerTask or executedTask cannot addDependency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -2425,9 +2425,9 @@ export default function TaskPoolTest() {
      * @tc.desc   seqRunnerTask or executedTask cannot be relied on
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -2448,9 +2448,9 @@ export default function TaskPoolTest() {
      * @tc.desc   seqRunnerTask or executedTask cannot addDependency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -2471,9 +2471,9 @@ export default function TaskPoolTest() {
      * @tc.desc   groupTask cannot be relied on
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2493,9 +2493,9 @@ export default function TaskPoolTest() {
      * @tc.desc   groupTask cannot addDependency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2515,9 +2515,9 @@ export default function TaskPoolTest() {
      * @tc.desc   seqRunnerTask cannot execute outside
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -2537,9 +2537,9 @@ export default function TaskPoolTest() {
      * @tc.desc   groupTask cannot execute outside
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2558,9 +2558,9 @@ export default function TaskPoolTest() {
      * @tc.desc   seqRunnerTask cannot executeDelayed outside
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -2580,9 +2580,9 @@ export default function TaskPoolTest() {
      * @tc.desc   groupTask cannot executeDelayed outside
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -2601,9 +2601,9 @@ export default function TaskPoolTest() {
      * @tc.desc   cancel the executeDelay task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = 0;
       let task: taskpool.Task = new taskpool.Task(printArgs, 100);
       taskpool.executeDelayed(1000, task).then((ret)=>{
@@ -2624,9 +2624,9 @@ export default function TaskPoolTest() {
      * @tc.desc   executedTask with dependency cannot executeDelayed again
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(delaySum, 10, 20, 100)
       let task2: taskpool.Task = new taskpool.Task(delaySum, 30, 40, 200)
       task1.addDependency(task2);
@@ -2649,9 +2649,9 @@ export default function TaskPoolTest() {
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task("taskName", Sum, 10, 20);
       try {
         task.name = "taskName1";
@@ -2667,9 +2667,9 @@ export default function TaskPoolTest() {
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task("taskName", Sum, 10, 20);
       expect(task.name).assertEqual("taskName");
       done();
@@ -2681,9 +2681,9 @@ export default function TaskPoolTest() {
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 10, 20);
       let name: string = task.name;
       expect(name).assertEqual("Sum");
@@ -2696,9 +2696,9 @@ export default function TaskPoolTest() {
      * @tc.desc   get name from taskInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(Sum, 10, 20)
       taskpool.execute(task).then(()=>{
         console.info("task1 success");
@@ -2722,9 +2722,9 @@ export default function TaskPoolTest() {
      * @tc.desc   get name from taskInfo
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task("taskName", Sum, 10, 20)
       taskpool.execute(task).then(()=>{
         console.info("task1 success");
@@ -2748,9 +2748,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Register a callback of onEnqueued
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let task: taskpool.Task = new taskpool.Task(printArgs, 1);
       let onEnqueuedStr = "";
@@ -2786,9 +2786,9 @@ export default function TaskPoolTest() {
      * @tc.desc   handle cancel task error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let task1: taskpool.Task = new taskpool.Task(testCancelDelayed);
@@ -2829,9 +2829,9 @@ export default function TaskPoolTest() {
      * @tc.desc   handle cancel task error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let task: taskpool.Task = new taskpool.Task(printArgs)
       taskpool.executeDelayed(1000, task).then(()=>{
@@ -2852,9 +2852,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Register a callback of onExecutionFailed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let task: taskpool.Task = new taskpool.Task(hashMapTest, 1);
       task.onExecutionFailed((e: Error)=>{
@@ -2874,9 +2874,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Register a callback of onEnqueued after execute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let task: taskpool.Task = new taskpool.Task(printArgs, 1);
 
@@ -2902,9 +2902,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(delay);
       expect(task.totalDuration < 5).assertTrue();
       expect(task.cpuDuration < 5).assertTrue();
@@ -2935,9 +2935,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let finalString: string = "";
       let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 300);
       let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200);
@@ -2962,9 +2962,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(AdditionDelay, 500);
       taskpool.execute(task);
       let start = new Date().getTime();
@@ -2984,9 +2984,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(randomTest, 100);
       expect(task.totalDuration < 5).assertTrue();
       expect(task.cpuDuration < 5).assertTrue();
@@ -3018,9 +3018,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let finalString: string = "";
       let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 300);
       let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200);
@@ -3045,9 +3045,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
+    it('TaskPoolTestClass125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(AdditionDelay, 500);
       taskpool.execute(task);
       let start = new Date().getTime();
@@ -3067,9 +3067,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
+    it('TaskPoolTestClass126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(delay, 100);
       let task2: taskpool.Task = new taskpool.Task(delay, 200);
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -3105,9 +3105,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
+    it('TaskPoolTestClass127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
       let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -3136,9 +3136,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
+    it('TaskPoolTestClass128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(randomTest, 100);
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup.addTask(task);
@@ -3172,9 +3172,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
+    it('TaskPoolTestClass129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       let finalString: string = "";
       let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 500);
       let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 300);
@@ -3214,9 +3214,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
+    it('TaskPoolTestClass130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       let finalString: string = "";
       let task1: taskpool.Task = new taskpool.Task(randomTest, 500);
       let task2: taskpool.Task = new taskpool.Task(randomTest, 300);
@@ -3257,9 +3257,9 @@ export default function TaskPoolTest() {
      * @tc.desc   duration for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: Function) => {
+    it('TaskPoolTestClass131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(printArgs, 100);
       let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -3287,9 +3287,9 @@ export default function TaskPoolTest() {
      * @tc.desc   handle cancel task error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let isTerminate3: boolean = false;
@@ -3320,9 +3320,9 @@ export default function TaskPoolTest() {
      * @tc.desc   handle cancel task error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let isTerminate3: boolean = false;
@@ -3362,9 +3362,9 @@ export default function TaskPoolTest() {
      * @tc.desc   execute long task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.LongTask = new taskpool.LongTask(Sum, 10, 20);
       let result = await taskpool.execute(task);
       taskpool.terminateTask(task);
@@ -3378,9 +3378,9 @@ export default function TaskPoolTest() {
      * @tc.desc   the long task can only be executed once
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.LongTask = new taskpool.LongTask(Sum, 10, 20);
       let result = await taskpool.execute(task);
       taskpool.terminateTask(task);
@@ -3399,9 +3399,9 @@ export default function TaskPoolTest() {
      * @tc.desc   task group does not support the long task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.LongTask = new taskpool.LongTask(Sum, 10, 20);
       let group = new taskpool.TaskGroup();
       try {
@@ -3419,9 +3419,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Supports judging whether it is concurrent function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret : boolean = taskpool.isConcurrent(isConcurrentTest1)
       expect(ret).assertEqual(true);
       ret = taskpool.isConcurrent(isConcurrentTest2)
@@ -3435,9 +3435,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support isDone interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isFinish: boolean = false;
       let isDoneFlag: boolean = false;
       let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -3462,9 +3462,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support isDone interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isDoneFlag: boolean = false;
       let task1: taskpool.Task = new taskpool.Task(testCancelDelayed);
       taskpool.execute(task1);
@@ -3488,9 +3488,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool error test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(errorTest)
       await taskpool.execute(task).then((res)=>{
         console.info("errTest res " + res)
@@ -3506,9 +3506,9 @@ export default function TaskPoolTest() {
      * @tc.desc   addDependency for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let finalString: string = "";
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
@@ -3544,9 +3544,9 @@ export default function TaskPoolTest() {
      * @tc.desc   removeDependency for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(delaySum, 10, 20, 100)
       let task2: taskpool.Task = new taskpool.Task(delaySum, 30, 40, 300)
       let task3: taskpool.Task = new taskpool.Task(delaySum, 50, 60, 500)
@@ -3570,9 +3570,9 @@ export default function TaskPoolTest() {
      * @tc.desc   removeDependency for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(delaySum, 10, 20, 100)
       let task2: taskpool.Task = new taskpool.Task(delaySum, 30, 40, 200)
       let task3: taskpool.Task = new taskpool.Task(delaySum, 50, 60, 300)
@@ -3602,9 +3602,9 @@ export default function TaskPoolTest() {
      * @tc.desc   executedTask cannot addDependency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
         let task2: taskpool.Task = new taskpool.Task(printArgs, 100);
@@ -3623,9 +3623,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the executeDelayed for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let task: taskpool.Task = new taskpool.Task(printArgs)
       taskpool.executeDelayed(1000, task, taskpool.Priority.IDLE).then(()=>{
@@ -3646,9 +3646,9 @@ export default function TaskPoolTest() {
      * @tc.desc   SequenceRunner for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.IDLE);
@@ -3667,9 +3667,9 @@ export default function TaskPoolTest() {
      * @tc.desc   SequenceRunner for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 300);
       let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 200);
       task1.addDependency(task2);
@@ -3688,9 +3688,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskGroup cannot add seqRunnerTask or executedTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(taskpool.Priority.IDLE);
@@ -3710,9 +3710,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskGroup cannot addTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       let task1: taskpool.Task = new taskpool.Task(printArgs, 40);
       let task2: taskpool.Task = new taskpool.Task(printArgs, 50);
@@ -3737,9 +3737,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the taskGroup in progress
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let i: number = 10;
       let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup1.addTask(AdditionDelay, 10);
@@ -3769,9 +3769,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Cancel the executed taskGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
       taskGroup1.addTask(printArgs, 10);
       taskGroup1.addTask(printArgs, 20);
@@ -3805,9 +3805,9 @@ export default function TaskPoolTest() {
      * @tc.desc   SequenceRunner with name execute task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let finalString = "";
       let t: Array<taskpool.Task> = []
       for (let i = 0; i <= 10; i++) {
@@ -3831,9 +3831,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Multiple sequenceRunner with name execute task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let finalString1 = "";
       let finalString2 = "";
       let finalString3 = "";
@@ -3865,9 +3865,9 @@ export default function TaskPoolTest() {
      * @tc.desc   SequenceRunner repeating tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(printArgs, 1);
 
       let runner1:taskpool.SequenceRunner = new taskpool.SequenceRunner("runner5");
@@ -3889,9 +3889,9 @@ export default function TaskPoolTest() {
      * @tc.desc   The task of the task group is executed in SequenceRunner
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(printArgs, 1);
 
       try {
@@ -3914,9 +3914,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Tasks with dependencies are executed in SequenceRunner
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(printArgs, 300);
       let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
       task1.addDependency(task2);
@@ -3936,9 +3936,9 @@ export default function TaskPoolTest() {
      * @tc.desc   sequenceRunner with name execute delayed task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner("runner9");
@@ -3959,9 +3959,9 @@ export default function TaskPoolTest() {
      * @tc.desc   sequenceRunner with name execute executed task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         taskpool.execute(task);
@@ -3982,9 +3982,9 @@ export default function TaskPoolTest() {
      * @tc.desc   sequenceRunner with name execute delayed task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         taskpool.executeDelayed(100, task);
@@ -4005,9 +4005,9 @@ export default function TaskPoolTest() {
      * @tc.desc   sequenceRunner with name and non-name execute delayed task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner1: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -4030,9 +4030,9 @@ export default function TaskPoolTest() {
      * @tc.desc   sequenceRunner with name execute executed task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner("runner13");
@@ -4053,9 +4053,9 @@ export default function TaskPoolTest() {
      * @tc.desc   sequenceRunner with name execute delayed task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner("runner14");
@@ -4076,9 +4076,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Repeat SequenceRunner execution on the same thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task1 = new taskpool.Task(printArgs, 111);
         let task2 = new taskpool.Task(printArgs, 222);
@@ -4102,9 +4102,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Multi threaded execution of SequenceRunner
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let mainFinalString = "";
       let childFinalString = "";
       let t: Array<taskpool.Task> = []
@@ -4134,9 +4134,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.executePeriodically(100, task)
       try {
@@ -4154,9 +4154,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.executePeriodically(100, task)
       try {
@@ -4174,9 +4174,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.executePeriodically(100, task)
       try {
@@ -4195,9 +4195,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.executePeriodically(100, task)
       try {
@@ -4216,9 +4216,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.executePeriodically(100, task)
       try {
@@ -4237,9 +4237,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.executePeriodically(100, task)
       try {
@@ -4258,9 +4258,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.executePeriodically(100, task)
       try {
@@ -4279,9 +4279,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.executePeriodically(100, task)
       try {
@@ -4314,9 +4314,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task = new taskpool.Task(dependend, 200);
       taskpool.execute(task)
       try {
@@ -4375,9 +4375,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool repeatedly calling Cancel and ExecuteDelayed, only last task can execute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let num = 100;
       let base1:CancelAndExecuteDelayed = new CancelAndExecuteDelayed(num);
       base1.postRequest();
@@ -4403,9 +4403,9 @@ export default function TaskPoolTest() {
       * @tc.desc   taskpool calling callback which have errorManage
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL1
+      * @tc.level  LEVEL0
       */
-     it('TaskPoolTestClass175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+     it('TaskPoolTestClass175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       taskpool.execute(errorManageTest).then((ret) => {
         isTerminate = true;
@@ -4424,9 +4424,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool executeDelayed failed to serialize result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(hashMapTest, 1);
       await taskpool.executeDelayed(500, task).catch((e: Error)=>{
         expect((e as BusinessError).toString()).assertContain("Error: An exception occurred during serialization, taskpool: failed to serialize result.");
@@ -4441,9 +4441,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool executeDelayed failed to serialize arguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let hashMap:HashMap<string, number> = new HashMap();
       hashMap.set("b", 234);
       let task: taskpool.Task = new taskpool.Task(dealHashMapTest, hashMap);
@@ -4460,9 +4460,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool executeDelayed failed to task is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         taskpool.executeDelayed(500, null)
       } catch (e) {
@@ -4478,9 +4478,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool executePeriodically failed to serialize arguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task = new taskpool.Task(printArgs, isConcurrentTest2);
         taskpool.executePeriodically(10, task, taskpool.Priority.HIGH)
@@ -4496,9 +4496,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool executeDelayed failed to serialize function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         taskpool.executePeriodically(-10, task, taskpool.Priority.HIGH)
@@ -4514,9 +4514,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool isDone interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
       let result1: number = await taskpool.execute(task1) as number;
       expect(task1.isDone()).assertTrue();
@@ -4540,9 +4540,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool isDone interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let finalString: string = "";
       let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 500);
       let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 300);
@@ -4574,9 +4574,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool isDone interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let taskGroup1: taskpool.TaskGroup = new taskpool.TaskGroup();
       let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
       taskGroup1.addTask(task1);
@@ -4598,9 +4598,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executeDelayed interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task: taskpool.Task = new taskpool.Task(printArgs, 100);
         taskpool.executeDelayed(-100, task);
@@ -4616,9 +4616,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support executePeriodically interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let task = new taskpool.Task(dependend, 200);
         taskpool.executePeriodically(-100, task);
@@ -4634,9 +4634,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Set transfer list for the task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let arrayBuffer: ArrayBuffer = new ArrayBuffer(16);
       let task: taskpool.Task = new taskpool.Task(setCloneListTest, arrayBuffer);
       task.setTransferList([arrayBuffer]);
@@ -4654,9 +4654,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support sendData and onReceiveData interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let res: number = 0;
       let task: taskpool.Task = new taskpool.Task(sendDataTest, 1);
       task.onReceiveData((data: number)=>{
@@ -4673,9 +4673,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support SendableClass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testClass1 = new SendableClass(10);
       let testClass2 = new SendableClass(20);
       let task: taskpool.Task = new taskpool.Task(sendableClassTestFunc, testClass1, testClass2);
@@ -4691,9 +4691,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support collections.Int8Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let int8Buffer: collections.Int8Array = new collections.Int8Array(3);
       let task: taskpool.Task = new taskpool.Task(Int8ArrayTestFunc, int8Buffer);
       let res: collections.Int8Array = await taskpool.execute(task) as collections.Int8Array;
@@ -4709,9 +4709,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support collections.Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let set: collections.Set<number> = new collections.Set([1, 2, 3]);
       let task: taskpool.Task = new taskpool.Task(SetTestFunc, set);
       let res: collections.Set<number> = await taskpool.execute(task) as collections.Set<number>;
@@ -4726,9 +4726,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support collections.Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let map: collections.Map<number, number> = new collections.Map([[1, 2], [3, 4]]);
       let task: taskpool.Task = new taskpool.Task(MapTestFunc, map);
       let res: collections.Map<number, number> = await taskpool.execute(task) as collections.Map<number, number>;
@@ -4743,9 +4743,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support SendableClass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testClass1 = new SimpleSendable(10);
       let testClass2 = new SimpleSendable(20);
       let task: taskpool.Task = new taskpool.Task(simpleSendableClassTestFunc, testClass1, testClass2);
@@ -4760,9 +4760,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool support collections.Uint8ClampedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let arkTSTest : collections.Uint8ClampedArray = new collections.Uint8ClampedArray(3);
       let task: taskpool.Task = new taskpool.Task(Uint8ClampedArrayTestFunc, arkTSTest);
       let res: collections.Uint8ClampedArray = await taskpool.execute(task) as collections.Uint8ClampedArray;
@@ -4777,9 +4777,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool execute
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let isTerminate3: boolean = false;
@@ -4815,9 +4815,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool GenericsTask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let isTerminate3: boolean = false;
@@ -4857,9 +4857,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool executeDelayed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let ret1 = "";
       let task: taskpool.Task = new taskpool.GenericsTask<[string], string>(printStrArgs, "test");
@@ -4882,9 +4882,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool executePeriodically
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let res: number = 0;
       let periodicTask: taskpool.Task = new taskpool.GenericsTask<[number], void>(sendDataTest, 200);
       periodicTask.onReceiveData((data: number) => {
@@ -4906,9 +4906,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool executePeriodically
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let res: number = 0;
       let periodicTask: taskpool.Task = new taskpool.Task(sendDataTest, 200);
       periodicTask.onReceiveData((data: number) => {
@@ -4930,9 +4930,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool taskGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task:taskpool.Task = new taskpool.Task(errorTest);
       let task2:taskpool.Task = new taskpool.Task(printArgs, 100);
       let taskGroup:taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -4951,9 +4951,9 @@ export default function TaskPoolTest() {
      * @tc.desc   taskpool sendableFunc add sendableClass test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate1: boolean = false;
       let isTerminate2: boolean = false;
       let task1 = new taskpool.Task(sendableFuncTest, sendableFunc);
@@ -4981,9 +4981,9 @@ export default function TaskPoolTest() {
      * @tc.desc   cancel executed task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(testString, "hello");
       await taskpool.execute(task);
       try {
@@ -5000,9 +5000,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Register a callback of TaskGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let result: number = 0;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -5034,9 +5034,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Register a callback of TaskGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let isTerminate: boolean = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       let task1: taskpool.Task = new taskpool.Task(hashMapTest, 300); // 300: test number
@@ -5060,9 +5060,9 @@ export default function TaskPoolTest() {
      * @tc.desc   Register a callback of SequenceRunner
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TaskPoolTestClass206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TaskPoolTestClass206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = 0;
       let isTerminate: boolean = false;
       let task1: taskpool.Task = new taskpool.Task(AdditionDelay, 500);
@@ -5089,1859 +5089,6 @@ export default function TaskPoolTest() {
         await promiseCase();
       }
       expect(result).assertEqual(800);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass207
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0207
-     * @tc.desc   Create AsyncRunner error
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        new taskpool.AsyncRunner(0);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: Parameter error. The input parameters are invalid, RunningCapacity must be greater than zero.');
-      }
-
-      try {
-        new taskpool.AsyncRunner("async207", 5, -1);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: Parameter error. The input parameters are invalid, WaitingCapacity must be greater than or equal zero.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass208
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0208
-     * @tc.desc   Create AsyncRunner error
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      new taskpool.AsyncRunner("async208", 5);
-      try {
-        new taskpool.AsyncRunner("async208", 4);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: Parameter error. The input parameters are invalid, AsyncRunner runningCapacity can not changed.');
-      }
-
-      try {
-        new taskpool.AsyncRunner("async208", 5, 10);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: Parameter error. The input parameters are invalid, AsyncRunner waitingCapacity can not changed.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass209
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0209
-     * @tc.desc   AsyncRunner execute error
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async209", 5, 5);
-      let task: taskpool.Task = new taskpool.Task("task209", printArgs, 100);
-      try {
-        asyncRunner.execute(task, 4);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: Parameter error. The input parameters are invalid, Priority value is error.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass210
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0210
-     * @tc.desc   AsyncRunner cancel task
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async210", 2);
-      let num = 0;
-      for (let i = 0; i < 5; i++) {
-        let task: taskpool.Task = new taskpool.Task(AdditionDelay, 100);
-        asyncRunner.execute(task).then(() => {
-          num++;
-        }).catch((e: BusinessError) => {
-          num++;
-          expect((e as BusinessError).toString()).assertEqual('BusinessError: The asyncRunner task has been canceled.');
-        })
-        if (i > 3) {
-          taskpool.cancel(task);
-        }
-      }
-      while (num < 5) {
-        await promiseCase();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass211
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0211
-     * @tc.desc   AsyncRunner cannot execute seqRunnerTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async211", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      let seqRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner("seq211");
-      seqRunner.execute(task);
-      try {
-        asyncRunner.execute(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, AsyncRunner cannot execute seqRunnerTask or executedTask.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass212
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0212
-     * @tc.desc   AsyncRunner cannot execute groupTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async212", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup("taskGroup212");
-      taskGroup.addTask(task);
-      try {
-        asyncRunner.execute(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, AsyncRunner cannot execute groupTask.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass213
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0213
-     * @tc.desc   AsyncRunner cannot execute dependent task
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async213", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      task.addDependency(task2);
-      try {
-        asyncRunner.execute(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: AsyncRunner:: dependent task not allowed.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass214
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0214
-     * @tc.desc   AsyncRunner cannot execute asyncRunnerTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async214", 2);
-      let asyncRunner2: taskpool.AsyncRunner = new taskpool.AsyncRunner("async214-1", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      asyncRunner.execute(task);
-      try {
-        asyncRunner2.execute(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, AsyncRunner cannot execute asyncRunnerTask.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass215
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0215
-     * @tc.desc   AsyncRunner cannot execute executedTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async215", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      taskpool.execute(task);
-      try {
-        asyncRunner.execute(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, AsyncRunner cannot execute seqRunnerTask or executedTask.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass216
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0216
-     * @tc.desc   AsyncRunner cannot execute periodicTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async216", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      taskpool.executePeriodically(1000, task);
-      try {
-        asyncRunner.execute(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The periodic task cannot be executed again, AsyncRunner cannot execute the periodicTask.');
-      }
-      setTimeout(()=>{
-        taskpool.cancel(task);
-      }, 2000);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass217
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0217
-     * @tc.desc   sequenceRunner cannot execute asyncRunnerTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async217", 2);
-      let seqRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner("seq217");
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      asyncRunner.execute(task);
-      try {
-        seqRunner.execute(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, SequenceRunner cannot execute asyncRunnerTask.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass218
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0218
-     * @tc.desc   taskGroup cannot execute asyncRunnerTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async218", 2);
-      let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup("taskGroup218");
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      asyncRunner.execute(task);
-      try {
-        taskGroup.addTask(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, TaskGroup cannot execute asyncRunnerTask.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass219
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0219
-     * @tc.desc   asyncRunnerTask cannot execute outside
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async219", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      asyncRunner.execute(task);
-      try {
-        taskpool.execute(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, AsyncRunnerTask cannot execute outside.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass220
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0220
-     * @tc.desc   asyncRunnerTask cannot execute outside
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async220", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      let task2: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      asyncRunner.execute(task);
-      try {
-        task2.addDependency(task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task has been executed by AsyncRunner.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass221
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0221
-     * @tc.desc   asyncRunnerTask cannot executed periodically
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async221", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      asyncRunner.execute(task);
-      try {
-        taskpool.executePeriodically(1000, task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, AsyncRunnerTask cannot executePeriodically.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass222
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0222
-     * @tc.desc   asyncRunnerTask cannot executeDelayed
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async222", 2);
-      let task: taskpool.Task = new taskpool.Task(AdditionDelay, 1000);
-      asyncRunner.execute(task);
-      try {
-        taskpool.executeDelayed(1000, task);
-      } catch (e) {
-        expect(e.toString()).assertEqual('BusinessError: The task cannot be executed by two APIs, AsyncRunnerTask cannot executeDelayed.');
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass223
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0223
-     * @tc.desc   asyncRunner task discarded
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async223", 5, 2);
-      let success = 0;
-      let failure = 0;
-      let size = 10;
-      for (let i = 0; i < size; i++) {
-        let task: taskpool.Task = new taskpool.Task(printArgs, i);
-        asyncRunner.execute(task, taskpool.Priority.HIGH).then(() => {
-          success++;
-        }).catch((e: BusinessError) => {
-          failure++;
-          expect((e as BusinessError).toString()).assertEqual('BusinessError: The asyncRunner task is discarded.');
-        });
-      }
-      while (success + failure < size) {
-        await promiseCase();
-      }
-      expect(success >= 5).assertTrue();
-      expect(success).assertLess(size);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass224
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0224
-     * @tc.desc   asyncRunner task has been canceled
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner("async224", 2);
-      let success = 0;
-      let failure = 0;
-      let size = 5;
-      let arr: Array<taskpool.Task> = [];
-      for (let i = 0; i < size; i++) {
-        let task: taskpool.Task = new taskpool.Task(printArgs, i);
-        asyncRunner.execute(task).then(() => {
-          success++;
-        }).catch((e: BusinessError) => {
-          failure++;
-          expect((e as BusinessError).toString()).assertEqual('BusinessError: The asyncRunner task has been canceled.');
-        });
-        if (i > 3) {
-          arr.push(task);
-        }
-      }
-      for (let i = 0; i < arr.length; i++) {
-        try {
-          taskpool.cancel(arr[i]);
-        } catch (e) {
-        }
-      }
-      while (success + failure < size) {
-        await promiseCase();
-      }
-      expect(failure).assertEqual(arr.length);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass225
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0225
-     * @tc.desc   cancel by taskId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let str = 'test';
-      let task = new taskpool.Task(fun, str);
-      let terminate = false;
-      taskpool.execute(task).catch(() => {
-        str = 'cancel success';
-        terminate = true;
-      });
-      setTimeout(() => {
-        taskpool.cancel(task.taskId);
-      }, 1000);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(str).assertEqual('cancel success');
-      done();
-    })
-
-
-    /**
-     * @tc.name   TaskPoolTestClass226
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0226
-     * @tc.desc   cancel by taskId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let str = 'test';
-      let task = new taskpool.Task(fun, str);
-      let terminate = false;
-      taskpool.execute(task).catch(() => {
-        str = 'cancel success';
-        terminate = true;
-      });
-      let cancelTask = new taskpool.Task(cancelById, task.taskId);
-      taskpool.execute(cancelTask);
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(str).assertEqual('cancel success');
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass227
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0227
-     * @tc.desc   cancel by taskId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        let task1: taskpool.Task = new taskpool.Task(printArgs, 100);
-        let task2: taskpool.Task = new taskpool.Task(printArgs, 200);
-        let task3: taskpool.Task = new taskpool.Task(printArgs, 300);
-        taskpool.execute(task1);
-        taskpool.execute(task2);
-        taskpool.execute(task3);
-        let start: number = new Date().getTime();
-        while (new Date().getTime() - start < 1000) {
-          continue;
-        }
-        taskpool.cancel(task1.taskId);
-      } catch(e) {
-        expect((e as BusinessError).toString()).assertEqual("BusinessError: The task to cancel does not exist, taskpool:: task is not executed or has been executed");
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass228
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0228
-     * @tc.desc   cancel by taskId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let str = 'test';
-      let task = new taskpool.Task(fun, str);
-      let terminate = false;
-      taskpool.executeDelayed(2000, task).catch(() => {
-        str = 'cancel success';
-        terminate = true;
-      });
-      let cancelTask = new taskpool.Task(cancelById, task.taskId);
-      taskpool.execute(cancelTask);
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(str).assertEqual('cancel success');
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass229
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0229
-     * @tc.desc   cancel by taskId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let str = 'test';
-      let task = new taskpool.Task(fun, str);
-      try {
-        taskpool.cancel(task.taskId);
-      } catch (e) {
-        expect((e as BusinessError).toString()).assertEqual("BusinessError: The task to cancel does not exist, taskpool:: task is not executed or has been executed");
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass230
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0230
-     * @tc.desc   cancel by taskId
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let str = 'test';
-      let task1 = new taskpool.Task(printArgs, 100);
-      let task2 = new taskpool.Task(printArgs, 100);
-      let task3 = new taskpool.Task(fun, str);
-      let taskGroup = new taskpool.TaskGroup();
-      taskGroup.addTask(task1);
-      taskGroup.addTask(task2);
-      taskGroup.addTask(task3);
-      let terminate = false;
-      taskpool.execute(taskGroup).then(() => {
-        str = 'finish success';
-        terminate = true;
-      }).catch(() => {
-        terminate = true;
-        str = 'cancel success';
-      });
-      setTimeout(() => {
-        taskpool.cancel(task3.taskId);
-      }, 1000);
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(str).assertEqual('cancel success');
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass231
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0231
-     * @tc.desc   test microjob in the taskpool
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let value: number = 500;
-      let task: taskpool.Task = new taskpool.Task(promiseTest, value);
-      let result = await taskpool.execute(task);
-      expect(result).assertEqual(1000);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass232
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0232
-     * @tc.desc   Test the ContainerScope and Measure
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(measureTest);
-      let result = await taskpool.execute(task);
-      expect(result).assertEqual(true);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass234
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0234
-     * @tc.desc   Test asyncRunnerTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let cancelNum = 0;
-      let catchCount = 0;
-      let asyncRunner:taskpool.AsyncRunner = new taskpool.AsyncRunner(1);
-      let size = 30;
-      for (let i = 0; i < size; i++) {
-        let task: taskpool.Task = new taskpool.Task(printArgs, i);
-        asyncRunner.execute(task).catch((e: BusinessError) => {
-          catchCount++;
-          if (e.code == 10200055) {
-            cancelNum++;
-          }
-        })
-        taskpool.cancel(task);
-      }
-      while (catchCount < size) {
-        await promiseCase();
-      }
-      expect(cancelNum).assertEqual(size);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass235
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0235
-     * @tc.desc   Test task cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let cancelNum = 0;
-      let catchCount = 0;
-      let size = 20;
-      for (let i = 0; i < size; i++) {
-        let task: taskpool.Task = new taskpool.Task(printArgs, i);
-        taskpool.execute(task).catch((e: BusinessError) => {
-          catchCount++;
-          if (e.code == 0) {
-            cancelNum++;
-          }
-        })
-        taskpool.cancel(task);
-      }
-      let asyncRunner:taskpool.AsyncRunner = new taskpool.AsyncRunner(1);
-      let asyncSize = 10;
-      let asyncCatchNum = 0;
-      for (let i = 0; i < asyncSize; i++) {
-        let task: taskpool.Task = new taskpool.Task(printArgs, i);
-        asyncRunner.execute(task).catch((e: BusinessError) => {
-          catchCount++;
-          if (e.code == 10200055) {
-            asyncCatchNum++;
-          }
-        })
-        taskpool.cancel(task);
-      }
-      while (catchCount < (size+asyncSize)) {
-        await promiseCase();
-      }
-      expect(cancelNum).assertEqual(size);
-      expect(asyncCatchNum).assertEqual(asyncSize);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass236
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0236
-     * @tc.desc   Test waiting task cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      taskpool.executeDelayed(1000, task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 500);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(undefined);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass237
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0237
-     * @tc.desc   Test running task cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 300);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(0);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass238
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0238
-     * @tc.desc   Test running task cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("Error: this is loop error");
-      expect(result).assertEqual(undefined);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass239
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0239
-     * @tc.desc   Test running task cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:string = "";
-      let task = new taskpool.Task(returnError, 1000);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = (e.data.result as object).toString();
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 500);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual("Error: this is return error");
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass240
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0240
-     * @tc.desc   Test running asyncTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let code:number = 0;
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      let runner = new taskpool.AsyncRunner(1,1);
-      runner.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        code = e.code;
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 300);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("The asyncRunner task has been canceled.");
-      expect(result).assertEqual(0);
-      expect(code).assertEqual(10200055);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass241
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0241
-     * @tc.desc   Test running asyncTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let code:number = 0;
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      let runner = new taskpool.AsyncRunner(1,1);
-      runner.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        code = e.code;
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("Error: this is loop error");
-      expect(result).assertEqual(undefined);
-      expect(code).assertEqual(10200055);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass242
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0242
-     * @tc.desc   Test waiting asyncTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let code:number = 0;
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      let task2 = new taskpool.Task(loop);
-      let runner = new taskpool.AsyncRunner(1,1);
-      runner.execute(task);
-      runner.execute(task2).catch((e:BusinessError<taskpool.TaskResult>) => {
-        code = e.code;
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task2.taskId);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("The asyncRunner task has been canceled.");
-      expect(result).assertEqual(undefined);
-      expect(code).assertEqual(10200055);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass243
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0243
-     * @tc.desc   Test running asyncTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let code:number = 0;
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(delaySum, 10, 20, 500);
-      let runner = new taskpool.AsyncRunner(1,1);
-      runner.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        code = e.code;
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 300);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("The asyncRunner task has been canceled.");
-      expect(result).assertEqual(30);
-      expect(code).assertEqual(10200055);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass244
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0244
-     * @tc.desc   Test running sequenceTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let code:number = 0;
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      let runner = new taskpool.SequenceRunner();
-      runner.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        code = e.code;
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 300);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(0);
-      expect(code).assertEqual(0);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass245
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0245
-     * @tc.desc   Test running sequenceTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      let runner = new taskpool.SequenceRunner();
-      runner.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("Error: this is loop error");
-      expect(result).assertEqual(undefined);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass246
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0246
-     * @tc.desc   Test running sequenceTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(delaySum, 10, 20, 1000);
-      let runner = new taskpool.SequenceRunner();
-      runner.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(30);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass247
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0247
-     * @tc.desc   Test running delayTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let code:number = 0;
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      taskpool.executeDelayed(500, task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        code = e.code;
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(0);
-      expect(code).assertEqual(0);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass248
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0248
-     * @tc.desc   Test running delayTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(loop);
-      taskpool.executeDelayed(500, task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 1300);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("Error: this is loop error");
-      expect(result).assertEqual(undefined);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass249
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0249
-     * @tc.desc   Test running delayTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let code:number = 0;
-      let result:object | undefined = undefined;
-      let task = new taskpool.Task(longString, 500);
-      taskpool.executeDelayed(500, task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        code = e.code;
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(getLongString());
-      expect(code).assertEqual(0);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass250
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0250
-     * @tc.desc   Test running groupTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task1 = new taskpool.Task(delaySum, 10, 10, 300);
-      let task2 = new taskpool.Task(delaySum, 20, 10, 800);
-      let group = new taskpool.TaskGroup();
-      group.addTask(task1);
-      group.addTask(task2);
-      taskpool.execute(group).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task1);
-      }, 200);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(20);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass251
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0251
-     * @tc.desc   Test running groupTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task1 = new taskpool.Task(delaySum, 10, 10, 300);
-      let task2 = new taskpool.Task(delaySum, 20, 10, 800);
-      let group = new taskpool.TaskGroup();
-      group.addTask(task1);
-      group.addTask(task2);
-      taskpool.execute(group).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(group);
-      }, 200);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(20);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass252
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0252
-     * @tc.desc   Test running groupTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task1 = new taskpool.Task(loop);
-      let task2 = new taskpool.Task(loop);
-      let group = new taskpool.TaskGroup();
-      group.addTask(task1);
-      group.addTask(task2);
-      taskpool.execute(group).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task1);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("Error: this is loop error");
-      expect(result).assertEqual(undefined);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass253
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0253
-     * @tc.desc   Test running groupTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task1 = new taskpool.Task(longString, 1000);
-      let task2 = new taskpool.Task(longString, 2000);
-      let group = new taskpool.TaskGroup();
-      group.addTask(task1);
-      group.addTask(task2);
-      taskpool.execute(group).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task1.taskId);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(getLongString());
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass254
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0254
-     * @tc.desc   Test running longTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.LongTask(delaySum, 10, 10, 1000);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-          taskpool.terminateTask(task);
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 500);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(20);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass255
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0255
-     * @tc.desc   Test running longTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.LongTask(loop);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-          taskpool.terminateTask(task);
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 300);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(0);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass256
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0256
-     * @tc.desc   Test running longTask cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:object | undefined = undefined;
-      let task = new taskpool.LongTask(loop);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as object;
-          }
-          taskpool.terminateTask(task);
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("Error: this is loop error");
-      expect(result).assertEqual(undefined);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass257
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0257
-     * @tc.desc   Test running task cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:number = -1;
-      let size = 1024;
-      let arr = new collections.Array<SendableClass>()
-      for (let i = 0; i < size; i++) {
-        arr.push(new SendableClass(i));
-      }
-      let task: taskpool.Task = new taskpool.Task(sendableClassArrFunc, arr);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            let res = e.data.result as collections.Array<SendableClass>;
-            result = res.length;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 400);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(size);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass258
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0258
-     * @tc.desc   Test running task cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:number = -1;
-      let size = 1024;
-      let arr = new collections.Array<SendableClass>()
-      for (let i = 0; i < size; i++) {
-        arr.push(new SendableClass(i));
-      }
-      let task: taskpool.Task = new taskpool.Task(sendableClassArrFunc, arr);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            let res = e.data.result as collections.Array<SendableClass>;
-            result = res.length;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(0);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass259
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0259
-     * @tc.desc   Test running task cancel
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      let error:string = "";
-      let result:number = -1;
-      let value: number = 500;
-      let task: taskpool.Task = new taskpool.Task(promiseNumber, value);
-      taskpool.execute(task).catch((e:BusinessError<taskpool.TaskResult>) => {
-        if (e.data !== undefined) {
-          error = (e.data.error as Error).toString();
-          if (e.data.result!== undefined) {
-            result = e.data.result as number;
-          }
-        }
-        terminate = true;
-      })
-      setTimeout(() => {
-        taskpool.cancel(task);
-      }, 800);
-
-      while (!terminate) {
-        await promiseCase();
-      }
-      expect(error).assertEqual("taskpool:: task has been canceled");
-      expect(result).assertEqual(value);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass260
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0260
-     * @tc.desc   taskpool support TreeSet
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let treeSet = new TreeSet<number>();
-      treeSet.add(5);
-      treeSet.add(1);
-      treeSet.add(2);
-      let task: taskpool.Task = new taskpool.Task(TreeSetTestFunc, treeSet);
-      let res: TreeSet<number> = await taskpool.execute(task) as TreeSet<number>;
-      expect(res.length).assertEqual(4);
-      expect(res.has(4)).assertTrue();
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass261
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0261
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        taskpool.getTask(null);
-      } catch (e) {
-        expect((e as BusinessError).toString()).assertContain("Parameter error");
-      }
-      try {
-        taskpool.getTask(undefined);
-      } catch (e) {
-        expect((e as BusinessError).toString()).assertContain("Parameter error");
-      }
-
-      let task: taskpool.Task |undefined = taskpool.getTask(0);
-      expect(task).assertEqual(undefined);
-
-      let task2: taskpool.Task |undefined = taskpool.getTask(-1);
-      expect(task2).assertEqual(undefined);
-
-      let task3: taskpool.Task |undefined = taskpool.getTask(1.1);
-      expect(task3).assertEqual(undefined);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass262
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0262
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(promiseNumber, 1000);
-      try {
-        taskpool.getTask(task.taskId, null);
-      } catch (e) {
-        expect((e as BusinessError).toString()).assertContain("Parameter error");
-      }
-
-      let task2: taskpool.Task |undefined = taskpool.getTask(task.taskId, "");
-      expect(task2).assertEqual(undefined);
-
-      let task3: taskpool.Task |undefined = taskpool.getTask(task.taskId, "default");
-      expect(task3).assertEqual(undefined);
-
-      let task4: taskpool.Task |undefined = taskpool.getTask(task.taskId, "PromiseNumber");
-      expect(task4).assertEqual(undefined);
-
-      let task5: taskpool.Task |undefined = taskpool.getTask(task.taskId, "promiseNumber");
-      expect(task5).assertEqual(task);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass263
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0263
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(promiseNumber, 10);
-      let terminate = false;
-      taskpool.execute(getTaskResult, task.taskId).then((res) => {
-        terminate = true;
-        expect(res).assertFalse();
-      })
-      while (!terminate) {
-        await promiseCase();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass264
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0264
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let terminate = false;
-      taskpool.execute(getCreateTaskId).then((res) =>{
-        terminate = true;
-        let task: taskpool.Task | undefined = taskpool.getTask(res as number);
-        expect(task).assertEqual(undefined);
-      })
-      while (!terminate) {
-        await promiseCase();
-      }
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass265
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0265
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let ss: worker.ThreadWorker = new worker.ThreadWorker("../workers/worker1.ets")
-      let task: taskpool.Task = new taskpool.Task(promiseNumber, 10);
-      ss.postMessage(task.taskId);
-      let flag:boolean = false;
-      let result:boolean = true;
-      ss.onmessage = (e: MessageEvents) => {
-        flag = true
-        ss.terminate();
-        result = e.data;
-      }
-      while (!flag) {
-        await promiseCase()
-      }
-      expect(result).assertFalse()
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass266
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0266
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let ss: worker.ThreadWorker = new worker.ThreadWorker("../workers/worker2.ets")
-      ss.postMessage("hello");
-      let flag:boolean = false;
-      let result:boolean = true;
-      ss.onmessage = (e: MessageEvents) => {
-        flag = true
-        ss.terminate();
-        result = e.data;
-      }
-      while (!flag) {
-        await promiseCase()
-      }
-      expect(result).assertFalse()
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass267
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0267
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(promiseNumber, 10);
-      let task1: taskpool.Task | undefined = taskpool.getTask(task.taskId, task.name);
-      expect(task1!.taskId).assertEqual(task.taskId);
-      expect(task1!.name).assertEqual(task.name);
-      expect(task1!.function).assertEqual(task.function);
-      expect(task1!.arguments).assertEqual(task.arguments);
-      expect(task1!.totalDuration).assertEqual(task.totalDuration);
-      expect(task1!.ioDuration).assertEqual(task.ioDuration);
-      expect(task1!.cpuDuration).assertEqual(task.cpuDuration);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass268
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0268
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let class1 = new TaskInfoClass();
-      let task: taskpool.Task = new taskpool.Task(taskSendManyFunc, 10, 20);
-      taskpool.execute(task).then(() => {
-        class1.increaseCount();
-      })
-      let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
-      task2?.onReceiveData(() => {
-        class1.increaseOnReceicve();
-      })
-      expect(task2!.isDone()).assertEqual(false);
-      while (await class1.getCount() < 1) {
-        await promiseCase()
-      }
-      expect(await class1.getOnReceicve()).assertEqual(20);
-      expect(task2!.isDone()).assertEqual(true);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass269
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0269
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let class1 = new TaskInfoClass();
-      let task: taskpool.Task = new taskpool.Task(taskSendManyFunc, 10, 20);
-      let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
-      task2?.onExecutionSucceeded(() => {
-        class1.increaseExecuteSuccess();
-      })
-      task2?.onEnqueued(() => {
-        class1.increaseEnqueue();
-      })
-      task2?.onStartExecution(() => {
-        class1.increaseStartExecute();
-      })
-      task2?.onReceiveData(() => {
-        class1.increaseOnReceicve();
-      })
-      taskpool.execute(task2).then(() => {
-        class1.increaseCount();
-      }).catch(() => {
-        class1.increaseErrCount()
-      })
-
-      while (await class1.getCount() < 1) {
-        await promiseCase()
-      }
-      expect(await class1.getEnqueue()).assertEqual(1);
-      expect(await class1.getStartExecute()).assertEqual(1);
-      expect(await class1.getExecuteSuccess()).assertEqual(1);
-      expect(await class1.getOnReceicve()).assertEqual(20);
-      done();
-    })
-
-    /**
-     * @tc.name   TaskPoolTestClass270
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0270
-     * @tc.desc   taskpool support getTask
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('TaskPoolTestClass270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let class1 = new TaskInfoClass();
-      let task: taskpool.Task = new taskpool.Task(taskErrFunc, 50);
-      let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
-      task2?.onExecutionFailed(() => {
-        class1.increaseExecuteFailed();
-      })
-      task2?.onEnqueued(() => {
-        class1.increaseEnqueue();
-      })
-      task2?.onStartExecution(() => {
-        class1.increaseStartExecute();
-      })
-      taskpool.execute(task2).then(() => {
-        class1.increaseCount();
-      }).catch(() => {
-        class1.increaseErrCount()
-      })
-
-      while (await class1.getErrCount() < 1) {
-        await promiseCase()
-      }
-      expect(await class1.getEnqueue()).assertEqual(1);
-      expect(await class1.getStartExecute()).assertEqual(1);
-      expect(await class1.getExecuteFailed()).assertEqual(1);
       done();
     })
   })
