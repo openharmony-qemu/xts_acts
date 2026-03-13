@@ -4355,6 +4355,425 @@ export default function coverageSupplementTest() {
       }
     });
 
+    // 5. loadTrainModelFromFile API 测试
+    /**
+     * @tc.name   loadTrainModelFromFileTrainCfgLossNameEmptyArray001
+     * @tc.number CoverageSupplement3Test_083
+     * @tc.desc   loadTrainModelFromFile TrainCfg lossName empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadTrainModelFromFileTrainCfgLossNameEmptyArray001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadTrainModelFromFileTrainCfgLossNameEmptyArray001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        trainCfg.lossName = [];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadTrainModelFromFileTrainCfgLossNameEmptyArray001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   loadTrainModelFromFileContextTargetEmptyArray001
+     * @tc.number CoverageSupplement3Test_084
+     * @tc.desc   loadTrainModelFromFile Context target empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadTrainModelFromFileContextTargetEmptyArray001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadTrainModelFromFileContextTargetEmptyArray001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        let context: mindSporeLite.Context = {};
+        context.target = [];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadTrainModelFromFileContextTargetEmptyArray001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   loadTrainModelFromFileModelEmptyString001
+     * @tc.number CoverageSupplement3Test_090
+     * @tc.desc   loadTrainModelFromFile model empty string test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadTrainModelFromFileModelEmptyString001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadTrainModelFromFileModelEmptyString001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile("", trainCfg, context);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadTrainModelFromFileModelEmptyString001 error: " + JSON.stringify(error));
+      }
+    });
+
+    // 6. loadTrainModelFromBuffer API 测试
+    /**
+     * @tc.name   loadTrainModelFromBufferTrainCfgLossNameEmptyArray001
+     * @tc.number CoverageSupplement3Test_091
+     * @tc.desc   loadTrainModelFromBuffer TrainCfg lossName empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadTrainModelFromBufferTrainCfgLossNameEmptyArray001', Level.LEVEL1, async (done:()=>void) => {
+      console.log("CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgLossNameEmptyArray001");
+      try {
+        let syscontext: common.Context = globalThis.context;
+        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
+        let cfg: mindSporeLite.TrainCfg = {};
+        cfg.lossName = [""];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
+        expect(msliteModel).not().assertNull();
+        expect(msliteModel).not().assertUndefined();
+      } catch (error) {
+        console.log("loadTrainModelFromBufferTrainCfgLossNameEmptyArray001 error: " + JSON.stringify(error));
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001
+     * @tc.number CoverageSupplement3Test_092
+     * @tc.desc   loadTrainModelFromBuffer TrainCfg lossName non-empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001', Level.LEVEL1, async (done:()=>void) => {
+      console.log("CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001");
+      try {
+        let syscontext: common.Context = globalThis.context;
+        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
+        let cfg: mindSporeLite.TrainCfg = {};
+        cfg.lossName = ["CrossEntropy"];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
+        expect(msliteModel).not().assertNull();
+        expect(msliteModel).not().assertUndefined();
+      } catch (error) {
+        console.log("loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001 error: " + JSON.stringify(error));
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   loadTrainModelFromBufferContextTargetEmptyArray001
+     * @tc.number CoverageSupplement3Test_095
+     * @tc.desc   loadTrainModelFromBuffer Context target empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadTrainModelFromBufferContextTargetEmptyArray001', Level.LEVEL1, async (done:()=>void) => {
+      console.log("CoverageSupplement3Test: loadTrainModelFromBufferContextTargetEmptyArray001");
+      try {
+        let syscontext: common.Context = globalThis.context;
+        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
+        let cfg: mindSporeLite.TrainCfg = {};
+        let context: mindSporeLite.Context = {};
+        context.target = [];
+        let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadTrainModelFromBufferContextTargetEmptyArray001 error: " + JSON.stringify(error));
+      }
+      done();
+    });
+
+    // 7. loadTrainModelFromFd API 测试
+    /**
+     * @tc.name   loadTrainModelFromFdTrainCfgLossNameEmptyArray001
+     * @tc.number CoverageSupplement3Test_101
+     * @tc.desc   loadTrainModelFromFd TrainCfg lossName empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadTrainModelFromFdTrainCfgLossNameEmptyArray001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadTrainModelFromFdTrainCfgLossNameEmptyArray001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        trainCfg.lossName = [];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+        let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
+        fs.closeSync(file);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadTrainModelFromFdTrainCfgLossNameEmptyArray001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001
+     * @tc.number CoverageSupplement3Test_102
+     * @tc.desc   loadTrainModelFromFd TrainCfg lossName non-empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001");
+      try {
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        trainCfg.lossName = ["CrossEntropy"];
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+        let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
+        fs.closeSync(file);
+        expect(msliteModel).not().assertNull();
+        expect(msliteModel).not().assertUndefined();
+      } catch (error) {
+        console.log("loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   loadModelFromFileContextTargetEmptyArray001
+     * @tc.number CoverageSupplement3Test_013
+     * @tc.desc   loadModelFromFile Context target empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFileContextTargetEmptyArray001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadModelFromFileContextTargetEmptyArray001");
+      try {
+        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let context: mindSporeLite.Context = {};
+        context.target = [];
+        let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadModelFromFileContextTargetEmptyArray001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   loadModelFromFileModelNull001
+     * @tc.number CoverageSupplement3Test_014
+     * @tc.desc   loadModelFromFile model null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFileModelNull001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadModelFromFileModelNull001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let msliteModel = await mindSporeLite.loadModelFromFile(null, context);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadModelFromFileModelNull001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   loadModelFromFileModelUndefined001
+     * @tc.number CoverageSupplement3Test_015
+     * @tc.desc   loadModelFromFile model undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFileModelUndefined001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadModelFromFileModelUndefined001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let msliteModel = await mindSporeLite.loadModelFromFile(undefined, context);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadModelFromFileModelUndefined001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   loadModelFromFileContextUndefined001
+     * @tc.number CoverageSupplement3Test_016
+     * @tc.desc   loadModelFromFile context undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFileContextUndefined001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadModelFromFileContextUndefined001");
+      try {
+        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let msliteModel = await mindSporeLite.loadModelFromFile(model_file, undefined);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadModelFromFileContextUndefined001 error: " + JSON.stringify(error));
+      }
+    });
+    
+    // 3. loadModelFromBuffer API 测试 - Promise 版本
+    /**
+     * @tc.name   loadModelFromBufferContextTargetEmptyArray001
+     * @tc.number CoverageSupplement3Test_031
+     * @tc.desc   loadModelFromBuffer Context target empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromBufferContextTargetEmptyArray001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadModelFromBufferContextTargetEmptyArray001");
+      try {
+        let syscontext: common.Context = globalThis.context;
+        let modelName = 'ml_face_isface.ms';
+        syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
+          if (error == null) {
+            let context: mindSporeLite.Context = {};
+            context.target = [];
+            let msliteModel = await mindSporeLite.loadModelFromBuffer(model_buffer.buffer, context);
+            expect(msliteModel).assertUndefined();
+          }
+        });
+      } catch (error) {
+        console.log("loadModelFromBufferContextTargetEmptyArray001 error: " + JSON.stringify(error));
+      }
+    });
+
+    // 4. loadModelFromFd API 测试 - Promise 版本
+    /**
+     * @tc.name   loadModelFromFdContextTargetEmptyArray001
+     * @tc.number CoverageSupplement3Test_052
+     * @tc.desc   loadModelFromFd Context target empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFdContextTargetEmptyArray001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadModelFromFdContextTargetEmptyArray001");
+      try {
+        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+        let context: mindSporeLite.Context = {};
+        context.target = [];
+        let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
+        fs.closeSync(file);
+        expect(msliteModel).assertUndefined();
+      } catch (error) {
+        console.log("loadModelFromFdContextTargetEmptyArray001 error: " + JSON.stringify(error));
+      }
+    });
+
+    /**
+     * @tc.name   loadModelFromFdContextCpuThreadAffinityModeAffinityMode001
+     * @tc.number CoverageSupplement3Test_053
+     * @tc.desc   loadModelFromFd Context cpu threadAffinityMode AFFINITY_MODE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFdContextCpuThreadAffinityModeAffinityMode001', Level.LEVEL1, async () => {
+      console.log("CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityModeAffinityMode001");
+      try {
+        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        context.cpu = {};
+        context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
+        let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
+        fs.closeSync(file);
+        expect(msliteModel).not().assertNull();
+        expect(msliteModel).not().assertUndefined();
+      } catch (error) {
+        console.log("loadModelFromFdContextCpuThreadAffinityModeAffinityMode001 error: " + JSON.stringify(error));
+      }
+    });
+
+    // 14. MSTensor.setData 测试用例
+    /**
+     * @tc.name   mstensorSetDataInputArrayNull001
+     * @tc.number CoverageSupplementTest_028
+     * @tc.desc   MSTensor setData input array null test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('mstensorSetDataInputArrayNull001', Level.LEVEL1, () => {
+      console.log("CoverageSupplementTest: mstensorSetDataInputArrayNull001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"];
+        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
+        mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
+          if (msliteModel !== null) {
+            let modelInputs: mindSporeLite.MSTensor[] = msliteModel.getInputs();
+            if (modelInputs.length > 0) {
+              try {
+                modelInputs[0].setData(null);
+
+              } catch (error) {
+                expect(true).assertFalse();
+                console.log("mstensorSetDataInputArrayNull001 setData error: " + JSON.stringify(error));
+              }
+            }
+          }
+        });
+      } catch (error) {
+        console.log("mstensorSetDataInputArrayNull001 error: " + JSON.stringify(error));
+      }
+    });
+    
+    // 16. MSTensor.setData API 测试 - 参数覆盖
+    /**
+     * @tc.name   mstensorSetDataInputArrayUndefined001
+     * @tc.number CoverageSupplement2Test_094
+     * @tc.desc   MSTensor setData inputArray undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('mstensorSetDataInputArrayUndefined001', Level.LEVEL1, () => {
+      console.log("CoverageSupplement2Test: mstensorSetDataInputArrayUndefined001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"]
+        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
+        mindSporeLite.loadModelFromFile(model_file, context, (mslite: mindSporeLite.Model) => {
+          if (mslite !== null) {
+            let modelInputs: mindSporeLite.MSTensor[] = mslite.getInputs();
+            if (modelInputs.length > 0) {
+              try {
+                modelInputs[0].setData(undefined);
+                expect(true).assertFalse();
+              } catch (error) {
+                console.log("mstensorSetDataInputArrayUndefined001 setData error: " + JSON.stringify(error));
+              }
+            }
+          }
+        });
+      } catch (error) {
+        console.log("mstensorSetDataInputArrayUndefined001 error: " + JSON.stringify(error));
+      }
+    });
 
   })
 }
