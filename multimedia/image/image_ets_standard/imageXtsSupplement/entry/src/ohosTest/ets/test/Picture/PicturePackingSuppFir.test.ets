@@ -48,7 +48,6 @@ let sleep = (ms: number = 66): Promise<string> => {
 }
 export default function PicturePackingPictureTestSupp() {
   describe('PicturePackingPictureTestSupp', () => {
-    let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
     });
@@ -685,5 +684,6 @@ export default function PicturePackingPictureTestSupp() {
         }
       })
     })
+
   })
 }
