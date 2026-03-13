@@ -541,7 +541,7 @@ export default function FileShare_test() {
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
           }
-          if (err.code == 401) {
+          if (err.code === 401) {
             expect(err.message == 'The input parameter is invalid').assertTrue();
           } else {
             expect(false).assertTrue();
@@ -588,7 +588,7 @@ export default function FileShare_test() {
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
           }
-          if (err.code == 13900001) {
+          if (err.code === 13900001) {
             expect(err.message == 'Operation not permitted').assertTrue();
           } else {
             expect(false).assertTrue();
@@ -642,7 +642,7 @@ export default function FileShare_test() {
           if (error.code === 801) {
             expect(error.message === "The device doesn't support this api").assertTrue();
           }
-          if (error.code == 13900001) {
+          if (error.code === 13900001) {
             expect(error.message == 'Operation not permitted').assertTrue();
           } else {
             expect(false).assertTrue();
@@ -686,7 +686,7 @@ export default function FileShare_test() {
         if (err.code === 801) {
           expect(err.message === "The device doesn't support this api").assertTrue();
         }
-        if (err.code == 13900001) {
+        if (err.code === 13900001) {
           expect(err.message == 'Operation not permitted').assertTrue();
         } else {
           expect(false).assertTrue();
@@ -723,7 +723,7 @@ export default function FileShare_test() {
         done(); 
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_005 has failed for ' + e.message + ", err code: " + e.code);
-        if(e.code == 801){
+        if(e.code === 801){
           expect(e.message == "The device doesn't support this api").assertTrue();
         }
         done();
