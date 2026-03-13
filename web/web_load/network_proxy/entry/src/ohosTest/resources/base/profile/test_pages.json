@@ -2,7 +2,14 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/webviewNetworkProxy",
-    "testability/pages/webCookieManager"
+    "testability/pages/webCookieManager",
+    "testability/pages/webDownloadManagerResumeDownloadParam",
+    "testability/pages/webDownloadManagerSetDownloadDelegateParam",
+    "testability/pages/webviewControllerAddIntelligentTrackingParam",
+    "testability/pages/webviewControllerBackOrForwardErrorCode",
+    "testability/pages/webviewControllerClearHostIPParam",
+    "testability/pages/webviewControllerDeleteJavaScriptRegisterParam",
+    "testability/pages/webviewControllerEnableBackForwardCacheParam"
   ]
 }
 

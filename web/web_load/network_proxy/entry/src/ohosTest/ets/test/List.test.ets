@@ -15,7 +15,22 @@
 import webviewNetworkProxy from './webviewNetworkProxy.test'
 import WebCookieManager from './WebCookieManager.test'
 
+import webDownloadManagerSetDownloadDelegateParam from './WebDownloadManagerSetDownloadDelegateParam.test';
+import webDownloadManagerResumeDownloadParam from './WebDownloadManagerResumeDownloadParam.test';
+import webviewControllerAddIntelligentTrackingParam from './WebviewControllerAddIntelligentTrackingParam.test';
+import webviewControllerBackOrForwardErrorCode from './WebviewControllerBackOrForwardErrorCode.test';
+import webviewControllerClearHostIPParam from './WebviewControllerClearHostIPParam.test';
+import webviewControllerDeleteJavaScriptRegisterParam from './WebviewControllerDeleteJavaScriptRegisterParam.test';
+import webviewControllerEnableBackForwardCacheParam from './WebviewControllerEnableBackForwardCacheParam.test';
+
 export default function testsuite() {
   webviewNetworkProxy()
   WebCookieManager()
+  webDownloadManagerSetDownloadDelegateParam()
+  webDownloadManagerResumeDownloadParam()
+  webviewControllerAddIntelligentTrackingParam()
+  webviewControllerBackOrForwardErrorCode()
+  webviewControllerClearHostIPParam()
+  webviewControllerDeleteJavaScriptRegisterParam()
+  webviewControllerEnableBackForwardCacheParam()
 }
