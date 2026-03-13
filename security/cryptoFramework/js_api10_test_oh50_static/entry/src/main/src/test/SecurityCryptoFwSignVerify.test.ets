@@ -2286,5 +2286,32 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_SignVerifySync_Func_5400
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_5400
+     * @tc.desc   algorithm is Sign and verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let algName: string = "RSA1024";
+        let signAlgName: string = "RSA1024|NoPadding|NoHash|OnlySign";
+        let verifyAlgName: string = "RSA1024|NoPadding|NoHash|OnlyVerify"
+        let msg: cryptoFramework.DataBlob = {data: new Uint8Array(128)};
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let signData: cryptoFramework.DataBlob = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgName);
+        await verify.init(keyPair.pubKey);
+        let ret = await verify.verify(null, signData);
+        expect(ret).assertTrue();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
   });
 }
