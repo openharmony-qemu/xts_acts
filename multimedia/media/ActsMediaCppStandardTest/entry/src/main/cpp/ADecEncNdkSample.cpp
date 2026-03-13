@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 
-/** @file Audio decode/encode sample implementation (native media API). */
-
+/**
+ * @file Audio decode/encode sample implementation (native media API).
+ * NDK_* macros in this file denote native API check-and-return helpers (see NdktestLogTest.h).
+ */
 #include "include/ADecEncNdkSample.h"
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_averrors.h>
@@ -198,7 +200,8 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioDecoderByMime(std::string mimety
 
 struct OH_AVCodec* ADecEncNdkSample::CreateAudioDecoderByName(std::string name)
 {
-    adec_ = OH_AudioDecoder_CreateByName(name.c_str());
+    const std::string nameCopy(name);
+    adec_ = OH_AudioDecoder_CreateByName(nameCopy.c_str());
     NDK_CHECK_AND_RETURN_RET_LOG(adec_ != nullptr, nullptr, "Fatal: OH_AudioDecoder_CreateByName");
 
     acodecSignal_ = new ADecEncSignal();
@@ -486,7 +489,8 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioEncoderByMime(std::string mimety
 
 struct OH_AVCodec* ADecEncNdkSample::CreateAudioEncoderByName(std::string name)
 {
-    aenc_ = OH_AudioEncoder_CreateByName(name.c_str());
+    const std::string nameCopy(name);
+    aenc_ = OH_AudioEncoder_CreateByName(nameCopy.c_str());
     NDK_CHECK_AND_RETURN_RET_LOG(aenc_ != nullptr, nullptr, "Fatal: OH_AudioEncoder_CreateByName");
     cbEnc_.onError = AencAsyncError;
     cbEnc_.onStreamChanged = AencAsyncStreamChanged;

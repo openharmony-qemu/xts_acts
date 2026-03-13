@@ -40,7 +40,9 @@ int SecureMemcpy(void* dest, size_t destMax, const void* src, size_t count)
     if (count > destMax || destMax > SECUREC_MEM_MAX_LEN) {
         return ERANGE;
     }
-    memcpy(dest, src, count);
+    const unsigned char* s = static_cast<const unsigned char*>(src);
+    unsigned char* d = static_cast<unsigned char*>(dest);
+    std::copy_n(s, count, d);
     return EOK;
 }
 

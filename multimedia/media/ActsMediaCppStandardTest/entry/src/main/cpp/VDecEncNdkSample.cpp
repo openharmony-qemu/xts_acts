@@ -241,7 +241,8 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoDecoderByMime(std::string mimety
         cout << "mimetype == 'video/avc'" << endl;
         vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
     } else {
-        vdec_ = OH_VideoDecoder_CreateByMime(mimetype.c_str());
+        const std::string mimeCopy(mimetype);
+        vdec_ = OH_VideoDecoder_CreateByMime(mimeCopy.c_str());
     }
     NDK_CHECK_AND_RETURN_RET_LOG(vdec_ != nullptr, nullptr, "Fatal: OH_VideoDecoder_CreateByMime");
     if (vcodecSignal_ == nullptr) {
