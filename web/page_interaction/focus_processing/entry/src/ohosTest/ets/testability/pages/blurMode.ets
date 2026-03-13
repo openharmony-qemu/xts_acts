@@ -110,6 +110,30 @@ struct WebComponent {
                   }
                   break;
               }
+            case "blurMode03": {
+              this.userAgentPC = this.controller.getUserAgent();
+              if ((this.userAgentPC).includes("PC")) {
+                Utils.emitEvent(true, 178230)
+                break;
+              }
+              this.blurMode = BlurOnKeyboardHideMode.SILENT;
+              this.isOnConsoleEnd = -1
+              let buttonOne = await driver.findComponent(ON.text('input'));
+              await buttonOne.click();
+              let buttonTwo = await driver.findComponent(ON.id('KeyHideKbd'));
+              if (buttonTwo) {
+                await buttonTwo.click()
+
+              } else {
+                this.inputMethodController.hideTextInput()
+                this.controller.onInactive();
+              }
+              await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
+              if (this.text == 'blur') {
+                Utils.emitEvent(true, 178230)
+              }
+              break;
+            }
           }
         })
       }
