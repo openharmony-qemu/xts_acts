@@ -4443,9 +4443,10 @@ export default function abilityTest() {
             try {
                 drmsys = drm.createMediaKeySystem(systemName);
                 session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
+                let optionalData:drm.OptionsData[] = [];
                 let base64 = new util.Base64();
                 let uint8pssh = base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
-                session!.generateMediaKeyRequest("video/mp4", uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, undefined).then(() => {
+                session!.generateMediaKeyRequest("video/mp4", uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, OptionsData).then(() => {
                     session.destroy();
                     drmsys.destroy();
                     done();
