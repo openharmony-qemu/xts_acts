@@ -1,5 +1,5 @@
- #ifndef COMMONTOOL_H
- #define COMMONTOOL_H
+#ifndef COMMONTOOL_H
+#define COMMONTOOL_H
 
  /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
