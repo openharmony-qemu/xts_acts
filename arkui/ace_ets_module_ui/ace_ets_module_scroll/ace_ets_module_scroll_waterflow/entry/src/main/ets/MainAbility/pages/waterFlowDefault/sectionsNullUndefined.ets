@@ -241,7 +241,7 @@ struct WaterFlowSectionsNullUndefined {
               }
             }
             try {
-              let updateNull: boolean = this.sections.update(2, newSection);
+              let updateNull: boolean = this.sections.update(null, newSection);
               AppStorage.setOrCreate('update_sectionIndex_null', updateNull);
               console.log('ErrorJson update_sectionIndex_null:', updateNull);
             } catch (error) {
