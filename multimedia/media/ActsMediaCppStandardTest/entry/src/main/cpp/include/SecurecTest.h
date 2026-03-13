@@ -65,8 +65,6 @@ int SecureMemcpy(void *dest, size_t destMax, const void *src, size_t count);
 }
 #endif
 
-// Compatibility macros: map securec function names to stub implementations
-#define memset_s(d, dm, c, n) SecureMemset(d, dm, c, n)
-#define memcpy_s(d, dm, s, n) SecureMemcpy(d, dm, s, n)
+// Use SecureMemset / SecureMemcpy directly; do not redefine memset_s/memcpy_s (G.FUU.14).
 
 #endif // SECUREC_H

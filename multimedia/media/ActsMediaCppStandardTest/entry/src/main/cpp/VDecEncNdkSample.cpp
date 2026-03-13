@@ -262,7 +262,8 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoDecoderByMime(std::string mimety
 
 struct OH_AVCodec* VDecEncNdkSample::CreateVideoDecoderByName(std::string name)
 {
-    vdec_ = OH_VideoDecoder_CreateByName(name.c_str());
+    const std::string nameCopy(name);
+    vdec_ = OH_VideoDecoder_CreateByName(nameCopy.c_str());
     NDK_CHECK_AND_RETURN_RET_LOG(vdec_ != nullptr, nullptr, "Fatal: OH_VideoDecoder_CreateByName");
     if (vcodecSignal_ == nullptr) {
         vcodecSignal_ = new VDecEncSignal();
@@ -479,7 +480,7 @@ void VDecEncNdkSample::InputFuncDec()
                 PopInqueueDec();
                 break;
             }
-            if (memcpy_s(OH_AVMemory_GetAddr(buffer), OH_AVMemory_GetSize(buffer), fileBuffer, bufferSize) != EOK ||
+            if (SecureMemcpy(OH_AVMemory_GetAddr(buffer), OH_AVMemory_GetSize(buffer), fileBuffer, bufferSize) != EOK ||
                 buffer == nullptr) {
                 free(fileBuffer);
                 PopInqueueDec();
@@ -571,7 +572,8 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoEncoderByMime(std::string mimety
     if (mimetype == "video/avc") {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
     } else {
-        venc_ = OH_VideoEncoder_CreateByMime(mimetype.c_str());
+        const std::string mimeCopy(mimetype);
+        venc_ = OH_VideoEncoder_CreateByMime(mimeCopy.c_str());
     }
     NDK_CHECK_AND_RETURN_RET_LOG(venc_ != nullptr, nullptr, "Fatal: OH_VideoEncoder_CreateByMime");
 

@@ -13,6 +13,10 @@
  * limitations under the License.
  */
 
+/**
+ * @file Audio decode/encode test declarations (native media API).
+ * "NDK" in guard names denotes native media API (legacy naming).
+ */
 #ifndef ACTSMEDIACPPSTANDARDTEST_ACTS_AUDIO_DEC_ENC_NDK_TEST_H
 #define ACTSMEDIACPPSTANDARDTEST_ACTS_AUDIO_DEC_ENC_NDK_TEST_H
 

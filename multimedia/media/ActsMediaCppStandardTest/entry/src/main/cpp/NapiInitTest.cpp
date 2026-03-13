@@ -31,7 +31,7 @@ static const std::vector<TestFunction> g_audioDecEncFuncTests = {
     SubMultimediaMediaAudioDecEncFunction0700,
 };
 
-// CodecFormatFuncTest group: Codec Format NDK Tests (0100-0300, index 0-2)
+// CodecFormatFuncTest group: Codec Format (native media API, legacy NDK naming) Tests (0100-0300, index 0-2)
 static const std::vector<TestFunction> g_codecFormatTests = {
     SubMultimediaMediaCodecFormat0100,
     SubMultimediaMediaCodecFormat0200,

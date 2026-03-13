@@ -24,17 +24,17 @@
 
 using namespace std;
 
-static bool CheckDecDesc(map<string, std::pair<bool, int>> InDesc, OH_AVFormat* OutDesc)
+static bool CheckDecDesc(map<string, std::pair<bool, int>> inDesc, OH_AVFormat* outDesc)
 {
-    for (const auto& t : InDesc) {
+    for (const auto& t : inDesc) {
         int32_t out_int32 = 0;
         int64_t out_int64 = 0;
         bool res = true;
         if (t.second.first) {
-            res = OH_AVFormat_GetLongValue(OutDesc, t.first.c_str(), &out_int64);
+            res = OH_AVFormat_GetLongValue(outDesc, t.first.c_str(), &out_int64);
             out_int32 = out_int64;
         } else {
-            res = OH_AVFormat_GetIntValue(OutDesc, t.first.c_str(), &out_int32);
+            res = OH_AVFormat_GetIntValue(outDesc, t.first.c_str(), &out_int32);
         }
         if (!res) {
             return false;
@@ -202,7 +202,7 @@ int SubMultimediaMediaCodecFormat0300()
         OH_AVFormat_Destroy(codecFormatOut);
         return -1;
     }
-    (void)memset_s(buffer, sizeIn, 1, sizeIn);
+    (void)SecureMemset(buffer, sizeIn, 1, sizeIn);
     OH_AVFormat_SetBuffer(codecFormatIn, bufferKey, buffer, sizeIn);
 
     OH_AVFormat_Copy(codecFormatOut, codecFormatIn);

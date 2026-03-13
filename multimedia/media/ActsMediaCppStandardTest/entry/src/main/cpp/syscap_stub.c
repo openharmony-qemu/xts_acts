@@ -20,6 +20,7 @@
  * shared library to load so NAPI tests can run.
  * Returns true so capability checks pass; individual tests may still fail
  * on devices without the actual capability.
+ * Name canIUse kept for syscap_ndk.h API compatibility (G.NAM.03).
  */
 #include <stdbool.h>
 

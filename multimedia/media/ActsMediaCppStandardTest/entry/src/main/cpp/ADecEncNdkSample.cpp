@@ -182,7 +182,8 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioDecoderByMime(std::string mimety
     if (mimetype == "audio/mp4a-latm") {
         adec_ = OH_AudioDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AAC);
     } else {
-        adec_ = OH_AudioDecoder_CreateByMime(mimetype.c_str());
+        const std::string mimeCopy(mimetype);
+        adec_ = OH_AudioDecoder_CreateByMime(mimeCopy.c_str());
     }
     NDK_CHECK_AND_RETURN_RET_LOG(adec_ != nullptr, nullptr, "Fatal: OH_AudioDecoder_CreateByMime");
 
@@ -439,7 +440,7 @@ void ADecEncNdkSample::InputFuncDec()
         NDK_CHECK_AND_RETURN_LOG(testFile_ != nullptr && testFile_->is_open(), "Fatal: open file fail");
         uint32_t bufferSize = 0;
         if (decInCnt_ < esLength) {
-            bufferSize = ES[decInCnt_];
+            bufferSize = es[decInCnt_];
             char* fileBuffer = (char*)malloc(sizeof(char) * bufferSize + 1);
             NDK_CHECK_AND_RETURN_LOG(fileBuffer != nullptr, "Fatal: malloc fail");
             (void)testFile_->read(fileBuffer, bufferSize);
@@ -451,7 +452,7 @@ void ADecEncNdkSample::InputFuncDec()
                 PopInqueueDec();
                 break;
             }
-            if (memcpy_s(OH_AVMemory_GetAddr(buffer), OH_AVMemory_GetSize(buffer), fileBuffer, bufferSize) != EOK) {
+            if (SecureMemcpy(OH_AVMemory_GetAddr(buffer), OH_AVMemory_GetSize(buffer), fileBuffer, bufferSize) != EOK) {
                 free(fileBuffer);
                 PopInqueueDec();
                 break;
@@ -685,10 +686,10 @@ int32_t ADecEncNdkSample::PushInbufferEnc()
             attr.flags = 1;
         }
     } else {
-        if (memcpy_s(OH_AVMemory_GetAddr(bufferEnc),
-                     OH_AVMemory_GetSize(bufferEnc),
-                     OH_AVMemory_GetAddr(bufferDec),
-                     sizeDecOut) != EOK) {
+        if (SecureMemcpy(OH_AVMemory_GetAddr(bufferEnc),
+                         OH_AVMemory_GetSize(bufferEnc),
+                         OH_AVMemory_GetAddr(bufferDec),
+                         sizeDecOut) != EOK) {
             cout << "ENC input Fatal: memcpy fail" << endl;
             PopOutqueueDec();
             PopInqueueEnc();
@@ -805,7 +806,7 @@ void ADecEncNdkSample::OutputFuncEnc()
 void ADecEncNdkSample::SetReadPath(const char* inpPath, uint32_t es[], uint32_t length)
 {
     inpFile = inpPath;
-    ES = es;
+    this->es = es;
     esLength = length;
 }
 

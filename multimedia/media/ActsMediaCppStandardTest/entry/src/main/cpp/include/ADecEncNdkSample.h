@@ -62,7 +62,7 @@ public:
 class ADecEncNdkSample : public NoCopyable {
 public:
     ADecEncNdkSample() = default;
-    ~ADecEncNdkSample();
+    ~ADecEncNdkSample() override;
 
     struct OH_AVCodec* CreateAudioDecoderByMime(std::string mimetype);
     struct OH_AVCodec* CreateAudioDecoderByName(std::string name);
@@ -135,7 +135,7 @@ private:
     std::string outDir_ = "/data/media/out.aac";
     const char* inpFile;
     const char* outFile;
-    uint32_t* ES;
+    uint32_t* es;
     uint32_t esLength = 0;
 };
 }

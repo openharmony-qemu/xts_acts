@@ -64,7 +64,7 @@ public:
 class VDecEncNdkSample : public NoCopyable {
 public:
     VDecEncNdkSample() = default;
-    ~VDecEncNdkSample();
+    ~VDecEncNdkSample() override;
 
     void SetEosState(bool needSetEos);
     struct OH_AVCodec* CreateVideoDecoderByMime(std::string mimetype);

@@ -51,8 +51,8 @@ static constexpr uint32_t DEFAULT_CHANNELS = 2;
 static const char* READPATH = "/data/storage/el2/base/haps/entry_test/files/AAC_48000_32_1.aac";
 
 static constexpr int EOS_WAIT_TIMEOUT_SEC = 90;
-static constexpr int kWaitPollMs = 100;
-static constexpr int kExpectedAudioFrameCount = 50;
+static constexpr int K_WAIT_POLL_MS = 100;
+static constexpr int K_EXPECTED_AUDIO_FRAME_COUNT = 50;
 
 static int WaitForEncEosWithTimeout(ADecEncNdkSample* sample, int timeoutSeconds)
 {
@@ -62,7 +62,7 @@ static int WaitForEncEosWithTimeout(ADecEncNdkSample* sample, int timeoutSeconds
             cout << "WaitForEncEos: timeout after " << timeoutSeconds << "s" << endl;
             return -1;
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(kWaitPollMs));
+        std::this_thread::sleep_for(std::chrono::milliseconds(K_WAIT_POLL_MS));
     }
     return 0;
 }
@@ -138,11 +138,11 @@ static int WaitEosAndRelease(ADecEncNdkSample* sample)
     return 0;
 }
 
-static bool CheckDecDesc(map<string, int> InDesc, OH_AVFormat* OutDesc)
+static bool CheckDecDesc(map<string, int> inDesc, OH_AVFormat* outDesc)
 {
     int32_t out;
-    for (const auto& t : InDesc) {
-        bool res = OH_AVFormat_GetIntValue(OutDesc, t.first.c_str(), &out);
+    for (const auto& t : inDesc) {
+        bool res = OH_AVFormat_GetIntValue(outDesc, t.first.c_str(), &out);
         cout << "key: " << t.first << "; out: " << out << endl;
         if (!res) {
             cout << "OH_AVFormat_GetIntValue Fail. key:" << t.first << endl;
@@ -232,6 +232,7 @@ static int SetupAudioDecEncByMime(ADecEncNdkSample* sample, OH_AVFormat* format)
 
 static int WaitDecEosThenFlushAndCheck(ADecEncNdkSample* sample)
 {
+    /* Loop terminates when decoder sets EOS state. */
     while (!sample->GetDecEosState()) {
     }
     if (sample->CalcuError() != AV_ERR_OK) {
@@ -256,7 +257,8 @@ static OH_AVFormat* CreateDefaultAacFormat()
 
 static int WaitFrameCountThenFlushAndReset(ADecEncNdkSample* sample)
 {
-    while (sample->GetFrameCount() < kExpectedAudioFrameCount) {
+    /* Loop terminates when output callback increments frame count to K_EXPECTED_AUDIO_FRAME_COUNT. */
+    while (sample->GetFrameCount() < K_EXPECTED_AUDIO_FRAME_COUNT) {
     }
     if (sample->FlushDec() != AV_ERR_OK || sample->FlushEnc() != AV_ERR_OK) {
         return -1;
@@ -662,8 +664,8 @@ int SubMultimediaMediaAudioDecEncFunction0600()
         delete aDecEncSample;
         return -1;
     }
-    /* Loop exits when encoder output callback increments frame count to kExpectedAudioFrameCount. */
-    while (aDecEncSample->GetFrameCount() < kExpectedAudioFrameCount) {
+    /* Loop exits when encoder output callback increments frame count to K_EXPECTED_AUDIO_FRAME_COUNT. */
+    while (aDecEncSample->GetFrameCount() < K_EXPECTED_AUDIO_FRAME_COUNT) {
     };
     if (aDecEncSample->StopDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(audioFormat);
@@ -783,6 +785,7 @@ int SubMultimediaMediaAudioDecEncFunction0700()
         delete aDecEncSample;
         return -1;
     }
+    /* Loop terminates when decoder sets EOS state. */
     while (!aDecEncSample->GetDecEosState()) {
     };
     if (aDecEncSample->StopDec() != AV_ERR_OK) {

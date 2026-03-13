@@ -15,7 +15,7 @@
 
 // AudioDecEncFuncTest: Audio Dec/Enc Function Tests (0100-0700, index 0-6)
 export const AudioDecEncFuncTest: (caseName: number) => Promise<number>;
-// CodecFormatFuncTest: Codec Format NDK Tests (0100-0300, index 0-2)
+// CodecFormatFuncTest: Codec Format (native media API, legacy NDK naming) Tests (0100-0300, index 0-2)
 export const CodecFormatFuncTest: (caseName: number) => Promise<number>;
 // VideoDecEncFuncTest: Video Dec/Enc Function Tests (0100-0700, index 0-6)
 export const VideoDecEncFuncTest: (caseName: number) => Promise<number>;
