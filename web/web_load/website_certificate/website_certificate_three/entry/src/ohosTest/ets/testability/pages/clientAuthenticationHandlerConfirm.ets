@@ -17,7 +17,7 @@ import Utils from '../../test/Utils';
 import { URL_CLIENT } from '../../test/Config.test';
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
-import {waitForAssert, waitForExist} from '../../test/WaitTest';
+import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
 const EVENT_ID_SET_EMIT_KEY = 202603;
 
