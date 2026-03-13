@@ -21,6 +21,7 @@
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avmemory.h>
+#include <vector>
 
 using namespace OHOS;
 using namespace OHOS::Media;
@@ -182,8 +183,9 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioDecoderByMime(std::string mimety
     if (mimetype == "audio/mp4a-latm") {
         adec_ = OH_AudioDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AAC);
     } else {
-        const std::string mimeCopy(mimetype);
-        adec_ = OH_AudioDecoder_CreateByMime(mimeCopy.c_str());
+        std::vector<char> mimeBuf(mimetype.begin(), mimetype.end());
+        mimeBuf.push_back('\0');
+        adec_ = OH_AudioDecoder_CreateByMime(mimeBuf.data());
     }
     NDK_CHECK_AND_RETURN_RET_LOG(adec_ != nullptr, nullptr, "Fatal: OH_AudioDecoder_CreateByMime");
 
@@ -201,8 +203,9 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioDecoderByMime(std::string mimety
 
 struct OH_AVCodec* ADecEncNdkSample::CreateAudioDecoderByName(std::string name)
 {
-    const std::string nameCopy(name);
-    adec_ = OH_AudioDecoder_CreateByName(nameCopy.c_str());
+    std::vector<char> nameBuf(name.begin(), name.end());
+    nameBuf.push_back('\0');
+    adec_ = OH_AudioDecoder_CreateByName(nameBuf.data());
     NDK_CHECK_AND_RETURN_RET_LOG(adec_ != nullptr, nullptr, "Fatal: OH_AudioDecoder_CreateByName");
 
     acodecSignal_ = new ADecEncSignal();
@@ -475,8 +478,9 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioEncoderByMime(std::string mimety
     if (mimetype == "audio/mp4a-latm") {
         aenc_ = OH_AudioEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AAC);
     } else {
-        const std::string mimeCopy(mimetype);
-        aenc_ = OH_AudioEncoder_CreateByMime(mimeCopy.c_str());
+        std::vector<char> mimeBuf(mimetype.begin(), mimetype.end());
+        mimeBuf.push_back('\0');
+        aenc_ = OH_AudioEncoder_CreateByMime(mimeBuf.data());
     }
     NDK_CHECK_AND_RETURN_RET_LOG(aenc_ != nullptr, nullptr, "Fatal: OH_AudioEncoder_CreateByMime");
     cbEnc_.onError = AencAsyncError;
@@ -490,8 +494,9 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioEncoderByMime(std::string mimety
 
 struct OH_AVCodec* ADecEncNdkSample::CreateAudioEncoderByName(std::string name)
 {
-    const std::string nameCopy(name);
-    aenc_ = OH_AudioEncoder_CreateByName(nameCopy.c_str());
+    std::vector<char> nameBuf(name.begin(), name.end());
+    nameBuf.push_back('\0');
+    aenc_ = OH_AudioEncoder_CreateByName(nameBuf.data());
     NDK_CHECK_AND_RETURN_RET_LOG(aenc_ != nullptr, nullptr, "Fatal: OH_AudioEncoder_CreateByName");
     cbEnc_.onError = AencAsyncError;
     cbEnc_.onStreamChanged = AencAsyncStreamChanged;

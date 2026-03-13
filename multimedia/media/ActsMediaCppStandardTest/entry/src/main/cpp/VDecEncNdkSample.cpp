@@ -17,6 +17,7 @@
  * helpers. */
 #include "include/VDecEncNdkSample.h"
 #include <multimedia/player_framework/native_avmemory.h>
+#include <vector>
 
 using namespace OHOS;
 using namespace OHOS::Media;
@@ -243,8 +244,9 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoDecoderByMime(std::string mimety
         cout << "mimetype == 'video/avc'" << endl;
         vdec_ = OH_VideoDecoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
     } else {
-        const std::string mimeCopy(mimetype);
-        vdec_ = OH_VideoDecoder_CreateByMime(mimeCopy.c_str());
+        std::vector<char> mimeBuf(mimetype.begin(), mimetype.end());
+        mimeBuf.push_back('\0');
+        vdec_ = OH_VideoDecoder_CreateByMime(mimeBuf.data());
     }
     NDK_CHECK_AND_RETURN_RET_LOG(vdec_ != nullptr, nullptr, "Fatal: OH_VideoDecoder_CreateByMime");
     if (vcodecSignal_ == nullptr) {
@@ -262,8 +264,9 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoDecoderByMime(std::string mimety
 
 struct OH_AVCodec* VDecEncNdkSample::CreateVideoDecoderByName(std::string name)
 {
-    const std::string nameCopy(name);
-    vdec_ = OH_VideoDecoder_CreateByName(nameCopy.c_str());
+    std::vector<char> nameBuf(name.begin(), name.end());
+    nameBuf.push_back('\0');
+    vdec_ = OH_VideoDecoder_CreateByName(nameBuf.data());
     NDK_CHECK_AND_RETURN_RET_LOG(vdec_ != nullptr, nullptr, "Fatal: OH_VideoDecoder_CreateByName");
     if (vcodecSignal_ == nullptr) {
         vcodecSignal_ = new VDecEncSignal();
@@ -572,8 +575,9 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoEncoderByMime(std::string mimety
     if (mimetype == "video/avc") {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
     } else {
-        const std::string mimeCopy(mimetype);
-        venc_ = OH_VideoEncoder_CreateByMime(mimeCopy.c_str());
+        std::vector<char> mimeBuf(mimetype.begin(), mimetype.end());
+        mimeBuf.push_back('\0');
+        venc_ = OH_VideoEncoder_CreateByMime(mimeBuf.data());
     }
     NDK_CHECK_AND_RETURN_RET_LOG(venc_ != nullptr, nullptr, "Fatal: OH_VideoEncoder_CreateByMime");
 
@@ -591,8 +595,9 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoEncoderByMime(std::string mimety
 
 struct OH_AVCodec* VDecEncNdkSample::CreateVideoEncoderByName(std::string name)
 {
-    const std::string nameCopy(name);
-    venc_ = OH_VideoEncoder_CreateByName(nameCopy.c_str());
+    std::vector<char> nameBuf(name.begin(), name.end());
+    nameBuf.push_back('\0');
+    venc_ = OH_VideoEncoder_CreateByName(nameBuf.data());
     NDK_CHECK_AND_RETURN_RET_LOG(venc_ != nullptr, nullptr, "Fatal: OH_VideoEncoder_CreateByName");
 
     if (vcodecSignal_ == nullptr) {
@@ -739,8 +744,9 @@ int32_t VDecEncNdkSample::WriteToFile()
         cout << "getOutPut Buffer fail" << endl;
         return AV_ERR_INVALID_VAL;
     }
-    const std::string path(outFile_);
-    FILE* outFile = fopen(path.c_str(), "a");
+    std::vector<char> pathBuf(outFile_.begin(), outFile_.end());
+    pathBuf.push_back('\0');
+    FILE* outFile = fopen(pathBuf.data(), "a");
     if (outFile == nullptr) {
         cout << "dump data fail" << endl;
         return AV_ERR_INVALID_VAL;
