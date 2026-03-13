@@ -46,9 +46,9 @@ export default function promiseThenTest() {
      * @tc.desc Test the fulfillment value when then() callback returns a normal value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve(10).then((value: int) => value * 2);
       expect(20).assertEqual(result);
     });
@@ -59,9 +59,9 @@ export default function promiseThenTest() {
      * @tc.desc Test the rejection reason when then() callback throws an error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
         await Promise.resolve().then(() => {
           throw new Error('callback error');
@@ -77,9 +77,9 @@ export default function promiseThenTest() {
      * @tc.desc Test the inherited value when then() callback returns a resolved Promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve(5).then(() => Promise.resolve('resolved'));
       expect('resolved').assertEqual(result);
     });
@@ -90,9 +90,9 @@ export default function promiseThenTest() {
      * @tc.desc Test parameter passing in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve(2)
         .then(value => value + 3)
         .then((value: int) => value * 4);
@@ -105,9 +105,9 @@ export default function promiseThenTest() {
      * @tc.desc Test state propagation when onFulfilled is omitted
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve('propagated value').then(undefined).then(value => value + ' processed');
       expect('propagated value processed').assertEqual(result);
     });
@@ -118,9 +118,9 @@ export default function promiseThenTest() {
      * @tc.desc Test independent execution when calling then() multiple times on the same Promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const basePromise = Promise.resolve(100);
       const result1 = await basePromise.then(value => value + 10);
       const result2 = await basePromise.then((value: int) => value * 2);
@@ -135,9 +135,9 @@ export default function promiseThenTest() {
      * @tc.desc Test state waiting when then() callback returns a pending Promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const pendingPromise = new Promise<number>((resolve) => {
         setTimeout(() => resolve(300), 150);
       });
@@ -151,9 +151,9 @@ export default function promiseThenTest() {
      * @tc.desc Test fulfillment result when then() callback returns a boolean value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve('valid').then(() => true);
       expect(true).assertEqual(result);
     });
@@ -164,9 +164,9 @@ export default function promiseThenTest() {
      * @tc.desc Test element access when then() callback returns an array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve().then(() => [10, 20, 30]);
       expect(10).assertEqual(result[0]);
       expect(30).assertEqual(result[2]);
@@ -178,9 +178,9 @@ export default function promiseThenTest() {
      * @tc.desc Test array processing in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve([1, 2, 3])
         .then(arr => arr.map((item: int) => item * 2))
         .then(arr => arr.filter(item => item > 3));
@@ -193,9 +193,9 @@ export default function promiseThenTest() {
      * @tc.desc Test sequential execution of asynchronous operations in then() callback
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let log = '';
       await Promise.resolve()
         .then(() => {
@@ -217,9 +217,9 @@ export default function promiseThenTest() {
      * @tc.desc Test chain propagation of resolved Promises returned by then() callback
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve(1)
         .then(() => Promise.resolve(2))
         .then(value => value + 3)
@@ -233,9 +233,9 @@ export default function promiseThenTest() {
      * @tc.desc Test execution order of nested then() in then() callback
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: int[] = [];
       await Promise.resolve(1)
         .then(value => {
@@ -257,9 +257,9 @@ export default function promiseThenTest() {
      * @tc.desc Test fulfillment result when then() callback returns 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve(false).then(() => 0);
       expect(0).assertEqual(result);
     });
@@ -270,9 +270,9 @@ export default function promiseThenTest() {
      * @tc.desc Test mathematical operation propagation in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve(10.0)
         .then((v: number) => v - 3)
         .then((v: number) => v / 2.0)
@@ -286,9 +286,9 @@ export default function promiseThenTest() {
      * @tc.desc Test fulfillment result when then() callback returns an empty string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve('old').then(() => '');
       expect('').assertEqual(result);
     });
@@ -299,9 +299,9 @@ export default function promiseThenTest() {
      * @tc.desc Test string concatenation in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve('Hello')
         .then(str => str + ' ')
         .then(str => str + 'World')
@@ -315,9 +315,9 @@ export default function promiseThenTest() {
      * @tc.desc Test side effects of modifying external variables in then() callback
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let externalVar: int = 10;
       await Promise.resolve().then(() => {
         externalVar = 20;
@@ -331,9 +331,9 @@ export default function promiseThenTest() {
      * @tc.desc Test combination of side effects and return values in then() chain calls
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let sideEffect: int = 0;
       const result = await Promise.resolve(3)
         .then((v: int) => {
@@ -355,9 +355,9 @@ export default function promiseThenTest() {
      * @tc.desc then chain handles sequential async operations correctly
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let sequence = '';
 
       await Promise.resolve()
@@ -386,9 +386,9 @@ export default function promiseThenTest() {
      * @tc.desc onRejected throws error propagates to next rejection handler
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let finalErr = '';
 
       await Promise.reject(new Error('first error'))
@@ -411,9 +411,9 @@ export default function promiseThenTest() {
      * @tc.desc then returns pending Promise when callback returns pending Promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let isPending = true;
       const pendingPromise = new Promise<int>((resolve) => {
         setTimeout(() => resolve(450), 100);
@@ -440,9 +440,9 @@ export default function promiseThenTest() {
      * @tc.desc then callback with boolean return value works correctly
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const promise1 = Promise.resolve(10 > 5).then(value => value);
       const promise2 = Promise.resolve(3 < 1).then(value => !value);
 
@@ -459,9 +459,9 @@ export default function promiseThenTest() {
      * @tc.desc empty onFulfilled callback results in undefined fulfillment
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve('has value').then(() => undefined);
       expect(result).assertEqual(undefined);
     });
@@ -472,9 +472,9 @@ export default function promiseThenTest() {
      * @tc.desc then chain propagates resolved Promise value correctly
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve(5)
         .then((v: int) => Promise.resolve(v * 4))
         .then(v => v + 10)
@@ -489,9 +489,9 @@ export default function promiseThenTest() {
      * @tc.desc onRejected is not called for fulfilled Promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let rejectCalled = false;
 
       await Promise.resolve('success').then(
@@ -511,9 +511,9 @@ export default function promiseThenTest() {
      * @tc.desc then callback modifies array and returns new array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve([1, 2, 3, 4])
         .then(arr => arr.filter(item => item % 2 === 0))
         .then(arr => arr.map((item: int) => item * 3));
@@ -527,9 +527,9 @@ export default function promiseThenTest() {
      * @tc.desc then callback receives rejection reason for rejected Promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const testError = new Error('custom error');
       let receivedReason = new Error('init error');
 
@@ -551,9 +551,9 @@ export default function promiseThenTest() {
      * @tc.desc then chain with mixed sync and async callbacks works sequentially
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const log: string[] = [];
 
       await Promise.resolve()
@@ -585,9 +585,9 @@ export default function promiseThenTest() {
      * @tc.desc then chain handles nested Promise resolution correctly
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result = await Promise.resolve(10.0)
         .then((v: number) => Promise.resolve(Promise.resolve(v * 3)))
         .then(v => Promise.resolve(v + 15))
@@ -602,9 +602,9 @@ export default function promiseThenTest() {
      * @tc.desc then returns new Promise even when callback returns undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseThenTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseThenTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const returnedPromise = Promise.resolve('test').then(() => undefined);
 
       expect(returnedPromise instanceof Promise).assertEqual(true);

@@ -54,7 +54,7 @@ export default function taskPoolTaskExecuteDelayedTest() {
      * @tc.desc test GenericsTask
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskExecuteDelayed1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

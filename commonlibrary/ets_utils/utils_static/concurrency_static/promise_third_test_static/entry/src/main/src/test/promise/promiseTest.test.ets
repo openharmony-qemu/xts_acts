@@ -1219,7 +1219,7 @@ export default function promiseTest(){
      * @tc.desc Deeply nested promises with value propagation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise: Promise<Promise<Promise<number>>> = new Promise<Promise<Promise<number>>>((resolve) => {
@@ -1240,7 +1240,7 @@ export default function promiseTest(){
      * @tc.desc Nested async functions with promise returns
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const outerAsync = async (): Promise<number> => {
@@ -1268,7 +1268,7 @@ export default function promiseTest(){
      * @tc.desc Error propagation through nested async functions
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const errorMsg: string = 'deep error';
@@ -1305,7 +1305,7 @@ export default function promiseTest(){
      * @tc.desc Mixed promise chaining with nested async operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const process = async (value: number): Promise<number> => {
@@ -1333,7 +1333,7 @@ export default function promiseTest(){
      * @tc.desc Nested error handling with multiple catch layers
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise = new Promise<string>((resolve, reject) => {
@@ -1363,7 +1363,7 @@ export default function promiseTest(){
      * @tc.desc Nested promises with different resolution times
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const startTime: number = Date.now();
@@ -1389,7 +1389,7 @@ export default function promiseTest(){
      * @tc.desc Deeply nested async functions with error recovery
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const level3 = async (): Promise<number> => {
@@ -1424,7 +1424,7 @@ export default function promiseTest(){
      * @tc.desc Nested promises with value transformation at each level
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise: Promise<string> = new Promise<number>((resolve) => {
@@ -1449,7 +1449,7 @@ export default function promiseTest(){
      * @tc.desc Async IIFE within promise executor
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise: Promise<number> = new Promise<number>( (resolve) => {
@@ -1474,7 +1474,7 @@ export default function promiseTest(){
      * @tc.desc Execution order with nested promises and sync code
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
@@ -1502,7 +1502,7 @@ export default function promiseTest(){
      * @tc.desc Nested promise resolution order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const order: number[] = [];
@@ -1533,7 +1533,7 @@ export default function promiseTest(){
      * @tc.desc Parallel nested promises with ordered results
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const createPromise = (id: number, delay: int): Promise<number> => {
@@ -1560,7 +1560,7 @@ export default function promiseTest(){
      * @tc.desc Nested async functions with log ordering
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
@@ -1598,7 +1598,7 @@ export default function promiseTest(){
      * @tc.desc Error handling order in nested promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
@@ -1635,7 +1635,7 @@ export default function promiseTest(){
      * @tc.desc Multiple nested then calls with transformations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise: Promise<number[]> = new Promise<number>((resolve) => {
@@ -1660,7 +1660,7 @@ export default function promiseTest(){
      * @tc.desc Async function chain with array processing
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const fetchItems = async (): Promise<int[]> => {
@@ -1700,7 +1700,7 @@ export default function promiseTest(){
      * @tc.desc Nested promises with array aggregation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise: Promise<int[]> = new Promise<int>((resolve) => {
@@ -1725,7 +1725,7 @@ export default function promiseTest(){
      * @tc.desc Parallel async operations with ordered results
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const operations = [
@@ -1748,7 +1748,7 @@ export default function promiseTest(){
      * @tc.desc Nested error logging with multiple catch blocks
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const errorLog: string[] = [];
@@ -1778,7 +1778,7 @@ export default function promiseTest(){
      * @tc.desc Nested promises with array transformation pipeline
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise: Promise<string[]> = new Promise<number[]>((resolve) => {
@@ -1805,7 +1805,7 @@ export default function promiseTest(){
      * @tc.desc Async function with nested parallel operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const asyncTask = async (id: int, delay: int): Promise<int> => {
@@ -1839,7 +1839,7 @@ export default function promiseTest(){
      * @tc.desc Deeply nested promises with final array aggregation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const promise: Promise<number[]> = new Promise<number>((resolve) => {

@@ -802,7 +802,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest028';
         console.info(`${TAG} test start`);
@@ -840,7 +840,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest029';
         console.info(`${TAG} test start`);
@@ -883,7 +883,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest030';
         console.info(`${TAG} test start`);
@@ -919,7 +919,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest031';
         console.info(`${TAG} test start`);
@@ -963,7 +963,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest032';
         console.info(`${TAG} test start`);
@@ -1000,7 +1000,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest033';
         console.info(`${TAG} test start`);
@@ -1049,7 +1049,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest034';
         console.info(`${TAG} test start`);
@@ -1091,7 +1091,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest035';
         console.info(`${TAG} test start`);
@@ -1144,7 +1144,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest036';
         console.info(`${TAG} test start`);
@@ -1176,7 +1176,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest037';
         console.info(`${TAG} test start`);
@@ -1211,7 +1211,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest038';
         console.info(`${TAG} test start`);
@@ -1246,7 +1246,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest039';
         console.info(`${TAG} test start`);
@@ -1282,7 +1282,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest040';
         console.info(`${TAG} test start`);
@@ -1314,7 +1314,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest041';
         console.info(`${TAG} test start`);
@@ -1350,7 +1350,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest042';
         console.info(`${TAG} test start`);
@@ -1387,7 +1387,7 @@ export default function PromiseTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('PromiseTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'PromiseTest043';
         console.info(`${TAG} test start`);
