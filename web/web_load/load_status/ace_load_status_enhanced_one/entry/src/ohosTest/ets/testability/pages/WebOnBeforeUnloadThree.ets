@@ -69,6 +69,8 @@ struct webOnBeforeUnloadThree {
             this.isShowPromptConfirm = false;
             this.isSearchEnd = false;
             this.searchTotalNumber = -1;
+            this.controller.clearHistory();
+            this.controller.removeCache(true);
             switch (this.emitKey) {
               case 'emitOnBeforeUnloadHandlePromptConfirm': {
                 try {

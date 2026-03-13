@@ -98,7 +98,7 @@ export default function ClientAuthenticationHandlerFiveTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.registerBaseEvent('testClientAuthenticationHandlerCancel001', '443', 26031042, ()=>{isReturn+= 1},
+      Utils.registerBaseEvent('testClientAuthenticationHandlerCancel001', 443, 26031042, ()=>{isReturn+= 1},
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

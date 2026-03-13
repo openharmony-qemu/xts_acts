@@ -93,7 +93,7 @@ export default function ClientAuthenticationHandlerSixTest() {
      */
     it('testClientAuthenticationHandlerIgnore001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerIgnore001', EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent('testClientAuthenticationHandlerIgnore001', 1, 26031042, done,
+      Utils.registerBaseEvent('testClientAuthenticationHandlerIgnore001', 1, 26031046, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

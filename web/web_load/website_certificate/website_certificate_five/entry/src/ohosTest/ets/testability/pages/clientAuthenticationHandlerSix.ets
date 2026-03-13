@@ -71,7 +71,7 @@ struct ClientAuthenticationHandlerFiveTest {
                 await Utils.waitForExist(()=>this.isPageEnd, this.str, 1, 1000);
                 this.controller.searchAllAsync('SSL');
                 await Utils.waitForExist(()=>this.isSearchEnd, this.str, true, 1000);
-                Utils.emitEvent(this.searchTotalNumber, 26031042);
+                Utils.emitEvent(this.searchTotalNumber, 26031046);
               } catch (error) {
                 console.log(this.str + 'errorInfo==>' + error.toString());
               }
