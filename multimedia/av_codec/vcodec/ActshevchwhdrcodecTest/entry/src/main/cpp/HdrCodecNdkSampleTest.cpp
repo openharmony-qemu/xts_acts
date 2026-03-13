@@ -484,9 +484,8 @@ int32_t HDRCodecNdkSample::SendDataAvc(OH_AVCodec *codec, uint32_t index, OH_AVM
         OH_VideoDecoder_PushInputData(codec, index, attr);
         return 1;
     }
-    uint32_t bufferSize = (static_cast<uint32_t>(ch[3] & 0xFF)) | (static_cast<uint32_t>(
-        ch[2] & 0xFF) << 8) | (static_cast<uint32_t>(ch[1] & 0xFF) << 16) |
-                      (static_cast<uint32_t>(ch[0] & 0xFF) << 24);
+    uint32_t bufferSize = (static_cast<uint32_t>(ch[3] & 0xFF)) | (static_cast<uint32_t>(ch[2] & 0xFF
+    ) << 8) | (static_cast<uint32_t>(ch[1] & 0xFF) << 16) | (static_cast<uint32_t>(ch[0] & 0xFF) << 24);
     uint8_t *fileBuffer = new uint8_t[bufferSize + START_CODE_SIZE];
     if (fileBuffer == nullptr) {
         cout << "Fatal: memory allocation failed" << endl;
