@@ -145,7 +145,7 @@ int VIDEO_HW_ENCODE_SQR_FUNC_003()
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;//1920
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
