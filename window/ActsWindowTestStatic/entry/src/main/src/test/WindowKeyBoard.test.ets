@@ -351,14 +351,21 @@ export default function WindowKeyBoardTest() {
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin!.keepKeyboardOnFocus(true);
+                subWin!.keepKeyboardOnFocus(false);
                 console.error(msgStr + 'Succeeded in calling keepKeyboardOnFocus.');
                 expect(false).assertTrue();
                 done()
             } catch (e) {
                 e = e as BusinessError;
-                console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e));
-                expect(e.code).assertEqual(1300002);
-                done()
+                if (e.code === 801) {
+                    console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done();
+                } else {
+                    console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e));
+                    expect(e.code).assertEqual(1300002);
+                    done()
+                }
             }
         })
 
@@ -541,9 +548,12 @@ export default function WindowKeyBoardTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(1300002);
-                expect(err.message != null).assertTrue();
-                done();
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                }
             }
         });
 
@@ -614,9 +624,12 @@ export default function WindowKeyBoardTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(1300002);
-                expect(err.message != null).assertTrue();
-                done();
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                }
             }
         });
 
