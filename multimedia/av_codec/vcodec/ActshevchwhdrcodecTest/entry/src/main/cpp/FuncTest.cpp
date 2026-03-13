@@ -1,0 +1,229 @@
+/*
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <string>
+#include <include/FuncTest.h>
+#include <include/HdrCodecNdkSampleTest.h>
+#include <multimedia/player_framework/native_averrors.h>
+#include <multimedia/player_framework/native_avcodec_base.h>
+#include <multimedia/player_framework/native_avcapability.h>
+#include <multimedia/player_framework/native_avcodec_videodecoder.h>
+
+using namespace std;
+using namespace OHOS;
+using namespace OHOS::Media;
+namespace OHOS {
+namespace Media {
+class HDRFuncNdkTest {
+public:
+    static void SetUpTestCase(void);
+    static void TearDownTestCase(void);
+    void SetUp(void);
+    void TearDown(void);
+};
+namespace {
+    static OH_AVCapability *cap_h263 = nullptr;
+    static string g_codecName263 = "";
+    static OH_AVCapability *cap_h264 = nullptr;
+    static string g_codecName264 = "";
+    static OH_AVCapability *cap_mpeg2 = nullptr;
+    static string g_codecNameMpeg2 = "";
+    static OH_AVCapability *cap_mpeg4 = nullptr;
+    static string g_codecNameMpeg4 = "";
+    static OH_AVCapability *cap_sw265 = nullptr;
+    static string g_codecNameSw265 = "";
+    static OH_AVCapability *cap_h265 = nullptr;
+    static string g_codecNameHw265 = "";
+}
+void HDRFuncNdkTest::TearDownTestCase() {}
+void HDRFuncNdkTest::SetUp() {}
+void HDRFuncNdkTest::TearDown() {}
+} // namespace Media
+} // namespace OHOS
+namespace OHOS {
+namespace Media {
+
+
+/**
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_009
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_009
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+int DEMUXER_DEC_ENC_MUXER_FUNC_009()
+{
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_h263)) {
+        shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
+        sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
+        const char *file = "/data/storage/el2/base/haps/entry_test/files/h263_aac.mp4";
+        sample->DEMUXER_FLAG = true;
+        sample->bframe = true;
+        sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
+        if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecName263, g_codecNameHw265)) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->Configure()) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->StartDemuxer()) {
+            return -1;
+        }
+        sample->WaitForEos();
+        if (sample->errorCount != 0) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+/**
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_010
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+int DEMUXER_DEC_ENC_MUXER_FUNC_010()
+{
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_mpeg2)) {
+        shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
+        sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
+        const char *file = "/data/storage/el2/base/haps/entry_test/files/mpeg2.mp4";
+        sample->DEMUXER_FLAG = true;
+        sample->bframe = true;
+        sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
+        if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameMpeg2, g_codecNameHw265)) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->Configure()) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->StartDemuxer()) {
+            return -1;
+        }
+        sample->WaitForEos();
+        if (sample->errorCount != 0) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+/**
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_011
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_011
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+int DEMUXER_DEC_ENC_MUXER_FUNC_011()
+{
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_mpeg4)) {
+        shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
+        sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
+        const char *file = "/data/storage/el2/base/haps/entry_test/files/mpeg4_1280x720_30.mp4";
+        sample->DEMUXER_FLAG = true;
+        sample->bframe = true;
+        sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
+        if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameMpeg4, g_codecNameHw265)) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->Configure()) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->StartDemuxer()) {
+            return -1;
+        }
+        sample->WaitForEos();
+        if (sample->errorCount != 0) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+/**
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_012
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_012
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+int DEMUXER_DEC_ENC_MUXER_FUNC_012()
+{
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_h264)) {
+        shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
+        sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
+        const char *file = "/data/storage/el2/base/haps/entry_test/files/h264_mp3_960x544_30r.mp4";
+        sample->DEMUXER_FLAG = true;
+        sample->bframe = true;
+        sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
+        if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecName264, g_codecNameHw265)) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->Configure()) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->StartDemuxer()) {
+            return -1;
+        }
+        sample->WaitForEos();
+        if (sample->errorCount != 0) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+/**
+ * @tc.name   DEMUXER_DEC_ENC_MUXER_FUNC_013
+ * @tc.number DEMUXER_DEC_ENC_MUXER_FUNC_013
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+int DEMUXER_DEC_ENC_MUXER_FUNC_013()
+{
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_sw265)) {
+        shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
+        sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
+        const char *file = "/data/storage/el2/base/haps/entry_test/files/VID_720.mp4";
+        sample->DEMUXER_FLAG = true;
+        sample->bframe = true;
+        sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
+        if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameSw265, g_codecNameHw265)) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->Configure()) {
+            return -1;
+        }
+        if (AV_ERR_OK != sample->StartDemuxer()) {
+            return -1;
+        }
+        sample->WaitForEos();
+        if (sample->errorCount != 0) {
+            return -1;
+        }
+    }
+    return 0;
+}
+}
+} // namespace
