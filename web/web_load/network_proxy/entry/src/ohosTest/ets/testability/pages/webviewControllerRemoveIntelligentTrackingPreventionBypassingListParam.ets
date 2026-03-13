@@ -133,7 +133,13 @@ struct Index {
               } catch (error) {
                 let e: BusinessError = error as BusinessError;
                 console.error(this.str + `ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(false, 178840);
+                if (e.code == 801) {
+                  Utils.emitEvent(true, 178840);
+                } else if (e.code == 401) {
+                  Utils.emitEvent(false, 178840);
+                } else {
+                  Utils.emitEvent(false, 178840);
+                }
               }
               break;
             }
