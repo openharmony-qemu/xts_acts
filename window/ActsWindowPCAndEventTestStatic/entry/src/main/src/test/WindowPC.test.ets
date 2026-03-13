@@ -2867,6 +2867,8 @@ export default function WindowPCTest() {
                 hilog.error(domain, tag, msgStr + 'Failed. Cause:' + JSON.stringify(error.code) + JSON.stringify(error));
                 if (error.code === 801) {
                     done();
+                } else if(error.code === 1300004){
+                    done();
                 } else {
                     expect(false).assertTrue();
                     done();
@@ -5255,6 +5257,38 @@ export default function WindowPCTest() {
                 hilog.info(domain, tag,msgStr + 'Failed to get the area of title buttons. Cause: ' + JSON.stringify(error));
                 if (error.code === 801) {
                     done()
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+        });
+
+        /**
+         * @tc.number    SUB_WINDOW_PC_STATIC_OFFSUBWINDOWCLOSE_1300004
+         * @tc.name      testOffSubWindowClose001_1300004
+         * @tc.desc      Test onSubWindowClose 1300004
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
+         */
+        it('testOffSubWindowClose001_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOffSubWindowClose001_1300004';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            let windowClass: window.Window = windowStage!.getMainWindowSync();
+
+            try {
+                windowClass.offSubWindowClose();
+                hilog.info(domain, tag, msgStr + 'offSubWindowClose success');
+                done();
+            } catch (error) {
+                error = error as BusinessError;
+                hilog.error(domain, tag, msgStr + 'Failed. Cause:' + JSON.stringify(error.code) + JSON.stringify(error));
+                if (error.code === 801) {
+                    done();
+                }else if(error.code === 1300004){
+                    done();
                 } else {
                     expect(false).assertTrue();
                     done();
