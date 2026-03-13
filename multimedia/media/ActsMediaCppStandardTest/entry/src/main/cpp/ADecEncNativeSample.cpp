@@ -18,6 +18,7 @@
  * NAPI_* macros in this file denote native API check-and-return helpers (see NapiTestLogTest.h).
  */
 #include "include/ADecEncNativeSample.h"
+#include <chrono>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avmemory.h>
@@ -425,13 +426,14 @@ int32_t ADecEncNativeSample::PushInbufferDec(uint32_t index, uint32_t bufferSize
 
 void ADecEncNativeSample::InputFuncDec()
 {
-    /* G.CTL.03: loop exits via break when !isDecRunning_, EOF, or memcpy error. */
-    while (true) {
-        if (!isDecRunning_.load()) {
-            break;
-        }
+    while (isDecRunning_.load()) {
         unique_lock<mutex> lock(acodecSignal_->inMutexDec_);
-        acodecSignal_->inCondDec_.wait(lock, [this]() { return acodecSignal_->inQueueDec_.size() > 0; });
+        bool woke = acodecSignal_->inCondDec_.wait_for(lock, std::chrono::seconds(1), [this]() {
+            return acodecSignal_->inQueueDec_.size() > 0 || !isDecRunning_.load();
+        });
+        if (!woke) {
+            break; /* G.CTL.03: timeout, exit to avoid permanent block */
+        }
         if (!isDecRunning_.load()) {
             break;
         }
@@ -713,17 +715,16 @@ int32_t ADecEncNativeSample::PushInbufferEnc()
 
 void ADecEncNativeSample::InputFuncEnc()
 {
-    /* G.CTL.03: loop exits via break when !isEncRunning_. */
-    while (true) {
+    while (isEncRunning_.load()) {
         cout << "DEC enter InputFuncEnc()" << endl;
-        if (!isEncRunning_.load()) {
-            break;
-        }
         unique_lock<mutex> lock(acodecSignal_->inMutexEnc_);
-        acodecSignal_->inCondEnc_.wait(lock, [this]() {
-            return (acodecSignal_->inQueueEnc_.size() > 0 && acodecSignal_->outQueueDec_.size() > 0);
+        bool woke = acodecSignal_->inCondEnc_.wait_for(lock, std::chrono::seconds(1), [this]() {
+            return (acodecSignal_->inQueueEnc_.size() > 0 && acodecSignal_->outQueueDec_.size() > 0) ||
+                   !isEncRunning_.load();
         });
-
+        if (!woke) {
+            break; /* G.CTL.03: timeout, exit to avoid permanent block */
+        }
         if (!isEncRunning_.load()) {
             break;
         }

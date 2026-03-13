@@ -16,6 +16,7 @@
 /** @file Video decode/encode sample implementation (native media API). NAPI_* macros denote native API check-and-return
  * helpers. */
 #include "include/VDecEncNativeSample.h"
+#include <chrono>
 #include <multimedia/player_framework/native_avmemory.h>
 #include <vector>
 
@@ -451,13 +452,15 @@ int32_t VDecEncNativeSample::PushInbufferDec(uint32_t index, uint32_t bufferSize
 
 void VDecEncNativeSample::InputFuncDec()
 {
-    while (true) {
+    while (isDecRunning_.load()) {
         cout << "ENTER DEC IN" << endl;
-        if (!isDecRunning_.load()) {
-            break;
-        }
         unique_lock<mutex> lock(vcodecSignal_->inMutexDec_);
-        vcodecSignal_->inCondDec_.wait(lock, [this]() { return vcodecSignal_->inQueueDec_.size() > 0; });
+        bool woke = vcodecSignal_->inCondDec_.wait_for(lock, std::chrono::seconds(1), [this]() {
+            return vcodecSignal_->inQueueDec_.size() > 0 || !isDecRunning_.load();
+        });
+        if (!woke) {
+            break; /* G.CTL.03: timeout, exit to avoid permanent block */
+        }
         if (!isDecRunning_.load()) {
             break;
         }
@@ -530,13 +533,14 @@ void VDecEncNativeSample::SendEncEos()
 
 void VDecEncNativeSample::OutputFuncDec()
 {
-    /* G.CTL.03: loop exits via break when !isDecRunning_. */
-    while (true) {
-        if (!isDecRunning_.load()) {
-            break;
-        }
+    while (isDecRunning_.load()) {
         unique_lock<mutex> lock(vcodecSignal_->outMutexDec_);
-        vcodecSignal_->outCondDec_.wait(lock, [this]() { return vcodecSignal_->outQueueDec_.size() > 0; });
+        bool woke = vcodecSignal_->outCondDec_.wait_for(lock, std::chrono::seconds(1), [this]() {
+            return vcodecSignal_->outQueueDec_.size() > 0 || !isDecRunning_.load();
+        });
+        if (!woke) {
+            break; /* G.CTL.03: timeout, exit to avoid permanent block */
+        }
         if (!isDecRunning_.load()) {
             break;
         }
@@ -759,12 +763,14 @@ int32_t VDecEncNativeSample::WriteToFile()
 
 void VDecEncNativeSample::OutputFuncEnc()
 {
-    while (true) {
-        if (!isEncRunning_.load()) {
-            break;
-        }
+    while (isEncRunning_.load()) {
         unique_lock<mutex> lock(vcodecSignal_->outMutexEnc_);
-        vcodecSignal_->outCondEnc_.wait(lock, [this]() { return vcodecSignal_->outQueueEnc_.size() > 0; });
+        bool woke = vcodecSignal_->outCondEnc_.wait_for(lock, std::chrono::seconds(1), [this]() {
+            return vcodecSignal_->outQueueEnc_.size() > 0 || !isEncRunning_.load();
+        });
+        if (!woke) {
+            break; /* G.CTL.03: timeout, exit to avoid permanent block */
+        }
         if (!isEncRunning_.load()) {
             break;
         }

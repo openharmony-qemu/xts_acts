@@ -29,6 +29,5 @@ target_link_libraries(mediacppstandard_test PUBLIC
     libnative_media_aenc.so
     libnative_media_vdec.so
     libnative_media_venc.so
-    libdeviceinfo_ndk.z.so
     libnative_window.so)
 
