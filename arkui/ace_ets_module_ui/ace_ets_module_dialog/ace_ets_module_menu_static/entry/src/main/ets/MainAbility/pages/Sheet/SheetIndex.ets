@@ -29,9 +29,7 @@ import {
   FlexAlign,
   SheetType,
   SheetKeyboardAvoidMode,
-  ModalTransition,
-  ContentTransitionEffect,
-  MenuKeyboardAvoidMode
+  ModalTransition
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';

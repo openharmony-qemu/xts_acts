@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-'use static'
+'use static';
 
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import router from '@ohos.router';
