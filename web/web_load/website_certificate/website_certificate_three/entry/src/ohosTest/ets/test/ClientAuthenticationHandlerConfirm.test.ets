@@ -92,7 +92,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters01', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters01', 'no_error', 26031301, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -108,7 +108,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters02', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters02', 'no_error', 26031302, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -124,7 +124,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters03', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters03', -110, 26031303, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -140,7 +140,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters04',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters04',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters04', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters04', 'no_error', 26031304, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -156,7 +156,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters05',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters05',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters05', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters05', 'no_error', 26031305, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -172,7 +172,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters06',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters06',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters06', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters06', -110, 26031306, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -188,7 +188,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters07',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters07',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters07', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters07', 'no_error', 26031307, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -204,7 +204,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters08',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters08',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters08', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters08', 'no_error', 26031308, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -220,7 +220,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters09',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters09',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters09', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters09', -110, 26031309, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -236,7 +236,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters10',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters10',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters10', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters10', 'no_error', 26031310, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -252,7 +252,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters11',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters11',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters11', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters11', 'no_error', 26031311, done,
         (backData: events_emitter.EventData, expected: Object) => {
@@ -268,7 +268,7 @@ export default function ClientAuthenticationHandlerConfirmTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testClientAuthenticationHandlerConfirmParameters12',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+    it('testClientAuthenticationHandlerConfirmParameters12',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async  (done: Function) =>{
       Utils.emitEvent('emitClientAuthenticationHandlerConfirmParameters12', EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent('testClientAuthenticationHandlerConfirmParameters12', -110, 26031312, done,
         (backData: events_emitter.EventData, expected: Object) => {
