@@ -242,6 +242,7 @@ export default function saveComponentStaticTest() {
       expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('16.00vp');
       expect(obj.getElement('$attrs').getInteger('fontStyle')).assertEqual(0);
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
+      expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual('HarmonyOS Sans');
       expect(obj.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFFFF');
       expect(obj.getElement('$attrs').getString('iconColor')).assertEqual('#FFFFFFFF');
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF007DFF');
@@ -821,6 +822,731 @@ export default function saveComponentStaticTest() {
       let strJson: string = inspector.getInspectorByKey('keySave');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bolder');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_1100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_1100
+     * @tc.desc   Test SecurityComponent BorderStyle is Dotted , borderWidth , borderColor , borderRadius attribute is normal and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_1100';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dotted,
+          'borderWid': 5,
+          'borderCol': '#ffffffff',
+          'borderRad': 5,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('borderStyle')).assertEqual(2);
+      expect(obj.getElement('$attrs').getString('borderWidth')).assertEqual('5.00vp');
+      expect(obj.getElement('$attrs').getString('borderColor')).assertEqual('#FFFFFFFF');
+      expect(obj.getElement('$attrs').getString('borderRadius')).assertEqual('5.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_1200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_1200
+     * @tc.desc   Test SecurityComponent BorderStyle attribute is Dashed and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_1200';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 5,
+          'borderCol': '#ffffffff',
+          'borderRad': 5,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('borderStyle')).assertEqual(1);
+      expect(obj.getElement('$attrs').getString('borderWidth')).assertEqual('5.00vp');
+      expect(obj.getElement('$attrs').getString('borderColor')).assertEqual('#FFFFFFFF');
+      expect(obj.getElement('$attrs').getString('borderRadius')).assertEqual('5.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_1300
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_1300
+     * @tc.desc   Test SecurityComponent BorderStyle attribute is Solid and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_1300';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Solid,
+          'borderWid': 5,
+          'borderCol': '#ffffffff',
+          'borderRad': 5,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('borderStyle')).assertEqual(0);
+      expect(obj.getElement('$attrs').getString('borderWidth')).assertEqual('5.00vp');
+      expect(obj.getElement('$attrs').getString('borderColor')).assertEqual('#FFFFFFFF');
+      expect(obj.getElement('$attrs').getString('borderRadius')).assertEqual('5.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_1400
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_1400
+     * @tc.desc   Test SecurityComponent offset out of screen in right edge result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_1400';
+      console.info(`====>${TCNAME} START====`);
+      let positX: String = '0.00px';
+      gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
+      try{
+        let windowClass: window.Window | undefined = await window.getLastWindow(gContext);
+        if (windowClass) {
+          let properties: window.WindowProperties = windowClass.getWindowProperties();
+          console.info(`Succeeded in obtaining the window properties.width: ` + properties.windowRect.width);
+          let window_width: Int = properties.windowRect.width;
+          console.info(`====>${TCNAME} properties.windowRect.width is: ` + window_width);
+          positX = `${Math.trunc(window_width / 2).toFixed(2)}px`;
+        }
+      } catch (err){
+        err = err as BusinessError;
+        console.error('Failed to obtain the window properties.error.code: ' + err.code);
+      }
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': positX,
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getElement('position').getString('x')).assertEqual(positX);
+      await UtilsTest.msSleep(1000);
+      failCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_1500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_1500
+     * @tc.desc   Test SecurityComponent offset out of screen in left edge result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_1500';
+      console.info(`====>${TCNAME} START====`);
+      let positX: String = '0';
+      gContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
+      try {
+        let windowClass: window.Window | undefined = await window.getLastWindow(gContext);
+        if (windowClass) {
+          let properties: window.WindowProperties = windowClass.getWindowProperties();
+          console.info(`Succeeded in obtaining the window properties.width: ` + properties.windowRect.width);
+          let window_width: Int = properties.windowRect.width;
+          console.info(`====>${TCNAME} properties.windowRect.width is: ` + window_width);
+          positX = `-${Math.trunc(window_width / 2).toFixed(2)}px`;
+        }
+      } catch (err) {
+        err = err as BusinessError;
+        console.error('Failed to obtain the window properties.error.code: ' + err.code)
+      }
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': positX,
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getElement('position').getString('x')).assertEqual(positX);
+      await UtilsTest.msSleep(1000);
+      failCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_1700
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_1700
+     * @tc.desc   Test SecurityComponent iconColor attribute is too light result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_1700';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#10ff0000',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('iconColor')).assertEqual('#10FF0000');
+      await UtilsTest.msSleep(1000);
+      failCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_1800
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_1800
+     * @tc.desc   Test SecurityComponent buttonType is 0 , iconSize is 20.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_1800';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 20,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#fffa0050',
+          'bgColor': '#ffff0000',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('buttonType')).assertEqual(0);
+      expect(obj.getElement('$attrs').getString('iconSize')).assertEqual('20.00vp');
+      expect(obj.getElement('$attrs').getString('iconColor')).assertEqual('#FFFA0050');
+      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFF0000');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_1900
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_1900
+     * @tc.desc   Test SecurityComponent iconSize attribute is too small result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_1900';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 1,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 20,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('iconSize')).assertEqual('1.00vp');
+      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual('20.00vp');
+      await UtilsTest.msSleep(1000);
+      failCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_2000
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_2000
+     * @tc.desc   Test SecurityComponent iconColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_2000';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': Color.Transparent,
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('iconColor')).assertEqual('#00000000');
+      await UtilsTest.msSleep(1000);
+      failCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_2100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_2100
+     * @tc.desc   Test SecurityComponent fontColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_2100';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': Color.Transparent,
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('fontColor')).assertEqual('#00000000');
+      await UtilsTest.msSleep(1000);
+      failCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_Static_2200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_Static_2200
+     * @tc.desc   Test SecurityComponent backgroundColor attribute is transparent result in Authorization is failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_Static_2200';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': Color.Transparent,
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF000000');
       await UtilsTest.msSleep(1000);
       sucCallback(TCNAME, done);
       let driver = Driver.create();
