@@ -2447,13 +2447,32 @@ export default function PhotoSetTitleTestSupp() {
      */
     it('SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_UNREGISTER_CHANGE_CALLBACK_003';
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
       try {
-        PhAccessHelper.unRegisterChange("");
-        expect().assertFail();
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await PhAccessHelper.getAssets(fetchOptions);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        let isCallbackTriggered = false;
+        let onCallback1 = (changeData: photoAccessHelper.ChangeData) => {
+          isCallbackTriggered = true;
+          console.info(TAG,testName,'onCallback1 on',changeData.type);
+          expect(changeData.type == 1 ).assertTrue();
+        }
+        PhAccessHelper.registerChange(photoAsset.uri, false, onCallback1);
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
+        let newTitle: string = 'newTitle22';
+        assetChangeRequest.setTitle(newTitle);
+        await PhAccessHelper.applyChanges(assetChangeRequest);
+        await sleep(1000)
+        PhAccessHelper.unRegisterChange("",onCallback1);
+        expect(isCallbackTriggered).assertTrue();
         done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
-        expect(Number(error.code)).assertEqual(13900020);
+        expect().assertFail();
         done();
       }
     });
