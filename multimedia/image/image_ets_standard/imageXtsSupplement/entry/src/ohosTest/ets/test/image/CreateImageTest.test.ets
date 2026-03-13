@@ -243,7 +243,7 @@ export default function CrateImageSupp() {
         const data: ArrayBuffer = new ArrayBuffer(112);
         let sourceOptions: image.SourceOptions = {
           sourceDensity: 120,
-          sourcePixelFormat: image.PixelMapFormat.YCBCR_P010,
+          sourcePixelFormat: image.PixelMapFormat.UNKNOWN,
           sourceSize: { height: 4, width: 6 },
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
