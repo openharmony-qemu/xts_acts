@@ -1521,7 +1521,7 @@ export default function fileIOCopyDir() {
       fs.mkdirSync(dpath);
       fs.mkdirSync(ddpath2);
       try {
-        fs.copyDirWithConflictFiles("", ddpath2, DIRMODE_FILE_COPY_REPLACE, (err: BusinessError<void>|null): void => {
+        fs.copyDirWithConflictFiles("", ddpath2, DIRMODE_FILE_COPY_REPLACE, (err: BusinessError<Array<ConflictFiles>>|null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_028 err package ' + err?.message);
             expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
@@ -1551,7 +1551,7 @@ export default function fileIOCopyDir() {
       fs.mkdirSync(dpath);
       fs.mkdirSync(ddpath2);
       try {
-        fs.copyDirWithConflictFiles(ddpath2, "", DIRMODE_FILE_COPY_REPLACE, (err: BusinessError<void>|null): void => {
+        fs.copyDirWithConflictFiles(ddpath2, "", DIRMODE_FILE_COPY_REPLACE, (err: BusinessError<Array<ConflictFiles>>|null) => {
           if (err?.code != 0) {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_029 err package ' + err?.message);
             expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
