@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium";
 import { ENTINFO1, SELFWANT, SELFHAPNAME, DEFAULT_USER_ID, INVALID_USER_ID, appIdsInit,
-  INVALID_WANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1 } from "../commom";
+  INVALID_WANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1 } from "../commom.ets";
 import { Driver, ON } from '@kit.TestKit';
 
 import accountManager from '@ohos.enterprise.accountManager';
@@ -75,8 +75,6 @@ export default function accountManagerTest() {
       console.info(' --- resetDomainAccountPolicy  -------- END --------');
       done();
     })
-
-    // ------------- accountManager --------------------
 
     /**
      * @tc.name   disallowOsAccountAddition_test_001
@@ -1507,22 +1505,7 @@ export default function accountManagerTest() {
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_074  -------- END --------');
     })
-
-    it("disallowOsAccountAddition_test_105_01", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- isOsAccountAdditionDisallowed_test_074  -------- START --------');
-      try {
-        accountManager.isOsAccountAdditionDisallowed(SELFWANT, undefined);
-        console.info(' --- isOsAccountAdditionDisallowed_test_074 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- isOsAccountAdditionDisallowed_test_074 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
-      }
-      done();
-      console.info(' --- isOsAccountAdditionDisallowed_test_074  -------- END --------');
-    })
-
-///-------------------
+    
     /**
      * @tc.name   addOsAccountAsync_test_061_1
      * @tc.number addOsAccountAsync_test_061_1

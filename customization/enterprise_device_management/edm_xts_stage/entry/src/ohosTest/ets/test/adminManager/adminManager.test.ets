@@ -17,7 +17,7 @@ import Want from '@ohos.app.ability.Want'
 import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EVENTS,
   BUNDLENAME1, INVALID_WANT, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS, INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND,
   OTHER_WANT, NOT_EXIST_WANT, DEFAULT_USER_ID, TEST_BUNDLENAME
-} from '../commom';
+} from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
@@ -1954,7 +1954,6 @@ export default function adminManagerTest() {
       console.info(' --- isByodAdmin_test_016  -------- END --------');
     })
 
-//----------------------
     /**
      * @tc.name   subscribeManagedEventSync_test_004_1
      * @tc.number subscribeManagedEventSync_test_004_1

@@ -31,7 +31,7 @@ import {
   bundleNamesInit,
   BUNDLE_NAME_200,
   BUNDLE_NAME_201
-} from '../commom';
+} from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import applicationManager from '@ohos.enterprise.applicationManager';
@@ -6646,8 +6646,6 @@ export default function applicationManagerTest() {
       done();
       console.info(' --- getAllowedRunningBundles_test_032  -------- END --------');
     })
-
-    //-------------
 
      /**
      * @tc.name   addDisallowedRunningBundlesSync_test_003_1

@@ -794,7 +794,7 @@ function testAddAllowedUsbDevices() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeDisallowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
-      expect(Number(error.code === 9200001)).assertTrue();
+      expect(Number(error.code) === 9200001).assertTrue();
     }
     done();
     console.info(' --- removeDisallowedUsbDevices_test_005  -------- END --------');

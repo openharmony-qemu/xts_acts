@@ -1321,7 +1321,7 @@ function testAddAllowedWifiList() {
       wifiManager.addAllowedWifiList(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code === 401)).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
