@@ -9806,8 +9806,6 @@ export default function audioFramework() {
       done();
     });
 
-
-        });
     /**
      * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0001
      * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0001
