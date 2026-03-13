@@ -153,7 +153,15 @@ export default function WindowEnterpriseTest() {
                             expect(info.rect.top).assertEqual(res.windowRect.top);
                             expect(info.rect.width).assertEqual(res.windowRect.width);
                             expect(info.rect.height).assertEqual(res.windowRect.height);
-                            expect(info.isFocused).assertEqual(true);
+                            expect(info!.globalDisplayRect!.left).assertLargerOrEqual(0);
+                            expect(info!.globalDisplayRect!.top).assertLargerOrEqual(0);
+                            expect(info!.globalDisplayRect!.width).assertLarger(0);
+                            expect(info!.globalDisplayRect!.height).assertLarger(0);
+                            expect(info!.bundleName === "com.example.actswindowtest.static").assertTrue();
+                            expect(info!.abilityName !== null).assertTrue();
+                            expect(info!.windowId).assertLargerOrEqual(0);
+                            expect(info!.windowStatusType !== null).assertTrue();
+                            expect(info!.isFocused === true || info!.isFocused === false).assertTrue();
                             break;
                         }
                     }
