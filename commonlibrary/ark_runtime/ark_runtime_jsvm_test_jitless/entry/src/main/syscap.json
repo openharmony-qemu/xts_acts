@@ -1,1 +1,12 @@
-../../../../ark_runtime_jsvm_test/entry/src/main/syscap.json
+{
+    "devices": {
+        "general": [],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.ArkCompiler.JSVM"
+                ]
+            }
+        ]
+    }
+}

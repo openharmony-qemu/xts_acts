@@ -39,8 +39,8 @@ struct ExtensionErrorCode {
 
       Button('getWindowAvoidArea401')
         .id('getWindowAvoidArea401')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
             extensionWindow?.getWindowAvoidArea(-1)
@@ -54,8 +54,8 @@ struct ExtensionErrorCode {
 
       Button('onAvoidAreaChange401')
         .id('onAvoidAreaChange401')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
             extensionWindow?.on('avoidAreaChange', null)
@@ -66,11 +66,28 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
+      Button('offAvoidAreaChange')
+        .id('offAvoidAreaChange')
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.on('avoidAreaChange', (info: uiExtension.AvoidAreaInfo) => {
+              console.info(`The avoid area of the host window is: ${JSON.stringify(info.area)}.`);
+            });
+            extensionWindow?.off('avoidAreaChange');
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
 
       Button('onWindowSizeChange401')
         .id('onWindowSizeChange401')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
             extensionWindow?.on('windowSizeChange', null)
@@ -83,17 +100,17 @@ struct ExtensionErrorCode {
         })
       Button('createSubWindowWithOptions1')
         .id('createSubWindowWithOptions1')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
               decorEnabled: false,
-              isModal:true,
-              modalityType:window.ModalityType.APPLICATION_MODALITY,
-              maximizeSupported:true,
-              outlineEnabled:true
+              isModal: true,
+              modalityType: window.ModalityType.APPLICATION_MODALITY,
+              maximizeSupported: true,
+              outlineEnabled: true
             };
             extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptions1', subWindowConfig)
             console.log('success in page')
@@ -103,19 +120,19 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
-        Button('createSubWindowWithOptions2')
+      Button('createSubWindowWithOptions2')
         .id('createSubWindowWithOptions2')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
               decorEnabled: true,
-              isModal:false,
-              modalityType:window.ModalityType.WINDOW_MODALITY,
-              maximizeSupported:false,
-              outlineEnabled:false
+              isModal: false,
+              modalityType: window.ModalityType.WINDOW_MODALITY,
+              maximizeSupported: false,
+              outlineEnabled: false
             };
             extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptions2', subWindowConfig)
             console.log('success in page')
@@ -128,8 +145,8 @@ struct ExtensionErrorCode {
 
       Button('createSubWindowWithOptions401')
         .id('createSubWindowWithOptions401')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
             extensionWindow?.createSubWindowWithOptions('', null)
@@ -140,10 +157,10 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
-        Button('createSubWindowWithOptionsnull')
+      Button('createSubWindowWithOptionsnull')
         .id('createSubWindowWithOptionsnull')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
             extensionWindow?.createSubWindowWithOptions(null, null)
@@ -154,10 +171,10 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
-        Button('createSubWindowWithOptionsundefined')
+      Button('createSubWindowWithOptionsundefined')
         .id('createSubWindowWithOptionsundefined')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
             extensionWindow?.createSubWindowWithOptions(undefined, undefined)
@@ -168,13 +185,13 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
-        Button('createSubWindowWithOptions2Null')
+      Button('createSubWindowWithOptions2Null')
         .id('createSubWindowWithOptions2Null')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
-            extensionWindow?.createSubWindowWithOptions(null, null,true)
+            extensionWindow?.createSubWindowWithOptions(null, null, true)
             console.log('success in page')
             this.message = 'success'
           } catch (err) {
@@ -182,13 +199,13 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
-        Button('createSubWindowWithOptions2undefined')
+      Button('createSubWindowWithOptions2undefined')
         .id('createSubWindowWithOptions2undefined')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
-            extensionWindow?.createSubWindowWithOptions(undefined, undefined,false)
+            extensionWindow?.createSubWindowWithOptions(undefined, undefined, false)
             console.log('success in page')
             this.message = 'success'
           } catch (err) {
@@ -196,13 +213,13 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
-        Button('createSubWindowWithOptions2_')
+      Button('createSubWindowWithOptions2_')
         .id('createSubWindowWithOptions2_')
-        .width('90%').margin({top: 5, bottom: 5}).fontSize(16).onClick(() => {
-          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
-            extensionWindow?.createSubWindowWithOptions('', null,false)
+            extensionWindow?.createSubWindowWithOptions('', null, false)
             console.log('success in page')
             this.message = 'success'
           } catch (err) {
@@ -217,9 +234,9 @@ struct ExtensionErrorCode {
         .onClick(() => this.clickNum++)
         .gesture(
           LongPressGesture({ repeat: true })
-            .onAction((event: GestureEvent|undefined) => {
-              if(event){
-                if(event.repeat) {
+            .onAction((event: GestureEvent | undefined) => {
+              if (event) {
+                if (event.repeat) {
                   this.longPressNum++
                 }
               }

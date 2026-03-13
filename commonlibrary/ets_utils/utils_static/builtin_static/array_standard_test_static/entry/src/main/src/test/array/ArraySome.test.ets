@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1147,7 +1147,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest090', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
-      const arr = new Array<number>(1000000).fill(5);
+      const arr = Array.create<number>(1000000, 5);
       arr[500000] = 15;
 
       let callCount = 0;

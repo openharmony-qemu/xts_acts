@@ -474,13 +474,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertTrue();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -507,13 +508,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -540,13 +542,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -573,13 +576,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -606,13 +610,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -639,13 +644,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -672,13 +678,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -705,13 +712,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -738,13 +746,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -771,12 +780,13 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect(error.code).assertEqual(62980096);
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect().assertFail();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -803,12 +813,13 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect(error.code).assertEqual(62980096);
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect().assertFail();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -835,12 +846,13 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect(error.code).assertEqual(62980096);
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect().assertFail();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -866,13 +878,15 @@ export default function graphicImagePixelMap3() {
         image.createPixelMap(color, opts, (error: BusinessError | null, pixelMap: image.PixelMap | undefined) => {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
-            expect(error.code).assertEqual(62980096);
+            expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
-            expect().assertFail();
+            expect(pixelMap?.isEditable).assertFalse();
+            expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -1023,10 +1037,11 @@ export default function graphicImagePixelMap3() {
         try {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
-          expect().assertFail();
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
-          expect(err.code).assertEqual(62980096);
+          expect().assertFail();
         }
         done();
       })
@@ -1147,10 +1162,11 @@ export default function graphicImagePixelMap3() {
         try {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
-          expect().assertFail();
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
-          expect(err.code).assertEqual(62980096);
+          expect().assertFail();
         }
         done();
       })
@@ -1271,10 +1287,11 @@ export default function graphicImagePixelMap3() {
         try {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
-          expect().assertFail();
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
-          expect(err.code).assertEqual(62980096);
+          expect().assertFail();
         }
         done();
       })
@@ -1832,13 +1849,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**
@@ -1865,13 +1883,14 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
             expect().assertFail();
+            done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
             expect(pixelMap?.isEditable).assertFalse();
             expect(pixelMap?.isStrideAlignment).assertFalse();
+            done();
           }
         })
-        done();
       })
 
     /**

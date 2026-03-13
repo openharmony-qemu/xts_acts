@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -815,7 +815,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType130008';
       try {
         const arrayType: ArrayType = ArrayType.DOUBLE_REF;
-        const arrayData: number[] = new Array<number>(10000).fill(1);
+        const arrayData: number[] = Array.create<number>(10000, 1);
         const arrayValue = new ArrayValue(arrayType, arrayData);
         const result = arrayValue.getType();
         expect(typeof result).assertEqual(typeof arrayType);

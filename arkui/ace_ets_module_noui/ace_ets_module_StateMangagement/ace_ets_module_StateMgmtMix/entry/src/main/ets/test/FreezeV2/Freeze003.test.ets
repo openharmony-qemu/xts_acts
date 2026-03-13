@@ -71,23 +71,21 @@ export default function FreezeV2Child() {
       await CommonFunc.sleep(1000)
       
       let nextPage = await driver.findComponent(ON.id('FreezeV2ChildNextPage'));
-      await CommonFunc.sleep(1000)
+      await CommonFunc.sleep(2000)
       await nextPage.click();
+      // 值为0 组件冻结 监听函数不触发
+      let x = AppStorage.get<number>('logNumFreezeV2003')
+      expect(x).assertEqual(0);
       let backPage = await driver.findComponent(ON.id('FreezeV2ChildBackPage'));
       await CommonFunc.sleep(1000)
       await backPage.click();
       await CommonFunc.sleep(500)
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (UiElementInfo: UIElementInfo) => {
-        try {
-          expect(UiElementInfo.text == 'The book name change from A Midsummer Night’s Dream to Jane Austen oPride and Prejudice').assertTrue();
-          expect(UiElementInfo.type == 'Toast').assertTrue();
-        } catch (err) {
-          console.info(err);
-        }
-      }
-      observer1.once('toastShow', callback1)
+      // 值为1 组件激活 监听函数触发
+      let y = AppStorage.get<number>('logNumFreezeV2003')
+      let text1 = await (await driver.findComponent(ON.id('freezeV2003_menssage'))).getText();
+      expect(text1).assertEqual('The book name change from A Midsummer Night’s Dream to Jane Austen oPride and Prejudice');
+      expect(y).assertEqual(1);
+      AppStorage.delete('logNumFreezeV2003')
       await CommonFunc.sleep(3000)
       console.info('FreezeV2Child_01 END');
       done()

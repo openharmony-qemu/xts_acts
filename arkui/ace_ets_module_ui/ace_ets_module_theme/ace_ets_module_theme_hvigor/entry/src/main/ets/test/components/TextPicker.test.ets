@@ -90,7 +90,7 @@ export default function textPickerThemeTest() {
     })
 
     /**
-     * @tc.name   ActsTextPickerThemeColors_0100
+     * @tc.name   `ActsTextPickerThemeColors_0100`
      * @tc.number ActsTextPickerThemeColors_0100
      * @tc.desc   Check system colors values of the TextPicker component
      * @tc.type   FUNCTION
@@ -109,7 +109,7 @@ export default function textPickerThemeTest() {
     });
 
     /**
-     * @tc.name   ActsTextPickerThemeColors_0200
+     * @tc.name   `ActsTextPickerThemeColors_0200`
      * @tc.number ActsTextPickerThemeColors_0200
      * @tc.desc   Check custom colors values of the TextPicker component
      * @tc.type   FUNCTION
@@ -128,7 +128,7 @@ export default function textPickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
     /**
-     * @tc.name   ActsTextPickerThemeColors_0300
+     * @tc.name   `ActsTextPickerThemeColors_0300`
      * @tc.number ActsTextPickerThemeColors_0300
      * @tc.desc   Check custom colors values of the TextPicker component
      * @tc.type   FUNCTION
@@ -147,7 +147,7 @@ export default function textPickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.name   ActsTextPickerThemeColors_0400
+     * @tc.name   `ActsTextPickerThemeColors_0400`
      * @tc.number ActsTextPickerThemeColors_0400
      * @tc.desc   Check custom colors values of the TextPicker component
      * @tc.type   FUNCTION

@@ -28,7 +28,6 @@ import ScrollSizeTest from './scrollSize/ScrollSizeTest.test'
 import NodeUtilsMethodTest from './customproperty/NodeUtilsMethodTest.test'
 
 export default function testsuite() {
-  customPropertyTest()
   KeyEventGetKeyCodeTest()
   KeyEventGetTypeTest()
   KeyEventStopPropagationTest()
@@ -42,4 +41,5 @@ export default function testsuite() {
   tabStop()
   ScrollSizeTest()
   NodeUtilsMethodTest()
+  customPropertyTest()
 }

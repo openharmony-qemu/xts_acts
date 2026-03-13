@@ -21,6 +21,7 @@ group("actsuiabilitycontext") {
       "actsmoveabilitytobackgroundteststatic:ActsMoveAbilityToBackgroundStaticTest",
       "actsstartabilityforsultteststatic:ActsAbilityStartAbilityForResultStaticTest",
       "actsstartabilityteststatic:ActsStartAbilityStaticTest",
+      "actsstartabilitywithperteststatic:ActsAbilityStartAbilityPermissionStaticTest",
     ]
   }
 }

@@ -49,7 +49,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -643,7 +643,7 @@ export default function WindowImmersiveTest() {
                 subWin = data;
                 expect(!!subWin).assertTrue();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                await (subWin! as window.Window).destroyWindow();
+                waitForCompletion(async () => {await (subWin! as window.Window).destroyWindow();})
                 try {
                     (subWin! as window.Window).setSpecificSystemBarEnabled('status', true, true).then(() => {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling setSpecificSystemBarEnabled.');
@@ -684,7 +684,7 @@ export default function WindowImmersiveTest() {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                    await (subWin! as window.Window).destroyWindow();
+                    waitForCompletion(async () => {await (subWin! as window.Window).destroyWindow();})
                     try {
                         subWin!.setImmersiveModeEnabledState(true);
                         hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling setImmersiveModeEnabledState.');
@@ -1024,6 +1024,7 @@ export default function WindowImmersiveTest() {
                     await (subWin! as window.Window).destroyWindow();
                     done()
                 }).catch((err: Error) => {
+                    waitForCompletion(async () => {
                     console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
                     await (subWin! as window.Window).destroyWindow();
                     if (err.code == 801) {
@@ -1032,6 +1033,7 @@ export default function WindowImmersiveTest() {
                         expect(err.code).assertEqual(1300004);
                     }
                     done()
+                    })
                 });
             } catch (exception) {
                 console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' +

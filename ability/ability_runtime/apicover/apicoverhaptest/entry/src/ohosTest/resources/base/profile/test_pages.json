@@ -8,6 +8,8 @@
     "ThirdAbility/pages/MainAbility_pages",
     "WindowStageAbility/pages/one",
     "WindowStageAbility/pages/two",
-    "WindowStageAbility/pages/three"
+    "WindowStageAbility/pages/three",
+    "CreateFormAbility/pages/form23_page",
+    "CreateFormAbility/pages/form33_page"
   ]
 }

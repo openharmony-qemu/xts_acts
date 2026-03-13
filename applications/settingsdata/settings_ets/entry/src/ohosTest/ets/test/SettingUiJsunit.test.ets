@@ -2628,6 +2628,28 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_get_value_sync_defValue_empty
+     * @tc.number settings_get_value_sync_defValue_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_defValue_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: string = settings.getValueSync(mContext, 'testkey', '', settings.domainName.DEVICE_SHARED);
+          expect(result === '').assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_defValue_empty] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_set_value_118_2
      * @tc.number settings_set_value_118_2
      * @tc.desc   MediumTest

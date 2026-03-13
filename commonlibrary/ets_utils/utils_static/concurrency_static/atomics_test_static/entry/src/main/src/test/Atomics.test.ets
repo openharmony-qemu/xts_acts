@@ -1033,15 +1033,17 @@ export default function AtomicsTest() {
           }
           for (let i = 0; i < taskCount; i++) {
             notifyTasks.push(new Promise<void>((resolve, reject) => {
-              await taskpool.execute(() => {
-                Atomics.add(readyCounter, 0, 1);
-                setTimeout(() => {
-                  Atomics.store(sharedArray, 0, 1n);
-                  const notifiedCount = Atomics.notify(sharedArray, 0);
-                  Atomics.store(sharedArray, 0, 0n);
-                  resolve(undefined);
-                }, 500);
-              });
+              waitForCompletion(async () => {
+                await taskpool.execute(() => {
+                  Atomics.add(readyCounter, 0, 1);
+                  setTimeout(() => {
+                    Atomics.store(sharedArray, 0, 1n);
+                    const notifiedCount = Atomics.notify(sharedArray, 0);
+                    Atomics.store(sharedArray, 0, 0n);
+                    resolve(undefined);
+                  }, 500);
+                });
+              })
             }));
           }
           while (Atomics.load(readyCounter, 0) < taskCount * 2) {
@@ -1102,16 +1104,18 @@ export default function AtomicsTest() {
           }
           for (let i = 0; i < taskCount; i++) {
             notifyTasks.push(new Promise<void>((resolve, reject) => {
-              await taskpool.execute(() => {
-                Atomics.add(readyCounter, 0, 1);
-                setTimeout(() => {
-                  const newValue = BigInt(i + 1);
-                  Atomics.store(sharedArray, 0, newValue);
-                  const notifiedCount = Atomics.notify(sharedArray, 0);
-                  Atomics.store(sharedArray, 0, 1n);
-                  resolve(undefined);
-                }, 500);
-              });
+              waitForCompletion(async () => {
+                await taskpool.execute(() => {
+                  Atomics.add(readyCounter, 0, 1);
+                  setTimeout(() => {
+                    const newValue = BigInt(i + 1);
+                    Atomics.store(sharedArray, 0, newValue);
+                    const notifiedCount = Atomics.notify(sharedArray, 0);
+                    Atomics.store(sharedArray, 0, 1n);
+                    resolve(undefined);
+                  }, 500);
+                });
+              })
             }));
           }
           while (Atomics.load(readyCounter, 0) < taskCount * 2) {
@@ -1173,13 +1177,15 @@ export default function AtomicsTest() {
           }
           for (let i = 0; i < taskCount; i++) {
             notifyTasks.push(new Promise<void>((resolve, reject) => {
-              await taskpool.execute(() => {
-                Atomics.add(readyCounter, 0, 1);
-                const newValue = BigInt(i + 1);
-                Atomics.store(sharedArray, i, newValue);
-                const notifiedCount = Atomics.notify(sharedArray, i);
-                resolve(undefined);
-              });
+              waitForCompletion(async () => {
+                await taskpool.execute(() => {
+                  Atomics.add(readyCounter, 0, 1);
+                  const newValue = BigInt(i + 1);
+                  Atomics.store(sharedArray, i, newValue);
+                  const notifiedCount = Atomics.notify(sharedArray, i);
+                  resolve(undefined);
+                });
+              })
             }));
           }
           await Promise.all([...waitTasks, ...notifyTasks]);

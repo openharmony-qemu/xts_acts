@@ -30,9 +30,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test tee
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlTee002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlTee002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c: number = fcntl.tee(-1);
       expect(c).assertEqual(-1);
       done()
@@ -44,9 +44,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test readahead
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlReadahead002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlReadahead002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = fcntl.readahead(-1);
       expect(result).assertEqual(-1);
       done()
@@ -58,9 +58,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test posixfadvise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlPosixFadvise002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlPosixFadvise002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fcntl.posixfadvise(-1)).assertEqual(-1);
       done()
     });
@@ -71,9 +71,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test posixfallocate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlPosixFallocate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlPosixFallocate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fcntl.posixfallocate(-1)).assertEqual(-1);
       done()
     });
@@ -84,9 +84,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test fcntl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlFcnTl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlFcnTl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fcntl.fcntl(-1)).assertEqual(-1);
       done()
     });
@@ -97,9 +97,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test fallocate
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlFalLocate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlFalLocate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fcntl.fallocate(-1)).assertEqual(-1);
       done()
     });
@@ -110,9 +110,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test fallocate64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlFalLocate64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlFalLocate64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fcntl.fallocate64(-1)).assertEqual(-1);
       done()
     });
@@ -123,9 +123,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test open
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlOpen002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlOpen002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = fcntl.open(-1);
       expect(data).assertEqual(-1);
       done();
@@ -137,9 +137,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test open64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlOpen64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlOpen64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = fcntl.open64(-1);
       expect(data).assertEqual(-1);
       done();
@@ -151,9 +151,9 @@ export default function fcntl1NdkTest() {
      * @tc.desc   test __fwrite_chk
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFcntlFwritechk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFcntlFwritechk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fcntl.fwritechk()).assertEqual(1);
       done()
     });

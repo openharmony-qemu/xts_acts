@@ -63,6 +63,18 @@
                             "displayName": "MotionBlur",
                             "type": "int",
                             "value": 1
+                        },
+                        {
+                            "name": "vec_2",
+                            "displayName": "Damn1",
+                            "type" : "vec3",
+                            "value": [1.0, 1.0, 1.0]
+                        },
+                        {
+                            "name": "vec_3",
+                            "displayName": "Damn2",
+                            "type" : "vec2",
+                            "value": [1.0, 1.0]
                         }
                     ]
                 }

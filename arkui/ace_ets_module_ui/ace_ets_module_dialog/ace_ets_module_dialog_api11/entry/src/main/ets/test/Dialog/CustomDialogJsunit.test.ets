@@ -67,14 +67,14 @@ export default function CustomDialogAJsunit() {
     //   done();
     // });
     /**
-     * @tc.name   CustomDialogAJsunit_0100
+     * @tc.name   CustomDialogAJsunit_0100Adapt001
      * @tc.number CustomDialogAJsunit_0100
      * @tc.desc   CustomDialogAJsunit_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('CustomDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
+    it('CustomDialogAJsunit_0100Adapt001', Level.LEVEL2, async (done: Function) => {
 
       console.info('CustomDialogAJsunit_0200 START');
       let driver = await UiDriver.create()

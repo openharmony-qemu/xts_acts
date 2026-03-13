@@ -30,9 +30,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixspawn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawn()).assertEqual(1);
       done()
     });
@@ -43,9 +43,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test spawnp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnP001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnP001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnP()).assertEqual(1);
       done()
     });
@@ -56,9 +56,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixspawnattrgetflags
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrGetFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrGetFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrGetFlags()).assertEqual(0);
       done()
     });
@@ -69,9 +69,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnFileActionsAddClose
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrAddClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrAddClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnFileActionsAddClose()).assertEqual(0);
       done()
     });
@@ -82,9 +82,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnFileActionsAdddup2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnFileActionsAdddup2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnFileActionsAdddup2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnFileActionsAdddup2()).assertEqual(0);
       done()
     });
@@ -95,9 +95,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnFileActionsAddopen
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnFileActionsAddOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnFileActionsAddOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnFileActionsAddopen()).assertEqual(1);
       done()
     });
@@ -108,9 +108,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnFileActionsDestroy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnFileActionsDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnFileActionsDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnFileActionsDestroy()).assertEqual(0);
       done()
     });
@@ -121,9 +121,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnFileActionsInit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnFileActionsInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnFileActionsInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnFileActionsInit()).assertEqual(0);
       done()
     });
@@ -134,9 +134,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrDestroy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrDestroy()).assertEqual(0);
       done()
     });
@@ -147,9 +147,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrGetSchedPolicy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrGetSchedPolicy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrGetSchedPolicy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrGetSchedPolicy()).assertEqual(0);
       done()
     });
@@ -160,9 +160,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrGetSigDefault
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrGetSigDefault001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrGetSigDefault001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrGetSigDefault()).assertEqual(0);
       done()
     });
@@ -173,9 +173,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrInit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrInit()).assertEqual(0);
       done()
     });
@@ -186,9 +186,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrGetSigMask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrGetSigMask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrGetSigMask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrGetSigMask()).assertEqual(0);
       done()
     });
@@ -199,9 +199,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrSetFlags
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrSetFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrSetFlags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrSetFlags()).assertEqual(0);
       done()
     });
@@ -212,9 +212,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrGetSchedParam
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrGetSchedParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrGetSchedParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrGetSchedParam()).assertEqual(0);
       done()
     });
@@ -225,9 +225,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrGetpGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrGetGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrGetGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrGetpGroup()).assertEqual(0);
       done()
     });
@@ -238,9 +238,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrSetSigDefault
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrSetSigDefault001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrSetSigDefault001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrSetSigDefault()).assertEqual(0);
       done()
     });
@@ -251,9 +251,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrSetSigMask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrSetSigMask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrSetSigMask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrSetSigMask()).assertEqual(0);
       done()
     });
@@ -264,9 +264,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrSetSchedPolicy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrSetSchedPolicy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrSetSchedPolicy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrSetSchedPolicy()).assertEqual(0);
       done()
     });
@@ -277,9 +277,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrSetSchedParam
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrSetSchedParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrSetSchedParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrSetSchedParam()).assertEqual(0);
       done()
     });
@@ -290,9 +290,9 @@ export default function muslSpawnTest() {
      * @tc.desc   test posixSpawnAttrSetPGroup
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSpawnPosixSpawnAttrSetPGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSpawnPosixSpawnAttrSetPGroup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(spawn.posixSpawnAttrSetPGroup()).assertEqual(0);
       done()
     });

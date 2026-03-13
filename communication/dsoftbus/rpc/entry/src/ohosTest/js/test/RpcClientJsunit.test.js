@@ -5640,14 +5640,14 @@ export default function ActsRpcClientJsTest() {
         });
 
         /**
-         * @tc.name   SUB_DSoftbus_IPC_API_MessageSequence_1480
+         * @tc.name   SUB_DSoftbus_IPC_API_MessageSequence_1480Adapt001
          * @tc.number SUB_DSoftbus_IPC_API_MessageSequence_1480
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it("SUB_DSoftbus_IPC_API_MessageSequence_1480", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        it("SUB_DSoftbus_IPC_API_MessageSequence_1480Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("---------------------start SUB_DSoftbus_IPC_API_MessageSequence_1480---------------------------");
             let context = FA.getContext();
             await context.getFilesDir()

@@ -80,7 +80,7 @@ export default function textClockThemeTest() {
     })
 
     /**
-     * @tc.name   ActsTextClockThemeColors_0100
+     * @tc.name   `ActsTextClockThemeColors_0100`
      * @tc.number ActsTextClockThemeColors_0100
      * @tc.desc   Check system colors values of TextClock component
      * @tc.type   FUNCTION
@@ -103,7 +103,7 @@ export default function textClockThemeTest() {
     });
 
     /**
-     * @tc.name   ActsTextClockThemeColors_0200
+     * @tc.name   `ActsTextClockThemeColors_0200`
      * @tc.number ActsTextClockThemeColors_0200
      * @tc.desc   Check custom colors values of TextClock component
      * @tc.type   FUNCTION
@@ -126,7 +126,7 @@ export default function textClockThemeTest() {
     });
 
     /**
-     * @tc.name   ActsTextClockThemeColors_0300
+     * @tc.name   `ActsTextClockThemeColors_0300`
      * @tc.number ActsTextClockThemeColors_0300
      * @tc.desc   Check custom colors values of TextClock component
      * @tc.type   FUNCTION
@@ -150,7 +150,7 @@ export default function textClockThemeTest() {
     });
 
     /**
-     * @tc.name   ActsTextClockThemeColors_0400
+     * @tc.name   `ActsTextClockThemeColors_0400`
      * @tc.number ActsTextClockThemeColors_0400
      * @tc.desc   Check system colors values of TextClock component
      * @tc.type   FUNCTION

@@ -255,14 +255,14 @@ export default function blendModeTest() {
       done();
     });
     /**
-     * @tc.name   blendModeTest_0110
+     * @tc.name   blendModeTest_0110Adapt001
      * @tc.number blendMode
      * @tc.desc   api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('blendModeTest_0110', Level.LEVEL2, async (done: Function) => {
+    it('blendModeTest_0110Adapt001', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -439,14 +439,14 @@ export default function blendModeTest() {
       done();
     });
     /**
-     * @tc.name   blendModeTest_0200
+     * @tc.name   blendModeTest_0200Adapt001
      * @tc.number blendMode
      * @tc.desc   api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('blendModeTest_0200', Level.LEVEL2, async (done: Function) => {
+    it('blendModeTest_0200Adapt001', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -649,14 +649,14 @@ export default function blendModeTest() {
       done();
     });
     /**
-     * @tc.name   blendModeTest_0300
+     * @tc.name   blendModeTest_0300Adapt001
      * @tc.number blendMode
      * @tc.desc   api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('blendModeTest_0300', Level.LEVEL2, async (done: Function) => {
+    it('blendModeTest_0300Adapt001', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

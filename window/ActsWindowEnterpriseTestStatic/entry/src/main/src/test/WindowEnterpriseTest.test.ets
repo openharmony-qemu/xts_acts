@@ -49,7 +49,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -159,15 +159,15 @@ export default function WindowEnterpriseTest() {
                     }
                     if (!isExit) {
                         hilog.error(domain, tag,`${caseName} failed, there is no match windowId.`);
-                        await terminateAbility(caseName);
+                        waitForCompletion(async () => {await terminateAbility(caseName);})
                         expect(false).assertTrue();
                         done()
                     }
-                    await terminateAbility(caseName);
+                    waitForCompletion(async () => {await terminateAbility(caseName);})
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' +' code:' +err.code+'msg:'+ err.message);
-                    await terminateAbility(caseName);
+                    waitForCompletion(async () => {await terminateAbility(caseName);})
                     expect(err.message!=null).assertTrue();
                     if (err.code === 801) {
                         hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);

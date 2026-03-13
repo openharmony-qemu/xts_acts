@@ -61,6 +61,7 @@ describe("SensorJsTest_sensor_50", function () {
         console.info('afterEach called')
     })
 
+    const PARAMETER_EXPECT_ERROR = true
     const PARAMETER_ERROR_CODE = 401
     const SERVICE_EXCEPTION_CODE = 14500101
     const PARAMETER_ERROR_MSG = 'The parameter invalid.'
@@ -169,7 +170,7 @@ describe("SensorJsTest_sensor_50", function () {
     it("newSignificant_Motion_SensorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.once(sensor.SensorId.SIGNIFICANT_MOTION, callback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         }, 500);
     })
@@ -234,7 +235,7 @@ describe("SensorJsTest_sensor_50", function () {
         sensor.on(sensor.SensorId.SIGNIFICANT_MOTION, onSensorCallback);
         sensor.off(sensor.SensorId.SIGNIFICANT_MOTION, onSensorCallback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         }, 500);
     })

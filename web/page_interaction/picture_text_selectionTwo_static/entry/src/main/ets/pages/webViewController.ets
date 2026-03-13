@@ -144,7 +144,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
         })
       }
 
-      Web({ src: "resource://rawfile/index.html", controller: this.controller })
+      Web({ src: "resource://rawfile/HistoryItem.html", controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .blockNetwork(this.blockNetwork)
     }

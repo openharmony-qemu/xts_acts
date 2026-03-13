@@ -189,6 +189,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
       let g_vector_failed_index: number = 0;
       try {
         () => {
+          waitForCompletion(async () => {
           let symVectors: v.symVectorData[] = v.symVectors;
           for (let vector of symVectors) {
             let algName: string = vector.symAlgName;
@@ -210,7 +211,8 @@ export default function SecurityCryptoFwVectorTestUnit() {
               expect(ret).assertTrue();
               console.info("#################### algEncDecName:" + algEncDecName)
             }
-          }          
+          }
+          })
         }();
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
@@ -233,6 +235,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
       let g_vector_failed_index: number = 0;
       try {
           () => {
+            waitForCompletion(async () => {
             let symAeadVectors: v.symVectorData[] = v.symAeadVectors
 
             for (let vector of symAeadVectors) {
@@ -270,6 +273,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
                 console.info("################### algEncDecName:" + algEncDecName)
               }
             }
+          })
         }();
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
@@ -292,6 +296,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
       let g_vector_failed_index: number = 0;
       try {
           () => {
+            waitForCompletion(async () => {
             let agreementVectors: v.agreementVectorData[] = v.agreementVectors;
             for (let vector of agreementVectors) {
               let algName: string = vector.algName;
@@ -329,6 +334,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
                 expect(ret).assertTrue();
               }
             }
+          })
         }();
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);

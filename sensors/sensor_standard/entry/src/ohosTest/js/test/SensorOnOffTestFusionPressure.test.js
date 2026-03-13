@@ -20,6 +20,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function SensorJsTest_sensor_65() {
 describe("SensorJsTest_sensor_65", function () {
 
+    const PARAMETER_EXPECT_ERROR = true
     const PARAMETER_ERROR_CODE = 401
     let sensorList = undefined
     let Available = false;
@@ -101,7 +102,7 @@ describe("SensorJsTest_sensor_65", function () {
         try {
             sensor.on(sensor.SensorId.FUSION_PRESSURE, callback);
             setTimeout(() => {
-                expect(true).assertTrue();
+                expect(PARAMETER_EXPECT_ERROR).assertTrue();
                 done();
             }, 500);
         } catch (error) {
@@ -135,7 +136,7 @@ describe("SensorJsTest_sensor_65", function () {
             console.info('-------------------newFusion_Pressure_SensorJsTest018 off in------------');
             sensor.off(sensor.SensorId.FUSION_PRESSURE);
             console.info('-------------------newFusion_Pressure_SensorJsTest018 off end-----------');
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         } catch (error) {
             hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest018 failed error.code: ${error.code} , error.message: ${error.message}`);

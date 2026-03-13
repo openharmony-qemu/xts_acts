@@ -27,6 +27,7 @@ import XmlTest05 from "./xml/XmlTest05.test"
 import XmlTest06 from "./xml/XmlTest06.test"
 import XmlTest07 from "./xml/XmlTest07.test"
 import XmlTest08 from "./xml/XmlTest08.test"
+import XmlSAXParserTest from "./xml/XmlSAXParserTest.test"
 
 import HashMapTest01 from "./hashmap/HashMapTest01.test"
 import HashMapTest02 from "./hashmap/HashMapTest02.test"
@@ -114,6 +115,7 @@ export default function testsuite() {
   XmlTest06();
   XmlTest07();
   XmlTest08();
+  XmlSAXParserTest();
 
   HashMapTest01();
   HashMapTest02();

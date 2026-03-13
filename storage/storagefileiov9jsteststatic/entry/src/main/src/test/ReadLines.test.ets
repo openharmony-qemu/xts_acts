@@ -210,6 +210,35 @@ export default function fileIOReadLines() {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_static_009
+     * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0900
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_readLines_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_009 start');
+      try {
+        let fpath = await Utils.nextFileName('fileIO_test_readLines_sync_static_009');
+        expect(await Utils.prepareFile(fpath, FILE_CONTENTS)).assertTrue();
+        let arr = FILE_CONTENTS.split("\n");
+        let readerIterator = fs.readLinesSync(fpath);
+        for (let i = 0; i <= arr.length + 1; i++) {
+          let it = readerIterator.next();
+          if(i === arr.length + 1){
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_009 it.done: ' + it.done);
+           expect(it.done == true).assertTrue();
+          }
+        }
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_sync_static_009 has failed for' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_readLines_async_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0100
      * @tc.desc   Test readLines() interfaces. Promise.

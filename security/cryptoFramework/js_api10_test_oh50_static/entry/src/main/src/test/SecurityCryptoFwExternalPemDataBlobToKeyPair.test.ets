@@ -46,6 +46,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
       let algName: string = "";
       try {
         () => {
+          waitForCompletion(async () => {
           for(let data of externalPemData) {
             algName = (data.algName) as string;
             let keyPair: cryptoFramework.KeyPair;
@@ -63,6 +64,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
             }
           }
           expect(true).assertTrue();
+          })
         }();
       } catch (error) {
         console.error(`${algName} “${error}“, error code: ${error.code}`);
@@ -422,6 +424,7 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
       let algName: string = "DH";
       try {
         () => {
+          waitForCompletion(async () => {
           let dataMap: DataBlobMap = new DataBlobMap(false);
           let data = dataMap.getDataWithArray(algName);
           let keyPair: cryptoFramework.KeyPair;
@@ -440,7 +443,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
             keyPair.priKey.clearMem();
             expect(ret).assertTrue();
           }
-          expect(true).assertTrue();          
+          expect(true).assertTrue();
+          })
         }();
       } catch (error) {
         console.error(`${algName} “${error}“, error code: ${error.code}`);

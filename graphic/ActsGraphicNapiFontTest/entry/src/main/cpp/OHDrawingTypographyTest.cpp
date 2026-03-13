@@ -2299,6 +2299,7 @@ int OHDrawingTypographyTest073()
     OH_Drawing_Font_Metrics* StartLineFont = OH_Drawing_TypographyGetLineFontMetrics(typography, 1, &charNumber);
     EXPECT_TRUE(StartLineFont == nullptr);
     OH_Drawing_TypographyDestroyLineFontMetrics(StartLineFont);
+    EXPECT_TRUE(StartLineFont == nullptr);
     OH_Drawing_DestroyTypography(typography);
     OH_Drawing_DestroyTypographyHandler(handler);
     OH_Drawing_DestroyTypographyStyle(typoStyle);

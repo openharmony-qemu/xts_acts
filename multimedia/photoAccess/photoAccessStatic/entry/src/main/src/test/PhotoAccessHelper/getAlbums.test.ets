@@ -58,26 +58,28 @@ export default function getAlbumsTest() {
           for (let i = 0; i < subTypes.length; i++) {
             (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i], (err: BusinessError<void> | null,
               fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
-              try {
-                if (err?.code !== 0) {
-                  hilog.error(domain, tag,
-                    testNum + ' getAlbums failed' + ", err.code:" + err?.code + ", err.message:" + err?.message);
-                  expect(false).assertTrue();
-                } else {
-                  const album =
-                    await (fetchResult as photoAccessHelper.FetchResult<photoAccessHelper.Album>).getFirstObject();
-                  fetchResult?.close();
-                  checkSystemAlbum(testNum, album, subTypes[i]);
-                  count++;
+              waitForCompletion(async () => {
+                try {
+                  if (err?.code !== 0) {
+                    hilog.error(domain, tag,
+                      testNum + ' getAlbums failed' + ", err.code:" + err?.code + ", err.message:" + err?.message);
+                    expect(false).assertTrue();
+                  } else {
+                    const album =
+                      await (fetchResult as photoAccessHelper.FetchResult<photoAccessHelper.Album>).getFirstObject();
+                    fetchResult?.close();
+                    checkSystemAlbum(testNum, album, subTypes[i]);
+                    count++;
+                  }
+                } catch (error) {
+                  hilog.info(domain, tag,
+                    testNum + ' getAlbums Failed!' + ", error.name:" + error.name + ", error.message:" + error.message);
                 }
-              } catch (error) {
-                hilog.info(domain, tag,
-                  testNum + ' getAlbums Failed!' + ", error.name:" + error.name + ", error.message:" + error.message);
-              }
-              if (i + 1 === subTypes.length) {
-                expect(count === subTypes.length);
-                done();
-              }
+                if (i + 1 === subTypes.length) {
+                  expect(count === subTypes.length);
+                  done();
+                }
+              })
             });
             await Utils.msSleep(50)
           }

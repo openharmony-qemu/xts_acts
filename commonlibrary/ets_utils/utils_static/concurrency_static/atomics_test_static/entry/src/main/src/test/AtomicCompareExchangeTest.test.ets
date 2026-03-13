@@ -1669,8 +1669,8 @@ export default function atomicsCompareExchangeTest() {
       const counter2 = new AtomicCounter78(sab, 1);
 
       // Run increments in parallel for both counters
-      const increments1 = Array.from(new Array<int>(3), () => counter1.increment());
-      const increments2 = Array.from(new Array<int>(2), () => counter2.increment());
+      const increments1 = Array.from(Array.create<int>(3, 0), () => counter1.increment());
+      const increments2 = Array.from(Array.create<int>(2, 0), () => counter2.increment());
       await Promise.all([...increments1, ...increments2]);
 
       expect(counter1.getValue()).assertEqual(3);

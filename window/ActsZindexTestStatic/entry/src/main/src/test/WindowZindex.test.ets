@@ -49,7 +49,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -182,10 +182,12 @@ export default function WindowZindexTest() {
                 await subWindow.destroyWindow();
                 let promise1 = subWindow.raiseToAppTop();
                 promise1.then(() => {
-                    hilog.info(domain, tag,msgStr + 'Succeeded in raising the window to app top.');
-                    await subWindow.destroyWindow();
-                    expect(false).assertTrue();
-                    done();
+                    waitForCompletion(async () => {
+                        hilog.info(domain, tag,msgStr + 'Succeeded in raising the window to app top.');
+                        await subWindow.destroyWindow();
+                        expect(false).assertTrue();
+                        done();
+                    })
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.error(domain, tag,msgStr + `Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
                     if(err.code = 801){
@@ -304,8 +306,8 @@ export default function WindowZindexTest() {
                     }
                     let subWindow1 = data;
                     subWindow1.resize(800, 1000);
-                    await subWindow1.setUIContent('pages/index2');
-                    await subWindow1.showWindow();
+                    waitForCompletion(async () => {await subWindow1.setUIContent('pages/index2');})
+                    waitForCompletion(async () => {await subWindow1.showWindow();})
                     hilog.info(domain, tag,msgStr + 'windowStage!.show SubWindow1 success');
                     let options : window.SubWindowOptions = {
                         title: 'title',
@@ -321,22 +323,25 @@ export default function WindowZindexTest() {
                         }
                         let subWindow2 = data;
                         subWindow2.resize(1000, 1000);
-                        await subWindow2.setUIContent('pages/index2');
-                        await subWindow2.showWindow();
+                        waitForCompletion(async () => {await subWindow2.setUIContent('pages/index2');})
+                        waitForCompletion(async () => {await subWindow2.showWindow();})
                         hilog.info(domain, tag,msgStr + 'windowStage!.show SubWindow2 success');
-                        await Utils.msSleep(100);
+                        waitForCompletion(async () => {await Utils.msSleep(100);})
                         let promise4 = subWindow1.raiseToAppTop();
                         promise4.then(() => {
-                            hilog.info(domain, tag,msgStr + 'Succeeded in raising the window to app top.');
-                            let lastWindowClass = await window.getLastWindow(context!);
-                            let properties = lastWindowClass.getWindowProperties();
-                            hilog.info(domain, tag,msgStr + 'properties:'+JSON.stringify(properties)+'name:'+properties.name);
-                            expect(properties.windowRect.height).assertEqual(1000);
-                            expect(properties.windowRect.width).assertEqual(800);
-                            await subWindow1.destroyWindow();
-                            await subWindow2.destroyWindow();
-                            done();
+                            waitForCompletion(async () => {
+                                hilog.info(domain, tag,msgStr + 'Succeeded in raising the window to app top.');
+                                let lastWindowClass = await window.getLastWindow(context!);
+                                let properties = lastWindowClass.getWindowProperties();
+                                hilog.info(domain, tag,msgStr + 'properties:'+JSON.stringify(properties)+'name:'+properties.name);
+                                expect(properties.windowRect.height).assertEqual(1000);
+                                expect(properties.windowRect.width).assertEqual(800);
+                                await subWindow1.destroyWindow();
+                                await subWindow2.destroyWindow();
+                                done();
+                            })
                         }).catch((err: Error):PromiseLike<void>|undefined => {
+                            waitForCompletion(async () => {
                             hilog.error(domain, tag,msgStr + `Failed to raise the window to app top. Cause code: ${err.code}, message: ${err.message}`);
                             await subWindow1.destroyWindow();
                             await subWindow2.destroyWindow();
@@ -346,7 +351,7 @@ export default function WindowZindexTest() {
                                 expect(false).assertTrue();
                                 done();
                             }
-
+                            })
                         });
                     }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(domain, tag,msgStr +` Failed to create the subwindow2. Cause code: ${err.code}, message: ${err.message}`);
@@ -467,10 +472,12 @@ export default function WindowZindexTest() {
                 await subWindow.destroyWindow();
                 let promise = subWindow.setRaiseByClickEnabled(false);
                 promise.then(() => {
-                    hilog.info(domain, tag,msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
-                    await subWindow.destroyWindow();
-                    expect(false).assertTrue();
-                    done();
+                    waitForCompletion(async () => {
+                        hilog.info(domain, tag,msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
+                        await subWindow.destroyWindow();
+                        expect(false).assertTrue();
+                        done();
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + `Failed to setRaiseByClickEnabled the window to app top. Cause code: ${err.code}, message: ${err.message}`);
                     if(err.code = 801){
@@ -552,11 +559,14 @@ export default function WindowZindexTest() {
             await Utils.msSleep(300);
             try {
                 windowClass.setWindowTopmost(true).then(() => {
-                    hilog.info(domain, tag,`${caseName} Succeeded in setting the window to be top most.`);
-                    await windowClass.setWindowTopmost(false)
-                    await subWindowClass.destroyWindow();
-                    done();
+                    waitForCompletion(async () => {
+                        hilog.info(domain, tag,`${caseName} Succeeded in setting the window to be top most.`);
+                        await windowClass.setWindowTopmost(false)
+                        await subWindowClass.destroyWindow();
+                        done();
+                    })
                 }).catch((err: Error):PromiseLike<void>|undefined => {
+                    waitForCompletion(async () => {
                     hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code === 801) {
                         await subWindowClass.destroyWindow();
@@ -565,6 +575,7 @@ export default function WindowZindexTest() {
                         expect(false).assertTrue();
                         done();
                     }
+                    })
                 });
             } catch (exception) {
                 exception = exception as BusinessError;
@@ -636,6 +647,7 @@ export default function WindowZindexTest() {
             await subWin.showWindow();
             await Utils.msSleep(300);
             await subWin.destroyWindow();
+            await Utils.msSleep(300);
             try {
                 subWin.setWindowTopmost(true).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowTopmost.');
@@ -1277,10 +1289,13 @@ export default function WindowZindexTest() {
             let subWinId = (subWin as window.Window).getWindowProperties().id;
             try {
               window.shiftAppWindowFocus(subWinId, mainWinId).then(() => {
+                waitForCompletion(async () => {
                 console.info(msgStr + 'Succeeded in shifting app window focus');
                 await (subWin as window.Window).destroyWindow();
                 done();
+                })
               }).catch((err: Error) => {
+                waitForCompletion(async () => {
                 if (err.code != 801) {
                   console.error(msgStr + `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
                   expect().assertFail();
@@ -1291,6 +1306,7 @@ export default function WindowZindexTest() {
                 }
                 await (subWin as window.Window).destroyWindow();
                 done();
+                })
               });
             } catch (err) {
               if (err.code != 801) {
@@ -1545,13 +1561,16 @@ export default function WindowZindexTest() {
             expect(windowProperties.focusable).assertEqual(false);
             let promise2 = windowClass.setWindowFocusable(true);
             promise2.then(() => {
+            waitForCompletion(async () => {
               console.info('Succeeded in setWindowFocusable.');
               let windowProperties2 = windowClass.getWindowProperties()
               console.info(`${msgStr} windowProperties2: ${JSON.stringify(windowProperties2)}`);
               expect(windowProperties2.focusable).assertEqual(true);
               await windowClass.destroyWindow();
               done();
+            })
             }).catch(async (err: Error) => {
+            waitForCompletion(async () => {
               console.error(`${msgStr} Failed2 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
               await windowClass.destroyWindow();
               if (err.code === 801) {
@@ -1561,6 +1580,7 @@ export default function WindowZindexTest() {
                 expect().assertFail();
                 done();
               }
+            })
             });
           }).catch(async (err: Error) => {
             console.error(`${msgStr} Failed1 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
@@ -1607,13 +1627,16 @@ export default function WindowZindexTest() {
             expect(windowProperties.focusable).assertEqual(false);
             let promise2 = windowClass!.setWindowFocusable(true);
             promise2.then(() => {
+            waitForCompletion(async () => {
               console.info('Succeeded in setWindowFocusable.');
               let windowProperties2 = windowClass!.getWindowProperties()
               console.info(`${msgStr} windowProperties2: ${JSON.stringify(windowProperties2)}`);
               expect(windowProperties2.focusable).assertEqual(true);
               await windowClass.destroyWindow();
               done();
+            })
             }).catch((err: Error) => {
+            waitForCompletion(async () => {
               console.error(`${msgStr} Failed2 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
               await windowClass.destroyWindow();
               if (err.code === 801) {
@@ -1623,6 +1646,7 @@ export default function WindowZindexTest() {
                 expect().assertFail();
                 done();
               }
+            })
             });
           }).catch(async (err: Error) => {
             console.error(`${msgStr} Failed1 to setWindowFocusable. Cause code: ${err.code}, message: ${err.message}`);
@@ -1664,6 +1688,7 @@ export default function WindowZindexTest() {
         try {
 
           windowClass.setWindowFocusable(false, (err: Error | null) => {
+            waitForCompletion(async () => {
             hilog.info(domain, tag,msgStr + 'window setWindowFocusable callback err ：' + JSON.stringify(err));
             if (err?.code !== 0) {
                 expect().assertFail();
@@ -1675,6 +1700,7 @@ export default function WindowZindexTest() {
             expect(windowProperties.focusable).assertEqual(false);
             await windowClass.destroyWindow();
             done();
+            })
           });
         } catch (error) {
           console.error(msgStr + ' Failed. Cause: ' + JSON.stringify(error));
@@ -1854,15 +1880,21 @@ export default function WindowZindexTest() {
         let windowStageStart:window.WindowStage = await startAbility(caseName, context!);
         try {
             windowStageStart.setWindowModal(true).then(() => {
-                hilog.info(domain, tag,msgStr + 'Succeeded in calling removeStartingWindow.');
-                await terminateAbility(caseName);
-                done()
+                waitForCompletion(async () => {
+                    waitForCompletion(async () => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling removeStartingWindow.');
+                    await terminateAbility(caseName);
+                    done()
+                    })
+                })
             }).catch((err: Error):PromiseLike<void>|undefined => {
+                waitForCompletion(async () => {
                 hilog.error(domain, tag,msgStr + 'Failed to call setWindowModal. Cause: ' + err.message + err.code);
                 expect(err.code).assertEqual(801);
                 expect(err.message!==null).assertTrue();
                 await terminateAbility(caseName);
                 done()
+                })
             });
 
         } catch (exception) {

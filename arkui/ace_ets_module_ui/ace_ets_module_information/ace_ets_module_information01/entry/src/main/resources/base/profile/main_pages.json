@@ -15,6 +15,7 @@
         "MainAbility/pages/DataPanel/DataPanelTest",
         "MainAbility/pages/DataPanel/DataPanelCloseEffect",
         "MainAbility/pages/DataPanel/DataPanelPropertiesNullUndefinedTest",
+        "MainAbility/pages/DataPanel/PanelPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Gauge/Gauge3Jsunit",
         "MainAbility/pages/Gauge/GaugeColorsTest",

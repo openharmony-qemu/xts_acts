@@ -92,6 +92,12 @@
         ]
       },
       {
+        "name": "ServiceExtAbility",
+        "srcEntry": "./ets/ServiceExtension/ServiceExtAbility.ets",
+        "type": "service",
+        "exported": false
+      },
+      {
         "name": "MyUIAbility1",
         "srcEntry": "./ets/myuiability/MyUIAbility1.ets",
         "type": "embeddedUI",

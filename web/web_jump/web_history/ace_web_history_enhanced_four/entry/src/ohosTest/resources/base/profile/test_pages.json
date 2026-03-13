@@ -4,6 +4,7 @@
     "testability/pages/webConfigCookieCharacter",
     "testability/pages/webConfigCookieSyncCharacter",
     "testability/pages/webClearAllCookiesCharacter",
-    "testability/pages/webClearAllCookiesSyncCharacter"
+    "testability/pages/webClearAllCookiesSyncCharacter",
+    "testability/pages/webCookieManagerError"
   ]
 }
