@@ -16,9 +16,9 @@
 #include <functional>
 #include <string>
 #include <vector>
-#include "include/ActsAudioDecEncNdkTest.h"
-#include "include/ActsCodecFormatNdkTest.h"
-#include "include/ActsVideoDecEncNdkTest.h"
+#include "include/ActsAudioDecEncNativeTest.h"
+#include "include/ActsCodecFormatNativeTest.h"
+#include "include/ActsVideoDecEncNativeTest.h"
 #include "napi/native_api.h"
 
 using TestFunction = std::function<int()>;
@@ -31,7 +31,7 @@ static const std::vector<TestFunction> g_audioDecEncFuncTests = {
     SubMultimediaMediaAudioDecEncFunction0700,
 };
 
-// CodecFormatFuncTest group: Codec Format (native media API, legacy NDK naming) Tests (0100-0300, index 0-2)
+// CodecFormatFuncTest group: Codec Format (native media API) Tests (0100-0300, index 0-2)
 static const std::vector<TestFunction> g_codecFormatTests = {
     SubMultimediaMediaCodecFormat0100,
     SubMultimediaMediaCodecFormat0200,

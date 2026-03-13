@@ -11,11 +11,11 @@ include_directories(
 
 add_library(mediacppstandard_test SHARED
     NapiInitTest.cpp
-    ActsAudioDecEncNdkTest.cpp
-    ActsCodecFormatNdkTest.cpp
-    ActsVideoDecEncNdkTest.cpp
-    ADecEncNdkSample.cpp
-    VDecEncNdkSample.cpp
+    ActsAudioDecEncNativeTest.cpp
+    ActsCodecFormatNativeTest.cpp
+    ActsVideoDecEncNativeTest.cpp
+    ADecEncNativeSample.cpp
+    VDecEncNativeSample.cpp
     SecurecTest.cpp
     syscap_stub.c
 )
