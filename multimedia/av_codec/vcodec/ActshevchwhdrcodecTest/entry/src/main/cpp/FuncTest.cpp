@@ -70,7 +70,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_009()
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/storage/el2/base/haps/entry_test/files/h263_aac.mp4";
-        sample->DEMUXER_FLAG = true;
+        sample->demuxerFlag = true;
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecName263, g_codecNameHw265)) {
@@ -104,7 +104,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_010()
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/storage/el2/base/haps/entry_test/files/mpeg2.mp4";
-        sample->DEMUXER_FLAG = true;
+        sample->demuxerFlag = true;
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameMpeg2, g_codecNameHw265)) {
@@ -138,7 +138,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_011()
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/storage/el2/base/haps/entry_test/files/mpeg4_1280x720_30.mp4";
-        sample->DEMUXER_FLAG = true;
+        sample->demuxerFlag = true;
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameMpeg4, g_codecNameHw265)) {
@@ -172,7 +172,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_012()
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/storage/el2/base/haps/entry_test/files/h264_mp3_960x544_30r.mp4";
-        sample->DEMUXER_FLAG = true;
+        sample->demuxerFlag = true;
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecName264, g_codecNameHw265)) {
@@ -206,7 +206,7 @@ int DEMUXER_DEC_ENC_MUXER_FUNC_013()
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/storage/el2/base/haps/entry_test/files/VID_720.mp4";
-        sample->DEMUXER_FLAG = true;
+        sample->demuxerFlag = true;
         sample->bframe = true;
         sample->MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
         if (AV_ERR_OK != sample->CreateDemuxerVideocoder(file, g_codecNameSw265, g_codecNameHw265)) {
