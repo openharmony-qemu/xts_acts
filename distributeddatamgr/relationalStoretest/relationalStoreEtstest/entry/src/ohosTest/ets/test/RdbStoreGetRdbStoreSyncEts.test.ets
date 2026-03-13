@@ -456,41 +456,6 @@ export default function RdbStoreGetRdbStoreSyncEtsTest() {
       hilog.info(DOMAIN, TAG, "************* RelationalStore_getRdbStoreSyncTest008 end *************");
     })
     /**
-     * @tc.name   RelationalStore_getRdbStoreSyncTest009
-     * @tc.number SUB_DistributedData_RelationalStore_getRdbStoreSyncTest009
-     * @tc.desc   Abnormal parameter, operation only supported in stage mode (using dataGroupId)
-     * @tc.desc   Therefore, automatic use cases cannot be implemented. For details, see the manual use cases
-     * @tc.expect Throw exception, 14801001 The operation is supported in the stage model only
-     * @tc.autoTest false (Requires Stage mode environment)
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 2
-     */
-    it('RelationalStore_getRdbStoreSyncTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function)  => {
-      hilog.info(DOMAIN, TAG, "************* RelationalStore_getRdbStoreSyncTest009 start *************");
-      const storeConfig: relationalStore.StoreConfig = {
-        name: RDB_TEST_NAME,
-        securityLevel: relationalStore.SecurityLevel.S1,
-        encrypt: false,
-        dataGroupId: '12345678',
-      };
-      let store: relationalStore.RdbStore | undefined = undefined;
-      try {
-        store = relationalStore.getRdbStoreSync(context, storeConfig);
-        hilog.warn(DOMAIN, TAG, "RelationalStore_getRdbStoreSyncTest009: Test may pass in Stage mode");
-      } catch (e) {
-        const err = e as BusinessError;
-        hilog.info(DOMAIN, TAG, `RelationalStore_getRdbStoreSyncTest009: Caught expected error. Code:${err.code}, message:${err.message}`);
-        if (Number(err.code) === 14801001) {
-          hilog.info(DOMAIN, TAG, "RelationalStore_getRdbStoreSyncTest009: Correctly threw error for non-Stage mode");
-        }
-      } finally {
-        await store?.close();
-      }
-      done();
-      hilog.info(DOMAIN, TAG, "************* RelationalStore_getRdbStoreSyncTest009 end *************");
-    })
-    /**
      * @tc.name   RelationalStore_getRdbStoreSyncTest010
      * @tc.number SUB_DistributedData_RelationalStore_getRdbStoreSyncTest010
      * @tc.desc   Abnormal parameter, invalid data group ID
