@@ -791,7 +791,7 @@ export default function RdbStoreGetRdbStoreSyncEtsTest() {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('RelationalStore_getRdbStoreSyncTest017', 0, async (done: Function) => {
+    it('RelationalStore_getRdbStoreSyncTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       hilog.info(DOMAIN, TAG, "************* RelationalStore_getRdbStoreSyncTest017 start *************");
       const storeConfig: relationalStore.StoreConfig = {
         name: RDB_TEST_NAME,
@@ -947,7 +947,7 @@ export default function RdbStoreGetRdbStoreSyncEtsTest() {
     })
     /**
      * @tc.name   RelationalStore_getRdbStoreSyncTest021
-     * @tc.number SUB_DistributedData_RelationalStore_getRdbStoreSyncTest001
+     * @tc.number SUB_DistributedData_RelationalStore_getRdbStoreSyncTest021
      * @tc.desc   Normal parameters, open database, create table, insert data, query data, delete data
      * @tc.expect No exception, return RdbStore normally
      * @tc.size   MediumTest
