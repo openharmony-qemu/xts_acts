@@ -302,6 +302,56 @@ export default function SandboxAPIStaticTest() {
             }
         })
 
+        /**
+         * @tc.name   SUB_Security_FileShare_OperationMode_static_0100
+         * @tc.number SUB_Security_FileShare_OperationMode_static_0100
+         * @tc.desc   Test fileShare OperationMode CREATE_MODE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_Security_FileShare_OperationMode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_FileShare_OperationMode_static_0100---------------------------');
+            let value = fileShare.OperationMode.CREATE_MODE;
+            hilog.info(domain, tag, 'SUB_Security_FileShare_OperationMode_static_0100 value is: ' + value);
+            expect(value).assertEqual(0b100);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_Security_FileShare_OperationMode_static_0200
+         * @tc.number SUB_Security_FileShare_OperationMode_static_0200
+         * @tc.desc   Test fileShare OperationMode DELETE_MODE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_Security_FileShare_OperationMode_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_FileShare_OperationMode_static_0200---------------------------');
+            let value = fileShare.OperationMode.DELETE_MODE;
+            hilog.info(domain, tag, 'SUB_Security_FileShare_OperationMode_static_0200 value is: ' + value);
+            expect(value).assertEqual(0b1000);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_Security_FileShare_OperationMode_static_0300
+         * @tc.number SUB_Security_FileShare_OperationMode_static_0300
+         * @tc.desc   Test fileShare OperationMode RENAME_MODE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_Security_FileShare_OperationMode_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: () => void): Promise<void> => {
+            hilog.info(domain, tag, '----------------------SUB_Security_FileShare_OperationMode_static_0300---------------------------');
+            let value = fileShare.OperationMode.RENAME_MODE;
+            hilog.info(domain, tag, 'SUB_Security_FileShare_OperationMode_static_0300 value is: ' + value);
+            expect(value).assertEqual(0b10000);
+            done();
+        })
     })
 
 }
