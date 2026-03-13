@@ -2433,6 +2433,75 @@ export default function createCameraInput() {
         }
       })
     /**
+     * @tc.name   SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_00001
+     * @tc.number SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_00001
+     * @tc.desc   getSupportedOutputCapability camera CameraPosition CAMERA_POSITION_FOLD_INNER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_00001', Level.LEVEL2,
+      async (done: Function) => {
+        const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_00001';
+        try {
+          console.info(TAG,testName,"start :");
+          if(mCameraDeviceArray.length > 0) {
+            let position = camera.CameraPosition.CAMERA_POSITION_FOLD_INNER;
+            for (let i = 0; i < mCameraDeviceArray.length; i++) {
+              if (position == mCameraDeviceArray[i].cameraPosition) {
+                let cameraOutputCapability =
+                  mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[i]);
+                expect(cameraOutputCapability != null).assertTrue();
+                break;
+              } else {
+                console.info(TAG, testName, "该设备不支持:");
+              }
+            }}
+          done();
+        } catch (error) {
+          console.error(TAG, testName, "fail,errorCode :", error.code);
+          expect().assertFail();
+          done();
+        }
+      })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_00002
+     * @tc.number SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_00002
+     * @tc.desc   getSupportedOutputCapability cameraOutputCapability photoProfiles format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_00002', Level.LEVEL2,
+      async (done: Function) => {
+        const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_OUTPUT_CAPABILITY_00002';
+        try {
+          console.info(TAG,testName,"start :");
+          if(mCameraDeviceArray.length > 0) {
+            let cameraOutputCapability =
+              mCameraManager.getSupportedOutputCapability(mCameraDeviceArray[0]);
+            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
+            expect(cameraOutputCapability.photoProfiles[0].format != null).assertTrue();
+            expect(cameraOutputCapability.photoProfiles[0].size.height > 0).assertTrue();
+            expect(cameraOutputCapability.photoProfiles[0].size.width > 0).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].frameRateRange.min > 0).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].frameRateRange.max > 0).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].format != null).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].size.height > 0 ).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].size.width > 0 ).assertTrue();
+            expect(cameraOutputCapability.previewProfiles[0].size.height > 0).assertTrue();
+            expect(cameraOutputCapability.previewProfiles[0].size.width > 0).assertTrue();
+            expect(cameraOutputCapability.previewProfiles[0].format != null).assertTrue();
+            expect(cameraOutputCapability.supportedMetadataObjectTypes != null).assertTrue();
+          }
+          done();
+        } catch (error) {
+          console.error(TAG, testName, "fail,errorCode :", error.code);
+          expect().assertFail();
+          done();
+        }
+      })
+    /**
      * @tc.name   SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_001
      * @tc.number SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_001
      * @tc.desc   createPreviewOutput Parameter missing
