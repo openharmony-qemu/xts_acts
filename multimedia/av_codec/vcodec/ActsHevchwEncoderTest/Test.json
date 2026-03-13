@@ -2,11 +2,11 @@
  "description": "Configuration for ActsHevchwEncoderTest Tests",
  "driver": {
    "type": "OHJSUnitTest",
-   "test-timeout": "1200000",
-   "shell-timeout": "1200000",
+   "test-timeout": "600000",
+   "shell-timeout": "600000",
    "bundle-name": "com.example.actshevchwencodertest",
    "module-name": "entry_test",
-   "testcase-timeout": "120000"
+   "testcase-timeout": "60000"
  },
  "kits": [
    {

@@ -33,7 +33,7 @@ OH_AVCapability* g_capEnc = nullptr;
 const char* CODEC_NAME = "";
 constexpr double DEFAULT_FRAME_RATE = 30.0;
 constexpr uint32_t DEFAULT_KEY_FRAME_INTERVAL = 2000;
-constexpr uint32_t OHPRINTF_VALUE = 1024
+constexpr uint32_t OHPRINTF_VALUE = 1024;
 } // namespace
 
 namespace OHOS {
@@ -66,14 +66,6 @@ void TearDown()
 }
 } // PtsApiTest
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_001
- * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_001
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_PTS_FUNC_001()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -82,7 +74,7 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_01_sqr_buffer.txt";
-    EncoderConfig config;
+    VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     char *input = new char[1024];
     char *output = new char[1024];
@@ -95,9 +87,9 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -108,14 +100,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_002
- * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_002
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_PTS_FUNC_002()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -124,7 +108,7 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_04_sqr_buffer.txt";
-    EncoderConfig config;
+    VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     char *input = new char[1024];
     char *output = new char[1024];
@@ -137,9 +121,9 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -150,14 +134,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_003
- * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_003
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_PTS_FUNC_003()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -166,7 +142,7 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_07_sqr_buffer.txt";
-    EncoderConfig config;
+    VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     char *input = new char[1024];
     char *output = new char[1024];
@@ -179,9 +155,9 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -192,14 +168,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_004
- * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_004
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_PTS_FUNC_004()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -208,7 +176,7 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_01_sqr_surface.txt";
-    EncoderConfig config;
+    VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     char *input = new char[1024];
     char *output = new char[1024];
@@ -221,9 +189,9 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -234,14 +202,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_005
- * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_005
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_PTS_FUNC_005()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -250,7 +210,7 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_04_sqr_surface.txt";
-    EncoderConfig config;
+    VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     char *input = new char[1024];
     char *output = new char[1024];
@@ -263,9 +223,9 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
@@ -276,14 +236,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_006
- * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_006
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_PTS_FUNC_006()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -292,7 +244,7 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_07_sqr_surface.txt";
-    EncoderConfig config;
+    VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     char *input = new char[1024];
     char *output = new char[1024];
@@ -305,9 +257,9 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
-    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+    vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
     vEncSample->surfInput = config.surfaceMode;
-    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL;
+    vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
     EXPECT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());

@@ -135,7 +135,7 @@ public:
         uint32_t bitrateMode = 0;       // 码率模式（默认值）
         uint32_t bitRate = 0;           // 码率值（默认值）
         bool surfaceMode = false;       // 表面模式（默认值）
-    }
+    };
     int32_t LoadTimeStampData(std::string filePath, EncoderConfig &config);
     VEncAPI11Signal *signal_;
     uint32_t errCount = 0;

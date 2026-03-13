@@ -83,14 +83,6 @@ void TearDown()
 }
 } //BframeFuncTest
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_B_FUNC_001
- * @tc.number VIDEO_HW_ENCODE_B_FUNC_001
- * @tc.desc   test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HW_ENCODE_B_FUNC_001()
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -98,13 +90,13 @@ int VIDEO_HW_ENCODE_B_FUNC_001()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1280; //1280
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_720; //720
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_01.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->defaultBitrateMode = CBR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE;
+    vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE; //0
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -120,14 +112,6 @@ int VIDEO_HW_ENCODE_B_FUNC_001()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_B_FUNC_002
- * @tc.number VIDEO_HW_ENCODE_B_FUNC_002
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HW_ENCODE_B_FUNC_002()
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -135,13 +119,13 @@ int VIDEO_HW_ENCODE_B_FUNC_002()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1280; //1280
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_720; //720
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_02.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->defaultBitrateMode = CBR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE;
+    vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE; //1
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -157,14 +141,6 @@ int VIDEO_HW_ENCODE_B_FUNC_002()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_B_FUNC_003
- * @tc.number VIDEO_HW_ENCODE_B_FUNC_003
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HW_ENCODE_B_FUNC_003()
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -172,13 +148,13 @@ int VIDEO_HW_ENCODE_B_FUNC_003()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1280;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_720;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1280; //1280
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_720; //720
     vEncSample->outDir = "/data/storage/el2/base/files/1280_720_YUV420_03.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->defaultBitrateMode = CBR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE;
+    vEncSample->defaultBframe = DEFAULT_BFRAME_DISABLE; //0
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_YUVI420;
     vEncSample->inpDir = INP_DIR_720_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -194,14 +170,6 @@ int VIDEO_HW_ENCODE_B_FUNC_003()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_B_FUNC_004
- * @tc.number VIDEO_HW_ENCODE_B_FUNC_004
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HW_ENCODE_B_FUNC_004()
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -210,14 +178,14 @@ int VIDEO_HW_ENCODE_B_FUNC_004()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
     vEncSample->surfInput = true;
     vEncSample->bEnable = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrateMode = SQR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE;
+    vEncSample->defaultBframe = DEFAULT_BFRAME_SINGLE; //1
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -233,14 +201,6 @@ int VIDEO_HW_ENCODE_B_FUNC_004()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_B_FUNC_005
- * @tc.number VIDEO_HW_ENCODE_B_FUNC_005
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HW_ENCODE_B_FUNC_005()
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -249,14 +209,14 @@ int VIDEO_HW_ENCODE_B_FUNC_005()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_AUTO;
+    vEncSample->defaultBframe = DEFAULT_BFRAME_AUTO; //-1
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -272,14 +232,6 @@ int VIDEO_HW_ENCODE_B_FUNC_005()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_B_FUNC_006
- * @tc.number VIDEO_HW_ENCODE_B_FUNC_006
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL2
- */
 int VIDEO_HW_ENCODE_B_FUNC_006()
 {
     bool bsupport = OH_AVCapability_IsFeatureSupported(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);
@@ -295,7 +247,7 @@ int VIDEO_HW_ENCODE_B_FUNC_006()
     vEncSample->bEnable = true;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
-    vEncSample->defaultBframe = DEFAULT_BFRAME_UNLIMITED;
+    vEncSample->defaultBframe = DEFAULT_BFRAME_UNLIMITED; //100
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     gFormat = OH_AVCapability_GetFeatureProperties(g_capEnc, OH_AVCapabilityFeature::VIDEO_ENCODER_B_FRAME);

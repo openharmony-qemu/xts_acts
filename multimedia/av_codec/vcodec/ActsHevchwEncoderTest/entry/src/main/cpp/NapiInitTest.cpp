@@ -158,7 +158,7 @@ static napi_value CreateAsyncTest(napi_env env,
     napi_create_string_utf8(env, resourceNameStr, NAPI_AUTO_LENGTH, &resourceName);
     napi_create_async_work(
         env, nullptr, resourceName, ExecuteGenericWork, CompleteGenericWork, context, &context->work);
-        api_queue_async_work(env, context->work);
+        napi_queue_async_work(env, context->work);
     return promise;
 }
 

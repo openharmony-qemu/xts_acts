@@ -23,6 +23,7 @@
 #include <native_image/native_image.h>
 #include <native_window/external_window.h>
 #include <native_buffer/native_buffer.h>
+#include <native_buffer/buffer_common.h>
 #include "include/VideoencApi11Sample.h"
 #include "include/CommonToolTest.h"
 using namespace OHOS;
@@ -267,7 +268,7 @@ int32_t VEncAPI11Sample::CreateSurface()
         cout << "OH_VideoEncoder_GetSurface fail" << endl;
         return ret;
     }
-    ret = AV_ERR_OK;
+    ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_FORMAT, NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP);
     if (ret != AV_ERR_OK) {
         cout << "NativeWindowHandleOpt SET_FORMAT fail" << endl;
         return ret;

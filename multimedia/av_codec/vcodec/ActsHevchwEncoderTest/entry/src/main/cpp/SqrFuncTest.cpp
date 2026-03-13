@@ -79,14 +79,6 @@ void TearDown()
 }
 } //SqrFuncTest
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_001
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_001
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_001()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -94,8 +86,8 @@ int VIDEO_HW_ENCODE_SQR_FUNC_001()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
@@ -103,9 +95,9 @@ int VIDEO_HW_ENCODE_SQR_FUNC_001()
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = VBR;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_20000000;
-    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_20000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_20000000; //20000000
+    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_20000000; //20000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -117,14 +109,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_001()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_002
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_002
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_002()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -139,9 +123,9 @@ int VIDEO_HW_ENCODE_SQR_FUNC_002()
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->surfInput = true;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_20000000;
-    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_20000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_20000000; //20000000
+    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_20000000; //20000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -153,14 +137,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_002()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_003
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_003
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_003()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -168,15 +144,15 @@ int VIDEO_HW_ENCODE_SQR_FUNC_003()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;//1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
-    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
+    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000; //100000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -189,14 +165,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_003()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_004
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_004
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_004()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -204,8 +172,8 @@ int VIDEO_HW_ENCODE_SQR_FUNC_004()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
@@ -221,14 +189,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_004()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_005
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_005
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_005()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -236,15 +196,15 @@ int VIDEO_HW_ENCODE_SQR_FUNC_005()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -257,14 +217,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_005()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_006
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_006
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_006()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -272,13 +224,13 @@ int VIDEO_HW_ENCODE_SQR_FUNC_006()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -291,14 +243,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_006()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_007
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_007
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_007()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -306,15 +250,15 @@ int VIDEO_HW_ENCODE_SQR_FUNC_007()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->maxbiteEnable = true;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
-    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
+    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000; //100000000
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -327,14 +271,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_007()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_008
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_008
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_008()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -342,17 +278,17 @@ int VIDEO_HW_ENCODE_SQR_FUNC_008()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->factorEnable = true;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
-    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_100;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
+    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000; //100000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_100; //100
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -365,14 +301,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_008()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_009
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_009
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_009()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -380,8 +308,8 @@ int VIDEO_HW_ENCODE_SQR_FUNC_009()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
@@ -389,10 +317,10 @@ int VIDEO_HW_ENCODE_SQR_FUNC_009()
     vEncSample->maxbiteEnable = true;
     vEncSample->factorEnable = true;
     vEncSample->qualityEnable = true;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
-    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
-    vEncSample->defaultQuality = DEFAULT_QUALITY_28;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
+    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_150000000; //150000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
+    vEncSample->defaultQuality = DEFAULT_QUALITY_28; //28
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -405,14 +333,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_009()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_010
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_010
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_010()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -423,15 +343,15 @@ int VIDEO_HW_ENCODE_SQR_FUNC_010()
     const char *codecNameAvc = OH_AVCapability_GetName(g_cap);
     cout << "codecNameAvc: " << codecNameAvc << endl;
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->factorEnable = true;
-    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_50000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_30;
+    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_50000000; //50000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_30; //30
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -444,14 +364,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_010()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_011
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_011
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_011()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -459,15 +371,15 @@ int VIDEO_HW_ENCODE_SQR_FUNC_011()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
-    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
+    vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000; //100000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -480,14 +392,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_011()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_012
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_012
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_012()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -495,8 +399,8 @@ int VIDEO_HW_ENCODE_SQR_FUNC_012()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->modeEnable = true;
     vEncSample->surfInput = true;
@@ -512,14 +416,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_012()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_013
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_013
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_013()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -527,15 +423,15 @@ int VIDEO_HW_ENCODE_SQR_FUNC_013()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
-    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
+    vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -548,14 +444,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_013()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_SQR_FUNC_014
- * @tc.number VIDEO_HW_ENCODE_SQR_FUNC_014
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_SQR_FUNC_014()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capEnc, BITRATE_MODE_SQR);
@@ -563,13 +451,13 @@ int VIDEO_HW_ENCODE_SQR_FUNC_014()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
-    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000;
+    vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;

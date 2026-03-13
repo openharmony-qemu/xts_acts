@@ -79,14 +79,6 @@ void TearDown()
 }
 } // RoiFuncTest
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_001
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_001
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_001()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
@@ -94,8 +86,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_001()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1920;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1080;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1920; //1920
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1080; //1080
     vEncSample->roiInfo = "10,10-100,100=-8;100,1-200,200=-4;"
                       "300,350-430,440=-4;510,54050,690=-4;"
                       "700,710-820,1000=-4";
@@ -112,14 +104,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_001()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_002
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_002
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_002()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_VBR);
@@ -127,8 +111,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_002()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1920;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1080;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1920; //1920
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1080; //1080
     vEncSample->roiInfo = "440,1272-1080,1920=-51";
     vEncSample->outDir = OUT_DIR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
@@ -143,14 +127,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_002()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_003
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_003
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_003()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
@@ -158,8 +134,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_003()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,650=51";
     vEncSample->outDir = OUT_DIR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
@@ -173,19 +149,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_003()
     return 0;
 }
 
-// /**
-//  * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_004
-//  * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_004
-//  * @tc.desc      : function test
-//  */
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_004
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_004
- * @tc.desc   VIDEO_HW_ENCODE_ROI_FUNC_004
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_004()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
@@ -193,8 +156,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_004()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "0,0-500,500;500,500-600,600;600,500-700,600";
     vEncSample->outDir = OUT_DIR;
     vEncSample->defaultBitrateMode = SQR;
@@ -209,19 +172,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_004()
     return 0;
 }
 
-// /**
-//  * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_005
-//  * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_005
-//  * @tc.desc      : function test
-//  */
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_005
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_005
- * @tc.desc   VIDEO_HW_ENCODE_ROI_FUNC_005
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_005()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
@@ -229,8 +179,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_005()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1920;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1080;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1920; //1920
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1080; //1080
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
     vEncSample->outDir = OUT_DIR;
     vEncSample->defaultBitrateMode = SQR;
@@ -245,14 +195,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_005()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_006
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_006
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_006()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
@@ -260,8 +202,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_006()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "10,10-100,100=-8;100,10-200,200=-4;"
                         "300,350-430,440=-4;510,540650,690=-4;"
                         "700,710-80,1000=-4";
@@ -278,14 +220,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_006()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_007
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_007
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_007()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_VBR);
@@ -293,8 +227,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_007()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "400,1272-1080,1920=-51";
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
@@ -309,14 +243,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_007()
     return 0;
 }
 
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_008
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_008
- * @tc.desc   function test
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_008()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
@@ -324,8 +250,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,650=51";
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
@@ -340,19 +266,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
     return 0;
 }
 
-// /**
-//  * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_009
-//  * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_009
-//  * @tc.desc      : function test
-//  */
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_009
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_009
- * @tc.desc   VIDEO_HW_ENCODE_ROI_FUNC_009
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_009()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
@@ -360,8 +273,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_009()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "0,0-500,500;500,500-600,600;600,500-700,600";
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
@@ -377,19 +290,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_009()
     return 0;
 }
 
-// /**
-//  * @tc.number    : VIDEO_HW_ENCODE_ROI_FUNC_010
-//  * @tc.name      : VIDEO_HW_ENCODE_ROI_FUNC_010
-//  * @tc.desc      : function test
-//  */
-/**
- * @tc.name   VIDEO_HW_ENCODE_ROI_FUNC_010
- * @tc.number VIDEO_HW_ENCODE_ROI_FUNC_010
- * @tc.desc   VIDEO_HW_ENCODE_ROI_FUNC_010
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
- */
 int VIDEO_HW_ENCODE_ROI_FUNC_010()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_SQR);
@@ -397,8 +297,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_010()
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
-    vEncSample->defaultWidth = DEFAULT_WIDTH_1080;
-    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920;
+    vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
+    vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
