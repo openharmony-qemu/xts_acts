@@ -38,6 +38,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
+import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function RichEditorUndefinedTest() {
   describe('RichEditorUndefined2', () => {
@@ -145,6 +146,8 @@ export default function RichEditorUndefinedTest() {
       await (text?.click() as Promise<void>);
       await (richEditor?.longClick() as Promise<void>);
       await CommonFunc.sleep(3000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onSelect');
       await (resetTextBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -154,6 +157,8 @@ export default function RichEditorUndefinedTest() {
       await CommonFunc.sleep(500);
       await (richEditor?.longClick() as Promise<void>);
       await CommonFunc.sleep(3000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('hello');
       console.info('[richEditorUndefined_static_2003] END');
       done();
@@ -179,6 +184,8 @@ export default function RichEditorUndefinedTest() {
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2054);
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onSubmit');
       await (resetTextBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -189,6 +196,8 @@ export default function RichEditorUndefinedTest() {
       await (richEditor?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2054);
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('hello');
       console.info('[richEditorUndefined_static_2004] END');
@@ -215,7 +224,8 @@ export default function RichEditorUndefinedTest() {
       await driver.triggerKey(2620);
       await driver.triggerKey(2622);
       await CommonFunc.sleep(1000);
-
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RichEditor_text');
       expect(await (text?.getText() as Promise<String>)).assertEqual('onPaste');
       await (resetTextBtn?.click() as Promise<void>);
@@ -227,6 +237,8 @@ export default function RichEditorUndefinedTest() {
       await (richEditor?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2622);
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('RichEditor_text');
       expect(await (text?.getText() as Promise<String>)).assertEqual('hello');
@@ -254,6 +266,8 @@ export default function RichEditorUndefinedTest() {
       let changeBtn_set = await driver.findComponent(ON.id('RichEditor_setCaretOffset'));
       await (richEditor?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       await (changeBtn_set?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onSelectionChange');
@@ -263,6 +277,8 @@ export default function RichEditorUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       await (richEditor?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(1000);
       await (changeBtn_set?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
@@ -295,6 +311,8 @@ export default function RichEditorUndefinedTest() {
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2071);
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('onWillChange');
       await (resetTextBtn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -304,6 +322,8 @@ export default function RichEditorUndefinedTest() {
       await (changeBtn_set?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2071);
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB);
       await CommonFunc.sleep(1000);
       expect(await (text?.getText() as Promise<String>)).assertEqual('hello');
       console.info('[richEditorUndefined_static_2007] END');
