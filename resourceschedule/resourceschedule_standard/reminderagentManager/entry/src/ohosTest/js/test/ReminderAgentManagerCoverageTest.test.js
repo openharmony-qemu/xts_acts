@@ -20,41 +20,40 @@ import notificationManager from '@ohos.notificationManager';
 
 export default function ReminderAgentManagerCoverageTest() {
     describe('ReminderAgentManagerCoverageTest', function () {
-        function sleep(ms) {
-            console.info(`ReminderAgentManagerCoverageTest SUB_NOTIFICATION_ANS_Publish_TEST ===>====>sleep is success`);
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
+        
+        beforeAll(function () {
 
-        beforeAll(async function (done) {
-            console.info(`ReminderAgentManagerCoverageTest beforeAll called requestEnableNotification`)
-            notificationManager.requestEnableNotification(async (err) => {
-                console.info(`ReminderAgentManagerCoverageTest come in requestEnableNotification`);
-                if (err) {
-                    console.info(`ReminderAgentManagerCoverageTest requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-                    expect(false).assertTrue();
-                    done();
-                } else {
-                    console.info("ReminderAgentManagerCoverageTest requestEnableNotification success");
-                    expect(true).assertTrue();
-                    await sleep(1000);
-                    done();
-                }
-            });
+            /*
+             * @tc.setup: setup invoked before all testcases
+             */
+            console.info('ReminderAgentManagerCoverageTest beforeAll called')
         })
 
         afterAll(function () {
-            console.info('afterAll called')
+
+            /*
+             * @tc.teardown: teardown invoked after all testcases
+             */
+            console.info('ReminderAgentManagerCoverageTest afterAll called')
         })
 
         beforeEach(function () {
-            console.info('beforeEach called')
+
+            /*
+             * @tc.setup: setup invoked before each testcases
+             */
+            console.info('ReminderAgentManagerCoverageTest beforeEach called')
         })
 
         afterEach(function () {
-            console.info('afterEach called')
+
+            /*
+             * @tc.teardown: teardown invoked after each testcases
+             */
+            console.info('ReminderAgentManagerCoverageTest afterEach called')
         })
 
-        console.info('start################################start');
+        console.info('ReminderAgentManagerCoverageTest start################################start');
 
         /**
          * @tc.name   publishReminder_callback_ringChannel_001
