@@ -15,6 +15,15 @@
  */
 
 import popupTest from './PopupTest/popupTest.test';
+import PopupNodeTest from './PopupTest/PopupNodeTest.test';
+import CustomPopupOptionsTest from './PopupTest/CustomPopupOptions.test';
+import PopupCommonTest from './PopupTest/PopupCommon.test';
+import PopupOptionsTest from './PopupTest/PopupOptions.test';
+
 export default function testsuite() {
   popupTest();
+  PopupNodeTest();
+  CustomPopupOptionsTest();
+  PopupCommonTest();
+  PopupOptionsTest();
 }
