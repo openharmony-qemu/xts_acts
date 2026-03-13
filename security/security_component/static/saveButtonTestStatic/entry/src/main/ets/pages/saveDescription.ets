@@ -19,7 +19,6 @@ import {
   Column,
   Component,
   ClickEvent,
-  ButtonType,
   SaveButton,
   SaveIconStyle,
   SaveDescription,
@@ -36,7 +35,6 @@ import events_emitter from '@ohos.events.emitter';
 @Entry
 @Component
 struct saveDescription {
-  @State bgType: ButtonType = ButtonType.Normal
   @State isShow: int = 0
 
   build() {
@@ -44,7 +42,7 @@ struct saveDescription {
       Column(){
         Row() {
           Column() {
-            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.DOWNLOAD_FILE, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.DOWNLOAD_FILE})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -67,7 +65,7 @@ struct saveDescription {
           .visibility(this.isShow === 0 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.SAVE, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.SAVE})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -90,7 +88,7 @@ struct saveDescription {
           .visibility(this.isShow === 1 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.SAVE_IMAGE, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.SAVE_IMAGE})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -113,7 +111,7 @@ struct saveDescription {
           .visibility(this.isShow === 2 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.SAVE_FILE, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.SAVE_FILE})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -136,7 +134,7 @@ struct saveDescription {
           .visibility(this.isShow === 3 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD_AND_SHARE, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD_AND_SHARE})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -159,7 +157,7 @@ struct saveDescription {
           .visibility(this.isShow === 4 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.RECEIVE, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.RECEIVE})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -182,7 +180,7 @@ struct saveDescription {
           .visibility(this.isShow === 5 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.CONTINUE_TO_RECEIVE, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.CONTINUE_TO_RECEIVE})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -205,7 +203,7 @@ struct saveDescription {
           .visibility(this.isShow === 6 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.SAVE_TO_GALLERY, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.SAVE_TO_GALLERY})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -228,7 +226,7 @@ struct saveDescription {
           .visibility(this.isShow === 7 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.EXPORT_TO_GALLERY, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.EXPORT_TO_GALLERY})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -251,7 +249,7 @@ struct saveDescription {
           .visibility(this.isShow === 8 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.QUICK_SAVE_TO_GALLERY, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.QUICK_SAVE_TO_GALLERY})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -274,7 +272,7 @@ struct saveDescription {
           .visibility(this.isShow === 9 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.RESAVE_TO_GALLERY, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.RESAVE_TO_GALLERY})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {
@@ -297,7 +295,7 @@ struct saveDescription {
           .visibility(this.isShow === 10 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.SAVE_ALL, buttonType: this.bgType })
+            SaveButton({ icon: SaveIconStyle.LINES, text: SaveDescription.SAVE_ALL})
               .onClick((event: ClickEvent, result: SaveButtonOnClickResult) => {
                 try {
                   let clickData:events_emitter.EventData = {

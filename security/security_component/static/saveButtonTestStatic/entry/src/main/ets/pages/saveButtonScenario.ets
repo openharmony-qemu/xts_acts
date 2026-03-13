@@ -87,7 +87,8 @@ struct saveButtonScenario {
   @State enable: boolean = true
   @State saveId: string = ''
 
-  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+  private stateChangeCallBack: (eventData: events_emitter.EventData) => void = 
+    (eventData: events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
       const data = eventData.data as Record<String, RecordData>
       console.info('====>page_saveButtonScenario page state change called:' + JSON.stringify(eventData.data));

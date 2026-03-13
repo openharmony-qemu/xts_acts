@@ -564,8 +564,8 @@ export default function saveComponentScenarioStaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('Test_Security_SaveButton_ScenariosStatic_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0500';
+     it('Test_Security_SaveButton_ScenariosStatic_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0600';
       console.info(`====>${TCNAME} START====`);
       try {
         let data: Record<string, RecordData> = {
