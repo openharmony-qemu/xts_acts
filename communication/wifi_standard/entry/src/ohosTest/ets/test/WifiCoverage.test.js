@@ -586,7 +586,7 @@ export default function wifiCoverageTest() {
 
 
     /**
-     * @tc.name   Sub_Communication_WiFiFi_P2pConnect_DeviceAddress_Empty_001
+     * @tc.name   Sub_Communication_WiFi_P2pConnect_DeviceAddress_Empty_001
      * @tc.number Sub_Communication_WiFi_P2pConnect_DeviceAddress_Empty_001
      * @tc.desc   Test p2pConnect API with empty deviceAddress
      * @tc.type   FUNCTION
