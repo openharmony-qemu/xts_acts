@@ -222,13 +222,13 @@ export default function SocketErrorCodeTest01() {
           done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName} DP_Socket get FAILED! Error: ${err.code}`)
-          expectTrue(err.code === 2301009);
+          expectTrue(Number(err.code) === 2301009);
           done()
         })
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 2301009);
+        expectTrue(Number(err.code) === 2301009);
         done();
       }
     });
@@ -266,7 +266,7 @@ export default function SocketErrorCodeTest01() {
         udp.send(sendOptions, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(err.code === 2301009);
+            expectTrue(Number(err.code) === 2301009);
             done();
           }
           else{
@@ -277,7 +277,7 @@ export default function SocketErrorCodeTest01() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 2301009);
+        expectTrue(Number(err.code) === 2301009);
         console.info(`${caseName}---End`);
         done();
       }
@@ -317,7 +317,7 @@ export default function SocketErrorCodeTest01() {
         udp.send(sendOptions, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-            expectTrue(err.code === 2301009);
+            expectTrue(Number(err.code) === 2301009);
             done();
           }
           else{
@@ -328,7 +328,7 @@ export default function SocketErrorCodeTest01() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 2301009);
+        expectTrue(Number(err.code) === 2301009);
         console.info(`${caseName}---End`);
         done();
       }
@@ -422,7 +422,7 @@ export default function SocketErrorCodeTest01() {
         tlsServer.setExtraOptions(undefined, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(err.code ===  401);
+            expectTrue(Number(err.code) ===  401);
             done();
           }
           else{
@@ -434,7 +434,7 @@ export default function SocketErrorCodeTest01() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -465,13 +465,13 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -493,7 +493,7 @@ export default function SocketErrorCodeTest01() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -515,7 +515,7 @@ export default function SocketErrorCodeTest01() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -537,7 +537,7 @@ export default function SocketErrorCodeTest01() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -570,7 +570,7 @@ export default function SocketErrorCodeTest01() {
         tls.setExtraOptions(undefined, (err: BusinessError) => {
           if (err) {
             console.log(`${caseName} set ExtraOptions err: ${JSON.stringify(err)}`);
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           }
           else{
@@ -582,7 +582,7 @@ export default function SocketErrorCodeTest01() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -618,13 +618,13 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: BusinessError) => {
           console.log(`${caseName}  setExtraOptions err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -679,12 +679,12 @@ export default function SocketErrorCodeTest01() {
         }).catch((err: BusinessError) => {
           console.log(`${caseName} set fail ${JSON.stringify(err)}`);
           console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -706,7 +706,7 @@ export default function SocketErrorCodeTest01() {
         server.on('connect', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -728,7 +728,7 @@ export default function SocketErrorCodeTest01() {
         server.on('error', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -750,7 +750,7 @@ export default function SocketErrorCodeTest01() {
         server.off('connect', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -772,7 +772,7 @@ export default function SocketErrorCodeTest01() {
         server.off('error', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -796,12 +796,12 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} connect err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -825,12 +825,12 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} send err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         })
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -852,7 +852,7 @@ export default function SocketErrorCodeTest01() {
         client.on('error', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -875,7 +875,7 @@ export default function SocketErrorCodeTest01() {
         client.off('message', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -897,7 +897,7 @@ export default function SocketErrorCodeTest01() {
         client.off('connect', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -919,7 +919,7 @@ export default function SocketErrorCodeTest01() {
         client.off('close', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -941,7 +941,7 @@ export default function SocketErrorCodeTest01() {
         client.off('error', undefined);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -966,12 +966,12 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: BusinessError) => {
           console.error('listen fail: ' + JSON.stringify(err));
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -1069,7 +1069,7 @@ export default function SocketErrorCodeTest01() {
         });
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 2303199)
+        expectTrue(Number(err.code) === 2303199)
         console.info(`${caseName} test end`);
         done();
       }
@@ -1104,7 +1104,7 @@ export default function SocketErrorCodeTest01() {
         done();
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401)
+        expectTrue(Number(err.code) === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -1130,7 +1130,7 @@ export default function SocketErrorCodeTest01() {
         done();
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401)
+        expectTrue(Number(err.code) === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -1156,7 +1156,7 @@ export default function SocketErrorCodeTest01() {
         done();
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401)
+        expectTrue(Number(err.code) === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -1182,7 +1182,7 @@ export default function SocketErrorCodeTest01() {
         done();
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401)
+        expectTrue(Number(err.code) === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -1208,7 +1208,7 @@ export default function SocketErrorCodeTest01() {
         done();
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401)
+        expectTrue(Number(err.code) === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -1234,7 +1234,7 @@ export default function SocketErrorCodeTest01() {
         done();
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401)
+        expectTrue(Number(err.code) === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -1260,7 +1260,7 @@ export default function SocketErrorCodeTest01() {
         done();
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401)
+        expectTrue(Number(err.code) === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -1304,14 +1304,14 @@ export default function SocketErrorCodeTest01() {
         })
           .catch((err: BusinessError) => {
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(err.code === 2301009);
+            expectTrue(Number(err.code) === 2301009);
             console.info(`${caseName}---End`);
             done();
           });
 
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        expectTrue((err as BusinessError).code === 2301009);
+        expectTrue(Number((err as BusinessError).code) === 2301009);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1354,13 +1354,13 @@ export default function SocketErrorCodeTest01() {
         })
           .catch((err: BusinessError) => {
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(err.code === 2301009);
+            expectTrue(Number(err.code) === 2301009);
             console.info(`${caseName}---End`);
             done();
           });
       } catch (err) {
         console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 2301009);
+        expectTrue(Number(err.code) === 2301009);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1388,7 +1388,7 @@ export default function SocketErrorCodeTest01() {
         tlsServer.setExtraOptions(null, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(err.code ===  401);
+            expectTrue(Number(err.code) ===  401);
             done();
           }
           else{
@@ -1400,7 +1400,7 @@ export default function SocketErrorCodeTest01() {
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -1479,13 +1479,13 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
     });
@@ -1563,7 +1563,7 @@ export default function SocketErrorCodeTest01() {
           tls.setExtraOptions(null, (err: BusinessError) => {
             if (err) {
               console.log(`${caseName} set ExtraOptions err: ${JSON.stringify(err)}`);
-              expectTrue(err.code === 401);
+              expectTrue(Number(err.code) === 401);
               done();
             } else {
               console.log(`${caseName} setExtraOptions success: ${JSON.stringify(err)}`);
@@ -1574,7 +1574,7 @@ export default function SocketErrorCodeTest01() {
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
           console.info(`${caseName} test end`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         }
       });
@@ -1611,13 +1611,13 @@ export default function SocketErrorCodeTest01() {
             done();
           }).catch((err: BusinessError) => {
             console.log(`${caseName}  setExtraOptions err: ${JSON.stringify(err)}`);
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           });
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
           console.info(`${caseName} test end`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         }
       });
@@ -1643,12 +1643,12 @@ export default function SocketErrorCodeTest01() {
           }).catch((err: BusinessError) => {
             console.log(`${caseName} set fail ${JSON.stringify(err)}`);
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           });
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         }
         console.info(`${caseName} test end`);
@@ -1678,12 +1678,12 @@ export default function SocketErrorCodeTest01() {
           }).catch((err: BusinessError) => {
             console.log(`${caseName} set fail ${JSON.stringify(err)}`);
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(err.code === 2301000);
+            expectTrue(Number(err.code) === 2301000);
             done();
           });
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 2301000);
+          expectTrue(Number(err.code) === 2301000);
           done();
         }
         console.info(`${caseName} test end`);
@@ -1713,12 +1713,12 @@ export default function SocketErrorCodeTest01() {
           }).catch((err: BusinessError) => {
             console.log(`${caseName} set fail ${JSON.stringify(err)}`);
             console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-            expectTrue(err.code === 2301000);
+            expectTrue(Number(err.code) === 2301000);
             done();
           });
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 2301000);
+          expectTrue(Number(err.code) === 2301000);
           done();
         }
         console.info(`${caseName} test end`);
@@ -1744,12 +1744,12 @@ export default function SocketErrorCodeTest01() {
             done();
           }).catch((err: BusinessError) => {
             console.error('listen fail: ' + JSON.stringify(err));
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           });
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         }
         console.info(`${caseName} test end`);
@@ -1777,12 +1777,12 @@ export default function SocketErrorCodeTest01() {
             done();
           }).catch((err: BusinessError) => {
             console.error('listen fail: ' + JSON.stringify(err));
-            expectTrue(err.code === 401);
+            expectTrue(Number(err.code) === 401);
             done();
           });
         } catch (err) {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         }
         console.info(`${caseName} test end`);
@@ -2031,12 +2031,12 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} connect err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 401);
+          expectTrue(Number(err.code) === 401);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(Number(err.code) === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -2066,12 +2066,12 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} connect err: ${JSON.stringify(err)}`);
-          expectTrue(err.code === 2301111);
+          expectTrue(Number(err.code) === 2301111);
           done();
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectTrue(err.code === 2301111);
+        expectTrue(Number(err.code) === 2301111);
         done();
       }
       console.info(`${caseName} test end`);
