@@ -4437,7 +4437,7 @@ export default function abilityTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_OPTIONALDATA', Level.LEVEL0, (done:Function) => {
+        it('SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_NULLARR_OPTIONALDATA', Level.LEVEL0, (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
             try {
