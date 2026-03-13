@@ -274,7 +274,7 @@ export default function CrateImageSupp() {
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
         console.info(TAG, testName, 'sourceOptions.sourcePixelFormat为：' + sourceOptions.sourcePixelFormat);
-        expect(sourceOptions.sourcePixelFormat).assertEqual(1);
+        expect(sourceOptions.sourcePixelFormat).assertEqual(3);
       } catch (error) {
         console.error(TAG, testName, `Failed to create ImageSource.code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
@@ -300,7 +300,7 @@ export default function CrateImageSupp() {
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
         console.info(TAG, testName, 'sourceOptions.sourcePixelFormat为：' + sourceOptions.sourcePixelFormat);
-        expect(sourceOptions.sourcePixelFormat).assertEqual(2);
+        expect(sourceOptions.sourcePixelFormat).assertEqual(8);
       } catch (error) {
         console.error(TAG, testName, `Failed to create ImageSource.code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
@@ -326,7 +326,7 @@ export default function CrateImageSupp() {
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
         console.info(TAG, testName, 'sourceOptions.sourcePixelFormat为：' + sourceOptions.sourcePixelFormat);
-        expect(sourceOptions.sourcePixelFormat).assertEqual(3);
+        expect(sourceOptions.sourcePixelFormat).assertEqual(10);
       } catch (error) {
         console.error(TAG, testName, `Failed to create ImageSource.code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
@@ -352,7 +352,7 @@ export default function CrateImageSupp() {
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
         console.info(TAG, testName, 'sourceOptions.sourcePixelFormat为：' + sourceOptions.sourcePixelFormat);
-        expect(sourceOptions.sourcePixelFormat).assertEqual(4);
+        expect(sourceOptions.sourcePixelFormat).assertEqual(11);
       } catch (error) {
         console.error(TAG, testName, `Failed to create ImageSource.code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
@@ -378,7 +378,7 @@ export default function CrateImageSupp() {
         };
         const imageSourceObj: image.ImageSource = image.createImageSource(data, sourceOptions);
         console.info(TAG, testName, 'sourceOptions.sourcePixelFormat为：' + sourceOptions.sourcePixelFormat);
-        expect(sourceOptions.sourcePixelFormat).assertEqual(5);
+        expect(sourceOptions.sourcePixelFormat).assertEqual(12);
       } catch (error) {
         console.error(TAG, testName, `Failed to create ImageSource.code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
@@ -688,7 +688,7 @@ export default function CrateImageSupp() {
         resourceMgr.getRawFd('test_exif_v2.jpg').then((rawFileDescriptor: resourceManager.RawFileDescriptor) => {
           const imageSourceObj = image.createImageSource(rawFileDescriptor, sourceOptions);
           console.info(TAG, testName, 'sourceOptions.sourcePixelFormat:'+ sourceOptions.sourcePixelFormat);
-          expect(sourceOptions.sourcePixelFormat).assertEqual(1);
+          expect(sourceOptions.sourcePixelFormat).assertEqual(3);
           done();
         })
       } catch (error) {
@@ -718,7 +718,7 @@ export default function CrateImageSupp() {
         resourceMgr.getRawFd('test_exif_v2.jpg').then((rawFileDescriptor: resourceManager.RawFileDescriptor) => {
           const imageSourceObj = image.createImageSource(rawFileDescriptor, sourceOptions);
           console.info(TAG, testName, 'sourceOptions.sourcePixelFormat:'+ sourceOptions.sourcePixelFormat);
-          expect(sourceOptions.sourcePixelFormat).assertEqual(2);
+          expect(sourceOptions.sourcePixelFormat).assertEqual(8);
           done();
         })
       } catch (error) {
@@ -748,7 +748,7 @@ export default function CrateImageSupp() {
         resourceMgr.getRawFd('test_exif_v2.jpg').then((rawFileDescriptor: resourceManager.RawFileDescriptor) => {
           const imageSourceObj = image.createImageSource(rawFileDescriptor, sourceOptions);
           console.info(TAG, testName, 'sourceOptions.sourcePixelFormat:'+ sourceOptions.sourcePixelFormat);
-          expect(sourceOptions.sourcePixelFormat).assertEqual(3);
+          expect(sourceOptions.sourcePixelFormat).assertEqual(10);
           done();
         })
       } catch (error) {
@@ -778,7 +778,7 @@ export default function CrateImageSupp() {
         resourceMgr.getRawFd('test_exif_v2.jpg').then((rawFileDescriptor: resourceManager.RawFileDescriptor) => {
           const imageSourceObj = image.createImageSource(rawFileDescriptor, sourceOptions);
           console.info(TAG, testName, 'sourceOptions.sourcePixelFormat:'+ sourceOptions.sourcePixelFormat);
-          expect(sourceOptions.sourcePixelFormat).assertEqual(4);
+          expect(sourceOptions.sourcePixelFormat).assertEqual(11);
           done();
         })
       } catch (error) {
@@ -808,7 +808,7 @@ export default function CrateImageSupp() {
         resourceMgr.getRawFd('test_exif_v2.jpg').then((rawFileDescriptor: resourceManager.RawFileDescriptor) => {
           const imageSourceObj = image.createImageSource(rawFileDescriptor, sourceOptions);
           console.info(TAG, testName, 'sourceOptions.sourcePixelFormat:'+ sourceOptions.sourcePixelFormat);
-          expect(sourceOptions.sourcePixelFormat).assertEqual(5);
+          expect(sourceOptions.sourcePixelFormat).assertEqual(12);
           done();
         })
       } catch (error) {
