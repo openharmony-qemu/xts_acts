@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+/** @file Audio decode/encode sample implementation (native media API). */
+
 #include "include/ADecEncNdkSample.h"
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_averrors.h>
@@ -233,7 +235,7 @@ int32_t ADecEncNdkSample::StartDec()
     if (testFile_ == nullptr) {
         testFile_ = std::make_unique<std::ifstream>();
         NDK_CHECK_AND_RETURN_RET_LOG(testFile_ != nullptr, AV_ERR_UNKNOWN, "Fatal: No memory");
-        testFile_->open(INP_FILE, std::ios::in | std::ios::binary);
+        testFile_->open(inpFile, std::ios::in | std::ios::binary);
     }
     if (inputLoopDec_ == nullptr) {
         inputLoopDec_ = make_unique<thread>(&ADecEncNdkSample::InputFuncDec, this);
@@ -401,7 +403,7 @@ int32_t ADecEncNdkSample::PushInbufferDec(uint32_t index, uint32_t bufferSize)
     struct OH_AVCodecBufferAttr attr;
     attr.offset = 0;
     attr.flags = AVCODEC_BUFFER_FLAGS_NONE;
-    if (decInCnt_ == ES_LENGTH) {
+    if (decInCnt_ == esLength) {
         cout << "DEC input: set EOS" << endl;
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
         attr.pts = 0;
@@ -433,7 +435,7 @@ void ADecEncNdkSample::InputFuncDec()
         }
         NDK_CHECK_AND_RETURN_LOG(testFile_ != nullptr && testFile_->is_open(), "Fatal: open file fail");
         uint32_t bufferSize = 0;
-        if (decInCnt_ < ES_LENGTH) {
+        if (decInCnt_ < esLength) {
             bufferSize = ES[decInCnt_];
             char* fileBuffer = (char*)malloc(sizeof(char) * bufferSize + 1);
             NDK_CHECK_AND_RETURN_LOG(fileBuffer != nullptr, "Fatal: malloc fail");
@@ -441,7 +443,7 @@ void ADecEncNdkSample::InputFuncDec()
             if (testFile_->eof()) {
                 free(fileBuffer);
                 cout << "Finish (EOF), sending decoder EOS" << endl;
-                decInCnt_ = ES_LENGTH;
+                decInCnt_ = esLength;
                 PushInbufferDec(index, 0);
                 PopInqueueDec();
                 break;
@@ -469,7 +471,8 @@ struct OH_AVCodec* ADecEncNdkSample::CreateAudioEncoderByMime(std::string mimety
     if (mimetype == "audio/mp4a-latm") {
         aenc_ = OH_AudioEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AAC);
     } else {
-        aenc_ = OH_AudioEncoder_CreateByMime(mimetype.c_str());
+        const std::string mimeCopy(mimetype);
+        aenc_ = OH_AudioEncoder_CreateByMime(mimeCopy.c_str());
     }
     NDK_CHECK_AND_RETURN_RET_LOG(aenc_ != nullptr, nullptr, "Fatal: OH_AudioEncoder_CreateByMime");
     cbEnc_.onError = AencAsyncError;
@@ -748,14 +751,14 @@ int32_t ADecEncNdkSample::WriteToFile()
         return AV_ERR_INVALID_VAL;
     }
     uint32_t size = acodecSignal_->sizeQueueEnc_.front();
-    FILE* outFile = fopen(OUT_FILE, "a");
-    if (outFile == nullptr) {
+    FILE* fp = fopen(outFile, "a");
+    if (fp == nullptr) {
         cout << "dump data fail" << endl;
         return AV_ERR_INVALID_VAL;
     } else {
-        fwrite(OH_AVMemory_GetAddr(buffer), 1, size, outFile);
+        fwrite(OH_AVMemory_GetAddr(buffer), 1, size, fp);
     }
-    return fclose(outFile);
+    return fclose(fp);
 }
 
 void ADecEncNdkSample::OutputFuncEnc()
@@ -797,9 +800,9 @@ void ADecEncNdkSample::OutputFuncEnc()
 
 void ADecEncNdkSample::SetReadPath(const char* inpPath, uint32_t es[], uint32_t length)
 {
-    INP_FILE = inpPath;
+    inpFile = inpPath;
     ES = es;
-    ES_LENGTH = length;
+    esLength = length;
 }
 
 void ADecEncNdkSample::ReRead()
@@ -808,8 +811,8 @@ void ADecEncNdkSample::ReRead()
         testFile_->close();
         cout << "ReRead close before file success " << endl;
     }
-    cout << "ReRead INP_FILE is " << INP_FILE << endl;
-    testFile_->open(INP_FILE, std::ios::in | std::ios::binary);
+    cout << "ReRead inpFile is " << inpFile << endl;
+    testFile_->open(inpFile, std::ios::in | std::ios::binary);
     if (testFile_ != nullptr) {
         cout << "testFile open success" << endl;
     }
@@ -823,7 +826,7 @@ void ADecEncNdkSample::SetEosState(bool needSetEos)
 
 void ADecEncNdkSample::SetSavePath(const char* outpPath)
 {
-    OUT_FILE = outpPath;
+    outFile = outpPath;
 }
 
 int32_t ADecEncNdkSample::CalcuError()

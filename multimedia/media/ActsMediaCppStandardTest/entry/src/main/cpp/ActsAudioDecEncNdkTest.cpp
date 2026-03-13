@@ -51,6 +51,8 @@ static constexpr uint32_t DEFAULT_CHANNELS = 2;
 static const char* READPATH = "/data/storage/el2/base/haps/entry_test/files/AAC_48000_32_1.aac";
 
 static constexpr int EOS_WAIT_TIMEOUT_SEC = 90;
+static constexpr int kWaitPollMs = 100;
+static constexpr int kExpectedAudioFrameCount = 50;
 
 static int WaitForEncEosWithTimeout(ADecEncNdkSample* sample, int timeoutSeconds)
 {
@@ -60,7 +62,7 @@ static int WaitForEncEosWithTimeout(ADecEncNdkSample* sample, int timeoutSeconds
             cout << "WaitForEncEos: timeout after " << timeoutSeconds << "s" << endl;
             return -1;
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(std::chrono::milliseconds(kWaitPollMs));
     }
     return 0;
 }
@@ -169,6 +171,78 @@ static bool SetFormat(struct OH_AVFormat* format, map<string, int> mediaDescript
     return true;
 }
 
+static int SetupAudioDecEncByName(ADecEncNdkSample* sample, OH_AVFormat* format, const map<string, int>& param)
+{
+    struct OH_AVCodec* audDec = sample->CreateAudioDecoderByName(DECODER_AAC);
+    if (audDec == nullptr) {
+        return -1;
+    }
+    if (sample->ConfigureDec(format) != AV_ERR_OK) {
+        return -1;
+    }
+    OH_AVFormat* outDescDec = OH_AudioDecoder_GetOutputDescription(audDec);
+    if (outDescDec == nullptr) {
+        return -1;
+    }
+    if (!CheckDecDesc(param, outDescDec)) {
+        return -1;
+    }
+    if (sample->PrepareDec() != AV_ERR_OK) {
+        return -1;
+    }
+    struct OH_AVCodec* audEnc = sample->CreateAudioEncoderByName(ENCODER_AAC);
+    if (audEnc == nullptr) {
+        return -1;
+    }
+    if (sample->ConfigureEnc(format) != AV_ERR_OK) {
+        return -1;
+    }
+    OH_AVFormat* outDescEnc = OH_AudioEncoder_GetOutputDescription(audEnc);
+    if (outDescEnc == nullptr) {
+        return -1;
+    }
+    if (!CheckDecDesc(param, outDescEnc)) {
+        return -1;
+    }
+    if (sample->PrepareEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
+static int SetupAudioDecEncByMime(ADecEncNdkSample* sample, OH_AVFormat* format)
+{
+    if (sample->ConfigureDec(format) != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->PrepareDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->CreateAudioEncoderByMime(MIME_TYPE_AAC) == nullptr) {
+        return -1;
+    }
+    if (sample->ConfigureEnc(format) != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->PrepareEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
+static int WaitDecEosThenFlushAndCheck(ADecEncNdkSample* sample)
+{
+    while (!sample->GetDecEosState()) {
+    }
+    if (sample->CalcuError() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->FlushDec() != AV_ERR_OK || sample->FlushEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
 static bool CanUseAudioCodec()
 {
     return canIUse("SystemCapability.Multimedia.Media.CodecBase") &&
@@ -208,63 +282,11 @@ int SubMultimediaMediaAudioDecEncFunction0100()
         return -1;
     }
     OH_AVFormat_SetStringValue(audioFormat, OH_MD_KEY_CODEC_MIME, OH_AVCODEC_MIMETYPE_AUDIO_AAC);
-
-    struct OH_AVCodec* audDec = aDecEncSample->CreateAudioDecoderByName(DECODER_AAC);
-    if (audDec == nullptr) {
+    if (SetupAudioDecEncByName(aDecEncSample, audioFormat, AudioParam) != 0) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    OH_AVFormat* OutDescDec = OH_AudioDecoder_GetOutputDescription(audDec);
-    if (OutDescDec == nullptr) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (!CheckDecDesc(AudioParam, OutDescDec)) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-
-    struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByName(ENCODER_AAC);
-    if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    OH_AVFormat* OutDescEnc = OH_AudioEncoder_GetOutputDescription(audEnc);
-    if (OutDescEnc == nullptr) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (!CheckDecDesc(AudioParam, OutDescEnc)) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-
     aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out1.aac");
     if (StartEncDecWithParams(aDecEncSample, audioFormat) != 0) {
@@ -277,16 +299,10 @@ int SubMultimediaMediaAudioDecEncFunction0100()
         delete aDecEncSample;
         return -1;
     }
-    audDec = nullptr;
-    audEnc = nullptr;
     OH_AVFormat_Destroy(audioFormat);
-    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
-    if (calcuErr != AV_ERR_OK) {
-        return -1;
-    }
-    return AV_ERR_OK;
+    return (calcuErr == AV_ERR_OK) ? AV_ERR_OK : -1;
 }
 
 /**
@@ -304,9 +320,7 @@ int SubMultimediaMediaAudioDecEncFunction0200()
         return AV_ERR_OK;
     }
     ADecEncNdkSample* aDecEncSample = new ADecEncNdkSample();
-
-    struct OH_AVCodec* audDec = aDecEncSample->CreateAudioDecoderByMime(MIME_TYPE_AAC);
-    if (audDec == nullptr) {
+    if (aDecEncSample->CreateAudioDecoderByMime(MIME_TYPE_AAC) == nullptr) {
         delete aDecEncSample;
         return -1;
     }
@@ -319,43 +333,14 @@ int SubMultimediaMediaAudioDecEncFunction0200()
     OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
     OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
     OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_TRACK_TYPE, MEDIA_TYPE_AUD);
-
-    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-
-    struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByMime(MIME_TYPE_AAC);
-    if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
+    if (SetupAudioDecEncByMime(aDecEncSample, audioFormat) != 0) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
     aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out2.aac");
-
-    if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->StartDec() != AV_ERR_OK) {
+    if (aDecEncSample->StartEnc() != AV_ERR_OK || aDecEncSample->StartDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
@@ -365,16 +350,10 @@ int SubMultimediaMediaAudioDecEncFunction0200()
         delete aDecEncSample;
         return -1;
     }
-    audDec = nullptr;
-    audEnc = nullptr;
     OH_AVFormat_Destroy(audioFormat);
-    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
-    if (calcuErr != AV_ERR_OK) {
-        return -1;
-    }
-    return AV_ERR_OK;
+    return (calcuErr == AV_ERR_OK) ? AV_ERR_OK : -1;
 }
 
 /**
@@ -535,7 +514,8 @@ int SubMultimediaMediaAudioDecEncFunction0400()
         delete aDecEncSample;
         return -1;
     }
-    while (aDecEncSample->GetFrameCount() < 50) {
+    /* Loop exits when encoder output callback increments frame count to kExpectedAudioFrameCount. */
+    while (aDecEncSample->GetFrameCount() < kExpectedAudioFrameCount) {
     };
     if (aDecEncSample->FlushDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(audioFormat);
@@ -595,9 +575,7 @@ int SubMultimediaMediaAudioDecEncFunction0500()
         return AV_ERR_OK;
     }
     ADecEncNdkSample* aDecEncSample = new ADecEncNdkSample();
-
-    struct OH_AVCodec* audDec = aDecEncSample->CreateAudioDecoderByMime(MIME_TYPE_AAC);
-    if (audDec == nullptr) {
+    if (aDecEncSample->CreateAudioDecoderByMime(MIME_TYPE_AAC) == nullptr) {
         delete aDecEncSample;
         return -1;
     }
@@ -609,29 +587,7 @@ int SubMultimediaMediaAudioDecEncFunction0500()
     OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNELS);
     OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLE_RATE);
     OH_AVFormat_SetIntValue(audioFormat, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, AudioStandard::SAMPLE_S16LE);
-    if (aDecEncSample->ConfigureDec(audioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-
-    struct OH_AVCodec* audEnc = aDecEncSample->CreateAudioEncoderByMime(MIME_TYPE_AAC);
-    if (audEnc == nullptr) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->ConfigureEnc(audioFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->PrepareEnc() != AV_ERR_OK) {
+    if (SetupAudioDecEncByMime(aDecEncSample, audioFormat) != 0) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
@@ -639,31 +595,12 @@ int SubMultimediaMediaAudioDecEncFunction0500()
     aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
     aDecEncSample->SetEosState(false);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out5.aac");
-
-    if (aDecEncSample->StartEnc() != AV_ERR_OK) {
+    if (aDecEncSample->StartEnc() != AV_ERR_OK || aDecEncSample->StartDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    while (!aDecEncSample->GetDecEosState()) {
-    };
-    cout << "aDecEncSample->GetDecEosState() is " << aDecEncSample->GetDecEosState() << endl;
-    if (aDecEncSample->CalcuError() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->FlushDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->FlushEnc() != AV_ERR_OK) {
+    if (WaitDecEosThenFlushAndCheck(aDecEncSample) != 0) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
@@ -672,33 +609,21 @@ int SubMultimediaMediaAudioDecEncFunction0500()
     aDecEncSample->ResetDecParam();
     aDecEncSample->ResetEncParam();
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out5_2.aac");
-    if (aDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
-    if (aDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(audioFormat);
-        delete aDecEncSample;
-        return -1;
-    }
     aDecEncSample->SetEosState(true);
-
+    if (aDecEncSample->StartEnc() != AV_ERR_OK || aDecEncSample->StartDec() != AV_ERR_OK) {
+        OH_AVFormat_Destroy(audioFormat);
+        delete aDecEncSample;
+        return -1;
+    }
     if (WaitEosAndRelease(aDecEncSample) != 0) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
     }
-    audDec = nullptr;
-    audEnc = nullptr;
     OH_AVFormat_Destroy(audioFormat);
-    audioFormat = nullptr;
     int32_t calcuErr = aDecEncSample->CalcuError();
     delete aDecEncSample;
-    if (calcuErr != AV_ERR_OK) {
-        return -1;
-    }
-    return AV_ERR_OK;
+    return (calcuErr == AV_ERR_OK) ? AV_ERR_OK : -1;
 }
 
 /**
@@ -771,7 +696,8 @@ int SubMultimediaMediaAudioDecEncFunction0600()
         delete aDecEncSample;
         return -1;
     }
-    while (aDecEncSample->GetFrameCount() < 50) {
+    /* Loop exits when encoder output callback increments frame count to kExpectedAudioFrameCount. */
+    while (aDecEncSample->GetFrameCount() < kExpectedAudioFrameCount) {
     };
     if (aDecEncSample->StopDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(audioFormat);

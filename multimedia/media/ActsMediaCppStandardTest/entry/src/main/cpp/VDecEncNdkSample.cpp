@@ -36,8 +36,8 @@ constexpr int32_t STOPNUM = 10000;
 void VdecAsyncError(OH_AVCodec* codec, int32_t errorCode, void* userData)
 {
     cout << "DEC Error errorCode=" << errorCode << endl;
-    VDecEncSignal* vcodecSignal_ = static_cast<VDecEncSignal*>(userData);
-    vcodecSignal_->errorNum_ += 1;
+    VDecEncSignal* vcodecSignal = static_cast<VDecEncSignal*>(userData);
+    vcodecSignal->errorNum_ += 1;
 }
 
 void VdecAsyncStreamChanged(OH_AVCodec* codec, OH_AVFormat* format, void* userData)
@@ -46,15 +46,15 @@ void VdecAsyncStreamChanged(OH_AVCodec* codec, OH_AVFormat* format, void* userDa
 }
 void VdecAsyncNeedInputData(OH_AVCodec* codec, uint32_t index, OH_AVMemory* data, void* userData)
 {
-    VDecEncSignal* vcodecSignal_ = static_cast<VDecEncSignal*>(userData);
-    unique_lock<mutex> lock(vcodecSignal_->inMutexDec_);
-    if (vcodecSignal_->isVdecFlushing_.load()) {
+    VDecEncSignal* vcodecSignal = static_cast<VDecEncSignal*>(userData);
+    unique_lock<mutex> lock(vcodecSignal->inMutexDec_);
+    if (vcodecSignal->isVdecFlushing_.load()) {
         cout << "VdecAsyncNeedInputData isVdecFlushing_ is true, return" << endl;
         return;
     }
-    vcodecSignal_->inQueueDec_.push(index);
-    vcodecSignal_->inBufferQueueDec_.push(data);
-    vcodecSignal_->inCondDec_.notify_all();
+    vcodecSignal->inQueueDec_.push(index);
+    vcodecSignal->inBufferQueueDec_.push(data);
+    vcodecSignal->inCondDec_.notify_all();
 }
 
 void VdecAsyncNewOutputData(OH_AVCodec* codec,
@@ -63,22 +63,22 @@ void VdecAsyncNewOutputData(OH_AVCodec* codec,
                             OH_AVCodecBufferAttr* attr,
                             void* userData)
 {
-    VDecEncSignal* vcodecSignal_ = static_cast<VDecEncSignal*>(userData);
-    unique_lock<mutex> lock(vcodecSignal_->outMutexDec_);
-    if (vcodecSignal_->isVdecFlushing_.load()) {
+    VDecEncSignal* vcodecSignal = static_cast<VDecEncSignal*>(userData);
+    unique_lock<mutex> lock(vcodecSignal->outMutexDec_);
+    if (vcodecSignal->isVdecFlushing_.load()) {
         cout << "VdecAsyncNeedInputData isVdecFlushing_ is true, return" << endl;
         return;
     }
-    vcodecSignal_->outQueueDec_.push(index);
-    vcodecSignal_->flagQueueDec_.push(attr->flags);
-    vcodecSignal_->outCondDec_.notify_all();
+    vcodecSignal->outQueueDec_.push(index);
+    vcodecSignal->flagQueueDec_.push(attr->flags);
+    vcodecSignal->outCondDec_.notify_all();
 }
 
 void VencAsyncError(OH_AVCodec* codec, int32_t errorCode, void* userData)
 {
     cout << "ENC Error errorCode=" << errorCode << endl;
-    VDecEncSignal* vcodecSignal_ = static_cast<VDecEncSignal*>(userData);
-    vcodecSignal_->errorNum_ += 1;
+    VDecEncSignal* vcodecSignal = static_cast<VDecEncSignal*>(userData);
+    vcodecSignal->errorNum_ += 1;
 }
 
 void VencAsyncStreamChanged(OH_AVCodec* codec, OH_AVFormat* format, void* userData)
@@ -92,17 +92,17 @@ void VencAsyncNewOutputData(OH_AVCodec* codec,
                             OH_AVCodecBufferAttr* attr,
                             void* userData)
 {
-    VDecEncSignal* vcodecSignal_ = static_cast<VDecEncSignal*>(userData);
-    unique_lock<mutex> lock(vcodecSignal_->outMutexEnc_);
-    if (vcodecSignal_->isVencFlushing_.load()) {
+    VDecEncSignal* vcodecSignal = static_cast<VDecEncSignal*>(userData);
+    unique_lock<mutex> lock(vcodecSignal->outMutexEnc_);
+    if (vcodecSignal->isVencFlushing_.load()) {
         cout << "VdecAsyncNeedInputData isVencFlushing_ is true, return" << endl;
         return;
     }
-    vcodecSignal_->outQueueEnc_.push(index);
-    vcodecSignal_->sizeQueueEnc_.push(attr->size);
-    vcodecSignal_->flagQueueEnc_.push(attr->flags);
-    vcodecSignal_->outBufferQueueEnc_.push(data);
-    vcodecSignal_->outCondEnc_.notify_all();
+    vcodecSignal->outQueueEnc_.push(index);
+    vcodecSignal->sizeQueueEnc_.push(attr->size);
+    vcodecSignal->flagQueueEnc_.push(attr->flags);
+    vcodecSignal->outBufferQueueEnc_.push(data);
+    vcodecSignal->outCondEnc_.notify_all();
 }
 
 void clearIntqueue(std::queue<uint32_t>& q)
@@ -586,7 +586,8 @@ struct OH_AVCodec* VDecEncNdkSample::CreateVideoEncoderByMime(std::string mimety
 
 struct OH_AVCodec* VDecEncNdkSample::CreateVideoEncoderByName(std::string name)
 {
-    venc_ = OH_VideoEncoder_CreateByName(name.c_str());
+    const std::string nameCopy(name);
+    venc_ = OH_VideoEncoder_CreateByName(nameCopy.c_str());
     NDK_CHECK_AND_RETURN_RET_LOG(venc_ != nullptr, nullptr, "Fatal: OH_VideoEncoder_CreateByName");
 
     if (vcodecSignal_ == nullptr) {

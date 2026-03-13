@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+/** @file Log helpers for native API tests (check-and-return macros). */
+
 #ifndef NDKTEST_LOG_H
 #define NDKTEST_LOG_H
 

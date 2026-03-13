@@ -133,10 +133,10 @@ private:
     struct OH_AVCodecAsyncCallback cbEnc_;
     int64_t timeStampEnc_ = 0;
     std::string outDir_ = "/data/media/out.aac";
-    const char* INP_FILE;
-    const char* OUT_FILE;
+    const char* inpFile;
+    const char* outFile;
     uint32_t* ES;
-    uint32_t ES_LENGTH = 0;
+    uint32_t esLength = 0;
 };
 }
 }

@@ -170,6 +170,49 @@ static int ConfigureAndStartVideoDecEnc(VDecEncNdkSample* sample, OH_AVFormat* f
     return GetSurfaceAndStartVideoDecEnc(sample, format);
 }
 
+static int CreateVideoDecEncAvcAndSetPaths(VDecEncNdkSample* sample, const char* savePath, bool noEos = false)
+{
+    if (sample->CreateVideoDecoderByMime(MIME_TYPE_AVC) == nullptr) {
+        return -1;
+    }
+    if (sample->CreateVideoEncoderByMime(MIME_TYPE_AVC) == nullptr) {
+        return -1;
+    }
+    sample->SetReadPath(READPATH);
+    sample->SetSavePath(savePath);
+    if (noEos) {
+        sample->SetEosState(false);
+    }
+    return 0;
+}
+
+static int WaitDecEosThenStopFlushEncAndCheck(VDecEncNdkSample* sample, OH_AVFormat* /* format */)
+{
+    while (!sample->GetDecEosState()) {
+    }
+    if (sample->StopDec() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->FlushEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    return (sample->CalcuError() == AV_ERR_OK) ? 0 : -1;
+}
+
+static int WaitEncEosThenStopAndRelease(VDecEncNdkSample* sample)
+{
+    if (WaitForEncEosWithTimeout(sample, EOS_WAIT_TIMEOUT_SEC) != 0) {
+        return -1;
+    }
+    if (sample->StopDec() != AV_ERR_OK || sample->StopEnc() != AV_ERR_OK) {
+        return -1;
+    }
+    if (sample->ReleaseEnc() != AV_ERR_OK || sample->ReleaseDec() != AV_ERR_OK) {
+        return -1;
+    }
+    return 0;
+}
+
 int SubMultimediaMediaVideoDecEncFunction0100()
 {
     InitCapabilities();
@@ -216,13 +259,13 @@ int SubMultimediaMediaVideoDecEncFunction0100()
         delete vDecEncSample;
         return -1;
     }
-    OH_AVFormat* OutDescDec = OH_VideoDecoder_GetOutputDescription(videoDec);
-    if (OutDescDec == nullptr) {
+    OH_AVFormat* outDescDec = OH_VideoDecoder_GetOutputDescription(videoDec);
+    if (outDescDec == nullptr) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
     }
-    if (!CheckDecDesc(VideoParam, OutDescDec)) {
+    if (!CheckDecDesc(VideoParam, outDescDec)) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
@@ -233,8 +276,8 @@ int SubMultimediaMediaVideoDecEncFunction0100()
         delete vDecEncSample;
         return -1;
     }
-    OH_AVFormat* OutDescEnc = OH_VideoEncoder_GetOutputDescription(videoEnc);
-    if (OutDescEnc == nullptr) {
+    OH_AVFormat* outDescEnc = OH_VideoEncoder_GetOutputDescription(videoEnc);
+    if (outDescEnc == nullptr) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
@@ -403,20 +446,10 @@ int SubMultimediaMediaVideoDecEncFunction0300()
         return AV_ERR_OK;
     }
     VDecEncNdkSample* vDecEncSample = new VDecEncNdkSample();
-
-    struct OH_AVCodec* videoDec = vDecEncSample->CreateVideoDecoderByMime(MIME_TYPE_AVC);
-    if (videoDec == nullptr) {
+    if (CreateVideoDecEncAvcAndSetPaths(vDecEncSample, "/data/storage/el2/base/files/video_003.h264") != 0) {
         delete vDecEncSample;
         return -1;
     }
-    struct OH_AVCodec* videoEnc = vDecEncSample->CreateVideoEncoderByMime(MIME_TYPE_AVC);
-    if (videoEnc == nullptr) {
-        delete vDecEncSample;
-        return -1;
-    }
-    vDecEncSample->SetReadPath(READPATH);
-    vDecEncSample->SetSavePath("/data/storage/el2/base/files/video_003.h264");
-
     OH_AVFormat* VideoFormat = createFormat();
     OH_AVFormat_SetIntValue(VideoFormat, OH_MD_KEY_PROFILE, AVC_PROFILE_BASELINE);
 
@@ -436,21 +469,15 @@ int SubMultimediaMediaVideoDecEncFunction0300()
         delete vDecEncSample;
         return -1;
     }
-    videoEnc = nullptr;
     if (vDecEncSample->ReleaseDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
     }
-    videoDec = nullptr;
     OH_AVFormat_Destroy(VideoFormat);
-    VideoFormat = nullptr;
     int ret = vDecEncSample->CalcuError();
     delete vDecEncSample;
-    if (ret != AV_ERR_OK) {
-        return -1;
-    }
-    return AV_ERR_OK;
+    return (ret == AV_ERR_OK) ? AV_ERR_OK : -1;
 }
 
 int SubMultimediaMediaVideoDecEncFunction0400()
@@ -461,21 +488,10 @@ int SubMultimediaMediaVideoDecEncFunction0400()
         return AV_ERR_OK;
     }
     VDecEncNdkSample* vDecEncSample = new VDecEncNdkSample();
-
-    struct OH_AVCodec* videoDec = vDecEncSample->CreateVideoDecoderByMime(MIME_TYPE_AVC);
-    if (videoDec == nullptr) {
+    if (CreateVideoDecEncAvcAndSetPaths(vDecEncSample, "/data/storage/el2/base/files/video_004.h264", true) != 0) {
         delete vDecEncSample;
         return -1;
     }
-    struct OH_AVCodec* videoEnc = vDecEncSample->CreateVideoEncoderByMime(MIME_TYPE_AVC);
-    if (videoEnc == nullptr) {
-        delete vDecEncSample;
-        return -1;
-    }
-    vDecEncSample->SetReadPath(READPATH);
-    vDecEncSample->SetEosState(false);
-    vDecEncSample->SetSavePath("/data/storage/el2/base/files/video_004.h264");
-
     OH_AVFormat* VideoFormat = createFormat();
     OH_AVFormat_SetIntValue(VideoFormat, OH_MD_KEY_PROFILE, AVC_PROFILE_HIGH);
 
@@ -524,21 +540,15 @@ int SubMultimediaMediaVideoDecEncFunction0400()
         delete vDecEncSample;
         return -1;
     }
-    videoEnc = nullptr;
     if (vDecEncSample->ReleaseDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
     }
-    videoDec = nullptr;
     OH_AVFormat_Destroy(VideoFormat);
-    VideoFormat = nullptr;
     int ret = vDecEncSample->CalcuError();
     delete vDecEncSample;
-    if (ret != AV_ERR_OK) {
-        return -1;
-    }
-    return AV_ERR_OK;
+    return (ret == AV_ERR_OK) ? AV_ERR_OK : -1;
 }
 
 int SubMultimediaMediaVideoDecEncFunction0500()
@@ -811,76 +821,17 @@ int SubMultimediaMediaVideoDecEncFunction0700()
         return AV_ERR_OK;
     }
     VDecEncNdkSample* vDecEncSample = new VDecEncNdkSample();
-
-    struct OH_AVCodec* videoDec = vDecEncSample->CreateVideoDecoderByMime(MIME_TYPE_AVC);
-    if (videoDec == nullptr) {
+    if (CreateVideoDecEncAvcAndSetPaths(vDecEncSample, "/data/storage/el2/base/files/video_007.h264", true) != 0) {
         delete vDecEncSample;
         return -1;
     }
-    struct OH_AVCodec* videoEnc = vDecEncSample->CreateVideoEncoderByMime(MIME_TYPE_AVC);
-    if (videoEnc == nullptr) {
-        delete vDecEncSample;
-        return -1;
-    }
-    vDecEncSample->SetReadPath(READPATH);
-    vDecEncSample->SetEosState(false);
-    vDecEncSample->SetSavePath("/data/storage/el2/base/files/video_007.h264");
-
     OH_AVFormat* VideoFormat = createFormat();
-    if (vDecEncSample->ConfigureDec(VideoFormat) != AV_ERR_OK) {
+    if (ConfigureAndStartVideoDecEnc(vDecEncSample, VideoFormat) != 0) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
     }
-    if (vDecEncSample->ConfigureEnc(VideoFormat) != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->GetSurface() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->SetOutputSurface() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->PrepareEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->PrepareDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StartEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StartDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-
-    while (!vDecEncSample->GetDecEosState()) {
-    };
-    if (vDecEncSample->StopDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->FlushEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->CalcuError() != AV_ERR_OK) {
+    if (WaitDecEosThenStopFlushEncAndCheck(vDecEncSample, VideoFormat) != 0) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
@@ -890,50 +841,18 @@ int SubMultimediaMediaVideoDecEncFunction0700()
     vDecEncSample->ResetEncParam();
     vDecEncSample->SetSavePath("/data/storage/el2/base/files/video_007_2.h264");
     vDecEncSample->SetEosState(true);
-    if (vDecEncSample->StartEnc() != AV_ERR_OK) {
+    if (vDecEncSample->StartEnc() != AV_ERR_OK || vDecEncSample->StartDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
     }
-    if (vDecEncSample->StartDec() != AV_ERR_OK) {
+    if (WaitEncEosThenStopAndRelease(vDecEncSample) != 0) {
         OH_AVFormat_Destroy(VideoFormat);
         delete vDecEncSample;
         return -1;
     }
-
-    if (WaitForEncEosWithTimeout(vDecEncSample, EOS_WAIT_TIMEOUT_SEC) != 0) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StopDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->StopEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    if (vDecEncSample->ReleaseEnc() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    videoEnc = nullptr;
-    if (vDecEncSample->ReleaseDec() != AV_ERR_OK) {
-        OH_AVFormat_Destroy(VideoFormat);
-        delete vDecEncSample;
-        return -1;
-    }
-    videoDec = nullptr;
     OH_AVFormat_Destroy(VideoFormat);
-    VideoFormat = nullptr;
     int ret = vDecEncSample->CalcuError();
     delete vDecEncSample;
-    if (ret != AV_ERR_OK) {
-        return -1;
-    }
-    return AV_ERR_OK;
+    return (ret == AV_ERR_OK) ? AV_ERR_OK : -1;
 }
