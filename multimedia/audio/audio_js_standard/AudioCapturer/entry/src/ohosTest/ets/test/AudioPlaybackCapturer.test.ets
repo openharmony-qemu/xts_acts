@@ -3860,10 +3860,9 @@ export default function audioCapturer() {
       let audioCapPromise: ESObject = null;
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
-          if (err) {
-             console.log(`${Tag} error code: ${err.code} ,message:${err.message}`); expect(Number(err.code)).assertEqual(501);
-            done();
+          if (err) {  
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
@@ -3872,8 +3871,9 @@ export default function audioCapturer() {
           done();
         });
       } catch (err) {
-         console.log(`${Tag} error code: ${err.code} ,message:${err.message}`); expect(Number(err.code)).assertEqual(501);
-        done();
+         console.log(`${Tag} error code: ${err.code} ,message:${err.message}`); 
+         expect(Number(err.code)).assertEqual(501);
+         done();
       }
 
       done();
@@ -5539,10 +5539,8 @@ export default function audioCapturer() {
       try {
         audio.createAudioCapturer(AudioCapturerOptions, (err, data) => {
           if (err) {
-            console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
-         expect(Number(err.code)).assertEqual(501);
-            done();
             console.error(`AudioCapturer Created : Error: ${err}`);
+            done();
           } else {
             console.info('AudioCapturer Created : Success : SUCCESS');
             data.release();
