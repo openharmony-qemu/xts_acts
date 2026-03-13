@@ -3173,6 +3173,64 @@ static napi_value NAPI_Global_setLoudnessGain2(napi_env env, napi_callback_info 
     return result;
 }
 
+static napi_value NAPI_Global_AvFormatSetUint(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = PARAM_2;
+    napi_value args[PARAM_2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int backParam = FAIL;
+    OH_AVFormat* format = OH_AVFormat_Create();
+    uint32_t value;
+    napi_get_value_uint32(env, args[PARAM_1], &value);
+    const char* key;
+    size_t keyLen;
+    napi_get_value_string_utf8(env, args[PARAM_0], nullptr, 0, &keyLen);
+    char* keyChar = new char[keyLen + 1];
+    napi_get_value_string_utf8(env, args[PARAM_0], keyChar, keyLen + 1, nullptr);
+    bool ret = OH_AVFormat_SetUintValue(format, keyChar, value);
+    if (ret) {
+        uint32_t getValue = 0;
+        OH_AVFormat_GetUintValue(format, keyChar, &getValue);
+        LOG("NAPI_Global_AvFormatSetUint key:%{public}s getValue:%{public}d", keyChar, getValue);
+        if (getValue == value) {
+            backParam = SUCCESS;
+        }
+    }
+    OH_AVFormat_Destroy(format);
+    delete[] keyChar;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value NAPI_Global_AvFormatSetUint1(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = PARAM_2;
+    napi_value args[PARAM_2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int backParam = FAIL;
+    OH_AVFormat* format = OH_AVFormat_Create();
+    uint32_t value;
+    napi_get_value_uint32(env, args[PARAM_1], &value);
+    const char* key;
+    size_t keyLen;
+    napi_get_value_string_utf8(env, args[PARAM_0], nullptr, 0, &keyLen);
+    char* keyChar = new char[keyLen + 1];
+    napi_get_value_string_utf8(env, args[PARAM_0], keyChar, keyLen + 1, nullptr);
+    bool ret = OH_AVFormat_SetUintValue(format, keyChar, value);
+    if (!ret) {
+        LOG("OH_AVFormat_SetUintValue failed");
+        if (getValue == value) {
+            backParam = ONEVAL;
+        }
+    }
+    OH_AVFormat_Destroy(format);
+    delete[] keyChar;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 static napi_value NAPI_Global_AVPlayerOnInfoTypeEnum(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -3422,6 +3480,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"getPlaybackStatisticMetricsAbnormal", nullptr, NAPI_Global_GetPlaybackStatisticMetricsAbnormal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"avFormatSetUint", nullptr, NAPI_Global_AvFormatSetUint, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"avFormatSetUintWithNull", nullptr, NAPI_Global_AvFormatSetUint1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"avPlayerOnInfoTypeEnum", nullptr, NAPI_Global_AVPlayerOnInfoTypeEnum, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"avPlayerOnInfoTypeEnum1", nullptr, NAPI_Global_AVPlayerOnInfoTypeEnum1, nullptr, nullptr, nullptr,
