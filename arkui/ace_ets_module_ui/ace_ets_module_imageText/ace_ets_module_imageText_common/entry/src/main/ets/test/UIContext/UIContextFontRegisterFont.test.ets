@@ -23,7 +23,7 @@ export default function UIContextFontRegisterFontTest() {
     beforeEach(async (done: Function) => {
       console.info("UIContextFontRegisterFontTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/UIcontextFont/UIContextFontRegisterFont',
+        url: 'MainAbility/pages/UIContext/UIContextFontRegisterFont',
       }
       try {
         router.clear();

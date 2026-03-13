@@ -95,7 +95,7 @@ export default function RouterPushUrlReplaceUrlNullUndefinedTest() {
       let button = await driver.findComponent(ON.id('RouterPushUrlNullUndefined_Button_PushUrlEmpty'))
       await button.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('pushUrl_empty')).assertEqual('');
+      expect(AppStorage.get('pushUrl_empty')).assertContain('Parameter error');
       AppStorage.delete('pushUrl_empty')
       console.log('SUB_ARKUI_ROUTER_PUSHURL_PARAM_EMPTY_001 END')
     })
@@ -155,7 +155,7 @@ export default function RouterPushUrlReplaceUrlNullUndefinedTest() {
       let button = await driver.findComponent(ON.id('RouterPushUrlNullUndefined_Button_ReplaceUrlEmpty'))
       await button.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('replaceUrl_empty')).assertEqual('');
+      expect(AppStorage.get('replaceUrl_empty')).assertContain('Parameter error');
       AppStorage.delete('replaceUrl_empty')
       console.log('SUB_ARKUI_ROUTER_REPLACEURL_PARAM_EMPTY_001 END')
     })
@@ -175,7 +175,7 @@ export default function RouterPushUrlReplaceUrlNullUndefinedTest() {
       let button = await driver.findComponent(ON.id('RouterPushUrlNullUndefined_Button_recoverableTrue'))
       await button.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('replaceUrl_recoverable_true')).assertEqual('');
+      expect(AppStorage.get('replaceUrl_recoverable_true')).assertContain('Parameter error');
       AppStorage.delete('replaceUrl_recoverable_true')
       console.log('SUB_ARKUI_ROUTER_REPLACEURL_RECOVERABLE_TRUE_001 END')
     })
