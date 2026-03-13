@@ -3221,9 +3221,7 @@ static napi_value NAPI_Global_AvFormatSetUint1(napi_env env, napi_callback_info 
     bool ret = OH_AVFormat_SetUintValue(format, keyChar, value);
     if (!ret) {
         LOG("OH_AVFormat_SetUintValue failed");
-        if (getValue == value) {
-            backParam = ONEVAL;
-        }
+        backParam = ONEVAL;
     }
     OH_AVFormat_Destroy(format);
     delete[] keyChar;
