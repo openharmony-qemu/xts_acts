@@ -114,7 +114,7 @@ export default function LocalSocketTest() {
         done()
       }catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
-        expectTrue(error.code == 401)
+        expectTrue(Number(error.code)  == 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -840,7 +840,7 @@ export default function LocalSocketTest() {
         done()
       }catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
-        expectTrue(error.code === 401)
+        expectTrue(Number(error.code) === 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -873,7 +873,7 @@ export default function LocalSocketTest() {
         done()
       }catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
-        expectTrue(error.code === 401)
+        expectTrue(Number(error.code)  === 401)
         console.info(`${caseName} test end`);
         done();
       }
