@@ -739,7 +739,8 @@ int32_t VDecEncNdkSample::WriteToFile()
         cout << "getOutPut Buffer fail" << endl;
         return AV_ERR_INVALID_VAL;
     }
-    FILE* outFile = fopen(outFile_.c_str(), "a");
+    const std::string path(outFile_);
+    FILE* outFile = fopen(path.c_str(), "a");
     if (outFile == nullptr) {
         cout << "dump data fail" << endl;
         return AV_ERR_INVALID_VAL;
