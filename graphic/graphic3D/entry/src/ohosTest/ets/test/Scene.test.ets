@@ -968,12 +968,11 @@ export default function sceneTest() {
           console.info(msg + ` component name:`, component?.name);
           expect(component.name).assertEqual(componentName);
           
-          /* task_0204 第1个参数为 null/undefined 时,抛出错误
           // Test node parameter with null
           try {
             let nullNodeComponent = await scene.createComponent(null, componentName);
             console.info(msg + " createComponent with null node: " + JSON.stringify(nullNodeComponent));
-            expect(nullNodeComponent != null).assertTrue();
+            expect().assertFail();
           } catch (err) {
             console.info(msg + " createComponent with null node threw error: " + JSON.stringify(err));
           }
@@ -982,22 +981,19 @@ export default function sceneTest() {
           try {
             let undefinedNodeComponent = await scene.createComponent(undefined, componentName);
             console.info(msg + " createComponent with undefined node: " + JSON.stringify(undefinedNodeComponent));
-            expect(undefinedNodeComponent != null).assertTrue();
+            expect().assertFail();
           } catch (err) {
             console.info(msg + " createComponent with undefined node threw error: " + JSON.stringify(err));
           }
-          */
 
-          /* task_0204 第2个参数为 ""空字符 时,抛出错误
           // Test name parameter with empty string
           try {
             let emptyNameComponent = await scene.createComponent(rootNode, "");
             console.info(msg + " createComponent with empty string name: " + JSON.stringify(emptyNameComponent));
-            expect(emptyNameComponent != null).assertTrue();
+            expect().assertFail();
           } catch (err) {
             console.info(msg + " createComponent with empty string name threw error: " + JSON.stringify(err));
           }
-          */
 
           // Test name parameter with null
           try {

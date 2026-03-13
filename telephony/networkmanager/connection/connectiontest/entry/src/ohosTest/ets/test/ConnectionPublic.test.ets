@@ -17,6 +17,8 @@ import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import connection from '@ohos.net.connection';
 import { BusinessError } from '@ohos.base';
 import socket from '@ohos.net.socket';
+import {common } from '@kit.AbilityKit';
+import {policy } from '@kit.NetworkKit';
 
 const ExpectFail: () => void = () => {
   try {
@@ -6350,6 +6352,71 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName1900
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_1900
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionNetHandleGetAddressesByName1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressesByName1900';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          let host: string = "";
+          netHandle.getAddressesByName(host, (error: BusinessError, data: connection.NetAddress[]) => {
+            if (error) {
+              console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+              ExpectTrue(error.code == 2100001);
+              console.info(`${caseName}---End`);
+              done();
+            } else {
+              console.info(`${caseName} data: ${JSON.stringify(data)}`);
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
+            }
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionNetHandleGetAddressesByName2200
+     * @tc.number SUB_NetworkMgr_Connection_NetHandle_GetAddressesByName_2200
+     * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionNetHandleGetAddressesByName2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrConnectionNetHandleGetAddressesByName2200';
+      console.info(`${caseName}---Start`);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          let host: string = "";
+          netHandle.getAddressesByName(host).then().catch((error: BusinessError) => {
+            console.info(`${caseName} Failed to get addresses. error:${JSON.stringify(error)}`);
+            ExpectTrue(error.code == 2100001);
+            console.info(`${caseName}---End`);
+            done();
+          });
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetAddressesByNameCallback0100
      * @tc.number SUB_NetworkMgr_Connection_GetAddressesByNameCallback_0100
      * @tc.desc   Use the corresponding network to resolve the host name and obtain all IP addresses.Using callback as an asynchronous method.
@@ -9221,6 +9288,68 @@ export default function ConnectionPublicTest() {
           ExpectTrue(err.code == 201);
           console.info(`${caseName}---End`);
           done();
+        }
+      });
+
+      /**
+    * @tc.name   testNetworkMgrPolicyShowAppNetPolicySetting0100
+    * @tc.number SUB_NetworkMgr_Policy_ShowAppNetPolicySetting_0100
+    * @tc.desc   Test ShowAppNetPolicySetting undefined
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+      it("testNetworkMgrPolicyShowAppNetPolicySetting0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName: string = "testNetworkMgrPolicyShowAppNetPolicySetting0100";
+        console.info(`${caseName}---Start`);
+        try{
+          let context:common.UIAbilityContext = getContext() as common.UIAbilityContext;
+          policy.showAppNetPolicySettings(undefined).then(() => {
+            console.info(`${caseName} showAppNetPolicySettings success`);
+            ExpectFail();
+            done();
+          }).catch((error: BusinessError)=>{
+            console.info(`${caseName} showAppNetPolicySettings failed, error:${JSON.stringify(error)}`);
+            console.info(`${caseName} fail, errInfo ->${JSON.stringify(error)}`);
+            ExpectTrue(error == null);
+            done();
+          })
+        }catch (err){
+          console.info(`${caseName} catch err ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+          console.info(`${caseName}---End`);
+        }
+      });
+
+   /**
+    * @tc.name   testNetworkMgrPolicyShowAppNetPolicySetting0200
+    * @tc.number SUB_NetworkMgr_Policy_ShowAppNetPolicySetting_0200
+    * @tc.desc   Test ShowAppNetPolicySetting null
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+      it("testNetworkMgrPolicyShowAppNetPolicySetting0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName: string = "testNetworkMgrPolicyShowAppNetPolicySetting0200";
+        console.info(`${caseName}---Start`);
+        try{
+          let context:common.UIAbilityContext = getContext() as common.UIAbilityContext;
+          policy.showAppNetPolicySettings(null).then(() => {
+            console.info(`${caseName} showAppNetPolicySettings success`);
+            ExpectFail();
+            done();
+          }).catch((error: BusinessError)=>{
+            console.info(`${caseName} showAppNetPolicySettings failed, error:${JSON.stringify(error)}`);
+            console.info(`${caseName} fail, errInfo ->${JSON.stringify(error)}`);
+            ExpectTrue(error == null);
+            done();
+          })
+        }catch (err){
+          console.info(`${caseName} catch err ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+          console.info(`${caseName}---End`);
         }
       });
   });

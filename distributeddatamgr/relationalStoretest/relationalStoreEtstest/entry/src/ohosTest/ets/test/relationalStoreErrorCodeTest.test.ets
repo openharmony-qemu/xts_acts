@@ -945,6 +945,28 @@ export default function relationalStoreErrorCodeTest() {
         expect(err.code == 401).assertTrue();
         done();
       }
+      try{
+          rdbStore.setDistributedTables(null, async(err)=>{
+          expect().assertFail();
+          console.info(TAG + "setDistributedTables success");
+          done();
+        })
+      }catch(err){
+        console.info(TAG + "err.code" + err.code + "err.message"+ err.message)
+        expect(err.code).assertEqual("401");
+        done();
+      }
+
+     try{
+        rdbStore.setDistributedTables([], async(err)=>{
+          console.info(TAG + "setDistributedTables success");
+          done();
+        })
+      }catch(err){
+        console.info(TAG + "err.code" + err.code + "err.message"+ err.message)
+        expect(err.code).assertEqual("401");
+        done();
+      }
       console.info(TAG + "************* errcode032 end *************");
     })
 
@@ -970,6 +992,16 @@ export default function relationalStoreErrorCodeTest() {
       }catch(err){
         console.info(TAG + "err.code" + err.code + "err.message"+ err.message)
         expect(err.code == 401).assertTrue();
+        done();
+      }
+      try{
+        await rdbStore.setDistributedTables(null);
+          expect().assertFail();
+          console.info(TAG + "setDistributedTables success");
+          done();
+      }catch(err){
+        console.info(TAG + "err.code" + err.code + "err.message"+ err.message)
+        expect(err.code).assertEqual("401");
         done();
       }
       console.info(TAG + "************* errcode033 end *************");

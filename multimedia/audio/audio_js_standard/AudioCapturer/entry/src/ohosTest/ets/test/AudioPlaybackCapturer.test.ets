@@ -337,7 +337,6 @@ export default function audioCapturer() {
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success : Stream Type: success`);
-        expect(true).assertTrue();
       } catch (err) {
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : ERROR :  ${JSON.stringify(err.message)}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
@@ -356,7 +355,6 @@ export default function audioCapturer() {
         let audioParamsGet = await audioCap.getStreamInfo();
         if (audioParamsGet != undefined && audioParamsGet != null) {
           console.info(`${Tag} AudioFrameworkRecLog: Capturer getStreamInfo:${JSON.stringify(audioParamsGet)}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${Tag} AudioFrameworkRecLog: audioParamsGet are incorrect,is :  ${JSON.stringify(audioParamsGet)}`);
           expect(false).assertTrue();
@@ -371,7 +369,6 @@ export default function audioCapturer() {
         let audioParamsGet = await audioCap.getCapturerInfo();
         if (audioParamsGet != undefined) {
           console.info(`${Tag} AudioFrameworkRecLog: Capturer CapturerInfo: ${JSON.stringify(audioParamsGet)}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${Tag} AudioFrameworkRecLog: audioParamsGet are incorrect , is :  ${JSON.stringify(audioParamsGet)}`);
           expect(false).assertTrue();
@@ -393,7 +390,6 @@ export default function audioCapturer() {
         console.log(`${Tag} fd-re: ${JSON.stringify(fd)}`);
         if (fd !== null) {
           console.info(`${Tag} AudioFrameworkRecLog: file fd created`);
-          expect(true).assertTrue();
         } else {
           console.info(`${Tag} AudioFrameworkRecLog: Capturer start : ERROR `);
           expect(false).assertTrue();
@@ -417,7 +413,6 @@ export default function audioCapturer() {
       try {
         await audioCap.release();
         console.log(`${Tag} release ok`);
-        expect(true).assertTrue();
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -474,7 +469,6 @@ export default function audioCapturer() {
         await audio.createAudioRenderer(AudioRendererOptions).then((data) => {
           let audioRen = data;
           console.log(`${Tag} audioRen Create Success: ${JSON.stringify(audioRen)}`);
-          expect(true).assertTrue();
         }).catch((err: BusinessError) => {
           console.log(`${Tag} bufferSize: ${JSON.stringify(bufferSize)} , dirPath: ${JSON.stringify(dirPath)}`);
           expect(false).assertTrue();
@@ -567,6 +561,8 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -575,7 +571,8 @@ export default function audioCapturer() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -637,6 +634,8 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -645,7 +644,8 @@ export default function audioCapturer() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -727,6 +727,8 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -735,7 +737,8 @@ export default function audioCapturer() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -817,6 +820,8 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -825,7 +830,8 @@ export default function audioCapturer() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -907,6 +913,8 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -915,7 +923,8 @@ export default function audioCapturer() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -997,6 +1006,8 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo2,
         privacyType: AudioPrivacyType2
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -1005,7 +1016,8 @@ export default function audioCapturer() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -1046,6 +1058,8 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo,
         playbackCaptureConfig: playbackCaptureConfig,
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -1054,7 +1068,8 @@ export default function audioCapturer() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }
@@ -1116,6 +1131,8 @@ export default function audioCapturer() {
         rendererInfo: AudioRendererInfo,
         privacyType: AudioPrivacyType
       }
+
+      let flag: boolean = false;
       let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
@@ -1124,7 +1141,8 @@ export default function audioCapturer() {
         );
       if (detecteDevice) {
           console.info(`${TagFrmwk}: this device has external device`)
-          expect(true).assertTrue();
+          flag = true;
+          expect(flag).assertEqual(true);
           done();
           return;
       }

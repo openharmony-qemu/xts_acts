@@ -17,7 +17,7 @@ import backgroundTaskManager from '@ohos.backgroundTaskManager'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
 
 export default function TransientTaskJsTest() {
-describe("TransientTaskJsTest", function () {
+describe("TransientTaskJsTestAdapt001", function () {
     beforeAll(function() {
         
         /*

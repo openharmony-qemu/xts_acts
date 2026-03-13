@@ -320,7 +320,7 @@ struct ListNullUndefined1 {
             }, (item: number) => item.toString())
           }
           .id('list_edgeEffect_default')
-          .width('30%')
+          .width('20%')
           .height('100%')
           .backgroundColor(0xF0F0F0)
 
@@ -339,7 +339,7 @@ struct ListNullUndefined1 {
           }
           .id('list_edgeEffect_null')
           .edgeEffect(null)
-          .width('30%')
+          .width('20%')
           .height('100%')
           .backgroundColor(0xF0F0F0)
 
@@ -358,7 +358,45 @@ struct ListNullUndefined1 {
           }
           .id('list_edgeEffect_undefined')
           .edgeEffect(undefined)
-          .width('30%')
+          .width('20%')
+          .height('100%')
+          .backgroundColor(0xF0F0F0)
+
+          // Test edgeEffect options with null
+          List() {
+            ForEach(this.numbers, (item: number) => {
+              ListItem() {
+                Text('' + item)
+                  .width('100%')
+                  .height('30%')
+                  .fontSize(14)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(0xF9CF93)
+              }
+            }, (item: number) => item.toString())
+          }
+          .id('list_edgeEffect_options_null')
+          .edgeEffect(EdgeEffect.Spring, null)
+          .width('20%')
+          .height('100%')
+          .backgroundColor(0xF0F0F0)
+
+          // Test edgeEffect options with undefined
+          List() {
+            ForEach(this.numbers, (item: number) => {
+              ListItem() {
+                Text('' + item)
+                  .width('100%')
+                  .height('30%')
+                  .fontSize(14)
+                  .textAlign(TextAlign.Center)
+                  .backgroundColor(0xF9CF93)
+              }
+            }, (item: number) => item.toString())
+          }
+          .id('list_edgeEffect_options_undefined')
+          .edgeEffect(EdgeEffect.Spring, undefined)
+          .width('20%')
           .height('100%')
           .backgroundColor(0xF0F0F0)
         }

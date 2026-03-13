@@ -184,26 +184,23 @@ struct NavigationContentMsgStack {
   @Link @Watch('info') message: number;
   @Link index: number;
   @Link logNumber: number;
-
+  @State infos: string = ''
   info() {
     this.logNumber++;
-    prompt.showToast({
-      message: `NavigationContent message:${this.message} index:${this.index} logNumber:${this.logNumber}`,
-      duration: 500
-    })
+    this.infos = `NavigationContent message:${this.message} index:${this.index} logNumber:${this.logNumber}`
   }
 
   build() {
     Column() {
       Text('msg:' + `${this.message}`)
-        .fontSize(9)
-        .fontWeight(FontWeight.Bold)
+        .height('5%')
       Text('index:' + `${this.index}`)
-        .fontSize(9)
-        .fontWeight(FontWeight.Bold)
+        .height('5%')
       Text('log number:' + `${this.logNumber}`)
-        .fontSize(9)
-        .fontWeight(FontWeight.Bold)
+        .height('5%')
+      Text(`${this.infos}`)
+        .id('freezeV1003_infos')
+        .height('5%')
     }
   }
 }

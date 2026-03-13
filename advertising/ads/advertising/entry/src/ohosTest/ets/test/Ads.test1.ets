@@ -475,5 +475,24 @@ export default function adsTest1() {
         done();
       }
     })
+
+    /**
+     * @tc.name testParseAdResponseEmptyParam
+     * @tc.number SUB_CLOUD_ADS_INTERACTION_LISTENER_1300
+     * @tc.desc testParseAdResponseEmptyParam.
+     * @tc.size LargeTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("testParseAdResponseEmptyParam", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        advertising.parseAdResponse('', null, null);
+        done();
+      } catch (e) {
+        hilog.error(Domain, TAG, `testParseAdResponseEmptyParam failed, ERROR= ${e}`);
+        expect(e != null).assertEqual(true);
+        done();
+      }
+    })
   })
 }

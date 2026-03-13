@@ -4854,14 +4854,14 @@ describe('fileTest', function () {
   });
 
   /**
-   * @tc.name   File_Document_Choose_001
+   * @tc.name   File_Document_Choose_001Adapt001
    * @tc.number SUB_STORAGE_Document_Choose_0400
    * @tc.desc   Function of API, choose file.The test file is exist.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('File_Document_Choose_001', Level.LEVEL0, async function (done) {
+  it('File_Document_Choose_001Adapt001', Level.LEVEL0, async function (done) {
     try {
       let code = await document.choose();
       let str = 'Error';

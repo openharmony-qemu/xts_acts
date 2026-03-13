@@ -164,5 +164,35 @@ export default function startArkChildProcessStatic() {
         }
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startArkChildProcess_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_startArkChildProcess_Static_0600
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_startArkChildProcess_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let path = context!.filesDir + '/test.txt';
+      let file = fs.openSync(path, fs.OpenMode.READ_ONLY | fs.OpenMode.CREATE);
+      let args: ChildProcessArgs = {};
+      try {
+        let pid = await childProcessManager.startArkChildProcess('', args);
+        hilog.info(0x0000, 'testTag', '%{public}s', `startChildProcess success, pid: ${pid}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        if (error.code === 801){
+          expect(error.code).assertEqual(801);
+          done();
+        } else {
+          expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+          hilog.info(0x0000, 'testTag', '%{public}s',
+            'Test passed: startArkChildProcess returns error 401  when Child process source file path is empty.');
+          done();
+        }
+      }
+    })
   })
 }

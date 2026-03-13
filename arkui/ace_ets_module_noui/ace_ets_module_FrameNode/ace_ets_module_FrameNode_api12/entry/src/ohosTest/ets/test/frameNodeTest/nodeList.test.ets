@@ -71,14 +71,14 @@ export default function nodeList() {
 
 
     /**
-     * @tc.name   nodeList_0100
+     * @tc.name   nodeList_0100Adapt001
      * @tc.number nodeList_0100
      * @tc.desc   nodeList_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('nodeList_0100', Level.LEVEL0, async (done: Function) => {
+    it('nodeList_0100Adapt001', Level.LEVEL0, async (done: Function) => {
       console.info('nodeList_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('listItem_node');

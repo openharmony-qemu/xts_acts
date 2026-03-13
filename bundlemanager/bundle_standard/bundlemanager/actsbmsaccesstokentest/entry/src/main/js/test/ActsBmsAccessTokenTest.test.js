@@ -23,7 +23,7 @@ const BUNDLE_NAME3 = 'com.example.bmsaccesstoken3';
 let userId = 0;
 
 export default function ActsBmsAccessTokenTest() {
-    describe('ActsBmsAccessTokenTest', function () {
+    describe('ActsBmsAccessTokenTestAdapt001', function () {
 
         beforeAll(async function (done) {
             await account.getAccountManager().getOsAccountLocalIdFromProcess().then(account => {

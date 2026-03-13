@@ -26,6 +26,7 @@ import DataPanelContentModifierTest from './DatapPnelTest/DataPanelContentModifi
 import DataPanelTest from './DatapPnelTest/DataPanelTest.test';
 import DataPanelCloseEffectTest from './DatapPnelTest/DataPanelCloseEffect.test';
 import DataPanelPropertiesNullUndefinedTest from './DatapPnelTest/DataPanelPropertiesNullUndefinedTest.test';
+import PanelPropertiesNullUndefinedTest from './DatapPnelTest/PanelPropertiesNullUndefinedTest.test';
 
 import Gauge3Jsunit from './GaugeTest/Gauge3Jsunit.test';
 import GaugeColorsTest from './GaugeTest/GaugeColorsTest.test';
@@ -65,6 +66,7 @@ export default function testsuite() {
     DataPanelTest()
     DataPanelCloseEffectTest()
     DataPanelPropertiesNullUndefinedTest()
+    PanelPropertiesNullUndefinedTest()
     // GaugeTest
     Gauge3Jsunit()
     GaugeColorsTest()

@@ -62,7 +62,7 @@ export default function FreezeV2Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest001', Level.LEVEL0, async () => {
+        it('FreezeTest001', Level.LEVEL0, async () => {
       console.info('FreezeTest001 START');
       let driver = await Driver.create()
       let changeIndex = await driver.findComponent(ON.id('changeIndex'));
@@ -72,17 +72,13 @@ export default function FreezeV2Test() {
       let changeMessage = await driver.findComponent(ON.id('changeMessage'));
       await changeMessage.click();
       await sleep(0.5)
-
-      let observer1 = await driver.createUIEventObserver()
-      let callback1 = (uiElementInfo: UIElementInfo) => {
-        try {
-          expect(uiElementInfo.text == 'FreezeChild message callback func 1, index: 1').assertTrue()
-          expect(uiElementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer1.once('toastShow', callback1)
+      let text1 = await (await driver.findComponent(ON.id('FreezeChild2_text_001'))).getText();
+      expect(text1).assertEqual('FreezeChild message callback func 1, index: 1, logNum: 1')
+      let changeIndex0 = await driver.findComponent(ON.id('changeIndex0'));
+      await changeIndex0.click();
+      await sleep(0.5)
+      let text2 = await (await driver.findComponent(ON.id('FreezeChild2_text_001'))).getText();
+      expect(text2).assertEqual('FreezeChild message callback func 1, index: 0, logNum: 2')
       console.info('FreezeTest001 END');
     });
   })

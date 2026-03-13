@@ -18,6 +18,13 @@ import addGestureApplyGesture from './AddGestureApplyGesture.test';
 import BoxSelectTest from "./GestureType/BoxSelect.test";
 import WebTextMenuGestureTest from "./GestureType/WebTextMenuGesture.test";
 import gestureTest from './uIContext/GestureNullandundefined/GestureTest.test';
+import addGestureNullAndUndefinedTest from './AddGesture/addGestureNullAndUndefinedTest.test';
+import gestureNullAndUndefinedTest from './Gesture/gestureNullAndUndefinedTest.test';
+import allowedTypesHandlerNullAndUndefinedTestTest from './GestureHandler/AllowedTypes/allowedTypesHandlerNullAndUndefinedTest.test';
+import tagHandlerNullAndUndefinedTest from './GestureHandler/Tag/tagHandlerNullAndUndefinedTest.test';
+import allowedTypesNullAndUndefinedTest from './GestureInterface/AllowedTypes/allowedTypesNullAndUndefinedTest.test';
+import tagNullAndUndefinedTest from './GestureInterface/Tag/tagNullAndUndefinedTest.test';
+import removeGestureByTagNullAndUndefinedTest from './RemoveGestureByTag/removeGestureByTagNullAndUndefinedTest.test';
 
 export default function testsuite() {
   gestureParallelJsunit()
@@ -25,4 +32,12 @@ export default function testsuite() {
   BoxSelectTest();
   gestureTest();
   WebTextMenuGestureTest();
+  addGestureNullAndUndefinedTest();
+  gestureNullAndUndefinedTest();
+  allowedTypesHandlerNullAndUndefinedTestTest();
+  tagHandlerNullAndUndefinedTest();
+  allowedTypesNullAndUndefinedTest();
+  tagNullAndUndefinedTest();
+  removeGestureByTagNullAndUndefinedTest();
+
 }

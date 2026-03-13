@@ -48,9 +48,9 @@ export default function napiRefTest() {
      * @tc.desc   MediumTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('napiCreateStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('napiCreateStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG = "napiCreateStrongRefCheckArg";
       console.info(`${TAG} START`);
       try {
@@ -180,9 +180,9 @@ export default function napiRefTest() {
      * @tc.desc   MediumTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('napiDeleteStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('napiDeleteStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG = "napiDeleteStrongRefCheckArg";
       console.info(`${TAG} START`);
       try {
@@ -202,9 +202,9 @@ export default function napiRefTest() {
      * @tc.desc   MediumTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('napiDeleteStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('napiDeleteStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG = "napiDeleteStrongRef";
       console.info(`${TAG} START`);
       try {

@@ -22,6 +22,7 @@ import {
   APP_IDS_200,
   APP_IDS_201,
   APP_IDS_AND_IDENTIFIER_1,
+  DEFAULT_APP_INDEX,
   DEFAULT_USER_ID,
   INVALID_USER_ID,
   AUTOSTARTAPP1,
@@ -917,7 +918,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1000,7 +1005,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1028,7 +1037,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1056,7 +1069,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1090,7 +1107,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1117,7 +1138,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1200,7 +1225,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1228,7 +1257,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1264,7 +1297,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1310,7 +1347,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1330,7 +1371,11 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1399,7 +1444,11 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1426,7 +1475,7 @@ export default function applicationManagerTest() {
       }
       done();
     })
-
+    
     /**
      * @tc.name   test_addUserNonStopApps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_001
@@ -1447,7 +1496,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1473,7 +1526,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1494,7 +1551,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1522,7 +1583,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1550,7 +1615,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1584,7 +1653,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1611,7 +1684,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1638,7 +1715,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1659,7 +1740,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1687,7 +1772,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1723,7 +1812,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1769,7 +1862,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1789,7 +1886,11 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1808,7 +1909,11 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1829,7 +1934,11 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1875,7 +1984,11 @@ export default function applicationManagerTest() {
         let res = applicationManager.getUserNonStopApps(SELFWANT);
         expect(res.length == 1).assertTrue();
       } catch (error) {
-        expect(error.code == 801 || error.code == 9200012).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2198,6 +2311,31 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addAutoStartAppsByIsHiddenStart_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_ISHIDDENSTART_001
+     * @tc.desc   test addAutoStartAppsByIsHiddenStart method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAutoStartAppsByIsHiddenStart_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let edmAutoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAutoStartApps(SELFWANT, edmAutoStartApps, DEFAULT_USER_ID, true);
+        let autoStartApps = applicationManager.getAutoStartApps(SELFWANT);
+        expect(autoStartApps.length == 2).assertTrue();
+        expect(autoStartApps[0].parameters?.isHiddenStart).assertFalse();
+        expect(autoStartApps[1].parameters?.isHiddenStart).assertFalse();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_addKeepAliveApps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_001
      * @tc.desc   test addKeepAliveApps method with unActive admin
@@ -2211,7 +2349,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -2231,7 +2373,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -2253,7 +2399,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, INVALID_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2279,7 +2429,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9201005 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201005).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2302,7 +2456,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200010 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200010).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2699,6 +2857,8 @@ export default function applicationManagerTest() {
         let kioskFeatures: Array<applicationManager.KioskFeature> = [];
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_GESTURE_CONTROL);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
         applicationManager.setKioskFeatures(SELFWANT, kioskFeatures);
         expect(false).assertTrue();
       } catch (error) {
@@ -2720,6 +2880,8 @@ export default function applicationManagerTest() {
         let kioskFeatures: Array<applicationManager.KioskFeature> = [];
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_GESTURE_CONTROL);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         applicationManager.setKioskFeatures(SELFWANT, kioskFeatures);
         expect(false).assertTrue();
@@ -2745,6 +2907,8 @@ export default function applicationManagerTest() {
         let kioskFeatures: Array<applicationManager.KioskFeature> = [];
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
         kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_GESTURE_CONTROL);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_SIDE_DOCK);
         applicationManager.setKioskFeatures(null, kioskFeatures);
         expect(false).assertTrue();
       } catch (error) {
@@ -2793,7 +2957,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -2814,7 +2982,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -2837,7 +3009,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, INVALID_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2864,7 +3040,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9201005 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201005).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2888,7 +3068,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200010 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200010).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3612,6 +3796,2855 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
+    })
+
+    /**
+     * @tc.name   addDisallowedRunningBundlesSync_test_001
+     * @tc.number addDisallowedRunningBundlesSync_test_001
+     * @tc.desc   addDisallowedRunningBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedRunningBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedRunningBundlesSync_test_001  -------- START --------');
+      try {
+        applicationManager.addDisallowedRunningBundlesSync(null, APP_IDS_1);
+        console.info(' --- addDisallowedRunningBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedRunningBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedRunningBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedRunningBundlesSync_test_002
+     * @tc.number addDisallowedRunningBundlesSync_test_002
+     * @tc.desc   addDisallowedRunningBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedRunningBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedRunningBundlesSync_test_002  -------- START --------');
+      try {
+        applicationManager.addDisallowedRunningBundlesSync(undefined, APP_IDS_1);
+        console.info(' --- addDisallowedRunningBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedRunningBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedRunningBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedRunningBundlesSync_test_003
+     * @tc.number addDisallowedRunningBundlesSync_test_003
+     * @tc.desc   addDisallowedRunningBundlesSync with null parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedRunningBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedRunningBundlesSync_test_003  -------- START --------');
+      try {
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, null);
+        console.info(' --- addDisallowedRunningBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedRunningBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedRunningBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedRunningBundlesSync_test_004
+     * @tc.number addDisallowedRunningBundlesSync_test_004
+     * @tc.desc   addDisallowedRunningBundlesSync with undefined parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedRunningBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedRunningBundlesSync_test_004  -------- START --------');
+      try {
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, undefined);
+        console.info(' --- addDisallowedRunningBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedRunningBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedRunningBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedRunningBundlesSync_test_005
+     * @tc.number addDisallowedRunningBundlesSync_test_005
+     * @tc.desc   addDisallowedRunningBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedRunningBundlesSync_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedRunningBundlesSync_test_005  -------- START --------');
+      try {
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, APP_IDS_1, null);
+        console.info(' --- addDisallowedRunningBundlesSync_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedRunningBundlesSync_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedRunningBundlesSync_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedRunningBundlesSync_test_006
+     * @tc.number addDisallowedRunningBundlesSync_test_006
+     * @tc.desc   addDisallowedRunningBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedRunningBundlesSync_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedRunningBundlesSync_test_006  -------- START --------');
+      try {
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- addDisallowedRunningBundlesSync_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedRunningBundlesSync_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedRunningBundlesSync_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedRunningBundlesSync_test_001
+     * @tc.number removeDisallowedRunningBundlesSync_test_001
+     * @tc.desc   removeDisallowedRunningBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedRunningBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedRunningBundlesSync_test_001  -------- START --------');
+      try {
+        applicationManager.removeDisallowedRunningBundlesSync(null, APP_IDS_200);
+        console.info(' --- removeDisallowedRunningBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedRunningBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedRunningBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedRunningBundlesSync_test_002
+     * @tc.number removeDisallowedRunningBundlesSync_test_002
+     * @tc.desc   removeDisallowedRunningBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedRunningBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedRunningBundlesSync_test_002  -------- START --------');
+      try {
+        applicationManager.removeDisallowedRunningBundlesSync(undefined, APP_IDS_200);
+        console.info(' --- removeDisallowedRunningBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedRunningBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedRunningBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedRunningBundlesSync_test_003
+     * @tc.number removeDisallowedRunningBundlesSync_test_003
+     * @tc.desc   removeDisallowedRunningBundlesSync with null parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedRunningBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedRunningBundlesSync_test_003  -------- START --------');
+      try {
+        applicationManager.removeDisallowedRunningBundlesSync(SELFWANT, null);
+        console.info(' --- removeDisallowedRunningBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedRunningBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedRunningBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedRunningBundlesSync_test_004
+     * @tc.number removeDisallowedRunningBundlesSync_test_004
+     * @tc.desc   removeDisallowedRunningBundlesSync with undefined parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedRunningBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedRunningBundlesSync_test_004  -------- START --------');
+      try {
+        applicationManager.removeDisallowedRunningBundlesSync(SELFWANT, undefined);
+        console.info(' --- removeDisallowedRunningBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedRunningBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedRunningBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedRunningBundlesSync_test_005
+     * @tc.number removeDisallowedRunningBundlesSync_test_005
+     * @tc.desc   removeDisallowedRunningBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedRunningBundlesSync_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedRunningBundlesSync_test_005  -------- START --------');
+      try {
+        applicationManager.removeDisallowedRunningBundlesSync(SELFWANT, APP_IDS_200, null);
+        console.info(' --- removeDisallowedRunningBundlesSync_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedRunningBundlesSync_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedRunningBundlesSync_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedRunningBundlesSync_test_006
+     * @tc.number removeDisallowedRunningBundlesSync_test_006
+     * @tc.desc   removeDisallowedRunningBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedRunningBundlesSync_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedRunningBundlesSync_test_006  -------- START --------');
+      try {
+        applicationManager.removeDisallowedRunningBundlesSync(SELFWANT, APP_IDS_200, undefined);
+        console.info(' --- removeDisallowedRunningBundlesSync_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedRunningBundlesSync_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedRunningBundlesSync_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedRunningBundlesSync_test_001
+     * @tc.number getDisallowedRunningBundlesSync_test_001
+     * @tc.desc   getDisallowedRunningBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedRunningBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedRunningBundlesSync_test_001  -------- START --------');
+      try {
+        applicationManager.getDisallowedRunningBundlesSync(null);
+        console.info(' --- getDisallowedRunningBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedRunningBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedRunningBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedRunningBundlesSync_test_002
+     * @tc.number getDisallowedRunningBundlesSync_test_002
+     * @tc.desc   getDisallowedRunningBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedRunningBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedRunningBundlesSync_test_002  -------- START --------');
+      try {
+        applicationManager.getDisallowedRunningBundlesSync(undefined);
+        console.info(' --- getDisallowedRunningBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedRunningBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedRunningBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedRunningBundlesSync_test_003
+     * @tc.number getDisallowedRunningBundlesSync_test_003
+     * @tc.desc   getDisallowedRunningBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedRunningBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedRunningBundlesSync_test_003  -------- START --------');
+      try {
+        applicationManager.getDisallowedRunningBundlesSync(SELFWANT, null);
+        console.info(' --- getDisallowedRunningBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedRunningBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedRunningBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedRunningBundlesSync_test_004
+     * @tc.number getDisallowedRunningBundlesSync_test_004
+     * @tc.desc   getDisallowedRunningBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedRunningBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedRunningBundlesSync_test_004  -------- START --------');
+      try {
+        applicationManager.getDisallowedRunningBundlesSync(SELFWANT, undefined);
+        console.info(' --- getDisallowedRunningBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedRunningBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedRunningBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAutoStartApps_test_001
+     * @tc.number addAutoStartApps_test_001
+     * @tc.desc   addAutoStartApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAutoStartApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAutoStartApps_test_001  -------- START --------');
+      try {
+        applicationManager.addAutoStartApps(null, [SELFWANT]);
+        console.info(' --- addAutoStartApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAutoStartApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAutoStartApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAutoStartApps_test_002
+     * @tc.number addAutoStartApps_test_002
+     * @tc.desc   addAutoStartApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAutoStartApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAutoStartApps_test_002  -------- START --------');
+      try {
+        applicationManager.addAutoStartApps(undefined, [SELFWANT]);
+        console.info(' --- addAutoStartApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAutoStartApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAutoStartApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAutoStartApps_test_003
+     * @tc.number addAutoStartApps_test_003
+     * @tc.desc   addAutoStartApps with null parameter autoStartApps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAutoStartApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAutoStartApps_test_003  -------- START --------');
+      try {
+        applicationManager.addAutoStartApps(SELFWANT, null);
+        console.info(' --- addAutoStartApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAutoStartApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAutoStartApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAutoStartApps_test_004
+     * @tc.number addAutoStartApps_test_004
+     * @tc.desc   addAutoStartApps with undefined parameter autoStartApps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAutoStartApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAutoStartApps_test_004  -------- START --------');
+      try {
+        applicationManager.addAutoStartApps(SELFWANT, undefined);
+        console.info(' --- addAutoStartApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAutoStartApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAutoStartApps_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeAutoStartApps_test_001
+     * @tc.number removeAutoStartApps_test_001
+     * @tc.desc   removeAutoStartApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAutoStartApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAutoStartApps_test_001  -------- START --------');
+      try {
+        applicationManager.removeAutoStartApps(null, [SELFWANT]);
+        console.info(' --- removeAutoStartApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAutoStartApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAutoStartApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAutoStartApps_test_002
+     * @tc.number removeAutoStartApps_test_002
+     * @tc.desc   removeAutoStartApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAutoStartApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAutoStartApps_test_002  -------- START --------');
+      try {
+        applicationManager.removeAutoStartApps(undefined, [SELFWANT]);
+        console.info(' --- removeAutoStartApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAutoStartApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAutoStartApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAutoStartApps_test_003
+     * @tc.number removeAutoStartApps_test_003
+     * @tc.desc   removeAutoStartApps with null parameter autoStartApps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAutoStartApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAutoStartApps_test_003  -------- START --------');
+      try {
+        applicationManager.removeAutoStartApps(SELFWANT, null);
+        console.info(' --- removeAutoStartApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAutoStartApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAutoStartApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAutoStartApps_test_004
+     * @tc.number removeAutoStartApps_test_004
+     * @tc.desc   removeAutoStartApps with undefined parameter autoStartApps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAutoStartApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAutoStartApps_test_004  -------- START --------');
+      try {
+        applicationManager.removeAutoStartApps(SELFWANT, undefined);
+        console.info(' --- removeAutoStartApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAutoStartApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAutoStartApps_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getAutoStartApps_test_001
+     * @tc.number getAutoStartApps_test_001
+     * @tc.desc   getAutoStartApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAutoStartApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAutoStartApps_test_001  -------- START --------');
+      try {
+        applicationManager.getAutoStartApps(null);
+        console.info(' --- getAutoStartApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAutoStartApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAutoStartApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAutoStartApps_test_002
+     * @tc.number getAutoStartApps_test_002
+     * @tc.desc   getAutoStartApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAutoStartApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAutoStartApps_test_002  -------- START --------');
+      try {
+        applicationManager.getAutoStartApps(undefined);
+        console.info(' --- getAutoStartApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAutoStartApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAutoStartApps_test_002  -------- END --------');
+    })
+
+    /**
+     * @tc.name   isModifyAutoStartAppsDisallowed_test_001
+     * @tc.number isModifyAutoStartAppsDisallowed_test_001
+     * @tc.desc   isModifyAutoStartAppsDisallowed with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isModifyAutoStartAppsDisallowed_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isModifyAutoStartAppsDisallowed_test_001  -------- START --------');
+      try {
+        applicationManager.isModifyAutoStartAppsDisallowed(null, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        console.info(' --- isModifyAutoStartAppsDisallowed_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isModifyAutoStartAppsDisallowed_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isModifyAutoStartAppsDisallowed_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isModifyAutoStartAppsDisallowed_test_002
+     * @tc.number isModifyAutoStartAppsDisallowed_test_002
+     * @tc.desc   isModifyAutoStartAppsDisallowed with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isModifyAutoStartAppsDisallowed_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isModifyAutoStartAppsDisallowed_test_002  -------- START --------');
+      try {
+        applicationManager.isModifyAutoStartAppsDisallowed(undefined, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        console.info(' --- isModifyAutoStartAppsDisallowed_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isModifyAutoStartAppsDisallowed_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isModifyAutoStartAppsDisallowed_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isModifyAutoStartAppsDisallowed_test_003
+     * @tc.number isModifyAutoStartAppsDisallowed_test_003
+     * @tc.desc   isModifyAutoStartAppsDisallowed with null parameter autoStartApp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isModifyAutoStartAppsDisallowed_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isModifyAutoStartAppsDisallowed_test_003  -------- START --------');
+      try {
+        applicationManager.isModifyAutoStartAppsDisallowed(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- isModifyAutoStartAppsDisallowed_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isModifyAutoStartAppsDisallowed_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isModifyAutoStartAppsDisallowed_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isModifyAutoStartAppsDisallowed_test_004
+     * @tc.number isModifyAutoStartAppsDisallowed_test_004
+     * @tc.desc   isModifyAutoStartAppsDisallowed with undefined parameter autoStartApp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isModifyAutoStartAppsDisallowed_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isModifyAutoStartAppsDisallowed_test_004  -------- START --------');
+      try {
+        applicationManager.isModifyAutoStartAppsDisallowed(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- isModifyAutoStartAppsDisallowed_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isModifyAutoStartAppsDisallowed_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isModifyAutoStartAppsDisallowed_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addKeepAliveApps_test_003
+     * @tc.number addKeepAliveApps_test_003
+     * @tc.desc   addKeepAliveApps with null parameter bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addKeepAliveApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addKeepAliveApps_test_003  -------- START --------');
+      try {
+        applicationManager.addKeepAliveApps(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- addKeepAliveApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addKeepAliveApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addKeepAliveApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addKeepAliveApps_test_004
+     * @tc.number addKeepAliveApps_test_004
+     * @tc.desc   addKeepAliveApps with undefined parameter bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addKeepAliveApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addKeepAliveApps_test_004  -------- START --------');
+      try {
+        applicationManager.addKeepAliveApps(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- addKeepAliveApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addKeepAliveApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addKeepAliveApps_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addKeepAliveApps_test_006
+     * @tc.number addKeepAliveApps_test_006
+     * @tc.desc   addKeepAliveApps with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addKeepAliveApps_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addKeepAliveApps_test_006  -------- START --------');
+      try {
+        applicationManager.addKeepAliveApps(SELFWANT, [TEST_BUNDLENAME], undefined);
+        console.info(' --- addKeepAliveApps_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addKeepAliveApps_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addKeepAliveApps_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addKeepAliveApps_test_001
+     * @tc.number addKeepAliveApps_test_001
+     * @tc.desc   addKeepAliveApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addKeepAliveApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addKeepAliveApps_test_001  -------- START --------');
+      try {
+        applicationManager.addKeepAliveApps(null, [TEST_BUNDLENAME], DEFAULT_USER_ID);
+        console.info(' --- addKeepAliveApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addKeepAliveApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addKeepAliveApps_test_001  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addKeepAliveApps_test_005
+     * @tc.number addKeepAliveApps_test_005
+     * @tc.desc   addKeepAliveApps with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addKeepAliveApps_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addKeepAliveApps_test_005  -------- START --------');
+      try {
+        applicationManager.addKeepAliveApps(SELFWANT, [TEST_BUNDLENAME], null);
+        console.info(' --- addKeepAliveApps_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addKeepAliveApps_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addKeepAliveApps_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeKeepAliveApps_test_001
+     * @tc.number removeKeepAliveApps_test_001
+     * @tc.desc   removeKeepAliveApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeKeepAliveApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeKeepAliveApps_test_001  -------- START --------');
+      try {
+        applicationManager.removeKeepAliveApps(null, [TEST_BUNDLENAME], DEFAULT_USER_ID);
+        console.info(' --- removeKeepAliveApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeKeepAliveApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeKeepAliveApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeKeepAliveApps_test_002
+     * @tc.number removeKeepAliveApps_test_002
+     * @tc.desc   removeKeepAliveApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeKeepAliveApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeKeepAliveApps_test_002  -------- START --------');
+      try {
+        applicationManager.removeKeepAliveApps(undefined, [TEST_BUNDLENAME], DEFAULT_USER_ID);
+        console.info(' --- removeKeepAliveApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeKeepAliveApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeKeepAliveApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeKeepAliveApps_test_003
+     * @tc.number removeKeepAliveApps_test_003
+     * @tc.desc   removeKeepAliveApps with null parameter bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeKeepAliveApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeKeepAliveApps_test_003  -------- START --------');
+      try {
+        applicationManager.removeKeepAliveApps(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- removeKeepAliveApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeKeepAliveApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeKeepAliveApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeKeepAliveApps_test_004
+     * @tc.number removeKeepAliveApps_test_004
+     * @tc.desc   removeKeepAliveApps with undefined parameter bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeKeepAliveApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeKeepAliveApps_test_004  -------- START --------');
+      try {
+        applicationManager.removeKeepAliveApps(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- removeKeepAliveApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeKeepAliveApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeKeepAliveApps_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getKeepAliveApps_test_001
+     * @tc.number getKeepAliveApps_test_001
+     * @tc.desc   getKeepAliveApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getKeepAliveApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getKeepAliveApps_test_001  -------- START --------');
+      try {
+        applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
+        console.info(' --- getKeepAliveApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getKeepAliveApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getKeepAliveApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getKeepAliveApps_test_002
+     * @tc.number getKeepAliveApps_test_002
+     * @tc.desc   getKeepAliveApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getKeepAliveApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getKeepAliveApps_test_002  -------- START --------');
+      try {
+        applicationManager.getKeepAliveApps(undefined, DEFAULT_USER_ID);
+        console.info(' --- getKeepAliveApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getKeepAliveApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getKeepAliveApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getKeepAliveApps_test_003
+     * @tc.number getKeepAliveApps_test_003
+     * @tc.desc   getKeepAliveApps with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getKeepAliveApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getKeepAliveApps_test_003  -------- START --------');
+      try {
+        applicationManager.getKeepAliveApps(SELFWANT, null);
+        console.info(' --- getKeepAliveApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getKeepAliveApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getKeepAliveApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getKeepAliveApps_test_004
+     * @tc.number getKeepAliveApps_test_004
+     * @tc.desc   getKeepAliveApps with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getKeepAliveApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getKeepAliveApps_test_004  -------- START --------');
+      try {
+        applicationManager.getKeepAliveApps(SELFWANT, undefined);
+        console.info(' --- getKeepAliveApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getKeepAliveApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getKeepAliveApps_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addUserNonStopApps_test_001
+     * @tc.number addUserNonStopApps_test_001
+     * @tc.desc   addUserNonStopApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addUserNonStopApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addUserNonStopApps_test_001  -------- START --------');
+      try {
+        let userNonStopApps: Array<common.ApplicationInstance> = [
+          {appIdentifier:"5765880207852919475", accountId:DEFAULT_USER_ID, appIndex:0}
+        ];
+        applicationManager.addUserNonStopApps(null, userNonStopApps);
+        console.info(' --- addUserNonStopApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addUserNonStopApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addUserNonStopApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addUserNonStopApps_test_002
+     * @tc.number addUserNonStopApps_test_002
+     * @tc.desc   addUserNonStopApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addUserNonStopApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addUserNonStopApps_test_002  -------- START --------');
+      try {
+        let userNonStopApps: Array<common.ApplicationInstance> = [
+          {appIdentifier:"5765880207852919475", accountId:DEFAULT_USER_ID, appIndex:0}
+        ];
+        applicationManager.addUserNonStopApps(undefined, userNonStopApps);
+        console.info(' --- addUserNonStopApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addUserNonStopApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addUserNonStopApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addUserNonStopApps_test_003
+     * @tc.number addUserNonStopApps_test_003
+     * @tc.desc   addUserNonStopApps with null parameter applicationInstances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addUserNonStopApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addUserNonStopApps_test_003  -------- START --------');
+      try {
+        applicationManager.addUserNonStopApps(SELFWANT, null);
+        console.info(' --- addUserNonStopApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addUserNonStopApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addUserNonStopApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addUserNonStopApps_test_004
+     * @tc.number addUserNonStopApps_test_004
+     * @tc.desc   addUserNonStopApps with undefined parameter applicationInstances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addUserNonStopApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addUserNonStopApps_test_004  -------- START --------');
+      try {
+        applicationManager.addUserNonStopApps(SELFWANT, undefined);
+        console.info(' --- addUserNonStopApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addUserNonStopApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addUserNonStopApps_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeUserNonStopApps_test_001
+     * @tc.number removeUserNonStopApps_test_001
+     * @tc.desc   removeUserNonStopApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeUserNonStopApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeUserNonStopApps_test_001  -------- START --------');
+      try {
+        let removeApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"1062865240531676032",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.removeUserNonStopApps(null, removeApps);
+        console.info(' --- removeUserNonStopApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeUserNonStopApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeUserNonStopApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeUserNonStopApps_test_002
+     * @tc.number removeUserNonStopApps_test_002
+     * @tc.desc   removeUserNonStopApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeUserNonStopApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeUserNonStopApps_test_002  -------- START --------');
+      try {
+        let removeApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"1062865240531676032",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.removeUserNonStopApps(undefined, removeApps);
+        console.info(' --- removeUserNonStopApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeUserNonStopApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeUserNonStopApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeUserNonStopApps_test_003
+     * @tc.number removeUserNonStopApps_test_003
+     * @tc.desc   removeUserNonStopApps with null parameter applicationInstances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeUserNonStopApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeUserNonStopApps_test_003  -------- START --------');
+      try {
+        applicationManager.removeUserNonStopApps(SELFWANT, null);
+        console.info(' --- removeUserNonStopApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeUserNonStopApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeUserNonStopApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeUserNonStopApps_test_004
+     * @tc.number removeUserNonStopApps_test_004
+     * @tc.desc   removeUserNonStopApps with undefined parameter applicationInstances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeUserNonStopApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeUserNonStopApps_test_004  -------- START --------');
+      try {
+        applicationManager.removeUserNonStopApps(SELFWANT, undefined);
+        console.info(' --- removeUserNonStopApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeUserNonStopApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeUserNonStopApps_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserNonStopApps_test_001
+     * @tc.number getUserNonStopApps_test_001
+     * @tc.desc   getUserNonStopApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserNonStopApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserNonStopApps_test_001  -------- START --------');
+      try {
+        applicationManager.getUserNonStopApps(null);
+        console.info(' --- getUserNonStopApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserNonStopApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserNonStopApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserNonStopApps_test_002
+     * @tc.number getUserNonStopApps_test_002
+     * @tc.desc   getUserNonStopApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserNonStopApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserNonStopApps_test_002  -------- START --------');
+      try {
+        applicationManager.getUserNonStopApps(undefined);
+        console.info(' --- getUserNonStopApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserNonStopApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserNonStopApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addFreezeExemptedApps_test_001
+     * @tc.number addFreezeExemptedApps_test_001
+     * @tc.desc   addFreezeExemptedApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addFreezeExemptedApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addFreezeExemptedApps_test_001  -------- START --------');
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"5765880207854258995",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.addFreezeExemptedApps(null, freezeExemptedApps);
+        console.info(' --- addFreezeExemptedApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addFreezeExemptedApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addFreezeExemptedApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addFreezeExemptedApps_test_002
+     * @tc.number addFreezeExemptedApps_test_002
+     * @tc.desc   addFreezeExemptedApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addFreezeExemptedApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addFreezeExemptedApps_test_002  -------- START --------');
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"5765880207854258995",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.addFreezeExemptedApps(undefined, freezeExemptedApps);
+        console.info(' --- addFreezeExemptedApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addFreezeExemptedApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addFreezeExemptedApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addFreezeExemptedApps_test_003
+     * @tc.number addFreezeExemptedApps_test_003
+     * @tc.desc   addFreezeExemptedApps with null parameter applicationInstances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addFreezeExemptedApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addFreezeExemptedApps_test_003  -------- START --------');
+      try {
+        applicationManager.addFreezeExemptedApps(SELFWANT, null);
+        console.info(' --- addFreezeExemptedApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addFreezeExemptedApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addFreezeExemptedApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addFreezeExemptedApps_test_004
+     * @tc.number addFreezeExemptedApps_test_004
+     * @tc.desc   addFreezeExemptedApps with undefined parameter applicationInstances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addFreezeExemptedApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addFreezeExemptedApps_test_004  -------- START --------');
+      try {
+        applicationManager.addFreezeExemptedApps(SELFWANT, undefined);
+        console.info(' --- addFreezeExemptedApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addFreezeExemptedApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addFreezeExemptedApps_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeFreezeExemptedApps_test_001
+     * @tc.number removeFreezeExemptedApps_test_001
+     * @tc.desc   removeFreezeExemptedApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeFreezeExemptedApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeFreezeExemptedApps_test_001  -------- START --------');
+      try {
+        let removeApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"1062865240531676032",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.removeFreezeExemptedApps(null, removeApps);
+        console.info(' --- removeFreezeExemptedApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeFreezeExemptedApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeFreezeExemptedApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeFreezeExemptedApps_test_002
+     * @tc.number removeFreezeExemptedApps_test_002
+     * @tc.desc   removeFreezeExemptedApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeFreezeExemptedApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeFreezeExemptedApps_test_002  -------- START --------');
+      try {
+        let removeApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"1062865240531676032",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.removeFreezeExemptedApps(undefined, removeApps);
+        console.info(' --- removeFreezeExemptedApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeFreezeExemptedApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeFreezeExemptedApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeFreezeExemptedApps_test_003
+     * @tc.number removeFreezeExemptedApps_test_003
+     * @tc.desc   removeFreezeExemptedApps with null parameter applicationInstances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeFreezeExemptedApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeFreezeExemptedApps_test_003  -------- START --------');
+      try {
+        applicationManager.removeFreezeExemptedApps(SELFWANT, null);
+        console.info(' --- removeFreezeExemptedApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeFreezeExemptedApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeFreezeExemptedApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeFreezeExemptedApps_test_004
+     * @tc.number removeFreezeExemptedApps_test_004
+     * @tc.desc   removeFreezeExemptedApps with undefined parameter applicationInstances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeFreezeExemptedApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeFreezeExemptedApps_test_004  -------- START --------');
+      try {
+        applicationManager.removeFreezeExemptedApps(SELFWANT, undefined);
+        console.info(' --- removeFreezeExemptedApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeFreezeExemptedApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeFreezeExemptedApps_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getFreezeExemptedApps_test_001
+     * @tc.number getFreezeExemptedApps_test_001
+     * @tc.desc   getFreezeExemptedApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getFreezeExemptedApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getFreezeExemptedApps_test_001  -------- START --------');
+      try {
+        applicationManager.getFreezeExemptedApps(null);
+        console.info(' --- getFreezeExemptedApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getFreezeExemptedApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getFreezeExemptedApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getFreezeExemptedApps_test_002
+     * @tc.number getFreezeExemptedApps_test_002
+     * @tc.desc   getFreezeExemptedApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getFreezeExemptedApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getFreezeExemptedApps_test_002  -------- START --------');
+      try {
+        applicationManager.getFreezeExemptedApps(undefined);
+        console.info(' --- getFreezeExemptedApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getFreezeExemptedApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getFreezeExemptedApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isModifyKeepAliveAppsDisallowed_test_001
+     * @tc.number isModifyKeepAliveAppsDisallowed_test_001
+     * @tc.desc   isModifyKeepAliveAppsDisallowed with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isModifyKeepAliveAppsDisallowed_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isModifyKeepAliveAppsDisallowed_test_001  -------- START --------');
+      try {
+        applicationManager.isModifyKeepAliveAppsDisallowed(null, DEFAULT_USER_ID, TEST_BUNDLENAME);
+        console.info(' --- isModifyKeepAliveAppsDisallowed_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isModifyKeepAliveAppsDisallowed_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isModifyKeepAliveAppsDisallowed_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isModifyKeepAliveAppsDisallowed_test_002
+     * @tc.number isModifyKeepAliveAppsDisallowed_test_002
+     * @tc.desc   isModifyKeepAliveAppsDisallowed with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isModifyKeepAliveAppsDisallowed_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isModifyKeepAliveAppsDisallowed_test_002  -------- START --------');
+      try {
+        applicationManager.isModifyKeepAliveAppsDisallowed(undefined, DEFAULT_USER_ID, TEST_BUNDLENAME);
+        console.info(' --- isModifyKeepAliveAppsDisallowed_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isModifyKeepAliveAppsDisallowed_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isModifyKeepAliveAppsDisallowed_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isModifyKeepAliveAppsDisallowed_test_003
+     * @tc.number isModifyKeepAliveAppsDisallowed_test_003
+     * @tc.desc   isModifyKeepAliveAppsDisallowed with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isModifyKeepAliveAppsDisallowed_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isModifyKeepAliveAppsDisallowed_test_003  -------- START --------');
+      try {
+        applicationManager.isModifyKeepAliveAppsDisallowed(SELFWANT, null, TEST_BUNDLENAME);
+        console.info(' --- isModifyKeepAliveAppsDisallowed_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isModifyKeepAliveAppsDisallowed_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isModifyKeepAliveAppsDisallowed_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isModifyKeepAliveAppsDisallowed_test_004
+     * @tc.number isModifyKeepAliveAppsDisallowed_test_004
+     * @tc.desc   isModifyKeepAliveAppsDisallowed with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isModifyKeepAliveAppsDisallowed_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isModifyKeepAliveAppsDisallowed_test_004  -------- START --------');
+      try {
+        applicationManager.isModifyKeepAliveAppsDisallowed(SELFWANT, undefined, TEST_BUNDLENAME);
+        console.info(' --- isModifyKeepAliveAppsDisallowed_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isModifyKeepAliveAppsDisallowed_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isModifyKeepAliveAppsDisallowed_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   clearUpApplicationData_test_001
+     * @tc.number clearUpApplicationData_test_001
+     * @tc.desc   clearUpApplicationData with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("clearUpApplicationData_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- clearUpApplicationData_test_001  -------- START --------');
+      try {
+        applicationManager.clearUpApplicationData(null, TEST_BUNDLENAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID);
+        console.info(' --- clearUpApplicationData_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- clearUpApplicationData_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- clearUpApplicationData_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   clearUpApplicationData_test_002
+     * @tc.number clearUpApplicationData_test_002
+     * @tc.desc   clearUpApplicationData with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("clearUpApplicationData_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- clearUpApplicationData_test_002  -------- START --------');
+      try {
+        applicationManager.clearUpApplicationData(undefined, TEST_BUNDLENAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID);
+        console.info(' --- clearUpApplicationData_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- clearUpApplicationData_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- clearUpApplicationData_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   clearUpApplicationData_test_003
+     * @tc.number clearUpApplicationData_test_003
+     * @tc.desc   clearUpApplicationData with null parameter appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("clearUpApplicationData_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- clearUpApplicationData_test_003  -------- START --------');
+      try {
+        applicationManager.clearUpApplicationData(SELFWANT, TEST_BUNDLENAME, null, DEFAULT_USER_ID);
+        console.info(' --- clearUpApplicationData_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- clearUpApplicationData_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- clearUpApplicationData_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   clearUpApplicationData_test_004
+     * @tc.number clearUpApplicationData_test_004
+     * @tc.desc   clearUpApplicationData with undefined parameter appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("clearUpApplicationData_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- clearUpApplicationData_test_004  -------- START --------');
+      try {
+        applicationManager.clearUpApplicationData(SELFWANT, TEST_BUNDLENAME, undefined, DEFAULT_USER_ID);
+        console.info(' --- clearUpApplicationData_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- clearUpApplicationData_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- clearUpApplicationData_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   clearUpApplicationData_test_005
+     * @tc.number clearUpApplicationData_test_005
+     * @tc.desc   clearUpApplicationData with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("clearUpApplicationData_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- clearUpApplicationData_test_005  -------- START --------');
+      try {
+        applicationManager.clearUpApplicationData(SELFWANT, TEST_BUNDLENAME, DEFAULT_APP_INDEX, null);
+        console.info(' --- clearUpApplicationData_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- clearUpApplicationData_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- clearUpApplicationData_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   clearUpApplicationData_test_006
+     * @tc.number clearUpApplicationData_test_006
+     * @tc.desc   clearUpApplicationData with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("clearUpApplicationData_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- clearUpApplicationData_test_006  -------- START --------');
+      try {
+        applicationManager.clearUpApplicationData(SELFWANT, TEST_BUNDLENAME, DEFAULT_APP_INDEX, undefined);
+        console.info(' --- clearUpApplicationData_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- clearUpApplicationData_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- clearUpApplicationData_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAllowedKioskApps_test_001
+     * @tc.number setAllowedKioskApps_test_001
+     * @tc.desc   setAllowedKioskApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAllowedKioskApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAllowedKioskApps_test_001  -------- START --------');
+      try {
+        applicationManager.setAllowedKioskApps(null, [`${'1265956504964495936'}`]);
+        console.info(' --- setAllowedKioskApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAllowedKioskApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAllowedKioskApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAllowedKioskApps_test_002
+     * @tc.number setAllowedKioskApps_test_002
+     * @tc.desc   setAllowedKioskApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAllowedKioskApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAllowedKioskApps_test_002  -------- START --------');
+      try {
+        applicationManager.setAllowedKioskApps(undefined, [`${'1265956504964495936'}`]);
+        console.info(' --- setAllowedKioskApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAllowedKioskApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAllowedKioskApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAllowedKioskApps_test_003
+     * @tc.number setAllowedKioskApps_test_003
+     * @tc.desc   setAllowedKioskApps with null parameter appIdentifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAllowedKioskApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAllowedKioskApps_test_003  -------- START --------');
+      try {
+        applicationManager.setAllowedKioskApps(SELFWANT, null);
+        console.info(' --- setAllowedKioskApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAllowedKioskApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAllowedKioskApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAllowedKioskApps_test_004
+     * @tc.number setAllowedKioskApps_test_004
+     * @tc.desc   setAllowedKioskApps with undefined parameter appIdentifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAllowedKioskApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAllowedKioskApps_test_004  -------- START --------');
+      try {
+        applicationManager.setAllowedKioskApps(SELFWANT, undefined);
+        console.info(' --- setAllowedKioskApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAllowedKioskApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAllowedKioskApps_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedKioskApps_test_001
+     * @tc.number getAllowedKioskApps_test_001
+     * @tc.desc   getAllowedKioskApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedKioskApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedKioskApps_test_001  -------- START --------');
+      try {
+        applicationManager.getAllowedKioskApps(null);
+        console.info(' --- getAllowedKioskApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedKioskApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedKioskApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedKioskApps_test_002
+     * @tc.number getAllowedKioskApps_test_002
+     * @tc.desc   getAllowedKioskApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedKioskApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedKioskApps_test_002  -------- START --------');
+      try {
+        applicationManager.getAllowedKioskApps(undefined);
+        console.info(' --- getAllowedKioskApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedKioskApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedKioskApps_test_002  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setKioskFeatures_test_002
+     * @tc.number setKioskFeatures_test_002
+     * @tc.desc   setKioskFeatures with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setKioskFeatures_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setKioskFeatures_test_002  -------- START --------');
+      try {
+        let kioskFeatures: Array<applicationManager.KioskFeature> = [];
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_NOTIFICATION_CENTER);
+        kioskFeatures.push(applicationManager.KioskFeature.ALLOW_CONTROL_CENTER);
+        applicationManager.setKioskFeatures(undefined, kioskFeatures);
+        console.info(' --- setKioskFeatures_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setKioskFeatures_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setKioskFeatures_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setKioskFeatures_test_003
+     * @tc.number setKioskFeatures_test_003
+     * @tc.desc   setKioskFeatures with null parameter features
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setKioskFeatures_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setKioskFeatures_test_003  -------- START --------');
+      try {
+        applicationManager.setKioskFeatures(SELFWANT, null);
+        console.info(' --- setKioskFeatures_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setKioskFeatures_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setKioskFeatures_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setKioskFeatures_test_004
+     * @tc.number setKioskFeatures_test_004
+     * @tc.desc   setKioskFeatures with undefined parameter features
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setKioskFeatures_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setKioskFeatures_test_004  -------- START --------');
+      try {
+        applicationManager.setKioskFeatures(SELFWANT, undefined);
+        console.info(' --- setKioskFeatures_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setKioskFeatures_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setKioskFeatures_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedRunningBundles_test_001
+     * @tc.number addAllowedRunningBundles_test_001
+     * @tc.desc   addAllowedRunningBundles with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedRunningBundles_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedRunningBundles_test_001  -------- START --------');
+      try {
+        applicationManager.addAllowedRunningBundles(null, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- addAllowedRunningBundles_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedRunningBundles_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedRunningBundles_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedRunningBundles_test_002
+     * @tc.number addAllowedRunningBundles_test_002
+     * @tc.desc   addAllowedRunningBundles with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedRunningBundles_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedRunningBundles_test_002  -------- START --------');
+      try {
+        applicationManager.addAllowedRunningBundles(undefined, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- addAllowedRunningBundles_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedRunningBundles_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedRunningBundles_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedRunningBundles_test_003
+     * @tc.number addAllowedRunningBundles_test_003
+     * @tc.desc   addAllowedRunningBundles with null parameter appIdentifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedRunningBundles_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedRunningBundles_test_003  -------- START --------');
+      try {
+        applicationManager.addAllowedRunningBundles(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- addAllowedRunningBundles_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedRunningBundles_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedRunningBundles_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedRunningBundles_test_004
+     * @tc.number addAllowedRunningBundles_test_004
+     * @tc.desc   addAllowedRunningBundles with undefined parameter appIdentifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedRunningBundles_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedRunningBundles_test_004  -------- START --------');
+      try {
+        applicationManager.addAllowedRunningBundles(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- addAllowedRunningBundles_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedRunningBundles_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedRunningBundles_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedRunningBundles_test_005
+     * @tc.number addAllowedRunningBundles_test_005
+     * @tc.desc   addAllowedRunningBundles with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedRunningBundles_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedRunningBundles_test_005  -------- START --------');
+      try {
+        applicationManager.addAllowedRunningBundles(SELFWANT, APP_IDS_1, null);
+        console.info(' --- addAllowedRunningBundles_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedRunningBundles_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedRunningBundles_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedRunningBundles_test_006
+     * @tc.number addAllowedRunningBundles_test_006
+     * @tc.desc   addAllowedRunningBundles with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedRunningBundles_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedRunningBundles_test_006  -------- START --------');
+      try {
+        applicationManager.addAllowedRunningBundles(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- addAllowedRunningBundles_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedRunningBundles_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedRunningBundles_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedRunningBundles_test_001
+     * @tc.number removeAllowedRunningBundles_test_001
+     * @tc.desc   removeAllowedRunningBundles with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedRunningBundles_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedRunningBundles_test_001  -------- START --------');
+      try {
+        applicationManager.removeAllowedRunningBundles(null, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- removeAllowedRunningBundles_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedRunningBundles_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedRunningBundles_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedRunningBundles_test_002
+     * @tc.number removeAllowedRunningBundles_test_002
+     * @tc.desc   removeAllowedRunningBundles with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedRunningBundles_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedRunningBundles_test_002  -------- START --------');
+      try {
+        applicationManager.removeAllowedRunningBundles(undefined, APP_IDS_1, DEFAULT_USER_ID);
+        console.info(' --- removeAllowedRunningBundles_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedRunningBundles_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedRunningBundles_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedRunningBundles_test_003
+     * @tc.number removeAllowedRunningBundles_test_003
+     * @tc.desc   removeAllowedRunningBundles with null parameter appIdentifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedRunningBundles_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedRunningBundles_test_003  -------- START --------');
+      try {
+        applicationManager.removeAllowedRunningBundles(SELFWANT, null, DEFAULT_USER_ID);
+        console.info(' --- removeAllowedRunningBundles_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedRunningBundles_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedRunningBundles_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedRunningBundles_test_004
+     * @tc.number removeAllowedRunningBundles_test_004
+     * @tc.desc   removeAllowedRunningBundles with undefined parameter appIdentifiers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedRunningBundles_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedRunningBundles_test_004  -------- START --------');
+      try {
+        applicationManager.removeAllowedRunningBundles(SELFWANT, undefined, DEFAULT_USER_ID);
+        console.info(' --- removeAllowedRunningBundles_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedRunningBundles_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedRunningBundles_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedRunningBundles_test_005
+     * @tc.number removeAllowedRunningBundles_test_005
+     * @tc.desc   removeAllowedRunningBundles with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedRunningBundles_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedRunningBundles_test_005  -------- START --------');
+      try {
+        applicationManager.removeAllowedRunningBundles(SELFWANT, APP_IDS_1, null);
+        console.info(' --- removeAllowedRunningBundles_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedRunningBundles_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedRunningBundles_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedRunningBundles_test_006
+     * @tc.number removeAllowedRunningBundles_test_006
+     * @tc.desc   removeAllowedRunningBundles with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedRunningBundles_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedRunningBundles_test_006  -------- START --------');
+      try {
+        applicationManager.removeAllowedRunningBundles(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- removeAllowedRunningBundles_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedRunningBundles_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedRunningBundles_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedRunningBundles_test_001
+     * @tc.number getAllowedRunningBundles_test_001
+     * @tc.desc   getAllowedRunningBundles with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedRunningBundles_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedRunningBundles_test_001  -------- START --------');
+      try {
+        applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
+        console.info(' --- getAllowedRunningBundles_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedRunningBundles_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedRunningBundles_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedRunningBundles_test_002
+     * @tc.number getAllowedRunningBundles_test_002
+     * @tc.desc   getAllowedRunningBundles with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedRunningBundles_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedRunningBundles_test_002  -------- START --------');
+      try {
+        applicationManager.getAllowedRunningBundles(undefined, DEFAULT_USER_ID);
+        console.info(' --- getAllowedRunningBundles_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedRunningBundles_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedRunningBundles_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedRunningBundles_test_003
+     * @tc.number getAllowedRunningBundles_test_003
+     * @tc.desc   getAllowedRunningBundles with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedRunningBundles_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedRunningBundles_test_003  -------- START --------');
+      try {
+        applicationManager.getAllowedRunningBundles(SELFWANT, null);
+        console.info(' --- getAllowedRunningBundles_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedRunningBundles_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedRunningBundles_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedRunningBundles_test_004
+     * @tc.number getAllowedRunningBundles_test_004
+     * @tc.desc   getAllowedRunningBundles with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedRunningBundles_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedRunningBundles_test_004  -------- START --------');
+      try {
+        applicationManager.getAllowedRunningBundles(SELFWANT, undefined);
+        console.info(' --- getAllowedRunningBundles_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedRunningBundles_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedRunningBundles_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAbilityDisabled_test_001
+     * @tc.number setAbilityDisabled_test_001
+     * @tc.desc   setAbilityDisabled with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAbilityDisabled_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAbilityDisabled_test_001  -------- START --------');
+      try {
+        applicationManager.setAbilityDisabled(null, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility', true);
+        console.info(' --- setAbilityDisabled_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAbilityDisabled_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAbilityDisabled_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAbilityDisabled_test_002
+     * @tc.number setAbilityDisabled_test_002
+     * @tc.desc   setAbilityDisabled with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAbilityDisabled_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAbilityDisabled_test_002  -------- START --------');
+      try {
+        applicationManager.setAbilityDisabled(undefined, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility', true);
+        console.info(' --- setAbilityDisabled_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAbilityDisabled_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAbilityDisabled_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAbilityDisabled_test_003
+     * @tc.number setAbilityDisabled_test_003
+     * @tc.desc   setAbilityDisabled with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAbilityDisabled_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAbilityDisabled_test_003  -------- START --------');
+      try {
+        applicationManager.setAbilityDisabled(SELFWANT, 'com.example.helloworld', null, 'EntryAbility', true);
+        console.info(' --- setAbilityDisabled_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAbilityDisabled_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAbilityDisabled_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setAbilityDisabled_test_004
+     * @tc.number setAbilityDisabled_test_004
+     * @tc.desc   setAbilityDisabled with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setAbilityDisabled_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setAbilityDisabled_test_004  -------- START --------');
+      try {
+        applicationManager.setAbilityDisabled(SELFWANT, 'com.example.helloworld', undefined, 'EntryAbility', true);
+        console.info(' --- setAbilityDisabled_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setAbilityDisabled_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setAbilityDisabled_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isAbilityDisabled_test_001
+     * @tc.number isAbilityDisabled_test_001
+     * @tc.desc   isAbilityDisabled with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isAbilityDisabled_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isAbilityDisabled_test_001  -------- START --------');
+      try {
+        applicationManager.isAbilityDisabled(null, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility');
+        console.info(' --- isAbilityDisabled_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isAbilityDisabled_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isAbilityDisabled_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isAbilityDisabled_test_002
+     * @tc.number isAbilityDisabled_test_002
+     * @tc.desc   isAbilityDisabled with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isAbilityDisabled_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isAbilityDisabled_test_002  -------- START --------');
+      try {
+        applicationManager.isAbilityDisabled(undefined, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility');
+        console.info(' --- isAbilityDisabled_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isAbilityDisabled_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isAbilityDisabled_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isAbilityDisabled_test_003
+     * @tc.number isAbilityDisabled_test_003
+     * @tc.desc   isAbilityDisabled with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isAbilityDisabled_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isAbilityDisabled_test_003  -------- START --------');
+      try {
+        applicationManager.isAbilityDisabled(SELFWANT, 'com.example.helloworld', null, 'EntryAbility');
+        console.info(' --- isAbilityDisabled_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isAbilityDisabled_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isAbilityDisabled_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   isAbilityDisabled_test_004
+     * @tc.number isAbilityDisabled_test_004
+     * @tc.desc   isAbilityDisabled with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("isAbilityDisabled_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- isAbilityDisabled_test_004  -------- START --------');
+      try {
+        applicationManager.isAbilityDisabled(SELFWANT, 'com.example.helloworld', undefined, 'EntryAbility');
+        console.info(' --- isAbilityDisabled_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- isAbilityDisabled_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- isAbilityDisabled_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getAutoStartApps_test_029
+     * @tc.number getAutoStartApps_test_029
+     * @tc.desc   getAutoStartApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAutoStartApps_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAutoStartApps_test_029  -------- START --------');
+      try {
+        applicationManager.getAutoStartApps(null);
+        console.info(' --- getAutoStartApps_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAutoStartApps_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAutoStartApps_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAutoStartApps_test_030
+     * @tc.number getAutoStartApps_test_030
+     * @tc.desc   getAutoStartApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAutoStartApps_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAutoStartApps_test_030  -------- START --------');
+      try {
+        applicationManager.getAutoStartApps(undefined);
+        console.info(' --- getAutoStartApps_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAutoStartApps_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAutoStartApps_test_030  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addKeepAliveApps_test_085
+     * @tc.number addKeepAliveApps_test_085
+     * @tc.desc   addKeepAliveApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addKeepAliveApps_test_085", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addKeepAliveApps_test_085  -------- START --------');
+      try {
+        applicationManager.addKeepAliveApps(null, [TEST_BUNDLENAME], DEFAULT_USER_ID);
+        console.info(' --- addKeepAliveApps_test_085 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addKeepAliveApps_test_085 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addKeepAliveApps_test_085  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getKeepAliveApps_test_029
+     * @tc.number getKeepAliveApps_test_029
+     * @tc.desc   getKeepAliveApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getKeepAliveApps_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getKeepAliveApps_test_029  -------- START --------');
+      try {
+        applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
+        console.info(' --- getKeepAliveApps_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getKeepAliveApps_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getKeepAliveApps_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getKeepAliveApps_test_030
+     * @tc.number getKeepAliveApps_test_030
+     * @tc.desc   getKeepAliveApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getKeepAliveApps_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getKeepAliveApps_test_030  -------- START --------');
+      try {
+        applicationManager.getKeepAliveApps(undefined, DEFAULT_USER_ID);
+        console.info(' --- getKeepAliveApps_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getKeepAliveApps_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getKeepAliveApps_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getKeepAliveApps_test_031
+     * @tc.number getKeepAliveApps_test_031
+     * @tc.desc   getKeepAliveApps with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getKeepAliveApps_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getKeepAliveApps_test_031  -------- START --------');
+      try {
+        applicationManager.getKeepAliveApps(SELFWANT, null);
+        console.info(' --- getKeepAliveApps_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getKeepAliveApps_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getKeepAliveApps_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getKeepAliveApps_test_032
+     * @tc.number getKeepAliveApps_test_032
+     * @tc.desc   getKeepAliveApps with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getKeepAliveApps_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getKeepAliveApps_test_032  -------- START --------');
+      try {
+        applicationManager.getKeepAliveApps(SELFWANT, undefined);
+        console.info(' --- getKeepAliveApps_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getKeepAliveApps_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getKeepAliveApps_test_032  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getUserNonStopApps_test_015
+     * @tc.number getUserNonStopApps_test_015
+     * @tc.desc   getUserNonStopApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserNonStopApps_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserNonStopApps_test_015  -------- START --------');
+      try {
+        applicationManager.getUserNonStopApps(null);
+        console.info(' --- getUserNonStopApps_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserNonStopApps_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserNonStopApps_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUserNonStopApps_test_016
+     * @tc.number getUserNonStopApps_test_016
+     * @tc.desc   getUserNonStopApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUserNonStopApps_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUserNonStopApps_test_016  -------- START --------');
+      try {
+        applicationManager.getUserNonStopApps(undefined);
+        console.info(' --- getUserNonStopApps_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUserNonStopApps_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUserNonStopApps_test_016  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getAllowedKioskApps_test_015
+     * @tc.number getAllowedKioskApps_test_015
+     * @tc.desc   getAllowedKioskApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedKioskApps_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedKioskApps_test_015  -------- START --------');
+      try {
+        applicationManager.getAllowedKioskApps(null);
+        console.info(' --- getAllowedKioskApps_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedKioskApps_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedKioskApps_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedKioskApps_test_016
+     * @tc.number getAllowedKioskApps_test_016
+     * @tc.desc   getAllowedKioskApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedKioskApps_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedKioskApps_test_016  -------- START --------');
+      try {
+        applicationManager.getAllowedKioskApps(undefined);
+        console.info(' --- getAllowedKioskApps_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedKioskApps_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedKioskApps_test_016  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getAllowedRunningBundles_test_029
+     * @tc.number getAllowedRunningBundles_test_029
+     * @tc.desc   getAllowedRunningBundles with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedRunningBundles_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedRunningBundles_test_029  -------- START --------');
+      try {
+        applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
+        console.info(' --- getAllowedRunningBundles_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedRunningBundles_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedRunningBundles_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedRunningBundles_test_030
+     * @tc.number getAllowedRunningBundles_test_030
+     * @tc.desc   getAllowedRunningBundles with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedRunningBundles_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedRunningBundles_test_030  -------- START --------');
+      try {
+        applicationManager.getAllowedRunningBundles(undefined, DEFAULT_USER_ID);
+        console.info(' --- getAllowedRunningBundles_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedRunningBundles_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedRunningBundles_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedRunningBundles_test_031
+     * @tc.number getAllowedRunningBundles_test_031
+     * @tc.desc   getAllowedRunningBundles with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedRunningBundles_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedRunningBundles_test_031  -------- START --------');
+      try {
+        applicationManager.getAllowedRunningBundles(SELFWANT, null);
+        console.info(' --- getAllowedRunningBundles_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedRunningBundles_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedRunningBundles_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedRunningBundles_test_032
+     * @tc.number getAllowedRunningBundles_test_032
+     * @tc.desc   getAllowedRunningBundles with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedRunningBundles_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedRunningBundles_test_032  -------- START --------');
+      try {
+        applicationManager.getAllowedRunningBundles(SELFWANT, undefined);
+        console.info(' --- getAllowedRunningBundles_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedRunningBundles_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedRunningBundles_test_032  -------- END --------');
     })
   })
 }

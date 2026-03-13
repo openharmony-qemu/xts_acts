@@ -368,12 +368,14 @@ export default function PromiseTest() {
         let result: Number = 20;
         try {
           const promise1 = new Promise<number>((resolve) => {
-            const task = new taskpool.Task(() => {
-              setTimeout(() => {
-                resolve(10);
-              }, 100);
-            });
-            await taskpool.execute(task)
+            waitForCompletion(async () => {
+              const task = new taskpool.Task(() => {
+                setTimeout(() => {
+                  resolve(10);
+                }, 100);
+              });
+              await taskpool.execute(task)
+            })
           });
           result = await promise1;
           expect(result).assertEqual(10);
@@ -1147,7 +1149,7 @@ export default function PromiseTest() {
         const TAG: string = 'PromiseTest036';
         console.info(`${TAG} test start`);
         try {
-          const array: Array<number> = new Array<number>(10);
+          const array: Array<number> = new Array<number>(10, (i) => 0);
           array.push(10);
           const promise1 = Promise.resolve<Any>(undefined);
           const promise2 = Promise.resolve<null>(null);

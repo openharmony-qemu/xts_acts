@@ -7998,7 +7998,36 @@ export default function InterfaceNullValueOverrideTest() {
         expect(Number(error.code)).assertEqual(9001005);
       }
     })
-    
+
+    /**
+     * @tc.name getOverrideResourceManager_null_0100
+     * @tc.number getOverrideResourceManager_null_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getOverrideResourceManager_null_0100', Level.LEVEL3, () => {
+      let value = res.getOverrideResourceManager(null);
+      console.log('getOverrideResourceManager_null_0100 value:', value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.name getOverrideResourceManager_undefined_0100
+     * @tc.number getOverrideResourceManager_undefined_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('getOverrideResourceManager_undefined_0100', Level.LEVEL3, () => {
+      let value = res.getOverrideResourceManager(undefined);
+      console.log('getOverrideResourceManager_undefined_0100 value:', value);
+      expect(value != null).assertTrue();
+    })
+
     console.log('*************end interfaceNullValueOverrideTest*************');
   })
 }

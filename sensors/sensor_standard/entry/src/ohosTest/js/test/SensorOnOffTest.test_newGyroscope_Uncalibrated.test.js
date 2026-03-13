@@ -506,14 +506,14 @@ describe("SensorJsTest_sensor_44", function () {
     })
 
     /**
-     * @tc.name   newGyroscope_Uncalibrated_SensorJsTest030
+     * @tc.name   newGyroscope_Uncalibrated_SensorJsTest030Adapt001
      * @tc.number SUB_SensorsSystem_GYROSCOPE_UNCALIBRATED_JSTest_0300
      * @tc.desc   Verification results of the incorrect parameters of the test interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("newGyroscope_Uncalibrated_SensorJsTest030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+    it("newGyroscope_Uncalibrated_SensorJsTest030Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------newGyroscope_Uncalibrated_SensorJsTest030--------------');
         sensor.on(sensor.SensorId.GYROSCOPE_UNCALIBRATED, callback, { 'interval': 100000000 });
         sensor.on(sensor.SensorId.GYROSCOPE_UNCALIBRATED, callback2, { 'interval': 100000000 });

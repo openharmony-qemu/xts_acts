@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -2475,14 +2475,9 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let arr: int[] = new Array<int>(3);
+      let arr: int[] = Array.create<int>(3, 0);
       arr[0] = 1;
       arr[2] = 3;
-      try {
-        let result1: int | undefined = arr[1];
-      } catch(err) {
-        expect(err.name).assertEqual("ClassCastError");
-      }
       try {
         let result2: int = arr.length;
         arr[result2] = 4;
@@ -3123,7 +3118,7 @@ export default function expressionTest6() {
      */
     it('ExpressionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let numObj: Number = new Number(Number.MAX_VALUE);
-      let arr: number[] = new Array<number>(0);
+      let arr: number[] = new Array<number>();
       let strObj: String = new String("");
 
       let result1: boolean = numObj instanceof Number;
@@ -3319,7 +3314,7 @@ export default function expressionTest6() {
      * @tc.level Level 1
      */
     it('ExpressionTest1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let arr: number[] = new Array<number>(3);
+      let arr: number[] = Array.create<number>(3, NaN);
       let maxSafe: number = Number.MAX_SAFE_INTEGER;
       arr[0] = maxSafe;
       arr[1] = maxSafe + 1;

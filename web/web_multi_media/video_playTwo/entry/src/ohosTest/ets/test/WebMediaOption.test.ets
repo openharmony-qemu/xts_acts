@@ -76,5 +76,37 @@ export default function webMediaOption() {
         });
       await Utils.waitAndClickComponent(driver,'webViewMediaOptionTestButton')
     })
+    /**
+     * @tc.name   testMediaOptions002
+     * @tc.number SUB_WEB_MEDIAOPTIONS_0200
+     * @tc.desc   test mediaOptions single instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMediaOptions002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitMediaOptions002", 300600)
+      Utils.registerBaseEvent("testMediaOptions002", false, 300630, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver,'webViewMediaOptionTestButton')
+    })
+    /**
+     * @tc.name   testMediaOptions003
+     * @tc.number SUB_WEB_MEDIAOPTIONS_0300
+     * @tc.desc   test mediaOptions single instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMediaOptions003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitMediaOptions003", 300600)
+      Utils.registerBaseEvent("testMediaOptions003", false, 300650, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver,'webViewMediaOptionTestButton')
+    })
   })
 }

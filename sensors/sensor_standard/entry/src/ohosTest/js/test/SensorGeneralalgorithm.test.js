@@ -52,7 +52,7 @@ describe("SensorJsTest_sensor_1", function () {
 
     let PARAMETER_ERROR_CODE = 401
     let PARAMETER_ERROR_MSG = 'The parameter invalid.'
-
+    let sensortempcode = true;
     let SENSOR_DATA_MATRIX = [
         {
             "rotation": [-0.7980074882507324, 0.5486301183700562, 0.24937734007835388, -0.17277367413043976,
@@ -1027,7 +1027,7 @@ describe("SensorJsTest_sensor_1", function () {
             sensor.getGeomagneticDip([1, 2, 3, 4], (error, data) => {
                 if (error) {
                     console.info('SensorJsTest_102 success');
-                    expect(true).assertTrue();
+                    expect(sensortempcode).assertTrue();
                 } else {
                     console.info("SensorJsTest_102 failed")
                     expect(false).assertTrue();

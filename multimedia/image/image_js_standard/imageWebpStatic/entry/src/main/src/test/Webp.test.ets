@@ -122,26 +122,28 @@ export default function imageWebp() {
         } else {
           globalImageSource = imageSourceApi;
           imageSourceApi.createPixelMap(arg, (err, pixelmap) => {
-            if (err && err.code) {
-              console.info(`${testNum} - fail ${err}`);
-              expect(false).assertTrue();
-              done();
-            } else {
-              globalpixelmap = pixelmap!;
-              try {
-                let imageInfo = await pixelmap!.getImageInfo();
-                expect(imageInfo.size.height == 2).assertTrue();
-                expect(imageInfo.size.width == 1).assertTrue();
-                console.info(`${testNum} - success `);
-                console.info("imageInfo height :" + imageInfo.size.height + "width : " +
-                imageInfo.size.width);
-                done();
-              } catch (err) {
-                console.info(`${testNum} getimageInfo err ` + JSON.stringify(err));
+            waitForCompletion(async () => {
+              if (err && err.code) {
+                console.info(`${testNum} - fail ${err}`);
                 expect(false).assertTrue();
                 done();
+              } else {
+                globalpixelmap = pixelmap!;
+                try {
+                  let imageInfo = await pixelmap!.getImageInfo();
+                  expect(imageInfo.size.height == 2).assertTrue();
+                  expect(imageInfo.size.width == 1).assertTrue();
+                  console.info(`${testNum} - success `);
+                  console.info("imageInfo height :" + imageInfo.size.height + "width : " +
+                  imageInfo.size.width);
+                  done();
+                } catch (err) {
+                  console.info(`${testNum} getimageInfo err ` + JSON.stringify(err));
+                  expect(false).assertTrue();
+                  done();
+                }
               }
-            }
+            })
           });
         }
       };

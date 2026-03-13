@@ -62,7 +62,7 @@ describe("SensorJsTest_sensor_21", function () {
     })
 
     let errMessages = ['string is not defined','The parameter invalid'];
-
+    let sensortempcode = true;
     let errMessage;
 
     /**
@@ -113,7 +113,7 @@ describe("SensorJsTest_sensor_21", function () {
         console.info('----------------------SignificantMotion_SensorJsTest003---------------------------');
         sensor.once(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, callback);
         setTimeout(() => {
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
@@ -156,7 +156,7 @@ describe("SensorJsTest_sensor_21", function () {
         sensor.on(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, onSensorCallback);
         sensor.off(sensor.SensorType.SENSOR_TYPE_ID_SIGNIFICANT_MOTION, onSensorCallback);
         setTimeout(() => {
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })

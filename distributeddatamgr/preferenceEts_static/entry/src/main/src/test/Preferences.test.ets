@@ -320,9 +320,11 @@ export default function preferenceTest() {
     it('testPreferencesPutArrayNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences!.clear();
       mPreferences!.put(KEY_TEST_INT_ARRAY_ELEMENT, new Array<number>(1, 2, 3), (err: BusinessError | null) :void => {
-        let pre = await mPreferences!.get(KEY_TEST_INT_ARRAY_ELEMENT, 0) as Array<number>;
-        expect(3).assertEqual(pre.length);
-        done();
+        waitForCompletion(async () => {
+          let pre = await mPreferences!.get(KEY_TEST_INT_ARRAY_ELEMENT, 0) as Array<number>;
+          expect(3).assertEqual(pre.length);
+          done();
+        })
       });
     })
 
@@ -408,20 +410,22 @@ export default function preferenceTest() {
       await mPreferences!.clear();
       let val: long = 4;
       mPreferences!.put(KEY_TEST_INT_ELEMENT, val, (err: BusinessError | null) :void => {
-        hilog.info(domain, tag, '%{public}s', TAG + "put end");
-        await mPreferences!.flush(); // del
-        hilog.info(domain, tag, '%{public}s', TAG + "flush end");
-        let pre = await mPreferences!.get(KEY_TEST_INT_ELEMENT, 0);
-        hilog.info(domain, tag, '%{public}s', TAG + "get end, value:" + pre);
-        expect(val).assertEqual(pre);
-        hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
-        await mPreferences!.flush();
-        hilog.info(domain, tag, '%{public}s', TAG + "flush end");
-        let pre2 = await mPreferences!.get(KEY_TEST_INT_ELEMENT, 0);
-        hilog.info(domain, tag, '%{public}s', TAG + "get pre2 is:" + pre2);
-        expect(val).assertEqual(pre2);
-        hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
-        done();
+        waitForCompletion(async () => {
+          hilog.info(domain, tag, '%{public}s', TAG + "put end");
+          await mPreferences!.flush(); // del
+          hilog.info(domain, tag, '%{public}s', TAG + "flush end");
+          let pre = await mPreferences!.get(KEY_TEST_INT_ELEMENT, 0);
+          hilog.info(domain, tag, '%{public}s', TAG + "get end, value:" + pre);
+          expect(val).assertEqual(pre);
+          hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
+          await mPreferences!.flush();
+          hilog.info(domain, tag, '%{public}s', TAG + "flush end");
+          let pre2 = await mPreferences!.get(KEY_TEST_INT_ELEMENT, 0);
+          hilog.info(domain, tag, '%{public}s', TAG + "get pre2 is:" + pre2);
+          expect(val).assertEqual(pre2);
+          hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
+          done();
+        })
       });
     })
 
@@ -688,9 +692,11 @@ export default function preferenceTest() {
       await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "test");
       await mPreferences!.flush();
       mPreferences!.clear((err : BusinessError | null) : void => {
-        let pre = await mPreferences!.get(KEY_TEST_STRING_ELEMENT, "defaultvalue")
-        expect("defaultvalue").assertEqual(pre);
-        done();
+        waitForCompletion(async () => {
+          let pre = await mPreferences!.get(KEY_TEST_STRING_ELEMENT, "defaultvalue")
+          expect("defaultvalue").assertEqual(pre);
+          done();
+        })
       });
     });
 
@@ -707,9 +713,11 @@ export default function preferenceTest() {
       await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "test");
       await mPreferences!.flush();
       await mPreferences!.clear().then(() : void => {
-        let per = await mPreferences!.get(KEY_TEST_STRING_ELEMENT, "defaultvalue");
-        expect("defaultvalue").assertEqual(per);
-        done();
+        waitForCompletion(async () => {
+          let per = await mPreferences!.get(KEY_TEST_STRING_ELEMENT, "defaultvalue");
+          expect("defaultvalue").assertEqual(per);
+          done();
+        })
       }).catch((err) => {
         expect(null).assertFail();
         done();

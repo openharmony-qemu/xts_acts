@@ -225,7 +225,7 @@ export default function PromiseRejectTest() {
     /**
      * @tc.number SUB_PROMISE_REJECT_TEST_1200
      * @tc.name PromiseRejectTest1200
-     * @tc.desc test value = Array(1000000).fill('test')
+     * @tc.desc test value = Array.create(1000000, ''test')
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

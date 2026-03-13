@@ -132,7 +132,7 @@ export default function BadgeResourceTest() {
       let style: ESObject = JSON.parse(obj.$attrs.style);
       console.info('[badgeResourceTest_005] style.fontSize is: ' + style.fontSize);
       let resourceFontSize :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_size_caption').id)
-      expect(style.fontSize).assertContain(px2vp(resourceFontSize)+'');
+      expect(style.fontSize).assertContain(Math.round(px2vp(resourceFontSize))+'');
       console.info('[badgeResourceTest_005] END');
       done();
     });
@@ -285,7 +285,7 @@ export default function BadgeResourceTest() {
       let style: ESObject = JSON.parse(obj.$attrs.style);
       console.info('[badgeResourceTest_015] style.fontSize is: ' + style.fontSize);
       let resourceFontSize :number  = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_size_caption').id)
-      expect(style.fontSize).assertContain(px2vp(resourceFontSize)+'');
+      expect(style.fontSize).assertContain(Math.round(px2vp(resourceFontSize))+'');
       console.info('[badgeResourceTest_015] END');
       done();
     });

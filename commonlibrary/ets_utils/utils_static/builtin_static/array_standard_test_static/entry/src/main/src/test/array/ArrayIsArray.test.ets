@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -146,7 +146,7 @@ export default function ArrayIsArrayTest() {
      * @tc.level  LEVEL1
      */
     it('testIsArray0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: boolean[] = new Array<boolean>(5);
+      const arr: boolean[] = new Array<boolean>(5, (i) => false);
       expect(Array.isArray(arr)).assertTrue();
     });
 
@@ -528,7 +528,7 @@ export default function ArrayIsArrayTest() {
      * @tc.level  LEVEL1
      */
     it('testIsArray0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: number[] = new Array<number>(10000);
+      const arr: number[] = new Array<number>(10000, (i) => 0);
       expect(Array.isArray(arr)).assertTrue();
     });
 
@@ -660,7 +660,7 @@ export default function ArrayIsArrayTest() {
      * @tc.level  LEVEL1
      */
     it('testIsArray0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: number[] = new Array<number>(3);
+      const arr: number[] = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[2] = 3;
       arr.length = 3;
@@ -1142,7 +1142,7 @@ export default function ArrayIsArrayTest() {
      * @tc.level  LEVEL1
      */
     it('testIsArray0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(10);
+      const arr: (number | undefined)[] = new Array<number | undefined>(10, (i) => undefined);
       arr[0] = 1;
       arr[5] = 6;
       arr.length = 10;

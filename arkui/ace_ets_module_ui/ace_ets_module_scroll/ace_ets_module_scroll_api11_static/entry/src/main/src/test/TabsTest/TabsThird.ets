@@ -71,7 +71,7 @@ export default function tabsThird() {
         if (!("IndexThird" == pages.name)) {
           console.info("get IndexThird state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
-          routerAlp.pushUrl(options)
+          routerAlp.replaceUrl(options)
           await Utils.sleep(2000);
           // console.info("push IndexThird page success " + JSON.stringify(result));
         }

@@ -423,6 +423,35 @@ export default function rdbStoreAttachErrorTest() {
             console.log(tag + "************* testRdbStoreAttachErr0009 end *************");
         })
 
+          /**
+         * @tc.name   testRdbStoreAttachErr0005
+         * @tc.number SUB_Distributed_relationalStore_SDK_AttachAPITest_2400
+         * @tc.desc   attach 
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+          it('testRdbStoreAttachErr0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+            console.log(tag + "************* testRdbStoreAttachErr0005 start *************");
+            let store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
+            try {
+                let num = await store!.attach(context!, STORE_CONFIG4, 'attachDB');
+                expect(num > 0).assertTrue();
+            } catch (err){
+                if(err.code === 801){
+                    hilog.error(domain, tag, 'testRdbStoreAttachErr0005 err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(801);  
+                }else{
+                    hilog.error(domain, tag, 'testRdbStoreAttachErr0005 err:' + JSON.stringify(err));
+                    expect(err.code).assertEqual(14800010);
+                }
+                
+            }  
+            await relationalStore.deleteRdbStore(context!, STORE_CONFIG);      
+            console.log(tag + "************* testRdbStoreAttachErr0006 end *************");
+        })
+
+
 
         console.log(tag + "*************Ets Test End*************");
         })

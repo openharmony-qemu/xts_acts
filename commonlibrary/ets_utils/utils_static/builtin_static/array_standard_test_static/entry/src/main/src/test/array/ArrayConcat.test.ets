@@ -51,10 +51,8 @@ export default function ArrayConcatTest() {
      * @tc.level Level 2
      */
     it('testArrayConcat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<number>(1);
-      arr1[0] = 1
-      const arr2 = new Array<number>(1);
-      arr2[0] = 2
+      const arr1: number[] = [1];
+      const arr2: number[] = [2];
       const result = arr1.concat(arr2);
       expect(arr1).assertDeepEquals([1] as Array<number>);
       expect(arr2).assertDeepEquals([2] as Array<number>);
@@ -121,12 +119,9 @@ export default function ArrayConcatTest() {
      * @tc.level Level 2
      */
     it('testArrayConcat0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<number>(1);
-      arr1[0] = 1
-      const arr2 = new Array<number>(1);
-      arr2[0] = 2
-      const arr3 = new Array<number>(1);
-      arr3[0] = 3
+      const arr1: number[] = [1];
+      const arr2: number[] = [2];
+      const arr3: number[] = [3];
       const result = arr1.concat(arr2, arr3);
       expect(arr1).assertDeepEquals([1] as Array<number>);
       expect(arr2).assertDeepEquals([2] as Array<number>);

@@ -92,7 +92,6 @@ export default function HiAppEventJSTest() {
                 hiAppEvent.removeProcessor(processorId)
                 hiAppEvent.removeProcessor(processorId)
                 hiAppEvent.removeProcessor(-1)
-                expect(true).assertTrue()
                 done()
             }
             catch (err) {
@@ -140,7 +139,6 @@ export default function HiAppEventJSTest() {
                 let processorId = hiAppEvent.addProcessor(processor);
                 console.info(`testHiAppEventJs05 > processorId: ${processorId}`)
                 hiAppEvent.removeProcessor(processorId)
-                expect(true).assertTrue()
                 done()
             }
             catch (err) {

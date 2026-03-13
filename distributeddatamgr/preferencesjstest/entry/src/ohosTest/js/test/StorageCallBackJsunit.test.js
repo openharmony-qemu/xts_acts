@@ -24,7 +24,7 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 var mPref;
 
 export default function storageCallBackTest() {
-    describe('storageCallBackTest', function () {
+    describe('storageCallBackTestAdapt001', function () {
         beforeAll(async function () {
             console.info('beforeAll')
         })

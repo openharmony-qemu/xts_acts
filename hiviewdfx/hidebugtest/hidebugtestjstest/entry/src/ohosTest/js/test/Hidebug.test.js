@@ -142,7 +142,6 @@ describe('HidebugJsTest', function () {
             let temp = 100;
             hidebug.stopProfiling();
             console.info('file is exists:', path);
-            expect(true).assertTrue();
         } catch (error) {
             expect().assertFail();
         }
@@ -172,7 +171,6 @@ describe('HidebugJsTest', function () {
             console.info('file is exists:', path1);
             console.info('file is exists:', path2);
             console.info('file is exists:', path3);
-            expect(true).assertTrue();
         } catch (error) {
             expect().assertFail();
         }
@@ -202,7 +200,6 @@ describe('HidebugJsTest', function () {
             let temp = 100;
             hidebug.stopProfiling();
             console.info('file is exists:', path);
-            expect(true).assertTrue();
         } catch (error) {
             expect().assertFail();
         }
@@ -236,7 +233,6 @@ describe('HidebugJsTest', function () {
             let temp = 100;
             hidebug.stopProfiling();
             console.info('file is exists:', path);
-            expect(true).assertTrue();
         } catch (error) {
             expect().assertFail();
         }
@@ -260,7 +256,6 @@ describe('HidebugJsTest', function () {
             let path = '/data/app/el2/100/base/com.hidebug.test/files/' + filename + '.heapsnapshot'
             hidebug.dumpHeapData(filename);
             console.info('file is exists:', path);
-            expect(true).assertTrue();
         } catch (error) {
             expect().assertFail();
         }
@@ -288,7 +283,6 @@ describe('HidebugJsTest', function () {
         try {
             hidebug.dumpHeapData('');
             console.info('file is exists:', path);
-            expect(true).assertTrue();
         } catch (error) {
             expect().assertFail();
         }
@@ -320,7 +314,6 @@ describe('HidebugJsTest', function () {
         try {
             hidebug.dumpHeapData(str);
             console.info('file is exists:', path);
-            expect(true).assertTrue();
         } catch (error) {
             expect().assertFail();
         }
@@ -391,7 +384,6 @@ describe('HidebugJsTest', function () {
             var args = new Array("allInfo")
             try {
                 hidebug.getServiceDump(serviceId, fd, args)
-                expect(true).assertTrue();
             } catch (error) {
                 expect().assertFail();
                 console.info(error.code)
@@ -481,7 +473,6 @@ describe('HidebugJsTest', function () {
             let path = "/proc/self/root/data/storage/el2/base/files/" + filename + ".json";
             let data = fileio.readTextSync(path);
             if (data.includes("napi")) {
-                expect(true).assertTrue();
             } else {
                 expect(false).assertTrue();
             }
@@ -528,10 +519,10 @@ describe('HidebugJsTest', function () {
         console.log('************* DFX_DFR_Hiprofiler_Interface_2000 Test start*************');
         try {
             hidebug.dumpJsHeapData("heapData");
-            expect(true).assertTrue();
         } catch (error) {
             console.info(error.code);
             console.info(error.message);
+            expect(false).assertTrue();
         }
         console.log('************* DFX_DFR_Hiprofiler_Interface_2000 Test end*************');
     });

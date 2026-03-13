@@ -396,5 +396,252 @@ describe('UtilInI18nTest', function () {
         expect(value).assertContain('236.588');
     })
 
+    /**
+     * @tc.name Util_unitConvert_null_test_0100
+     * @tc.number Util_unitConvert_null_test_0100
+     * @tc.desc with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_null_test_0100', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: null, measureSystem: null },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            1000,
+            'zh-CN',
+            'long');
+        console.log('Util_unitConvert_null_test_0100 value:', value);
+        expect(value).assertEqual('1,000');
+    })
+
+    /**
+     * @tc.name Util_unitConvert_null_test_0200
+     * @tc.number Util_unitConvert_null_test_0200
+     * @tc.desc with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_null_test_0200', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: null, measureSystem: null },
+            1000,
+            'zh-CN',
+            'long');
+        console.log('Util_unitConvert_null_test_0200 value:', value);
+        expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name Util_unitConvert_null_test_0300
+     * @tc.number Util_unitConvert_null_test_0300
+     * @tc.desc with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_null_test_0300', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            null,
+            'zh-CN',
+            'long');
+        console.log('Util_unitConvert_null_test_0300 value:', value);
+        expect(value).assertEqual(undefined);
+    })
+
+    /**
+     * @tc.name Util_unitConvert_null_test_0400
+     * @tc.number Util_unitConvert_null_test_0400
+     * @tc.desc with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_null_test_0400', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            1000,
+            null,
+            'long');
+        console.log('Util_unitConvert_null_test_0400 value:', value);
+        expect(value).assertEqual(undefined);
+    })
+
+    /**
+     * @tc.name Util_unitConvert_null_test_0500
+     * @tc.number Util_unitConvert_null_test_0500
+     * @tc.desc with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_null_test_0500', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            1000,
+            'zh-CN',
+            null);
+        console.log('Util_unitConvert_null_test_0500 value:', value);
+        expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name Util_unitConvert_nullString_test_0100
+     * @tc.number Util_unitConvert_nullString_test_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_nullString_test_0100', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: '', measureSystem: '' },
+            1000,
+            'zh-CN',
+            'long');
+        console.log('Util_unitConvert_nullString_test_0100 value:', value);
+        expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name Util_unitConvert_nullString_test_0200
+     * @tc.number Util_unitConvert_nullString_test_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_nullString_test_0200', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            1000,
+            '',
+            'long');
+        console.log('Util_unitConvert_nullString_test_0200 value:', value);
+        expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name Util_unitConvert_nullString_test_0300
+     * @tc.number Util_unitConvert_nullString_test_0300
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_nullString_test_0300', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            1000,
+            'zh-CN',
+            '');
+        console.log('Util_unitConvert_nullString_test_0300 value:', value);
+        expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name Util_unitConvert_undefined_test_0100
+     * @tc.number Util_unitConvert_undefined_test_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_undefined_test_0100', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: undefined, measureSystem: undefined },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            1000,
+            'zh-CN',
+            'long');
+        console.log('Util_unitConvert_undefined_test_0100 value:', value);
+        expect(value).assertEqual('1,000');
+    })
+
+    /**
+     * @tc.name Util_unitConvert_undefined_test_0200
+     * @tc.number Util_unitConvert_undefined_test_0200
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_undefined_test_0200', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: undefined, measureSystem: undefined },
+            1000,
+            'zh-CN',
+            'long');
+        console.log('Util_unitConvert_undefined_test_0200 value:', value);
+        expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name Util_unitConvert_undefined_test_0300
+     * @tc.number Util_unitConvert_undefined_test_0300
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_undefined_test_0300', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            undefined,
+            'zh-CN',
+            'long');
+        console.log('Util_unitConvert_undefined_test_0300 value:', value);
+        expect(value).assertEqual(undefined);
+    })
+
+    /**
+     * @tc.name Util_unitConvert_undefined_test_0400
+     * @tc.number Util_unitConvert_undefined_test_0400
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_undefined_test_0400', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            1000,
+            undefined,
+            'long');
+        console.log('Util_unitConvert_undefined_test_0400 value:', value);
+        expect(value).assertEqual(undefined);
+    })
+
+    /**
+     * @tc.name Util_unitConvert_undefined_test_0500
+     * @tc.number Util_unitConvert_undefined_test_0500
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Util_unitConvert_undefined_test_0500', Level.LEVEL3, function () {
+        let util = new I18n.Util();
+        let value = util.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+            { unit: 'meter-per-second', measureSystem: 'SI' },
+            1000,
+            'zh-CN',
+            undefined);
+        console.log('Util_unitConvert_undefined_test_0500 value:', value);
+        expect(value).assertEqual('1,000米');
+    })
+
     console.log('*************end UtilInI18nTest*************');
 })}

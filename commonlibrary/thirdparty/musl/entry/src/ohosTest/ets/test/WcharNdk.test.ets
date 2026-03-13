@@ -30,9 +30,9 @@ export default function wcharNdkTest() {
      * @tc.desc   test getwc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharGetwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharGetwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = wchar.getwc();
       expect(result).assertEqual(0);
       done()
@@ -44,9 +44,9 @@ export default function wcharNdkTest() {
      * @tc.desc   test mbrlen
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharMbrlen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharMbrlen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = wchar.mbrlen();
       console.info("Test NAPI data = \"" + data + "\"");
       expect(data).assertEqual(1);
@@ -59,9 +59,9 @@ export default function wcharNdkTest() {
      * @tc.desc   test fgetws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFGetWs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFGetWs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = wchar.fgetws();
       expect(result).assertEqual(0);
       done()
@@ -73,9 +73,9 @@ export default function wcharNdkTest() {
      * @tc.desc   test fgetwc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFGetWc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFGetWc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = wchar.fgetwc();
       expect(result).assertEqual(0);
       done()

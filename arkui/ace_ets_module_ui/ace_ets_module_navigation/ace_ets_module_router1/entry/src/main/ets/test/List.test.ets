@@ -127,6 +127,12 @@ import RouterMode from './ohosRouterTest/RouterMode.test';
 import RouterModeCall from './ohosRouterTest/RouterModeCall.test';
 import RouterCall from './ohosRouterTest/RouterCall.test';
 
+import UIContentRouterBackNullUndefinedTest from './UIContextRouterNullUndefinedTest/UIContentRouterBackNullUndefined.test';
+import UIContentRouterGetStateByUrlNullUndefinedTest from './UIContextRouterNullUndefinedTest/UIContentRouterGetStateByUrlNullUndefined.test';
+import UIContentRouterPushNamedRouteNullUndefinedTest from './UIContextRouterNullUndefinedTest/UIContentRouterPushNamedRouteNullUndefined.test';
+import UIContentRouterPushUrlNullUndefinedTest from './UIContextRouterNullUndefinedTest/UIContentRouterPushUrlNullUndefined.test';
+import UIContentRouterReplaceUrlNullUndefinedTest from './UIContextRouterNullUndefinedTest/UIContentRouterReplaceUrlNullUndefined.test';
+
 import Router1 from './Router2/Router1.test'
 import Router2 from './Router2/Router2.test'
 import Router3 from './Router2/Router3.test'
@@ -253,7 +259,11 @@ export default function testsuite() {
   RouterMode();
   RouterModeCall();
   RouterCall();
-
+  UIContentRouterBackNullUndefinedTest();
+  UIContentRouterGetStateByUrlNullUndefinedTest();
+  UIContentRouterPushNamedRouteNullUndefinedTest();
+  UIContentRouterPushUrlNullUndefinedTest();
+  UIContentRouterReplaceUrlNullUndefinedTest();
   Router1();
   Router2();
   Router3();

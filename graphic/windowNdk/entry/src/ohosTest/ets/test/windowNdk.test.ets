@@ -1285,14 +1285,14 @@ export default function windowNdk() {
         done();
     })
     /**
-     * @tc.name   test_SetWindowFocusable_true
+     * @tc.name   test_SetWindowFocusable_trueAdapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4900
      * @tc.desc   test_SetWindowFocusable_true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_SetWindowFocusable_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('test_SetWindowFocusable_trueAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetWindowFocusable_true";
       let result = windowNdkTest.setWindowFocusable(windowId,true);
         console.log(caseName + ' setWindowFocusable result:'+ JSON.stringify(result));
