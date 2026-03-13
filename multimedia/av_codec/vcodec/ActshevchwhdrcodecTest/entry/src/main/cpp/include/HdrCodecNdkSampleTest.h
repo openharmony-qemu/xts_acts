@@ -31,15 +31,11 @@
 #include <multimedia/player_framework/native_avdemuxer.h>
 #include <multimedia/player_framework/native_avsource.h>
 #include <multimedia/player_framework/native_avmuxer.h>
-//#include "securec.h"
 #include <multimedia/player_framework/native_avcodec_videodecoder.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
-//#include "nocopyable.h"
 #include <multimedia/player_framework/native_avmemory.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include  <multimedia/player_framework/native_averrors.h>
-//#include "surface/window.h"
-//#include "iconsumer_surface.h"
 namespace OHOS {
 namespace Media {
 class VSignal {
@@ -55,7 +51,7 @@ public:
     std::queue<OH_AVMemory *> outBufferQueue_;
 };
 
-class HDRCodecNdkSample{
+class HDRCodecNdkSample {
 public:
     HDRCodecNdkSample() = default;
     ~HDRCodecNdkSample();
@@ -96,17 +92,17 @@ public:
     const char *outDir = "/data/storage/el2/base/haps/entry_test/files/1920_1080_10_30Mb.h264";
     bool needEncode = false;
     bool needTransCode = false;
-    int32_t DEFAULT_WIDTH = 3840;
-    int32_t DEFAULT_HEIGHT = 2160;
+    int32_t defaultWidth = 3840;
+    int32_t defaultHeight = 2160;
     int32_t DEFAULT_ROTATION = 0;
     int32_t DEFAULT_PIXEL_FORMAT = AV_PIXEL_FORMAT_NV12;
-    double DEFAULT_FRAME_RATE = 30.0;
+    double defaultFrameRate = 30.0;
     const char *MIME_TYPE = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
-    uint32_t REPEAT_START_STOP_BEFORE_EOS = 0;  // 1200 测试用例
-    uint32_t REPEAT_START_FLUSH_BEFORE_EOS = 0; // 1300 测试用例
-    uint32_t REPEAT_START_FLUSH_STOP_BEFORE_EOS = 0;
+    uint32_t repeatStartStopBeforeEos = 0;  // 1200 测试用例
+    uint32_t repeatStartFlushBeforeEos = 0; // 1300 测试用例
+    uint32_t repeatStartFlushStopBeforeEos = 0;
     uint32_t frameCount_ = 0;
-    uint32_t repeat_time = 0;
+    uint32_t repeatTime = 0;
     uint32_t frameCountDec = 0;
     uint32_t frameCountEnc = 0;
     int32_t DEFAULT_PROFILE = HEVC_PROFILE_MAIN_10;
@@ -120,7 +116,7 @@ public:
     int32_t inputNum = 0;
     bool finishLastPush = false;
     bool bframe = false;
-    bool DEMUXER_FLAG = false;
+    bool demuxerFlag = false;
 
 private:
     OHNativeWindow *window = nullptr;

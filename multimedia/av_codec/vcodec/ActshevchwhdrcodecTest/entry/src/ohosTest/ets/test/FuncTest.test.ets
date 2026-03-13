@@ -59,7 +59,7 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG4_FUNC_009', Level.LEVEL1, async (done: Function) => {
+    it('DEMUXER_DEC_ENC_MUXER_FUNC_009', Level.LEVEL1, async (done: Function) => {
       const result = await libentry.DEMUXER_DEC_ENC_MUXER_FUNC_009();
       expect(result).assertEqual(0);
       done();
@@ -73,7 +73,7 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0010', Level.LEVEL1, async (done: Function) => {
+    it('DEMUXER_DEC_ENC_MUXER_FUNC_010', Level.LEVEL1, async (done: Function) => {
       const result = await libentry.DEMUXER_DEC_ENC_MUXER_FUNC_010();
       expect(result).assertEqual(0);
       done();
@@ -87,7 +87,7 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0011', Level.LEVEL1, async (done: Function) => {
+    it('DEMUXER_DEC_ENC_MUXER_FUNC_011', Level.LEVEL1, async (done: Function) => {
       const result = await libentry.DEMUXER_DEC_ENC_MUXER_FUNC_011();
       expect(result).assertEqual(0);
       done();
@@ -101,7 +101,7 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0012', Level.LEVEL1, async (done: Function) => {
+    it('DEMUXER_DEC_ENC_MUXER_FUNC_012', Level.LEVEL1, async (done: Function) => {
       const result = await libentry.DEMUXER_DEC_ENC_MUXER_FUNC_012();
       expect(result).assertEqual(0);
       done();
@@ -115,7 +115,7 @@ export default function FuncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_DECODE_SYNC_SWMPEG4_FUNC_0013', Level.LEVEL1, async (done: Function) => {
+    it('DEMUXER_DEC_ENC_MUXER_FUNC_013', Level.LEVEL1, async (done: Function) => {
       const result = await libentry.DEMUXER_DEC_ENC_MUXER_FUNC_013();
       expect(result).assertEqual(0);
       done();

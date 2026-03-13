@@ -84,7 +84,7 @@ void VdecInputDataReady(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data, vo
     HDRCodecNdkSample *sample = static_cast<HDRCodecNdkSample *>(userData);
     VSignal *signal = sample->decSignal;
     unique_lock<mutex> lock(signal->inMutex_);
-    if (sample->DEMUXER_FLAG) {
+    if (sample->demuxerFlag) {
         OH_AVCodecBufferAttr attr;
         OH_AVDemuxer_ReadSample(sample->demuxer, sample->videoTrackID, data, &attr);
         OH_VideoDecoder_PushInputData(codec, index, attr);
@@ -149,7 +149,7 @@ static void VencOutputDataReady(OH_AVCodec *codec, uint32_t index, OH_AVMemory *
     } else if (attr->flags != AVCODEC_BUFFER_FLAGS_CODEC_DATA) {
         sample->frameCountEnc++;
     }
-    if (sample->DEMUXER_FLAG) {
+    if (sample->demuxerFlag) {
         OH_AVMuxer_WriteSample(sample->muxer, sample->videoTrackID, data, *attr);
     }
 }
@@ -257,7 +257,7 @@ void HDRCodecNdkSample::ProcessAdditionalRead(uint32_t &bufferSize, void *&pBuff
     pPrereadBuffer_ = START_CODE_SIZE;
 
     if (SafeMemcpy(prereadBuffer_.get(), START_CODE_SIZE,
-                 currentBuffer - START_CODE_SIZE, START_CODE_SIZE) != SUCCESS_CODE) {
+    currentBuffer - START_CODE_SIZE, START_CODE_SIZE) != SUCCESS_CODE) {
         bufferSize = 0;
         pBuffer = nullptr;
         mpegUnit_->resize(0);
@@ -327,7 +327,8 @@ void HDRCodecNdkSample::GetBufferSize()
         inFile_->read(reinterpret_cast<char *>(prereadBuffer_.get() + START_CODE_SIZE), PREREAD_BUFFER_SIZE);
         prereadBufferSize_ = inFile_->gcount() + START_CODE_SIZE;
         pPrereadBuffer_ = START_CODE_SIZE;
-        if (SafeMemcpy(prereadBuffer_.get(), START_CODE_SIZE, pBuffer - START_CODE_SIZE, START_CODE_SIZE) != SUCCESS_CODE) {
+        if (SafeMemcpy(prereadBuffer_.get(), START_CODE_SIZE, pBuffer - START_CODE_SIZE,
+        START_CODE_SIZE) != SUCCESS_CODE) {
             return;
         }
         PtrStepExtraRead(bufferSize, &pBuffer);
@@ -407,8 +408,10 @@ int32_t HDRCodecNdkSample::SendDataH263(OH_AVCodec *codec, uint32_t index, OH_AV
         OH_VideoDecoder_PushInputData(codec, index, attr);
         return 1;
     }
-    uint32_t bufferSize = (uint32_t)(((ch[3] & 0xFF)) | ((ch[2] & 0xFF) << EIGHT) | ((ch[1] & 0xFF) << SIXTEEN) |
-                                     ((ch[0] & 0xFF) << TWENTY_FOUR));
+    uint32_t bufferSize = static_cast<uint32_t>((ch[3] & 0xFF)) |
+                      static_cast<uint32_t>((ch[2] & 0xFF) << 8) |
+                      static_cast<uint32_t>((ch[1] & 0xFF) << 16) |
+                      static_cast<uint32_t>((ch[0] & 0xFF) << 24);
     if (bufferSize != 0) {
         attr.flags = AVCODEC_BUFFER_FLAGS_SYNC_FRAME + AVCODEC_BUFFER_FLAGS_CODEC_DATA;
     } else {
@@ -481,8 +484,10 @@ int32_t HDRCodecNdkSample::SendDataAvc(OH_AVCodec *codec, uint32_t index, OH_AVM
         OH_VideoDecoder_PushInputData(codec, index, attr);
         return 1;
     }
-    uint32_t bufferSize = (uint32_t)(((ch[3] & 0xFF)) | ((ch[2] & 0xFF) << EIGHT) | ((ch[1] & 0xFF) << SIXTEEN) |
-                                     ((ch[0] & 0xFF) << TWENTY_FOUR));
+    uint32_t bufferSize = (static_cast<uint32_t>(ch[3] & 0xFF)) |
+                      (static_cast<uint32_t>(ch[2] & 0xFF) << 8) |
+                      (static_cast<uint32_t>(ch[1] & 0xFF) << 16) |
+                      (static_cast<uint32_t>(ch[0] & 0xFF) << 24);
     uint8_t *fileBuffer = new uint8_t[bufferSize + START_CODE_SIZE];
     if (fileBuffer == nullptr) {
         cout << "Fatal: memory allocation failed" << endl;
@@ -681,7 +686,7 @@ int32_t HDRCodecNdkSample::SendData(OH_AVCodec *codec, uint32_t index, OH_AVMemo
 static int32_t RepeatCallStartFlush(HDRCodecNdkSample *sample)
 {
     int32_t ret = 0;
-    sample->REPEAT_START_FLUSH_BEFORE_EOS--;
+    sample->repeatStartFlushBeforeEos--;
     ret = OH_VideoEncoder_Flush(sample->venc_);
     if (ret != AV_ERR_OK) {
         return ret;
@@ -705,7 +710,7 @@ static int32_t RepeatCallStartFlush(HDRCodecNdkSample *sample)
 static int32_t RepeatCallStartStop(HDRCodecNdkSample *sample)
 {
     int32_t ret = 0;
-    sample->REPEAT_START_STOP_BEFORE_EOS--;
+    sample->repeatStartStopBeforeEos--;
     ret = OH_VideoDecoder_Stop(sample->vdec_);
     if (ret != AV_ERR_OK) {
         return ret;
@@ -729,7 +734,7 @@ static int32_t RepeatCallStartStop(HDRCodecNdkSample *sample)
 static int32_t RepeatCallStartFlushStop(HDRCodecNdkSample *sample)
 {
     int32_t ret = 0;
-    sample->REPEAT_START_FLUSH_STOP_BEFORE_EOS--;
+    sample->repeatStartFlushStopBeforeEos--;
     ret = OH_VideoEncoder_Flush(sample->venc_);
     if (ret != AV_ERR_OK) {
         return ret;
@@ -798,7 +803,7 @@ int32_t HDRCodecNdkSample::CreateDemuxerVideocoder(const char *file, std::string
 {
     int trackType = 0;
     fd = open(file, O_RDONLY);
-    outFd = open("./output.mp4", O_CREAT | O_RDWR |O_TRUNC, S_IRUSR | S_IWUSR);
+    outFd = open("./output.mp4", O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
     int64_t size = GetFileSize(file);
     source = OH_AVSource_CreateWithFD(fd, 0, size);
     if (!source) {
@@ -822,13 +827,13 @@ int32_t HDRCodecNdkSample::CreateDemuxerVideocoder(const char *file, std::string
         OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &trackType);
         if (trackType == MEDIA_TYPE_VID) {
             videoTrackID = index;
-            OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_ROTATION, &DEFAULT_ROTATION);
-            OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_WIDTH, &DEFAULT_WIDTH);
-            OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_HEIGHT, &DEFAULT_HEIGHT);
+            OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_ROTATION, &defaultRotation);
+            OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_WIDTH, &defaultWidth);
+            OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_HEIGHT, &defaultHeight);
             OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_PIXEL_FORMAT, &DEFAULT_PIXEL_FORMAT);
-            OH_AVFormat_GetDoubleValue(trackFormat, OH_MD_KEY_FRAME_RATE, &DEFAULT_FRAME_RATE);
+            OH_AVFormat_GetDoubleValue(trackFormat, OH_MD_KEY_FRAME_RATE, &defaultFrameRate);
             OH_AVFormat_SetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, MIME_TYPE);
-            OH_AVMuxer_SetRotation(muxer, DEFAULT_ROTATION);
+            OH_AVMuxer_SetRotation(muxer, defaultRotation);
         } else {
             audioTrackID = index;
         }
@@ -872,13 +877,13 @@ void HDRCodecNdkSample::FlushBuffer()
 
 int32_t HDRCodecNdkSample::RepeatCall()
 {
-    if (REPEAT_START_FLUSH_BEFORE_EOS > 0) {
+    if (repeatStartFlushBeforeEos > 0) {
         return RepeatCallStartFlush(this);
     }
-    if (REPEAT_START_STOP_BEFORE_EOS > 0) {
+    if (repeatStartStopBeforeEos > 0) {
         return RepeatCallStartStop(this);
     }
-    if (REPEAT_START_FLUSH_STOP_BEFORE_EOS > 0) {
+    if (repeatStartFlushStopBeforeEos > 0) {
         return RepeatCallStartFlushStop(this);
     }
     return 0;
@@ -916,8 +921,9 @@ void HDRCodecNdkSample::InputFunc()
         decSignal->inIdxQueue_.pop();
         decSignal->inBufferQueue_.pop();
         lock.unlock();
-        if (SendData(vdec_, index, buffer) == 1)
+        if (SendData(vdec_, index, buffer) == 1) {
             break;
+        }  
     }
 }
 
@@ -928,10 +934,10 @@ int32_t HDRCodecNdkSample::Configure()
         cout << "Fatal: Failed to create format" << endl;
         return AV_ERR_UNKNOWN;
     }
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, defaultWidth);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, defaultHeight);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIXEL_FORMAT);
-    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, defaultFrameRate);
     int ret = OH_VideoDecoder_Configure(vdec_, format);
     if (ret != AV_ERR_OK) {
         return ret;
@@ -984,10 +990,10 @@ int32_t HDRCodecNdkSample::ReConfigure()
         cout<< "Fatal: Failed to create format" << endl;
         return AV_ERR_UNKNOWN;
     }
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, defaultWidth);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, defaultHeight);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIXEL_FORMAT);
-    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, defaultFrameRate);
     ret = OH_VideoDecoder_Configure(vdec_, format);
     if (ret != AV_ERR_OK) {
         OH_AVFormat_Destroy(format);
