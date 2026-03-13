@@ -3421,8 +3421,6 @@ function testAddApn() {
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
-    } else {
-      expect(true).assertTrue();
     }
     done();
   });
