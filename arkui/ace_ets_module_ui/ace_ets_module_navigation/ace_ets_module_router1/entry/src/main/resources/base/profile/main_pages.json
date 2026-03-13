@@ -131,6 +131,8 @@
         "MainAbility/pages/router/pushNamedRoute/pushNamedRoute22",
         "MainAbility/pages/router/pushNamedRoute/pushNamedRoute23",
         "MainAbility/pages/router/pushNamedRoute/pushNamedRoute24",
+        "MainAbility/pages/systemRouter/SystemRouterReplaceNullUndefined",
+        "MainAbility/pages/router/RouterPushUrlReplaceUrlNullUndefined",
         "MainAbility/pages/supplementRouter/pushPageA",
         "MainAbility/pages/supplementRouter/pushPageB",
         "MainAbility/pages/supplementRouter/pushPageC",
