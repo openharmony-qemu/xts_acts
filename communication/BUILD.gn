@@ -61,6 +61,7 @@ group("communication") {
       "wifi_p2p:ActsP2PJSTest",
       "wifi_standard:ActsWifiJSTest",
       "wifi_standard_static:ActsWifiJSStaticTest",
+      "wifi_switchoff:ActsWifiManagerSwitchOffTest",
       "wifimanager_switchoff_static:ActsManagerDisableStaticTest",
     ]
   } else {
