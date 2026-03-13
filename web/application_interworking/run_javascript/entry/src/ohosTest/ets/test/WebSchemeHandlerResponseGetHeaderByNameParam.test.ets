@@ -52,7 +52,7 @@ export default function webSchemeHandlerResponseGetHeaderByNameParam() {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPABILITY).then(() => {
         console.info(`enable success`);
-      }).catch((err: object) => {\
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info('webSchemeHandlerResponseGetHeaderByNameParam beforeEach start');
