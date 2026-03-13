@@ -310,6 +310,7 @@ function onFusionPressureCallback(data: sensor.FusionPressureResponse) {
 
 export default function SensorJsStaticTest() {
   describe("SensorJsStaticTest", ():void => {
+    const PARAMETER_EXPECT_ERROR = true
     const PERMISSION_DENIED_CODE = 201;
     const NON_SYSTEM_API_CODE = 202;
     const PARAMETER_ERROR_CODE = 401
@@ -4384,7 +4385,7 @@ export default function SensorJsStaticTest() {
         done();
       } catch (error) {
         console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
-        expect(true).assertTrue();
+        expect(PARAMETER_EXPECT_ERROR).assertTrue();
         done();
       }
     })

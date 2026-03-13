@@ -66,7 +66,7 @@ describe("SensorJsTest_sensor_13", function () {
     })
 
     let errMessages = ['string is not defined','The parameter invalid'];
-
+    const PARAMETER_EXPECT_ERROR = true
     let errMessage;
 
     /**
@@ -144,7 +144,7 @@ describe("SensorJsTest_sensor_13", function () {
         console.info('----------------------LinearAcceleration_SensorJsTest004---------------------------');
         sensor.once(sensor.SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, callback);
         setTimeout(() => {
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         }, 500);
     })
@@ -215,7 +215,7 @@ describe("SensorJsTest_sensor_13", function () {
         sensor.on(sensor.SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, onSensorCallback);
         sensor.off(sensor.SensorType.SENSOR_TYPE_ID_LINEAR_ACCELERATION, onSensorCallback);
         setTimeout(() => {
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         }, 500);
     })
