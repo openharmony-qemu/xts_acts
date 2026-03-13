@@ -358,7 +358,7 @@ export default function WindowKeyBoardTest() {
             } catch (e) {
                 e = e as BusinessError;
                 if (e.code === 801) {
-                    console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${err.code}, message: ${err.message}`);
+                    console.error(msgStr + `Failed to obtain the window status of window. Cause code: ${e.code}, message: ${e.message}`);
                     expect(false).assertTrue();
                     done();
                 } else {

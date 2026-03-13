@@ -807,10 +807,10 @@ export default function WindowPropertiesTest() {
             expect(properties.drawableRect.top).assertLargerOrEqual(0);
             expect(properties.drawableRect.width).assertLarger(0);
             expect(properties.drawableRect.height).assertLarger(0);
-            expect(properties.globalDisplayRect.left).assertLargerOrEqual(0);
-            expect(properties.globalDisplayRect.top).assertLargerOrEqual(0);
-            expect(properties.globalDisplayRect.width).assertLarger(0);
-            expect(properties.globalDisplayRect.height).assertLarger(0);
+            expect(properties.globalDisplayRect!.left).assertLargerOrEqual(0);
+            expect(properties.globalDisplayRect!.top).assertLargerOrEqual(0);
+            expect(properties.globalDisplayRect!.width).assertLarger(0);
+            expect(properties.globalDisplayRect!.height).assertLarger(0);
             expect(properties.isLayoutFullScreen).assertEqual(false);
             expect(properties.focusable).assertEqual(true);
             expect(properties.touchable).assertEqual(true);
