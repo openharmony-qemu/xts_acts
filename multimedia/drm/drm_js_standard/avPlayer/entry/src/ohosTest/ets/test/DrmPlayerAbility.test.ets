@@ -4429,5 +4429,100 @@ export default function abilityTest() {
                 done();
             }
         })
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_OPTIONALDATA
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_OPTIONALDATA
+         * @tc.desc   generateMediaKeyRequest传入undefined OptionsData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_OPTIONALDATA', Level.LEVEL0, (done:Function) => {
+            let drmsys:drm.MediaKeySystem;
+            let session:drm.MediaKeySession;
+            try {
+                drmsys = drm.createMediaKeySystem(systemName);
+                session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
+                let base64 = new util.Base64();
+                let uint8pssh = base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
+                session!.generateMediaKeyRequest("video/mp4", uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, undefined).then(() => {
+                    session.destroy();
+                    drmsys.destroy();
+                    done();
+                }).catch((err:BusinessError) => {
+                    expect(err.code).not().assertUndefined();
+                    session.destroy();
+                    drmsys.destroy();
+                    done();
+                });
+            } catch (err) {
+                drmsys!.destroy();
+                done();
+            }
+        })
+               /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_NULL_MIME
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_NULL_MIME
+         * @tc.desc   generateMediaKeyRequest传入undefined OptionsData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_NULL_MIME', Level.LEVEL0, (done:Function) => {
+            let drmsys:drm.MediaKeySystem;
+            let session:drm.MediaKeySession;
+            try {
+                drmsys = drm.createMediaKeySystem(systemName);
+                session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
+                let optionalData:drm.OptionsData[] = [{name: "optionalDataName", value: "optionalDataValue"}];
+                let base64 = new util.Base64();
+                let uint8pssh = base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
+                session!.generateMediaKeyRequest(null, uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, optionalData).then(() => {
+                    session.destroy();
+                    drmsys.destroy();
+                    done();
+                }).catch((err:BusinessError) => {
+                    expect(err.code).not().assertUndefined();
+                    session.destroy();
+                    drmsys.destroy();
+                    done();
+                });
+            } catch (err) {
+                drmsys!.destroy();
+                done();
+            }
+        })
+               /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_MIME
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_MIME
+         * @tc.desc   generateMediaKeyRequest传入undefined OptionsData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_DRM_AVPLAYER_GENERATEMEDIAKEYREQUEST_UNDEFINED_MIME', Level.LEVEL0, (done:Function) => {
+            let drmsys:drm.MediaKeySystem;
+            let session:drm.MediaKeySession;
+            try {
+                drmsys = drm.createMediaKeySystem(systemName);
+                session = drmsys!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
+                let optionalData:drm.OptionsData[] = [{name: "optionalDataName", value: "optionalDataValue"}];
+                let base64 = new util.Base64();
+                let uint8pssh = base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
+                session!.generateMediaKeyRequest(undefined, uint8pssh, drm.MediaKeyType.MEDIA_KEY_TYPE_ONLINE, optionalData).then(() => {
+                    session.destroy();
+                    drmsys.destroy();
+                    done();
+                }).catch((err:BusinessError) => {
+                    expect(err.code).not().assertUndefined();
+                    session.destroy();
+                    drmsys.destroy();
+                    done();
+                });
+            } catch (err) {
+                drmsys!.destroy();
+                done();
+            }
+        })
     })
 }
