@@ -3495,6 +3495,7 @@ describe('threadWorkerTest', function () {
         while (!isTerminate) {
           await promiseCase();
         }
+        expect(isTerminate).assertEqual(true);
         done();
     })
 
@@ -3526,6 +3527,7 @@ describe('threadWorkerTest', function () {
         while (!isTerminate) {
           await promiseCase();
         }
+        expect(isTerminate).assertEqual(true);
         done();
     })
 
