@@ -176,7 +176,7 @@ struct WebDownloadItem {
         .onlineImageAccess(true)
         .databaseAccess(true)
         .onPageEnd((event) => {
-          console.log("onPageEnd", event.url)
+          console.log('onPageEnd', event.url)
           this.isPageEnd = 0
         })
     }

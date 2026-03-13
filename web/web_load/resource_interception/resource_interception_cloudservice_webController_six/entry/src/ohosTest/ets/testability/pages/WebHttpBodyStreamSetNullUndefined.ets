@@ -57,7 +57,8 @@ struct WebHttpBodyStream {
 
   setWebHttpBodyStream(operate: string){
     try {
-      this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+      this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest,
+        resourceHandler: webview.WebResourceHandler) => {
         console.info('[schemeHandler] onRequestStart:'+request.getRequestUrl());
         let stream = request.getHttpBodyStream();
         try {
