@@ -48,7 +48,7 @@ export default function SystemRouterReplaceNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_NULL_001', 0, async () => {
+    it('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_NULL_001', Level.LEVEL2, async () => {
       console.log('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_NULL_001 START')
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -68,7 +68,7 @@ export default function SystemRouterReplaceNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_UNDEFINED_001', 0, async () => {
+    it('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_UNDEFINED_001', Level.LEVEL2, async () => {
       console.log('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_UNDEFINED_001 START')
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -88,7 +88,7 @@ export default function SystemRouterReplaceNullUndefinedTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_EMPTY_001', 0, async () => {
+    it('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_EMPTY_001', Level.LEVEL2, async () => {
       console.log('SUB_ARKUI_SYSTEMROUTER_REPLACE_PARAM_EMPTY_001 START')
       let driver = Driver.create();
       await CommonFunc.sleep(500);
