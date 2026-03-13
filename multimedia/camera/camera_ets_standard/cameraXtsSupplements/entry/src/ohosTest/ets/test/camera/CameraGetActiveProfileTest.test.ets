@@ -1360,5 +1360,30 @@ export default function CameraGetActiveProfileTest() {
         done();
       }
     })
+    /**
+     * @tc.name   SUB_CAMERA_SET_EXPOSURE_MODE_00001
+     * @tc.number SUB_CAMERA_SET_EXPOSURE_MODE_00001
+     * @tc.desc   Camera ExposureMode EXPOSURE_MODE_UNSPECIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_SET_EXPOSURE_MODE_00001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SET_EXPOSURE_MODE_00001';
+      try {
+        if(mCameraDeviceArray.length > 0) {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput,mPhotoOutput);
+         let isSupported = mPhotoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED)
+          console.info(TAG, testName, 'isSupported',isSupported);
+        expect(isSupported).not().assertUndefined();
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName, error, error.code)
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
