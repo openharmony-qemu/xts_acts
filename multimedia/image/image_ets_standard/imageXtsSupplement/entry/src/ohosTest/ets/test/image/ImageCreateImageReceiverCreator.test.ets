@@ -231,7 +231,7 @@ export default function ImageCreateImageReceiverCreator() {
     /**
      * @tc.name   SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_009
      * @tc.number SUB_MEDIA_IMAGE_CREATE_IMAGE_RECEIVER_SUPP_009
-     * @tc.desc   Test createImageReceiver with capacity:null
+     * @tc.desc   Test createImageReceiver with capacity:undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

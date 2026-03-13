@@ -1027,7 +1027,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_001
-     * @tc.desc       createPixelMapUsingAllocator options editable:true
+     * @tc.desc       createPixelMapUsingAllocator options isEditable:true
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -1042,7 +1042,7 @@ export default function ImageSourceCreatePixelMapListSupp() {
         let pixelmap = await imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
         if (pixelmap != undefined) {
           console.info(TAG,testName,'Succeeded in creating pixelMap object.',JSON.stringify(pixelmap));
-          expect(decodeOpts.editable).assertTrue();
+          expect(pixelmap.isEditable).assertTrue();
         } else {
           console.error(TAG,testName,`Failed to create pixelMap object `);
           expect().assertFail();

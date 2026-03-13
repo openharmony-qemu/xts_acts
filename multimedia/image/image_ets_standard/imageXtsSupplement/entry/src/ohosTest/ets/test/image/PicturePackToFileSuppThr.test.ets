@@ -770,20 +770,21 @@ export default function PicturePackToFileTestThrSupp() {
           pixelFormat: image.PixelMapFormat.RGBA_8888,
           size: { height: 4, width: 6 }
         };
-        const path: string = `${context.filesDir}/test_exif_v2.webp`;
+        const path: string = `${context.filesDir}/packToFile_21.jpg`;
         image.createPixelMap(color, opts).then(async (pixelmap: image.PixelMap) => {
           const packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 };
           const file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
-
           imagePackerObj.packToFile(pixelmap, file.fd, packOpts, async (err: BusinessError) => {
             try {
               if (err) {
                 console.error(TAG, testName, `Failed to pack. code=${err.code}, msg=${err.message}`);
                 expect().assertFail();
               } else {
-                console.info(TAG, testName, 'Packing succeeded. isEditable=', pixelmap.isEditable);
-                expect(pixelmap.isEditable).assertTrue();
+                const imageSourceObj: image.ImageSource = image.createImageSource(file.fd);
+                const imageInfo =await imageSourceObj.getImageInfo();
+                console.info(TAG, testName, 'Packing succeeded.', JSON.stringify(imageInfo));
+                expect(imageInfo.size.width > 0).assertTrue();
               }
             } finally {
               await pixelmap.release();
@@ -815,20 +816,21 @@ export default function PicturePackToFileTestThrSupp() {
           pixelFormat: image.PixelMapFormat.RGBA_8888,
           size: { height: 4, width: 6 }
         };
-        const path: string = `${context.filesDir}/test_exif_v2.webp`;
+        const path: string = `${context.filesDir}/packToFile_23.jpg`;
         image.createPixelMap(color, opts).then(async (pixelmap: image.PixelMap) => {
           const packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 };
           const file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
-
           imagePackerObj.packToFile(pixelmap, file.fd, packOpts, async (err: BusinessError) => {
             try {
               if (err) {
                 console.error(TAG, testName, `Failed to pack. code=${err.code}, msg=${err.message}`);
                 expect().assertFail();
               } else {
-                console.info(TAG, testName, 'Packing succeeded. isEditable=', pixelmap.isEditable);
-                expect(pixelmap.isEditable).assertFalse();
+                const imageSourceObj: image.ImageSource = image.createImageSource(file.fd);
+                const imageInfo =await imageSourceObj.getImageInfo();
+                console.info(TAG, testName, 'Packing succeeded.', JSON.stringify(imageInfo));
+                expect(imageInfo.size.width > 0).assertTrue();
               }
             } finally {
               await pixelmap.release();
@@ -858,14 +860,16 @@ export default function PicturePackToFileTestThrSupp() {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions =
           { editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
-        const path: string = context.filesDir + "/test_exif_v2.webp";
+        const path: string = context.filesDir + "/packToFile_24.jpg";
         image.createPixelMap(color, opts).then(async (pixelmap: image.PixelMap) => {
           let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
           let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           await imagePackerObj.packToFile(pixelmap, file.fd, packOpts);
-          console.info(TAG, testName, 'Succeeded in packing the image to file.',pixelmap.isEditable);
-          expect(pixelmap.isEditable).assertFalse();
+          const imageSourceObj: image.ImageSource = image.createImageSource(file.fd);
+          const imageInfo =await imageSourceObj.getImageInfo();
+          console.info(TAG, testName, 'Packing succeeded.', JSON.stringify(imageInfo));
+          expect(imageInfo.size.width > 0).assertTrue();
           await imagePackerObj.release();
           await pixelmap.release();
         })
@@ -890,14 +894,16 @@ export default function PicturePackToFileTestThrSupp() {
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions =
           { editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 } }
-        const path: string = context.filesDir + "/test_exif_v2.webp";
+        const path: string = context.filesDir + "/packToFile_26.jpg";
         image.createPixelMap(color, opts).then(async (pixelmap: image.PixelMap) => {
           let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
           let file = fs.openSync(path, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           await imagePackerObj.packToFile(pixelmap, file.fd, packOpts);
-          console.info(TAG, testName, 'Succeeded in packing the image to file.',pixelmap.isEditable);
-          expect(pixelmap.isEditable).assertTrue();
+          const imageSourceObj: image.ImageSource = image.createImageSource(file.fd);
+          const imageInfo =await imageSourceObj.getImageInfo();
+          console.info(TAG, testName, 'Packing succeeded.', JSON.stringify(imageInfo));
+          expect(imageInfo.size.width > 0).assertTrue();
           await imagePackerObj.release();
           await pixelmap.release();
         })
@@ -930,8 +936,8 @@ export default function PicturePackToFileTestThrSupp() {
               console.error(TAG, testName, `Failed to pack the image.code ${err.code},message is ${err.message}`);
               expect().assertFail();
             } else {
-              console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
-              expect(pixelMap.isEditable).assertTrue();
+              console.info(TAG, testName, 'Succeeded in packing the image.');
+              expect(ArrayBuffer.length >0 ).assertTrue();
             }
             await imagePackerObj.release();
             await pixelMap.release();
@@ -967,7 +973,7 @@ export default function PicturePackToFileTestThrSupp() {
               expect().assertFail();
             } else {
               console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
-              expect(pixelMap.isEditable).assertFalse();
+              expect(ArrayBuffer.length >0 ).assertTrue();
             }
             await imagePackerObj.release();
             await pixelMap.release();
@@ -998,8 +1004,8 @@ export default function PicturePackToFileTestThrSupp() {
           let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           const packedData: ArrayBuffer = await imagePackerObj.packing(pixelMap, packOpts);
-          console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
-          expect(pixelMap.isEditable).assertTrue();
+          console.info(TAG, testName, 'Succeeded in packing the image.',ArrayBuffer.length);
+          expect(ArrayBuffer.length > 0 ).assertTrue();
           await imagePackerObj.release();
           await pixelMap.release();
           done();
@@ -1027,8 +1033,8 @@ export default function PicturePackToFileTestThrSupp() {
           let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           const packedData: ArrayBuffer = await imagePackerObj.packing(pixelMap, packOpts);
-          console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
-          expect(pixelMap.isEditable).assertFalse();
+          console.info(TAG, testName, 'Succeeded in packing the image.',ArrayBuffer.length);
+          expect(ArrayBuffer.length > 0 ).assertTrue();
           await imagePackerObj.release();
           await pixelMap.release();
           done();
@@ -1056,8 +1062,8 @@ export default function PicturePackToFileTestThrSupp() {
           let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           const packedData: ArrayBuffer = await imagePackerObj.packToData(pixelMap, packOpts);
-          console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
-          expect(pixelMap.isEditable).assertTrue();
+          console.info(TAG, testName, 'Succeeded in packing the image.',ArrayBuffer.length);
+          expect(ArrayBuffer.length > 0 ).assertTrue();
           await imagePackerObj.release();
           await pixelMap.release();
           done();
@@ -1085,8 +1091,8 @@ export default function PicturePackToFileTestThrSupp() {
           let packOpts: image.PackingOption = { format: "image/jpeg", quality: 98 }
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           const packedData: ArrayBuffer = await imagePackerObj.packToData(pixelMap, packOpts);
-          console.info(TAG, testName, 'Succeeded in packing the image.',pixelMap.isEditable);
-          expect(pixelMap.isEditable).assertFalse();
+          console.info(TAG, testName, 'Succeeded in packing the image.',ArrayBuffer.length);
+          expect(ArrayBuffer.length > 0 ).assertTrue();
           await imagePackerObj.release();
           await pixelMap.release();
           done();

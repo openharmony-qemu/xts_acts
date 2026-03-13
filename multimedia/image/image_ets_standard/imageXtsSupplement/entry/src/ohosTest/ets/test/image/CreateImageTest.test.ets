@@ -1623,7 +1623,47 @@ export default function CrateImageSupp() {
       }
       done();
     })
-
+    /**
+     * @tc.number     SUB_MEDIA_CREATE_IMAGE_SOURCE_rawfile_TEST_001
+     * @tc.name       SUB_MEDIA_CREATE_IMAGE_SOURCE_rawfile_TEST_001
+     * @tc.desc       createImageSource cover pixelFormats
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_CREATE_IMAGE_SOURCE_rawfile_TEST_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_CREATE_IMAGE_SOURCE_rawfile_TEST_001';
+      const pixelFormats = [
+        image.PixelMapFormat.ARGB_8888,
+        image.PixelMapFormat.RGB_565,
+        image.PixelMapFormat.BGRA_8888,
+        image.PixelMapFormat.RGB_888,
+        image.PixelMapFormat.ALPHA_8,
+        image.PixelMapFormat.RGBA_F16,
+        image.PixelMapFormat.NV12,
+        image.PixelMapFormat.ASTC_4x4
+      ];
+      try {
+        for (const format of pixelFormats) {
+          let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+          let sourceOptions: image.SourceOptions = {
+            sourceDensity: 120,
+            sourcePixelFormat: format,
+            sourceSize: { height: 4, width: 6 },
+          };
+          const resourceMgr: resourceManager.ResourceManager = context.resourceManager;
+          resourceMgr.getRawFd('test_exif_v2.jpg').then((rawFileDescriptor: resourceManager.RawFileDescriptor) => {
+            const imageSourceObj = image.createImageSource(rawFileDescriptor, sourceOptions);
+            console.warn(TAG, testName, `Testing format ${format} succeeded`);
+            expect(imageSourceObj != null).assertTrue();
+          })
+        }
+      } catch (error) {
+        console.error(TAG, testName, `获取RawFd失败: code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    })
 
   })
 }
