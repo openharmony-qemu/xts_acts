@@ -3250,6 +3250,58 @@ static napi_value NAPI_Global_AVPlayerBufferingTypeEnum(napi_env env, napi_callb
     napi_create_int32(env, res, &result);
     return result;
 }
+
+static napi_value NAPI_Global_setLoudnessGain3(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError};
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+    OH_AVPlayer_Prepare(player);
+    OH_AVPlayer_SetAudioRendererInfo(player, AUDIOSTREAM_USAGE_MOVIE);
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    double loudnessGain;
+    napi_get_value_double(env, args[0], &loudnessGain);
+    OH_AVErrCode errCode = OH_AVPlayer_SetLoudnessGain(player, loudnessGain);
+    if (errCode == AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value NAPI_Global_setLoudnessGain4(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError};
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+    OH_AVPlayer_Prepare(player);
+    OH_AVPlayer_SetAudioRendererInfo(player, AUDIOSTREAM_USAGE_AUDIOBOOK);
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    double loudnessGain;
+    napi_get_value_double(env, args[0], &loudnessGain);
+    OH_AVErrCode errCode = OH_AVPlayer_SetLoudnessGain(player, loudnessGain);
+    if (errCode == AV_ERR_OK) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3410,6 +3462,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"setLoudnessGain", nullptr, NAPI_Global_setLoudnessGain, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setLoudnessGain1", nullptr, NAPI_Global_setLoudnessGain1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setLoudnessGain2", nullptr, NAPI_Global_setLoudnessGain2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setLoudnessGain3", nullptr, NAPI_Global_setLoudnessGain3, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setLoudnessGain4", nullptr, NAPI_Global_setLoudnessGain4, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMediaDescription", nullptr, NAPI_Global_GetMediaDescription, nullptr, nullptr,
             nullptr, napi_default, nullptr},
         {"getMediaDescriptionOne", nullptr, NAPI_Global_GetMediaDescriptionOne, nullptr, nullptr,
