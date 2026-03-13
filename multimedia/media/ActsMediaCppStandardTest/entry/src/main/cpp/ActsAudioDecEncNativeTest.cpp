@@ -22,6 +22,7 @@
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <string>
+/* syscap: capability API header, name fixed by SDK. */
 #include <syscap_ndk.h>
 #include <thread>
 #include "include/ADecEncNativeSample.h"
@@ -259,6 +260,7 @@ static int WaitFrameCountThenFlushAndReset(ADecEncNativeSample* sample)
 {
     /* Loop terminates when output callback increments frame count to K_EXPECTED_AUDIO_FRAME_COUNT. */
     while (sample->GetFrameCount() < K_EXPECTED_AUDIO_FRAME_COUNT) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     if (sample->FlushDec() != AV_ERR_OK || sample->FlushEnc() != AV_ERR_OK) {
         return -1;
@@ -388,28 +390,36 @@ static int SetupAudioDecEncByMimePipelineNoProfile(ADecEncNativeSample* s, OH_AV
     return 0;
 }
 
-static int RunDecEnc0600Flow(ADecEncNativeSample* s,
-                             const char* readPath,
-                             const uint32_t* es,
-                             uint32_t esLen,
-                             const char* savePath1,
-                             const char* savePath2)
+struct DecEncPaths {
+    const char* readPath;
+    const uint32_t* es;
+    uint32_t esLen;
+    const char* savePath1;
+    const char* savePath2;
+};
+
+static int RunDecEnc0600Phase1(ADecEncNativeSample* s, const DecEncPaths* paths)
 {
-    s->SetReadPath(readPath, es, esLen);
-    s->SetSavePath(savePath1);
+    s->SetReadPath(paths->readPath, paths->es, paths->esLen);
+    s->SetSavePath(paths->savePath1);
     s->SetEosState(false);
     if (s->StartEnc() != AV_ERR_OK || s->StartDec() != AV_ERR_OK) {
         return -1;
     }
     while (s->GetFrameCount() < K_EXPECTED_AUDIO_FRAME_COUNT) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     if (s->StopDec() != AV_ERR_OK || s->StopEnc() != AV_ERR_OK) {
         return -1;
     }
+    return 0;
+}
+static int RunDecEnc0600Phase2(ADecEncNativeSample* s, const DecEncPaths* paths)
+{
     s->ReRead();
     s->ResetDecParam();
     s->ResetEncParam();
-    s->SetSavePath(savePath2);
+    s->SetSavePath(paths->savePath2);
     s->SetEosState(true);
     if (s->StartEnc() != AV_ERR_OK || s->StartDec() != AV_ERR_OK) {
         return -1;
@@ -419,17 +429,19 @@ static int RunDecEnc0600Flow(ADecEncNativeSample* s,
     }
     return WaitEosAndRelease(s);
 }
-
-static int RunDecEnc0700Flow(ADecEncNativeSample* s,
-                             const char* readPath,
-                             const uint32_t* es,
-                             uint32_t esLen,
-                             const char* savePath1,
-                             const char* savePath2)
+static int RunDecEnc0600Flow(ADecEncNativeSample* s, const DecEncPaths* paths)
 {
-    s->SetReadPath(readPath, es, esLen);
+    if (RunDecEnc0600Phase1(s, paths) != 0) {
+        return -1;
+    }
+    return RunDecEnc0600Phase2(s, paths);
+}
+
+static int RunDecEnc0700Flow(ADecEncNativeSample* s, const DecEncPaths* paths)
+{
+    s->SetReadPath(paths->readPath, paths->es, paths->esLen);
     s->SetEosState(false);
-    s->SetSavePath(savePath1);
+    s->SetSavePath(paths->savePath1);
     if (s->StartEnc() != AV_ERR_OK || s->StartDec() != AV_ERR_OK) {
         return -1;
     }
@@ -444,7 +456,7 @@ static int RunDecEnc0700Flow(ADecEncNativeSample* s,
     s->ReRead();
     s->ResetDecParam();
     s->ResetEncParam();
-    s->SetSavePath(savePath2);
+    s->SetSavePath(paths->savePath2);
     s->SetEosState(true);
     if (s->StartEnc() != AV_ERR_OK || s->StartDec() != AV_ERR_OK) {
         return -1;
@@ -715,12 +727,12 @@ int SubMultimediaMediaAudioDecEncFunction0600()
         delete aDecEncSample;
         return -1;
     }
-    if (RunDecEnc0600Flow(aDecEncSample,
-                          READPATH,
-                          ES_AAC_48000_32_1,
-                          ES_AAC_48000_32_1_LENGTH,
-                          "/data/storage/el2/base/files/AAC_48000_32_1_out6.aac",
-                          "/data/storage/el2/base/files/AAC_48000_32_1_out6_2.aac") != 0) {
+    const DecEncPaths paths0600 = { READPATH,
+                                    ES_AAC_48000_32_1,
+                                    ES_AAC_48000_32_1_LENGTH,
+                                    "/data/storage/el2/base/files/AAC_48000_32_1_out6.aac",
+                                    "/data/storage/el2/base/files/AAC_48000_32_1_out6_2.aac" };
+    if (RunDecEnc0600Flow(aDecEncSample, &paths0600) != 0) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;
@@ -751,12 +763,12 @@ int SubMultimediaMediaAudioDecEncFunction0700()
         delete aDecEncSample;
         return -1;
     }
-    if (RunDecEnc0700Flow(aDecEncSample,
-                          READPATH,
-                          ES_AAC_48000_32_1,
-                          ES_AAC_48000_32_1_LENGTH,
-                          "/data/storage/el2/base/files/AAC_48000_32_1_out7.aac",
-                          "/data/storage/el2/base/files/AAC_48000_32_1_out7_2.aac") != 0) {
+    const DecEncPaths paths0700 = { READPATH,
+                                    ES_AAC_48000_32_1,
+                                    ES_AAC_48000_32_1_LENGTH,
+                                    "/data/storage/el2/base/files/AAC_48000_32_1_out7.aac",
+                                    "/data/storage/el2/base/files/AAC_48000_32_1_out7_2.aac" };
+    if (RunDecEnc0700Flow(aDecEncSample, &paths0700) != 0) {
         OH_AVFormat_Destroy(audioFormat);
         delete aDecEncSample;
         return -1;

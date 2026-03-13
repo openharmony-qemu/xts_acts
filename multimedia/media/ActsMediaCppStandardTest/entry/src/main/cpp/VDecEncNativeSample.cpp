@@ -530,6 +530,7 @@ void VDecEncNativeSample::SendEncEos()
 
 void VDecEncNativeSample::OutputFuncDec()
 {
+    /* G.CTL.03: loop exits via break when !isDecRunning_. */
     while (true) {
         if (!isDecRunning_.load()) {
             break;

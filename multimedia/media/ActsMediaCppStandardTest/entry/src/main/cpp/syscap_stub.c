@@ -14,17 +14,17 @@
  */
 
 /*
- * Stub for canIUse() from syscap_ndk.h.
+ * Stub for canIUse() from capability API header (syscap; name fixed by SDK).
  * SDK declares it with @library NA (no native .so); runtime may not provide it
  * when loading this test .so. Providing a local implementation allows the
  * shared library to load so NAPI tests can run.
  * Returns true so capability checks pass; individual tests may still fail
  * on devices without the actual capability.
- * Name canIUse kept for syscap_ndk.h API compatibility (G.NAM.03).
+ * Name canIUse kept for capability API compatibility (G.NAM.03).
  */
 #include <stdbool.h>
 
-bool canIUse(const char* cap)
+bool canIUse(const char* cap) /* G.NAM.03: name fixed by syscap API */
 {
     (void)cap;
     return true;

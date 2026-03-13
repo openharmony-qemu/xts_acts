@@ -64,60 +64,79 @@ static bool SetFormat(struct OH_AVFormat* format, map<string, std::pair<bool, in
     return true;
 }
 
-static void SetCodecFormat0200Values(OH_AVFormat* fmt,
-                                     const char* intKey,
-                                     const char* longKey,
-                                     const char* floatKey,
-                                     const char* doubleKey,
-                                     const char* stringKey,
-                                     const char* stringValue,
-                                     int32_t intVal,
-                                     int64_t longVal,
-                                     float floatVal,
-                                     double doubleVal)
+struct CodecFormat0200Keys {
+    const char* intKey;
+    const char* longKey;
+    const char* floatKey;
+    const char* doubleKey;
+    const char* stringKey;
+    const char* stringValue;
+};
+
+struct CodecFormat0200Vals {
+    int32_t intVal;
+    int64_t longVal;
+    float floatVal;
+    double doubleVal;
+};
+
+static void SetCodecFormat0200Values(OH_AVFormat* fmt, const CodecFormat0200Keys* keys, const CodecFormat0200Vals* vals)
 {
-    OH_AVFormat_SetIntValue(fmt, intKey, intVal);
-    OH_AVFormat_SetLongValue(fmt, longKey, longVal);
-    OH_AVFormat_SetFloatValue(fmt, floatKey, floatVal);
-    OH_AVFormat_SetDoubleValue(fmt, doubleKey, doubleVal);
-    OH_AVFormat_SetStringValue(fmt, stringKey, stringValue);
+    OH_AVFormat_SetIntValue(fmt, keys->intKey, vals->intVal);
+    OH_AVFormat_SetLongValue(fmt, keys->longKey, vals->longVal);
+    OH_AVFormat_SetFloatValue(fmt, keys->floatKey, vals->floatVal);
+    OH_AVFormat_SetDoubleValue(fmt, keys->doubleKey, vals->doubleVal);
+    OH_AVFormat_SetStringValue(fmt, keys->stringKey, keys->stringValue);
+}
+
+static int VerifyFormat0200Int(OH_AVFormat* out, const CodecFormat0200Keys* k, const CodecFormat0200Vals* v)
+{
+    int32_t val = 0;
+    OH_AVFormat_GetIntValue(out, k->intKey, &val);
+    return (val == v->intVal) ? 0 : -1;
+}
+static int VerifyFormat0200Long(OH_AVFormat* out, const CodecFormat0200Keys* k, const CodecFormat0200Vals* v)
+{
+    int64_t val = 0;
+    OH_AVFormat_GetLongValue(out, k->longKey, &val);
+    return (val == v->longVal) ? 0 : -1;
+}
+static int VerifyFormat0200Float(OH_AVFormat* out, const CodecFormat0200Keys* k, const CodecFormat0200Vals* v)
+{
+    float val = 0.0f;
+    OH_AVFormat_GetFloatValue(out, k->floatKey, &val);
+    return (val == v->floatVal) ? 0 : -1;
+}
+static int VerifyFormat0200Double(OH_AVFormat* out, const CodecFormat0200Keys* k, const CodecFormat0200Vals* v)
+{
+    double val = 0.0;
+    OH_AVFormat_GetDoubleValue(out, k->doubleKey, &val);
+    return (val == v->doubleVal) ? 0 : -1;
+}
+static int VerifyFormat0200String(OH_AVFormat* out, const CodecFormat0200Keys* k)
+{
+    const char* val = nullptr;
+    OH_AVFormat_GetStringValue(out, k->stringKey, &val);
+    return (val != nullptr && *val == *k->stringValue) ? 0 : -1;
 }
 
 static int VerifyCodecFormat0200Copy(OH_AVFormat* codecFormatOut,
-                                     const char* intKey,
-                                     const char* longKey,
-                                     const char* floatKey,
-                                     const char* doubleKey,
-                                     const char* stringKey,
-                                     int32_t intVal,
-                                     int64_t longVal,
-                                     float floatVal,
-                                     double doubleVal,
-                                     const char* stringVal)
+                                     const CodecFormat0200Keys* keys,
+                                     const CodecFormat0200Vals* vals)
 {
-    int32_t intValueOut = 0;
-    OH_AVFormat_GetIntValue(codecFormatOut, intKey, &intValueOut);
-    if (intValueOut != intVal) {
+    if (VerifyFormat0200Int(codecFormatOut, keys, vals) != 0) {
         return -1;
     }
-    int64_t longValueOut = 0;
-    OH_AVFormat_GetLongValue(codecFormatOut, longKey, &longValueOut);
-    if (longValueOut != longVal) {
+    if (VerifyFormat0200Long(codecFormatOut, keys, vals) != 0) {
         return -1;
     }
-    float floatValueOut = 0.0f;
-    OH_AVFormat_GetFloatValue(codecFormatOut, floatKey, &floatValueOut);
-    if (floatValueOut != floatVal) {
+    if (VerifyFormat0200Float(codecFormatOut, keys, vals) != 0) {
         return -1;
     }
-    double doubleValueOut = 0.0;
-    OH_AVFormat_GetDoubleValue(codecFormatOut, doubleKey, &doubleValueOut);
-    if (doubleValueOut != doubleVal) {
+    if (VerifyFormat0200Double(codecFormatOut, keys, vals) != 0) {
         return -1;
     }
-    const char* stringValueOut = nullptr;
-    OH_AVFormat_GetStringValue(codecFormatOut, stringKey, &stringValueOut);
-    if (stringValueOut == nullptr || *stringValueOut != *stringVal) {
+    if (VerifyFormat0200String(codecFormatOut, keys) != 0) {
         return -1;
     }
     return 0;
@@ -171,16 +190,9 @@ int SubMultimediaMediaCodecFormat0100()
 
 int SubMultimediaMediaCodecFormat0200()
 {
-    const char* intKey = "int value key";
-    const char* longKey = "long value key";
-    const char* floatKey = "float value key";
-    const char* doubleKey = "double value key";
-    const char* stringKey = "string value key";
-    const char* stringValue = "string_value";
-    const int32_t intValue = 1;
-    const int64_t longValue = 1;
-    const float floatValue = 1.0f;
-    const double doubleValue = 1.0;
+    const CodecFormat0200Keys keys = { "int value key",    "long value key",   "float value key",
+                                       "double value key", "string value key", "string_value" };
+    const CodecFormat0200Vals vals = { 1, 1, 1.0f, 1.0 };
 
     OH_AVFormat* codecFormatIn = OH_AVFormat_Create();
     if (codecFormatIn == nullptr) {
@@ -191,29 +203,9 @@ int SubMultimediaMediaCodecFormat0200()
         OH_AVFormat_Destroy(codecFormatIn);
         return -1;
     }
-    SetCodecFormat0200Values(codecFormatIn,
-                             intKey,
-                             longKey,
-                             floatKey,
-                             doubleKey,
-                             stringKey,
-                             stringValue,
-                             intValue,
-                             longValue,
-                             floatValue,
-                             doubleValue);
+    SetCodecFormat0200Values(codecFormatIn, &keys, &vals);
     OH_AVFormat_Copy(codecFormatOut, codecFormatIn);
-    int ret = VerifyCodecFormat0200Copy(codecFormatOut,
-                                        intKey,
-                                        longKey,
-                                        floatKey,
-                                        doubleKey,
-                                        stringKey,
-                                        intValue,
-                                        longValue,
-                                        floatValue,
-                                        doubleValue,
-                                        stringValue);
+    int ret = VerifyCodecFormat0200Copy(codecFormatOut, &keys, &vals);
     OH_AVFormat_Destroy(codecFormatIn);
     OH_AVFormat_Destroy(codecFormatOut);
     return ret;

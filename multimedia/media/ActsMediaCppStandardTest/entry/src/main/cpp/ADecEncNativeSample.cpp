@@ -33,9 +33,9 @@ constexpr uint32_t STOPNUM = 10000;
 
 void AdecAsyncError(OH_AVCodec* codec, int32_t errorCode, void* userData)
 {
-    ADecEncSignal* acodecSignal_ = static_cast<ADecEncSignal*>(userData);
+    ADecEncSignal* acodecSignal = static_cast<ADecEncSignal*>(userData);
     cout << "DEC Error errorCode=" << errorCode << endl;
-    acodecSignal_->errorNum_ += 1;
+    acodecSignal->errorNum_ += 1;
 }
 
 void AdecAsyncStreamChanged(OH_AVCodec* codec, OH_AVFormat* format, void* userData)
@@ -712,6 +712,7 @@ int32_t ADecEncNativeSample::PushInbufferEnc()
 
 void ADecEncNativeSample::InputFuncEnc()
 {
+    /* G.CTL.03: loop exits via break when !isEncRunning_. */
     while (true) {
         cout << "DEC enter InputFuncEnc()" << endl;
         if (!isEncRunning_.load()) {

@@ -24,6 +24,7 @@
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <string>
+/* Capability API header; name fixed by SDK. */
 #include <syscap_ndk.h>
 #include <thread>
 #include "include/VDecEncNativeSample.h"
@@ -106,13 +107,13 @@ static bool SetFormat(struct OH_AVFormat* format, map<string, int> mediaDescript
 
 static struct OH_AVFormat* CreateFormat()
 {
-    OH_AVFormat* DefaultFormat = OH_AVFormat_Create();
-    OH_AVFormat_SetIntValue(DefaultFormat, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    OH_AVFormat_SetIntValue(DefaultFormat, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-    OH_AVFormat_SetIntValue(DefaultFormat, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIXELFORMAT);
-    OH_AVFormat_SetDoubleValue(DefaultFormat, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAMERATE);
-    OH_AVFormat_SetStringValue(DefaultFormat, OH_MD_KEY_CODEC_MIME, OH_AVCODEC_MIMETYPE_VIDEO_AVC);
-    return DefaultFormat;
+    OH_AVFormat* defaultFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(defaultFormat, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    OH_AVFormat_SetIntValue(defaultFormat, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    OH_AVFormat_SetIntValue(defaultFormat, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIXELFORMAT);
+    OH_AVFormat_SetDoubleValue(defaultFormat, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAMERATE);
+    OH_AVFormat_SetStringValue(defaultFormat, OH_MD_KEY_CODEC_MIME, OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    return defaultFormat;
 }
 
 static bool CanUseVideoCodec()
@@ -280,6 +281,7 @@ static int WaitFrameCountThenFlushAndReset(VDecEncNativeSample* sample)
 {
     /* Loop terminates when output callback increments frame count to K_EXPECTED_VIDEO_FRAME_COUNT. */
     while (sample->GetFrameCount() < K_EXPECTED_VIDEO_FRAME_COUNT) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     if (sample->FlushDec() != AV_ERR_OK || sample->FlushEnc() != AV_ERR_OK) {
         return -1;
@@ -311,6 +313,7 @@ static int WaitFrameCountThenStopDecEnc(VDecEncNativeSample* sample)
 {
     /* Loop terminates when output callback increments frame count to K_EXPECTED_VIDEO_FRAME_COUNT. */
     while (sample->GetFrameCount() < K_EXPECTED_VIDEO_FRAME_COUNT) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     if (sample->StopDec() != AV_ERR_OK || sample->StopEnc() != AV_ERR_OK) {
         return -1;
