@@ -246,9 +246,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with no parameters, verify returning empty object and its prototype
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result1).assertEqual('object');
       expect(JSON.stringify(result1)).assertEqual('{}');
     });
@@ -259,9 +259,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with null as parameter, verify returning empty object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result2).assertEqual('object');
       expect(JSON.stringify(result2)).assertEqual('{}');
     });
@@ -272,9 +272,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with undefined as parameter, verify returning empty object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result3).assertEqual('object');
       expect(JSON.stringify(result3)).assertEqual('{}');
     });
@@ -285,9 +285,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a plain object as parameter, verify returning original object and its properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(result4).assertEqual(originalObj4);
       expect(result4.name).assertEqual('test');
       expect(result4.age).assertEqual(20);
@@ -299,9 +299,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with an array as parameter, verify returning original array and its characteristics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(result5).assertEqual(originalArr5);
       expect(result5.length).assertEqual(3);
       expect(result5[1]).assertEqual(20);
@@ -314,9 +314,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a function as parameter, verify returning original function and its callability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(result6).assertEqual(originalFn6);
       expect(result6(2, 3)).assertEqual(5);
       expect(typeof result6).assertEqual('function');
@@ -328,9 +328,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a BigInt as parameter, verify wrapped object and its characteristics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result7).assertEqual('object');
       expect(result7.valueOf()).assertEqual(456n);
     });
@@ -341,9 +341,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a Symbol as parameter, verify wrapped object and its characteristics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result8).assertEqual('object');
       expect(result8_1 === originalSymbol8).assertEqual(true);
     });
@@ -354,9 +354,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a Number primitive as parameter, verify wrapped object and its prototype methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result9).assertEqual('object');
       expect(result9.valueOf()).assertEqual(789);
       expect(result9.toFixed(2)).assertEqual('789.00');
@@ -368,9 +368,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a String primitive as parameter, verify wrapped object and its prototype methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result10).assertEqual('object');
       expect(result10.valueOf()).assertEqual('javascript');
       expect(result10.slice(0, 4)).assertEqual('java');
@@ -382,9 +382,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a Boolean primitive (true), verify wrapped object and value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result11).assertEqual('object');
       expect(result11.valueOf()).assertEqual(true);
       expect(result11.toString()).assertEqual('true');
@@ -396,9 +396,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a Boolean primitive (false), verify wrapped object and value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(typeof result12).assertEqual('object');
       expect(result12.valueOf()).assertEqual(false);
       expect(result12.toString()).assertEqual('false');
@@ -410,9 +410,9 @@ export default function Object1Test() {
      * @tc.desc   Call Object() with a Date object, verify returning original Date and its value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(result13).assertEqual(originalDate13);
       expect(result13.getTime()).assertEqual(originalDate13.getTime());
       expect(result13.toISOString()).assertEqual('2024-01-01T00:00:00.000Z');

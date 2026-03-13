@@ -48,9 +48,9 @@ export default function ArrayConcatTest() {
      * @tc.desc Verify Array concat single element arrays
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('testArrayConcat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr1: number[] = [1];
       const arr2: number[] = [2];
       const result = arr1.concat(arr2);
@@ -65,9 +65,9 @@ export default function ArrayConcatTest() {
      * @tc.desc Verify Array concat multiple number arrays
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('testArrayConcat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr1 = new Array<number>(1, 2, 3);
       const arr2 = new Array<number>(4, 5);
       const result = arr1.concat(arr2);
@@ -82,9 +82,9 @@ export default function ArrayConcatTest() {
      * @tc.desc Verify Array concat string arrays
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('testArrayConcat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr1 = new Array<string>('a', 'b');
       const arr2 = new Array<string>('c', 'd');
       const result = arr1.concat(arr2);
@@ -99,9 +99,9 @@ export default function ArrayConcatTest() {
      * @tc.desc Verify Array concat boolean arrays
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('testArrayConcat0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr1 = new Array<boolean>(true, false);
       const arr2 = new Array<boolean>(true);
       const result = arr1.concat(arr2);

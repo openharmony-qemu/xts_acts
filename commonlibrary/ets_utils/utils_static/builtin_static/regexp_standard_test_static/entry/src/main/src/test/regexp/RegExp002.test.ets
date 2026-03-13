@@ -36,9 +36,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with global regex returning all matches
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "apple banana apple";
       const regex = new RegExp('apple', 'g');
       const result = str.match(regex);
@@ -51,9 +51,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with regex without global flag returning match info
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "apple banana apple";
       const regex = new RegExp('apple');
       const result = str.match(regex);
@@ -66,9 +66,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with regex containing capturing group
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "apple banana apple";
       const regex = new RegExp('(apple)');
       const result = str.match(regex);
@@ -82,9 +82,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() returns null when there is no match
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "apple banana apple";
       const regex = new RegExp('orange');
       const result = str.match(regex);
@@ -97,9 +97,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with global regex returns all matches (repetition)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "apple banana apple";
       const regex = new RegExp('apple', 'g');
       const result = str.match(regex);
@@ -112,9 +112,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with regex containing capturing group and global flag
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "apple banana apple";
       const regex = new RegExp('(apple)', 'g');
       const result = str.match(regex);
@@ -127,9 +127,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() on an empty string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "";
       const regex = new RegExp('.', 'g');
       const result = str.match(regex);
@@ -142,9 +142,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with Unicode characters
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "😀😃😄";
       const regex = new RegExp('.', 'gu');
       const result = str.match(regex);
@@ -157,9 +157,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with multi-line string and ^/$ anchors
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "line1\nline2";
       const regex = new RegExp('^line2$', 'm');
       const result = str.match(regex);
@@ -172,9 +172,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with zero-width assertions (lookahead)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "abc";
       const regex = new RegExp('(?=b)c', 'g');
       const result = str.match(regex);
@@ -187,9 +187,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with optional capturing group that may not match
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "banana";
       const regex = new RegExp('(apple)?banana');
       const result = str.match(regex);
@@ -203,9 +203,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with repeated pattern using quantifiers
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "aaabbb";
       const regex = new RegExp('a+b+');
       const result = str.match(regex);
@@ -218,9 +218,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with alternation pattern
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "cat";
       const regex = new RegExp('dog|cat|mouse');
       const result = str.match(regex);
@@ -233,9 +233,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with character class
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "abc123";
       const regex = new RegExp('[a-z]+');
       const result = str.match(regex);
@@ -248,9 +248,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with Unicode combining marks
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "e\u0301clair";
       const regex = new RegExp('e\u0301');
       const result = str.match(regex);
@@ -263,9 +263,9 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with lookahead assertion
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegMatch0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegMatch0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str = "foobar";
       const regex = new RegExp('foo(?=bar)');
       const result = str.match(regex);
@@ -278,7 +278,7 @@ export default function RegExpTest002() {
      * @tc.desc Test match() with lookbehind assertion
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
     it('testRegMatch0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foobar";

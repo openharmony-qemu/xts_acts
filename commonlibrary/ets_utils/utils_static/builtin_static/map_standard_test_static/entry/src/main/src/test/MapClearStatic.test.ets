@@ -50,9 +50,9 @@ export default function MapClearTest() {
      * @tc.desc Clear an empty Map, check size is 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<number,number> = new Map<number, number>();
       map.clear();
       expect(map.size).assertEqual(0);
@@ -64,9 +64,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with one element, check size is 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<string,string> = new Map<string, string>();
       map.set('key', 'value');
       map.clear();
@@ -79,9 +79,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with multiple elements, check size is 0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<number,string> = new Map<number, string>();
       map.set(1, 'a');
       map.set(2, 'b');
@@ -96,9 +96,9 @@ export default function MapClearTest() {
      * @tc.desc After clear, check if original key exists
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<string,string> = new Map<string, string>();
       map.set('key', 'value');
       map.clear();
@@ -111,9 +111,9 @@ export default function MapClearTest() {
      * @tc.desc After clear, check if get returns undefined for original key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<string,string> = new Map<string, string>();
       map.set('key', 'value');
       map.clear();
@@ -126,9 +126,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with number keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<number,string> = new Map<number, string>();
       map.set(100, 'hundred');
       map.set(200, 'two hundred');
@@ -142,9 +142,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with boolean keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<boolean,string> = new Map<boolean, string>();
       map.set(true, 'yes');
       map.set(false, 'no');
@@ -158,9 +158,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with object keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const obj1 = new Object();
       const obj2 = new Object();
       const map:Map<Any,string> = new Map<Any, string>();
@@ -176,9 +176,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with null key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<Any,string> = new Map<Any, string>();
       map.set(null, 'null value');
       map.clear();
@@ -191,9 +191,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with undefined key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<Any,string>  = new Map<Any, string>();
       map.set(undefined, 'undefined value');
       map.clear();
@@ -206,9 +206,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with function keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const func1 = () => {};
       const func2 = () => {};
       const map:Map<Any,Any> = new Map<Any, Any>();
@@ -224,9 +224,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with array keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const arr1 = [1, 2];
       const arr2 = [3, 4];
       const map:Map<Any,Any> = new Map<Any, Any>();
@@ -242,9 +242,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map with mixed key types
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<Any,Any> = new Map<Any, Any>();
       map.set('string', 1);
       map.set(123, 'number');
@@ -260,9 +260,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map and check entries iterator is empty
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<Any,Any> = new Map<Any, Any>();
       map.set('a', 1);
       map.set('b', 2);
@@ -276,9 +276,9 @@ export default function MapClearTest() {
      * @tc.desc Clear a Map and check keys iterator is empty
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('MapClearTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+    it('MapClearTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const map:Map<Any,Any> = new Map<Any, Any>();
       map.set('a', 1);
       map.set('b', 2);

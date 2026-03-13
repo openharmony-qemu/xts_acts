@@ -168,9 +168,9 @@ export default function ArrayEveryTest() {
      * @tc.desc All elements > 10, return true
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [12, 15, 20, 18];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
@@ -185,9 +185,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Exists element <= 10, return false
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [12, 5, 20, 18];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
@@ -201,9 +201,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Empty array, return true
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: boolean[] = [];
       let callbackCalled = false;
       const callback = () => {
@@ -222,9 +222,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Single-element array, element passes test (return true)
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [15];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
@@ -238,9 +238,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Single-element array, element fails test (return false)
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [5];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
@@ -254,9 +254,9 @@ export default function ArrayEveryTest() {
      * @tc.desc All strings have length <= 6
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr = ["spray", "elite", "quick"];
       const callback = (str: string) => str.length <= 6;
       const result = arr.every(callback);
@@ -270,9 +270,9 @@ export default function ArrayEveryTest() {
      * @tc.desc All objects have active: true
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: BaseI7[] = [
         { id: 1, active: true },
         { id: 2, active: true },
@@ -290,9 +290,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Exists object with active: false, return false
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: BaseI8[] = [
         { id: 1, active: true },
         { id: 2, active: false },
@@ -310,9 +310,9 @@ export default function ArrayEveryTest() {
      * @tc.desc All elements are not null
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: number[] = [1, 2, 3];
       const callback = (elem: number) => elem !== null;
       const result = arr.every(callback);
@@ -326,9 +326,9 @@ export default function ArrayEveryTest() {
      * @tc.desc Exists null element, return false
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('ArrayEveryTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('ArrayEveryTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       const arr: (number | null)[] = [1, null, 3];
       const callback = (elem: number | null) => elem !== null;
       const result = arr.every(callback);
