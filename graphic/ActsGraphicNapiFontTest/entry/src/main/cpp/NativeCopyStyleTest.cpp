@@ -502,7 +502,7 @@ int OHDrawingCopyTypographyStyle005()
     };
     for (int i = 0; i < textAlign.size(); i++) {
         OH_Drawing_SetTypographyTextAlign(typoStyle_, textAlign[i]);
-        OH_Drawing_TypographyStyle*typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        OH_Drawing_TypographyStyle* typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
         ASSERT_NE(typoStyleCopy_, nullptr);
         EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), textAlign[i]);
     }
