@@ -5265,7 +5265,7 @@ export default function WindowPCTest() {
         });
 
         /**
-         * @tc.number    SUB_WINDOW_PC_STATIC_OFFSUBWINDOWCLOSE_001
+         * @tc.number    SUB_WINDOW_PC_STATIC_OFFSUBWINDOWCLOSE_1300004
          * @tc.name      testOffSubWindowClose001_1300004
          * @tc.desc      Test onSubWindowClose 1300004
          * @tc.size      MediumTest
