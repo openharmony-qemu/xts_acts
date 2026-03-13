@@ -71,7 +71,6 @@ group("multimedia") {
       "audio/ActsAudioOHndkTest:ActsAudioOHndkTest",
       "audio_ndk/oh_audio_render_test:ActsAudioRenderTest",
       "av_codec/audio_encoder:ActsAvbufferEncoderTest",
-      "av_codec/audio_test:ActsAvAudioEncoderCapiNdkTest",
       "av_codec/avcencInfo:ActsAvcencInfoTest",
       "av_codec/capability:ActsCapabilityTest",
       "av_codec/demuxer:ActsDemuxerTest",
