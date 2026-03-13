@@ -4186,7 +4186,7 @@ export default function requestImageTest() {
         let photoAsset: sendablePhotoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         photoAsset.getThumbnail(size).then((pixelMap) => {
           console.info('getThumbnail successful ' + pixelMap);
-          expect(pixelMap.isStrideAlignment).assertFalse();
+          expect(isEmpty(pixelMap.isStrideAlignment)).assertFalse();
         }).catch((err: BusinessError) => {
           console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
           expect().assertFail();
@@ -4343,7 +4343,7 @@ export default function requestImageTest() {
         photoAsset.getThumbnail(size,(err, pixelMap) => {
           if (err === undefined) {
             console.info('getThumbnail successful ' + pixelMap);
-            expect(pixelMap.isStrideAlignment).assertFalse();
+            expect(isEmpty(pixelMap.isStrideAlignment)).assertFalse();
           } else {
             console.error(`getThumbnail fail with error: ${err.code}, ${err.message}`);
             expect().assertFail();

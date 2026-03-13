@@ -2801,10 +2801,13 @@ export default function PhotoGetAssetsTestSupp() {
     it('SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PHOTO_ACCESS_HELPER_REGISTER_CHANGE_CALLBACK_003';
       try {
+        let isCallbackTriggered = false;
         let onCallback = (changeData: photoAccessHelper.ChangeData) => {
           console.info(TAG,testName,'onCallback success, changeData: ' + JSON.stringify(changeData));
+          isCallbackTriggered = true;
         }
         PhAccessHelper.registerChange("", false, onCallback);
+        expect(isCallbackTriggered).assertFalse();
         done();
       } catch (error) {
         console.error(TAG, testName, `getAlbumsCallback failed with err: ${error.code}, ${error.message}`);
