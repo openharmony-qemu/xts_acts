@@ -249,7 +249,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
         capturerFlags: 0
       }
 
@@ -285,7 +285,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
         capturerFlags: 0
       }
 
@@ -321,7 +321,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
         capturerFlags: 0
       }
 
@@ -357,7 +357,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        source: audio.SourceType.SOURCE_TYPE_LIVE,
         capturerFlags: 0
       }
 
