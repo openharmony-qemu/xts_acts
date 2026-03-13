@@ -16,10 +16,14 @@ import ActsLongTimeTaskManagerTest from './ActsLongTimeTaskManagerTest.test';
 import ActsApi21LongTimeTaskManagerTest from './ActsApi21LongTimeTaskManagerTest.test';
 import ActsApi22LongTimeTaskManagerTest from './ActsApi22LongTimeTaskManagerTest.test';
 import ActsLongTimeTaskManagerErrorCodeTest from './ActsLongTimeTaskManagerErrorCodeTest.test';
+import ActsApi9LongTimeTaskManagerTest from './ActsApi9LongTimeTaskManagerTest.test';
+import ActsApi12LongTimeTaskManagerTest from './ActsApi12LongTimeTaskManagerTest.test';
 
 export default function testsuite() {
   ActsLongTimeTaskManagerTest();
   ActsApi21LongTimeTaskManagerTest();
   ActsApi22LongTimeTaskManagerTest();
   ActsLongTimeTaskManagerErrorCodeTest();
+  ActsApi9LongTimeTaskManagerTest();
+  ActsApi12LongTimeTaskManagerTest();
 }
