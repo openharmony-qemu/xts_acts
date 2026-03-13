@@ -133,7 +133,7 @@ function testIsWifiActiveSync() {
       wifiManager.isWifiActiveSync(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -154,7 +154,7 @@ function testIsWifiActiveSync() {
       wifiManager.isWifiActiveSync(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1259,7 +1259,7 @@ function testAddAllowedWifiList() {
       wifiManager.addAllowedWifiList(undefined, wifiAccessInfos);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1275,11 +1275,11 @@ function testAddAllowedWifiList() {
   it("test_add_allowed_wifi_list_00015", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = []
-      wifiManager.addAllowedWifiList(SELFWANT, wifiAccessInfos);
-      expect(false).assertTrue();
+      wifiManager.addAllowedWifiList(SELFWANT, []);
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
+      expect(ret.length == 0).assertTrue();
     } catch (error) {
-      expect(error.code === null).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1300,7 +1300,7 @@ function testAddAllowedWifiList() {
       wifiManager.addAllowedWifiList(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1321,7 +1321,7 @@ function testAddAllowedWifiList() {
       wifiManager.addAllowedWifiList(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code === 401)).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1511,7 +1511,7 @@ function testRemoveAllowedWifiList() {
       wifiManager.removeAllowedWifiList(undefined, wifiAccessInfos);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1527,11 +1527,19 @@ function testRemoveAllowedWifiList() {
   it("test_remove_allowed_wifi_list_0009", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = []
-      wifiManager.removeAllowedWifiList(SELFWANT, wifiAccessInfos);
-      expect(false).assertTrue();
+      let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
+        {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
+        {ssid: "wifi2", bssid: "68:77:24:77:A6:D6"}
+      ]
+      wifiManager.addAllowedWifiList(SELFWANT, wifiAccessInfos);
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
+      expect(ret.length == wifiAccessInfos.length).assertTrue();
+      wifiManager.removeAllowedWifiList(SELFWANT, []);
+      let result: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
+      expect(result.length == wifiAccessInfos.length).assertTrue();
+      wifiManager.removeAllowedWifiList(SELFWANT, ret);
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1552,7 +1560,7 @@ function testRemoveAllowedWifiList() {
       wifiManager.removeAllowedWifiList(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1573,7 +1581,7 @@ function testRemoveAllowedWifiList() {
       wifiManager.removeAllowedWifiList(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1654,7 +1662,7 @@ function testGetAllowedWifiList() {
       wifiManager.getAllowedWifiList(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1969,20 +1977,20 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.name   test_add_disallowed_wifi_list_0013
+   * @tc.name   test_add_disallowed_wifi_list_00013
    * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0013
    * @tc.desc   test wifiManager addDisallowedWifiList without admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
    */
-  it("test_add_disallowed_wifi_list_0013", Level.LEVEL2, async (done: Function) => {
+  it("test_add_disallowed_wifi_list_00013", Level.LEVEL2, async (done: Function) => {
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [{ssid: "wifi1", bssid: "68:77:24:77:A6:D6"}]
       wifiManager.addDisallowedWifiList(undefined, wifiAccessInfos);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -2001,7 +2009,7 @@ function testAddDisallowedWifiList() {
       wifiManager.addDisallowedWifiList(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2022,7 +2030,7 @@ function testAddDisallowedWifiList() {
       wifiManager.addDisallowedWifiList(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2040,10 +2048,13 @@ function testAddDisallowedWifiList() {
   it("test_add_disallowed_wifi_list_00016", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
+      let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [{ssid: "wifi1"}]
+      wifiManager.addDisallowedWifiList(SELFWANT, wifiAccessInfos);
       wifiManager.addDisallowedWifiList(SELFWANT, []);
-      expect(false).assertTrue();
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getDisallowedWifiList(SELFWANT);
+      expect(ret.length == 1).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2223,7 +2234,7 @@ function testRemoveDisallowedWifiList() {
       wifiManager.removeDisallowedWifiList(undefined, wifiAccessInfos);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -2242,7 +2253,7 @@ function testRemoveDisallowedWifiList() {
       wifiManager.removeDisallowedWifiList(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2263,7 +2274,7 @@ function testRemoveDisallowedWifiList() {
       wifiManager.removeDisallowedWifiList(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2281,10 +2292,19 @@ function testRemoveDisallowedWifiList() {
   it("test_remove_disallowed_wifi_list_0011", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
+      let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
+        {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
+        {ssid: "wifi2", bssid: "68:77:24:77:A6:D6"}
+      ]
+      wifiManager.addDisallowedWifiList(SELFWANT, wifiAccessInfos);
+      let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getDisallowedWifiList(SELFWANT);
+      expect(ret.length == wifiAccessInfos.length).assertTrue();
       wifiManager.removeDisallowedWifiList(SELFWANT, []);
-      expect(false).assertTrue();
+      let result: Array<wifiManager.WifiAccessInfo> = wifiManager.getDisallowedWifiList(SELFWANT);
+      expect(result.length == wifiAccessInfos.length).assertTrue();
+      wifiManager.removeDisallowedWifiList(SELFWANT, ret);
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2366,7 +2386,7 @@ function testGetDisallowedWifiList() {
       wifiManager.getDisallowedWifiList(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -2597,7 +2617,7 @@ function testTurnOnWifiList() {
       wifiManager.turnOnWifi(null, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -2615,7 +2635,7 @@ function testTurnOnWifiList() {
       wifiManager.turnOnWifi(undefined, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -2742,7 +2762,7 @@ function testTurnOffWifiList() {
       wifiManager.turnOffWifi(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -2760,7 +2780,7 @@ function testTurnOffWifiList() {
       wifiManager.turnOffWifi(undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });

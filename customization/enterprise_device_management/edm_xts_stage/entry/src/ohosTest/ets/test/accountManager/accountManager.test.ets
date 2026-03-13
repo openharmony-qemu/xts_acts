@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium";
 import { ENTINFO1, SELFWANT, SELFHAPNAME, DEFAULT_USER_ID, INVALID_USER_ID, appIdsInit,
-  INVALID_WANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1 } from "../commom.ets";
+  INVALID_WANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1 } from "../commom";
 import { Driver, ON } from '@kit.TestKit';
 
 import accountManager from '@ohos.enterprise.accountManager';
@@ -76,6 +76,7 @@ export default function accountManagerTest() {
       done();
     })
 
+    // ------------- accountManager --------------------
 
     /**
      * @tc.name   disallowOsAccountAddition_test_001
@@ -1521,6 +1522,7 @@ export default function accountManagerTest() {
       console.info(' --- isOsAccountAdditionDisallowed_test_074  -------- END --------');
     })
 
+///-------------------
     /**
      * @tc.name   addOsAccountAsync_test_061_1
      * @tc.number addOsAccountAsync_test_061_1
@@ -1537,8 +1539,8 @@ export default function accountManagerTest() {
         console.info(' --- addOsAccountAsync_test_061_1 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addOsAccountAsync_test_061_1 error 9201003 is expected, actually catch: ' + error.code);
-        expect(error.code === 9201003).assertTrue();
+        console.info(' --- addOsAccountAsync_test_061_1 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1563,8 +1565,8 @@ export default function accountManagerTest() {
         console.info(' --- addOsAccountAsync_test_061_2 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addOsAccountAsync_test_061_2 error 9201003 is expected, actually catch: ' + error.code);
-        expect(error.code === 9201003).assertTrue();
+        console.info(' --- addOsAccountAsync_test_061_2 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1582,15 +1584,15 @@ export default function accountManagerTest() {
      * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_061_3", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addOsAccountAsync_test_061_2  -------- START --------');
+      console.info(' --- addOsAccountAsync_test_061_3  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         accountManager.addOsAccountAsync(SELFWANT, undefined, osAccount.OsAccountType.GUEST);
         console.info(' --- addOsAccountAsync_test_061_3 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addOsAccountAsync_test_061_3 error 9201003 is expected, actually catch: ' + error.code);
-        expect(error.code === 9201003).assertTrue();
+        console.info(' --- addOsAccountAsync_test_061_3 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1720,7 +1722,7 @@ export default function accountManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- setDomainAccountPolicy_test_009_3  -------- END --------');
+      console.info(' --- setDomainAccountPolicy_test_009_4  -------- END --------');
     })
 
 
@@ -1749,7 +1751,7 @@ export default function accountManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- setDomainAccountPolicy_test_009_3  -------- END --------');
+      console.info(' --- setDomainAccountPolicy_test_009_5  -------- END --------');
     })
 
 

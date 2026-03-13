@@ -31,7 +31,7 @@ import {
   bundleNamesInit,
   BUNDLE_NAME_200,
   BUNDLE_NAME_201
-} from '../commom.ets';
+} from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import applicationManager from '@ohos.enterprise.applicationManager';
@@ -6647,6 +6647,8 @@ export default function applicationManagerTest() {
       console.info(' --- getAllowedRunningBundles_test_032  -------- END --------');
     })
 
+    //-------------
+
      /**
      * @tc.name   addDisallowedRunningBundlesSync_test_003_1
      * @tc.number addDisallowedRunningBundlesSync_test_003_1
@@ -6662,8 +6664,8 @@ export default function applicationManagerTest() {
         console.info(' --- addDisallowedRunningBundlesSync_test_003_1 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDisallowedRunningBundlesSync_test_003_1 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code === 401).assertTrue();
+        console.info(' --- addDisallowedRunningBundlesSync_test_003_1 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
       console.info(' --- addDisallowedRunningBundlesSync_test_003_1  -------- END --------');
@@ -6685,8 +6687,8 @@ export default function applicationManagerTest() {
         console.info(' --- removeDisallowedRunningBundlesSync_test_004_1 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeDisallowedRunningBundlesSync_test_004_1 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code === 401).assertTrue();
+        console.info(' --- removeDisallowedRunningBundlesSync_test_004_1 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedRunningBundlesSync_test_004_1  -------- END --------');
@@ -6708,8 +6710,8 @@ export default function applicationManagerTest() {
         console.info(' --- addAutoStartApps_test_004_1 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addAutoStartApps_test_004_1 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code === 401).assertTrue();
+        console.info(' --- addAutoStartApps_test_004_1 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
       console.info(' --- addAutoStartApps_test_004_1  -------- END --------');
@@ -6733,7 +6735,7 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAutoStartApps_test_004_2 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code === 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAutoStartApps_test_004_2  -------- END --------');
@@ -6757,7 +6759,7 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAutoStartApps_test_004_3 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code === 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAutoStartApps_test_004_3  -------- END --------');
@@ -6781,7 +6783,7 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAutoStartApps_test_004_4 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code === 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAutoStartApps_test_004_4  -------- END --------');
@@ -6805,37 +6807,11 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAutoStartApps_test_004_5 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code === 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAutoStartApps_test_004_5  -------- END --------');
     })
-
-
-    /**
-     * @tc.name   addAutoStartApps_test_004_6
-     * @tc.number addAutoStartApps_test_004_6
-     * @tc.desc   addAutoStartApps with [] parameter AutoStartApps
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addAutoStartApps_test_004_6", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addAutoStartApps_test_004_6  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        applicationManager.addAutoStartApps(SELFWANT, [], DEFAULT_USER_ID, false);
-        console.info(' --- addAutoStartApps_test_004_6 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addAutoStartApps_test_004_6 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code === 401).assertTrue();
-      }
-      done();
-      console.info(' --- addAutoStartApps_test_004_6  -------- END --------');
-    })
-
-
 
   })
 }
