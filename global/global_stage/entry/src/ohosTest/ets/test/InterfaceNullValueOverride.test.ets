@@ -8028,6 +8028,49 @@ export default function InterfaceNullValueOverrideTest() {
       expect(value != null).assertTrue();
     })
 
+    /**
+     * @tc.name updateOverrideConfiguration_null_0100
+     * @tc.number updateOverrideConfiguration_null_0100
+     * @tc.desc with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('updateOverrideConfiguration_null_0100', Level.LEVEL3, () => {
+      try {
+        let overrideResourceManager = res.getOverrideResourceManager();
+        let value = overrideResourceManager.updateOverrideConfiguration(null);
+        console.log('updateOverrideConfiguration_null_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (e) {
+        let error = e as BusinessError;
+        console.log('updateOverrideConfiguration_null_0100 err:' + error.code);
+        expect(Number(error.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name updateOverrideConfiguration_undefined_0100
+     * @tc.number updateOverrideConfiguration_undefined_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('updateOverrideConfiguration_undefined_0100', Level.LEVEL3, () => {
+      try {
+        let overrideResourceManager = res.getOverrideResourceManager();
+        let value = overrideResourceManager.updateOverrideConfiguration(undefined);
+        console.log('updateOverrideConfiguration_undefined_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (e) {
+        let error = e as BusinessError;
+        console.log('updateOverrideConfiguration_undefined_0100 err:' + error.code);
+        expect(Number(error.code)).assertEqual(401);
+      }
+    })
+
     console.log('*************end interfaceNullValueOverrideTest*************');
   })
 }
