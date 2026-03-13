@@ -936,7 +936,7 @@ export default function ProcessTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('ProcessTest030', TestType.FUNCTION | Level.LEVEL1,
+    it('ProcessTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'ProcessTest030';
         console.info(`${TAG} test start`);
@@ -1085,7 +1085,7 @@ export default function ProcessTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('ProcessTest034', TestType.FUNCTION | Size.MEDIUMTEST | LEVEL1,
+    it('ProcessTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const TAG: string = 'ProcessTest034';
         console.info(`${TAG} test start`);
@@ -1108,7 +1108,7 @@ export default function ProcessTest() {
 
     /**
      * @tc.number SUB_PROCESS_TEST_3500
-     * @name ProcessTest035
+     * @tc.name ProcessTest035
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
