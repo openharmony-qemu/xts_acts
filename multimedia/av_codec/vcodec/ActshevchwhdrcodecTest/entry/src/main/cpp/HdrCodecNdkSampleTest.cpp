@@ -484,9 +484,8 @@ int32_t HDRCodecNdkSample::SendDataAvc(OH_AVCodec *codec, uint32_t index, OH_AVM
         OH_VideoDecoder_PushInputData(codec, index, attr);
         return 1;
     }
-    uint32_t bufferSize = (static_cast<uint32_t>(ch[3] & 0xFF)) |
-                      (static_cast<uint32_t>(ch[2] & 0xFF) << 8) |
-                      (static_cast<uint32_t>(ch[1] & 0xFF) << 16) |
+    uint32_t bufferSize = (static_cast<uint32_t>(ch[3] & 0xFF)) | (static_cast<uint32_t>(
+        ch[2] & 0xFF) << 8) | (static_cast<uint32_t>(ch[1] & 0xFF) << 16) |
                       (static_cast<uint32_t>(ch[0] & 0xFF) << 24);
     uint8_t *fileBuffer = new uint8_t[bufferSize + START_CODE_SIZE];
     if (fileBuffer == nullptr) {
@@ -499,7 +498,6 @@ int32_t HDRCodecNdkSample::SendDataAvc(OH_AVCodec *codec, uint32_t index, OH_AVM
         fileBuffer = nullptr;
         return -1;
     }
-    
     (void)inFile_->read((char *)fileBuffer + START_CODE_SIZE, bufferSize);
     if (inFile_->fail()) {
         delete[] fileBuffer;
@@ -923,7 +921,7 @@ void HDRCodecNdkSample::InputFunc()
         lock.unlock();
         if (SendData(vdec_, index, buffer) == 1) {
             break;
-        }  
+        }
     }
 }
 
