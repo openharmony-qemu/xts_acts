@@ -4784,6 +4784,38 @@ export default function WindowLifeCycleTest() {
                     done();
                 }
             });
+
+        /**
+         * @tc.name   test_windowClassLoadContentByName_Promise_withOutStorage_static
+         * @tc.number test_windowClassLoadContentByName_Promise_withOutStorage_static
+         * @tc.desc   test_windowClassLoadContentByName_Promise_withOutStorage_static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('test_windowClassLoadContentByName_Promise_withOutStorage_static',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+                let msg: string = "test_windowClassLoadContentByName_Promise_withOutStorage_static"
+                let windowClass: window.Window = windowStage!.getMainWindowSync();
+                hilog.info(0x0000, '[ANI]', `${msg} begin`);
+                try {
+                    let promise = windowClass.loadContentByName('');
+                    promise.then(() => {
+                        hilog.info(0x0000, '[ANI]', `${msg} Succeeded in loading the content.`);
+                        expect(true).assertFail()
+                        done()
+                    }).catch((err: Error): PromiseLike<void> | undefined => {
+                        hilog.info(0x0000, '[ANI]',
+                            `${msg} Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
+                        expect(err.code).assertEqual(401);
+                        done();
+                    });
+                } catch (exception) {
+                    hilog.info(0x0000, '[ANI]', `${msg} Failed to loadContentByName. Cause: ${JSON.stringify(exception)}`)
+                    expect(true).assertFail()
+                    done()
+                }
+            });
     })
 
 }
