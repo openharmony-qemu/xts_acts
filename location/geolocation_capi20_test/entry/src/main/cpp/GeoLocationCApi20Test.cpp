@@ -64,8 +64,10 @@ void LocationInfoCallback(Location_Info *location, void *userData)
     double direction = baseInfo.direction;
     int64_t timeForFix = baseInfo.timeForFix;
     int64_t timeSinceBoot = baseInfo.timeSinceBoot;
+    double altitudeAccuracy = baseInfo.altitudeAccuracy;
     double speedAccuracy = baseInfo.speedAccuracy;
     double directionAccuracy = baseInfo.directionAccuracy;
+    int64_t uncertaintyOfTimeSinceBoot = baseInfo.uncertaintyOfTimeSinceBoot;
     Location_SourceType locationsourcetype = baseInfo.locationSourceType;
     Location_ResultCode ResultCode = OH_LocationInfo_GetAdditionalInfo(location, additionalInfo, infoLen);
 };
