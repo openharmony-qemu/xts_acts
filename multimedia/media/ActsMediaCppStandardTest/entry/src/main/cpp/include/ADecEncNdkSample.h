@@ -17,7 +17,7 @@
 #define AUDIODECENC_NDK_SAMPLE_H
 
 #include <iostream>
-#include <stdio.h>
+#include <cstdio>
 #include <unistd.h>
 #include <atomic>
 #include <fstream>

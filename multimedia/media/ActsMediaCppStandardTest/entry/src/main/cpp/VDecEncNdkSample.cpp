@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+/** @file Video decode/encode sample implementation (native media API). NDK_* macros denote native API check-and-return
+ * helpers. */
 #include "include/VDecEncNdkSample.h"
 #include <multimedia/player_framework/native_avmemory.h>
 

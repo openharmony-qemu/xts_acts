@@ -41,7 +41,7 @@ static uint32_t ES_AAC_48000_32_1[] = { 283, 336, 291, 405, 438, 411, 215, 215, 
                                         397, 362, 393, 394, 391, 383, 385, 377, 379, 381, 369, 375, 379, 346, 382,
                                         356, 361, 366, 394, 393, 385, 362, 406, 399, 384, 377, 385 };
 
-static constexpr uint32_t ES_AAC_48000_32_1_Length = sizeof(ES_AAC_48000_32_1) / sizeof(uint32_t);
+static constexpr uint32_t ES_AAC_48000_32_1_LENGTH = sizeof(ES_AAC_48000_32_1) / sizeof(uint32_t);
 static const string MIME_TYPE_AAC = "audio/mp4a-latm";
 static const string DECODER_AAC = "avdec_aac";
 static const string ENCODER_AAC = "avenc_aac";
@@ -269,7 +269,7 @@ static int WaitFrameCountThenFlushAndReset(ADecEncNdkSample* sample)
 
 static int RunAudioDecEncTwoPhase(ADecEncNdkSample* sample, const char* savePath1, const char* savePath2)
 {
-    sample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
+    sample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_LENGTH);
     sample->SetEosState(false);
     sample->SetSavePath(savePath1);
     if (sample->StartEnc() != AV_ERR_OK || sample->StartDec() != AV_ERR_OK) {
@@ -333,7 +333,7 @@ int SubMultimediaMediaAudioDecEncFunction0100()
         delete aDecEncSample;
         return -1;
     }
-    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
+    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_LENGTH);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out1.aac");
     if (StartEncDecWithParams(aDecEncSample, audioFormat) != 0) {
         OH_AVFormat_Destroy(audioFormat);
@@ -384,7 +384,7 @@ int SubMultimediaMediaAudioDecEncFunction0200()
         delete aDecEncSample;
         return -1;
     }
-    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
+    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_LENGTH);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out2.aac");
     if (aDecEncSample->StartEnc() != AV_ERR_OK || aDecEncSample->StartDec() != AV_ERR_OK) {
         OH_AVFormat_Destroy(audioFormat);
@@ -460,7 +460,7 @@ int SubMultimediaMediaAudioDecEncFunction0300()
         delete aDecEncSample;
         return -1;
     }
-    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
+    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_LENGTH);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out3.aac");
 
     if (aDecEncSample->StartEnc() != AV_ERR_OK) {
@@ -519,7 +519,7 @@ int SubMultimediaMediaAudioDecEncFunction0400()
         delete aDecEncSample;
         return -1;
     }
-    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
+    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_LENGTH);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out4.aac");
     aDecEncSample->SetEosState(false);
     if (aDecEncSample->StartEnc() != AV_ERR_OK || aDecEncSample->StartDec() != AV_ERR_OK) {
@@ -648,7 +648,7 @@ int SubMultimediaMediaAudioDecEncFunction0600()
         delete aDecEncSample;
         return -1;
     }
-    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
+    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_LENGTH);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out6.aac");
     aDecEncSample->SetEosState(false);
 
@@ -769,7 +769,7 @@ int SubMultimediaMediaAudioDecEncFunction0700()
         delete aDecEncSample;
         return -1;
     }
-    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_Length);
+    aDecEncSample->SetReadPath(READPATH, ES_AAC_48000_32_1, ES_AAC_48000_32_1_LENGTH);
     aDecEncSample->SetEosState(false);
     aDecEncSample->SetSavePath("/data/storage/el2/base/files/AAC_48000_32_1_out7.aac");
 

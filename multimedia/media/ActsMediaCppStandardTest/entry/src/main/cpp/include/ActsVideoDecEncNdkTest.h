@@ -15,8 +15,8 @@
 
 /**
  * @file Video decode/encode test declarations (native media API).
+ * "NDK" in guard/macro names denotes native media API (legacy naming).
  */
-
 #ifndef ACTSMEDIACPPSTANDARDTEST_ACTS_VIDEO_DEC_ENC_NDK_TEST_H
 #define ACTSMEDIACPPSTANDARDTEST_ACTS_VIDEO_DEC_ENC_NDK_TEST_H
 

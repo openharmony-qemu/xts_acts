@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
-/** @file Log helpers for native API tests (check-and-return macros). */
-
+/**
+ * @file Log helpers for native API tests (check-and-return macros).
+ * NDK_ prefix in macro names is legacy and denotes native API check-and-return helpers.
+ */
 #ifndef NDKTEST_LOG_H
 #define NDKTEST_LOG_H
 
-#include <stdio.h>
+#include <cstdio>
 
 #define RET_FAIL (-1)
 #define RET_OK   0

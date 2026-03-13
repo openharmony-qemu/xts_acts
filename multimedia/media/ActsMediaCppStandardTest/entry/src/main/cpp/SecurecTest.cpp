@@ -18,7 +18,6 @@
 #include <cstddef>
 
 extern "C" {
-
 int SecureMemset(void* dest, size_t destMax, int c, size_t count)
 {
     if (dest == nullptr) {

@@ -15,8 +15,8 @@
 
 /**
  * @file Codec format test declarations (native media API).
+ * "NDK" in guard/macro names denotes native media API (legacy naming).
  */
-
 #ifndef ACTSMEDIACPPSTANDARDTEST_ACTS_CODEC_FORMAT_NDK_TEST_H
 #define ACTSMEDIACPPSTANDARDTEST_ACTS_CODEC_FORMAT_NDK_TEST_H
 
