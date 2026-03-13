@@ -87,7 +87,7 @@ public:
     int32_t ReleaseEnc();
     int32_t CalcuError();
 
-    void SetReadPath(const char* inpPath, uint32_t es[], uint32_t length);
+    void SetReadPath(const char* inpPath, uint32_t esData[], uint32_t length);
     void SetEosState(bool needSetEos);
     void SetSavePath(const char* outpPath);
     void ReRead();

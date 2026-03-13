@@ -803,10 +803,10 @@ void ADecEncNdkSample::OutputFuncEnc()
     }
 }
 
-void ADecEncNdkSample::SetReadPath(const char* inpPath, uint32_t es[], uint32_t length)
+void ADecEncNdkSample::SetReadPath(const char* inpPath, uint32_t esData[], uint32_t length)
 {
     inpFile = inpPath;
-    this->es = es;
+    es = esData;
     esLength = length;
 }
 
