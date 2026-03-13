@@ -3604,6 +3604,43 @@ export default function WindowLifecycle() {
       }
     });
 
+    /**
+     * @tc.name   testcreateWindowPromise_0100
+     * @tc.number testcreateWindowPromise_0100
+     * @tc.desc   验证TYPE_MAIN window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testcreateWindowPromise_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = "testcreateWindowPromise_0100";
+      console.log(caseName + " begin");
+      let config: window.Configuration = {
+        name: "testRestoreMainWindow_0300",
+        windowType: window.WindowType.TYPE_MAIN,
+        ctx: context,
+        decorEnabled:false,
+      };
+      try {
+        window.createWindow(config).then(async (data) => {
+          expect(true).assertFail();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err!.code === 801) {
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+        });
+      } catch (err) {
+        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done()
+      }
+    });
+
     
     
 
