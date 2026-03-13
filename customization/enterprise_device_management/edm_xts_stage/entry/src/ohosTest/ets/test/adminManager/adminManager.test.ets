@@ -107,6 +107,29 @@ export default function adminManagerTest() {
     })
 
     /**
+     * @tc.name   test_subscribeManagedEventSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_SUBSCRIBEMANAGEDEVENTSYNC_005
+     * @tc.desc   test subscribeManagedEventSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_subscribeManagedEventSync_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let events: Array<adminManager.ManagedEvent> = [];
+        adminManager.subscribeManagedEventSync(SELFWANT, events);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' ---test_subscribeManagedEventSync_005 error 9200008 is expected, actually catch: ' + error.code);
+        expect(error.code == 9200008).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_unsubscribeManagedEventSync_001
      * @tc.number SUB_CUSTOMIZATION_EDM_UNSUBSCRIBEMANAGEDEVENTSYNC_001
      * @tc.desc   test unsubscribeManagedEventSync method with unActive admin
@@ -180,6 +203,29 @@ export default function adminManagerTest() {
         adminManager.unsubscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
       } catch (error) {
         expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_unsubscribeManagedEventSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNSUBSCRIBEMANAGEDEVENTSYNC_005
+     * @tc.desc   test unsubscribeManagedEventSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_unsubscribeManagedEventSync_005", Level.LEVEL0, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let events: Array<adminManager.ManagedEvent> = [];
+        adminManager.unsubscribeManagedEventSync(SELFWANT, events);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' ---test_unsubscribeManagedEventSync_005 error 9200008 is expected, actually catch: ' + error.code);
+        expect(error.code == 9200008).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -288,6 +334,27 @@ export default function adminManagerTest() {
         let bundles: Array<string> = adminManager.getDelegatedBundleNames(SELFWANT, DELEGATED_POLICIES[0]);
         expect(bundles.length == 1).assertTrue();
         expect(bundles[0] == BUNDLENAME1).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_setDelegatedPolicies_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDELEGATEDPOLICIES_006
+     * @tc.desc   test setDelegatedPolicies method with invalid policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setDelegatedPolicies_006", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let policies: Array<string> = [];
+        adminManager.setDelegatedPolicies(SELFWANT, BUNDLENAME1, policies);
       } catch (error) {
         expect(false).assertTrue();
       } finally {

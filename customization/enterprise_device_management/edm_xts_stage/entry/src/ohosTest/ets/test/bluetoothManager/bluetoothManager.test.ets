@@ -236,6 +236,26 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_allowed_bluetooth_devices_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_BLUETOOTH_DEVICES_0700
+     * @tc.desc   test addallowedbluetoothdevices method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_add_allowed_bluetooth_devices_0700', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let deviceIds: Array<string>  = [];
+        bluetoothManager.addAllowedBluetoothDevices(SELFWANT, deviceIds);
+      } catch(error) {
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+
+    /**
      * @tc.name   test_get_allowed_bluetooth_devices_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_BLUETOOTH_DEVICES_0100
      * @tc.desc   test getAllowedBluetoothDevices method with normal admin
@@ -409,6 +429,27 @@ export default function bluetoothManagerTest() {
       try {
         let deviceIds: Array<string>  = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
         bluetoothManager.removeAllowedBluetoothDevices(SELFWANT,deviceIds);
+      } catch(error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_remove_allowed_bluetooth_devices_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_BLUETOOTH_DEVICES_0500
+     * @tc.desc   test removeAllowedBluetoothDevices method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_remove_allowed_bluetooth_devices_0500', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let deviceIds: Array<string>  = [];
+        bluetoothManager.removeAllowedBluetoothDevices(SELFWANT, deviceIds);
       } catch(error) {
         expect(false).assertTrue();
       } finally {
@@ -624,6 +665,27 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_disallowed_bluetooth_devices_0901
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_BLUETOOTH_DEVICES_0901
+     * @tc.desc   test adddisallowedbluetoothdevices method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_add_disallowed_bluetooth_devices_0901', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let deviceIds: Array<string>  = [];
+        bluetoothManager.addDisallowedBluetoothDevices(SELFWANT, deviceIds);
+      } catch(error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_get_disallowed_bluetooth_devices_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_BLUETOOTH_DEVICES_0100
      * @tc.desc   test getDisallowedBluetoothDevices method with normal admin
@@ -804,6 +866,27 @@ export default function bluetoothManagerTest() {
         bluetoothManager.removeDisallowedBluetoothDevices(SELFWANT,deviceIds);
         let ret2: Array<string> = bluetoothManager.getDisallowedBluetoothDevices(SELFWANT);
         expect(ret2.length == 0).assertTrue();
+      } catch(error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_remove_disallowed_bluetooth_devices_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_BLUETOOTH_DEVICES_0500
+     * @tc.desc   test removeDisallowedBluetoothDevices method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_remove_disallowed_bluetooth_devices_0500', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let deviceIds: Array<string>  = [];
+        bluetoothManager.removeDisallowedBluetoothDevices(SELFWANT, deviceIds);
       } catch(error) {
         expect(false).assertTrue();
       } finally {
@@ -1129,6 +1212,30 @@ export default function bluetoothManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_disallowed_bluetooth_protocols_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_BLUETOOTH_PROTOCOLS_0500
+     * @tc.desc   test adddisallowedbluetoothdevices method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_add_disallowed_bluetooth_protocols_0500', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let accountId: number = 100;
+        let protocols: Array<bluetoothManager.Protocol> = [];
+        bluetoothManager.addDisallowedBluetoothProtocols(SELFWANT, accountId, protocols);
+        expect(false).assertTrue();
+      } catch(error) {
+        console.info(' --- test_add_disallowed_bluetooth_protocols_0500 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_remove_disallowed_bluetooth_protocols_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_BLUETOOTH_PROTOCOLS_0100
      * @tc.desc   test removeDisallowedBluetoothProtocols method with unActive admin
@@ -1189,6 +1296,28 @@ export default function bluetoothManagerTest() {
         bluetoothManager.removeDisallowedBluetoothProtocols(null, accountId, protocols);
         expect(false).assertTrue();
       } catch(error) {
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_remove_disallowed_bluetooth_protocols_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_BLUETOOTH_PROTOCOLS_0400
+     * @tc.desc   test removeDisallowedBluetoothProtocols method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_remove_disallowed_bluetooth_protocols_0400', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let accountId: number = 100;
+        let protocols: Array<bluetoothManager.Protocol> = [];
+        bluetoothManager.removeDisallowedBluetoothProtocols(null, accountId, protocols);
+        expect(false).assertTrue();
+      } catch(error) {
+        console.info(' --- test_remove_disallowed_bluetooth_protocols_0400 error 401 is expected, actually catch: ' + error.code);
         expect(error.code == 401).assertTrue();
       }
       done();
