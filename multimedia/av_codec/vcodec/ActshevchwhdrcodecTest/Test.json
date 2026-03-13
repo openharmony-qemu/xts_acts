@@ -30,7 +30,9 @@
       "push": [
         "./resource/media/codec/video_decoder/1920_1080_10_30Mb.h264->/data/app/el2/100/base/com.example.ActshevchwhdrcodecTest/haps/entry_test/files/",
         "./resource/media/codec/video_decoder/h263_aac.mp4->/data/app/el2/100/base/com.example.ActshevchwhdrcodecTest/haps/entry_test/files/",
+        "./resource/media/codec/video_decoder/mpeg2.mp4->/data/app/el2/100/base/com.example.ActshevchwhdrcodecTest/haps/entry_test/files/",
         "./resource/media/codec/video_decoder/mpeg4_1280x720_30.mp4->/data/app/el2/100/base/com.example.ActshevchwhdrcodecTest/haps/entry_test/files/",
+        "./resource/media/codec/video_decoder/h264_mp3_960x544_30r.mp4->/data/app/el2/100/base/com.example.ActshevchwhdrcodecTest/haps/entry_test/files/",
         "./resource/media/codec/video_decoder/VID_720.mp4->/data/app/el2/100/base/com.example.ActshevchwhdrcodecTest/haps/entry_test/files/"
       ]
     }
