@@ -1294,5 +1294,67 @@ export default function ErrormangerTest() {
       }
     })
 
+    /**
+     * @tc.name   testErrorManger_2900
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2900
+     * @tc.desc   验证onLoopTimeOut传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let observer: errorManager.LoopObserver = {
+        onLoopTimeOut(undefined) {
+        }
+      };
+      try {
+        console.info("====>testErrorManger_2900 loopObserver start");
+        errorManager.on("loopObserver", 2000, observer)
+        console.info("====>testErrorManger_2900 loopObserver end 01");
+        errorManager.off("loopObserver");
+        console.info("====>testErrorManger_2900 loopObserver end 02");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_2900 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(false).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3000
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3000
+     * @tc.desc   验证onUnhandledException传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let observer: errorManager.ErrorObserver = {
+        onUnhandledException(undefined) {
+        },
+        onException(errorObj) {
+          console.log('onException, name: ', errorObj.name);
+          console.log('onException, message: ', errorObj.message);
+          if (typeof(errorObj.stack) === 'string') {
+            console.log('onException, stack: ', errorObj.stack);
+          }
+        }
+      };
+      let observerId = -1;
+      try {
+        console.info("====>testErrorManger_3000 error start");
+        observerId = errorManager.on('error', observer);
+        console.info("====>testErrorManger_3000 error end 01 " + observerId.toString());
+        errorManager.off('error', observerId);
+        console.info("====>testErrorManger_3000 error end 02");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3000 catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(false).assertTrue()
+        done();
+      }
+    })
+
   })
 }
