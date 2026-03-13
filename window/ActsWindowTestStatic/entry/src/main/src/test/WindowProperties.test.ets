@@ -807,6 +807,10 @@ export default function WindowPropertiesTest() {
             expect(properties.drawableRect.top).assertLargerOrEqual(0);
             expect(properties.drawableRect.width).assertLarger(0);
             expect(properties.drawableRect.height).assertLarger(0);
+            expect(properties.globalDisplayRect.left).assertLargerOrEqual(0);
+            expect(properties.globalDisplayRect.top).assertLargerOrEqual(0);
+            expect(properties.globalDisplayRect.width).assertLarger(0);
+            expect(properties.globalDisplayRect.height).assertLarger(0);
             expect(properties.isLayoutFullScreen).assertEqual(false);
             expect(properties.focusable).assertEqual(true);
             expect(properties.touchable).assertEqual(true);
@@ -1551,6 +1555,43 @@ export default function WindowPropertiesTest() {
         }
         })
 
+        /**
+        * @tc.number       testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.name         testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.desc         testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
+        it('testGetWindowStateSnapshotPromiseErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = "testGetWindowStateSnapshotPromiseErrCode1300002_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+        try {
+            let tempWnd: window.Window = await windowStage!.createSubWindow('testGetWindowStateSnapshotPromiseErrCode1300002_0100')
+            hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+            await Utils.msSleep(300);
+            expect(!!tempWnd).assertTrue();
+            await tempWnd.destroyWindow();
+            hilog.info(domain, tag, msgStr + 'window.destroy success');
+            await tempWnd.getWindowStateSnapshot();
+            hilog.info(domain, tag, msgStr + 'window after getWindowStateSnapshot');
+            expect(false).assertTrue();
+            done();
+        } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+            if (exception.code !== 801) {
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to getWindowStateSnapshot. Cause code:' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(1300002);
+            } else {
+            hilog.error(0x0000, '[ANI]',
+                msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(801);
+            }
+            done()
+        }
+        })
 
         /**
         * @tc.number       testSnapshotPromiseErrCode1300002_0100
