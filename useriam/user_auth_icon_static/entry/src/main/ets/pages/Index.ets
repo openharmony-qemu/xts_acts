@@ -36,7 +36,6 @@ struct Index {
   build() {
     Row() {
       Column() {
-        Text("authTrustLevel=-1")
         UserAuthIcon({
           authParam: this.authParam,
           widgetParam: this.widgetParam,

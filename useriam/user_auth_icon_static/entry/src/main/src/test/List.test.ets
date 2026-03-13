@@ -16,6 +16,5 @@
 import UserAuthIcon from "./UserAuthIconTestUnit.test"
 
 export default function testsuite() {
-
     UserAuthIcon();
 }
