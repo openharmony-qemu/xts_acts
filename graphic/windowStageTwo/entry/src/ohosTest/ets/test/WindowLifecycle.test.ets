@@ -3605,41 +3605,76 @@ export default function WindowLifecycle() {
     });
 
     /**
-     * @tc.name   testcreateWindowPromise_0100
-     * @tc.number testcreateWindowPromise_0100
-     * @tc.desc   验证TYPE_MAIN window
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testcreateWindowPromise_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
-      let caseName = "testcreateWindowPromise_0100";
-      console.log(caseName + " begin");
-      let config: window.Configuration = {
-        name: "testRestoreMainWindow_0300",
-        windowType: window.WindowType.TYPE_MAIN,
-        ctx: context,
-        decorEnabled:false,
-      };
-      try {
-        window.createWindow(config).then(async (data) => {
-          expect(true).assertFail();
-          done()
-        }).catch(async (err: BusinessError) => {
-          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-          if (err!.code === 801) {
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
-        });
-      } catch (err) {
-        console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-        expect(err.code).assertEqual(401);
-        done()
-      }
-    });
+* @tc.name testReleaseUIContent_0100
+* @tc.number testReleaseUIContent_0100
+* @tc.desc test releaseUIContent when windowStage destroy
+* @tc.type FUNCTION
+* @tc.size MEDIUMTEST
+* @tc.level LEVEL3
+*/
+it('testReleaseUIContent_0100', Level.LEVEL3, async (done: Function) => {
+let caseName = "testReleaseUIContent_0100";
+console.log(caseName + ' begin ');
+let windowStageStart:window.WindowStage = await startAbility(caseName,context);
+await sleep(300);
+await terminateAbility(caseName);
+await sleep(300);
+try {
+windowStageStart.releaseUIContent().then(() => {
+console.info(caseName+' Succeeded in releasing the content.');
+expect(false).assertTrue();
+done();
+}).catch((err: BusinessError) => {
+console.error(caseName + Failed to create the Window. Cause code: ${err.code}, message: ${err.message});
+expect(err.code).assertEqual(1300002);
+expect(err.message).assertEqual('This window state is abnormal.[window][loadContent]msg: The window is not created or destroyed.');
+done();
+});
+} catch (exception) {
+console.error(caseName+ Failed to release the content. Cause code: ${exception.code}, message: ${exception.message});
+expect(false).assertTrue();
+done();
+}
+
+})
+/**
+ * @tc.name   testReleaseUIContent_0200
+ * @tc.number testReleaseUIContent_0200
+ * @tc.desc   test releaseUIContent when windowStage backgound
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
+it('testReleaseUIContent_0200', Level.LEVEL3, async (done: Function) => {
+  let caseName = "testReleaseUIContent_0200";
+  console.log(caseName + ' begin ');
+  if(deviceType === '2in1'){
+    let windowStageStart:window.WindowStage = await startAbility(caseName,context);
+    await sleep(300);
+    let mainWindow = windowStageStart.getMainWindowSync();
+    await mainWindow.minimize();
+    await sleep(300);
+    try {
+      windowStageStart.releaseUIContent().then(async () => {
+        console.info(caseName+' Succeeded in releasing the content.');
+        await mainWindow.restore();
+        await terminateAbility(caseName);
+        done();
+      }).catch(async (err: BusinessError) => {
+        console.error(caseName + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
+        await terminateAbility(caseName);
+        expect(false).assertTrue();
+        done();
+      });
+    } catch (exception) {
+      console.error(caseName+` Failed to release the content. Cause code: ${exception.code}, message: ${exception.message}`);
+      expect(false).assertTrue();
+      done();
+    }
+  }else{
+    done();
+  }
+})
 
     
     
