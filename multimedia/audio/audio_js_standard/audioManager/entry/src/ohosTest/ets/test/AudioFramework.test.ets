@@ -8238,7 +8238,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       try {
         let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
         console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1600 Status: ${ret}`);
