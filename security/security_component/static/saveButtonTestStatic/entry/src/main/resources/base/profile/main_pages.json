@@ -2,6 +2,8 @@
   "src": [
     "pages/Index",
     "pages/saveButtonUserCancel",
-    "pages/saveButton"
+    "pages/saveButton",
+    "pages/saveDescription",
+    "pages/saveButtonScenario"
   ]
 }

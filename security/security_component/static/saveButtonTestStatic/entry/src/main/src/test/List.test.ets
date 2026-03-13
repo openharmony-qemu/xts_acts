@@ -15,8 +15,12 @@
  
 import saveComponentUserCancelStaticTest from './SaveComponentUserCancelStatic.test';
 import saveComponentStaticTest from './SaveComponentStatic.test';
+import saveComponentDescriptionStaticTest from './SaveComponentDescriptionStatic.test';
+import saveComponentScenarioStaticTest from './SaveComponentScenarioStatic.test';
 
 export default function testsuite() {
   saveComponentUserCancelStaticTest();
   saveComponentStaticTest();
+  saveComponentDescriptionStaticTest();
+  saveComponentScenarioStaticTest();
 }
