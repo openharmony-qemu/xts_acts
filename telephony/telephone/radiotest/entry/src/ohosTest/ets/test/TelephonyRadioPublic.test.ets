@@ -25,6 +25,7 @@ const SLOT_2: number = -1;
 const SLOT_3: number = 1000000;
 const SLOT_4: number = 0.0000001;
 const SLOT_5: null = null;
+const SLOT_6: undefined = undefined;
 
 let isSim0Active: Boolean = false;
 let isSim1Active: Boolean = false;
@@ -1321,6 +1322,569 @@ export default function telephonyRadioPublicTest() {
         console.info(`${caseName} failed`);
         ExpectTrue(err.code == 401);
         console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetOperatorName2100
+     * @tc.number SUB_Telephony_Radio_GetOperatorName_2100
+     * @tc.desc   Pass the parameter null to get the carrier name; promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetOperatorName2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetOperatorName2100';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getOperatorName(SLOT_6).then((data: string) => {
+          console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
+          ExpectTrue(false);
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+          ExpectTrue(err.code == 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} failed`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetOperatorName1100
+     * @tc.number SUB_Telephony_Radio_GetOperatorName_1100
+     * @tc.desc   Pass the parameter null to get the carrier name; callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetOperatorName1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetOperatorName1100';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getOperatorName(SLOT_6, (err: BusinessError, data: string) => {
+          if (err) {
+            console.info(`${caseName} failed, callback: err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 401);
+            console.info(`${caseName} test end`);
+            done();
+          }
+          else {
+            console.info(`${caseName} success, callback: data->${JSON.stringify(data)}`);
+            ExpectTrue(false);
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} failed`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioIsRadioOn1300
+     * @tc.number SUB_Telephony_Radio_IsRadioOn_1300
+     * @tc.desc   Check if the main card's Radio is turned on. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioIsRadioOn1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioIsRadioOn1300';
+      console.info(`${caseName} test start`);
+      try {
+        radio.isRadioOn(SLOT_6, (err: BusinessError, data: boolean) => {
+          if (err) {
+            console.info(`${caseName} failed, callback: err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 401);
+            console.info(`${caseName} test end`);
+            done();
+          } else {
+            console.info(`${caseName} success, callback: data->${JSON.stringify(data)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioIsNRSupported1100
+     * @tc.number SUB_Telephony_Radio_IsNRSupported_1100
+     * @tc.desc   Determine if the current device supports 5G (NR).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioIsNRSupported1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioIsNRSupported1100';
+      console.info(`${caseName} test start`);
+      try {
+        let result: boolean = radio.isNRSupported(SLOT_6);
+        console.info(`${caseName} success: "" + result`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} failed: "" + ${err}`);
+        ExpectTrue(true);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetSignalInformation1300
+     * @tc.number SUB_Telephony_Radio_GetSignalInformation_1300
+     * @tc.desc   Obtain a list of registered network signal strength information corresponding to the specified SIM card slot. Use Promise for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetSignalInformation1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetSignalInformation1300';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getSignalInformation(SLOT_6).then((data: Array<radio.SignalInformation>) => {
+          console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+          ExpectTrue(err.code == 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      }
+      catch (err) {
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Telephony_radio_getSignalInformationSync_2000
+     * @tc.number SUB_Telephony_radio_getSignalInformationSync_2000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Telephony_radio_getSignalInformationSync_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_Telephony_radio_getSignalInformationSync_2000';
+      let simState: sim.SimState = await sim.getSimStateSync(0);
+      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
+        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        let slotId = null;
+        radio.isRadioOn((err, data) => {
+          if (err) {
+            try {
+              console.info("SUB_Telephony_radio_getSignalInformationSync_2000 111  " +
+              radio.getSignalInformationSync(slotId));
+              expect(radio.getSignalInformationSync(slotId).length).assertEqual(0);
+              done();
+            } catch (err) {
+              console.info("SUB_Telephony_radio_getSignalInformationSync_2000 err " + JSON.stringify(err));
+              expect(true).assertFalse();
+              done();
+            }
+          } else {
+            try {
+              console.info("SUB_Telephony_radio_getSignalInformationSync_2000 " +
+              radio.getSignalInformationSync(slotId));
+              expect(radio.getSignalInformationSync(slotId).length == 0).assertTrue();
+              done();
+            } catch (err) {
+              console.info("SUB_Telephony_radio_getSignalInformationSync_2000 err " + JSON.stringify(err));
+              expect(true).assertFalse();
+              done();
+            }
+          }
+        });
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetSignalInformation1100
+     * @tc.number SUB_Telephony_Radio_GetSignalInformation_1100
+     * @tc.desc   Obtain a list of registered network signal strength information corresponding to the specified SIM card slot. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetSignalInformation1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetSignalInformation1100';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getSignalInformation(SLOT_6, (err: BusinessError, data: Array<radio.SignalInformation>) => {
+          if (err) {
+            console.info(`testGetSignalInformation0600 failed, callback: err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 401);
+            console.info(`${caseName} test end`);
+            done();
+          } else {
+            console.info(`testGetSignalInformation0600 success, callback: data->${JSON.stringify(data)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      }
+      catch (err) {
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetISOCountryCodeForNetworkPromise0900
+     * @tc.number SUB_Telephony_Radio_GetISOCountryCodeForNetwork_Promise_0900
+     * @tc.desc   slotId parameter input is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetISOCountryCodeForNetworkPromise0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetISOCountryCodeForNetworkPromise0900';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getISOCountryCodeForNetwork(SLOT_6).then((data: string) => {
+          console.info(`${caseName} failed, data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+          ExpectTrue(err.code == 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      }
+      catch (err) {
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetISOCountryCodeForNetworkAsync0900
+     * @tc.number SUB_Telephony_Radio_GetISOCountryCodeForNetwork_Async_0900
+     * @tc.desc   slotId parameter input is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetISOCountryCodeForNetworkAsync0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetISOCountryCodeForNetworkAsync0900';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getISOCountryCodeForNetwork(SLOT_5, (err: BusinessError, data: string) => {
+          if (err) {
+            console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 401);
+            console.info(`${caseName} test end`);
+            done();
+          }
+          else {
+            console.info(`${caseName} failed, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      }
+      catch (err) {
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetNetworkSelectionModePromise0900
+     * @tc.number SUB_Telephony_Radio_GetNetworkSelectionMode_Promise_0900
+     * @tc.desc   slotId parameter input is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetNetworkSelectionModePromise0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetNetworkSelectionModePromise0900';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getNetworkSelectionMode(SLOT_6).then((data: radio.NetworkSelectionMode) => {
+          console.info(`${caseName} failed, data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+          ExpectTrue(err.code == 401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      }
+      catch (err) {
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetNetworkSelectionModeAsync0900
+     * @tc.number SUB_Telephony_Radio_GetNetworkSelectionMode_Async_0900
+     * @tc.desc   slotId parameter input is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetNetworkSelectionModeAsync0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetNetworkSelectionModeAsync0900';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getNetworkSelectionMode(SLOT_6, (err: BusinessError, data: radio.NetworkSelectionMode) => {
+          if (err) {
+            console.info(`${caseName} success, err->${JSON.stringify(data)}`);
+            ExpectTrue(err.code == 401);
+            console.info(`${caseName} test end`);
+            done();
+          }
+          else {
+            console.info(`${caseName} failed, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      }
+      catch (err) {
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetNetworkState1200
+     * @tc.number SUB_Telephony_Radio_GetNetworkState_1200
+     * @tc.desc   Parameter null is used to obtain the network status; promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetNetworkState1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetNetworkState1200';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getNetworkState(SLOT_6).then((data: radio.NetworkState) => {
+          console.info(`${caseName} failed ,promise: data->${JSON.stringify(data)}`);
+          ExpectTrue(typeof data.longOperatorName === 'string'
+            && typeof data.shortOperatorName === 'string'
+            && typeof data.plmnNumeric === 'string'
+            && typeof data.isRoaming === 'boolean'
+            && typeof data.isCaActive === 'boolean'
+            && typeof data.isEmergency === 'boolean');
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} success, promise: err->${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} failed`);
+        ExpectTrue(false);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetNetworkState1100
+     * @tc.number SUB_Telephony_Radio_GetNetworkState_1100
+     * @tc.desc   Parameter null is used to obtain the network status; callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetNetworkState1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetNetworkState1100';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getNetworkState(SLOT_6, (err: BusinessError, data: radio.NetworkState) => {
+          if (err) {
+            console.info(`GetNetworkStateSlotIdCallback0400 success, callback: err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 401);
+            console.info(`${caseName} test end`);
+            done();
+          } else {
+            console.info(`GetNetworkStateSlotIdCallback0400 failed, callback: data->${JSON.stringify(data)}`);
+            ExpectTrue(false);
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} failed`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetRadioTech1300
+     * @tc.number SUB_Telephony_Radio_GetRadioTech_1300
+     * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetRadioTech1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetRadioTech1300';
+      console.info(`${caseName} test start`);
+      try {
+        let data = await radio.getRadioTech(SLOT_6);
+        console.info(`${caseName} success, Promise: data->${JSON.stringify(data)}`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} failed, Promise: err->${err}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetRadioTech1400
+     * @tc.number SUB_Telephony_Radio_GetRadioTech_1400
+     * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyRadioGetRadioTech1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetRadioTech1400';
+      console.info(`${caseName} test start`);
+      try {
+        let data = await radio.getRadioTech(SLOT_6);
+        console.info(`${caseName} success, Promise: data->${JSON.stringify(data)}`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      } catch (err) {
+        console.info(`${caseName} failed, Promise: err->${err}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Telephony_radio_getRadioTechSync_1500
+     * @tc.number SUB_Telephony_radio_getRadioTechSync_1500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Telephony_radio_getRadioTechSync_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      try {
+        let slotId = undefined;
+        console.info("SUB_Telephony_radio_getRadioTechSync_1500 " + radio.getRadioTechSync(slotId));
+        expect(radio.getRadioTechSync(slotId).psRadioTech == 0).assertTrue();
+        done();
+      } catch (err) {
+        console.info("SUB_Telephony_radio_getRadioTechSync_1500 err " + JSON.stringify(err));
+        expect(err !== null).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyRadioGetRadioTech1100
+     * @tc.number SUB_Telephony_Radio_GetRadioTech_1100
+     * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Using callback for asynchronous callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyRadioGetRadioTech1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyRadioGetRadioTech1100';
+      console.info(`${caseName} test start`);
+      try {
+        radio.getRadioTech(SLOT_6, (err: BusinessError, data: radio.NetworkRadioTech) => {
+          if (err) {
+            console.info(`${caseName} failed, callback: err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 401);
+            console.info(`${caseName} test end`);
+            done();
+          } else {
+            console.info(`${caseName} success, callback: data->${JSON.stringify(data)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      }
+      catch (err) {
+        console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+        ExpectTrue(err.code == 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Telephony_radio_getRadioTechSync_0100
+     * @tc.number SUB_Telephony_radio_getRadioTechSync_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Telephony_radio_getRadioTechSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      try {
+        let slotId = null;
+        console.info("SUB_Telephony_radio_getRadioTechSync_0100 " + radio.getRadioTechSync(slotId));
+        expect(radio.getRadioTechSync(slotId).psRadioTech == 0).assertTrue();
+        done();
+      } catch (err) {
+        console.info("SUB_Telephony_radio_getRadioTechSync_0100 err " + JSON.stringify(err));
+        expect(err !== null).assertTrue();
         done();
       }
     });
