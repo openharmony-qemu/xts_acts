@@ -79,6 +79,8 @@ import RdbStoreGetModifyTimeErrTest from "./RdbStoreGetModifyTimeErr.test";
 import rdbStorePredicatesParamErrTest from "./RdbStorePredicatesParamErr.test";
 import rdbStoreAttachErrorTest from "./RdbStoreAttachError.test";
 
+import RdbStoreArkGetRdbStoreSyncTest from "./RdbStoreArkGetRdbStoreSyncEts.test";
+
 export default function testsuite() {
   RelationStoreRdbStoreTest();
   RelationalStoreEnumTest();
@@ -161,4 +163,6 @@ export default function testsuite() {
   RdbStoreGetModifyTimeErrTest();
   rdbStorePredicatesParamErrTest();
   rdbStoreAttachErrorTest();
+
+  RdbStoreArkGetRdbStoreSyncTest();
 }
