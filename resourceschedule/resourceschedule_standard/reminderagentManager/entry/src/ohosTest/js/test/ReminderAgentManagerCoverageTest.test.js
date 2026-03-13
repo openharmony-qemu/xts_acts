@@ -651,7 +651,7 @@ export default function ReminderAgentManagerCoverageTest() {
         })
 
         /**
-         * @tc.name     publishReminder_promise_snoozeSlotType_002
+         * @tc.name   publishReminder_promise_snoozeSlotType_002
          * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_PUBLISHREMINDER_PROMISE_SNOOZESLOTTYPE_002
          * @tc.desc   test publishReminder promise with snoozeSlotType SOCIAL_COMMUNICATION.
          * @tc.type   FUNCTION
@@ -682,7 +682,7 @@ export default function ReminderAgentManagerCoverageTest() {
 
         /**
          * @tc.name   publishReminder_promise_snoozeSlotType_003
-         * * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_PUBLISHREMINDER_PROMISE_SNOOZESLOTTYPE_003
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_PUBLISHREMINDER_PROMISE_SNOOZESLOTTYPE_003
          * @tc.desc   test publishReminder promise with snoozeSlotType SERVICE_INFORMATION.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1084,7 +1084,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 reminderAgent.publishReminder(null, (err, reminderId) => {
                     if (err) {
                         console.info('publishReminder_callback_null_001 callback err.code is :' + err.code);
-                        expect(err.code == 401).assertTrue;
+                        expect(err.code == 401).assertTrue();
                         done();
                     } else {
                         console.info('publishReminder_callback_null_001 callback reminderId = ' + reminderId);
@@ -1093,7 +1093,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 })
             } catch (error) {
                 console.log("publishReminder_callback_null_001 publishReminder error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1112,7 +1112,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 reminderAgent.publishReminder(undefined, (err, reminderId) => {
                     if (err) {
                         console.info('publishReminder_callback_undefined_001 callback err.code is :' + err.code);
-                        expect(err.code == 401).assertTrue;
+                        expect(err.code == 401).assertTrue();
                         done();
                     } else {
                         console.info('publishReminder_callback_undefined_001 callback reminderId = ' + reminderId);
@@ -1121,7 +1121,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 })
             } catch (error) {
                 console.log("publishReminder_callback_undefined_001 publishReminder error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1142,12 +1142,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('publishReminder_promise_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.log("publishReminder_promise_null_001 publishReminder error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1168,12 +1168,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('publishReminder_promise_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.log("publishReminder_promise_undefined_001 publishReminder error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1192,7 +1192,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 reminderAgent.cancelReminder(null, (err) => {
                     if (err) {
                         console.info('cancelReminder_callback_null_001 callback err.code is :' + err.code);
-                        expect(err.code == 401).assertTrue;
+                        expect(err.code == 401).assertTrue();
                         done();
                     } else {
                         console.info('cancelReminder_callback_null_001 callback success');
@@ -1201,7 +1201,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 });
             } catch (error) {
                 console.info("cancelReminder_callback_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1229,7 +1229,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 });
             } catch (error) {
                 console.info("cancelReminder_callback_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1250,12 +1250,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('cancelReminder_promise_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("cancelReminder_promise_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1276,12 +1276,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('cancelReminder_promise_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("cancelReminder_promise_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1300,7 +1300,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 reminderAgent.addNotificationSlot(null, (err) => {
                     if (err) {
                         console.info('addNotificationSlot_callback_null_001 callback err.code is :' + err.code);
-                        expect(err.code == 401).assertTrue;
+                        expect(err.code == 401).assertTrue();
                         done();
                     } else {
                         console.info('addNotificationSlot_callback_null_001 callback success');
@@ -1309,7 +1309,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 });
             } catch (error) {
                 console.info("addNotificationSlot_callback_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1328,7 +1328,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 reminderAgent.addNotificationSlot(undefined, (err) => {
                     if (err) {
                         console.info('addNotificationSlot_callback_undefined_001 callback err.code is :' + err.code);
-                        expect(err.code == 401).assertTrue;
+                        expect(err.code == 401).assertTrue();
                         done();
                     } else {
                         console.info('addNotificationSlot_callback_undefined_001 callback success');
@@ -1337,7 +1337,7 @@ export default function ReminderAgentManagerCoverageTest() {
                 });
             } catch (error) {
                 console.info("addNotificationSlot_callback_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1358,12 +1358,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('addNotificationSlot_promise_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("addNotificationSlot_promise_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1384,12 +1384,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('addNotificationSlot_promise_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("addNotificationSlot_promise_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1411,12 +1411,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('addExcludeDate_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("addExcludeDate_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1438,12 +1438,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('addExcludeDate_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("addExcludeDate_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1464,12 +1464,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('addExcludeDate_date_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("addExcludeDate_date_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1490,12 +1490,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('addExcludeDate_date_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("addExcludeDate_date_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1516,12 +1516,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('deleteExcludeDates_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("deleteExcludeDates_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1542,12 +1542,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('deleteExcludeDates_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("deleteExcludeDates_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1568,12 +1568,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('getExcludeDates_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("getExcludeDates_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1594,12 +1594,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('getExcludeDates_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("getExcludeDates_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1620,12 +1620,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('cancelReminderOnDisplay_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("cancelReminderOnDisplay_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1646,12 +1646,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('cancelReminderOnDisplay_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("cancelReminderOnDisplay_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1676,12 +1676,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('updateReminder_reminderId_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("updateReminder_reminderId_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1706,12 +1706,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('updateReminder_reminderId_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("updateReminder_reminderId_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1732,12 +1732,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('updateReminder_reminderReq_null_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("updateReminder_reminderReq_null_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
@@ -1758,12 +1758,12 @@ export default function ReminderAgentManagerCoverageTest() {
                     done();
                 }).catch((err) => {
                     console.info('updateReminder_reminderReq_undefined_001 promise err.code is :' + err.code);
-                    expect(err.code == 401).assertTrue;
+                    expect(err.code == 401).assertTrue();
                     done();
                 });
             } catch (error) {
                 console.info("updateReminder_reminderReq_undefined_001 error.code:" + error.code);
-                expect(error.code == 401).assertTrue;
+                expect(error.code == 401).assertTrue();
                 done();
             }
         })
