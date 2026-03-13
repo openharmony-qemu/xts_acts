@@ -722,7 +722,6 @@ export default function FileShare_test() {
         expect(fileShare.PolicyErrorCode.PERMISSION_NOT_PERSISTED === 4).assertTrue();
         done(); 
       } catch (e) {
-        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_005 has failed for ' + e.message + ", err code: " + e.code);
         if(e.code == 801){
           expect(e.message == "The device doesn't support this api").assertTrue();
