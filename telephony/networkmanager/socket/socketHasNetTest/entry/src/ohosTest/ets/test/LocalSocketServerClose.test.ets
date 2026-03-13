@@ -636,7 +636,7 @@ export default function LocalSocketServerCloseTest() {
             console.info(`options `+JSON.stringify(options));
             ExpectTrue(options.receiveBufferSize != null);
             ExpectTrue(options.sendBufferSize != null);
-            ExpectTrue(options.socketTimeout != null);
+            ExpectTrue(options.socketTimeout == undefined);
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
@@ -692,7 +692,7 @@ export default function LocalSocketServerCloseTest() {
             ExpectTrue(options.receiveBufferSize != null);
             ExpectTrue(options.sendBufferSize != null);
             ExpectTrue(options.reuseAddress != null);
-            ExpectTrue(options.socketTimeout == null);
+            ExpectTrue(options.socketTimeout == undefined);
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
@@ -715,7 +715,7 @@ export default function LocalSocketServerCloseTest() {
             ExpectTrue(options.receiveBufferSize != null);
             ExpectTrue(options.sendBufferSize != null);
             ExpectTrue(options.reuseAddress != null);
-            ExpectTrue(options.socketTimeout == null);
+            ExpectTrue(options.socketTimeout == undefined);
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
@@ -784,7 +784,7 @@ export default function LocalSocketServerCloseTest() {
             ExpectTrue(options.receiveBufferSize != null);
             ExpectTrue(options.sendBufferSize != null);
             ExpectTrue(options.reuseAddress != null);
-            ExpectTrue(options.socketTimeout == null);
+            ExpectTrue(options.socketTimeout == undefined);
           }).catch((err: Object) => {
             console.error(`getExtraOptions fail: ` + JSON.stringify(err));
           });
