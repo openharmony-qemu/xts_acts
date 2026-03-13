@@ -2294,6 +2294,36 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
+     * @tc.number SUB_MULTIMEIDA_AVFORMAT_SETUINT_0001
+     * @tc.name   testOhAvFormatSetUint001
+     * @tc.desc   test OH_AVFormat_SetUintValue
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvFormatSetUint001', Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.avFormatSetUint("test", 123);
+      console.info(`testOhAvFormatSetUint001 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_AVFORMAT_SETUINT_0002
+     * @tc.name   testOhAvFormatSetUint002
+     * @tc.desc   test OH_AVFormat_SetUintValue
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvFormatSetUint002', Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.avFormatSetUintWithBull("test", 123);
+      console.info(`testOhAvFormatSetUint002 result = ${result}`);
+      expect(result).assertEqual(1);
+      done();
+    });
+
+    /**
      * @tc.name   testOhAVPlayerOnInfoTypeEnum001
      * @tc.number SUB_MULTIMEIDA_AVPLAYER_ONINFOTYPEENUM_0100
      * @tc.desc   test OH_AVPlayer_OnInfoTypeEnum, input null avplayer
