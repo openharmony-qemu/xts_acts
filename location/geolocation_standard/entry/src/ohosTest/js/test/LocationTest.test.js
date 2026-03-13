@@ -2153,52 +2153,52 @@ export default function geolocationTest_geo3() {
     })
 
     /**
-     * @tc.name   SUB_HSS_SendCommand_0300
-     * @tc.number SUB_HSS_SendCommand_0300
+     * @tc.name   SUB_HSS_SendCommand_0500
+     * @tc.number SUB_HSS_SendCommand_0500
      * @tc.desc   Test sendCommand api .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_HSS_SendCommand_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_HSS_SendCommand_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let requestInfo = null;
         try {
             await geolocation.sendCommand(requestInfo, (err, result) => {
                 if (err) {
-                    console.info('1sendcommand callback_0300 err:' + JSON.stringify(err));
+                    console.info('1sendcommand callback_0500 err:' + JSON.stringify(err));
                     expect(true).assertEqual(JSON.stringify(err) != null);
                     done();
                 }
-                console.info('sendcommand callback_0300 result:' + JSON.stringify(result));
+                console.info('sendcommand callback_0500 result:' + JSON.stringify(result));
             });
         } catch (error) {
-            console.info('2sendcommand callback_0300 err:' + JSON.stringify(error));
+            console.info('2sendcommand callback_0500 err:' + JSON.stringify(error));
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         done();
     })
 
     /**
-     * @tc.name   SUB_HSS_SendCommand_0400
-     * @tc.number SUB_HSS_SendCommand_0400
+     * @tc.name   SUB_HSS_SendCommand_0600
+     * @tc.number SUB_HSS_SendCommand_0600
      * @tc.desc   Test sendCommand1 api .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_HSS_SendCommand_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_HSS_SendCommand_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let requestInfo = null;
         try {
             geolocation.sendCommand(requestInfo).then((result) => {
-                console.info('sendCommand promise_0400 result:' + result);
+                console.info('sendCommand promise_0600 result:' + result);
                 done();
             }).catch(error => {
-                console.info('1sendcommand promise_0400 err:' + JSON.stringify(error));
+                console.info('1sendcommand promise_0600 err:' + JSON.stringify(error));
                 expect(true).assertEqual(JSON.stringify(error) != null);
                 done();
             })
         } catch (error) {
-            console.info('2sendcommand promise_0400 err:' + JSON.stringify(error));
+            console.info('2sendcommand promise_0600 err:' + JSON.stringify(error));
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         done();
