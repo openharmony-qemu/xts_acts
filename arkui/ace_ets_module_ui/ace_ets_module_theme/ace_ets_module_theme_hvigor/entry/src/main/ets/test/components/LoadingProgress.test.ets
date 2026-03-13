@@ -69,7 +69,7 @@ export default function loadingProgressThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsLoadingProgressThemeColors_0100
+     * @tc.name   `ActsLoadingProgressThemeColors_0100`
      * @tc.number ActsloadingProgressThemeColors_0100
      * @tc.desc   Check system colors values of TextClock component
      * @tc.type   FUNCTION
@@ -87,7 +87,7 @@ export default function loadingProgressThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.name   ActsLoadingProgressThemeColors_0200
+     * @tc.name   `ActsLoadingProgressThemeColors_0200`
      * @tc.number ActsLoadingProgressThemeColors_0200
      * @tc.desc   Check custom colors values of TextClock component
      * @tc.type   FUNCTION
@@ -106,7 +106,7 @@ export default function loadingProgressThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.name   ActsLoadingProgressThemeColors_0300
+     * @tc.name   `ActsLoadingProgressThemeColors_0300`
      * @tc.number ActsLoadingProgressThemeColors_0300
      * @tc.desc   Check custom colors values of TextClock component
      * @tc.type   FUNCTION

@@ -15,6 +15,7 @@
 
 import certManager from '@ohos.security.certManager';
 import { BusinessError } from '@ohos.base';
+import { systemParameterEnhance } from '@kit.BasicServicesKit';
 import buffer from '@ohos.buffer';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as signVerifyPromise from './utils/signAndVerify/signVerifyPromise';
@@ -757,7 +758,7 @@ export default function api16CertFuncTestTwoUnit() {
       console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0015: started ");
       let uir ='oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA;u=0;a=20010044';
       const context :common.Context = GlobalContext.getContext();
-      if (deviceInfo.deviceType != '2in1') {
+      if ((deviceInfo.deviceType != '2in1')&&(systemParameterEnhance.getSync("const.certManager.enableOpenCACertDialog","false")!="true")) {
         let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
         try {
           await certManagerDialog.openUninstallCertificateDialog(context, certificateType, uir)
@@ -880,7 +881,7 @@ export default function api16CertFuncTestTwoUnit() {
       let property: certManagerDialog.CertificateDialogProperty = {
         showInstallButton: false /* 不显示安装按钮 */
       };
-      if (deviceInfo.deviceType != '2in1') {
+      if ((deviceInfo.deviceType != '2in1')&&(systemParameterEnhance.getSync("const.certManager.enableOpenCACertDialog","false")!="true")) {
         try {
           await certManagerDialog.openCertificateDetailDialog(context, caCert, property)
           expect(null).assertFail();
@@ -932,7 +933,7 @@ export default function api16CertFuncTestTwoUnit() {
       console.log("SUB_Security_CertManger_OpenUninstallCertDialogCertJsApi_Func_0100: started ");
       let uir ='oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA;u=0;a=20010044';
       const context :common.Context = GlobalContext.getContext();
-      if (deviceInfo.deviceType != '2in1') {
+      if ((deviceInfo.deviceType != '2in1')&&(systemParameterEnhance.getSync("const.certManager.enableOpenCACertDialog","false")!="true")) {
         let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
         try {
           await certManagerDialog.openUninstallCertificateDialog(null, certificateType, uir)

@@ -21,7 +21,7 @@ import CommonFunc from '../../../MainAbility/common/Common';
 const SLEEP_TIME = 1000;
 
 export default function nestedScroll_CombinedTest() {
-  describe('nestedScroll', () => {
+  describe('nestedScrollAdapt001', () => {
     beforeEach(async (done: Function) => {
       console.info('nestedScroll beforeEach start');
       let options: router.RouterOptions = {

@@ -807,7 +807,8 @@ export default function observerManagerCallStateTest() {
       try {
         let callback = (value: observer.CCallStateInfo) => {
           console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' + JSON.stringify(value.teleNumber));
-          ExpectTrue(value !== null);
+          expect(typeof value.state === undefined).assertFalse();
+          expect(typeof value.teleNumber === undefined).assertFalse();
           observer.offCCallStateChange();
           done();
         }

@@ -325,9 +325,15 @@ export default function smsTextPublic() {
       hilog.info(domain, tag, `${caseName} test start`);
       try {
         let result = sms.hasSmsCapability();
-        hilog.info(domain, tag, `${caseName} : ${JSON.stringify(result)}`);
-        expect(result).assertEqual(true)
-        done();
+        if(result){
+          hilog.info(domain, tag, `${caseName} : ${JSON.stringify(result)}`);
+          expect(result).assertEqual(true)
+          done();
+        } else {
+          hilog.info(domain, tag, `${caseName} : ${JSON.stringify(result)}`);
+          expect().assertFail();
+          done();
+        }
       } catch (err) {
         hilog.info(domain, tag, `${caseName} err:${err}`);
         expect().assertFail();

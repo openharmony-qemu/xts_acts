@@ -79,7 +79,7 @@ export default function counterThemeTest() {
       }
     })
     /**
-     * @tc.name   ActsCounterThemeColors_0100
+     * @tc.name   `ActsCounterThemeColors_0100`
      * @tc.number ActsCounterThemeColors_0100
      * @tc.desc   Check counter system colors
      * @tc.type   FUNCTION
@@ -96,7 +96,7 @@ export default function counterThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.name   ActsCounterThemeColors_0200
+     * @tc.name   `ActsCounterThemeColors_0200`
      * @tc.number ActsCounterThemeColors_0200
      * @tc.desc   Check counter theme colors
      * @tc.type   FUNCTION
@@ -114,7 +114,7 @@ export default function counterThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.name   ActsCounterThemeColors_0300
+     * @tc.name   `ActsCounterThemeColors_0300`
      * @tc.number ActsCounterThemeColors_0300
      * @tc.desc   Check counter theme colors after change theme
      * @tc.type   FUNCTION
@@ -134,7 +134,7 @@ export default function counterThemeTest() {
     })
 
     /**
-     * @tc.name   ActsCounterThemeColors_0400
+     * @tc.name   `ActsCounterThemeColors_0400`
      * @tc.number ActsCounterThemeColors_0400
      * @tc.desc   Check counter system colors after reset theme
      * @tc.type   FUNCTION

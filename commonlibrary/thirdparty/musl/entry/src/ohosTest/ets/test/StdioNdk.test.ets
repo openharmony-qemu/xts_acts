@@ -30,9 +30,9 @@ export default function stdioNdkTest() {
      * @tc.desc   test vsprintfChk
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioVsprintfChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioVsprintfChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdio.vsprintfChk();
       expect(data).assertEqual(0);
       done();
@@ -43,9 +43,9 @@ export default function stdioNdkTest() {
      * @tc.desc   test setbuf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioSetbuf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioSetbuf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdio.setbuf();
       expect(data).assertEqual(0);
       done();
@@ -57,9 +57,9 @@ export default function stdioNdkTest() {
      * @tc.desc   test setbuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioSetbuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioSetbuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdio.setbuffer();
       expect(data).assertEqual(0);
       done();
@@ -71,9 +71,9 @@ export default function stdioNdkTest() {
      * @tc.desc   test setlinebuf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioSetlinebuf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioSetlinebuf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stdio.setlinebuf();
       expect(data).assertEqual(0);
       done();
@@ -85,9 +85,9 @@ export default function stdioNdkTest() {
      * @tc.desc   test feof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStdioFEof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStdioFEof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(stdio.feof()).assertEqual(0);
       done()
     });

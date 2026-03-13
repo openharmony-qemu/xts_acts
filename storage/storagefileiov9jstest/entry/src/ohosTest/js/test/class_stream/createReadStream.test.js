@@ -396,14 +396,14 @@ export default function fscreateReadStream() {
     });
 
     /**
-     * @tc.name   fileIO_test_create_ReadStream_014
+     * @tc.name   fileIO_test_create_ReadStream_014Adapt001
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1400
      * @tc.desc   Test the createWriteStream() interface of class Stream.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('fileIO_test_create_ReadStream_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+    it('fileIO_test_create_ReadStream_014Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_014');
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 

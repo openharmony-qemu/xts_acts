@@ -77,15 +77,15 @@ export default function taskPoolAsyncRunnerErrorTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1001
-     * @tc.name taskPoolAsyncRunnerErrorTest0100
-     * @tc.desc test Common tasks are exceptional
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1001
+      * @tc.name taskPoolAsyncRunnerErrorTest0100
+      * @tc.desc test Common tasks are exceptional
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0100: start`);
         let Count1: number = 0;
@@ -121,15 +121,15 @@ export default function taskPoolAsyncRunnerErrorTest() {
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1002
-     * @tc.name taskPoolAsyncRunnerErrorTest0200
-     * @tc.desc test GenericsTask throws exceptions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1002
+      * @tc.name taskPoolAsyncRunnerErrorTest0200
+      * @tc.desc test GenericsTask throws exceptions
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info(`${tag} taskPoolAsyncRunnerErrorTest0200: start`);
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -165,15 +165,15 @@ export default function taskPoolAsyncRunnerErrorTest() {
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1003
-     * @tc.name taskPoolAsyncRunnerErrorTest0300
-     * @tc.desc test OnEnqueued callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1003
+      * @tc.name taskPoolAsyncRunnerErrorTest0300
+      * @tc.desc test OnEnqueued callback
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0300: start`);
         let Count1: number = 0;
@@ -229,15 +229,15 @@ export default function taskPoolAsyncRunnerErrorTest() {
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1004
-     * @tc.name taskPoolAsyncRunnerErrorTest0400
-     * @tc.desc test OnStartExecution callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1004
+      * @tc.name taskPoolAsyncRunnerErrorTest0400
+      * @tc.desc test OnStartExecution callback
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0400: start`);
         let Count1: number = 0;
@@ -299,15 +299,15 @@ export default function taskPoolAsyncRunnerErrorTest() {
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1005
-     * @tc.name taskPoolAsyncRunnerErrorTest0500
-     * @tc.desc test OnExecutionFailed callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_TEST_1005
+      * @tc.name taskPoolAsyncRunnerErrorTest0500
+      * @tc.desc test OnExecutionFailed callback
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerErrorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log(`${tag} taskPoolAsyncRunnerErrorTest0500: start`);
         let Count1: number = 0;

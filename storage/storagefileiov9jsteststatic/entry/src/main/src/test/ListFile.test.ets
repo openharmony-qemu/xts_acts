@@ -2185,7 +2185,7 @@ export default function fileIOListfile() {
     /**
      * @tc.name   fileIO_test_listfile_async_static_038
      * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3800
-     * @tc.desc   Test listFile() interfaces. Promise. Filter excludeMedia as false.
+     * @tc.desc   Test listFile() interfaces. Promise. Filter excludeMedia as true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2207,7 +2207,7 @@ export default function fileIOListfile() {
           displayName: ["*listfile*"],
           fileSizeOver: 0,
           lastModifiedAfter: time - 3,
-          excludeMedia: false
+          excludeMedia: true
         };
         let dirents = await fs.listFile(dpath, {
           listNum: 0,
@@ -2219,6 +2219,405 @@ export default function fileIOListfile() {
         done();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_038 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_039
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3900
+     * @tc.desc   Test listFile() interfaces. Callback. First parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        fs.listFile("", (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_039 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_039 end error ' + e.message);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_040
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4000
+     * @tc.desc   Test listFile() interfaces. Callback. Filter suffix as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_040');
+      let fpath1 = dpath + '/listfile_async_031.txt';
+      let fpath2 = dpath + '/listfile_async_031.doc';
+      let fpath3 = dpath + '/listfile_async_031.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_040 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_040 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_041
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4100
+     * @tc.desc   Test listFile() interfaces. Callback. Filter suffix as non-empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_041');
+      let fpath1 = dpath + '/listfile_async_032.txt';
+      let fpath2 = dpath + '/listfile_async_032.doc';
+      let fpath3 = dpath + '/listfile_async_032.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc"],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_041 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length == 2).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_041 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_042
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4200
+     * @tc.desc   Test listFile() interfaces. Callback. Filter suffix as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_042');
+      let fpath1 = dpath + '/listfile_async_033.txt';
+      let fpath2 = dpath + '/listfile_async_033.doc';
+      let fpath3 = dpath + '/listfile_async_033.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [""],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_042 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_042 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_043
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4300
+     * @tc.desc   Test listFile() interfaces. Callback. Filter displayName as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_043');
+      let fpath1 = dpath + '/listfile_async_034.txt';
+      let fpath2 = dpath + '/listfile_async_034.doc';
+      let fpath3 = dpath + '/listfile_async_034.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: [],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_043 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_043 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_044
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4400
+     * @tc.desc   Test listFile() interfaces. Callback. Filter displayName as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_044');
+      let fpath1 = dpath + '/listfile_async_035.txt';
+      let fpath2 = dpath + '/listfile_async_035.doc';
+      let fpath3 = dpath + '/listfile_async_035.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: [""],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_044 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length === 0).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_044 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_045
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4500
+     * @tc.desc   Test listFile() interfaces. Callback. Filter mimeType as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_045');
+      let fpath1 = dpath + '/listfile_async_036.txt';
+      let fpath2 = dpath + '/listfile_async_036.doc';
+      let fpath3 = dpath + '/listfile_async_036.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt"],
+          mimeType: [],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_045 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length === 1).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_045 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_046
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4600
+     * @tc.desc   Test listFile() interfaces. Callback. Filter mimeType as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_046');
+      let fpath1 = dpath + '/listfile_async_037.txt';
+      let fpath2 = dpath + '/listfile_async_037.doc';
+      let fpath3 = dpath + '/listfile_async_037.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          mimeType: [""],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_046 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length === 3).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_046 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_047
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4700
+     * @tc.desc   Test listFile() interfaces. Callback. Filter excludeMedia as true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_047');
+      let fpath1 = dpath + '/listfile_async_038.txt';
+      let fpath2 = dpath + '/listfile_async_038.doc';
+      let fpath3 = dpath + '/listfile_async_038.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3,
+          excludeMedia: true
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_047 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length === 3).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_047 end error' + JSON.stringify(e));
         expect(false).assertTrue();
         done();
       }

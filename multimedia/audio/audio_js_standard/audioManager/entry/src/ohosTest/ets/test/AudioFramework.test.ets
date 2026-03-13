@@ -1506,6 +1506,134 @@ export default function audioFramework() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_2900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_2900
+     * @tc.desc   Setvol to 14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      audioManager.setVolume(audio.AudioVolumeType.VOICE_CALL, highVol, (err) => {
+        if (err) {
+          console.error(`${TagFrmwk}: failed to set volume: Callback: ENAME :  ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwk}: callback : ENAME :  VOICE_CALL setVolume successful `);
+          audioManager.getVolume(audio.AudioVolumeType.MEDIA, (err, value) => {
+            if (err) {
+              console.error(`${TagFrmwk}: callback : VOICE_CALL: ENAME : Error ${err.message}`);
+              expect(false).assertTrue();
+            } else if (value == highVol) {
+              console.info(`${TagFrmwk}: callback : VOICE_CALL getVolume: ENAME : PASS :${value}`);
+            } else {
+              console.info(`${TagFrmwk}: callback : VOICE_CALL getVolume: ENAME : FAIL :${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3000
+     * @tc.desc   Setvol to 14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      audioManager.setVolume(audio.AudioVolumeType.ALARM, highVol, (err) => {
+        if (err) {
+          console.error(`${TagFrmwk}: failed to set volume: Callback: ENAME :  ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwk}: callback : ENAME :  ALARM setVolume successful `);
+          audioManager.getVolume(audio.AudioVolumeType.MEDIA, (err, value) => {
+            if (err) {
+              console.error(`${TagFrmwk}: callback : ALARM: ENAME : Error ${err.message}`);
+              expect(false).assertTrue();
+            } else if (value == highVol) {
+              console.info(`${TagFrmwk}: callback : ALARM getVolume: ENAME : PASS :${value}`);
+            } else {
+              console.info(`${TagFrmwk}: callback : ALARM getVolume: ENAME : FAIL :${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3100
+     * @tc.desc   Setvol to 14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      audioManager.setVolume(audio.AudioVolumeType.ACCESSIBILITY, highVol, (err) => {
+        if (err) {
+          console.error(`${TagFrmwk}: failed to set volume: Callback: ENAME :  ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwk}: callback : ENAME :  ACCESSIBILITY setVolume successful `);
+          audioManager.getVolume(audio.AudioVolumeType.MEDIA, (err, value) => {
+            if (err) {
+              console.error(`${TagFrmwk}: callback : ACCESSIBILITY: ENAME : Error ${err.message}`);
+              expect(false).assertTrue();
+            } else if (value == highVol) {
+              console.info(`${TagFrmwk}: callback : ACCESSIBILITY getVolume: ENAME : PASS :${value}`);
+            } else {
+              console.info(`${TagFrmwk}: callback : ACCESSIBILITY getVolume: ENAME : FAIL :${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3200
+     * @tc.desc   Setvol to 14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_SETVOLUME_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      audioManager.setVolume(audio.AudioVolumeType.VOICE_ASSISTANT, highVol, (err) => {
+        if (err) {
+          console.error(`${TagFrmwk}: failed to set volume: Callback: ENAME :  ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwk}: callback : ENAME :  VOICE_ASSISTANT setVolume successful `);
+          audioManager.getVolume(audio.AudioVolumeType.MEDIA, (err, value) => {
+            if (err) {
+              console.error(`${TagFrmwk}: callback : VOICE_ASSISTANT: ENAME : Error ${err.message}`);
+              expect(false).assertTrue();
+            } else if (value == highVol) {
+              console.info(`${TagFrmwk}: callback : VOICE_ASSISTANT getVolume: ENAME : PASS :${value}`);
+            } else {
+              console.info(`${TagFrmwk}: callback : VOICE_ASSISTANT getVolume: ENAME : FAIL :${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0100
      * @tc.desc   getMaxVolume for Media
@@ -1535,7 +1663,7 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0200', 1, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       audioManager.getMaxVolume(audioMedia, (err, value) => {
         console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : value:${value}`);
         if (err) {
@@ -4084,6 +4212,122 @@ export default function audioFramework() {
          }
       });
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0005
+     * @tc.desc   ismute - AudioVolumeType.VOICE_CALL - Promise - false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.VOICE_CALL, lowVol);
+        await audioManager.mute(audio.AudioVolumeType.VOICE_CALL,false);
+        let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.VOICE_CALL);
+        if (data == false) {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute VOICE_CALL: false: PASS:${data}`);
+          done();
+        } else {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute VOICE_CALL: false: FAILED:${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0006
+     * @tc.desc   ismute - AudioVolumeType.ALARM - Promise - false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.ALARM, lowVol);
+        await audioManager.mute(audio.AudioVolumeType.ALARM,false);
+        let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.ALARM);
+        if (data == false) {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: false: PASS:${data}`);
+          done();
+        } else {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: false: FAILED:${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0007
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0007
+     * @tc.desc   ismute - AudioVolumeType.ACCESSIBILITY - Promise - false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.ACCESSIBILITY, lowVol);
+        await audioManager.mute(audio.AudioVolumeType.ACCESSIBILITY,false);
+        let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.ACCESSIBILITY);
+        if (data == false) {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: false: PASS:${data}`);
+          done();
+        } else {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: false: FAILED:${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0008
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0008
+     * @tc.desc   ismute - AudioVolumeType.VOICE_ASSISTANT - Promise - false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.VOICE_ASSISTANT, lowVol);
+        await audioManager.mute(audio.AudioVolumeType.VOICE_ASSISTANT,false);
+        let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.VOICE_ASSISTANT);
+        if (data == false) {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute VOICE_ASSISTANT: false: PASS:${data}`);
+          done();
+        } else {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute VOICE_ASSISTANT: false: FAILED:${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+
 
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0001
@@ -7518,6 +7762,176 @@ export default function audioFramework() {
         }
         done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0500
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_INVALID);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_INVALID}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+          expect(Number(err.code)).assertEqual(6800101);
+          done;
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0600
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_MIC);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_MIC}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0700
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0800
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0900
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_1000
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_1100
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_CAMCORDER);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_CAMCORDER}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
@@ -7535,6 +7949,308 @@ export default function audioFramework() {
         expect(false).assertTrue();
       }
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0002
+     * @tc.desc   isStreamActive STREAM_USAGE_UNKNOWN test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0002 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0300
+     * @tc.desc   isStreamActive STREAM_USAGE_MUSIC test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0300 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0400
+     * @tc.desc   isStreamActive STREAM_USAGE_VOICE_COMMUNICATION test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0400 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0500
+     * @tc.desc   isStreamActive STREAM_USAGE_NOTIFICATION_RINGTONE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0500 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0600
+     * @tc.desc   isStreamActive STREAM_USAGE_RINGTONE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0600 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0700
+     * @tc.desc   isStreamActive STREAM_USAGE_ALARM test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_ALARM);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0700 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0800
+     * @tc.desc   isStreamActive STREAM_USAGE_NOTIFICATION test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0800 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0900
+     * @tc.desc   isStreamActive STREAM_USAGE_VOICE_ASSISTANT test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0900 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1000
+     * @tc.desc   isStreamActive STREAM_USAGE_ACCESSIBILITY test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1000 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1100
+     * @tc.desc   isStreamActive STREAM_USAGE_GAME test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_GAME);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1100 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1200
+     * @tc.desc   isStreamActive STREAM_USAGE_VIDEO_COMMUNICATION test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1200 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1300
+     * @tc.desc   isStreamActive STREAM_USAGE_VOICE_MESSAGE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1300 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1400
+     * @tc.desc   isStreamActive STREAM_USAGE_NAVIGATION test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1400 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1500
+     * @tc.desc   isStreamActive STREAM_USAGE_MOVIE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1500 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1600
+     * @tc.desc   isStreamActive STREAM_USAGE_AUDIOBOOK test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_1600 Status: ${ret}`);
+        expect(ret).assertEqual(false);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`isStreamActive ERROR: ${error}`);
+        expect(false).assertTrue();
+      }
+    })
+
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_0100
@@ -7652,6 +8368,205 @@ export default function audioFramework() {
         }
         done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0300
+     * @tc.desc   isAcousticEchoCancelerSupported - SOURCE_TYPE_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_INVALID);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_INVALID}, Status: ${isSupportAEC}`);
+          expect(false).assertTrue();
+        } catch (err) {
+          let error = err as BusinessError;
+          expect(Number(err.code)).assertEqual(6800101);
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0400
+     * @tc.desc   isAcousticEchoCancelerSupported - SOURCE_TYPE_MIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_MIC);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_MIC}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0500
+     * @tc.desc   isAcousticEchoCancelerSupported - SOURCE_TYPE_VOICE_RECOGNITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0600
+     * @tc.desc   isAcousticEchoCancelerSupported - SOURCE_TYPE_PLAYBACK_CAPTURE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0700
+     * @tc.desc   isAcousticEchoCancelerSupported - SOURCE_TYPE_VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0800
+     * @tc.desc   isAcousticEchoCancelerSupported - SOURCE_TYPE_VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0900
+     * @tc.desc   isAcousticEchoCancelerSupported -
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_CAMCORDER);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_CAMCORDER}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_1000
+     * @tc.desc   isAcousticEchoCancelerSupported - SOURCE_TYPE_UNPROCESSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_UNPROCESSED);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_UNPROCESSED}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+      })
+
+
     /**
      * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1339
      * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1339
@@ -7693,6 +8608,186 @@ export default function audioFramework() {
       }
       done();
     });
+
+        /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1341
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1341
+     * @tc.desc   isRecordingAvailable with SOURCE_TYPE_VOICE_RECOGNITION parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1341', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION,
+        capturerFlags: 0
+      };
+      try {
+        audioStreamManager.isRecordingAvailable(capturerInfo);
+        console.info(`${TagFrmwk}: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1342
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1342
+     * @tc.desc   isRecordingAvailable with SOURCE_TYPE_PLAYBACK_CAPTURE parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1342', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE,
+        capturerFlags: 0
+      };
+      try {
+        audioStreamManager.isRecordingAvailable(capturerInfo);
+        console.info(`${TagFrmwk}: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1343
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1343
+     * @tc.desc   isRecordingAvailable with SOURCE_TYPE_VOICE_COMMUNICATION parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1343', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+        capturerFlags: 0
+      };
+      try {
+        audioStreamManager.isRecordingAvailable(capturerInfo);
+        console.info(`${TagFrmwk}: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1344
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1344
+     * @tc.desc   isRecordingAvailable with SOURCE_TYPE_VOICE_MESSAGE parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1344', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+        capturerFlags: 0
+      };
+      try {
+        audioStreamManager.isRecordingAvailable(capturerInfo);
+        console.info(`${TagFrmwk}: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1345
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1345
+     * @tc.desc   isRecordingAvailable with SOURCE_TYPE_CAMCORDER parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1345', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+        capturerFlags: 0
+      };
+      try {
+        audioStreamManager.isRecordingAvailable(capturerInfo);
+        console.info(`${TagFrmwk}: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1346
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1346
+     * @tc.desc   isRecordingAvailable with SOURCE_TYPE_UNPROCESSED parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1346', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      };
+      try {
+        audioStreamManager.isRecordingAvailable(capturerInfo);
+        console.info(`${TagFrmwk}: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1347
+     * @tc.number AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1347
+     * @tc.desc   isRecordingAvailable with SOURCE_TYPE_LIVE parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOSTREAMMANAGER_ISRECORDINGAVAILABLE_1347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_LIVE,
+        capturerFlags: 0
+      };
+      try {
+        audioStreamManager.isRecordingAvailable(capturerInfo);
+        console.info(`${TagFrmwk}: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_0300
      * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_0300
@@ -8710,6 +9805,467 @@ export default function audioFramework() {
       }
       done();
     });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0001
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0001
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.BLUETOOTH_A2DP, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0002
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0002
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.MIC, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0003
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0003
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.USB_HEADSET, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0004
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0004
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.DISPLAY_PORT, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0005
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0005
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.REMOTE_CAST, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0006
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0006
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.USB_DEVICE, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0007
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0007
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.HDMI, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0008
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0008
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.LINE_DIGITAL, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0009
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0009
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.REMOTE_DAUDIO, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0010
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0010
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.HEARING_AID, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0011
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0011
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.NEARLINK, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0012
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0012
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.SYSTEM_PRIVATE, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0013
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0013
+     * @tc.desc   getSystemVolumeInDb with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.DEFAULT, (err, db) => {
+          if (err) {
+            console.info(`${TagFrmwk}: PASS :${err.message}`);
+            expect(Number((err as BusinessError).code)).assertEqual(401);
+          } else {
+            console.info(`${TagFrmwk}: FAIL`);
+            expect(false).assertTrue();
+          }
+          done();
+        });
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0014
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0014
+     * @tc.desc   getSystemVolumeInDb with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.INVALID);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0015
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0015
+     * @tc.desc   getSystemVolumeInDb with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.EARPIECE);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0016
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0016
+     * @tc.desc   getSystemVolumeInDb with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.WIRED_HEADSET);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0017
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0017
+     * @tc.desc   getSystemVolumeInDb with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.WIRED_HEADPHONES);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0018
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0018
+     * @tc.desc   getSystemVolumeInDb with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.BLUETOOTH_SCO);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
     /**
      * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1355
      * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1355
@@ -8795,6 +10351,636 @@ export default function audioFramework() {
     it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1358', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.SPEAKER);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+        /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1400
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1400
+     * @tc.desc   getSystemVolumeInDb with BLUETOOTH_A2DP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.BLUETOOTH_A2DP);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1401
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1401
+     * @tc.desc   getSystemVolumeInDb with MIC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.MIC);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1402
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1402
+     * @tc.desc   getSystemVolumeInDb with USB_HEADSET.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.USB_HEADSET);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1403
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1403
+     * @tc.desc   getSystemVolumeInDb with DISPLAY_PORT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.DISPLAY_PORT);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1404
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1404
+     * @tc.desc   getSystemVolumeInDb with REMOTE_CAST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.REMOTE_CAST);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1405
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1405
+     * @tc.desc   getSystemVolumeInDb with USB_DEVICE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.USB_DEVICE);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1406
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1406
+     * @tc.desc   getSystemVolumeInDb with HDMI.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.HDMI);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1407
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1407
+     * @tc.desc   getSystemVolumeInDb with LINE_DIGITAL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1407', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.LINE_DIGITAL);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1408
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1408
+     * @tc.desc   getSystemVolumeInDb with REMOTE_DAUDIO.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1408', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.REMOTE_DAUDIO);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1409
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1409
+     * @tc.desc   getSystemVolumeInDb with HEARING_AID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1409', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.HEARING_AID);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1410
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1410
+     * @tc.desc   getSystemVolumeInDb with NEARLINK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.NEARLINK);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1411
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1411
+     * @tc.desc   getSystemVolumeInDb with SYSTEM_PRIVATE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1411', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.SYSTEM_PRIVATE);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1412
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1412
+     * @tc.desc   getSystemVolumeInDb with DEFAULT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1412', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, undefined, audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1413
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1413
+     * @tc.desc   getSystemVolumeInDb with VOICE_CALL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1413', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.VOICE_CALL, undefined, audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1414
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1414
+     * @tc.desc   getSystemVolumeInDb with RINGTONE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1414', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.RINGTONE, undefined, audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1415
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1415
+     * @tc.desc   getSystemVolumeInDb with ALARM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1415', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.ALARM, undefined, audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1416
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1416
+     * @tc.desc   getSystemVolumeInDb with ACCESSIBILITY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1416', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.ACCESSIBILITY, undefined, audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1417
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1417
+     * @tc.desc   getSystemVolumeInDb with VOICE_ASSISTANT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDB_1417', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.VOICE_ASSISTANT, undefined, audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1418
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1418
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1418', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.REMOTE_CAST);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1419
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1419
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1419', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.BLUETOOTH_A2DP);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1361
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1361
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1361', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.USB_HEADSET);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1362
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1362
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1362', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.MIC);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1363
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1363
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1363', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.DISPLAY_PORT);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1364
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1364
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1364', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.USB_DEVICE);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1365
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1365
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1365', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.HDMI);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1366
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1366
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1366', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.LINE_DIGITAL);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1367
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1367
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1367', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.REMOTE_DAUDIO);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1368
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1368
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1368', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.HEARING_AID);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1369
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1369
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1369', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.NEARLINK);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1370
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1370
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.SYSTEM_PRIVATE);
+        console.info(`${TagFrmwk}: FAIL`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: PASS :${(err as BusinessError).message}`);
+        expect(Number((err as BusinessError).code)).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1371
+     * @tc.number AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1371
+     * @tc.desc   getSystemVolumeInDbSync with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIOVOLUMEGROUPMANAGER_GETSYSTEMVOLUMEINDBSYNC_1371', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioVolumeGroupManager.getSystemVolumeInDbSync(audio.AudioVolumeType.MEDIA, null, audio.DeviceType.DEFAULT);
         console.info(`${TagFrmwk}: FAIL`);
         expect(false).assertTrue();
       } catch (err) {
@@ -9307,6 +11493,70 @@ export default function audioFramework() {
         }
         done();
       })
+
+    /**
+    * @tc.name   AUDIO_MANAGER_GETMAXVOLUME_PROMISE_ALARM_0100
+    * @tc.number AUDIO_MANAGER_GETMAXVOLUME_PROMISE_ALARM_0100
+    * @tc.desc   getMaxVolume promise with ALARM volume type test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_MANAGER_GETMAXVOLUME_PROMISE_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          let value = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+          console.info(`${TagFrmwk}: getMaxVolume promise with ALARM: PASS, maxVolume: ${value}`);
+          done();
+        } catch (err) {
+          console.info(`${TagFrmwk}: getMaxVolume promise with ALARM: FAIL :${(err as BusinessError).message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+          /**
+    * @tc.name   AUDIO_MANAGER_GETMAXVOLUME_PROMISE_ACCESSIBILITY_0100
+    * @tc.number AUDIO_MANAGER_GETMAXVOLUME_PROMISE_ACCESSIBILITY_0100
+    * @tc.desc   getMaxVolume promise with ACCESSIBILITY volume type test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_MANAGER_GETMAXVOLUME_PROMISE_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          let value = await audioManager.getMaxVolume(audio.AudioVolumeType.ACCESSIBILITY);
+          console.info(`${TagFrmwk}: getMaxVolume promise with ACCESSIBILITY: PASS, maxVolume: ${value}`);
+          done();
+        } catch (err) {
+          console.info(`${TagFrmwk}: getMaxVolume promise with ACCESSIBILITY: FAIL :${(err as BusinessError).message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+          /**
+    * @tc.name   AUDIO_MANAGER_GETMAXVOLUME_PROMISE_VOICE_ASSISTANT_0100
+    * @tc.number AUDIO_MANAGER_GETMAXVOLUME_PROMISE_VOICE_ASSISTANT_0100
+    * @tc.desc   getMaxVolume promise with VOICE_ASSISTANT volume type test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_MANAGER_GETMAXVOLUME_PROMISE_VOICE_ASSISTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          let value = await audioManager.getMaxVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
+          console.info(`${TagFrmwk}: getMaxVolume promise with VOICE_ASSISTANT: PASS, maxVolume: ${value}`);
+          done();
+        } catch (err) {
+          console.info(`${TagFrmwk}: getMaxVolume promise with VOICE_ASSISTANT: FAIL :${(err as BusinessError).message}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
 
     /**
     * @tc.name   AUDIO_MANAGER_MUTE_ALARM_0100
@@ -10608,7 +12858,7 @@ export default function audioFramework() {
           console.info(`${TagFrmwk}: getVolume with VOICE_CALL: FAIL :${err.message}`);
           expect(false).assertTrue();
         } else {
-          expect(value).assertLarger(0);
+          expect(value).assertLargerOrEqual(0);
           console.info(`${TagFrmwk}: getVolume with VOICE_CALL: PASS`);
           done();
         }
@@ -10638,14 +12888,14 @@ export default function audioFramework() {
     })
 
     /**
-    * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100
-    * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100
+    * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0001
+    * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0001
     * @tc.desc   getVolume with ALARM test.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       audioVolumeGroupManager.getVolume(audio.AudioVolumeType.ALARM, (err, value) => {
         if (err) {
           console.info(`${TagFrmwk}: getVolume with ALARM: FAIL :${err.message}`);
@@ -10659,14 +12909,14 @@ export default function audioFramework() {
     })
 
     /**
-    * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100
-    * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100
+    * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0001
+    * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0001
     * @tc.desc   getVolume with ACCESSIBILITY test.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       audioVolumeGroupManager.getVolume(audio.AudioVolumeType.ACCESSIBILITY, (err, value) => {
         if (err) {
           console.info(`${TagFrmwk}: getVolume with ACCESSIBILITY: FAIL :${err.message}`);
@@ -10788,6 +13038,240 @@ export default function audioFramework() {
         }
         done();
     })
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0001
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0001
+     * @tc.desc   getVolume with RINGTONE test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_RINGTONE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getVolume(audio.AudioVolumeType.RINGTONE);
+        console.info(`${TagFrmwk}: getVolume with RINGTONE: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getVolume with RINGTONE: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100
+     * @tc.desc   getVolume with ALARM test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getVolume(audio.AudioVolumeType.ALARM);
+        console.info(`${TagFrmwk}: getVolume with ALARM: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getVolume with ALARM: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100
+     * @tc.desc   getVolume with ACCESSIBILITY test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getVolume(audio.AudioVolumeType.ACCESSIBILITY);
+        console.info(`${TagFrmwk}: getVolume with ACCESSIBILITY: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getVolume with ACCESSIBILITY: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_VOICE_ASSISTANT_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_VOICE_ASSISTANT_0100
+     * @tc.desc   getVolume with VOICE_ASSISTANT test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_VOICE_ASSISTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.info(`${TagFrmwk}: getVolume with VOICE_ASSISTANT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getVolume with VOICE_ASSISTANT: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_ALARM_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_ALARM_0100
+     * @tc.desc   getMinVolume with ALARM test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.ALARM);
+        console.info(`${TagFrmwk}: getMinVolume with ALARM: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getMinVolume with ALARM: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_ACCESSIBILITY_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_ACCESSIBILITY_0100
+     * @tc.desc   getMinVolume with ACCESSIBILITY test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.ACCESSIBILITY);
+        console.info(`${TagFrmwk}: getMinVolume with ACCESSIBILITY: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getMinVolume with ACCESSIBILITY: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_VOICE_ASSISTANT_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_VOICE_ASSISTANT_0100
+     * @tc.desc   getMinVolume with VOICE_ASSISTANT test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_MINVOLUME_VOICE_ASSISTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.info(`${TagFrmwk}: getMinVolume with VOICE_ASSISTANT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getMinVolume with VOICE_ASSISTANT: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_ALARM_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_ALARM_0100
+     * @tc.desc   getMaxVolume with ALARM test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_ALARM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.ALARM);
+        console.info(`${TagFrmwk}: getMaxVolume with ALARM: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getMaxVolume with ALARM: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_ACCESSIBILITY_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_ACCESSIBILITY_0100
+     * @tc.desc   getMaxVolume with ACCESSIBILITY test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_ACCESSIBILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.ACCESSIBILITY);
+        console.info(`${TagFrmwk}: getMaxVolume with ACCESSIBILITY: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getMaxVolume with ACCESSIBILITY: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_VOICE_ASSISTANT_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_VOICE_ASSISTANT_0100
+     * @tc.desc   getMaxVolume with VOICE_ASSISTANT test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_VOICE_ASSISTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getMinVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.info(`${TagFrmwk}: getMaxVolume with VOICE_ASSISTANT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getMaxVolume with VOICE_ASSISTANT: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_VOICE_CALL_0100
+     * @tc.number AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_VOICE_CALL_0100
+     * @tc.desc   getMaxVolume with VOICE_CALL test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('AUDIO_VOLUME_GROUP_MANAGER_GET_MAXVOLUME_VOICE_CALL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let value = audioVolumeGroupManager.getMaxVolume(audio.AudioVolumeType.VOICE_CALL);
+        console.info(`${TagFrmwk}: getMaxVolume with VOICE_CALL: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: getMaxVolume with VOICE_CALL: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
     })
 
     /**

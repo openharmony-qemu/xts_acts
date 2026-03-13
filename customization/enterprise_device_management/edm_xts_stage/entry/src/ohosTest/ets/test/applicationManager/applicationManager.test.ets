@@ -300,6 +300,27 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addDisallowedRunningBundlesSync_013
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDRUNNINGBUNDLESSYNC_013
+     * @tc.desc   test addDisallowedRunningBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addDisallowedRunningBundlesSync_013", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let appIds: Array<string> = [];
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, appIds, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeDisallowedRunningBundlesSync_001
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_001
      * @tc.desc   test removeDisallowedRunningBundlesSync method with unActive admin
@@ -496,6 +517,27 @@ export default function applicationManagerTest() {
         console.info(' --- test_removeDisallowedRunningBundlesSync_010 error 401 is expected, actually catch: '
           + error.code);
         expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeDisallowedRunningBundlesSync_011
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDRUNNINGBUNDLESSYNC_011
+     * @tc.desc   test removeDisallowedRunningBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeDisallowedRunningBundlesSync_011", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let appIds: Array<string> = [];
+        applicationManager.removeDisallowedRunningBundlesSync(SELFWANT, appIds, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -735,6 +777,27 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addAutoStartApps_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_005
+     * @tc.desc   test addAutoStartApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAutoStartApps_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let autoStartApps: Array<Want> = [];
+        applicationManager.addAutoStartApps(SELFWANT, autoStartApps);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeAutoStartApps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_001
      * @tc.desc   test removeAutoStartApps method with unActive admin
@@ -808,6 +871,27 @@ export default function applicationManagerTest() {
       try {
         let autoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAutoStartApps(SELFWANT, autoStartApps);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAutoStartApps_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_005
+     * @tc.desc   test removeAutoStartApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAutoStartApps_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let autoStartApps: Array<Want> = [];
         applicationManager.removeAutoStartApps(SELFWANT, autoStartApps);
       } catch (error) {
         expect(false).assertTrue();
@@ -918,7 +1002,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1001,7 +1089,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1029,7 +1121,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1057,7 +1153,11 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1091,7 +1191,38 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addFreezeExemptedApps_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_008
+     * @tc.desc   test addFreezeExemptedApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addFreezeExemptedApps_008", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let applicationInstances: Array<common.ApplicationInstance> = [];
+        applicationManager.addFreezeExemptedApps(SELFWANT, applicationInstances);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_addFreezeExemptedApps_008 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1118,7 +1249,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1201,7 +1336,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1229,7 +1368,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1265,7 +1408,11 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1311,7 +1458,38 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeFreezeExemptedApps_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_008
+     * @tc.desc   test removeFreezeExemptedApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeFreezeExemptedApps_008", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let applicationInstances: Array<common.ApplicationInstance> = [];
+        applicationManager.removeFreezeExemptedApps(SELFWANT, applicationInstances);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_removeFreezeExemptedApps_008 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1331,7 +1509,11 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1400,7 +1582,11 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1427,7 +1613,7 @@ export default function applicationManagerTest() {
       }
       done();
     })
-
+    
     /**
      * @tc.name   test_addUserNonStopApps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_001
@@ -1448,7 +1634,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1474,7 +1664,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1495,7 +1689,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1523,7 +1721,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1551,7 +1753,11 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1585,7 +1791,38 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addUserNonStopApps_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_007
+     * @tc.desc   test addUserNonStopApps method with missing param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addUserNonStopApps_007", Level.LEVEL2, async (done: Function) => {
+      try {
+        let userNonStopApps: Array<common.ApplicationInstance> = [];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_addUserNonStopApps_007 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1612,7 +1849,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1639,7 +1880,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1660,7 +1905,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1688,7 +1937,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1724,7 +1977,11 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1770,7 +2027,38 @@ export default function applicationManagerTest() {
         applicationManager.removeUserNonStopApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeUserNonStopApps_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_007
+     * @tc.desc   test removeUserNonStopApps method with missing param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeUserNonStopApps_007", Level.LEVEL2, async (done: Function) => {
+      try {
+        let userNonStopApps: Array<common.ApplicationInstance> = [];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_removeUserNonStopApps_007 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1790,7 +2078,11 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -1809,7 +2101,11 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1830,7 +2126,11 @@ export default function applicationManagerTest() {
         applicationManager.getUserNonStopApps(null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1876,7 +2176,11 @@ export default function applicationManagerTest() {
         let res = applicationManager.getUserNonStopApps(SELFWANT);
         expect(res.length == 1).assertTrue();
       } catch (error) {
-        expect(error.code == 801 || error.code == 9200012).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1972,6 +2276,27 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addAutoStartAppsByDis_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_DIS_005
+     * @tc.desc   test addAutoStartAppsByDis method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAutoStartAppsByDis_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let autoStartApps: Array<Want> = [];
+        applicationManager.addAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID, true);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeAutoStartAppsByUserId_001
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_USERID_001
      * @tc.desc   test removeAutoStartAppsByUserId method with unActive admin
@@ -2045,6 +2370,27 @@ export default function applicationManagerTest() {
       try {
         let autoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAutoStartAppsByUserId_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEAUTOSTARTAPPS_USERID_005
+     * @tc.desc   test removeAutoStartAppsByUserId method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAutoStartAppsByUserId_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let autoStartApps: Array<Want> = [];
         applicationManager.removeAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID);
       } catch (error) {
         expect(false).assertTrue();
@@ -2199,6 +2545,31 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addAutoStartAppsByIsHiddenStart_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDAUTOSTARTAPPS_ISHIDDENSTART_001
+     * @tc.desc   test addAutoStartAppsByIsHiddenStart method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAutoStartAppsByIsHiddenStart_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let edmAutoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAutoStartApps(SELFWANT, edmAutoStartApps, DEFAULT_USER_ID, true);
+        let autoStartApps = applicationManager.getAutoStartApps(SELFWANT);
+        expect(autoStartApps.length == 2).assertTrue();
+        expect(autoStartApps[0].parameters?.isHiddenStart).assertFalse();
+        expect(autoStartApps[1].parameters?.isHiddenStart).assertFalse();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_addKeepAliveApps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_001
      * @tc.desc   test addKeepAliveApps method with unActive admin
@@ -2212,7 +2583,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -2232,7 +2607,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -2254,7 +2633,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, INVALID_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2280,7 +2663,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9201005 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201005).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2303,7 +2690,37 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200010 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200010).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_006
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_006", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApps: Array<string> = [];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_006 error 801 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2367,6 +2784,32 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeKeepAliveApps_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEKEEPALIVEAPPS_004
+     * @tc.desc   test removeKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeKeepAliveApps_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApps: Array<string> = [];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_removeKeepAliveApps_004 error 801 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2786,6 +3229,27 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_setKioskFeatures_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_setKioskFeatures_005
+     * @tc.desc   test setKioskFeatures method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setKioskFeatures_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let kioskFeatures: Array<applicationManager.KioskFeature> = [];
+        applicationManager.setKioskFeatures(SELFWANT, kioskFeatures);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_addKeepAliveAppsWithDisallowModify_001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_WITHDISALLOWMODIFY_001
      * @tc.desc   test AddKeepAliveAppsWithDisallowModify method with unActive admin
@@ -2800,7 +3264,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200001 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
     })
@@ -2821,7 +3289,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200002 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -2844,7 +3316,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, INVALID_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2871,7 +3347,11 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9201005 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201005).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2895,7 +3375,38 @@ export default function applicationManagerTest() {
         applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 9200010 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200010).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveAppsWithDisallowModify_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_WITHDISALLOWMODIFY_006
+     * @tc.desc   test addKeepAliveAppsWithDisallowModify method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveAppsWithDisallowModify_006", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApps: Array<string> = [];
+        let disallowModifty: boolean = false;
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addKeepAliveApps(SELFWANT, keepAliveApps, DEFAULT_USER_ID, disallowModifty);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveAppsWithDisallowModify_006 error 801 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3134,6 +3645,27 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addAllowedRunningBundles_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDRUNNINGBUNDLES_008
+     * @tc.desc   test addAllowedRunningBundles method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedRunningBundles_008", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let appIdentifiers: Array<string> = [];
+        applicationManager.addAllowedRunningBundles(SELFWANT, appIdentifiers, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeAllowedRunningBundles_001
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDRUNNINGBUNDLES_001
      * @tc.desc   test removeAllowedRunningBundles method with unActive admin
@@ -3248,6 +3780,27 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedRunningBundles_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDRUNNINGBUNDLES_007
+     * @tc.desc   test removeAllowedRunningBundles method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedRunningBundles_007", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let appIdentifiers: Array<string> = [];
+        applicationManager.removeAllowedRunningBundles(SELFWANT, appIdentifiers, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

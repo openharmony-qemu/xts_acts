@@ -117,7 +117,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest0100';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -155,7 +155,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest0300';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -204,7 +204,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest0400';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -253,7 +253,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest0500';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -295,7 +295,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest0600';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -343,7 +343,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest0800';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -384,7 +384,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest0900';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -430,7 +430,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest1000';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -471,7 +471,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest1100';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -509,7 +509,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest1200';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -550,7 +550,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest1300';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -597,7 +597,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest1400';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -638,7 +638,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName: string = 'executeDelayedTaskErrorTest1500';
       console.info(`${caseName} test start`);
       let num: Number = 0;
@@ -675,7 +675,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest1600';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -716,7 +716,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest1700';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -761,7 +761,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest1800';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -802,7 +802,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest2000';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -840,7 +840,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest3100';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -879,7 +879,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest3200';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -917,7 +917,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest3300';
       console.info(`${caseName} test start`);
       let num = 0;
@@ -955,7 +955,7 @@ export default function executeDelayedTaskErrorTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('executeDelayedTaskErrorTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('executeDelayedTaskErrorTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName = 'executeDelayedTaskErrorTest3400';
       console.info(`${caseName} test start`);
       let num = 0;

@@ -15,8 +15,10 @@
 
 import SelectStatusTest from './checkbox/SelectStatus.test'
 import selectDividerTest from './selectDividerTest/selectDividerTest.test'
+import TriggerSelectNullUndefinedTest from './selectTest/TriggerSelectNullUndefinedExample.test'
 
 export default function testsuite() {
   SelectStatusTest();
   selectDividerTest();
+  TriggerSelectNullUndefinedTest();
 }

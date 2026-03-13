@@ -87,14 +87,14 @@ export default function LineMetricsTwoTest() {
     });
 
     /**
-     * @tc.name   testLineMetricsTest_0100
+     * @tc.name   testLineMetricsTest_0100Adapt001
      * @tc.number SUB_BASIC_XTS_GRAPHICTEXT_API_0100
      * @tc.desc   runMetrics and LineMetrics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testLineMetricsTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+    it('testLineMetricsTest_0100Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg  = "====testLineMetricsTest_0100===="
       let fontCollection: text.FontCollection = new text.FontCollection();
       try {

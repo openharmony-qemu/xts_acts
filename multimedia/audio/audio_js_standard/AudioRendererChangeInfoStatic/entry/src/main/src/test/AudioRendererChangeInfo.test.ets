@@ -2047,26 +2047,28 @@ export default function audioCapturerChange() {
 
       audioStreamManager!.getCurrentAudioRendererInfoArray((err: BusinessError<void> | null,
         AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo> | undefined) => {
-        console.info(`${Tag} : [GET_RENDERER_STATE_1_CALLBACK] **** Get Callback Called ****`);
-        await Utils.msSleep(100);
-        if (err) {
-          console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
-          resultFlag = false;
-        } else {
-          if (AudioRendererChangeInfoArray != null) {
-            for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
-              // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
-              let devDescriptor: Array<audio.AudioDeviceDescriptor> = AudioRendererChangeInfoArray[i].deviceDescriptors;
-              for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
-                // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
-              }
-              if (devDescriptor != null) {
-                resultFlag = true;
-                console.info(`${Tag} : State :   ${AudioRendererChangeInfoArray[i].rendererState}`);
+          waitForCompletion(async () => {
+            console.info(`${Tag} : [GET_RENDERER_STATE_1_CALLBACK] **** Get Callback Called ****`);
+            await Utils.msSleep(100);
+            if (err) {
+              console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
+              resultFlag = false;
+            } else {
+              if (AudioRendererChangeInfoArray != null) {
+                for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
+                  // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
+                  let devDescriptor: Array<audio.AudioDeviceDescriptor> = AudioRendererChangeInfoArray[i].deviceDescriptors;
+                  for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
+                    // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
+                  }
+                  if (devDescriptor != null) {
+                    resultFlag = true;
+                    console.info(`${Tag} : State :   ${AudioRendererChangeInfoArray[i].rendererState}`);
+                  }
+                }
               }
             }
-          }
-        }
+          })
       });
 
       await Utils.msSleep(1000);
@@ -2147,26 +2149,28 @@ export default function audioCapturerChange() {
 
       audioStreamManagerCB!.getCurrentAudioRendererInfoArray((err: BusinessError<void> | null,
         AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo> | undefined) => {
-        console.info(`${Tag} : [GET_RENDERER_STATE_2_CALLBACK] **** Get Callback Called ****`);
-        await Utils.msSleep(100);
-        if (err) {
-          console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
-          resultFlag = false;
-        } else {
-          if (AudioRendererChangeInfoArray != null) {
-            for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
-              // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
-              let devDescriptor: Array<audio.AudioDeviceDescriptor> = AudioRendererChangeInfoArray[i].deviceDescriptors;
-              for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
-                // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
-              }
-              if (devDescriptor != null) {
-                resultFlag = true;
-                console.info(`${Tag} : State :   ${AudioRendererChangeInfoArray[i].rendererState}`);
+        waitForCompletion(async () => {
+          console.info(`${Tag} : [GET_RENDERER_STATE_2_CALLBACK] **** Get Callback Called ****`);
+          await Utils.msSleep(100);
+          if (err) {
+            console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
+            resultFlag = false;
+          } else {
+            if (AudioRendererChangeInfoArray != null) {
+              for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
+                // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
+                let devDescriptor: Array<audio.AudioDeviceDescriptor> = AudioRendererChangeInfoArray[i].deviceDescriptors;
+                for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
+                  // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
+                }
+                if (devDescriptor != null) {
+                  resultFlag = true;
+                  console.info(`${Tag} : State :   ${AudioRendererChangeInfoArray[i].rendererState}`);
+                }
               }
             }
           }
-        }
+        })
       });
 
       await Utils.msSleep(1000);
@@ -2253,26 +2257,28 @@ export default function audioCapturerChange() {
 
       audioStreamManager!.getCurrentAudioRendererInfoArray((err: BusinessError<void> | null,
         AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo> | undefined) => {
-        console.info(`${Tag} : [GET_RENDERER_STATE_3_CALLBACK] **** Get Callback Called ****`);
-        await Utils.msSleep(100);
-        if (err) {
-          console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
-          resultFlag = false;
-        } else {
-          if (AudioRendererChangeInfoArray != null) {
-            for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
-              // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
-              let devDescriptor: Array<audio.AudioDeviceDescriptor> = AudioRendererChangeInfoArray[i].deviceDescriptors;
-              for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
-                // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
-              }
-              if (devDescriptor != null) {
-                resultFlag = true;
-                console.info(`${Tag} : State :   ${AudioRendererChangeInfoArray[i].rendererState}`);
+        waitForCompletion(async () => {
+          console.info(`${Tag} : [GET_RENDERER_STATE_3_CALLBACK] **** Get Callback Called ****`);
+          await Utils.msSleep(100);
+          if (err) {
+            console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
+            resultFlag = false;
+          } else {
+            if (AudioRendererChangeInfoArray != null) {
+              for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
+                // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
+                let devDescriptor: Array<audio.AudioDeviceDescriptor> = AudioRendererChangeInfoArray[i].deviceDescriptors;
+                for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
+                  // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
+                }
+                if (devDescriptor != null) {
+                  resultFlag = true;
+                  console.info(`${Tag} : State :   ${AudioRendererChangeInfoArray[i].rendererState}`);
+                }
               }
             }
           }
-        }
+        })
       });
 
       await Utils.msSleep(1000);
@@ -2358,26 +2364,28 @@ export default function audioCapturerChange() {
 
       audioStreamManager!.getCurrentAudioRendererInfoArray((err: BusinessError<void> | null,
         AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo> | undefined) => {
-        console.info(`${Tag} : [GET_RENDERER_STATE_5_CALLBACK] **** Get Callback Called ****`);
-        await Utils.msSleep(100);
-        if (err) {
-          console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
-          resultFlag = false;
-        } else {
-          if (AudioRendererChangeInfoArray != null) {
-            for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
-              // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
-              let devDescriptor: Array<audio.AudioDeviceDescriptor> = AudioRendererChangeInfoArray[i].deviceDescriptors;
-              for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
-                // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
-              }
-              if (devDescriptor != null) {
-                resultFlag = true;
-                console.info(`${Tag}AFRenLog: RenSta :   ${AudioRendererChangeInfoArray[i].rendererState}`);
+        waitForCompletion(async () => {
+          console.info(`${Tag} : [GET_RENDERER_STATE_5_CALLBACK] **** Get Callback Called ****`);
+          await Utils.msSleep(100);
+          if (err) {
+            console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
+            resultFlag = false;
+          } else {
+            if (AudioRendererChangeInfoArray != null) {
+              for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
+                // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
+                let devDescriptor: Array<audio.AudioDeviceDescriptor> = AudioRendererChangeInfoArray[i].deviceDescriptors;
+                for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
+                  // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
+                }
+                if (devDescriptor != null) {
+                  resultFlag = true;
+                  console.info(`${Tag}AFRenLog: RenSta :   ${AudioRendererChangeInfoArray[i].rendererState}`);
+                }
               }
             }
           }
-        }
+        })
       });
 
       await Utils.msSleep(1000);
@@ -2453,30 +2461,32 @@ export default function audioCapturerChange() {
 
       audioStreamManager!.getCurrentAudioRendererInfoArray((err: BusinessError<void> | null,
         AudioRendererChangeInfoArray: Array<audio.AudioRendererChangeInfo> | undefined) => {
-        console.info(`${Tag} : [GET_RENDERER_DD_CALLBACK] **** Get Callback Called ****`);
-        await Utils.msSleep(100);
-        if (err) {
-          console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
-          resultFlag = false;
-        } else {
-          if (AudioRendererChangeInfoArray != null) {
-            for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
-              // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
-              for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
-                let Id: number = AudioRendererChangeInfoArray[i].deviceDescriptors[j].id;
-                let dType: audio.DeviceType = AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType;
-                let dRole: audio.DeviceRole = AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceRole;
-                let sRate: Array<int> = AudioRendererChangeInfoArray[i].deviceDescriptors[j].sampleRates;
-                let cCount: Array<int> = AudioRendererChangeInfoArray[i].deviceDescriptors[j].channelCounts;
-                let cMask: Array<int> = AudioRendererChangeInfoArray[i].deviceDescriptors[j].channelMasks;
-                // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
-                if (Id > 0 && dType == 2 && dRole == 2 && sRate.length != 0 && cCount.length != 0 && cMask != null) {
-                  resultFlag = true;
+        waitForCompletion(async () => {
+          console.info(`${Tag} : [GET_RENDERER_DD_CALLBACK] **** Get Callback Called ****`);
+          await Utils.msSleep(100);
+          if (err) {
+            console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${err?.message}`);
+            resultFlag = false;
+          } else {
+            if (AudioRendererChangeInfoArray != null) {
+              for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
+                // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
+                for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
+                  let Id: number = AudioRendererChangeInfoArray[i].deviceDescriptors[j].id;
+                  let dType: audio.DeviceType = AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceType;
+                  let dRole: audio.DeviceRole = AudioRendererChangeInfoArray[i].deviceDescriptors[j].deviceRole;
+                  let sRate: Array<int> = AudioRendererChangeInfoArray[i].deviceDescriptors[j].sampleRates;
+                  let cCount: Array<int> = AudioRendererChangeInfoArray[i].deviceDescriptors[j].channelCounts;
+                  let cMask: Array<int> = AudioRendererChangeInfoArray[i].deviceDescriptors[j].channelMasks;
+                  // console.info(`${Tag} : ${i}  ${JSON.stringify(AudioRendererChangeInfoArray[i].deviceDescriptors[j])}`);
+                  if (Id > 0 && dType == 2 && dRole == 2 && sRate.length != 0 && cCount.length != 0 && cMask != null) {
+                    resultFlag = true;
+                  }
                 }
               }
             }
           }
-        }
+        })
       });
 
       await Utils.msSleep(1000);

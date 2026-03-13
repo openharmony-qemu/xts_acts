@@ -18,7 +18,7 @@ import systemLoad from '@ohos.resourceschedule.systemload';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
 
 export default function ThermalControlMgrTest() {
-    describe("ThermalControlMgrTest", function () {
+    describe("ThermalControlMgrTestAdapt001", function () {
         beforeAll(function() {
             
             /*

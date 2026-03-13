@@ -279,6 +279,111 @@ struct webPrefetchPageEnhancedTest {
                 }
                 break;
               }
+
+              case 'emitPrefetchPageUriEmpty': {
+                try {
+                  let options = new webview.PrefetchOptions();
+                  options.ignoreCacheControlNoStore = true;
+                  options.minTimeBetweenPrefetchesMs = 100;
+                  this.controller.prefetchPage('', [{ headerKey: 'headerKey', headerValue: 'headerValue' }], options);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code , 2025091617);
+                }
+                break;
+              }
+              case 'emitPrefetchPageUriNull': {
+                try {
+                  let options = new webview.PrefetchOptions();
+                  options.ignoreCacheControlNoStore = true;
+                  options.minTimeBetweenPrefetchesMs = 100;
+                  this.controller.prefetchPage(null, [{ headerKey: 'headerKey', headerValue: 'headerValue' }], options);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code , 2025091618);
+                }
+                break;
+              }
+              case 'emitPrefetchPageUriUndefined': {
+                try {
+                  let options = new webview.PrefetchOptions();
+                  options.ignoreCacheControlNoStore = true;
+                  options.minTimeBetweenPrefetchesMs = 100;
+                  this.controller.prefetchPage(undefined, [{ headerKey: 'headerKey', headerValue: 'headerValue' }], options);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code , 2025091619);
+                }
+                break;
+              }
+
+              case 'emitPrefetchPageHeadersEmptyArray': {
+                try {
+                  let options = new webview.PrefetchOptions();
+                  options.ignoreCacheControlNoStore = true;
+                  options.minTimeBetweenPrefetchesMs = 100;
+                  this.controller.prefetchPage(URL, [], options);
+                  Utils.emitEvent('noError' , 2025091620);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code , 2025091620);
+                }
+                break;
+              }
+
+
+              case 'emitPrefetchPageUriEmpty2': {
+                try {
+                  let options = new webview.PrefetchOptions();
+                  options.ignoreCacheControlNoStore = true;
+                  options.minTimeBetweenPrefetchesMs = 100;
+                  this.controller.prefetchPage('', [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code , 2025091621);
+                }
+                break;
+              }
+              case 'emitPrefetchPageUriNull2': {
+                try {
+                  let options = new webview.PrefetchOptions();
+                  options.ignoreCacheControlNoStore = true;
+                  options.minTimeBetweenPrefetchesMs = 100;
+                  this.controller.prefetchPage(null, [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code , 2025091622);
+                }
+                break;
+              }
+              case 'emitPrefetchPageUriUndefined2': {
+                try {
+                  let options = new webview.PrefetchOptions();
+                  options.ignoreCacheControlNoStore = true;
+                  options.minTimeBetweenPrefetchesMs = 100;
+                  this.controller.prefetchPage(undefined, [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code , 2025091623);
+                }
+                break;
+              }
+
+              case 'emitPrefetchPageHeadersEmptyArray2': {
+                try {
+                  let options = new webview.PrefetchOptions();
+                  options.ignoreCacheControlNoStore = true;
+                  options.minTimeBetweenPrefetchesMs = 100;
+                  this.controller.prefetchPage(URL, []);
+                  Utils.emitEvent('noError' , 2025091624);
+                } catch (error) {
+                  console.error(this.emitKey + ' ErrorCode：' + error.code + ' Message：' + error.message);
+                  Utils.emitEvent(error.code , 2025091624);
+                }
+                break;
+              }
+
+
             }
           })
       }

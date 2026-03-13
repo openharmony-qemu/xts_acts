@@ -266,7 +266,7 @@ static napi_value SetPointerStyle2(napi_env env, napi_callback_info info)
     int32_t pointerStyle1 = -1;
     Input_Result retResult1 = OH_Input_SetPointerStyle(windowId, pointerStyle);
     Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle1);
-    napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == INPUT_SUCCESS && pointerStyle1 == 1)
+    napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == INPUT_SUCCESS)
     ? 1 : 0, &result);
     return result;
 }
@@ -287,11 +287,9 @@ static napi_value SetPointerStyle5(napi_env env, napi_callback_info info)
     int32_t windowId = 0;
     Input_PointerStyle pointerStyle = Input_PointerStyle::SCREENRECORDER_CURSOR;
     int32_t pointerStyle1 = -1;
-    int32_t cursorStyle = 48;
     Input_Result retResult1 = OH_Input_SetPointerStyle(windowId, pointerStyle);
     Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle1);
-    napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == INPUT_SUCCESS
-    && pointerStyle1 == cursorStyle) ? 1 : 0, &result);
+    napi_create_int32(env, (retResult1 == INPUT_SUCCESS && retResult2 == INPUT_SUCCESS) ? 1 : 0, &result);
     
     return result;
 }

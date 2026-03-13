@@ -23,7 +23,7 @@ const TAG = "ContinuousTaskJsTest ";
 let subscribe_;
 
 export default function ContinuousTaskJsTest() {
-describe("ContinuousTaskJsTest", function () {
+describe("ContinuousTaskJsTestAdapt001", function () {
     beforeAll(function() {
         
         /*

@@ -77,11 +77,9 @@ export default function ActsCallbackTest() {
           } else {
             console.info(`${TAG} requestEnableNotification succeeded`)
             expect(false).assertTrue()
-            await Utils.msSleep(1000)
+            waitForCompletion(async () => {await Utils.msSleep(1000)})
             done()
           }
-
-          
         })
         await Utils.msSleep(1500)
         let driver = Driver.create()

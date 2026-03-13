@@ -49,7 +49,7 @@ export default function PromiseAsyncOperationTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAsyncOperationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void):Promise<void> => {
+    it('PromiseAsyncOperationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void):Promise<void> => {
       const caseName = 'AsyncOperationTest0100';
       console.info(`${caseName}, test start`);
       const asyncFunction = async () => {
@@ -72,7 +72,7 @@ export default function PromiseAsyncOperationTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAsyncOperationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void):Promise<void> => {
+    it('PromiseAsyncOperationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void):Promise<void> => {
       const asyncFunction = async () => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
@@ -109,7 +109,7 @@ export default function PromiseAsyncOperationTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseAsyncOperationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void):Promise<void> => {
+    it('PromiseAsyncOperationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: () => void):Promise<void> => {
       const asyncLock: AsyncLock = AsyncLock.request('Lock');
       await asyncLock.lockAsync(taskFunction).then((value: Any):void => {
         const result = value as number;

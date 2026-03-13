@@ -379,5 +379,19 @@ export default function webViewContCreatePdfAndOthersError() {
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
 
+    /**
+     * @tc.name   testCreatePdfCallbackInitErrFalse
+     * @tc.number testCreatePdfCallbackInitErrFalse
+     * @tc.desc   test interface of CreatePdf with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreatePdfCallbackInitErrFalse',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("testCreatePdfCallbackInitErrFalse", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testCreatePdfCallbackInitErrFalse", "17100001", 20151224, done);
+      await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
+    })
+
   })
 }

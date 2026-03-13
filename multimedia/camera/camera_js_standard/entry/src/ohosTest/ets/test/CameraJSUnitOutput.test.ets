@@ -2785,14 +2785,14 @@ export default function cameraJSUnitOutput() {
 
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300Adapt001
      * @tc.number SUB_MULTIMEDIA_CAMERA_FRAME_SHUTTER_END_INFO_0100
      * @tc.desc   frame shutter end info
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300', Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300Adapt001', Level.LEVEL2, async (done: Function) => {
 
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MOVING_PHOTO_0300--------------");
       // 创建相机
@@ -2979,14 +2979,14 @@ export default function cameraJSUnitOutput() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100
      * @tc.desc   video output get supported frame rates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100', Level.LEVEL1, async (done: Function) => {
+    it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100Adapt001', Level.LEVEL1, async (done: Function) => {
       console.info("--------------BEGIN SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_SUPPORTED_FRAME_RATES_0100--------------");    
 
       // 创建一个Video会话

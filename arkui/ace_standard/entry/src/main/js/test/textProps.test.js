@@ -19,7 +19,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function textPropsJsTest() {
-    describe('textPropsJsTest', function() {
+    describe('textPropsJsTestAdapt001', function() {
 
         async function sleep(time) {
             return new Promise((resolve, reject) => {

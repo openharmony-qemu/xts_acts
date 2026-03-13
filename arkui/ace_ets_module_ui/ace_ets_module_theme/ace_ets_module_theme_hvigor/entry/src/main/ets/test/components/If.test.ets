@@ -68,7 +68,7 @@ export default function ifThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsIfThemeColors_0100
+     * @tc.name   `ActsIfThemeColors_0100`
      * @tc.number ActsIfThemeColors_0100
      * @tc.desc   check system colors values of child component inside if-else body
      * @tc.type   FUNCTION
@@ -102,7 +102,7 @@ export default function ifThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsIfThemeColors_0200
+     * @tc.name   `ActsIfThemeColors_0200`
      * @tc.number ActsIfThemeColors_0200
      * @tc.desc   check custom colors values of child component inside if-else body
      * @tc.type   FUNCTION
@@ -138,7 +138,7 @@ export default function ifThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsIfThemeColors_0300
+     * @tc.name   `ActsIfThemeColors_0300`
      * @tc.number ActsIfThemeColors_0300
      * @tc.desc   check custom colors values of child component inside if-else body
      * @tc.type   FUNCTION

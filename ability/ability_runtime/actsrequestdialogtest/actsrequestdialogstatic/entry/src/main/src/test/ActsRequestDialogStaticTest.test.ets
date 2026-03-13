@@ -74,22 +74,24 @@ export default function ActsRequestDialogStaticTest() {
       expect(1).assertEqual(dialogRequest.ResultCode.RESULT_CANCEL);
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          if (err) {
-            console.info(`====>ACTS_requestDialog_static_0100 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
-          }
-          console.info("====>ACTS_requestDialog_static_0100 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
-          if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
-            console.info('====>ACTS_requestDialog_static_0100 ACTS_StartAbility_CommonEvent1 success=====>');
-            await Utils.msSleep(500);
-            console.info('====>ACTS_requestDialog_static_0100 processInfoCheck=====>');
-            expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
-            CommonEventManager.unsubscribe(subscriber!, () => {
-              console.info("====>UnSubscribe0100 CallBack====>");
-            });
-            done();
-          }
+          waitForCompletion(async () => {
+            if (err) {
+              console.info(`====>ACTS_requestDialog_static_0100 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+            }
+            console.info("====>ACTS_requestDialog_static_0100 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
+            if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+              console.info('====>ACTS_requestDialog_static_0100 ACTS_StartAbility_CommonEvent1 success=====>');
+              await Utils.msSleep(500);
+              console.info('====>ACTS_requestDialog_static_0100 processInfoCheck=====>');
+              expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+              CommonEventManager.unsubscribe(subscriber!, () => {
+                console.info("====>UnSubscribe0100 CallBack====>");
+              });
+              done();
+            }
+          })
         }
 
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
@@ -134,26 +136,28 @@ export default function ActsRequestDialogStaticTest() {
       let resultCode: dialogRequest.ResultCode | undefined;
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          if (err) {
-            console.info(`====>ACTS_requestDialog_static_0200 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
-          }
-          console.info("====>ACTS_requestDialog_static_0200 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
-          if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
-            console.info('====>ACTS_requestDialog_static_0200 ACTS_StartAbility_CommonEvent1 success=====>');
-            await Utils.msSleep(500);
-            console.info('====>ACTS_requestDialog_static_0200 processInfoCheck=====>');
-            expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
-            expect(typeof AppStorage.get<int>("windowRectLeft")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectTop")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectWidth")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectHeight")!).assertEqual('int');
-            CommonEventManager.unsubscribe(subscriber!, () => {
-              console.info("====>UnSubscribe0100 CallBack====>");
-            });
-            done();
-          }
+          waitForCompletion(async () => {
+            if (err) {
+              console.info(`====>ACTS_requestDialog_static_0200 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+            }
+            console.info("====>ACTS_requestDialog_static_0200 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
+            if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+              console.info('====>ACTS_requestDialog_static_0200 ACTS_StartAbility_CommonEvent1 success=====>');
+              await Utils.msSleep(500);
+              console.info('====>ACTS_requestDialog_static_0200 processInfoCheck=====>');
+              expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+              expect(typeof AppStorage.get<int>("windowRectLeft")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectTop")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectWidth")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectHeight")!).assertEqual('int');
+              CommonEventManager.unsubscribe(subscriber!, () => {
+                console.info("====>UnSubscribe0100 CallBack====>");
+              });
+              done();
+            }
+          })
         }
 
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
@@ -295,22 +299,24 @@ export default function ActsRequestDialogStaticTest() {
       let resultCode: dialogRequest.ResultCode | undefined;
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          if (err) {
-            console.info(`====>ACTS_requestDialog_static_0600 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
-          }
-          console.info("====>ACTS_requestDialog_static_0600 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
-          if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
-            console.info('====>ACTS_requestDialog_static_0600 ACTS_StartAbility_CommonEvent1 success=====>');
-            await Utils.msSleep(500);
-            console.info('====>ACTS_requestDialog_static_0600 processInfoCheck=====>');
-            expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
-            CommonEventManager.unsubscribe(subscriber!, () => {
-              console.info("====>UnSubscribe0100 CallBack====>");
-            });
-            done();
-          }
+          waitForCompletion(async () => {
+            if (err) {
+              console.info(`====>ACTS_requestDialog_static_0600 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+            }
+            console.info("====>ACTS_requestDialog_static_0600 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
+            if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+              console.info('====>ACTS_requestDialog_static_0600 ACTS_StartAbility_CommonEvent1 success=====>');
+              await Utils.msSleep(500);
+              console.info('====>ACTS_requestDialog_static_0600 processInfoCheck=====>');
+              expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+              CommonEventManager.unsubscribe(subscriber!, () => {
+                console.info("====>UnSubscribe0100 CallBack====>");
+              });
+              done();
+            }
+          })
         }
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {
@@ -353,26 +359,28 @@ export default function ActsRequestDialogStaticTest() {
       let resultCode: dialogRequest.ResultCode | undefined;
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          if (err) {
-            console.info(`====>ACTS_requestDialog_static_0700 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
-          }
-          console.info("====>ACTS_requestDialog_static_0700 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
-          if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
-            console.info('====>ACTS_requestDialog_static_0700 ACTS_StartAbility_CommonEvent1 success=====>');
-            await Utils.msSleep(500);
-            console.info('====>ACTS_requestDialog_static_0700 processInfoCheck=====>');
-            expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
-            expect(typeof AppStorage.get<int>("windowRectLeft")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectTop")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectWidth")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectHeight")!).assertEqual('int');
-            CommonEventManager.unsubscribe(subscriber!, () => {
-              console.info("====>UnSubscribe0100 CallBack====>");
-            });
-            done();
-          }
+          waitForCompletion(async () => {
+            if (err) {
+              console.info(`====>ACTS_requestDialog_static_0700 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+            }
+            console.info("====>ACTS_requestDialog_static_0700 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
+            if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+              console.info('====>ACTS_requestDialog_static_0700 ACTS_StartAbility_CommonEvent1 success=====>');
+              await Utils.msSleep(500);
+              console.info('====>ACTS_requestDialog_static_0700 processInfoCheck=====>');
+              expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+              expect(typeof AppStorage.get<int>("windowRectLeft")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectTop")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectWidth")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectHeight")!).assertEqual('int');
+              CommonEventManager.unsubscribe(subscriber!, () => {
+                console.info("====>UnSubscribe0100 CallBack====>");
+              });
+              done();
+            }
+          })
         }
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
           .then((data: CommonEventManager.CommonEventSubscriber | null) => {

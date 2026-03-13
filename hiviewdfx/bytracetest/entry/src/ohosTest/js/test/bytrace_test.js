@@ -56,7 +56,6 @@ describe("BytraceTest", function () {
         try {
             console.info("DFX_DFR_Bytrace_0200 1 start");
             bytrace.startTrace("test2", 222);
-            expect(true).assertTrue();
             console.info("DFX_DFR_Bytrace_0200 1 success");
         } catch (err) {
             console.info("DFX_DFR_Bytrace_0200 1 fail!");
@@ -117,7 +116,6 @@ describe("BytraceTest", function () {
         try {
             console.info("DFX_DFR_Bytrace_0300 1 start")
             bytrace.finishTrace("test3", 111);
-            expect(true).assertTrue();
             console.info("DFX_DFR_Bytrace_0300 1 success");
         } catch (err) {
             console.info("DFX_DFR_Bytrace_0300 1 fail!");
@@ -196,7 +194,6 @@ describe("BytraceTest", function () {
         try {
             console.info("DFX_DFR_Bytrace_0500 1 start")
             bytrace.traceByValue("test5", 5);
-            expect(true).assertTrue();
             console.info("DFX_DFR_Bytrace_0500 1 success")
         } catch (err) {
             console.info("DFX_DFR_Bytrace_0500 1 fail!");

@@ -3155,7 +3155,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3216,7 +3216,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3276,7 +3276,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3337,7 +3337,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -4081,6 +4081,76 @@ export default function displayTest() {
         done();
       }
     });
+
+    /**
+    * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_0100
+    * @tc.name   testOnChange_setPreferOrientation_0100
+    * @tc.desc   旋转后屏幕改变监听
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('testOnChange_setPreferOrientation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChange_setPreferOrientation_0100';
+      let msgStr : string = 'jsunittest ' + caseName + ' ';
+      let windowClass:window.Window = windowStage!.getMainWindowSync();
+      let dis = display.getDefaultDisplaySync();
+      try {
+        if(isSupportRotate === true){
+          let index1 = 0;
+          let index2 = 0;
+          const callback1 = (res: number)=>{
+            console.info(caseName + ' callback1 res: ' + res);
+            expect(res).assertEqual(dis.id);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          const callback2 = (res: number)=>{
+            console.info(caseName + ' callback2 res: ' + res);
+            expect(res).assertEqual(dis.id);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+          }
+          display.on('change', callback1);
+          display.on('change', callback2);
+          console.info(caseName + ' on change success' );
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          console.info(caseName + ' etPreferredOrientation(window.Orientation.LANDSCAPE) success' );
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+          expect(index1).assertLarger(0);
+          expect(index2).assertLarger(0);
+          display.off('change',callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setOrientation index1: ' + index1);
+          console.info(caseName + ' setOrientation index2: ' + index2);
+          expect(index1).assertLarger(0);
+          expect(index2).assertLarger(0);
+          display.off('change');
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+          expect(index1).assertLarger(0);
+          expect(index2).assertLarger(0);
+          done();
+        }else{
+          done();
+        }
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code === 801) {
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    
 
   })
 }

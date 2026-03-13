@@ -84,11 +84,11 @@ export default function flexBasisTest() {
   }, {
     describe: 'SetStringPx',
     setValue: {
-      flexBasis: '200.00px'
+      flexBasis: '300.00px'
     },
     expectValue: {
-      expectFlexBasis: '200.00px',
-      expectSize: 200.00
+      expectFlexBasis: '300.00px',
+      expectSize: 300.00
     }
   }, {
     describe: 'SetStringPercent',
@@ -115,16 +115,15 @@ export default function flexBasisTest() {
         console.info('[' + data.caseTag + '] check the flexBasis is or not be set success');
         if (data.testValue.describe == 'SetNumber') {
           data.testValue.expectValue.expectSize = UIContext.resolveUIContext()!.vp2px(100.00)
-
         }
         if (data.testValue.describe == 'SetStringPercent') {
           data.testValue.expectValue.expectSize = UIContext.resolveUIContext()!.vp2px(120)
         }
+        console.info('[' + data.caseTag + '] data.testValue.expectValue.expectSize' + data.testValue.expectValue.expectSize);
 
         if (data.testValue.describe == 'SetNumber' || data.testValue.describe == 'SetStringPx') {
+          console.info('[' + data.caseTag + '] data.viewObj.$attrs.flexBasis' + data.viewObj!.getElement('$attrs').getString('flexBasis'));
           expect(data.viewObj!.getElement('$attrs').getString('flexBasis')).assertEqual(data.testValue.expectValue.expectFlexBasis);
-          console.info('[' + data.caseTag + '] data.viewObj.$attrs.flexBasis' +
-          data.viewObj!.getElement('$attrs').getString('flexBasis'));
         }
 
         //Get target component rect

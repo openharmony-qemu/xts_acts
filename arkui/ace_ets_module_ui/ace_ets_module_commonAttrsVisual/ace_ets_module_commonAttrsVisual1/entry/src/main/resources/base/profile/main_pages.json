@@ -44,6 +44,26 @@
         "MainAbility/pages/RectShapePage",
         "MainAbility/pages/TransitionEffectOpacity",
         "MainAbility/pages/MaterialFilter",
-        "MainAbility/pages/CommonNullUndefined"
+        "MainAbility/pages/CommonNullUndefined",
+        "MainAbility/pages/ParamsNull/AnimateToImmediatelyNullTest",
+        "MainAbility/pages/ParamsNull/AnimateToNullTest",
+        "MainAbility/pages/ParamsNull/BindTabsToNestedScrollableNullTest",
+        "MainAbility/pages/ParamsNull/BindTabsToScrollableNullTest",
+        "MainAbility/pages/ParamsNull/CreateAnimatorNullTest",
+        "MainAbility/pages/ParamsNull/GetNavigationInfoByUniqueIdNullTest",
+        "MainAbility/pages/ParamsNull/KeyframeAnimateToNullTest",
+        "MainAbility/pages/ParamsNull/SetFrameRateRangeNullTest",
+        "MainAbility/pages/ParamsNull/SwiperContentUpdateNullTest",
+        "MainAbility/pages/ParamsNull/UnbindTabsFromNestedScrollableNullTest",
+        "MainAbility/pages/ParamsNull/UnbindTabsFromScrollableNullTest",
+        "MainAbility/pages/ParamsNull/GetNodePropertyValueNullTest",
+        "MainAbility/pages/ParamsNull/BindControllerNullTest",
+        "MainAbility/pages/ParamsNull/InterpolateNullTest",
+        "MainAbility/pages/ParamsNull/SetPolyToPolyNullTest",
+        "MainAbility/pages/ParamsNull/CreateAnimationNullTest",
+        "MainAbility/pages/ParamsNull/EnableBreathingAnimationFalseTest",
+        "MainAbility/pages/select/TransitionNullUndefinedTest",
+        "MainAbility/pages/select/ColorMetricsNullUndefined"
+
     ]
 }

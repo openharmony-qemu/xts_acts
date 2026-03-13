@@ -210,7 +210,6 @@ export default function accountManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null);
@@ -245,7 +244,6 @@ export default function accountManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT, DEFAULT_USER_ID);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null, DEFAULT_USER_ID);
@@ -289,7 +287,6 @@ export default function accountManagerTest() {
         localIds.push(localId);
         console.info(' --- disallowOsAccountAddition_test_008 newAccount.localId: ' + localId);
         accountManager.disallowOsAccountAddition(SELFWANT, true, localId);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT, localId);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null, localId);
@@ -348,10 +345,8 @@ export default function accountManagerTest() {
       console.info(' --- disallowOsAccountAddition_test_0010  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
-        accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
+        let ret = accountManager.disallowOsAccountAddition(SELFWANT, true);
+        expect(ret == null).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_0010 error is unexpected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -375,10 +370,8 @@ export default function accountManagerTest() {
       console.info(' --- disallowOsAccountAddition_test_0011  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
-        accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
+        let ret = accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
+        expect(ret == null).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_0011 error is unexpected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -774,7 +767,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_001 error 9200001 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
       console.info(' --- setDomainAccountPolicy_test_001  -------- END --------');
@@ -798,7 +795,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_002 error 9200002 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -824,7 +825,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_003 error 401 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 401) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -884,7 +889,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_005 error 9200007 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 9200007) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200007).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -947,7 +956,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_007 error 401 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 401) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -990,7 +1003,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_008 error 401 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 401) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1047,7 +1064,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- getDomainAccountPolicy_test_001 error 9200001 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
       }
       done();
       console.info(' --- getDomainAccountPolicy_test_001  -------- END --------');
@@ -1071,7 +1092,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- getDomainAccountPolicy_test_002 error 9200002 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200002).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1097,7 +1122,11 @@ export default function accountManagerTest() {
       } catch (error) {
         console.info(' --- getDomainAccountPolicy_test_003 error 401 and 801 is expected, actually catch: '
           + error.code);
-        expect((error.code == 401) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

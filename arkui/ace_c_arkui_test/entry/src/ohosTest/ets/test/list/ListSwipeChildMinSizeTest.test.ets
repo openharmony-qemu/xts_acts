@@ -316,14 +316,14 @@ export default function ListSwipeChildMinSizeTest() {
 
 
     /**
-     * @tc.name   testImageAniMator010
+     * @tc.name   testImageAniMator010Adapt001
      * @tc.number SUB_ARKUI_CAPI_ImageAnimator_011
      * @tc.desc   testing testImageAnimator interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testImageAniMator010', Level.LEVEL1, async (done: Function) => {
+    it('testImageAniMator010Adapt001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAniMator011()).assertEqual(1)
       done()
     }) 

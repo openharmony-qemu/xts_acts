@@ -89,7 +89,6 @@ struct PageOne {
         Button('pushNamed PageOne Single')
           .onClick((e:ClickEvent) => {
             try{
-              initModule ('./PageOne')
               router1.pushNamedRoute({ name: 'nickNameOne', params: 20 }, router.RouterMode.Single)
             }catch(err){
               console.log('+++++errpushNamedRoute',err)

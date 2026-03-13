@@ -1634,6 +1634,127 @@ export default function channelCallbacktest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1601
+         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1601
+         * @tc.desc   Check whether the channel is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_Ese_LogicalChannel_js_1601', Level.LEVEL0, async function (done) {
+            try {
+                if (getReader == undefined) {
+                    console.info("[NFC_test]16 This function is not supported because the phone NFC chip is ST chip.");
+                } else {
+                    let getPromise = Session.openLogicalChannel(null,null);
+                    await getPromise.then((data) => {
+                        console.info("[NFC_test]16  openLogicalChannel data: " + data);
+                        if ( data != undefined && data != null){
+                            console.info("[NFC_test]16 openLogicalChannel data != null");
+                        }
+                        else {
+                            console.info("[NFC_test]16 openLogicalChannel data == null");
+                        }
+                    }).catch((error)=> {
+                        console.info("[NFC_test]16 openLogicalChannel catch error" + error.code + "---" + error);
+                        expect(3300103).assertEqual(error.code)
+                    });
+                    sleep(5000);
+                }
+            } catch (err) {
+                if (err.code === 401) {
+                    console.info("[NFC_test]16 openLogicalChannel_Promise occurs exception:" + err.code + "---" + err);
+                    expect(401).assertEqual(err.code);
+                } else {
+                    console.info("[NFC_test]16 openLogicalChannel_Promise occurs exception:" + err.code + "---" + err);
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1602
+         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1602
+         * @tc.desc   Check whether the channel is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_Ese_LogicalChannel_js_1602', Level.LEVEL0, async function (done) {
+            try {
+                if (getReader == undefined) {
+                    console.info("[NFC_test]16 This function is not supported because the phone NFC chip is ST chip.");
+                } else {
+                    let getPromise = Session.openLogicalChannel(undefined,undefined);
+                    await getPromise.then((data) => {
+                        console.info("[NFC_test]16  openLogicalChannel data: " + data);
+                        if ( data != undefined && data != null){
+                            console.info("[NFC_test]16 openLogicalChannel data != null");
+                        }
+                        else {
+                            console.info("[NFC_test]16 openLogicalChannel data == null");
+                        }
+                    }).catch((error)=> {
+                        console.info("[NFC_test]16 openLogicalChannel catch error" + error.code + "---" + error);
+                        expect(3300103).assertEqual(error.code)
+                    });
+                    sleep(5000);
+                }
+            } catch (err) {
+                if (err.code === 401) {
+                    console.info("[NFC_test]16 openLogicalChannel_Promise occurs exception:" + err.code + "---" + err);
+                    expect(401).assertEqual(err.code);
+                } else {
+                    console.info("[NFC_test]16 openLogicalChannel_Promise occurs exception:" + err.code + "---" + err);
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1603
+         * @tc.number SUB_Communication_Ese_LogicalChannel_js_1603
+         * @tc.desc   Check whether the channel is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_Ese_LogicalChannel_js_1603', Level.LEVEL0, async function (done) {
+            let array = [];
+            try {
+                if (getReader == undefined) {
+                    console.info("[NFC_test]16 This function is not supported because the phone NFC chip is ST chip.");
+                } else {
+                    let getPromise = Session.openLogicalChannel(array,undefined);
+                    await getPromise.then((data) => {
+                        console.info("[NFC_test]16  openLogicalChannel data: " + data);
+                        if ( data != undefined && data != null){
+                            console.info("[NFC_test]16 openLogicalChannel data != null");
+                        }
+                        else {
+                            console.info("[NFC_test]16 openLogicalChannel data == null");
+                        }
+                    }).catch((error)=> {
+                        console.info("[NFC_test]16 openLogicalChannel catch error" + error.code + "---" + error);
+                        expect(3300103).assertEqual(error.code)
+                    });
+                    sleep(5000);
+                }
+            } catch (err) {
+                if (err.code === 401) {
+                    console.info("[NFC_test]16 openLogicalChannel_Promise occurs exception:" + err.code + "---" + err);
+                    expect(401).assertEqual(err.code);
+                } else {
+                    console.info("[NFC_test]16 openLogicalChannel_Promise occurs exception:" + err.code + "---" + err);
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1700
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1700
          * @tc.desc   hasHceCapability to support a certain type of card emulation.

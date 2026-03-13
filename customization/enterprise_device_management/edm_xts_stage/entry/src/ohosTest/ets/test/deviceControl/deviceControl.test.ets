@@ -79,8 +79,8 @@ function testOperateDevice() {
   it("test_operate_device_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      deviceControl.operateDevice(SELFWANT, LOCK_SCREEN);
-      expect(true).assertTrue();
+      let ret = deviceControl.operateDevice(SELFWANT, LOCK_SCREEN);
+      expect(ret == null).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {

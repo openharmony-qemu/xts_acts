@@ -30,9 +30,9 @@ export default function ucharNdkTest() {
      * @tc.desc   test c16rtomb
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslUcharC16rtomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslUcharC16rtomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = uchar.c16rtomb();
       expect(result).assertEqual(resultTrue);
@@ -45,9 +45,9 @@ export default function ucharNdkTest() {
      * @tc.desc   test c32rtomb
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslUcharC32rtomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslUcharC32rtomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = uchar.c32rtomb();
       expect(result).assertEqual(resultTrue);
@@ -59,9 +59,9 @@ export default function ucharNdkTest() {
      * @tc.desc   test mbrtoc16
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslUcharMbrtoc16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslUcharMbrtoc16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = uchar.mbrtoc16();
       expect(result).assertEqual(1)
       done()
@@ -73,9 +73,9 @@ export default function ucharNdkTest() {
      * @tc.desc   test mbrtoc32
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslUcharMbrtoc32001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslUcharMbrtoc32001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = uchar.mbrtoc32();
       expect(result).assertEqual(1)
       done()

@@ -28,7 +28,7 @@ import inspector from '@ohos.arkui.inspector'
 import { UtilsTest } from '../Util.test';
 
 export default function colorModifierUndefinedTest() {
-  describe('colorModifierUndefinedTest', () => {
+  describe('colorModifierUndefinedTestAdapt001', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility('com.acts.arkui.component.common.attrs.test.static', 'EntryAbility');
