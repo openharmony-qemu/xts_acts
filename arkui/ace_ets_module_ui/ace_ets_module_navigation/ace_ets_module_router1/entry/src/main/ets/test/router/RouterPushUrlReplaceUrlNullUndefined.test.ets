@@ -16,31 +16,27 @@ import { describe, beforeEach, Level, it, expect } from '@ohos/hypium';
 import { router } from '@kit.ArkUI';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import { sleep, startPage } from '../../../uiutils/commonUtils';
-
 
 export default function RouterPushUrlReplaceUrlNullUndefinedTest() {
   describe('RouterPushUrlReplaceUrlNullUndefinedTest', () => {
     beforeEach(async (done: Function) => {
-      await startPage('pages/router/RouterPushUrlReplaceUrlNullUndefined')
-      await sleep(1000)
-      // console.info("RouterPushUrlReplaceUrlNullUndefinedTest beforeEach start");
-      // let options: router.RouterOptions = {
-      //   url: 'MainAbility/pages/router/RouterPushUrlReplaceUrlNullUndefined',
-      // }
-      // try {
-      //   router.clear();
-      //   let pages = router.getState();
-      //   console.info("get RouterPushUrlReplaceUrlNullUndefinedTest state pages: " + JSON.stringify(pages));
-      //   if (!("RouterPushUrlReplaceUrlNullUndefined" == pages.name)) {
-      //     console.info("get RouterPushUrlReplaceUrlNullUndefinedTest state pages.name: " + JSON.stringify(pages.name));
-      //     let result = await router.replaceUrl(options);
-      //     await CommonFunc.sleep(2000);
-      //     console.info("push RouterPushUrlReplaceUrlNullUndefinedTest success: " + JSON.stringify(result));
-      //   }
-      // } catch (err) {
-      //   console.error("push RouterPushUrlReplaceUrlNullUndefinedTest page error: " + err);
-      // }
+      console.info("RouterPushUrlReplaceUrlNullUndefinedTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/router/RouterPushUrlReplaceUrlNullUndefined',
+      }
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get RouterPushUrlReplaceUrlNullUndefinedTest state pages: " + JSON.stringify(pages));
+        if (!("RouterPushUrlReplaceUrlNullUndefined" == pages.name)) {
+          console.info("get RouterPushUrlReplaceUrlNullUndefinedTest state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.replaceUrl(options);
+          await CommonFunc.sleep(2000);
+          console.info("push RouterPushUrlReplaceUrlNullUndefinedTest success: " + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error("push RouterPushUrlReplaceUrlNullUndefinedTest page error: " + err);
+      }
       done();
     });
 

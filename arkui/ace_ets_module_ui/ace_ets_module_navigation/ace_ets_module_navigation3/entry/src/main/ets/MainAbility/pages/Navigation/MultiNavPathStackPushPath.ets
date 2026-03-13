@@ -17,7 +17,7 @@ import { MultiNavigation, MultiNavPathStack, SplitPolicy } from '@kit.ArkUI';
 @Component
 export struct TestPageHome {
   @State message: string = 'TestPageHome';
-  param: Object = {};
+  param: Object = new Object();
   @Consume('pageStack') pageStack: MultiNavPathStack = new MultiNavPathStack();
 
   build() {
@@ -37,7 +37,7 @@ export struct TestPageHome {
 @Component
 export struct TestPageDetail {
   @State message: string = 'TestPageDetail';
-  param: Object = {};
+  param: Object = new Object();
 
   build() {
     NavDestination() {
@@ -57,7 +57,7 @@ export struct TestPageDetail {
 @Component
 export struct TestPageFull {
   @State message: string = 'TestPageFull';
-  param: Object = {};
+  param: Object = new Object();
 
   build() {
     NavDestination() {
