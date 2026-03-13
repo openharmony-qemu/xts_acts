@@ -77,17 +77,14 @@ struct SectionItem {
 @Component
 struct chipGroupTest {
   @State name: string = 'chipGroupTest';
-  @State StepTips: string = '设备支持屏幕朗读时\n' + '操作步骤:\n' +
-    '1.1、点击单选区域和多选区域组件的删除图标，观察朗读内容；1.2、双击删除图标；1.3、删除所有删除后缀图标的操作块后双击已删除按钮\n' +
-    '2.1、点击单选区域和多选区域组件的保存后缀图标，观察朗读内容,双击后缀图标\n' + '\n' +
-    '预期结果：1.1、朗读内容为：删除，按钮，删除文本；1.2、操作块被删除\n' +
-    '2.1、朗读内容为：保存，按钮，选项后缀图标\n'
+  @State StepTips: string = '不支持屏幕朗读直接按照失败处理走豁免\n'+'设备支持屏幕朗读时\n' + '操作步骤:\n' +
+    '1、点击单选区域和多选区域组件的后缀图标，观察朗读内容，双击后缀图标\n' + '\n' +
+    '1、朗读内容为：保存，按钮，选项后缀图标\n'
   @State vueStatus: boolean = false;
   @State status1: boolean = false;
   @State status2: boolean = false;
   @State status3: boolean = false;
   @State status4: boolean = false;
-  @State status5: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -256,215 +253,107 @@ struct chipGroupTest {
                   this.onAccessibilityHoverEnable = true
                 })
             }
-
-            Column() {
-              Button('已删除')
-                .borderRadius(8)
-                .backgroundColor(0x317aff)
-                .width('30%')
-                .onClick(() => {
-                  this.status5 = true;
-                  if (this.status1 && this.status2 && this.status3 && this.status4 && this.status5) {
-                    this.vueStatus = true;
-                  } else {
-                    this.vueStatus = false;
-                  }
-                })
-            }
           }
 
           Column() {
             Column({ space: 10 }) {
               SectionGroup({ title: '单选区' }) {
-                SectionItem({ title: '单选 无后缀区域' }) {
-                  ChipGroup({
-                    items: [
-                      {
-                        prefixIcon: {
-                          src: $r('app.media.icon')
+                ChipGroup({
+                  items: [
+                    {
+                      prefixIcon: {
+                        src: $r('app.media.icon')
+                      },
+                      label: { text: '选项1' },
+                      suffixImageIcon: {
+                        src: $r('sys.media.save_button_picture'),
+                        accessibilityText: '保存',
+                        accessibilityDescription: '选项后缀图标',
+                        accessibilityLevel: 'auto',
+                        action: () => {
+                          this.status1 = true;
+                          if (this.status1 && this.status2 && this.status3 && this.status4) {
+                            this.vueStatus = true;
+                          } else {
+                            this.vueStatus = false;
+                          }
                         },
-                        label: { text: '选项1' },
-                        suffixImageIcon: {
-                          src: $r('sys.media.save_button_picture'),
+                      },
+                      allowClose: true
+                    },
+                    {
+                      label: { text: '选项2' },
+                      suffixSymbol: {
+                        normal: new SymbolGlyphModifier($r('sys.symbol.save')),
+                        activated: new SymbolGlyphModifier($r('sys.symbol.save'))
+                      },
+                      suffixSymbolOptions: {
+                        normalAccessibility: {
                           accessibilityText: '保存',
                           accessibilityDescription: '选项后缀图标',
                           accessibilityLevel: 'auto',
-                          action: () => {
-                            this.status1 = true;
-                            if (this.status1 && this.status2 && this.status3 && this.status4 && this.status5) {
-                              this.vueStatus = true;
-                            } else {
-                              this.vueStatus = false;
-                            }
-                          },
                         },
-                        allowClose: true
-                      },
-                      {
-                        label: { text: '选项2' },
-                        suffixSymbol: {
-                          normal: new SymbolGlyphModifier($r('sys.symbol.save')),
-                          activated: new SymbolGlyphModifier($r('sys.symbol.save'))
-                        },
-                        suffixSymbolOptions: {
-                          normalAccessibility: {
-                            accessibilityText: '保存',
-                            accessibilityDescription: '选项后缀图标',
-                            accessibilityLevel: 'auto',
-                          },
-                          action: () => {
-                            this.status2 = true;
-                            if (this.status1 && this.status2 && this.status3 && this.status4 && this.status5) {
-                              this.vueStatus = true;
-                            } else {
-                              this.vueStatus = false;
-                            }
+                        action: () => {
+                          this.status2 = true;
+                          if (this.status1 && this.status2 && this.status3 && this.status4) {
+                            this.vueStatus = true;
+                          } else {
+                            this.vueStatus = false;
                           }
                         }
-                      },
-                      {
-                        label: { text: '选项3' },
-                        closeOptions: {
-                          accessibilityText: '删除',
-                          accessibilityDescription: '删除文本',
-                          accessibilityLevel: 'yes'
-                        },
-                        allowClose: true
-                      },
-                      {
-                        label: { text: '选项4' },
-                        closeOptions: {
-                          accessibilityText: '删除',
-                          accessibilityDescription: '删除文本',
-                          accessibilityLevel: 'yes'
-                        },
-                        allowClose: true
-                      },
-                    ]
-                  })
-                }
-
-                SectionItem({ title: '单选 有后缀区域' }) {
-                  ChipGroup({
-                    items: [
-                      {
-                        label: { text: '选项1' },
-                        closeOptions: {
-                          accessibilityText: '删除',
-                          accessibilityDescription: '删除文本',
-                          accessibilityLevel: 'yes'
-                        },
-                        allowClose: true
-                      },
-                      {
-                        label: { text: '选项2' },
-                        closeOptions: {
-                          accessibilityText: '删除',
-                          accessibilityDescription: '删除文本',
-                          accessibilityLevel: 'yes'
-                        },
-                        allowClose: true
-                      },
-                    ],
-                    suffix: this.Suffix.bind(this),
-                  })
-                }
+                      }
+                    },
+                  ]
+                })
               }
             }
 
             Column({ space: 10 }) {
               SectionGroup({ title: '多选区' }) {
-                SectionItem({ title: '多选 无后缀区域' }) {
-                  ChipGroup({
-                    items: [
-                      {
-                        label: { text: '选项1' },
-                        suffixImageIcon: {
-                          src: $r('sys.media.save_button_picture'),
+                ChipGroup({
+                  items: [
+                    {
+                      label: { text: '选项1' },
+                      suffixImageIcon: {
+                        src: $r('sys.media.save_button_picture'),
+                        accessibilityText: '保存',
+                        accessibilityDescription: '选项后缀图标',
+                        accessibilityLevel: 'auto',
+                        action: () => {
+                          this.status3 = true;
+                          if (this.status1 && this.status2 && this.status3 && this.status4) {
+                            this.vueStatus = true;
+                          } else {
+                            this.vueStatus = false;
+                          }
+                        },
+                      }
+                    },
+                    {
+                      label: { text: '选项2' },
+                      suffixSymbol: {
+                        normal: new SymbolGlyphModifier($r('sys.symbol.save')),
+                        activated: new SymbolGlyphModifier($r('sys.symbol.save'))
+                      },
+                      suffixSymbolOptions: {
+                        normalAccessibility: {
                           accessibilityText: '保存',
                           accessibilityDescription: '选项后缀图标',
                           accessibilityLevel: 'auto',
-                          action: () => {
-                            this.status3 = true;
-                            if (this.status1 && this.status2 && this.status3 && this.status4 && this.status5) {
-                              this.vueStatus = true;
-                            } else {
-                              this.vueStatus = false;
-                            }
-                          },
-                        }
-                      },
-                      {
-                        label: { text: '选项2' },
-                        suffixSymbol: {
-                          normal: new SymbolGlyphModifier($r('sys.symbol.save')),
-                          activated: new SymbolGlyphModifier($r('sys.symbol.save'))
                         },
-                        suffixSymbolOptions: {
-                          normalAccessibility: {
-                            accessibilityText: '保存',
-                            accessibilityDescription: '选项后缀图标',
-                            accessibilityLevel: 'auto',
-                          },
-                          action: () => {
-                            this.status4 = true;
-                            if (this.status1 && this.status2 && this.status3 && this.status4 && this.status5) {
-                              this.vueStatus = true;
-                            } else {
-                              this.vueStatus = false;
-                            }
+                        action: () => {
+                          this.status4 = true;
+                          if (this.status1 && this.status2 && this.status3 && this.status4) {
+                            this.vueStatus = true;
+                          } else {
+                            this.vueStatus = false;
                           }
                         }
-                      },
-                      {
-                        label: { text: '选项3' },
-                        closeOptions: {
-                          accessibilityText: '删除',
-                          accessibilityDescription: '删除文本',
-                          accessibilityLevel: 'yes'
-                        },
-                        allowClose: true
-                      },
-                      {
-                        label: { text: '选项4' },
-                        closeOptions: {
-                          accessibilityText: '删除',
-                          accessibilityDescription: '删除文本',
-                          accessibilityLevel: 'yes'
-                        },
-                        allowClose: true
-                      },
-                    ],
-                    multiple: true
-                  })
-                }
-
-                SectionItem({ title: '多选 有后缀区域' }) {
-                  ChipGroup({
-                    items: [
-                      {
-                        label: { text: '选项1' },
-                        closeOptions: {
-                          accessibilityText: '删除',
-                          accessibilityDescription: '删除文本',
-                          accessibilityLevel: 'yes'
-                        },
-                        allowClose: true
-                      },
-                      {
-                        label: { text: '选项2' },
-                        closeOptions: {
-                          accessibilityText: '删除',
-                          accessibilityDescription: '删除文本',
-                          accessibilityLevel: 'yes'
-                        },
-                        allowClose: true
-                      },
-                    ],
-                    suffix: this.Suffix.bind(this),
-                    multiple: true,
-                  })
-                }
+                      }
+                    },
+                  ],
+                  multiple: true
+                })
               }
             }
           }
