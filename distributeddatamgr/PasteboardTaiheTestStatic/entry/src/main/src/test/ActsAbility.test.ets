@@ -4792,5 +4792,556 @@ export default function abilityTest() {
       hilog.info(domain, tag, "------SUB_PasteBoard_ETS_HasRemoteData_Static_0010 end------");
       done();
     })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0030
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0030
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0030 start------");
+      let textData = "https://www.baidu.com";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0030 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0040
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0040
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0040 start------");
+      let textData = "CA982";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0040 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0050
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0050
+     * @tc.desc   textData is "qqq@163.com",Patterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0050 start------");
+      let textData = "qqq@163.com";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          let patterns1: Array<pasteboard.Pattern> =[];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0050 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0060
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0060
+     * @tc.desc   textData is "qqq@163.com",Patterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0060 start------");
+      let textData = "qqq@163.com";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          let patterns1: Array<pasteboard.Pattern> =[];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0060 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0070
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0070
+     * @tc.desc   pattterns value is pasteboard.Pattern.NUMBER/EMAIL_ADDRESS/URL/HTTP_URL/FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0070 start------");
+      let textData = "<!DOCTYPE html><html><head><title>" +
+        "的厚爱hi哦</title></head><body><h2>恶风无关痛痒和</h2>" +
+        "<p>Greg任何人https://exampsaole.com问我的<a href=\"https://exaeqdwerfmple.com\">" +
+        "如果qwiuyhw@huedqw.dsh站</a>CA982</p></body></html>";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,
+      pasteboard.Pattern.HTTP_URL,pasteboard.Pattern.FLIGHT_NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(5);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0070 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0080
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0080
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0080 start------");
+      let textData = "https://啊";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0080 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0090
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0090
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0090 start------");
+      let textData = "http://example.com.huhfbvhfbvfdbvhdf2432bhjb123jh3h3bh2、1b3h213b3h21b2311hbh222222222222222222^^89";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0090 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0100
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0100
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0100 start------");
+      let textData = "http://";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          let patterns1: Array<pasteboard.Pattern> =[];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0100 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0110
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0110
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0110 start------");
+      let textData = "http://";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          let patterns1: Array<pasteboard.Pattern> =[];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0110 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0120
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0120
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0120 start------");
+      let textData = "https://";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          let patterns1: Array<pasteboard.Pattern> =[];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0120 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0130
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0130
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0130 start------");
+      let textData = "htp://e";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          let patterns1: Array<pasteboard.Pattern> =[];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0130 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0140
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0140
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0140 start------");
+      let textData = "0C2094Z";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0140 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0150
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0150
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0150 start------");
+      let textData = "ZA039";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0150 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0160
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0160
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0160 start------");
+      let textData = "9A309";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0160 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0170
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0170
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0170 start------");
+      let textData = "aC0294A 121234A ACB29A CA12 CA12345A AC02943 AC0294a";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          let patterns1: Array<pasteboard.Pattern> =[];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0170 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0180
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0180
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL/FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0180 start------");
+      let textData = "1.jy:/*€ spuSHa9IGkDVaSζ) http://lag.c h@s.z CA9621";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER, pasteboard.Pattern.HTTP_URL, 
+      pasteboard.Pattern.URL, pasteboard.Pattern.EMAIL_ADDRESS, pasteboard.Pattern.NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          expect(data.length).assertEqual(5);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0180 end------");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PasteBoard_ETS_DetectPatterns_Static_0190
+     * @tc.number SUB_PasteBoard_ETS_DetectPatterns_Static_0190
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PasteBoard_ETS_DetectPatterns_Static_0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0190 start------");
+      let textData = "ceshihttp://aa.com";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, textData);
+      let systemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteData);
+      let res = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER, pasteboard.Pattern.HTTP_URL, 
+      pasteboard.Pattern.URL, pasteboard.Pattern.EMAIL_ADDRESS, pasteboard.Pattern.NUMBER];
+      try {
+        await systemPasteboard.detectPatterns(patterns).then((data) => {
+          hilog.info(domain, tag, "data.sort:" + data.sort().join(''));
+          let patterns1: Array<pasteboard.Pattern> =[];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(domain, tag, "error.message:" + err.message);
+        expect(null).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, "------SUB_PasteBoard_ETS_DetectPatterns_Static_0190 end------");
+      done();
+    })
   })
 }
