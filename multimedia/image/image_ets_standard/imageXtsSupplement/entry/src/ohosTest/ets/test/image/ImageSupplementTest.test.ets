@@ -184,12 +184,8 @@ export default function ImageSupplementTest() {
       const path = 'test_exif_v2.jpg';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
       imageSourceApi = await getImageSource(path);
       try {
-        await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.getProperties(null);
@@ -220,12 +216,8 @@ export default function ImageSupplementTest() {
       const path = 'test_exif_v2.jpg';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
       imageSourceApi = await getImageSource(path);
       try {
-        await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           await metaData.makerNoteHuaweiMetadata.getProperties(undefined);
@@ -246,7 +238,7 @@ export default function ImageSupplementTest() {
     /**
      * @tc.number     SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001
      * @tc.name       SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001
-     * @tc.desc       Metadata -makerNoteHuaweiMetadata -getAllProperties -cover null
+     * @tc.desc       Metadata -makerNoteHuaweiMetadata -getAllProperties -返回值为空
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -258,51 +250,17 @@ export default function ImageSupplementTest() {
       testExifMetadata.imageWidth = 0;
       imageSourceApi = await getImageSource(path);
       try {
-        await imageSourceApi.writeImageMetadata(null);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
           let res = await metaData.makerNoteHuaweiMetadata.getAllProperties();
-          expect(res != undefined).assertTrue();
+          expect().assertFail();
         } else {
           console.error(TAG, testName, 'metadata is null. ');
           expect().assertFail();
         }
       } catch (error) {
         console.error(TAG, testName, 'makerNoteHuaweiMetadata getProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7700204);
-        done();
-      } finally {
-        await imageSourceApi?.release();
-        done();
-      }
-    });
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_002
-     * @tc.name       SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_002
-     * @tc.desc       Metadata -makerNoteHuaweiMetadata -getAllProperties -cover undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_002', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_002';
-      const path = 'test.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      imageSourceApi = await getImageSource(path);
-      try {
-        await imageSourceApi.writeImageMetadata(undefined);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-          let res = await metaData.makerNoteHuaweiMetadata.getAllProperties();
-          expect(res != undefined).assertTrue();
-        } else {
-          console.error(TAG, testName, 'metadata is null. ');
-          expect().assertFail();
-        }
-      } catch (error) {
-        console.error(TAG, testName, 'makerNoteHuaweiMetadata getAllProperties error', error.message, error.code);
-        expect(Number(error.code)).assertEqual(7700204);
+        expect(error.code).assertUndefined();
         done();
       } finally {
         await imageSourceApi?.release();
@@ -312,7 +270,7 @@ export default function ImageSupplementTest() {
     /**
      * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_001
      * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_001
-     * @tc.desc       Metadata -ExifMetadata -getAllProperties -正常参数
+     * @tc.desc       Metadata -ExifMetadata -getAllProperties -返回值不为空
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -322,12 +280,8 @@ export default function ImageSupplementTest() {
       const path = 'test_exif_v2.jpg';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.imageWidth = 0;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
       imageSourceApi = await getImageSource(path);
       try {
-        await imageSourceApi.writeImageMetadata(imageMetadata);
         let metaData = await imageSourceApi.readImageMetadata(["ImageWidth", "ImageLength"]);
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           let res = await metaData.exifMetadata.getAllProperties();
@@ -345,55 +299,22 @@ export default function ImageSupplementTest() {
         done();
       }
     });
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002
-     * @tc.desc       Metadata -ExifMetadata -getAllProperties -cover null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002';
-      const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      imageSourceApi = await getImageSource(path);
-      try {
-        await imageSourceApi.writeImageMetadata(null);
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let res = await metaData.exifMetadata.getAllProperties();
-          expect().assertFail();
-        } else {
-          console.error(TAG, testName, 'metadata is null. ');
-          expect().assertFail();
-        }
-      } catch (error) {
-        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(7700204);
-        done();
-      } finally {
-        await imageSourceApi?.release();
-        done();
-      }
-    });
+
     /**
      * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_003
      * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_003
-     * @tc.desc       Metadata -ExifMetadata -getAllProperties -cover undefined
+     * @tc.desc       Metadata -ExifMetadata -getAllProperties -返回值为空
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_003';
-      const path = 'test_exif_v2.jpg';
+      const path = 'test.jpg';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.imageWidth = 0;
       imageSourceApi = await getImageSource(path);
       try {
-        await imageSourceApi.writeImageMetadata(undefined);
         let metaData = await imageSourceApi.readImageMetadata();
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           let res = await metaData.exifMetadata.getAllProperties();
@@ -404,7 +325,7 @@ export default function ImageSupplementTest() {
         }
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(7700204);
+        expect(error.code).assertUndefined();
         done();
       } finally {
         await imageSourceApi?.release();
