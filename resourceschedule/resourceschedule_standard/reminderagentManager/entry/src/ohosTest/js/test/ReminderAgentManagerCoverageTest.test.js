@@ -208,7 +208,7 @@ export default function ReminderAgentManagerCoverageTest() {
         })
 
         /**
-         * @tc.name   publishReminderReminder_callback_tapDismissed_001
+         * @tc.name   publishReminder_callback_tapDismissed_001
          * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_PUBLISHREMINDER_CALLBACK_TAPDISMISSED_001
          * @tc.desc   test publishReminder callback with tapDismissed false.
          * @tc.type   FUNCTION
@@ -831,7 +831,7 @@ export default function ReminderAgentManagerCoverageTest() {
         })
 
         /**
-         * @tc.name   cancelReminder_callback_slotType_001
+         * @tc.name   removeNotificationSlot_callback_slotType_001
          * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENTMANAGER_REMOVENOTIFICATIONSLOT_CALLBACK_SLOTTYPE_001
          * @tc.desc   test removeNotificationSlot callback with slotType UNKNOWN_TYPE.
          * @tc.type   FUNCTION
