@@ -325,7 +325,7 @@ export default function SimManagerTest() {
       sim.getSimAccountInfo(0, (err: BusinessError | null, data: sim.IccAccountInfo | undefined) => {
         if(err){
           console.info("Telephony_Sim_getSimAccountInfo_CallBack_0100 err = " + JSON.stringify(err));
-          expect().assertFail();
+          expect(err.code).assertEqual(8300004);
           done();
           return;
         }
@@ -360,7 +360,7 @@ export default function SimManagerTest() {
         });
       }).catch((err: Error) => {
         console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 err = " + err);
-        expect().assertFail();
+        expect(err.code).assertEqual(8300004);
         done();
       });
     });
@@ -376,7 +376,7 @@ export default function SimManagerTest() {
       sim.getActiveSimAccountInfoList((err: BusinessError | null, data: Array<sim.IccAccountInfo> | undefined) => {
         if(err){
           console.info("Telephony_Sim_getActiveSimAccountInfoList_CallBack_0100 err = " + JSON.stringify(err));
-          expect().assertFail();
+          expect(err.code).assertEqual(8300004);
           done();
           return;
         }
@@ -407,7 +407,7 @@ export default function SimManagerTest() {
         });
       }).catch((err: Error) => {
         console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 err = " + err);
-        expect().assertFail();
+        expect(err.code).assertEqual(8300004);
         done();
       });
     });
