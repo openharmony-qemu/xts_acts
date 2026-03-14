@@ -366,7 +366,7 @@ async function loadSoundPoolWithFdPromise(usage: audio.StreamUsage, maxStreams: 
       done();
     }
   }, (error: BusinessError) => {
-    console.error(TAG, `catchCallback, error message is ${error.message}`);
+    console.error(TAG, `soundpool catchCallback, error message:${error.message}`);
     expect().assertFail();
     done();
   });
