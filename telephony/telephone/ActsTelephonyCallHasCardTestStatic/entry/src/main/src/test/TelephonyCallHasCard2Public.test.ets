@@ -1119,6 +1119,42 @@ export default function HasCard2PublicTest() {
     });
 
     /**
+     * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_1500
+     * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1500
+     * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it("testTelephonyCallManagerIsEmergencyPhoneNumber_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber_static_1500';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        const options: call.EmergencyNumberOptions = {
+          slotId: 0
+        };
+        call.isEmergencyPhoneNumber("", options, (err: BusinessError<void> | null, data: boolean | undefined) => {
+          if (err?.code) {
+            hilog.error(domain, tag, `${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
+            expect(true).assertEqual(err?.code === 8300001);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber, data->${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        hilog.error(domain, tag, `${caseName} test end `);
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
      * @tc.name   testTelephonyCallManagerIsEmergencyPhoneNumber_static_1800
      * @tc.number SUB_Telephony_CallManager_IsEmergencyPhoneNumber_1800
      * @tc.desc   Determine whether the emergency phone number is based on the telephone number parameters. Use the callback asynchronous callback api7+.
