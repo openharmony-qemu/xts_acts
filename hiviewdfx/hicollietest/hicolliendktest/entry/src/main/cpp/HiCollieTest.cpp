@@ -25,14 +25,14 @@
 #define LOG_TAG "StruckTest"
 
 // 设置上报应用线程卡死事件标志位
-std::shared_ptr<std::atomic<bool>> isSixSecondEvent_ = std::make_shared<std::atomic<bool>>(false);
+std::shared_ptr<std::atomic<bool>> isSixSecondEvent1_ = std::make_shared<std::atomic<bool>>(false);
 int  g_suc = 1;
 void ReportEvent1() {
-    bool temp = isSixSecondEvent_->load();
+    bool temp = isSixSecondEvent1_->load();
     g_suc = OH_HiCollie_Report(&temp);
     // 成功：0
-    OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_Report: %{public}d, isSixSecondEvent: %{public}d", g_suc, isSixSecondEvent_->load());
-    isSixSecondEvent_->store(temp);
+    OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_Report: %{public}d, isSixSecondEvent1: %{public}d", g_suc, isSixSecondEvent1_->load());
+    isSixSecondEvent1_->store(temp);
     
 }
 
@@ -49,9 +49,9 @@ napi_value OH_HiCollie_Report_sucess(napi_env env, napi_callback_info info)
 }
 napi_value OH_HiCollie_Report_Main(napi_env env, napi_callback_info info)
 {
-    bool temp = isSixSecondEvent_->load();
+    bool temp = isSixSecondEvent1_->load();
     int reportResult = OH_HiCollie_Report(&temp);
-    OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_Report: %{public}d, isSixSecondEvent: %{public}d", reportResult, isSixSecondEvent_->load());
+    OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_Report: %{public}d, isSixSecondEvent1: %{public}d", reportResult, isSixSecondEvent1_->load());
     // 执行任务
     napi_value sum;
     napi_create_int32(env, reportResult, &sum);
