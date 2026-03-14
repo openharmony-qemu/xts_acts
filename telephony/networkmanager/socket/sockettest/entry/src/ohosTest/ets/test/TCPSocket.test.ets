@@ -6111,7 +6111,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9014
+          port: 9015
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6160,7 +6160,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9014
+          port: 9016
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6209,7 +6209,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9015
+          port: 9017
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6258,7 +6258,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9016
+          port: 9018
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6306,7 +6306,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9017
+          port: 9019
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6354,7 +6354,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9018
+          port: 9020
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6402,7 +6402,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9019
+          port: 9021
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6450,7 +6450,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9004
+          port: 9022
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6871,7 +6871,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10003
+          port: 10004
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6921,7 +6921,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10004
+          port: 10005
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -6971,7 +6971,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10004
+          port: 10005
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7021,7 +7021,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10005
+          port: 10007
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7071,7 +7071,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10006
+          port: 10008
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7121,7 +7121,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10007
+          port: 10009
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7171,7 +7171,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10008
+          port: 10010
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7221,7 +7221,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10008
+          port: 10011
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7271,7 +7271,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10008
+          port: 10012
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7321,7 +7321,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10009
+          port: 10013
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7371,7 +7371,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10010
+          port: 10014
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7421,7 +7421,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10011
+          port: 10015
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7471,7 +7471,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10012
+          port: 10016
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7521,7 +7521,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10013
+          port: 10017
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7571,7 +7571,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10014
+          port: 10018
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7620,7 +7620,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10015
+          port: 10019
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7669,7 +7669,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10017
+          port: 10020
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -7718,7 +7718,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object')
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 10018
+          port: 10021
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
@@ -8313,7 +8313,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         expect(tcp).assertInstanceOf('Object');
         let bindAddress: socket.NetAddress = {
           address: '127.0.0.1',
-          port: 9004
+          port: 4104
         };
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
           console.info('fail to bind' + err.code.toString());
@@ -8372,7 +8372,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
             expect(tcpServer).assertInstanceOf('Object');
             let listenAddress: socket.NetAddress = {
               address: '127.0.0.1',
-              port: 4017
+              port: 5020
             };
             await tcpServer.listen(listenAddress).catch((err: BusinessError) => {
               console.info('fail to listen' + err.code.toString());
@@ -8380,7 +8380,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
             let tcpConnectOptions: socket.TCPConnectOptions = {
               address: {
                 address: '127.0.0.1',
-                port: 4017
+                port: 5020
               },
               proxy:{
                 type: 0,
@@ -8490,7 +8490,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
             expect(tcpServer).assertInstanceOf('Object');
             let listenAddress: socket.NetAddress = {
               address: '127.0.0.1',
-              port: 4001,
+              port: 8002,
               family: 1
             };
             await tcpServer.listen(listenAddress).catch((err: BusinessError) => {
@@ -8543,7 +8543,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
             expect(tcpServer).assertInstanceOf('Object');
             let listenAddress: socket.NetAddress = {
               address: '127.0.0.1',
-              port: 4001,
+              port: 8003,
               family: 1
             };
             await tcpServer.listen(listenAddress).catch((err: BusinessError) => {
@@ -8589,7 +8589,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
             expect(tcpServer).assertInstanceOf('Object');
             let listenAddress: socket.NetAddress = {
               address: '127.0.0.1',
-              port: 4094
+              port: 5095
             };
             await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
                   console.info('fail to listen' + err.code.toString());
@@ -8648,7 +8648,7 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
             expect(tcp).assertInstanceOf('Object');
             let bindAddress: socket.NetAddress = {
               address: '127.0.0.1',
-              port: 4094
+              port: 4095
             };
             await tcp.bind(bindAddress).catch((err:BusinessError) => {
                   console.info('fail to bind' + err.code.toString());
