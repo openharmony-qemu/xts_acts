@@ -99,6 +99,28 @@ export default function printTest() {
         expect(error).assertEqual(401);
         done();
       })
+
+      await print.print(null).then((printTask: print.PrintTask) => {
+        expect(typeof (printTask)).assertEqual('object');
+        expect(!!printTask).assertTrue();
+        console.log('print_function_0100 succeed');
+        done();
+      }).catch((error: BusinessError) => {
+        console.log('print_function_0100 failed, err: ' + JSON.stringify(error));
+        expect(error).assertEqual(13100001);
+        done();
+      })
+
+      await print.print(undefined).then((printTask: print.PrintTask) => {
+        expect(typeof (printTask)).assertEqual('object');
+        expect(!!printTask).assertTrue();
+        console.log('print_function_0100 succeed');
+        done();
+      }).catch((error: BusinessError) => {
+        console.log('print_function_0100 failed, err: ' + JSON.stringify(error));
+        expect(error).assertEqual(13100001);
+        done();
+      })
     })
 
     /**
@@ -117,6 +139,40 @@ export default function printTest() {
           if (err) {
             console.log('print_function_0200 expect failed, err: ' + JSON.stringify(err));
             expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(typeof (printTask)).assertEqual('object');
+            expect(!!printTask).assertTrue();
+            console.log('print_function_0200 succeed');
+            done()
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.print(null, (err: BusinessError, printTask: print.PrintTask) => {
+        try {
+          if (err) {
+            console.log('print_function_0200 expect failed, err: ' + JSON.stringify(err));
+            expect(err).assertEqual(13100001);
+            done();
+          } else {
+            expect(typeof (printTask)).assertEqual('object');
+            expect(!!printTask).assertTrue();
+            console.log('print_function_0200 succeed');
+            done()
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.print(undefined, (err: BusinessError, printTask: print.PrintTask) => {
+        try {
+          if (err) {
+            console.log('print_function_0200 expect failed, err: ' + JSON.stringify(err));
+            expect(err).assertEqual(13100001);
             done();
           } else {
             expect(typeof (printTask)).assertEqual('object');
@@ -147,6 +203,40 @@ export default function printTest() {
           if (err) {
             console.log('print_function_0300 failed, err: ' + JSON.stringify(err));
             expect(err.code).assertEqual(13100003);
+            done();
+          } else {
+            expect(typeof (printTask)).assertEqual('object');
+            expect(!!printTask).assertTrue();
+            console.log('print_function_0300 succeed');
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.print(undefined, undefined, (err: BusinessError, printTask: print.PrintTask) => {
+        try {
+          if (err) {
+            console.log('print_function_0300 failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(undefined);
+            done();
+          } else {
+            expect(typeof (printTask)).assertEqual('object');
+            expect(!!printTask).assertTrue();
+            console.log('print_function_0300 succeed');
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.print(null, null, (err: BusinessError, printTask: print.PrintTask) => {
+        try {
+          if (err) {
+            console.log('print_function_0300 failed, err: ' + JSON.stringify(err));
+            expect(err.code).assertEqual(undefined);
             done();
           } else {
             expect(typeof (printTask)).assertEqual('object');
