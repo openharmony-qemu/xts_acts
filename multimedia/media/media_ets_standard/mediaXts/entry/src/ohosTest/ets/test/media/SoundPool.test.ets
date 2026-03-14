@@ -597,10 +597,11 @@ async function playSoundPoolWithUndefinedInPromiseMode(usage: audio.StreamUsage,
       console.info(TAG, 'file soundId: ' + soundId);
       soundPool.on('loadComplete', async (soundId: number) => {
         console.info(TAG, 'Succeeded in loadComplete, soundId: ' + soundId);
+        let soundIDToBePlayed: number | undefined = soundId;
         if (paramConfig.soundID === undefined) {
-          soundId = undefined;
+          soundIDToBePlayed = undefined;
         }
-        await soundPool?.play(soundId, paramConfig.playParameters).then((streamId: number) => {
+        await soundPool?.play(soundIDToBePlayed, paramConfig.playParameters).then((streamId: number) => {
           console.info(TAG, 'Succeeded in playing soundPool ,streamId =' + streamId);
           expect().assertFail();
           soundPool?.off('loadComplete');
@@ -635,14 +636,15 @@ async function playSoundPoolWithUndefinedInCallbackMode(usage: audio.StreamUsage
 
       let rawFileDescriptor = testContext.resourceManager.getRawFdSync(TEST_MP3_FILE);
       console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
-      console.info(TAG, 'Succeeded in loadComplete, soundId: ' + soundId);
       let soundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
-      soundPool.on('loadComplete', (soundId?: number) => {
-        console.info(TAG, 'file soundId: ' + soundId);
+      console.info(TAG, 'file soundId: ' + soundId);
+      soundPool.on('loadComplete', (soundId: number) => {
+        console.info(TAG, 'Succeeded in loadComplete, soundId: ' + soundId);
+        let soundIDToBePlayed: number | undefined = soundId;
         if (paramConfig.soundID === undefined) {
-          soundId = undefined;
+          soundIDToBePlayed = undefined;
         }
-        soundPool?.play(soundId, paramConfig.playParameters, (error: BusinessError, streamId: number) => {
+        soundPool?.play(soundIDToBePlayed, paramConfig.playParameters, (error: BusinessError, streamId: number) => {
           if (error) {
             console.error(TAG, `Failed to play soundPool: errCode is ${error.code}, errMessage is ${error.message}`);
             expect().assertTrue();
