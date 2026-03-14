@@ -32,9 +32,9 @@ export default function sendfileNdkTest() {
      * @tc.desc   test sendfile
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSendfileSendfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSendfileSendfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let context = abilityDelegator.getAppContext();
       let filesDir = context.filesDir;
@@ -60,9 +60,9 @@ export default function sendfileNdkTest() {
        * @tc.desc   test sendfile
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL1
+       * @tc.level  LEVEL0
        */
-      it('testMuslSendfileSendfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      it('testMuslSendfileSendfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let result:number = sendfile.sendfile(0);
         expect(result).assertEqual(1);
         done()
@@ -74,9 +74,9 @@ export default function sendfileNdkTest() {
      * @tc.desc   test sendfile64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSendfileSendfile64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSendfileSendfile64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sendfile.sendfile64(1);
       expect(result).assertEqual(-1);
       done()
@@ -88,9 +88,9 @@ export default function sendfileNdkTest() {
      * @tc.desc   test sendfile64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSendfileSendfile64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSendfileSendfile64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sendfile.sendfile64(0);
       expect(result).assertEqual(1);
       done()

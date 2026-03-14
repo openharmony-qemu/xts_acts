@@ -431,6 +431,7 @@ export default function audioGetRendererInfoTest() {
         expect(false).assertTrue();
         done();
       }
+      done();
     });
   });
   let Tag: string = 'AudioRendererOnOutputDeviceChangeWithInfo';

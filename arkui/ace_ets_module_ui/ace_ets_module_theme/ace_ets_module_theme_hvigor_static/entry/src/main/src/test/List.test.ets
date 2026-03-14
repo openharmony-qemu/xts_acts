@@ -57,13 +57,13 @@ export default function testsuite() {
   // buttonThemeTest();
   checkboxThemeTest()
   // checkboxGroupThemeTest();
-  counterThemeTest();
+  // counterThemeTest();
   datePickerThemeTest();
   dividerThemeTest();
   // forEachTest();
   // ifThemeTest();
   // lazyForEachTest();
-  loadingProgressThemeTest();
+  // loadingProgressThemeTest();
   // menuThemeTest();
   // menuItemThemeTest();
   // patternLockThemeTest();

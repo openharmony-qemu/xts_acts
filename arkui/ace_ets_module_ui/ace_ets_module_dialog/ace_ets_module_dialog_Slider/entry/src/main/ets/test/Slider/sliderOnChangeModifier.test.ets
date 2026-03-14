@@ -50,7 +50,7 @@ export default function sliderOnChangeModifierTest() {
    
    /**
      * @tc.number ArkUX_Modifier_Slider_OnChange_1001
-     * @tc.name Test the properties of components
+     * @tc.name ArkUX_Modifier_Slider_OnChange_1001
      * @tc.desc OnChange callback
      * @tc.size MediumTest
      * @tc.type Function
@@ -73,7 +73,7 @@ export default function sliderOnChangeModifierTest() {
 
   /**
    * @tc.number ArkUX_Modifier_Slider_OnChange_1002
-   * @tc.name Test the properties of components
+   * @tc.name ArkUX_Modifier_Slider_OnChange_1002
    * @tc.desc OnChange callback
    * @tc.size MediumTest
    * @tc.type Function

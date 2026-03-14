@@ -14,9 +14,13 @@
  */
 
 import abilityTest from './Ability.test';
+import asyncRunnerTest from './AsyncRunner.test';
+import cancelTest from './Cancel.test';
 import taskTimeoutTest from './TaskTimeout.test';
 
 export default function testsuite() {
   abilityTest();
+  asyncRunnerTest();
+  cancelTest();
   taskTimeoutTest();
 }

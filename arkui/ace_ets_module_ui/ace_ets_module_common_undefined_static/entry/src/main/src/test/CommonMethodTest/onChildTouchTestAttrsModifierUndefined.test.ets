@@ -39,7 +39,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
 
 export default function OnChildTouchTestUndefinedTest() {
-  describe('OnChildTouchTestUndefinedTest', () => {
+  describe('OnChildTouchTestUndefinedTestAdapt001', () => {
     beforeAll(async (): Promise<void> => {
       console.info("OnChildTouchTestAttrsModifierUndefinedTest beforeAll start");
 

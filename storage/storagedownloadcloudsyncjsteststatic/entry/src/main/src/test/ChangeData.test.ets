@@ -111,5 +111,77 @@ export default function changeDatetest() {
       }
     });
 
+    /**
+ 	       * @tc.name   cloudSync_test_ChangeData_Uris_static_004
+ 	       * @tc.number SUB_STORAGE_DOWNLOAD_CHANGEDATA_TEST_0400
+ 	       * @tc.desc   function of API, Test unregisterChange with empty string uri.
+ 	       * @tc.type   FUNCTION
+ 	        Error: 402 Payment Required - Insufficient credits
+ 	       * @tc.size   MEDIUMTEST
+ 	       * @tc.level  LEVEL3
+ 	       */
+    it('cloudSync_test_ChangeData_Uris_static_004', Level.LEVEL3, async (): Promise<void> => {
+      try {
+        let uri: string = "";
+        cloudSync.unregisterChange(uri);
+        expect(cloudSync.NotifyType.NOTIFY_ADDED === 0).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_004 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   cloudSync_test_ChangeData_Uris_static_005
+      * @tc.number SUB_STORAGE_DOWNLOAD_CHANGEDATA_TEST_0500
+      * @tc.desc   function of API, Test registerChange with recursion true.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('cloudSync_test_ChangeData_Uris_static_005', Level.LEVEL3, async (): Promise<void> => {
+      let dpath = await Utils.nextFileName('cloudSync_test_ChangeData_Uris_static_005');
+      fs.mkdirSync(dpath);
+      let uri = fileUri.getUriFromPath(dpath);
+      try {
+        let onCallback1 = (changeData: cloudSync.ChangeData) => {
+          if (changeData.type == cloudSync.NotifyType.NOTIFY_ADDED) {
+            hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_005 added changeData:' + changeData.uris);
+          } else if (changeData.type== cloudSync.NotifyType.NOTIFY_DELETED) {
+            hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_005 removed changeData:' + changeData.uris);
+          }
+        }
+        cloudSync.registerChange(uri, true, onCallback1);
+        cloudSync.unregisterChange(uri);
+        fs.rmdirSync(dpath);
+        expect(false).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_005 has failed for ' + e.message + ', code: ' + e.code);
+        fs.rmdirSync(dpath);
+        expect((e as BusinessError).code === 401 && (e as BusinessError).message == 'The input parameter is invalid').assertTrue();
+      }
+    });
+
+    /**
+      * @tc.name   cloudSync_test_ChangeData_Uris_static_006
+      * @tc.number SUB_STORAGE_DOWNLOAD_CHANGEDATA_TEST_0600
+      * @tc.desc   function of API, Test registerChange with empty string uri.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('cloudSync_test_ChangeData_Uris_static_006', Level.LEVEL3, async (): Promise<void> => {
+      try {
+        let uri: string = "";
+        let onCallback1 = (changeData: cloudSync.ChangeData) => {
+          hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_006 changedata:' + changeData.uris);
+        }
+        cloudSync.registerChange(uri, false, onCallback1);
+        expect(false).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_006 has failed for ' + e.message + ', code: ' + e.code);
+        expect((e as BusinessError).code === 401 && (e as BusinessError).message == 'The input parameter is invalid').assertTrue();
+      }
+    });
   });
 }

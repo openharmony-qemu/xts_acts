@@ -211,6 +211,107 @@ struct webViewContStoreWebArchiveError {
               }
               break;
             }
+
+            case "emitStoreWebArchiveCallBackEmpty": {
+              try {
+                this.controllerTwo.storeWebArchive("", true, (error, filename) => {
+                  if (error) {
+                    console.info(`save web archive error: ` + JSON.stringify(error));
+                    return;
+                  }
+                  if (filename != null) {
+                    console.info(`save web archive success: ${filename}`);
+                  }
+                });
+              } catch (error) {
+                console.error(`emitStoreWebArchiveCallBackInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+              }
+              Utils.emitEvent(this.errorCode, 112201)
+              break;
+            }
+
+            case "emitStoreWebArchiveCallBackNull": {
+              try {
+                this.controllerTwo.storeWebArchive(null, true, (error, filename) => {
+                  if (error) {
+                    console.info(`save web archive error: ` + JSON.stringify(error));
+                    return;
+                  }
+                  if (filename != null) {
+                    console.info(`save web archive success: ${filename}`);
+                  }
+                });
+              } catch (error) {
+                console.error(`emitStoreWebArchiveCallBackInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+              }
+              Utils.emitEvent(this.errorCode, 112202)
+              break;
+            }
+
+            case "emitStoreWebArchiveCallBackUndefined": {
+              try {
+                this.controllerTwo.storeWebArchive(undefined, true, (error, filename) => {
+                  if (error) {
+                    console.info(`save web archive error: ` + JSON.stringify(error));
+                    return;
+                  }
+                  if (filename != null) {
+                    console.info(`save web archive success: ${filename}`);
+                  }
+                });
+              } catch (error) {
+                console.error(`emitStoreWebArchiveCallBackInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+              }
+              Utils.emitEvent(this.errorCode, 112203)
+              break;
+            }
+
+            case "emitStoreWebArchivePromiseEmpty": {
+              try {
+                this.errorTestCode = 0;
+                this.errorMsg = 'failed';
+                this.controller.storeWebArchive("", true)
+                Utils.emitEvent('noError', 112204)
+              } catch (error) {
+                console.error(`emitStoreWebArchivePromiseUnAccessErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 112204)
+              }
+              break;
+            }
+
+            case "emitStoreWebArchivePromiseNull": {
+              try {
+                this.errorTestCode = 0;
+                this.errorMsg = 'failed';
+                this.controller.storeWebArchive(null, true)
+                Utils.emitEvent('noError', 112205)
+              } catch (error) {
+                console.error(`emitStoreWebArchivePromiseUnAccessErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 112205)
+              }
+              break;
+            }
+
+            case "emitStoreWebArchivePromiseUndefined": {
+              try {
+                this.errorTestCode = 0;
+                this.errorMsg = 'failed';
+                this.controller.storeWebArchive(undefined, true)
+                Utils.emitEvent('noError', 112206)
+              } catch (error) {
+                console.error(`emitStoreWebArchivePromiseUnAccessErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 112206)
+              }
+              break;
+            }
+
+
           }
         })
       }

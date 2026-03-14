@@ -579,6 +579,56 @@ export default function SingleKvStoreNullEtsTestStatic() {
       })
 
     /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_getResultSet_query_CALLBACK_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreNullEtsTestStatic_13001
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase add return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_getResultSet_query_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let resultSet: factory.KVStoreResultSet | undefined;
+        console.info(TAG +'SUB_DDM_DKV_SINGLEKVSTORE_getResultSet_query_CALLBACK_0100');
+        try {
+          let entries: factory.Entry[] = [];
+          for (let i = 0; i < 10; i++) {
+            entries.push({
+              key: 'batch_test_string_key' + i,
+              value: {
+                type: factory.ValueType.STRING,
+                value: 'batch_test_string_value'
+              }
+            });
+          }
+
+          kvStore!.putBatch(entries, (err: BusinessError | null, data: string[] | undefined) => {
+            console.info(TAG +'SUB_DDM_DKV_SINGLEKVSTORE_getResultSet_query_CALLBACK_0100 putBatch success');
+            expect(err == undefined).assertTrue();
+            const query: factory.Query = new factory.Query();
+            query.prefixKey("batch_test");
+            kvStore!.getResultSet(query,
+              (err: Error | null, result: factory.KVStoreResultSet | undefined) => {
+                console.info(TAG +'SUB_DDM_DKV_SINGLEKVSTORE_getResultSet_query_CALLBACK_0100 getResultSet success');
+                resultSet = result as factory.KVStoreResultSet;
+                expect(10).assertEqual(resultSet!.getCount());
+                console.info(TAG +'SUB_DDM_DKV_SINGLEKVSTORE_getResultSet_query_CALLBACK_0100 getCount() == 10');
+                kvStore!.closeResultSet(resultSet!, (err, data) => {
+                  console.info(TAG +'SUB_DDM_DKV_SINGLEKVSTORE_getResultSet_query_CALLBACK_0100 closeResultSet success');
+                  expect(err == undefined).assertTrue();
+                  done();
+                })
+              });
+          });
+        } catch (e) {
+          console.error(TAG +'SUB_DDM_DKV_SINGLEKVSTORE_getResultSet_query_CALLBACK_0100 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          expect(null).assertFail();
+          done();
+        }
+      })
+
+    /**
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_GETRESULTSET_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStoreNullEtsTestStatic_1400
      * @tc.desc   Test Js Api SingleKvStoreGetResultSet testcase 001

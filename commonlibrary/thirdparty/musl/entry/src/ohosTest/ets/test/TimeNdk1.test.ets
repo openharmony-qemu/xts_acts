@@ -33,9 +33,9 @@ export default function timeNdk1Test() {
      * @tc.desc   test the normal condition of Futimes_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeFutimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeFutimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time1.Futimes_One()).assertEqual(1);
       done()
     });
@@ -46,9 +46,9 @@ export default function timeNdk1Test() {
      * @tc.desc   test the abnormal condition of Futimes_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeFutimes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeFutimes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time1.Futimes_Two()).assertEqual(1);
       done()
     });
@@ -59,9 +59,9 @@ export default function timeNdk1Test() {
      * @tc.desc   test the normal condition of Futimesat_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeFutimesat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeFutimesat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time1.Futimesat_One()).assertEqual(1);
       done()
     });
@@ -72,9 +72,9 @@ export default function timeNdk1Test() {
      * @tc.desc   test the abnormal condition of Futimesat_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeFutimesat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeFutimesat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time1.Futimesat_Two()).assertEqual(1);
       done()
     });
@@ -85,9 +85,9 @@ export default function timeNdk1Test() {
      * @tc.desc   test the normal condition of TzName_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTzName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTzName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time1.TzName_One()).assertEqual(1);
       done()
     });
@@ -98,9 +98,9 @@ export default function timeNdk1Test() {
      * @tc.desc   test the normal condition of TzName_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTzName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTzName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time1.TzName_Two()).assertEqual(1);
       done()
     });
@@ -111,9 +111,9 @@ export default function timeNdk1Test() {
      * @tc.desc   test the normal condition of Utimes_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeUtimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeUtimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time1.Utimes_One()).assertEqual(1);
       done()
     });
@@ -124,9 +124,9 @@ export default function timeNdk1Test() {
      * @tc.desc   test the abnormal condition of Utimes_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeUtimes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeUtimes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time1.Utimes_Two()).assertEqual(1);
       done()
     });

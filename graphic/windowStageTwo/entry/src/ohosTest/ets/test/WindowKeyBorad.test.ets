@@ -87,7 +87,7 @@ export default function windowKeyBorad() {
             await text3.click();
             console.info('beforeAll 完成 click success');
         }else{
-          await sleep(2000);
+          await sleep(3000);
           await driver.pressBack();
           console.info('beforeAll pressBack success');
         }

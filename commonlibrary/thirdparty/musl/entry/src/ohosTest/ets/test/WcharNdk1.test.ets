@@ -30,9 +30,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Btowc_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharBtowc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharBtowc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Btowc_One()).assertEqual(1);
       done();
     });
@@ -43,9 +43,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the abnormal condition of Btowc_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharBtowc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharBtowc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Btowc_Two()).assertEqual(1);
       done();
     });
@@ -56,9 +56,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Mbtowc_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharMbtowc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharMbtowc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Mbtowc_One()).assertEqual(1);
       done();
     });
@@ -69,9 +69,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the abnormal condition of Mbtowc_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharMbtowc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharMbtowc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Mbtowc_Two()).assertEqual(0);
       done();
     });
@@ -82,9 +82,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Fputwc_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFputwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFputwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Fputwc_One()).assertEqual(1);
       done();
     });
@@ -95,9 +95,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Fputws_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFputws001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFputws001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Fputws_One()).assertEqual(1);
       done();
     });
@@ -108,9 +108,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Fwide_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFwide001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFwide001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Fwide_One()).assertEqual(1);
       done();
     });
@@ -121,9 +121,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the abnormal condition of Fwide_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFwide002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFwide002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Fwide_Two()).assertEqual(1);
       done();
     });
@@ -134,9 +134,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Fwprintf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFwprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFwprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Fwprintf_One()).assertEqual(1);
       done();
     });
@@ -147,9 +147,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the abnormal condition of Fwprintf_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFwprintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFwprintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Fwprintf_Two()).assertEqual(1);
       done();
     });
@@ -160,9 +160,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wprintf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wprintf_One()).assertEqual(1);
       done();
     });
@@ -173,9 +173,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the abnormal condition of Wprintf_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWprintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWprintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wprintf_Two()).assertEqual(1);
       done();
     });
@@ -186,9 +186,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Fwscanf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFwscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFwscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Fwscanf_One()).assertEqual(1);
       done();
     });
@@ -199,9 +199,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the abnormal condition of Fwscanf_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharFwscanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharFwscanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Fwscanf_Two()).assertEqual(1);
       done();
     });
@@ -212,9 +212,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Swprintf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharSwprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharSwprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Swprintf_One()).assertEqual(1);
       done();
     });
@@ -225,9 +225,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the abnormal condition of Swprintf_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharSwprintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharSwprintf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Swprintf_Two()).assertEqual(1);
       done();
     });
@@ -238,9 +238,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Swscanf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharSwscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharSwscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Swscanf_One()).assertEqual(1);
       done();
     });
@@ -251,9 +251,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the abnormal condition of Swscanf_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharSwscanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharSwscanf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Swscanf_Two()).assertEqual(1);
       done();
     });
@@ -264,9 +264,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Mbrtowc_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharMbrtowc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharMbrtowc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Mbrtowc_One()).assertEqual(1);
       done();
     });
@@ -277,9 +277,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Mbsinit_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharMbsinit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharMbsinit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Mbsinit_One()).assertEqual(1);
       done();
     });
@@ -290,9 +290,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Mbstowcs_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharMbstowcs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharMbstowcs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Mbstowcs_One()).assertEqual(1);
       done();
     });
@@ -303,9 +303,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Mbsrtowcs_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharMbsrtowcs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharMbsrtowcs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Mbsrtowcs_One()).assertEqual(1);
       done();
     });
@@ -316,9 +316,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Mbsnrtowcs_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharMbsnrtowcs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharMbsnrtowcs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Mbsnrtowcs_One()).assertEqual(1);
       done();
     });
@@ -329,9 +329,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of OpenWmemstream_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharOpenWmemstream001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharOpenWmemstream001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.OpenWmemstream_One()).assertEqual(1);
       done();
     });
@@ -342,9 +342,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Towlower_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharTowlower001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharTowlower001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Towlower_One()).assertEqual(1);
       done();
     });
@@ -355,9 +355,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Towupper_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharTowupper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharTowupper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Towupper_One()).assertEqual(1);
       done();
     });
@@ -368,9 +368,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcpcpy_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcpcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcpcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcpcpy_One()).assertEqual(1);
       done();
     });
@@ -381,9 +381,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcpncpy_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcpncpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcpncpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcpncpy_One()).assertEqual(1);
       done();
     });
@@ -394,9 +394,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcrtomb_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcrtomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcrtomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcrtomb_One()).assertEqual(1);
       done();
     });
@@ -407,9 +407,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcscasecmp_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcscasecmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcscasecmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcscasecmp_One()).assertEqual(1);
       done();
     });
@@ -420,9 +420,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcscasecmpl_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcscasecmpL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcscasecmpL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcscasecmpl_One()).assertEqual(1);
       done();
     });
@@ -433,9 +433,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcscat_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcscat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcscat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcscat_One()).assertEqual(1);
       done();
     });
@@ -446,9 +446,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcschr_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcschr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcschr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcschr_One()).assertEqual(1);
       done();
     });
@@ -459,9 +459,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcscmp_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcscmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcscmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcscmp_One()).assertEqual(1);
       done();
     });
@@ -472,9 +472,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcscoll_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcscoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcscoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcscoll_One()).assertEqual(1);
       done();
     });
@@ -485,9 +485,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcscolll_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcscollL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcscollL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcscolll_One()).assertEqual(1);
       done();
     });
@@ -498,9 +498,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcscpy_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcscpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcscpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcscpy_One()).assertEqual(1);
       done();
     });
@@ -511,9 +511,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcscspn_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcscspn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcscspn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcscspn_One()).assertEqual(1);
       done();
     });
@@ -524,9 +524,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsdup_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsdup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsdup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsdup_One()).assertEqual(1);
       done();
     });
@@ -537,9 +537,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsftime_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsftime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsftime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsftime_One()).assertEqual(1);
       done();
     });
@@ -550,9 +550,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsftimel_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsftimeL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsftimeL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsftimel_One()).assertEqual(1);
       done();
     });
@@ -563,9 +563,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcslen_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcslen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcslen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcslen_One()).assertEqual(1);
       done();
     });
@@ -576,9 +576,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsncasecmp_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsncasecmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsncasecmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsncasecmp_One()).assertEqual(1);
       done();
     });
@@ -589,9 +589,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsncasecmpl_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsncasecmpL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsncasecmpL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsncasecmpl_One()).assertEqual(1);
       done();
     });
@@ -602,9 +602,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsncat_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsncat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsncat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsncat_One()).assertEqual(1);
       done();
     });
@@ -615,9 +615,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsncmp_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsncmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsncmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsncmp_One()).assertEqual(1);
       done();
     });
@@ -628,9 +628,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsncpy_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsncpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsncpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsncpy_One()).assertEqual(1);
       done();
     });
@@ -641,9 +641,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsnlen_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsnlen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsnlen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsnlen_One()).assertEqual(1);
       done();
     });
@@ -654,9 +654,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsnrtombs_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsnrtombs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsnrtombs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsnrtombs_One()).assertEqual(1);
       done();
     });
@@ -667,9 +667,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcspbrk_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcspbrk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcspbrk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcspbrk_One()).assertEqual(1);
       done();
     });
@@ -680,9 +680,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsrchr_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsrchr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsrchr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsrchr_One()).assertEqual(1);
       done();
     });
@@ -693,9 +693,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsrtombs_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsrtombs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsrtombs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsrtombs_One()).assertEqual(1);
       done();
     });
@@ -706,9 +706,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsspn_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsspn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsspn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsspn_One()).assertEqual(1);
       done();
     });
@@ -719,9 +719,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsstr_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsstr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsstr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsstr_One()).assertEqual(1);
       done();
     });
@@ -732,9 +732,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstod_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstod_One()).assertEqual(1);
       done();
     });
@@ -745,9 +745,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstof_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstof001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstof_One()).assertEqual(1);
       done();
     });
@@ -758,9 +758,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstok_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstok001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstok001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstok_One()).assertEqual(1);
       done();
     });
@@ -771,9 +771,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstol_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstol_One()).assertEqual(1);
       done();
     });
@@ -784,9 +784,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstold_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstold001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstold001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstold_One()).assertEqual(1);
       done();
     });
@@ -797,9 +797,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstoll_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstoll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstoll_One()).assertEqual(1);
       done();
     });
@@ -810,9 +810,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstombs_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstombs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstombs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstombs_One()).assertEqual(1);
       done();
     });
@@ -823,9 +823,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstoul_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstoul001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstoul001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstoul_One()).assertEqual(1);
       done();
     });
@@ -836,9 +836,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcstoull_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcstoull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcstoull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcstoull_One()).assertEqual(1);
       done();
     });
@@ -849,9 +849,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcswcs_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcswcs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcswcs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcswcs_One()).assertEqual(1);
       done();
     });
@@ -862,9 +862,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcswidth_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcswidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcswidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcswidth_One()).assertEqual(1);
       done();
     });
@@ -875,9 +875,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsxfrm_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsxfrm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsxfrm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsxfrm_One()).assertEqual(1);
       done();
     });
@@ -888,9 +888,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcsxfrml_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcsxfrmL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcsxfrmL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcsxfrml_One()).assertEqual(1);
       done();
     });
@@ -901,9 +901,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wctob_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWctob001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWctob001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wctob_One()).assertEqual(1);
       done();
     });
@@ -914,9 +914,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wctomb_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWctomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWctomb001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wctomb_One()).assertEqual(1);
       done();
     });
@@ -927,9 +927,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wcwidth_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWcwidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWcwidth001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wcwidth_One()).assertEqual(1);
       done();
     });
@@ -940,9 +940,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wmemchr_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWmemchr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWmemchr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wmemchr_One()).assertEqual(1);
       done();
     });
@@ -953,9 +953,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wmemcmp_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWmemcmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWmemcmp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wmemcmp_One()).assertEqual(1);
       done();
     });
@@ -966,9 +966,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wmemcpy_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWmemcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWmemcpy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wmemcpy_One()).assertEqual(1);
       done();
     });
@@ -979,9 +979,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wmemmove_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWmemmove001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWmemmove001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wmemmove_One()).assertEqual(1);
       done();
     });
@@ -992,9 +992,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wmemset_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWmemset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWmemset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wmemset_One()).assertEqual(1);
       done();
     });
@@ -1005,9 +1005,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Wscanf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharWscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharWscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Wscanf_One()).assertEqual(1);
       done();
     });
@@ -1018,9 +1018,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Vfwprintf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharVfwprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharVfwprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Vfwprintf_One()).assertEqual(1);
       done();
     });
@@ -1031,9 +1031,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Vswprintf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharVswprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharVswprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Vswprintf_One()).assertEqual(1);
       done();
     });
@@ -1044,9 +1044,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Vwscanf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharVwscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharVwscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Vwscanf_One()).assertEqual(1);
       done();
     });
@@ -1057,9 +1057,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Vwprintf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharVwprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharVwprintf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Vwprintf_One()).assertEqual(1);
       done();
     });
@@ -1070,9 +1070,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Getwchar_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharGetwchar001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharGetwchar001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Getwchar_One()).assertEqual(1);
       done();
     });
@@ -1083,9 +1083,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Putwc_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharPutwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharPutwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Putwc_One()).assertEqual(1);
       done();
     });
@@ -1096,9 +1096,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of PutWChar_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharPutWChar001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharPutWChar001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.PutWChar_One()).assertEqual(1);
       done();
     });
@@ -1109,9 +1109,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Ungetwc_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharUngetwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharUngetwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Ungetwc_One()).assertEqual(1);
       done();
     });
@@ -1122,9 +1122,9 @@ export default function wcharNdk1Test() {
      * @tc.desc   test the normal condition of Vfwscanf_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslWcharVfwscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslWcharVfwscanf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(wchar1.Vfwscanf_One()).assertEqual(1);
       done();
     });

@@ -137,14 +137,14 @@ export default function webgl2_query() {
             done();
         });
         /**
-         * @tc.name   webgl_test_deleteQuery_2
+         * @tc.name   webgl_test_deleteQuery_2Adapt001
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_QUERY_0005
          * @tc.desc   Test deleteQuery.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('webgl_test_deleteQuery_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        it('webgl_test_deleteQuery_2Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_deleteQuery_2] deleteQuery");
             deleteQuery((query) => {
                 expect(checkError(gl)).assertEqual(gl.NO_ERROR);

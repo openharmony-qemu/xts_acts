@@ -763,14 +763,14 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.name   testTextRun_GetGlyphs
+     * @tc.name   testTextRun_GetGlyphsAdapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_028
      * @tc.desc   To test Run GetGlyphs interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTextRun_GetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetGlyphsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetGlyphs';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -825,14 +825,14 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.name   testTextRun_GetPositions
+     * @tc.name   testTextRun_GetPositionsAdapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_029
      * @tc.desc   To test Run GetPositions interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTextRun_GetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetPositionsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetPositions';
       console.info(msg + 'begin');
       let textTitle = "123";

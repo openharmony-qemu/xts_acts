@@ -101,9 +101,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with all resolved promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.resolve(1);
       const p2: Promise<string> = Promise.resolve('two');
       const p3: Promise<boolean> = Promise.resolve(true);
@@ -118,9 +118,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with one rejected promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.resolve(1);
       const p2: Promise<string> = Promise.reject(new Error('rejection'));
       const p3: Promise<boolean> = Promise.resolve(true);
@@ -139,9 +139,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with non-promise values
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.resolve(1);
       const p2: number = 2;
       const p3: string = 'three';
@@ -156,9 +156,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all preserves order of results
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<number> = new Promise<number>((resolve) =>
       {setTimeout(() => resolve(1), 30)}
       );
@@ -179,9 +179,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with mixed resolved and pending promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<string> = Promise.resolve('ready');
       const p2: Promise<number> = new Promise<number>((resolve) =>
       {setTimeout(() => resolve(42), 20)}
@@ -197,9 +197,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all rejects immediately on first rejection
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const startTime = Date.now();
       const p1: Promise<void> = new Promise<void>((resolve, reject) =>
       {setTimeout(() => reject(new Error('first')), 10)}
@@ -222,11 +222,10 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with large number of promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
     it('PromiseAllTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const promises: Promise<int>[] = new Array<number>(10)
-        .fill(0)
+      const promises: Promise<int>[] = Array.create<number>(10, 0)
         .map((_, i: int) => Promise.resolve(i));
 
       const result = await Promise.all(promises);
@@ -239,9 +238,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with rejected promise and catch handler
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.resolve(1);
       const p2: Promise<string> = Promise.reject(new Error('fail'));
 
@@ -255,9 +254,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with rejected promise in middle of array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.resolve(10);
       const p2: Promise<string> = Promise.reject(new Error('middle error'));
       const p3: Promise<boolean> = new Promise<boolean>((resolve) => {
@@ -278,9 +277,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with promises that resolve to arrays
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<number[]> = new Promise<number[]>((resolve) => {
         resolve([1, 2, 3]);
       });
@@ -298,9 +297,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with non-array iterable
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const promiseSet: Set<Promise<int>> = new Set<Promise<int>>([
         Promise.resolve(1),
         new Promise<int>((resolve) => resolve(2))
@@ -316,9 +315,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with long delay promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const startTime = Date.now();
       const p1: Promise<string> = new Promise<string>((resolve) => {
         setTimeout(() => resolve('slow'), 100);
@@ -338,9 +337,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with promises that resolve to null and undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<null> = new Promise<null>((resolve) => {
         resolve(null);
       });
@@ -359,9 +358,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with mixed promise types and primitives
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = new Promise<int>((resolve) => {
         setTimeout(() => resolve(42), 30);
       });
@@ -379,9 +378,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch handling specific error type
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.reject(new CustomError('custom failure'))
         .catch((err: Error) => err.message.length);
       const p2: Promise<int> = Promise.resolve(10);
@@ -396,9 +395,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with multiple catch handlers
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<string> = Promise.reject(new Error('error1'))
         .catch((err: Error) => `caught: ${err.message}`);
       const p2: Promise<string> = Promise.reject(new Error('error2'))
@@ -414,9 +413,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch returning different type
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.reject(new Error('count error'))
         .catch((err: Error) => err.message.length);
       const p2: Promise<string> = Promise.resolve('success');
@@ -431,9 +430,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with nested catches
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1 = new Promise<number>((resolve, reject) => {
         reject(new Error('level 1'));
       })
@@ -453,9 +452,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch rethrowing different error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<void> = Promise.reject(new Error('original'))
         .catch((err: Error) => {
           throw new Error(`wrapped: ${err.message}`);
@@ -475,9 +474,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with some promises catching and some rejecting
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<string> = Promise.reject(new Error('fail1'))
         .catch((err: Error) => `fixed: ${err.message}`);
       const p2: Promise<number> = Promise.reject(new Error('fail2'));
@@ -496,9 +495,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch returning promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<number> = Promise.reject(new Error('delayed'))
         .catch((err: Error) => {
           return new Promise<number>((resolve) => {
@@ -517,9 +516,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch and finally
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const log: string[] = [];
 
       const p1: Promise<string> = Promise.reject(new Error('oops'))
@@ -542,9 +541,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch in outer and inner promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const innerPromise: Promise<int> = Promise.reject(new Error('inner'))
         .catch((err: Error) => err.message.length);
 
@@ -561,9 +560,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch and async operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.reject(new Error('need delay'))
         .catch(async (err: Error) => {
           await new Promise<void>(resolve => {setTimeout(()=>{resolve(undefined)}, 30)});
@@ -583,9 +582,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with unhandled error in nested promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<number> = new Promise<number>((resolve) => {
         resolve(10);
       });
@@ -611,9 +610,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch that returns same type as resolved value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Math.random() > 0.5
         ? Promise.resolve(100)
         : Promise.reject(new Error('random fail')).catch((err: Error) => err.message.length);
@@ -631,9 +630,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch and multiple finally blocks
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const log: string[] = [];
 
       const p1: Promise<int> = Promise.reject(new Error('fail'))
@@ -660,9 +659,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch that modifies shared state
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let sharedState = 0;
 
       const p1: Promise<void> = Promise.reject(new Error('increment'))
@@ -685,9 +684,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with catch and promise chaining
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('PromiseAllTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const p1: Promise<int> = Promise.reject(new Error('start'))
         .catch((err: Error) => err.message.length) // 5
         .then(val => val * 2) // 10
@@ -706,9 +705,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with nested Promise.all and async catches
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const innerPromise = Promise.all([
         Promise.reject(new Error('inner1')).catch(async (err: Error) => {
           await new Promise<int>(resolve => {setTimeout(()=>{resolve(1)}, 10)});
@@ -727,9 +726,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with race condition in async operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const start = Date.now();
       const p1 = new Promise<int>(resolve => {
       setTimeout(() => resolve(1), 50)}
@@ -749,9 +748,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with multiple layers of error handling
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const p1 = new Promise<number>((resolve, reject) => {
         setTimeout(() => reject(new Error('level1')), 10);
       })
@@ -774,9 +773,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with mixed sync and async rejections
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const p1: Promise<string> = Promise.reject(new Error('sync error'))
         .catch((err: Error) => err.message);
       const p2: Promise<string> = new Promise<string>((resolve, reject) => {
@@ -793,9 +792,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with recursive promise structure
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const result = await Promise.all([
         createRecursivePromise(3),
         createRecursivePromise(0)
@@ -809,9 +808,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with promises that resolve to other promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const p1: Promise<int> = Promise.resolve(
         new Promise<int>(resolve => {setTimeout(() => resolve(10), 20)})
       );
@@ -827,9 +826,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with mixed settled states and cleanup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const resources: string[] = [];
 
       const p1: Promise<int> = Promise.resolve(1)
@@ -853,9 +852,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with long chain of async operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const createChainedPromise = (start: number, steps: number): Promise<number> => {
         let promise: Promise<number> = Promise.resolve(start);
         for (let i = 0; i < steps; i++) {
@@ -880,9 +879,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with parallel error handling
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const errors: string[] = [];
 
       const createErrorPromise = (msg: string, delay: int): Promise<int> => {
@@ -910,9 +909,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with nested error in resolved promise
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const p1: Promise<int> = Promise.resolve()
         .then(() => {
           return new Promise<int>((resolve) => {
@@ -936,9 +935,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with resources that must be cleaned up
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const resources: string[] = [];
 
       const createResource = (name: string, shouldFail: boolean): Promise<string> => {
@@ -979,9 +978,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with delayed error propagation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
 
       const p1: Promise<void> = new Promise<void>((resolve, reject) => {
@@ -1013,9 +1012,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with nested promises that resolve after delays
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const createNestedPromise = (value: number, delay: int): Promise<number> => {
         return new Promise<number>(resolve => {
           setTimeout(() => {
@@ -1039,9 +1038,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with complex error recovery strategy
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const operation = (id: int, failType?: 'critical' | 'retry' | 'none'): Promise<int> => {
         return new Promise<int>((resolve, reject) => {
           setTimeout(() => {
@@ -1087,9 +1086,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with cascading promises in sequence
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
 
       const p1: Promise<number> = new Promise<number>(resolve => {
@@ -1128,9 +1127,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with cascading errors through chain
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
 
       const p1: Promise<number> = new Promise<number>((resolve, reject) => {
@@ -1166,9 +1165,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with timed cascading promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const startTime = Date.now();
 
       const createTimedPromise = (delay: int, value: number): Promise<number> => {
@@ -1192,9 +1191,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with cascading finally blocks
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
 
       const p1: Promise<number> = new Promise<number>(resolve => {
@@ -1231,9 +1230,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with interleaved cascading promises
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
 
       const base: Promise<number> = new Promise<number>(resolve => {
@@ -1276,9 +1275,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with timing in nested all calls
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const startTime = Date.now();
 
       const inner1: Promise<number> = Promise.all([
@@ -1306,9 +1305,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with cascading error recovery
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const createFailingPromise = (id: int, shouldFail: boolean): Promise<int> => {
         return new Promise<int>((resolve, reject) => {
           setTimeout(() => {
@@ -1339,9 +1338,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with sequential timing dependencies
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const timestamps: number[] = [];
 
       const p1: Promise<void> = new Promise<void>(resolve => {
@@ -1383,9 +1382,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with cascading promises and shared state
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const shared: int[] = [];
 
       const p1: Promise<int> = new Promise<int>(resolve => {
@@ -1424,9 +1423,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with parallel and sequential mix
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const startTime = Date.now();
 
       // Parallel operations
@@ -1454,9 +1453,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with timed error propagation
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
       const startTime = Date.now();
 
@@ -1493,9 +1492,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with conditional cascading
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const log: string[] = [];
 
       const p1: Promise<number> = new Promise<number>(resolve => {
@@ -1531,9 +1530,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with cascading in nested arrays
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const p1: Promise<number> = new Promise<number>(resolve =>{
       setTimeout(() => resolve(1), 10)}
       );
@@ -1557,9 +1556,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with cascading cleanup operations
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const resources: string[] = [];
 
       const openResource = (name: string): Promise<string> => {
@@ -1611,9 +1610,9 @@ export default function promiseAllTest(){
      * @tc.desc test Promise.all with complex cascading dependency graph
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
-    it('PromiseAllTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('PromiseAllTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       // Create base promises
       const a: Promise<number> = new Promise<number>(resolve =>{
       setTimeout(() => resolve(1), 10)}

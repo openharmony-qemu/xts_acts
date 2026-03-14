@@ -181,7 +181,7 @@ struct AccessibilityCustom {
         }
         .height('10%')
         ContentSlot(this.nodeContent)
-      }.height('80%')
+      }.height('60%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -211,7 +211,7 @@ struct AccessibilityCustom {
 
         this.FailBtn($r('app.string.btn_fullscreen'), true);
       }
-      .height('10%')
+      .height('30%')
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)

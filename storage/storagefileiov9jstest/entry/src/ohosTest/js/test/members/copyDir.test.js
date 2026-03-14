@@ -408,6 +408,204 @@ export default function fileIOCopyDir() {
   });
 
   /**
+   * @tc.name   fileIO_test_copyDir_sync_009
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_0900
+   * @tc.desc   Test copyDirSync() interface with src as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_009', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_009';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync('', dpath, DIRMODE_FILE_COPY_REPLACE);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_009 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_sync_010
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1000
+   * @tc.desc   Test copyDirSync() interface with src as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_010', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_010';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync(null, dpath, DIRMODE_FILE_COPY_REPLACE);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_010 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_sync_011
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1100
+   * @tc.desc   Test copyDirSync() interface with src as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_011', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_011';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync(undefined, dpath, DIRMODE_FILE_COPY_REPLACE);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_011 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_sync_012
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1200
+   * @tc.desc   Test copyDirSync() interface with dest as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_012', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_012';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync(dpath, '', DIRMODE_FILE_COPY_REPLACE);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_012 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_sync_013
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1300
+   * @tc.desc   Test copyDirSync() interface with dest as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_013', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_013';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync(dpath, null, DIRMODE_FILE_COPY_REPLACE);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_013 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_sync_014
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1400
+   * @tc.desc   Test copyDirSync() interface with dest as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_014', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_014';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync(dpath, undefined, DIRMODE_FILE_COPY_REPLACE);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_014 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_sync_015
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1500
+   * @tc.desc   Test copyDirSync() interface with mode as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_015', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_015';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync(dpath, dpath + '_dest', '');
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_015 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_sync_016
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1600
+   * @tc.desc   Test copyDirSync() interface with mode as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_016', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_016';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync(dpath, dpath + '_dest', null);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_016 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_sync_017
+   * @tc.number SUB_DF_FILEIO_COPYDIR_SYNC_1700
+   * @tc.desc   Test copyDirSync() interface with mode as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_sync_017', Level.LEVEL3, async function () {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_sync_017';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDirSync(dpath, dpath + '_dest', undefined);
+      expect(false).assertTrue();
+    } catch (err) {
+      console.log('fileIO_test_copyDir_sync_017 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+    }
+  });
+
+  /**
    * @tc.name   fileIO_test_copyDir_async_000
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_0000
    * @tc.desc   Test copyDir() interface.Promise.
@@ -1328,6 +1526,946 @@ export default function fileIOCopyDir() {
     }
   });
 
+ /**
+   * @tc.name   fileIO_test_copyDir_async_029
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2900
+   * @tc.desc   Test copyDir() interface.Promise with src as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_029', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_029';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      await fileIO.copyDir('', dpath, DIRMODE_FILE_COPY_REPLACE);
+      expect().assertFail();
+      done();
+    } catch (err) {
+      fileIO.rmdirSync(dpath);
+      console.log('fileIO_test_copyDir_async_029 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_030
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3000
+   * @tc.desc   Test copyDir() interface.Promise with dest as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_030', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_030';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      await fileIO.copyDir(dpath, '', DIRMODE_FILE_COPY_REPLACE);
+      expect().assertFail();
+      done();
+    } catch (err) {
+      fileIO.rmdirSync(dpath);
+      console.log('fileIO_test_copyDir_async_030 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_031
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3100
+   * @tc.desc   Test copyDir() interface.Promise with mode as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_031', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_031';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      await fileIO.copyDir(dpath, dpath + '_dest', '');
+      expect().assertFail();
+      done();
+    } catch (err) {
+      fileIO.rmdirSync(dpath);
+      console.log('fileIO_test_copyDir_async_031 has failed for ' + err.message + ', code: ' + err.code);
+      expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_032
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3200
+   * @tc.desc   Test copyDir() interface.Callback with src as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_032', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_032';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir('', dpath, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_032 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_032 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_033
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3300
+   * @tc.desc   Test copyDir() interface.Callback with dest as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_033', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_033';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, '', DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_033 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_033 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_034
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3400
+   * @tc.desc   Test copyDir() interface.Callback with mode as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_034', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_034';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', '', (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_034 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_034 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_035
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3500
+   * @tc.desc   Test copyDir() interface.Callback with mode as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_035', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_035';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', null, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_035 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_035 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_036
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3600
+   * @tc.desc   Test copyDir() interface.Callback with mode as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_036', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_036';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', undefined, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_036 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_036 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_037
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3700
+   * @tc.desc   Test copyDir() interface.Callback (3 params) with src as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_037', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_037';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir('', dpath, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_037 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_037 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_038
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_3800
+   * @tc.desc   Test copyDir() interface.Callback (3 params) with dest as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_038', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_038';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, '', (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_038 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_038 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_042
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_4200
+   * @tc.desc   Test copyDir() interface.Callback (ConflictFiles) with src as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_042', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_042';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir('', dpath, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_042 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_042 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_043
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_4300
+   * @tc.desc   Test copyDir() interface.Callback (ConflictFiles) with src as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_043', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_043';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(null, dpath, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_043 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_043 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_044
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_4400
+   * @tc.desc   Test copyDir() interface.Callback (ConflictFiles) with src as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_044', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_044';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(undefined, dpath, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_044 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_044 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_045
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_4500
+   * @tc.desc   Test copyDir() interface.Callback (ConflictFiles) with dest as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_045', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_045';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, '', (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_045 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_045 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_046
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_4600
+   * @tc.desc   Test copyDir() interface.Callback (ConflictFiles) with dest as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_046', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_046';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, null, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_046 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_046 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_047
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_4700
+   * @tc.desc   Test copyDir() interface.Callback (ConflictFiles) with dest as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_047', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_047';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, undefined, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_047 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_047 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_051
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5100
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with src as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_051', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_051';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir('', dpath, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_051 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_051 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_052
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5200
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with src as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_052', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_052';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(null, dpath, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_052 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_052 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_053
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5300
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with src as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_053', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_053';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(undefined, dpath, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_053 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_053 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_054
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5400
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with dest as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_054', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_054';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, '', DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_054 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_054 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_055
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5500
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with dest as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_055', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_055';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, null, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_055 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_055 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_056
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5600
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with dest as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_056', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_056';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, undefined, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_056 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_056 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_057
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5700
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with mode as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_057', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_057';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', '', (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_057 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_057 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_058
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5800
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with mode as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_058', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_058';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', null, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_058 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_058 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_059
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_5900
+   * @tc.desc   Test copyDir() interface.Callback (4 params) with mode as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_059', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_059';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', undefined, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_059 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_059 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_060
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_6000
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with src as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_060', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_060';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir('', dpath, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_060 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_060 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_061
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_6100
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with src as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_061', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_061';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(null, dpath, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_061 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_061 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_062
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_6200
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with src as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_062', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_062';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(undefined, dpath, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_062 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_062 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_063
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_6300
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with dest as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_063', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_063';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, '', DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_063 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_063 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_064
+   * @tc.number SUB_DF_FILEIO_COPY_DIR_ASYNC_6400
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with dest as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_064', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_064';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, null, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_064 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_064 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_065
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_6500
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with dest as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_065', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_065';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, undefined, DIRMODE_FILE_COPY_REPLACE, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_065 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_065 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_066
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_6600
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with mode as empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_066', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_066';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', '', (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_066 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_066 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_067
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_6700
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with mode as null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_067', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_067';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', null, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_067 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_067 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_copyDir_async_068
+   * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_6800
+   * @tc.desc   Test copyDir() interface.Callback (4 params, ConflictFiles) with mode as undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_copyDir_async_068', Level.LEVEL3, async function (done) {
+    let dpath = await featureAbility.getContext().getFilesDir() + '/fileIO_test_copyDir_async_068';
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.copyDir(dpath, dpath + '_dest', undefined, (err) => {
+        if (err) {
+          console.log('fileIO_test_copyDir_async_068 error: ' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_copyDir_async_068 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      fileIO.rmdirSync(dpath);
+      done();
+    }
+  });
+
   /**
    * @tc.name   fileIO_test_copyDir_async_028
    * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_2800
@@ -1355,5 +2493,5 @@ export default function fileIOCopyDir() {
       done();
     }
   });
-  });
+});
 }

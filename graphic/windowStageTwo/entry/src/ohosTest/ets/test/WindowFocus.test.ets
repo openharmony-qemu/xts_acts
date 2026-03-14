@@ -1391,6 +1391,7 @@ export default function windowFocusTest() {
         done()
       }
     });
+    
 
     /**
      * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_0100

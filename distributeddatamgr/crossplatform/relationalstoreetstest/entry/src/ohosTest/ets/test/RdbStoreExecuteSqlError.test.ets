@@ -547,6 +547,23 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             done();
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG_S2)
+          try{
+            await relationalStore.getRdbStore(context, STORE_CONFIG_S2, (err, store) => {
+              if(err){
+                expect(err.code).assertEqual("801");
+                done();
+              }else{
+                expect(typeof(store) === "object").assertTrue();
+                done();
+              }
+            })
+           
+          }catch (e) {
+            console.error(TAG + `testGetRdbStoreConfig0100 failed, code is ${e.code},message is ${e.message}`);
+            expect(e.code).assertEqual("801");
+            done();
+          }
+          await relationalStore.deleteRdbStore(context, STORE_CONFIG_S2)
         console.info(TAG + "************* testGetRdbStoreConfig0100 end   *************");
       });
 
@@ -570,6 +587,24 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             done();
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG_S3)
+
+          try{
+            await relationalStore.getRdbStore(context, STORE_CONFIG_S3, (err, store) => {
+              if(err){
+                expect(err.code).assertEqual("801");
+                done();
+              }else{
+                expect(typeof(store) === "object").assertTrue();
+                done();
+              }
+            })
+           
+          }catch (e) {
+            console.error(TAG + `testGetRdbStoreConfig0100 failed, code is ${e.code},message is ${e.message}`);
+            expect(e.code).assertEqual("801");
+            done();
+          }
+          await relationalStore.deleteRdbStore(context, STORE_CONFIG_S3)
         console.info(TAG + "************* testGetRdbStoreConfig0200 end   *************");
       });
 
@@ -589,6 +624,24 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             done();
           }catch (e) {
             console.error(TAG + `testGetRdbStoreConfig0300 failed, code is ${e.code},message is ${e.message}`);
+            expect(e.code).assertEqual("801");
+            done();
+          }
+          await relationalStore.deleteRdbStore(context, STORE_CONFIG_S4)
+
+          try{
+            await relationalStore.getRdbStore(context, STORE_CONFIG_S4, (err, store) => {
+              if(err){
+                expect(err.code).assertEqual("801");
+                done();
+              }else{
+                expect(typeof(store) === "object").assertTrue();
+                done();
+              }
+            })
+           
+          }catch (e) {
+            console.error(TAG + `testGetRdbStoreConfig0100 failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual("801");
             done();
           }
@@ -1313,6 +1366,17 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual("14800014")
         }
+
+        try {
+          if (store != undefined) {
+          
+            (store as relationalStore.RdbStore).on("perfStat", sqlExecutionInfo);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("14800014")
+        }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1600 end-----")
       })
 
@@ -1587,6 +1651,17 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
         expect(err.code).assertEqual("14800014")
       }
+
+      try {
+        if (store != undefined) {
+          await store.close();
+          (store as relationalStore.RdbStore).on('autoSyncProgress', progressDetail);
+          console.info(TAG + 'off success.');
+        }
+      } catch (err) {
+        console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("14800014")
+      }
       console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1400 end-----")
     })
 
@@ -1630,6 +1705,17 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         if (store != undefined) {
           await store.close();
           (store as relationalStore.RdbStore).off('statistics');
+          console.info(TAG + 'off success.');
+        }
+      } catch (err) {
+        console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("14800014")
+      }
+
+      try {
+        if (store != undefined) {
+          await store.close();
+          (store as relationalStore.RdbStore).off('perfStat');
           console.info(TAG + 'off success.');
         }
       } catch (err) {
@@ -1707,6 +1793,126 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
       }
       console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1800 end-----")
     })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_1900
+     * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_1900
+     * @tc.desc   Test on statistics with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_off_ErrTest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1900 start-----")
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let sqlExecutionInfo = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+          console.info(`sql: ${sqlExecutionInfo.sql[0]}`);
+          console.info(`totalTime: ${sqlExecutionInfo.totalTime}`);
+          console.info(`waitTime: ${sqlExecutionInfo.waitTime}`);
+          console.info(`prepareTime: ${sqlExecutionInfo.prepareTime}`);
+          console.info(`executeTime: ${sqlExecutionInfo.executeTime}`);
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).off(null, sqlExecutionInfo);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+        }
+
+      try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).off(undefined, sqlExecutionInfo);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+        }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1900 end-----")
+      })
+
+       /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_2000
+     * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_2000
+     * @tc.desc   Test on statistics with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_off_ErrTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2000 start-----")
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let exceptionMessages = (exceptionMessages: relationalStore.ExceptionMessage) => {
+          console.info(`sql: ${exceptionMessages.code}`);
+          console.info(`sql: ${exceptionMessages.message}`);
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).off(null, exceptionMessages);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+        }
+
+      try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).off(undefined, exceptionMessages);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+        }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2000 end-----")
+      })
+
+        /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_2000
+     * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_2000
+     * @tc.desc   Test on statistics with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_on_ErrTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_2000 start-----")
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        let exceptionMessages = (exceptionMessages: relationalStore.ExceptionMessage) => {
+          console.info(`sql: ${exceptionMessages.code}`);
+          console.info(`sql: ${exceptionMessages.message}`);
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).on(null, exceptionMessages);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+        }
+
+      try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).on(undefined, exceptionMessages);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("401")
+        }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_2000 end-----")
+      })
 
      /**
      * @tc.name   SUB_DistributedData_RelationalStore_emit_ErrTest_0300
@@ -2851,8 +3057,19 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
           expect(store === undefined).assertFalse();
           expect(store.version).assertEqual(0);
+          let pr = await store.executeSync('PRAGMA user_version');
+          expect(pr).assertEqual(0);
+        } catch (err) {
+          console.error(TAG, `set user_version failed, errCode:${err.code}, message:${err.message}`);
+          expect(err.code).assertEqual("14800014");
+        }
+
+        try {
+          let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+          expect(store === undefined).assertFalse();
+          expect(store.version).assertEqual(0);
           await store.close();
-          await store.executeSync('PRAGMA user_version');
+         await store.executeSync('PRAGMA user_version');
           expect().assertFail();
         } catch (err) {
           console.error(TAG, `set user_version failed, errCode:${err.code}, message:${err.message}`);
@@ -2997,6 +3214,15 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }catch(err){
             console.error(TAG + `testExecuteError0200 execute is failed, code is ${err.code},message is ${err.message}`);
             expect(err.code).assertEqual(14800000);
+          }
+
+          try{
+            let pr = await rdbStore.execute("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)", txId, ['tt', 28, 50000])
+            console.info(TAG + `testExecuteError0100 execute is successful`);
+            expect(pr).assertEqual(1);
+          }catch(err){
+            console.error(TAG + `testExecuteError0100 execute is failed, code is ${err.code},message is ${err.message}`);
+            expect("401").assertEqual(err.code);
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
         console.info(TAG + "************* testExecuteError0200 end   *************");
@@ -3341,6 +3567,169 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         }
         console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0900 end *************");
       })
+
+       /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1100
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1100
+     * @tc.desc   Test remoteQuery 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1100 start-----")  
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.greaterThan("id", 0);
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        if (store != undefined) {
+          try{
+            let res = await (store as relationalStore.RdbStore).remoteQuery("1234567", "EMPLOYEE", predicates,
+            ["ID", "NAME", "AGE", "SALARY", "CODES"]);
+            expect(typeof(res) === "object").assertTrue();
+        }catch(err) {
+          console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual(14800000);
+         }
+        }
+         if (store != undefined) {
+          try{
+           (store as relationalStore.RdbStore).remoteQuery("1234567", "EMPLOYEE", predicates,
+            ["ID", "NAME", "AGE", "SALARY", "CODES"], (err, res)=>{
+              if(err){
+                expect(err.code).assertEqual(14800000);
+              }else{
+                expect(typeof(res) === "object").assertTrue();
+              }
+     
+            });
+        }catch(err) {
+          console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual(14800000);
+         }  
+        }
+        await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1100 end-----")
+      })
+
+       /**
+     * @tc.name   testExecuteError0300
+     * @tc.number testExecuteError0300
+     * @tc.desc   execute err.code 14800000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+   it('testExecuteError0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    console.info(TAG + "************* testExecuteError0200 start *************");
+    let rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+   try{
+        await rdbStore.execute("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)",  [])
+        console.info(TAG + `testExecuteError0200 execute is successful`);
+        expect().assertFail();
+      }catch(err){
+        console.error(TAG + `testExecuteError0200 execute is failed, code is ${err.code},message is ${err.message}`);
+        expect(err.code).assertEqual(14800000);
+      }
+
+      try{
+        let pr = await rdbStore.execute("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)", ['tt', 28, 50000])
+        console.info(TAG + `testExecuteError0100 execute is successful`);
+        expect(pr).assertEqual(1);
+      }catch(err){
+        console.error(TAG + `testExecuteError0100 execute is failed, code is ${err.code},message is ${err.message}`);
+        expect("401").assertEqual(err.code);
+      }
+      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+    console.info(TAG + "************* testExecuteError0300 end   *************");
+})
+
+    /**
+     * @tc.name   testRekeyParam0100
+     * @tc.number testRekeyParam0100
+     * @tc.desc   Test rekey 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRekeyParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+          console.log(TAG + "************* testRekeyParam0100 start *************");
+          let rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+          try {
+            await rdbStore.rekey(cryptoParam1);
+            expect().assertFail();
+            done();
+          } catch (err) {
+            console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+            expect(err.code).assertEqual(801);
+            done();
+          }
+          try {
+            await rdbStore.rekey(cryptoParam2);
+            expect().assertFail();
+            done();
+          } catch (err) {
+            console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+            expect(err.code).assertEqual(801);
+            done();
+          }
+          try {
+            await rdbStore.rekey(cryptoParam3);
+            expect().assertFail();
+            done();
+          } catch (err) {
+            console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+            expect(err.code).assertEqual(801);
+            done();
+          }
+          await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+          console.log(TAG + "************* testRekeyParam0100 end *************");
+      });
+
+      
+    /**
+     * @tc.name   testRekeyExParam0100
+     * @tc.number testRekeyExParam0100
+     * @tc.desc   Test rekey 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRekeyExParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done:Function) => {
+      console.log(TAG + "************* testRekeyExParam0100 start *************");
+      let rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      try {
+        await rdbStore.rekeyEx(cryptoParam1);
+        done();
+      } catch (err) {
+        console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+        expect(err.code).assertEqual(801);
+        done();
+      }
+      try {
+        await rdbStore.rekeyEx(cryptoParam2);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+        expect(err.code).assertEqual(801);
+        done();
+      }
+      try {
+        await rdbStore.rekeyEx(cryptoParam3);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+        expect(err.code).assertEqual(801);
+        done();
+      }
+      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      console.log(TAG + "************* testRekeyExParam0100 end *************");
+  });
+
+  
+
   
     
     });

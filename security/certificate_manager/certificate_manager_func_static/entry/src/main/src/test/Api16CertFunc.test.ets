@@ -280,6 +280,25 @@ export default function api16CertFuncTestUnit() {
         hilog.error(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0010 e.code: ${e.code}`);
       }
 
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(priEccCredData, "", alias, level);
+        hilog.info(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0010 installPrivateCertificate promise success! uri: ${JSON.stringify(result.uri)}`);
+        keyUri = result.uri;
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0010 e.code: ${e.code}`);
+        expect(e.code).assertEqual(17500003);
+      }
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(priEccCredData, pwd, "", level);
+        hilog.info(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0010 installPrivateCertificate promise success! uri: ${JSON.stringify(result.uri)}`);
+        keyUri = result.uri;
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0010 e.code: ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+
       if (keyUri != undefined) {
         await certManager.uninstallPrivateCertificate(keyUri);
       } else {
@@ -338,16 +357,50 @@ export default function api16CertFuncTestUnit() {
       let pwd = '123456';
       let alias = 'appCertAliasDemoEcc';
       let level = certManager.AuthStorageLevel.EL4;
+      let signSpec: certManager.CMSignatureSpec = {
+        purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
+        padding: certManager.CmKeyPadding.CM_PADDING_PSS,
+        digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
+      };
 
       try {
         let result: certManager.CMResult = await certManager.installPrivateCertificate(priEccCredData, pwd, alias, level);
         hilog.info(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0012 installPrivateCertificate promise success! uri: ${JSON.stringify(result.uri)}`);
         keyUri = result.uri;
+
       } catch (e) {
         e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0012 e.code: ${e.code}`);
       }
-
+      if (keyUri != undefined){
+        try{
+          certManager.init("",signSpec,(err,cmHandle)=>{
+            hilog.info(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0012 init success!`);
+          })
+        }catch(e){
+          e = e as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0012 e.code: ${e.code}`);
+          expect(e.code).assertEqual(401);
+        }
+        try{
+          await certManager.init("",signSpec).then((cmHandle)=>{
+            hilog.info(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0012 init success!`);
+          })
+        }catch(e){
+          e = e as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0012 e.code: ${e.code}`);
+          expect(e.code).assertEqual(401);
+        }
+        try{
+          await certManager.init(keyUri,signSpec).then((cmHandle)=>{
+            hilog.info(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0012 init success!`);
+            expect(cmHandle.handle!=null).assertTrue();
+          })
+        }catch(e){
+          e = e as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `Security_CertManager_InstallPrivateCertificate_Func_Static_0012 e.code: ${e.code}`);
+        }
+      }
       if (keyUri != undefined) {
         await certManager.uninstallPrivateCertificate(keyUri);
       } else {
@@ -594,7 +647,24 @@ export default function api16CertFuncTestUnit() {
         e = e as BusinessError;
         hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010  e.code: ${e.code}`);
       }
-
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priSM2CredData), "", alias);
+        hilog.info(domain, tag, '%{public}s', 'Security_CertManager_VerifyPromiseSM3_Func_Static_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri));
+        keyUri = result.uri;
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010  e.code: ${e.code}`);
+        expect(e.code).assertEqual(17500003);
+      }
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priSM2CredData), pwd, "");
+        hilog.info(domain, tag, '%{public}s', 'Security_CertManager_VerifyPromiseSM3_Func_Static_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri));
+        keyUri = result.uri;
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `Security_CertManager_VerifyPromiseSM3_Func_Static_0010  e.code: ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
       if (keyUri != undefined) {
         await signVerifyPromise.signVerifyNormalProcess(keyUri, credData, signspec, verifySpec).then((result1: certManager.CMResult) => {
         expect(result1.outData == null).assertTrue();

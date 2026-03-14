@@ -30,9 +30,9 @@ export default function statvfsNdkTest() {
      * @tc.desc   test statvfs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatvfsStatvfs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatvfsStatvfs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1
       let c: number = statvfs.statvfs(a);
       expect(c).assertEqual(0);
@@ -45,9 +45,9 @@ export default function statvfsNdkTest() {
      * @tc.desc   test statvfs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatvfsStatvfs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatvfsStatvfs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 2
       let c: number = statvfs.statvfs(a);
       expect(c).assertEqual(-1);
@@ -61,9 +61,9 @@ export default function statvfsNdkTest() {
      * @tc.desc   test statvfs64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatvfsStatvfs64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatvfsStatvfs64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1
       let c: number = statvfs.statvfs64(a);
       expect(c).assertEqual(0);
@@ -76,9 +76,9 @@ export default function statvfsNdkTest() {
      * @tc.desc   test statvfs64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatvfsStatvfs64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatvfsStatvfs64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 2
       let c: number = statvfs.statvfs64(a);
       expect(c).assertEqual(-1);

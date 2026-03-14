@@ -15,6 +15,7 @@
         "MainAbility/pages/DataPanel/DataPanelTest",
         "MainAbility/pages/DataPanel/DataPanelCloseEffect",
         "MainAbility/pages/DataPanel/DataPanelPropertiesNullUndefinedTest",
+        "MainAbility/pages/DataPanel/PanelPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Gauge/Gauge3Jsunit",
         "MainAbility/pages/Gauge/GaugeColorsTest",
@@ -28,6 +29,7 @@
         "MainAbility/pages/PatternLock/PatternLockActivateCircleStyle1",
         "MainAbility/pages/PatternLock/PatternLockPage",
         "MainAbility/pages/PatternLock/PatternLockPropertiesNullUndefined",
+        "MainAbility/pages/PatternLock/PatternLockEnableForeground",
 
         "MainAbility/pages/QRCode/QRCodeApiTest",
         "MainAbility/pages/QRCode/QRCodeAttrTest",

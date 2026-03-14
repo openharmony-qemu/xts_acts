@@ -19,7 +19,7 @@ import router from '@system.router';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
 
 export default function basicabilityapi() {
-    describe('basicabilityapi', function () {
+    describe('basicabilityapiAdapt001', function () {
         let testResult;
         let testResultFail;
         let test;

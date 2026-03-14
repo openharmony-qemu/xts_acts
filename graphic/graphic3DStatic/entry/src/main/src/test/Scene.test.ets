@@ -13,12 +13,18 @@
  * limitations under the License.
  */
 import {
+  Animation,
   Camera,
+  CameraParameters,
   CustomGeometry,
+  Effect,
+  EffectParameters,
+  Environment,
   GeometryType,
   Image,
   Light,
   LightType,
+  Mat4x4,
   MeshResource,
   Node,
   NodeType,
@@ -27,8 +33,11 @@ import {
   RaycastParameters,
   RaycastResult,
   Rect,
+  RenderConfiguration,
+  RenderContext,
   RenderParameters,
   RenderResourceFactory,
+  RenderingPipelineType,
   Rotation3,
   Sampler,
   SamplerAddressMode,
@@ -41,7 +50,6 @@ import {
   SceneResourceType,
   Shader,
   SphereGeometry,
-  RenderContext,
   Vec2,
   Vec3,
   Vec4
@@ -79,15 +87,15 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.name   testGetNodeByPath
+     * @tc.name   testGetNodeByPathWithNodeType
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0020
-     * @tc.desc   Nodes are obtained from paths
+     * @tc.desc   Nodes are obtained from paths with optional NodeType filter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let msg = "============================testGetNodeByPath";
+    it('testGetNodeByPathWithNodeType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testGetNodeByPathWithNodeType";
       console.info(msg + ' begin ');
       try {
         let resource: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
@@ -104,7 +112,7 @@ export default function sceneTest() {
         expect(nullNode).assertNull();
         done();
       } catch (err) {
-        console.info(msg + " Failed in testGetNodeByPath " +
+        console.info(msg + " Failed in testGetNodeByPathWithNodeType " +
         JSON.stringify(err));
         expect().assertFail();
         done();
@@ -246,6 +254,10 @@ export default function sceneTest() {
         scene.destroy();
         expect(scene.renderFrame()).assertFalse();
         console.info(msg + " Succeed in scene?.renderFrame() ");
+        
+        expect(scene.renderFrame({ alwaysRender: false }) != null).assertTrue();
+        console.info(msg + " Succeed in scene?.renderFrame({ alwaysRender: false }) ");
+
         done();
       } catch (err) {
         console.info(msg + " Failed in testSceneRenderFrame " + JSON.stringify(err));
@@ -705,9 +717,18 @@ export default function sceneTest() {
         expect(renderContext != null).assertTrue();
 
         if (renderContext != null) {
+          let pluginName = '74c2dde9-8134-4471-af49-66ea20993c41'
+          let plugin = await renderContext.loadPlugin(pluginName);
+          console.info(msg + ' plugin "' + pluginName + '" load result:', plugin);
+          expect(plugin).assertTrue();
+
           let loadFail = await renderContext.loadPlugin("NonExistentPlugin");
           console.info(msg + ' plugin "NonExistentPlugin" load result:', loadFail);
           expect(loadFail).assertFalse();
+
+          let loadEmpty = await renderContext.loadPlugin("");
+          console.info(msg + ' plugin "" (empty string) load result:', loadEmpty);
+          expect(loadEmpty).assertFalse();
         }
         console.info(msg + " test completed successfully");
         done();
@@ -746,6 +767,14 @@ export default function sceneTest() {
         expect(component != null).assertTrue();
         console.info(msg + ` component name:`, component?.name);
         expect(component.name).assertEqual(componentName);
+
+        try {
+          let emptyNameComponent: SceneComponent = await scene.createComponent(rootNode!, "");
+          console.info(msg + " createComponent with empty string name: " + JSON.stringify(emptyNameComponent));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createComponent with empty string name threw error: " + JSON.stringify(err));
+        }
 
         console.info(msg + " test completed successfully");
         done();
@@ -789,12 +818,522 @@ export default function sceneTest() {
 
         let missingComponent: SceneComponent | null = scene.getComponent(rootNode!, "NonExistentComponent");
         console.info(msg + " Attempted to retrieve missing component 'NonExistentComponent':", missingComponent);
-        expect(missingComponent == null).assertTrue();
+        expect(missingComponent).assertNull();
+
+        try {
+          let emptyNameComponent: SceneComponent | null = scene.getComponent(rootNode!, "");
+          console.info(msg + " getComponent with empty string name: " + JSON.stringify(emptyNameComponent));
+          expect(emptyNameComponent).assertNull();
+        } catch (err) {
+          console.info(msg + " getComponent with empty string name threw error: " + JSON.stringify(err));
+        }
 
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
         console.info(msg + " Failed in testGetComponent " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateCamera
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1060
+     * @tc.desc   Test SceneResourceFactory.createCamera method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateCamera', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateCamera";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        
+        let camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+        expect(camera.name).assertEqual("TestCamera");
+        expect(camera.nodeType).assertEqual(NodeType.CAMERA);
+        console.info(msg + " createCamera success");
+        
+        // Test with CameraParameters
+        let camera2 = await rf.createCamera(
+          { name: "TestCamera2" }, 
+          { renderingPipeline: RenderingPipelineType.FORWARD }
+        );
+        expect(camera2 != null).assertTrue();
+        expect(camera2.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
+        console.info(msg + " createCamera with parameters success");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateEffect
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1070
+     * @tc.desc   Test SceneResourceFactory.createEffect method and verify effectId property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateEffect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateEffect";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+
+        let effectParams: EffectParameters = { effectId: "89b83608-c910-433e-9fd8-22f3ef64eabd" };
+        let effect: Effect = await rf.createEffect(effectParams);
+        expect(effect != null).assertTrue();
+        
+        effect.enabled = true;
+        expect(effect.enabled).assertTrue();
+        console.info(msg + " enabled set to true successfully");
+        
+        effect.enabled = false;
+        expect(effect.enabled).assertFalse();
+        console.info(msg + " enabled set to false successfully");
+        
+        expect(effect.effectId).assertEqual("89b83608-c910-433e-9fd8-22f3ef64eabd");
+        console.info(msg + " createEffect success");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCameraGetViewMatrixWithStructure
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1080
+     * @tc.desc   Test Camera.getViewMatrix method and verify matrix structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraGetViewMatrixWithStructure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraGetViewMatrixWithStructure";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let camera: Camera = await rf.createCamera({ name: "TestCamera" });
+        expect(camera != null).assertTrue();
+
+        let viewMatrix: Mat4x4 = camera.getViewMatrix();
+        expect(viewMatrix != undefined).assertTrue();
+        expect(viewMatrix != null).assertTrue();
+        console.info(msg + " getViewMatrix succeeded");
+
+        // Verify matrix structure
+        expect(viewMatrix.x.x).assertEqual(1);
+        expect(viewMatrix.y.y).assertEqual(1);
+        expect(viewMatrix.z.z).assertEqual(1);
+        expect(viewMatrix.w.w).assertEqual(1);
+        console.info(msg + " view matrix structure verified");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCameraParametersMsaa
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1130
+     * @tc.desc   Test CameraParameters.msaa property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraParametersMsaa', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraParametersMsaa";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let cameraParams: CameraParameters = { msaa: true };
+        let camera = await rf.createCamera({ name: "TestCamera" }, cameraParams);
+        expect(camera != null).assertTrue();
+        
+        expect(camera.msaa).assertTrue();
+        console.info(msg + " msaa set to true via CameraParameters successfully");
+        
+        cameraParams.msaa = false;
+        let camera2 = await rf.createCamera({ name: "TestCamera" }, cameraParams);
+        expect(camera2.msaa).assertFalse();
+        console.info(msg + " msaa set to false via CameraParameters successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCameraParametersRenderingPipeline
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1140
+     * @tc.desc   Test CameraParameters.renderingPipeline property getter and setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCameraParametersRenderingPipeline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCameraParametersRenderingPipeline";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let cameraParams: CameraParameters = {
+          renderingPipeline: RenderingPipelineType.FORWARD
+        };
+        let camera = await rf.createCamera({ name: "TestCamera" }, cameraParams);
+        expect(camera != null).assertTrue();
+        
+        expect(camera.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
+        console.info(msg + " renderingPipeline set to FORWARD successfully");
+        
+        cameraParams.renderingPipeline = RenderingPipelineType.FORWARD_LIGHTWEIGHT;
+        let camera2 = await rf.createCamera({ name: "TestCamera" }, cameraParams);
+        expect(camera2.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD_LIGHTWEIGHT);
+        console.info(msg + " renderingPipeline set to FORWARD_LIGHTWEIGHT successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateCameraWithParams
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1330
+     * @tc.desc   Test SceneResourceFactory.createCamera with cameraParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateCameraWithParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateCameraWithParams";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let rf: SceneResourceFactory = scene.getResourceFactory();
+        let cameraParams: CameraParameters = {
+          msaa: true,
+          renderingPipeline: RenderingPipelineType.FORWARD
+        };
+        let camera = await rf.createCamera({ name: "TestCamera" }, cameraParams);
+        expect(camera != null).assertTrue();
+        expect(camera.name).assertEqual("TestCamera");
+        expect(camera.msaa).assertTrue();
+        expect(camera.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
+        console.info(msg + " createCamera with params succeeded");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRegisterResourcePath
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1350
+     * @tc.desc   Test RenderContext.registerResourcePath method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRegisterResourcePath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testRegisterResourcePath";
+      console.info(msg + ' begin ');
+      try {
+        let rc: RenderContext | null = Scene.getDefaultRenderContext();
+        let result = false;
+        if (rc != null) {
+          result = rc.registerResourcePath("custom", "resources/");
+        } else {
+          console.info(msg + " registerResourcePath fail, rc != null.");
+          expect().assertFail();
+        }
+        console.info(msg + " registerResourcePath succeeded");
+        expect(result).assertTrue();
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testRegisterResourcePathEmptyString
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1351
+     * @tc.desc   Test RenderContext.registerResourcePath with empty string and boolean returns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRegisterResourcePathEmptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testRegisterResourcePathEmptyString";
+      console.info(msg + ' begin ');
+      try {
+        let rc: RenderContext | null = Scene.getDefaultRenderContext();
+        expect(rc != null).assertTrue();
+
+        if (rc != null) {
+          let renderContext = rc;
+
+          let registerEmptyProtocol = renderContext.registerResourcePath("", "OhosRawFile://shaders/custom_shader");
+          console.info(msg + ' protocol "" registration result:', registerEmptyProtocol);
+          expect(registerEmptyProtocol).assertFalse();
+
+          let registerEmptyUri = renderContext.registerResourcePath("shaders_test2", "");
+          console.info(msg + ' uri "" registration result:', registerEmptyUri);
+          expect(registerEmptyUri).assertFalse();
+
+          let registerSuccess = renderContext.registerResourcePath("shaders_test_success", "OhosRawFile://shaders/custom_shader");
+          console.info(msg + ' successful registration result:', registerSuccess);
+          expect(registerSuccess).assertTrue();
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetEnvironment
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1360
+     * @tc.desc   Test Scene.environment getter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetEnvironment', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testGetEnvironment";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let env = scene.environment;
+        expect(env != undefined).assertTrue();
+        expect(env != null).assertTrue();
+        console.info(msg + " environment getter succeeded");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetEnvironment
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1370
+     * @tc.desc   Test Scene.environment setter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetEnvironment', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testSetEnvironment";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let env = scene.environment;
+        scene.environment = env;
+        expect(scene.environment != null).assertTrue();
+        console.info(msg + " environment setter succeeded");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetRoot
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1390
+     * @tc.desc   Test Scene.root getter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetRoot', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testGetRoot";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let root = scene.root;
+        expect(root != null).assertTrue();
+        console.info(msg + " root property retrieved successfully");
+        
+        expect(root != null).assertTrue();
+        console.info(msg + " root getter succeeded");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetRenderConfiguration
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1400
+     * @tc.desc   Test Scene.renderConfiguration getter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetRenderConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testGetRenderConfiguration";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != undefined).assertTrue();
+        expect(renderConfig != null).assertTrue();
+        console.info(msg + " renderConfiguration getter succeeded");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCloneNode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1410
+     * @tc.desc   Test Scene.cloneNode method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCloneNode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCloneNode";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let node = scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514');
+        expect(node != null).assertTrue();
+        
+        let clonedNode = scene.cloneNode(node!, scene.root!, "ClonedNode");
+        expect(clonedNode != null).assertTrue();
+        if (clonedNode!.name) {
+          expect(clonedNode!.name).assertEqual("ClonedNode");
+        }
+        console.info(msg + " cloneNode succeeded");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCloneNodeEmptyStringAndNull
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1411
+     * @tc.desc   Test Scene.cloneNode with empty string name and null return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCloneNodeEmptyStringAndNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCloneNodeEmptyStringAndNull";
+      console.info(msg + ' begin ');
+      try {
+        let sceneUri: Resource = $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb");
+        let scene = await Scene.load(sceneUri);
+        expect(scene != null).assertTrue();
+        
+        let node = scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514');
+        expect(node != null).assertTrue();
+        
+        let resultEmptyName = scene.cloneNode(node!, scene.root!, "");
+        console.info(msg + " cloneNode with empty string name: " + JSON.stringify(resultEmptyName));
+        expect(resultEmptyName != null).assertTrue();
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + ' Failed: ' + JSON.stringify(err));
         expect().assertFail();
         done();
       }

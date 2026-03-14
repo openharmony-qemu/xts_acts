@@ -46,6 +46,7 @@ describe("SensorJsTest_sensor_64", function () {
 
     let invalid  = -1;
     let TAG  = '';
+    const PARAMETER_EXPECT_ERROR = true
     const PARAMETER_ERROR_CODE = 401
     const SERVICE_EXCEPTION_CODE = 14500101
     const SENSOR_NO_SUPPORT_CODE = 14500102
@@ -137,7 +138,7 @@ describe("SensorJsTest_sensor_64", function () {
         try {
             let ret = sensor.getSingleSensorSync(null);
             console.error(TAG + ' getSingleSensorSync success: ' + JSON.stringify(ret));
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         } catch (error) {
             console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);

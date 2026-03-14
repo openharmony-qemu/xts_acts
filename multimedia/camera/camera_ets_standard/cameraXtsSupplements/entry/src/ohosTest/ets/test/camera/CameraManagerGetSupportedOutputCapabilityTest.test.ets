@@ -137,6 +137,7 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
+      AppStorage.setOrCreate('emptyString', '')
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
@@ -154,6 +155,8 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
     afterAll(async () => {
       console.info('afterAll case');
       await closeFd(fdNumber);
+      AppStorage.delete('string1')
+      AppStorage.delete('emptyString')
     });
 
     /**
@@ -180,10 +183,9 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
-      } finally {
-        await releasePhotoSession();
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -210,10 +212,9 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
-      } finally {
-        await releasePhotoSession();
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -240,10 +241,9 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
-      } finally {
-        await releasePhotoSession();
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -270,10 +270,9 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
-      } finally {
-        await releasePhotoSession();
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -300,10 +299,9 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
-      } finally {
-        await releasePhotoSession();
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -330,10 +328,9 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       } catch (err) {
         console.error(TAG, testName, 'Failed', err, err.code);
         expect().assertFail();
-      } finally {
-        await releasePhotoSession();
-        done();
       }
+      await releasePhotoSession();
+      done();
     })
 
     /**
@@ -1464,7 +1461,65 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       }
       done();
     })
-
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_0001
+     * @tc.number SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_0001
+     * @tc.desc   getSupportedFullOutputCapability cameraOutputCapability NORMAL_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_0001', Level.LEVEL2,
+      async (done: Function) => {
+        const testName = 'SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_0001';
+        try {
+          console.info(TAG,testName,"start :");
+          if(mCameraDeviceArray.length > 0) {
+            let cameraOutputCapability =
+              mCameraManager.getSupportedFullOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_PHOTO);
+            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
+            expect(cameraOutputCapability.photoProfiles[0].format != null).assertTrue();
+            expect(cameraOutputCapability.photoProfiles[0].size.height > 0).assertTrue();
+            expect(cameraOutputCapability.photoProfiles[0].size.width > 0).assertTrue();
+            expect(cameraOutputCapability.supportedMetadataObjectTypes != null).assertTrue();
+          }
+          done();
+        } catch (error) {
+          console.error(TAG, testName, "fail,errorCode :", error.code);
+          expect().assertFail();
+          done();
+        }
+      })
+    /**
+     * @tc.name   SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_0002
+     * @tc.number SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_0002
+     * @tc.desc   getSupportedFullOutputCapability cameraOutputCapability NORMAL_VIDEO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_0002', Level.LEVEL2,
+      async (done: Function) => {
+        const testName = 'SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_0002';
+        try {
+          console.info(TAG,testName,"start :");
+          if(mCameraDeviceArray.length > 0) {
+            let cameraOutputCapability =
+              mCameraManager.getSupportedFullOutputCapability(mCameraDeviceArray[0], camera.SceneMode.NORMAL_VIDEO);
+            console.info(TAG, testName, "getSupportedOutputCapability ok:",cameraOutputCapability);
+            expect(cameraOutputCapability.videoProfiles[0].frameRateRange.min > 0).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].frameRateRange.max > 0).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].format != null).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].size.height > 0 ).assertTrue();
+            expect(cameraOutputCapability.videoProfiles[0].size.width > 0 ).assertTrue();
+          }
+          done();
+        } catch (error) {
+          console.error(TAG, testName, "fail,errorCode :", error.code);
+          expect().assertFail();
+          done();
+        }
+      })
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_001
      * @tc.number SUB_CAMERA_MANAGER_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_001
@@ -3091,7 +3146,44 @@ export default function CameraManagerGetSupportedOutputCapabilityTest() {
       }
       done();
     })
-
+    /**
+     * @tc.name   SUB_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_NORMAL_VIDEO_023
+     * @tc.number SUB_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_NORMAL_VIDEO_023
+     * @tc.desc   CameraManager -getSupportedFullOutputCapability cameraId "" Parameter missing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUM
+     * @tc.level  LEVEL2
+     */
+    it('SUB_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_NORMAL_VIDEO_023', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_NORMAL_VIDEO_023';
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG, `${testName} cameraManager is null.`);
+        done();
+        return;
+      }
+      let res = mCameraManager.getSupportedCameras();
+      let useDevice: camera.CameraDevice = {
+        cameraId: "",
+        cameraPosition: 2,
+        connectionType: 0,
+        hostDeviceName: "",
+        cameraType: 1,
+        hostDeviceType: 0,
+        lensEquivalentFocalLength: [],
+        cameraOrientation: 45,
+        isRetractable: false
+      }
+      try {
+        let result: camera.CameraOutputCapability =
+          mCameraManager.getSupportedFullOutputCapability(useDevice, camera.SceneMode.NORMAL_VIDEO);
+        console.info(TAG, testName, 'Success');
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, 'Failed', err, err.code);
+        expect(Number(err.code)).assertEqual(7400101);
+      }
+      done();
+    })
     /**
      * @tc.name   SUB_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_SECURE_PHOTO_001
      * @tc.number SUB_GET_SUPPORTED_FULL_OUTPUT_CAPABILITY_SECURE_PHOTO_001

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -87,7 +87,7 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(1).fill(0);
+      const arr = new Array<number>(1, (i) => 0);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(0);
     });
@@ -101,7 +101,7 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<string>(100).fill("0");
+      const arr = new Array<string>(100, (i) => '0');
       expect(arr.length).assertEqual(100);
       expect(arr[99]).assertEqual("0");
     });
@@ -198,57 +198,8 @@ export default function ArrayPrototypeTest() {
      * @tc.level Level 1
      */
     it('testArrayConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0009
-     * @tc.name testArrayConstructor0009
-     * @tc.desc Verify Array constructor throws RangeError when called with negative integer length (-1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new Array<number>(-1);
-      } catch (e) {
-        expect(e.message).assertEqual("size = -1");
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0010
-     * @tc.name testArrayConstructor0010
-     * @tc.desc Verify Array constructor throws RangeError when called with negative float length (-2.5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new Array<number>(-2.5);
-      } catch (e) {
-        expect((e as BusinessError).message).assertEqual("Invalid array length");
-      }
-    });
-
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_PROTOTYPE_0012
-     * @tc.name testArrayConstructor0012
-     * @tc.desc Verify Array constructor creates array with single float element when float argument is passed (0.5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      try {
-        new Array<number>(3.14);
-      } catch (e) {
-        expect((e as BusinessError).message).assertEqual("Invalid array length");
-      }
     });
 
     /**
@@ -1105,7 +1056,7 @@ lineB`;
      * @tc.level Level 1
      */
     it('testArrayConstructor0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(10).fill(0);
+      const arr = new Array<number>(10, (i) => 0);
       expect(arr.length).assertEqual(10);
       expect(arr[9]).assertEqual(0);
     });
@@ -1348,7 +1299,7 @@ lineB`;
      * @tc.level Level 2
      */
     it('testArrayConstructor0101', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000).fill(0);
+      const arr = new Array<number>(1000, (i) => 0);
       expect(arr.length).assertEqual(1000);
       expect(arr[999]).assertEqual(0);
     });

@@ -31,7 +31,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 
 
 export default function closeToastTest() {
-  describe('closeToastTest', () => {
+  describe('closeToastTestAdapt001', () => {
     beforeEach(async (done: Function) => {
       console.info("closeToastTest beforeEach start");
       let options: router.RouterOptions = {

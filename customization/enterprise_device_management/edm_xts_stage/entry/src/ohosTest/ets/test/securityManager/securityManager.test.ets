@@ -2544,7 +2544,11 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0100 error.code = ' + error.code);
-      expect(error.code == 9200001 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     }
     done();
   });
@@ -2564,7 +2568,11 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0200 error.code = ' + error.code);
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2608,7 +2616,11 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0400 error.code = ' + error.code);
-      expect(error.code == 9200012 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2674,7 +2686,11 @@ function testGetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_external_source_extensions_policy_0200 error.code = ' + error.code);
-      expect(error.code == 9200002 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

@@ -35,3 +35,7 @@ export const oHScanCancelScan: () => Promise<number>;
 export const oHScanGetPictureScanProgress: () => Promise<number>;
 export const oHScanExit: () => Promise<number>;
 export const oHPrintStartPrintByNative: (context: Context) => Promise<number>;
+
+export const oHPrintCreateEnum1: () => Promise<number>;
+export const oHPrintCreateEnum2: () => Promise<number>;
+export const oHScanCreateEnum: () => Promise<number>;

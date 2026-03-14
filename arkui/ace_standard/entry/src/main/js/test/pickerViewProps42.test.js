@@ -18,7 +18,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function pickerViewPropsJsTest42() {
-    describe('pickerViewPropsJsTest42', function() {
+    describe('pickerViewPropsJsTest42Adapt001', function() {
 
         async function sleep(time) {
             return new Promise((resolve, reject) => {

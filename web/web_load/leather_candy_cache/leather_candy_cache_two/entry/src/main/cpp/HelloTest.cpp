@@ -535,6 +535,27 @@ static napi_value SetCacheCapacity50(napi_env env, napi_callback_info info)
     return Capacity;
 }
 
+static napi_value SetCacheCapacity100(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 获取第一个参数 webTag
+    size_t webTagSize = 0;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+    char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+    size_t webTagLength = 0;
+    napi_value Capacity;
+    napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "%{public}s, length = %{public}d", webTagValue,
+                 (int)webTagSize);
+    uint32_t capacity = OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity(100);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag, "testLog: SetCacheCapacity0:capacity:%{public}d",
+                 capacity);
+    napi_create_uint32(env, capacity, &Capacity);
+    return Capacity;
+}
+
 static napi_value SetCacheCapacity101(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -619,6 +640,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"setCacheCapacity_1", nullptr, SetCacheCapacity_1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setCacheCapacity0", nullptr, SetCacheCapacity0, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setCacheCapacity50", nullptr, SetCacheCapacity50, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setCacheCapacity100", nullptr, SetCacheCapacity100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setCacheCapacity101", nullptr, SetCacheCapacity101, nullptr, nullptr, nullptr, napi_default, nullptr}
 
     };

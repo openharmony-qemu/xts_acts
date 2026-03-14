@@ -39,6 +39,8 @@ enum OH_AVErrCode {
 
   AV_ERR_INVALID_STATE = 8,
 
+  AV_ERR_UNSUPPORTED_FORMAT = 11,
+
   AV_ERR_SUPER_RESOLUTION_NOT_ENABLED = 5410004,
 }
 const MAX_COUNT = 999999999;
@@ -1004,6 +1006,19 @@ export default function OhAVPlayerNDKTest() {
     it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0004', Level.LEVEL0, async (done: Function) => {
       let testResult = avplayer.testMediaSourceSetMimeType(0, 0);
       expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      done();
+    });
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005
+     * @tc.desc   Test OH_MediaSource_SetMimeType
+     *            testOhAvMediaSourceSetMimeType0005
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005', Level.LEVEL0, async (done: Function) => {
+      let testResult = avplayer.testMediaSourceSetMimeType(0, 3);
+      expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_UNSUPPORTED_FORMAT);
       done();
     });
     /**
@@ -3081,6 +3096,323 @@ export default function OhAVPlayerNDKTest() {
       expect(avplayer.checkErrorCode(player.userData)).assertEqual(OH_AVErrCode.AV_ERR_OK);
       await fs.close(subtitle.fd);
       console.info(`testOhAVPlayerOnSubtitleInfoUpdate001 test end `);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_MEDIASOURCELOADER_DESTROY_0002
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_MEDIASOURCELOADER_DESTROY_0002
+     * @tc.desc   Test OH_AVMediaSourceLoader_Destroy, input null avMediaSourceLoader
+     *            testAVMediaSourceLoaderDestroy
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCELOADER_DESTROY_0002', Level.LEVEL0, async (done: Function) => {
+      let testResult = avplayer.testAVMediaSourceLoaderDestroy();
+      expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlayerSetPlaybackRange010
+     * @tc.name   testOhAVPlayerSetPlaybackRange010
+     * @tc.desc   Set the Playback Range of player.
+     *            testOhAVPlayerSetPlaybackRange010
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerSetPlaybackRange010', Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlayerSetPlaybackRange010 test start `);
+      let result: number = avplayer.OhAVPlayerSetPlaybackRangeErr();
+      expect(0).assertEqual(result);
+      console.info(`testOhAVPlayerSetPlaybackRange010 test end `);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlayerAddFDSubtitleSource002
+     * @tc.name   testOhAVPlayerAddFDSubtitleSource002
+     * @tc.desc   Set the Subtitle Source of player.
+     *            testOhAVPlayerAddFDSubtitleSource002
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerAddFDSubtitleSource002', Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlayerAddFDSubtitleSource002 test start `);
+      let result: number = avplayer.OhAVPlayerAddFDSubtitleSourceErr();
+      expect(0).assertEqual(result);
+      console.info(`testOhAVPlayerAddFDSubtitleSource002 test end `);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlayerSelectTrackWithMode002
+     * @tc.name   testOhAVPlayerSelectTrackWithMode002
+     * @tc.desc   test OH_AVPlayer_SelectTrackWithMode
+     *            testOhAVPlayerSelectTrackWithMode002
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlayerSelectTrackWithMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.OhAVPlayerSelectTrackWithModeErr();
+      expect(0).assertEqual(result);
+      console.info(`testOhAVPlayerSelectTrackWithMode002 test end `); 
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetPreferHDR003
+     * @tc.name   testOhAVPlaybackStrategySetPreferHDR003
+     * @tc.desc   test OH_AVPlaybackStrategy_SetPreferHDR
+     *            testOhAVPlaybackStrategySetPreferHDR003
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetPreferHDR003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetPreferHDR003 test start`);
+      try {
+        let result: number = avplayer.OhAVPlaybackStrategySetPreferHDRErr();
+        expect(0).assertEqual(result);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferHDR003:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `v:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetPreferHDR003 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetPreferredHeight005
+     * @tc.name   testOhAVPlaybackStrategySetPreferredHeight005
+     * @tc.desc   test OH_AVPlaybackStrategy_SetPreferredHeight
+     *            testOhAVPlaybackStrategySetPreferredHeight005
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetPreferredHeight005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetPreferredHeight005 test start`);
+      try {
+        let result: number = avplayer.OhAVPlaySetPreferredHeightErr();
+        expect(0).assertEqual(result);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredHeight005:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredHeight005:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetPreferredHeight005 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetPreferredWidth005
+     * @tc.name   testOhAVPlaybackStrategySetPreferredWidth005
+     * @tc.desc   test OH_AVPlaybackStrategy_SetPreferredWidth
+     *            testOhAVPlaybackStrategySetPreferredWidth005
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetPreferredWidth005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetPreferredWidth005 test start`);
+      try {
+        let result: number = avplayer.OhSetPreferredWidthErr();
+        expect(0).assertEqual(result);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredWidth005:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredWidth005:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetPreferredWidth005 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetPreferredBufferDuration006
+     * @tc.name   testOhAVPlaybackStrategySetPreferredBufferDuration006
+     * @tc.desc   test OH_AVPlaybackStrategy_SetPreferredBufferDuration
+     *            testOhAVPlaybackStrategySetPreferredBufferDuration006
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetPreferredBufferDuration006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetPreferredBufferDuration006 test start`);
+      try {
+        let result: number = avplayer.OhAVPlaySetPreferredBufferDurationErr();
+        expect(0).assertEqual(result);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredBufferDuration006:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredBufferDuration006:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetPreferredBufferDuration006 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetMutedMediaType006
+     * @tc.name   testOhAVPlaybackStrategySetMutedMediaType006
+     * @tc.desc   test OH_AVPlaybackStrategy_SetMutedMediaType
+     *            testOhAVPlaybackStrategySetMutedMediaType006
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetMutedMediaType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetMutedMediaType006 test start`);
+      try {
+        let result: number = avplayer.OhAVPlaybackStrategySetMutedMediaTypeErr();
+        expect(0).assertEqual(result);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetMutedMediaType006:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetMutedMediaType006:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetMutedMediaType006 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetPreferredAudioLanguage003
+     * @tc.name   testOhAVPlaybackStrategySetPreferredAudioLanguage003
+     * @tc.desc   test OH_AVPlaybackStrategy_SetPreferredAudioLanguage
+     *            testOhAVPlaybackStrategySetPreferredAudioLanguage003
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetPreferredAudioLanguage003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetPreferredAudioLanguage003 test start`);
+      try {
+        let result: number = avplayer.OhAVPlaybackStrategySetPreferredAudioLanguageErr();
+        expect(0).assertEqual(result);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredAudioLanguage003:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredAudioLanguage003:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetPreferredAudioLanguage003 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetPreferredSubtitleLanguage003
+     * @tc.name   testOhAVPlaybackStrategySetPreferredSubtitleLanguage003
+     * @tc.desc   test OH_AVPlaybackStrategy_SetPreferredSubtitleLanguage
+     *            testOhAVPlaybackStrategySetPreferredSubtitleLanguage003
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetPreferredSubtitleLanguage003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetPreferredSubtitleLanguage003 test start`);
+      try {
+        let result: number = avplayer.OhAVPlaySetPreferredSubtitleLanguageErr();
+        expect(0).assertEqual(result);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredSubtitleLanguage003:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredSubtitleLanguage003:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetPreferredSubtitleLanguage003 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetShowFirstFrameOnPrepare003
+     * @tc.name   testOhAVPlaybackStrategySetShowFirstFrameOnPrepare003
+     * @tc.desc   test OH_AVPlaybackStrategy_SetShowFirstFrameOnPrepare
+     *            testOhAVPlaybackStrategySetShowFirstFrameOnPrepare003
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetShowFirstFrameOnPrepare003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetShowFirstFrameOnPrepare003 test start`);
+      try {
+        let result: number = avplayer.OhAVPlaybackStrategySetShowFirstFrameOnPrepareErr();
+        expect(0).assertEqual(result);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetShowFirstFrameOnPrepare003:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetShowFirstFrameOnPrepare003:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetShowFirstFrameOnPrepare003 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetPreferredBufferDurationForPlaying005
+     * @tc.name   testOhAVPlaybackStrategySetPreferredBufferDurationForPlaying005
+     * @tc.desc   test OH_AVPlaybackStrategy_SetPreferredBufferDurationForPlaying
+     *            testOhAVPlaybackStrategySetPreferredBufferDurationForPlaying005
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetPreferredBufferDurationForPlaying005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetPreferredBufferDurationForPlaying005 test start`);
+      try {
+        let result: number = avplayer.OhAVPlayBufferDurationForPlayingErr();
+        expect(result).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredBufferDurationForPlaying005:${result}`);
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetPreferredBufferDurationForPlaying005:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetPreferredBufferDurationForPlaying005 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetThresholdForAutoQuickPlay005
+     * @tc.name   testOhAVPlaybackStrategySetThresholdForAutoQuickPlay005
+     * @tc.desc   test OH_AVPlaybackStrategy_SetThresholdForAutoQuickPlay
+     *            testOhAVPlaybackStrategySetThresholdForAutoQuickPlay005
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetThresholdForAutoQuickPlay005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetThresholdForAutoQuickPlay005 test start`);
+      try{
+        let result: number = avplayer.OhAVPlaybackStrategySetThresholdForAutoQuickPlayErr();
+        expect(result).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        done();
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetThresholdForAutoQuickPlay005:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetThresholdForAutoQuickPlay005 test end`);
+      done();
+    });
+
+    /**
+     * @tc.number testOhAVPlaybackStrategySetKeepDecodingOnMute003
+     * @tc.name   testOhAVPlaybackStrategySetKeepDecodingOnMute003
+     * @tc.desc   test OH_AVPlaybackStrategy_SetKeepDecodingOnMute
+     *            testOhAVPlaybackStrategySetKeepDecodingOnMute003
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAVPlaybackStrategySetKeepDecodingOnMute003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`testOhAVPlaybackStrategySetKeepDecodingOnMute003 test start`);
+      try{
+        let result: number = avplayer.OhAVPlaybackStrategySetKeepDecodingOnMuteErr();
+        expect(result).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        done();
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', `testOhAVPlaybackStrategySetKeepDecodingOnMute003:${error}`);
+        expect().assertFail();
+      }
+      console.info(`testOhAVPlaybackStrategySetKeepDecodingOnMute003 test end`);
       done();
     });
   });

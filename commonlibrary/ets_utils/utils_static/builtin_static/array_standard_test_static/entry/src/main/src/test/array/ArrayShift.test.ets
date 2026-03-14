@@ -66,7 +66,7 @@ export default function ArrayShiftTest() {
      * @tc.level Level 2
      */
     it('testArrayShift0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(42);
+      const arr = new Array<number>(42, (i) => 0);
       const result = arr.shift();
       expect(arr.length).assertEqual(41);
     });
@@ -299,8 +299,8 @@ export default function ArrayShiftTest() {
      * @tc.level Level 2
      */
     it('testArrayUnshift0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
-      arr[0] = 3
+      const arr = new Array<number>();
+      arr.push(3);
       arr.unshift(2);
       arr.unshift(1);
       expect(arr).assertDeepEquals([1, 2, 3] as Array<number>);

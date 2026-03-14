@@ -37,7 +37,7 @@
     "MainAbility/pages/lifecycle/LifeCycle0100",
     "MainAbility/pages/lifecycle/LifeCycle0300",
     "MainAbility/pages/lifecycle/LifeCycle0310",
-    "MainAbility/pages/lifecycle/LifeCycleUndefinedNull"
-
+    "MainAbility/pages/lifecycle/LifeCycleUndefinedNull",
+    "MainAbility/pages/circularReference/CircularReference"
   ]
 }

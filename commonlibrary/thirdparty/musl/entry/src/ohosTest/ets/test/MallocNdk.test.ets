@@ -30,9 +30,9 @@ export default function mallocNdkTest() {
      * @tc.desc   test malloc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMallocMalloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMallocMalloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 0
       let a: number = malloc.malloc();
       expect(a).assertEqual(0);
@@ -44,9 +44,9 @@ export default function mallocNdkTest() {
      * @tc.desc   test memalign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMallocMemalign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMallocMemalign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let b = 0
       let a: number = malloc.memalign();
       expect(a).assertEqual(1);
@@ -58,9 +58,9 @@ export default function mallocNdkTest() {
      * @tc.desc   test malloc_usable_size
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMallocMallocUsableSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMallocMallocUsableSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = malloc.mallocUsableSize();
       expect(a).assertEqual(0);
       done()
@@ -71,9 +71,9 @@ export default function mallocNdkTest() {
      * @tc.desc   test mallopt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMallocMallopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMallocMallopt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = malloc.mallopt();
       expect(a).assertEqual(0);
       done()

@@ -32,9 +32,9 @@ export default function stat1NdkTest() {
      * @tc.desc   test chmod
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatChmod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatChmod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stat.chmod();
       expect(result).assertEqual(-1);
       done()
@@ -46,9 +46,9 @@ export default function stat1NdkTest() {
      * @tc.desc   test fstatat
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatFstatat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatFstatat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stat.fstatat();
       expect(result).assertEqual(-1);
       done()
@@ -60,9 +60,9 @@ export default function stat1NdkTest() {
      * @tc.desc   test fstatat64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatFstatat64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatFstatat64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stat.fstatat64();
       expect(result).assertEqual(-1);
       done()
@@ -74,9 +74,9 @@ export default function stat1NdkTest() {
      * @tc.desc   test lstat
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatLstat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatLstat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stat.lstat();
       expect(data).assertEqual(-1);
       done()
@@ -88,9 +88,9 @@ export default function stat1NdkTest() {
      * @tc.desc   test lstat64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatLstat64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatLstat64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = stat.lstat64();
       expect(data).assertEqual(-1);
       done()
@@ -102,9 +102,9 @@ export default function stat1NdkTest() {
      * @tc.desc   test futimens
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatFutimens002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatFutimens002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stat.futimens();
       expect(result).assertEqual(-1);
       done()
@@ -116,9 +116,9 @@ export default function stat1NdkTest() {
      * @tc.desc   test umask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslStatUmask002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslStatUmask002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = stat.umask();
       expect(result).assertEqual(-1);
       done();

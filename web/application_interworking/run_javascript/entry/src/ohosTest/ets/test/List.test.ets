@@ -24,6 +24,41 @@ import jsMessageExtThree from './JsMessageExtThree.test';
 import jsMessageExtFour from './JsMessageExtFour.test';
 import runJavaScriptExt from './RunJavaScriptExt.test';
 
+import adsBlockManagerSetAdsBlockRulesParam from './AdsBlockManagerSetAdsBlockRulesParam.test';
+import adsBlockManagerAddAdsBlockDisallowedListParam from './AdsBlockManagerAddAdsBlockDisallowedListParam.test';
+import adsBlockManagerRemoveAdsBlockAllowedListParam from './AdsBlockManagerRemoveAdsBlockAllowedListParam.test';
+import adsBlockManagerAddAdsBlockAllowedListParam from './AdsBlockManagerAddAdsBlockAllowedListParam.test';
+import adsBlockManagerRemoveAdsBlockDisallowedListParam from './AdsBlockManagerRemoveAdsBlockDisallowedListParam.test';
+
+import backForwardListGetItemAtIndexNullUndefined from './BackForwardListGetItemAtIndexNullUndefined.test';
+import proxyConfigInsertProxyRuleParam from './ProxyConfigInsertProxyRuleParam.test';
+import proxyConfigInsertBypassRuleParam from './ProxyConfigInsertBypassRuleParam.test';
+import proxyConfigInsertDirectRuleParam from './ProxyConfigInsertDirectRuleParam.test';
+import proxyControllerApplyProxyOverrideParam from './ProxyControllerApplyProxyOverrideParam.test';
+import webDownloadItemDeserializeParam from './WebDownloadItemDeserializeParam.test';
+
+import webMessageExtSetStringErrorCode from './WebMessageExtSetStringErrorCode.test';
+import webMessageExtSetArrayBufferErrorCode from './WebMessageExtSetArrayBufferErrorCode.test';
+import webMessageExtSetErrorErrorCode from './WebMessageExtSetErrorErrorCode.test';
+import webMessageExtSetNumberNullUndefined from './WebMessageExtSetNumberNullUndefined.test';
+import webMessagePortPostMessageEventExtErrorCode from './WebMessagePortPostMessageEventExtErrorCode.test';
+
+import webSchemeHandlerResponseSetMimeTypeParam from './WebSchemeHandlerResponseSetMimeTypeParam.test';
+import webSchemeHandlerResponseSetEncodingParam from './WebSchemeHandlerResponseSetEncodingParam.test';
+import webSchemeHandlerResponseSetUrlParam from './WebSchemeHandlerResponseSetUrlParam.test';
+import webSchemeHandlerResponseSetStatusParam from './WebSchemeHandlerResponseSetStatusParam.test';
+import webSchemeHandlerResponseSetStatusTextParam from './WebSchemeHandlerResponseSetStatusTextParam.test';
+import webSchemeHandlerResponseSetHeaderByNameParam from './WebSchemeHandlerResponseSetHeaderByNameParam.test';
+import webSchemeHandlerResponseSetNetErrorCodeParam from './WebSchemeHandlerResponseSetNetErrorCodeParam.test';
+import webSchemeHandlerResponseGetHeaderByNameParam from './WebSchemeHandlerResponseGetHeaderByNameParam.test';
+
+import webResourceResponseSetResponseDataParam from './WebResourceResponseSetResponseDataParam.test';
+import webResourceResponseSetResponseEncodingParam from './WebResourceResponseSetResponseEncodingParam.test';
+import webResourceResponseSetResponseMimeTypeParam from './WebResourceResponseSetResponseMimeTypeParam.test';
+import webResourceResponseSetResponseHeaderParam from './WebResourceResponseSetResponseHeaderParam.test';
+import webResourceResponseSetReasonMessageParam from './WebResourceResponseSetReasonMessageParam.test';
+import webResourceResponseSetResponseCodeParam from './WebResourceResponseSetResponseCodeParam.test';
+
 export default function testsuite() {
   webJsunit()
   webJsunitTwo()
@@ -34,5 +69,40 @@ export default function testsuite() {
   jsMessageExtTwo()
   jsMessageExtThree()
   jsMessageExtFour()
+  runJavaScriptExt()
+  adsBlockManagerRemoveAdsBlockAllowedListParam()
+  adsBlockManagerSetAdsBlockRulesParam()
+  adsBlockManagerAddAdsBlockDisallowedListParam()
+  adsBlockManagerAddAdsBlockAllowedListParam()
+  adsBlockManagerRemoveAdsBlockDisallowedListParam()
+
+  backForwardListGetItemAtIndexNullUndefined()
+  proxyConfigInsertBypassRuleParam()
+  proxyConfigInsertDirectRuleParam()
+  proxyConfigInsertProxyRuleParam()
+  proxyControllerApplyProxyOverrideParam()
+  webDownloadItemDeserializeParam()
+
+  webMessageExtSetStringErrorCode()
+  webMessageExtSetArrayBufferErrorCode()
+  webMessageExtSetErrorErrorCode()
+  webMessageExtSetNumberNullUndefined()
+  webMessagePortPostMessageEventExtErrorCode()
+
+  webSchemeHandlerResponseSetUrlParam()
+  webSchemeHandlerResponseSetStatusParam()
+  webSchemeHandlerResponseSetStatusTextParam()
+  webSchemeHandlerResponseSetHeaderByNameParam()
+  webSchemeHandlerResponseSetMimeTypeParam()
+  webSchemeHandlerResponseSetEncodingParam()
+  webSchemeHandlerResponseSetNetErrorCodeParam()
+  webSchemeHandlerResponseGetHeaderByNameParam()
+
+  webResourceResponseSetReasonMessageParam()
+  webResourceResponseSetResponseDataParam()
+  webResourceResponseSetResponseEncodingParam()
+  webResourceResponseSetResponseMimeTypeParam()
+  webResourceResponseSetResponseHeaderParam()
+  webResourceResponseSetResponseCodeParam()
   runJavaScriptExt()
 }

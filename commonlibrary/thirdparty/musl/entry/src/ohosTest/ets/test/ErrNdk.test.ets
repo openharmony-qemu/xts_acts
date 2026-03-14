@@ -30,9 +30,9 @@ export default function errNdkTest() {
      * @tc.desc   test warn
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslErrWarn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslErrWarn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 13;
       let result: number = err.warn();
       expect(result).assertEqual(resultTrue);
@@ -45,9 +45,9 @@ export default function errNdkTest() {
      * @tc.desc   test warnx
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslErrWarnx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslErrWarnx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 13;
       let result: number = err.warnx();
       expect(result).assertEqual(resultTrue);

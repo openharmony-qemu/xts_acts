@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import router from '@ohos.router';
 import { BusinessError } from '@ohos.base';
 import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-initModule('./pushNamedRoute19')
+initModule('./pushNamedRoute28')
 
 @Entry({ routeName: 'pushNamedRoute19' })
 @Component
@@ -29,10 +29,10 @@ struct pushNamedRoute19 {
     Column() {
       Text('pushNamedRoute19').id('pushNamedRoute19_text1')
       Button('pushNamedRoute').onClick((event: ClickEvent) => {
-        initModule('./pushNamedRoute19')
+        initModule('./pushNamedRoute28')
         for(let i = 0; i < 32 ; i++){
           this.getUIContext().getRouter().pushNamedRoute({
-            name: 'pushNamedRoute19'
+            name: 'pushNamedRoute28'
           },router.RouterMode.Standard, (err) => {
             if (err) {
               this.text1 = '' +  (err as BusinessError).code

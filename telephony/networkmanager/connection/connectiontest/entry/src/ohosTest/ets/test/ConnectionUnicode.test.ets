@@ -628,5 +628,39 @@ export default function ConnectionUnicodeTest() {
       expect(result).assertEqual(TRADITIONAL_CHINESE_DOMAIN);
     });
 
+    /**
+     * @tc.name    testConnectionGetDnsUnicode4300
+     * @tc.number  SUB_Connection_GETUNICODE_4300
+     * @tc.desc    Test Null parameters.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('testConnectionGetDnsUnicode4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const result = connection.getDnsUnicode(null, connection.ConversionProcess.NO_CONFIGURATION);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code)).assertEqual(2100001);
+      }
+    });
+
+    /**
+     * @tc.name    testConnectionGetDnsUnicode4400
+     * @tc.number  SUB_Connection_GETUNICODE_4400
+     * @tc.desc    Test Undefined parameters.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
+    it('testConnectionGetDnsUnicode4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      try {
+        const result = connection.getDnsUnicode(undefined, connection.ConversionProcess.NO_CONFIGURATION);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code)).assertEqual(2100001);
+      }
+    });
+
   });
 }

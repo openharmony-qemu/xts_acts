@@ -94,8 +94,8 @@ napi_value OH_Scan_StartScannerDiscovery1(napi_env env, napi_callback_info info)
     Scan_ScannerDiscoveryCallback callback;
     napi_value result = nullptr;
     int32_t errorCode = OH_Scan_StartScannerDiscovery(ScannerDiscoveryCallback);
-    napi_create_int32(env, ((errorCode == SCAN_ERROR_GENERIC_FAILURE) || (errorCode == SCAN_ERROR_NONE))
-    ? 0 : -1, &result);
+    bool ret = (errorCode == SCAN_ERROR_GENERIC_FAILURE) || (errorCode == SCAN_ERROR_NONE);
+    napi_create_int32(env, ret ? 0 : -1, &result);
     return result;
 }
 

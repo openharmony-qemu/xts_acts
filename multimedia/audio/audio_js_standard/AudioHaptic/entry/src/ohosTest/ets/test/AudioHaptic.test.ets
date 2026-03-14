@@ -70,6 +70,8 @@ export default function AudioHapticTest() {
     let AudioHapticPlayer: audioHaptic.AudioHapticPlayer;
     let sourceId_Notification = 0;
     let sourceId_Ringtone = 0;
+    let TagFrmwk: string = "AudioHapticTest";
+ 	  let audioHapticManager: audioHaptic.AudioHapticManager;
 
     let driveFn = async () => {
       let dr = Driver.create();
@@ -2045,6 +2047,84 @@ export default function AudioHapticTest() {
       done();
     })
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0002
+     * @tc.desc   AudioHapticPlayer_on_audioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0002", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let id = 0;
+      let audioFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
+      let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0,length:0,offset:0}
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      let testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
+      audioFd = testContext.resourceManager.getRawFdSync('notification.ogg')
+      hapticFd = testContext.resourceManager.getRawFdSync('notification.json')
+      await audioHapticManager.registerSourceFromFd(audioFd,hapticFd).then((value:number)=>{
+        console.info(`Promise returned to indicate that th id of registerSource`);
+        id = value;
+      }).catch((err: BusinessError) => {
+          console.error(`fail to register source`);
+          expect(false).assertTrue();
+      });
+      let latencyMode:audioHaptic.AudioLatencyMode=audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
+      audioHapticManager.setAudioLatencyMode(id,latencyMode);
+      let usage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
+      audioHapticManager.setStreamUsage(id,usage);
+      let options:audioHaptic.AudioHapticPlayerOptions = {muteAudio:false, muteHaptics:false};
+      let audioHapticPlayer:audioHaptic.AudioHapticPlayer | undefined = undefined;
+      await audioHapticManager.createPlayer(id,options).then(async(value:audioHaptic.AudioHapticPlayer)=>{
+        console.info(`Create Success`);
+        audioHapticPlayer = value;
+        await audioHapticPlayer.start().then(()=>{
+          console.info(`Create Success`);
+        }).catch((err: BusinessError) => {
+          console.error(`fail to start playing, ${err}`);
+          expect(false).assertTrue();
+        });
+        await sleep(1000);
+        await audioHapticPlayer.setVolume(5).then(()=>{
+          console.info(`setVolume player successfully`);
+        }).catch((err: BusinessError) => {
+          console.error(`fail to setVolume playing out of range, ${err.code}`);
+          expect(Number(err.code)).assertEqual(5400108);
+        });
+        await audioHapticPlayer.stop().then(()=>{
+          console.info(`promise return to indicate stop successfully`);
+        }).catch((err: BusinessError) => {
+          console.error(`fail to stop playing, ${err}`);
+          expect(false).assertTrue();
+        });
+        await audioHapticPlayer.release().then(()=>{
+          console.info(`release player successfully`);
+        }).catch((err: BusinessError) => {
+          console.error(`fail to release playing, ${err}`);
+          expect(false).assertTrue();
+        });
+        await audioHapticPlayer.setVolume(0.50).then(()=>{
+          console.info(`setVolume player successfully`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`fail to setVolume playing already release, ${err.code}`);
+          expect(Number(err.code)).assertEqual(5400102);
+        });
+        await audioHapticPlayer.setLoop(true).then(()=>{
+          console.info(`setVolume player successfully`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(`fail to setloop playing, ${err.code}`);
+          expect(Number(err.code)).assertEqual(5400102);
+        });
+      }).catch((err: BusinessError) => {
+          console.error(`fail to start playing, ${err}`);
+          expect(false).assertTrue();
+      });
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200
      * @tc.desc   AudioHapticPlayer_on_audioInterrupt
@@ -2108,7 +2188,7 @@ export default function AudioHapticTest() {
           console.error(`fail to setVolume playing already release, ${err.code}`);
           expect(Number(err.code)).assertEqual(5400102);
         });
-        await audioHapticPlayer.setLoop(true).then(()=>{
+        await audioHapticPlayer.setLoop(false).then(()=>{
           console.info(`setVolume player successfully`);
           expect(false).assertTrue();
         }).catch((err: BusinessError) => {
@@ -2355,5 +2435,49 @@ export default function AudioHapticTest() {
       }
       done();
     });
+
+   /**
+    * @tc.name   AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100
+    * @tc.number AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100
+    * @tc.desc   setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_NOTIFICATION_RINGTONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_NOTIFICATION_RINGTONE);
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_NOTIFICATION_RINGTONE: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100
+    * @tc.number AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100
+    * @tc.desc   setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('AUDIO_HAPTIC_MANAGER_SET_STREAM_USAGE_VIDEO_COMMUNICATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      try {
+        audioHapticManager.setStreamUsage(sourceId_Notification, audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: PASS`);
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setStreamUsage with STREAM_USAGE_VIDEO_COMMUNICATION: FAIL :${(err as BusinessError).message}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+      done();
+    })
   })
 }

@@ -1010,14 +1010,14 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Si
   }
 })
 /**
- * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_1
+ * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_1Adapt001
  * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1100
  * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_show_2
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+it('testSetTitleAndDockHoverShow_Title_show_dock_show_1Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_show_dock_show_1';
   try {
     let windowClass = windowStage.getMainWindowSync();

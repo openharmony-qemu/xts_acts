@@ -134,9 +134,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0100";
         console.log(`${caseName} test start `);
@@ -166,9 +166,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0200";
         console.log(`${caseName} test start `);
@@ -197,9 +197,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0300";
         console.log(`${caseName} test start `);
@@ -228,9 +228,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0400";
         console.log(`${caseName} test start `);
@@ -259,9 +259,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0500";
         console.log(`${caseName} test start `);
@@ -291,9 +291,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0600";
         console.log(`${caseName} test start `);
@@ -328,9 +328,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0700";
         console.log(`${caseName} test start `);
@@ -363,9 +363,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0800";
         console.log(`${caseName} test start `);
@@ -393,9 +393,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_0900";
         console.log(`${caseName} test start `);
@@ -424,9 +424,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_1000";
         console.log(`${caseName} test start `);
@@ -455,9 +455,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_1100";
         console.log(`${caseName} test start `);
@@ -493,9 +493,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_1200";
         console.log(`${caseName} test start `);
@@ -532,9 +532,9 @@ export default function taskPoolSendableTest() {
      * @tc.desc   Sendable class can only inherit from Sendable class.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testSendableExecute_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('testSendableExecute_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let caseName: string = "testSendableExecute_static_1300";
         console.log(`${caseName} test start `);
