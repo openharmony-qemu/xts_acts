@@ -36,8 +36,8 @@ export default function HiAppEvent() {
         console.info(null, 'hiAppEvent', null);
         done();
       });
-
     })
+
     /**
      * @tc.name   hiAppEvent_null_SECURITY
      * @tc.number SUB_hiAppEvent_null_SECURITY
@@ -65,8 +65,8 @@ export default function HiAppEvent() {
         console.info(null, 'hiAppEvent', null);
         done();
       });
-
     })
+
     /**
      * @tc.name   hiAppEvent__BEHAVIOR
      * @tc.number SUB_hiAppEvent__BEHAVIOR
@@ -126,6 +126,7 @@ export default function HiAppEvent() {
       });
 
     })
+
     /**
      * @tc.name   hiAppEvent_configure_null
      * @tc.number SUB_hiAppEvent_configure_null
@@ -155,6 +156,7 @@ export default function HiAppEvent() {
       });
 
     })
+
     /**
      * @tc.name   hiAppEvent_configure_undefined
      * @tc.number SUB_hiAppEvent_configure_undefined
@@ -184,9 +186,10 @@ export default function HiAppEvent() {
       });
 
     })
+
     /**
      * @tc.name   hiAppEvent_undefined_STATISTIC
-     * @tc.number SUB_hiAppEvent_null_STATISTIC
+     * @tc.number hiAppEvent_undefined_STATISTIC
      * @tc.desc   write函数异常值覆盖，undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,6 +215,7 @@ export default function HiAppEvent() {
         done();
       });
     })
+
     /**
      * @tc.name   hiAppEvent_nullvalue_STATISTIC
      * @tc.number hiAppEvent_nullvalue_STATISTIC
@@ -240,6 +244,7 @@ export default function HiAppEvent() {
         done();
       });
     })
+
     /**
      * @tc.name   hiAppEvent_promise_undefined_STATISTIC
      * @tc.number hiAppEvent_promise_undefined_STATISTIC
@@ -259,10 +264,12 @@ export default function HiAppEvent() {
         console.info(`success to write event`);
       }).catch((err: BusinessError) => {
         console.error(`code: ${err.code}, message: ${err.message}`);
+        expect(err.code === 401 || err.code === -2).assertTrue()
       });
         console.info(undefined, 'hiAppEvent', undefined);
         done();
       });
+
     /**
      * @tc.name   hiAppEvent_promise_null_STATISTIC
      * @tc.number hiAppEvent_promise_null_STATISTIC
@@ -282,6 +289,7 @@ export default function HiAppEvent() {
         console.info(`success to write event`);
       }).catch((err: BusinessError) => {
         console.error(`code: ${err.code}, message: ${err.message}`);
+        expect(err.code === 401 || err.code === -2).assertTrue()
       });
       console.info(null, 'hiAppEvent', null);
       done();

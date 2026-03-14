@@ -1256,9 +1256,10 @@ export default function HiAppEvent1() {
       }
       console.info('hiAppEventdfx_addWatcher_appEventFilters_null_1 end');
     });
+
     /**
      * @tc.name   hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-eventTypes数组为空,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1286,9 +1287,10 @@ export default function HiAppEvent1() {
       }
       console.info('hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null end')
     });
+
     /**
      * @tc.name   hiAppEventdfx_addWatcher_appEventFilters_name_null
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number hiAppEventdfx_addWatcher_appEventFilters_name_null
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-name数组为空,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1315,9 +1317,10 @@ export default function HiAppEvent1() {
       }
       console.info('hiAppEventdfx_addWatcher_appEventFilters_name_null end')
     });
+
     /**
      * @tc.name   hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY
      * @tc.desc   验证调用removeWatcher,watch-appEventFilters-eventTypes数组为SECURITY,remove成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1345,16 +1348,17 @@ export default function HiAppEvent1() {
       }
       console.info('hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY end')
     });
+
     /**
      * @tc.name   hiAppEventdfx_write_eventType_SECURITY_BEHAVIOR
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3000
+     * @tc.number hiAppEventdfx_write_eventType_SECURITY_BEHAVIOR
      * @tc.desc   验证调用write,ventType枚举值是SECURITY、BEHAVIOR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('hiAppEventdfx_write_eventType_SECURITY', Level.LEVEL1, async (done: Function) =>  {
-      console.info('hiAppEventdfx_write_eventType_SECURITY start')
+    it('hiAppEventdfx_write_eventType_SECURITY_BEHAVIOR', Level.LEVEL1, async (done: Function) =>  {
+      console.info('hiAppEventdfx_write_eventType_SECURITY_BEHAVIOR start')
       let eventParams: Record<string, number> = {'clickTime': 100};
       let eventInfo: hiAppEventdfx.AppEventInfo = {
         // Define the event domain.
@@ -1374,11 +1378,12 @@ export default function HiAppEvent1() {
         expect(err.code === 401).assertTrue()
         done();
       });
-      console.info('hiAppEventdfx_write_eventType_SECURITY end')
+      console.info('hiAppEventdfx_write_eventType_SECURITY_BEHAVIOR end')
     });
+
     /**
      * @tc.name   testHiAppEvent011
-     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0300
+     * @tc.number testHiAppEvent011
      * @tc.desc   验证添加数据处理者addProcessor，debugMode为true，添加成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1408,9 +1413,10 @@ export default function HiAppEvent1() {
         done();
       }
     });
+
     /**
      * @tc.name   testHiAppEvent012
-     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0300
+     * @tc.number testHiAppEvent012
      * @tc.desc   验证添加数据处理者addProcessor，onStartReport为false，添加成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1439,9 +1445,10 @@ export default function HiAppEvent1() {
         done();
       }
     });
+
     /**
      * @tc.name   testHiAppEvent013
-     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0300
+     * @tc.number testHiAppEvent013
      * @tc.desc   验证添加数据处理者addProcessor，onBackgroundReport为false，添加成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1471,9 +1478,10 @@ export default function HiAppEvent1() {
         done();
       }
     });
+
     /**
      * @tc.name   testHiAppEvent014
-     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0300
+     * @tc.number testHiAppEvent014
      * @tc.desc   验证添加数据处理者addProcessor，eventConfigs空数组，添加成功
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1502,9 +1510,10 @@ export default function HiAppEvent1() {
         done();
       }
     });
+
     /**
      * @tc.name   testHiAppEvent015
-     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0300
+     * @tc.number testHiAppEvent015
      * @tc.desc   验证添加数据处理者addProcessor，eventConfigs-isRealTime为true，添加成功，返回值大于0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1539,9 +1548,10 @@ export default function HiAppEvent1() {
         done();
       }
     });
+
     /**
      * @tc.name   testHiAppEvent016
-     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_0300
+     * @tc.number testHiAppEvent016
      * @tc.desc   验证clearData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1558,9 +1568,10 @@ export default function HiAppEvent1() {
       console.info('testHiAppEvent016 end')
       done();
     });
+
     /**
      * @tc.name   testHiAppEventconfigEventPolicy020
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1000
+     * @tc.number testHiAppEventconfigEventPolicy020
      * @tc.desc   验证hiAppEventdfx.configEventPolicy接口测试-MainThreadJank-MainThreadJank-autoStopSampling为false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1588,9 +1599,10 @@ export default function HiAppEvent1() {
       });
       console.info( `testHiAppEventconfigEventPolicy020 end`);
     })
+
     /**
      * @tc.name   testHiAppEventconfigEventPolicy021
-     * @tc.number DFX_DFT_HiviewKit_HiAppEvent_configEventPolicyStatic_1000
+     * @tc.number testHiAppEventconfigEventPolicy021
      * @tc.desc   验证hiAppEventdfx.configEventPolicy接口测试-MainThreadJank为undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
