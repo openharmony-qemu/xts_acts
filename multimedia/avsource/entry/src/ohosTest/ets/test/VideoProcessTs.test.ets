@@ -424,7 +424,7 @@ describe('VideoProcessTsTest', () => {
             let targetHeight = imageInfo.size.height * 2;
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
-            let enhancedPixelmap = await imageProcessor.enhanceDetail(
+            let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
                 sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.HIGH);
             expect(enhancedPixelmap != null).assertTrue();
             enhancedPixelmap = await imageProcessor.enhanceDetail(
@@ -465,25 +465,25 @@ describe('VideoProcessTsTest', () => {
             let opts: image.InitializationOptions = {
                 editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}
             }
-            let pxielMap : image.PixelMap = image.createPixelMapSync(opts);
-            expect(PixelMap.isEditable).assertTrue();
+            let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
+            expect(pixelMap.isEditable).assertTrue();
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
 
-            let enhancedPixelmap = await imageProcessor.enhanceDetail(
+            let enhancedPixelmap: image.PixelMap  = await imageProcessor.enhanceDetail(
                 pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
 
-            expect(PixelMap.isEditable).assertTrue();
-            enhancedPixelmap:= imageProcessor.enhanceDetailSync(
+            expect(pixelMap.isEditable).assertTrue();
+            enhancedPixelmap = imageProcessor.enhanceDetailSync(
                 pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
 
-            expect(PixelMap.isEditable).assertTrue();
+            expect(pixelMap.isEditable).assertTrue();
             enhancedPixelmap = await imageProcessor.enhanceDetail(
                 pixelMap, 1024, 1024, videoProcessingEngine.QualityLevel.NONE);
 
-            expect(PixelMap.isEditable).assertTrue();
+            expect(pixelMap.isEditable).assertTrue();
             enhancedPixelmap = imageProcessor.enhanceDetailSync(
-                pixelMap, 1024, 1024,, videoProcessingEngine.QualityLevel.NONE);
+                pixelMap, 1024, 1024, videoProcessingEngine.QualityLevel.NONE);
             done();
         } catch (err) {
             console.info('testVideoProcessTs013 failed, error is' + err.message);
