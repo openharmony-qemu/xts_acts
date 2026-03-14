@@ -96,7 +96,7 @@ export default function Hichecker() {
     it('Hicheckerundefinedcontains', Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>Hicheckerundefinedcontains  start")
-        hichecker.contains(null);
+        hichecker.contains(undefined);
         done();
       }catch (err) {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);

@@ -397,7 +397,13 @@ export default function HidebugTest() {
         done();
       } catch (error) {
         console.error(`====>HidebugTest_0015 getServiceDump catch > error code: ${error.code}, error msg: ${error.message}`)
-        expect(error.code === 401).assertFalse();
+        if (error.code === 201) {
+          console.info(`The application does not have the permission required to call the API`);
+          done();
+        } else {
+          expect(error.code === 401).assertFalse();
+          done();
+        }
         done();
       }
       console.info("HidebugTest_0015 end");
