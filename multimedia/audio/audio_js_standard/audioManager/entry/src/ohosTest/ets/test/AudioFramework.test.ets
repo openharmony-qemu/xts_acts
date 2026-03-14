@@ -12863,7 +12863,8 @@ export default function audioFramework() {
           done();
         }
         done();
-    })
+      })
+      done();
     })
 
     /**
