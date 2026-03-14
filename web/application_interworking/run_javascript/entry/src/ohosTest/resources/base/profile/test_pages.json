@@ -9,7 +9,7 @@
       "testability/pages/jsMessageExtTwo",
       "testability/pages/jsMessageExtThree",
       "testability/pages/jsMessageExtFour",
-      "testability/pages/runJavaScriptExt"
+      "testability/pages/runJavaScriptExt",
       "testability/pages/adsBlockManagerSetAdsBlockRulesParam",
       "testability/pages/adsBlockManagerAddAdsBlockAllowedListParam",
       "testability/pages/adsBlockManagerAddAdsBlockDisallowedListParam",
