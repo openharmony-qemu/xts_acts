@@ -37,7 +37,7 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       #"ace_ets_module_advancedComponents_nowear_api18_static:ActsAceEtsModuleAdvancedComponentsNoWearApi18StaticTest",
       "ace_ets_module_advancedComponents_nowear_api20:ActsAceEtsModuleAdvancedComponentsNoWearApi20Test",
       "ace_ets_module_chip_nowear:ActsAceEtsModuleChipNoWearTest",
-      "ace_ets_module_advance_chip_static:ActsAceEtsModuleAdvanceCounterStaticTest",
+      "ace_ets_module_advance_chip_static:ActsAceEtsModuleAdvanceChipStaticTest",
       "ace_ets_module_segmentButton_nowear:ActsAceEtsModuleSegmentButtonNoWearTest",
       "ace_ets_module_counter:ActsAceEtsModuleCounterTest",
       "ace_ets_module_advance_counter_static:ActsAceEtsModuleAdvanceCounterStaticTest",
