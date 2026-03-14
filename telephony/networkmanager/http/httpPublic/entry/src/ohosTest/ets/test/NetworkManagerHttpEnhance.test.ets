@@ -236,6 +236,111 @@ export default function NetworkManagerHttpEnhanceTest() {
 
   describe('NetworkManagerHttpEnhanceTest', () => {
     /**
+     * @tc.name   testNetworkMgrHTTPRequestDnsServers0600
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0600
+     * @tc.desc   Test request property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testNetworkMgrHTTPRequestDnsServers0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=> {
+      let caseName: string = "SUB_NetworkMgr_HTTP_Request_DnsServers_0600";
+      console.info(`${caseName}---Start`);
+
+      try {
+        httpRequest.requestInStream(address_baidu, httpRequestOptions_dnsServers_emptyArr).then((data) => {
+          console.log(`${caseName} request succeed, data: ${JSON.stringify(data)}`);
+          expectTrue(data === 200);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} catch error: ${JSON.stringify(error)}`);
+        expectTrue(false);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrHTTPRequestPerformanceTiming0100
+     * @tc.number SUB_NetworkMgr_HTTP_Request_PerformanceTiming_0100
+     * @tc.desc   Test PerformanceTiming property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHTTPRequestPerformanceTiming0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHTTPRequestPerformanceTiming0100';
+      console.info(`${caseName}---Start`);
+      try {
+        httpRequest.request(address_post, httpRequestOptions_post, (err, data) => {
+          if (err) {
+            console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
+            expectTrue(data.performanceTiming.dnsTiming >= 0);
+            expectTrue(data.performanceTiming.tcpTiming >= 0);
+            expectTrue(data.performanceTiming.tlsTiming >= 0);
+            expectTrue(data.performanceTiming.firstSendTiming > 0);
+            expectTrue(data.performanceTiming.firstReceiveTiming > 0);
+            expectTrue(data.performanceTiming.totalFinishTiming > 0);
+            expectTrue(data.performanceTiming.redirectTiming >= 0);
+            expectTrue(data.performanceTiming.responseHeaderTiming > 0);
+            expectTrue(data.performanceTiming.responseBodyTiming > 0);
+            expectTrue(data.performanceTiming.totalTiming > 0);
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      }catch (error) {
+        console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0100
+     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0100
+     * @tc.desc   http::request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrHTTPRequestDnsOverHttps0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName:string = 'testNetworkMgrHTTPRequestDnsOverHttps0100';
+      console.info(`${caseName}---Start`);
+      try {
+        httpRequest.request(address_baidu2, httpRequestOptions_dnsOverHttps_emptyStr, (err, data) => {
+          if (err) {
+            console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
+            expectTrue(data.responseCode == 200);
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      }catch (error) {
+        console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
+        expectFalse();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
      * @tc.name   testNetworkMgrHTTPOnDataSendProgress0100
      * @tc.number SUB_NetworkMgr_HTTP_On_DataSendProgress_0100
      * @tc.desc   http::on
@@ -729,39 +834,6 @@ export default function NetworkManagerHttpEnhanceTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0100
-     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0100
-     * @tc.desc   http::request
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrHTTPRequestDnsOverHttps0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName:string = 'testNetworkMgrHTTPRequestDnsOverHttps0100';
-      console.info(`${caseName}---Start`);
-      try {
-        httpRequest.request(address_baidu2, httpRequestOptions_dnsOverHttps, (err, data) => {
-          if (err) {
-            console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
-            expectFalse();
-            console.info(`${caseName}---End`);
-            done();
-          } else {
-            console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.responseCode == 200);
-            console.info(`${caseName}---End`);
-            done();
-          }
-        });
-      }catch (error) {
-        console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectFalse();
-        console.info(`${caseName}---End`);
-        done();
-      }
-    });
-
-    /**
      * @tc.name   testNetworkMgrHTTPRequestDnsOverHttps0200
      * @tc.number SUB_NetworkMgr_HTTP_Request_DnsOverHttps_0200
      * @tc.desc   http::request
@@ -1089,79 +1161,6 @@ export default function NetworkManagerHttpEnhanceTest() {
       } catch (error) {
         console.info(`${caseName} catch error: ${JSON.stringify(error)}`);
         expectTrue(false);
-        console.info(`${caseName}---End`);
-        done();
-      }
-    });
-    /**
-     * @tc.name   testNetworkMgrHTTPRequestDnsServers0600
-     * @tc.number SUB_NetworkMgr_HTTP_Request_DnsServers_0600
-     * @tc.desc   Test request property.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("testNetworkMgrHTTPRequestDnsServers0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=> {
-      let caseName: string = "SUB_NetworkMgr_HTTP_Request_DnsServers_0600";
-      console.info(`${caseName}---Start`);
-
-      try {
-        httpRequest.requestInStream(address_baidu, httpRequestOptions_dnsServers_emptyArr).then((data) => {
-          console.log(`${caseName} request succeed, data: ${JSON.stringify(data)}`);
-          expectTrue(data === 200);
-          console.info(`${caseName}---End`);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
-          expectFalse();
-          console.info(`${caseName}---End`);
-          done();
-        })
-      } catch (error) {
-        console.info(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(false);
-        console.info(`${caseName}---End`);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testNetworkMgrHTTPRequestPerformanceTiming0100
-     * @tc.number SUB_NetworkMgr_HTTP_Request_PerformanceTiming_0100
-     * @tc.desc   Test PerformanceTiming property
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrHTTPRequestPerformanceTiming0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName:string = 'testNetworkMgrHTTPRequestPerformanceTiming0100';
-      console.info(`${caseName}---Start`);
-      try {
-        httpRequest.request(address_post, httpRequestOptions_post, (err, data) => {
-          if (err) {
-            console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
-            expectFalse();
-            console.info(`${caseName}---End`);
-            done();
-          } else {
-            console.log(`${caseName} request success, data: ${JSON.stringify(data)}`);
-            expectTrue(data.performanceTiming.dnsTiming >= 0);
-            expectTrue(data.performanceTiming.tcpTiming >= 0);
-            expectTrue(data.performanceTiming.tlsTiming >= 0);
-            expectTrue(data.performanceTiming.firstSendTiming > 0);
-            expectTrue(data.performanceTiming.firstReceiveTiming > 0);
-            expectTrue(data.performanceTiming.totalFinishTiming > 0);
-            expectTrue(data.performanceTiming.redirectTiming >= 0);
-            expectTrue(data.performanceTiming.responseHeaderTiming > 0);
-            expectTrue(data.performanceTiming.responseBodyTiming > 0);
-            expectTrue(data.performanceTiming.totalTiming > 0);
-            console.info(`${caseName}---End`);
-            done();
-          }
-        });
-      }catch (error) {
-        console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectFalse();
         console.info(`${caseName}---End`);
         done();
       }
