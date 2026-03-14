@@ -290,59 +290,53 @@ export default function observerManagerSimStateTest1() {
       }
       try {
         observer.on("simStateChange", (data: observer.SimStateData) => {
-          if (!err){
-            const simStateAry: number[] = [
-              sim.SimState.SIM_STATE_UNKNOWN,
-              sim.SimState.SIM_STATE_LOCKED,
-              sim.SimState.SIM_STATE_NOT_PRESENT,
-              sim.SimState.SIM_STATE_NOT_READY,
-              sim.SimState.SIM_STATE_LOADED,
-              sim.SimState.SIM_STATE_READY
-            ]
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]
 
-            const simStateAry1: number[] = [
-              sim.CardType.UNKNOWN_CARD,
-              sim.CardType.SINGLE_MODE_SIM_CARD,
-              sim.CardType.SINGLE_MODE_USIM_CARD,
-              sim.CardType.SINGLE_MODE_RUIM_CARD,
-              sim.CardType.DUAL_MODE_CG_CARD,
-              sim.CardType.CT_NATIONAL_ROAMING_CARD,
-              sim.CardType.CU_DUAL_MODE_CARD,
-              sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
-              sim.CardType.DUAL_MODE_UG_CARD,
-              sim.CardType.SINGLE_MODE_ISIM_CARD
-            ];
+          const simStateAry1: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
 
-            const simStateAry2: number[] = [
-              sim.LockReason.SIM_NONE,
-              sim.LockReason.SIM_PIN,
-              sim.LockReason.SIM_PUK,
-              sim.LockReason.SIM_PIN_PIN,
-              sim.LockReason.SIM_PIN_PUK,
-              sim.LockReason.SIM_PU_PIN,
-              sim.LockReason.SIM_PU_PUK,
-              sim.LockReason.SIM_PP_PIN,
-              sim.LockReason.SIM_PP_PUK,
-              sim.LockReason.SIM_PC_PIN,
-              sim.LockReason.SIM_PC_PUK,
-              sim.LockReason.SIM_SIM_PIN,
-              sim.LockReason.SIM_SIM_PUK,
-            ];
-            console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-            if(simStateAry.includes(data.SimState) && simStateAry1.includes(data.CardType) && simStateAry2.includes(data.LockReason)){
-              console.info(`${caseName} data success ${JSON.stringify(data)}`);
-              ExpectTrue(true);
-              done();
-            }else{
-              console.info(`${caseName} data fail ${JSON.stringify(data)}`);
-              ExpectTrue(false);
-              done();
-            }
+          const simStateAry2: number[] = [
+            observer.LockReason.SIM_NONE,
+            observer.LockReason.SIM_PIN,
+            observer.LockReason.SIM_PUK,
+            observer.LockReason.SIM_PN_PIN,
+            observer.LockReason.SIM_PN_PUK,
+            observer.LockReason.SIM_PU_PIN,
+            observer.LockReason.SIM_PU_PUK,
+            observer.LockReason.SIM_PP_PIN,
+            observer.LockReason.SIM_PP_PUK,
+            observer.LockReason.SIM_PC_PIN,
+            observer.LockReason.SIM_PC_PUK,
+            observer.LockReason.SIM_SIM_PIN,
+            observer.LockReason.SIM_SIM_PUK,
+          ];
+          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+          if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
+            console.info(`${caseName} data success ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            done();
           }else{
-            console.info(`${caseName} data ${JSON.stringify(data)}`);
+            console.info(`${caseName} data fail ${JSON.stringify(data)}`);
             ExpectTrue(false);
             done();
-          }
+          }   
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
@@ -374,56 +368,50 @@ export default function observerManagerSimStateTest1() {
         observer.on("simStateChange",  {
           slotId: 0
         }, (data: observer.SimStateData) => {
-          if (!err){
-            const simStateAry: number[] = [
-              sim.SimState.SIM_STATE_UNKNOWN,
-              sim.SimState.SIM_STATE_LOCKED,
-              sim.SimState.SIM_STATE_NOT_PRESENT,
-              sim.SimState.SIM_STATE_NOT_READY,
-              sim.SimState.SIM_STATE_LOADED,
-              sim.SimState.SIM_STATE_READY
-            ]
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]
 
-            const simStateAry1: number[] = [
-              sim.CardType.UNKNOWN_CARD,
-              sim.CardType.SINGLE_MODE_SIM_CARD,
-              sim.CardType.SINGLE_MODE_USIM_CARD,
-              sim.CardType.SINGLE_MODE_RUIM_CARD,
-              sim.CardType.DUAL_MODE_CG_CARD,
-              sim.CardType.CT_NATIONAL_ROAMING_CARD,
-              sim.CardType.CU_DUAL_MODE_CARD,
-              sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
-              sim.CardType.DUAL_MODE_UG_CARD,
-              sim.CardType.SINGLE_MODE_ISIM_CARD
-            ];
+          const simStateAry1: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
 
-            const simStateAry2: number[] = [
-              sim.LockReason.SIM_NONE,
-              sim.LockReason.SIM_PIN,
-              sim.LockReason.SIM_PUK,
-              sim.LockReason.SIM_PIN_PIN,
-              sim.LockReason.SIM_PIN_PUK,
-              sim.LockReason.SIM_PU_PIN,
-              sim.LockReason.SIM_PU_PUK,
-              sim.LockReason.SIM_PP_PIN,
-              sim.LockReason.SIM_PP_PUK,
-              sim.LockReason.SIM_PC_PIN,
-              sim.LockReason.SIM_PC_PUK,
-              sim.LockReason.SIM_SIM_PIN,
-              sim.LockReason.SIM_SIM_PUK,
-            ];
-            console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-            if(simStateAry.includes(data.SimState) && simStateAry1.includes(data.CardType) && simStateAry2.includes(data.LockReason)){
-              console.info(`${caseName} data success ${JSON.stringify(data)}`);
-              ExpectTrue(true);
-              done();
-            }else{
-              console.info(`${caseName} data fail ${JSON.stringify(data)}`);
-              ExpectTrue(false);
-              done();
-            }
+          const simStateAry2: number[] = [
+            observer.LockReason.SIM_NONE,
+            observer.LockReason.SIM_PIN,
+            observer.LockReason.SIM_PUK,
+            observer.LockReason.SIM_PIN_PIN,
+            observer.LockReason.SIM_PIN_PUK,
+            observer.LockReason.SIM_PU_PIN,
+            observer.LockReason.SIM_PU_PUK,
+            observer.LockReason.SIM_PP_PIN,
+            observer.LockReason.SIM_PP_PUK,
+            observer.LockReason.SIM_PC_PIN,
+            observer.LockReason.SIM_PC_PUK,
+            observer.LockReason.SIM_SIM_PIN,
+            observer.LockReason.SIM_SIM_PUK,
+          ];
+          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+          if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
+            console.info(`${caseName} data success ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            done();
           }else{
-            console.info(`${caseName} data ${JSON.stringify(data)}`);
+            console.info(`${caseName} data fail ${JSON.stringify(data)}`);
             ExpectTrue(false);
             done();
           }
