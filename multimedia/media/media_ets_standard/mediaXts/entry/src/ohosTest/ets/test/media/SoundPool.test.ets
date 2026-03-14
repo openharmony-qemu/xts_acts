@@ -366,7 +366,7 @@ async function loadSoundPoolWithFdPromise(usage: audio.StreamUsage, maxStreams: 
       done();
     }
   }, (error: BusinessError) => {
-    console.error(TAG, `soundpool catchCallback, error message:${error.message}`);
+    console.error(TAG, `catchCallback, error message is ${error.message}`);
     expect().assertFail();
     done();
   });
@@ -378,14 +378,14 @@ async function loadWithUndefinedInCallbackMode(usage: audio.StreamUsage, maxStre
   await media.createSoundPool(maxStreams, audioRendererInfo).then(async (soundPool_: media.SoundPool) => {
     if (soundPool_ != null) {
       soundPool = soundPool_;
-      console.info(TAG, 'Succeeded in creating SoundPool promise');
+      console.info(TAG, 'Create soundPool successfully');
       if (paramConfig.typeOfLoadSound === 'uri') {
         soundPool.load(paramConfig.uri, (error: BusinessError, soundId_: number) => {
           if (error) {
-            console.error(TAG, `Failed to load soundPool: errCode is ${error.code}, errMessage is ${error.message}`);
-            expect().assertTrue();
+            console.error(TAG, `Failed to load uri, errCode is ${error.code}, errMessage is ${error.message}`);
+            expect(soundId_).assertEqual(undefined);
           } else {
-            console.info(TAG, 'Succeeded in loading soundId:' + soundId_);
+            console.info(TAG, 'Load uri with undefined successfully, soundId is ' + soundId_);
             expect().assertFail();
           }
           done();
@@ -394,22 +394,22 @@ async function loadWithUndefinedInCallbackMode(usage: audio.StreamUsage, maxStre
         soundPool.load(paramConfig.fd, paramConfig.offset, paramConfig.length,
           (error: BusinessError, soundId_: number) => {
             if (error) {
-              console.error(TAG, `Failed to load soundPool: errCode is ${error.code}, errMessage is ${error.message}`);
-              expect().assertTrue();
+              console.error(TAG, `Failed to load fd, errCode is ${error.code}, errMessage is ${error.message}`);
+              expect(soundId_).assertEqual(undefined);
             } else {
-              console.info(TAG, 'Succeeded in loading soundId:' + soundId_);
+              console.info(TAG, 'Load fd with undefined successfully, soundId is ' + soundId_);
               expect().assertFail();
             }
             done();
         });
       }
     } else {
-      console.error(TAG, 'Failed to create SoundPool promise');
+      console.error(TAG, 'Failed to create soundPool');
       expect().assertFail();
       done();
     }
   }, (error: BusinessError) => {
-    console.error(TAG, `soundpool catchCallback, error message:${error.message}`);
+    console.error(TAG, `catchCallback, error message is ${error.message}`);
     expect().assertFail();
     done();
   });
@@ -421,35 +421,35 @@ async function loadWithUndefinedInPromiseMode(usage: audio.StreamUsage, maxStrea
   await media.createSoundPool(maxStreams, audioRendererInfo).then(async (soundPool_: media.SoundPool) => {
     if (soundPool_ != null) {
       soundPool = soundPool_;
-      console.info(TAG, 'Succeeded in creating SoundPool promise');
+      console.info(TAG, 'Create soundPool successfully.');
       if (paramConfig.typeOfLoadSound === 'uri') {
         await soundPool.load(paramConfig.uri).then((soundId: number) => {
-          console.info(TAG, 'Succeeded in loading soundPool with undefined, soundId is ' + soundId);
+          console.info(TAG, 'Load uri with undefined successfully, soundId is ' + soundId);
           expect().assertFail();
           done();
         }, (err: BusinessError) => {
-          console.error(TAG, 'Failed to load soundpool with undefined as expected, error is ' + err.message);
-          expect().assertTrue();
+          console.error(TAG, 'Failed to load uri with undefined, error is ' + err.message);
+          expect().assertEqual(undefined);
           done();
         });
       } else {
         await soundPool.load(paramConfig.fd, paramConfig.offset, paramConfig.length).then((soundId: number) => {
-          console.info(TAG, 'Succeeded in loading soundPool with undefined, soundId is ' + soundId);
+          console.info(TAG, 'Load fd with undefined successfully, soundId is ' + soundId);
           expect().assertFail();
           done();
         }, (err: BusinessError) => {
-          console.error(TAG, 'Failed to load soundpool with undefined as expected, error is ' + err.message);
+          console.error(TAG, 'Failed to load fd with undefined, error is ' + err.message);
           expect().assertTrue();
           done();
         });
       }
     } else {
-      console.error(TAG, 'Failed to create SoundPool promise');
+      console.error(TAG, 'Failed to create soundPool');
       expect().assertFail();
       done();
     }
   }, (error: BusinessError) => {
-    console.error(TAG, `soundpool catchCallback, error message:${error.message}`);
+    console.error(TAG, `soundpool catchCallback, error message is ${error.message}`);
     expect().assertFail();
     done();
   });
@@ -592,34 +592,39 @@ async function playSoundPoolWithUndefinedInPromiseMode(usage: audio.StreamUsage,
         AppStorage.get<common.UIAbilityContext>("testContext") as common.UIAbilityContext;
 
       let rawFileDescriptor = testContext.resourceManager.getRawFdSync(TEST_MP3_FILE);
-      console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
       let soundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
-      console.info(TAG, 'file soundId: ' + soundId);
+      console.info(TAG, 'soundId is ' + soundId);
       soundPool.on('loadComplete', async (soundId: number) => {
-        console.info(TAG, 'Succeeded in loadComplete, soundId: ' + soundId);
+        console.info(TAG, 'Load sound successfully, soundId is ' + soundId);
         let soundIDToBePlayed: number | undefined = soundId;
         if (paramConfig.soundID === undefined) {
           soundIDToBePlayed = undefined;
         }
-        await soundPool?.play(soundIDToBePlayed, paramConfig.playParameters).then((streamId: number) => {
-          console.info(TAG, 'Succeeded in playing soundPool ,streamId =' + streamId);
+        await soundPool?.play(soundIDToBePlayed as number, paramConfig.playParameters).then((streamId: number) => {
+          if (paramConfig.playParameters === undefined) {
+            console.info(TAG, 'Play sound while playParameters is undefined successfully, streamId is ' + streamId);
+            expect(streamId > 0).assertTrue();
+            soundPool?.off('loadComplete');
+            done();
+            return;
+          }
+          console.info(TAG, 'Play sound successfully, streamId is ' + streamId);
           expect().assertFail();
           soundPool?.off('loadComplete');
           done();
-        }, (err: BusinessError) => {
-          console.error(TAG,
-            `Failed to play soundPool and catch errorCode is: ${err?.code}, errMsg is ${err?.message}'`);
-          expect().assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(TAG, `Failed to play sound, errorCode is ${err?.code}, errMsg is ${err?.message}'`);
+          expect().assertEqual(undefined);
           done();
         });
-      })
+      });
     } else {
-      console.error(TAG, `playSoundPoolWithParamsPromise create soundPool error.`);
+      console.error(TAG, `Failed to create soundPool`);
       expect().assertFail();
       done();
     }
   } catch (error) {
-    console.error(TAG, `playSoundPoolWithParamsPromise error,  ${error}`);
+    console.error(TAG, `catch error,  ${error}`);
     expect().assertFail();
     done();
   }
@@ -635,36 +640,41 @@ async function playSoundPoolWithUndefinedInCallbackMode(usage: audio.StreamUsage
         AppStorage.get<common.UIAbilityContext>("testContext") as common.UIAbilityContext;
 
       let rawFileDescriptor = testContext.resourceManager.getRawFdSync(TEST_MP3_FILE);
-      console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
       let soundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
-      console.info(TAG, 'file soundId: ' + soundId);
       soundPool.on('loadComplete', (soundId: number) => {
-        console.info(TAG, 'Succeeded in loadComplete, soundId: ' + soundId);
+        console.info(TAG, 'Load sound successfully, soundId is ' + soundId);
         let soundIDToBePlayed: number | undefined = soundId;
         if (paramConfig.soundID === undefined) {
           soundIDToBePlayed = undefined;
         }
         soundPool?.play(soundIDToBePlayed, paramConfig.playParameters, (error: BusinessError, streamId: number) => {
           if (error) {
-            console.error(TAG, `Failed to play soundPool: errCode is ${error.code}, errMessage is ${error.message}`);
-            expect().assertTrue();
+            console.error(TAG, `Failed to play sound, errCode is ${error.code}, errMessage is ${error.message}`);
+            expect(streamId).assertEqual(undefined);
+            soundPool?.off('loadComplete');
             done();
-          } else {
-            console.info(TAG, 'Succeeded in playing soundPool, streamId:' + streamId);
-            expect().assertFail();
-            done();
+            return;
           }
+          if (paramConfig.playParameters === undefined) {
+            console.info(TAG, 'Play sound while playParameters is undefined successfully, streamId is ' + streamId);
+            expect(streamId > 0).assertTrue();
+            soundPool?.off('loadComplete');
+            done();
+            return;
+          }
+          console.info(TAG, 'Play sound successfully, streamId is ' + streamId);
+          expect().assertFail();
           soundPool?.off('loadComplete');
           done();
         });
       })
     } else {
-      console.error(TAG, `playSoundPoolWithParamsCallback create soundPool error.`);
+      console.error(TAG, `Failed to create soundPool`);
       expect().assertFail();
       done();
     }
   } catch (error) {
-    console.error(TAG, `playSoundPoolWithParamsCallback error,  ${error}`);
+    console.error(TAG, `catch error,  ${error}`);
     expect().assertFail();
     done();
   }
