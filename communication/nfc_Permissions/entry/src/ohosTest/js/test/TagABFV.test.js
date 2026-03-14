@@ -55,7 +55,7 @@ export default function nfcTagABFVTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_Communication_NFC_nfctage_js_2300', Level.LEVEL0, function ()  {
+        it('SUB_Communication_NFC_nfctage_js_0100', Level.LEVEL0, function ()  {
             let elementName = {
                 "bundleName": "ohos.acts.communication.nfc.nfcdevice",
                 "abilityName": "MainAbility",
