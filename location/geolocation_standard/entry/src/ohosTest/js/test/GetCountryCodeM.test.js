@@ -207,6 +207,39 @@ export default function geolocationTest_6() {
         done();
     })
 
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_CountryCode_0700
+     * @tc.number SUB_HSS_LocationSystem_CountryCode_0700
+     * @tc.desc   Obtaining Country Code Information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_CountryCode_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        try {
+            geolocationm.getCountryCode((err,data) => {
+                if (err) {
+                    return console.info("[lbs_js] SUB_HSS_LocationSystem_CountryCode_0700 callback err:  " + JSON.stringify(err));
+                    expect().assertFail();
+                } else {
+                    console.info("[lbs_js] SUB_HSS_LocationSystem_CountryCode_0700 callback success"+ JSON.stringify(data));
+                    expect(true).assertEqual(data != null);
+                    expect(true).assertEqual(data.country != 'NA')
+                    expect(true).assertEqual(data.type != -1)
+                }
+            })
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_LocationSystem_CountryCode_0700 callback try err." + JSON.stringify(error));
+            if (error.code == "801") {
+                expect(error.code).assertEqual("801")
+            } else {
+                expect().assertFail();
+            }
+        }
+        await sleep(1500);
+        done();
+    })
+
     })
 }
 
