@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import ChipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
-import ChipTest0010 from './ChipTest/ChipTest0010.test';
+import chipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
+import chipTest0010 from './ChipTest/ChipTest0010.test';
 
 export default function testsuite() {
-  ChipGroupIconItemOptionsTest();
-  ChipTest0010();
+  chipGroupIconItemOptionsTest();
+  chipTest0010();
 }
