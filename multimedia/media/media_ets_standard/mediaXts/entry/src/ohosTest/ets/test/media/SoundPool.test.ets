@@ -49,8 +49,8 @@ interface LoadSoundWithUndefinedConfig {
 }
 
 interface PlaySoundWithUndefinedConfig {
-  soundID?: number;
-  playParameters?: media.PlayParameters;
+  soundID: number | undefined;
+  playParameters: media.PlayParameters | undefined;
 }
 
 function createSoundPoolCallbackNormal(usage: audio.StreamUsage, maxStreams: number, done: Function) {
@@ -593,9 +593,11 @@ async function playSoundPoolWithUndefinedInPromiseMode(usage: audio.StreamUsage,
 
       let rawFileDescriptor = testContext.resourceManager.getRawFdSync(TEST_MP3_FILE);
       console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
-      soundPool.on('loadComplete', async (soundId?: number) => {
+      let soundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
+      console.info(TAG, 'file soundId: ' + soundId);
+      soundPool.on('loadComplete', async (soundId: number) => {
         console.info(TAG, 'Succeeded in loadComplete, soundId: ' + soundId);
-        if (paramConfig === undefined) {
+        if (paramConfig.soundID === undefined) {
           soundId = undefined;
         }
         await soundPool?.play(soundId, paramConfig.playParameters).then((streamId: number) => {
@@ -610,8 +612,6 @@ async function playSoundPoolWithUndefinedInPromiseMode(usage: audio.StreamUsage,
           done();
         });
       })
-      let soundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
-      console.info(TAG, 'file soundId: ' + soundId);
     } else {
       console.error(TAG, `playSoundPoolWithParamsPromise create soundPool error.`);
       expect().assertFail();
@@ -635,9 +635,11 @@ async function playSoundPoolWithUndefinedInCallbackMode(usage: audio.StreamUsage
 
       let rawFileDescriptor = testContext.resourceManager.getRawFdSync(TEST_MP3_FILE);
       console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
+      console.info(TAG, 'Succeeded in loadComplete, soundId: ' + soundId);
+      let soundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
       soundPool.on('loadComplete', (soundId?: number) => {
-        console.info(TAG, 'Succeeded in loadComplete, soundId: ' + soundId);
-        if (paramConfig === undefined) {
+        console.info(TAG, 'file soundId: ' + soundId);
+        if (paramConfig.soundID === undefined) {
           soundId = undefined;
         }
         soundPool?.play(soundId, paramConfig.playParameters, (error: BusinessError, streamId: number) => {
@@ -654,8 +656,6 @@ async function playSoundPoolWithUndefinedInCallbackMode(usage: audio.StreamUsage
           done();
         });
       })
-      let soundId = await soundPool.load(rawFileDescriptor.fd, rawFileDescriptor.offset, rawFileDescriptor.length);
-      console.info(TAG, 'file soundId: ' + soundId);
     } else {
       console.error(TAG, `playSoundPoolWithParamsCallback create soundPool error.`);
       expect().assertFail();
