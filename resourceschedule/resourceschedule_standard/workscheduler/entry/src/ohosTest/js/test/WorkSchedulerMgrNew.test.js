@@ -303,8 +303,8 @@ export default function WorkSchedulerMgrNewTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("WorkSchedulerMgrNEW006", Level.LEVEL0, async function (done) {
-        console.info('----------------------WorkSchedulerMgrNEW006---------------------------');
+    it("testStartWorkFun010", Level.LEVEL0, async function (done) {
+        console.info('----------------------testStartWorkFun010---------------------------');
         workScheduler.stopAndClearWorks();
         let workInfo = {
             workId: 1,
@@ -315,18 +315,18 @@ export default function WorkSchedulerMgrNewTest() {
         try{
             expect(workScheduler.startWork(workInfo)).assertNull();
         }catch(error){
-            console.info("WorkSchedulerMgrNEW006 ----------------error: " + error.code);
+            console.info("testStartWorkFun010 ----------------error: " + error.code);
         }
         try{
             expect(workScheduler.stopWork(workInfo)).assertNull();
             workScheduler.getWorkStatus(1).then((res) => {
-                console.info("WorkSchedulerMgrNEW006 getWorkStatus promise success,data is" +
+                console.info("testStartWorkFun010 getWorkStatus promise success,data is" +
                 JSON.stringify(res));
                 expect(res.networkType).assertEqual(5)
             })
             done();
         }catch(error){
-            console.info("WorkSchedulerMgrNEW006 ----------------error: " + error.code);
+            console.info("testStartWorkFun010 ----------------error: " + error.code);
         }
     })
     /**
