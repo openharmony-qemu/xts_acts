@@ -27,16 +27,16 @@ export default function ActsBackgroundProcessManagerNewTest() {
     describe("ActsBackgroundProcessManagerNewTest", () => {
 
         /**
-         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001
-         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_001
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_001
          * @tc.desc   setProcessPriority NULL
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
             async (done: Function) => {
-                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001 begin-------');
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_001 begin-------');
 
                 try{
                     let pid = null;
@@ -44,7 +44,7 @@ export default function ActsBackgroundProcessManagerNewTest() {
                         backgroundProcessManager.ProcessPriority.PROCESS_INACTIVE);
                     done();
                 }catch(error){
-                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001 has failed for' + error.message + 'code:' + error.code);
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_001 has failed for' + error.message + 'code:' + error.code);
                     if (error.code == 401){
                         expect(error.code == 401).assertTrue();
                         done();
@@ -52,20 +52,20 @@ export default function ActsBackgroundProcessManagerNewTest() {
                         expect(false).assertTrue();
                         done();
                     }}
-                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_001 end-------')
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_001 end-------')
             })
 
         /**
-         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002
-         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_002
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_002
          * @tc.desc   setProcessPriority undefined
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_002", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
             async (done: Function) => {
-                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002 begin-------');
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_002 begin-------');
 
                 try{
                     let pid = undefined;
@@ -73,7 +73,7 @@ export default function ActsBackgroundProcessManagerNewTest() {
                         backgroundProcessManager.ProcessPriority.PROCESS_INACTIVE);
                     done();
                 }catch(error){
-                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002 has failed for' + error.message + 'code:' + error.code);
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_002 has failed for' + error.message + 'code:' + error.code);
                     if (error.code == 401){
                         expect(error.code == 401).assertTrue();
                         done();
@@ -81,27 +81,27 @@ export default function ActsBackgroundProcessManagerNewTest() {
                         expect(false).assertTrue();
                         done();
                     }}
-                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_002 end-------')
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_002 end-------')
             })
 
         /**
-         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003
-         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003
+         * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_003
+         * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_003
          * @tc.desc   resetProcessPriority undefined
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
+        it("SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST |Level.LEVEL3,
             async (done: Function) => {
-                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003 begin-------');
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_003 begin-------');
 
                 try{
                     let pid = undefined;
                     backgroundProcessManager.resetProcessPriority(pid);
                     done();
                 }catch(error){
-                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003 has failed for' + error.message + 'code:' + error.code);
+                    hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_003 has failed for' + error.message + 'code:' + error.code);
                     if (error.code == 401){
                         expect(error.code == 401).assertTrue();
                         done();
@@ -109,7 +109,7 @@ export default function ActsBackgroundProcessManagerNewTest() {
                         expect(false).assertTrue();
                         done();
                     }}
-                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_003 end-------')
+                hilog.info(DOMAIN, TAG, '%{public}s', '-------SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NEW_XTS_003 end-------')
             })
 
         /**
