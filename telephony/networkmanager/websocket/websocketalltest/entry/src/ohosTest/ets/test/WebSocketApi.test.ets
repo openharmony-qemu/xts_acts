@@ -5151,6 +5151,7 @@ export default function WebSocketApiTest() {
         console.info(`${caseName} test end`);
       }
     })
+    
     /**
      * @tc.name   testNetworkMgrWebSocketConnectPromise1100
      * @tc.number SUB_NetworkMgr_WebSocket_ConnectPromise_1100
