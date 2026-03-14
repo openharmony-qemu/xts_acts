@@ -466,22 +466,14 @@ describe('VideoProcessTsTest', () => {
                 editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}
             }
             let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
-<<<<<<< HEAD
             expect(pixelMap.isEditable).assertTrue();
-=======
-            expect(PixelMap.isEditable).assertTrue();
->>>>>>> bef935c4f470982b139bee5a563bf539d76bbbf2
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
 
             let enhancedPixelmap: image.PixelMap  = await imageProcessor.enhanceDetail(
                 pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
 
-<<<<<<< HEAD
             expect(pixelMap.isEditable).assertTrue();
-=======
-            expect(PixelMap.isEditable).assertTrue();
->>>>>>> bef935c4f470982b139bee5a563bf539d76bbbf2
             enhancedPixelmap = imageProcessor.enhanceDetailSync(
                 pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
 
