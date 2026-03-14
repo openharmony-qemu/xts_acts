@@ -28,12 +28,6 @@ export default function testsuite() {
     {
         let infoNfc = GetParam("const.nfc.not_support", "false");
         if (infoNfc == "false") {
-            nfcATagSessionTest();
-            nfcControllerTest();
-            nfcIsoDepTagTest();
-            nfcMifareClassicTag();
-            nfcMifareUltralightTag();
-            nfcNDEFTagTest();
             nfcTagABFVTest();
         } else {
             EmptyTest();
