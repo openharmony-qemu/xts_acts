@@ -1824,6 +1824,13 @@ export default function geolocationTest_GeoErr() {
             expect(true).assertEqual(geolocationm.LocationRequestScenario.DAILY_LIFE_SERVICE == 0x304)
             expect(true).assertEqual(geolocationm.LocationRequestScenario.NO_POWER == 0x305)
 
+            expect(true).assertEqual(geolocation.LocationRequestScenario.UNSET == 0x300)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.NAVIGATION == 0x301)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.TRAJECTORY_TRACKING == 0x302)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.CAR_HAILING == 0x303)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.DAILY_LIFE_SERVICE == 0x304)
+            expect(true).assertEqual(geolocation.LocationRequestScenario.NO_POWER == 0x305)
+
             expect(true).assertEqual(geolocationm.CoordinateSystemType.WGS84 == 1)
             expect(true).assertEqual(geolocationm.CoordinateSystemType.GCJ02 == 2)
 
@@ -1831,6 +1838,16 @@ export default function geolocationTest_GeoErr() {
             expect(true).assertEqual(geolocationm.LocationRequestPriority.ACCURACY == 0X201)
             expect(true).assertEqual(geolocationm.LocationRequestPriority.LOW_POWER == 0x202)
             expect(true).assertEqual(geolocationm.LocationRequestPriority.FIRST_FIX == 0x203)
+
+            expect(true).assertEqual(geolocation.LocationRequestPriority.UNSET == 0x200)
+            expect(true).assertEqual(geolocation.LocationRequestPriority.ACCURACY == 0X201)
+            expect(true).assertEqual(geolocation.LocationRequestPriority.LOW_POWER == 0x202)
+            expect(true).assertEqual(geolocation.LocationRequestPriority.FIRST_FIX == 0x203)
+
+            expect(true).assertEqual(geolocationm.LocationSourceType.GNSS == 1)
+            expect(true).assertEqual(geolocationm.LocationSourceType.NETWORK == 2)
+            expect(true).assertEqual(geolocationm.LocationSourceType.INDOOR == 3)
+            expect(true).assertEqual(geolocationm.LocationSourceType.RTK == 4)
 
             done();
 
