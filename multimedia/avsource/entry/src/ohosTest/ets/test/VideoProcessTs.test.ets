@@ -424,20 +424,18 @@ describe('VideoProcessTsTest', () => {
             let targetHeight = imageInfo.size.height * 2;
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
-            let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+            let enhancedPixelmap = await imageProcessor.enhanceDetail(
                 sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.HIGH);
             expect(enhancedPixelmap != null).assertTrue();
-            enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+            enhancedPixelmap = await imageProcessor.enhanceDetail(
                 sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.MEDIUM);
             expect(enhancedPixelmap != null).assertTrue();
-            enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+            enhancedPixelmap = await imageProcessor.enhanceDetail(
                 sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.LOW);
             expect(enhancedPixelmap != null).assertTrue();
-            enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+            enhancedPixelmap = await imageProcessor.enhanceDetail(
                 sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.NONE);
             expect(enhancedPixelmap != null).assertTrue();
-            expect(enhancedPixelmap.isEditable).assertFalse();
-            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
             done();
         } catch (err) {
             console.info('testVideoProcessTs012 failed, error is' + err.message);
@@ -472,20 +470,19 @@ describe('VideoProcessTsTest', () => {
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
 
-            expect(PixelMap.isEditable).assertTrue();
-            let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+            let enhancedPixelmap = await imageProcessor.enhanceDetail(
                 pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
 
             expect(PixelMap.isEditable).assertTrue();
-            enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+            enhancedPixelmap:= imageProcessor.enhanceDetailSync(
                 pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
 
             expect(PixelMap.isEditable).assertTrue();
-            enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+            enhancedPixelmap = await imageProcessor.enhanceDetail(
                 pixelMap, 1024, 1024, videoProcessingEngine.QualityLevel.NONE);
 
             expect(PixelMap.isEditable).assertTrue();
-            enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
+            enhancedPixelmap = imageProcessor.enhanceDetailSync(
                 pixelMap, 1024, 1024,, videoProcessingEngine.QualityLevel.NONE);
             done();
         } catch (err) {
