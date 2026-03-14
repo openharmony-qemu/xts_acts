@@ -260,6 +260,7 @@ export default function observerManagerSimStateTest1() {
         }, (data: observer.SimStateData) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           ExpectTrue(true);
+          observer.off('simStateChange');
           done();
         });
       } catch (error) {
@@ -330,6 +331,7 @@ export default function observerManagerSimStateTest1() {
           if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
             console.info(`${caseName} data success ${JSON.stringify(data)}`);
             ExpectTrue(true);
+            observer.off('simStateChange');
             done();
           }else{
             console.info(`${caseName} data fail ${JSON.stringify(data)}`);
@@ -407,6 +409,7 @@ export default function observerManagerSimStateTest1() {
           if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
             console.info(`${caseName} data success ${JSON.stringify(data)}`);
             ExpectTrue(true);
+            observer.off('simStateChange');
             done();
           }else{
             console.info(`${caseName} data fail ${JSON.stringify(data)}`);
