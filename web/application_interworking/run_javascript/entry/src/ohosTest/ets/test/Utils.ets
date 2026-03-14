@@ -125,7 +125,7 @@ export default class Utils {
   
   
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: number, 
-                           done: Function, expectFunction: Function) {
+                           done: Function | null, expectFunction: Function) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -136,7 +136,9 @@ export default class Utils {
         } catch (err) {
           console.info(`[${testCaseName}] err:` + JSON.stringify(err));
         }
-        done()
+        if (done) {
+          done()
+        }
       }
       let innerEvent: events_emitter.InnerEvent = {
         eventId: eventId,

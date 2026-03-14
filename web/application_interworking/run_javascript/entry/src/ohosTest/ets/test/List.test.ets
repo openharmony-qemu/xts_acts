@@ -22,6 +22,7 @@ import runJavaScriptErrorCode from './RunJavaScriptErrorCode.test';
 import jsMessageExtTwo from './JsMessageExtTwo.test';
 import jsMessageExtThree from './JsMessageExtThree.test';
 import jsMessageExtFour from './JsMessageExtFour.test';
+import runJavaScriptExt from './RunJavaScriptExt.test';
 
 import adsBlockManagerSetAdsBlockRulesParam from './AdsBlockManagerSetAdsBlockRulesParam.test';
 import adsBlockManagerAddAdsBlockDisallowedListParam from './AdsBlockManagerAddAdsBlockDisallowedListParam.test';
@@ -68,7 +69,7 @@ export default function testsuite() {
   jsMessageExtTwo()
   jsMessageExtThree()
   jsMessageExtFour()
-
+  runJavaScriptExt()
   adsBlockManagerRemoveAdsBlockAllowedListParam()
   adsBlockManagerSetAdsBlockRulesParam()
   adsBlockManagerAddAdsBlockDisallowedListParam()
@@ -103,5 +104,4 @@ export default function testsuite() {
   webResourceResponseSetResponseMimeTypeParam()
   webResourceResponseSetResponseHeaderParam()
   webResourceResponseSetResponseCodeParam()
-
 }

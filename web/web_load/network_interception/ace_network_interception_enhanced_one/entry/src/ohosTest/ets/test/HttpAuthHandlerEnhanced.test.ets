@@ -95,6 +95,14 @@ export default function httpAuthHandlerEnhanced() {
     it('testHttpAuthHandlerConfirmFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitHttpAuthHandlerConfirmFalse", 121)
       Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", false, 2025102107,
+        null, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", 'httpbin.org', 26031015,
+        null, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", 'Fake Realm', 26031016,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
