@@ -327,7 +327,6 @@ export default function observerManagerSimStateTest1() {
             observer.LockReason.SIM_SIM_PIN,
             observer.LockReason.SIM_SIM_PUK,
           ];
-          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
           if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
             console.info(`${caseName} data success ${JSON.stringify(data)}`);
             ExpectTrue(true);
@@ -394,8 +393,8 @@ export default function observerManagerSimStateTest1() {
             observer.LockReason.SIM_NONE,
             observer.LockReason.SIM_PIN,
             observer.LockReason.SIM_PUK,
-            observer.LockReason.SIM_PIN_PIN,
-            observer.LockReason.SIM_PIN_PUK,
+            observer.LockReason.SIM_PN_PIN,
+            observer.LockReason.SIM_PN_PUK,
             observer.LockReason.SIM_PU_PIN,
             observer.LockReason.SIM_PU_PUK,
             observer.LockReason.SIM_PP_PIN,
@@ -405,7 +404,6 @@ export default function observerManagerSimStateTest1() {
             observer.LockReason.SIM_SIM_PIN,
             observer.LockReason.SIM_SIM_PUK,
           ];
-          console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
           if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
             console.info(`${caseName} data success ${JSON.stringify(data)}`);
             ExpectTrue(true);
