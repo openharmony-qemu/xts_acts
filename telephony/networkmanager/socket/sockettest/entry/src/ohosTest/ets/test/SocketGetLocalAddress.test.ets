@@ -622,5 +622,39 @@ export default function SocketGetLocalSocketTest() {
       }
     });
 
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1100
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_1100
+     * @tc.desc   test LocalConnection GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1100';
+      try {
+        console.info(`${caseName} test start`);
+        let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        expect(udp).assertInstanceOf('Object');
+        udp.getLocalAddress().then((data: socket.NetAddress) => {
+          console.info(`${caseName} success data:${JSON.stringify(data)}`);
+          ExpectFail();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName}_1 fail err:${JSON.stringify(err)}`);
+          console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
+        }).finally(() => {
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
   })
 }
+
