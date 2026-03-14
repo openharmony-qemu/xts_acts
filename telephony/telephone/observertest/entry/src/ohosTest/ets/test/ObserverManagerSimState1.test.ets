@@ -272,7 +272,7 @@ export default function observerManagerSimStateTest1() {
 
     /**
      * @tc.name   testTelephonyObserverSimStateChangeOn2300
-     * @tc.number SUB_Telephony_Observer_SimStateChangeOn_1000
+     * @tc.number testTelephonyObserverSimStateChangeOn2300
      * @tc.desc   Subscribe to sim state change events.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -346,8 +346,8 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
-     * @tc.name   testTelephonyObserverSimStateChangeOn2300
-     * @tc.number SUB_Telephony_Observer_SimStateChangeOn_1000
+     * @tc.name   testTelephonyObserverSimStateChangeOn2400
+     * @tc.number testTelephonyObserverSimStateChangeOn2400
      * @tc.desc   Subscribe to sim state change events.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
