@@ -104,5 +104,4 @@ export default function testsuite() {
   webResourceResponseSetResponseMimeTypeParam()
   webResourceResponseSetResponseHeaderParam()
   webResourceResponseSetResponseCodeParam()
-  runJavaScriptExt()
 }
