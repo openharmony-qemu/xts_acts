@@ -297,7 +297,7 @@ export default function WorkSchedulerMgrNewTest() {
     })
     /**
      * @tc.name   testStartWorkFun010
-     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_081
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_NEW_XTS_010
      * @tc.desc    networkType is NETWORK_TYPE_ETHERNET
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
