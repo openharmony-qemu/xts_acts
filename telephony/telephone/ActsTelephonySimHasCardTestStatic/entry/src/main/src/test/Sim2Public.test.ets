@@ -1158,17 +1158,7 @@ export default function Sim2Public() {
                   sim.CardType.DUAL_MODE_UG_CARD,
                   sim.CardType.SINGLE_MODE_ISIM_CARD
                 ];
-                const isCard: boolean = simStateAry.includes(data);
-                if(isCard){
-                  ExpectTrue(true);
-                  hilog.info(domain, tag, `${caseName} getCardType true test end ,data->${JSON.stringify(data)}`);
-                  done();
-                }else{
-                  ExpectFail();
-                  hilog.info(domain, tag, `${caseName} getCardType else test end `);
-                  done();
-                }
-                
+                expect(data).assertEqual(simStateAry);
               }else {
                 ExpectFail();
                 hilog.info(domain, tag, `${caseName} getCardType else test end `);
