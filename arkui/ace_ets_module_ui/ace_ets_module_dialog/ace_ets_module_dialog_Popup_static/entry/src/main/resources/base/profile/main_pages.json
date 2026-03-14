@@ -5,6 +5,7 @@
     "MainAbility/pages/popup/PopupIndex",
     "MainAbility/pages/popup/CustomPopupOptions",
     "MainAbility/pages/popup/PopupOptions",
-    "MainAbility/pages/popup/PopupCommonOptions"
+    "MainAbility/pages/popup/PopupCommonOptions",
+    "MainAbility/pages/TipsOptions/TipsOptions"
   ]
 }

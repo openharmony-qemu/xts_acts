@@ -19,6 +19,7 @@ import PopupNodeTest from './PopupTest/PopupNodeTest.test';
 import CustomPopupOptionsTest from './PopupTest/CustomPopupOptions.test';
 import PopupCommonTest from './PopupTest/PopupCommon.test';
 import PopupOptionsTest from './PopupTest/PopupOptions.test';
+import TipsOptionsTest from './TipsOptionsTest/TipsOptions.test';
 
 export default function testsuite() {
   popupTest();
@@ -26,4 +27,5 @@ export default function testsuite() {
   CustomPopupOptionsTest();
   PopupCommonTest();
   PopupOptionsTest();
+  TipsOptionsTest();
 }
