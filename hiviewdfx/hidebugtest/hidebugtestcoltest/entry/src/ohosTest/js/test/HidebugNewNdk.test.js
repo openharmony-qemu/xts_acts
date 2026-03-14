@@ -31,7 +31,8 @@ describe('HidebugNewNdkTest', function () {
      */
     it('SUB_DFX_DFR_Hidebug_StackBack_Fun_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
-            testNapi.getBacktraceFromFp();
+            let  errorcode = testNapi.getBacktraceFromFp();
+            expect(errorcode == 0).assertTrue();
             done();
         } catch (err) {
             console.error(`SUB_DFX_DFR_Hidebug_StackBack_Fun_0100 > error code: ${err.code}, error msg: ${err.message}`);
@@ -50,7 +51,8 @@ describe('HidebugNewNdkTest', function () {
      */
     it('SUB_DFX_DFR_Hidebug_StackBack_NDK_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
-            testNapi.getBacktraceInvaildFromFp();
+            let  errorcode = testNapi.getBacktraceInvaildFromFp();
+            expect(errorcode == 0).assertTrue();
             done();
         } catch (err) {
             console.error(`SUB_DFX_DFR_Hidebug_StackBack_NDK_0800 > error code: ${err.code}, error msg: ${err.message}`);
