@@ -664,6 +664,48 @@ export default function WindowPropertiesTest() {
             done();
             }
         })
+
+                /**
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3011
+        * @tc.name        testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0101
+        * @tc.desc        Set whether the screen is steady on false
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0101',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0101';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0101');
+            hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            try {
+            (win as window.Window).setWindowKeepScreenOn(false, (err: BusinessError<void> | null): void => {
+                const errCode: number = err!.code;
+                if (errCode) {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + 'Failed to set the screen to be always on false. Cause:' + JSON.stringify(err));
+                expect(err!.code).assertEqual(1300002);
+                done()
+                return;
+                }
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting the screen to be always on false');
+                expect(false).assertTrue();
+                done()
+            });
+            } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]',
+                msgStr + 'Failed to set the screen to be always on false. Cause:' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(1300002);
+            done();
+            }
+        })
+
         /**
         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1740
         * @tc.name        testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200
@@ -700,6 +742,44 @@ export default function WindowPropertiesTest() {
             done();
             }
         })
+
+                /**
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1741
+        * @tc.name        testSetWindowKeepScreenOn_Window_State_Abnorma_static_0201
+        * @tc.desc        Set whether the screen is steady on
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level4
+        */
+        it('testSetWindowKeepScreenOn_Window_State_Abnorma_static_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
+        async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowKeepScreenOn_Window_State_Abnorma_static_0201';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let windowClass: window.Window;
+            windowClass = await windowStage!.createSubWindow('testSetWindowKeepScreenOn_Window_State_Abnormalx');
+            hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+            expect(!!windowClass).assertTrue();
+            await (windowClass as window.Window).destroyWindow();
+            try {
+            (windowClass as window.Window).setWindowKeepScreenOn(true).then(() => {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting the screen to be always on.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error): PromiseLike<void> | undefined => {
+                hilog.info(0x0000, '[ANI]',
+                msgStr + 'Failed to set the screen to be always on. Cause:  ' + JSON.stringify(err));
+                expect(err.code).assertEqual(1300002);
+                done();
+            });
+            } catch (exception) {
+            hilog.error(0x0000, '[ANI]',
+                msgStr + 'Failed to set the screen to be always on. catch Cause: ' + JSON.stringify(exception));
+            expect(false).assertTrue();
+            done();
+            }
+        })
+
         /**
         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
         * @tc.name        test_getWindowProperties_mainWindow_static_0100
@@ -727,6 +807,10 @@ export default function WindowPropertiesTest() {
             expect(properties.drawableRect.top).assertLargerOrEqual(0);
             expect(properties.drawableRect.width).assertLarger(0);
             expect(properties.drawableRect.height).assertLarger(0);
+            expect(properties.globalDisplayRect!.left).assertLargerOrEqual(0);
+            expect(properties.globalDisplayRect!.top).assertLargerOrEqual(0);
+            expect(properties.globalDisplayRect!.width).assertLarger(0);
+            expect(properties.globalDisplayRect!.height).assertLarger(0);
             expect(properties.isLayoutFullScreen).assertEqual(false);
             expect(properties.focusable).assertEqual(true);
             expect(properties.touchable).assertEqual(true);
@@ -1471,6 +1555,43 @@ export default function WindowPropertiesTest() {
         }
         })
 
+        /**
+        * @tc.number       testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.name         testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.desc         testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
+        it('testGetWindowStateSnapshotPromiseErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = "testGetWindowStateSnapshotPromiseErrCode1300002_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+        try {
+            let tempWnd: window.Window = await windowStage!.createSubWindow('testGetWindowStateSnapshotPromiseErrCode1300002_0100')
+            hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+            await Utils.msSleep(300);
+            expect(!!tempWnd).assertTrue();
+            await tempWnd.destroyWindow();
+            hilog.info(domain, tag, msgStr + 'window.destroy success');
+            await tempWnd.getWindowStateSnapshot();
+            hilog.info(domain, tag, msgStr + 'window after getWindowStateSnapshot');
+            expect(false).assertTrue();
+            done();
+        } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+            if (exception.code !== 801) {
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to getWindowStateSnapshot. Cause code:' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(1300002);
+            } else {
+            hilog.error(0x0000, '[ANI]',
+                msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(801);
+            }
+            done()
+        }
+        })
 
         /**
         * @tc.number       testSnapshotPromiseErrCode1300002_0100
@@ -3603,10 +3724,11 @@ export default function WindowPropertiesTest() {
             let win: window.Window = await windowStage!.createSubWindow('testWindowOffScreenshot_RepeatOff_static');
             console.log(msgStr + 'windowStage!.createSubWindow success');
             expect(!!win).assertTrue();
-            try {
-            (win as window.Window).onScreenshot(() => {
+            const callback = () => {
                 console.info(msgStr + 'screenshot happened.');
-            });
+            }
+            try {
+            (win as window.Window).onScreenshot(callback);
             } catch (exception) {
             console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
             await (win as window.Window).destroyWindow();
@@ -3614,7 +3736,7 @@ export default function WindowPropertiesTest() {
             done();
             }
             try {
-            (win as window.Window).offScreenshot();
+            (win as window.Window).offScreenshot(callback);
             } catch (exception) {
             console.error(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
             await (win as window.Window).destroyWindow();
@@ -3950,6 +4072,7 @@ export default function WindowPropertiesTest() {
             await Utils.msSleep(1000)
 
             windowClass.offOcclusionStateChanged(callback);
+            windowClass.offOcclusionStateChanged();
             done();
             } catch (err) {
             err = err as BusinessError;
