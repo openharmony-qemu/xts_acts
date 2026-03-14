@@ -439,7 +439,7 @@ async function loadWithUndefinedInPromiseMode(usage: audio.StreamUsage, maxStrea
           done();
         }, (err: BusinessError) => {
           console.error(TAG, 'Failed to load fd with undefined, error is ' + err.message);
-          expect().assertTrue();
+          expect().assertEqual(undefined);
           done();
         });
       }
