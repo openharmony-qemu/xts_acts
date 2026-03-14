@@ -354,7 +354,7 @@ async function loadSoundPoolWithFdPromise(usage: audio.StreamUsage, maxStreams: 
       console.info(TAG, 'file fd: ' + rawFileDescriptor.fd);
       await soundPool.load(rawFileDescriptor.fd, 0, rawFileDescriptor.length).then(async (soundId: number) => {
         console.info(TAG, 'Succeeded in loading soundPool, soundId is ' + soundId);
-        expect().assertTrue();
+        expect(true).assertTrue();
       }, (err: BusinessError) => {
         console.error(TAG, 'Failed to load soundpool and catch error is ' + err.message);
         expect().assertFail();
