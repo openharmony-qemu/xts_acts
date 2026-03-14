@@ -3934,14 +3934,14 @@ export default function ReminderAgentTest() {
 
         /**
          * @tc.name   testremoveNotificationSlot_0140
-         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0139
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0140
          * @tc.desc   test testremoveNotificationSlot slotType is UNKNOWN_TYPE.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it('testremoveNotificationSlot_0140', Level.LEVEL0, async function (done) {
-            console.info('----------------------testPublishReminderNorAlarmFun_0138--------------------------');
+            console.info('----------------------testPublishReminderNorAlarmFun_0140--------------------------');
             let tarRemoveSlot = {
                 type: notification.SlotType.UNKNOWN_TYPE
             }
