@@ -326,5 +326,34 @@ export default function HitraceMeterTest() {
       }
       console.info("testHitraceMeter_0005 end");
     })
+
+    /**
+     * @tc.name   testHitraceMeter_0006
+     * @tc.number SUB_DFX_DFR_HitraceMeter_Ets_0006
+     * @tc.desc   验证HitraceMeter.startSyncTrace第一个参数输入枚举值['DEBUG', 'CRITICAL'];traceByValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testHitraceMeter_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      try{
+        console.info("testHitraceMeter_0006 start");
+        hiTraceMeter.startSyncTrace(hiTraceMeter.HiTraceOutputLevel.DEBUG, "myTestTRACE001", "1");
+        console.info("====> testHitraceMeter_0006 traceByValue DEBUG end 01");
+        hiTraceMeter.traceByValue(hiTraceMeter.HiTraceOutputLevel.DEBUG, "myTestTRACE001", 1);
+        console.info("====> testHitraceMeter_0006 startSyncTrace CRITICAL start 02");
+        hiTraceMeter.startSyncTrace(hiTraceMeter.HiTraceOutputLevel.CRITICAL, "myTestTRACE002", "2");
+        console.info("====> testHitraceMeter_0006 traceByValue CRITICAL start 02");
+        hiTraceMeter.traceByValue(hiTraceMeter.HiTraceOutputLevel.CRITICAL, "myTestTRACE001", 2);
+        console.info("====> testHitraceMeter_0006 finishSyncTrace CRITICAL start 03");
+        hiTraceMeter.finishSyncTrace(hiTraceMeter.HiTraceOutputLevel.CRITICAL);
+        done();
+      }catch(err){
+        console.error(`====>testHitraceMeter_0006 traceByValue undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+      console.info("testHitraceMeter_0006 end");
+    })
   })
 }

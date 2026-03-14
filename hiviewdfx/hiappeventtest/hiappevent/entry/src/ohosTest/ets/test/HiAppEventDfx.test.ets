@@ -2,9 +2,230 @@ import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, it, expect, Level } from '@ohos/hypium'
 import hiAppEventdfx from '@ohos.hiviewdfx.hiAppEvent';
 import { ErrorCode } from '@ohos.ability.errorCode';
+let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let tag: string = 'HiAppEventDFX'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+
 
 export default function HiAppEvent1() {
   describe('HiAppEventdfx', () => {
+    /**
+     * @tc.name   hiAppEventdfx_addWatcher_appEventFilters_null_1
+     * @tc.number hiAppEventdfx_addWatcher_appEventFilters_null_1
+     * @tc.desc   验证调用removeWatcher,watch-appEventFilters数组为空,remove成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('hiAppEventdfx_addWatcher_appEventFilters_null_1', Level.LEVEL3, async (done: Function) => {
+      console.info('hiAppEventdfx_addWatcher_appEventFilters_null_1 start')
+      let watcher :hiAppEvent.Watcher = {
+        name: "watcher1",
+        appEventFilters:[]
+      };
+      let Holder = hiAppEvent.addWatcher(watcher);
+      console.info(`hiAppEventdfx_addWatcher_appEventFilters_null_1 > watcher1: ${Holder}`)
+      try {
+        hiAppEvent.removeWatcher(watcher);
+        done()
+      } catch (error) {
+        console.error(`hiAppEventdfx_addWatcher_appEventFilters_null_1  > error code: ${error.code}, error msg: ${error.message}`)
+        expect(error.code === 401).assertTrue()
+        done();
+      }
+      console.info('hiAppEventdfx_addWatcher_appEventFilters_null_1 end');
+    });
+    /**
+     * @tc.name   hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null
+     * @tc.number hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null
+     * @tc.desc   验证调用removeWatcher,watch-appEventFilters-eventTypes数组为空,remove成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null', Level.LEVEL0, async (done: Function) =>  {
+      console.info('hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null start')
+      let watcher :hiAppEvent.Watcher = {
+        name: "watcher5",
+        appEventFilters: [{
+          domain: hiAppEvent.domain.OS,
+          eventTypes:[],
+          names: ["test_name"]
+        }],
+      };
+      let Holder = hiAppEvent.addWatcher(watcher);
+      console.info(`hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null > watcher5: ${Holder}`)
+      try {
+        hiAppEvent.removeWatcher(watcher);
+        done()
+      } catch (error) {
+        console.error(`hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null  > error code: ${error.code}, error msg: ${error.message}`)
+        expect(error.code === 401).assertTrue()
+        done();
+      }
+      console.info('hiAppEventdfx_addWatcher_appEventFilters_eventTypes_null end')
+    });
+    /**
+     * @tc.name   hiAppEventdfx_addWatcher_appEventFilters_name_null
+     * @tc.number hiAppEventdfx_addWatcher_appEventFilters_name_null
+     * @tc.desc   验证调用removeWatcher,watch-appEventFilters-name数组为空,remove成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('hiAppEventdfx_addWatcher_appEventFilters_name_null', Level.LEVEL0, async (done: Function) =>  {
+      console.info('hiAppEventdfx_addWatcher_appEventFilters_name_null start')
+      let watcher :hiAppEvent.Watcher = {
+        name: "watcher555",
+        appEventFilters: [{
+          domain: hiAppEvent.domain.OS,
+          names: []
+        }],
+      };
+      try {
+        let Holder = hiAppEvent.addWatcher(watcher);
+        console.info(`hiAppEventdfx_addWatcher_appEventFilters_name_null > watcher555: ${Holder}`)
+        hiAppEvent.removeWatcher(watcher);
+        done()
+      } catch (error) {
+        console.error(`hiAppEventdfx_addWatcher_appEventFilters_name_null  > error code: ${error.code}, error msg: ${error.message}`)
+        expect(error.code === 401).assertTrue()
+        done();
+      }
+      console.info('hiAppEventdfx_addWatcher_appEventFilters_name_null end')
+    });
+    /**
+     * @tc.name   hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY
+     * @tc.number hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY
+     * @tc.desc   验证调用removeWatcher,watch-appEventFilters-eventTypes数组为SECURITY,remove成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY', Level.LEVEL0, async (done: Function) =>  {
+      console.info('hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY start')
+      let watcher :hiAppEvent.Watcher = {
+        name: "watcher5",
+        appEventFilters: [{
+          domain: hiAppEvent.domain.OS,
+          eventTypes:[hiAppEvent.EventType.SECURITY],
+          names: ["test_name"]
+        }],
+      };
+      let Holder = hiAppEvent.addWatcher(watcher);
+      console.info(`hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY > watcher2: ${Holder}`)
+      try {
+        hiAppEvent.removeWatcher(watcher);
+        done()
+      } catch (error) {
+        console.error(`hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY  > error code: ${error.code}, error msg: ${error.message}`)
+        expect(error.code === 401).assertTrue()
+        done();
+      }
+      console.info('hiAppEventdfx_addWatcher_appEventFilters_eventTypes_SECURITY end')
+    });
+    /**
+     * @tc.name   hiAppEventdfx_write_eventType_SECURITY
+     * @tc.number hiAppEventdfx_write_eventType_SECURITY
+     * @tc.desc   验证调用write,ventType枚举值是SECURITY、BEHAVIOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('hiAppEventdfx_write_eventType_SECURITY', Level.LEVEL1, async (done: Function) =>  {
+      console.info('hiAppEventdfx_write_eventType_SECURITY start')
+      let eventParams: Record<string, number> = {'clickTime': 100};
+      let eventInfo: hiAppEvent.AppEventInfo = {
+        // Define the event domain.
+        domain: 'button',
+        // Define the event name.
+        name: 'click',
+        // Define the event type.
+        eventType: hiAppEvent.EventType.SECURITY,
+        // Define the event parameters.
+        params: eventParams,
+      };
+      hiAppEvent.write(eventInfo).then(() => {
+        console.info('hiAppEventDfx', `success to write event`);
+        done();
+      }).catch((err: BusinessError) => {
+        console.error('hiAppEventDfx', `code: ${err.code}, message: ${err.message}`);
+        expect(err.code === 401).assertTrue()
+        done();
+      });
+      console.info('hiAppEventdfx_write_eventType_SECURITY end')
+    });
+    /**
+     * @tc.name   testHiAppEvent016
+     * @tc.number testHiAppEvent016
+     * @tc.desc   验证clearData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHiAppEvent016', Level.LEVEL3, async (done: Function) => {
+      console.info('testHiAppEvent016 start')
+      try {
+        hiAppEvent.clearData()
+      } catch (err) {
+        console.error(`testHiAppEvent016 > error code: ${err.code}, error msg: ${err.message}`);
+        expect(false).assertTrue()
+      }
+      console.info('testHiAppEvent016 end')
+      done();
+    });
+    /**
+     * @tc.name   testHiAppEventconfigEventPolicy020
+     * @tc.number testHiAppEventconfigEventPolicy020
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank-MainThreadJank-autoStopSampling为false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHiAppEventconfigEventPolicy020', Level.LEVEL0, async (done: Function) =>  {
+      console.info( `testHiAppEventconfigEventPolicy020 start`);
+      let policy: hiAppEvent.EventPolicy = {
+        "mainThreadJankPolicy": {
+          "logType": 1,
+          "sampleInterval": 100,
+          "ignoreStartupTime": 11,
+          "sampleCount": 21,
+          "reportTimesPerApp": 3,
+          "autoStopSampling": false
+        }
+      };
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        console.info( `testHiAppEventconfigEventPolicy020 configEventPolicy call successful`);
+        done();
+      }).catch((err: Error) => {
+        console.error( 'testHiAppEventconfigEventPolicy020 message :(%{public}s', err.message);
+        expect(false).assertTrue();
+        done();
+      });
+      console.info( `testHiAppEventconfigEventPolicy020 end`);
+    })
+    /**
+     * @tc.name   testHiAppEventconfigEventPolicy021
+     * @tc.number testHiAppEventconfigEventPolicy021
+     * @tc.desc   验证hiAppEvent.configEventPolicy接口测试-MainThreadJank为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHiAppEventconfigEventPolicy021',  Level.LEVEL1, async (done: Function) =>  {
+      console.info( `testHiAppEventconfigEventPolicy021 start`);
+      let policy: hiAppEvent.EventPolicy = {
+        "mainThreadJankPolicy": undefined
+      };
+      hiAppEvent.configEventPolicy(policy).then(() => {
+        console.error( `Unexpected success for undefined policy`);
+        done();
+      }).catch((err: Error) => {
+        console.error( 'testHiAppEventconfigEventPolicy001 Code: ${err?.code}, message: ${err?.message}');
+        expect(false).assertTrue;
+        done();
+      });
+      console.info( `testHiAppEventconfigEventPolicy021 end`);
+    })
     /**
      * @tc.name   hiAppEventdfx_addWatcher_null_1
      * @tc.number SUB_hiAppEventdfx_addWatcher_null_1
@@ -14,7 +235,7 @@ export default function HiAppEvent1() {
      * @tc.level  LEVEL0
      */
     it('hiAppEventdfx_addWatcher_null_1', Level.LEVEL0, async (done: Function) => {
-      let watcher: hiAppEventdfx.Watcher = {
+      let watcher: hiAppEvent.Watcher = {
         name: " ",
       }
       try{
@@ -37,7 +258,7 @@ export default function HiAppEvent1() {
      * @tc.level  LEVEL0
      */
     it('hiAppEventdfx_removeWatcher_null_1', Level.LEVEL0, async (done: Function) => {
-      let watcher: hiAppEventdfx.Watcher = {
+      let watcher: hiAppEvent.Watcher = {
         name: " ",
       }
       try{
@@ -61,7 +282,7 @@ export default function HiAppEvent1() {
      * @tc.level  LEVEL0
      */
     it('hiAppEventdfx_addWatcher_undefined_1', Level.LEVEL0, async (done: Function) => {
-      let watcher: hiAppEventdfx.Watcher = {
+      let watcher: hiAppEvent.Watcher = {
         name: " ",
       }
       try{
@@ -85,7 +306,7 @@ export default function HiAppEvent1() {
      * @tc.level  LEVEL0
      */
     it('hiAppEventdfx_removeWatcher_undefined_1', Level.LEVEL0, async (done: Function) => {
-      let watcher: hiAppEventdfx.Watcher = {
+      let watcher: hiAppEvent.Watcher = {
         name: " ",
       }
       try{
@@ -1224,6 +1445,95 @@ export default function HiAppEvent1() {
       }
       console.info("hiAppEventdfx18_undefined end");
     })
+    /**
+     * @tc.name   testHiAppEvent027
+     * @tc.number testHiAppEvent027
+     * @tc.desc   addProcessor函数的异常值覆盖,第debugMode参数异常值true覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHiAppEvent027', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'testHiAppEvent010 start');
+      let config: Record<string, string> = {
+        "": "",
+      };
+      let processor: hiAppEvent.Processor = {
+        name: 'test_processor',
+        debugMode: true,
+        routeInfo: '',
+        appId: '',
+        onStartReport: false,
+        onBackgroundReport: false,
+        periodReport: -1,
+        batchReport: -2,
+        userIds: [],
+        userProperties: [],
+        configId: -1,
+        customConfigs: config,
+        eventConfigs: [
+          {
+            domain: '',
+            name: 'testEvent',
+            isRealTime: true
+          }
+        ],
+        configName:  'SDK_OCG'
+      }
+      try {
+        let processorId = hiAppEvent.addProcessor(processor);
+        hilog.info(domain, tag, `testHiAppEvent027 > processorId: ${processorId}`)
+        hiAppEvent.removeProcessor(processorId)
+        done()
+      }
+      catch (err) {
 
+        hilog.error(domain, tag, `testHiAppEvent027 > error code: ${err.code}, error msg: ${err.message}`);
+        expect(false).assertTrue()
+        done();
+      }
+    });
+    /**
+     * @tc.name   testHiAppEvent028
+     * @tc.number testHiAppEvent028
+     * @tc.desc   addProcessor函数的异常值覆盖,第debugMode参数异常值true覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHiAppEvent028', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, 'testHiAppEvent010 start');
+      let config: Record<string, string> = {
+        "": "",
+      };
+      let processor: hiAppEvent.Processor = {
+        name: 'test_processor',
+        debugMode: true,
+        routeInfo: '',
+        appId: '',
+        onStartReport: false,
+        onBackgroundReport: false,
+        periodReport: -1,
+        batchReport: -2,
+        userIds: [],
+        userProperties: [],
+        configId: -1,
+        customConfigs: config,
+        eventConfigs: [],
+        configName:  'SDK_OCG'
+      }
+      try {
+        let processorId = hiAppEvent.addProcessor(processor);
+        hilog.info(domain, tag, `testHiAppEvent028 > processorId: ${processorId}`)
+        hiAppEvent.removeProcessor(processorId)
+        done()
+      }
+      catch (err) {
+
+        hilog.error(domain, tag, `testHiAppEvent028 > error code: ${err.code}, error msg: ${err.message}`);
+        expect(false).assertTrue()
+        done();
+      }
+    });
   })
 }
