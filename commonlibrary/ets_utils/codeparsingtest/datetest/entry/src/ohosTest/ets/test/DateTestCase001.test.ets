@@ -85,7 +85,7 @@ export default function DateTestCase001() {
     it('toISOStringFormat', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const date: Date = new Date(Date.UTC(2024, 5, 15, 14, 30, 45, 123));
       const isoString: string = date.toISOString();
-      //expect(isoString).match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/);
+      expect(isoString).assertEqual("2024-06-15T14:30:45.123Z");
     });
 
     /**

@@ -72,9 +72,9 @@ export default function DateTestCase004() {
      */
     it('isDaylightSavingTime', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const testDates = [
-        new Date('2024-03-10'), // 美国夏令时开始前后
-        new Date('2024-06-15'), // 夏令时期间
-        new Date('2024-11-03'),// 美国夏令时结束前后
+        new Date('2024-03-10'),
+        new Date('2024-06-15'),
+        new Date('2024-11-03'),
       ];
       testDates.forEach(date => {
         expect(isDaylightSavingTime(date)).assertFalse();
@@ -90,7 +90,6 @@ export default function DateTestCase004() {
      * @tc.level  LEVEL1
      */
     it('usDSTStartTimeChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      // 测试跨越夏令时开始的时间计算
       const dateBefore = new Date('2024-03-10T01:30:00-05:00');
       const dateAfter = new Date(dateBefore.getTime() + 3600000);
       expect(dateAfter.toISOString()).assertEqual("2024-03-10T07:30:00.000Z");
@@ -182,11 +181,9 @@ export default function DateTestCase004() {
      * @tc.level  LEVEL1
      */
     it('handleAmbiguousTime', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      // 第一次 1:00 AM（EDT）
       const date1 = new Date('2024-11-03T01:00:00-04:00');
       expect(date1.toISOString()).assertEqual("2024-11-03T05:00:00.000Z");
       expect(date1.getTimezoneOffset()).assertEqual(-480);
-      // 第二次 1:00 AM（EST）
       const date2 = new Date('2024-11-03T01:00:00-05:00');
       expect(date2.toISOString()).assertEqual('2024-11-03T06:00:00.000Z');
       expect(date2.getTimezoneOffset()).assertEqual(-480);
@@ -364,8 +361,8 @@ export default function DateTestCase004() {
         'America/Los_Angeles',
         'Europe/London',
         'Europe/Paris',
-        'Asia/Tokyo', // 日本不使用夏令时
-        'Asia/Shanghai'// 中国不使用夏令时
+        'Asia/Tokyo',
+        'Asia/Shanghai'
       ];
       const testDate = new Date('2024-06-15T12:00:00Z');
       timeZones.forEach(tz => {
@@ -431,21 +428,16 @@ export default function DateTestCase004() {
      * @tc.level  LEVEL1
      */
     it('timeDifferenceAcrossDST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-
-
-      // 场景1: 夏令时开始前后的时间差
       const beforeStart = new Date('2024-03-09T23:00:00-05:00');
       const afterStart = new Date('2024-03-10T01:00:00-04:00');
 
       const diff1 = (afterStart.getTime() - beforeStart.getTime()) / 3600000;
       expect(diff1).assertEqual(1);
-      // 场景2: 夏令时结束前后的时间差
       const beforeEnd = new Date('2024-11-03T01:00:00-04:00');
       const afterEnd = new Date('2024-11-03T02:00:00-05:00');
 
       const diff2 = (afterEnd.getTime() - beforeEnd.getTime()) / 3600000;
       expect(diff2).assertEqual(2);
-      // 场景3: 使用本地时间计算
       const localStart = new Date(2024, 2, 9, 23, 0, 0);
       const localEnd = new Date(2024, 2, 10, 1, 0, 0);
 
@@ -465,8 +457,6 @@ export default function DateTestCase004() {
       const baseDate = new Date('2024-03-09T12:00:00-05:00');
       expect(baseDate.toISOString()).assertEqual("2024-03-09T17:00:00.000Z");
       expect(baseDate.toLocaleString()).assertEqual("3/10/2024, 1:00:00 AM");
-
-      // 加1天
       const nextDay = new Date(baseDate);
       nextDay.setDate(baseDate.getDate() + 1);
       expect(nextDay.toLocaleString()).assertEqual("3/11/2024, 1:00:00 AM");
@@ -475,11 +465,9 @@ export default function DateTestCase004() {
         baseDate.getTimezoneOffset(), '->', nextDay.getTimezoneOffset());
       expect(baseDate.getTimezoneOffset()).assertEqual(-480);
       expect(nextDay.getTimezoneOffset()).assertEqual(-480);
-      // 加7天
       const nextWeek = new Date(baseDate);
       nextWeek.setDate(baseDate.getDate() + 7);
       expect(baseDate.toLocaleString()).assertEqual("3/10/2024, 1:00:00 AM");
-      // 加1个月
       const nextMonth = new Date(baseDate);
       nextMonth.setMonth(baseDate.getMonth() + 1);
       console.log('+1月:', nextMonth.toLocaleString());
@@ -500,7 +488,6 @@ export default function DateTestCase004() {
       console.log('date1.getTime() === date2.getTime():');
       expect(date1.getTime() === date2.getTime()).assertTrue();
       expect(date1 === date2).assertFalse();
-      // 夏令时开始前后的本地时间
       const beforeDST = new Date('2024-03-10T05:59:00Z');
       const afterDST = new Date('2024-03-10T07:00:00Z');
 
@@ -519,16 +506,13 @@ export default function DateTestCase004() {
      * @tc.level  LEVEL1
      */
     it('midnightNearDST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      // 夏令时开始前一天的午夜
-      const midnight1 = new Date(2024, 2, 9, 0, 0, 0); // 3月9日
+      const midnight1 = new Date(2024, 2, 9, 0, 0, 0);
       expect(midnight1.toLocaleString()).assertEqual('3/9/2024, 12:00:00 AM');
-      const midnight2 = new Date(2024, 2, 10, 0, 0, 0); // 3月10日
+      const midnight2 = new Date(2024, 2, 10, 0, 0, 0);
       expect(midnight2.toLocaleString()).assertEqual('3/10/2024, 12:00:00 AM');
-      // 夏令时结束前一天的午夜
-      const midnight3 = new Date(2024, 10, 2, 0, 0, 0); // 11月2日
+      const midnight3 = new Date(2024, 10, 2, 0, 0, 0);
       expect(midnight3.toLocaleString()).assertEqual('11/2/2024, 12:00:00 AM');
-      // 夏令时结束当天的午夜
-      const midnight4 = new Date(2024, 10, 3, 0, 0, 0); // 11月3日
+      const midnight4 = new Date(2024, 10, 3, 0, 0, 0);
       expect(midnight4.toLocaleString()).assertEqual('11/3/2024, 12:00:00 AM');
     });
 
@@ -543,10 +527,7 @@ export default function DateTestCase004() {
      */
     it('scheduledTaskDST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let res: ArrayList<string | number | boolean> = new ArrayList<string | number | boolean>();
-      // 模拟一个每天8:00 AM运行的任务
-      const startDate = new Date(2024, 2, 9, 8, 0, 0); // 夏令时开始前一天
-
-      // 计算接下来5天的运行时间
+      const startDate = new Date(2024, 2, 9, 8, 0, 0);
       for (let day = 0; day < 5; day++) {
         const runTime = new Date(startDate);
         runTime.setDate(startDate.getDate() + day);
@@ -567,19 +548,14 @@ export default function DateTestCase004() {
      * @tc.level  LEVEL1
      */
     it('dSTPitfalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      // 陷阱1: 使用本地时间构造日期
-      const date1 = new Date(2024, 2, 10, 2, 30, 0); // 这个时间不存在！
+      const date1 = new Date(2024, 2, 10, 2, 30, 0);
       expect(date1.toLocaleString()).assertEqual("3/10/2024, 2:30:00 AM");
       expect(date1.toISOString()).assertEqual("2024-03-09T18:30:00.000Z");
       console.log('尝试创建不存在的 2:30 AM:', date1.toLocaleString());
       console.log('实际创建的时间:', date1.toISOString());
-
-      // 正确方法: 使用UTC时间
       const date2 = new Date(Date.UTC(2024, 2, 10, 7, 30, 0));
       console.log('使用UTC创建:', date2.toISOString());
       expect(date2.toISOString()).assertEqual("2024-03-10T07:30:00.000Z");
-
-      // 陷阱2: 直接比较本地时间
       const march9 = new Date(2024, 2, 9, 14, 0, 0);
       const march10 = new Date(2024, 2, 10, 14, 0, 0);
       expect(march9.toLocaleString()).assertEqual("3/9/2024, 2:00:00 PM");
@@ -607,7 +583,6 @@ export default function DateTestCase004() {
       const restoredDate1 = new Date(isoString);
       console.log('恢复的日期:', restoredDate1.toLocaleString());
       expect(restoredDate1.toString()).assertEqual("Mon Mar 11 2024 00:00:00 GMT+0800");
-      // 方法2: 保存为时间戳
       const timestamp = originalDate.getTime();
       console.log('保存的时间戳:', timestamp);
       expect(timestamp).assertEqual(1710086400000);
@@ -628,7 +603,6 @@ export default function DateTestCase004() {
      */
     it('timeZoneChanges', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let res: ArrayList<string | number | boolean> = new ArrayList<string | number | boolean>();
-      // 不同年份的夏令时规则可能不同
       const years = [2005, 2015, 2025];
 
       years.forEach(year => {
@@ -639,8 +613,6 @@ export default function DateTestCase004() {
         res.add(year);
         res.add(standardOffset);
         res.add(daylightOffset);
-
-        // 使用Intl API获取特定日期的时区偏移
         const marchDate = new Date(`${year}-03-15T00:00:00Z`);
         const marchFormatter = new Intl.DateTimeFormat('en-US', {
           timeZone: 'America/New_York',

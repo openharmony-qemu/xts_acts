@@ -611,7 +611,7 @@ export default function DateTestCase006() {
       expect(date2.toLocaleDateString()).assertEqual('12/1/2012');
       expect(date2.toLocaleTimeString()).assertEqual('12:00:00 AM');
       expect(date2.toUTCString()).assertEqual('Fri, 30 Nov 2012 16:00:00 GMT');
-      expect(date2.toISOString()).assertEqual('2012-11-30T16:00:00.000Z'); // 等于2012年12月1日
+      expect(date2.toISOString()).assertEqual('2012-11-30T16:00:00.000Z');
 
       const date3: Date = new Date(1995, 11, 32);
 
@@ -622,9 +622,8 @@ export default function DateTestCase006() {
       expect(date3.toLocaleDateString()).assertEqual('1/1/1996');
       expect(date3.toLocaleTimeString()).assertEqual('12:00:00 AM');
       expect(date3.toUTCString()).assertEqual('Sun, 31 Dec 1995 16:00:00 GMT');
-      expect(date3.toISOString()).assertEqual('1995-12-31T16:00:00.000Z'); // 等于1996年1月1日
+      expect(date3.toISOString()).assertEqual('1995-12-31T16:00:00.000Z');
       const date4: Date = new Date(1995, 11, 0);
-      // 核心时间：1995年11月30日 00:00:00 GMT+0800（东八区）
       expect(date4.toString()).assertEqual('Thu Nov 30 1995 00:00:00 GMT+0800');
       expect(date4.toDateString()).assertEqual('Thu Nov 30 1995');
       expect(date4.toTimeString()).assertEqual('00:00:00 GMT+0800');
@@ -702,7 +701,6 @@ export default function DateTestCase006() {
       expect(date2.toUTCString()).assertEqual('Sat, 30 Dec 1995 16:00:00 GMT');
       expect(date2.toISOString()).assertEqual('1995-12-30T16:00:00.000Z');
       const date3: Date = new Date(1995, 11, 0);
-      // 核心时间：1995年11月30日 00:00:00 GMT+0800（东八区）
       expect(date3.toString()).assertEqual('Thu Nov 30 1995 00:00:00 GMT+0800');
       expect(date3.toDateString()).assertEqual('Thu Nov 30 1995');
       expect(date3.toTimeString()).assertEqual('00:00:00 GMT+0800');
@@ -712,7 +710,6 @@ export default function DateTestCase006() {
       expect(date3.toUTCString()).assertEqual('Wed, 29 Nov 1995 16:00:00 GMT');
       expect(date3.toISOString()).assertEqual('1995-11-29T16:00:00.000Z');
       const date4: Date = new Date(1995, 11, 32);
-      // 核心时间：1996年1月1日 00:00:00 GMT+0800（东八区）
       expect(date4.toString()).assertEqual('Mon Jan 01 1996 00:00:00 GMT+0800');
       expect(date4.toDateString()).assertEqual('Mon Jan 01 1996');
       expect(date4.toTimeString()).assertEqual('00:00:00 GMT+0800');
