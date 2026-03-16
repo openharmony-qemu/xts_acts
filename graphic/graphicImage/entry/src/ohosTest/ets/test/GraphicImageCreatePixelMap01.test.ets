@@ -52,6 +52,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap !== null).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -69,6 +70,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         // Verify basic properties
         console.info(`${LOG_PREFIX} dstPixelMap size: ${JSON.stringify(dstPixelMap)}`);
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel001 success`);
         expect(false).assertTrue();
@@ -108,6 +110,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap.isEditable).assertEqual(true);
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -122,6 +125,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
         expect(dstPixelMap.isEditable).assertEqual(true);
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel002 success`);
         expect(false).assertTrue();
@@ -161,6 +165,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap.isEditable).assertEqual(false);
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -175,6 +180,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
         expect(dstPixelMap.isEditable).assertEqual(false);
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel003 success`);
         expect(false).assertTrue();
@@ -214,6 +220,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap.isStrideAlignment !== undefined).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -228,6 +235,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
         expect(dstPixelMap.isStrideAlignment !== undefined).assertTrue();
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel004 success`);
         expect(false).assertTrue();
@@ -267,6 +275,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap.isStrideAlignment !== undefined).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -281,6 +290,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
         expect(dstPixelMap.isStrideAlignment !== undefined).assertTrue();
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel005 success`);
         expect(false).assertTrue();
@@ -636,6 +646,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap !== null).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -649,9 +660,6 @@ export default function GraphicImageCreatePixelMap01() {
         const dstPixelMap = image.createPixelMapFromParcel(sequence);
         
         console.info(`${LOG_PREFIX} large dstPixelMap: ${dstPixelMap}`);
-        expect(dstPixelMap !== null).assertTrue();
-        
-        // Verify size is maintained
         expect(dstPixelMap !== null).assertTrue();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel016 success`);
@@ -692,6 +700,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap !== null).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -705,9 +714,6 @@ export default function GraphicImageCreatePixelMap01() {
         const dstPixelMap = image.createPixelMapFromParcel(sequence);
         
         console.info(`${LOG_PREFIX} minimum dstPixelMap: ${dstPixelMap}`);
-        expect(dstPixelMap !== null).assertTrue();
-        
-        // Verify size is maintained
         expect(dstPixelMap !== null).assertTrue();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel017 success`);
@@ -749,6 +755,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const rgbPixelMap = image.createPixelMapUsingAllocatorSync(rgbColorBuffer, rgbOpts);
         expect(rgbPixelMap !== null).assertTrue();
+        await rgbPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data

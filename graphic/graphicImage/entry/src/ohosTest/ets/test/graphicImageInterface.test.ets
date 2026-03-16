@@ -58,6 +58,8 @@ export default function graphicImageInterfaceTest() {
           } else {
               console.log(" www data 1.3" + msg)
               console.info(msg + ' Succeeded in converting pixelmap.');
+              srcPixelmap.release();
+              dstPixelMap.release();
               done()
           }
         })
@@ -99,6 +101,8 @@ export default function graphicImageInterfaceTest() {
         image.createPremultipliedPixelMap(dstPixelMap, srcPixelmap).then(() => {
             console.log(" www data 2.3" + msg)
             console.info(msg + ' Succeeded in converting pixelmap.');
+            srcPixelmap.release();
+            dstPixelMap.release();
             done()
         }).catch((error: BusinessError) => {
             console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -148,6 +152,8 @@ export default function graphicImageInterfaceTest() {
           } else {
               console.log(" www data 3.3" + msg)
               console.info(msg + ' Succeeded in converting pixelmap.');
+              srcPixelmap.release();
+              dstPixelMap.release();
               done()
           }
         })
@@ -189,6 +195,8 @@ export default function graphicImageInterfaceTest() {
         image.createUnpremultipliedPixelMap(srcPixelmap, dstPixelMap).then(() => {
             console.log(" www data 4.3" + msg)
             console.info(msg + ' Succeeded in converting pixelmap.');
+            srcPixelmap.release();
+            dstPixelMap.release();
             done()
         }).catch((error: BusinessError) => {
             console.error(msg + ` Failed to convert pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -221,6 +229,7 @@ export default function graphicImageInterfaceTest() {
           if (pixelMap != undefined) {
               pixelMap.writeBufferToPixelsSync(color);
               console.info(msg + ' Succeeded in writeBufferToPixelsSync.');
+              pixelMap.release();
               done()
           }else{
               console.info(msg + ' pixelMap == undefined');
@@ -269,6 +278,7 @@ export default function graphicImageInterfaceTest() {
             }
           };
           pixelMap.readPixelsSync(area);
+          pixelMap.release();
           done()
         }).catch((error: BusinessError) => {
           console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -302,6 +312,7 @@ export default function graphicImageInterfaceTest() {
         image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
           let rate : number = 0.5;
           pixelMap.opacitySync(rate);
+          pixelMap.release();
           done()
         }).catch((error: BusinessError) => {
           console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -335,6 +346,7 @@ export default function graphicImageInterfaceTest() {
       try {
         image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
           let pixelmap : image.PixelMap = pixelMap.createAlphaPixelmapSync();
+          pixelmap.release();
           done()
         }).catch((error: BusinessError) => {
           console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -369,6 +381,7 @@ export default function graphicImageInterfaceTest() {
           let translateX : number = 50.0;
           let translateY : number = 10.0;
           pixelMap.translateSync(translateX, translateY);
+          pixelMap.release();
           done()
         }).catch((error: BusinessError) => {
           console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -402,6 +415,7 @@ export default function graphicImageInterfaceTest() {
         image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
           let angle : number = 90.0;
           pixelMap.rotateSync(angle);
+          pixelMap.release();
           done()
         }).catch((error: BusinessError) => {
           console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -436,6 +450,7 @@ export default function graphicImageInterfaceTest() {
           let horizontal : boolean = true;
           let vertical : boolean = false;
           pixelMap.flipSync(horizontal, vertical);
+          pixelMap.release();
           done()
         }).catch((error: BusinessError) => {
           console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -469,6 +484,7 @@ export default function graphicImageInterfaceTest() {
         image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
           let region : image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
           pixelMap.cropSync(region);
+          pixelMap.release();
           done()
         }).catch((error: BusinessError) => {
           console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -503,6 +519,7 @@ export default function graphicImageInterfaceTest() {
       }
       image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
         console.log(msg + " Succeed in createPixelMap ")
+        pixelMap.release();
         done()
       }).catch((error: BusinessError) => {
         console.error(msg + `Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
