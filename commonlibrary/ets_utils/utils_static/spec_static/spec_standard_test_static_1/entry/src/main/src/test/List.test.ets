@@ -13,11 +13,15 @@
  * limitations under the License.
  */
 import AnnotationsTest from "./Annotations/annotations.test";
+import AttemptInvalidTypeConversionTest from "./contextsandconversions/AttemptInvalidTypeConversionTest.test";
+import StringOperatorContextsTest from "./contextsandconversions/StringOperatorContextsTest.test";
 import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.test";
 import UndefinedTypeSafetyTest from "./undefined/UndefinedTypeSafety.test";
 import StatementsTest from "./statements/StatementsTest.test";
 export default function testsuite() {
   AnnotationsTest();
+  AttemptInvalidTypeConversionTest();
+  StringOperatorContextsTest();
   UndefinedFixVerificationTest();
   UndefinedTypeSafetyTest();
   StatementsTest();
