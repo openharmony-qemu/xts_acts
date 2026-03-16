@@ -18,6 +18,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@kit.BasicServicesKit';
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default class EntryAbility extends UIAbility {
   private onCreateFlag = false;
@@ -38,9 +39,10 @@ export default class EntryAbility extends UIAbility {
     this.onCreateFlag = true;
   }
 
-  onDestroy(): void {
+  async onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', `${this.TEST_CASE_NAME}Ability ohosTest onDestroy`);
     this.onDestroyFlag = true;
+    await eventBusPlus.emit('abilitytest_EntryAbility6_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -72,6 +74,7 @@ export default class EntryAbility extends UIAbility {
   onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', `${this.TEST_CASE_NAME} Ability onForeground`);
+    globalThis.EntryAbility6 = this.context;
     this.onForegroundFlag = true;
     this.onForegroundNumber = this.onForegroundNumber + 1
 
@@ -114,9 +117,6 @@ export default class EntryAbility extends UIAbility {
           hilog.info(0x0000, 'testTag', '%{public}s',
             `${this.TEST_CASE_NAME} publish : ${JSON.stringify(result)}`);
         });
-      setTimeout(() => {
-        this.context.terminateSelf();
-      }, 2000)
     }
   }
 
