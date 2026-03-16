@@ -219,25 +219,9 @@ export default function dataManagerTest() {
               }
             });
           } else {
-            data.enableCellularData((err: BusinessError) => {
-              if (err) {
-                console.info(`${caseName} enableCellularData err->${JSON.stringify(err)}`);
-                ExpectTrue(false);
-                done();
-              }
-              data.getCellularDataState((err: BusinessError, data: data.DataConnectState) => {
-                if (err) {
-                  console.info(`${caseName}  etCellularDataState_err->${JSON.stringify(err)}`);
-                  ExpectTrue(false);
-                  done();
-                } else {
-                  // Start the cellular data with the status of linked;
-                  console.info(`${caseName} getCellularDataState_data->${JSON.stringify(data)}`);
-                  ExpectTrue(true);
-                  done();
-                }
-              });
-            });
+            console.info(`${caseName} CellularData not Enabled`);
+            ExpectTrue(false);
+            done();
           }
         } else {
           console.info(`${caseName} This test case requires an environment where cards are inserted.`);
@@ -249,7 +233,6 @@ export default function dataManagerTest() {
         ExpectTrue(false);
         done();
       }
-      await data.enableCellularData();
       console.info(`${caseName} test end `);
     });
 
@@ -316,23 +299,9 @@ export default function dataManagerTest() {
               done();
             });
           } else {
-            data.enableCellularData((err: BusinessError) => {
-              if (err) {
-                console.info(`${caseName} err->${JSON.stringify(err)}`);
-                ExpectTrue(false);
-                done();
-              }
-              data.getCellularDataState().then((data: data.DataConnectState) => {
-                // Start the cellular data with the status of linked;
-                console.info(`${caseName} data->${JSON.stringify(data)}`);
-                ExpectTrue(true);
-                done();
-              }).catch((err: BusinessError) => {
-                console.info(`${caseName} err->${JSON.stringify(err)}`);
-                ExpectTrue(false);
-                done();
-              });
-            });
+            console.info(`${caseName} CellularData not Enabled`);
+            ExpectTrue(false);
+            done();
           }
         } else {
           console.info(`${caseName} This test case requires an environment where cards are inserted.`);
