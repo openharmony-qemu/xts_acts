@@ -18,6 +18,7 @@ import { Driver,ON, Component } from '@ohos.UiTest';
 import Utils from './Util.test';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { checkSupportOrNot } from './utils/commonFunc';
+import userAuth from '@ohos.userIAM.userAuth'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
