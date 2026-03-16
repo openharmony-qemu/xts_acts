@@ -48,7 +48,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -286,11 +286,9 @@ export default function WindowModalTest() {
                 }).catch((err: Error) :PromiseLike<void>|undefined => {
                     if (err.code == 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-                        expect(false).assertFalse()
                         done()
                     } else if (err.code == 1300004) {
                         hilog.error(domain, tag,`${message} Unauthorized operation.`);
-                        expect(false).assertFalse()
                         done()
                     } else {
                         hilog.error(domain, tag,`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);

@@ -246,6 +246,27 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_addAllowedInstallBundlesSync_011
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_011
+     * @tc.desc   test addAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedInstallBundlesSync_011", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let appIds: Array<string> = [];
+        bundleManager.addAllowedInstallBundlesSync(SELFWANT, appIds, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeAllowedInstallBundlesSync_001
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_001
      * @tc.desc   test removeAllowedInstallBundlesSync method with unActive admin
@@ -719,6 +740,27 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_installation_allowed_app_distribution_types_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0600
+     * @tc.desc   test addInstallationAllowedAppDistributionTypes type out of scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_add_installation_allowed_app_distribution_types_0600', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let appDistributionTypes: Array<bundleManager.AppDistributionType> = [];
+        bundleManager.addInstallationAllowedAppDistributionTypes(SELFWANT, appDistributionTypes);
+      } catch(error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_get_installation_allowed_app_distribution_types_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0100
      * @tc.desc   test getInstallationAllowedAppDistributionTypes method with normal admin
@@ -916,6 +958,27 @@ export default function bundleManagerTest() {
         expect(resAfter.length == 0).assertTrue();
       } catch(error) {
         expect(error.code == 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_remove_installation_allowed_app_distribution_types_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0600
+     * @tc.desc   test removeInstallationAllowedAppDistributionTypes type out of scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_remove_installation_allowed_app_distribution_types_0600', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let allowedAppDistributionTypes: Array<bundleManager.AppDistributionType>  = [];
+        bundleManager.removeInstallationAllowedAppDistributionTypes(SELFWANT, allowedAppDistributionTypes);
+      } catch(error) {
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1128,6 +1191,27 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_addDisallowedInstallBundlesSync_011
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_011
+     * @tc.desc   test addDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addDisallowedInstallBundlesSync_011", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let appIds: Array<string> = [];
+        bundleManager.addDisallowedInstallBundlesSync(SELFWANT, appIds, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeDisallowedInstallBundlesSync_001
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_001
      * @tc.desc   test removeDisallowedInstallBundlesSync method with unActive admin
@@ -1324,6 +1408,27 @@ export default function bundleManagerTest() {
         console.info(' --- test_removeDisallowedInstallBundlesSync_010 error 401 is expected, actually catch: '
           + error.code);
         expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeDisallowedInstallBundlesSync_011
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_011
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeDisallowedInstallBundlesSync_011", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let appIds: Array<string> = [];
+        bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, appIds, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1595,14 +1700,14 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDisallowedUninstallBundlesSync_003
+     * @tc.name   test_addDisallowedUninstallBundlesSync_003Adapt001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_007
      * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDisallowedUninstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
+    it("test_addDisallowedUninstallBundlesSync_003Adapt001", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         bundleManager.addDisallowedUninstallBundlesSync(null, APP_IDS_1);
@@ -1678,6 +1783,27 @@ export default function bundleManagerTest() {
         console.info(' --- test_addDisallowedUninstallBundlesSync_010 error 401 is expected, actually catch: '
           + error.code);
         expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addDisallowedUninstallBundlesSync_011
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_011
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addDisallowedUninstallBundlesSync_011", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let appIds: Array<string> = [];
+        bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, appIds, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1881,6 +2007,27 @@ export default function bundleManagerTest() {
         console.info(' --- test_removeDisallowedUninstallBundlesSync_010 error 401 is expected, actually catch: '
           + error.code);
         expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_011
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_011
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeDisallowedUninstallBundlesSync_011", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let appIds: Array<string> = [];
+        bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, appIds, DEFAULT_USER_ID);
+      } catch (error) {
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2452,6 +2599,29 @@ export default function bundleManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_install_011
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_011
+     * @tc.desc   test install method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_011", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let hapFilePaths: Array<string> = [];
+        await bundleManager.install(SELFWANT, hapFilePaths, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_install_011 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
     
     /**
      * @tc.name   test_get_installed_bundle_list_001
@@ -3008,7 +3178,11 @@ export default function bundleManagerTest() {
         await bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
         expect(false).assertTrue();
       } catch (error) {
-        expect((error.code == 9201002) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201002).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3029,11 +3203,2154 @@ export default function bundleManagerTest() {
         await bundleManager.installMarketApps(SELFWANT, ERROR_MARKET_APPS);
         expect(false).assertTrue();
       } catch (error) {
-        expect((error.code == 9200012) || (error.code == 801)).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     })
+
+    /**
+     * @tc.name   test_install_market_apps_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_005
+     * @tc.desc   test market apps method with Super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_005", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleNames: Array<string> = [];
+        await bundleManager.installMarketApps(SELFWANT, bundleNames);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_install_market_apps_005 error 9200012 || 801 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   addAllowedInstallBundlesSync_test_001
+     * @tc.number addAllowedInstallBundlesSync_test_001
+     * @tc.desc   addAllowedInstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedInstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedInstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.addAllowedInstallBundlesSync(null, APP_IDS_1);
+        console.info(' --- addAllowedInstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedInstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedInstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedInstallBundlesSync_test_002
+     * @tc.number addAllowedInstallBundlesSync_test_002
+     * @tc.desc   addAllowedInstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedInstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedInstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.addAllowedInstallBundlesSync(undefined, APP_IDS_1);
+        console.info(' --- addAllowedInstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedInstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedInstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedInstallBundlesSync_test_003
+     * @tc.number addAllowedInstallBundlesSync_test_003
+     * @tc.desc   addAllowedInstallBundlesSync with null parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedInstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedInstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.addAllowedInstallBundlesSync(SELFWANT, null);
+        console.info(' --- addAllowedInstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedInstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedInstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedInstallBundlesSync_test_004
+     * @tc.number addAllowedInstallBundlesSync_test_004
+     * @tc.desc   addAllowedInstallBundlesSync with undefined parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedInstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedInstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.addAllowedInstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- addAllowedInstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedInstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedInstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedInstallBundlesSync_test_005
+     * @tc.number addAllowedInstallBundlesSync_test_005
+     * @tc.desc   addAllowedInstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedInstallBundlesSync_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedInstallBundlesSync_test_005  -------- START --------');
+      try {
+        bundleManager.addAllowedInstallBundlesSync(SELFWANT, APP_IDS_1, null);
+        console.info(' --- addAllowedInstallBundlesSync_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedInstallBundlesSync_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedInstallBundlesSync_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedInstallBundlesSync_test_006
+     * @tc.number addAllowedInstallBundlesSync_test_006
+     * @tc.desc   addAllowedInstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedInstallBundlesSync_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedInstallBundlesSync_test_006  -------- START --------');
+      try {
+        bundleManager.addAllowedInstallBundlesSync(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- addAllowedInstallBundlesSync_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedInstallBundlesSync_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedInstallBundlesSync_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedInstallBundlesSync_test_001
+     * @tc.number removeAllowedInstallBundlesSync_test_001
+     * @tc.desc   removeAllowedInstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedInstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedInstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.removeAllowedInstallBundlesSync(null, APP_IDS_1);
+        console.info(' --- removeAllowedInstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedInstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedInstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedInstallBundlesSync_test_002
+     * @tc.number removeAllowedInstallBundlesSync_test_002
+     * @tc.desc   removeAllowedInstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedInstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedInstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.removeAllowedInstallBundlesSync(undefined, APP_IDS_1);
+        console.info(' --- removeAllowedInstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedInstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedInstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedInstallBundlesSync_test_003
+     * @tc.number removeAllowedInstallBundlesSync_test_003
+     * @tc.desc   removeAllowedInstallBundlesSync with null parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedInstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedInstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.removeAllowedInstallBundlesSync(SELFWANT, null);
+        console.info(' --- removeAllowedInstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedInstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedInstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedInstallBundlesSync_test_004
+     * @tc.number removeAllowedInstallBundlesSync_test_004
+     * @tc.desc   removeAllowedInstallBundlesSync with undefined parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedInstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedInstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.removeAllowedInstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- removeAllowedInstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedInstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedInstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedInstallBundlesSync_test_005
+     * @tc.number removeAllowedInstallBundlesSync_test_005
+     * @tc.desc   removeAllowedInstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedInstallBundlesSync_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedInstallBundlesSync_test_005  -------- START --------');
+      try {
+        bundleManager.removeAllowedInstallBundlesSync(SELFWANT, APP_IDS_1, null);
+        console.info(' --- removeAllowedInstallBundlesSync_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedInstallBundlesSync_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedInstallBundlesSync_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedInstallBundlesSync_test_006
+     * @tc.number removeAllowedInstallBundlesSync_test_006
+     * @tc.desc   removeAllowedInstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedInstallBundlesSync_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedInstallBundlesSync_test_006  -------- START --------');
+      try {
+        bundleManager.removeAllowedInstallBundlesSync(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- removeAllowedInstallBundlesSync_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedInstallBundlesSync_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedInstallBundlesSync_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedInstallBundlesSync_test_001
+     * @tc.number getAllowedInstallBundlesSync_test_001
+     * @tc.desc   getAllowedInstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedInstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedInstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.getAllowedInstallBundlesSync(null);
+        console.info(' --- getAllowedInstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedInstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedInstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedInstallBundlesSync_test_002
+     * @tc.number getAllowedInstallBundlesSync_test_002
+     * @tc.desc   getAllowedInstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedInstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedInstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.getAllowedInstallBundlesSync(undefined);
+        console.info(' --- getAllowedInstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedInstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedInstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedInstallBundlesSync_test_003
+     * @tc.number getAllowedInstallBundlesSync_test_003
+     * @tc.desc   getAllowedInstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedInstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedInstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.getAllowedInstallBundlesSync(SELFWANT, null);
+        console.info(' --- getAllowedInstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedInstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedInstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedInstallBundlesSync_test_004
+     * @tc.number getAllowedInstallBundlesSync_test_004
+     * @tc.desc   getAllowedInstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedInstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedInstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.getAllowedInstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- getAllowedInstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedInstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedInstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedInstallBundlesSync_test_001
+     * @tc.number addDisallowedInstallBundlesSync_test_001
+     * @tc.desc   addDisallowedInstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedInstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedInstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.addDisallowedInstallBundlesSync(null, APP_IDS_1);
+        console.info(' --- addDisallowedInstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedInstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedInstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedInstallBundlesSync_test_002
+     * @tc.number addDisallowedInstallBundlesSync_test_002
+     * @tc.desc   addDisallowedInstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedInstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedInstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.addDisallowedInstallBundlesSync(undefined, APP_IDS_1);
+        console.info(' --- addDisallowedInstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedInstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedInstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedInstallBundlesSync_test_003
+     * @tc.number addDisallowedInstallBundlesSync_test_003
+     * @tc.desc   addDisallowedInstallBundlesSync with null parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedInstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedInstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.addDisallowedInstallBundlesSync(SELFWANT, null);
+        console.info(' --- addDisallowedInstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedInstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedInstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedInstallBundlesSync_test_004
+     * @tc.number addDisallowedInstallBundlesSync_test_004
+     * @tc.desc   addDisallowedInstallBundlesSync with undefined parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedInstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedInstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.addDisallowedInstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- addDisallowedInstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedInstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedInstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedInstallBundlesSync_test_005
+     * @tc.number addDisallowedInstallBundlesSync_test_005
+     * @tc.desc   addDisallowedInstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedInstallBundlesSync_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedInstallBundlesSync_test_005  -------- START --------');
+      try {
+        bundleManager.addDisallowedInstallBundlesSync(SELFWANT, APP_IDS_1, null);
+        console.info(' --- addDisallowedInstallBundlesSync_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedInstallBundlesSync_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedInstallBundlesSync_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedInstallBundlesSync_test_006
+     * @tc.number addDisallowedInstallBundlesSync_test_006
+     * @tc.desc   addDisallowedInstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedInstallBundlesSync_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedInstallBundlesSync_test_006  -------- START --------');
+      try {
+        bundleManager.addDisallowedInstallBundlesSync(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- addDisallowedInstallBundlesSync_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedInstallBundlesSync_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedInstallBundlesSync_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedInstallBundlesSync_test_001
+     * @tc.number removeDisallowedInstallBundlesSync_test_001
+     * @tc.desc   removeDisallowedInstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedInstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedInstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.removeDisallowedInstallBundlesSync(null, APP_IDS_1);
+        console.info(' --- removeDisallowedInstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedInstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedInstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedInstallBundlesSync_test_002
+     * @tc.number removeDisallowedInstallBundlesSync_test_002
+     * @tc.desc   removeDisallowedInstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedInstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedInstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.removeDisallowedInstallBundlesSync(undefined, APP_IDS_1);
+        console.info(' --- removeDisallowedInstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedInstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedInstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedInstallBundlesSync_test_003
+     * @tc.number removeDisallowedInstallBundlesSync_test_003
+     * @tc.desc   removeDisallowedInstallBundlesSync with null parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedInstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedInstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, null);
+        console.info(' --- removeDisallowedInstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedInstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedInstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedInstallBundlesSync_test_004
+     * @tc.number removeDisallowedInstallBundlesSync_test_004
+     * @tc.desc   removeDisallowedInstallBundlesSync with undefined parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedInstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedInstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- removeDisallowedInstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedInstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedInstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedInstallBundlesSync_test_005
+     * @tc.number removeDisallowedInstallBundlesSync_test_005
+     * @tc.desc   removeDisallowedInstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedInstallBundlesSync_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedInstallBundlesSync_test_005  -------- START --------');
+      try {
+        bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, APP_IDS_1, null);
+        console.info(' --- removeDisallowedInstallBundlesSync_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedInstallBundlesSync_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedInstallBundlesSync_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedInstallBundlesSync_test_006
+     * @tc.number removeDisallowedInstallBundlesSync_test_006
+     * @tc.desc   removeDisallowedInstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedInstallBundlesSync_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedInstallBundlesSync_test_006  -------- START --------');
+      try {
+        bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- removeDisallowedInstallBundlesSync_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedInstallBundlesSync_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedInstallBundlesSync_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedInstallBundlesSync_test_001
+     * @tc.number getDisallowedInstallBundlesSync_test_001
+     * @tc.desc   getDisallowedInstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedInstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedInstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.getDisallowedInstallBundlesSync(null);
+        console.info(' --- getDisallowedInstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedInstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedInstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedInstallBundlesSync_test_002
+     * @tc.number getDisallowedInstallBundlesSync_test_002
+     * @tc.desc   getDisallowedInstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedInstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedInstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.getDisallowedInstallBundlesSync(undefined);
+        console.info(' --- getDisallowedInstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedInstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedInstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedInstallBundlesSync_test_003
+     * @tc.number getDisallowedInstallBundlesSync_test_003
+     * @tc.desc   getDisallowedInstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedInstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedInstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.getDisallowedInstallBundlesSync(SELFWANT, null);
+        console.info(' --- getDisallowedInstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedInstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedInstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedInstallBundlesSync_test_004
+     * @tc.number getDisallowedInstallBundlesSync_test_004
+     * @tc.desc   getDisallowedInstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedInstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedInstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.getDisallowedInstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- getDisallowedInstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedInstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedInstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUninstallBundlesSync_test_001
+     * @tc.number addDisallowedUninstallBundlesSync_test_001
+     * @tc.desc   addDisallowedUninstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUninstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUninstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.addDisallowedUninstallBundlesSync(null, APP_IDS_1);
+        console.info(' --- addDisallowedUninstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUninstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUninstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUninstallBundlesSync_test_002
+     * @tc.number addDisallowedUninstallBundlesSync_test_002
+     * @tc.desc   addDisallowedUninstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUninstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUninstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.addDisallowedUninstallBundlesSync(undefined, APP_IDS_1);
+        console.info(' --- addDisallowedUninstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUninstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUninstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUninstallBundlesSync_test_003
+     * @tc.number addDisallowedUninstallBundlesSync_test_003
+     * @tc.desc   addDisallowedUninstallBundlesSync with null parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUninstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUninstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, null);
+        console.info(' --- addDisallowedUninstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUninstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUninstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUninstallBundlesSync_test_004
+     * @tc.number addDisallowedUninstallBundlesSync_test_004
+     * @tc.desc   addDisallowedUninstallBundlesSync with undefined parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUninstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUninstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- addDisallowedUninstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUninstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUninstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUninstallBundlesSync_test_005
+     * @tc.number addDisallowedUninstallBundlesSync_test_005
+     * @tc.desc   addDisallowedUninstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUninstallBundlesSync_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUninstallBundlesSync_test_005  -------- START --------');
+      try {
+        bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_1, null);
+        console.info(' --- addDisallowedUninstallBundlesSync_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUninstallBundlesSync_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUninstallBundlesSync_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUninstallBundlesSync_test_006
+     * @tc.number addDisallowedUninstallBundlesSync_test_006
+     * @tc.desc   addDisallowedUninstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUninstallBundlesSync_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUninstallBundlesSync_test_006  -------- START --------');
+      try {
+        bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_1, undefined);
+        console.info(' --- addDisallowedUninstallBundlesSync_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUninstallBundlesSync_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUninstallBundlesSync_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUninstallBundlesSync_test_001
+     * @tc.number removeDisallowedUninstallBundlesSync_test_001
+     * @tc.desc   removeDisallowedUninstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUninstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.removeDisallowedUninstallBundlesSync(null, APP_IDS_200);
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUninstallBundlesSync_test_002
+     * @tc.number removeDisallowedUninstallBundlesSync_test_002
+     * @tc.desc   removeDisallowedUninstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUninstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.removeDisallowedUninstallBundlesSync(undefined, APP_IDS_200);
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUninstallBundlesSync_test_003
+     * @tc.number removeDisallowedUninstallBundlesSync_test_003
+     * @tc.desc   removeDisallowedUninstallBundlesSync with null parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUninstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, null);
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUninstallBundlesSync_test_004
+     * @tc.number removeDisallowedUninstallBundlesSync_test_004
+     * @tc.desc   removeDisallowedUninstallBundlesSync with undefined parameter appIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUninstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUninstallBundlesSync_test_005
+     * @tc.number removeDisallowedUninstallBundlesSync_test_005
+     * @tc.desc   removeDisallowedUninstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUninstallBundlesSync_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_005  -------- START --------');
+      try {
+        bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_200, null);
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUninstallBundlesSync_test_006
+     * @tc.number removeDisallowedUninstallBundlesSync_test_006
+     * @tc.desc   removeDisallowedUninstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUninstallBundlesSync_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_006  -------- START --------');
+      try {
+        bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_200, undefined);
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUninstallBundlesSync_test_001
+     * @tc.number getDisallowedUninstallBundlesSync_test_001
+     * @tc.desc   getDisallowedUninstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUninstallBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUninstallBundlesSync_test_001  -------- START --------');
+      try {
+        bundleManager.getDisallowedUninstallBundlesSync(null);
+        console.info(' --- getDisallowedUninstallBundlesSync_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUninstallBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUninstallBundlesSync_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUninstallBundlesSync_test_002
+     * @tc.number getDisallowedUninstallBundlesSync_test_002
+     * @tc.desc   getDisallowedUninstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUninstallBundlesSync_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUninstallBundlesSync_test_002  -------- START --------');
+      try {
+        bundleManager.getDisallowedUninstallBundlesSync(undefined);
+        console.info(' --- getDisallowedUninstallBundlesSync_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUninstallBundlesSync_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUninstallBundlesSync_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUninstallBundlesSync_test_003
+     * @tc.number getDisallowedUninstallBundlesSync_test_003
+     * @tc.desc   getDisallowedUninstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUninstallBundlesSync_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUninstallBundlesSync_test_003  -------- START --------');
+      try {
+        bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, null);
+        console.info(' --- getDisallowedUninstallBundlesSync_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUninstallBundlesSync_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUninstallBundlesSync_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUninstallBundlesSync_test_004
+     * @tc.number getDisallowedUninstallBundlesSync_test_004
+     * @tc.desc   getDisallowedUninstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUninstallBundlesSync_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUninstallBundlesSync_test_004  -------- START --------');
+      try {
+        bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- getDisallowedUninstallBundlesSync_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUninstallBundlesSync_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUninstallBundlesSync_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   uninstall_test_001
+     * @tc.number uninstall_test_001
+     * @tc.desc   uninstall with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstall_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstall_test_001  -------- START --------');
+      try {
+        bundleManager.uninstall(null, BUNDLENAME1, DEFAULT_USER_ID);
+        console.info(' --- uninstall_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstall_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstall_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   uninstall_test_002
+     * @tc.number uninstall_test_002
+     * @tc.desc   uninstall with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("uninstall_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- uninstall_test_002  -------- START --------');
+      try {
+        bundleManager.uninstall(undefined, BUNDLENAME1, DEFAULT_USER_ID);
+        console.info(' --- uninstall_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- uninstall_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- uninstall_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   install_test_001
+     * @tc.number install_test_001
+     * @tc.desc   install with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("install_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- install_test_001  -------- START --------');
+      try {
+        bundleManager.install(null, HAP_FILE_PATH, EDM_INSTALL_PARAM_FOR_ALL_USER);
+        console.info(' --- install_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- install_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- install_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   install_test_002
+     * @tc.number install_test_002
+     * @tc.desc   install with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("install_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- install_test_002  -------- START --------');
+      try {
+        bundleManager.install(undefined, HAP_FILE_PATH, EDM_INSTALL_PARAM_FOR_ALL_USER);
+        console.info(' --- install_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- install_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- install_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   install_test_003
+     * @tc.number install_test_003
+     * @tc.desc   install with null parameter bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("install_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- install_test_003  -------- START --------');
+      try {
+        bundleManager.install(SELFWANT, null, EDM_INSTALL_PARAM_FOR_ALL_USER);
+        console.info(' --- install_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- install_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- install_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   install_test_004
+     * @tc.number install_test_004
+     * @tc.desc   install with undefined parameter bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("install_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- install_test_004  -------- START --------');
+      try {
+        bundleManager.install(SELFWANT, undefined, EDM_INSTALL_PARAM_FOR_ALL_USER);
+        console.info(' --- install_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- install_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- install_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   install_test_005
+     * @tc.number install_test_005
+     * @tc.desc   install with null parameter callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("install_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- install_test_005  -------- START --------');
+      try {
+        bundleManager.install(SELFWANT, HAP_FILE_PATH, null);
+        console.info(' --- install_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- install_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- install_test_005  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   install_test_006
+     * @tc.number install_test_006
+     * @tc.desc   install with undefined parameter callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("install_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- install_test_006  -------- START --------');
+      try {
+        bundleManager.install(SELFWANT, HAP_FILE_PATH, undefined);
+        console.info(' --- install_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- install_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- install_test_006  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstalledBundleList_test_001
+     * @tc.number getInstalledBundleList_test_001
+     * @tc.desc   getInstalledBundleList with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_001  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(null, DEFAULT_USER_ID);
+        console.info(' --- getInstalledBundleList_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstalledBundleList_test_002
+     * @tc.number getInstalledBundleList_test_002
+     * @tc.desc   getInstalledBundleList with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_002  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(undefined, DEFAULT_USER_ID);
+        console.info(' --- getInstalledBundleList_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstalledBundleList_test_003
+     * @tc.number getInstalledBundleList_test_003
+     * @tc.desc   getInstalledBundleList with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_003  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(SELFWANT, null);
+        console.info(' --- getInstalledBundleList_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstalledBundleList_test_004
+     * @tc.number getInstalledBundleList_test_004
+     * @tc.desc   getInstalledBundleList with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_004  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(SELFWANT, undefined);
+        console.info(' --- getInstalledBundleList_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addInstallationAllowedAppDistributionTypes_test_001
+     * @tc.number addInstallationAllowedAppDistributionTypes_test_001
+     * @tc.desc   addInstallationAllowedAppDistributionTypes with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addInstallationAllowedAppDistributionTypes_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addInstallationAllowedAppDistributionTypes_test_001  -------- START --------');
+      try {
+        bundleManager.addInstallationAllowedAppDistributionTypes(null, [bundleManager.AppDistributionType.APP_GALLERY, bundleManager.AppDistributionType.ENTERPRISE]);
+        console.info(' --- addInstallationAllowedAppDistributionTypes_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addInstallationAllowedAppDistributionTypes_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addInstallationAllowedAppDistributionTypes_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addInstallationAllowedAppDistributionTypes_test_002
+     * @tc.number addInstallationAllowedAppDistributionTypes_test_002
+     * @tc.desc   addInstallationAllowedAppDistributionTypes with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addInstallationAllowedAppDistributionTypes_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addInstallationAllowedAppDistributionTypes_test_002  -------- START --------');
+      try {
+        bundleManager.addInstallationAllowedAppDistributionTypes(undefined, [bundleManager.AppDistributionType.APP_GALLERY, bundleManager.AppDistributionType.ENTERPRISE]);
+        console.info(' --- addInstallationAllowedAppDistributionTypes_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addInstallationAllowedAppDistributionTypes_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addInstallationAllowedAppDistributionTypes_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addInstallationAllowedAppDistributionTypes_test_003
+     * @tc.number addInstallationAllowedAppDistributionTypes_test_003
+     * @tc.desc   addInstallationAllowedAppDistributionTypes with null parameter appDistributionTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addInstallationAllowedAppDistributionTypes_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addInstallationAllowedAppDistributionTypes_test_003  -------- START --------');
+      try {
+        bundleManager.addInstallationAllowedAppDistributionTypes(SELFWANT, null);
+        console.info(' --- addInstallationAllowedAppDistributionTypes_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addInstallationAllowedAppDistributionTypes_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addInstallationAllowedAppDistributionTypes_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addInstallationAllowedAppDistributionTypes_test_004
+     * @tc.number addInstallationAllowedAppDistributionTypes_test_004
+     * @tc.desc   addInstallationAllowedAppDistributionTypes with undefined parameter appDistributionTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addInstallationAllowedAppDistributionTypes_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addInstallationAllowedAppDistributionTypes_test_004  -------- START --------');
+      try {
+        bundleManager.addInstallationAllowedAppDistributionTypes(SELFWANT, undefined);
+        console.info(' --- addInstallationAllowedAppDistributionTypes_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addInstallationAllowedAppDistributionTypes_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addInstallationAllowedAppDistributionTypes_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeInstallationAllowedAppDistributionTypes_test_001
+     * @tc.number removeInstallationAllowedAppDistributionTypes_test_001
+     * @tc.desc   removeInstallationAllowedAppDistributionTypes with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeInstallationAllowedAppDistributionTypes_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeInstallationAllowedAppDistributionTypes_test_001  -------- START --------');
+      try {
+        let allowedAppDistributionTypes: Array<bundleManager.AppDistributionType>  = [0, 7]
+        bundleManager.removeInstallationAllowedAppDistributionTypes(null, allowedAppDistributionTypes);
+        console.info(' --- removeInstallationAllowedAppDistributionTypes_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeInstallationAllowedAppDistributionTypes_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeInstallationAllowedAppDistributionTypes_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeInstallationAllowedAppDistributionTypes_test_002
+     * @tc.number removeInstallationAllowedAppDistributionTypes_test_002
+     * @tc.desc   removeInstallationAllowedAppDistributionTypes with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeInstallationAllowedAppDistributionTypes_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeInstallationAllowedAppDistributionTypes_test_002  -------- START --------');
+      try {
+        let allowedAppDistributionTypes: Array<bundleManager.AppDistributionType>  = [0, 7]
+        bundleManager.removeInstallationAllowedAppDistributionTypes(undefined, allowedAppDistributionTypes);
+        console.info(' --- removeInstallationAllowedAppDistributionTypes_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeInstallationAllowedAppDistributionTypes_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeInstallationAllowedAppDistributionTypes_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeInstallationAllowedAppDistributionTypes_test_003
+     * @tc.number removeInstallationAllowedAppDistributionTypes_test_003
+     * @tc.desc   removeInstallationAllowedAppDistributionTypes with null parameter appDistributionTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeInstallationAllowedAppDistributionTypes_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeInstallationAllowedAppDistributionTypes_test_003  -------- START --------');
+      try {
+        bundleManager.removeInstallationAllowedAppDistributionTypes(SELFWANT, null);
+        console.info(' --- removeInstallationAllowedAppDistributionTypes_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeInstallationAllowedAppDistributionTypes_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeInstallationAllowedAppDistributionTypes_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeInstallationAllowedAppDistributionTypes_test_004
+     * @tc.number removeInstallationAllowedAppDistributionTypes_test_004
+     * @tc.desc   removeInstallationAllowedAppDistributionTypes with undefined parameter appDistributionTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeInstallationAllowedAppDistributionTypes_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeInstallationAllowedAppDistributionTypes_test_004  -------- START --------');
+      try {
+        bundleManager.removeInstallationAllowedAppDistributionTypes(SELFWANT, undefined);
+        console.info(' --- removeInstallationAllowedAppDistributionTypes_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeInstallationAllowedAppDistributionTypes_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeInstallationAllowedAppDistributionTypes_test_004  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstallationAllowedAppDistributionTypes_test_001
+     * @tc.number getInstallationAllowedAppDistributionTypes_test_001
+     * @tc.desc   getInstallationAllowedAppDistributionTypes with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstallationAllowedAppDistributionTypes_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstallationAllowedAppDistributionTypes_test_001  -------- START --------');
+      try {
+        bundleManager.getInstallationAllowedAppDistributionTypes(null);
+        console.info(' --- getInstallationAllowedAppDistributionTypes_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstallationAllowedAppDistributionTypes_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstallationAllowedAppDistributionTypes_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstallationAllowedAppDistributionTypes_test_002
+     * @tc.number getInstallationAllowedAppDistributionTypes_test_002
+     * @tc.desc   getInstallationAllowedAppDistributionTypes with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstallationAllowedAppDistributionTypes_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstallationAllowedAppDistributionTypes_test_002  -------- START --------');
+      try {
+        bundleManager.getInstallationAllowedAppDistributionTypes(undefined);
+        console.info(' --- getInstallationAllowedAppDistributionTypes_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstallationAllowedAppDistributionTypes_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstallationAllowedAppDistributionTypes_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installMarketApps_test_001
+     * @tc.number installMarketApps_test_001
+     * @tc.desc   installMarketApps with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installMarketApps_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installMarketApps_test_001  -------- START --------');
+      try {
+        bundleManager.installMarketApps(null, MARKET_APPS);
+        console.info(' --- installMarketApps_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installMarketApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- installMarketApps_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installMarketApps_test_002
+     * @tc.number installMarketApps_test_002
+     * @tc.desc   installMarketApps with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installMarketApps_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installMarketApps_test_002  -------- START --------');
+      try {
+        bundleManager.installMarketApps(undefined, MARKET_APPS);
+        console.info(' --- installMarketApps_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installMarketApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- installMarketApps_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installMarketApps_test_003
+     * @tc.number installMarketApps_test_003
+     * @tc.desc   installMarketApps with null parameter bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installMarketApps_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installMarketApps_test_003  -------- START --------');
+      try {
+        bundleManager.installMarketApps(SELFWANT, null);
+        console.info(' --- installMarketApps_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installMarketApps_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- installMarketApps_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   installMarketApps_test_004
+     * @tc.number installMarketApps_test_004
+     * @tc.desc   installMarketApps with undefined parameter bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installMarketApps_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installMarketApps_test_004  -------- START --------');
+      try {
+        bundleManager.installMarketApps(SELFWANT, undefined);
+        console.info(' --- installMarketApps_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installMarketApps_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- installMarketApps_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getAllowedInstallBundlesSync_test_029
+     * @tc.number getAllowedInstallBundlesSync_test_029
+     * @tc.desc   getAllowedInstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedInstallBundlesSync_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedInstallBundlesSync_test_029  -------- START --------');
+      try {
+        bundleManager.getAllowedInstallBundlesSync(null);
+        console.info(' --- getAllowedInstallBundlesSync_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedInstallBundlesSync_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedInstallBundlesSync_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedInstallBundlesSync_test_030
+     * @tc.number getAllowedInstallBundlesSync_test_030
+     * @tc.desc   getAllowedInstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedInstallBundlesSync_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedInstallBundlesSync_test_030  -------- START --------');
+      try {
+        bundleManager.getAllowedInstallBundlesSync(undefined);
+        console.info(' --- getAllowedInstallBundlesSync_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedInstallBundlesSync_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedInstallBundlesSync_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedInstallBundlesSync_test_031
+     * @tc.number getAllowedInstallBundlesSync_test_031
+     * @tc.desc   getAllowedInstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedInstallBundlesSync_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedInstallBundlesSync_test_031  -------- START --------');
+      try {
+        bundleManager.getAllowedInstallBundlesSync(SELFWANT, null);
+        console.info(' --- getAllowedInstallBundlesSync_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedInstallBundlesSync_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedInstallBundlesSync_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedInstallBundlesSync_test_032
+     * @tc.number getAllowedInstallBundlesSync_test_032
+     * @tc.desc   getAllowedInstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedInstallBundlesSync_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedInstallBundlesSync_test_032  -------- START --------');
+      try {
+        bundleManager.getAllowedInstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- getAllowedInstallBundlesSync_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedInstallBundlesSync_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedInstallBundlesSync_test_032  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getDisallowedInstallBundlesSync_test_029
+     * @tc.number getDisallowedInstallBundlesSync_test_029
+     * @tc.desc   getDisallowedInstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedInstallBundlesSync_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedInstallBundlesSync_test_029  -------- START --------');
+      try {
+        bundleManager.getDisallowedInstallBundlesSync(null);
+        console.info(' --- getDisallowedInstallBundlesSync_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedInstallBundlesSync_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedInstallBundlesSync_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedInstallBundlesSync_test_030
+     * @tc.number getDisallowedInstallBundlesSync_test_030
+     * @tc.desc   getDisallowedInstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedInstallBundlesSync_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedInstallBundlesSync_test_030  -------- START --------');
+      try {
+        bundleManager.getDisallowedInstallBundlesSync(undefined);
+        console.info(' --- getDisallowedInstallBundlesSync_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedInstallBundlesSync_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedInstallBundlesSync_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedInstallBundlesSync_test_031
+     * @tc.number getDisallowedInstallBundlesSync_test_031
+     * @tc.desc   getDisallowedInstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedInstallBundlesSync_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedInstallBundlesSync_test_031  -------- START --------');
+      try {
+        bundleManager.getDisallowedInstallBundlesSync(SELFWANT, null);
+        console.info(' --- getDisallowedInstallBundlesSync_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedInstallBundlesSync_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedInstallBundlesSync_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedInstallBundlesSync_test_032
+     * @tc.number getDisallowedInstallBundlesSync_test_032
+     * @tc.desc   getDisallowedInstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedInstallBundlesSync_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedInstallBundlesSync_test_032  -------- START --------');
+      try {
+        bundleManager.getDisallowedInstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- getDisallowedInstallBundlesSync_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedInstallBundlesSync_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedInstallBundlesSync_test_032  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getDisallowedUninstallBundlesSync_test_029
+     * @tc.number getDisallowedUninstallBundlesSync_test_029
+     * @tc.desc   getDisallowedUninstallBundlesSync with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUninstallBundlesSync_test_029", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUninstallBundlesSync_test_029  -------- START --------');
+      try {
+        bundleManager.getDisallowedUninstallBundlesSync(null);
+        console.info(' --- getDisallowedUninstallBundlesSync_test_029 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUninstallBundlesSync_test_029 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUninstallBundlesSync_test_029  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUninstallBundlesSync_test_030
+     * @tc.number getDisallowedUninstallBundlesSync_test_030
+     * @tc.desc   getDisallowedUninstallBundlesSync with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUninstallBundlesSync_test_030", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUninstallBundlesSync_test_030  -------- START --------');
+      try {
+        bundleManager.getDisallowedUninstallBundlesSync(undefined);
+        console.info(' --- getDisallowedUninstallBundlesSync_test_030 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUninstallBundlesSync_test_030 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUninstallBundlesSync_test_030  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUninstallBundlesSync_test_031
+     * @tc.number getDisallowedUninstallBundlesSync_test_031
+     * @tc.desc   getDisallowedUninstallBundlesSync with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUninstallBundlesSync_test_031", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUninstallBundlesSync_test_031  -------- START --------');
+      try {
+        bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, null);
+        console.info(' --- getDisallowedUninstallBundlesSync_test_031 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUninstallBundlesSync_test_031 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUninstallBundlesSync_test_031  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUninstallBundlesSync_test_032
+     * @tc.number getDisallowedUninstallBundlesSync_test_032
+     * @tc.desc   getDisallowedUninstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUninstallBundlesSync_test_032", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUninstallBundlesSync_test_032  -------- START --------');
+      try {
+        bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, undefined);
+        console.info(' --- getDisallowedUninstallBundlesSync_test_032 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUninstallBundlesSync_test_032 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUninstallBundlesSync_test_032  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getInstalledBundleList_test_057
+     * @tc.number getInstalledBundleList_test_057
+     * @tc.desc   getInstalledBundleList with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_057", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_057  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(null, DEFAULT_USER_ID);
+        console.info(' --- getInstalledBundleList_test_057 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_057 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_057  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstalledBundleList_test_058
+     * @tc.number getInstalledBundleList_test_058
+     * @tc.desc   getInstalledBundleList with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_058", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_058  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(undefined, DEFAULT_USER_ID);
+        console.info(' --- getInstalledBundleList_test_058 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_058 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_058  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstalledBundleList_test_059
+     * @tc.number getInstalledBundleList_test_059
+     * @tc.desc   getInstalledBundleList with null parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_059", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_059  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(SELFWANT, null);
+        console.info(' --- getInstalledBundleList_test_059 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_059 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_059  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstalledBundleList_test_060
+     * @tc.number getInstalledBundleList_test_060
+     * @tc.desc   getInstalledBundleList with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstalledBundleList_test_060", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstalledBundleList_test_060  -------- START --------');
+      try {
+        bundleManager.getInstalledBundleList(SELFWANT, undefined);
+        console.info(' --- getInstalledBundleList_test_060 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstalledBundleList_test_060 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstalledBundleList_test_060  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getInstallationAllowedAppDistributionTypes_test_015
+     * @tc.number getInstallationAllowedAppDistributionTypes_test_015
+     * @tc.desc   getInstallationAllowedAppDistributionTypes with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstallationAllowedAppDistributionTypes_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstallationAllowedAppDistributionTypes_test_015  -------- START --------');
+      try {
+        bundleManager.getInstallationAllowedAppDistributionTypes(null);
+        console.info(' --- getInstallationAllowedAppDistributionTypes_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstallationAllowedAppDistributionTypes_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstallationAllowedAppDistributionTypes_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getInstallationAllowedAppDistributionTypes_test_016
+     * @tc.number getInstallationAllowedAppDistributionTypes_test_016
+     * @tc.desc   getInstallationAllowedAppDistributionTypes with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getInstallationAllowedAppDistributionTypes_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getInstallationAllowedAppDistributionTypes_test_016  -------- START --------');
+      try {
+        bundleManager.getInstallationAllowedAppDistributionTypes(undefined);
+        console.info(' --- getInstallationAllowedAppDistributionTypes_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getInstallationAllowedAppDistributionTypes_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getInstallationAllowedAppDistributionTypes_test_016  -------- END --------');
+    })
+
   })
 }

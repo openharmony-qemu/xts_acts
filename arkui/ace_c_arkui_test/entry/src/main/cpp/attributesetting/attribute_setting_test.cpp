@@ -136,7 +136,6 @@ static napi_value TestAttributeSetting010(napi_env env, napi_callback_info info)
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
     auto abnormalNode = new ArkUI_Node({PARAM_NEGATIVE_1, nullptr, true});
     ASSERT_EQ(nodeAPI->resetAttribute(abnormalNode, NODE_WIDTH), ARKUI_ERROR_CODE_NOT_SUPPROTED_FOR_ARKTS_NODE);
-    
     NAPI_END;
 }
 } // namespace ArkUICapiTest

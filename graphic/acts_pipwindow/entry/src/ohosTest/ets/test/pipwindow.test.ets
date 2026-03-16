@@ -2494,7 +2494,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD true`);
               pipController.setPiPControlEnabled(pipWindow.PiPControlType.FAST_BACKWARD, false)
               console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD false`);
-              expect(true).assertTrue();
+              
 
               done();
             } catch (error) {
@@ -2576,7 +2576,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               console.info(`${message} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
               pipController.setPiPControlEnabled(pipWindow.PiPControlType.CAMERA_SWITCH, true)
               console.info(`${message} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
-              expect(true).assertTrue();
+              
 
               done();
             } catch (error) {
@@ -5978,7 +5978,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       if (isPipWindowEnabled) {
         try {
           await pipWindow.create(config);
-          expect(true).assertTrue();
+          
           done();
         } catch (err) {
           console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
@@ -6010,7 +6010,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       if (isPipWindowEnabled) {
         try {
           await pipWindow.create(config);
-          expect(true).assertTrue();
+          
           done();
         } catch (err) {
           console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
@@ -6044,7 +6044,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         try {
           pipController = await pipWindow.create(config);
           pipController.setAutoStartEnabled(false);
-          expect(true).assertTrue();
+          
           done();
         } catch (err) {
           console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
@@ -6159,6 +6159,230 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         done();
       }
     });
+
+    /**
+     * @tc.name   testCreatePiPWindow_01
+     * @tc.number SUB_BASIC_WMS_PIP_CREATE_0100
+     * @tc.desc   testCreatePiPWindow_01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCreatePiPWindow_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      const caseName = 'testCreatePiPWindow_01';
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        let pipController: pipWindow.PiPController;
+        let xComponentController: XComponentController = new XComponentController();
+        let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效值
+        let xComponent = typeNode.createNode(uiContext, 'XComponent');
+        xComponent.initialize({
+          id: 'xcomponent',
+          type: XComponentType.SURFACE,
+          controller: xComponentController
+        });
+        let contentWidth: number = 800; // 假设当前内容宽度800px。
+        let contentHeight: number = 600; // 假设当前内容高度600px。
+        let config: pipWindow.PiPConfiguration = {
+          context: context1,
+          navigationId:'',
+          componentController: xComponentController,
+          templateType: pipWindow.PiPTemplateType.VIDEO_CALL,
+          controlGroups:[],
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled:true
+        };
+
+        let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
+        promise1.then((data: pipWindow.PiPController) => {
+          pipController = data;
+          console.info(`${caseName} Succeeded in creating pip controller. Data:${data}`);
+          let promise2: Promise<void> = pipController.startPiP();
+          promise2.then(() => {
+            console.info(`${caseName} Succeeded in starting pip.`);
+            let promise3 : Promise<void> = pipController.stopPiP();
+            promise3.then(() => {
+              console.info(caseName + ' Succeeded in stopping pip');
+              
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+
+
+      } catch (exception) {
+        console.error(`${caseName} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCreatePiPWindow_02
+     * @tc.number SUB_BASIC_WMS_PIP_CREATE_0200
+     * @tc.desc   testCreatePiPWindow_02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCreatePiPWindow_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      const caseName = 'testCreatePiPWindow_02';
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        let pipController: pipWindow.PiPController;
+        let xComponentController: XComponentController = new XComponentController();
+        let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效值
+        let xComponent = typeNode.createNode(uiContext, 'XComponent');
+        xComponent.initialize({
+          id: 'xcomponent',
+          type: XComponentType.SURFACE,
+          controller: xComponentController
+        });
+        let contentWidth: number = 800; // 假设当前内容宽度800px。
+        let contentHeight: number = 600; // 假设当前内容高度600px。
+        let config: pipWindow.PiPConfiguration = {
+          context: context1,
+          navigationId:'',
+          componentController: xComponentController,
+          templateType: pipWindow.PiPTemplateType.VIDEO_MEETING,
+          controlGroups: [pipWindow.VideoMeetingControlGroup.HANG_UP_BUTTON, pipWindow.VideoMeetingControlGroup.MUTE_SWITCH, pipWindow.VideoMeetingControlGroup.CAMERA_SWITCH],
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled:false
+        };
+
+        let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
+        promise1.then((data: pipWindow.PiPController) => {
+          pipController = data;
+          console.info(`${caseName} Succeeded in creating pip controller. Data:${data}`);
+          let promise2: Promise<void> = pipController.startPiP();
+          promise2.then(() => {
+            console.info(`${caseName} Succeeded in starting pip.`);
+            let promise3 : Promise<void> = pipController.stopPiP();
+            promise3.then(() => {
+              console.info(caseName + ' Succeeded in stopping pip');
+              
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+
+
+      } catch (exception) {
+        console.error(`${caseName} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreatePiPWindow_03
+     * @tc.number SUB_BASIC_WMS_PIP_CREATE_0300
+     * @tc.desc   testCreatePiPWindow_03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCreatePiPWindow_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      const caseName = 'testCreatePiPWindow_03';
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        let pipController: pipWindow.PiPController;
+        let xComponentController: XComponentController = new XComponentController();
+        let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效值
+        let xComponent = typeNode.createNode(uiContext, 'XComponent');
+        xComponent.initialize({
+          id: 'xcomponent',
+          type: XComponentType.SURFACE,
+          controller: xComponentController
+        });
+        let contentWidth: number = 800; // 假设当前内容宽度800px。
+        let contentHeight: number = 600; // 假设当前内容高度600px。
+        let config: pipWindow.PiPConfiguration = {
+          context: context1,
+          navigationId:'',
+          componentController: xComponentController,
+          templateType: pipWindow.PiPTemplateType.VIDEO_LIVE,
+          controlGroups: [pipWindow.VideoLiveControlGroup.VIDEO_PLAY_PAUSE, pipWindow.VideoLiveControlGroup.MUTE_SWITCH],
+          contentWidth: contentWidth,
+          contentHeight: contentHeight,
+          cornerAdsorptionEnabled:false
+        };
+
+        let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
+        promise1.then((data: pipWindow.PiPController) => {
+          pipController = data;
+          console.info(`${caseName} Succeeded in creating pip controller. Data:${data}`);
+          let promise2: Promise<void> = pipController.startPiP();
+          promise2.then(() => {
+            console.info(`${caseName} Succeeded in starting pip.`);
+            let promise3 : Promise<void> = pipController.stopPiP();
+            promise3.then(() => {
+              console.info(caseName + ' Succeeded in stopping pip');
+              
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+          if (err.code == 801) {
+            expect(err.message != null).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+
+
+      } catch (exception) {
+        console.error(`${caseName} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
 
 
   })

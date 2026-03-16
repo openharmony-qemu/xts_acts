@@ -230,14 +230,14 @@ export default function requestImageDataTest() {
     });
 
     /**
-     * @tc.name   request_image_data_005
+     * @tc.name   request_image_data_005Adapt001
      * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0500
      * @tc.desc   request image data with balanceMode and editedMode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('request_image_data_005', Level.LEVEL0, async (done: Function) => {
+    it('request_image_data_005Adapt001', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_data_005';
       try {
         let photoAsset = null;

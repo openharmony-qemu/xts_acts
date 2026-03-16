@@ -74,9 +74,13 @@ struct httpAuthHandlerEnhanced {
       Web({ src: '', controller: this.controller })
         .onHttpAuthRequest((event) => {
           if (event) {
+            console.log('onHttpAuthRequest host==>' + event.host);
+            console.log('onHttpAuthRequest realm==>' + event.realm);
             let result = event.handler.confirm(undefined, undefined);
             console.log('onHttpAuthRequest confirm result==>'+result);
-            Utils.emitEvent(result, 2025102107)
+            Utils.emitEvent(result, 2025102107);
+            Utils.emitEvent(event.host, 26031015);
+            Utils.emitEvent(event.realm, 26031016);
           }
           return true
         })

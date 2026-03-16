@@ -150,6 +150,39 @@ struct webViewSetHttpDns {
               })
               break;
             }
+            case "testSetHttpDnsAutoEmpty": {
+              try {
+                this.isPageEnd = -1;
+                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.OFF, "")
+                Utils.emitEvent('noError', 340050)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 340050)
+              }
+              break;
+            }
+            case "testSetHttpDnsAutoNull": {
+              try {
+                this.isPageEnd = -1;
+                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.OFF, null)
+                Utils.emitEvent('noError', 340060)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 340060)
+              }
+              break;
+            }
+            case "testSetHttpDnsAutoUndefined": {
+              try {
+                this.isPageEnd = -1;
+                web_webview.WebviewController.setHttpDns(web_webview.SecureDnsMode.OFF, null)
+                Utils.emitEvent('noError', 340070)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 340070)
+              }
+              break;
+            }
           }
         })
       }

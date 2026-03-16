@@ -134,7 +134,7 @@ export default function sequenceRunnerAbilityTest_2() {
      * @tc.desc test sequenceRunner task with uint_32_array error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolSequenceRunnerClassifyTest2600_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const caseName = 'taskPoolSequenceRunnerClassifyTest2600_2'
@@ -202,7 +202,7 @@ export default function sequenceRunnerAbilityTest_2() {
      * @tc.desc test sequenceRunner task with uint_32_array error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolSequenceRunnerClassifyTest_2700_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const caseName = 'taskPoolSequenceRunnerClassifyTest_2700_2'
@@ -270,7 +270,7 @@ export default function sequenceRunnerAbilityTest_2() {
      * @tc.desc test sequenceRunner task with uint_32_array error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolSequenceRunnerClassifyTest_2800_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const caseName = 'taskPoolSequenceRunnerClassifyTest_2800_2'
@@ -338,7 +338,7 @@ export default function sequenceRunnerAbilityTest_2() {
      * @tc.desc test sequenceRunner task with uint_32_array error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolSequenceRunnerClassifyTest_2900_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const caseName = 'taskPoolSequenceRunnerClassifyTest_2900_2'
@@ -407,7 +407,7 @@ export default function sequenceRunnerAbilityTest_2() {
      * @tc.desc test sequenceRunner task with uint_32_array error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolSequenceRunnerClassifyTest_3100_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const caseName = 'taskPoolSequenceRunnerClassifyTest_3100_2'
@@ -476,7 +476,7 @@ export default function sequenceRunnerAbilityTest_2() {
      * @tc.desc test sequenceRunner task with unitClampedArray error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolSequenceRunnerClassifyTest_3700_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const caseName = 'taskPoolSequenceRunnerClassifyTest_3700_2'
@@ -544,7 +544,7 @@ export default function sequenceRunnerAbilityTest_2() {
      * @tc.desc test sequenceRunner task with asyncLock error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolSequenceRunnerClassifyTest_4000_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       const caseName = 'taskPoolSequenceRunnerClassifyTest_4000_2'

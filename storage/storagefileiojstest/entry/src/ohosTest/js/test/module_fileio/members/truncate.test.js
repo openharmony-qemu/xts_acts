@@ -277,5 +277,426 @@ describe('fileio_truncate', function () {
       expect(false).assertTrue();
     }
   });
+
+  /**
+   * @tc.name   fileio_truncate_error_001
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_001
+   * @tc.desc   Test truncate() interface with empty string path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_001', Level.LEVEL2, async function () {
+    try {
+      await fileio.truncate("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_truncate_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_002
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_002
+   * @tc.desc   Test truncate() interface with null path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_002', Level.LEVEL2, async function () {
+    try {
+      await fileio.truncate(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_truncate_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_003
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_003
+   * @tc.desc   Test truncate() interface with undefined path. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_003', Level.LEVEL2, async function () {
+    try {
+      await fileio.truncate(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_truncate_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_004
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_004
+   * @tc.desc   Test truncate() interface with null len. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_004', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_truncate_error_004');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      await fileio.truncate(fpath, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_truncate_error_004: ' + e.message + ', code: ' + e.code);
+      fileio.unlinkSync(fpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_005
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_005
+   * @tc.desc   Test truncate() interface with undefined len. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_005', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_truncate_error_005');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      await fileio.truncate(fpath, undefined);
+      let fd = fileio.openSync(fpath, 0o2);
+      expect(isIntNum(fd)).assertTrue();
+      let readLen = fileio.readSync(fd, new ArrayBuffer(4096));
+      expect(readLen == 0).assertTrue();
+      fileio.closeSync(fd);
+      fileio.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileio_truncate_error_005: ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  // Test cases for truncate(path: string, callback: AsyncCallback<void>): void
+  /**
+   * @tc.name   fileio_truncate_error_006
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_006
+   * @tc.desc   Test truncate() interface with empty string path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_006', Level.LEVEL2, async function (done) {
+    try {
+      fileio.truncate("", function (err) {
+        if (err) {
+          console.log('fileio_truncate_error_006: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'No such file or directory').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_truncate_error_006: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_007
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_007
+   * @tc.desc   Test truncate() interface with null path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_007', Level.LEVEL2, async function (done) {
+    try {
+      fileio.truncate(null, function (err) {
+        if (err) {
+          console.log('fileio_truncate_error_007: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_truncate_error_007: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_008
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_008
+   * @tc.desc   Test truncate() interface with undefined path. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_008', Level.LEVEL2, async function (done) {
+    try {
+      fileio.truncate(undefined, function (err) {
+        if (err) {
+          console.log('fileio_truncate_error_008: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_truncate_error_008: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  // Test cases for truncate(path: string, len: number, callback: AsyncCallback<void>): void
+  /**
+   * @tc.name   fileio_truncate_error_009
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_009
+   * @tc.desc   Test truncate() interface with empty string path. Callback with len.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_009', Level.LEVEL2, async function (done) {
+    try {
+      fileio.truncate("", 5, function (err) {
+        if (err) {
+          console.log('fileio_truncate_error_009: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'No such file or directory').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_truncate_error_009: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_010
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_010
+   * @tc.desc   Test truncate() interface with null path. Callback with len.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_010', Level.LEVEL2, async function (done) {
+    try {
+      fileio.truncate(null, 5, function (err) {
+        if (err) {
+          console.log('fileio_truncate_error_010: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_truncate_error_010: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_011
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_011
+   * @tc.desc   Test truncate() interface with undefined path. Callback with len.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_011', Level.LEVEL2, async function (done) {
+    try {
+      fileio.truncate(undefined, 5, function (err) {
+        if (err) {
+          console.log('fileio_truncate_error_011: ' + err.message + ', code: ' + err.code);
+          expect(err.message == 'Invalid path').assertTrue();
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_truncate_error_011: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_012
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_012
+   * @tc.desc   Test truncate() interface with null len. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_012', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_truncate_error_012');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileio.truncate(fpath, null, function (err) {
+        if (err) {
+          console.log('fileio_truncate_error_012: ' + err.message + ', code: ' + err.code);
+        }
+        fileio.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileio_truncate_error_012: ' + e.message + ', code: ' + e.code);
+      fileio.unlinkSync(fpath);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_error_013
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_ERROR_013
+   * @tc.desc   Test truncate() interface with undefined len. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_error_013', Level.LEVEL2, async function (done) {
+    let fpath = await nextFileName('fileio_truncate_error_013');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileio.truncate(fpath, undefined, function (err) {
+        if (err) {
+          console.log('fileio_truncate_error_013: ' + err.message + ', code: ' + err.code);
+          expect(false).assertTrue();
+        }
+        let fd = fileio.openSync(fpath, 0o2);
+        expect(isIntNum(fd)).assertTrue();
+        let readLen = fileio.readSync(fd, new ArrayBuffer(4096));
+        expect(readLen == 0).assertTrue();
+        fileio.closeSync(fd);
+        fileio.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileio_truncate_error_013: ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  // Test cases for truncateSync(path: string, len?: number): void
+  /**
+   * @tc.name   fileio_truncate_sync_error_001
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_ERROR_001
+   * @tc.desc   Test truncateSync() interface with empty string path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_sync_error_001', Level.LEVEL2, async function () {
+    try {
+      fileio.truncateSync("");
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_truncate_sync_error_001: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_sync_error_002
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_ERROR_002
+   * @tc.desc   Test truncateSync() interface with null path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_sync_error_002', Level.LEVEL2, async function () {
+    try {
+      fileio.truncateSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_truncate_sync_error_002: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_sync_error_003
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_ERROR_003
+   * @tc.desc   Test truncateSync() interface with undefined path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_sync_error_003', Level.LEVEL2, async function () {
+    try {
+      fileio.truncateSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_truncate_sync_error_003: ' + e.message + ', code: ' + e.code);
+      expect(e.message == 'Invalid path').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_sync_error_004
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_ERROR_004
+   * @tc.desc   Test truncateSync() interface with null len.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_sync_error_004', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_truncate_sync_error_004');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileio.truncateSync(fpath, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileio_truncate_sync_error_004: ' + e.message + ', code: ' + e.code);
+      fileio.unlinkSync(fpath);
+    }
+  });
+
+  /**
+   * @tc.name   fileio_truncate_sync_error_005
+   * @tc.number SUB_DF_FILEIO_TRUNCATE_SYNC_ERROR_005
+   * @tc.desc   Test truncateSync() interface with undefined len.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('fileio_truncate_sync_error_005', Level.LEVEL2, async function () {
+    let fpath = await nextFileName('fileio_truncate_sync_error_005');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    try {
+      fileio.truncateSync(fpath, undefined);
+      let fd = fileio.openSync(fpath, 0o2);
+      expect(isIntNum(fd)).assertTrue();
+      let readLen = fileio.readSync(fd, new ArrayBuffer(4096));
+      expect(readLen == 0).assertTrue();
+      fileio.closeSync(fd);
+      fileio.unlinkSync(fpath);
+    } catch (e) {
+      console.log('fileio_truncate_sync_error_005: ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
 });
 }

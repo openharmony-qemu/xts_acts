@@ -143,9 +143,9 @@ export default function sequenceRunnerAbilityTest() {
      * @tc.desc test sequenceRunner task with string
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolSequenceRunnerClassifyTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerClassifyTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
         const caseName = 'taskPoolSequenceRunnerClassifyTest_1100'
         console.info(`${caseName} test start`)
@@ -203,9 +203,9 @@ export default function sequenceRunnerAbilityTest() {
      * @tc.desc test sequenceRunner task with string error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolSequenceRunnerClassifyTest_1100_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerClassifyTest_1100_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
         const caseName = 'taskPoolSequenceRunnerClassifyTest_1100_2'
         console.info(`${caseName} test start`)
@@ -269,9 +269,9 @@ export default function sequenceRunnerAbilityTest() {
      * @tc.desc test sequenceRunner task with number
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolSequenceRunnerClassifyTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerClassifyTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
         const caseName = 'taskPoolSequenceRunnerClassifyTest_1200'
         console.info(`${caseName} test start`)
@@ -320,9 +320,9 @@ export default function sequenceRunnerAbilityTest() {
      * @tc.desc test sequenceRunner task with boolean
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolSequenceRunnerClassifyTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerClassifyTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
         const caseName = 'taskPoolSequenceRunnerClassifyTest_1300'
         console.info(`${caseName} test start`)
@@ -385,9 +385,9 @@ export default function sequenceRunnerAbilityTest() {
      * @tc.desc test sequenceRunner task with boolean error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('taskPoolSequenceRunnerClassifyTest_1300_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerClassifyTest_1300_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (): Promise<void> => {
         const caseName = 'taskPoolSequenceRunnerClassifyTest_1300_2'
         console.info(`${caseName} test start`)
@@ -446,7 +446,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with bigint
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -496,7 +496,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with bigint error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_1400_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -557,7 +557,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with undefined error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_1500_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -618,7 +618,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with null error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_1600_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -679,7 +679,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with array error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_1700_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -739,7 +739,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with map error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_1800_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -802,7 +802,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test TaskGroup
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_1900_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -860,7 +860,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with set error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_2000_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -922,7 +922,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with int_8_array error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_2100_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -980,7 +980,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with uint_8_array error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_2200_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -1039,7 +1039,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with int_16_array error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_2300_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -1097,7 +1097,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with uint_16_array error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_2400_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {
@@ -1156,7 +1156,7 @@ export default function sequenceRunnerAbilityTest() {
     //  * @tc.desc test sequenceRunner task with int_32_array error
     //  * @tc.size MediumTest
     //  * @tc.type Function
-    //  * @tc.level Level 2
+    //  * @tc.level Level 1
     //  */
     // it('taskPoolSequenceRunnerClassifyTest_2500_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
     //   async (): Promise<void> => {

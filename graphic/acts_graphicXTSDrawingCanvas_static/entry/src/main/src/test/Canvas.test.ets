@@ -648,6 +648,18 @@ export default function drawingTsCanvasTest() {
       try {
         const brush = new drawing.Brush();
         canvas.attachBrush(brush);
+        canvas.drawPixelMapMesh(pixel!, 2, 2, [], 0, [0xFFFFFFFF.toInt(),0xFFEFFFFF.toInt(),0xFFFFEFFF.toInt(),0xFFFFFFEF.toInt(),0xFFFFFF00.toInt(),0xFFEFFFF.toInt(),0xFFEFFFF.toInt(),0xFFEFFFF.toInt(),0xFFEFFFF.toInt()], 0);
+        canvas.detachBrush();
+        console.info(msg + ' 3 [] drawPixelMapMesh successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` 3 [] drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const brush = new drawing.Brush();
+        canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel!, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, [], 0);
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh 2 successed');
@@ -672,8 +684,8 @@ export default function drawingTsCanvasTest() {
         const brush = new drawing.Brush();
         canvas.attachBrush(brush);
         for (let index = 0; index < 20; index++) {
-          // 待确认
-          // canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
+          canvas.drawPixelMapMesh(pixel!, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
+          console.info(msg + 'drawPixelMapMesh  successed step: ' + index);
         }
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh successed');

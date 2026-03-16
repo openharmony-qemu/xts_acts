@@ -44,7 +44,10 @@ export default function moveAbilityToBackgroundTest() {
     beforeEach(() => {
     });
     afterEach(async () => {
-      await globalThis.entryAbilityContext.terminateSelf();
+      if(globalThis.entryAbilityContext != undefined){
+        await globalThis.entryAbilityContext.terminateSelf();
+      }
+      
     });
     afterAll(() => {
     });

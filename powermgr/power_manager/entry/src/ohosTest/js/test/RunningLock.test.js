@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import deviceInfo from '@ohos.deviceInfo';
 import runningLock from '@ohos.runningLock';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
@@ -1628,11 +1627,7 @@ export default function RunningLockTest() {
         let isRunningLockTypeSupported =
           await runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
         console.info(`${TAG} isRunningLockTypeSupported: ${isRunningLockTypeSupported}`);
-        if (deviceInfo.deviceType == '2in1') {
-          expect(isRunningLockTypeSupported).assertTrue();
-        } else {
-          expect(isRunningLockTypeSupported).assertFalse();
-        }
+        expect(isRunningLockTypeSupported).assertFalse();
       } catch (e) {
         console.error(`${TAG} error: ${JSON.stringify(e)}`);
         expect().assertFail();
@@ -1660,13 +1655,8 @@ export default function RunningLockTest() {
             done();
           } else {
             console.info(`${TAG} isRunningLockTypeSupported: ${isRunningLockTypeSupported}`);
-            if (deviceInfo.deviceType == '2in1') {
-              expect(isRunningLockTypeSupported).assertTrue();
-              done();
-            } else {
-              expect(isRunningLockTypeSupported).assertFalse();
-              done();
-            }
+            expect(isRunningLockTypeSupported).assertFalse();
+            done();
           }
         });
     })
@@ -1681,7 +1671,10 @@ export default function RunningLockTest() {
      */
     it('testRunningLockTest_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'testRunningLockTest_5900';
-      if (runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE)) {
+      let isRunningLockTypeSupported =
+        await runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+      console.info(`${TAG} isRunningLockTypeSupported: ${JSON.stringify(isRunningLockTypeSupported)}`);  
+      if (isRunningLockTypeSupported) {
         try {
           let lock = await runningLock.createRunningLock(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
           console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
@@ -1801,7 +1794,10 @@ export default function RunningLockTest() {
      */
     it('testRunningLockTest_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let TAG = 'testRunningLockTest_6400';
-      if (runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE)) {
+      let isRunningLockTypeSupported =
+        await runningLock.isRunningLockTypeSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+      console.info(`${TAG} isRunningLockTypeSupported: ${JSON.stringify(isRunningLockTypeSupported)}`);
+      if (isRunningLockTypeSupported) {
         runningLock.createRunningLock(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE, (error, lock) => {
           if (error) {
             console.error(`${TAG} error: ${JSON.stringify(error)}`);
@@ -2051,4 +2047,4 @@ export default function RunningLockTest() {
       }
     })
   })
-} 
+}

@@ -91,12 +91,14 @@ export default function verificationStaticTest() {
           const context: common.UIAbilityContext =
             AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext;
           context.startAbility(want).then(() => {
+            waitForCompletion(async () => {
             hilog.info(domain, tag, 'Succeeded in starting SpecifiedAbility.');
             await Utils.msSleep(2000);
             let specifiedId: string = AppStorage.get<string>("specifiedId") as string;
             hilog.info(domain, tag, `specifiedId:${specifiedId}`);
             expect(specifiedId).assertEqual("SpecifiedAbilityInstance_Key");
             done();
+            })
           }).catch((err: Error): void => {
             hilog.error(domain, tag,
               `Failed to start SpecifiedAbility. Code is ${err.code}, message is ${err.message}`);

@@ -21,7 +21,8 @@ group("hdf") {
       "device_manager:device_manager_ndk",
       "hid:emit_event_test",
       "usb:usb_ndk",
-      "errorcode:hdf_errorcode"
+      "errorcode:hdf_errorcode",
+      "selection:selection"
     ]
   }
 }

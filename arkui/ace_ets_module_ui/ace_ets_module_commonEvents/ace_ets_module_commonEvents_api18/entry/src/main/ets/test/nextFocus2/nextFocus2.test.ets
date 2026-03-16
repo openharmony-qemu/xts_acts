@@ -18,7 +18,7 @@ import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDi
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function nextFocus2() {
-  describe('Button', () => {
+  describe('ButtonAdapt001', () => {
     beforeEach(async (done: Function) => {
       console.info('Button beforeEach start');
       let options: router.RouterOptions = {

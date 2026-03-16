@@ -2153,6 +2153,160 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_set_value_callback_key_empty
+     * @tc.number settings_set_value_callback_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(mContext, '', 'testvalue', (result) => {
+            console.info("[settings_set_value_callback_key_empty] result = " + result);
+            expect(err == "Error: Permission denied").assertTrue();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_key_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_empty
+     * @tc.number settings_set_value_callback_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, 'testkey', 'testvalue', '');
+          expect(result === null).assertTrue();
+        } catch (err) {
+          console.error("[settings_set_value_callback_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_null
+     * @tc.number settings_set_value_callback_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, 'testkey', 'testvalue', null);
+          console.info("[settings_set_value_callback_null] result = " + result);
+          expect(result === null).assertTrue();
+        } catch (err) {
+          console.error("[settings_set_value_callback_null] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_undefined
+     * @tc.number settings_set_value_callback_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, 'testkey', 'testvalue', undefined);
+          console.info("[settings_set_value_callback_undefined] result = " + result);
+          expect(result === null).assertTrue();
+        } catch (err) {
+          console.error("[settings_set_value_callback_undefined] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_value_empty
+     * @tc.number settings_set_value_callback_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(mContext, 'testkey', '', (result) => {
+            console.info("[settings_set_value_callback_value_empty] result = " + result);
+            expect(err == "Error: Permission denied").assertTrue();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_value_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_domain_result
+     * @tc.number settings_set_value_domain_result
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_domain_result', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let result =
+          await settings.setValue(mContext, 'testkeydomian2', 'testvalue2', settings.domainName.DEVICE_SHARED);
+        console.info("[settings_set_value_domain_result] result = " + result);
+        expect(!result).assertTrue();
+        done();
+      } catch (err) {
+        console.error("[settings_set_value_domain_result] error = " + err);
+        expect(err.code).assertEqual(201);
+        done();
+        return;
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_callback_no_permission
+     * @tc.number settings_set_value_callback_no_permission
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_no_permission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(mContext, 'testkey', 'testvalue', (result) => {
+            console.info("[settings_set_value_callback_no_permission] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_no_permission] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
      * @tc.name   settings_get_value_112
      * @tc.number settings_get_value_112
      * @tc.desc   settings_get_value_112
@@ -2474,6 +2628,28 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_get_value_sync_defValue_empty
+     * @tc.number settings_get_value_sync_defValue_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_defValue_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: string = settings.getValueSync(mContext, 'testkey', '', settings.domainName.DEVICE_SHARED);
+          expect(result === '').assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_defValue_empty] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_set_value_118_2
      * @tc.number settings_set_value_118_2
      * @tc.desc   MediumTest
@@ -2538,30 +2714,6 @@ export default function settingUiJsunit() {
           })
       }catch (err) {
         console.error("[settings_set_value_118] error = " + err);
-        expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
-          .assertTrue();
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   settings_get_value_119
-     * @tc.number settings_get_value_119
-     * @tc.desc   settings_get_value_119
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_get_value_119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) =>  {
-      let name = 'settings.screen.brightness119';//关键字
-      let obj = '323445.00';//值
-      let domainName = 'secure';
-      try{
-        let value = settings.getValueSync(globalThis.abilityContext, name, obj, domainName);
-        console.info("[settings_set_value_119] value is: " + value);
-        expect(true).assertTrue();
-      } catch (err) {
-        console.error("[settings_set_value_119] error = " + err);
         expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
           .assertTrue();
       }

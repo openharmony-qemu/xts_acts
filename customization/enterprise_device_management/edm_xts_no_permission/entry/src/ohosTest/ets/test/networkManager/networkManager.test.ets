@@ -597,7 +597,11 @@ function testTurnOnMobileData() {
       networkManager.turnOnMobileData(SELFWANT, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -618,7 +622,11 @@ function testTurnOnMobileData() {
       networkManager.turnOnMobileData(SELFWANT, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -641,7 +649,11 @@ function testTurnOffMobileData() {
       networkManager.turnOffMobileData(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -665,7 +677,11 @@ function testAddApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_add_apn_0001 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -689,7 +705,11 @@ function testDeleteApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_delete_apn_0001 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -713,7 +733,11 @@ function testUpdateApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_update_apn_0001 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -737,7 +761,11 @@ function testSetPreferredApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_preferred_apn_0001 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -761,7 +789,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0001 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -783,7 +815,11 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0002 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -807,7 +843,11 @@ function testSetEthernetConfig() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_ethernet_config_0001 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -829,7 +869,11 @@ function testSetEthernetConfig() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_ethernet_config_0002 error 201 or 801 is expected, actually catch: ' + error.code);
-      expect((error.code == 201) || (error.code == 801)).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

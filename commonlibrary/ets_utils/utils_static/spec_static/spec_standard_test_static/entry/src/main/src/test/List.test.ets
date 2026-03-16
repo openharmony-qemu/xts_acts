@@ -24,6 +24,22 @@ import EqualityExpressions from "./Types/EqualityExpressions.test.ets";
 import ClassLateInitizationTest from "./Class/Class.test";
 import UnionTest from "./Union/Unionnormalization.test";
 
+import abstractClassesTest from "./classes/classdeclaration/AbstractClassesTest.test";
+import accessingParentClassTest from "./classes/classextensionclause/AccessingParentClassTest.test"
+import classCallRewriteTest from "./classes/classextensionclause/ClassCallRewriteTest.test"
+import classInheritsParentMembersTest from "./classes/classextensionclause/ClassInheritsParentMembersTest.test"
+import classRewriteCallTest from "./classes/classextensionclause/ClassRewriteCallTest.test"
+import classRewritingTest from "./classes/classextensionclause/ClassRewritingTest.test"
+import classSuperclassNonPrivateTest from "./classes/classextensionclause/ClassSuperclassNonPrivateTest.test"
+import classSuperclassOverrideTest from "./classes/classextensionclause/ClassSuperclassOverrideTest.test"
+import classSuperclassStaticmethodTest from "./classes/classextensionclause/ClassSuperclassStaticmethodTest.test"
+import initializeMembersTest from "./classes/classextensionclause/InitializeMembersTest.test"
+
+import AssignmentLikeContextsTest from "./contextsandconversions/AssignmentLikeContextsTest.test";
+import AttemptInvalidTypeConversionTest from "./contextsandconversions/AttemptInvalidTypeConversionTest.test";
+import NumericOperatorContextsTest from "./contextsandconversions/NumericOperatorContextsTest.test";
+import StringOperatorContextsTest from "./contextsandconversions/StringOperatorContextsTest.test";
+
 export default function testsuite() {
   builtinsBlockTest();
   builtinsBreakTest();
@@ -50,4 +66,20 @@ export default function testsuite() {
   ClassLateInitizationTest();
   EqualityExpressions();
   UnionTest();
+
+  abstractClassesTest();
+  accessingParentClassTest();
+  classCallRewriteTest();
+  classInheritsParentMembersTest();
+  classRewriteCallTest();
+  classRewritingTest();
+  classSuperclassNonPrivateTest();
+  classSuperclassOverrideTest();
+  classSuperclassStaticmethodTest();
+  initializeMembersTest();
+
+  AssignmentLikeContextsTest();
+  AttemptInvalidTypeConversionTest();
+  NumericOperatorContextsTest();
+  StringOperatorContextsTest();
 }

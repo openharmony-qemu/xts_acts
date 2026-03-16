@@ -93,7 +93,7 @@ export default function textInputThemeTest() {
       }
     })
     /**
-     * @tc.name   ActsTextInputThemeColors_0100
+     * @tc.name   `ActsTextInputThemeColors_0100`
      * @tc.number ActsTextInputThemeColors_0100
      * @tc.desc   Check system colors values of the TextInput component
      * @tc.type   FUNCTION
@@ -110,7 +110,7 @@ export default function textInputThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.name   ActsTextInputThemeColors_0200
+     * @tc.name   `ActsTextInputThemeColors_0200`
      * @tc.number ActsTextInputThemeColors_0200
      * @tc.desc   Check custom theme colors values of the TextInput component
      * @tc.type   FUNCTION
@@ -128,7 +128,7 @@ export default function textInputThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.name   ActsTextInputThemeColors_0300
+     * @tc.name   `ActsTextInputThemeColors_0300`
      * @tc.number ActsTextInputThemeColors_0300
      * @tc.desc   Check custom theme colors values of the TextInput component after theme change
      * @tc.type   FUNCTION
@@ -147,7 +147,7 @@ export default function textInputThemeTest() {
       console.info(`${SUITE} ${CASE} END`)
     })
     /**
-     * @tc.name   ActsTextInputThemeColors_0400
+     * @tc.name   `ActsTextInputThemeColors_0400`
      * @tc.number ActsTextInputThemeColors_0400
      * @tc.desc   Check system colors values of the TextInput component after theme reset
      * @tc.type   FUNCTION

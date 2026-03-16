@@ -59,11 +59,11 @@ interface TextLineData {
 let textLineExpectData:TextLineData = { // 0
   "glyphCount": 40,
   "textRange": {"start":0, "end":40},
-  "typographicBounds": {"ascent":-303.39,"descent":112.61,"leading":0,"width":2106.82},
-  "imageBounds": {"left":1,"top":9,"right":2078.39,"bottom":44},
+  "typographicBounds": {"ascent":-303.39,"descent":112.61,"leading":0,"width":2134.11},
+  "imageBounds": {"left":2,"top":8,"right":2105.98,"bottom":41},
   "trailingSpaceWidth": 0,
   "stringIndexForPosition": 1,
-  "offsetForStringIndex": 220.13,
+  "offsetForStringIndex": 221.92,
   "alignmentOffset": 0,
   "enumerateCaretOffsets": [0,0,1]
 }

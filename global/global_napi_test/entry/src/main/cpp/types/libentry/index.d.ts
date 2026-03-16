@@ -82,3 +82,4 @@ export const initNativeRsMgrOpenRawDirRawFile64Null: (resmgr: resourceManager.Re
 export const isRawDirTrue: (resmgr: resourceManager.ResourceManager, path: string) => Boolean;
 export const getDirectionVertical: (resmgr: resourceManager.ResourceManager) => Boolean;
 export const getEmuTypeErrorCode: (resmgr: resourceManager.ResourceManager) => Boolean;
+export const getRawFileContent64: (resmgr: resourceManager.ResourceManager, path: string) => Uint8Array;

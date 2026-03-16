@@ -162,9 +162,12 @@ it('testListLanesToRange01_static', Level.LEVEL0, async (done: () => void): Prom
 
       expect(Math.abs(List_lanes_011.left - List_lanes_01.left) <= 1).assertTrue();
       expect(Math.abs(List_lanes_014.left - List_lanes_01.left) <= 1).assertTrue();
-      expect(Math.abs(Math.round((List_lanes_012.left - List_lanes_011.right) -(UIContext.resolveUIContext()!.vp2px(50 / 3)))) <= 1)
+      console.log('testListLanesToRange01_static List_lanes_012.left - List_lanes_011.right: ' + (List_lanes_012.left - List_lanes_011.right));
+      console.log('testListLanesToRange01_static List_lanes_013.left - List_lanes_012.right: ' + (List_lanes_013.left - List_lanes_012.right));
+      console.log('testListLanesToRange01_static UIContext.resolveUIContext()!.vp2px(50)/3: ' + (UIContext.resolveUIContext()!.vp2px(50) / 3));
+      expect(Math.abs(Math.round((List_lanes_012.left - List_lanes_011.right) -(UIContext.resolveUIContext()!.vp2px(50) / 3))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round((List_lanes_013.left - List_lanes_012.right) -(UIContext.resolveUIContext()!.vp2px(50 / 3)))) <= 1)
+      expect(Math.abs(Math.round((List_lanes_013.left - List_lanes_012.right) -(UIContext.resolveUIContext()!.vp2px(50) / 3))) <= 1)
         .assertTrue();
 
       expect(Math.abs(Math.round(List_lanes_011.right - List_lanes_011.left) - Math.round(UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();

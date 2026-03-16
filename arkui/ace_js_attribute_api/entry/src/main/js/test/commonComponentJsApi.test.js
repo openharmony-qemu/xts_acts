@@ -18,7 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 
 
 export default function aceJsApiAndAttr() {
-    describe('aceJsApiAndAttr', function() {
+    describe('aceJsApiAndAttrAdapt001', function() {
 
         async function sleep(time) {
             return new Promise((resolve, reject) => {

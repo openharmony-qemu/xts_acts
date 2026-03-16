@@ -1122,9 +1122,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       {
         const originalSet: Set<string> = new Set(["apple", "banana", "cherry"]);
         const jsonStr: string = JSON.stringify(originalSet, (key, value: Set<string>) => {
@@ -1152,9 +1152,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MultiLangArrObj = {
         labels: [
           { lang: "Greek", symbol: "Ω" },
@@ -1176,9 +1176,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = ["$100", "€50", "¥1000", "£20"];
       const jsonStr: string = JSON.stringify(originalArr);
       const parsedArr: string[] = JSON.parse(jsonStr);
@@ -1193,9 +1193,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: Map<string, number>[] = [
         new Map([["a", 1], ["b", 2]]),
         new Map([["c", 3]])
@@ -1221,9 +1221,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: Test5_Obj2 = {
         users: [
           {
@@ -1257,9 +1257,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: EmojiNestedObj = {
         user: {
           name: "😊 Alice",
@@ -1279,9 +1279,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: Test7_Obj3 = {
         config: {
           theme: "light",
@@ -1308,9 +1308,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: AgeDiffCompare = {
         people: [{ name: "A", age: 25 }, { name: "B", age: 30 }],
         diffs: []
@@ -1336,9 +1336,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MathFormulaArrObj = {
         formulas: [
           { id: 1, expression: "a² + b² = c²" },

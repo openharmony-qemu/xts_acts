@@ -21,7 +21,7 @@ const triggerAction = 'accessibilityFocus';
 const eventType = 'accessibilityFocus';
 
 export default function AccessibleRegisterState() {
-describe('AccessibleRegisterState', function () {
+describe('AccessibleRegisterStateAdapt001', function () {
     beforeAll(async function (done) {
         let driver = Driver.create();
         console.info(`AccessibleRegisterState: beforeAll starts`);

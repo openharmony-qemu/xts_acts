@@ -737,7 +737,7 @@ export default function getBundleInfoForSelf() {
         expect(data.appInfo).assertEqual(null);
         expect(data.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0.0);
         let extensionList = data.hapModulesInfo[0].extensionAbilitiesInfo
-        expect(extensionList.length).assertEqual(31);
+        expect(extensionList.length).assertEqual(32);
         let count = 0;
         for (let i = 0; i < extensionList.length; i++) {
           switch (extensionList[i].name) {
@@ -911,6 +911,11 @@ export default function getBundleInfoForSelf() {
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.LIVE_FORM)
               count = count + 30;
               break;
+            case 'selection':
+              console.info("selection" + JSON.stringify(extensionList[i].extensionAbilityType));
+              expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.SELECTION)
+              count = count + 31
+              break;
             case 'webNativeMessaging':
               console.info("webNativeMessaging" + JSON.stringify(extensionList[i].extensionAbilityType));
               expect(extensionList[i].extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.WEB_NATIVE_MESSAGING)
@@ -925,7 +930,7 @@ export default function getBundleInfoForSelf() {
           }
           hilog.info(domain, tag, "count" + JSON.stringify(count));
         }
-        expect(count).assertEqual(477);
+        expect(count).assertEqual(508);
         expect(data.hapModulesInfo[0].metadata.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);

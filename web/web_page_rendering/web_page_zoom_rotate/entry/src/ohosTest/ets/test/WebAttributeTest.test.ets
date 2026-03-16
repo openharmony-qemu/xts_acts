@@ -88,6 +88,36 @@ export default function webAttributeTest() {
       })
 
       /**
+       * @tc.name   testInitialScale003
+       * @tc.number SUB_WEB_INITIALSCALE_0300
+       * @tc.desc   test initialScale from null
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testInitialScale003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        Utils.emitEvent("emitInitialScale003", 153860)
+        Utils.registerEvent("testInitialScale003", 'oldScale=100,newScale=90', 153900, done);
+        let component = await driver.findComponent(ON.id("WebAttributeTestButton"));
+        await component.click();
+      })
+
+      /**
+       * @tc.name   testInitialScale004
+       * @tc.number SUB_WEB_INITIALSCALE_0400
+       * @tc.desc   test initialScale from undefined
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+      it('testInitialScale004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        Utils.emitEvent("emitInitialScale004", 153860)
+        Utils.registerEvent("testInitialScale004", 'oldScale=100,newScale=90', 153910, done);
+        let component = await driver.findComponent(ON.id("WebAttributeTestButton"));
+        await component.click();
+      })
+
+      /**
        * @tc.name   testOnScaleChange001
        * @tc.number SUB_WEB_ONSCALECHANGE_0100
        * @tc.desc   test onScaleChange

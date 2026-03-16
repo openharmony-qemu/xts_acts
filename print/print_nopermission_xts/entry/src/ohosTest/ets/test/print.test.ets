@@ -730,5 +730,56 @@ export default function printTest() {
         done();
       })
     })
+
+    /**
+    * @tc.name   print_function_1700
+    * @tc.number print_function_1700
+    * @tc.desc   check the printTask off without callback
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('print_function_1700', Level.LEVEL2, async (done: Function) => {
+      let file = ['file://data/print/a.png', 'file://data/print/b.png'];
+      let context = getContext();
+      // Permissions required: ohos.permission.PRINT
+      await print.print(file, context).then((printTask: print.PrintTask) => {
+        try {
+          printTask.on('block', () => {
+            hilog.info(DOMAIN, TAG, 'print state is block')
+          })
+          printTask.on('succeed', () => {
+            hilog.info(DOMAIN, TAG, 'print state is succeed')
+          })
+          printTask.on('fail', () => {
+            hilog.info(DOMAIN, TAG, 'print state is fail')
+          })
+          printTask.on('cancel', () => {
+            hilog.info(DOMAIN, TAG, 'print state is cancel')
+          })
+          printTask.off('block', () => {
+            hilog.info(DOMAIN, TAG, 'unregister print state is blocked')
+          })
+          printTask.off('succeed', () => {
+            hilog.info(DOMAIN, TAG, 'unregister print state is succeed')
+          })
+          printTask.off('fail', () => {
+            hilog.info(DOMAIN, TAG, 'unregister print state is fail')
+          })
+          printTask.off('cancel', () => {
+            hilog.info(DOMAIN, TAG, 'unregister print state is cancel')
+          })
+          console.log('print_function_1700 succeed');
+          done();
+        } catch (error) {
+          console.log('print_function_1700 expect failed, err: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(201);
+          done();
+        }
+      }).catch((error: BusinessError) => {
+        expect(error).assertEqual(201);
+        done();
+      })
+    })
   })
 }

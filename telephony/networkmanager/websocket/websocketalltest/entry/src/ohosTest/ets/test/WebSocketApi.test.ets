@@ -5151,5 +5151,257 @@ export default function WebSocketApiTest() {
         console.info(`${caseName} test end`);
       }
     })
+    
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectPromise1100
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectPromise_1100
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(url is undefined,correct options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnectPromise1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketConnectPromise1100';
+      console.info(`${caseName} test start`);
+      try {
+        ws.connect(undefined,options).then((value: boolean) => {
+          console.info(`${caseName} test connect success and value is ${value}`);
+          expectFail(`${caseName} test connect success`);
+          done();
+          console.info(`${caseName} test end`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+          expectEqual(err.code,401);
+          done();
+          console.info(`${caseName} test end`);
+        });
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectPromise1200
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectPromise_1200
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(null url,correct options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnectPromise1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketConnectPromise1200';
+      console.info(`${caseName} test start`);
+      try {
+        let options2: webSocket.WebSocketRequestOptions = {
+          header: {
+            'Content-Type': 'application/json'
+          },
+          caPath:''
+        };
+        ws.connect(availableWebSocketAddress,options2).then((value: boolean) => {
+          console.info(`${caseName} test connect success and value is ${value}`);
+          done();
+          console.info(`${caseName} test end`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+          expectEqual(err.code,-1);
+          done();
+          console.info(`${caseName} test end`);
+        });
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectPromise1300
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectPromise_1300
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(null url,correct options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnectPromise1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketConnectPromise1300';
+      console.info(`${caseName} test start`);
+      try {
+        let options2: webSocket.WebSocketRequestOptions = {
+          header: {
+            'Content-Type': 'application/json'
+          },
+          skipServerCertVerification:true
+        };
+        ws.connect(availableWebSocketAddress,options2).then((value: boolean) => {
+          console.info(`${caseName} test connect success and value is ${value}`);
+          done();
+          console.info(`${caseName} test end`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+          expectEqual(err.code,-1);
+          done();
+          console.info(`${caseName} test end`);
+        });
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectPromise1400
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectPromise_1400
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(null url,correct options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnectPromise1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketConnectPromise1400';
+      console.info(`${caseName} test start`);
+      try {
+        let options2: webSocket.WebSocketRequestOptions = {
+          header: {
+            'Content-Type': 'application/json'
+          },
+          skipServerCertVerification:false
+        };
+        ws.connect(availableWebSocketAddress,options2).then((value: boolean) => {
+          console.info(`${caseName} test connect success and value is ${value}`);
+          done();
+          console.info(`${caseName} test end`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+          expectEqual(err.code,-1);
+          done();
+          console.info(`${caseName} test end`);
+        });
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectPromise1500
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectPromise_1500
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(null url,correct options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnectPromise1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketConnectPromise1500';
+      console.info(`${caseName} test start`);
+      try {
+        let options2: webSocket.WebSocketRequestOptions = {
+          header: {
+            'Content-Type': 'application/json'
+          },
+          clientCert : {
+            certPath : '',
+            keyPath : '',
+            keyPassword : ''
+          }
+        };
+        ws.connect(availableWebSocketAddress,options2).then((value: boolean) => {
+          console.info(`${caseName} test connect success and value is ${value}`);
+          done();
+          console.info(`${caseName} test end`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+          expectEqual(err.code,-1);
+          done();
+          console.info(`${caseName} test end`);
+        });
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectPromise1600
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectPromise_1600
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(null url,correct options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnectPromise1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketConnectPromise1600';
+      console.info(`${caseName} test start`);
+      try {
+        let options2: webSocket.WebSocketRequestOptions = {
+          header: {
+            'Content-Type': 'application/json'
+          },
+          clientCert : {
+            certPath : '123',
+            keyPath : '123'
+          }
+        };
+        ws.connect(availableWebSocketAddress,options2).then((value: boolean) => {
+          console.info(`${caseName} test connect success and value is ${value}`);
+          done();
+          console.info(`${caseName} test end`);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+          expectEqual(err.code,2302002);
+          done();
+          console.info(`${caseName} test end`);
+        });
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    })
+
+
+    /**
+     * @tc.name   testNetworkMgrWebSocketConnectCallback1700
+     * @tc.number SUB_NetworkMgr_WebSocket_ConnectCallback_1700
+     * @tc.desc   Establish a WebSocket connection based on the URL address and header(null url,correct options)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrWebSocketConnectCallback1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrWebSocketConnectCallback1700';
+      console.info(`${caseName} test start`);
+      try {
+        ws.connect(undefined, options, (err: BusinessError, value: boolean) => {
+          if (err) {
+            console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+            expectEqual(err.code,401);
+            done();
+            console.info(`${caseName} test end`);
+          } else {
+            console.info(`${caseName} test connect success and value is ${value}`);
+            expectFail(`${caseName} test connect success`);
+            done();
+            console.info(`${caseName} test end`);
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catchError ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        console.info(`${caseName} test end`);
+      }
+    })
   });
 }

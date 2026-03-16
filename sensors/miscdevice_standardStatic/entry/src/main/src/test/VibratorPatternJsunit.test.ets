@@ -2647,5 +2647,124 @@ export default function VibratorJsTest_misc_9() {
       done();
     })
 
+    /**
+     * @tc.name   UniversalVibratorJsTest27
+     * @tc.number UniversalVibratorJsTest27
+     * @tc.desc   Test HapticFeedback effect constants to verify all predefined vibration effect types have correct string values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("UniversalVibratorJsTest27", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest27"
+      hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+      try {
+        let effect: vibrator.VibratePreset = {
+          type: "preset",
+          effectId: "haptic.clock.timer",
+          count: -1,
+          intensity: -500,
+        }
+        let attribute: vibrator.VibrateAttribute = {
+          id: -0,
+          usage: "unknown",
+          deviceId: 4,
+        }
+        await vibrator.startVibration(effect, attribute);
+        vibrator.isSupportEffect(INVALID_EFFECT_ID, (error: BusinessError<void> | null, state: boolean | undefined) : void=>{
+          if (error != null){
+            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            hilog.info(domain, tag, TAG + ' VibratorProgramticHapticTestStatic069 success ');
+            expect(state === false).assertTrue();
+            done();
+          }
+        });
+        let isSupportEffectData: boolean = await vibrator.isSupportEffect(INVALID_EFFECT_ID);
+        expect(isSupportEffectData === true).assertTrue();
+
+        const effectId:string = "haptic.clock.timer";
+        const vibrators = vibrator.getVibratorInfoSync();
+        const vibratorInfoParam:vibrator.VibratorInfoParam = {
+          deviceId: vibrators[0].deviceId,
+          vibratorId: vibrators[0].vibratorId
+        };
+        const jsEffectInfo = vibrator.getEffectInfoSync(effectId, vibratorInfoParam);
+        expect(jsEffectInfo.isEffectSupported === false).assertTrue();
+
+        let builder = new vibrator.VibratorPatternBuilder();
+        let vibratorPattern = builder.build();
+        expect(vibratorPattern.time === 1).assertTrue();
+        expect(vibratorPattern.events[0].eventType.CONTINUOUS === 0).assertTrue();
+        expect(vibratorPattern.events[0].eventType.TRANSIENT === 1).assertTrue();
+        expect(vibratorPattern.events[0].time === 5).assertTrue();
+        expect(vibratorPattern.events[0].duration === 4).assertTrue();
+        expect(vibratorPattern.events[0].intensity === 7).assertTrue();
+        expect(vibratorPattern.events[0].frequency === 2).assertTrue();
+        expect(vibratorPattern.events[0].index === 7).assertTrue();
+
+      } catch (error) {
+        hilog.info(domain, tag, TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   UniversalVibratorJsTest28
+     * @tc.number UniversalVibratorJsTest28
+     * @tc.desc   Test HapticFeedback effect constants to verify all predefined vibration effect types have correct string values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("UniversalVibratorJsTest28", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      TAG = "UniversalVibratorJsTest28"
+      hilog.info(domain, tag, TAG + ' isAvailable ' + isAvailable);
+      try {
+        let effect: vibrator.VibratePreset = {
+          type: "preset",
+          effectId: "haptic.clock.timer",
+          count: -1,
+          intensity: -500,
+        }
+        let attribute: vibrator.VibrateAttribute = {
+          id: -0,
+          usage: "unknown"
+        }
+        await vibrator.startVibration(effect, attribute);
+        vibrator.isSupportEffect(INVALID_EFFECT_ID, (error: BusinessError<void> | null, state: boolean | undefined) : void=>{
+          if (error != null){
+            hilog.info(domain, tag, TAG + ` error.code: ${error?.code} , error.message: ${error?.message}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            hilog.info(domain, tag, TAG + ' VibratorProgramticHapticTestStatic069 success ');
+            expect(state === true).assertTrue();
+            done();
+          }
+        });
+        let isSupportEffectData: boolean = await vibrator.isSupportEffect(INVALID_EFFECT_ID);
+        expect(isSupportEffectData === true).assertTrue();
+        let vibratorsList = vibrator.getVibratorInfoSync();
+        expect(vibratorsList.length === 0).assertTrue();
+
+        const validCallback = (statusEvent: vibrator.VibratorStatusEvent) => {
+          expect(statusEvent.timestamp === 4).assertTrue();
+          expect(statusEvent.deviceId === 1).assertTrue();
+          expect(statusEvent.vibratorCount === 5).assertTrue();
+          expect(statusEvent.isVibratorOnline === true).assertTrue();
+        };
+        vibrator.onVibratorStateChange(validCallback);
+
+      } catch (error) {
+        hilog.info(domain, tag, TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
+        expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+        done();
+      }
+    })
+
   })
 }

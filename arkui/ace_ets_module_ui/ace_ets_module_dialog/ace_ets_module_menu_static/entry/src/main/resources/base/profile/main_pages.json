@@ -10,6 +10,11 @@
     "MainAbility/pages/bindMenu/onDidDisappear",
     "MainAbility/pages/bindMenu/onWillAppear",
     "MainAbility/pages/bindMenu/onWillDisappear",
-    "MainAbility/pages/bindContextMenu/bindContextMenu"
+    "MainAbility/pages/bindContextMenu/bindContextMenu",
+    "MainAbility/pages/bindContextMenu/ContextMenuOptions",
+    "MainAbility/pages/promptAction/promptAction",
+    "MainAbility/pages/promptAction/getState",
+    "MainAbility/pages/menuExpandSymbol/Menu",
+    "MainAbility/pages/common/HoverScaleInterruption"
   ]
 }

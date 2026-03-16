@@ -94,6 +94,7 @@ int OHDrawingCopyTypographyStyle001();
 int OHDrawingCopyTypographyStyle002();
 int OHDrawingCopyTypographyStyle003();
 int OHDrawingCopyTypographyStyle004();
+int OHDrawingCopyTypographyStyle005();
 } // namespace OHOS
 
 #endif // ACTSGRAPHICNAPIDRAWINGTEST_NATIVECOPYSTYLETEST_H

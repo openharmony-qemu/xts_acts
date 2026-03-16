@@ -226,6 +226,7 @@ export default function abilitystaticTest() {
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityRuntime_AppManager_Static_0200';
         hilog.info(domain, tag, `${itName} start`);
+        let offInvokeSuccess = false;
         try {
           const observer = new CustomApplicationStateObserver();
           const observerId = appManager.onApplicationStateChange(observer);
@@ -273,7 +274,15 @@ export default function abilitystaticTest() {
           hilog.info(domain, tag, `${itName} ProcessData assert End`);
 
           hilog.info(domain, tag, `${itName} off applicationState`);
-          await appManager.offApplicationStateChange(observerId);
+          await appManager.offApplicationStateChange(observerId).then(() => {
+            hilog.info(domain, tag, `${itName} offApplicationStateChange success`);
+            offInvokeSuccess = true;
+          }).catch((e: Error) => {
+            const err = e as BusinessError;
+            hilog.info(domain, tag, `${itName} off err: code ${err.code}, message ${err.message}`);
+            expect().assertFail();
+          })
+          expect(offInvokeSuccess).assertTrue();
         } catch (err) {
           if (err instanceof BusinessError) {
             hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
@@ -282,6 +291,34 @@ export default function abilitystaticTest() {
         }
         hilog.info(domain, tag, `${itName} end`);
         done()
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0600
+     * @tc.desc   Registering an Application Status Listener.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityRuntime_AppManager_Static_0600';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} off applicationState`);
+          appManager.offApplicationStateChange(-1, (err: BusinessError<void> | null): void => {
+            hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
+            expect(err?.code).assertEqual(401);
+            done();
+          })
+        } catch (err) {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
+            expect(err?.code).assertEqual(401);
+            done();
+          }
+        }
       })
 
     /**

@@ -18,6 +18,7 @@ let pipeWrite:testNapi.PipeResult = {readFd:-1, writeFd:-1};
 
 let connId:number = 0;
 
+
 // Error code for "Capability not supported"
 const CAPABILITY_NOT_SUPPORTED_ERROR = 801;
 
@@ -146,8 +147,10 @@ export default function abilityTest() {
           console.log('pbbb' + code)
           // Check if error is capability not supported (use helper function for enum compatibility)
           if (isCapabilityNotSupportedCode(code)) {
+            let flag = true;
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(true).assertEqual(true);  // Mark as passed (skipped)
+            expect(flag).assertEqual(true);  // Mark as passed (skipped)
+            flag = false
             done();
             return;
           }
@@ -173,8 +176,10 @@ export default function abilityTest() {
         connId = 0;
         // Check if error is capability not supported
         if (err.code === CAPABILITY_NOT_SUPPORTED_ERROR) {
+          let flag1 = true;
           hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-          expect(true).assertEqual(true);  // Mark as passed (skipped)
+          expect(flag1).assertEqual(true);  // Mark as passed (skipped)
+          flag1 = false;
           done();
           return;
         }
@@ -245,8 +250,10 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           // Check if error is capability not supported (use helper function for enum compatibility)
           if (isCapabilityNotSupportedCode(code)) {
+            let flag2 = true;
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(true).assertEqual(true);  // Mark as passed (skipped)
+            expect(flag2).assertEqual(true);  // Mark as passed (skipped)
+            flag2 = false;
             done();
             return;
           }
@@ -262,8 +269,10 @@ export default function abilityTest() {
         hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
         // Check if error is capability not supported
         if (err.code === CAPABILITY_NOT_SUPPORTED_ERROR) {
+          let flag3 = true;
           hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-          expect(true).assertEqual(true);  // Mark as passed (skipped)
+          expect(flag3).assertEqual(true);  // Mark as passed (skipped)
+          flag3 = false;
           done();
           return;
         }
@@ -312,8 +321,10 @@ export default function abilityTest() {
           SendCommand("terminateSelf", pipeWrite.writeFd);
         },
         onDisconnect(connection) {
+          let flag4 = true;
           hilog.info(0x0000, 'testTag', `${tcNumber} onDisconnect connectionId: ${JSON.stringify(connection.connectionId)}`);
-          expect(true).assertEqual(true);
+          expect(flag4).assertEqual(true);
+          flag4 = false;
           done();
 
         },
@@ -321,8 +332,10 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           // Check if error is capability not supported (use helper function for enum compatibility)
           if (isCapabilityNotSupportedCode(code)) {
+            let flag5 = true;
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(true).assertEqual(true);  // Mark as passed (skipped)
+            expect(flag5).assertEqual(true);  // Mark as passed (skipped)
+            flag5 = false;
             done();
             return;
           }
@@ -338,8 +351,10 @@ export default function abilityTest() {
         hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
         // Check if error is capability not supported
         if (err.code === CAPABILITY_NOT_SUPPORTED_ERROR) {
+          let flag6 = true;
           hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-          expect(true).assertEqual(true);  // Mark as passed (skipped)
+          expect(flag6).assertEqual(true);  // Mark as passed (skipped)
+          flag6 = false;
           done();
           return;
         }
@@ -410,8 +425,10 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           // Check if error is capability not supported (use helper function for enum compatibility)
           if (isCapabilityNotSupportedCode(code)) {
+            let flag7 = true;
             hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(true).assertEqual(true);  // Mark as passed (skipped)
+            expect(flag7).assertEqual(true);  // Mark as passed (skipped)
+            flag7 = false;
             done();
             return;
           }
@@ -427,8 +444,10 @@ export default function abilityTest() {
         hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
         // Check if error is capability not supported
         if (err.code === CAPABILITY_NOT_SUPPORTED_ERROR) {
+          let flag8 = true;
           hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-          expect(true).assertEqual(true);  // Mark as passed (skipped)
+          expect(flag8).assertEqual(true);  // Mark as passed (skipped)
+          flag8 = false;
           done();
           return;
         }

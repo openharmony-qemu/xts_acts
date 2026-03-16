@@ -29,3 +29,6 @@ export const TestHiCollieTimerNdkCanSuc: () => number;
 export const testHiCollieStuckWithTimeoutNdk: () => number;
 export const testHiCollieStuckWithTimeoutNdk1: () => number;
 export const testHiCollieStuckWithTimeoutNdk2: () => number;
+export const OH_HiCollie_Report_sucess: () => number;
+export const OH_HiCollie_Report_Main: () => number;
+export const OH_HiCollie_Report_Remote: () => boolean;

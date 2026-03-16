@@ -140,6 +140,7 @@ export default function InputDeviceTest() {
         hilog.info(domain, tag, `${caseName} enter`);
         try {
           await inputDevice.getDeviceList().then((ids: Array<Int>) => {
+            waitForCompletion(async () => {
             hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
             expect(ids).assertInstanceOf('Array');
             if(ids.length > 0) {
@@ -176,6 +177,7 @@ export default function InputDeviceTest() {
               });
             }
             done();
+          })
           });
         } catch (error) {
           error = error as BusinessError;

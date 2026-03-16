@@ -896,6 +896,70 @@ export default function ActsZipDeflateTest() {
       })
 
     /**
+     * @tc.number     ACTS_ZipTest_static_28
+     * @tc.name       actsZipTest_static_28
+     * @tc.desc       test deflateSetHeader
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('actsZipTest_static_28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================actsZipTest_static_28 start==================");
+        let str = 'hello world!';
+        let arrayBufferIn = new ArrayBuffer(str.length);
+        let byteArray = new Uint8Array(arrayBufferIn);
+        for (let i = 0, j = str.length; i < j; i++) {
+          byteArray[i] = str.charCodeAt(i)
+        }
+        let arrayBufferOut = new ArrayBuffer(100);
+        let zStream: zlib.ZStream = {
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        };
+        let zip: zlib.Zip = zlib.createZipSync()
+        await zip.deflateInit2(zStream, zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED, zlib.CompressMethod.DEFLATED, 28,
+          zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY)
+          .then((data: zlib.ReturnStatus) => {
+            hilog.info(domain, tag, 'actsZipTest_static_28 deflateInit2 success. data: ' + JSON.stringify(data));
+            expect(data).assertEqual(zlib.ReturnStatus.OK);
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `actsZipTest_static_28 deflateInit2 errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData).assertFail();
+          })
+        await zip.deflateSetHeader({
+          nextIn: arrayBufferIn,
+          availableIn: 1,
+          nextOut: arrayBufferOut,
+          availableOut: 1
+        },
+          {
+            isText: false,
+            os: 1,
+            time: 1,
+            xflags: 1,
+            extra: arrayBufferIn,
+            extraLen: 12,
+            name: arrayBufferIn,
+            comment: arrayBufferOut,
+            hcrc: false,
+            done: false
+          }).then((data: zlib.ReturnStatus) => {
+          hilog.info(domain, tag, 'actsZipTest_static_28 deflateSetHeader success. data: ' + JSON.stringify(data));
+          expect(data).assertEqual(zlib.ReturnStatus.OK);
+        }).catch((errData: Error): void => {
+          hilog.error(domain, tag,
+            `actsZipTest_static_28 deflateSetHeader errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        })
+        done();
+        hilog.info(domain, tag, "==================actsZipTest_static_28 end==================");
+      })
+      
+    /**
      * @tc.number     ACTS_ZipTest_static_59
      * @tc.name       actsZipTest_static_59
      * @tc.desc       test deflateSetHeader

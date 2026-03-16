@@ -1276,7 +1276,7 @@ export default class UIExtensionProvider extends UIExtensionAbility {
         });
       }
     }
-    // errorCode_02800 - terminateSelf promise test
+    
     if (want.action == 'Sub_UIExtensionContentSession_errorCode_2800') {
       try {
         session.terminateSelf()
@@ -1309,6 +1309,130 @@ export default class UIExtensionProvider extends UIExtensionAbility {
         }, function () {
           console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
         });
+      }
+    }
+
+    if (want.action == 'Sub_UIExtensionContentSession_errorCode_2900') {
+      try {
+        session.loadContent(null);
+        console.info(`${caseTag} session.loadContent success`);
+        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+        });
+      } catch (error) {
+        console.error(`session.loadContent fail, error: ${JSON.stringify(error)}`);
+        if (error.code == 401) {
+          commonEventManager.publish('ACTS_TEST_DESTROY', {
+            parameters: {
+              'result':error?.code,
+            }
+          }, function () {
+            console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+            setTimeout(() => {
+              session?.terminateSelf((err: BusinessError) => {
+                if (err) {
+                  console.error(`Failed to terminate self, code: ${err.code}, msg: ${err.message}`);
+                  return;
+                }
+                console.info(`Successed in terminating self.`);
+              });
+            },500)
+          });
+        }
+      }
+    }
+    
+    if (want.action == 'Sub_UIExtensionContentSession_errorCode_3000') {
+      let errorCode_3100: number = 0;
+      try {
+        session.loadContent('');
+        console.info(`${caseTag} session.loadContent success`);
+        commonEventManager.publish('ACTS_TEST_DESTROY', {
+          parameters: {
+            'result': errorCode_3100
+          }
+        }, function () {
+          console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+        });
+      } catch (error) {
+        console.error(`session.loadContent fail, error: ${JSON.stringify(error)}`);
+        errorCode_3100 = -1
+      }
+      commonEventManager.publish('ACTS_TEST_DESTROY', {
+        parameters: {
+          'result': errorCode_3100
+        }
+      }, function () {
+        console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+        setTimeout(() => {
+          session?.terminateSelf((err: BusinessError) => {
+            if (err) {
+              console.error(`Failed to terminate self, code: ${err.code}, msg: ${err.message}`);
+              return;
+            }
+            console.info(`Successed in terminating self.`);
+          });
+        },500)
+      });
+    }
+
+    if (want.action == 'Sub_UIExtensionContentSession_errorCode_3100') {
+      try {
+        session.loadContent('', undefined);
+        console.info(`${caseTag} session.loadContent success`);
+        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+        });
+      } catch (error) {
+        console.error(`session.loadContent fail, error: ${JSON.stringify(error)}`);
+        if (error.code == 401) {
+          commonEventManager.publish('ACTS_TEST_DESTROY', {
+            parameters: {
+              'result':error?.code,
+            }
+          }, function () {
+            console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+            setTimeout(() => {
+              session?.terminateSelf((err: BusinessError) => {
+                if (err) {
+                  console.error(`Failed to terminate self, code: ${err.code}, msg: ${err.message}`);
+                  return;
+                }
+                console.info(`Successed in terminating self.`);
+              });
+            },500)
+          });
+        }
+      }
+    }
+    
+    if (want.action == 'Sub_UIExtensionContentSession_errorCode_3200') {
+      try {
+        session.loadContent('', null);
+        console.info(`${caseTag} session.loadContent success`);
+        commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+          console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+        });
+      } catch (error) {
+        console.error(`session.loadContent fail, error: ${JSON.stringify(error)}`);
+        if (error.code == 401) {
+          commonEventManager.publish('ACTS_TEST_DESTROY', {
+            parameters: {
+              'result':error?.code,
+            }
+          }, function () {
+            console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+            setTimeout(() => {
+              session?.terminateSelf((err: BusinessError) => {
+                if (err) {
+                  console.error(`Failed to terminate self, code: ${err.code}, msg: ${err.message}`);
+                  return;
+                }
+                console.info(`Successed in terminating self.`);
+              });
+            },500)
+          });
+        }
       }
     }
   }

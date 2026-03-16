@@ -302,7 +302,10 @@ struct WebAttributeTest {
           .onAlert((event) => {
             if (event) {
               console.log("event.url:" + event.url)
-              console.log("event.message:" + event.message)
+              console.log("event.message:" + event.message);
+              console.log("event.handleCancel:" + event.result.handleCancel);
+              console.log("event.handleConfirm:" + event.result.handleConfirm);
+              console.log("event.handlePromptConfirm:" + event.result.handlePromptConfirm);
               this.alert = event.message
             }
             return false

@@ -720,7 +720,11 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0100 error.code = ' + error.code);
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -744,7 +748,11 @@ function testGetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_external_source_extensions_policy_0100 error.code = ' + error.code);
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

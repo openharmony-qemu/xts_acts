@@ -65,6 +65,10 @@ export default function LifeCycleUndefinedNull() {
       await CommonFunc.sleep(1000)
       let comThis: ESObject = AppStorage.get('LifeCycleUndefinedNull')
       try {
+        UIUtils.getLifecycle(comThis).addObserver(null)
+        console.info('[LifeCycleUndefinedNullTest001] addObserver null');
+        UIUtils.getLifecycle(comThis).addObserver(undefined)
+        console.info('[LifeCycleUndefinedNullTest001] addObserver undefined');
         UIUtils.getLifecycle(comThis).removeObserver(null)
         console.info('[LifeCycleUndefinedNullTest001] removeObserver null');
         UIUtils.getLifecycle(comThis).removeObserver(undefined)

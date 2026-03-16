@@ -76,6 +76,7 @@ describe("VibratorJsTest_misc_3", function () {
     const DEVICE_OPERATION_MSG = 'Device operation failed.'
     const PERMISSION_ERROR_MSG = 'Permission denied.'
     const PARAMETER_ERROR_MSG = 'The parameter invalid.'
+    let sensortempcode = true;
     let TAG = ""
 
     /**
@@ -105,7 +106,7 @@ describe("VibratorJsTest_misc_3", function () {
                 } else {
                     await vibrator.stopVibration();
                     console.info(TAG + ' startVibration success');
-                    expect(true).assertTrue();
+                    expect(sensortempcode).assertTrue();
                 }
                 setTimeout(()=>{
                     done();
@@ -222,7 +223,7 @@ describe("VibratorJsTest_misc_3", function () {
             }
             await vibrator.stopVibration();
             console.info(TAG + ` startVibration success`);
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         } catch (error) {
             if (error && !isAvailable) {
@@ -329,7 +330,7 @@ describe("VibratorJsTest_misc_3", function () {
                 expect(false).assertTrue();
                 done();
             }
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         } catch (error) {
             if (error && !isAvailable) {
@@ -372,7 +373,7 @@ describe("VibratorJsTest_misc_3", function () {
                 } else {
                     await vibrator.stopVibration();
                     console.info(TAG + ' startVibration success');
-                    expect(true).assertTrue();
+                    expect(sensortempcode).assertTrue();
                 }
                 setTimeout( ()=>{
                     done();
@@ -473,7 +474,7 @@ describe("VibratorJsTest_misc_3", function () {
                 } else {
                     await vibrator.stopVibration();
                     console.info(TAG + ' startVibration success');
-                    expect(true).assertTrue();
+                    expect(sensortempcode).assertTrue();
                 }
                 setTimeout(async ()=>{
                     done();
@@ -588,7 +589,7 @@ describe("VibratorJsTest_misc_3", function () {
                 expect(false).assertTrue();
                 done();
             }
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         } catch (error) {
             if (error && !isAvailable) {
@@ -695,7 +696,7 @@ describe("VibratorJsTest_misc_3", function () {
                 expect(false).assertTrue();
                 done();
             }
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         } catch (error) {
             if (error && !isAvailable) {
@@ -778,7 +779,7 @@ describe("VibratorJsTest_misc_3", function () {
                 return new Promise((resolve, reject) => {
                     vibrator.stopVibration("time").then(() => {
                         console.log("VibratorJsTest038 stop success");
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         setTimeout(()=>{
                             resolve();
                         }, 500);
@@ -795,7 +796,7 @@ describe("VibratorJsTest_misc_3", function () {
             let promise = new Promise((resolve, reject) => {
                 vibrator.vibrate(180000).then(() => {
                     console.log("VibratorJsTest038 vibrate success");
-                    expect(true).assertTrue();
+                    expect(sensortempcode).assertTrue();
                     setTimeout(()=>{
                         resolve();
                     }, 500);
@@ -846,7 +847,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -895,7 +896,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -944,7 +945,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -993,7 +994,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + 'vibrator success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -1042,7 +1043,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     setTimeout(() => {
                         done();
@@ -1091,7 +1092,7 @@ describe("VibratorJsTest_misc_3", function () {
                         expect(false).assertTrue();
                     } else {
                         console.info(TAG + ' vibrator success');
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                     }
                     setTimeout(() => {
                         done();

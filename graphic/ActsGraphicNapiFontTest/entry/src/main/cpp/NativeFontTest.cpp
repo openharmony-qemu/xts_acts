@@ -56,11 +56,11 @@ int NativeFontTestFontMeasureText015()
         OH_Drawing_CreateTypographyHandler(typoStyle, OH_Drawing_CreateFontCollection());
     OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
     OH_Drawing_TextBox* textBox = OH_Drawing_TypographyGetRectsForPlaceholders(typography);
-    EXPECT_EQ(textBox == nullptr, false);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
     OH_Drawing_DestroyTypographyHandler(handler);
     OH_Drawing_DestroyTypography(typography);
     OH_Drawing_TypographyDestroyTextBox(textBox);
+    EXPECT_EQ(textBox == nullptr, false);
     return TEST_SUCCESS_CODE;
 }
 
@@ -544,10 +544,22 @@ int OHDrawingCreateTextTab002()
     OH_Drawing_TextTab* textTab = OH_Drawing_CreateTextTab(TEXT_ALIGN_LEFT, TEXT_TAB_LOCATION_DEFAULT);
     EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab), TEXT_ALIGN_LEFT);
     OH_Drawing_TextTab* textTab2 = OH_Drawing_CreateTextTab(TEXT_ALIGN_JUSTIFY, 0.0);
-    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab), TEXT_ALIGN_LEFT);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab2), TEXT_ALIGN_LEFT);
+    OH_Drawing_TextTab* textTab3 = OH_Drawing_CreateTextTab(TEXT_ALIGN_CENTER, 0.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab3), TEXT_ALIGN_CENTER);
+    OH_Drawing_TextTab* textTab4 = OH_Drawing_CreateTextTab(TEXT_ALIGN_JUSTIFY, 0.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab4), TEXT_ALIGN_LEFT);
+    OH_Drawing_TextTab* textTab5 = OH_Drawing_CreateTextTab(TEXT_ALIGN_START, 0.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab5), TEXT_ALIGN_LEFT);
+    OH_Drawing_TextTab* textTab6 = OH_Drawing_CreateTextTab(TEXT_ALIGN_END, 0.0);
+    EXPECT_EQ(OH_Drawing_GetTextTabAlignment(textTab6), TEXT_ALIGN_LEFT);
     EXPECT_EQ(OH_Drawing_GetTextTabAlignment(nullptr), TEXT_ALIGN_LEFT);
     OH_Drawing_DestroyTextTab(textTab);
     OH_Drawing_DestroyTextTab(textTab2);
+    OH_Drawing_DestroyTextTab(textTab3);
+    OH_Drawing_DestroyTextTab(textTab4);
+    OH_Drawing_DestroyTextTab(textTab5);
+    OH_Drawing_DestroyTextTab(textTab6);
     return TEST_SUCCESS_CODE;
 }
 

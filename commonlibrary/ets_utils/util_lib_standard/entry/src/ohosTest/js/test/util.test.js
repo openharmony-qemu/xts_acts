@@ -754,7 +754,7 @@ describe('TextEncoderTest', function () {
       try {
         cb([1, 2]);
       } catch (err) {
-        expect(err.message).assertEqual('maybe is not function');
+        expect(err.message).assertEqual('Parameter error. maybe is not function');
       }
     })
 

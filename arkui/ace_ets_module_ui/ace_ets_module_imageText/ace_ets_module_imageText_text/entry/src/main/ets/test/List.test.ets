@@ -17,6 +17,7 @@ import InputPresetTest from './PresetTest/InputPresetTest.test';
 import APITextBackgroundStyleJsunit from './ContainerSpanTest/APITextBackgroundStyleJsunit.test';
 import ContainerSpanModifierTest from './ContainerSpanTest/ContainerSpanModifier.test';
 import ContainerSpanModifierTest1 from './ContainerSpanTest/ContainerSpanModifierTest1.test';
+import ContainerSpanPropertiesNullUndefinedTest from './ContainerSpanTest/ContainerSpanPropertiesNullUndefinedTest.test';
 
 import ImageLoadResultTest from './ImageSpanTest/ImageLoadResultTest.test';
 import ImageSpanJsunit from './ImageSpanTest/ImageSpanJsunit.test';
@@ -138,6 +139,7 @@ import TextSpecialOptionsNullTest from './TextTest/TextSpecialOptionsNull.test';
 import TextLayoutOptionsNullTest from './TextTest/TextLayoutOptionsNull.test';
 import TextSpecialAttrsNullTest from './TextTest/TextSpecialAttrsNull.test';
 import TextMethodsNullTest from './TextTest/TextMethodsNull.test';
+import TextEditMenuOptionsNullTest from './TextTest/TextEditMenuOptionsNull.test';
 
 
 export default function testsuite() {
@@ -146,6 +148,7 @@ export default function testsuite() {
   APITextBackgroundStyleJsunit()
   ContainerSpanModifierTest()
   ContainerSpanModifierTest1()
+  ContainerSpanPropertiesNullUndefinedTest()
   // ImageSpanTest
   ImageLoadResultTest()
   ImageSpanJsunit()
@@ -267,4 +270,5 @@ export default function testsuite() {
   TextLayoutOptionsNullTest();
   TextSpecialAttrsNullTest();
   TextMethodsNullTest();
+  TextEditMenuOptionsNullTest();
 }

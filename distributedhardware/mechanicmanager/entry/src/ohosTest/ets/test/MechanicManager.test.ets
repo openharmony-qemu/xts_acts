@@ -62,6 +62,55 @@ export default function MechanicManagerAPI() {
       // await clickRequestPermission(CLOSE_BT_TEXT);
       done();
     });
+
+        /**
+     * @tc.name   SUB_DH_MechanicManager_on_0900
+     * @tc.number SUB_DH_MechanicManager_on_0900
+     * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口入参type为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_on_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_0900 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(null, callback);
+            console.info("SUB_DH_MechanicManager_on_0900 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_0900 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_0900 end-----------------");
+          }
+        });
+
+        /**
+     * @tc.name   SUB_DH_MechanicManager_on_1000
+     * @tc.number SUB_DH_MechanicManager_on_1000
+     * @tc.desc   Subscribes to device attachment state change events,mechanicManager.on接口入参type为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_on_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_1000 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(undefined, callback);
+            console.info("SUB_DH_MechanicManager_on_1000 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1000 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_1000 end-----------------");
+          }
+        });
+
     /**
      * @tc.name   SUB_DH_MechanicManager_on_0100
      * @tc.number SUB_DH_MechanicManager_on_0100
@@ -192,6 +241,54 @@ export default function MechanicManagerAPI() {
         expect(error.code == 401).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_off_0300 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_off_0900
+     * @tc.number SUB_DH_MechanicManager_off_0900
+     * @tc.desc   Unsubscribes from device attachment state change events,mechanicManager.off接口回调type为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_off_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_0900 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(null, callback);
+            console.log("SUB_DH_MechanicManager_off_0900 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_0900 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+          console.info("-----------------SUB_DH_MechanicManager_off_0900 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_off_1000
+     * @tc.number SUB_DH_MechanicManager_off_1000
+     * @tc.desc   Unsubscribes from device attachment state change events,mechanicManager.off接口回调type为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_off_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_1000 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.AttachStateChangeInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(undefined, callback);
+            console.log("SUB_DH_MechanicManager_off_1000 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1000 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+          console.info("-----------------SUB_DH_MechanicManager_off_1000 end-----------------");
     });
 
     /**
@@ -442,6 +539,54 @@ export default function MechanicManagerAPI() {
     });
 
     /**
+     * @tc.name   SUB_DH_MechanicManager_on_1100
+     * @tc.number SUB_DH_MechanicManager_on_1100
+     * @tc.desc   Subscribes to tracking events,mechanicManager.on接口入参type为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_on_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_1100 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(null, callback);
+            console.info("SUB_DH_MechanicManager_on_1100 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1100 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_1100 end-----------------");
+          }
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_on_1200
+     * @tc.number SUB_DH_MechanicManager_on_1200
+     * @tc.desc   Subscribes to tracking events,mechanicManager.on接口入参type为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_on_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_on_1200 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.on(undefined, callback);
+            console.info("SUB_DH_MechanicManager_on_1200 mechanicManager.on success" + ",expect fail");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_on_1200 mechanicManager.on failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            console.info("-----------------SUB_DH_MechanicManager_on_1200 end-----------------");
+          }
+    });
+
+    /**
      * @tc.name   SUB_DH_MechanicManager_on_0600
      * @tc.number SUB_DH_MechanicManager_on_0600
      * @tc.desc   Subscribes to tracking events,mechanicManager.on接口入参callback为undefined
@@ -592,6 +737,54 @@ export default function MechanicManagerAPI() {
         expect(error.code == 401).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_off_0700 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_off_1100
+     * @tc.number SUB_DH_MechanicManager_off_1100
+     * @tc.desc   Unsubscribes from tracking events,mechanicManager.off接口回调type为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_off_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_1100 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(null, callback);
+            console.log("SUB_DH_MechanicManager_off_1100 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1100 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+          console.info("-----------------SUB_DH_MechanicManager_off_1100 end-----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DH_MechanicManager_off_1200
+     * @tc.number SUB_DH_MechanicManager_off_1200
+     * @tc.desc   Unsubscribes from tracking events,mechanicManager.off接口回调type为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+        it("SUB_DH_MechanicManager_off_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+          console.info("-----------------SUB_DH_MechanicManager_off_1200 begin-----------------");
+          try {
+            let callback = (result: mechanicManager.TrackingEventInfo) => {
+              console.info(`'callback result:' ${result}`);
+            }
+            mechanicManager.off(undefined, callback);
+            console.log("SUB_DH_MechanicManager_off_1200 mechanicManager.off success");
+            expect().assertFail();
+          } catch (error) {
+            console.error(`SUB_DH_MechanicManager_off_1200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+            expect(error.code == 401).assertTrue();
+          }
+          console.info("-----------------SUB_DH_MechanicManager_off_1200 end-----------------");
     });
 
     /**

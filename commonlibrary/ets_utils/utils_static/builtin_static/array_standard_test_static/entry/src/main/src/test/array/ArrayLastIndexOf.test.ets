@@ -452,7 +452,7 @@ export default function ArrayLastIndexOfTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = new Array<number>(10000).fill(0);
+      const arr: number[] = Array.create<number>(10000, 0);
       arr[9999] = 123;
       const result: number = arr.lastIndexOf(123);
       expect(result).assertEqual(9999);
@@ -804,7 +804,7 @@ export default function ArrayLastIndexOfTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = new Array<number>(100000).fill(0);
+      const arr: number[] = Array.create<number>(100000, 0);
       arr[99999] = 5;
       const result: number = arr.lastIndexOf(5);
       expect(result).assertEqual(99999);
@@ -1243,7 +1243,7 @@ export default function ArrayLastIndexOfTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayLastIndexOf0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(6);
+      const arr: (number | undefined)[] = new Array<number | undefined>(6, (i) => undefined);
       arr[0] = 1;
       arr[3] = 2;
       arr[5] = 2;

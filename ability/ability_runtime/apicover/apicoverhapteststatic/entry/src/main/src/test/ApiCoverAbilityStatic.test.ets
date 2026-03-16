@@ -192,6 +192,20 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
+     * @tc.name   SUB_AA_Test_InsightIntent_Static_0200
+     * @tc.number SUB_AA_Test_InsightIntent_Static_0200
+     * @tc.desc   Test insightIntent.ReturnMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AA_Test_InsightIntent_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect(0).assertEqual(insightIntent.ReturnMode.CALLBACK);
+      expect(1).assertEqual(insightIntent.ReturnMode.FUNCTION);
+      done();
+    })
+
+    /**
      * @tc.name   SUB_AA_AbilityAppManager_Static_0100
      * @tc.number SUB_AA_AbilityAppManager_Static_0100
      * @tc.desc   The form of a promise getRunningProcessInformation
@@ -462,6 +476,7 @@ export default function ApiCoverStaticTest() {
           hilog.info(domain, tag, `${itName} connect`);
           const connectId = context?.connectServiceExtensionAbility(want, options);
           hilog.info(domain, tag, `${itName} connectId: ${connectId}`);
+          expect(connectId).assertLarger(0);
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `${itName} options isConnect: ${options.isConnect}`);
           expect(options.isConnect).assertTrue();

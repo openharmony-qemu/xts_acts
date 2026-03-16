@@ -18,7 +18,7 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level}
 
 
 export default function aceJsTest() {
-describe('aceJsTest', function () {
+describe('aceJsTestAdapt001', function () {
 
     async function sleep(time) {
         return new Promise((resolve, reject) => {

@@ -29,7 +29,7 @@ let mPref;
 let currentDeviceIsWatch = false;
 
 export default function storagePromiseTest() {
-    describe('storagePromiseTest', function () {
+    describe('storagePromiseTestAdapt001', function () {
         beforeAll(async function () {
             console.info('beforeAll');
             let deviceTypeInfo = deviceInfo.deviceType;

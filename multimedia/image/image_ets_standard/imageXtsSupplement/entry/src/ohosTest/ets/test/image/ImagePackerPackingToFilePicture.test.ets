@@ -759,7 +759,7 @@ export default function ImagePackerPackingToFilePictureTest() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: true
         };
-        const filePath: string = 'file://' + testContext.filesDir + "/test_exif_v2.jpg";
+        const filePath: string = 'file://' + testContext.filesDir + "/IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_019.jpg";
         let file = fs.openSync(filePath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         console.info(TAG, testName, 'openSync success');
         let commodityPixelMap: image.PixelMap = await imageSourceApi.createPixelMap();
@@ -796,7 +796,7 @@ export default function ImagePackerPackingToFilePictureTest() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        const filePath: string = 'file://' + testContext.filesDir + "/test_exif_v2.jpg";
+        const filePath: string = 'file://' + testContext.filesDir + "/IMAGE_PACKER_PACKING_TO_FIlE_PROMISE_020.jpg";
         let file = fs.openSync(filePath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         console.info(TAG, testName, 'openSync success');
         let commodityPixelMap: image.PixelMap = await imageSourceApi.createPixelMap();

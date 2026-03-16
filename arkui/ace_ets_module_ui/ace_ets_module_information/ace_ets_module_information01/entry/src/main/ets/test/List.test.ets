@@ -26,6 +26,7 @@ import DataPanelContentModifierTest from './DatapPnelTest/DataPanelContentModifi
 import DataPanelTest from './DatapPnelTest/DataPanelTest.test';
 import DataPanelCloseEffectTest from './DatapPnelTest/DataPanelCloseEffect.test';
 import DataPanelPropertiesNullUndefinedTest from './DatapPnelTest/DataPanelPropertiesNullUndefinedTest.test';
+import PanelPropertiesNullUndefinedTest from './DatapPnelTest/PanelPropertiesNullUndefinedTest.test';
 
 import Gauge3Jsunit from './GaugeTest/Gauge3Jsunit.test';
 import GaugeColorsTest from './GaugeTest/GaugeColorsTest.test';
@@ -38,6 +39,8 @@ import GaugePropertiesNullUndefinedTest from './GaugeTest/GaugePropertiesNullUnd
 import PatternLock11Jsunit from './PatternLockTest/PatternLock11Jsunit.test';
 import PatternLockActivateCircleStyle1 from './PatternLockTest/PatternLockActivateCircleStyle1.test';
 import PatternLockJsunit from './PatternLockTest/PatternLockJsunit.test';
+import PatternLockPropertiesNullUndefinedTest from './PatternLockTest/PatternLockPropertiesNullUndefined.test';
+import PatternLockEnableForegroundTest from './PatternLockTest/PatternLockEnableForeground.test';
 
 import QRCodeApiTest from './QRCodeTest/QRCodeApiTest.test';
 import QRCodeAttrTest from './QRCodeTest/QRCodeAttrTest.test';
@@ -63,6 +66,7 @@ export default function testsuite() {
     DataPanelTest()
     DataPanelCloseEffectTest()
     DataPanelPropertiesNullUndefinedTest()
+    PanelPropertiesNullUndefinedTest()
     // GaugeTest
     Gauge3Jsunit()
     GaugeColorsTest()
@@ -75,6 +79,8 @@ export default function testsuite() {
     PatternLock11Jsunit()
     PatternLockActivateCircleStyle1()
     PatternLockJsunit()
+    PatternLockPropertiesNullUndefinedTest()
+    PatternLockEnableForegroundTest()
     // QRCodeTest
     QRCodeApiTest()
     QRCodeAttrTest()

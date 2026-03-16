@@ -30,9 +30,9 @@ export default function schedNdkTest() {
      * @tc.desc   test __sched_cpualloc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedShedCpualloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedShedCpualloc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.schedCpualloc();
       expect(result).assertEqual(0);
       done()
@@ -43,9 +43,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_get_priority_max
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedGetPriorityMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedGetPriorityMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testParam = 1
       let result:number = sched.schedGetPriorityMax(testParam);
       expect(result).assertEqual(99);
@@ -58,9 +58,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_get_priority_max
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedGetPriorityMax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedGetPriorityMax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testParam = 100
       let result:number = sched.schedGetPriorityMax(testParam);
       expect(result).assertEqual(-1);
@@ -73,9 +73,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_get_priority_min
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedGetPriorityMin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedGetPriorityMin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testParam = 1
       let result:number = sched.schedGetPriorityMin(testParam);
       expect(result).assertEqual(1);
@@ -88,9 +88,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_get_priority_min
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedGetPriorityMin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedGetPriorityMin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testParam = 100
       let result:number = sched.schedGetPriorityMin(testParam);
       expect(result).assertEqual(-1);
@@ -103,9 +103,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_yield
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedYield001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedYield001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_yield();
       expect(result).assertEqual(0);
       done()
@@ -117,9 +117,9 @@ export default function schedNdkTest() {
      * @tc.desc   MuslSchedTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedGetscheduler001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedGetscheduler001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_getscheduler(-1);
       expect(result).assertEqual(-1);
       done()
@@ -132,9 +132,9 @@ export default function schedNdkTest() {
      * @tc.desc   testMuslSchedSchedSetparam001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedSetparam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedSetparam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_setparam(-1);
       expect(result).assertEqual(-1);
       done()
@@ -146,9 +146,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_setparam
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedSetparam002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedSetparam002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_setparam(0);
       expect(result).assertEqual(0);
       done()
@@ -160,9 +160,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_setscheduler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedSetscheduler001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedSetscheduler001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_setscheduler(-1);
       expect(result).assertEqual(-1);
       done()
@@ -174,9 +174,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_setscheduler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedSetscheduler002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedSetscheduler002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_setscheduler(0);
       expect(result).assertEqual(-1);
       done()
@@ -188,9 +188,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_getaffinity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedGetaffinity001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedGetaffinity001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_getaffinity();
       expect(result).assertEqual(0);
       done()
@@ -202,9 +202,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_getcpu
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedGetcpu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedGetcpu001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_getcpu();
       expect(result).assertEqual(0);
       done()
@@ -216,9 +216,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_setaffinity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedSetaffinity001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedSetaffinity001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_setaffinity();
       expect(result).assertEqual(0);
       done()
@@ -230,9 +230,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_rr_get_interval
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedRrGetInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedRrGetInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_rr_get_interval(0);
       expect(result).assertEqual(0);
       done()
@@ -244,9 +244,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_rr_get_interval
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedRrGetInterval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedRrGetInterval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.sched_rr_get_interval(-1);
       expect(result).assertEqual(-1);
       done()
@@ -258,9 +258,9 @@ export default function schedNdkTest() {
      * @tc.desc   test schedCpuCount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedCpuCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedCpuCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = sched.schedCpuCount();
       expect(result).assertEqual(0);
       done()
@@ -272,9 +272,9 @@ export default function schedNdkTest() {
      * @tc.desc   test sched_getparam
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSchedSchedGetparam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSchedSchedGetparam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = sched.schedGetparam();
       expect(data).assertEqual(0);
       done()

@@ -25,6 +25,7 @@ group("useriam") {
       "face_auth/js_api_test/function_test/userauthpart2:ActsUserauthTwoTest",
       "face_auth/js_api_test/function_test/userauthpart2_static:ActsUserauthTwoStaticTest",
       "user_auth_icon:ActsUserAuthIconTest",
+      "user_auth_icon_static:ActsUserAuthIconStaticTest",
       "user_auth"
     ]
   }

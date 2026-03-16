@@ -197,6 +197,21 @@ const MARKET_APPS: Array<string> = [
   "test_bundle_2",
 ];
 
+function getErrorCode(err: BusinessError): number | undefined {
+  if (err && typeof err === 'object') {
+    if (err && err.code) {
+      const code = err.code;
+      if (typeof code === 'string' && !isNaN(Number(code))) {
+        return Number(code);
+      }
+      if (typeof code === 'number') {
+        return code;
+      }
+    }
+  }
+  return undefined;
+}
+
 export {
   BUNDLENAME1, ENTINFO1, SELFWANT, AUTOSTARTAPP1, AUTOSTARTAPP2, SELFHAPNAME, COMPANYNAME2, DESCRIPTION2,
   ENTINFO2, NETWORK_ETH_LOCAL, NETWORK_ETH_INVALID, DEFAULT_USER_ID, INVALID_USER_ID,
@@ -207,5 +222,5 @@ export {
   PIXEL_MAP, WATERMARK_BUNDLE_NAME, TEST_BUNDLENAME, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS,
   INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND, DEFAULT_ACCOUNT_ID, INVALID_ACCOUNT_ID,CURRENT_USER_ID,
   getCurrentUserId, DEFAULT_APP_INDEX, TEST_APP_INSTANCE, TEST_PERMISSION_MANAGED_STATE_GRANTED,
-  TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, OTHER_WANT, MARKET_APPS
+  TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, OTHER_WANT, MARKET_APPS, getErrorCode
 }

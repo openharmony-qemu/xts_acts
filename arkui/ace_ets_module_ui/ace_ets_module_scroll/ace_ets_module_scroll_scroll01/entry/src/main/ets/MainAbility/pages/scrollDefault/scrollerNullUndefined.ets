@@ -95,14 +95,14 @@ struct ScrollerCallBackNullUndefined {
         Button('velocity1')
           .id('scrollEdge_nullUndefined_3')
           .onClick(() => {
-            this.scroller.scrollEdge(Edge.Bottom, { velocity: null });
+            this.scroller.scrollEdge(Edge.Bottom, null);
           })
 
         // Test scrollEdge velocity with undefined
         Button('velocity2')
           .id('scrollEdge_nullUndefined_4')
           .onClick(() => {
-            this.scroller.scrollEdge(Edge.Top, { velocity: undefined });
+            this.scroller.scrollEdge(Edge.Top, undefined);
           })
       }.height('5%')
 

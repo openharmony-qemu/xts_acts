@@ -305,15 +305,19 @@ export default function PerfStatEtsTest() {
       async (done: () => void): Promise<void> => {
       console.log(TAG + "************* testRdbStorePerfStat_0010 start *************");
       let observer1 = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
-        expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
-        expect(1).assertEqual(SqlExeInfo.sql.length);
-        await Utils.msSleep(2000);
+        waitForCompletion(async () => {
+          expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
+          expect(1).assertEqual(SqlExeInfo.sql.length);
+          await Utils.msSleep(2000);
+        })
       };
 
       let observer2 = (SqlExeInfo : relationalStore.SqlExecutionInfo) => {
-        expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
-        expect(1).assertEqual(SqlExeInfo.sql.length);
-        await Utils.msSleep(2000);
+        waitForCompletion(async () => {
+          expect('SELECT * FROM test').assertEqual(SqlExeInfo.sql[0]);
+          expect(1).assertEqual(SqlExeInfo.sql.length);
+          await Utils.msSleep(2000);
+        })
       };
 
       rdbStore!.onPerfStat(observer1)

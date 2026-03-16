@@ -159,7 +159,8 @@ struct IndexPage {
     { title: 'ImageDownloadInfo', uri: 'pages/ArkUI/ImageDownloadInfo' },
     { title: 'GameAddTest', uri: 'pages/ArkUI/GameAddTest' },
     { title: 'AdvancedBlendMode', uri: 'pages/ArkUI/AdvancedBlendMode' },
-    { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' }
+    { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' },
+    { title: 'CapiDragDrop', uri: 'pages/ArkUI/CapiDragDropTest' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

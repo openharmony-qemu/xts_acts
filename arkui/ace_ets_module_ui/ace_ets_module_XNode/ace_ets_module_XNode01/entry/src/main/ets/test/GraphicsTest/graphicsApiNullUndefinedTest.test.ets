@@ -56,9 +56,13 @@ export default function graphicsApiNullUndefinedTest() {
  
       let strJson1 = getInspectorByKey('graphicsApiNullUndefinedFirst');
       let strJson2 = getInspectorByKey('graphicsApiNullUndefinedSecond');
+      let strJson3 = getInspectorByKey('graphicsApiShapeClipNullUndefinedFirst');
+      let strJson4 = getInspectorByKey('graphicsApiShapeClipNullUndefinedSecond');
 
       expect(JSON.parse(strJson1).$type).assertEqual('NodeContainer');
       expect(JSON.parse(strJson2).$type).assertEqual('NodeContainer');
+      expect(JSON.parse(strJson3).$type).assertEqual('NodeContainer');
+      expect(JSON.parse(strJson4).$type).assertEqual('NodeContainer');
       
       console.info('[graphicsApiNullUndefinedTest_0100 ] END');
       done();

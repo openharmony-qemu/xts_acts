@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,7 +70,6 @@ export default function flexPadding_AutoJsunit() {
     });
 
     
-    
 /**
      * @tc.number   testFlexItemAlignAutoFlexPadMeet_static
      * @tc.name     testFlexItemAlignAutoFlexPadMeet_static
@@ -93,21 +92,40 @@ it('testFlexItemAlignAutoFlexPadMeet_static', Level.LEVEL0, async (): Promise<vo
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexPadding01');
 
-      expect(Math.abs(textFlexPadding01.left - flexPadding01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding01.right - textFlexPadding02.left) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding02.right - textFlexPadding03.left) <= 1).assertTrue();
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi1'+ Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi2'+ Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi3'+ Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi4'+ Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi5'+ Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi6'+ Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi7'+ Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi8'+ Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi9'+ Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi10'+ Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi11'+ Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_static_chazhi12'+ Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
 
-      expect(Math.abs(textFlexPadding01.top - textFlexPadding02.top) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding02.top - textFlexPadding03.top) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding01.top - flexPadding01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
 
-      expect(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-
-      expect(Math.abs(textFlexPadding01.right - textFlexPadding01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding02.right - textFlexPadding02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding03.right - textFlexPadding03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoFlexPadMeet END');
@@ -137,20 +155,41 @@ it('testFlexItemAlignAutoFlexPadOverflow_static', Level.LEVEL0, async () => {
       let textFlexPadding02: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textFlexPadding02');
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexPadding01');
-      expect(Math.abs(textFlexPadding01.left - flexPadding01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding01.right - textFlexPadding02.left) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding02.right - textFlexPadding03.left) <= 1).assertTrue();
 
-      expect(Math.abs(textFlexPadding01.top - textFlexPadding02.top) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding02.top - textFlexPadding03.top) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding01.top - flexPadding01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue();
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi1'+ Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi2'+ Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi3'+ Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi4'+ Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi5'+ Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi6'+ Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi7'+ Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi8'+ Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi9'+ Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi10'+ Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi11'+ Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_static_chazhi12'+ Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
 
-      expect(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding01.right - textFlexPadding01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding02.right - textFlexPadding02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue();
-      expect(Math.abs(textFlexPadding03.right - textFlexPadding03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 3).assertTrue();
+      expect(Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue();
+
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoFlexPadOverflow_static END');

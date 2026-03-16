@@ -6,6 +6,7 @@
         "MainAbility/pages/ContainerSpan/APITextBackgroundStyle",
         "MainAbility/pages/ContainerSpan/ContainerSpanModifier",
         "MainAbility/pages/ContainerSpan/ContainerSpanModifierTest1",
+        "MainAbility/pages/ContainerSpan/ContainerSpanPropertiesNullUndefinedTest",
 
         "MainAbility/pages/ImageSpan/ImageLoadResult",
         "MainAbility/pages/ImageSpan/ImageSpanAlignment",
@@ -125,6 +126,7 @@
         "MainAbility/pages/Text/TextSpecialOptionsNull",
         "MainAbility/pages/Text/TextLayoutOptionsNull",
         "MainAbility/pages/Text/TextSpecialAttrsNull",
-        "MainAbility/pages/Text/TextMethodsNull"
+        "MainAbility/pages/Text/TextMethodsNull",
+        "MainAbility/pages/Text/TextEditMenuOptionsNull"
     ]
 }

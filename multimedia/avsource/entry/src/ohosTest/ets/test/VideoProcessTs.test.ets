@@ -13,23 +13,23 @@
  * limitations under the License.
  */
 
- import videoProcessingEngine from '@ohos.multimedia.videoProcessingEngine';
- import { image } from '@kit.ImageKit';
- import { describe, it, expect, Level } from '@ohos/hypium';
- import { abilityDelegatorRegistry } from '@kit.TestKit';
- import { fileIo as fs } from '@kit.CoreFileKit';
+import videoProcessingEngine from '@ohos.multimedia.videoProcessingEngine';
+import { image } from '@kit.ImageKit';
+import { describe, it, expect, Level } from '@ohos/hypium';
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { fileIo as fs } from '@kit.CoreFileKit';
 
- let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
- let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
+let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
+let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
- export default function videoProcessTsTest() {
-    describe('VideoProcessTsTest', () => {
-        abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
-        abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let moduleName = abilityDelegatorArguments.parameters['-m'];
-        let context = abilityDelegator.getAppContext().getApplicationContext().createModuleContext(moduleName);
-        let mResourceManager = context.resourceManager;
-        let imageSource: image.ImageSource = image.createImageSource(mResourceManager.getRawFdSync('sample_image.png'));
+export default function videoProcessTsTest() {
+describe('VideoProcessTsTest', () => {
+    abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
+    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+    let moduleName = abilityDelegatorArguments.parameters['-m'];
+    let context = abilityDelegator.getAppContext().getApplicationContext().createModuleContext(moduleName);
+    let mResourceManager = context.resourceManager;
+    let imageSource: image.ImageSource = image.createImageSource(mResourceManager.getRawFdSync('sample_image.png'));
     
     /**
      * @tc.name   testVideoProcessTs001
@@ -79,9 +79,19 @@
             let targetHeight = imageInfo.size.height * 2;
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
+            expect(sourceImage.isEditable).assertFalse();
+            expect(sourceImage.isStrideAlignment).assertFalse();
+            expect(sourceImage != null).assertTrue();
+            expect(sourceImage != undefined).assertTrue();
+            expect(targetWidth != undefined).assertTrue();
+            expect(targetHeight != undefined).assertTrue();
+            expect(targetWidth != null).assertTrue();
+            expect(targetHeight != null).assertTrue();
             let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
                 sourceImage, targetWidth, targetHeight);
             expect(enhancedPixelmap != null).assertTrue();
+            expect(enhancedPixelmap.isEditable).assertFalse();
+            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
             done();
         } catch (err) {
             console.info('testVideoProcessTs002 failed, error is' + err.message);
@@ -254,6 +264,8 @@
             let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
                 sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
             expect(enhancedPixelmap != null).assertTrue();
+            expect(enhancedPixelmap.isEditable).assertFalse();
+            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
             done();
         } catch (err) {
             console.info('testVideoProcessTs007 failed, error is' + err.message);
@@ -286,9 +298,19 @@
             let targetHeight = imageInfo.size.height * 2;
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
+            expect(sourceImage.isEditable).assertFalse();
+            expect(sourceImage.isStrideAlignment).assertFalse();
+            expect(sourceImage != null).assertTrue();
+            expect(sourceImage != undefined).assertTrue();
+            expect(targetWidth != undefined).assertTrue();
+            expect(targetHeight != undefined).assertTrue();
+            expect(targetWidth != null).assertTrue();
+            expect(targetHeight != null).assertTrue();
             let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
                 sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.NONE);
             expect(enhancedPixelmap != null).assertTrue();
+            expect(enhancedPixelmap.isEditable).assertFalse();
+            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
             done();
         } catch (err) {
             console.info('testVideoProcessTs008 failed, error is' + err.message);
@@ -321,6 +343,8 @@
             let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
                 sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
             expect(enhancedPixelmap != null).assertTrue();
+            expect(enhancedPixelmap.isEditable).assertFalse();
+            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
             done();
         } catch (err) {
             console.info('testVideoProcessTs009 failed, error is' + err.message);
@@ -371,6 +395,98 @@
             done();
         } catch (err) {
             console.info('testVideoProcessTs011 failed, error is' + err.message);
+            if (err.code != undefined) {
+                expect(false).assertTrue();
+                done();
+            }
+            expect(true).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   testVideoProcessTs012
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_VIDEO_PROCESS_TS_012
+     * @tc.desc   test async method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testVideoProcessTs012', Level.LEVEL0, async(done: Function) => {
+        if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
+            expect(true).assertTrue();
+            done();
+        }
+        try {
+            let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
+            const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
+            let targetWidth = imageInfo.size.width * 2;
+            let targetHeight = imageInfo.size.height * 2;
+            let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+            expect(imageProcessor != null).assertTrue();
+            let enhancedPixelmap: image.PixelMap = await imageProcessor.enhanceDetail(
+                sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.HIGH);
+            expect(enhancedPixelmap != null).assertTrue();
+            enhancedPixelmap = await imageProcessor.enhanceDetail(
+                sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.MEDIUM);
+            expect(enhancedPixelmap != null).assertTrue();
+            enhancedPixelmap = await imageProcessor.enhanceDetail(
+                sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.LOW);
+            expect(enhancedPixelmap != null).assertTrue();
+            enhancedPixelmap = await imageProcessor.enhanceDetail(
+                sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.NONE);
+            expect(enhancedPixelmap != null).assertTrue();
+            done();
+        } catch (err) {
+            console.info('testVideoProcessTs012 failed, error is' + err.message);
+            if (err.code != undefined) {
+                expect(false).assertTrue();
+                done();
+            }
+            expect(true).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   testVideoProcessTs013
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_VIDEO_PROCESS_TS_013
+     * @tc.desc   test async method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testVideoProcessTs013', Level.LEVEL0, async(done: Function) => {
+        if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
+            expect(true).assertTrue();
+            done();
+        }
+        try {
+            let opts: image.InitializationOptions = {
+                editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}
+            }
+            let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
+            expect(pixelMap.isEditable).assertTrue();
+            let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
+            expect(imageProcessor != null).assertTrue();
+
+            let enhancedPixelmap: image.PixelMap  = await imageProcessor.enhanceDetail(
+                pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
+
+            expect(pixelMap.isEditable).assertTrue();
+            enhancedPixelmap = imageProcessor.enhanceDetailSync(
+                pixelMap, 2, videoProcessingEngine.QualityLevel.NONE);
+
+            expect(pixelMap.isEditable).assertTrue();
+            enhancedPixelmap = await imageProcessor.enhanceDetail(
+                pixelMap, 1024, 1024, videoProcessingEngine.QualityLevel.NONE);
+
+            expect(pixelMap.isEditable).assertTrue();
+            enhancedPixelmap = imageProcessor.enhanceDetailSync(
+                pixelMap, 1024, 1024, videoProcessingEngine.QualityLevel.NONE);
+            done();
+        } catch (err) {
+            console.info('testVideoProcessTs013 failed, error is' + err.message);
             if (err.code != undefined) {
                 expect(false).assertTrue();
                 done();

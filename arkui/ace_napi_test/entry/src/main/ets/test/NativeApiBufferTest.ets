@@ -34,9 +34,9 @@ export default function napiBufferTest() {
      * @tc.desc   aceNapiEtsTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('napiBufferTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('napiBufferTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(napitest.CreateBuffer().toString()).assertDeepEquals(napitest.testStr);
       expect(napitest.CreateExternalBuffer().toString()).assertDeepEquals(napitest.testStr);
     })
@@ -47,9 +47,9 @@ export default function napiBufferTest() {
      * @tc.desc   aceNapiEtsTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('napiBufferTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('napiBufferTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buffer: Object = napitest.CreateBuffer();
       expect(napitest.IsBuffer(buffer)).assertTrue();
       expect(napitest.GetBufferInfo(buffer)).assertTrue();

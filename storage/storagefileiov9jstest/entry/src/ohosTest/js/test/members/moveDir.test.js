@@ -1370,5 +1370,1138 @@ export default function fileIOMoveDir() {
       expect(false).assertTrue();
     }
   });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_026
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_2600
+   * @tc.desc   Test moveDir() interface.Promise, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+
+  it('fileIO_test_moveDir_async_026', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_026');
+
+    try {
+      await fileIO.moveDir("", dpath.destDir);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_026 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_027
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_2700
+   * @tc.desc   Test moveDir() interface.Promise, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_027', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_027');
+
+    try {
+      await fileIO.moveDir(null, dpath.destDir);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_027 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_028
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_2800
+   * @tc.desc   Test moveDir() interface.Promise, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_028', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_028');
+
+    try {
+      await fileIO.moveDir(undefined, dpath.destDir);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_028 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_029
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_2900
+   * @tc.desc   Test moveDir() interface.Promise, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_029', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_029');
+
+    try {
+      await fileIO.moveDir(dpath.srcDir, "");
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_029 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_030
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3000
+   * @tc.desc   Test moveDir() interface.Promise, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_030', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_030');
+
+    try {
+      await fileIO.moveDir(dpath.srcDir, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_030 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_031
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3100
+   * @tc.desc   Test moveDir() interface.Promise, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_031', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_031');
+
+    try {
+      await fileIO.moveDir(dpath.srcDir, undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_031 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_032
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3200
+   * @tc.desc   Test moveDir() interface.Promise, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_032', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_032');
+
+    try {
+      await fileIO.moveDir(dpath.srcDir, dpath.destDir, "");
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_032 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_033
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3300
+   * @tc.desc   Test moveDir() interface.Promise, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_033', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_033');
+
+    try {
+      await fileIO.moveDir(dpath.srcDir, dpath.destDir, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_033 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_034
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3400
+   * @tc.desc   Test moveDir() interface.Promise, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_034', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_034');
+
+    try {
+      await fileIO.moveDir(dpath.srcDir, dpath.destDir, undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.rmdirSync(dpath.baseDir);
+      console.log('fileIO_test_moveDir_async_034 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900032).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_035
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3500
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_035', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_035');
+
+    try {
+      fileIO.moveDir("", dpath.destDir, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_035 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_035 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_036
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3600
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_036', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_036');
+
+    try {
+      fileIO.moveDir(null, dpath.destDir, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_036 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_036 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+  
+  /**
+   * @tc.name   fileIO_test_moveDir_async_037
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3700
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_037', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_037');
+
+    try {
+      fileIO.moveDir(undefined, dpath.destDir, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_037 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_037 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_038
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3800
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_038', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_038');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, "", (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_038 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_038 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_039
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_3900
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_039', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_039');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, null, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_039 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_039 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_040
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4000
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_040', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_040');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, undefined, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_040 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_040 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_041
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4100
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_041', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_041');
+
+    try {
+      fileIO.moveDir("", dpath.destDir, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_041 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_042
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4200
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_042', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_042');
+
+    try {
+      fileIO.moveDir(null, dpath.destDir, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_042 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_043
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4300
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_043', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_043');
+
+    try {
+      fileIO.moveDir(undefined, dpath.destDir, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_043 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+
+  /*
+   * @tc.name   fileIO_test_moveDir_async_044
+   * @tc.number fileIO_test_moveDir_async_044
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_044', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_044');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, "", (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_044 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /*
+   * @tc.name   fileIO_test_moveDir_async_045
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4500
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_045', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_045');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, null, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_045 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /*
+   * @tc.name   fileIO_test_moveDir_async_046
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4600
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_046', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_046');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, undefined, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_046 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_047
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4700
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_047', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_047');
+
+    try {
+      fileIO.moveDir("", dpath.destDir, DIRMODE_DIRECTORY_THROW_ERR, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_047 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_047 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_048
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4800
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_048', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_048');
+
+    try {
+      fileIO.moveDir(null, dpath.destDir, DIRMODE_DIRECTORY_THROW_ERR, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_048 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_048 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_049
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_4900
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_049', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_049');
+
+    try {
+      fileIO.moveDir(undefined, dpath.destDir, DIRMODE_DIRECTORY_THROW_ERR, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_049 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_049 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_050
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5000
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_050', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_050');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, "", DIRMODE_DIRECTORY_THROW_ERR, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_050 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_050 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_051
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5100
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_051', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_051');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, null, DIRMODE_DIRECTORY_THROW_ERR, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_051 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_051 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_052
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5200
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_052', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_052');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, null, DIRMODE_DIRECTORY_THROW_ERR, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_052 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_052 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_053
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5300
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_053', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_053');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, dpath.destDir, null, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_053 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_053 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_054
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5400
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_054', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_054');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, dpath.destDir, undefined, (err) => {
+        if (err) {
+          fileIO.rmdirSync(dpath.baseDir);
+          console.log('fileIO_test_moveDir_async_054 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(err.code === 13900032).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_054 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_055
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5500
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_055', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_055');
+
+    try {
+      fileIO.moveDir("", dpath.destDir, DIRMODE_DIRECTORY_THROW_ERR, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_055 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_056
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5600
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_056', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_056');
+
+    try {
+      fileIO.moveDir(null, dpath.destDir, DIRMODE_DIRECTORY_THROW_ERR, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_056 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_057
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5700
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_057', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_057');
+
+    try {
+      fileIO.moveDir(undefined, dpath.destDir, DIRMODE_DIRECTORY_THROW_ERR, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_057 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_058
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5800
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_058', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_058');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, "", DIRMODE_DIRECTORY_THROW_ERR, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_058 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_059
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_5900
+   * @tc.desc   Test moveDir() interface.Callback, parameter is nill.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_059', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_059');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, null, DIRMODE_DIRECTORY_THROW_ERR, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_059 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_060
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_6000
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_060', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_060');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, undefined, DIRMODE_DIRECTORY_THROW_ERR, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_060 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_061
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_6100
+   * @tc.desc   Test moveDir() interface.Callback, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_061', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_061');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, dpath.destDir, "", (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_061 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_062
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_6200
+   * @tc.desc   Test moveDir() interface.Callback, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_062', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_062');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, dpath.destDir, null, (ConflictFiles) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_062 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_async_063
+   * @tc.number SUB_DF_FILEIO_MOVEDIR_ASYNC_6300
+   * @tc.desc   Test moveDir() interface.Callback, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_async_063', Level.LEVEL3, async function (done) {
+    let dpath = await readyFiles('fileIO_test_moveDir_async_063');
+
+    try {
+      fileIO.moveDir(dpath.srcDir, dpath.destDir, undefined, (err) => {
+        if (err && err.code == 13900015 && err.data?.length !== undefined) {
+          for (let i = 0; i < err.data.length; i++) {
+            console.error("move directory failed with conflicting files: " + err.data[i].srcFile + " " + err.data[i].destFile);
+          }
+        } 
+        console.log('fileIO_test_moveDir_async_063 accessSync: ' + fileIO.accessSync(dpath.srcDir));
+        expect(fileIO.accessSync(dpath.srcDir)).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_moveDir_async_063 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_sync_064
+   * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_6400
+   * @tc.desc   Test moveDirSync() interface, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_sync_064', Level.LEVEL3, async function () {
+    let dpath = await nextFileName('fileIO_test_moveDir_sync_064');
+
+    try {
+      fileIO.moveDirSync("", dpath.destDir, DIRMODE_FILE_REPLACE);
+      expect(fileIO.accessSync(dpath)).assertFalse();
+    } catch (e) {
+      console.log('fileIO_test_moveDir_sync_064 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_sync_065
+   * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_6500
+   * @tc.desc   Test moveDirSync() interface, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_sync_065', Level.LEVEL3, async function () {
+    let dpath = await nextFileName('fileIO_test_moveDir_sync_065');
+
+    try {
+      fileIO.moveDirSync(null, dpath.destDir, DIRMODE_FILE_REPLACE);
+      expect(fileIO.accessSync(dpath)).assertFalse();
+    } catch (e) {
+      console.log('fileIO_test_moveDir_sync_065 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_sync_066
+   * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_6600
+   * @tc.desc   Test moveDirSync() interface, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_sync_066', Level.LEVEL3, async function () {
+    let dpath = await nextFileName('fileIO_test_moveDir_sync_066');
+
+    try {
+      fileIO.moveDirSync(undefined, dpath.destDir, DIRMODE_FILE_REPLACE);
+      expect(fileIO.accessSync(dpath)).assertFalse();
+    } catch (e) {
+      console.log('fileIO_test_moveDir_sync_066 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_sync_067
+   * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_6700
+   * @tc.desc   Test moveDirSync() interface, parameter is "".
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_sync_067', Level.LEVEL3, async function () {
+    let dpath = await nextFileName('fileIO_test_moveDir_sync_067');
+
+    try {
+      fileIO.moveDirSync(dpath.srcDir, "", DIRMODE_FILE_REPLACE);
+      expect(fileIO.accessSync(dpath)).assertFalse();
+    } catch (e) {
+      console.log('fileIO_test_moveDir_sync_067 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_sync_068
+   * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_6800
+   * @tc.desc   Test moveDirSync() interface, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_sync_068', Level.LEVEL3, async function () {
+    let dpath = await nextFileName('fileIO_test_moveDir_sync_068');
+
+    try {
+      fileIO.moveDirSync(dpath.srcDir, null, DIRMODE_FILE_REPLACE);
+      expect(fileIO.accessSync(dpath)).assertFalse();
+    } catch (e) {
+      console.log('fileIO_test_moveDir_sync_068 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_sync_069
+   * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_6900
+   * @tc.desc   Test moveDirSync() interface, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_sync_069', Level.LEVEL3, async function () {
+    let dpath = await nextFileName('fileIO_test_moveDir_sync_069');
+
+    try {
+      fileIO.moveDirSync(dpath.srcDir, undefined, DIRMODE_FILE_REPLACE);
+      expect(fileIO.accessSync(dpath)).assertFalse();
+    } catch (e) {
+      console.log('fileIO_test_moveDir_sync_069 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_sync_070
+   * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_7000
+   * @tc.desc   Test moveDirSync() interface, parameter is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_sync_070', Level.LEVEL3, async function () {
+    let dpath = await nextFileName('fileIO_test_moveDir_sync_070');
+
+    try {
+      fileIO.moveDirSync(dpath.srcDir, dpath.destDir, null);
+      expect(fileIO.accessSync(dpath)).assertFalse();
+    } catch (e) {
+      console.log('fileIO_test_moveDir_sync_070 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_moveDir_sync_071
+   * @tc.number SUB_DF_FILEIO_MOVEDIRSYNC_7100
+   * @tc.desc   Test moveDirSync() interface, parameter is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_moveDir_sync_071', Level.LEVEL3, async function () {
+    let dpath = await nextFileName('fileIO_test_moveDir_sync_071');
+
+    try {
+      fileIO.moveDirSync(dpath.srcDir, dpath.destDir, undefined);
+      expect(fileIO.accessSync(dpath)).assertFalse();
+    } catch (e) {
+      console.log('fileIO_test_moveDir_sync_071 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+    }
+  });
 });
 }

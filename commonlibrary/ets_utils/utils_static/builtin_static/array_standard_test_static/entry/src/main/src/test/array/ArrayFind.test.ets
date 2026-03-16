@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -683,7 +683,7 @@ export default function ArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it("testArrayFind0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: int[] = new Array<int>(3).fill(7);
+      const arr: int[] = Array.create<int>(3, 7);
       const result: int | undefined = arr.find((v: int) => v === 8);
       expect(result).assertEqual(undefined);
     });
@@ -859,7 +859,7 @@ export default function ArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it("testArrayFind0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: int[] = new Array<int>(10000).fill(0);
+      const arr: int[] = Array.create<int>(10000, 0);
       arr[9999] = 42;
       const result: int | undefined = arr.find((x: int) => x === 42);
       expect(result).assertEqual(42);
@@ -902,7 +902,7 @@ export default function ArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it("testArrayFind0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(5);
+      const arr = new Array<number | undefined>(5, (i) => undefined);
       arr[3] = 7;
       const result: number | undefined = arr.find((x: number | undefined) => x === 7);
       expect(result).assertEqual(7);
@@ -1104,7 +1104,7 @@ export default function ArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it("testArrayFind0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(4);
+      const arr: (number | undefined)[] = new Array<number | undefined>(4, (i) => undefined);
       arr[0] = undefined;
       arr[3] = 10;
       const result: number | undefined = arr.find((x: number | undefined) => x === 10) as number | undefined;
@@ -1603,7 +1603,7 @@ export default function ArrayFindTest() {
      * @tc.level  LEVEL1
      */
     it("testArrayFind0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(6);
+      const arr: (number | undefined)[] = new Array<number | undefined>(6, (i) => undefined);
       arr[2] = 5;
       arr[5] = 10;
       const result: number | undefined = arr.find((x: number | undefined): boolean => x === 10);

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import WindowZindexTest from "./WindowZindex.test";
+import WindowAnimationTest from "./WindowAnimation.test";
 export default function testsuite() {
   WindowZindexTest();
+  WindowAnimationTest();
 }

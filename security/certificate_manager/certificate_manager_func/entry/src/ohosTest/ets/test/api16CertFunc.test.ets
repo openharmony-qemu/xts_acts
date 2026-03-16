@@ -380,7 +380,21 @@ export default function api16CertFuncTestUnit() {
       try {
         let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), pwd, alias, level);
       } catch (e) {
-        console.log("Security_CertManager_InstallPrivateCertificate_Func_0013: e.code " + e.code);
+        console.log("Security_CertManager_InstallPrivateCertificate_Func_0013 error1: e.code " + e.code);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), "", alias, level);
+      } catch (e) {
+        console.log("Security_CertManager_InstallPrivateCertificate_Func_0013 error2: e.code " + e.code);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), pwd, "", level);
+      } catch (e) {
+        console.log("Security_CertManager_InstallPrivateCertificate_Func_0013 error3: e.code " + e.code);
         expect(e.code).assertEqual(401);
       }
       console.log("Security_CertManager_InstallPrivateCertificate_Func_0013: success.");

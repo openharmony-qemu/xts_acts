@@ -2302,5 +2302,79 @@ export default function MulticastSocket() {
         done();
       }
     });
+     /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketGetMulticastTTL0700
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetMulticastTTL_0700
+     * @tc.desc   Get the maximum number of hops for the router
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('testNetworkMgrSocketMulticastSocketGetMulticastTTL0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketGetMulticastTTL0700';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        await multicast.addMembership(addr).catch((err:BusinessError) => {
+                console.info('fail to addMembership' + err.code.toString());
+        });
+        let ttl: number = 0;
+        await multicast.setMulticastTTL(ttl).catch((err: BusinessError) => {
+          console.info( `fail to setMulticastTTL`+ err.code.toString());
+        });
+        multicast.getMulticastTTL().then((value: number) => {
+          expectEqual(value, ttl);
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err: ${JSON.stringify(err)}`);
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+        /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketGetMulticastTTL0800
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetMulticastTTL_0800
+     * @tc.desc   Get the maximum number of hops for the router
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketGetMulticastTTL0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketGetMulticastTTL0800';
+      console.info(`${caseName} test start`);
+      try {
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        await multicast.addMembership(addr).catch((err:BusinessError) => {
+                console.info('fail to addMembership' + err.code.toString());
+        });
+        let ttl: number = 255;
+        await multicast.setMulticastTTL(ttl).catch((err: BusinessError) => {
+          console.info( `fail to setMulticastTTL`+ err.code.toString());
+        });
+        multicast.getMulticastTTL().then((value: number) => {
+          expectEqual(value, ttl);
+          console.info(`${caseName} test end`);
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} err: ${JSON.stringify(err)}`);
+          expectFail();
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
   });
 }

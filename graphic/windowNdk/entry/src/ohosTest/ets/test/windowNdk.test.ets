@@ -97,11 +97,11 @@ export default function windowNdk() {
         console.info(`${Tag}: test_OH_NativeWindowManager_RegisterKeyEventFilter RegisterKeyEventFilter: ${a}`);
         if(a==2000){
           console.info(`${Tag}: 此设备不支持SystemCapability.Window.SessionManager能力`);
-          expect(true).assertTrue();
+          
           done();
         }else
           if (a==0){
-          expect(true).assertTrue();
+          
           done();
         }else{
           expect(false).assertTrue();
@@ -123,10 +123,10 @@ export default function windowNdk() {
       console.info(`${Tag}: test_OH_NativeWindowManager_UnregisterKeyEventFilter unRegisterKeyEventFilter: ${a}`);
       if(a==2000){
         console.info(`${Tag}: 此设备不支持SystemCapability.Window.SessionManager能力`);
-        expect(true).assertTrue();
+        
         done();
       }else if (a==0){
-        expect(true).assertTrue();
+        
         done();
       }else{
         expect(false).assertTrue();
@@ -1246,7 +1246,7 @@ export default function windowNdk() {
           expect(false).assertTrue();
           done();
         }else{
-          expect(true).assertTrue();
+          
           done();
         }
     })
@@ -1285,14 +1285,14 @@ export default function windowNdk() {
         done();
     })
     /**
-     * @tc.name   test_SetWindowFocusable_true
+     * @tc.name   test_SetWindowFocusable_trueAdapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_4900
      * @tc.desc   test_SetWindowFocusable_true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_SetWindowFocusable_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('test_SetWindowFocusable_trueAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "test_SetWindowFocusable_true";
       let result = windowNdkTest.setWindowFocusable(windowId,true);
         console.log(caseName + ' setWindowFocusable result:'+ JSON.stringify(result));
@@ -1418,11 +1418,11 @@ export default function windowNdk() {
         console.log(caseName + '  result:'+ JSON.stringify(result));
         if(result==2000){
           console.info(`${Tag}: 此设备不支持SystemCapability.Window.SessionManager能力`);
-          expect(true).assertTrue();
+          
           done();
         }else
           if (result==0){
-          expect(true).assertTrue();
+          
           done();
         }else{
           expect(false).assertTrue();
@@ -1461,11 +1461,11 @@ export default function windowNdk() {
         console.log(caseName + '  result:'+ JSON.stringify(result));
         if(result==2000){
           console.info(`${Tag}: 此设备不支持SystemCapability.Window.SessionManager能力`);
-          expect(true).assertTrue();
+          
           done();
         }else
           if (result==0){
-          expect(true).assertTrue();
+          
           done();
         }else{
           expect(false).assertTrue();
@@ -1502,11 +1502,11 @@ export default function windowNdk() {
         console.log(caseName + '  result:'+ JSON.stringify(result));
         if(result==2000){
           console.info(`${Tag}: 此设备不支持SystemCapability.Window.SessionManager能力`);
-          expect(true).assertTrue();
+          
           done();
         }else
           if (result==0){
-          expect(true).assertTrue();
+          
           done();
         }else{
           expect(false).assertTrue();
@@ -1544,11 +1544,11 @@ export default function windowNdk() {
         console.log(caseName + '  result:'+ JSON.stringify(result));
         if(result==2000){
           console.info(`${Tag}: 此设备不支持SystemCapability.Window.SessionManager能力`);
-          expect(true).assertTrue();
+          
           done();
         }else
           if (result==0){
-          expect(true).assertTrue();
+          
           done();
         }else{
           expect(false).assertTrue();

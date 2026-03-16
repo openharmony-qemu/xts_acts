@@ -157,15 +157,15 @@ export default function connectNativeParameterTest() {
     })
 
     /**
-     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_Want_Null_0300
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Want_Null_0300
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_ConnectNative_Null_0300
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Null_0300
      * @tc.desc   Test connectNative with null want parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_WEB_WebNativeMessagingExtension_ConnectNative_Want_Null_0300', Level.LEVEL2, () => {
-      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_ConnectNative_Want_Null_0300`;
+    it('SUB_WEB_WebNativeMessagingExtension_ConnectNative_Null_0300', Level.LEVEL2, () => {
+      const tcNumber = `SUB_WEB_WebNativeMessagingExtension_ConnectNative_Null_0300`;
       hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
       let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {

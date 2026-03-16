@@ -2575,6 +2575,18 @@ export default function QueryNull(){
         qRes = query.deviceId("deviceId")
         expect(qRes!=undefined).assertTrue();
 
+        qRes = query.and()
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.or()
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.beginGroup()
+        expect(qRes!=undefined).assertTrue();
+
+        qRes = query.endGroup()
+        expect(qRes!=undefined).assertTrue();
+
         done();
       } catch (e) {
         console.error(TAG + 'put 1, catch e ' + `, error code is ${e.code}, message is ${e.message}`);

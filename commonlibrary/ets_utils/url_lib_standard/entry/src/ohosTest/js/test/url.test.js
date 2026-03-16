@@ -1143,14 +1143,14 @@ describe('UrlFunTest', function () {
     })
 
     /**
-     * @tc.name   testParamsSet007
+     * @tc.name   testParamsSet007Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_06300
      * @tc.desc   Sets the value associated with a given search parameter to the given value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testParamsSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    it('testParamsSet007Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
             let params = new Url.URLParams("1=value1&2=value2&key3=3");
             var b = undefined;
