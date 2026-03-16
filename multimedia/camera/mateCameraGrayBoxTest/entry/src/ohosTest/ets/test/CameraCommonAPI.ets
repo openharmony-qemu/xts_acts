@@ -846,6 +846,9 @@ export function getSuppotredZoomRatioRange(photoSession: ESObject) {
   let zoomRatioRange: Array<number> = [];
   try {
     zoomRatioRange = photoSession.getZoomRatioRange();
+    if (zoomRatioRange == undefined) {
+      return [];
+    }
     if (zoomRatioRange!.length > 1) {
       if (zoomRatioRange![1] > 1) {
         zoomRatioRange!.push(1)
