@@ -57,7 +57,7 @@ export default function DateTestCase001() {
     it('toDateStringFormat', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const date: Date = new Date(2024, 5, 15);
       const str: string = date.toDateString();
-      //expect(str).toContain('2024');
+      expect(str).assertEqual("Sat Jun 15 2024");
     });
 
     /**
@@ -309,7 +309,7 @@ export default function DateTestCase001() {
     it('toTimeStringFormat', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const date: Date = new Date(2024, 5, 15, 14, 30, 45);
       const str: string = date.toTimeString();
-      // expect(str).toContain('14:30:45');
+      expect(str).assertEqual('14:30:45 GMT+0800');
     });
 
     /**
@@ -338,7 +338,7 @@ export default function DateTestCase001() {
     it('toUTCStringFormat', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const date: Date = new Date(Date.UTC(2024, 5, 15, 14, 30, 45));
       const str: string = date.toUTCString();
-      //expect(str).toContain('GMT');
+      expect(str).assertEqual('Sat, 15 Jun 2024 14:30:45 GMT');
     });
 
     /**
@@ -393,7 +393,7 @@ export default function DateTestCase001() {
     it('toISOStringMillisecondPrecision', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const date: Date = new Date(Date.UTC(2024, 5, 15, 14, 30, 45, 1));
       const isoString: string = date.toISOString();
-      // expect(isoString).toContain('.001Z');
+      expect(isoString).assertEqual('2024-06-15T14:30:45.001Z');
     });
 
     /**
@@ -407,8 +407,8 @@ export default function DateTestCase001() {
     it('toISOStringLargeDate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
       const date: Date = new Date(Date.UTC(9999, 11, 31, 23, 59, 59, 999));
       const isoString: string = date.toISOString();
-      // expect(isoString).toContain('9999');
-    });
+       expect(isoString).assertEqual('9999-12-31T23:59:59.999Z');
+    })
 
     /**
      * @tc.name   multipleLocaleFormats

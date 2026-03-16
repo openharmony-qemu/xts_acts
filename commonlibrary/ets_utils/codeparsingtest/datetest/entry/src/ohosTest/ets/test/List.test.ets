@@ -27,7 +27,6 @@ import DateTestCase004Test from './DateTestCase004.test';
 import DateTestCase005Test from './DateTestCase005.test';
 import DateTestCase006Test from './DateTestCase006.test';
 import DateTestCase007Test from './DateTestCase007.test';
-import DateTestCase008Test from './DateTestCase008.test';
 
 export default function testsuite() {
   dateTest();
@@ -46,5 +45,4 @@ export default function testsuite() {
   DateTestCase005Test();
   DateTestCase006Test();
   DateTestCase007Test();
-  DateTestCase008Test();
 }

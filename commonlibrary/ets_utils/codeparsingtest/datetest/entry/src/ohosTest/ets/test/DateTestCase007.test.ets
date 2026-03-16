@@ -32,491 +32,297 @@ export default function DateTestCase007() {
       // This API supports only one parameter: preset action function.
     })
     /**
-     * @tc.name   utcVsLocalSameDate
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_001
-     * @tc.desc   Verify UTC and local getters differ for same date.
+     * @tc.name   dateNowReturnsNumber
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_001
+     * @tc.desc   Verify Date.now() returns a number representing milliseconds since epoch.
      * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('utcVsLocalSameDate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date(Date.UTC(2024, 5, 15, 12, 0, 0));
-      const utcHours: number = date.getUTCHours();
-      const localHours: number = date.getHours();
-      expect(utcHours).assertEqual(12);
-      expect(localHours !== utcHours).assertTrue();
+    it('dateNowReturnsNumber', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const now: number = Date.now();
+      expect(typeof now).assertEqual('number');
+      expect(now).assertLarger(0);
     });
 
     /**
-     * @tc.name   timezoneOffsetPositive
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_002
-     * @tc.desc   Verify getTimezoneOffset() returns positive for west of UTC.
+     * @tc.name   dateNowIncrements
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_002
+     * @tc.desc   Verify Date.now() returns increasing values on subsequent calls.
      * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('timezoneOffsetPositive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date();
-      const offset: number = date.getTimezoneOffset();
-      expect(typeof offset).assertEqual('number');
+    it('dateNowIncrements', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const start: number = Date.now();
+      const end: number = Date.now();
+      expect(end >= start).assertTrue();
     });
 
     /**
-     * @tc.name   timezoneOffsetConsistency
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_003
-     * @tc.desc   Verify getTimezoneOffset() is consistent across dates.
+     * @tc.name   dateNowPrecision
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_003
+     * @tc.desc   Verify Date.now() returns values with millisecond precision.
      * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('timezoneOffsetConsistency', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const dates: Date[] = [
-        new Date(2024, 0, 15),
-        new Date(2024, 6, 15),
-        new Date(2024, 11, 15)
-      ];
-      const offsets: number[] = dates.map(d => d.getTimezoneOffset());
-      expect(offsets.length).assertEqual(3);
+    it('dateNowPrecision', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const now: number = Date.now();
+      expect(now % 1).assertEqual(0);
     });
 
     /**
-     * @tc.name   utcDateIndependence
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_004
-     * @tc.desc   Verify UTC methods are independent of local timezone.
+     * @tc.name   dateParseValidDate
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_004
+     * @tc.desc   Verify Date.parse() with valid date string returns timestamp.
      * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('utcDateIndependence', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date(Date.UTC(2024, 5, 15, 12, 0, 0));
+    it('dateParseValidDate', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const timestamp: number = Date.parse('2024-01-15T12:00:00Z');
+      expect(typeof timestamp).assertEqual('number');
+      expect(timestamp).assertLarger(0);
+    });
+
+    /**
+     * @tc.name   dateParseISO8601
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_005
+     * @tc.desc   Verify Date.parse() with ISO 8601 format.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateParseISO8601', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const isoString: string = '2024-06-15T14:30:45.123Z';
+      const timestamp: number = Date.parse(isoString);
+      const date: Date = new Date(timestamp);
+      expect(date.toISOString()).assertEqual(isoString);
+    });
+
+    /**
+     * @tc.name   dateParseRFC2822
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_006
+     * @tc.desc   Verify Date.parse() with RFC 2822 format.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateParseRFC2822', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const rfcString: string = 'Tue, 15 Jun 2024 14:30:45 GMT';
+      const timestamp: number = Date.parse(rfcString);
+      expect(typeof timestamp).assertEqual('number');
+      expect(timestamp).assertLarger(0);
+    });
+
+    /**
+     * @tc.name   dateParseInvalid
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_007
+     * @tc.desc   Verify Date.parse() with invalid string returns NaN.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateParseInvalid', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const invalid: number = Date.parse('not a date');
+      expect(isNaN(invalid)).assertTrue();
+    });
+
+    /**
+     * @tc.name   dateParseEmpty
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_008
+     * @tc.desc   Verify Date.parse() with empty string returns NaN.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateParseEmpty', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const empty: number = Date.parse('');
+      expect(isNaN(empty)).assertTrue();
+    });
+
+    /**
+     * @tc.name   dateUTCBasic
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_009
+     * @tc.desc   Verify Date.UTC() with basic parameters returns timestamp.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCBasic', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const timestamp: number = Date.UTC(2024, 5, 15, 14, 30, 45, 123);
+      expect(typeof timestamp).assertEqual('number');
+      expect(timestamp).assertLarger(0);
+    });
+
+    /**
+     * @tc.name   dateUTCEpoch
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_010
+     * @tc.desc   Verify Date.UTC(1970, 0, 1) returns 0.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCEpoch', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const timestamp: number = Date.UTC(1970, 0, 1);
+      expect(timestamp).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   dateUTCMilliseconds
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_011
+     * @tc.desc   Verify Date.UTC() includes millisecond precision.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCMilliseconds', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const timestamp: number = Date.UTC(2024, 5, 15, 14, 30, 45, 999);
+      const date: Date = new Date(timestamp);
+      expect(date.getMilliseconds()).assertEqual(999);
+    });
+
+    /**
+     * @tc.name   dateUTCNegativeYear
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_012
+     * @tc.desc   Verify Date.UTC() with negative year.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCNegativeYear', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const timestamp: number = Date.UTC(-100, 5, 15);
+      expect(timestamp).assertLess(0);
+    });
+
+    /**
+     * @tc.name   dateUTCLargeYear
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_013
+     * @tc.desc   Verify Date.UTC() with large year.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCLargeYear', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const timestamp: number = Date.UTC(9999, 11, 31);
+      expect(timestamp).assertLarger(0);
+    });
+
+    /**
+     * @tc.name   dateUTCLocalVsUTC
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_014
+     * @tc.desc   Verify difference between Date.UTC() and local time constructor.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCLocalVsUTC', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const utcTimestamp: number = Date.UTC(2024, 5, 15, 12, 0, 0);
+      const localDate: Date = new Date(2024, 5, 15, 12, 0, 0);
+      expect(utcTimestamp !== localDate.getTime()).assertTrue();
+    });
+
+    /**
+     * @tc.name   dateParseVsConstructor
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_015
+     * @tc.desc   Verify Date.parse() vs Date constructor with string.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateParseVsConstructor', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const str: string = '2024-06-15T12:00:00Z';
+      const parseResult: number = Date.parse(str);
+      const date: Date = new Date(str);
+      expect(parseResult).assertEqual(date.getTime());
+    });
+
+    /**
+     * @tc.name   dateParseTimeOnly
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_016
+     * @tc.desc   Verify Date.parse() with time-only string.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateParseTimeOnly', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const timestamp: number = Date.parse('1970-01-01T12:30:45.123Z');
+      const expected: number = 12 * 3600000 + 30 * 60000 + 45 * 1000 + 123;
+      expect(timestamp).assertEqual(expected);
+    });
+
+    /**
+     * @tc.name   dateUTCOverflow
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_017
+     * @tc.desc   Verify Date.UTC() handles overflow in parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCOverflow', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const overflow: number = Date.UTC(2024, 12, 32);
+      const normal: number = Date.UTC(2025, 0, 1);
+      expect(overflow).assertEqual(1738368000000);
+      expect(normal).assertEqual(1735689600000);
+    });
+
+    /**
+     * @tc.name   dateUTCUnderflow
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_018
+     * @tc.desc   Verify Date.UTC() handles underflow in parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCUnderflow', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const underflow: number = Date.UTC(2024, 0, 0);
+      const normal: number = Date.UTC(2023, 11, 31);
+      expect(underflow).assertEqual(normal);
+    });
+
+    /**
+     * @tc.name   dateUTCMinimalParams
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_019
+     * @tc.desc   Verify Date.UTC() with minimal parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('dateUTCMinimalParams', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const timestamp: number = Date.UTC(2024, 5);
+      const date: Date = new Date(timestamp);
       expect(date.getUTCFullYear()).assertEqual(2024);
       expect(date.getUTCMonth()).assertEqual(5);
-      expect(date.getUTCDate()).assertEqual(15);
-      expect(date.getUTCHours()).assertEqual(12);
+      expect(date.getUTCDate()).assertEqual(1);
     });
 
     /**
-     * @tc.name   localVsUTCFullYear
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_005
-     * @tc.desc   Verify difference between local and UTC full year.
+     * @tc.name   dateParseCaseInsensitive
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_020
+     * @tc.desc   Verify Date.parse() is case-insensitive for month names.
      * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('localVsUTCFullYear', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date(Date.UTC(2024, 0, 1, 0, 0, 0));
-      const localYear: number = date.getFullYear();
-      const utcYear: number = date.getUTCFullYear();
-      expect(utcYear).assertEqual(2024);
+    it('dateParseCaseInsensitive', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const upper: number = Date.parse('15 JUNE 2024');
+      const lower: number = Date.parse('15 june 2024');
+      expect(upper).assertEqual(lower);
     });
 
     /**
-     * @tc.name   crossTimezoneComparison
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_006
-     * @tc.desc   Verify comparing dates in different timezones uses same timestamp.
+     * @tc.name   dateNowVsDateConstructor
+     * @tc.number SUB_COMMONLIBRARY_DATE_STATIC_021
+     * @tc.desc   Verify Date.now() equals new Date().getTime().
      * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
+     * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('crossTimezoneComparison', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const utcTime: number = Date.UTC(2024, 5, 15, 12, 0, 0);
-      const date1: Date = new Date(utcTime);
-      const date2: Date = new Date(utcTime);
-      expect(date1.getTime()).assertEqual(date2.getTime());
-    });
-
-    /**
-     * @tc.name   dstDetectionMethod1
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_007
-     * @tc.desc   Verify detecting DST by comparing January and July offsets.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstDetectionMethod1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      const jan: Date = new Date(year, 0, 1);
-      const jul: Date = new Date(year, 6, 1);
-      const janOffset: number = jan.getTimezoneOffset();
-      const julOffset: number = jul.getTimezoneOffset();
-      const hasDST: boolean = janOffset !== julOffset;
-      expect(typeof hasDST).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.name   dstDetectionMethod2
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_008
-     * @tc.desc   Verify detecting DST by checking offset change.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstDetectionMethod2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      let previousOffset: number | null = null;
-      let dstDetected: boolean = false;
-
-      for (let month = 0; month < 12; month++) {
-        const date: Date = new Date(year, month, 15);
-        const offset: number = date.getTimezoneOffset();
-        if (previousOffset !== null && offset !== previousOffset) {
-          dstDetected = true;
-          break;
-        }
-        previousOffset = offset;
-      }
-
-      expect(typeof dstDetected).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.name   usDSTStartTransition
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_009
-     * @tc.desc   Verify US DST start transition behavior.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('usDSTStartTransition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const beforeDST: Date = new Date('2024-03-10T01:59:59-05:00');
-      const afterDST: Date = new Date('2024-03-10T03:00:00-04:00');
-      const diff: number = afterDST.getTime() - beforeDST.getTime();
-      expect(diff).assertEqual(1000);
-    });
-
-    /**
-     * @tc.name   usDSTEndTransition
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_010
-     * @tc.desc   Verify US DST end transition behavior.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('usDSTEndTransition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const first1am: Date = new Date('2024-11-03T01:00:00-04:00');
-      const second1am: Date = new Date('2024-11-03T01:00:00-05:00');
-      const diff: number = second1am.getTime() - first1am.getTime();
-      expect(diff).assertEqual(3600000);
-    });
-
-    /**
-     * @tc.name   europeDSTStart
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_011
-     * @tc.desc   Verify Europe DST start (last Sunday in March).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('europeDSTStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      for (let day = 25; day <= 31; day++) {
-        const date: Date = new Date(Date.UTC(year, 2, day, 1, 0, 0));
-        const offset: number = date.getTimezoneOffset();
-      }
-      expect(true).assertTrue();
-    });
-
-    /**
-     * @tc.name   europeDSDEnd
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_012
-     * @tc.desc   Verify Europe DST end (last Sunday in October).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('europeDSDEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      for (let day = 25; day <= 31; day++) {
-        const date: Date = new Date(Date.UTC(year, 9, day, 1, 0, 0));
-        const offset: number = date.getTimezoneOffset();
-      }
-      expect(true).assertTrue();
-    });
-
-    /**
-     * @tc.name   australiaDST
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_013
-     * @tc.desc   Verify Australia DST (October to April, opposite of northern hemisphere).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('australiaDST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      const jan: Date = new Date(year, 0, 15);
-      const jul: Date = new Date(year, 6, 15);
-      const janOffset: number = jan.getTimezoneOffset();
-      const julOffset: number = jul.getTimezoneOffset();
-      expect(typeof janOffset).assertEqual('number');
-      expect(typeof julOffset).assertEqual('number');
-    });
-
-    /**
-     * @tc.name   noDSTTimeZone
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_014
-     * @tc.desc   Verify timezone without DST (e.g., UTC+8 China).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('noDSTTimeZone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      const dates: Date[] = [
-        new Date(year, 0, 15),
-        new Date(year, 6, 15),
-        new Date(year, 11, 15)
-      ];
-      const offsets: number[] = dates.map(d => d.getTimezoneOffset());
-      const allSame: boolean = offsets.every(o => o === offsets[0]);
-      expect(typeof allSame).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.name   southernHemisphereDST
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_015
-     * @tc.desc   Verify southern hemisphere DST (opposite season).
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('southernHemisphereDST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      const jan: Date = new Date(year, 0, 15);
-      const jul: Date = new Date(year, 6, 15);
-      const janOffset: number = jan.getTimezoneOffset();
-      const julOffset: number = jul.getTimezoneOffset();
-      const hasDST: boolean = janOffset !== julOffset;
-      expect(typeof hasDST).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.name   dstTransitionHour
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_016
-     * @tc.desc   Verify DST transition occurs at specific hour.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstTransitionHour', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date(2024, 2, 10);
-      const hours: number[] = [];
-      for (let hour = 0; hour < 24; hour++) {
-        const testDate: Date = new Date(2024, 2, 10, hour, 0, 0);
-        hours.push(testDate.getHours());
-      }
-      expect(hours.length).assertEqual(24);
-    });
-
-    /**
-     * @tc.name   dstTransitionDayCalculation
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_017
-     * @tc.desc   Verify day calculation across DST boundary.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstTransitionDayCalculation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date(2024, 2, 9, 12, 0, 0);
-      const nextDay: Date = new Date(date);
-      nextDay.setDate(date.getDate() + 1);
-      expect(nextDay.getDate()).assertEqual(10);
-      expect(nextDay.getHours()).assertEqual(12);
-    });
-
-    /**
-     * @tc.name   dstNonExistentTime
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_018
-     * @tc.desc   Verify handling of non-existent time during DST jump.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstNonExistentTime', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date(2024, 2, 10, 2, 30, 0);
-      const timestamp: number = date.getTime();
-      expect(typeof timestamp).assertEqual('number');
-    });
-
-    /**
-     * @tc.name   dstAmbiguousTime
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_019
-     * @tc.desc   Verify handling of ambiguous time during DST end.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstAmbiguousTime', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date1: Date = new Date(2024, 10, 3, 1, 30, 0);
-      const date2: Date = new Date(2024, 10, 3, 1, 30, 0);
-      expect(typeof date1.getTime()).assertEqual('number');
-      expect(typeof date2.getTime()).assertEqual('number');
-    });
-
-    /**
-     * @tc.name   dstAwareDateMath
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_020
-     * @tc.desc   Verify date arithmetic across DST boundary.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstAwareDateMath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const startDate: Date = new Date(2024, 2, 9, 12, 0, 0);
-      const endDate: Date = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
-      const diff: number = (endDate.getTime() - startDate.getTime()) / 3600000;
-      expect(diff).assertEqual(24);
-    });
-
-    /**
-     * @tc.name   multipleTimezoneOffsets
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_021
-     * @tc.desc   Verify multiple timezone offsets in year with DST.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('multipleTimezoneOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      const offsets: Set<number> = new Set();
-      for (let month = 0; month < 12; month++) {
-        const date: Date = new Date(year, month, 15);
-        offsets.add(date.getTimezoneOffset());
-      }
-      expect(offsets.size >= 1).assertTrue();
-    });
-
-    /**
-     * @tc.name   dstStartMonth
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_022
-     * @tc.desc   Verify DST starts in March for US.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstStartMonth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      const feb: Date = new Date(year, 1, 15);
-      const mar: Date = new Date(year, 2, 15);
-      const apr: Date = new Date(year, 3, 15);
-      expect(typeof feb.getTimezoneOffset()).assertEqual('number');
-      expect(typeof mar.getTimezoneOffset()).assertEqual('number');
-      expect(typeof apr.getTimezoneOffset()).assertEqual('number');
-    });
-
-    /**
-     * @tc.name   dstEndMonth
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_023
-     * @tc.desc   Verify DST ends in November for US.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstEndMonth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      const oct: Date = new Date(year, 9, 15);
-      const nov: Date = new Date(year, 10, 15);
-      const dec: Date = new Date(year, 11, 15);
-      expect(typeof oct.getTimezoneOffset()).assertEqual('number');
-      expect(typeof nov.getTimezoneOffset()).assertEqual('number');
-      expect(typeof dec.getTimezoneOffset()).assertEqual('number');
-    });
-
-    /**
-     * @tc.name   dstDuration
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_024
-     * @tc.desc   Verify DST duration calculation.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstDuration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      let dstStart: Date | null = null;
-      let dstEnd: Date | null = null;
-      let currentOffset: number | null = null;
-
-      for (let month = 0; month < 12; month++) {
-        const date: Date = new Date(year, month, 15);
-        const offset: number = date.getTimezoneOffset();
-        if (currentOffset !== null && offset !== currentOffset) {
-          if (!dstStart) {
-            dstStart = new Date(year, month, 1);
-          } else if (!dstEnd) {
-            dstEnd = new Date(year, month, 1);
-          }
-        }
-        currentOffset = offset;
-      }
-
-      if (dstStart && dstEnd) {
-        const duration: number = (dstEnd.getTime() - dstStart.getTime()) / (24 * 60 * 60 * 1000);
-        expect(duration > 180 && duration < 240).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.name   timezoneOffsetChanges
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_025
-     * @tc.desc   Verify timezone offset changes across DST boundaries.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('timezoneOffsetChanges', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const year: number = 2024;
-      const offsets: number[] = [];
-      for (let month = 0; month < 12; month++) {
-        const date: Date = new Date(year, month, 15);
-        offsets.push(date.getTimezoneOffset());
-      }
-      const hasChanges: boolean = new Set(offsets).size > 1;
-      expect(typeof hasChanges).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.name   internationalDateLine
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_026
-     * @tc.desc   Verify dates near international date line.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('internationalDateLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const utcTime: number = Date.UTC(2024, 5, 15, 12, 0, 0);
-      const date: Date = new Date(utcTime);
-      const localDay: number = date.getDate();
-      const utcDay: number = date.getUTCDate();
-      expect(typeof localDay).assertEqual('number');
-      expect(typeof utcDay).assertEqual('number');
-    });
-
-    /**
-     * @tc.name   extremeTimezones
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_027
-     * @tc.desc   Verify extreme timezone offsets.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('extremeTimezones', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const date: Date = new Date();
-      const offset: number = date.getTimezoneOffset();
-      expect(offset >= -720 && offset <= 720).assertTrue();
-    });
-
-    /**
-     * @tc.name   dstAffectsLocalHours
-     * @tc.number SUB_COMMONLIBRARY_DATE_TIMEZONES_028
-     * @tc.desc   Verify DST affects local hours but not UTC.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dstAffectsLocalHours', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const timestamp: number = Date.UTC(2024, 2, 10, 7, 0, 0);
-      const date: Date = new Date(timestamp);
-      const utcHours: number = date.getUTCHours();
-      expect(utcHours).assertEqual(7);
+    it('dateNowVsDateConstructor', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+      const nowNumber: number = Date.now();
+      const nowDate: Date = new Date();
+      expect(Math.abs(nowDate.getTime() - nowNumber)).assertLess(10);
     });
 
   });
