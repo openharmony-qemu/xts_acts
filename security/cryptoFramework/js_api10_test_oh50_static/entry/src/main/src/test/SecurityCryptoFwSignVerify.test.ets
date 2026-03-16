@@ -2304,7 +2304,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let signData: cryptoFramework.DataBlob = signVerifySyncUtils.doSignSync(signAlgName, keyPair.priKey, msg);
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgName);
         await verify.init(keyPair.pubKey);
-        let ret = await verify.verify(null, signData);
+        let ret = await verify.verify(msg, signData);
         expect(ret).assertTrue();
       } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
