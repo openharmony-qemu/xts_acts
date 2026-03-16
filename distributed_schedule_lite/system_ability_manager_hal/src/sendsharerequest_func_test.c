@@ -403,6 +403,8 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0010, Function |
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount, 1);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
 
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -447,7 +449,9 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0010, Func
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount, 0);
-    
+
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 

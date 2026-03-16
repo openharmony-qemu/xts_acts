@@ -376,6 +376,9 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0010, Function | MediumTes
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);
+
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -411,6 +414,9 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0020, Function | MediumTes
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == FALSE, TRUE);
+
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -446,6 +452,9 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0030, Function | MediumTes
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);
+
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -483,6 +492,8 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0010, Function |
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);  
 
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -519,6 +530,8 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function |
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == FALSE, TRUE);
 
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
