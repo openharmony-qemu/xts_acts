@@ -89,7 +89,7 @@ export default function webOnFirstContentfulPaint() {
     it('testOnFirstContentfulPaintStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('emitOnFirstContentfulPaint002', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('testOnFirstContentfulPaintStatic002', false, 522, done);
+      Utils.registerEvent('testOnFirstContentfulPaintStatic002', true, 522, done);
       inspector.sendEventByKey('WebOnFirstContentfulPaintButton', 10, '');
       await Utils.msSleep(5000);
       setTimeout(() => {
