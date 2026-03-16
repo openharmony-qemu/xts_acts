@@ -164,26 +164,22 @@ struct UIObserverPanPage {
   build() {
     Column() {
       Text('UIObserver Pan Event Tests')
-        .fontSize(20)
         .fontWeight(FontWeight.Bold)
-        .margin({ top: 20, bottom: 20 })
+        .height('5%')
+        
 
       Text(this.testResults)
-        .fontSize(14)
-        .margin({ bottom: 20 })
         .id('test_results_text')
+        .height('5%')
 
-      Text('Pan Gesture Area (Drag Me)')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+      Text('Pan Gesture Area (Drag Me)').height('5%')
 
       // 可拖动区域 - 执行 Pan 手势会触发 UIObserver 回调
       Column() {
         Text('Drag Me')
-          .fontSize(20)
       }
-      .width(300)
-      .height(200)
+      .width('40%')
+      .height('20%')
       .backgroundColor('#E0E0E0')
       .border({ width: 2, color: '#999999' })
       .justifyContent(FlexAlign.Center)
@@ -206,9 +202,9 @@ struct UIObserverPanPage {
 
       Button('Reset Position')
         .id('reset_button')
-        .width(200)
-        .height(50)
-        .margin({ top: 20 })
+        .width('30%')
+        .height('5%')
+        .margin({ top: '3%' })
         .onClick(() => {
           this.offsetX = 0;
           this.offsetY = 0;
@@ -217,6 +213,5 @@ struct UIObserverPanPage {
     }
     .width('100%')
     .height('100%')
-    .padding(20)
   }
 }

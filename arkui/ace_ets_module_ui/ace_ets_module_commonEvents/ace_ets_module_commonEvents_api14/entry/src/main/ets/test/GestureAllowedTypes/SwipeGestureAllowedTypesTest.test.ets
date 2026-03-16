@@ -70,7 +70,7 @@ export default function SwipeGestureAllowedTypesTest() {
 
       // trigger gesture with finger
       let driver = Driver.create();
-      let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
+      let speed = 1000
       await CommonFunc.sleep(1000);
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2), speed)
       await CommonFunc.sleep(3000);
