@@ -4181,8 +4181,8 @@ export default function WindowPropertiesTest() {
                 type: window.AnimationType.FADE_IN_OUT
             };
             let windowParam: window.WindowCreateParams = {
-                animationParams: animation_param
-                needAnimation: ture
+                animationParams: animation_param,
+                needAnimation: true
             };
             let options: StartOptions = {
                 windowCreateParams: windowParam
@@ -4227,7 +4227,7 @@ export default function WindowPropertiesTest() {
                 type: window.AnimationType.FADE_IN_OUT
             };
             let windowParam: window.WindowCreateParams = {
-                animationParams: animation_param
+                animationParams: animation_param,
                 needAnimation: false
             };
             let options: StartOptions = {
