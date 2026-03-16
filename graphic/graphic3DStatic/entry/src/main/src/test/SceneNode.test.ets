@@ -843,6 +843,34 @@ export default function sceneNodeTest() {
       }
     })
     /**
+     * @tc.name   testCreateGeometryEmptyName
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0595
+     * @tc.desc   Test createGeometry with empty string name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateGeometryEmptyName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateGeometryEmptyName";
+      console.info(msg + ' begin ');
+      try {
+        let cubeGeom = new CubeGeometry();
+        expect(cubeGeom != null).assertTrue();
+        cubeGeom.size = { x: 0.5, y: 0.5, z: 0.5 };
+        let meshRes = await rf!.createMesh({ name: "mesh for empty name test" }, cubeGeom);
+        expect(meshRes != null).assertTrue();
+        let geometry = await rf!.createGeometry({ name: "" }, meshRes);
+        expect(geometry != null).assertTrue();
+        console.info(msg + " createGeometry with empty name success");
+        scene?.root?.children.append(geometry);
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateGeometryEmptyName " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
      * @tc.name   testImportNode
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0600
      * @tc.desc   Used to import a node
