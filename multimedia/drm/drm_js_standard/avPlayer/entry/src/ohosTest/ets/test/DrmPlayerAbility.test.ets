@@ -5735,12 +5735,14 @@ export default function abilityTest() {
             let mediaKeySession: drm.MediaKeySession = mediaKeySystem.createMediaKeySession();
             try {
                 let status: boolean = mediaKeySession.requireSecureDecoderModule("");
+                done();
             } catch (err) {
                 console.log("XX SET_GET_CONFIG_6100 failed", err.code);
                 expect(err.code).assertEqual(401);
                 mediaKeySystem.destroy();
                 done();
             }
+            done();
         })
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_6200
