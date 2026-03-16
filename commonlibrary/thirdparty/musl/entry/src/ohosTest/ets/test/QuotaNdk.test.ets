@@ -29,9 +29,9 @@ export default function muslQuotaNdkTest() {
      * @tc.desc   quotactl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslQuotaQuotactl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslQuotaQuotactl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let trueResult = 0
       let result:number = quota.quotactl();
       expect(result).assertEqual(trueResult);

@@ -19,6 +19,7 @@ group("concurrency_static") {
     deps = [
       "asynclock_test_static:ActsAsyncLockStaticTest",
       "atomics_test_static:ActsAtomicsStaticTest",
+      "async_test_static:ActsAsyncStaticTest",
       "eaworker_test_static:ActsEAWorkerStaticTest",
       "message_test_static:ActsMessageHandlerStaticTest",
       "process_test_static:ActsProcessStaticTest",
@@ -38,6 +39,7 @@ group("concurrency_static") {
       "asyncRunner_test_static:ActsAsyncRunnerStaticTest",
       "lock_test_static:ActsLockStaticTest",
       "workerLocal_test_static:ActsWorkerLocalStaticTest",
+      "promise_third_test_static:ActsPromiseThirdStaticTest",
     ]
 
   }

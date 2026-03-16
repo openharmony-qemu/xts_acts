@@ -18,7 +18,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function imageAnimatorPropsJsTest() {
-    describe('imageAnimatorPropsJsTest', function() {
+    describe('imageAnimatorPropsJsTestAdapt001', function() {
 
         async function sleep(time) {
             return new Promise((resolve, reject) => {

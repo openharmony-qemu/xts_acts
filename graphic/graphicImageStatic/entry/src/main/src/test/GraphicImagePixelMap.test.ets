@@ -605,11 +605,12 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.getImageInfo((err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_1600 succeed');
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -763,11 +764,12 @@ export default function graphicImagePixelMap() {
               alphaPixelMap?.isStrideAlignment);
             expect(alphaPixelMap?.isEditable).assertFalse();
             expect(alphaPixelMap?.isStrideAlignment).assertFalse();
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -833,12 +835,12 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.scale(scaleX, scaleY, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_3100 succeed')
-            
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -961,12 +963,12 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.rotate(angle, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_3600 succeed')
-            
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1004,12 +1006,12 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.flip(horizontal, vertical, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_3800 succeed')
-            
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1073,12 +1075,12 @@ export default function graphicImagePixelMap() {
         try {
           pixelMap!.crop(region, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap_static_4100 succeed')
-            
+            done();
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1345,13 +1347,13 @@ export default function graphicImagePixelMap() {
             if (error) {
               console.error('Failed to read pixelMap from the specified area. ');
               expect().assertFail();
+              done();
             } else {
               console.info('Succeeded in reading pixelMap from the specified area.');
-              
+              done();
             }
           })
         }
-        done();
       })
 
     /**
@@ -1429,13 +1431,13 @@ export default function graphicImagePixelMap() {
             if (error) {
               console.error('Failed to read pixelMap from the specified area. ');
               expect().assertFail();
+              done();
             } else {
               console.info('Succeeded in reading pixelMap from the specified area.');
-              
+              done();
             }
           })
         }
-        done();
       })
 
     /**
@@ -1542,12 +1544,13 @@ export default function graphicImagePixelMap() {
             if (error) {
               console.error(`www data Failed to write pixelmap into the specified area.`);
               expect().assertFail();
+              done();
             } else {
               console.info('www data Succeeded in writing pixelmap into the specified area callback.');
+              done();
             }
           })
         }
-        done();
       })
 
     /**
@@ -1856,12 +1859,12 @@ export default function graphicImagePixelMap() {
           if(error) {
             console.error(`Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
-            return;
+            done();
           } else {
             console.info('Succeeded in creating pixelmap.');
+            done();
           }
         })
-        done();
       })
 
     /**

@@ -170,9 +170,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn01_testBasicPropertyCopy();
       expect(result).assertEqual(true);
     });
@@ -183,9 +183,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn02_testSamePropertyOverride();
       expect(result).assertEqual(true);
     });
@@ -196,9 +196,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn03_testSymbolPropertyCopy();
       expect(result).assertEqual(true);
     });
@@ -209,9 +209,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn04_testDeepCopyFailure();
       expect(result).assertEqual(true);
     });
@@ -222,9 +222,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn05_testIgnoreNullUndefinedSource();
       expect(result).assertEqual(true);
     });
@@ -235,9 +235,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn06_testMultiSourceOrder();
       expect(result).assertEqual(true);
     });
@@ -248,9 +248,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn07_testPreserveTargetNonOverlapProps();
       expect(result).assertEqual(true);
     });
@@ -261,9 +261,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn08_testArrayAsSource();
       expect(result).assertEqual(true);
     });
@@ -274,9 +274,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn08_testArrayAsSource();
       expect(result).assertEqual(true);
     });
@@ -287,9 +287,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn10_testIgnoreNonEnumerableProps();
       expect(result).assertEqual(true);
     });
@@ -300,9 +300,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn11_testStringAsSource();
       expect(result).assertEqual(true);
     });
@@ -313,9 +313,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn12_testNumberAsSource();
       expect(result).assertEqual(true);
     });
@@ -326,9 +326,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn13_testBooleanAsSource();
       expect(result).assertEqual(true);
     });
@@ -339,9 +339,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn14_testIgnorePrototypeProps();
       expect(result).assertEqual(true);
     });
@@ -352,9 +352,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn15_testTargetNullUndefinedThrow();
       expect(result).assertEqual(true);
     });
@@ -365,9 +365,9 @@ export default function Object2Test() {
      * @tc.desc   test object assign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Object2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Object2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result = Fn16_testCopyGetterValue();
       expect(result).assertEqual(true);
     });

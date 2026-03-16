@@ -48,7 +48,7 @@ export default function AlertDialog4() {
     });
     /* *
     * @tc.number: AlertDialog4_0100
-    * @tc.name  : AlertDialog4_0100
+    * @tc.name  AlertDialog4_0100
     * @tc.desc  : To test that the Provide decorator supports union types.
     * @tc.level : Level 2
     */
@@ -83,7 +83,7 @@ export default function AlertDialog4() {
     });
     /* *
     * @tc.number: AlertDialog4_0200
-    * @tc.name  : AlertDialog4_0200
+    * @tc.name  AlertDialog4_0200
     * @tc.desc  : To test that the Provide decorator supports union types.
     * @tc.level : Level 2
     */

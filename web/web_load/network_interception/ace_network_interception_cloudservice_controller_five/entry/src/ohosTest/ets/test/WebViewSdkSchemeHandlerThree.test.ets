@@ -236,5 +236,37 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         });
       sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
     })
+    /**
+     * @tc.name   testSdkSchemeHandlerOnRequestStartSetNull
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_onRequestStart_Error_API_0100
+     * @tc.desc   test onRequestStart set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSdkSchemeHandlerOnRequestStartSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitSdkSchemeHandlerOnRequestStartSetNull', 142401);
+      Utils.registerBaseEvent('testSdkSchemeHandlerOnRequestStartSetNull', '401', 26031068, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+    })
+    /**
+     * @tc.name   testSdkSchemeHandlerOnRequestStartSetUndefined
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_onRequestStart_Error_API_0200
+     * @tc.desc   test onRequestStart set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSdkSchemeHandlerOnRequestStartSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitSdkSchemeHandlerOnRequestStartSetUndefined', 142401);
+      Utils.registerBaseEvent('testSdkSchemeHandlerOnRequestStartSetUndefined', '401', 26031069, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webViewSdkSchemeHandlerThreeButton', 10, '');
+    })
   })
 }

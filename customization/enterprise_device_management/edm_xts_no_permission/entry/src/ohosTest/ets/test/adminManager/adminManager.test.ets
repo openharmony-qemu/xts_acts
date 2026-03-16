@@ -191,7 +191,11 @@ export default function adminManagerTest() {
         await adminManager.enableDeviceAdmin(OTHER_WANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -213,7 +217,11 @@ export default function adminManagerTest() {
         await adminManager.disableDeviceAdmin(OTHER_WANT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 201 || error.code == 801).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(OTHER_WANT);
         await adminManager.disableAdmin(SELFWANT);

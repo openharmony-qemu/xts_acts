@@ -98,6 +98,7 @@
     "MainAbility/pages/promptAction/showDialogBackgroundEffect1",
     "MainAbility/pages/promptAction/showDialogBlurStyleOptions2",
     "MainAbility/pages/promptAction/showDialogBackgroundEffect2",
+    "MainAbility/pages/prompt/promptNullUndefined",
     "MainAbility/pages/customDialog/customdialog4",
     "MainAbility/pages/promptAction/closeToastTest2",
     "MainAbility/pages/prompt/PromptActionShowActionMenuNullTest"

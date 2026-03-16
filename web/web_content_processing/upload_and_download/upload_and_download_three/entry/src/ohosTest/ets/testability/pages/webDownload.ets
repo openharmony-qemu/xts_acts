@@ -248,7 +248,24 @@ struct Index {
           await waitForExist(()=>this.isDownloadStart ? 1: 0, 'isDownloadStart ' + this.str, 1);
           if (this.isDownloadStart) {
             console.info('isDownloadStart==>');
+            console.info('onDownloadStart url:' + event.url)
+            console.info('onDownloadStart userAgent:' + event.userAgent)
+            console.info('onDownloadStart contentDisposition:' + event.contentDisposition)
+            console.info('onDownloadStart contentLength:' + event.contentLength)
+            console.info('onDownloadStart mimetype:' + event.mimetype)
             Utils.emitEvent(event.url, 130400);
+            if (event.userAgent) {
+              Utils.emitEvent(true, 26031017);
+            } else {
+              Utils.emitEvent(false, 26031017);
+            }
+            Utils.emitEvent(event.contentDisposition, 26031018);
+            if (event.contentLength&&event.contentLength>0) {
+              Utils.emitEvent(true, 26031019);
+            } else {
+              Utils.emitEvent(false, 26031019);
+            }
+            Utils.emitEvent(event.mimetype, 26031020);
             this.isDownloadStart = false;
           }
         })

@@ -65,7 +65,7 @@ export default function alphabetIndexerThemeTest() {
       }
     })
     /**
-     * @tc.name   ActsAlphabetIndexerThemeColors_0100
+     * @tc.name   `ActsAlphabetIndexerThemeColors_0100`
      * @tc.number ActsAlphabetIndexerThemeColors_0100
      * @tc.desc   Check system colors values of the AlphabetIndexer component
      * @tc.type   FUNCTION
@@ -92,7 +92,7 @@ export default function alphabetIndexerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.name   ActsAlphabetIndexerThemeColors_0200
+     * @tc.name   `ActsAlphabetIndexerThemeColors_0200`
      * @tc.number ActsAlphabetIndexerThemeColors_0200
      * @tc.desc   Check custom colors values of the AlphabetIndexer component
      * @tc.type   FUNCTION
@@ -120,7 +120,7 @@ export default function alphabetIndexerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-     * @tc.name   ActsAlphabetIndexerThemeColors_0300
+     * @tc.name   `ActsAlphabetIndexerThemeColors_0300`
      * @tc.number ActsAlphabetIndexerThemeColors_0300
      * @tc.desc   Check system colors values of the AlphabetIndexer component
      * @tc.type   FUNCTION

@@ -18,7 +18,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function undo() {
-    describe('linePropsJsTest', function() {
+    describe('linePropsJsTestAdapt001', function() {
 
         async function sleep(time) {
             return new Promise((resolve, reject) => {
@@ -802,14 +802,14 @@ export default function undo() {
         });
 
         /**
-         * @tc.name   testLineX1Prop
+         * @tc.name   testLineX1PropAdapt001
          * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
          * @tc.desc   ACE
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('testLineX1Prop', Level.LEVEL0, async function(done) {
+        it('testLineX1PropAdapt001', Level.LEVEL0, async function(done) {
             console.info('testLineX1Prop START');
             console.info("[lineProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
 

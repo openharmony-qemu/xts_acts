@@ -47,7 +47,7 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
     });
 
     /**
-     * @tc.name    gestureInterceptionEnhancementCallbackRecognizerTest_0010
+     * @tc.name      gestureInterceptionEnhancementCallbackRecognizerTest_0010
      * @tc.number tabsInterceptionEnhancementcallbackRecognizerTest_0010
      * @tc.desc   test the Recognizer callBackData when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
      * @tc.type   FUNCTION

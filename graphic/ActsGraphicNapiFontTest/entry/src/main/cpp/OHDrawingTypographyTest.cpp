@@ -2299,6 +2299,7 @@ int OHDrawingTypographyTest073()
     OH_Drawing_Font_Metrics* StartLineFont = OH_Drawing_TypographyGetLineFontMetrics(typography, 1, &charNumber);
     EXPECT_TRUE(StartLineFont == nullptr);
     OH_Drawing_TypographyDestroyLineFontMetrics(StartLineFont);
+    EXPECT_TRUE(StartLineFont == nullptr);
     OH_Drawing_DestroyTypography(typography);
     OH_Drawing_DestroyTypographyHandler(handler);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
@@ -2317,7 +2318,9 @@ int OHDrawingTypographyTest073()
 int OHDrawingTypographyTest074()
 {
     OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    EXPECT_NE(typoStyle, nullptr);
     OH_Drawing_StrutStyle* strutstyle = new OH_Drawing_StrutStyle();
+    EXPECT_NE(strutstyle, nullptr);
     strutstyle->weight = FONT_WEIGHT_400;
     strutstyle->style = FONT_STYLE_ITALIC;
     // 17.0 For size

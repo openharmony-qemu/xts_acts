@@ -113,5 +113,30 @@ export default function actsNotificationAnsThreePartySubscribeTest() {
           }
       });
     })
+
+    /**
+      * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1011_884
+      * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1011_884
+      * @tc.desc   verify the promise function
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('Sub_Notification_Ans_ThreePartyWatch_Static_1011_884', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // 定义当前测试用例的日志标签
+      let TAG = "Sub_Notification_Ans_ThreePartyWatch_Static_1011_884 ";
+      let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [];
+      // 1、调用subscribe(info: NotificationExtensionSubscriptionInfo[]): Promise<void>接口订阅成功，其中addr按照备注方法获取，type填写BLUETOOTH
+      await notificationExtensionSubscription.subscribe(infos).then(() => {
+        console.info(TAG+"subscribe success222");
+        expect().assertFail();
+        done()
+      }).catch((e: Error) => {
+        let err = e as BusinessError;
+        console.error(TAG+`subscribe fail: ${JSON.stringify(err.code)}`);
+        expect(err.code).assertEqual(401);
+        done();
+      });
+    })
   })
 }

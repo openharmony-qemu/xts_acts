@@ -1072,12 +1072,30 @@ export default function relationalStoreInterfaceErrTest() {
             }
           }
         }
+
+        let changeInfos = (changeInfos: Array<relationalStore.ChangeInfo>) => {
+          for(let i =0; i< changeInfos.length; i++){
+              console.info(`changeInfos: ${JSON.stringify(changeInfos[i])}`);
+          }
+        }
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (store != undefined) {
             (store as relationalStore.RdbStore).on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
               storeObserver);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('801')
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).on('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+              changeInfos);
             console.info(TAG + 'on success.');
           }
         } catch (err) {
@@ -1099,6 +1117,7 @@ export default function relationalStoreInterfaceErrTest() {
       async () => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0200 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         let storeObserver = (devices: Array<string>) => {
           if (devices != undefined) {
@@ -1221,11 +1240,36 @@ export default function relationalStoreInterfaceErrTest() {
           console.info(`progress: ${progressDetail}`);
         }
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (store != undefined) {
             (store as relationalStore.RdbStore).on('autoSyncProgress', progressDetail);
             console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('801')
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).on('storeObservice', true, () => {
+              console.info(TAG + 'on success.');
+            });
+     
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('801')
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).off('storeObservice', true, () => {
+              console.info(TAG + 'on success.');
+            });
+     
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
@@ -1272,6 +1316,7 @@ export default function relationalStoreInterfaceErrTest() {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0800 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        STORE_CONFIG.vector = true;
         let sqlExecutionInfo = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
           console.info(`sql: ${sqlExecutionInfo.sql[0]}`);
           console.info(`totalTime: ${sqlExecutionInfo.totalTime}`);
@@ -1310,12 +1355,30 @@ export default function relationalStoreInterfaceErrTest() {
             }
           }
         }
+
+        let changeInfos = (changeInfos: Array<relationalStore.ChangeInfo>) => {
+          for(let i =0; i< changeInfos.length; i++){
+              console.info(`changeInfos: ${JSON.stringify(changeInfos[i])}`);
+          }
+        }
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (store != undefined) {
             (store as relationalStore.RdbStore).off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
               storeObserver);
+            console.info(TAG + 'off success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual('801')
+        }
+
+        try {
+          if (store != undefined) {
+            (store as relationalStore.RdbStore).off('dataChange', relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+              changeInfos);
             console.info(TAG + 'off success.');
           }
         } catch (err) {
@@ -1337,6 +1400,7 @@ export default function relationalStoreInterfaceErrTest() {
       async () => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0200 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         try {
           if (store != undefined) {
@@ -1441,6 +1505,7 @@ export default function relationalStoreInterfaceErrTest() {
       async () => {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0600 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
+        STORE_CONFIG.vector = true;
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         let progressDetail = (progressDetail: relationalStore.ProgressDetails) => {
           console.info(TAG + `progress: ${progressDetail}`);
@@ -1495,6 +1560,7 @@ export default function relationalStoreInterfaceErrTest() {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0800 start-----")
         let context: common.UIAbilityContext | undefined = AppStorage.get('context') as common.UIAbilityContext
         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+        STORE_CONFIG.vector = true;
         try {
           if (store != undefined) {
             (store as relationalStore.RdbStore).off('statistics');
@@ -2778,7 +2844,7 @@ export default function relationalStoreInterfaceErrTest() {
          }
        }catch(err) {
            console.error(TAG + 'catch Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
-           expect(err.code).assertTrue("14800014");
+           expect(err.code).assertEqual("14800014");
        }
     
        console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0500 end-----")
@@ -2803,14 +2869,14 @@ export default function relationalStoreInterfaceErrTest() {
          (store as relationalStore.RdbStore).cloudSync(relationalStore.SyncMode.SYNC_MODE_NATIVE_FIRST,
            (progressDetails) => {
              console.info(TAG + `Progess: ${progressDetails}`);
-           }, (err: BusinessError) => {
              expect(progressDetails.code).assertEqual(3);
+           }, (err: BusinessError) => {     
              console.info(TAG + 'Cloud sync succeeded');
            });
          }
        }catch(err) {
            console.error(TAG + 'catch Failed to cloudSync.Code: ' + err.code + ',message:' + err.message);
-           expect(err.code).assertTrue("14800014");
+           expect(err.code).assertEqual("14800014");
        }
     
        console.info(TAG + "-----SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0600 end-----")

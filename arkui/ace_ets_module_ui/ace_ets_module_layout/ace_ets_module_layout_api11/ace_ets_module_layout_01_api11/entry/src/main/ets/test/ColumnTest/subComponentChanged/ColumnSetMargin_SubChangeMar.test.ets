@@ -19,7 +19,7 @@ import RectValue from '../../../MainAbility/common/Rect';
 import CommonFunc from "../../../MainAbility/common/Common";
 import { MessageManager,Callback } from '../../../MainAbility/common/MessageManager';
 export default function ColumnSetMargin_SubChangeMar() {
-  describe('ColumnSetMarginTest',  () =>{
+  describe('ColumnSetMarginTestAdapt001',  () =>{
     beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Column/subcomponentChanged/ColumnSetMargin_SubChangeMar',

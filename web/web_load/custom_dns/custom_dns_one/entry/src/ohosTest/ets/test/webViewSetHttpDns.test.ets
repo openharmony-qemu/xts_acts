@@ -177,5 +177,50 @@ export default function webViewSetHttpDns() {
       }
       done();
     })
+    /**
+     * @tc.name   testSetHttpDnsAutoEmpty
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0500
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetHttpDnsAutoEmpty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+      emitKey="testSetHttpDnsAutoEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetHttpDnsAutoEmpty", "401",340050, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
+    })
+    /**
+     * @tc.name   testSetHttpDnsAutoNull
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0600
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetHttpDnsAutoNull',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+      emitKey="testSetHttpDnsAutoNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetHttpDnsAutoNull", "401",340060, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
+    })
+    /**
+     * @tc.name   testSetHttpDnsAutoUndefined
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0700
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetHttpDnsAutoUndefined',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+      emitKey="testSetHttpDnsAutoUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetHttpDnsAutoUndefined", "401",340070, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
+    })
   })
 }

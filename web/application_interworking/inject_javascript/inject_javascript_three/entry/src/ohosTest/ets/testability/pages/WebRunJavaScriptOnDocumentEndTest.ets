@@ -129,6 +129,41 @@ struct WebRunJavaScriptOnDocumentEndTest {
                 }
                 break;
               }
+              case 'emitWebRunJavaScriptOnDocumentEnd004': {
+                // Test case for empty array coverage
+                let resultData = '';
+                this.scripts = []; // Empty array test
+                try {
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('runJavaScriptOnDocumentEnd.html'));
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  
+                  // Verify that no scripts were executed (empty array)
+                  this.controller.runJavaScript('document.body.innerHTML', (error, result) => {
+                    if (error) {
+                      console.info('emitWebRunJavaScriptOnDocumentEnd004 getBodyContent() return error: ' + error)
+                    }
+                    if (result) {
+                      console.info('emitWebRunJavaScriptOnDocumentEnd004 getBodyContent() return result: ' + result)
+                      resultData = result;
+                    }
+                  });
+                  resultData = await waitForExist(() => resultData, 'emitWebRunJavaScriptOnDocumentEnd004', null);
+                  
+                  // Verify that the result does not contain any script modifications
+                  let isClean = !resultData.includes('runJavaScriptOnDocumentEnd') && 
+                              !resultData.includes('testValue') &&
+                              !resultData.includes('push new js on run end called');
+                  Utils.emitEvent(isClean ? 'PASS' : 'FAIL', 173130);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent('ERROR', 173130);
+                }
+                break;
+              }
             }
          })
       }

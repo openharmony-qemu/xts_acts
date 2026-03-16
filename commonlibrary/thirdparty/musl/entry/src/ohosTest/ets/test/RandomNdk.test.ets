@@ -32,9 +32,9 @@ export default function muslRandomNdkTest() {
      * @tc.desc   test getrandom
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslRandomGetrandom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslRandomGetrandom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret:number = random.getrandom();
       expect(ret).assertEqual(0)
       done()

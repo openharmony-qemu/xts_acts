@@ -285,6 +285,111 @@ export default function geolocationTest_geo8() {
             }
             done()
         })
+
+        /**
+         * @tc.name   test_GetDistanceBetweenLocations_0100
+         * @tc.number test_GetDistanceBetweenLocations_0100
+         * @tc.desc   Obtain the
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('test_GetDistanceBetweenLocations_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let location1 = null
+                let location2 = null
+                let distance1 = geolocationm.getDistanceBetweenLocations(location1, location2);
+                expect(distance1).assertEqual(0)
+            } catch(error) {
+                console.error("getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_HSS_Addbeaconfence_0100
+         * @tc.number SUB_HSS_Addbeaconfence_0100
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_Addbeaconfence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let fenceRequest = null;
+                geolocationm.addBeaconFence(fenceRequest).then((id) => {
+                    console.info("addBeaconFence0100 success, fence id:" + id);
+                }).catch((error) => {
+                    console.error('promise, addBeaconFence0100: error=' + JSON.stringify(error));
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                });
+            } catch (error) {
+                console.error("addBeaconFence0100: errCode" + error.code + ", errMessage" + error.message);
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            };
+        await sleep(1000);
+        done();
+        })
+
+        /**
+         * @tc.name   SUB_HSS_Removebeaconfence_0100
+         * @tc.number SUB_HSS_Removebeaconfence_0100
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_Removebeaconfence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let beacon = null;
+                geolocationm.removeBeaconFence(beacon).then(()=>{
+                    console.info("promise,removeBeaconFence success");
+                }).catch((error)=>{
+                    console.error("promise,removeBeaconFence:error="+JSON.stringify(error));
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                });
+            } catch (error) {
+                console.error("removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            };
+            await sleep(1000);
+        done();
+        })
+
+        /**
+         * @tc.name   SUB_HSS_isWlanBssidMatched_0100
+         * @tc.number SUB_HSS_isWlanBssidMatched_0100
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_isWlanBssidMatched_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_isWlanBssidMatched_0100: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                try {
+                    let wlanBssidArray = null;
+                    let rssiThreshold = null;
+                    let needStartScan = false;
+                    geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
+                          console.info("isWlanBssidMatched0100 Wlan Bssid Matched Result:" + res);
+                          expect(res).assertTrue();
+                    })
+                } catch (error) {
+                    console.error("[lbs_js] Promise isWlanBssidMatched0100:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });
+
     })
 }
 

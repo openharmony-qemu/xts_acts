@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import { usbManager } from '@kit.MDMKit';
@@ -183,7 +183,804 @@ function testAddAllowedUsbDevices() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-    });
+    })
+
+    /**
+     * @tc.name   addAllowedUsbDevices_test_001
+     * @tc.number addAllowedUsbDevices_test_001
+     * @tc.desc   addAllowedUsbDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedUsbDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedUsbDevices_test_001  -------- START --------');
+      try {
+        let devices1: Array<usbManager.UsbDeviceId> = [
+          {vendorId: 1, productId: 1},
+          {vendorId: 22, productId: 33},
+        ]
+        usbManager.addAllowedUsbDevices(null, devices1);
+        console.info(' --- addAllowedUsbDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedUsbDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedUsbDevices_test_002
+     * @tc.number addAllowedUsbDevices_test_002
+     * @tc.desc   addAllowedUsbDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedUsbDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedUsbDevices_test_002  -------- START --------');
+      try {
+        let devices1: Array<usbManager.UsbDeviceId> = [
+          {vendorId: 1, productId: 1},
+          {vendorId: 22, productId: 33},
+        ]
+        usbManager.addAllowedUsbDevices(undefined, devices1);
+        console.info(' --- addAllowedUsbDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedUsbDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedUsbDevices_test_003
+     * @tc.number addAllowedUsbDevices_test_003
+     * @tc.desc   addAllowedUsbDevices with null parameter usbDeviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedUsbDevices_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedUsbDevices_test_003  -------- START --------');
+      try {
+        usbManager.addAllowedUsbDevices(SELFWANT, null);
+        console.info(' --- addAllowedUsbDevices_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedUsbDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedUsbDevices_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addAllowedUsbDevices_test_004
+     * @tc.number addAllowedUsbDevices_test_004
+     * @tc.desc   addAllowedUsbDevices with undefined parameter usbDeviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedUsbDevices_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedUsbDevices_test_004  -------- START --------');
+      try {
+        usbManager.addAllowedUsbDevices(SELFWANT, undefined);
+        console.info(' --- addAllowedUsbDevices_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedUsbDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addAllowedUsbDevices_test_004  -------- END --------');
+    })
+
+  /**
+   * @tc.name   addAllowedUsbDevices_test_005
+   * @tc.number addAllowedUsbDevices_test_005
+   * @tc.desc   addAllowedUsbDevices with undefined parameter usbDeviceIds
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("addAllowedUsbDevices_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addAllowedUsbDevices_test_005  -------- START --------');
+    try {
+      usbManager.addAllowedUsbDevices(SELFWANT, []);
+      console.info(' --- addAllowedUsbDevices_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addAllowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+    console.info(' --- addAllowedUsbDevices_test_005  -------- END --------');
+  })
+
+    /**
+     * @tc.name   removeAllowedUsbDevices_test_001
+     * @tc.number removeAllowedUsbDevices_test_001
+     * @tc.desc   removeAllowedUsbDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedUsbDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedUsbDevices_test_001  -------- START --------');
+      try {
+        let devices: Array<usbManager.UsbDeviceId> = [{vendorId: 22, productId: 33}]
+        usbManager.removeAllowedUsbDevices(null, devices);
+        console.info(' --- removeAllowedUsbDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedUsbDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedUsbDevices_test_002
+     * @tc.number removeAllowedUsbDevices_test_002
+     * @tc.desc   removeAllowedUsbDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedUsbDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedUsbDevices_test_002  -------- START --------');
+      try {
+        let devices: Array<usbManager.UsbDeviceId> = [{vendorId: 22, productId: 33}]
+        usbManager.removeAllowedUsbDevices(undefined, devices);
+        console.info(' --- removeAllowedUsbDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedUsbDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedUsbDevices_test_003
+     * @tc.number removeAllowedUsbDevices_test_003
+     * @tc.desc   removeAllowedUsbDevices with null parameter usbDeviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedUsbDevices_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedUsbDevices_test_003  -------- START --------');
+      try {
+        usbManager.removeAllowedUsbDevices(SELFWANT, null);
+        console.info(' --- removeAllowedUsbDevices_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedUsbDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedUsbDevices_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeAllowedUsbDevices_test_004
+     * @tc.number removeAllowedUsbDevices_test_004
+     * @tc.desc   removeAllowedUsbDevices with undefined parameter usbDeviceIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedUsbDevices_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedUsbDevices_test_004  -------- START --------');
+      try {
+        usbManager.removeAllowedUsbDevices(SELFWANT, undefined);
+        console.info(' --- removeAllowedUsbDevices_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedUsbDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeAllowedUsbDevices_test_004  -------- END --------');
+    })
+
+  /**
+   * @tc.name   removeAllowedUsbDevices_test_005
+   * @tc.number removeAllowedUsbDevices_test_005
+   * @tc.desc   removeAllowedUsbDevices with empty parameter usbDeviceIds
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("removeAllowedUsbDevices_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeAllowedUsbDevices_test_005  -------- START --------');
+    try {
+      usbManager.removeAllowedUsbDevices(SELFWANT, []);
+      console.info(' --- removeAllowedUsbDevices_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeAllowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+    console.info(' --- removeAllowedUsbDevices_test_005  -------- END --------');
+  })
+
+    /**
+     * @tc.name   getAllowedUsbDevices_test_001
+     * @tc.number getAllowedUsbDevices_test_001
+     * @tc.desc   getAllowedUsbDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedUsbDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedUsbDevices_test_001  -------- START --------');
+      try {
+        usbManager.getAllowedUsbDevices(null);
+        console.info(' --- getAllowedUsbDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedUsbDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedUsbDevices_test_002
+     * @tc.number getAllowedUsbDevices_test_002
+     * @tc.desc   getAllowedUsbDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedUsbDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedUsbDevices_test_002  -------- START --------');
+      try {
+        usbManager.getAllowedUsbDevices(undefined);
+        console.info(' --- getAllowedUsbDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedUsbDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUsbStorageDeviceAccessPolicy_test_001
+     * @tc.number setUsbStorageDeviceAccessPolicy_test_001
+     * @tc.desc   setUsbStorageDeviceAccessPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUsbStorageDeviceAccessPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUsbStorageDeviceAccessPolicy_test_001  -------- START --------');
+      try {
+        usbManager.setUsbStorageDeviceAccessPolicy(null, usbManager.UsbPolicy.READ_WRITE);
+        console.info(' --- setUsbStorageDeviceAccessPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUsbStorageDeviceAccessPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUsbStorageDeviceAccessPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setUsbStorageDeviceAccessPolicy_test_002
+     * @tc.number setUsbStorageDeviceAccessPolicy_test_002
+     * @tc.desc   setUsbStorageDeviceAccessPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setUsbStorageDeviceAccessPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setUsbStorageDeviceAccessPolicy_test_002  -------- START --------');
+      try {
+        usbManager.setUsbStorageDeviceAccessPolicy(undefined, usbManager.UsbPolicy.READ_WRITE);
+        console.info(' --- setUsbStorageDeviceAccessPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setUsbStorageDeviceAccessPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- setUsbStorageDeviceAccessPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUsbStorageDeviceAccessPolicy_test_001
+     * @tc.number getUsbStorageDeviceAccessPolicy_test_001
+     * @tc.desc   getUsbStorageDeviceAccessPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUsbStorageDeviceAccessPolicy_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUsbStorageDeviceAccessPolicy_test_001  -------- START --------');
+      try {
+        usbManager.getUsbStorageDeviceAccessPolicy(null);
+        console.info(' --- getUsbStorageDeviceAccessPolicy_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUsbStorageDeviceAccessPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUsbStorageDeviceAccessPolicy_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUsbStorageDeviceAccessPolicy_test_002
+     * @tc.number getUsbStorageDeviceAccessPolicy_test_002
+     * @tc.desc   getUsbStorageDeviceAccessPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUsbStorageDeviceAccessPolicy_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUsbStorageDeviceAccessPolicy_test_002  -------- START --------');
+      try {
+        usbManager.getUsbStorageDeviceAccessPolicy(undefined);
+        console.info(' --- getUsbStorageDeviceAccessPolicy_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUsbStorageDeviceAccessPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUsbStorageDeviceAccessPolicy_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUsbDevices_test_001
+     * @tc.number addDisallowedUsbDevices_test_001
+     * @tc.desc   addDisallowedUsbDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUsbDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUsbDevices_test_001  -------- START --------');
+      try {
+        let addDevices: Array<usbManager.UsbDeviceType> = [
+          {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
+          {baseClass: 9, subClass: 0, protocol: 0, descriptor: usbManager.Descriptor.DEVICE},
+        ]
+        usbManager.addDisallowedUsbDevices(null, addDevices);
+        console.info(' --- addDisallowedUsbDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUsbDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUsbDevices_test_002
+     * @tc.number addDisallowedUsbDevices_test_002
+     * @tc.desc   addDisallowedUsbDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUsbDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUsbDevices_test_002  -------- START --------');
+      try {
+        let addDevices: Array<usbManager.UsbDeviceType> = [
+          {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
+          {baseClass: 9, subClass: 0, protocol: 0, descriptor: usbManager.Descriptor.DEVICE},
+        ]
+        usbManager.addDisallowedUsbDevices(undefined, addDevices);
+        console.info(' --- addDisallowedUsbDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUsbDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUsbDevices_test_003
+     * @tc.number addDisallowedUsbDevices_test_003
+     * @tc.desc   addDisallowedUsbDevices with null parameter usbDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUsbDevices_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUsbDevices_test_003  -------- START --------');
+      try {
+        usbManager.addDisallowedUsbDevices(SELFWANT, null);
+        console.info(' --- addDisallowedUsbDevices_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUsbDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUsbDevices_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addDisallowedUsbDevices_test_004
+     * @tc.number addDisallowedUsbDevices_test_004
+     * @tc.desc   addDisallowedUsbDevices with undefined parameter usbDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUsbDevices_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUsbDevices_test_004  -------- START --------');
+      try {
+        usbManager.addDisallowedUsbDevices(SELFWANT, undefined);
+        console.info(' --- addDisallowedUsbDevices_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUsbDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- addDisallowedUsbDevices_test_004  -------- END --------');
+    })
+
+  /**
+   * @tc.name   addDisallowedUsbDevices_test_005
+   * @tc.number addDisallowedUsbDevices_test_005
+   * @tc.desc   addDisallowedUsbDevices with empty parameter usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("addDisallowedUsbDevices_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addDisallowedUsbDevices_test_005  -------- START --------');
+    try {
+      usbManager.addDisallowedUsbDevices(SELFWANT, []);
+      console.info(' --- addDisallowedUsbDevices_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addDisallowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+    console.info(' --- addDisallowedUsbDevices_test_004  -------- END --------');
+  })
+
+
+    /**
+     * @tc.name   removeDisallowedUsbDevices_test_001
+     * @tc.number removeDisallowedUsbDevices_test_001
+     * @tc.desc   removeDisallowedUsbDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUsbDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUsbDevices_test_001  -------- START --------');
+      try {
+        let devices: Array<usbManager.UsbDeviceType> = [
+          {baseClass: 0, subClass: 0, protocol: -1, descriptor: usbManager.Descriptor.DEVICE},
+        ]
+        usbManager.removeDisallowedUsbDevices(null, devices);
+        console.info(' --- removeDisallowedUsbDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUsbDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUsbDevices_test_002
+     * @tc.number removeDisallowedUsbDevices_test_002
+     * @tc.desc   removeDisallowedUsbDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUsbDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUsbDevices_test_002  -------- START --------');
+      try {
+        let devices: Array<usbManager.UsbDeviceType> = [
+          {baseClass: 0, subClass: 0, protocol: -1, descriptor: usbManager.Descriptor.DEVICE},
+        ]
+        usbManager.removeDisallowedUsbDevices(undefined, devices);
+        console.info(' --- removeDisallowedUsbDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUsbDevices_test_002  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUsbDevices_test_003
+     * @tc.number removeDisallowedUsbDevices_test_003
+     * @tc.desc   removeDisallowedUsbDevices with null parameter usbDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUsbDevices_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUsbDevices_test_003  -------- START --------');
+      try {
+        usbManager.removeDisallowedUsbDevices(SELFWANT, null);
+        console.info(' --- removeDisallowedUsbDevices_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUsbDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUsbDevices_test_003  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   removeDisallowedUsbDevices_test_004
+     * @tc.number removeDisallowedUsbDevices_test_004
+     * @tc.desc   removeDisallowedUsbDevices with undefined parameter usbDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUsbDevices_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUsbDevices_test_004  -------- START --------');
+      try {
+        usbManager.removeDisallowedUsbDevices(SELFWANT, undefined);
+        console.info(' --- removeDisallowedUsbDevices_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUsbDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- removeDisallowedUsbDevices_test_004  -------- END --------');
+    })
+
+  /**
+   * @tc.name   removeDisallowedUsbDevices_test_005
+   * @tc.number removeDisallowedUsbDevices_test_005
+   * @tc.desc   removeDisallowedUsbDevices with empty parameter usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("removeDisallowedUsbDevices_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeDisallowedUsbDevices_test_005  -------- START --------');
+    try {
+      usbManager.removeDisallowedUsbDevices(SELFWANT, []);
+      console.info(' --- removeDisallowedUsbDevices_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeDisallowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+    console.info(' --- removeDisallowedUsbDevices_test_005  -------- END --------');
+  })
+
+    /**
+     * @tc.name   getDisallowedUsbDevices_test_001
+     * @tc.number getDisallowedUsbDevices_test_001
+     * @tc.desc   getDisallowedUsbDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUsbDevices_test_001", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUsbDevices_test_001  -------- START --------');
+      try {
+        usbManager.getDisallowedUsbDevices(null);
+        console.info(' --- getDisallowedUsbDevices_test_001 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUsbDevices_test_001  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUsbDevices_test_002
+     * @tc.number getDisallowedUsbDevices_test_002
+     * @tc.desc   getDisallowedUsbDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUsbDevices_test_002", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUsbDevices_test_002  -------- START --------');
+      try {
+        usbManager.getDisallowedUsbDevices(undefined);
+        console.info(' --- getDisallowedUsbDevices_test_002 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUsbDevices_test_002  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getAllowedUsbDevices_test_015
+     * @tc.number getAllowedUsbDevices_test_015
+     * @tc.desc   getAllowedUsbDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedUsbDevices_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedUsbDevices_test_015  -------- START --------');
+      try {
+        usbManager.getAllowedUsbDevices(null);
+        console.info(' --- getAllowedUsbDevices_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedUsbDevices_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedUsbDevices_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getAllowedUsbDevices_test_016
+     * @tc.number getAllowedUsbDevices_test_016
+     * @tc.desc   getAllowedUsbDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getAllowedUsbDevices_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getAllowedUsbDevices_test_016  -------- START --------');
+      try {
+        usbManager.getAllowedUsbDevices(undefined);
+        console.info(' --- getAllowedUsbDevices_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getAllowedUsbDevices_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getAllowedUsbDevices_test_016  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getUsbStorageDeviceAccessPolicy_test_015
+     * @tc.number getUsbStorageDeviceAccessPolicy_test_015
+     * @tc.desc   getUsbStorageDeviceAccessPolicy with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUsbStorageDeviceAccessPolicy_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUsbStorageDeviceAccessPolicy_test_015  -------- START --------');
+      try {
+        usbManager.getUsbStorageDeviceAccessPolicy(null);
+        console.info(' --- getUsbStorageDeviceAccessPolicy_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUsbStorageDeviceAccessPolicy_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUsbStorageDeviceAccessPolicy_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getUsbStorageDeviceAccessPolicy_test_016
+     * @tc.number getUsbStorageDeviceAccessPolicy_test_016
+     * @tc.desc   getUsbStorageDeviceAccessPolicy with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getUsbStorageDeviceAccessPolicy_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getUsbStorageDeviceAccessPolicy_test_016  -------- START --------');
+      try {
+        usbManager.getUsbStorageDeviceAccessPolicy(undefined);
+        console.info(' --- getUsbStorageDeviceAccessPolicy_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getUsbStorageDeviceAccessPolicy_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getUsbStorageDeviceAccessPolicy_test_016  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getDisallowedUsbDevices_test_015
+     * @tc.number getDisallowedUsbDevices_test_015
+     * @tc.desc   getDisallowedUsbDevices with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUsbDevices_test_015", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUsbDevices_test_015  -------- START --------');
+      try {
+        usbManager.getDisallowedUsbDevices(null);
+        console.info(' --- getDisallowedUsbDevices_test_015 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUsbDevices_test_015 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUsbDevices_test_015  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDisallowedUsbDevices_test_016
+     * @tc.number getDisallowedUsbDevices_test_016
+     * @tc.desc   getDisallowedUsbDevices with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDisallowedUsbDevices_test_016", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDisallowedUsbDevices_test_016  -------- START --------');
+      try {
+        usbManager.getDisallowedUsbDevices(undefined);
+        console.info(' --- getDisallowedUsbDevices_test_016 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDisallowedUsbDevices_test_016 error 401 is expected, actually catch: ' + error.code);
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDisallowedUsbDevices_test_016  -------- END --------');
+    })
+
+;
 }
 
 function testRemoveAllowedUsbDevices() {

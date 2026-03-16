@@ -18,7 +18,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-export default function SearchEitMenuOptionsTest() {
+export default function TextAreaEditMenuOptionsTest() {
   describe('TextAreaEditMenuOptionsTest', () : void => {
     beforeAll(async (): Promise<void> => {
       console.info("TextAreaEditMenuOptionsTest beforeEach start");
@@ -59,97 +59,57 @@ export default function SearchEitMenuOptionsTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextAreaEditMenuOptionsTest_static_0001', Level.LEVEL0, async (done: () =>void) : Promise<void> => {
+      console.info('[TextAreaEditMenuOptionsTest_static_0001] START');
       let driver = Driver.create();
-      console.info('TextAreaEditMenuOptionsTest TextAreaEditMenuOptionsTest0002 START');
-      await CommonFunc.sleep(500);
-      let search = await driver.findComponent(ON.id('textArea')) as Component;
-      await CommonFunc.sleep(500);
-      await search.longClick();
-      await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('111111')) as Component;
-      await CommonFunc.sleep(500);
-      await button.click();
-      let search2 = await driver.findComponent(ON.id('search2')) as Component;
-      await CommonFunc.sleep(500);
-      await search2.click();
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('textAreaLabelInfo');
-      let obj = JSON.parseJsonElement(strJson);
-      console.log('TextAreaEditMenuOptionsTest0002---obj.$attrs---' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-      console.log('TextAreaEditMenuOptionsTest0002---obj.$attrs.content---' + obj.getElement('$attrs').getString('content'));
-      expect('' + obj.getElement('$attrs').getString('content')).assertEqual('');
-      console.info("[TextAreaEditMenuOptionsTest0002] end");
-      done();
-    });
-
-    /**
-     * @tc.number   TextAreaEditMenuOptionsTest_static_0002
-     * @tc.name     TextAreaEditMenuOptionsTest_static_0002
-     * @tc.desc     TextAreaEditMenuOptionsTest_static_0002
-     * @tc.level    Level.LEVEL0
-     */
-    it('TextAreaEditMenuOptionsTest_static_0002', Level.LEVEL0, async (done: () =>void) : Promise<void> => {
-      let driver = Driver.create();
-      console.info('TextAreaEditMenuOptionsTest TextAreaEditMenuOptionsTest0002 START');
-      let change = await driver.findComponent(ON.id('button_ChangeValue')) as Component;
-      await CommonFunc.sleep(500);
-      change.click();
-      await CommonFunc.sleep(500);
-      let search = await driver.findComponent(ON.id('textArea')) as Component;
-      await CommonFunc.sleep(500);
-      await search.longClick();
-      await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.text('全选')) as Component;
-      await CommonFunc.sleep(500);
-      button.click();
-      await CommonFunc.sleep(500);
-      let text = await driver.findComponent(ON.id('textArea')) as Component;
-      await CommonFunc.sleep(500);
-      await text.inputText('undefined');
-      await CommonFunc.sleep(500);
-
-      let search2 = await driver.findComponent(ON.id('search2')) as Component;
-      await CommonFunc.sleep(500);
-      await search2.click();
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('textArea');
-      let obj = JSON.parseJsonElement(strJson);
-      console.log('TextAreaEditMenuOptionsTest0002---obj.$attrs---' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-      console.log('TextAreaEditMenuOptionsTest0002---obj.$attrs.content---' + obj.getElement('$attrs').getString('text'));
-      expect('' + obj.getElement('$attrs').getString('text')).assertEqual('undefined');
-      console.info("[TextAreaEditMenuOptionsTest0002] end");
-      done();
-    });
-    /**
-     * @tc.number   TextAreaEditMenuOptionsTest_static_0003
-     * @tc.name     TextAreaEditMenuOptionsTest_static_0003
-     * @tc.desc     TextAreaEditMenuOptionsTest_static_0003
-     * @tc.level    Level.LEVEL0
-     */
-    it('TextAreaEditMenuOptionsTest_static_0003', Level.LEVEL0, async (done: () =>void) : Promise<void> => {
-      let driver = Driver.create();
-      console.info('TextAreaEditMenuOptionsTest TextAreaEditMenuOptionsTest0002 START');
-      let change = await driver.findComponent(ON.id('button_ChangeValue')) as Component;
-      await CommonFunc.sleep(500);
-      change.click();
-      await CommonFunc.sleep(500);
-      let search = await driver.findComponent(ON.id('textArea')) as Component;
-      await CommonFunc.sleep(500);
-      await search.longClick();
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.text('111111')) as Component;
-      await CommonFunc.sleep(500);
-      await button.click();
-      let search2 = await driver.findComponent(ON.id('search2')) as Component;
-      await CommonFunc.sleep(500);
-      await search2.click();
-      await CommonFunc.sleep(500);
-      let strJson = inspector.getInspectorByKey('textAreaLabelInfo');
+      let textArea = await driver.findComponent(ON.id('TextArea')) as Component;
+      await CommonFunc.sleep(1000);
+      await textArea.longClick();
+      await CommonFunc.sleep(1000);
+
+      let strJson = inspector.getInspectorByKey('Text');
       let obj = JSON.parseJsonElement(strJson);
-      console.log('TextAreaEditMenuOptionsTest_static_0003---obj.$attrs---' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-      console.log('TextAreaEditMenuOptionsTest_static_0003---obj.$attrs.content---' + obj.getElement('$attrs').getString('content'));
-      expect('' + obj.getElement('$attrs').getString('content')).assertEqual('');
-      console.info("[TextAreaEditMenuOptionsTest_static_0003] end");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(
+        '');
+      await CommonFunc.sleep(1000);
+      let search = await driver.findComponent(ON.id('Search')) as Component;
+      await CommonFunc.sleep(1000);
+      await search.click();
+      await CommonFunc.sleep(1000);
+
+      let button = await driver.findComponent(ON.id('button_editMenuOptions')) as Component;
+      await CommonFunc.sleep(1000);
+      await button.click();
+      await CommonFunc.sleep(1000);
+
+      await textArea.longClick();
+      await CommonFunc.sleep(1000);
+
+      let text = await driver.findComponent(ON.text('111111')) as Component;
+      await CommonFunc.sleep(1000);
+      await text.click();
+      await CommonFunc.sleep(1000);
+      strJson = inspector.getInspectorByKey('Text');
+      obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(
+        '111111');
+
+      await CommonFunc.sleep(1000);
+      await search.click();
+      await CommonFunc.sleep(1000);
+
+      await CommonFunc.sleep(1000);
+      await button.click();
+      await CommonFunc.sleep(1000);
+
+      await CommonFunc.sleep(1000);
+      await textArea.longClick();
+      await CommonFunc.sleep(1000);
+
+      strJson = inspector.getInspectorByKey('Text');
+      obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(
+        '');
       done();
     });
   })

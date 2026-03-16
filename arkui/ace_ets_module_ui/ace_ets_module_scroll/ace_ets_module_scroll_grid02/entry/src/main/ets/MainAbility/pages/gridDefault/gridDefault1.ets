@@ -435,7 +435,7 @@ struct GridNullUndefined1 {
         .scrollBar(BarState.On)
         .scrollBarWidth(10)
         .columnsTemplate('1fr 1fr')
-        .width('25%')
+        .width('20%')
         .height('100%')
         .id('grid_scrollBarColor_default')
         .backgroundColor(0xF0F0F0)
@@ -457,7 +457,7 @@ struct GridNullUndefined1 {
         .scrollBarWidth(10)
         .scrollBarColor('')
         .columnsTemplate('1fr 1fr')
-        .width('25%')
+        .width('20%')
         .height('100%')
         .id('grid_scrollBarColor_emptyString')
         .backgroundColor(0xF0F0F0)
@@ -479,7 +479,7 @@ struct GridNullUndefined1 {
         .scrollBarWidth(10)
         .scrollBarColor(null)
         .columnsTemplate('1fr 1fr')
-        .width('25%')
+        .width('20%')
         .height('100%')
         .id('grid_scrollBarColor_null')
         .backgroundColor(0xF0F0F0)
@@ -501,9 +501,31 @@ struct GridNullUndefined1 {
         .scrollBarWidth(10)
         .scrollBarColor(undefined)
         .columnsTemplate('1fr 1fr')
-        .width('25%')
+        .width('20%')
         .height('100%')
         .id('grid_scrollBarColor_undefined')
+        .backgroundColor(0xF0F0F0)
+
+        // Test scrollBarColor with number
+        Grid() {
+          ForEach(this.numbers, (item: string) => {
+            GridItem() {
+              Text('' + item)
+                .width('100%')
+                .height('30%')
+                .fontSize(14)
+                .textAlign(TextAlign.Center)
+                .backgroundColor(0xF9CF93)
+            }
+          }, (item: string) => item)
+        }
+        .scrollBar(BarState.On)
+        .scrollBarWidth(10)
+        .scrollBarColor(0xFFF000)
+        .columnsTemplate('1fr 1fr')
+        .width('20%')
+        .height('100%')
+        .id('grid_scrollBarColor_number')
         .backgroundColor(0xF0F0F0)
       }
       .width('100%')

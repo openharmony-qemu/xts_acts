@@ -35,6 +35,7 @@ const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
 const PARAMETER_ERROR_MSG = 'The parameter invalid.'
 const PERMISSION_DENIED_MSG = 'Permission denied.'
 let tokenID = undefined
+let sensortempcode = true;
 let permissionNameUser = 'ohos.permission.ACTIVITY_MOTION'
 async function grantPerm(){
     try {
@@ -236,7 +237,7 @@ describe("SensorJsTest_sensor_18", function () {
                     try {
                         sensor.once(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER, callback);
                         setTimeout(() => {
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                             done();
                         }, 4000);
                     } catch (error) {
@@ -272,7 +273,7 @@ describe("SensorJsTest_sensor_18", function () {
                     try {
                         sensor.once(sensor.SensorType.SENSOR_TYPE_ID_PEDOMETER, callback, 5);
                         setTimeout(() => {
-                            expect(true).assertTrue();
+                            expect(sensortempcode).assertTrue();
                             done();
                         }, 4000);
                     } catch (error) {

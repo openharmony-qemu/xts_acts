@@ -58,6 +58,7 @@ struct pasteButtonScenario {
   @State fontSize: number | undefined = 16
   @State fontStyle: FontStyle | undefined = FontStyle.Normal
   @State fontWeight: FontWeight | undefined = FontWeight.Medium
+  @State fontFamily: string | undefined = 'HarmonyOS Sans'
   @State fontColor: string | Color | undefined = '#ffffffff'
   @State iconColor: string | Color | undefined = '#ffffffff'
   @State bgColor: string | Color | undefined = '#ff007dff'
@@ -77,113 +78,114 @@ struct pasteButtonScenario {
   @State maxWidth: int = 25
   @State minHeight: int = 30
   @State maxHeight: int = 35
-  private stateChangeCallBack: (eventData:events_emitter.EventData) => void =
-    (eventData:events_emitter.EventData) => {
-      if (eventData != null && eventData.data != undefined) {
-        const data = eventData.data as Record<String, RecordData>
-        console.info('====>page_pasteButtonScenario page state change called:' + JSON.stringify(eventData.data));
-
-        if (data['bgType'] != null) {
-          this.bgType = data['bgType'] as ButtonType
-        }
-        if (data['iconSize'] != null) {
-          this.iconSize = data['iconSize'] as Int
-        }
-        if (data['direct'] != null) {
-          this.direct = data['direct'] as SecurityComponentLayoutDirection
-        }
-        if (data['positionX'] != null) {
-          this.positionX = data['positionX'] as String
-        }
-        if (data['positionY'] != null) {
-          this.positionY = data['positionY'] as String
-        }
-        if (data['anchorX'] != null) {
-          this.anchorX = data['anchorX'] as String
-        }
-        if (data['anchorY'] != null) {
-          this.anchorY = data['anchorY'] as String
-        }
-        if (data['offsetX'] != null) {
-          this.offsetX = data['offsetX'] as String
-        }
-        if (data['offsetY'] != null) {
-          this.offsetY = data['offsetY'] as String
-        }
-        if (data['fontSize'] != null) {
-          this.fontSize = data['fontSize'] as Int
-        }
-        if (data['fontStyle'] != null) {
-          this.fontStyle = data['fontStyle'] as FontStyle
-        }
-        if (data['fontWeight'] != null) {
-          this.fontWeight = data['fontWeight'] as FontWeight
-        }
-        if ((data['fontColor'] != null) && (data['fontColor'] != Color.Transparent)) {
-          this.fontColor = data['fontColor'] as String
-        } else if ((data['fontColor'] != null) && (data['fontColor'] == Color.Transparent)) {
-          this.fontColor = data['fontColor'] as Color
-        }
-        if ((data['iconColor'] != null) && (data['iconColor'] != Color.Transparent)) {
-          this.iconColor = data['iconColor'] as String
-        } else if ((data['iconColor'] != null) && (data['iconColor'] == Color.Transparent)) {
-          this.iconColor = data['iconColor'] as Color
-        }
-        if ((data['bgColor'] != null) && (data['bgColor'] != Color.Transparent)) {
-          this.bgColor = data['bgColor'] as String
-        } else if ((data['bgColor'] != null) && (data['bgColor'] == Color.Transparent)) {
-          this.bgColor = data['bgColor'] as Color
-        }
-        if (data['borderSty'] != null) {
-          this.borderSty = data['borderSty'] as BorderStyle
-        }
-        if (data['borderWid'] != null) {
-          this.borderWid = data['borderWid'] as Int
-        }
-        if (data['borderCol'] != null) {
-          this.borderCol = data['borderCol'] as String
-        }
-        if (data['borderRad'] != null) {
-          this.borderRad = data['borderRad'] as Int
-        }
-        if (data['left'] != null) {
-          this.left = data['left'] as Int
-        }
-        if (data['right'] != null) {
-          this.right = data['right'] as Int
-        }
-        if (data['top'] != null) {
-          this.top = data['top'] as Int
-        }
-        if (data['bottom'] != null) {
-          this.bottom = data['bottom'] as Int
-        }
-        if (data['middle'] != null) {
-          this.middle = data['middle'] as Int
-        }
-        if (data['clipSet'] != null) {
-          this.clipSet = data['clipSet'] as Boolean
-        }
-        if (data['width'] != null) {
-          this.widthT = data['width'] as Int
-        }
-        if (data['height'] != null) {
-          this.heightT = data['height'] as Int
-        }
-        if (data['minWidth'] != null) {
-          this.minWidth = data['minWidth'] as Int
-        }
-        if (data['maxWidth'] != null) {
-          this.maxWidth = data['maxWidth'] as Int
-        }
-        if (data['minHeight'] != null) {
-          this.minHeight = data['minHeight'] as Int
-        }
-        if (data['maxHeight'] != null) {
-          this.maxHeight = data['maxHeight'] as Int
-        }
+  private stateChangeCallBack: (eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
+    if (eventData != null && eventData.data != undefined) {
+      const data = eventData.data as Record<String, RecordData>
+      console.info('====>page_pasteButtonScenario page state change called:' + JSON.stringify(eventData.data));
+      if (data['bgType'] != null) {
+        this.bgType = data['bgType'] as ButtonType
+      }
+      if (data['iconSize'] != null) {
+        this.iconSize = data['iconSize'] as Int
+      }
+      if (data['direct'] != null) {
+        this.direct = data['direct'] as SecurityComponentLayoutDirection
+      }
+      if (data['positionX'] != null) {
+        this.positionX = data['positionX'] as String
+      }
+      if (data['positionY'] != null) {
+        this.positionY = data['positionY'] as String
+      }
+      if (data['anchorX'] != null) {
+        this.anchorX = data['anchorX'] as String
+      }
+      if (data['anchorY'] != null) {
+        this.anchorY = data['anchorY'] as String
+      }
+      if (data['offsetX'] != null) {
+        this.offsetX = data['offsetX'] as String
+      }
+      if (data['offsetY'] != null) {
+        this.offsetY = data['offsetY'] as String
+      }
+      if (data['fontSize'] != null) {
+        this.fontSize = data['fontSize'] as Int
+      }
+      if (data['fontStyle'] != null) {
+        this.fontStyle = data['fontStyle'] as FontStyle
+      }
+      if (data['fontWeight'] != null) {
+        this.fontWeight = data['fontWeight'] as FontWeight
+      }
+      if (data['fontFamily'] != null) {
+        this.fontFamily = data['fontFamily'] as String
+      }
+      if ((data['fontColor'] != null) && (data['fontColor'] != Color.Transparent)) {
+        this.fontColor = data['fontColor'] as String
+      } else if ((data['fontColor'] != null) && (data['fontColor'] == Color.Transparent)) {
+        this.fontColor = data['fontColor'] as Color
+      }
+      if ((data['iconColor'] != null) && (data['iconColor'] != Color.Transparent)) {
+        this.iconColor = data['iconColor'] as String
+      } else if ((data['iconColor'] != null) && (data['iconColor'] == Color.Transparent)) {
+        this.iconColor = data['iconColor'] as Color
+      }
+      if ((data['bgColor'] != null) && (data['bgColor'] != Color.Transparent)) {
+        this.bgColor = data['bgColor'] as String
+      } else if ((data['bgColor'] != null) && (data['bgColor'] == Color.Transparent)) {
+        this.bgColor = data['bgColor'] as Color
+      }
+      if (data['borderSty'] != null) {
+        this.borderSty = data['borderSty'] as BorderStyle
+      }
+      if (data['borderWid'] != null) {
+        this.borderWid = data['borderWid'] as Int
+      }
+      if (data['borderCol'] != null) {
+        this.borderCol = data['borderCol'] as String
+      }
+      if (data['borderRad'] != null) {
+        this.borderRad = data['borderRad'] as Int
+      }
+      if (data['left'] != null) {
+        this.left = data['left'] as Int
+      }
+      if (data['right'] != null) {
+        this.right = data['right'] as Int
+      }
+      if (data['top'] != null) {
+        this.top = data['top'] as Int
+      }
+      if (data['bottom'] != null) {
+        this.bottom = data['bottom'] as Int
+      }
+      if (data['middle'] != null) {
+        this.middle = data['middle'] as Int
+      }
+      if (data['clipSet'] != null) {
+        this.clipSet = data['clipSet'] as Boolean
+      }
+      if (data['width'] != null) {
+        this.widthT = data['width'] as Int
+      }
+      if (data['height'] != null) {
+        this.heightT = data['height'] as Int
+      }
+      if (data['minWidth'] != null) {
+        this.minWidth = data['minWidth'] as Int
+      }
+      if (data['maxWidth'] != null) {
+        this.maxWidth = data['maxWidth'] as Int
+      }
+      if (data['minHeight'] != null) {
+        this.minHeight = data['minHeight'] as Int
+      }
+      if (data['maxHeight'] != null) {
+        this.maxHeight = data['maxHeight'] as Int
       }
     }
+  }
 
   onPageShow() {
     console.info('====>page_pasteButtonScenario page show called');
@@ -230,6 +232,7 @@ struct pasteButtonScenario {
             .fontSize(this.fontSize)
             .fontStyle(this.fontStyle)
             .fontWeight(this.fontWeight)
+            .fontFamily(this.fontFamily)
             .fontColor(this.fontColor)
             .iconColor(this.iconColor)
             .backgroundColor(this.bgColor)

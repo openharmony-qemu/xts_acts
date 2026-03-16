@@ -403,6 +403,290 @@ export default function pasteComponentScenarioStaticTest() {
     });
 
     /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_0500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_0500
+     * @tc.desc   Test SecurityComponent constraintSize.minWidth attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_0500';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      let obj1 = JSON.parseJsonElement(obj.getElement('$attrs').getString('constraintSize'));
+      expect(obj1.getString('minWidth')).assertEqual('20.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_0600
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_0600
+     * @tc.desc   Test SecurityComponent constraintSize.maxWidth attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_0600';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      let obj1 = JSON.parseJsonElement(obj.getElement('$attrs').getString('constraintSize'));
+      expect(obj1.getString('maxWidth')).assertEqual('25.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_0700
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_0700
+     * @tc.desc   Test SecurityComponent constraintSize.minHeight attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_0700';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      let obj1 = JSON.parseJsonElement(obj.getElement('$attrs').getString('constraintSize'));
+      expect(obj1.getString('minHeight')).assertEqual('30.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+    
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_0800
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_0800
+     * @tc.desc   Test SecurityComponent constraintSize.maxHeight attribute is Normal and Authorization succeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_0800';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Medium,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      let obj1 = JSON.parseJsonElement(obj.getElement('$attrs').getString('constraintSize'));
+      expect(obj1.getString('maxHeight')).assertEqual('35.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
      * @tc.name   Test_Security_PasteButton_ScenariosStatic_0900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_0900
      * @tc.desc   Test SecurityComponent layoutDirection attribute is undefined and Authorization is successful
@@ -1096,6 +1380,777 @@ export default function pasteComponentScenarioStaticTest() {
       console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2000
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2000
+     * @tc.desc   Test SecurityComponent fontFamily attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2000';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontFamily': undefined,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual('HarmonyOS Sans');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2100
+     * @tc.desc   Test SecurityComponent fontColor attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2100';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': undefined,
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFFFF');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2200
+     * @tc.desc   Test SecurityComponent fontColor attribute is RGB value transmitted and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2200';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': 'rgb(255, 255, 1)',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFF01');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2300
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2300
+     * @tc.desc   Test SecurityComponent iconColor attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2300';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': '#ffffffff',
+          'iconColor': undefined,
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('iconColor')).assertEqual('#FFFFFFFF');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2400
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2400
+     * @tc.desc   Test SecurityComponent iconColor attribute is RGB value transmitted and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2400';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': '#ffffffff',
+          'iconColor': 'rgb(255, 255, 1)',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('iconColor')).assertEqual('#FFFFFF01');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2500
+     * @tc.desc   Test SecurityComponent backgroundColor attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2500';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': undefined,
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF007DFF');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2600
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2600
+     * @tc.desc   Test SecurityComponent backgroundColor attribute is RGB value transmitted and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2600';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': 'rgb(0, 235, 255)',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00EBFF');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2700
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2700
+     * @tc.desc   Test SecurityComponent borderColor attribute is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2700';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': undefined,
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('borderColor')).assertEqual('#FFFFFFFF');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2800
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2800
+     * @tc.desc   Test SecurityComponent borderColor attribute is RGB value transmitted and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2800';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': 'rgb(0, 235, 155)',
+          'borderRad': 0,
+          'left': 12,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('borderColor')).assertEqual('#FF00EB9B');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_2900
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_2900
+     * @tc.desc   Test SecurityComponent padding of left is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_2900';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': undefined,
+          'right': 12,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getElement('padding').getString('left')).assertEqual('12.00vp');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_PasteButton_ScenariosStatic_3000
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_ScenariosStatic_3000
+     * @tc.desc   Test SecurityComponent padding of right is undefined and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_PasteButton_ScenariosStatic_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_PasteButton_ScenariosStatic_3000';
+      console.info(`====>${TCNAME} START====`);
+      await UtilsTest.msSleep(1000);
+      try {
+        let data: Record<string, RecordData> = {
+          'icon': 0,
+          'textType': 0,
+          'bgType': ButtonType.Normal,
+          'iconSize': 16,
+          'direct': SecurityComponentLayoutDirection.HORIZONTAL,
+          'positionX': '0',
+          'positionY': '0',
+          'anchorX': '0',
+          'anchorY': '0',
+          'offsetX': '0',
+          'offsetY': '0',
+          'fontSize': 16,
+          'fontStyle': FontStyle.Normal,
+          'fontWeight': FontWeight.Normal,
+          'fontColor': '#ffffffff',
+          'iconColor': '#ffffffff',
+          'bgColor': '#ff007dff',
+          'borderSty': BorderStyle.Dashed,
+          'borderWid': 0,
+          'borderCol': '#ffffffff',
+          'borderRad': 0,
+          'left': 12,
+          'right': undefined,
+          'top': 4,
+          'bottom': 4,
+          'middle': 4,
+          'width': 10,
+          'height': 15,
+          'minWidth': 20,
+          'maxWidth': 25,
+          'minHeight': 30,
+          'maxHeight': 35
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getElement('padding').getString('right')).assertEqual('12.00vp');
       await UtilsTest.msSleep(1000);
       sucCallback(TCNAME, done);
       let driver = Driver.create();

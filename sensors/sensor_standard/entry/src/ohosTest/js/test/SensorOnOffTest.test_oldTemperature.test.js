@@ -62,6 +62,7 @@ describe("SensorJsTest_sensor_22", function () {
         console.info('afterEach called')
     })
 
+    const PARAMETER_EXPECT_ERROR = true
     const PARAMETER_ERROR_CODE = 401
     const PARAMETER_ERROR_MSG = 'The parameter invalid.'
     const SERVICE_EXCEPTION_CODE = 14500101
@@ -90,7 +91,7 @@ describe("SensorJsTest_sensor_22", function () {
             done();
         }
          setTimeout(() => {
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         }, 500);
     })

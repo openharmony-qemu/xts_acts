@@ -1748,8 +1748,6 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1400  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(width).assertEqual('12.00vp');
-          expect(height).assertEqual('12.00vp');
           expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
 
@@ -1814,8 +1812,6 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1600  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(width).assertEqual('12.00vp');
-          expect(height).assertEqual('12.00vp');
           expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           done();
@@ -1843,8 +1839,6 @@ export default function sliderTest() {
           console.info("----ArkUX_Stage_Slider_blockSize_1700  is " + JSON.stringify(obj.$attrs.blockSize));
           let width: string = obj.$attrs.blockSize.width;
           let height: string = obj.$attrs.blockSize.height;
-          expect(width).assertEqual('12.00vp');
-          expect(height).assertEqual('12.00vp');
           expect(width).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           expect(height).assertEqual(defaultStrokeWidth($r('sys.float.slider_inset_block_size')));
           done();

@@ -807,6 +807,7 @@ export default function RequestDownloadStaticTest() {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 create success");
         let on_completedCallback = (pro: request.agent.Progress): void => {
+          waitForCompletion(async () => {
           try {
             let task: request.agent.Task = await request.agent.create(baseContext!, config);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start twice");
@@ -819,6 +820,7 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 err: " + JSON.stringify(err));
             done();
           }
+          })
         }
         task.onCompleted(on_completedCallback);
         await task.start();

@@ -74,7 +74,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -109,7 +109,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test TaskGroup error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1001_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -154,7 +154,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test GenericsTask
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -187,7 +187,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test GenericsTask
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1002_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -228,7 +228,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test task1.name
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -264,7 +264,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test isCanceled
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -304,7 +304,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onEnqueued
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -353,7 +353,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onEnqueued
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -409,7 +409,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onStartExecution
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -456,7 +456,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onStartExecution
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -515,7 +515,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onExecutionSucceeded
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -555,7 +555,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onExecutionSucceeded
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1013_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -606,7 +606,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test isDone
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -633,7 +633,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test isDone
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

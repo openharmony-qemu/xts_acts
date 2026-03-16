@@ -350,6 +350,50 @@ export default function listDefaultTest1() {
       console.info('[listEdgeEffectNullUndefined_0200] END');
     })
 
+    /**
+     * @tc.name   listEdgeEffectNullUndefined_0300
+     * @tc.number listEdgeEffectNullUndefined_0300
+     * @tc.desc   Test list edgeEffect options property with null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('listEdgeEffectNullUndefined_0300', Level.LEVEL0, async () => {
+      console.info('[listEdgeEffectNullUndefined_0300] START');
+
+      let strJson: string = getInspectorByKey('list_edgeEffect_options_null');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[listEdgeEffectNullUndefined_0300] null obj is: " +
+      JSON.stringify(obj.$attrs.edgeEffect));
+
+      // list edgeEffect options 设置null
+      expect(obj.$attrs.edgeEffect).assertEqual("EdgeEffect.Spring");
+      console.info('[listEdgeEffectNullUndefined_0300] END');
+    })
+
+    /**
+     * @tc.name   listEdgeEffectNullUndefined_0400
+     * @tc.number listEdgeEffectNullUndefined_0400
+     * @tc.desc   Test list edgeEffect options property with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('listEdgeEffectNullUndefined_0400', Level.LEVEL0, async () => {
+      console.info('[listEdgeEffectNullUndefined_0400] START');
+
+      let strJson: string = getInspectorByKey('list_edgeEffect_options_undefined');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[listEdgeEffectNullUndefined_0400] undefined obj is: " +
+      JSON.stringify(obj.$attrs.edgeEffect));
+
+      // list edgeEffect options 设置undefined
+      expect(obj.$attrs.edgeEffect).assertEqual("EdgeEffect.Spring");
+      console.info('[listEdgeEffectNullUndefined_0400] END');
+    })
+
     // ========== contentStartOffset tests ==========
     /**
      * @tc.name   listContentStartOffsetNullUndefined_0100

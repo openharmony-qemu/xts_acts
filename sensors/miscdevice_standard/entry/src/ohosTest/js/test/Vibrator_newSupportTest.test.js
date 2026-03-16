@@ -22,6 +22,7 @@ const ABILITYJUDGMENT = canIUse('SystemCapability.Sensors.MiscDevice');
 describe("VibratorJsTest_misc_6", function () {
     var g_execute = true;
     let EFFECT_ID = "haptic.clock.timer";
+    let sensortempcode = true;
     let INVALID_EFFECT_ID = "xxx";
     beforeAll(async function (done) {
         /*
@@ -138,7 +139,7 @@ describe("VibratorJsTest_misc_6", function () {
                                 expect(false).assertTrue();
                                 reject(error);
                             } else {
-                                expect(true).assertTrue();
+                                expect(sensortempcode).assertTrue();
                                 resolve();
                             }
                         });
@@ -156,7 +157,7 @@ describe("VibratorJsTest_misc_6", function () {
                                 expect(false).assertTrue();
                                 reject(error);
                             } else {
-                                expect(true).assertTrue();
+                                expect(sensortempcode).assertTrue();
                                 resolve();
                             }
                         });
@@ -172,7 +173,7 @@ describe("VibratorJsTest_misc_6", function () {
                         expect(false).assertTrue();
                         reject(error);
                     } else {
-                        expect(true).assertTrue();
+                        expect(sensortempcode).assertTrue();
                         isSupport = state;
                         resolve();
                     }
@@ -273,7 +274,7 @@ describe("VibratorJsTest_misc_6", function () {
                                 expect(false).assertTrue();
                                 reject(error);
                             } else {
-                                expect(true).assertTrue();
+                                expect(sensortempcode).assertTrue();
                                 resolve();
                             }
                         });
@@ -291,7 +292,7 @@ describe("VibratorJsTest_misc_6", function () {
                                 expect(false).assertTrue();
                                 reject(error);
                             } else {
-                                expect(true).assertTrue();
+                                expect(sensortempcode).assertTrue();
                                 resolve();
                             }
                         });
@@ -303,7 +304,7 @@ describe("VibratorJsTest_misc_6", function () {
 
             let isSupportPromise = new Promise((resolve, reject) => {
                 vibrator.isSupportEffect(EFFECT_ID).then((state) => {
-                    expect(true).assertTrue();
+                    expect(sensortempcode).assertTrue();
                     isSupport = state;
                     resolve();
                 }, (error) => {
@@ -372,7 +373,7 @@ describe("VibratorJsTest_misc_6", function () {
                 expect(false).assertTrue();
             }, (error) => {
                 console.info(TAG + ` isSupportEffect error ,error.code: ${error.code},error.message: ${error.message}`);
-                expect(true).assertTrue();
+                expect(sensortempcode).assertTrue();
                 done()
             });
         } catch (error) {

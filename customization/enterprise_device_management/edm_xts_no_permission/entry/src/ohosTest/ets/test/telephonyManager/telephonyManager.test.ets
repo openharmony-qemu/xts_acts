@@ -49,7 +49,11 @@ function testSetSimDisabled() {
       telephonyManager.setSimDisabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -72,7 +76,11 @@ function testSetSimEnabled() {
       telephonyManager.setSimEnabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -95,7 +103,11 @@ function testIsSimDisabled() {
       telephonyManager.isSimDisabled(SELFWANT, 0);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -119,7 +131,11 @@ function testAddOutgoingCallPolicyNumbers() {
       telephonyManager.addOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -142,7 +158,11 @@ function testGetOutgoingCallPolicyNumbers() {
       telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -166,7 +186,11 @@ function testRemoveOutgoingCallPolicyNumbers() {
       telephonyManager.removeOutgoingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -190,7 +214,11 @@ function testAddIncomingCallPolicyNumbers() {
       telephonyManager.addIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -213,7 +241,11 @@ function testGetIncomingCallPolicyNumbers() {
       telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -237,7 +269,11 @@ function testRemoveIncomingCallPolicyNumbers() {
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -260,7 +296,11 @@ function testHangupCalling() {
       telephonyManager.hangupCalling(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201 || error.code == 801).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

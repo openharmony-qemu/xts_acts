@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { isDeviceSupport } from './List.test';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 
 export default function canNotUse() {
@@ -27,7 +28,8 @@ export default function canNotUse() {
      */
     it('Test_cannotUseTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      let flag: boolean = canIUse("SystemCapability.Applications.IntelligentScene");
+      let flag: boolean = canIUse("SystemCapability.Applications.IntelligentScene") &&
+        canIUse("SystemCapability.Applications.Settings.Core") && isDeviceSupport();
       expect(flag).assertEqual(false);
       done();
     });

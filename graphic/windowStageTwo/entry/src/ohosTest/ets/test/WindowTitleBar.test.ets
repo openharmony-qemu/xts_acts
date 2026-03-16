@@ -224,16 +224,24 @@ export default function windowTitleBarTest() {
       console.log(msgStr + 'begin');
       let windowClass = await windowStage.getMainWindow();
       try {
-        let decorButtonStyle = windowClass.getDecorButtonStyle();
-        console.info(msgStr+ ' Succeeded in getting the style of button. Data: ' + JSON.stringify(decorButtonStyle));
-        expect(decorButtonStyle.colorMode).assertEqual(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-        expect(decorButtonStyle.buttonBackgroundSize).assertEqual(28);
-        expect(decorButtonStyle.spacingBetweenButtons).assertEqual(12);
-        expect(decorButtonStyle.closeButtonRightMargin).assertEqual(20);
-        done();
+        
+          let decorButtonStyle = windowClass.getDecorButtonStyle();
+          console.info(msgStr+ ' Succeeded in getting the style of button. Data: ' + JSON.stringify(decorButtonStyle));
+          if(isFreeWindowMode === true){
+          expect(decorButtonStyle.colorMode).assertEqual(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+          expect(decorButtonStyle.buttonBackgroundSize).assertEqual(28);
+          expect(decorButtonStyle.spacingBetweenButtons).assertEqual(12);
+          expect(decorButtonStyle.closeButtonRightMargin).assertEqual(20);
+          done();
+        }else{
+          expect(false).assertTrue();
+          done();
+        }
+        
       } catch (exception) {
         console.error(msgStr+ `Failed to set the style of button. Cause code: ${exception.code}, message: ${exception.message}`);
-        if(exception.code = 801){
+        if(isFreeWindowMode === false){
+          expect(exception.code).assertEqual(801);
           done();
         }else {
           expect(false).assertTrue();

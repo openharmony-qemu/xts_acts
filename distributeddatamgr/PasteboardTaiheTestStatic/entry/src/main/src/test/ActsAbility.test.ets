@@ -790,10 +790,12 @@ export default function abilityTest() {
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       try {
         systemPasteBoard.setData(pasteData, (err) => {
-          let hasData = await systemPasteBoard.hasData();
-          let data = systemPasteBoard.getDataSync();
-          expect(hasData).assertTrue();
-          done();
+          waitForCompletion(async () => {
+            let hasData = await systemPasteBoard.hasData();
+            let data = systemPasteBoard.getDataSync();
+            expect(hasData).assertTrue();
+            done();
+          })
         });
       } catch (err) {
         err = err as BusinessError;
@@ -816,9 +818,11 @@ export default function abilityTest() {
       let systemPasteBoard = pasteboard.getSystemPasteboard();
       try {
         systemPasteBoard.clearData((err) => {
-          let hasData = await systemPasteBoard.hasData();
-          expect(hasData).assertFalse();
-          done();
+          waitForCompletion(async () => {
+            let hasData = await systemPasteBoard.hasData();
+            expect(hasData).assertFalse();
+            done();
+          })
         });
       } catch (err) {
         err = err as BusinessError;

@@ -185,6 +185,8 @@ export default function AvPlayerEnumTest() {
       expect(Number(media.AVErrorCode.AVERR_IO_UNSUPPORTED_REQUEST)).assertEqual(5411011);
       expect(Number(media.AVErrorCode.AVERR_SUPER_RESOLUTION_UNSUPPORTED)).assertEqual(5410003);
       expect(Number(media.AVErrorCode.AVERR_SUPER_RESOLUTION_NOT_ENABLED)).assertEqual(5410004);
+      expect(Number(media.AVErrorCode.AVERR_PARAMETER_OUT_OF_RANGE)).assertEqual(5400108);
+      expect(Number(media.AVErrorCode.AVERR_IO_CLEARTEXT_NOT_PERMITTED)).assertEqual(5411012);
       done();
     });
 
@@ -228,6 +230,88 @@ export default function AvPlayerEnumTest() {
       expect(Number(audio.InterruptMode.SHARE_MODE)).assertEqual(0);
       expect(Number(audio.InterruptMode.INDEPENDENT_MODE)).assertEqual(1);
       expect(Number(audio.StreamUsage.STREAM_USAGE_UNKNOWN)).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0001
+     * @tc.desc   AVPlayer Enumeration test - MediaDescriptionKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(string(media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH)).assertEqual("original_width");
+      expect(string(media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT)).assertEqual("original_height");
+      expect(string(media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS)).assertEqual("ref_track_ids");
+      expect(string(media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE)).assertEqual("track_ref_type");
+      expect(string(media.MediaDescriptionKey.MD_KEY_MIME_TYPE)).assertEqual("mime_type");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0002
+     * @tc.desc   AVPlayer Enumeration test - VideoScaleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.VideoScaleType.VIDEO_SCALE_TYPE_SCALED_ASPECT)).assertEqual(2);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0003
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0003
+     * @tc.desc   AVPlayer Enumeration test - AVErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.AVErrorCode.AVERR_PARAMETER_OUT_OF_RANGE)).assertEqual(5400108);
+      expect(Number(media.AVErrorCode.AVERR_IO_CLEARTEXT_NOT_PERMITTED)).assertEqual(5411012);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0004
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0004
+     * @tc.desc   AVPlayer Enumeration test - MediaType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.MediaType.MEDIA_TYPE_UNSUPPORTED)).assertEqual(-1);
+      expect(Number(media.MediaType.MEDIA_TYPE_ATTACHMENT)).assertEqual(3);
+      expect(Number(media.MediaType.MEDIA_TYPE_DATA)).assertEqual(4);
+      expect(Number(media.MediaType.MEDIA_TYPE_TIMED_METADATA)).assertEqual(5);
+      expect(Number(media.MediaType.MEDIA_TYPE_AUXILIARY)).assertEqual(6);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0005
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0005
+     * @tc.desc   AVPlayer Enumeration test - VideoScaleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(string(media.PlaybackMetricsKey.PREPARE_DURATION)).assertEqual('prepare_duration');
+      expect(string(media.PlaybackMetricsKey.RESOURCE_CONNECTION_DURATION)).assertEqual('resource_connection_duration');
+      expect(string(media.PlaybackMetricsKey.FIRST_FRAME_DECAPSULATION_DURATION)).assertEqual('first_frame_decapsulation_duration');
+      expect(string(media.PlaybackMetricsKey.TOTAL_PLAYING_TIME)).assertEqual('total_playback_time');
+      expect(string(media.PlaybackMetricsKey.DOWNLOAD_REQUESTS_COUNT)).assertEqual('loading_requests_count');
+      expect(string(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_TIME)).assertEqual('total_loading_time');
+      expect(string(media.PlaybackMetricsKey.TOTAL_DOWNLOAD_SIZE)).assertEqual('total_loading_bytes');
+      expect(string(media.PlaybackMetricsKey.STALLING_COUNT)).assertEqual('stalling_count');
+      expect(string(media.PlaybackMetricsKey.TOTAL_STALLING_TIME)).assertEqual('total_stalling_time');
       done();
     });
 

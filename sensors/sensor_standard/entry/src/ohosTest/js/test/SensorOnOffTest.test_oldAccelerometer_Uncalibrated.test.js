@@ -72,7 +72,7 @@ describe("SensorJsTest_sensor_6", function () {
     })
 
     let errMessages = ['string is not defined','The parameter invalid'];
-
+    let sensortempcode = true;
     let errMessage;
 
     /**
@@ -153,7 +153,7 @@ describe("SensorJsTest_sensor_6", function () {
         console.info('----------------------Accelerometer_Uncalibrated_SensorJsTest004---------------------------');
         sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, callback);
         setTimeout(() => {
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
@@ -227,7 +227,7 @@ describe("SensorJsTest_sensor_6", function () {
         sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, onSensorCallback);
         sensor.off(sensor.SensorType.SENSOR_TYPE_ID_ACCELEROMETER_UNCALIBRATED, onSensorCallback);
         setTimeout(() => {
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })

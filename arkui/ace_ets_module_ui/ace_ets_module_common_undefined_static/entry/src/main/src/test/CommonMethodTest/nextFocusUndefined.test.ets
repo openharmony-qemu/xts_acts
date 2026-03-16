@@ -39,7 +39,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility } from '../Util.test';
 
 export default function NextFocusUndefinedTest() {
-  describe('NextFocusUndefinedTest', () => {
+  describe('NextFocusUndefinedTestAdapt001', () => {
     beforeAll(async (): Promise<void> => {
       console.info("NextFocusUndefinedTest beforeAll start");
 

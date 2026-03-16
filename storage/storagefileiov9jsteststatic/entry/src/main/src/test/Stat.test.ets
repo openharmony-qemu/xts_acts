@@ -618,6 +618,7 @@ export default function fileIOStat() {
         let fpath = await Utils.nextFileName('fileIO_stat_async_static_000');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
         await fs.stat(fpath).then((statres: fs.Stat) => {
+        waitForCompletion(async () => {
           expect(statres !== null).assertTrue();
           let file = fs.openSync(fpath);
           await fs.stat(file.fd).then((stat2: fs.Stat) => {
@@ -629,6 +630,7 @@ export default function fileIOStat() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           });
+        })
         }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
           expect(false).assertTrue();
@@ -1802,7 +1804,7 @@ export default function fileIOStat() {
           }
           expect(stat2?.isSymbolicLink() === false).assertTrue();
           fs.closeSync(file);
-          await Utils.msSleep(2000);
+          waitForCompletion(async () => {await Utils.msSleep(2000);})
           hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 unlink start');
           fs.unlinkSync(fpath);
           done();

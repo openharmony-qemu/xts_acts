@@ -4623,7 +4623,7 @@ export default function continuationManagerTest() {
         it('testunregisterContinuation040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testunregisterContinuation040 start----------------------");
             try {
-                continuationManager.unregisterContinuation(undefined, (err) => {
+                continuationManager.unregisterContinuation(null, (err) => {
                     if (err != 0) {
                         console.log('testunregisterContinuation040 err code is' + err.code);
                         expect().assertFail();

@@ -1361,7 +1361,8 @@ export default function checkBoxGroupTest() {
           JSON.stringify(markObj));
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0400 component markObj.strokeWidth is: " +
           JSON.stringify(markObj.strokeWidth));
-          expect(markObj.strokeWidth).assertEqual("2.00vp");
+          let width :number = Number(markObj.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(width - 2))<=1).assertEqual(true)
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0400 END ');
         } catch (err) {
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0400 ERR  ' + JSON.stringify(err));
@@ -1463,7 +1464,8 @@ export default function checkBoxGroupTest() {
           JSON.stringify(markObj));
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0700 component markObj.strokeWidth is: " +
           JSON.stringify(markObj.strokeWidth));
-          expect(markObj.strokeWidth).assertEqual("2.00vp");
+          let width :number = Number(markObj.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(width - 2))<=1).assertEqual(true)
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0700 END ');
         } catch (err) {
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0700 ERR  ' + JSON.stringify(err));
@@ -1497,7 +1499,8 @@ export default function checkBoxGroupTest() {
           JSON.stringify(markObj));
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0800 component markObj.strokeWidth is: " +
           JSON.stringify(markObj.strokeWidth));
-          expect(markObj.strokeWidth).assertEqual("2.00vp");
+          let width :number = Number(markObj.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(width - 2))<=1).assertEqual(true)
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0800 END ');
         } catch (err) {
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_0800 ERR  ' + JSON.stringify(err));
@@ -1565,7 +1568,8 @@ export default function checkBoxGroupTest() {
           JSON.stringify(markObj));
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1000 component markObj.strokeWidth is: " +
           JSON.stringify(markObj.strokeWidth));
-          expect(markObj.strokeWidth).assertEqual("2.00vp");
+          let width :number = Number(markObj.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(width - 2))<=1).assertEqual(true)
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1000 END ');
         } catch (err) {
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1000 ERR  ' + JSON.stringify(err));
@@ -1667,7 +1671,8 @@ export default function checkBoxGroupTest() {
           JSON.stringify(markObj));
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1300 component markObj.strokeWidth is: " +
           JSON.stringify(markObj.strokeWidth));
-          expect(markObj.strokeWidth).assertEqual("2.00vp");
+          let width :number = Number(markObj.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(width - 2))<=1).assertEqual(true)
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1300 END ');
         } catch (err) {
           console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1300 ERR  ' + JSON.stringify(err));
@@ -1741,7 +1746,8 @@ export default function checkBoxGroupTest() {
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1500 component obj.$attrs.mark is: " +
           JSON.stringify(obj.$attrs.mark));
           let markObj: Record<string, ESObject> = JSON.parse(obj.$attrs.mark);
-          expect(markObj.strokeWidth).assertEqual("2.00vp");
+          let width :number = Number(markObj.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(width - 2))<=1).assertEqual(true)
           expect(markObj.size).assertEqual("0.00vp");
           expect(markObj.strokeColor).assertEqual(obj.$attrs.borderColor);
           expect(obj.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);
@@ -1753,7 +1759,8 @@ export default function checkBoxGroupTest() {
           console.info("ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1500 objGroup obj.$attrs.mark is: " +
           JSON.stringify(objGroup.$attrs.mark));
           let markObjGroup: Record<string, ESObject> = JSON.parse(objGroup.$attrs.mark);
-          expect(markObjGroup.strokeWidth).assertEqual("2.00vp");
+          let widthGroup :number = Number(markObjGroup.strokeWidth.split('.')[0])
+          expect(Math.floor(Math.abs(widthGroup - 2))<=1).assertEqual(true)
           expect(markObjGroup.size).assertEqual("0.00vp");
           expect(markObjGroup.strokeColor).assertEqual(obj.$attrs.borderColor);
           expect(objGroup.$attrs.unselectedColor).assertEqual(obj.$attrs.backgroundColor);

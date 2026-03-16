@@ -1201,8 +1201,9 @@ struct setBlanklessLoadingWithParamsTest {
 
       Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .onPageEnd(() => {
+        .onLoadIntercept((event) => {
           this.isPageEnd = 0
+          return false;
         })
     }
   }

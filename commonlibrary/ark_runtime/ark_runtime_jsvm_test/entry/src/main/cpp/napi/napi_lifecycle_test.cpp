@@ -1343,6 +1343,12 @@ static intptr_t g_externals[] = {
         return nullptr;
     }
 
+    OH_JSVM_CloseHandleScope(env1, handleScope);
+    OH_JSVM_CloseEnvScope(env1, envScope);
+    OH_JSVM_DestroyEnv(env1);
+    OH_JSVM_CloseVMScope(vm, vmScope);
+    OH_JSVM_DestroyVM(vm);
+
     bool setValue = true;
     JSVM_Value retValue = nullptr;
     OH_JSVM_GetBoolean(env, setValue, &retValue);

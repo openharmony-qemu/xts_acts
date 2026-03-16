@@ -56,14 +56,6 @@ export default class StartAbility extends UIAbility {
       AppStorage.setOrCreate('pageContext', this.context);
       hilog.info(domain, 'testTag', 'Succeeded in AppStorage this.context.'+this.context);
     });
-
-    let windowStageEventChangeArray: window.WindowStageEventType[] = [];
-    windowStage.onWindowStageEvent((windowStageEvent: window.WindowStageEventType) => {
-      hilog.info(domain, 'testTag', 'windowStageEvent happened. Event:' + JSON.stringify(windowStageEvent));
-      windowStageEventChangeArray.push(windowStageEvent);
-    });
-    AppStorage.setOrCreate('windowStageEventChangeArray', windowStageEventChangeArray);
-    console.info('Succeeded windowStageEventChangeArray: ' + JSON.stringify(windowStageEventChangeArray));
   }
 
   public onWindowStageDestroy(): void {

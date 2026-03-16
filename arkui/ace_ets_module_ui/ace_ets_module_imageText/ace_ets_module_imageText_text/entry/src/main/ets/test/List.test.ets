@@ -17,6 +17,7 @@ import InputPresetTest from './PresetTest/InputPresetTest.test';
 import APITextBackgroundStyleJsunit from './ContainerSpanTest/APITextBackgroundStyleJsunit.test';
 import ContainerSpanModifierTest from './ContainerSpanTest/ContainerSpanModifier.test';
 import ContainerSpanModifierTest1 from './ContainerSpanTest/ContainerSpanModifierTest1.test';
+import ContainerSpanPropertiesNullUndefinedTest from './ContainerSpanTest/ContainerSpanPropertiesNullUndefinedTest.test';
 
 import ImageLoadResultTest from './ImageSpanTest/ImageLoadResultTest.test';
 import ImageSpanJsunit from './ImageSpanTest/ImageSpanJsunit.test';
@@ -147,6 +148,7 @@ export default function testsuite() {
   APITextBackgroundStyleJsunit()
   ContainerSpanModifierTest()
   ContainerSpanModifierTest1()
+  ContainerSpanPropertiesNullUndefinedTest()
   // ImageSpanTest
   ImageLoadResultTest()
   ImageSpanJsunit()

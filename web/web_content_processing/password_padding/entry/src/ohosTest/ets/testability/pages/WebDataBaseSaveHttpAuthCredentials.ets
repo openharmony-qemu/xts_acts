@@ -120,7 +120,16 @@ struct WebDataBaseSaveHttpAuthCredentials {
               }
             break;
             }
-
+            case "testSaveHttpAuthCredentialsEmptyRealm": {
+              try {
+                webview.WebDataBase.saveHttpAuthCredentials("host", "", "username", "password");
+                Utils.emitEvent("empty_realm", 20260246);
+              } catch (error) {
+                console.error("saveHttpAuthCredentials with empty realm error: " + JSON.stringify(error));
+                Utils.emitEvent("error", 20260246);
+              }
+              break;
+            }
             case "testSaveHttpAuthCredentialsNullRealm": {
               try {
                 webview.WebDataBase.saveHttpAuthCredentials("host", null, "username", "password");
@@ -171,7 +180,16 @@ struct WebDataBaseSaveHttpAuthCredentials {
               }
               break;
             }
-   
+            case "testSaveHttpAuthCredentialsEmptyPassword": {
+              try {
+                webview.WebDataBase.saveHttpAuthCredentials("host", "realm", "username", "");
+                Utils.emitEvent("empty_password", 20260252);
+              } catch (error) {
+                console.error("saveHttpAuthCredentials with empty password error: " + JSON.stringify(error));
+                Utils.emitEvent("error", 20260252);
+              }
+              break;
+            }
             case "testSaveHttpAuthCredentialsNullPassword": {
               try {
                 webview.WebDataBase.saveHttpAuthCredentials("host", "realm", "username", null);

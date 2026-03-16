@@ -287,16 +287,19 @@ export default function ObserverJsunit() {
 		let callback = (value:observer.CallStateInfo) => {
           console.log("on callStateChange, state:" + value.state + ", number:" + value.number);
           expect(typeof value.state === undefined).assertFalse();
+          expect(typeof value.number === undefined).assertFalse();
+          observer.off('callStateChange');
+          done();
         }
         observer.on('callStateChange', {
           slotId: 0
         }, callback);
         done();
       } catch (error) {
+        console.log("Telephony_observer_observer_on_callStateChange_0200 on callStateChange fail, error:" + error.code);
         expect(false).assertTrue();
         done();
       }
-        observer.off('callStateChange');
       console.log("************* Telephony_observer_observer_on_callStateChange_0200 Test end *************");
     })
 
@@ -428,6 +431,33 @@ export default function ObserverJsunit() {
         done();
       }
       console.log("************* Telephony_observer_observer_on_callStateChange_0600 Test end *************");
+    })
+
+    /**
+     * @tc.name   Telephony_observer_observer_on_callStateChange_0700
+     * @tc.number Telephony_observer_observer_on_callStateChange_0700
+     * @tc.desc   call the off method of callStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Telephony_observer_observer_on_callStateChange_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      console.log("************* Telephony_observer_observer_on_callStateChange_0700 Test start *************");
+      try {
+        let callback = (value:observer.CallStateInfo) => {
+          console.log("Telephony_observer_observer_on_callStateChange_0700 on callStateChange, state:" + value.state + ", number:" + value.number);
+          expect(typeof value.state === undefined).assertFalse();
+          expect(typeof value.number === undefined).assertFalse();
+          observer.off('callStateChange');
+          done();
+        }
+        observer.on('callStateChange', callback);
+      } catch (error) {
+        console.log("Telephony_observer_observer_on_callStateChange_0700 on callStateChange fail, error:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+      console.log("************* Telephony_observer_observer_on_callStateChange_0700 Test end *************");
     })
 
     /**

@@ -934,24 +934,41 @@ export default function sceneNodeTest() {
         console.info(msg + " Succeed in createGeometry ");
         scene?.root?.children.append(geometry1);
 
-        // Test null/undefined parameters for createMesh
-        /* task_0204 第一个参数为null/undefined时,崩溃 
-        let nullNullMesh = await rf.createMesh(null, null);
-        expect(nullNullMesh != null).assertTrue();
-        console.info(msg + " createMesh with (null, null) returned mesh");
+        // Test both parameters with null
+        try {
+          let nullNullMesh = await rf.createMesh(null, null);
+          console.info(msg + " createMesh with (null, null): " + JSON.stringify(nullNullMesh));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createMesh with (null, null) threw error: " + JSON.stringify(err));
+        }
 
-        let undefinedUndefinedMesh = await rf.createMesh(undefined, undefined);
-        expect(undefinedUndefinedMesh != null).assertTrue();
-        console.info(msg + " createMesh with (undefined, undefined) returned mesh");
+        // Test both parameters with undefined
+        try {
+          let undefinedUndefinedMesh = await rf.createMesh(undefined, undefined);
+          console.info(msg + " createMesh with (undefined, undefined): " + JSON.stringify(undefinedUndefinedMesh));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createMesh with (undefined, undefined) threw error: " + JSON.stringify(err));
+        }
 
-        let paramsNullMesh = await rf.createMesh({ name: "test" }, null);
-        expect(paramsNullMesh != null).assertTrue();
-        console.info(msg + " createMesh with (params, null) returned mesh");
+        // Test geometry parameter with null
+        try {
+          let paramsNullMesh = await rf.createMesh({ name: "test" }, null);
+          console.info(msg + " createMesh with (params, null): " + JSON.stringify(paramsNullMesh));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createMesh with (params, null) threw error: " + JSON.stringify(err));
+        }
 
-        let paramsUndefinedMesh = await rf.createMesh({ name: "test" }, undefined);
-        expect(paramsUndefinedMesh != null).assertTrue();
-        console.info(msg + " createMesh with (params, undefined) returned mesh");
-        */
+        // Test geometry parameter with undefined
+        try {
+          let paramsUndefinedMesh = await rf.createMesh({ name: "test" }, undefined);
+          console.info(msg + " createMesh with (params, undefined): " + JSON.stringify(paramsUndefinedMesh));
+          expect().assertFail();
+        } catch (err) {
+          console.info(msg + " createMesh with (params, undefined) threw error: " + JSON.stringify(err));
+        }
        
         let nullGeomMesh = await rf.createMesh(null, cubeGeom);
         expect(nullGeomMesh != null).assertTrue();

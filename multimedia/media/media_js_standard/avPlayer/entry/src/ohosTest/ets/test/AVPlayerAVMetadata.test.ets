@@ -1061,6 +1061,52 @@ export default function AVMetadata() {
       });
     });
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0300', Level.LEVEL0,async (done: Function) => {
+      console.info(TAG + "SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0300  is success");
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      await avMetadataExtractor.fetchAlbumCover((err, PixelMap) => {
+        if (err) {
+          console.error(TAG, `fetchMetadata callback failed, err = ${JSON.stringify(err)}`);
+          done();
+          return;
+        }
+        console.info(TAG, `fetchMetadata callback success video PixelMap :${PixelMap}}`);
+        expect(PixelMap != undefined).assertTrue();
+        expect(PixelMap.isEditable).assertFalse();
+        expect(PixelMap.isStrideAlignment).assertTrue();
+        avMetadataExtractor.release();
+        done();
+      });
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0400', Level.LEVEL0,async (done: Function) => {
+      console.info(TAG + "SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0400  is success");
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      await avMetadataExtractor.fetchAlbumCover((err, PixelMap) => {
+        expect(PixelMap == undefined).assertTrue();
+        expect(err.code).assertEqual(5400106);
+        console.error(TAG, `fetchMetadata callback failed because of unsupport media type`);
+        avMetadataExtractor.release();
+        done();
+      });
+    });
+    /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_PROMISE_FUNCTION_1800
      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_PROMISE_FUNCTION_1800
      * @tc.desc   Local Video playback control test
@@ -1189,6 +1235,42 @@ export default function AVMetadata() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0300
+     * @tc.desc   Online http Video with httpheader playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0300', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      let pixelMapLoc: image.PixelMap | undefined = undefined;
+      let headers: Record<string, string> = {
+        "User-Agent" : "User-Agent-Value"
+      };
+      avMetadataExtractor.setUrlSource(HTTP_SOURCE, headers);
+      // 初始化入参
+      let timeUs = 10000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
+        pixelMapLoc = pixelMap;
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      expect(pixelMapLoc).assertUndefined();
+      await avMetadataExtractor.release();
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0100
      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0100
      * @tc.desc   Online http Video playback control test
@@ -1220,6 +1302,39 @@ export default function AVMetadata() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0200
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap) => {
+        expect(pixelMap).not().assertUndefined();
+        expect(pixelMap.isEditable).assertFalse();
+        expect(pixelMap.isStrideAlignment).assertFalse();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect().assertFail();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0100
      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0100
@@ -1274,7 +1389,6 @@ export default function AVMetadata() {
       avMetadataExtractor.release();
       done();
     });
-
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0200
      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0200
@@ -1284,6 +1398,58 @@ export default function AVMetadata() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          expect(err.code).assertEqual(5400106);
+          if (frameInfo !== undefined) {
+            let result: number = frameInfo.result;
+            expect(result).assertEqual(0);
+          }
+          console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(err)}`);
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      timesUs.push(-1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      avMetadataExtractor.fetchFramesByTimes(null, queryOption, null, null);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0300
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0300', Level.LEVEL0, async (done: Function) => {
     let avMetadataExtractor = await media.createAVMetadataExtractor();
     console.info('AVMetadataExtractor success');
     avMetadataExtractor.fdSrc = AVFileDescriptor2;

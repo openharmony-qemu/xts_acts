@@ -16,7 +16,7 @@
 import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, describe, it, expect,
 } from '../Common';
- import { Level, TestType, Size } from '@ohos/hypium';
+import { Level, TestType, Size } from '@ohos/hypium';
 
 export default function fileIOCreateStream() {
 describe('fileIO_fs_createStream', function () {
@@ -43,7 +43,7 @@ describe('fileIO_fs_createStream', function () {
       sr.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_sync_000 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
     }
   });
 
@@ -63,7 +63,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -108,7 +108,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -129,7 +129,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       fileIO.unlinkSync(fpath);
     }
   });
@@ -150,7 +150,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -176,7 +176,7 @@ describe('fileIO_fs_createStream', function () {
       sw.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
     }
   });
 
@@ -353,7 +353,7 @@ describe('fileIO_fs_createStream', function () {
       sa.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_sync_013 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
     }
   });
 
@@ -560,7 +560,7 @@ describe('fileIO_fs_createStream', function () {
       sr.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_async_000 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
       done();
     }
   });
@@ -592,7 +592,7 @@ describe('fileIO_fs_createStream', function () {
             console.log(
               'fileIO_test_create_stream_async_001 error: {message: ' + err.message + ', code: ' + err.code + '}'
             );
-            expect(err.code == 13900005 && err.message == 'I/O error').assertTrue();
+            expect(err.code === 13900005 && err.message == 'I/O error').assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -621,7 +621,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -641,7 +641,7 @@ describe('fileIO_fs_createStream', function () {
       fileIO.createStream(fpath, 'r', (err) => {
         if (err) {
           console.log('fileIO_test_create_stream_async_003 error: {message: ' + err.message + ', code: ' + err.code + '}');
-          expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+          expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
         }
       });
@@ -724,7 +724,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -743,7 +743,7 @@ describe('fileIO_fs_createStream', function () {
     try {
       fileIO.createStream(fpath, 'r+', (err) => {
         console.log('fileIO_test_create_stream_async_007 error: {message: ' + err.message + ', code: ' + err.code + '}');
-        expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+        expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
         done();
       });
     } catch (e) {
@@ -768,7 +768,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -789,7 +789,7 @@ describe('fileIO_fs_createStream', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('fileIO_test_create_stream_async_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
       done();
     }
   });
@@ -845,7 +845,7 @@ describe('fileIO_fs_createStream', function () {
       sw.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_async_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
       done();
     }
   });
@@ -876,7 +876,7 @@ describe('fileIO_fs_createStream', function () {
             console.log(
               'fileIO_test_create_stream_async_012 error: {message: ' + err.message + ', code: ' + err.code + '}'
             );
-            expect(err.code == 13900005 && err.message == 'I/O error').assertTrue();
+            expect(err.code === 13900005 && err.message == 'I/O error').assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1021,7 +1021,7 @@ describe('fileIO_fs_createStream', function () {
       sa.closeSync();
       fileIO.unlinkSync(fpath);
       console.log('fileIO_test_create_stream_async_017 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900005 && e.message == 'I/O error').assertTrue();
+      expect(e.code === 13900005 && e.message == 'I/O error').assertTrue();
       done();
     }
   });
@@ -1052,7 +1052,7 @@ describe('fileIO_fs_createStream', function () {
             console.log(
               'fileIO_test_create_stream_async_018 error: {message: ' + err.message + ', code: ' + err.code + '}'
               );
-            expect(err.code == 13900005 && err.message == 'I/O error').assertTrue();
+            expect(err.code === 13900005 && err.message == 'I/O error').assertTrue();
             done();
           } else {
             expect(false).assertTrue();
@@ -1319,138 +1319,412 @@ describe('fileIO_fs_createStream', function () {
   });
 
   /**
-  * @tc.name   fileIO_test_create_stream_async_029
-  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_2900
+  * @tc.name   fileIO_test_create_stream_async_034
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3400
   * @tc.desc   Test createStream() interface. Callback. Path is null.
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL0
   */
-  it('fileIO_test_create_stream_async_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+  it('fileIO_test_create_stream_async_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_create_stream_async_029');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
     try {
       fileIO.createStream(null, 'r', (err) => {
-        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        console.log('fileIO_test_create_stream_async_034 err ' + err.message + ', code: ' + err.code);
         done();
       });
       fileIO.unlinkSync(fpath);
       done();
     } catch (e) {
       fileIO.unlinkSync(fpath);
-      console.log('fileIO_test_create_stream_async_029 has failed for ' + e.message + ', code: ' + e.code);
+      console.log('fileIO_test_create_stream_async_034 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code).assertEqual(13900020);
       done();
     }
   });
 
   /**
-  * @tc.name   fileIO_test_create_stream_async_030
-  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3000
+  * @tc.name   fileIO_test_create_stream_async_035
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3500
   * @tc.desc   Test createStream() interface. Callback. Path is undefined.
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL0
   */
-  it('fileIO_test_create_stream_async_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+  it('fileIO_test_create_stream_async_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_create_stream_async_030');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
     try {
       fileIO.createStream(undefined, 'r', (err) => {
-        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        console.log('fileIO_test_create_stream_async_035 err ' + err.message + ', code: ' + err.code);
         done();
       });
       fileIO.unlinkSync(fpath);
       done();
     } catch (e) {
       fileIO.unlinkSync(fpath);
-      console.log('fileIO_test_create_stream_async_030 has failed for ' + e.message + ', code: ' + e.code);
+      console.log('fileIO_test_create_stream_async_035 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code).assertEqual(13900020);
       done();
     }
   });
 
   /**
-  * @tc.name   fileIO_test_create_stream_async_031
-  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3100
+  * @tc.name   fileIO_test_create_stream_async_036
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3600
   * @tc.desc   Test createStream() interface. Callback. Mode is empty string.
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL0
   */
-  it('fileIO_test_create_stream_async_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+  it('fileIO_test_create_stream_async_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_create_stream_async_031');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
     try {
       fileIO.createStream(fpath, "", (err) => {
-        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        console.log('fileIO_test_create_stream_async_036 err ' + err.message + ', code: ' + err.code);
         done();
       });
       fileIO.unlinkSync(fpath);
       done();
     } catch (e) {
       fileIO.unlinkSync(fpath);
-      console.log('fileIO_test_create_stream_async_031 has failed for ' + e.message + ', code: ' + e.code);
+      console.log('fileIO_test_create_stream_async_036 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code).assertEqual(13900020);
       done();
     }
   });
 
   /**
-  * @tc.name   fileIO_test_create_stream_async_032
-  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3200
+  * @tc.name   fileIO_test_create_stream_async_037
+  * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3700
   * @tc.desc   Test createStream() interface. Callback. Mode is null.
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL0
   */
-  it('fileIO_test_create_stream_async_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+  it('fileIO_test_create_stream_async_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_create_stream_async_032');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
     try {
       fileIO.createStream(fpath, null, (err) => {
-        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        console.log('fileIO_test_create_stream_async_037 err ' + err.message + ', code: ' + err.code);
         done();
       });
       fileIO.unlinkSync(fpath);
       done();
     } catch (e) {
       fileIO.unlinkSync(fpath);
-      console.log('fileIO_test_create_stream_async_032 has failed for ' + e.message + ', code: ' + e.code);
+      console.log('fileIO_test_create_stream_async_037 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code).assertEqual(13900020);
       done();
     }
   });
 
   /**
-  * @tc.name   fileIO_test_create_stream_async_033
+  * @tc.name   fileIO_test_create_stream_async_038
   * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3300
   * @tc.desc   Test createStream() interface. Callback. Mode is undefined.
   * @tc.type   FUNCTION
   * @tc.size   MEDIUMTEST
   * @tc.level  LEVEL0
   */
-  it('fileIO_test_create_stream_async_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-    let fpath = await nextFileName('fileIO_test_create_stream_async_033');
+  it('fileIO_test_create_stream_async_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_038');
     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
     try {
       fileIO.createStream(fpath, undefined, (err) => {
-        console.log('fileIO_test_create_stream_async_033 err ' + err.message + ', code: ' + err.code);
+        console.log('fileIO_test_create_stream_async_038 err ' + err.message + ', code: ' + err.code);
         done();
       });
       fileIO.unlinkSync(fpath);
       done();
     } catch (e) {
       fileIO.unlinkSync(fpath);
-      console.log('fileIO_test_create_stream_async_033 has failed for ' + e.message + ', code: ' + e.code);
+      console.log('fileIO_test_create_stream_async_038 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code).assertEqual(13900020);
       done();
     }
   });
+
+  
+  /**
+    * @tc.name   fileIO_test_create_stream_async_039
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3900
+    * @tc.desc   Test createReadStream() interfaces. Promise. path is null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_039', Level.LEVEL3, async function (done) {
+    try {
+      await fileIO.createReadStream(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_039 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_040
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4000
+    * @tc.desc   Test createReadStream() interfaces. Callback. path is null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_040', Level.LEVEL3, async function (done) {
+    try {
+      fileIO.createReadStream(null, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_040 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_041
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4100
+    * @tc.desc   Test createReadStream() interfaces. Callback. path is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_041', Level.LEVEL3, async function (done) {
+    try {
+      fileIO.createReadStream(undefined, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_041 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_042
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4200
+    * @tc.desc   Test createReadStream() interfaces. Callback. options is null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_042', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_042');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createReadStream(fpath, null, (err) => {
+        if(err) {
+          console.log('fileIO_test_create_stream_async_042 error: {message: ' + err.message + ', code: ' + err.code + '}');
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_042 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+  
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_043
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4300
+    * @tc.desc   Test createReadStream() interfaces. Callback. options is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_043', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_029');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createReadStream(fpath, undefined, (err, sr) => {
+        if (err) {
+          console.log('fileIO_test_create_stream_async_043 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_043 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_044
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4400
+    * @tc.desc   Test createReadStream() interfaces. Promise. options is null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_044', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_024');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let sr = await fileIO.createReadStream(fpath, null);
+      expect(sr !== null).assertTrue();
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_044 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_045
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4500
+    * @tc.desc   Test createReadStream() interfaces. Promise. options is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_045', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_025');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let sr = await fileIO.createReadStream(fpath, undefined);
+      expect(sr !== null).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_045 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_046
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4600
+    * @tc.desc   Test createReadStream() interfaces. Callback. path is null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_046', Level.LEVEL3, async function (done) {
+    try {
+      fileIO.createReadStream(null, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_046 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_047
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4700
+    * @tc.desc   Test createReadStream() interfaces. Callback. path is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_047', Level.LEVEL3, async function (done) {
+    try {
+      fileIO.createReadStream(undefined, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_047 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_048
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4800
+    * @tc.desc   Test createReadStream() interfaces. Callback. options is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_048', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_029');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createReadStream(fpath, undefined, (err, sr) => {
+        if (err) {
+          console.log('fileIO_test_create_stream_async_048 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_048 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_create_stream_async_049
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_4900
+    * @tc.desc   Test createReadStream() interfaces. Callback. options is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_049', Level.LEVEL3, async function (done) {
+    let fpath = await nextFileName('fileIO_test_create_stream_async_030');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      fileIO.createReadStream(fpath, null, (err) => {
+        if (err) {
+          console.log('fileIO_test_create_stream_async_049 has failed for ' + e.message + ', code: ' + e.code);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_049 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      done();
+    }
+  });
+  
+  /**
+    * @tc.name   fileIO_test_create_stream_async_050
+    * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_5000
+    * @tc.desc   Test createReadStream() interfaces. Promise. path is undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+  it('fileIO_test_create_stream_async_050', Level.LEVEL3, async function (done) {
+    try {
+      await fileIO.createReadStream(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_create_stream_async_050 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });  
 });
 }

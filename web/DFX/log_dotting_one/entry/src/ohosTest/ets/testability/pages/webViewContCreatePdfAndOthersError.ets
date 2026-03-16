@@ -405,6 +405,28 @@ struct webViewContCreatePdfAndOthersError {
               break;
             }
 
+            case 'testCreatePdfCallbackInitErrFalse': {
+              try {
+              const pdfConfigFalse: webview.PdfConfiguration = {
+                  width: 8.27,
+                  height: 11.69,
+                  marginTop: 0,
+                  marginBottom: 0,
+                  marginRight: 0,
+                  marginLeft: 0,
+                  shouldPrintBackground: false
+                }
+                this.controllerNull.createPdf(pdfConfigFalse, () => {
+                })
+              } catch (error) {
+                console.error(`emitCreatePdfCallbackInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+                Utils.emitEvent(this.errorCode, 20151224)
+              }
+              break;
+            }
+
           }
         })
       }
