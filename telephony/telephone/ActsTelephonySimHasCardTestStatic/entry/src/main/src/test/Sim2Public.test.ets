@@ -1162,6 +1162,7 @@ export default function Sim2Public() {
                 if(data != undefined){
                   hilog.info(domain, tag, `${caseName} , data->${JSON.stringify(data)} `);
                   ExpectTrue(simStateAry.includes(data));
+                  done();
                 }
                 
               }else {
