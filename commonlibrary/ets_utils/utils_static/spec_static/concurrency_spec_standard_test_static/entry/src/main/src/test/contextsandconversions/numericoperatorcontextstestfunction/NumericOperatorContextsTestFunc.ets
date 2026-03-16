@@ -3302,3 +3302,62 @@ export function testNumericOperatorContexts0224() {
   }
 }
 
+export function testNumericOperatorContexts0225() {
+  const TAG = 'testNumericOperatorContexts0225';
+  let x: short = 1;
+  let y: short = 1;
+  if ((x != y) !== false) {
+    console.info(`${TAG} Task execution failed: (x != y): ${(x != y)}`);
+    throw new Error('(x != y) check failed, expected false');
+  }
+
+  if ((y != x) !== false) {
+    console.info(`${TAG} Task execution failed: (y != x): ${(y != x)}`);
+    throw new Error('(y != x) check failed, expected false');
+  }
+}
+
+export function testNumericOperatorContexts0226() {
+  const TAG = 'testNumericOperatorContexts0226';
+  let x: short = 1;
+  let y: short = 1;
+  if ((x !== y) !== false) {
+    console.info(`${TAG} Task execution failed: (x !== y): ${(x !== y)}`);
+    throw new Error('(x !== y) check failed, expected false');
+  }
+
+  if ((y !== x) !== false) {
+    console.info(`${TAG} Task execution failed: (y !== x): ${(y !== x)}`);
+    throw new Error('(y !== x) check failed, expected false');
+  }
+}
+
+export function testNumericOperatorContexts0227() {
+  const TAG = 'testNumericOperatorContexts0227';
+  let x: short = 1;
+  let y: int = 1;
+  if ((x > y) !== false) {
+    console.info(`${TAG} Task execution failed: (x > y): ${(x > y)}`);
+    throw new Error('(x > y) check failed, expected false');
+  }
+
+  if ((y > x) !== false) {
+    console.info(`${TAG} Task execution failed: (y > x): ${(y > x)}`);
+    throw new Error('(y > x) check failed, expected false');
+  }
+}
+
+export function testNumericOperatorContexts0228() {
+  const TAG = 'testNumericOperatorContexts0228';
+  let x: short = 1;
+  let y: int = 1;
+  if ((x >= y) !== true) {
+    console.info(`${TAG} Task execution failed: (x >= y): ${(x >= y)}`);
+    throw new Error('(x >= y) check failed, expected true');
+  }
+
+  if ((y >= x) !== true) {
+    console.info(`${TAG} Task execution failed: (y >= x): ${(y >= x)}`);
+    throw new Error('(y >= x) check failed, expected true');
+  }
+}
