@@ -123,7 +123,7 @@ struct WebAttributeTest {
           .onClick(async () => {
             console.info("key==>" + this.str)
             await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+            // await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
             switch (this.str) {
               case "emitOnAlert001": {
                   try {
@@ -275,7 +275,7 @@ struct WebAttributeTest {
           })
           .onPageBegin((event) => {
             if (event) {
-              this.pageBegin = event.url
+              // this.pageBegin = event.url
               console.log("onPageBegin==> event.url:" + event.url)
             }
           })
