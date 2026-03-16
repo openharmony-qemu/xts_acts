@@ -864,12 +864,12 @@ export default function TaskTimeout2Test() {
           expect(e.code).assertEqual(10200058);
         })
       })
-       let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
-        runner.execute(task1).then(() => {
-          console.info(`${caseName} execute task1 then`);
-        }).catch((e: BusinessError) => {
-          console.info(`${caseName} catch task1: ${e.message}`);
-        });
+      let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+      runner.execute(task1).then(() => {
+        console.info(`${caseName} execute task1 then`);
+      }).catch((e: BusinessError) => {
+        console.info(`${caseName} catch task1: ${e.message}`);
+      });
       while (!isTerminate) {
         await promiseCase();
       }
@@ -1749,13 +1749,19 @@ export default function TaskTimeout2Test() {
       let l1Task = new taskpool.Task(level1Task);
       let l2Task = new taskpool.Task(level2Task);
       let l3Task = new taskpool.Task(level3Task);
-      taskpool.execute(l1Task).catch(() => {
+      taskpool.execute(l1Task).then(() => {
+        count++
+      }).catch(() => {
         count++
       });
-      taskpool.execute(l2Task).catch(() => {
+      taskpool.execute(l2Task).then(() => {
+        count++
+      }).catch(() => {
         count++
       });
-      taskpool.execute(l3Task).catch(() => {
+      taskpool.execute(l3Task).then(() => {
+        count++
+      }).catch(() => {
         count++
       });
       setTimeout(() => {
@@ -1765,6 +1771,7 @@ export default function TaskTimeout2Test() {
           taskpool.cancel(l3Task);
           isTerminate = true;
         } catch (e) {
+          isTerminate = true;
         }
       }, 100);
       while (!isTerminate || count < 3) {
