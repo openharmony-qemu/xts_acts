@@ -7885,5 +7885,618 @@ export default function NumericOperatorContextsTest() {
 
         done();
       })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21200
+     * @tc.name      concurrent_testNumericOperatorContexts0212
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0212'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0212)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21300
+     * @tc.name      concurrent_testNumericOperatorContexts0213
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0213'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0213)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21400
+     * @tc.name      concurrent_testNumericOperatorContexts0214
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0214'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0214)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21500
+     * @tc.name      concurrent_testNumericOperatorContexts0215
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0215'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0215)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21600
+     * @tc.name      concurrent_testNumericOperatorContexts0216
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0216'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0216)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21700
+     * @tc.name      concurrent_testNumericOperatorContexts0217
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0217'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0217)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21800
+     * @tc.name      concurrent_testNumericOperatorContexts0218
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0218'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0218)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21900
+     * @tc.name      concurrent_testNumericOperatorContexts0219
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0219'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0219)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22000
+     * @tc.name      concurrent_testNumericOperatorContexts0220
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0220'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0220)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22100
+     * @tc.name      concurrent_testNumericOperatorContexts0221
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0221'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0221)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22200
+     * @tc.name      concurrent_testNumericOperatorContexts0222
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0222'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0222)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22300
+     * @tc.name      concurrent_testNumericOperatorContexts0223
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0223'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0223)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22400
+     * @tc.name      concurrent_testNumericOperatorContexts0224
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0224'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0224)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22500
+     * @tc.name      concurrent_testNumericOperatorContexts0225
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0225'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0225)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22600
+     * @tc.name      concurrent_testNumericOperatorContexts0226
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0226'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0226)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22700
+     * @tc.name      concurrent_testNumericOperatorContexts0227
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0227'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0227)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22800
+     * @tc.name      concurrent_testNumericOperatorContexts0228
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testNumericOperatorContexts0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testNumericOperatorContexts0228'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testNumericOperatorContexts0228)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
   });
 }
