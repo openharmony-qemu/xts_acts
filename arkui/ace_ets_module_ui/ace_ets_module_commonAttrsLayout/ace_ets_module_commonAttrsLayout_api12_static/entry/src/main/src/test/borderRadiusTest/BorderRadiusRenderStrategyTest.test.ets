@@ -35,12 +35,12 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function BorderRadiusRenderStrategyTest() {
   describe('BorderRadiusRenderStrategyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BorderRadiusRenderStrategyTest beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api12.static", "EntryAbility")
     });
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info("BorderRadiusRenderStrategyTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/borderRadius/BorderRadiusRenderStrategy',
