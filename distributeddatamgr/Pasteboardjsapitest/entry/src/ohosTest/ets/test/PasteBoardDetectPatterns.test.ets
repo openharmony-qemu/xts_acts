@@ -966,8 +966,7 @@ export default function pasteboardDetectPatternsTest() {
       await systemPasteboard.setData(pasteData);
       let res: boolean = await systemPasteboard.hasData();
       expect(res).assertEqual(true);
-      let patterns = [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,
-      pasteboard.Pattern.HTTP_URL,pasteboard.Pattern.FLIGHT_NUMBER];
+      let patterns = [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,pasteboard.Pattern.FLIGHT_NUMBER];
       try{
         await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
           console.log(tag+'patterns detectPatterns is: '+data.sort().join(''));

@@ -4940,8 +4940,7 @@ export default function abilityTest() {
       await systemPasteboard.setData(pasteData);
       let res = await systemPasteboard.hasData();
       expect(res).assertEqual(true);
-      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,
-      pasteboard.Pattern.HTTP_URL,pasteboard.Pattern.FLIGHT_NUMBER];
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,pasteboard.Pattern.FLIGHT_NUMBER];
       try {
         await systemPasteboard.detectPatterns(patterns).then((data) => {
           expect(data.length).assertEqual(4);
