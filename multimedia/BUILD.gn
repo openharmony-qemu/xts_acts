@@ -91,6 +91,7 @@ group("multimedia") {
       "av_codec/vcodec/ActsDecodersTest:ActsDecodersHapTest",
       "av_codec/vcodec/ActsVcodecEncoderTest:ActsVcodecEncoderHapTest",
       "av_codec/vcodec/ActsHevcswDecoderTest:ActsHevcswDecoderHapTest",
+      "av_codec/vcodec/ActsHevchwEncoderTest:ActsHevchwEncoderHapTest",
       "avsession/avsession_js_standard/avsessionManager:avsession_framework_js_hap",
       "avsession/avsession_js_standard/avsessionCore:avsession_Core_js_hap",
       "avsession/avsession_js_standard/avsessionAVCast:avsession_AVCast_js_hap",
