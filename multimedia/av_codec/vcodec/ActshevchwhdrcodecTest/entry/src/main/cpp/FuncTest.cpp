@@ -47,6 +47,44 @@ namespace {
     static OH_AVCapability *cap_h265 = nullptr;
     static string g_codecNameHw265 = "";
 }
+void HDRFuncNdkTest::SetUpTestCase()
+{
+    cap_h263 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_H263, false, SOFTWARE);
+    if (cap_h263 != nullptr) {
+        g_codecName263 = OH_AVCapability_GetName(cap_h263);
+        cout << "g_codecName263: " << g_codecName263 << endl;
+    }
+
+    cap_h264 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, SOFTWARE);
+    if (cap_h264 != nullptr) {
+        g_codecName264 = OH_AVCapability_GetName(cap_h264);
+        cout << "g_codecName264: " << g_codecName264 << endl;
+    }
+
+    cap_mpeg2 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (cap_mpeg2 != nullptr) {
+        g_codecNameMpeg2 = OH_AVCapability_GetName(cap_mpeg2);
+        cout << "g_codecNameMpeg2: " << g_codecNameMpeg2 << endl;
+    }
+
+    cap_mpeg4 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4_PART2, false, SOFTWARE);
+    if (cap_mpeg4 != nullptr) {
+        g_codecNameMpeg4 = OH_AVCapability_GetName(cap_mpeg4);
+        cout << "g_codecNameMpeg4: " << g_codecNameMpeg4 << endl;
+    }
+
+    cap_sw265 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
+    if (cap_sw265 != nullptr) {
+        g_codecNameSw265 = OH_AVCapability_GetName(cap_sw265);
+        cout << "g_codecNameSw265: " << g_codecNameSw265 << endl;
+    }
+
+    cap_h265 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap_h265 != nullptr) {
+        g_codecNameHw265 = OH_AVCapability_GetName(cap_h265);
+        cout << "g_codecNameHw265: " << g_codecNameHw265 << endl;
+    }
+}
 void HDRFuncNdkTest::TearDownTestCase() {}
 void HDRFuncNdkTest::SetUp() {}
 void HDRFuncNdkTest::TearDown() {}
