@@ -15,8 +15,10 @@
 import AnnotationsTest from "./Annotations/annotations.test";
 import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.test";
 import UndefinedTypeSafetyTest from "./undefined/UndefinedTypeSafety.test";
+import StatementsTest from "./statements/StatementsTest.test";
 export default function testsuite() {
   AnnotationsTest();
   UndefinedFixVerificationTest();
   UndefinedTypeSafetyTest();
+  StatementsTest();
 }
