@@ -1001,7 +1001,7 @@ export default function DeviceInfoTest() {
       console.info('deviceinfo_test_static_4100 start');
       let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_HIGH;
       console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
-      expect(performanceClass).assertEqual(CLASS_LEVEL_HIGH);
+      expect(performanceClass).assertEqual(deviceinfo.PerformanceClassLevel.CLASS_LEVEL_HIGH);
       done();
       console.info('deviceinfo_test_static_4100 : end');
     })
@@ -1018,7 +1018,7 @@ export default function DeviceInfoTest() {
       console.info('deviceinfo_test_static_4200 start');
       let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_MEDIUM;
       console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
-      expect(performanceClass).assertEqual(CLASS_LEVEL_MEDIUM);
+      expect(performanceClass).assertEqual(deviceinfo.PerformanceClassLevel.CLASS_LEVEL_MEDIUM);
       done();
       console.info('deviceinfo_test_static_4200 : end');
     })
@@ -1035,7 +1035,7 @@ export default function DeviceInfoTest() {
       console.info('deviceinfo_test_static_4300 start');
       let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_LOW;
       console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
-      expect(performanceClass).assertEqual(CLASS_LEVEL_LOW);
+      expect(performanceClass).assertEqual(deviceinfo.PerformanceClassLevel.CLASS_LEVEL_LOW);
       done();
       console.info('deviceinfo_test_static_4300 : end');
     })
