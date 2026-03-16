@@ -3489,7 +3489,7 @@ export default function windowErrCode401_3() {
         console.info(msgStr + 'Succeeded');
         expect().assertFail();
       } catch (exception) {
-        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+ message:${exception.message});
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
         expect(exception.code).assertEqual(1001);
         expect(exception.message!=null).assertTrue();
       }
@@ -3498,7 +3498,7 @@ export default function windowErrCode401_3() {
         console.info(msgStr + 'Succeeded2.');
         expect().assertFail();
       } catch (exception) {
-        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+ message:${exception.message});
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
         expect(exception.code).assertEqual(1001);
         expect(exception.message!=null).assertTrue();
       }
@@ -3506,7 +3506,7 @@ export default function windowErrCode401_3() {
         await ohosWindow.create(context, '', ohosWindow.WindowType.TYPE_STATUS_BAR);
         console.info(msgStr + 'Succeeded3');
       } catch (exception) {
-        console.error(msgStr + 'Failed3. Cause:' + JSON.stringify(exception.code)+ message:${exception.message});
+        console.error(msgStr + 'Failed3. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
         expect(exception.code).assertEqual(0);
         expect(exception.message!=null).assertTrue();
       }
@@ -3514,7 +3514,7 @@ export default function windowErrCode401_3() {
         await ohosWindow.create(context, null, ohosWindow.WindowType.TYPE_STATUS_BAR);
         console.info(msgStr + 'Succeeded4');
       } catch (exception) {
-        console.error (msgStr + 'Failed4. Cause:' + JSON.stringify(exception.code)+ message:${exception.message});
+        console.error (msgStr + 'Failed4. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
         expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
       }
@@ -3524,7 +3524,7 @@ export default function windowErrCode401_3() {
         expect().assertFail();
         done()
       } catch (exception) {
-        console.error(msgStr + 'Failed5. Cause:' + JSON.stringify(exception.code)+ message:${exception.message});
+        console.error(msgStr + 'Failed5. Cause:' + JSON.stringify(exception.code)+ `message:${exception.message}`);
         expect(exception.code).assertEqual(1003);
         expect(exception.message!=null).assertTrue();
         done();
