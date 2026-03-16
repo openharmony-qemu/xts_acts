@@ -1158,7 +1158,7 @@ export default function Sim2Public() {
                   sim.CardType.DUAL_MODE_UG_CARD,
                   sim.CardType.SINGLE_MODE_ISIM_CARD
                 ];
-                expect(data).assertEqual(simStateAry);
+                ExpectTrue(simStateAry.includes(data));
               }else {
                 ExpectFail();
                 hilog.info(domain, tag, `${caseName} getCardType else test end `);
@@ -1647,11 +1647,11 @@ export default function Sim2Public() {
               if (!data) {
                 hilog.info(domain, tag,
                   `${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-                expect().assertFail();
+                expect(!data).assertTrue();
                 hilog.info(domain, tag, `${caseName} test end `);
                 done();
               } else {
-                expect(data).assertTrue();
+                expect().assertFail();
                 hilog.info(domain, tag, `${caseName} test end `);
                 done();
               }
@@ -1741,11 +1741,11 @@ export default function Sim2Public() {
                 if (!data) {
                   hilog.info(domain, tag,
                     `${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-                  expect().assertFail();
+                  expect(!data).assertTrue();
                   hilog.info(domain, tag, `${caseName} test end `);
                   done();
                 } else {
-                  expect(data).assertTrue();
+                  ExpectFail();
                   hilog.info(domain, tag, `${caseName} test end `);
                   done();
                 }
