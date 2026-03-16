@@ -457,13 +457,13 @@ export async function nestedOuterTimeoutTask(time: number): Promise<number> {
 
 @Concurrent
 export async function rejectTaskShort(time: number): Promise<number> {
-  await new Promise<number>((_, reject) => setTimeout(() => reject(new Error("reject")), 100));
+  await new Promise<number>((_, reject) => setTimeout(() => reject(new Error('reject')), 100));
   return time;
 }
 
 @Concurrent
 export async function rejectTaskLong(time: number): Promise<number> {
-  await new Promise<number>((_, reject) => setTimeout(() => reject(new Error("reject")), 500));
+  await new Promise<number>((_, reject) => setTimeout(() => reject(new Error('reject')), 500));
   return time;
 }
 

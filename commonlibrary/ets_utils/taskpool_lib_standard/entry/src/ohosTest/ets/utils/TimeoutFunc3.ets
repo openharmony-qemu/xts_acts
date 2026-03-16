@@ -1,6 +1,6 @@
-import { taskpool } from "@kit.ArkTS";
-import { timeoutDemo2 } from "./TimeoutFunc2";
-import { periodicTaskInner } from "./TimeoutFuncList";
+import { taskpool } from '@kit.ArkTS';
+import { timeoutDemo2 } from './TimeoutFunc2';
+import { periodicTaskInner } from './TimeoutFuncList';
 
 @Concurrent
 export async function level3Task(): Promise<number> {

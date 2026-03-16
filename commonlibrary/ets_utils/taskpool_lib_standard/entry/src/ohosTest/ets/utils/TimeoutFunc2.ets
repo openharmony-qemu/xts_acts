@@ -1,6 +1,6 @@
-import { taskpool } from "@kit.ArkTS";
-import { asyncSleep } from "../test/exportFunclist";
-import { level3Task } from "./TimeoutFuncList";
+import { taskpool } from '@kit.ArkTS';
+import { asyncSleep } from '../test/exportFunclist';
+import { level3Task } from './TimeoutFuncList';
 
 @Concurrent
 export function timeoutDemo2 (time: number) {
