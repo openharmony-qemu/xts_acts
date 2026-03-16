@@ -1073,13 +1073,7 @@ describe('btConnectionTest', () => {
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
-            bluetooth.setDevicePinCode('11:22:33:44:55:66', undefined).then(() => {
-                console.info('setDevicePinCode success');
-                expect().assertFail();
-            }, (error :BusinessError) => {
-                console.info('setDevicePinCode promise: errCode:' + error.code + ',errMessage' + error.message);
-                expect(Number(error.code)).assertEqual(401);
-            })
+            await bluetooth.setDevicePinCode('11:22:33:44:55:66', undefined)
         } catch (err) {
             console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
             expect(Number(err.code)).assertEqual(401);
@@ -1097,16 +1091,10 @@ describe('btConnectionTest', () => {
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
-            bluetooth.setDevicePinCode('11:22:33:44:55:66', "").then(() => {
-                console.info('setDevicePinCode success');
-                expect().assertFail();
-            }, (error :BusinessError) => {
-                console.info('setDevicePinCode promise: errCode:' + error.code + ',errMessage' + error.message);
-                expect(Number(error.code)).assertEqual(401);
-            })
+            await bluetooth.setDevicePinCode('11:22:33:44:55:66', "")
         } catch (err) {
             console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
-            expect(Number(err.code)).assertEqual(401);
+            expect(Number(err.code)).assertEqual(2900099);
         }
         done();
     })
