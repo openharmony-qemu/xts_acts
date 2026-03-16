@@ -96,8 +96,8 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
         notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data: notificationExtensionSubscription.GrantedBundleInfo[]) => {
           num++
           console.info(testNum+num+`getUserGrantedEnabledBundles successfully. Data: ${JSON.stringify(data)}`);
-          expect(JSON.stringify(data?.[3]?.bundleName)).assertEqual("com.ohos.contacts')
-          expect(JSON.stringify(data?.[4]?.bundleName)).assertEqual("com.ohos.mms')
+          expect(JSON.stringify(data?.[3]?.bundleName)).assertEqual('com.ohos.contacts')
+          expect(JSON.stringify(data?.[4]?.bundleName)).assertEqual('com.ohos.mms')
           done()
         }).catch((error: Error) => {
           let err = error as BusinessError
