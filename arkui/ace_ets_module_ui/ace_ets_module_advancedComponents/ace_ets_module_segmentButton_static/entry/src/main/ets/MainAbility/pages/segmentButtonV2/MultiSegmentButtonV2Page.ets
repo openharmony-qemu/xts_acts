@@ -29,7 +29,6 @@ import {
   BlurStyle,
   BackgroundBlurStyleOptions,
   Scroll,
-  SizeT,
   LocalizedPadding,
   Text,
   FontWeight,
@@ -40,9 +39,9 @@ import {
   AdaptiveColor,
   Button,
   FlexWrap,
-  FlexOptions,
   FlexAlign
 } from '@kit.ArkUI';
+import { SizeT } from '@ohos.arkui.node'
 
 @Entry
 @ComponentV2
@@ -74,15 +73,15 @@ struct MultiCapsuleSegmentButtonV2Example {
 
   build() {
     Scroll() {
-      Column({ space: 12 } as ColumnOptions) {
+      Column() {
         Text('' + this.selectedIndexes)
           .key('selectedIndexesTest001')
         MultiCapsuleSegmentButtonV2({
           items: this.textItems,
           selectedIndexes: this.selectedIndexes,
-          $selectedIndexes: (selectedIndexes) => {
-            this.selectedIndexes = selectedIndexes
-            console.log('selectIndex---' + selectedIndexes)
+          $selectedIndexes: (value: int[]) => {
+            this.selectedIndexes = value
+            console.log('selectIndex---' + value)
           },
           onItemClicked: (num: int) => {
             num = 666
@@ -122,7 +121,7 @@ struct MultiCapsuleSegmentButtonV2Example {
           .width('100%')
           .key('MCSegmentButtonSelectedIndexesId001')
 
-        Flex({ wrap: FlexWrap.Wrap } as FlexOptions) {
+        Flex({ wrap: FlexWrap.Wrap }) {
           Button('[0]')
             .onClick(() => {
               this.selectedIndexes = [0];

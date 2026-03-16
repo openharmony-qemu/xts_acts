@@ -61,7 +61,7 @@ export default function MultiSegmentButtonV2PageTest() {
         url: "MainAbility/pages/segmentButtonV2/MultiSegmentButtonV2Page",
       }
       try {
-        const pageRouter = AppStorage.get("router") as Router
+        const pageRouter = AppStorage.get("router")! as Router
         pageRouter.clear();
         let pages: router.RouterState = pageRouter.getState();
         console.info("get MultiSegmentButtonV2PageTest state pages: " + JSON.stringify(pages));

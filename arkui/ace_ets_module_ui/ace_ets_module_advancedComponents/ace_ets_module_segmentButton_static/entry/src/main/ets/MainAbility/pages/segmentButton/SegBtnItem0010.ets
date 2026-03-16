@@ -77,7 +77,7 @@ struct SegBtnItem0010 {
   @State selectedIndexes: int[] = [0]
 
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column() {
       SegmentButton({
         options: this.tabOptions,
         selectedIndexes: this.selectedIndexes

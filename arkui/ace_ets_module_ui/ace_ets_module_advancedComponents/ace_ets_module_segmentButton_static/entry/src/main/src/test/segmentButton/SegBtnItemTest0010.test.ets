@@ -61,7 +61,7 @@ export default function SegBtnItemTest0010() {
         url: "MainAbility/pages/segmentButton/SegBtnItem0010",
       }
       try {
-        const pagesRouter = AppStorage.get("router") as Router
+        const pagesRouter = AppStorage.get("router")! as Router
         pagesRouter.clear();
         let pages: router.RouterState = pagesRouter.getState();
         console.info("get SegBtnItemTest0010 state pages: " + JSON.stringify(pages));
