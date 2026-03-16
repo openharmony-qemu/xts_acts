@@ -1794,5 +1794,1518 @@ export default function StatementsTest() {
       }
     });
 
+    /**
+     * @tc.number    SUB_STATEMENTS_9000
+     * @tc.name      testStatements0090
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let s: number[]|undefined = (): number[]|undefined => { return undefined; }();
+      let expectedException = "NullPointerError";
+      try {
+        for (let v of s!) {
+          res += v;
+        }
+        expect(true).assertFalse();
+      } catch (error) {
+        expect(error.toString()).assertEqual(expectedException);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9100
+     * @tc.name      testStatements0091
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let a = new A2();
+      for (let x of a) res += x;
+      expect(res).assertEqual("abc");
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9200
+     * @tc.name      testStatements0092
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let ua: UT[] = [['abc', 'def'] as string[], 'ghi'];
+      for (let x of ua) {
+        for (let y of x) {
+          res += y;
+        }
+      }
+      expect(res).assertEqual('abcdefghi');
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9300
+     * @tc.name      testStatements0093
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let sentence: String = '';
+      let ua: RT = {1: 'Once', 2: 'Upon', 3: 'A', 4: 'Time'};
+      for (let x of ua) {
+        sentence += (x[1] + ' ');
+      }
+      expect(sentence).assertEqual('Once Upon A Time ');
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9400
+     * @tc.name      testStatements0094
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let xa: readonly number [] = [1, 2, 3];
+      let sum = 0;
+      for (let x of xa) {
+        sum += x;
+      }
+      expect(sum).assertEqual(6);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9500
+     * @tc.name      testStatements0095
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      for (let v of "") res += v;
+      expect(res).assertEqual("");
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9600
+     * @tc.name      testStatements0096
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      const nums: FixedArray<number> = [1, 2, 3, 4, 5];
+      let sum = 0;
+      for (let x of nums) {
+        sum += x;
+      }
+      expect(sum).assertEqual(15);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9700
+     * @tc.name      testStatements0097
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      const raa: ReadonlyArray<string> = ['a', 'b', 'c'];
+      let sum = 0;
+      for (let x of raa) {
+        res += x;
+      }
+      expect(res).assertEqual('abc');
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9800
+     * @tc.name      testStatements0098
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let arr: int[][] = [[1,2,3], [4,5,6], [7,8,9]];
+      for (const v of arr) {
+        res += ' ';
+        for (const q of v)
+          res += q;
+      }
+      expect(res).assertEqual(" 123 456 789");
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_9900
+     * @tc.name      testStatements0099
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      const v: int = 0;
+      for (let v of [1,2,3,4]) res += v;
+      expect(res).assertEqual("1234");
+      expect(v).assertEqual(0);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10000
+     * @tc.name      testStatements0100
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let v: int;
+      for (v of [1,2,3,4]) res += v;
+      expect(res).assertEqual("1234");
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10100
+     * @tc.name      testStatements0101
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let v: Float;
+      for (v of [1.1f,2.2f,3.3f,4.4f]) res += v;
+      expect(res).assertEqual("1.12.23.34.4");
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10200
+     * @tc.name      testStatements0102
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let v: double;
+      for (v of [1.1,2.2,3.3,4.4]) res += v;
+      expect(res).assertEqual("1.12.23.34.4");
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10300
+     * @tc.name      testStatements0103
+     * @tc.desc      In a 'for-of' statement type 'expr' must be either array or string, or an instance of iterable class or interface.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res = "";
+      let v: long;
+      for (v of [1,2,3,4]) res += v;
+      expect(res).assertEqual("1234");
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10400
+     * @tc.name      testStatements0104
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i = 2;
+      while (i > 0) {
+        break;
+      }
+      expect(i).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10500
+     * @tc.name      testStatements0105
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i = 2;
+      for (;;) {
+        break;
+      }
+      expect(i).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10600
+     * @tc.name      testStatements0106
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let flowCounter: int = 0;
+      outer: do {
+        do {
+          break;
+        } while(true);
+        flowCounter++;
+        do {
+          break;
+        } while(true);
+        flowCounter++;
+        break outer;
+      } while(true);
+      expect(flowCounter).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10700
+     * @tc.name      testStatements0107
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i = 0;
+      for (let ch of "string") {
+        i++;
+        break;
+      }
+      expect(i).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10800
+     * @tc.name      testStatements0108
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i = 2;
+      for (;;) {
+        if (true) { break; }
+      }
+      expect(i).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_10900
+     * @tc.name      testStatements0109
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i = 2;
+      while (i > 0) {
+        break;
+        i--;
+      }
+      expect(i).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11000
+     * @tc.name      testStatements0110
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let flowCounter: int = 0;
+      outer: do {
+        do {
+          break;
+        } while(true);
+        flowCounter++;
+        do {
+          break outer;
+        } while(true);
+        flowCounter++;
+        break outer;
+      } while(true);
+      expect(flowCounter).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11100
+     * @tc.name      testStatements0111
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let flowCounter: int = 0;
+      outer: do {
+        do {
+          break;
+        } while(true);
+        flowCounter++;
+        do {
+          break;
+        } while(true);
+        flowCounter++;
+        break outer;
+      } while(true);
+      expect(flowCounter).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11200
+     * @tc.name      testStatements0112
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i = 0;
+      for (let ch of "string") {
+        i++;
+        if(ch == 'i' ) break;
+      }
+      expect(i).assertEqual(4);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11300
+     * @tc.name      testStatements0113
+     * @tc.desc      Break statements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let flowCounter: int = 0;
+      outer: do {
+        do {
+          break;
+        } while(true);
+        flowCounter++;
+        do {
+          break outer;
+        } while(true);
+        flowCounter++;
+        break outer;
+      } while(true);
+      expect(flowCounter).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11400
+     * @tc.name      testStatements0114
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      for (let y: int = 0; y < 10; y++) {
+        let x = 0;
+        while (x++ < 10) {
+          let z = 0;
+          do {
+            if (z % 2 == 0) {
+              continue;
+            }
+            sum += z;
+          } while (z++ < 10);
+          if (x % 2 == 0) {
+            continue;
+          }
+        }
+        if (y % 2 == 0) {
+          continue;
+        }
+      }
+      expect(sum).assertEqual(2500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11500
+     * @tc.name      testStatements0115
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      let arr: int[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+      for (let y of arr) {
+        loop2: for (let x = 0; x < 20; x++) {
+          let z = 0;
+          do {
+            let t = 100;
+            while (t++ < 200) {
+              if (t % 3 == 0) {
+                continue;
+              }
+              sum += t;
+            }
+            if (z % 2 == 0) {
+              continue loop2;
+            }
+          } while (z++ < 10);
+          if (x % 2 == 0) {
+            continue;
+          }
+        }
+        if (y % 2 == 0) {
+          continue;
+        }
+      }
+      expect(sum).assertEqual(2222000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11600
+     * @tc.name      testStatements0116
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      let x = 0;
+      do {
+        if (x % 2 == 0) {
+          continue;
+        }
+        sum += x;
+      } while (x++ < 100);
+      expect(sum).assertEqual(2500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11700
+     * @tc.name      testStatements0117
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y = 0;
+      do {
+        let x = 0;
+        do {
+          if (x % 2 == 0) {
+            continue;
+          }
+          sum += x;
+        } while (x++ < 100);
+      } while (y++ < 3);
+      expect(sum).assertEqual(10000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11800
+     * @tc.name      testStatements0118
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      do {
+        let x = 0;
+        loop2: do {
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        } while (x++ < 100);
+      } while (y++ < 3);
+      expect(sum).assertEqual(10000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_11900
+     * @tc.name      testStatements0119
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      do {
+        let x = 0;
+        do {
+          sum += x;
+        } while (x++ < 100);
+        if (y % 2 == 0) {
+          continue;
+        }
+      } while (y++ < 100);
+      expect(sum).assertEqual(510050);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12000
+     * @tc.name      testStatements0120
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      loop1: do {
+        let x = 0;
+        do {
+          sum += x;
+        } while (x++ < 100);
+        if (y % 2 == 0) {
+          continue loop1;
+        }
+      } while (y++ < 100);
+      expect(sum).assertEqual(510050);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12100
+     * @tc.name      testStatements0121
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      do {
+        let x = 0;
+        do {
+          if (x % 2 == 0) {
+            continue;
+          }
+          sum += x;
+        } while (x++ < 100);
+        if (y % 2 == 0) {
+          continue;
+        }
+      } while (y++ < 100);
+      expect(sum).assertEqual(252500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12200
+     * @tc.name      testStatements0122
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      loop1: do {
+        let x = 0;
+        loop2: do {
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        } while (x++ < 100);
+        if (y % 2 == 0) {
+          continue loop1;
+        }
+      } while (y++ < 100);
+      expect(sum).assertEqual(252500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12300
+     * @tc.name      testStatements0123
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      loop1: do {
+        let x = 0;
+        loop2: do {
+          if (x == 10) {
+            continue loop1;
+          }
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        } while (x++ < 100);
+      } while (y++ < 3);
+      expect(sum).assertEqual(100);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12400
+     * @tc.name      testStatements0124
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      for (let x: int = 0; x < 100; x++) {
+        if (x % 2 == 0) {
+          continue;
+        }
+        sum += x;
+      }
+      expect(sum).assertEqual(2500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12500
+     * @tc.name      testStatements0125
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      for (let y: int = 0; y < 3; y++) {
+        for (let x: int = 0; x < 100; x++) {
+          if (x % 2 == 0) {
+            continue;
+          }
+          sum += x;
+        }
+      }
+      expect(sum).assertEqual(7500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12600
+     * @tc.name      testStatements0126
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      for (let y: int = 0; y < 3; y++) {
+        loop2: for (let x: int = 0; x < 100; x++) {
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        }
+      }
+      expect(sum).assertEqual(7500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12700
+     * @tc.name      testStatements0127
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      for (let y: int = 0; y < 100; y++) {
+        for (let x: int = 0; x < 100; x++) {
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue;
+        }
+      }
+      expect(sum).assertEqual(495000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12800
+     * @tc.name      testStatements0128
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      loop1: for (let y: int = 0; y < 100; y++) {
+        for (let x: int = 0; x < 100; x++) {
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue loop1;
+        }
+      }
+      expect(sum).assertEqual(495000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_12900
+     * @tc.name      testStatements0129
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      for (let y: int = 0; y < 100; y++) {
+        for (let x: int = 0; x < 100; x++) {
+          if (x % 2 == 0) {
+            continue;
+          }
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue;
+        }
+      }
+      expect(sum).assertEqual(250000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13000
+     * @tc.name      testStatements0130
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      loop1: for (let y: int = 0; y < 100; y++) {
+        loop2: for (let x: int = 0; x < 100; x++) {
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue loop1;
+        }
+      }
+      expect(sum).assertEqual(250000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13100
+     * @tc.name      testStatements0131
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      loop1: for (let y: int = 0; y < 3; y++) {
+        loop2: for (let x: int = 0; x < 100; x++) {
+          if (x == 10) {
+            continue loop1;
+          }
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        }
+      }
+      expect(sum).assertEqual(75);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13200
+     * @tc.name      testStatements0132
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      let arr: int[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (let x of arr) {
+        if (x % 2 == 0) {
+          continue;
+        }
+        sum += x;
+      }
+      expect(sum).assertEqual(25);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13300
+     * @tc.name      testStatements0133
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      let arr1: int[] = [0, 1, 2];
+      let arr2: int[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (let y of arr1) {
+        for (let x of arr2) {
+          if (x % 2 == 0) {
+            continue;
+          }
+          sum += x;
+        }
+      }
+      expect(sum).assertEqual(75);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13400
+     * @tc.name      testStatements0134
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      let arr1: int[] = [0, 1, 2];
+      let arr2: int[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (let y of arr1) {
+        for (let x of arr2) {
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue;
+        }
+      }
+      expect(sum).assertEqual(135);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13500
+     * @tc.name      testStatements0135
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      let arr1: int[] = [0, 1, 2, 3, 4];
+      let arr2: int[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (let y of arr1) {
+        for (let x of arr2) {
+          if (x % 2 == 0) {
+            continue;
+          }
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue;
+        }
+      }
+      expect(sum).assertEqual(125);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13600
+     * @tc.name      testStatements0136
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0;
+      let x = 0;
+      while (x++ < 100) {
+        if (x % 2 == 0) {
+          continue;
+        }
+        sum += x;
+      }
+      expect(sum).assertEqual(2500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13700
+     * @tc.name      testStatements0137
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y = 0;
+      while (y++ < 3) {
+        let x = 0;
+        while (x++ < 100) {
+          if (x % 2 == 0) {
+            continue;
+          }
+          sum += x;
+        }
+      }
+      expect(sum).assertEqual(7500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13800
+     * @tc.name      testStatements0138
+     * @tc.desc      Continue statement (inside while statement)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i: int = 0;
+      let j: int = 0;
+      while (i < 20) {
+        i++;
+        if (i > 10) continue;
+        j++;
+      }
+      expect(i).assertEqual(20);
+      expect(j).assertEqual(10);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_13900
+     * @tc.name      testStatements0139
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      while (y++ < 3) {
+        let x = 0;
+        loop2: while (x++ < 100) {
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        }
+      }
+      expect(sum).assertEqual(7500);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14000
+     * @tc.name      testStatements0140
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      while (y++ < 100) {
+        let x = 0;
+        while (x++ < 100) {
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue;
+        }
+      }
+      expect(sum).assertEqual(505000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14100
+     * @tc.name      testStatements0141
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      loop1: while (y++ < 100) {
+        let x = 0;
+        while (x++ < 100) {
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue loop1;
+        }
+      }
+      expect(sum).assertEqual(505000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14200
+     * @tc.name      testStatements0142
+     * @tc.desc      A continue statement stops execution of the current loop iteration and passes control to the next iteration with proper check of the loop exit condition depending on the loop kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      while (y++ < 100) {
+        let x = 0;
+        while (x++ < 100) {
+          if (x % 2 == 0) {
+            continue;
+          }
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue;
+        }
+      }
+      expect(sum).assertEqual(250000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14300
+     * @tc.name      testStatements0143
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      loop1: while (y++ < 100) {
+        let x = 0;
+        loop2: while (x++ < 100) {
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        }
+        if (y % 2 == 0) {
+          continue loop1;
+        }
+      }
+      expect(sum).assertEqual(250000);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14400
+     * @tc.name      testStatements0144
+     * @tc.desc      A continue statement with label identifier transfers control out of the enclosing loop statement which has the same label identifier. Such statement must be in the body of the surrounding function or method otherwise compile-time error is raised by the compiler.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sum: int = 0, y: int = 0;
+      loop1: while (y++ < 3) {
+        let x = 0;
+        loop2: while (x++ < 100) {
+          if (x == 10) {
+            continue loop1;
+          }
+          if (x % 2 == 0) {
+            continue loop2;
+          }
+          sum += x;
+        }
+      }
+      expect(sum).assertEqual(75);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14500
+     * @tc.name      testStatements0145
+     * @tc.desc      Switch statement
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let last = 0;
+      pd = 0;
+      f(5);
+      expect(pd).assertEqual(1);
+      expect(last).assertEqual(0);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14600
+     * @tc.name      testStatements0146
+     * @tc.desc      Switch statement
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let last: int = 0;
+      pd = 0;
+      last = 0;
+      f(2);
+      expect(pd).assertEqual(0);
+      expect(last).assertEqual(0);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14700
+     * @tc.name      testStatements0147
+     * @tc.desc      Switch statement
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      def = 0;
+      last = 0;
+      f1(5);
+      expect(def).assertEqual(1);
+      expect(last).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14800
+     * @tc.name      testStatements0148
+     * @tc.desc      Switch statement with interpolated string.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      result = 'miss';
+      sint();
+      expect(result).assertEqual('hit');
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_14900
+     * @tc.name      testStatements0149
+     * @tc.desc      Switch statement
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(f3(0)).assertEqual(3);
+      expect(f3(1)).assertEqual(3);
+      expect(f3(2)).assertEqual(3);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15000
+     * @tc.name      testStatements0150
+     * @tc.desc      Switch statement
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      sr = -1;
+      f4(0);
+      expect(sr).assertEqual(42);
+      sr = -1;
+      f4(1);
+      expect(sr).assertEqual(42);
+      sr = -1;
+      f4(2);
+      expect(sr).assertEqual(42);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15100
+     * @tc.name      testStatements0151
+     * @tc.desc      Switch statement
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(switchMe('Hello')).assertEqual('First');
+      expect(switchMe('World')).assertEqual('Second');
+      expect(switchMe('Unknown')).assertEqual('Sad');
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15200
+     * @tc.name      testStatements0152
+     * @tc.desc      Throw statements cause an exception or Error to be thrown.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      let v = 0;
+      try {
+        try {
+          if (t1 != t2) throw new Err();
+        } catch (e) {
+          if (e instanceof Err) {
+            v++;
+            throw e;
+          }
+        }
+      } catch (e) {
+        if (e instanceof Err) {
+          v++;
+        }
+      }
+      expect(v).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15300
+     * @tc.name      testStatements0153
+     * @tc.desc      Try statements run the block of code to handle exceptions and errors.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      try {} catch (e) { }
+      expect(t1).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15400
+     * @tc.name      testStatements0154
+     * @tc.desc      Try statements run the block of code to handle exceptions and errors.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      try {
+        if (t1 != t2) throw new Er();
+      } catch (e) {
+      } finally {
+        expect(t1).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15500
+     * @tc.name      testStatements0155
+     * @tc.desc      Try statements run the block of code to handle exceptions and errors.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      try {
+        if (t1 != t2) throw new Er();
+      } catch (e) {
+        expect(t1).assertEqual(1);
+      } finally {
+      }
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15600
+     * @tc.name      testStatements0156
+     * @tc.desc      Try statements run the block of code to handle exceptions and errors.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      let res = 0;
+      try {
+        try {
+          if (t1 != t2) throw new Er();
+        } finally {
+          res = 1;
+        }
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+        expect(res).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15700
+     * @tc.name      testStatements0157
+     * @tc.desc      Try statements run the block of code to handle exceptions and errors.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      let obj: Object|null = null;
+      try {
+        if (t1 != t2) throw new Er();
+      } catch (e) {
+        obj = e;
+      }
+      expect(obj instanceof Error).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15800
+     * @tc.name      testStatements0158
+     * @tc.desc      A catch clause consists of two parts: - Catch identifier that provides access to the object associated with the error thrown; and - Block of code that handles the situation.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(processNumbers(4, 2)).assertEqual(2);
+      expect(processNumbers(4, 0)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_15900
+     * @tc.name      testStatements0159
+     * @tc.desc      A finally clause defines a set of actions as a block which is executed regardless how try-catch was fulfilled normally or abruptly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      let ret:int = 1;
+      try {
+        if (t1 == t2) throw new Er();
+      } finally {
+        ret = 0;
+      }
+      expect(ret).assertEqual(0);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_16000
+     * @tc.name      testStatements0160
+     * @tc.desc      A finally clause defines a set of actions as a block which is executed regardless how try-catch was fulfilled normally or abruptly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      let ret:int = 1;
+      try {
+        if (t1 == t2) throw new Er();
+        ret = 1;
+      } catch (e) {
+        ret = 1;
+      } finally {
+        ret = 0;
+      }
+      expect(ret).assertEqual(0);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_16100
+     * @tc.name      testStatements0161
+     * @tc.desc      A finally clause defines a set of actions as a block which is executed regardless how try-catch was fulfilled normally or abruptly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      let ret: int = 0;
+      try {
+        if (t1 == t2) throw new Er();
+      } catch (e) {
+        ret = 1;
+      } finally {
+      }
+      expect(ret).assertEqual(0);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_16200
+     * @tc.name      testStatements0162
+     * @tc.desc      A finally clause defines a set of actions as a block which is executed regardless how try-catch was fulfilled normally or abruptly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let t1 = 1, t2 = 2;
+      let ret: int = 0;
+      try {
+        if (t1 != t2) throw new Er();
+      } catch (e) {
+        ret = 1;
+      } finally {
+        ret = 0;
+      }
+      expect(ret).assertEqual(0);
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_16300
+     * @tc.name      testStatements0163
+     * @tc.desc      The try block and the entire try statement completes normally if catch blocks are not executed. Try block execution completes abruptly if an exception or error x is thrown inside the try block.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        foo26(new Er(), 100);
+      } catch (e) {
+        expect(e instanceof Er).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_STATEMENTS_16400
+     * @tc.name      testStatements0164
+     * @tc.desc      The try block and the entire try statement completes normally if catch blocks are not executed. Try block execution completes abruptly if an exception or error x is thrown inside the try block.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStatements0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let err: I = new ErImpl();
+      try {
+        if (1 != 2) throw err as Error;
+      } catch (e) {
+        expect(e instanceof I).assertTrue();
+        expect(e instanceof Er).assertTrue();
+      }
+    });
+
   })
 }
