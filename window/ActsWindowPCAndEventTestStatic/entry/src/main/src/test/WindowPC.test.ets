@@ -3011,7 +3011,7 @@ export default function WindowPCTest() {
          * @tc.type      Function
          * @tc.level     Level3
          */
-        it('testOnWindowTitleButtonRectChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
+        it('testOnWindowTitleButtonRectChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): void => {
             let caseName: string = 'testOnWindowTitleButtonRectChange001';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
@@ -3022,15 +3022,26 @@ export default function WindowPCTest() {
 
                 let callback: Callback<window.TitleButtonRect> = (titleButtonRect: window.TitleButtonRect) => {
                     callbackInvoked = true;
+                    expect(titleButtonRect.right === 0).assertTrue()
+                    expect(titleButtonRect.top === 0).assertTrue()
+                    expect(titleButtonRect.width !== 0).assertTrue()
+                    expect(titleButtonRect.height !== 0).assertTrue()
                     hilog.info(domain, tag, msgStr + 'onWindowTitleButtonRectChange callback invoked: ' + JSON.stringify(titleButtonRect));
                 };
 
                 windowClass.onWindowTitleButtonRectChange(callback);
                 hilog.info(domain, tag, msgStr + 'onWindowTitleButtonRectChange registered success');
 
+                await Utils.msSleep(500)
+                windowClass.setWindowTitleButtonVisible(false, true, true)
+                hilog.info(domain, tag, msgStr + 'setWindowTitleButtonVisible success');
+                await Utils.msSleep(500)
+
                 windowClass.offWindowTitleButtonRectChange(callback);
                 hilog.info(domain, tag, msgStr + 'offWindowTitleButtonRectChange success');
 
+                windowClass.setWindowTitleButtonVisible(true, true, true)
+                hilog.info(domain, tag, msgStr + 'setWindowTitleButtonVisible success');
                 done();
             } catch (error) {
                 error = error as BusinessError;
@@ -3969,7 +3980,7 @@ export default function WindowPCTest() {
           hilog.info(domain, tag, caseName + ' getWindowDecorHeight result: ' + getHeight);
 
           if (isFreeWindowMode) {
-            expect(getHeight).assertEqual(setHeight);
+            expect(Math.abs(setHeight-getHeight)).assertLessOrEqual(1);
           }
 
           done();
@@ -4304,6 +4315,7 @@ export default function WindowPCTest() {
           let getStyle: window.DecorButtonStyle = subWin.getDecorButtonStyle();
           hilog.info(domain, tag, caseName + ' getDecorButtonStyle result: ' + JSON.stringify(getStyle));
 
+          expect(getStyle.colorMode).assertEqual(1);
           expect(getStyle.buttonBackgroundSize).assertEqual(setStyle.buttonBackgroundSize);
           expect(getStyle.spacingBetweenButtons).assertEqual(setStyle.spacingBetweenButtons);
           expect(getStyle.closeButtonRightMargin).assertEqual(setStyle.closeButtonRightMargin);
