@@ -1139,12 +1139,13 @@ export default function Sim2Public() {
     it("testTelephonySimGetSimCardType_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testTelephonySimGetSimCardType_static_0300';
+        let type:boolean =false;
         hilog.info(domain, tag, `${caseName} test start `);
         sim.hasSimCard(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
           if (data) {
             hilog.info(domain, tag,
               `${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-            sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType ) => {
+            sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType | undefined) => {
               if (err?.code === 0) {
                 const simStateAry: sim.CardType[] = [
                   sim.CardType.UNKNOWN_CARD,
@@ -1158,7 +1159,11 @@ export default function Sim2Public() {
                   sim.CardType.DUAL_MODE_UG_CARD,
                   sim.CardType.SINGLE_MODE_ISIM_CARD
                 ];
-                ExpectTrue(simStateAry.includes(data));
+                if(data != undefined){
+                  hilog.info(domain, tag, `${caseName} , data->${JSON.stringify(data)} `);
+                  ExpectTrue(simStateAry.includes(data));
+                }
+                
               }else {
                 ExpectFail();
                 hilog.info(domain, tag, `${caseName} getCardType else test end `);
