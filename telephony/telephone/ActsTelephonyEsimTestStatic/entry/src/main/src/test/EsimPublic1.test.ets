@@ -194,7 +194,7 @@ export default function EsimPublic1() {
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           }else{
-            hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+            hilog.info(domain, tag, `${caseName} Fail : the data is:${data}`);
             ExpectFail();
             hilog.info(domain, tag, `${caseName} test end`);
             done();
@@ -222,7 +222,7 @@ export default function EsimPublic1() {
         hilog.info(domain, tag, `${caseName} test start`);
         try {
           let data: boolean = eSIM.isSupported(SLOT_2);
-          hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+          hilog.info(domain, tag, `${caseName} Fail : the data is:${data}`);
           ExpectFail();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
@@ -249,7 +249,7 @@ export default function EsimPublic1() {
         hilog.info(domain, tag, `${caseName} test start`);
         try {
           let data: boolean = eSIM.isSupported(SLOT_3);
-          hilog.info(domain, tag, `${caseName} success : the data is:${data}`);
+          hilog.info(domain, tag, `${caseName} Fail : the data is:${data}`);
           ExpectFail();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
