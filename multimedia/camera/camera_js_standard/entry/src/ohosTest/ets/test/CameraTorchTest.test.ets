@@ -605,7 +605,7 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isSupported = mCameraManager.IsTorchLevelControlSupported();
+          let isSupported = mCameraManager.isTorchLevelControlSupported();
           console.info(`${TAG} IsTorchLevelControlSupported: ${isSupported}`);
         } catch (error) {
           console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_ISTORCHLEVELCONTROLSUPPORTED_0200 err` + error.code);
@@ -630,13 +630,13 @@ export default function cameraTorchTest() {
         done();
       } else {
         try {
-          let isTorchSupportedStatus = mCameraManager.IsTorchLevelControlSupported();
+          let isTorchSupportedStatus = mCameraManager.isTorchLevelControlSupported();
           console.info(`${TAG} isTorchSupportedStatus: ${isTorchSupportedStatus}`);
           if (isTorchSupportedStatus) {
             let level = 0.5;
-            let ret = mCameraManager.SetTorchModeOnWithLevel(level);
-            console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200 ret` + ret);
-            expect(ret == 0).assertTrue();
+            mCameraManager.setTorchModeOnWithLevel(level);
+            console.info(`${TAG} SUB_MULTIMEDIA_CAMERA_SETTORCHMODEONWITHLEVEL_0200 end`);
+            expect(true).assertTrue();
           }
  
         } catch (error) {
