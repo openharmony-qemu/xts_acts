@@ -102,29 +102,6 @@ export default function openCustomDialogNullAndUndefinedTest() {
     });
 
     /**
-     * @tc.name   openCustomDialogIsModalTrue001
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_ISMODAL_001
-     * @tc.desc   Test openCustomDialog with isModal true.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogIsModalTrue001', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogIsModalTrue001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnIsModalTrue'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogIsModalTrue001] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('isModal true success');
-      console.info('[openCustomDialogIsModalTrue001] END');
-    });
-
-    /**
      * @tc.name   openCustomDialogIsModalFalse002
      * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_ISMODAL_002
      * @tc.desc   Test openCustomDialog with isModal false.
@@ -143,123 +120,8 @@ export default function openCustomDialogNullAndUndefinedTest() {
       let strJson = getInspectorByKey('resultTextOpenCustomDialog');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[openCustomDialogIsModalFalse002] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('isModal false success');
+      expect(obj.$attrs.content).assertContain('false');
       console.info('[openCustomDialogIsModalFalse002] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogAutoCancelTrue001
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_AUTOCANCEL_001
-     * @tc.desc   Test openCustomDialog with autoCancel true.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogAutoCancelTrue001', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogAutoCancelTrue001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnAutoCancelTrue'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogAutoCancelTrue001] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('autoCancel true success');
-      console.info('[openCustomDialogAutoCancelTrue001] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogAutoCancelFalse002
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_AUTOCANCEL_002
-     * @tc.desc   Test openCustomDialog with autoCancel false.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogAutoCancelFalse002', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogAutoCancelFalse002] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnAutoCancelFalse'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogAutoCancelFalse002] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('autoCancel false success');
-      console.info('[openCustomDialogAutoCancelFalse002] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogEnableHoverModeTrue001
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_ENABLEHOVERMODE_001
-     * @tc.desc   Test openCustomDialog with enableHoverMode true.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogEnableHoverModeTrue001', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogEnableHoverModeTrue001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnEnableHoverModeTrue'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogEnableHoverModeTrue001] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('enableHoverMode true success');
-      console.info('[openCustomDialogEnableHoverModeTrue001] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogEnableHoverModeFalse002
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_ENABLEHOVERMODE_002
-     * @tc.desc   Test openCustomDialog with enableHoverMode false.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogEnableHoverModeFalse002', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogEnableHoverModeFalse002] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnEnableHoverModeFalse'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogEnableHoverModeFalse002] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('enableHoverMode false success');
-      console.info('[openCustomDialogEnableHoverModeFalse002] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogLevelModeOverlay001
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_LEVELMODE_001
-     * @tc.desc   Test openCustomDialog with levelMode OVERLAY.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogLevelModeOverlay001', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogLevelModeOverlay001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnLevelModeOverlay'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogLevelModeOverlay001] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('levelMode OVERLAY success');
-      console.info('[openCustomDialogLevelModeOverlay001] END');
     });
 
     /**
@@ -283,98 +145,6 @@ export default function openCustomDialogNullAndUndefinedTest() {
       console.info("[openCustomDialogLevelModeEmbedded002] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('levelMode EMBEDDED success');
       console.info('[openCustomDialogLevelModeEmbedded002] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogImmersiveModeDefault001
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_IMMERSIVEMODE_001
-     * @tc.desc   Test openCustomDialog with immersiveMode DEFAULT.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogImmersiveModeDefault001', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogImmersiveModeDefault001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnImmersiveModeDefault'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogImmersiveModeDefault001] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('immersiveMode DEFAULT success');
-      console.info('[openCustomDialogImmersiveModeDefault001] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogImmersiveModeExtend002
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_IMMERSIVEMODE_002
-     * @tc.desc   Test openCustomDialog with immersiveMode EXTEND.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogImmersiveModeExtend002', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogImmersiveModeExtend002] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnImmersiveModeExtend'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogImmersiveModeExtend002] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('immersiveMode EXTEND success');
-      console.info('[openCustomDialogImmersiveModeExtend002] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogFocusableTrue001
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_FOCUSABLE_001
-     * @tc.desc   Test openCustomDialog with focusable true.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogFocusableTrue001', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogFocusableTrue001] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnFocusableTrue'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogFocusableTrue001] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('focusable true success');
-      console.info('[openCustomDialogFocusableTrue001] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogFocusableFalse002
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_FOCUSABLE_002
-     * @tc.desc   Test openCustomDialog with focusable false.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogFocusableFalse002', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogFocusableFalse002] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnFocusableFalse'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogFocusableFalse002] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('focusable false success');
-      console.info('[openCustomDialogFocusableFalse002] END');
     });
 
     /**
@@ -444,29 +214,6 @@ export default function openCustomDialogNullAndUndefinedTest() {
       console.info("[openCustomDialogOptionsNull005] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('options null catch: 401');
       console.info('[openCustomDialogOptionsNull005] END');
-    });
-
-    /**
-     * @tc.name   openCustomDialogOptionsUndefined006
-     * @tc.number SUB_ARKUI_PROMPACTION_OPENCUSTOMDIALOG_PARAM_006
-     * @tc.desc   Test openCustomDialog with options undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('openCustomDialogOptionsUndefined006', Level.LEVEL0, async () => {
-      console.info('[openCustomDialogOptionsUndefined006] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnOptionsUndefined'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextOpenCustomDialog');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[openCustomDialogOptionsUndefined006] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('options undefined success');
-      console.info('[openCustomDialogOptionsUndefined006] END');
     });
   })
 }

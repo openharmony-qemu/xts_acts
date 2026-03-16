@@ -58,7 +58,7 @@ struct UpdateCustomDialogNullAndUndefined {
         }
       }));
     this.promptAction.openCustomDialog(this.contentNode!, {
-      showInSubWindow: false
+      showInSubWindow: false,alignment: DialogAlignment.Center
     }).then(() => {
       this.dialogOpened = true;
     });

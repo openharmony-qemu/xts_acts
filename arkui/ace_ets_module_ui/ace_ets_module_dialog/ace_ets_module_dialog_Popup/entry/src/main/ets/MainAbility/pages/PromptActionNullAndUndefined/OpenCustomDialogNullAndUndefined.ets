@@ -78,7 +78,7 @@ struct OpenCustomDialogNullAndUndefined {
             .width('45%')
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                showInSubWindow: true
+                showInSubWindow: true,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'showInSubWindow true success';
               }).catch((err: BusinessError) => {
@@ -92,7 +92,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                showInSubWindow: false
+                showInSubWindow: false,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'showInSubWindow false success';
               }).catch((err: BusinessError) => {
@@ -106,7 +106,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                isModal: true
+                isModal: true,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'isModal true success';
               }).catch((err: BusinessError) => {
@@ -120,7 +120,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                isModal: false
+                isModal: false,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'isModal false success';
               }).catch((err: BusinessError) => {
@@ -134,7 +134,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                autoCancel: true
+                autoCancel: true,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'autoCancel true success';
               }).catch((err: BusinessError) => {
@@ -148,7 +148,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                autoCancel: false
+                autoCancel: false,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'autoCancel false success';
               }).catch((err: BusinessError) => {
@@ -162,7 +162,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                enableHoverMode: true
+                enableHoverMode: true,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'enableHoverMode true success';
               }).catch((err: BusinessError) => {
@@ -176,7 +176,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                enableHoverMode: false
+                enableHoverMode: false,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'enableHoverMode false success';
               }).catch((err: BusinessError) => {
@@ -190,7 +190,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                levelMode: LevelMode.OVERLAY
+                levelMode: LevelMode.OVERLAY,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'levelMode OVERLAY success';
               }).catch((err: BusinessError) => {
@@ -204,7 +204,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                levelMode: LevelMode.EMBEDDED
+                levelMode: LevelMode.EMBEDDED,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'levelMode EMBEDDED success';
               }).catch((err: BusinessError) => {
@@ -218,7 +218,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                immersiveMode: ImmersiveMode.DEFAULT
+                immersiveMode: ImmersiveMode.DEFAULT,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'immersiveMode DEFAULT success';
               }).catch((err: BusinessError) => {
@@ -232,7 +232,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                immersiveMode: ImmersiveMode.EXTEND
+                immersiveMode: ImmersiveMode.EXTEND,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'immersiveMode EXTEND success';
               }).catch((err: BusinessError) => {
@@ -246,7 +246,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                focusable: true
+                focusable: true,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'focusable true success';
               }).catch((err: BusinessError) => {
@@ -260,7 +260,7 @@ struct OpenCustomDialogNullAndUndefined {
 
             .onClick(() => {
               this.promptAction.openCustomDialog(this.contentNode!, {
-                focusable: false
+                focusable: false,alignment: DialogAlignment.Center
               }).then(() => {
                 this.resultText = 'focusable false success';
               }).catch((err: BusinessError) => {
@@ -275,7 +275,7 @@ struct OpenCustomDialogNullAndUndefined {
             .onClick(() => {
               try {
                 this.promptAction.openCustomDialog(null as ESObject, {
-                  showInSubWindow: false
+                  showInSubWindow: false,alignment: DialogAlignment.Center
                 }).then(() => {
                   this.resultText = 'content null success';
                 }).catch((err: BusinessError) => {
@@ -293,7 +293,7 @@ struct OpenCustomDialogNullAndUndefined {
             .onClick(() => {
               try {
                 this.promptAction.openCustomDialog(undefined as ESObject, {
-                  showInSubWindow: false
+                  showInSubWindow: false,alignment: DialogAlignment.Center
                 }).then(() => {
                   this.resultText = 'content undefined success';
                 }).catch((err: BusinessError) => {

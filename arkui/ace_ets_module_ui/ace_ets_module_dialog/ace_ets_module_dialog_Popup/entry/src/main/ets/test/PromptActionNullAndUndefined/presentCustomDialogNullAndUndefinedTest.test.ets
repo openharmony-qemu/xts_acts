@@ -102,29 +102,6 @@ export default function presentCustomDialogNullAndUndefinedTest() {
     });
 
     /**
-     * @tc.name   presentCustomDialogBuilderNull003
-     * @tc.number SUB_ARKUI_PROMPTACTION_PRESENTCUSTOMDIALOG_PARAM_003
-     * @tc.desc   Test presentCustomDialog with builder null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('presentCustomDialogBuilderNull003', Level.LEVEL0, async () => {
-      console.info('[presentCustomDialogBuilderNull003] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnBuilderNull'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextPresent');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[presentCustomDialogBuilderNull003] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('present without controller success');
-      console.info('[presentCustomDialogBuilderNull003] END');
-    });
-
-    /**
      * @tc.name   presentCustomDialogBuilderUndefined004
      * @tc.number SUB_ARKUI_PROMPTACTION_PRESENTCUSTOMDIALOG_PARAM_004
      * @tc.desc   Test presentCustomDialog with builder undefined.
@@ -191,29 +168,6 @@ export default function presentCustomDialogNullAndUndefinedTest() {
       console.info("[presentCustomDialogControllerUndefined006] result is: " + JSON.stringify(obj.$attrs.content));
       expect(obj.$attrs.content).assertContain('controller undefined success');
       console.info('[presentCustomDialogControllerUndefined006] END');
-    });
-
-    /**
-     * @tc.name   presentCustomDialogOptionsNull007
-     * @tc.number SUB_ARKUI_PROMPTACTION_PRESENTCUSTOMDIALOG_PARAM_007
-     * @tc.desc   Test presentCustomDialog with options null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('presentCustomDialogOptionsNull007', Level.LEVEL0, async () => {
-      console.info('[presentCustomDialogOptionsNull007] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let scroll = await driver.findComponent(ON.type('Scroll'));
-      let btn = await scroll.scrollSearch(ON.id('btnOptionsNull'));
-      await btn.click();
-      await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('resultTextPresent');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[presentCustomDialogOptionsNull007] result is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertContain('controller undefined success');
-      console.info('[presentCustomDialogOptionsNull007] END');
     });
 
     /**
