@@ -55,20 +55,20 @@ export default function SegBtnItemTest0010() {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
     })
-    beforeEach(async (): Promise => {
+    beforeEach(async (): Promise<void> => {
       console.info("SegBtnItemTest0010 beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/segmentButton/SegBtnItem0010",
       }
       try {
-        const SegBtnItemTest0010 = AppStorage.get("router") as Router
-        SegBtnItemTest0010.clear();
-        let pages: router.RouterState = SegBtnItemTest0010.getState();
+        const pagesRouter = AppStorage.get("router") as Router
+        pagesRouter.clear();
+        let pages: router.RouterState = pagesRouter.getState();
         console.info("get SegBtnItemTest0010 state pages: " + JSON.stringify(pages));
         if (!("ArrayLikeString" == pages.name)) {
           console.info("get SegBtnItemTest0010 state pages.name: " + JSON.stringify(pages.name));
           // let result = await SegBtnItemTest0010.pushUrl(options);
-          SegBtnItemTest0010.pushUrl(options);
+          pagesRouter.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push SegBtnItemTest0010 success: " + JSON.stringify(result));
         }

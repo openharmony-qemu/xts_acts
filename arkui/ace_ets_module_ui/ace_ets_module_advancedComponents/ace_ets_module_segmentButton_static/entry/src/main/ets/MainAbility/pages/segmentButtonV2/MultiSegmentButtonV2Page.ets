@@ -101,7 +101,7 @@ struct MultiCapsuleSegmentButtonV2Example {
           itemBackgroundColor: this.itemBackgroundColor,
           itemBackgroundEffect: this.itemBackgroundEffect,
           itemSelectedBackgroundColor: ColorMetrics.resourceColor(Color.Red),
-          itemIconSize: { width: LengthMetrics.vp(18), height: LengthMetrics.vp(18) } as SizeT,
+          itemIconSize: { width: LengthMetrics.vp(18), height: LengthMetrics.vp(18) } as SizeT<LengthMetrics>,
           itemIconFillColor: ColorMetrics.resourceColor(Color.Pink),
           itemSelectedIconFillColor: ColorMetrics.resourceColor(Color.Blue),
           itemSymbolFontSize: LengthMetrics.vp(20),

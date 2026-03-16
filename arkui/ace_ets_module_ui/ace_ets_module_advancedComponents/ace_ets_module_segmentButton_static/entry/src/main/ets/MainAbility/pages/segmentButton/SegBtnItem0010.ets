@@ -36,7 +36,7 @@ struct SegBtnItem0010 {
       { text: 'tab2', accessibilityLevel: 'no', accessibilityDescription: 'tab2' },
       { text: 'tab3', accessibilityLevel: 'yes', accessibilityDescription: 'tab3' },
       { text: 'tab4', accessibilityLevel: 'no-hide-descendants', accessibilityDescription: 'tab4' }
-    ] as ItemRestriction
+    ] as ItemRestriction<SegmentButtonTextItem>
   })
   @State capOptions: SegmentButtonOptions = SegmentButtonOptions.capsule({
     buttons: [
@@ -72,7 +72,7 @@ struct SegBtnItem0010 {
         accessibilityLevel: 'no-hide-descendants',
         accessibilityDescription: 'email4'
       }
-    ] as ItemRestriction
+    ] as ItemRestriction<SegmentButtonIconItem>
   })
   @State selectedIndexes: int[] = [0]
 

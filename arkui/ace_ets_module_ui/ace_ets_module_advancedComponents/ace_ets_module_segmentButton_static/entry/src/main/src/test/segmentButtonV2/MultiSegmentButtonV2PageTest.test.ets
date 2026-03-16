@@ -55,20 +55,20 @@ export default function MultiSegmentButtonV2PageTest() {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
     })
-    beforeEach(async (): Promise => {
+    beforeEach(async (): Promise<void> => {
       console.info("MultiSegmentButtonV2PageTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/segmentButtonV2/MultiSegmentButtonV2Page",
       }
       try {
-        const MultiSegmentButtonV2PageTest = AppStorage.get("router") as Router
-        MultiSegmentButtonV2PageTest.clear();
-        let pages: router.RouterState = MultiSegmentButtonV2PageTest.getState();
+        const pageRouter = AppStorage.get("router") as Router
+        pageRouter.clear();
+        let pages: router.RouterState = pageRouter.getState();
         console.info("get MultiSegmentButtonV2PageTest state pages: " + JSON.stringify(pages));
         if (!("ArrayLikeString" == pages.name)) {
           console.info("get MultiSegmentButtonV2PageTest state pages.name: " + JSON.stringify(pages.name));
           // let result = await MultiSegmentButtonV2PageTest.pushUrl(options);
-          MultiSegmentButtonV2PageTest.pushUrl(options);
+          pageRouter.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push MultiSegmentButtonV2PageTest success: " + JSON.stringify(result));
         }
