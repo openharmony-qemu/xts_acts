@@ -78,7 +78,7 @@ struct WebPageSnapshot {
                     Utils.emitEvent("null_error", 154100)
                   } else {
                     console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
-                    Utils.emitEvent("null_error", 154100)
+                    Utils.emitEvent("null", 154100)
                   }
                 });
               } catch (error) {
