@@ -8006,5 +8006,55 @@ export default function applicationManagerTest() {
       }
       done();
     })
+    /**
+     * @tc.name   addAllowedRunningBundles_test_006_1
+     * @tc.number addAllowedRunningBundles_test_006_1
+     * @tc.desc   addAllowedRunningBundles with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedRunningBundles_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedRunningBundles_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret = applicationManager.addAllowedRunningBundles(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedRunningBundles_test_006_1 done is expected, but error, actually catch: ' + error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addAllowedRunningBundles_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeAllowedRunningBundles_test_006_1
+     * @tc.number removeAllowedRunningBundles_test_006_1
+     * @tc.desc   removeAllowedRunningBundles with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedRunningBundles_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedRunningBundles_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.addAllowedRunningBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID)
+        let ret = applicationManager.removeAllowedRunningBundles(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedRunningBundles_test_006_1 done is expected,but error, actually catch: ' +
+        error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- removeAllowedRunningBundles_test_006_1  -------- END --------');
+    })
+
   })
 }
