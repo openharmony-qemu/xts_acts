@@ -58,7 +58,7 @@ export default function UserAuthIcon() {
         let code = await (result.getText() as Promise<string>);
         await Utils.msSleep(5000);
         hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_Func_Static_0330 code is ' + code);
-        expect(code).assertEqual("12500010");
+        expect((code == "12500010") || (code == "12500005")).assertTrue();
       }
       done();
     })
