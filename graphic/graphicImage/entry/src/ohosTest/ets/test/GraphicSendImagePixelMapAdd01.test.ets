@@ -836,7 +836,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
           // pixelMap.marshalling(undefined);
           console.info(`${LOG_PREFIX} marshallingSendableUndefined001: success.`);
-        await pixelMap.release();
+          await pixelMap.release();
           done();
         } catch (error) {
           console.error(
