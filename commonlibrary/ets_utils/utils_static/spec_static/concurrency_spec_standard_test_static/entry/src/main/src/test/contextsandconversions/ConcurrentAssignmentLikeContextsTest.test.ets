@@ -3934,6 +3934,1624 @@ export default function AssignmentLikeContextsTest() {
       })
 
 
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10400
+     * @tc.name      concurrent_testAssignmentLikeContexts0104
+     * @tc.desc     A conversion from a type to that same type is permitted for any type (extended cases)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0104'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0104)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10500
+     * @tc.name      concurrent_testAssignmentLikeContexts0105
+     * @tc.desc     A conversion from a type to that same type is permitted for any type (generic class with type parameter as class)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0105'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0105)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10600
+     * @tc.name      concurrent_testAssignmentLikeContexts0106
+     * @tc.desc     A conversion from a type to that same type is permitted for any type (generic class with bounded type parameter)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0106'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0106)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10700
+     * @tc.name      concurrent_testAssignmentLikeContexts0107
+     * @tc.desc     Invocation contexts allow an identity conversion (multiple types including functions and arrays)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0107'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0107)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10800
+     * @tc.name      concurrent_testAssignmentLikeContexts0108
+     * @tc.desc     A value of the null type may be assigned to any reference type (basic reference types)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0108'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0108)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_10900
+     * @tc.name      concurrent_testAssignmentLikeContexts0109
+     * @tc.desc     A value of the null type may be assigned to any reference type (system classes and error types)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0109'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0109)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11000
+     * @tc.name      concurrent_testAssignmentLikeContexts0110
+     * @tc.desc     A value of the null type may be assigned to any reference type (string and utility classes)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0110'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0110)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11100
+     * @tc.name      concurrent_testAssignmentLikeContexts0111
+     * @tc.desc     Widening primitive type: byte to short/int/long/float/double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0111'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0111)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11200
+     * @tc.name      concurrent_testAssignmentLikeContexts0112
+     * @tc.desc     Widening primitive type: short to int/long/float/double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0112'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0112)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11300
+     * @tc.name      concurrent_testAssignmentLikeContexts0113
+     * @tc.desc     Widening primitive type: int to long/float/double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0113'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0113)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11400
+     * @tc.name      concurrent_testAssignmentLikeContexts0114
+     * @tc.desc     Widening primitive type: long to float/double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0114'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0114)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11500
+     * @tc.name      concurrent_testAssignmentLikeContexts0115
+     * @tc.desc     Widening primitive type: float to double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0115'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0115)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11600
+     * @tc.name      concurrent_testAssignmentLikeContexts0116
+     * @tc.desc     Widening reference conversion: array to Object
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0116'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0116)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11700
+     * @tc.name      concurrent_testAssignmentLikeContexts0117
+     * @tc.desc     Widening reference conversion: multi-dimensional array to Object
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0117'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0117)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11800
+     * @tc.name      concurrent_testAssignmentLikeContexts0118
+     * @tc.desc     Widening reference conversion: wrapper type array to Object
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0118'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0118)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11900
+     * @tc.name      concurrent_testAssignmentLikeContexts0119
+     * @tc.desc     Widening reference conversion: wrapper type to Object/Integral/Floating/Comparable
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0119'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0119)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12000
+     * @tc.name      concurrent_testAssignmentLikeContexts0120
+     * @tc.desc     Widening reference conversion: function and function array to Object
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0120'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0120)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12100
+     * @tc.name      concurrent_testAssignmentLikeContexts0121
+     * @tc.desc     Widening reference conversion: enum and enum array to Object
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0121'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0121)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12200
+     * @tc.name      concurrent_testAssignmentLikeContexts0122
+     * @tc.desc     Widening reference conversion: interface implementation to Object
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0122'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0122)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12300
+     * @tc.name      concurrent_testAssignmentLikeContexts0123
+     * @tc.desc     Widening reference conversion: multi-dimensional function array to Object array (nullable)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0123'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0123)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12400
+     * @tc.name      concurrent_testAssignmentLikeContexts0124
+     * @tc.desc     Widening reference conversion: generic class with interface type parameter to super generic class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0124'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0124)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12500
+     * @tc.name      concurrent_testAssignmentLikeContexts0125
+     * @tc.desc     Identity conversion for generic class with nested type parameter
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0125'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0125)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12600
+     * @tc.name      concurrent_testAssignmentLikeContexts0126
+     * @tc.desc     Identity conversion for nullable function type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0126'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0126)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12700
+     * @tc.name      concurrent_testAssignmentLikeContexts0127
+     * @tc.desc     Widening reference conversion for nested generic class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0127'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0127)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12800
+     * @tc.name      concurrent_testAssignmentLikeContexts0128
+     * @tc.desc     Identity conversion for array of generic objects
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0128'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0128)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_12900
+     * @tc.name      concurrent_testAssignmentLikeContexts0129
+     * @tc.desc     Assignment contexts allow widening reference conversion followed by unboxing (Byte to byte)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0129'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0129)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13000
+     * @tc.name      concurrent_testAssignmentLikeContexts0130
+     * @tc.desc     Assignment contexts allow widening reference conversion followed by unboxing (Short to short)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0130'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0130)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13100
+     * @tc.name      concurrent_testAssignmentLikeContexts0131
+     * @tc.desc     Assignment contexts allow widening reference conversion followed by unboxing (Int to int)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0131'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0131)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13200
+     * @tc.name      concurrent_testAssignmentLikeContexts0132
+     * @tc.desc     Assignment contexts allow widening reference conversion followed by unboxing (Long to long)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0132'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0132)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13300
+     * @tc.name      concurrent_testAssignmentLikeContexts0133
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (boolean to Object)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0133'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0133)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13400
+     * @tc.name      concurrent_testAssignmentLikeContexts0134
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (byte to Integral)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0134'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0134)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13500
+     * @tc.name      concurrent_testAssignmentLikeContexts0135
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (char to Object)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0135'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0135)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13600
+     * @tc.name      concurrent_testAssignmentLikeContexts0136
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (short to Object)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0136'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0136)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13700
+     * @tc.name      concurrent_testAssignmentLikeContexts0137
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (int to Integral)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0137'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0137)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13800
+     * @tc.name      concurrent_testAssignmentLikeContexts0138
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (long to Object)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0138'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0138)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_13900
+     * @tc.name      concurrent_testAssignmentLikeContexts0139
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (float to Object)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0139'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0139)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14000
+     * @tc.name      concurrent_testAssignmentLikeContexts0140
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (double to Object)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0140'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0140)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14100
+     * @tc.name      concurrent_testAssignmentLikeContexts0141
+     * @tc.desc     Invocation contexts allow widening reference conversion followed by unboxing (Short to short)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0141'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0141)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14200
+     * @tc.name      concurrent_testAssignmentLikeContexts0142
+     * @tc.desc     Invocation contexts allow widening reference conversion followed by unboxing (Int to int)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0142'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0142)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14300
+     * @tc.name      concurrent_testAssignmentLikeContexts0143
+     * @tc.desc     Invocation contexts allow widening reference conversion followed by unboxing (Long to long)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0143'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0143)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14400
+     * @tc.name      concurrent_testAssignmentLikeContexts0144
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (float to Floating)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0144'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0144)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14500
+     * @tc.name      concurrent_testAssignmentLikeContexts0145
+     * @tc.desc     Assignment contexts allow conversion followed by widening reference conversion (double to Floating)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0145'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0145)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14600
+     * @tc.name      concurrent_testAssignmentLikeContexts0146
+     * @tc.desc     Invocation contexts allow conversion followed by widening reference conversion (byte to Integral)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0146'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0146)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14700
+     * @tc.name      concurrent_testAssignmentLikeContexts0147
+     * @tc.desc     Invocation contexts allow conversion followed by widening reference conversion (char to Object)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0147'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0147)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_14800
+     * @tc.name      concurrent_testAssignmentLikeContexts0148
+     * @tc.desc     Compile-time error for narrowing primitive conversion (int to byte)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('concurrent_testAssignmentLikeContexts0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_testAssignmentLikeContexts0148'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(testAssignmentLikeContexts0148)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
 
   })
 }
