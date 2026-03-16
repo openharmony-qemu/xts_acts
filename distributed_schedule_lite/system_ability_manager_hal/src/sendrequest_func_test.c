@@ -470,6 +470,8 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0010, Function | MediumTest 
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount == 1, TRUE);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
 
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -510,6 +512,8 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0020, Function | MediumTest 
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount == 1, TRUE);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
 
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -651,6 +655,8 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0060, Function | MediumTest 
     result = demoApi->SAMGR_SendRequestProxy(&feature->identity, &request2, NULL);
     TEST_ASSERT_EQUAL_INT(result == 0, TRUE);
 
+    free(request2.data);
+    request2.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -686,7 +692,9 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0070, Function | MediumTest 
     int32 result = demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, DemoHandlerAndCheck); 
     TEST_ASSERT_EQUAL_INT(result, 0);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
-    
+
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -723,7 +731,9 @@ LITE_TEST_CASE(SendRequestTestSuite, testSendRequest0080, Function | MediumTest 
         int32 result = demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, DemoHandlerAndCheck); 
         TEST_ASSERT_EQUAL_INT(result, 0);
         TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
-    
+
+        free(request.data);
+        request.data = NULL;
         ReleaseIUnknown(demoApi);
     }
 }

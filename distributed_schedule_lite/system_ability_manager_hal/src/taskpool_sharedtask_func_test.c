@@ -342,6 +342,11 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
+
+    free(request.data);
+    request.data = NULL;
+    free(request2.data);
+    request2.data = NULL;
 };
 
 /**
@@ -396,6 +401,11 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[1].serviceCalledCount == 1, TRUE);
+
+    free(request.data);
+    request.data = NULL;
+    free(request2.data);
+    request2.data = NULL;
 };
 
 /**
@@ -437,6 +447,11 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_threadID11 == g_threadID21, TRUE);
+
+    free(request.data);
+    request.data = NULL;
+    free(request2.data);
+    request2.data = NULL;
 };
 
 /**
@@ -478,5 +493,10 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0040, Function | MediumTest
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_threadID12 == g_threadID22, TRUE);
+
+    free(request1.data);
+    request1.data = NULL;
+    free(request2.data);
+    request2.data = NULL;
 };
 RUN_TEST_SUITE(ShareTaskFuncTestSuite);

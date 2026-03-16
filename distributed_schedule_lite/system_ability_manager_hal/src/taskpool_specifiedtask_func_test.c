@@ -312,6 +312,11 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0010, Function | Med
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
+
+    free(request.data);
+    request.data = NULL;
+    free(request2.data);
+    request2.data = NULL;
 };
 
 /**
@@ -366,6 +371,11 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0020, Function | Med
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
+
+    free(request.data);
+    request.data = NULL;
+    free(request2.data);
+    request2.data = NULL;
 };
 
 /**
@@ -408,5 +418,10 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0030, Function | Med
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_servicePoint1 == g_servicePoint2, TRUE);
+
+    free(request.data);
+    request.data = NULL;
+    free(request2.data);
+    request2.data = NULL;
 };
 RUN_TEST_SUITE(SpecifiedTaskFuncTestSuite);
