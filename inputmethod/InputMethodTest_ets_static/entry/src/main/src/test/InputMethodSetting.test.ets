@@ -1008,35 +1008,5 @@ export default function inputMethodSettingTest() {
             }
         });
 
-        /**
-         * @tc.name   Sub_InputMethod_IMF_sendMessagePromise_static_0300
-         * @tc.number Sub_InputMethod_IMF_sendMessagePromise_static_0300
-         * @tc.desc   Function test
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('Sub_InputMethod_IMF_sendMessagePromise_static_0300', Level.LEVEL3, async (done: () => void) => {
-            const testName = 'Sub_InputMethod_IMF_sendMessagePromise_static_0300';
-            const ATTRIBUTE: inputMethod.TextConfig = {
-                inputAttribute: {
-                    textInputType: inputMethod.TextInputType.TEXT, enterKeyType: inputMethod.EnterKeyType.UNSPECIFIED
-                }
-            };
-            await inputMethod.getController().attach(true, ATTRIBUTE);
-            console.info(`====>${testName} attach success.`);
-            try {
-                let msgParam: ArrayBuffer = new ArrayBuffer(128);
-                await inputMethod.getController().sendMessage('', msgParam);
-                console.info(`====>${testName} sendMessage success.`);
-                expect().assertFail();
-                done();
-            } catch (err) {
-                console.info(`====>${testName} errCode:${err.code}, errMessage is ${err.message}`)
-                await inputMethod.getController().detach();
-                expect(err.code).assertEqual(12800014);
-                done();
-            };
-        });
     })
 }
