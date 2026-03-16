@@ -14399,5 +14399,340 @@ export default function napiApiTest() {
       }
       done();
     });
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_0100
+     * @tc.name      testRunScriptPath0001
+     * @tc.desc      test run script path parameter script The file name exceeds the maximum length of 255 bytes
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0001 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest01();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0001 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_0200
+     * @tc.name      testRunScriptPath0002
+     * @tc.desc      test run script path parameter script The file name exceeds the maximum length of 255 bytes
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0002 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest02();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0002 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_0300
+     * @tc.name      testRunScriptPath0003
+     * @tc.desc      test The filename contains illegal characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0003 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest03();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0003 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_0400
+     * @tc.name      testRunScriptPath0004
+     * @tc.desc      test File does not exist
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0004 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest04();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0004 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_0500
+     * @tc.name      testRunScriptPath0005
+     * @tc.desc      test non-abc file
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0005 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest05();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0005 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_0700
+     * @tc.name      testRunScriptPath0007
+     * @tc.desc      test the content of the abc file is empty
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0007 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest07();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0007 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_0900
+     * @tc.name      testRunScriptPath0009
+     * @tc.desc      test path is nullptr
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0009 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest09();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0009 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_1000
+     * @tc.name      testRunScriptPath0010
+     * @tc.desc      test Running the same file multiple times with 10
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0010 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest10();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0010 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_1100
+     * @tc.name      testRunScriptPath0011
+     * @tc.desc      test Multiple executions with different files
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0011 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest11();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0011 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_1200
+     * @tc.name      testRunScriptPath0012
+     * @tc.desc      test value is nullptr
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0012 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest12();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0012 END');
+    });
+
+    /**
+     * @tc.number    SUB_RUN_SCRIPT_PATH_1300
+     * @tc.name      testRunScriptPath0013
+     * @tc.desc      test env is nullptr
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testRunScriptPath0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testRunScriptPath0013 START');
+      const finalResult: boolean = napitest.napiRunScriptPathTest13();
+
+      expect(finalResult).assertTrue();
+      console.info('testRunScriptPath0011 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_0100
+     * @tc.name      testNapiLoadModule0001
+     * @tc.desc      test invalid path
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModule0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModule0001 START');
+      const finalResult: boolean = napitest.napiLoadModuleTest01();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModule0001 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_0200
+     * @tc.name      testNapiLoadModule0002
+     * @tc.desc      test path is nullptr
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModule0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModule0002 START');
+      const finalResult: boolean = napitest.napiLoadModuleTest02();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModule0002 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_0700
+     * @tc.name      testNapiLoadModule0007
+     * @tc.desc      test the file size exceeds the maximum 11M specification
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModule0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModule0007 START');
+      const finalResult: boolean = napitest.napiLoadModuleTest07();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModule0007 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_0800
+     * @tc.name      testNapiLoadModule0008
+     * @tc.desc      test Multiple calls 10000 for the same file
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModule0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModule0008 START');
+      const finalResult: boolean = napitest.napiLoadModuleTest08();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModule0008 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_0900
+     * @tc.name      testNapiLoadModule0009
+     * @tc.desc      test multiple executions with different files
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModule0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModule0009 START');
+      const finalResult: boolean = napitest.napiLoadModuleTest09();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModule0009 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_INFO_0100
+     * @tc.name      testNapiLoadModuleInfo0001
+     * @tc.desc      test invalid path
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModuleInfo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModuleInfo0001 START');
+      const finalResult: boolean = napitest.napiLoadModuleInfoTest01();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModuleInfo0001 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_INFO_0200
+     * @tc.name      testNapiLoadModuleInfo0002
+     * @tc.desc      test path nullptr
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModuleInfo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModuleInfo0002 START');
+      const finalResult: boolean = napitest.napiLoadModuleInfoTest02();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModuleInfo0002 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_INFO_0300
+     * @tc.name      testNapiLoadModuleInfo0003
+     * @tc.desc      test path does not exist
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModuleInfo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModuleInfo0003 START');
+      const finalResult: boolean = napitest.napiLoadModuleInfoTest03();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModuleInfo0003 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_INFO_0400
+     * @tc.name      testNapiLoadModuleInfo0004
+     * @tc.desc      test Multiple calls 1000 for the same file
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModuleInfo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModuleInfo0004 START');
+      const finalResult: boolean = napitest.napiLoadModuleInfoTest04();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModuleInfo0004 END');
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_LOAD_MODULE_INFO_0500
+     * @tc.name      testNapiLoadModuleInfo0005
+     * @tc.desc      test Multiple calls with different files
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testNapiLoadModuleInfo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      console.info('testNapiLoadModuleInfo0005 START');
+      const finalResult: boolean = napitest.napiLoadModuleInfoTest05();
+
+      expect(finalResult).assertTrue();
+      console.info('testNapiLoadModuleInfo0005 END');
+    });
   })
 }
