@@ -19,6 +19,7 @@ group("spec_static") {
     deps = [
       "spec_standard_test_static:ActsSpecStaticTest",
       "spec_standard_test_static_1:ActsSpecStaticTest1",
+	  "concurrency_spec_standard_test_static:ActsConcurrencySpecStaticTest",
     ]
   }
 }
