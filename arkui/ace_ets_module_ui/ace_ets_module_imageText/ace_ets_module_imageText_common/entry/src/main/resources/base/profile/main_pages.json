@@ -25,6 +25,7 @@
         "MainAbility/pages/Measure/TextCommonTextComputing0440",
         "MainAbility/pages/Measure/TextCommonTextComputing0570",
         "MainAbility/pages/Measure/TextGetParagraphsTest",
+        "MainAbility/pages/Measure/MeasureText",
 
         "MainAbility/pages/BindSelectionMenuTest",
         "MainAbility/pages/DisableMenuItems",
@@ -54,6 +55,8 @@
         "MainAbility/pages/TypeNodeTestPage",
         "MainAbility/pages/MagnifierTestPage",
         "MainAbility/pages/MeasureUtilsTestPage",
-        "MainAbility/pages/TextMenuControllerTestPage"
+        "MainAbility/pages/TextMenuControllerTestPage",
+        "MainAbility/pages/UIContext/UIContextFontRegisterFont",
+        "MainAbility/pages/Text/TextMethodsNull2"
     ]
 }

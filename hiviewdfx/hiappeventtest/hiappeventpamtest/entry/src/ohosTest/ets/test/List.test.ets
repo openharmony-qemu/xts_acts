@@ -16,10 +16,12 @@ import HiAppEventPamTest from './HiAppEventPam.test';
 import HiAppEventSetConfigTest from './HiAppEventConfig.test';
 import HiAppEventconfigEventPolicy from './HiAppEventconfigEventPolicy.test'
 import HiAppEventMtbf from './HiAppEventMtbf.test';
+import ConfigEventPolicyPage from './ConfigEventPolicyPage.test';
 
 export default function testsuite() {
   HiAppEventPamTest();
   HiAppEventSetConfigTest();
   HiAppEventconfigEventPolicy();
   HiAppEventMtbf();
+  ConfigEventPolicyPage();
 }

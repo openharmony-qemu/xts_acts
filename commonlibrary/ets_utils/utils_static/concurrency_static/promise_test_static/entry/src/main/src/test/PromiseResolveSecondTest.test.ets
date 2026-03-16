@@ -48,7 +48,7 @@ export default function PromiseResolveSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseResolveTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseResolveTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseResolveTest3000';
         console.info(`${caseName} test start`);
@@ -111,7 +111,7 @@ export default function PromiseResolveSecondTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('PromiseResolveTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('PromiseResolveTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void):Promise<void> => {
         const caseName = 'PromiseResolveTest3100';
         console.info(`${caseName} test start`);

@@ -140,6 +140,26 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+
+            case "testSecureDnsModeOFF001": {
+              try {
+                Utils.emitEvent(webview.SecureDnsMode.OFF, 202603091)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "testSecureDnsModeSECURE_ONLY001": {
+              try {
+                Utils.emitEvent(webview.SecureDnsMode.SECURE_ONLY, 202603093)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
           }
         })
       }

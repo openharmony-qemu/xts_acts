@@ -31,9 +31,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0001";
       try {
         let result: string = String.fromCharCode();
@@ -51,9 +51,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0002";
       try {
         let result: string = String.fromCharCode(189, 43, 190, 61);
@@ -71,9 +71,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0003";
       try {
         let result: string = String.fromCharCode(65);
@@ -91,9 +91,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0004";
       try {
         let result: string = String.fromCharCode(65, 66);
@@ -111,9 +111,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0005";
       try {
         let result: string = String.fromCharCode(65, 66, 67);
@@ -131,9 +131,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0006";
       try {
         let result: string = String.fromCharCode(0x2014);
@@ -151,9 +151,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface fromCharCode().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0007";
       try {
         let result: string = String.fromCharCode(0x12014);
@@ -171,9 +171,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCharCode.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0008";
       try {
         let result: string = String.fromCharCode(8212);
@@ -191,9 +191,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCharCode.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCharCode0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCharCode0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCharCode0009";
       try {
         let result: string = String.fromCharCode(-1);
@@ -213,9 +213,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0001";
       try {
         let result = String.fromCodePoint();
@@ -233,9 +233,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0002";
       try {
         let result = String.fromCodePoint(42);
@@ -253,9 +253,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0003";
       try {
         let result = String.fromCodePoint(65, 90);
@@ -273,9 +273,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0004";
       try {
         let result = String.fromCodePoint(0x404);
@@ -293,9 +293,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0005";
       try {
         let result = String.fromCodePoint(194564);
@@ -313,9 +313,9 @@ export default function StringTest() {
      * @tc.desc Test the function of the interface testFromCodePoint.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testFromCodePoint0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testFromCodePoint0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testFromCodePoint0006";
       try {
         let result = String.fromCodePoint(0x1d306, 0x61, 0x1d307);

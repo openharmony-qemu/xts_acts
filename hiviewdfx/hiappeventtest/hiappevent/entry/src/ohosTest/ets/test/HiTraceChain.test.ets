@@ -242,6 +242,28 @@ export default function hiTraceChainTest() {
       console.info("testhiTraceChain_0007 end");
     })
 
-
+    /**
+     * @tc.name   testhiTraceChain_0008
+     * @tc.number SUB_DFX_DFR_hiTraceChain_Ets_0008
+     * @tc.desc   验证hiTraceChain.enableFlag(),第2个参数覆盖枚举:['NO_BE_INFO']；
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testhiTraceChain_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      try{
+        console.info("testhiTraceChain_0008 start");
+        let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
+        let enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.NO_BE_INFO);
+        hiTraceChain.enableFlag(traceId, hiTraceChain.HiTraceFlag.DONOT_CREATE_SPAN);
+        enabledDoNotCreateSpanFlag = hiTraceChain.isFlagEnabled(traceId, hiTraceChain.HiTraceFlag.D2D_TP_INFO);
+        done();
+      }catch(err){
+        console.error(`====>testhiTraceChain_0008 enableFlag undefined catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+      console.info("testhiTraceChain_0008 end");
+    })
   })
 }

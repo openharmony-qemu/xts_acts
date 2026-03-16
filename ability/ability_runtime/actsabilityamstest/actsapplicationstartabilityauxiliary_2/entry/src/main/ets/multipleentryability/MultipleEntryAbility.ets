@@ -18,6 +18,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@kit.BasicServicesKit';
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default class EntryAbility extends UIAbility {
   private onCreateFlag = false;
@@ -52,7 +53,7 @@ export default class EntryAbility extends UIAbility {
     commonEventManager.publish(`${this.TEST_CASE_NAME}_onDestroyHap_1`, commonEventData, (result) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 50==: ${JSON.stringify(result)}`);
     });
-    await this.sleep(1000);
+    await eventBusPlus.emit('Auxiliary_2_MultipleEntryAbility_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -80,7 +81,7 @@ export default class EntryAbility extends UIAbility {
 
   }
 
-  onForeground(): void {
+  async onForeground(): Promise<void> {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
     hilog.info(0x0000, 'testTag', '%{public}s', `TEST_CASE_NAME: ${this.TEST_CASE_NAME}`);
@@ -102,9 +103,8 @@ export default class EntryAbility extends UIAbility {
             hilog.info(0x0000, 'testTag', '%{public}s',
               `onConnect SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_2200, 50==: ${JSON.stringify(result)}`);
           });
-        setTimeout(() => {
-          this.context.terminateSelf();
-        }, 1000)
+        await eventBusPlus.onWait('Auxiliary_2_MultipleEntryAbility_onForegroundHap_1');
+        this.context.terminateSelf();
         break;
       case 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_1500':
         this.onForegroundFlagNumber = this.onForegroundFlagNumber + 1
@@ -118,7 +118,9 @@ export default class EntryAbility extends UIAbility {
           this.onWindowStageCreateFlag = false;
           this.onForegroundFlag = false;
         }
-        this.context.moveAbilityToBackground();
+        setTimeout(() => {
+          this.context.moveAbilityToBackground();
+        },500)
     }
   }
 
@@ -126,6 +128,7 @@ export default class EntryAbility extends UIAbility {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
     this.onBackgroundFlag = true;
+    eventBusPlus.emit('Auxiliary2_MultipleEntryAbility_onBackground');
   }
 
   sleep(ms: number): Promise<void> {

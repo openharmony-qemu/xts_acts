@@ -98,7 +98,7 @@ export default function WebInitTest() {
       await Utils.msSleep(2000);
       Utils.emitEvent("customizeSchemes0200", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("customizeSchemes0200", 17100020, 302, done);
+      Utils.registerEvent("customizeSchemes0200", 401, 302, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('customizeSchemes', 10, '');
       await Utils.msSleep(2000);

@@ -37,9 +37,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp can be created from a string pattern with flags
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re: RegExp = new RegExp('abc', 'i');
       const result: boolean = re.test('ABC');
       expect(result).assertTrue();
@@ -53,9 +53,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp constructed from another RegExp copies source and flags
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re2: RegExp = new RegExp('foo', 'gi');
       expect(re2.source).assertEqual('foo');
       expect(re2.flags).assertEqual('gi');
@@ -68,9 +68,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify new flags override the original flags when reusing RegExp
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re1: RegExp = new RegExp('bar', 'i');
       const re2: RegExp = new RegExp('bar', 'g');
       expect(re2.flags).assertEqual('g');
@@ -83,9 +83,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify SyntaxError is thrown when invalid flag is provided
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let errorCaught: boolean = false;
       try {
         new RegExp('a', 'z');
@@ -101,9 +101,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify escape characters in string pattern are correctly interpreted
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re: RegExp = new RegExp('\\d+');
       expect(re.test('123')).assertTrue();
       expect(re.test('abc')).assertFalse();
@@ -116,9 +116,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp constructed from existing RegExp with undefined flag keeps original flags
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re1: RegExp = new RegExp('test', 'gi');
       const re2: RegExp = new RegExp(re1, undefined);
       expect(re2.flags).assertEqual('gi');
@@ -132,9 +132,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify flags with different order (e.g. 'gi' and 'ig') are treated equivalently
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re1: RegExp = new RegExp('abc', 'gi');
       const re2: RegExp = new RegExp('abc', 'ig');
       expect(re1.flags).assertEqual('gi');
@@ -149,9 +149,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify Unicode flag 'u' enables proper emoji matching
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re1: RegExp = new RegExp('.', 'u');
       const emoji: string = '😊';
       expect(re1.test(emoji)).assertTrue();
@@ -165,9 +165,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify difference between global (g) and sticky (y) flags
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str: string = 'abc abc';
       const reGlobal: RegExp = new RegExp('abc', 'g');
       const reSticky: RegExp = new RegExp('abc', 'y');
@@ -185,9 +185,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify dotAll flag (s) allows dot to match newline characters
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str: string = 'abc\ndef';
       const reWithoutS: RegExp = new RegExp('abc.def');
       const reWithS: RegExp = new RegExp('abc.def', 's');
@@ -201,9 +201,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify multiline flag (m) changes behavior of ^ and $ anchors
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const str: string = 'first\nsecond';
       const reNoM: RegExp = new RegExp('^second$');
       const reWithM: RegExp = new RegExp('^second$', 'm');
@@ -217,9 +217,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify passing empty string as flags produces valid RegExp with no flags
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re: RegExp = new RegExp('abc', '');
       expect(re.source).assertEqual('abc');
       expect(re.flags).assertEqual('');
@@ -232,9 +232,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify dynamic RegExp creation using escaped string patterns
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const keyword: string = 'end.';
       const pattern: string = keyword.replace('.', '\\.');
       const re: RegExp = new RegExp(pattern);
@@ -248,9 +248,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp constructed with combined flags 'g' and 'y'
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('abc', 'gy');
       expect(re.global).assertEqual(true);
       expect(re.sticky).assertEqual(true);
@@ -262,9 +262,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify new RegExp created from existing one with modified flags
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re1 = new RegExp('abc', 'gi');
       const re2 = new RegExp(re1, 'm');
       expect(re2.multiline).assertEqual(true);
@@ -277,9 +277,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp constructed from RegExp of another realm (simulated)
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('foo');
       expect(re.source).assertEqual('foo');
     });
@@ -290,9 +290,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify SyntaxError thrown when RegExp created with invalid flag
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let threw = false;
       try {
         new RegExp('test', 'invalid');
@@ -308,9 +308,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp supports dotAll flag 's' to match newline characters
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('a.b', 's');
       expect(re.test('a\nb')).assertTrue();
     });
@@ -322,9 +322,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp supports Unicode property escapes with \\p{L}
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('\\p{L}+', 'u');
       expect(re.test('你好')).assertTrue();
       expect(re.test('123')).assertFalse();
@@ -336,9 +336,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp constructed with named capture groups works correctly
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('(?<first>\\w+)', 'u');
       const match = re.exec('hello');
       expect(match?.groups?.["first"]).assertEqual('hello');
@@ -350,9 +350,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp constructed from string containing special characters behaves as expected
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('\\[abc\\]');
       expect(re.test('[abc]')).assertTrue();
       expect(re.test('abc')).assertFalse();
@@ -364,9 +364,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp with sticky flag 'y' correctly respects lastIndex
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('a', 'y');
       const str = 'aa';
       re.lastIndex = 1;
@@ -379,9 +379,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp interacts correctly with String.prototype.match
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('\\d+', 'g');
       const str = 'abc123def456';
       expect(str.match(re)).assertDeepEquals(['123', '456']);
@@ -393,9 +393,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp with replace() handles global flag correctly
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('cat', 'g');
       const str = 'cat bat cat';
       expect(str.replace(re, 'dog')).assertEqual('dog bat dog');
@@ -407,9 +407,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp matches surrogate pairs correctly with Unicode flag
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('\\u{1F600}', 'u');
       expect(re.test('😀')).assertTrue();
     });
@@ -420,9 +420,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp throws SyntaxError when flags are repeated
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let threw = false;
       try {
         new RegExp('abc', 'gg');
@@ -438,9 +438,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp constructed dynamically from concatenated strings
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const part1 = 'ab';
       const part2 = 'c';
       const re = new RegExp(part1 + part2);
@@ -454,9 +454,9 @@ export default function RegExpTest001() {
      * @tc.desc Verify RegExp constructed from empty string and replaced globally
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegCtr0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testRegCtr0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const re = new RegExp('', 'g');
       const str = 'abc';
       expect(str.replace(re, '-')).assertEqual('-a-b-c-');

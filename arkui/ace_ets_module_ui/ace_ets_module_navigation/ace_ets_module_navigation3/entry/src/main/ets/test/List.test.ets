@@ -162,6 +162,7 @@ import NavigationLevelTest20 from './Navigation/NavigationLevel/NavigationLevelT
 import NavigationLevelTest21 from './Navigation/NavigationLevel/NavigationLevelTest21.test'
 import NavigationLevelTest22 from './Navigation/NavigationLevel/NavigationLevelTest22.test'
 import NavigationLevelTest23 from './Navigation/NavigationLevel/NavigationLevelTest23.test'
+import MultiNavPathStackPushPathTest from './Navigation/MultiNavPathStackPushPath.test'
 import NavPathInfoIsEntry from './Navigation/NavPathInfoIsEntry.test'
 import GetStateByIndexTest from './UIObserver/GetStateByIndexTest.test'
 import UIObserverObserver4Test from './UIObserver/UIObserverObserver4Test.test'
@@ -317,6 +318,7 @@ export default function testsuite() {
   NavigationLevelTest21();
   NavigationLevelTest22();
   NavigationLevelTest23();
+  MultiNavPathStackPushPathTest();
   NavPathInfoIsEntry();
   NavPathStack12()
   NavPathStack21()

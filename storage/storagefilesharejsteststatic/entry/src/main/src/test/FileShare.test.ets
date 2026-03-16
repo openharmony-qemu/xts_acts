@@ -541,7 +541,7 @@ export default function FileShare_test() {
           if (err.code === 801) {
             expect(err.message === "The device doesn't support this api").assertTrue();
           }
-          if (err.code == 401) {
+          if (err.code === 401) {
             expect(err.message == 'The input parameter is invalid').assertTrue();
           } else {
             expect(false).assertTrue();
@@ -550,6 +550,185 @@ export default function FileShare_test() {
         }
         hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_001 END');
       });
+
+    /**
+    * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0200
+    * @tc.name FileShare_persistPermission_static_002
+    * @tc.desc Test persistPermission() interfaces
+    * Test normal uri and OperationMode is READ_MODE and WRITE_MODE .
+    * @tc.size MEDIUM
+    * @tc.type Function
+    * @tc.level Level 0
+    * @tc.require
+    */
+    it('FileShare_persistPermission_static_002',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const fileStr: String = data + "/FileShare_persistPermission_static_002.txt";
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_002 START');
+
+        try {
+          const uri = fileUri.getUriFromPath(fileStr);
+          hilog.info(domain, tag, '%{public}s', `Constructed URI: ${uri}`);
+          const fd = await fs.open(uri, fs.OpenMode.CREATE);
+          await fs.close(fd);
+          let policyInfo: fileShare.PolicyInfo = {
+            uri: uri,
+            operationMode: fileShare.OperationMode.READ_MODE | fileShare.OperationMode.WRITE_MODE,
+          };
+          let policies: Array<fileShare.PolicyInfo> = [policyInfo];
+          await fileShare.persistPermission(policies);
+          hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_002 success');
+          done();
+        } catch (e) {
+          const err = e as BusinessError;
+          hilog.info(domain, tag,
+            'FileShare_persistPermission_static_002 failed: code = %{public}d, message = %{public}s',
+            err.code, err.message);
+          if (err.code === 801) {
+            expect(err.message === "The device doesn't support this api").assertTrue();
+          }
+          if (err.code === 13900001) {
+            expect(err.message == 'Operation not permitted').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_002 END');
+      });
+
+
+    /**
+    * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0300
+    * @tc.name FileShare_persistPermission_static_003
+    * @tc.desc Test persistPermission() interfaces
+    * Test INVALID_PATH uri and OperationMode is READ_MODE.
+    * @tc.size MEDIUM
+    * @tc.type Function
+    * @tc.level Level 3
+    * @tc.require
+    */
+    it('FileShare_persistPermission_static_003',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const fileStr1: String = data + "/FileShare_persistPermission_static_003_1.txt";
+        const fileStr2: String = data + "/FileShare_persistPermission_static_003_2.txt";
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_003 START');
+
+        try {
+          const uri1 = fileUri.getUriFromPath(fileStr1);
+          const policyInfo1: fileShare.PolicyInfo = {
+            uri: uri1,
+            operationMode: fileShare.OperationMode.READ_MODE,
+          };
+          const uri2 = fileUri.getUriFromPath(fileStr2);
+          const fd = await fs.open(uri2, fs.OpenMode.CREATE);
+          await fs.close(fd);
+          const policyInfo2: fileShare.PolicyInfo = {
+            uri: uri2,
+            operationMode: fileShare.OperationMode.READ_MODE,
+          };
+          const policies: Array<fileShare.PolicyInfo> = [policyInfo1, policyInfo2];
+          await fileShare.persistPermission(policies);
+          hilog.error(domain, tag, 'Unexpected success: persistPermission should have failed');
+          expect(false).assertTrue();
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, 'Expected failure: code = %{public}d, message = %{public}s',
+            error.code, error.message);
+          if (error.code === 801) {
+            expect(error.message === "The device doesn't support this api").assertTrue();
+          }
+          if (error.code === 13900001) {
+            expect(error.message == 'Operation not permitted').assertTrue();
+          } else {
+            expect(false).assertTrue();
+          }
+          done();
+        }
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_003 END');
+      });
+    
+    /**
+    * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_0400
+    * @tc.name FileShare_persistPermission_static_004
+    * @tc.desc Test persistPermission() interfaces
+    * Test normal uri and OperationMode is READ_MODE.
+    * @tc.size MEDIUM
+    * @tc.type Function
+    * @tc.level Level 0
+    * @tc.require
+    */
+    it('FileShare_persistPermission_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const fileStr: String = data + "/FileShare_persistPermission_static_004.txt";
+      hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_004 START');
+
+      try {
+        const uri = fileUri.getUriFromPath(fileStr);
+        hilog.info(domain, tag, '%{public}s', `Created test file and closed. URI: ${uri}`);
+        const fd = await fs.open(uri, fs.OpenMode.CREATE);
+        await fs.close(fd);
+        hilog.info(domain, tag, '%{public}s', `Created test file and closed. URI: ${uri}`);
+        let policyInfo: fileShare.PolicyInfo = {
+          uri: uri,
+          operationMode: fileShare.OperationMode.READ_MODE,
+        };
+        let policies: Array<fileShare.PolicyInfo> = [policyInfo];
+        await fileShare.persistPermission(policies);
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_004: persistPermission success');
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_004 has failed for ' + e);
+        let err = e as BusinessError;
+        if (err.code === 801) {
+          expect(err.message === "The device doesn't support this api").assertTrue();
+        }
+        if (err.code === 13900001) {
+          expect(err.message == 'Operation not permitted').assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_004 END');
+    });
+
+    /**
+     * @tc.name   FileShare_persistPermission_static_005
+     * @tc.number SUB_BASIC_FM_FileAPI_FileShare_PersistPermission_static_0500
+     * @tc.desc   Test persistPermission() interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('FileShare_persistPermission_static_005',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: () => void): Promise<void> => {
+      try {
+        let PolicyErrorResult: fileShare.PolicyErrorResult = {
+                uri: "file://storage/Users/currentUser/Documents/1.txt",
+                code: fileShare.PolicyErrorCode.PERSISTENCE_FORBIDDEN,
+                message: "Operation not permitted"
+        };
+        expect(PolicyErrorResult.code == fileShare.PolicyErrorCode.PERSISTENCE_FORBIDDEN).assertTrue();
+        expect(PolicyErrorResult.uri == "file://storage/Users/currentUser/Documents/1.txt").assertTrue();
+        expect(PolicyErrorResult.message == "Operation not permitted").assertTrue();
+        expect(fileShare.PolicyErrorCode.PERSISTENCE_FORBIDDEN === 1).assertTrue();
+        expect(fileShare.PolicyErrorCode.INVALID_MODE === 2).assertTrue();
+        expect(fileShare.PolicyErrorCode.INVALID_PATH === 3).assertTrue();
+        expect(fileShare.PolicyErrorCode.PERMISSION_NOT_PERSISTED === 4).assertTrue();
+        done(); 
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'FileShare_persistPermission_static_005 has failed for ' + e.message + ", err code: " + e.code);
+        if(e.code === 801){
+          expect(e.message == "The device doesn't support this api").assertTrue();
+        }
+        done();
+      }
+    });
   })
   hilog.info(domain, tag, '%{public}s', 'FileShare_test end');
 }

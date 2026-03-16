@@ -14,8 +14,10 @@
  */
 import webViewControllerJsunit from './webViewControllerJsunit.test'
 import webViewOnSslError from './webViewOnSslError.test'
+import httpAuthHandlerThree from './HttpAuthHandlerThree.test'
 
 export default function testsuite() {
        webViewControllerJsunit()
        webViewOnSslError()
+       httpAuthHandlerThree()
 }

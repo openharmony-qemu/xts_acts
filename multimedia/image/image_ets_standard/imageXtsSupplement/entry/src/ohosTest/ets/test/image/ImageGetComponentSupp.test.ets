@@ -344,7 +344,7 @@ export default function ImageGetComponentSupp() {
     /**
      * @tc.number     image_getComponent_AsyncCallback_002
      * @tc.name       image_getComponent_AsyncCallback_002
-     * @tc.desc       Image.getComponent,ComponentType
+     * @tc.desc       Image.getComponent,ComponentType.YUV_Y
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 0
@@ -475,6 +475,34 @@ export default function ImageGetComponentSupp() {
       })
     })
 
+    /**
+     * @tc.number     image_getComponent_AsyncCallback_006
+     * @tc.name       image_getComponent_AsyncCallback_006
+     * @tc.desc       Image.getComponent,return valve:img.clipRect.x,img.clipRect.y
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('image_getComponent_AsyncCallback_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'image_getComponent_AsyncCallback_006';
+      ImageGetComponent(done,testName, async (receiver) => {
+        try {
+          receiver.on('imageArrival', async () => {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',JSON.stringify(img.clipRect));
+            expect(img.clipRect.x).assertEqual(0);
+            expect(img.clipRect.y).assertEqual(0);
+          });
+        }catch (error) {
+          console.info(TAG ,testName, error.message, error.code);
+          expect().assertFail();
+        }
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+      })
+    })
+
 
     /**
      * @tc.number     image_getComponent_callback_return_valve_001
@@ -501,6 +529,39 @@ export default function ImageGetComponentSupp() {
                 expect(img.format> 0).assertTrue();
                 console.info(TAG ,testName,'Succeeded in reading the next Image.',img.timestamp);
                 expect(img.timestamp!=undefined).assertTrue();
+              }
+            });
+          }catch (error) {
+            console.info(TAG ,testName, error.message, error.code);
+            expect().assertFail();
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+      })
+    })
+
+    /**
+     * @tc.number     image_getComponent_callback_return_valve_002
+     * @tc.name       image_getComponent_callback_return_valve_002
+     * @tc.desc       Image.getComponent,return valve:img.clipRect.x,img.clipRect.y
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('image_getComponent_callback_return_valve_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'image_getComponent_callback_return_valve_002';
+      ImageGetComponent(done,testName, async (receiver) => {
+        receiver.on('imageArrival', async () => {
+          try {
+            receiver.readNextImage((err: BusinessError, img: image.Image) => {
+              if (err) {
+                console.error(TAG ,testName,`Failed to read the next Image.code ${err.code},message is ${err.message}`);
+              } else {
+                console.info(TAG, testName, 'Succeeded in reading the next Image.', JSON.stringify(img.clipRect));
+                expect(img.clipRect.x).assertEqual(0);
+                expect(img.clipRect.y).assertEqual(0);
               }
             });
           }catch (error) {

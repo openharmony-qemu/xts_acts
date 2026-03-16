@@ -20,6 +20,8 @@ import BackupExtensionAbility from '@ohos.application.BackupExtensionAbility';
 import { BundleVersion } from '@ohos.application.BackupExtensionAbility';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
+import BackupExtensionContext from '@ohos.file.BackupExtensionContext';
+import contextConstant from '@ohos.app.ability.contextConstant';
 
 let id: int = 1;
 let domain: int = 0x0000;
@@ -30,6 +32,11 @@ interface ErrorInfo {
     errorInfo: string
   }
 
+interface ProgressInfo {
+  progressed: number,
+  total: number
+}
+
 
 export class BackupExt extends BackupExtensionAbility {
     onRestore(ver: BundleVersion) {
@@ -39,6 +46,17 @@ export class BackupExt extends BackupExtensionAbility {
     onBackup() {
         hilog.info(domain, tag, '%{public}s', 'do backup.');
     }
+
+    async backupDir() {
+      hilog.info(domain, tag, '%{public}s', "onBackup begin");
+      this.context.area = contextConstant.AreaMode.EL1;
+      let dir = this.context.backupDir;
+      hilog.info(domain, tag, '%{public}s', `onBackup el1 dir: ${dir}`);
+      this.context.area = contextConstant.AreaMode.EL2;
+      dir = this.context.backupDir;
+      hilog.info(domain, tag, '%{public}s', `onBackup el2 dir: ${dir}`);
+      hilog.info(domain, tag, '%{public}s', "onBackup end");
+   }
 
     onBackupEx(backupInfo: string): string {
         try {
@@ -82,6 +100,16 @@ export class BackupExt extends BackupExtensionAbility {
         } catch (error) {
           hilog.error(domain, tag, '%{public}s', 'onRelease error: ' + JSON.stringify(error));
         }
+      }
+
+      onProcess(): string {
+        hilog.info(domain, tag, '%{public}s', `onProcess begin`);
+        let processInfo: ProgressInfo = {
+        progressed: 100,
+        total: 1000, 
+        }
+        hilog.info(domain, tag, '%{public}s', `onProcess end`);
+        return JSON.stringify(processInfo);
       }
 };
 
@@ -595,6 +623,46 @@ export default function abilityTest() {
                 hilog.info(domain, tag, '%{public}s', 'test_Backup_onRelease_scenario_positive_001 error: ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
+            }
+        });
+
+        /**
+            * @tc.name   test_Backup_OnProcess_static_001
+            * @tc.number SUB_BASIC_FM_FileAPI_OnProcess_static_0300
+            * @tc.desc   Test onRestoreEx() interfaces
+            * @tc.type   FUNCTION
+            * @tc.size   MEDIUMTEST
+            * @tc.level  LEVEL3
+            */
+        it("test_Backup_OnProcess_static_001", Level.LEVEL3, () => {
+            try {
+                let BackupExtensionAbility = new BackupExt();
+                BackupExtensionAbility.onProcess();
+                hilog.info(domain, tag, '%{public}s', 'test_Backup_OnProcess_static_001 run ok');
+                expect(id === 1).assertTrue();
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', `test_Backup_OnProcess_static_001 error: ${JSON.stringify(error)}`);
+                expect(false).assertTrue();
+            }
+        });
+
+        /**
+            * @tc.name   test_Backup_Backupdir_static_001
+            * @tc.number SUB_BASIC_FM_FileAPI_BackupDir_static_0100
+            * @tc.desc   Test backupdir() interfaces
+            * @tc.type   FUNCTION
+            * @tc.size   MEDIUMTEST
+            * @tc.level  LEVEL1
+            */
+        it("test_Backup_Backupdir_static_001", Level.LEVEL1, () => {
+            try {
+                let backupdir = new BackupExt();
+                backupdir.backupDir();
+                hilog.info(domain, tag, '%{public}s', 'backup-onBackup run ok');
+                expect(id === 1).assertTrue();
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', `test_Backup_Backupdir_static_001 error: ${JSON.stringify(error)}`);
+                expect(false).assertTrue();
             }
         });
     })

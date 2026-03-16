@@ -77,8 +77,7 @@ export default function audioRoutingManager() {
             expect(data[0].deviceType).assertEqual(15);
             expect(data[0].networkId).assertEqual("LocalDevice");
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(false).assertTrue();
             done();
@@ -114,8 +113,7 @@ export default function audioRoutingManager() {
             expect(data[0].deviceType).assertEqual(15);
             expect(data[0].networkId).assertEqual("LocalDevice");
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(false).assertTrue();
             done();
@@ -152,8 +150,7 @@ export default function audioRoutingManager() {
             expect(data[0].networkId).assertEqual('LocalDevice');
 
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(false).assertTrue();
             done();
@@ -189,8 +186,7 @@ export default function audioRoutingManager() {
             expect(data[0].deviceType).assertEqual(15);
             expect(data[0].networkId).assertEqual("LocalDevice");
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(false).assertTrue();
             done();
@@ -226,8 +222,7 @@ export default function audioRoutingManager() {
             expect(data[0].deviceType).assertEqual(audio.DeviceType.INVALID);
             expect(data[0].networkId).assertEqual('LocalDevice');
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(Number(err.code)).assertEqual(6800101);
             done();
@@ -249,7 +244,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
         capturerFlags: 0
       }
 
@@ -260,11 +255,10 @@ export default function audioRoutingManager() {
             console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
             let data: ESObject = AudioDeviceDescriptors;
             expect(data[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
-            expect(data[0].deviceType).assertEqual(audio.DeviceType.INVALID);
+            expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
             expect(data[0].networkId).assertEqual('LocalDevice');
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(Number(err.code)).assertEqual(6800101);
             done();
@@ -285,7 +279,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
         capturerFlags: 0
       }
 
@@ -296,11 +290,10 @@ export default function audioRoutingManager() {
             console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
             let data: ESObject = AudioDeviceDescriptors;
             expect(data[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
-            expect(data[0].deviceType).assertEqual(audio.DeviceType.INVALID);
+            expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
             expect(data[0].networkId).assertEqual('LocalDevice');
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(Number(err.code)).assertEqual(6800101);
             done();
@@ -321,7 +314,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
         capturerFlags: 0
       }
 
@@ -332,11 +325,10 @@ export default function audioRoutingManager() {
             console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
             let data: ESObject = AudioDeviceDescriptors;
             expect(data[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
-            expect(data[0].deviceType).assertEqual(audio.DeviceType.INVALID);
+            expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
             expect(data[0].networkId).assertEqual('LocalDevice');
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(Number(err.code)).assertEqual(6800101);
             done();
@@ -357,7 +349,7 @@ export default function audioRoutingManager() {
      */
     it("SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let capturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        source: audio.SourceType.SOURCE_TYPE_LIVE,
         capturerFlags: 0
       }
 
@@ -368,11 +360,10 @@ export default function audioRoutingManager() {
             console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
             let data: ESObject = AudioDeviceDescriptors;
             expect(data[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
-            expect(data[0].deviceType).assertEqual(audio.DeviceType.INVALID);
+            expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
             expect(data[0].networkId).assertEqual('LocalDevice');
             done();
-          })
-          .catch((err: BusinessError) => {
+          }).catch((err: BusinessError) => {
             console.error(`get device descriptor fail: ${err.code},${err.message}`);
             expect(Number(err.code)).assertEqual(6800101);
             done();

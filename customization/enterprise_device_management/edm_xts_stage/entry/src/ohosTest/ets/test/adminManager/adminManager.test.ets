@@ -107,6 +107,29 @@ export default function adminManagerTest() {
     })
 
     /**
+     * @tc.name   test_subscribeManagedEventSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_SUBSCRIBEMANAGEDEVENTSYNC_005
+     * @tc.desc   test subscribeManagedEventSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_subscribeManagedEventSync_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let events: Array<adminManager.ManagedEvent> = [];
+        adminManager.subscribeManagedEventSync(SELFWANT, events);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' ---test_subscribeManagedEventSync_005 error 9200008 is expected, actually catch: ' + error.code);
+        expect(error.code == 9200008).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_unsubscribeManagedEventSync_001
      * @tc.number SUB_CUSTOMIZATION_EDM_UNSUBSCRIBEMANAGEDEVENTSYNC_001
      * @tc.desc   test unsubscribeManagedEventSync method with unActive admin
@@ -180,6 +203,29 @@ export default function adminManagerTest() {
         adminManager.unsubscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
       } catch (error) {
         expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_unsubscribeManagedEventSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNSUBSCRIBEMANAGEDEVENTSYNC_005
+     * @tc.desc   test unsubscribeManagedEventSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_unsubscribeManagedEventSync_005", Level.LEVEL0, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let events: Array<adminManager.ManagedEvent> = [];
+        adminManager.unsubscribeManagedEventSync(SELFWANT, events);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' ---test_unsubscribeManagedEventSync_005 error 9200008 is expected, actually catch: ' + error.code);
+        expect(error.code == 9200008).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -288,6 +334,27 @@ export default function adminManagerTest() {
         let bundles: Array<string> = adminManager.getDelegatedBundleNames(SELFWANT, DELEGATED_POLICIES[0]);
         expect(bundles.length == 1).assertTrue();
         expect(bundles[0] == BUNDLENAME1).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_setDelegatedPolicies_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDELEGATEDPOLICIES_006
+     * @tc.desc   test setDelegatedPolicies method with invalid policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_setDelegatedPolicies_006", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let policies: Array<string> = [];
+        adminManager.setDelegatedPolicies(SELFWANT, BUNDLENAME1, policies);
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -1953,5 +2020,395 @@ export default function adminManagerTest() {
       done();
       console.info(' --- isByodAdmin_test_016  -------- END --------');
     })
+
+    /**
+     * @tc.name   subscribeManagedEventSync_test_004_1
+     * @tc.number subscribeManagedEventSync_test_004_1
+     * @tc.desc   subscribeManagedEventSync with [] parameter managedEvents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("subscribeManagedEventSync_test_004_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- subscribeManagedEventSync_test_004_1  -------- START --------');
+      try {
+        adminManager.subscribeManagedEventSync(SELFWANT, []);
+        console.info(' --- subscribeManagedEventSync_test_004_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- subscribeManagedEventSync_test_004_1 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- subscribeManagedEventSync_test_004_1  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   unsubscribeManagedEventSync_test_004_1
+     * @tc.number unsubscribeManagedEventSync_test_004_1
+     * @tc.desc   unsubscribeManagedEventSync with [] parameter managedEvents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("unsubscribeManagedEventSync_test_004_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- unsubscribeManagedEventSync_test_004_1  -------- START --------');
+      try {
+        adminManager.unsubscribeManagedEventSync(SELFWANT, []);
+        console.info(' --- unsubscribeManagedEventSync_test_004_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- unsubscribeManagedEventSync_test_004_1 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- unsubscribeManagedEventSync_test_004_1  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   test_setDelegatedPolicies_005_1
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDELEGATEDPOLICIES_005_1
+     * @tc.desc   test setDelegatedPolicies method with "" bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_setDelegatedPolicies_005_1", Level.LEVEL0, async (done: Function) => {
+      console.info(' --- test_setDelegatedPolicies_005_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        adminManager.setDelegatedPolicies(SELFWANT, "", DELEGATED_POLICIES);
+        console.info(' --- test_setDelegatedPolicies_005_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_setDelegatedPolicies_005_1 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200009).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      console.info(' --- test_setDelegatedPolicies_005_1  -------- END --------');
+      done();
+    })
+
+
+    /**
+     * @tc.name   test_setDelegatedPolicies_005_2
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDELEGATEDPOLICIES_005_2
+     * @tc.desc   test setDelegatedPolicies method with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_setDelegatedPolicies_005_2", Level.LEVEL0, async (done: Function) => {
+      console.info(' --- test_setDelegatedPolicies_005_2  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        adminManager.setDelegatedPolicies(SELFWANT, null, DELEGATED_POLICIES);
+        console.info(' --- test_setDelegatedPolicies_005_2 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_setDelegatedPolicies_005_2 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      console.info(' --- test_setDelegatedPolicies_005_2  -------- END --------');
+      done();
+    })
+
+
+    /**
+     * @tc.name   test_setDelegatedPolicies_005_3
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDELEGATEDPOLICIES_005_3
+     * @tc.desc   test setDelegatedPolicies method with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_setDelegatedPolicies_005_3", Level.LEVEL0, async (done: Function) => {
+      console.info(' --- test_setDelegatedPolicies_005_3  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        adminManager.setDelegatedPolicies(SELFWANT, undefined, DELEGATED_POLICIES);
+        console.info(' --- test_setDelegatedPolicies_005_3 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_setDelegatedPolicies_005_3 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      console.info(' --- test_setDelegatedPolicies_005_3  -------- END --------');
+      done();
+    })
+
+    /**
+     * @tc.name   getDelegatedPolicies_test_002_1
+     * @tc.number getDelegatedPolicies_test_002_1
+     * @tc.desc   getDelegatedPolicies with "" parameter bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDelegatedPolicies_test_002_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDelegatedPolicies_test_002_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        adminManager.getDelegatedPolicies(SELFWANT, "");
+        console.info(' --- getDelegatedPolicies_test_002_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDelegatedPolicies_test_002_1 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- getDelegatedPolicies_test_002_1  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDelegatedPolicies_test_002_2
+     * @tc.number getDelegatedPolicies_test_002_2
+     * @tc.desc   getDelegatedPolicies with null parameter bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDelegatedPolicies_test_002_2", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDelegatedPolicies_test_002_2  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        adminManager.getDelegatedPolicies(SELFWANT, null);
+        console.info(' --- getDelegatedPolicies_test_002_2 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDelegatedPolicies_test_002_2 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- getDelegatedPolicies_test_002_2  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDelegatedPolicies_test_002_3
+     * @tc.number getDelegatedPolicies_test_002_3
+     * @tc.desc   getDelegatedPolicies with undefined parameter bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDelegatedPolicies_test_002_3", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDelegatedPolicies_test_002_3  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        adminManager.getDelegatedPolicies(SELFWANT, undefined);
+        console.info(' --- getDelegatedPolicies_test_002_3 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDelegatedPolicies_test_002_3 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- getDelegatedPolicies_test_002_3  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDelegatedBundleNames_test_002_1
+     * @tc.number getDelegatedBundleNames_test_002_1
+     * @tc.desc   getDelegatedBundleNames with "" parameter policies
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDelegatedBundleNames_test_002_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDelegatedBundleNames_test_002_1  -------- START --------');
+      try {
+        adminManager.getDelegatedBundleNames(SELFWANT, "");
+        console.info(' --- getDelegatedBundleNames_test_002_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDelegatedBundleNames_test_002_1 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- getDelegatedBundleNames_test_002_1  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDelegatedBundleNames_test_002_2
+     * @tc.number getDelegatedBundleNames_test_002_2
+     * @tc.desc   getDelegatedBundleNames with null parameter policies
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDelegatedBundleNames_test_002_2", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDelegatedBundleNames_test_002_2  -------- START --------');
+      try {
+        adminManager.getDelegatedBundleNames(SELFWANT, null);
+        console.info(' --- getDelegatedBundleNames_test_002_2 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDelegatedBundleNames_test_002_2 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDelegatedBundleNames_test_002_2  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDelegatedBundleNames_test_002_3
+     * @tc.number getDelegatedBundleNames_test_002_3
+     * @tc.desc   getDelegatedBundleNames with undefined parameter policies
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDelegatedBundleNames_test_002_3", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDelegatedBundleNames_test_002_3  -------- START --------');
+      try {
+        adminManager.getDelegatedBundleNames(SELFWANT, undefined);
+        console.info(' --- getDelegatedBundleNames_test_002_3 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDelegatedBundleNames_test_002_3 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getDelegatedBundleNames_test_002_3  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   test_startAdminProvision_011_1
+     * @tc.number test_startAdminProvision_011_1
+     * @tc.desc   startAdminProvision with null parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_startAdminProvision_011_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_startAdminProvision_011_1  -------- START --------');
+      try {
+        adminManager.startAdminProvision(null, adminManager.AdminType.ADMIN_TYPE_BYOD,
+          AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
+        console.info(' --- test_startAdminProvision_011_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_startAdminProvision_011_1 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_startAdminProvision_011_1  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   test_startAdminProvision_011_2
+     * @tc.number test_startAdminProvision_011_2
+     * @tc.desc   startAdminProvision with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_startAdminProvision_011_2", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_startAdminProvision_011_2  -------- START --------');
+      try {
+        adminManager.startAdminProvision(undefined, adminManager.AdminType.ADMIN_TYPE_BYOD,
+          AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
+        console.info(' --- test_startAdminProvision_011_2 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_startAdminProvision_011_2 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_startAdminProvision_011_2  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   test_startAdminProvision_011_3
+     * @tc.number test_startAdminProvision_011_3
+     * @tc.desc   startAdminProvision with undefined parameter Context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_startAdminProvision_011_3", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_startAdminProvision_011_3  -------- START --------');
+      try {
+        adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
+          undefined, PARAMETERS_LOWER_BOUND);
+        console.info(' --- test_startAdminProvision_011_3 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_startAdminProvision_011_3 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_startAdminProvision_011_3  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   test_startAdminProvision_011_4
+     * @tc.number test_startAdminProvision_011_4
+     * @tc.desc   startAdminProvision with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_startAdminProvision_011_4", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_startAdminProvision_011_4  -------- START --------');
+      try {
+        adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
+          AppStorage.get("test"), null);
+        console.info(' --- test_startAdminProvision_011_4 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_startAdminProvision_011_4 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_startAdminProvision_011_4  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   test_startAdminProvision_011_5
+     * @tc.number test_startAdminProvision_011_5
+     * @tc.desc   startAdminProvision with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_startAdminProvision_011_5", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_startAdminProvision_011_5  -------- START --------');
+      try {
+        adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
+          AppStorage.get("test"), undefined);
+        console.info(' --- test_startAdminProvision_011_5 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_startAdminProvision_011_5 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_startAdminProvision_011_5  -------- END --------');
+    })
+
   })
 }

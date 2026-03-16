@@ -76,8 +76,6 @@ export default function accountManagerTest() {
       done();
     })
 
-    // ------------- accountManager --------------------
-
     /**
      * @tc.name   disallowOsAccountAddition_test_001
      * @tc.number disallowOsAccountAddition_test_001
@@ -210,7 +208,6 @@ export default function accountManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null);
@@ -245,7 +242,6 @@ export default function accountManagerTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT, DEFAULT_USER_ID);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null, DEFAULT_USER_ID);
@@ -289,7 +285,6 @@ export default function accountManagerTest() {
         localIds.push(localId);
         console.info(' --- disallowOsAccountAddition_test_008 newAccount.localId: ' + localId);
         accountManager.disallowOsAccountAddition(SELFWANT, true, localId);
-        expect(true).assertTrue();
         let queryResult = accountManager.isOsAccountAdditionDisallowed(SELFWANT, localId);
         expect(queryResult).assertTrue();
         queryResult = accountManager.isOsAccountAdditionDisallowed(null, localId);
@@ -348,10 +343,8 @@ export default function accountManagerTest() {
       console.info(' --- disallowOsAccountAddition_test_0010  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
-        accountManager.disallowOsAccountAddition(SELFWANT, true);
-        expect(true).assertTrue();
+        let ret = accountManager.disallowOsAccountAddition(SELFWANT, true);
+        expect(ret == null).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_0010 error is unexpected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -375,10 +368,8 @@ export default function accountManagerTest() {
       console.info(' --- disallowOsAccountAddition_test_0011  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
-        accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
-        expect(true).assertTrue();
+        let ret = accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
+        expect(ret == null).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_0011 error is unexpected, actually catch: ' + error.code);
         expect(false).assertTrue();
@@ -1506,6 +1497,330 @@ export default function accountManagerTest() {
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_074  -------- END --------');
+    })
+    
+    /**
+     * @tc.name   addOsAccountAsync_test_061_1
+     * @tc.number addOsAccountAsync_test_061_1
+     * @tc.desc   addOsAccountAsync with "" parameter accountName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addOsAccountAsync_test_061_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addOsAccountAsync_test_061_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        accountManager.addOsAccountAsync(SELFWANT, '', osAccount.OsAccountType.GUEST);
+        console.info(' --- addOsAccountAsync_test_061_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addOsAccountAsync_test_061_1 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addOsAccountAsync_test_061_1  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addOsAccountAsync_test_061_2
+     * @tc.number addOsAccountAsync_test_061_2
+     * @tc.desc   addOsAccountAsync with null parameter accountName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addOsAccountAsync_test_061_2", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addOsAccountAsync_test_061_2  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        accountManager.addOsAccountAsync(SELFWANT, null, osAccount.OsAccountType.GUEST);
+        console.info(' --- addOsAccountAsync_test_061_2 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addOsAccountAsync_test_061_2 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addOsAccountAsync_test_061_2  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   addOsAccountAsync_test_061_3
+     * @tc.number addOsAccountAsync_test_061_3
+     * @tc.desc   addOsAccountAsync with undefined parameter accountName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addOsAccountAsync_test_061_3", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addOsAccountAsync_test_061_3  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        accountManager.addOsAccountAsync(SELFWANT, undefined, osAccount.OsAccountType.GUEST);
+        console.info(' --- addOsAccountAsync_test_061_3 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addOsAccountAsync_test_061_3 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addOsAccountAsync_test_061_3  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDomainAccountPolicy_test_009_1
+     * @tc.number setDomainAccountPolicy_test_009_1
+     * @tc.desc   setDomainAccountPolicy with undefined admin to set domain account policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDomainAccountPolicy_test_009_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDomainAccountPolicy_test_009_1  -------- START --------');
+      let policy: accountManager.DomainAccountPolicy = {
+        passwordValidityPeriod: 300,
+        passwordExpirationNotification: 360,
+      };
+      try {
+        await accountManager.setDomainAccountPolicy(undefined, DOMAIN_ACCOUNT_INFO1, policy);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDomainAccountPolicy_test_009_1 error 801 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+      console.info(' --- setDomainAccountPolicy_test_009_1  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDomainAccountPolicy_test_009_2
+     * @tc.number setDomainAccountPolicy_test_009_2
+     * @tc.desc   setDomainAccountPolicy with null domainAccountInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDomainAccountPolicy_test_009_2", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDomainAccountPolicy_test_009_2  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      let policy: accountManager.DomainAccountPolicy = {
+        passwordValidityPeriod: 300,
+        passwordExpirationNotification: 360,
+      };
+      try {
+        await accountManager.setDomainAccountPolicy(SELFWANT, null, policy);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDomainAccountPolicy_test_009_2 error 801 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- setDomainAccountPolicy_test_009_2  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDomainAccountPolicy_test_009_3
+     * @tc.number setDomainAccountPolicy_test_009_3
+     * @tc.desc   setDomainAccountPolicy with undefined domainAccountInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDomainAccountPolicy_test_009_3", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDomainAccountPolicy_test_009_3  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      let policy: accountManager.DomainAccountPolicy = {
+        passwordValidityPeriod: 300,
+        passwordExpirationNotification: 360,
+      };
+      try {
+        await accountManager.setDomainAccountPolicy(SELFWANT, undefined, policy);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDomainAccountPolicy_test_009_3 error 801 or 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- setDomainAccountPolicy_test_009_3  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDomainAccountPolicy_test_009_4
+     * @tc.number setDomainAccountPolicy_test_009_4
+     * @tc.desc   setDomainAccountPolicy with null policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDomainAccountPolicy_test_009_4", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDomainAccountPolicy_test_009_4  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await accountManager.setDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDomainAccountPolicy_test_009_4 error 801 or 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- setDomainAccountPolicy_test_009_4  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   setDomainAccountPolicy_test_009_5
+     * @tc.number setDomainAccountPolicy_test_009_5
+     * @tc.desc   setDomainAccountPolicy with undefined policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setDomainAccountPolicy_test_009_5", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setDomainAccountPolicy_test_009_5  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await accountManager.setDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setDomainAccountPolicy_test_009_5 error 801 or 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- setDomainAccountPolicy_test_009_5  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDomainAccountPolicy_test_003_1
+     * @tc.number getDomainAccountPolicy_test_003_1
+     * @tc.desc   getDomainAccountPolicy with undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDomainAccountPolicy_test_003_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDomainAccountPolicy_test_003_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await accountManager.getDomainAccountPolicy(undefined, DOMAIN_ACCOUNT_INFO1);
+        console.info(' --- getDomainAccountPolicy_test_003_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDomainAccountPolicy_test_003_1 error 401 or 801 is expected, actually catch: '
+          + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- getDomainAccountPolicy_test_003_1  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDomainAccountPolicy_test_003_2
+     * @tc.number getDomainAccountPolicy_test_003_2
+     * @tc.desc   getDomainAccountPolicy with null domainAccountInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDomainAccountPolicy_test_003_2", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDomainAccountPolicy_test_003_2  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await accountManager.getDomainAccountPolicy(SELFWANT, null);
+        console.info(' --- getDomainAccountPolicy_test_003_2 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDomainAccountPolicy_test_003_2 error 401 or 801 is expected, actually catch: '
+          + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- getDomainAccountPolicy_test_003_2  -------- END --------');
+    })
+
+
+    /**
+     * @tc.name   getDomainAccountPolicy_test_003_3
+     * @tc.number getDomainAccountPolicy_test_003_3
+     * @tc.desc   getDomainAccountPolicy with undefined domainAccountInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getDomainAccountPolicy_test_003_3", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDomainAccountPolicy_test_003_3  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await accountManager.getDomainAccountPolicy(SELFWANT, undefined);
+        console.info(' --- getDomainAccountPolicy_test_003_3 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getDomainAccountPolicy_test_003_3 error 401 or 801 is expected, actually catch: '
+          + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- getDomainAccountPolicy_test_003_3  -------- END --------');
     })
   })
 }

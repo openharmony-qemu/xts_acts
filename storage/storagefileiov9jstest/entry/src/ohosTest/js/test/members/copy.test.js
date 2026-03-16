@@ -1570,5 +1570,155 @@ it('fileIO_copy_async_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
         done();
       }
      });
-   });
+
+  /**
+   * @tc.name   fileIO_copy_async_049
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_4900
+   * @tc.desc   Test copy() file interfaces.callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_copy_async_049', Level.LEVEL3, async function (done) {
+    let dpath = await nextFileName('fileIO_copy_async_049');
+    fileIO.mkdirSync(dpath);
+    let fpath1 = dpath + '/srcDir_firsttest.txt';
+    let fpath2 = dpath + '/srcDir_secondtest.txt';
+    let file1 = fs.openSync(fpath1, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+    let file2 = fs.openSync(fpath2, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+    fs.writeSync(file1.fd, 'aaaaaaaaaaaaa');
+    fs.writeSync(file2.fd, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
+    let stat1 = fs.statSync(fpath1);
+    console.info("fileIO_copy_async_049 file1 size is: " + stat1.size);
+    let stat2 = fs.statSync(fpath2);
+    console.info("fileIO_copy_async_049 file2 size is: " + stat2.size);
+    let srcDirUri = fileUri.getUriFromPath(fpath1);
+    let dstDirUri = fileUri.getUriFromPath(fpath2);
+
+    try {
+      let progressListener = (progress) => {
+        console.info(`fileIO_copy_async_049 progressSize: ${progress.processedSize}, totalSize: ${progress.totalSize}`);
+      };
+      let options = {
+        "progressListener" : progressListener
+      }
+      fileIO.copy(srcDirUri, dstDirUri, options, (err) => {
+        if (err) {
+          console.log('fileIO_copy_async_049 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        let stat3 = fs.statSync(fpath2);
+        let str = fs.readTextSync(fpath2);
+        console.info("fileIO_copy_async_049 copy end file2 size context is: " + stat3.size + ',context: ' + str);
+        expect(stat3.size == stat1.size).assertTrue();
+        let filenames1 = fs.listFileSync(dpath);
+        console.log('fileIO_copy_async_049 filenames1: ' + filenames1);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_copy_async_049 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_copy_async_050
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_5000
+   * @tc.desc   Test copy() dir interfaces.callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_copy_async_050', Level.LEVEL3, async function (done) {
+    let dpath = await nextFileName('fileIO_copy_async_050');
+    let ddpath = dpath + '/srcDir_first';
+    let dmpath = dpath + '/srcDir_second';
+    fileIO.mkdirSync(dpath);
+    fileIO.mkdirSync(ddpath);
+    fileIO.mkdirSync(dmpath);
+    let ffpath = ddpath + '/srcFile_first_01';
+    expect(prepareFile(ffpath, FILE_CONTENT)).assertTrue();
+    let srcDirUri = fileUri.getUriFromPath(ddpath);
+    let dstDirUri = fileUri.getUriFromPath(dmpath);
+
+    try {
+      let progressListener = (progress) => {
+        console.info(`fileIO_copy_async_050 progressSize: ${progress.processedSize}, totalSize: ${progress.totalSize}`);
+      };
+      let options = {
+        "progressListener" : progressListener
+      }
+      fileIO.copy(srcDirUri, dstDirUri, options, (err) => {
+        if (err) {
+          console.log('fileIO_copy_async_050 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        let filenames1 = fs.listFileSync(ddpath);
+        console.log('fileIO_copy_async_050 filenames1: ' + filenames1);
+        let filenames2 = fs.listFileSync(dmpath);
+        console.log('fileIO_copy_async_050 filenames2: ' + filenames2);
+        expect(filenames1.length == filenames2.length).assertTrue();
+        expect(fileIO.accessSync(dmpath + '/srcDir_first/srcFile_first_01')).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_copy_async_050 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_copy_async_051
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIO_Copy_ASYNC_5100
+   * @tc.desc   Test copy() interfaces.callback
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_copy_async_051', Level.LEVEL3, async function (done) {
+    let dpath = await nextFileName('fileIO_copy_async_051');
+    let ddpath = dpath + '/A/';
+    let dd1path = dpath + '/A/srcDir';
+    let dd2path = dpath + '/A/srcDir/srcDir_first';
+    let dmpath = dpath + '/srcDir_second/';
+    fileIO.mkdirSync(dpath);
+    fileIO.mkdirSync(ddpath);
+    fileIO.mkdirSync(dd1path);
+    fileIO.mkdirSync(dd2path);
+    fileIO.mkdirSync(dmpath);
+    let ffpath = dd2path + '/srcFile_first_01.txt';
+    expect(prepareFile(ffpath, FILE_CONTENT)).assertTrue();
+    let ffpath1 = dd1path + '/srcFile_first_02.txt';
+    expect(prepareFile(ffpath1, FILE_CONTENT)).assertTrue();
+    let srcDirUri = fileUri.getUriFromPath(ddpath);
+    let dstDirUri = fileUri.getUriFromPath(dmpath);
+
+    try {
+      let progressListener = (progress) => {
+        console.info(`fileIO_copy_async_051 progressSize: ${progress.processedSize}, totalSize: ${progress.totalSize}`);
+      };
+      let options = {
+        "progressListener" : progressListener
+      }
+      fileIO.copy(srcDirUri, dstDirUri, options, (err) => {
+        if (err) {
+          console.log('fileIO_copy_async_051 error package: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        let filenames1 = fs.listFileSync(ddpath);
+        console.log('fileIO_copy_async_051 filenames1: ' + filenames1);
+        let filenames2 = fs.listFileSync(dmpath);
+        console.log('fileIO_copy_async_051 filenames2: ' + filenames2);
+        expect(filenames1.length == filenames2.length).assertTrue();
+        expect(fileIO.accessSync(dmpath + '/A/srcDir/srcDir_first/srcFile_first_01.txt')).assertTrue();
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_copy_async_051 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+});
 }

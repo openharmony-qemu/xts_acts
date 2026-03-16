@@ -89,6 +89,7 @@ export default class EntryAbility extends UIAbility {
   onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', `${this.TEST_CASE_NAME} Ability onForeground`);
+    globalThis.EntryAbility7 = this.context;
     this.onForegroundFlag = true;
     this.onForegroundNumber = this.onForegroundNumber + 1
 
@@ -121,9 +122,6 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', '%{public}s',
         `${this.TEST_CASE_NAME} Failed to start SpecifiedAbility. err.Code is ${err.code}  err.message is ${err.message}`);
     })
-    setTimeout(() => {
-      this.context.terminateSelf()
-    }, 2000)
   }
 
   onBackground(): void {

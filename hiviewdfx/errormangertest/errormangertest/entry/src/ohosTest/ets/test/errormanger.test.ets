@@ -1294,5 +1294,351 @@ export default function ErrormangerTest() {
       }
     })
 
+    /**
+     * @tc.name   testErrorManger_2900
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2900
+     * @tc.desc   验证onLoopTimeOut传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let observer: errorManager.LoopObserver = {
+        onLoopTimeOut(undefined) {
+        }
+      };
+      try {
+        console.info("====>testErrorManger_2900 loopObserver start");
+        errorManager.on("loopObserver", 2000, observer)
+        console.info("====>testErrorManger_2900 loopObserver end 01");
+        errorManager.off("loopObserver");
+        console.info("====>testErrorManger_2900 loopObserver end 02");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_2900 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(false).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3000
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3000
+     * @tc.desc   验证onUnhandledException传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testErrorManger_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let observer: errorManager.ErrorObserver = {
+        onUnhandledException(undefined) {
+        },
+        onException(errorObj) {
+          console.log('onException, name: ', errorObj.name);
+          console.log('onException, message: ', errorObj.message);
+          if (typeof(errorObj.stack) === 'string') {
+            console.log('onException, stack: ', errorObj.stack);
+          }
+        }
+      };
+      let observerId = -1;
+      try {
+        console.info("====>testErrorManger_3000 error start");
+        observerId = errorManager.on('error', observer);
+        console.info("====>testErrorManger_3000 error end 01 " + observerId.toString());
+        errorManager.off('error', observerId);
+        console.info("====>testErrorManger_3000 error end 02");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3000 catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(false).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3100
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3100
+     * @tc.desc   验证errorManager.setDefaultErrorHandler(undefined) 抛出错误码 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testErrorManger_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info("testErrorManger_3100 start");;
+      try{
+        observer01 = errorManager.setDefaultErrorHandler(undefined);
+        console.info('testErrorManger_3100 Registered Handler 1 (index 1)');
+        done();
+      }catch(error){
+        console.info("testErrorManger_3100 err = " + error.code);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+      console.info("testErrorManger_3100 end");
+    })
+
+    /**
+     * @tc.name   testErrorManger_3200
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3200
+     * @tc.desc   验证errorManager.on("loopObserver", 1, observer)，第2个参数传null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_3200 loopObserver start");
+        let observer: errorManager.LoopObserver = {
+          onLoopTimeOut(timeout: number) {
+            console.info('Duration timeout: ' + timeout);
+          }
+        };
+        errorManager.on("loopObserver", null, observer);
+        console.info("====>testErrorManger_3200 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3200 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3300
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3300
+     * @tc.desc   验证errorManager.on("loopObserver", 1, observer)，第2个参数传undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_3300 loopObserver start");
+        let observer: errorManager.LoopObserver = {
+          onLoopTimeOut(timeout: number) {
+            console.info('Duration timeout: ' + timeout);
+          }
+        };
+        errorManager.on("loopObserver", undefined, observer);
+        console.info("====>testErrorManger_3300 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3300 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3400
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3400
+     * @tc.desc   验证errorManager.on("loopObserver", 1, observer)，第3个参数传null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_3400 loopObserver start");
+        errorManager.on("loopObserver", 1, null);
+        console.info("====>testErrorManger_3400 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3400 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3500
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3500
+     * @tc.desc   验证errorManager.on("loopObserver", 1, observer)，第3个参数传undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_3500 loopObserver start");
+        errorManager.on("loopObserver", 1, undefined);
+        console.info("====>testErrorManger_3500 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3500 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3600
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3600
+     * @tc.desc   验证errorManager.off("loopObserver", observer)，第2个参数传undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_3600 loopObserver start");
+        errorManager.off("loopObserver", undefined);
+        console.info("====>testErrorManger_3600 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3600 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3700
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3700
+     * @tc.desc   验证errorManager.off("unhandledRejection", observer)，第2个参数传undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_3700 loopObserver start");
+        errorManager.off("unhandledRejection", undefined);
+        console.info("====>testErrorManger_3700 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3700 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3800
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3800
+     * @tc.desc   验证errorManager.off("globalUnhandledRejectionDetected", promiseFunc)，第2个参数传undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_3800 loopObserver start");
+        errorManager.off("globalUnhandledRejectionDetected", undefined);
+        console.info("====>testErrorManger_3800 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3800 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_3900
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_3900
+     * @tc.desc   验证errorManager.off("freeze", freezeCallback)，第2个参数传undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_3900 loopObserver start");
+        errorManager.off("freeze", undefined);
+        console.info("====>testErrorManger_3900 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_3900 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_4000
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4000
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc)，第2个参数传null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_4000 loopObserver start");
+        errorManager.on('globalErrorOccurred', null);
+        console.info("====>testErrorManger_4000 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_4000 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_4100
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4100
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc)，第2个参数传undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_4100 loopObserver start");
+        errorManager.on('globalErrorOccurred', undefined);
+        console.info("====>testErrorManger_4100 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_4100 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_4200
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4200
+     * @tc.desc   验证errorManager.off('globalErrorOccurred', errorFunc)，第2个参数传null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_4200 loopObserver start");
+        errorManager.off('globalErrorOccurred', null);
+        console.info("====>testErrorManger_4200 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_4200 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testErrorManger_4300
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4300
+     * @tc.desc   验证errorManager.off('globalErrorOccurred', errorFunc)，第2个参数传null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====>testErrorManger_4300 loopObserver start");
+        errorManager.off('globalErrorOccurred', undefined);
+        console.info("====>testErrorManger_4300 loopObserver end 01");
+        done();
+      } catch (err) {
+        console.error(`====>testErrorManger_4300 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
+        expect(err.code === 401).assertTrue()
+        done();
+      }
+    })
+
   })
 }

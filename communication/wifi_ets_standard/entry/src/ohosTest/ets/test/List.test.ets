@@ -14,7 +14,8 @@
  */
 
 import wifiSta from './WifiManagerSTA.test'
-
+import wifiManagerTest from './WifiManagerReturnValue.test'
 export default function testsuite() {
   wifiSta();
+  wifiManagerTest();
 }

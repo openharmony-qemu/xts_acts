@@ -1738,8 +1738,6 @@ export default function LRUCatchTest() {
         expect().assertFail();
       }
     })
-
-
     /**
      * @tc.name   testLRUCacheCreateDefault0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7500
@@ -1759,6 +1757,470 @@ export default function LRUCatchTest() {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect().assertFail();
       }
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0100
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0001";
+      let arrk: number[] = [];
+      let arrv: string[] = [];
+      class ChildLRUCache extends util.LRUCache<number, string>
+      {
+        constructor(capacity: number) {
+          super(capacity);
+        }
+        afterRemoval(isEvict: boolean, key: number, value: string, newValue: string) {
+          if (isEvict === false) {
+            arrk.push(key);
+            arrv.push(value);
+          }
+        }
+      }
+      let that = new ChildLRUCache(3);
+      that.put(1,'aa');
+      that.put(3,'bb');
+      that.put(2,'cc');
+      that.clear();
+      expect(arrk[0]).assertEqual(1);
+      expect(arrk[1]).assertEqual(3);
+      expect(arrk[2]).assertEqual(2);
+      expect(arrv[0]).assertEqual('aa');
+      expect(arrv[1]).assertEqual('bb');
+      expect(arrv[2]).assertEqual('cc');
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0200
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0002";
+      class TestClass {
+        str:string = '';
+        constructor(input: string) {
+          this.str = input;
+        }
+      }
+      let arrk: string[] = [];
+      let arrv: string[] = [];
+      class ChildLRUCache extends util.LRUCache<string, TestClass> {
+        constructor(capacity?: number) {
+          super(capacity);
+        }
+        afterRemoval(isEvict: boolean, key: string, value: TestClass, newValue: TestClass): void {
+          expect(isEvict).assertEqual(false);
+          arrk.push(key);
+          arrv.push(value.str);
+        }
+      }
+      let test1 = new TestClass('testA');
+      let test2 = new TestClass('testB');
+      let test3 = new TestClass('testC');
+      let lru = new ChildLRUCache(3);
+      lru.put('aa', test1);
+      lru.put('bb', test2);
+      lru.put('cc', test3);
+      lru.clear();
+      expect(arrk[0]).assertEqual('aa');
+      expect(arrk[1]).assertEqual('bb');
+      expect(arrk[2]).assertEqual('cc');
+      expect(arrv[0]).assertEqual('testA');
+      expect(arrv[1]).assertEqual('testB');
+      expect(arrv[2]).assertEqual('testC');
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0300
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0003";
+      class TestClass {
+        str:string = '';
+        constructor(input: string) {
+          this.str = input;
+        }
+      }
+      let arrk: string[] = [];
+      let arrv: string[] = [];
+      class ChildLRUCache extends util.LRUCache<string, TestClass> {
+        constructor(capacity?: number) {
+          super(capacity);
+        }
+        afterRemoval(isEvict: boolean, key: string, value: TestClass, newValue: TestClass): void {
+          expect(isEvict).assertEqual(true)
+          arrk.push(key)
+          arrv.push(value.str);
+        }
+      }
+      let test1 = new TestClass('testA');
+      let test2 = new TestClass('testB');
+      let test3 = new TestClass('testC');
+      let lru = new ChildLRUCache(2);
+      lru.put('aa', test1);
+      lru.put('bb', test2);
+      lru.put('cc', test3);
+      expect(arrk[0]).assertEqual('aa');
+      expect(arrv[0]).assertEqual('testA');
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0400
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0004";
+      let removedKeys: number[] = [];
+      let removedValues: string[] = [];
+      class CustomLRUCache extends util.LRUCache<number, string> {
+        constructor() {
+          super(3);
+        }
+
+        afterRemoval(isEvict: boolean, key: number, oldValue: string) {
+          expect(isEvict).assertEqual(false);
+          removedKeys.push(key);
+          removedValues.push(oldValue);
+        }
+      }
+      const cache = new CustomLRUCache();
+      cache.put(1, 'apple');
+      cache.put(2, 'banana');
+      cache.put(1, 'orange');
+      expect(removedKeys.length).assertEqual(1);
+      expect(removedValues.length).assertEqual(1);
+      expect(removedKeys[0]).assertEqual(1);
+      expect(removedValues[0]).assertEqual('apple');
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0500
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0005";
+      let evictedKeys: string[] = [];
+      class EvictionTrackerCache extends util.LRUCache<string, number> {
+        constructor() {
+          super(2);
+        }
+        afterRemoval(isEvict: boolean, key: string) {
+          expect(isEvict).assertEqual(true);
+          evictedKeys.push(key);
+        }
+      }
+      const cache = new EvictionTrackerCache();
+      cache.put('A', 100);
+      cache.put('B', 200);
+      cache.put('C', 300);
+      expect(evictedKeys.length).assertEqual(1);
+      expect(evictedKeys[0]).assertEqual('A');
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0600
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0006";
+      interface Person {
+        id: number;
+        name: string;
+      }
+      let removedIds: number[] = [];
+      let removedNames: string[] = [];
+      class ObjectValueCache extends util.LRUCache<number, Person> {
+        constructor() {
+          super(2);
+        }
+        afterRemoval(isEvict: boolean, key: number, value: Person) {
+          removedIds.push(value.id);
+          removedNames.push(value.name);
+        }
+      }
+      const cache = new ObjectValueCache();
+      const alice: Person = {id: 1, name: 'Alice'};
+      const bob: Person = {id: 2, name: 'Bob'};
+      const charlie: Person = {id: 3, name: 'Charlie'};
+      cache.put(101, alice);
+      cache.put(102, bob);
+      cache.put(103, charlie);
+      expect(removedIds.length).assertEqual(1);
+      expect(removedIds[0]).assertEqual(1);
+      expect(removedNames[0]).assertEqual('Alice');
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0700
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0007";
+      const removalMap = new Map<string, boolean>();
+      class ClearOperationCache extends util.LRUCache<string, number> {
+        constructor() {
+          super(5);
+        }
+        afterRemoval(isEvict: boolean, key: string) {
+          expect(isEvict).assertEqual(false);
+          removalMap.set(key, true);
+        }
+      }
+      const cache = new ClearOperationCache();
+      cache.put('first', 100);
+      cache.put('second', 200);
+      cache.put('third', 300);
+      cache.clear();
+      expect(removalMap.size).assertEqual(3);
+      expect(removalMap.has('first')).assertEqual(true);
+      expect(removalMap.has('second')).assertEqual(true);
+      expect(removalMap.has('third')).assertEqual(true);
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0800
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0008";
+      let evictionCount = 0;
+      class CapacityUpdateCache extends util.LRUCache<string, string> {
+        constructor() {
+            super(4);
+        }
+        afterRemoval(isEvict: boolean) {
+            if (isEvict) evictionCount++;
+        }
+      }
+      const cache = new CapacityUpdateCache();
+      cache.put('a', 'apple');
+      cache.put('b', 'banana');
+      cache.put('c', 'cherry');
+      cache.put('d', 'date');
+      cache.updateCapacity(2);
+      expect(evictionCount).assertEqual(2);
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0900
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0009";
+      const removalSequence: string[] = [];
+      class OrderTrackingCache extends util.LRUCache<string, string> {
+        constructor() {
+          super(2);
+        }
+        afterRemoval(isEvict: boolean, key: string) {
+          removalSequence.push(key);
+        }
+      }
+      const cache = new OrderTrackingCache();
+      cache.put('A', 'Apple');
+      cache.put('B', 'Banana');
+      cache.put('C', 'Cherry');
+      cache.put('D', 'Date');
+      expect(removalSequence.length).assertEqual(2);
+      expect(removalSequence[0]).assertEqual('A');
+      expect(removalSequence[1]).assertEqual('B');
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1000
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testLRUCacheAfterRemoval0010";
+      interface Product {
+        id: number;
+        name: string;
+        price: number;
+      }
+      class ProductCache extends util.LRUCache<number, Product> {
+        constructor() {
+          super(3);
+        }
+      }
+      const cache = new ProductCache();
+      const product1: Product = { id: 1001, name: "键盘", price: 299 };
+      const product2: Product = { id: 1002, name: "鼠标", price: 199 };
+      cache.put(product1.id, product1);
+      cache.put(product2.id, product2);
+      expect(cache.get(1001)?.name).assertEqual("键盘");
+      expect(cache.get(1002)?.price).assertEqual(199);
+      expect(cache.get(9999)).assertUndefined();
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1100
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const removedItems: string[] = [];
+      class EvictionCache extends util.LRUCache<string, number> {
+        constructor() {
+          super(3);
+        }
+        afterRemoval(isEvict: boolean, key: string, value: number) {
+          if (isEvict) {
+            removedItems.push(key);
+          }
+        }
+      }
+      const cache = new EvictionCache();
+      cache.put("A", 100);
+      cache.put("B", 200);
+      cache.put("C", 300);
+      expect(cache.get("A")).assertEqual(100);
+      cache.put("D", 400);
+      expect(removedItems.length).assertEqual(1);
+      expect(removedItems[0]).assertEqual("B");
+      cache.put("E", 500);
+      expect(removedItems.length).assertEqual(2);
+      expect(removedItems[1]).assertEqual("C");
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1200
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface RemovalRecord {
+        key: string;
+        value: number;
+        isEviction: boolean;
+      }
+      const records: RemovalRecord[] = [];
+      class RemovalCache extends util.LRUCache<string, number> {
+        constructor() {
+          super(5);
+        }
+        afterRemoval(isEvict: boolean, key: string, value: number) {
+          records.push({ key, value, isEviction: isEvict });
+        }
+      }
+      const cache = new RemovalCache();
+      cache.put("item1", 100);
+      cache.put("item2", 200);
+      cache.put("item3", 300);
+      const removedValue = cache.remove("item2");
+      expect(removedValue).assertEqual(200);
+      expect(records.length).assertEqual(1);
+      expect(records[0].key).assertEqual("item2");
+      expect(records[0].isEviction).assertEqual(false);
+      cache.put("item4", 400);
+      cache.put("item5", 500);
+      cache.put("item6", 600);
+      expect(records.length).assertEqual(1);
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1300
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      interface UserID {
+        id: string;
+        domain: string;
+      }
+      interface UserProfile {
+        name: string;
+        lastLogin: number;
+      }
+      const idComparator = (a: UserID, b: UserID): boolean => {
+        return a.id === b.id && a.domain === b.domain;
+      };
+      class UserCache extends util.LRUCache<UserID, UserProfile> {
+        constructor() {
+          super(10);
+        }
+        keyEquals(a: UserID, b: UserID): boolean {
+          return idComparator(a, b);
+        }
+      }
+      const cache = new UserCache();
+      const userId1: UserID = { id: "user123", domain: "example.com" };
+      const user1: UserProfile = { name: "张三", lastLogin: Date.now() };
+      const userId2: UserID = { id: "user123", domain: "test.org" };
+      const user2: UserProfile = { name: "李四", lastLogin: Date.now() };
+      cache.put(userId1, user1);
+      cache.put(userId2, user2);
+      expect(cache.get(userId1)?.name).assertEqual("张三");
+      expect(cache.get(userId2)?.name).assertEqual("李四");
+    })
+    /**
+     * @tc.name   testLRUCacheAfterRemoval0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1400
+     * @tc.desc   Test the AfterRemoval callback method for LRUCache.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLRUCacheAfterRemoval0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const updateRecords: string[] = [];
+      class UpdateCache extends util.LRUCache<string, number> {
+        constructor() {
+          super(5);
+        }
+        afterRemoval(isEvict: boolean, key: string) {
+          if (!isEvict) {
+            updateRecords.push(`removed:${key}`);
+          }
+        }
+      }
+      const cache = new UpdateCache();
+      cache.put("price", 100);
+      cache.put("price", 120);
+      expect(updateRecords.length).assertEqual(1);
+      expect(updateRecords[0]).assertEqual("removed:price");
+      expect(cache.get("price")).assertEqual(120);
+      cache.put("price", 150);
+      expect(updateRecords.length).assertEqual(2);
+      expect(updateRecords[1]).assertEqual("removed:price");
+      expect(cache.get("price")).assertEqual(150);
     })
   })
 }
