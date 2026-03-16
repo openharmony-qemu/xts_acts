@@ -3969,3 +3969,596 @@ export function testAssignmentLikeContexts0116(){
       }
 }
 
+export function testAssignmentLikeContexts0117(){
+  const TAG = 'testAssignmentLikeContexts0117';
+  let src: Object[][] = new Object[1][1];
+        let dst: Object = src as Object;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
+export function testAssignmentLikeContexts0118(){
+  const TAG = 'testAssignmentLikeContexts0118';
+  let src_Byte: Byte[] = new Byte[1];
+        let dst_Byte: Object = src_Byte as Object;
+
+        let src_Short: Short[] = new Short[1];
+        let dst_Short: Object = src_Short as Object;
+
+        let src_Char: Char[] = new Char[1];
+        let dst_Char: Object = src_Char as Object;
+
+        let src_Int: Int[] = new Int[1];
+        let dst_Int: Object = src_Int as Object;
+
+        let src_Long: Long[] = new Long[1];
+        let dst_Long: Object = src_Long as Object;
+
+        let src_Float: Float[] = new Float[1];
+        let dst_Float: Object = src_Float as Object;
+
+        let src_Double: Double[] = new Double[1];
+        let dst_Double: Object = src_Double as Object;
+  if(src_Byte !== dst_Byte){
+        console.info(`${TAG} Task execution failed: src_Byte: ${src_Byte}`);
+        throw new Error('src_Byte check failed, expected dst_Byte');
+      }
+
+  if(src_Short !== dst_Short){
+        console.info(`${TAG} Task execution failed: src_Short: ${src_Short}`);
+        throw new Error('src_Short check failed, expected dst_Short');
+      }
+
+  if(src_Char !== dst_Char){
+        console.info(`${TAG} Task execution failed: src_Char: ${src_Char}`);
+        throw new Error('src_Char check failed, expected dst_Char');
+      }
+
+  if(src_Int !== dst_Int){
+        console.info(`${TAG} Task execution failed: src_Int: ${src_Int}`);
+        throw new Error('src_Int check failed, expected dst_Int');
+      }
+
+  if(src_Long !== dst_Long){
+        console.info(`${TAG} Task execution failed: src_Long: ${src_Long}`);
+        throw new Error('src_Long check failed, expected dst_Long');
+      }
+
+  if(src_Float !== dst_Float){
+        console.info(`${TAG} Task execution failed: src_Float: ${src_Float}`);
+        throw new Error('src_Float check failed, expected dst_Float');
+      }
+
+  if(src_Double !== dst_Double){
+        console.info(`${TAG} Task execution failed: src_Double: ${src_Double}`);
+        throw new Error('src_Double check failed, expected dst_Double');
+      }
+}
+
+export function testAssignmentLikeContexts0119(){
+  const TAG = 'testAssignmentLikeContexts0119';
+  // 到 Object 的拓宽转换
+        let src_Double: Double = new Double();
+        let dst_Object: Object = src_Double as Object;
+
+        // 到 Integral 的拓宽转换
+
+        let src_Byte: Byte = new Byte();
+        let dst_Integral_Byte: Integral = src_Byte as Integral;
+
+        let src_Short: Short = new Short();
+        let dst_Integral_Short: Integral = src_Short as Integral;
+
+        let src_Int: Int = new Int();
+        let dst_Integral_Int: Integral = src_Int as Integral;
+
+        let src_Long: Long = new Long();
+        let dst_Integral_Long: Integral = src_Long as Integral;
+
+        // 到 Floating 的拓宽转换
+
+        let src_Float: Float = new Float();
+        let dst_Floating_Float: Floating = src_Float as Floating;
+
+        let src_Double2: Double = new Double();
+        let dst_Floating_Double: Floating = src_Double2 as Floating;
+
+        // 到 Comparable 的拓宽转换
+        let src_Byte_Comp: Byte = new Byte();
+        let dst_Comp_Byte: Comparable<Byte> = src_Byte_Comp as Comparable<Byte>;
+
+        let src_Char_Comp: Char = new Char();
+        let dst_Comp_Char: Comparable<Char> = src_Char_Comp as Comparable<Char>;
+  if(src_Double !== dst_Object){
+        console.info(`${TAG} Task execution failed: src_Double: ${src_Double}`);
+        throw new Error('src_Double check failed, expected dst_Object');
+      }
+
+  if(src_Byte !== dst_Integral_Byte as Byte){
+        console.info(`${TAG} Task execution failed: src_Byte: ${src_Byte}`);
+        throw new Error('src_Byte check failed, expected dst_Integral_Byte as Byte');
+      }
+
+  if(src_Short !== dst_Integral_Short as Short){
+        console.info(`${TAG} Task execution failed: src_Short: ${src_Short}`);
+        throw new Error('src_Short check failed, expected dst_Integral_Short as Short');
+      }
+
+  if(src_Int !== dst_Integral_Int as Int){
+        console.info(`${TAG} Task execution failed: src_Int: ${src_Int}`);
+        throw new Error('src_Int check failed, expected dst_Integral_Int as Int');
+      }
+
+  if(src_Long !== dst_Integral_Long as Long){
+        console.info(`${TAG} Task execution failed: src_Long: ${src_Long}`);
+        throw new Error('src_Long check failed, expected dst_Integral_Long as Long');
+      }
+
+  if(src_Float !== dst_Floating_Float as Float){
+        console.info(`${TAG} Task execution failed: src_Float: ${src_Float}`);
+        throw new Error('src_Float check failed, expected dst_Floating_Float as Float');
+      }
+
+  if(src_Double2 !== dst_Floating_Double as Double){
+        console.info(`${TAG} Task execution failed: src_Double2: ${src_Double2}`);
+        throw new Error('src_Double2 check failed, expected dst_Floating_Double as Double');
+      }
+
+  if(src_Byte_Comp !== dst_Comp_Byte as Byte){
+        console.info(`${TAG} Task execution failed: src_Byte_Comp: ${src_Byte_Comp}`);
+        throw new Error('src_Byte_Comp check failed, expected dst_Comp_Byte as Byte');
+      }
+
+  if(src_Char_Comp !== dst_Comp_Char as Char){
+        console.info(`${TAG} Task execution failed: src_Char_Comp: ${src_Char_Comp}`);
+        throw new Error('src_Char_Comp check failed, expected dst_Comp_Char as Char');
+      }
+}
+
+export function testAssignmentLikeContexts0120(){
+  const TAG = 'testAssignmentLikeContexts0120';
+  let src_Func: () => void = () => { return; };
+        let dst_Func_Object: Object = src_Func as Object;
+
+        let src_FuncArray: (() => void)[] = [];
+        let dst_FuncArray_Object: Object = src_FuncArray as Object;
+  if(src_Func !== dst_Func_Object){
+        console.info(`${TAG} Task execution failed: src_Func: ${src_Func}`);
+        throw new Error('src_Func check failed, expected dst_Func_Object');
+      }
+
+  if(src_FuncArray !== dst_FuncArray_Object){
+        console.info(`${TAG} Task execution failed: src_FuncArray: ${src_FuncArray}`);
+        throw new Error('src_FuncArray check failed, expected dst_FuncArray_Object');
+      }
+}
+
+export function testAssignmentLikeContexts0121(){
+  const TAG = 'testAssignmentLikeContexts0121';
+  let src_Enum: Color = Color.Red;
+        let dst_Enum_Object: Object = src_Enum as Object;
+
+        let src_EnumArray: Color[] = [Color.Red, Color.Blue];
+        let dst_EnumArray_Object: Object = src_EnumArray as Object;
+  if(src_Enum !== dst_Enum_Object){
+        console.info(`${TAG} Task execution failed: src_Enum: ${src_Enum}`);
+        throw new Error('src_Enum check failed, expected dst_Enum_Object');
+      }
+
+  if(src_EnumArray !== dst_EnumArray_Object){
+        console.info(`${TAG} Task execution failed: src_EnumArray: ${src_EnumArray}`);
+        throw new Error('src_EnumArray check failed, expected dst_EnumArray_Object');
+      }
+}
+
+export function testAssignmentLikeContexts0122(){
+  const TAG = 'testAssignmentLikeContexts0122';
+  let src_Interface: I = new A44();
+        let dst_Interface_Object: Object = src_Interface as Object;
+  if(src_Interface !== dst_Interface_Object){
+        console.info(`${TAG} Task execution failed: src_Interface: ${src_Interface}`);
+        throw new Error('src_Interface check failed, expected dst_Interface_Object');
+      }
+}
+
+export function testAssignmentLikeContexts0123(){
+  const TAG = 'testAssignmentLikeContexts0123';
+  let src: ((a: Double) => double)[][]|null = null;
+        let dst: Object[]|null = src as Object[]|null;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
+export function testAssignmentLikeContexts0124(){
+  const TAG = 'testAssignmentLikeContexts0124';
+  let src: C<I> = new C<I>();
+        let dst: B2<I> = src as B2<I>;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
+export function testAssignmentLikeContexts0125(){
+  const TAG = 'testAssignmentLikeContexts0125';
+  let src: C1<A> = new C1<A>();
+        let dst: C1<A> = src;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
+export function testAssignmentLikeContexts0126(){
+  const TAG = 'testAssignmentLikeContexts0126';
+  let src: Func|null = (x: int, y: string) => new Boolean(x > 0);
+        let dst: Func|null = src;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
+export function testAssignmentLikeContexts0127(){
+  const TAG = 'testAssignmentLikeContexts0127';
+  let src: C3<A45> = new C3<A45>();
+        let dst: B2<A45> = src as B2<A45>;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
+export function testAssignmentLikeContexts0128(){
+  const TAG = 'testAssignmentLikeContexts0128';
+  let src: B2<A45>[] = [new B2<A45>(), new B2<A45>()];
+        let dst: B2<A45>[] = src;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+
+  if(src.length !== dst.length){
+        console.info(`${TAG} Task execution failed: src.length: ${src.length}`);
+        throw new Error('src.length check failed, expected dst.length');
+      }
+
+  if(src[0] !== dst[0]){
+        console.info(`${TAG} Task execution failed: src[0]: ${src[0]}`);
+        throw new Error('src[0] check failed, expected dst[0]');
+      }
+}
+
+export function testAssignmentLikeContexts0129(){
+  const TAG = 'testAssignmentLikeContexts0129';
+  let res1: byte = foo<Byte>(new Byte(1 as byte));
+
+        let res2: byte = foo<Byte>(new Byte(-128 as byte));
+  if(res1 !== 1){
+        console.info(`${TAG} Task execution failed: res1: ${res1}`);
+        throw new Error('res1 check failed, expected 1');
+      }
+
+  if(res2 !== -128){
+        console.info(`${TAG} Task execution failed: res2: ${res2}`);
+        throw new Error('res2 check failed, expected -128');
+      }
+}
+
+export function testAssignmentLikeContexts0130(){
+  const TAG = 'testAssignmentLikeContexts0130';
+  let res1: short = foo1<Short>(new Short(1));
+
+        let res2: short = foo1<Short>(new Short(Short.MAX_VALUE));
+  if(res1 !== 1){
+        console.info(`${TAG} Task execution failed: res1: ${res1}`);
+        throw new Error('res1 check failed, expected 1');
+      }
+
+  if(res2 !== 32767){
+        console.info(`${TAG} Task execution failed: res2: ${res2}`);
+        throw new Error('res2 check failed, expected 32767');
+      }
+}
+
+export function testAssignmentLikeContexts0131(){
+  const TAG = 'testAssignmentLikeContexts0131';
+  let res1: int = foo2<Int>(new Int(-1));
+
+        let res2: int = foo2<Int>(new Int(Int.MAX_VALUE));
+  if(res1 !== -1){
+        console.info(`${TAG} Task execution failed: res1: ${res1}`);
+        throw new Error('res1 check failed, expected -1');
+      }
+
+  if(res2 !== Int.MAX_VALUE){
+        console.info(`${TAG} Task execution failed: res2: ${res2}`);
+        throw new Error('res2 check failed, expected Int.MAX_VALUE');
+      }
+}
+
+export function testAssignmentLikeContexts0132(){
+  const TAG = 'testAssignmentLikeContexts0132';
+  let res1: long = foo3<Long>(new Long(Long.MIN_VALUE));
+
+        let res2: long = foo3<Long>(new Long(Long.MAX_VALUE));
+  if(res1 !== Long.MIN_VALUE){
+        console.info(`${TAG} Task execution failed: res1: ${res1}`);
+        throw new Error('res1 check failed, expected Long.MIN_VALUE');
+      }
+
+  if(res2 !== Long.MAX_VALUE){
+        console.info(`${TAG} Task execution failed: res2: ${res2}`);
+        throw new Error('res2 check failed, expected Long.MAX_VALUE');
+      }
+}
+
+export function testAssignmentLikeContexts0133(){
+  const TAG = 'testAssignmentLikeContexts0133';
+  let src_1: boolean = true;
+        let dst_1: Object = src_1;
+
+        let src_2: boolean = false;
+        let dst_2: Object = src_2;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0134(){
+  const TAG = 'testAssignmentLikeContexts0134';
+  let src_1: byte = -128 as byte;
+        let dst_1: Integral = src_1 as Integral;
+
+        let src_2: byte = 0 as byte;
+        let dst_2: Integral = src_2 as Integral;
+
+        let src_3: byte = 127 as byte;
+        let dst_3: Integral = src_3 as Integral;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+
+  if(dst_3 === null){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0135(){
+  const TAG = 'testAssignmentLikeContexts0135';
+  let src_1: char = c'\u0000';
+        let dst_1: Object = src_1;
+
+        let src_2: char = c'X';
+        let dst_2: Object = src_2;
+
+        let src_3: char = c'\uffff';
+        let dst_3: Object = src_3;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+
+  if(dst_3 === null){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0136(){
+  const TAG = 'testAssignmentLikeContexts0136';
+  let src_1: short = Short.MIN_VALUE;
+        let dst_1: Object = src_1;
+
+        let src_2: short = (255).toShort();
+        let dst_2: Object = src_2;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0137(){
+  const TAG = 'testAssignmentLikeContexts0137';
+  let src_1: int = 127;
+        let dst_1: Integral = src_1 as Integral;
+
+        let src_2: int = 32767;
+        let dst_2: Integral = src_2 as Integral;
+
+        let src_3: int = Int.MAX_VALUE;
+        let dst_3: Integral = src_3 as Integral;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+
+  if(dst_3 === null){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0138(){
+  const TAG = 'testAssignmentLikeContexts0138';
+  let src_1: long = Long.MIN_VALUE;
+        let dst_1: Object = src_1;
+
+        let src_2: long = (9223372036854775807).toLong();
+        let dst_2: Object = src_2;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0139(){
+  const TAG = 'testAssignmentLikeContexts0139';
+  let src_1: float = 1.401298464324817e-45f;
+        let dst_1: Object = src_1;
+
+        let src_2: float = Float.MAX_VALUE;
+        let dst_2: Object = src_2;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0140(){
+  const TAG = 'testAssignmentLikeContexts0140';
+  let src_1: double = -1.401298464324817e-45;
+        let dst_1: Object = src_1;
+
+        let src_2: double = Double.MAX_VALUE;
+        let dst_2: Object = src_2;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0141(){
+  const TAG = 'testAssignmentLikeContexts0141';
+  let param: Short = new Short(32767);
+        let obj: A47 = new A47(param);
+        obj.foo(param);
+  if(obj.fld !== 32767){
+        console.info(`${TAG} Task execution failed: obj.fld: ${obj.fld}`);
+        throw new Error('obj.fld check failed, expected 32767');
+      }
+}
+
+export function testAssignmentLikeContexts0142(){
+  const TAG = 'testAssignmentLikeContexts0142';
+  let param: Int = new Int(Int.MAX_VALUE);
+        let obj: A48 = new A48(param);
+        obj.foo(param);
+  if(obj.fld !== Int.MAX_VALUE){
+        console.info(`${TAG} Task execution failed: obj.fld: ${obj.fld}`);
+        throw new Error('obj.fld check failed, expected Int.MAX_VALUE');
+      }
+}
+
+export function testAssignmentLikeContexts0143(){
+  const TAG = 'testAssignmentLikeContexts0143';
+  let param: Long = new Long(Long.MAX_VALUE);
+        let obj: A49 = new A49(param);
+        obj.foo(param);
+  if(obj.fld !== Long.MAX_VALUE){
+        console.info(`${TAG} Task execution failed: obj.fld: ${obj.fld}`);
+        throw new Error('obj.fld check failed, expected Long.MAX_VALUE');
+      }
+}
+
+export function testAssignmentLikeContexts0144(){
+  const TAG = 'testAssignmentLikeContexts0144';
+  let src_1: float = 0.0f;
+        let dst_1: Floating = src_1 as Floating;
+
+        let src_2: float = Float.MIN_VALUE;
+        let dst_2: Floating = src_2 as Floating;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0145(){
+  const TAG = 'testAssignmentLikeContexts0145';
+  let src_1: double = 0.0;
+        let dst_1: Floating = src_1 as Floating;
+
+        let src_2: double = Double.MAX_VALUE;
+        let dst_2: Floating = src_2 as Floating;
+  if(dst_1 === null){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 should not be null');
+      }
+
+  if(dst_2 === null){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0146(){
+  const TAG = 'testAssignmentLikeContexts0146';
+  let param: byte = 64 as byte;
+  if(param as Integral === null){
+        console.info(`${TAG} Task execution failed: param as Integral: ${param as Integral}`);
+        throw new Error('param as Integral should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0147(){
+  const TAG = 'testAssignmentLikeContexts0147';
+  let param: char = c'\u767D'; // 字符 '白'
+        foo5(param);
+  if(param === null){
+        console.info(`${TAG} Task execution failed: param: ${param}`);
+        throw new Error('param should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0148(){
+  const TAG = 'testAssignmentLikeContexts0148';
+  let src: int = 300;
+        let dst: byte = src as byte;
+  if(dst !== 44){
+        console.info(`${TAG} Task execution failed: dst: ${dst}`);
+        throw new Error('dst check failed, expected 44');
+      }
+}
