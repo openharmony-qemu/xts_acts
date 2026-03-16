@@ -1973,4 +1973,1983 @@ export default function expressionTest1() {
       })
 
 
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0054
+     * @tc.name concurrent_ExpressionTest0054
+     * @tc.desc Test addition assignment with strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0054'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0054)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0055
+     * @tc.name concurrent_ExpressionTest0055
+     * @tc.desc Test array index validation using string key conversion
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0055'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0055)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0057
+     * @tc.name concurrent_ExpressionTest0057
+     * @tc.desc Test instanceof operator with array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0057'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0057)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0058
+     * @tc.name concurrent_ExpressionTest0058
+     * @tc.desc Test void operator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0058'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0058)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0059
+     * @tc.name concurrent_ExpressionTest0059
+     * @tc.desc Test comma operator in for loop
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0059'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0059)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0060
+     * @tc.name concurrent_ExpressionTest0060
+     * @tc.desc Test array destructuring with skip elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0060'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0060)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0063
+     * @tc.name concurrent_ExpressionTest0063
+     * @tc.desc Test logical AND short-circuit evaluation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0063'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0063)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0064
+     * @tc.name concurrent_ExpressionTest0064
+     * @tc.desc Test logical OR short-circuit evaluation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0064'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0064)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0065
+     * @tc.name concurrent_ExpressionTest0065
+     * @tc.desc Test nullish coalescing operator with null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0065'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0065)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0066
+     * @tc.name concurrent_ExpressionTest0066
+     * @tc.desc Test nullish coalescing operator with 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0066'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0066)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0067
+     * @tc.name concurrent_ExpressionTest0067
+     * @tc.desc Test optional chaining operator with existing property
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0067'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0067)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0069
+     * @tc.name concurrent_ExpressionTest0069
+     * @tc.desc Test exponentiation with negative base
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0069'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0069)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0070
+     * @tc.name concurrent_ExpressionTest0070
+     * @tc.desc Test division by zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0070'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0070)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0071
+     * @tc.name concurrent_ExpressionTest0071
+     * @tc.desc Test unary plus with boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0071'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0071)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0073
+     * @tc.name concurrent_ExpressionTest0073
+     * @tc.desc Test prefix increment in expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0073'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0073)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0074
+     * @tc.name concurrent_ExpressionTest0074
+     * @tc.desc Test postfix increment in expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0074'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0074)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0075
+     * @tc.name concurrent_ExpressionTest0075
+     * @tc.desc Test multiple logical operators precedence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0075'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0075)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0076
+     * @tc.name concurrent_ExpressionTest0076
+     * @tc.desc Test bitwise left shift with negative number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0076'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0076)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0077
+     * @tc.name concurrent_ExpressionTest0077
+     * @tc.desc Test bitwise right shift with negative number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0077'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0077)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0078
+     * @tc.name concurrent_ExpressionTest0078
+     * @tc.desc Test string comparison with > operator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0078'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0078)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0079
+     * @tc.name concurrent_ExpressionTest0079
+     * @tc.desc Test string comparison with < operator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0079'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0079)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0080
+     * @tc.name concurrent_ExpressionTest0080
+     * @tc.desc Test conditional operator with multiple conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0080'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0080)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0081
+     * @tc.name concurrent_ExpressionTest0081
+     * @tc.desc Test modulus with negative divisor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0081'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0081)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0082
+     * @tc.name concurrent_ExpressionTest0082
+     * @tc.desc Test typeof null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0082'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0082)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0083
+     * @tc.name concurrent_ExpressionTest0083
+     * @tc.desc Test logical NOT with truthy value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0083'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0083)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0084
+     * @tc.name concurrent_ExpressionTest0084
+     * @tc.desc Test logical NOT with falsy value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0084'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0084)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0085
+     * @tc.name concurrent_ExpressionTest0085
+     * @tc.desc Test double logical NOT
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0085'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0085)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0086
+     * @tc.name concurrent_ExpressionTest0086
+     * @tc.desc Test left shift assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0086'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0086)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0087
+     * @tc.name concurrent_ExpressionTest0087
+     * @tc.desc Test right shift assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0087'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0087)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0088
+     * @tc.name concurrent_ExpressionTest0088
+     * @tc.desc Test bitwise AND assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0088'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0088)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0089
+     * @tc.name concurrent_ExpressionTest0089
+     * @tc.desc Test bitwise OR assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0089'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0089)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0090
+     * @tc.name concurrent_ExpressionTest0090
+     * @tc.desc Test bitwise XOR assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0090'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0090)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0091
+     * @tc.name concurrent_ExpressionTest0091
+     * @tc.desc Test exponentiation assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0091'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0091)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0092
+     * @tc.name concurrent_ExpressionTest0092
+     * @tc.desc Test instanceof with object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0092'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0092)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0094
+     * @tc.name concurrent_ExpressionTest0094
+     * @tc.desc Test multiple assignment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0094'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0094)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0096
+     * @tc.name concurrent_ExpressionTest0096
+     * @tc.desc Test boolean and number comparison with ==
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0096'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0096)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0097
+     * @tc.name concurrent_ExpressionTest0097
+     * @tc.desc Test null and undefined comparison with ==
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0097'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0097)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0098
+     * @tc.name concurrent_ExpressionTest0098
+     * @tc.desc Test array and string comparison with ===
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0098'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0098)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0099
+     * @tc.name concurrent_ExpressionTest0099
+     * @tc.desc Test operator precedence with logical and arithmetic
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0099'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0099)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0101
+     * @tc.name concurrent_ExpressionTest0101
+     * @tc.desc Test addition with maximum safe integer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0101'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0101)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0102
+     * @tc.name concurrent_ExpressionTest0102
+     * @tc.desc Test subtraction with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0102'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0102)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0103
+     * @tc.name concurrent_ExpressionTest0103
+     * @tc.desc Test multiplication with decimal numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0103'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0103)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0104
+     * @tc.name concurrent_ExpressionTest0104
+     * @tc.desc Test division with decimal result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0104'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0104)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0105
+     * @tc.name concurrent_ExpressionTest0105
+     * @tc.desc Test modulus with decimal numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0105'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0105)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0106
+     * @tc.name concurrent_ExpressionTest0106
+     * @tc.desc Test exponentiation with decimal exponent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0106'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0106)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0107
+     * @tc.name concurrent_ExpressionTest0107
+     * @tc.desc Test prefix increment in loop condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0107'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0107)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0108
+     * @tc.name concurrent_ExpressionTest0108
+     * @tc.desc Test postfix increment in loop condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0108'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0108)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0109
+     * @tc.name concurrent_ExpressionTest0109
+     * @tc.desc Test prefix decrement in calculation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0109'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0109)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0110
+     * @tc.name concurrent_ExpressionTest0110
+     * @tc.desc Test postfix decrement in calculation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0110'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0110)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0111
+     * @tc.name concurrent_ExpressionTest0111
+     * @tc.desc Test assignment with calculation result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0111'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0111)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0112
+     * @tc.name concurrent_ExpressionTest0112
+     * @tc.desc Test addition assignment with negative values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0112'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0112)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0113
+     * @tc.name concurrent_ExpressionTest0113
+     * @tc.desc Test subtraction assignment with negative values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0113'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0113)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0114
+     * @tc.name concurrent_ExpressionTest0114
+     * @tc.desc Test multiplication assignment with decimal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0114'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0114)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0115
+     * @tc.name concurrent_ExpressionTest0115
+     * @tc.desc Test division assignment with decimal result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0115'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0115)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0116
+     * @tc.name concurrent_ExpressionTest0116
+     * @tc.desc Test modulus assignment with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('concurrent_ExpressionTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        console.info('testTag', '%{public}s', 'it begin');
+        let caseName = 'concurrent_ExpressionTest0116'
+        let result: int = 0
+        
+        try {
+          let group = new taskpool.TaskGroup(caseName)
+          for (let i: int = 0; i < concurrentNum; i++) {
+            group.addTask(ExpressionTest0116)
+          }
+          await taskpool.execute(group).then((res) => {
+            console.info(`${caseName} Task execution success`);
+            result = res.length
+          }).catch((e: Error) => {
+            console.info(`${caseName} Task execution catch: ${e.message}`);
+            expect().assertFail()
+          })
+          expect(result).assertEqual(concurrentNum)
+        } catch (e) {
+          console.info(`${caseName} Task execution failed with error: ${e.message}, code: ${e.code}`);
+          expect().assertFail()
+        }
+
+        done();
+      })
+
 
