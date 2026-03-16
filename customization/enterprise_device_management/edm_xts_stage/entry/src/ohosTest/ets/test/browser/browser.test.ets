@@ -86,7 +86,7 @@ function testSetPolicySync() {
       browser.setPolicySync(null, TEST_APP_ID_1, TEST_POLICY_NAME, TEST_POLICY_VALUE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   })
@@ -105,7 +105,7 @@ function testSetPolicySync() {
       browser.setPolicySync(SELFWANT, "", TEST_POLICY_NAME, TEST_POLICY_VALUE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -213,7 +213,7 @@ function testGetpolicySync() {
       browser.getPoliciesSync(null, TEST_APP_ID_1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   })
@@ -232,7 +232,7 @@ function testGetpolicySync() {
       browser.getPoliciesSync(SELFWANT, "");
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -294,7 +294,7 @@ function testSetManagedBrowserPolicy() {
       browser.setManagedBrowserPolicy(SELFWANT, "", TEST_POLICY_NAME, TEST_POLICY_VALUE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -315,7 +315,7 @@ function testSetManagedBrowserPolicy() {
       browser.setManagedBrowserPolicy(SELFWANT, SELFHAPNAME, "", TEST_POLICY_VALUE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -335,7 +335,7 @@ function testSetManagedBrowserPolicy() {
       browser.setManagedBrowserPolicy(INVALID_WANT, SELFHAPNAME, TEST_POLICY_NAME, TEST_POLICY_VALUE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   })
@@ -397,7 +397,7 @@ function testGetManagedBrowserPolicy() {
       browser.getManagedBrowserPolicy(SELFWANT, "");
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -417,7 +417,7 @@ function testGetManagedBrowserPolicy() {
       browser.getManagedBrowserPolicy(INVALID_WANT, SELFHAPNAME);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   })

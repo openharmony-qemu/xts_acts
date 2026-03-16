@@ -79,7 +79,7 @@ export default function adminManagerTest() {
         adminManager.subscribeManagedEventSync(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -97,7 +97,8 @@ export default function adminManagerTest() {
     it("test_subscribeManagedEventSync_004", Level.LEVEL0, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        adminManager.subscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
+        let ret = adminManager.subscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
+        expect(ret == null).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -182,7 +183,7 @@ export default function adminManagerTest() {
         adminManager.unsubscribeManagedEventSync(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -200,7 +201,8 @@ export default function adminManagerTest() {
     it("test_unsubscribeManagedEventSync_004", Level.LEVEL0, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        adminManager.unsubscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
+        let ret = adminManager.unsubscribeManagedEventSync(SELFWANT, SUBSCRIBE_EVENTS);
+        expect(ret == null).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -307,7 +309,7 @@ export default function adminManagerTest() {
         adminManager.setDelegatedPolicies(SELFWANT, BUNDLENAME1, invalidPolicy);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -376,7 +378,7 @@ export default function adminManagerTest() {
         adminManager.isByodAdmin(null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -501,7 +503,7 @@ export default function adminManagerTest() {
         adminManager.getDelegatedPolicies(SELFWANT, "invalid");
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -561,7 +563,7 @@ export default function adminManagerTest() {
         adminManager.getDelegatedBundleNames(SELFWANT, "invalid");
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -585,7 +587,7 @@ export default function adminManagerTest() {
         adminManager.startAdminProvision(INVALID_WANT, adminManager.AdminType.ADMIN_TYPE_BYOD, AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -607,7 +609,7 @@ export default function adminManagerTest() {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_NORMAL, AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -629,7 +631,7 @@ export default function adminManagerTest() {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD, null, PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -651,7 +653,7 @@ export default function adminManagerTest() {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD, AppStorage.get("test"), INVALID_PARAMETERS);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -674,7 +676,7 @@ export default function adminManagerTest() {
             AppStorage.get("test"), INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -704,7 +706,7 @@ export default function adminManagerTest() {
             AppStorage.get("test"), invalidParameterOverUpperBound);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -735,7 +737,7 @@ export default function adminManagerTest() {
             AppStorage.get("test"), invalidParameterOverUpperBound);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })    
@@ -762,7 +764,7 @@ export default function adminManagerTest() {
             AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -798,7 +800,7 @@ export default function adminManagerTest() {
             AppStorage.get("test"), parameter);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -825,7 +827,7 @@ export default function adminManagerTest() {
             AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -849,7 +851,7 @@ export default function adminManagerTest() {
             AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -977,7 +979,7 @@ export default function adminManagerTest() {
         await adminManager.disableAdmin(null);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } 
       done();
 
@@ -1014,7 +1016,7 @@ export default function adminManagerTest() {
         await adminManager.disableAdmin(null, userId);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } 
       done();
     })
@@ -1304,7 +1306,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- enableDeviceAdmin_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- enableDeviceAdmin_test_001  -------- END --------');
@@ -1327,7 +1329,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- enableDeviceAdmin_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- enableDeviceAdmin_test_002  -------- END --------');
@@ -1350,7 +1352,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disableDeviceAdmin_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disableDeviceAdmin_test_001  -------- END --------');
@@ -1373,7 +1375,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disableDeviceAdmin_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disableDeviceAdmin_test_002  -------- END --------');
@@ -1396,7 +1398,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disableAdmin_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disableAdmin_test_001  -------- END --------');
@@ -1419,7 +1421,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disableAdmin_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disableAdmin_test_002  -------- END --------');
@@ -1442,7 +1444,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disableAdmin_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disableAdmin_test_003  -------- END --------');
@@ -1465,7 +1467,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disableAdmin_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disableAdmin_test_004  -------- END --------');
@@ -1488,7 +1490,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- subscribeManagedEventSync_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- subscribeManagedEventSync_test_001  -------- END --------');
@@ -1511,7 +1513,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- subscribeManagedEventSync_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- subscribeManagedEventSync_test_002  -------- END --------');
@@ -1534,7 +1536,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- subscribeManagedEventSync_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- subscribeManagedEventSync_test_003  -------- END --------');
@@ -1557,7 +1559,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- subscribeManagedEventSync_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- subscribeManagedEventSync_test_004  -------- END --------');
@@ -1580,7 +1582,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- unsubscribeManagedEventSync_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- unsubscribeManagedEventSync_test_001  -------- END --------');
@@ -1603,7 +1605,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- unsubscribeManagedEventSync_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- unsubscribeManagedEventSync_test_002  -------- END --------');
@@ -1626,7 +1628,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- unsubscribeManagedEventSync_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- unsubscribeManagedEventSync_test_003  -------- END --------');
@@ -1649,7 +1651,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- unsubscribeManagedEventSync_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- unsubscribeManagedEventSync_test_004  -------- END --------');
@@ -1672,7 +1674,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setDelegatedPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setDelegatedPolicies_test_001  -------- END --------');
@@ -1695,7 +1697,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setDelegatedPolicies_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setDelegatedPolicies_test_002  -------- END --------');
@@ -1718,7 +1720,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setDelegatedPolicies_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setDelegatedPolicies_test_003  -------- END --------');
@@ -1741,7 +1743,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setDelegatedPolicies_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setDelegatedPolicies_test_004  -------- END --------');
@@ -1764,7 +1766,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDelegatedPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDelegatedPolicies_test_001  -------- END --------');
@@ -1787,7 +1789,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDelegatedPolicies_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDelegatedPolicies_test_002  -------- END --------');
@@ -1810,7 +1812,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isByodAdmin_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isByodAdmin_test_001  -------- END --------');
@@ -1833,7 +1835,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isByodAdmin_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isByodAdmin_test_002  -------- END --------');
@@ -1856,7 +1858,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDelegatedBundleNames_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDelegatedBundleNames_test_001  -------- END --------');
@@ -1879,7 +1881,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDelegatedBundleNames_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDelegatedBundleNames_test_002  -------- END --------');
@@ -1901,7 +1903,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- enableDeviceAdmin_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- enableDeviceAdmin_test_015  -------- END --------');
@@ -1924,7 +1926,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- enableDeviceAdmin_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- enableDeviceAdmin_test_016  -------- END --------');
@@ -1947,7 +1949,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disableDeviceAdmin_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disableDeviceAdmin_test_015  -------- END --------');
@@ -1970,7 +1972,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disableDeviceAdmin_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disableDeviceAdmin_test_016  -------- END --------');
@@ -1992,7 +1994,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isByodAdmin_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isByodAdmin_test_015  -------- END --------');
@@ -2015,7 +2017,7 @@ export default function adminManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isByodAdmin_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isByodAdmin_test_016  -------- END --------');
@@ -2156,7 +2158,7 @@ export default function adminManagerTest() {
       console.info(' --- getDelegatedPolicies_test_002_1  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        adminManager.getDelegatedPolicies(SELFWANT, "");
+        adminManager.getDelegatedPolicies(SELFWANT, '');
         console.info(' --- getDelegatedPolicies_test_002_1 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
