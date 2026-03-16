@@ -1,5 +1,5 @@
 
-import actsNotificationAnsThreePartyWatchStaticWithInAbilityTest from './actsNotificationAnsThreePartyWatchStaticWithInAbilityTest.test';
+import actsNotificationAnsThreePartyWatchStaticWithInAbilityTest from './ActsNotificationAnsThreePartyWatchStaticWithInAbilityTest.test';
 export default function testsuite() {
   actsNotificationAnsThreePartyWatchStaticWithInAbilityTest();
 }
