@@ -14,11 +14,12 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID, getErrorCode } from '../commom';
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import systemManager from '@ohos.enterprise.systemManager';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 
 export default function systemManagerTest() {
   describe('systemManager_test', () => {
@@ -41,6 +42,8 @@ export default function systemManagerTest() {
     testGetKeyEventPolicies();
     testStartCollectLog();
     testFinishLogCollected();
+    testSetActivationLockDisabled();
+ 	  testIsActivationLockDisabled();
   })
 }
 
@@ -3151,6 +3154,171 @@ function testFinishLogCollected() {
       } else {
         expect(Number(error.code) === 9200002).assertTrue();
       }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetActivationLockDisabled() {
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0001
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0001
+  * @tc.desc   test systemManager setActivationLockDisabled without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0001", Level.LEVEL2, async (done: Function) => {
+    let credential: string = "test";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((err)=> {
+      const errorCode = getErrorCode(err);
+      expect(errorCode === 801 || errorCode === 9200001).assertTrue();
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0002
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0002
+  * @tc.desc   test systemManager setActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    let credential: string = "test";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((err)=> {
+      const errorCode = getErrorCode(err);
+      expect(errorCode == 801 || errorCode == 9200002).assertTrue();
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0003
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0003
+  * @tc.desc   test systemManager setActivationLockDisabled true with credential is null
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let credential: string = "";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((err)=> {
+      const errorCode = getErrorCode(err);
+      expect(errorCode === 801 || errorCode === 9200012).assertTrue();   
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0004
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0004
+  * @tc.desc   test systemManager setActivationLockDisabled true with Whether the CCM parameter is enabled
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let credential: string = "test";
+    let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((err)=> {
+        const errorCode = getErrorCode(err);
+        if (info == "true") {
+            expect(errorCode === 801 || errorCode === 9201011).assertTrue();
+        } else {
+            expect(errorCode === 801 || errorCode === 9201012).assertTrue();
+        }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0005
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0005
+  * @tc.desc   test systemManager setActivationLockDisabled false with Whether the CCM parameter is enabled
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
+    await systemManager.setActivationLockDisabled(SELFWANT, false, "").then(()=>{
+      if (info == "true") {
+        expect(true).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+    }).catch ((err)=> {
+      const errorCode = getErrorCode(err);
+      if (info == "true") {
+          expect(errorCode === 801).assertTrue();
+      } else {
+          expect(errorCode === 801 || errorCode === 9201012).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+}
+
+function testIsActivationLockDisabled() {
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0001
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0001
+  * @tc.desc   test systemManager IsActivationLockDisabled without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      await systemManager.isActivationLockDisabled(SELFWANT);
+      expect(false).assertTrue();
+    } catch (err) {
+      const errorCode = getErrorCode(err);
+      expect(errorCode === 801 || errorCode === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0002
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0002
+  * @tc.desc   test systemManager IsActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      await systemManager.isActivationLockDisabled(SELFWANT);
+      expect(false).assertTrue();
+    } catch (err) {
+      const errorCode = getErrorCode(err);
+      expect(errorCode === 801 || errorCode === 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

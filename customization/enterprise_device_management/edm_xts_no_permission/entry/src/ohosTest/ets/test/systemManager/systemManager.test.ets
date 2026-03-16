@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID, getErrorCode } from '../commom';
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -41,6 +41,8 @@ export default function systemManagerTest() {
     testGetKeyEventPolicies();
     testStartCollectLog();
     testFinishLogCollected();
+    testSetActivationLockDisabled();
+    testIsActivationLockDisabled();
   })
 }
 
@@ -539,6 +541,54 @@ function testFinishLogCollected() {
       } else {
         expect(Number(error.code) === 201).assertTrue();
       }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetActivationLockDisabled() {
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0100
+  * @tc.desc   test systemManager setActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    let credential: string = "test";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((err) => {
+      const errorCode = getErrorCode(err);
+      expect(errorCode === 801 || errorCode === 201).assertTrue();
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+}
+
+function testIsActivationLockDisabled() {
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0100
+  * @tc.desc   test systemManager isActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      systemManager.isActivationLockDisabled(SELFWANT);
+      expect(false).assertTrue();
+    } catch (err) {
+      const errorCode = getErrorCode(err);
+      expect(errorCode === 801 || errorCode === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
