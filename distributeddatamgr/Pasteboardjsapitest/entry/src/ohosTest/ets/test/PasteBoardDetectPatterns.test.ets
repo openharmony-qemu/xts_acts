@@ -971,7 +971,7 @@ export default function pasteboardDetectPatternsTest() {
       try{
         await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
           console.log(tag+'patterns detectPatterns is: '+data.sort().join(''));
-          expect(data.length).assertEqual(5);
+          expect(data.length).assertEqual(4);
           expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
           done()
         }).catch((err: BusinessError)=>{

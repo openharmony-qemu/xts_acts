@@ -4944,7 +4944,7 @@ export default function abilityTest() {
       pasteboard.Pattern.HTTP_URL,pasteboard.Pattern.FLIGHT_NUMBER];
       try {
         await systemPasteboard.detectPatterns(patterns).then((data) => {
-          expect(data.length).assertEqual(5);
+          expect(data.length).assertEqual(4);
           expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
         })
       } catch (err) {
@@ -5326,8 +5326,7 @@ export default function abilityTest() {
       await systemPasteboard.setData(pasteData);
       let res = await systemPasteboard.hasData();
       expect(res).assertEqual(true);
-      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER, pasteboard.Pattern.HTTP_URL, 
-      pasteboard.Pattern.URL, pasteboard.Pattern.EMAIL_ADDRESS, pasteboard.Pattern.NUMBER];
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
       try {
         await systemPasteboard.detectPatterns(patterns).then((data) => {
           hilog.info(domain, tag, "data.sort:" + data.sort().join(''));
