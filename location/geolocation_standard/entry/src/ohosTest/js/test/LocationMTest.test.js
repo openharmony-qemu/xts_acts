@@ -140,12 +140,11 @@ export class MyFenceExtensionAbility extends FenceExtensionAbility {
             wantAgent: wantAgentMy
         };
         notificationManager.publish(notificationRequest);
-        expect(true).assertEqual(transition != null);
+        expect(transition != null).assertTrue();
     }
 
     onDestroy() {
         console.info('MyFenceExtensionAbility destroy');
-        expect(true).assertTrue()
     }
 }
 
@@ -2798,7 +2797,7 @@ export default function geolocationTest_geo7() {
                 fenceExt.context = null
                 fenceExt.onFenceStatusChange(transition, addition)
                 fenceExt.onDestroy()
-                expect(true).assertTrue()
+                expect(true).assertTrue(fenceExt != null)
             } catch(error) {
                 expect(true).assertEqual(JSON.stringify(error) != null)
             }
@@ -3064,6 +3063,265 @@ export default function geolocationTest_geo7() {
             await sleep(10000);
             done();
         }
+    })
+
+    /**
+     * @tc.name   test_AddGnssGeofence_0200
+     * @tc.number test_AddGnssGeofence_0200
+     * @tc.desc   Test the function of locating the validity period of the fence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_AddGnssGeofence_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");
+        console.info("test_AddGnssGeofence_0200 : " + isAcessToken);
+        if (!isAcessToken) {
+            console.info("The device does not support geofence");
+            expect(isAcessToken).assertFalse();
+            done();
+        } else {
+            await changedLocationMode();
+            let geofence = { "latitude": 31.12, "longitude": 121.11, "radius": 1, "expiration": 1, "coordinateSystemType": 1};
+            let fenceRequest = {
+                "geofence": geofence,
+                "monitorTransitionEvents": [],
+                "geofenceTransitionCallback" : (err, transition) => {
+                    if (err) {
+                        console.info("test_AddGnssGeofence_0200 transition callback  err:" + err);
+                        expect(true).assertEqual(JSON.stringify(err) != null);
+                        return;
+                    }
+                    console.info("[lbs_js] test_AddGnssGeofence_0200 callback result:" + JSON.stringify(transition));
+                    expect(true).assertEqual(transition != null);
+                    expect(true).assertEqual(transition.geofenceId != -1)
+                    expect(true).assertEqual(transition.transitionEvent != -1)
+                },
+                "notifications" : [],
+                "fenceExtensionAbilityName" : ''
+            };
+            let fenceId = -1;
+            try {
+                await geolocationm.addGnssGeofence(fenceRequest).then((id) => {
+                    console.info("[lbs_js] test_AddGnssGeofence_0200 addGnssGeofence success, id = " + id);
+                    fenceId = id;
+                    expect(true).assertEqual(id != -1);
+                }).catch((err) => {
+                    console.info("[lbs_js] test_AddGnssGeofence_0200 add error=" + JSON.stringify(error));
+                    expect(true).assertEqual(JSON.stringify(err) != null);
+                }
+                );
+            } catch (error) {
+                console.info("[lbs_js] test_AddGnssGeofence_0200 add try error:"+ JSON.stringify(error));
+                if (error.code == "801") {
+                    expect(error.code).assertEqual("801")
+                } else {
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                }
+            }
+            await sleep(10000);
+            done();
+        }
+    })
+
+    /**
+     * @tc.name   test_GetCurrentLocation_re_0100
+     * @tc.number test_GetCurrentLocation_re_0100
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_GetCurrentLocation_re_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = { "priority": request_priority_UNSET, "scenario": request_scenario_NAVIGATION, "timeoutMs": 1000, "maxAccuracy": 10 };
+        try {
+            geolocationm.getCurrentLocation(currentLocationRequest, (err, location) => {
+                if (err) {
+                    console.info("[lbs_js] test_GetCurrentLocation_re_0100 callback err:  " + JSON.stringify(err));
+                    expect(err.code).assertEqual(3301200);
+                    console.info('[lbs_js] test_GetCurrentLocation_re_0100 reject after');
+                    done();
+                } else {
+                    console.info("[lbs_js] test_GetCurrentLocation_re_0100 callback result:" + JSON.stringify(location));
+                    expect(true).assertEqual(location != null);
+                    expect(true).assertEqual(location.latitude != -1)
+                    expect(true).assertEqual(location.longitude != -1)
+                    expect(true).assertEqual(location.altitude != -1)
+                    expect(true).assertEqual(location.accuracy != -1)
+                    expect(true).assertEqual(location.speed != -1)
+                    expect(true).assertEqual(location.timeStamp != -1)
+                    expect(true).assertEqual(location.direction != -1)
+                    expect(true).assertEqual(location.timeSinceBoot != -1)
+                    expect(true).assertEqual(location.additions.length != -1)
+                    expect(true).assertEqual(location.additionsMap != null)
+                    expect(true).assertEqual(location.altitudeAccuracy != -1)
+                    expect(true).assertEqual(location.speedAccuracy != -1)
+                    expect(true).assertEqual(location.directionAccuracy != -1)
+                    expect(true).assertEqual(location.uncertaintyOfTimeSinceBoot != -1)
+                    expect(true).assertEqual(location.sourceType != -1)
+                    if (location.poi != null) {
+                        let poiArray = location.poi.poiArray
+                        expect(true).assertEqual(poiArray != null)
+                        if (poiArray && poiArray.length > 0) {
+                            expect(true).assertEqual(poiArray[0].id != 'NA')
+                            expect(true).assertEqual(poiArray[0].confidence != -1)
+                            expect(true).assertEqual(poiArray[0].name != 'NA')
+                            expect(true).assertEqual(poiArray[0].latitude != -1)
+                            expect(true).assertEqual(poiArray[0].longitude != -1)
+                            expect(true).assertEqual(poiArray[0].administrativeArea != 'NA')
+                            expect(true).assertEqual(poiArray[0].subAdministrativeArea != 'NA')
+                            expect(true).assertEqual(poiArray[0].locality != 'NA')
+                            expect(true).assertEqual(poiArray[0].subLocality != 'NA')
+                            expect(true).assertEqual(poiArray[0].address != 'NA')
+                        }
+                        expect(true).assertEqual(location.poi.timestamp != -1)
+                    }
+                }
+            });
+        } catch (error) {
+            console.info("[lbs_js] test_GetCurrentLocation_re_0100 callback try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   test_GetCurrentLocation_re_0200
+     * @tc.number test_GetCurrentLocation_re_0200
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_GetCurrentLocation_re_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = { "priority": request_priority_FIRST_FIX, "scenario": request_scenario_NAVIGATION, "timeoutMs": 1000, "maxAccuracy": 10 };
+        try {
+            await geolocationm.getCurrentLocation(currentLocationRequest).then((location) => {
+                console.info('[lbs_js] test_GetCurrentLocation_re_0200 promise result ' + JSON.stringify(location));
+                expect(true).assertEqual(location != null);
+                expect(true).assertEqual(location.latitude != -1)
+                expect(true).assertEqual(location.longitude != -1)
+                expect(true).assertEqual(location.altitude != -1)
+                expect(true).assertEqual(location.accuracy != -1)
+                expect(true).assertEqual(location.speed != -1)
+                expect(true).assertEqual(location.timeStamp != -1)
+                expect(true).assertEqual(location.direction != -1)
+                expect(true).assertEqual(location.timeSinceBoot != -1)
+                expect(true).assertEqual(location.additions.length != -1)
+                expect(true).assertEqual(location.additionsMap != null)
+                expect(true).assertEqual(location.altitudeAccuracy != -1)
+                expect(true).assertEqual(location.speedAccuracy != -1)
+                expect(true).assertEqual(location.directionAccuracy != -1)
+                expect(true).assertEqual(location.uncertaintyOfTimeSinceBoot != -1)
+                expect(true).assertEqual(location.sourceType != -1)
+                if (location.poi != null) {
+                    let poiArray = location.poi.poiArray
+                    expect(true).assertEqual(poiArray != null)
+                    if (poiArray && poiArray.length > 0) {
+                        expect(true).assertEqual(poiArray[0].id != 'NA')
+                        expect(true).assertEqual(poiArray[0].confidence != -1)
+                        expect(true).assertEqual(poiArray[0].name != 'NA')
+                        expect(true).assertEqual(poiArray[0].latitude != -1)
+                        expect(true).assertEqual(poiArray[0].longitude != -1)
+                        expect(true).assertEqual(poiArray[0].administrativeArea != 'NA')
+                        expect(true).assertEqual(poiArray[0].subAdministrativeArea != 'NA')
+                        expect(true).assertEqual(poiArray[0].locality != 'NA')
+                        expect(true).assertEqual(poiArray[0].subLocality != 'NA')
+                        expect(true).assertEqual(poiArray[0].address != 'NA')
+                    }
+                    expect(true).assertEqual(location.poi.timestamp != -1)
+                }
+            }).catch(error => {
+                console.info('[lbs_js] test_GetCurrentLocation_re_0200 promise err:' + JSON.stringify(error));
+                expect(error.code).assertEqual(3301200);
+            })
+        } catch (error) {
+            console.info("[lbs_js] test_GetCurrentLocation_re_0200 promise try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   test_LocationChange_getLastLocation_0100
+     * @tc.number test_LocationChange_getLastLocation_0100
+     * @tc.desc   Obtain the last location after a single location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_LocationChange_getLastLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
+        enableLocationSwitch();
+        let requestInfo = {"priority":request_priority_UNSET, "scenario":request_scenario_NAVIGATION, "timeInterval":0,
+            "distanceInterval": 0, "maxAccuracy": 0};
+        var locationChange = (location) => {
+            console.info('[lbs_js] test_LocationChange_getLastLocation_0100: data: ' + JSON.stringify(location));
+            expect(true).assertEqual(locationChange !=null);
+        };
+        try {
+            geolocationm.on('locationChange', requestInfo, locationChange);
+        } catch (error) {
+            console.info("[lbs_js] test_LocationChange_getLastLocation_0100 try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+        }
+        try {
+            geolocationm.off('locationChange', locationChange);
+        } catch (error) {
+            console.info("[lbs_js] test_LocationChange_getLastLocation_0100 try err." + JSON.stringify(error));
+            expect(true).assertFalse();
+        }
+        await sleep(1500);
+        try {
+            let location = geolocationm.getLastLocation();
+            console.info('[lbs_js] test_LocationChange_getLastLocation_0100 getLastLocation: sucess');
+            expect(true).assertEqual(JSON.stringify(location) != null);
+            if (location) {
+                expect(true).assertEqual(location != null);
+                expect(true).assertEqual(location.latitude != -1)
+                expect(true).assertEqual(location.longitude != -1)
+                expect(true).assertEqual(location.altitude != -1)
+                expect(true).assertEqual(location.accuracy != -1)
+                expect(true).assertEqual(location.speed != -1)
+                expect(true).assertEqual(location.timeStamp != -1)
+                expect(true).assertEqual(location.direction != -1)
+                expect(true).assertEqual(location.timeSinceBoot != -1)
+                expect(true).assertEqual(location.additions.length != -1)
+                expect(true).assertEqual(location.additionsMap != null)
+                expect(true).assertEqual(location.altitudeAccuracy != -1)
+                expect(true).assertEqual(location.speedAccuracy != -1)
+                expect(true).assertEqual(location.directionAccuracy != -1)
+                expect(true).assertEqual(location.uncertaintyOfTimeSinceBoot != -1)
+                expect(true).assertEqual(location.sourceType != -1)
+                if (location.poi != null) {
+                    let poiArray = location.poi.poiArray
+                    expect(true).assertEqual(poiArray != null)
+                    if (poiArray && poiArray.length > 0) {
+                        expect(true).assertEqual(poiArray[0].id != 'NA')
+                        expect(true).assertEqual(poiArray[0].confidence != -1)
+                        expect(true).assertEqual(poiArray[0].name != 'NA')
+                        expect(true).assertEqual(poiArray[0].latitude != -1)
+                        expect(true).assertEqual(poiArray[0].longitude != -1)
+                        expect(true).assertEqual(poiArray[0].administrativeArea != 'NA')
+                        expect(true).assertEqual(poiArray[0].subAdministrativeArea != 'NA')
+                        expect(true).assertEqual(poiArray[0].locality != 'NA')
+                        expect(true).assertEqual(poiArray[0].subLocality != 'NA')
+                        expect(true).assertEqual(poiArray[0].address != 'NA')
+                    }
+                    expect(true).assertEqual(location.poi.timestamp != -1)
+                }
+            }
+        } catch (error) {
+            console.info("[lbs_js] test_LocationChange_getLastLocation_0100 error:"+ error)
+            if (error.code == "801") {
+                expect(error.code).assertEqual("801")
+            } else {
+                expect(error.code).assertEqual("3301200");
+            }
+        }
+        await sleep(1500);
+        done();
     })
 
     })

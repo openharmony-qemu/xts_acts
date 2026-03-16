@@ -390,6 +390,62 @@ export default function geolocationTest_geo8() {
             }            
         });
 
+        /**
+         * @tc.name   test_GetDistanceBetweenLocations_0200
+         * @tc.number test_GetDistanceBetweenLocations_0200
+         * @tc.desc   Obtain the
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('test_GetDistanceBetweenLocations_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let location1 = {"latitude": 30.12, "longitude": 120.11, "altitude": 0, "accuracy": 0,
+                    "speed": 0, "timeStamp": 0, "direction": 0, "timeSinceBoot": 0, "additionSize": 0, "additions": []}
+                let location2 = {"latitude": 30.12, "longitude": 120.11, "altitude": 0, "accuracy": 0,
+                    "speed": 0, "timeStamp": 0, "direction": 0, "timeSinceBoot": 0, "additionSize": 0, "additions": []}
+                let distance1 = geolocationm.getDistanceBetweenLocations(location1, location2);
+                expect(distance1).assertEqual(0)
+            } catch(error) {
+                console.error("test_GetDistanceBetweenLocations_0200_01: errCode" + error.code + ", errMessage" + error.message);
+                expect(true).assertFail();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_HSS_isWlanBssidMatched_0200
+         * @tc.number SUB_HSS_isWlanBssidMatched_0200
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_HSS_isWlanBssidMatched_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
+            console.info("SUB_HSS_isWlanBssidMatched_0200: " + isAcessToken);
+            if (!isAcessToken) {
+                console.info("The device does not support Gnss");
+                expect(isAcessToken).assertFalse();
+                done();
+            } else {
+                try {
+                    let wlanBssidArray = [];
+                    let rssiThreshold = -100;
+                    let needStartScan = false;
+                    geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
+                          console.info("SUB_HSS_isWlanBssidMatched_0200 Wlan Bssid Matched Result:" + res);
+                          expect(res != true).assertTrue();
+                    })
+                } catch (error) {
+                    console.error("[lbs_js] Promise SUB_HSS_isWlanBssidMatched_0200:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                }
+                await sleep(1000);
+                done();
+            }            
+        });
+
     })
 }
 
