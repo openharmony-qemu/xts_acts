@@ -168,6 +168,8 @@ export default function bluetoothBleTest() {
 
         beforeAll(async (done : Function) => {
             await clickRequestPermission(PERMISSION_TEXT);
+
+
             console.info('beforeAll called')
             BleScanner = bluetooth.createBleScanner();
             console.info('createBleScanner result:' + JSON.stringify(BleScanner));
@@ -264,7 +266,7 @@ export default function bluetoothBleTest() {
             try {
                 bluetooth.on('BLEDeviceFind', onReceiveEvent);
             } catch (err) {
-                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                console.error("03errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
             }
             bluetooth.off('BLEDeviceFind', onReceiveEvent);
@@ -522,7 +524,7 @@ export default function bluetoothBleTest() {
                 console.info('[bluetooth_js] BLE scan off10');
                 bluetooth.stopBLEScan();
             } catch (err) {
-                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                console.error("13errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
             }
             bluetooth.off('BLEDeviceFind', onReceiveEvent);
@@ -578,24 +580,6 @@ export default function bluetoothBleTest() {
             done();
         })
 
-        /**
-         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500Adapt001
-         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500
-         * @tc.desc   Test constant PhyType api12
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1500Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
-            let PHY_LE_1M = bluetooth.PhyType.PHY_LE_1M;
-            console.info("[bluetooth_js]PHY_LE_1M : " + JSON.stringify(PHY_LE_1M));
-            expect(true).assertEqual(PHY_LE_1M == 1);
-
-            let PHY_LE_ALL_SUPPORTED = bluetooth.PhyType.PHY_LE_ALL_SUPPORTED;
-            console.info("[bluetooth_js]PHY_LE_ALL_SUPPORTED : " + JSON.stringify(PHY_LE_ALL_SUPPORTED));
-            expect(true).assertEqual(PHY_LE_ALL_SUPPORTED == 255);
-            done();
-        })
 
         /**
          * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_1600
@@ -923,7 +907,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONPARAM_ENUMVALUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let value1 = bluetooth.ConnectionParam.LOW_POWER;
                 console.info('[bt_arkts]get LOW_POWER is ' + JSON.stringify(value1));
@@ -948,7 +932,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-         it('SUB_COMMUNICATION_BLUETOOTHBLE_BLE_BLEPHY_ENUMVALUE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLE_BLEPHY_ENUMVALUE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let value4 = bluetooth.BlePhy.BLE_PHY_1M;
                 console.info('[bt_arkts]get bluetooth BlePhy BLE_PHY_1M is ' + JSON.stringify(value4));
@@ -973,7 +957,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-         it('SUB_COMMUNICATION_BLUETOOTHBLE_BLE_CODEPHY_ENUMVALUE_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLE_CODEPHY_ENUMVALUE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let value7 = bluetooth.CodedPhyMode.BLE_PHY_CODED_S2;
                 console.info('[bt_arkts]get bluetooth CodedPhyMode BLE_PHY_CODED_S2 is ' + JSON.stringify(value7));
@@ -996,7 +980,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 device.on('serviceChange',onReceiveEvent_void);
                 console.info('[bt_arkts]return_on value type is null，device on success')
@@ -1020,7 +1004,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.updateConnectionParam(bluetooth.ConnectionParam.LOW_POWER);
                 console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
@@ -1044,7 +1028,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.updateConnectionParam(bluetooth.ConnectionParam.BALANCED);
                 console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
@@ -1069,7 +1053,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.updateConnectionParam(bluetooth.ConnectionParam.HIGH);
                 console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
@@ -1093,7 +1077,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let serviceUuid = '00001888-0000-1000-8000-00805f9b34fb';
                 let returu_gattservice: bluetooth.GattService = gattServer.getService(serviceUuid);
@@ -1128,7 +1112,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let returu_gattservice: bluetooth.GattService = gattServer.getService(null);
                 expect().assertFail();
@@ -1147,7 +1131,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let return_list: bluetooth.GattService[] = gattServer.getServices();
                 console.info('[bt_arkts] return_list is' + JSON.stringify(return_list));
@@ -1177,7 +1161,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let return_status: bluetooth.ProfileConnectionState = gattServer.getConnectedState('01:02:00:02:03:01');
                 console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
@@ -1202,7 +1186,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let return_status: bluetooth.ProfileConnectionState = gattServer.getConnectedState('01');
                 console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
@@ -1228,7 +1212,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let return_status=device.getConnectedState();
                 console.info('[bt_arkts] client ProfileConnectionState 0100 is' + JSON.stringify(return_status))
@@ -1254,7 +1238,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 gattServer.onBlePhyUpdate(onReceiveEvent_value);
                 gattServer.offBlePhyUpdate(onReceiveEvent_value);
@@ -1272,7 +1256,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_OBPU_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 gattServer.onBlePhyUpdate(onReceiveEvent_value);
                 gattServer.offBlePhyUpdate();
@@ -1291,7 +1275,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 device.onBlePhyUpdate(onReceiveEvent_value);
                 device.offBlePhyUpdate(onReceiveEvent_value);
@@ -1309,7 +1293,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_OBPU_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 device.onBlePhyUpdate(onReceiveEvent_value);
                 device.offBlePhyUpdate();
@@ -1327,7 +1311,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue1);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1352,7 +1336,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let data: bluetooth.PhyValue  = await gattServer.readPhy(deviceId);
                 console.info('[bt_arkts] server readPhy:'+ JSON.stringify(data));
@@ -1382,7 +1366,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-         it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let data: bluetooth.PhyValue = await device.readPhy();
                 console.info('[bt_arkts] client readPhy:'+ JSON.stringify(data));
@@ -1412,7 +1396,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0400', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_NOTCONNECT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue1);
                 console.info('[bt_arkts] client setPhy success');
@@ -1439,7 +1423,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-         it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let data: bluetooth.PhyValue  = await gattServer.readPhy(null);
                 expect().assertFail();
@@ -1464,7 +1448,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let data: bluetooth.PhyValue  = await gattServer.readPhy(undefined);
                 expect().assertFail();
@@ -1488,7 +1472,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 let data: bluetooth.PhyValue  = await gattServer.readPhy('11111111');
                 expect().assertFail();
@@ -1513,7 +1497,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0400', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue2);
                 console.info('[bt_arkts] client setPhy success');
@@ -1538,7 +1522,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0500', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue3);
                 console.info('[bt_arkts] client setPhy success');
@@ -1563,7 +1547,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0600', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue4);
                 console.info('[bt_arkts] client setPhy success');
@@ -1588,7 +1572,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0700', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue5);
                 console.info('[bt_arkts] client setPhy success');
@@ -1613,7 +1597,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0800', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue6);
                 console.info('[bt_arkts] client setPhy success');
@@ -1639,7 +1623,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0900', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue7);
                 console.info('[bt_arkts] client setPhy success');
@@ -1664,7 +1648,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1000', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue8);
                 console.info('[bt_arkts] client setPhy success');
@@ -1689,7 +1673,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1100', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await device.setPhy(phyValue9);
                 console.info('[bt_arkts] client setPhy success');
@@ -1705,7 +1689,7 @@ export default function bluetoothBleTest() {
                 }
             }
             done();
-        })     
+        })
         /**
          * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1200
          * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1200
@@ -1714,7 +1698,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1200', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue2);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1740,7 +1724,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1300', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue3);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1765,7 +1749,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1400', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue4);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1791,7 +1775,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1500', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue5);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1817,7 +1801,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1600', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue6);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1842,7 +1826,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1700', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue7);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1867,7 +1851,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1800', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue8);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1892,7 +1876,7 @@ export default function bluetoothBleTest() {
          * @tc.size MEDIUMTEST
          * @tc.level Level 0
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1900', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_ADD_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
             try {
                 await gattServer.setPhy(deviceId , phyValue9);
                 console.info('[bt_arkts] client setPhy is success');
@@ -1910,5 +1894,647 @@ export default function bluetoothBleTest() {
             done();
         })
 
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1800
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1800
+         * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                device = bluetooth.createGattClientDevice(null);
+                console.info('createGattClientDevice result:' + JSON.stringify(device));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] createGattClientDevice failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]createGattClientDevice is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] createGattClientDevice failed, invalid parameter.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1900
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1900
+         * @tc.desc API23 server setPhy 连接未建立 参数覆盖 test
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_createGattClientDevice_ADD_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                device = bluetooth.createGattClientDevice(undefined);
+                console.info('createGattClientDevice result:' + JSON.stringify(device));
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts] createGattClientDevice failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]createGattClientDevice is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] createGattClientDevice failed, invalid parameter.');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0100
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0100"
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.startBLEScan(undefined);
+                expect().assertFail();
+            } catch (err) {
+                console.error(`[bt_arkts] createGattClientDevice failed, code is ${err.code},message is ${err.message}`);
+                if (Number(err.code) == 801) {
+                    console.info('[bt_arkts]createGattClientDevice is not support');
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] createGattClientDevice failed, invalid parameter.');
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0200
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0200"
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.startBLEScan(null);
+
+            } catch (err) {
+                console.error(`[bt_arkts] createGattClientDevice failed, code is ${err.code},message is ${err.message}`);
+                if (Number(err.code) == 801) {
+                    console.info('[bt_arkts]createGattClientDevice is not support');
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] createGattClientDevice failed, invalid parameter.');
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0300
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0300"
+            try {
+                bluetooth.startBLEScan([{
+                    deviceId:"00:11:22:33:44:55",
+                    name:"test",
+                    serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                }], undefined);
+
+            } catch (err) {
+                console.error(`${caseName} [bt_arkts] createGattClientDevice failed, code is ${err.code},message is ${err.message}`);
+                if (Number(err.code) == 801) {
+                    console.info('[bt_arkts]createGattClientDevice is not support');
+                    expect(Number(err.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] createGattClientDevice failed, invalid parameter.');
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0400
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0400"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.NORMAL
+            };
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info( `${caseName} `+ "startBLEScan success");
+            } catch (err) {
+                console.error( `${caseName} `+ "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            bluetooth.off("BLEDeviceFind", onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0500
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0500
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0500"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.BATCH
+            };
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info( `${caseName} `+ "startBLEScan success");
+            } catch (err) {
+                console.error( `${caseName} `+ "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            bluetooth.off("BLEDeviceFind", onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0600
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0600
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0600"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.FENCE_SENSITIVITY_LOW
+            };
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info( `${caseName} `+ "startBLEScan success");
+            } catch (err) {
+                console.error( `${caseName} `+ "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            bluetooth.off("BLEDeviceFind", onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0700
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0700
+         * @tc.desc   Test startBLEScan api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0700"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.FENCE_SENSITIVITY_HIGH
+            };
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info( `${caseName} `+ "startBLEScan success");
+            } catch (err) {
+                console.error( `${caseName} `+ "errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            bluetooth.off("BLEDeviceFind", onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0100
+         * @tc.desc   Test on-BLEDeviceFind api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0100"
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.on(null, onReceiveEvent);
+            } catch (err) {
+                console.error("03errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0200
+         * @tc.desc   Test on-BLEDeviceFind api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0200"
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.on(undefined, onReceiveEvent);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0300
+         * @tc.desc   Test on-BLEDeviceFind api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0300"
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.off(null, onReceiveEvent);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0400
+         * @tc.desc   Test on-BLEDeviceFind api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLEDeviceFind_ADD_0400"
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.off(undefined, onReceiveEvent);
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0100
+         * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState 401.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_status: bluetooth.ProfileConnectionState = gattServer.getConnectedState('');
+                console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+                expect(return_status).assertEqual(0);
+            } catch (error) {
+                console.error(`[bt_arkts]server getConnectedState is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]getConnectedState is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server getConnectedState input is error');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0200
+         * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState 401.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_status: bluetooth.ProfileConnectionState = gattServer.getConnectedState(null);
+                console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+                expect(return_status).assertEqual(0);
+            } catch (error) {
+                console.error(`[bt_arkts]server getConnectedState is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]getConnectedState is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server getConnectedState input is error');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0300
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0300
+         * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState 401.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                let return_status: bluetooth.ProfileConnectionState = gattServer.getConnectedState(undefined);
+                console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+                expect(return_status).assertEqual(0);
+            } catch (error) {
+                console.error(`[bt_arkts]server ProfileConnectionState 0300 is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]getConnectedState is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                } else {
+                    console.info('[bt_arkts] server getConnectedState input is error');
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0100
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0100
+         * @tc.desc 20251113API22用例覆盖 on_serviceChange/off_serviceChange 1-1.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                device.on(null,onReceiveEvent_void);
+                console.info('[bt_arkts]return_on value type is null，device on success')
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]service change is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0200
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0200
+         * @tc.desc 20251113API22用例覆盖 on_serviceChange/off_serviceChange 1-1.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                device.on(undefined,onReceiveEvent_void);
+                console.info('[bt_arkts]return_on value type is null，device on success')
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]service change is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0300
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0300
+         * @tc.desc 20251113API22用例覆盖 on_serviceChange/off_serviceChange 1-1.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                device.off(null,onReceiveEvent_void);
+                console.info('[bt_arkts]return_on value type is null，device on success')
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]service change is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0400
+         * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0400
+         * @tc.desc 20251113API22用例覆盖 on_serviceChange/off_serviceChange 1-1.
+         * @tc.type Method
+         * @tc.size MEDIUMTEST
+         * @tc.level Level 0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                device.off(undefined,onReceiveEvent_void);
+                console.info('[bt_arkts]return_on value type is null，device on success')
+                expect().assertFail();
+            } catch (error) {
+                console.error(`[bt_arkts]service change is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) == 801) {
+                    console.info('[bt_arkts]is not support');
+                    expect(Number(error.code) == 801).assertTrue();
+                }else {
+                    expect(Number(error.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0100
+         * @tc.desc   Test startScan
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                BleScanner.on(null, onReceiveEvents);
+                expect().assertFail();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 || err.code == 2900009) {
+                    console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0200
+         * @tc.desc   Test startScan
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                BleScanner.on(undefined, onReceiveEvents);
+                expect().assertFail();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 || err.code == 2900009) {
+                    console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0300
+         * @tc.desc   Test startScan
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                BleScanner.off(null, onReceiveEvents);
+                expect().assertFail();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 || err.code == 2900009) {
+                    console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0400
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0400
+         * @tc.desc   Test startScan
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_BLESCANNER_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                BleScanner.off(undefined, onReceiveEvents);
+                expect().assertFail();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801 || err.code == 2900009) {
+                    console.info('[bluetooth_js]startScan is not support or start scan as it is out of hardware');
+                    expect(true).assertTrue();
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
     })
 }
