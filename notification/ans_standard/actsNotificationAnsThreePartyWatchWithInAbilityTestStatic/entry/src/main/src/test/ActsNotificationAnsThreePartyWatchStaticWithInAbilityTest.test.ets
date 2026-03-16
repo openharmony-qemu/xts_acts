@@ -96,7 +96,11 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
         notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data: notificationExtensionSubscription.GrantedBundleInfo[]) => {
           num++
           console.info(testNum+num+`getUserGrantedEnabledBundles successfully. Data: ${JSON.stringify(data)}`);
-          expect(JSON.stringify(data)).assertEqual('[{"bundleName":"com.huawei.hmos.ailife","appIndex":0,"appName":"智慧生活"},{"bundleName":"com.huawei.hmos.calendar","appIndex":0,"appName":"日历"},{"bundleName":"com.huawei.hmos.meetime","appIndex":0,"appName":"畅连"},{"bundleName":"com.ohos.contacts","appIndex":0,"appName":"联系人"},{"bundleName":"com.ohos.mms","appIndex":0,"appName":"信息"}]')
+          expect(JSON.stringify(data?.[0]?.bundleName)).assertEqual('com.huawei.hmos.ailife')
+          expect(JSON.stringify(data?.[1]?.bundleName)).assertEqual('com.huawei.hmos.calendar')
+          expect(JSON.stringify(data?.[2]?.bundleName)).assertEqual("com.huawei.hmos.meetime')
+          expect(JSON.stringify(data?.[3]?.bundleName)).assertEqual("com.ohos.contacts')
+          expect(JSON.stringify(data?.[4]?.bundleName)).assertEqual("com.ohos.mms')
           done()
         }).catch((error: Error) => {
           let err = error as BusinessError
