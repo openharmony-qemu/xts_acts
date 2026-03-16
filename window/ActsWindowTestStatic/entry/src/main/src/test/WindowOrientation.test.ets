@@ -460,7 +460,7 @@ export default function WindowOrientationTest() {
         })
         /**
         * @tc.name   testconvertOrientationAndRotationDestoryedWindow_static
-        * @tc.number SUB_BASIC_WMS_FUNCTION_convertOrientationAndRotation_static_0200
+        * @tc.number SUB_BASIC_WMS_FUNCTION_convertOrientationAndRotation_static
         * @tc.desc   验证convertOrientationAndRotation接口窗口状态异常调用
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
@@ -552,6 +552,39 @@ export default function WindowOrientationTest() {
                     done()
                 } else {
                     expect(err!.code).assertEqual(1300002)
+                    done();
+                }
+            }
+        })
+
+        /**
+        * @tc.name   testconvertOrientationAndRotation_static_0300
+        * @tc.number testconvertOrientationAndRotation_static_0300
+        * @tc.desc   验证convertOrientationAndRotation接口调用
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('testconvertOrientationAndRotation_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const caseName:string = 'testconvertOrientationAndRotation_static_0300';
+            console.log(caseName + 'begin.');
+            let originalValue: int = 0;
+            let fromType: window.RotationInfoType = window.RotationInfoType.DISPLAY_ROTATION;
+            let toType: window.RotationInfoType = window.RotationInfoType.WINDOW_ORIENTATION;
+            let windowClass:window.Window = await windowStage!.createSubWindow('testconvertOrientationAndRotation_static_0300');
+            try {
+                let convertValue: int = windowClass.convertOrientationAndRotation(fromType, toType, originalValue);
+                expect(convertValue).assertLargerOrEqual(0);
+                expect(convertValue).assertLessOrEqual(3);
+                await Utils.msSleep(200);
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+                if (err!.code === 801) {
+                    done()
+                } else {
+                    expect(true).assertFail(); 
                     done();
                 }
             }
