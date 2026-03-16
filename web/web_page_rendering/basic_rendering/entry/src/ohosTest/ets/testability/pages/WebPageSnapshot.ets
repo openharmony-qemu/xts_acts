@@ -72,19 +72,23 @@ struct WebPageSnapshot {
           switch (this.str) {
             case "testWebPageSnapshot001": {
               try {
-                this.controller.webPageSnapshot(null, (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
-                  if (error) {
-                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent("null_error", 154100)
-                  } else {
-                    console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
-                    Utils.emitEvent("null", 154100)
-                  }
-                });
+                if(this.controller.webPageSnapshot) {
+                  this.controller.webPageSnapshot(null, (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
+                    if (error) {
+                      console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                      Utils.emitEvent("null_error", 154100)
+                    } else {
+                      console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
+                      Utils.emitEvent("null", 154100)
+                    }
+                  });
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent("null_error", 154100)
               }
+
+
               break;
             }
             case "testWebPageSnapshot002": {
