@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { common } from '@kit.AbilityKit';
+import Want from '@ohos.app.ability.Want';
+import eventBusPlus from '../lib/EventBusPlus';
 
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 function sleep(ms: number) {
@@ -120,15 +122,17 @@ export default function abilityTest() {
             bundleName: 'com.test.actslifecycletest',
             abilityName: "MainAbility2",
           };
+          let eventPromise = eventBusPlus.onWait("MainAbility2 onForeground");
           globalThis.context.startAbility(startWant).then(() => {
             console.log(TAG,'startAbility success');
           }).catch((error: BusinessError) => {
             console.log(TAG,'startAbility error', JSON.stringify(error));
             expect().assertFail();
           })
-          await sleep(2000);
-          try{
-            console.log(TAG,'flag=',flag);
+          await eventPromise;
+
+          try {
+            console.log(TAG, 'flag=', flag);
             expect(flag).assertEqual(false);
             done();
           } catch(e){
@@ -173,13 +177,11 @@ export default function abilityTest() {
           }).catch((error: BusinessError) => {
             console.log(TAG,'startAbility error', JSON.stringify(error));
           });
-          await sleep(1500);
           abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           let cmd2 ="kill -9 pidof com.acts.ability.actslifecyclerely";
           abilityDelegator.executeShellCommand(cmd2, (err : BusinessError, data: abilityDelegatorRegistry.ShellCmdResult) => {
             console.info('executeShellCommand2 callback');
           });
-          await sleep(2000);
           try{
             console.log(TAG,'flag=',flag);
             expect(flag).assertEqual(false);

@@ -251,7 +251,7 @@ export default function windowImmersiveTest() {
           await text3.click();
           console.info('beforeAll 完成 click success');
         } else {
-          await sleep(2000);
+          await sleep(3000);
           await driver.pressBack();
           console.info('beforeAll pressBack success');
         }
@@ -2712,7 +2712,11 @@ export default function windowImmersiveTest() {
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
-              expect(err.code == 801 || err.code == 1300002).assertTrue();
+              if (err.code === 801) {
+                expect(err.code).assertEqual(801);
+             } else {
+                expect(err.code).assertEqual(1300002);
+             }
               done();
             })
           } catch (err) {
@@ -2763,7 +2767,11 @@ export default function windowImmersiveTest() {
               console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
               await subWindowClass?.destroyWindow();
               await sleep(1000);
-              expect(err.code == 801 || err.code == 1300004).assertTrue();
+              if (err.code === 801) {
+                expect(err.code).assertEqual(801);
+              } else {
+                expect(err.code).assertEqual(1300004);
+              }
               done();
             })
           } catch (err) {
@@ -2981,7 +2989,11 @@ export default function windowImmersiveTest() {
             await dialogWindowClass?.destroyWindow();
             console.info(`${message} after destroyWindow`);
             await sleep(1000);
-            expect(err.code == 801 || err.code == 1300004).assertTrue();
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801);
+            } else {
+              expect(err.code).assertEqual(1300004);
+            }
             done();
           }
         }).catch((err: BusinessError) => {
@@ -3028,7 +3040,11 @@ export default function windowImmersiveTest() {
             done();
           } catch (err) {
             console.error(`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
-            expect(err.code == 801 || err.code == 1300002).assertTrue();
+            if (err.code === 801) {
+              expect(err.code).assertEqual(801);
+            } else {
+              expect(err.code).assertEqual(1300002);
+            }
             done();
           }
         }).catch((err: BusinessError) => {
@@ -3528,14 +3544,14 @@ export default function windowImmersiveTest() {
 
 
     /**
-     * @tc.name   testIsImmersiveLayoutwithSubWindowDefaultState
+     * @tc.name   testIsImmersiveLayoutwithSubWindowDefaultStateAdapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
      * @tc.desc   验证子窗创建后默认为沉浸式状态
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIsImmersiveLayoutwithSubWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testIsImmersiveLayoutwithSubWindowDefaultStateAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithSubWindowDefaultState';
       let windowClass = await windowStage.createSubWindow('testIsImmersiveLayoutwithSubWindowDefaultState')
       await windowClass.setUIContent('testability/pages/Index1');
@@ -3603,14 +3619,14 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.name   testIsImmersiveLayoutwithDialogWindowDefaultState
+     * @tc.name   testIsImmersiveLayoutwithDialogWindowDefaultStateAdapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0400
      * @tc.desc   验证dialog窗创建后默认为非沉浸式状态
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testIsImmersiveLayoutwithDialogWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testIsImmersiveLayoutwithDialogWindowDefaultStateAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDialogWindowDefaultState';
       let config: window.Configuration = {
         name: "testIsImmersiveLayoutwithDialogWindowDefaultState",
@@ -3650,14 +3666,14 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.name   testIsImmersiveLayoutwithImmersiveMode
+     * @tc.name   testIsImmersiveLayoutwithImmersiveModeAdapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0500
      * @tc.desc   验证非2in1设备setImmersiveModeEnabledState后IsImmersiveLayout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIsImmersiveLayoutwithImmersiveMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testIsImmersiveLayoutwithImmersiveModeAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithImmersiveMode';
       try {
         if (isFreeWindowMode == false) {
@@ -3686,14 +3702,14 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.name   testIsImmersiveLayoutwithWindowLayoutFullScreen
+     * @tc.name   testIsImmersiveLayoutwithWindowLayoutFullScreenAdapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0600
      * @tc.desc   验证非2in1setWindowLayoutFullScreen后IsImmersiveLayout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testIsImmersiveLayoutwithWindowLayoutFullScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testIsImmersiveLayoutwithWindowLayoutFullScreenAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithWindowLayoutFullScreen';
       try {
         if (isFreeWindowMode == false) {
@@ -3724,14 +3740,14 @@ export default function windowImmersiveTest() {
     });
 
     /**
-     * @tc.name   testIsImmersiveLayoutwithMiniMize
+     * @tc.name   testIsImmersiveLayoutwithMiniMizeAdapt001
      * @tc.number testIsImmersiveLayoutwithMiniMize
      * @tc.desc   testIsImmersiveLayoutwithMiniMize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    // it('testIsImmersiveLayoutwithMiniMize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    // it('testIsImmersiveLayoutwithMiniMizeAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
     //   let caseName = 'testIsImmersiveLayoutwithMiniMize';
     //   // 1、拉起另一个Abllity主窗
     //   let windowStageStart = await startAbility(caseName, context);
@@ -3758,14 +3774,14 @@ export default function windowImmersiveTest() {
     // });
 
     /**
-     * @tc.name   testIsImmersiveLayoutwithDestroySubWindow
+     * @tc.name   testIsImmersiveLayoutwithDestroySubWindowAdapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0800
      * @tc.desc   验证销毁后调用IsImmersiveLayout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testIsImmersiveLayoutwithDestroySubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testIsImmersiveLayoutwithDestroySubWindowAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testIsImmersiveLayoutwithDestroySubWindow';
       let windowClass = await windowStage.createSubWindow('testIsImmersiveLayoutwithDestroySubWindow');
       await windowClass.destroyWindow();

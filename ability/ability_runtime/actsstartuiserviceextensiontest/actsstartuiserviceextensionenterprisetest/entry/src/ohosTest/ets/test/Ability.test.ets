@@ -18,17 +18,12 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     beforeAll((done:Function) => {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
-      isSupportCapability = systemParameterEnhance.getSync('const.abilityms.enable_uiservice') == 'true';
       mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model') == 'true';
       console.info('====> [test ] isSupportCapability: ' + isSupportCapability +  " mpEnable:" + mpEnable);
-      if(isSupportCapability != true && isSupportCapability != false){
-        expect().assertFail();
-        done();
-      }
       if(mpEnable != true && mpEnable != false){
         expect().assertFail();
-        done();
       }
+      done();
     })
     afterEach(async (done:Function) => {
       await sleep(2000);
@@ -45,17 +40,17 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_0100', Level.LEVEL0, async (done: Function) => {
-  let tag = "SUB_Ability_AbilityRuntime_AppManager_0100";
-  console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0100] start');
-  appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise").then((data: boolean) => {
-    hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
-    try{expect(data).assertTrue();}catch{};
-    done();
-  }).catch((err: BusinessError) => {
-    hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
-    try{expect().assertFail();}catch{};
-    done();
-  })
+      let tag = "SUB_Ability_AbilityRuntime_AppManager_0100";
+      console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0100] start');
+      appManager.isAppRunning("com.acts.startuiserviceextensiontestenterprise").then((data: boolean) => {
+        hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
+        try{expect(data).assertTrue();}catch{};
+        done();
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
+        try{expect().assertFail();}catch{};
+        done();
+      })
     })
 
     /**

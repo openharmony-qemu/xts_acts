@@ -54,7 +54,7 @@ import BindMenuWithResponse from './Menu/BindMenuWithResponse.test';
 import openMenuNullUndefinedTest from './MenuNullUndefined/openMenu.test';
 import updateMenuNullUndefinedTest from './MenuNullUndefined/updateMenu.test';
 import closeMenuNullUndefinedTest from './MenuNullUndefined/closeMenu.test';
-
+import MenuItemNullTest from './MenuItemNullTest/MenuItemNullTest.test';
 export default function testsuite() {
   openMenuNullUndefinedTest();
   updateMenuNullUndefinedTest();
@@ -95,5 +95,5 @@ export default function testsuite() {
   maskColorTest();
   maskBackgroundBlurStyleTest();
   BindMenuWithResponse();
-  
+  MenuItemNullTest();
 }

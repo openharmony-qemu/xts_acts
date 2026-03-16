@@ -48,6 +48,7 @@ export default function ActsNotificationSystemLiveViewTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
 
       notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+      waitForCompletion(async () => {
         console.info(`beforeAll come in requestEnableNotification`);
         if (err) {
           console.info(`beforeAll requestEnableNotification err: ${err.code}`)
@@ -57,6 +58,7 @@ export default function ActsNotificationSystemLiveViewTest() {
           await Utils.msSleep(1000)
           done()
         }
+      })
       })
       await Utils.msSleep(1000)
       let driver = Driver.create()

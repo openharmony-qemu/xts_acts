@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -99,7 +99,7 @@ export async function testFun3(cycleCount: Number, text: string): Promise<number
 
 
 export async function testFun5(text: string): Promise<number[]> {
-  let textWidthList: number[] = new Array<Number>(1);
+  let textWidthList: number[] = Array.create<Number>(1, 0);
   return textWidthList
 }
 

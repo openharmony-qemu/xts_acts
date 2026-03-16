@@ -83,6 +83,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start checkAppAccess");
         let data = await appAccountManager.checkAppAccess(null, owner);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -141,6 +142,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start checkAppAccess");
         let data = await appAccountManager.checkAppAccess(undefined, owner);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -199,6 +201,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start checkAppAccess");
         let data = await appAccountManager.checkAppAccess(name, null);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -257,6 +260,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start checkAppAccess");
         let data = await appAccountManager.checkAppAccess(name, undefined);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -653,6 +657,7 @@ export default function AppAccountErrCodeCheck() {
         let appAccountManager = account.createAppAccountManager();
         console.info(tag + "start deleteCredential");
         await appAccountManager.deleteCredential(accountName, "PIN");
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -707,6 +712,7 @@ export default function AppAccountErrCodeCheck() {
         let appAccountManager = account.createAppAccountManager();
         console.info(tag + "start deleteCredential");
         await appAccountManager.deleteCredential(accountName, "PIN");
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -760,6 +766,7 @@ export default function AppAccountErrCodeCheck() {
         await appAccountManager.createAccount(name);
         console.info(tag + "start deleteCredential");
         await appAccountManager.deleteCredential(name, "PIN");
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -842,6 +849,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start checkAppAccess");
         let data = await appAccountManager.checkAppAccess(accountName, owner);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -872,6 +880,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start checkAppAccess");
         let data = await appAccountManager.checkAppAccess(accountName, owner);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -904,6 +913,7 @@ export default function AppAccountErrCodeCheck() {
         let data = await appAccountManager.checkAppAccess(name, bundleName);
         console.info(tag + "data: " + JSON.stringify(data));
         await appAccountManager.removeAccount(name);
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1027,6 +1037,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCustomDataSync");
         let data = appAccountManager.getCustomDataSync(name, key);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1057,6 +1068,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCustomDataSync");
         let data = appAccountManager.getCustomDataSync(accountName, "credentialType");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1087,6 +1099,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCustomDataSync");
         let data = appAccountManager.getCustomDataSync(accountName, "credentialType");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1120,6 +1133,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCustomDataSync");
         let data = appAccountManager.getCustomDataSync(name, key);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1150,6 +1164,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start setCredential");
         let data = await appAccountManager.setCredential(accountName, "owner", "a");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1210,6 +1225,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start setCredential");
         let data = await appAccountManager.setCredential("accountName", credentialType, "a");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1270,6 +1286,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start setCredential");
         let data = await appAccountManager.setCredential("accountName", "credentialType", credential);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1329,6 +1346,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start setCustomData");
         let data = await appAccountManager.setCustomData(accountName, "owner", "a");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1388,6 +1406,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start setCustomData");
         let data = await appAccountManager.setCustomData("accountName", key, "a");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1447,6 +1466,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start setCustomData");
         let data = await appAccountManager.setCustomData("accountName", "credentialType", value);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1506,6 +1526,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCredential");
         let data = await appAccountManager.getCredential(accountName, "credentialType");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1565,6 +1586,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCredential");
         let data = await appAccountManager.getCredential("accountName", credentialType);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1624,6 +1646,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCredential");
         let data = await appAccountManager.getCredential("accountName", credentialType);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1683,6 +1706,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCustomData");
         let data = await appAccountManager.getCustomData(accountName, "key");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1771,6 +1795,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCustomData");
         let data = await appAccountManager.getCustomData("accountName", key);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1834,6 +1859,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getCustomData");
         let data = await appAccountManager.getCustomData(name, key);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1891,6 +1917,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getAuthList");
         let data = await appAccountManager.getAuthList(accountName, "authType");
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1950,6 +1977,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getAuthList");
         let data = await appAccountManager.getAuthList("accountName", getAuthList);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -2009,6 +2037,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getAuthCallback");
         let data = await appAccountManager.getAuthCallback(sessionId);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -2065,6 +2094,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start getAuthCallback");
         let data = await appAccountManager.getAuthCallback(sessionId);
         console.info(tag + "data: " + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {

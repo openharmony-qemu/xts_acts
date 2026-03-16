@@ -34,23 +34,25 @@ async function commitModifyCallback(done: () => void, testNum: string, fetchOps:
     asset.set(photoAccessHelper.PhotoKeys.TITLE, newTitle);
     hilog.info(domain, tag, `${testNum} newTitle: ${newTitle}`);
     asset.commitModify((err: BusinessError | null) => {
-      try {
-        if (err?.code !== 0) {
-          hilog.info(domain, tag, `${testNum} err: ${err}`);
-          expect(false).assertTrue();
-        } else {
-          const option: photoAccessHelper.FetchOptions =
-            photoFetchOption(testNum, photoAccessHelper.PhotoKeys.URI, uri);
-          const newAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, option);
-          const title: photoAccessHelper.MemberType = newAsset.get(photoAccessHelper.PhotoKeys.TITLE).toString();
-          expect(title).assertEqual(newTitle);
-          asset.set(photoAccessHelper.PhotoKeys.TITLE, oldTitle.toString());
-          await asset.commitModify();
+      waitForCompletion(async () => {
+        try {
+          if (err?.code !== 0) {
+            hilog.info(domain, tag, `${testNum} err: ${err}`);
+            expect(false).assertTrue();
+          } else {
+            const option: photoAccessHelper.FetchOptions =
+              photoFetchOption(testNum, photoAccessHelper.PhotoKeys.URI, uri);
+            const newAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, option);
+            const title: photoAccessHelper.MemberType = newAsset.get(photoAccessHelper.PhotoKeys.TITLE).toString();
+            expect(title).assertEqual(newTitle);
+            asset.set(photoAccessHelper.PhotoKeys.TITLE, oldTitle.toString());
+            await asset.commitModify();
+          }
+        } catch (error) {
+          hilog.info(domain, tag, `${testNum} error: ${error}`);
         }
-      } catch (error) {
-        hilog.info(domain, tag, `${testNum} error: ${error}`);
-      }
-      done();
+        done();
+      })
     })
   } catch (error) {
     hilog.info(domain, tag, `${testNum} failed; error: ${error}`);

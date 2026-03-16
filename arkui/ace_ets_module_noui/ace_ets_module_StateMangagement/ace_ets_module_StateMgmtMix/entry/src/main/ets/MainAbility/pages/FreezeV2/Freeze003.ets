@@ -38,13 +38,16 @@ struct Page1 {
 @ComponentV2({ freezeWhenInactive: true })
 export struct Child {
   @Local bookTest: Book = new Book('A Midsummer Night’s Dream');
-
+  @Local message: string = '';
+  @Local logNum: number = 0;
+  aboutToAppear(): void {
+    AppStorage.setOrCreate<number>('logNumFreezeV2003', 0)
+  }
   @Monitor('bookTest.name')
   onMessageChange(monitor: IMonitor) {
-    prompt.showToast({
-      message: `The book name change from ${monitor.value()?.before} to ${monitor.value()?.now}`,
-      duration: 500
-    })
+    this.logNum++;
+    AppStorage.setOrCreate<number>('logNumFreezeV2003', this.logNum)
+    this.message = `The book name change from ${monitor.value()?.before} to ${monitor.value()?.now}`
   }
 
   textUpdate(): number {
@@ -55,6 +58,7 @@ export struct Child {
   build() {
     Column() {
       Text(`The book name is  ${this.bookTest.name}`).fontSize(this.textUpdate())
+      Text(this.message).id('freezeV2003_menssage').height('5%')
       Button('go to next page').fontSize(9)
         .onClick(() => {
           router.pushUrl({ url: 'MainAbility/pages/FreezeV2/Freeze003Page' });

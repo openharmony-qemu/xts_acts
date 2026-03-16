@@ -190,10 +190,51 @@ export default function webErrorPageTest() {
      */
     it('testOnOverrideErrorPage01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnOverrideErrorPage01', 19);
-      Utils.registerBaseEvent('testOnOverrideErrorPage01', -106, 2025081407, done, (backData: events_emitter.EventData, expected: Object) => {
+      let isReturn = 0;
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', 'ERR_INTERNET_DISCONNECTED', 26031034, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', 'https://www.baiiiiiiiiidu.com/', 26031035, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', true, 26031036, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', true, 26031037, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', false, 26031038, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', false, 26031039, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', 'GET', 26031040, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      Utils.registerBaseEvent('testOnOverrideErrorPage01', -106, 2025081407, ()=>{
+        isReturn += 1;
+      }, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebErrorPageButton', 10, '');
+      if (await Utils.waitForExist(() => isReturn, 'testOnOverrideErrorPage01' + '_returnCheck', 8, 1000)) {
+        done();
+      }
     })
     /**
      * @tc.name   testOnOverrideErrorPage02

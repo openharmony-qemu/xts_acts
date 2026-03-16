@@ -107,7 +107,7 @@ export default function RdbStoreCallbackNullTest(){
 			  expect(rdbStore!== undefined).assertEqual(true);
 			  expect(rdbStore!.version).assertEqual(0);
 			  expect(rdbStore!.rebuilt).assertEqual(0);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 
@@ -145,7 +145,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -182,7 +182,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 
@@ -221,7 +221,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -265,7 +265,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -309,7 +309,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -350,7 +350,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -471,7 +471,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -515,7 +515,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -559,7 +559,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -603,7 +603,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -647,7 +647,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-              await relationalStore.deleteRdbStore(context!, storeConfig);
+              waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -689,7 +689,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-              await relationalStore.deleteRdbStore(context!, storeConfig);
+              waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -727,7 +727,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -765,7 +765,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -808,7 +808,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await relationalStore.deleteRdbStore(context!, storeConfig);
+			  waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig);})
 			  done();
 			}
 		  });
@@ -851,7 +851,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await (rdbStore as relationalStore.RdbStore).close();
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -860,7 +860,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    await relationalStore.deleteRdbStore(context!, storeConfig1);
+			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
 				done();
 				}
 			});
@@ -907,7 +907,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await (rdbStore as relationalStore.RdbStore).close();
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -964,7 +964,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await (rdbStore as relationalStore.RdbStore).close();
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -973,7 +973,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    await relationalStore.deleteRdbStore(context!, storeConfig1);
+			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
 				done();
 				}
 			});
@@ -1021,7 +1021,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await (rdbStore as relationalStore.RdbStore).close();
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -1030,7 +1030,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    await relationalStore.deleteRdbStore(context!, storeConfig1);
+			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
 				done();
 				}
 			});
@@ -1078,7 +1078,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  await (rdbStore as relationalStore.RdbStore).close();
+			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -1100,6 +1100,50 @@ export default function RdbStoreCallbackNullTest(){
 		  done();
 		}
 	  });
+
+    /**
+     * @tc.name       SUB_DDM_RDB_pluginLibs_null_0001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RelationalStoreGetstoreCallbackTest_2500
+     * @tc.desc       String is ""
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('SUB_DDM_RDB_pluginLibs_null_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'SUB_DDM_RDB_pluginLibs_null_0001';
+        console.info(TAG + `************* ${caseName} start *************`);
+        try {
+          const storeConfig: relationalStore.StoreConfig = {
+            name: 'BaseOptional_PathAllEmpty.db',
+            securityLevel: relationalStore.SecurityLevel.S3,
+            rootDir: '',
+            customDir: '',
+            dataGroupId: '',
+            pluginLibs: ['']
+          };
+          relationalStore.getRdbStore(context!, storeConfig, (err, rdbStore) => {
+			waitForCompletion(async () => {
+            if (err) {
+              console.error(TAG + `${caseName} fail: ${err.code}, ${err.message}`);
+              expect(null).assertFail();
+              done();
+            } else {
+              console.info(TAG + `${caseName} success`);
+              expect(rdbStore!== undefined).assertEqual(true);
+              await relationalStore.deleteRdbStore(context!, storeConfig);
+              done();
+            }
+			})
+          });
+        } catch (e) {
+          const err = e as BusinessError;
+          console.error(TAG + `${caseName} catch exception: ${err.code}, ${err.message}`);
+          expect(null).assertFail();
+          done();
+        }
+      });
+	  
 	
 	})
 }

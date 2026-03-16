@@ -16,7 +16,7 @@
 import {
   fileIO, FILE_CONTENT, prepareFile, nextFileName, describe, it, expect,
 } from '../Common';
-import { Level } from '@ohos/hypium';
+import { TestType, Size, Level } from '@ohos/hypium';
 
 export default function fileIOFdatasync() {
   describe('fileIO_fs_fdatasync', async function () {
@@ -79,6 +79,42 @@ export default function fileIOFdatasync() {
     } catch (e) {
       console.log('fileIO_test_fdatasync_sync_002 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_fdatasync_sync_003
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_SYNC_0300
+   * @tc.desc   Test fdatasyncSync() interface. Fd is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_fdatasync_sync_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.fdatasyncSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_fdatasync_sync_003 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_fdatasync_sync_004
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_SYNC_0400
+   * @tc.desc   Test fdatasyncSync() interface. Fd is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_fdatasync_sync_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.fdatasyncSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_fdatasync_sync_004 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
     }
   });
 
@@ -268,6 +304,90 @@ export default function fileIOFdatasync() {
     } catch (e) {
       console.log('fileIO_test_fdatasync_async_007 has failed for ' + e.message + ', code: ' + e.code);
       expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_fdatasync_async_008
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0800
+   * @tc.desc   Test fdatasync() interface. Promise. Fd is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_fdatasync_async_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.fdatasync(null);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_fdatasync_async_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_fdatasync_async_009
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0900
+   * @tc.desc   Test fdatasync() interface. Promise. Fd is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_fdatasync_async_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      await fileIO.fdatasync(undefined);
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_fdatasync_async_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_fdatasync_async_010
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_1000
+   * @tc.desc   Test fdatasync() interface. Callback. Fd is null.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_fdatasync_async_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.fdatasync(null, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_fdatasync_async_010 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_fdatasync_async_011
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_1100
+   * @tc.desc   Test fdatasync() interface. Callback. Fd is undefined.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_fdatasync_async_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+
+    try {
+      fileIO.fdatasync(undefined, (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_fdatasync_async_011 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
       done();
     }
   });

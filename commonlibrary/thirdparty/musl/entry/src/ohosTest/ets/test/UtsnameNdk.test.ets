@@ -30,9 +30,9 @@ export default function utsnameNdkTest() {
      * @tc.desc   test uname
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslUtsnameUname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslUtsnameUname001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = utsname.uname();
       expect(result).assertEqual(resultTrue);

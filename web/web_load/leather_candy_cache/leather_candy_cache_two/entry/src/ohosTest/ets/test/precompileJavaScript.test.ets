@@ -83,7 +83,7 @@ export default function precompileJavaScriptTest() {
      */
     it('testPrecompileJavaScript005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPrecompileJavaScript005", 148401)
-      Utils.registerBaseEvent("testPrecompileJavaScript005", "401", 148420, done,
+      Utils.registerBaseEvent("testPrecompileJavaScript005", '401', 148420, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });
@@ -99,7 +99,7 @@ export default function precompileJavaScriptTest() {
      */
     it('testPrecompileJavaScript006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPrecompileJavaScript006", 148401)
-      Utils.registerBaseEvent("testPrecompileJavaScript006", "401", 148430, done,
+      Utils.registerBaseEvent("testPrecompileJavaScript006", '401', 148430, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });
@@ -117,6 +117,91 @@ export default function precompileJavaScriptTest() {
     it('testPrecompileJavaScript011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPrecompileJavaScript011", 148401)
       Utils.registerBaseEvent("testPrecompileJavaScript011", 0, 148440, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('precompileJavaScriptTestButton',driver)
+    })
+
+    /**
+     * @tc.name   testPrecompileJavaScript012
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_1200
+     * @tc.desc   test PrefetchedResource first parameter3 is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPrecompileJavaScript012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testPrecompileJavaScript012", 148401)
+      Utils.registerBaseEvent("testPrecompileJavaScript012", 0, 148412, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('precompileJavaScriptTestButton',driver)
+    })
+
+    /**
+     * @tc.name   testPrecompileJavaScript013
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_1300
+     * @tc.desc   test PrefetchedResource first parameter1 is NA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPrecompileJavaScript013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testPrecompileJavaScript013", 148401)
+      Utils.registerBaseEvent("testPrecompileJavaScript013", '401', 148413, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('precompileJavaScriptTestButton',driver)
+    })
+
+    /**
+     * @tc.name   testPrecompileJavaScript014
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_1400
+     * @tc.desc   test PrefetchedResource first parameter1 is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPrecompileJavaScript014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testPrecompileJavaScript014", 148401)
+      Utils.registerBaseEvent("testPrecompileJavaScript014", '401', 148414, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('precompileJavaScriptTestButton',driver)
+    })
+
+    /**
+     * @tc.name   testPrecompileJavaScript015
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_1500
+     * @tc.desc   test PrefetchedResource first parameter1 is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPrecompileJavaScript015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testPrecompileJavaScript015", 148401)
+      Utils.registerBaseEvent("testPrecompileJavaScript015", '401', 148415, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('precompileJavaScriptTestButton',driver)
+    })
+
+    /**
+     * @tc.name   testPrecompileJavaScript016
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PRECOMPILEJAVASCRIPT_1600
+     * @tc.desc   test PrefetchedResource res is 17100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPrecompileJavaScript016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testPrecompileJavaScript016", 148401)
+      Utils.registerBaseEvent("testPrecompileJavaScript016", '17100001', 148416, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });

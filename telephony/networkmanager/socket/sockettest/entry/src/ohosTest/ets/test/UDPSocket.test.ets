@@ -2891,5 +2891,44 @@ export default function UDPSocketTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOnListening0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_OnListening_0100
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketUDPSocketOnListening0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketUDPSocketOnListening0100';
+      console.info(`${caseName} test start`);
+      try {
+        let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        udp.on('error',(err:BusinessError) => {
+          console.error("on error,err:" + JSON.stringify(err));
+        });
+        udp.on('listening',() => {
+          console.info("on listening success");
+        });
+        udp.bind(UDPAddr1, (err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} err: ${JSON.stringify(err)}`);
+            expectFail();
+          }
+          console.info(`${caseName} test end`);
+          udp.off('error',(err:BusinessError) => {
+            console.error("off error,err:" + JSON.stringify(err));
+          });
+          udp.off('listening');
+          udp.close();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectFail();
+        done();
+      }
+    });
   });
 }

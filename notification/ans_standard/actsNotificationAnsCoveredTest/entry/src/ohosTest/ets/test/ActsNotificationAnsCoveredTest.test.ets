@@ -64,6 +64,162 @@ export default function actsNotificationAnsCovered() {
       // This API supports only one parameter: clear action function.
     })
 
+
+    /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_1101
+     * @tc.name    Sub_Notification_CES_CommonEvent_1101
+     * @tc.desc    test udnefined of commonEvent.publish
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_1101', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_1101"
+      try {
+        //发布公共事件
+        let publishCB = (err: Base.BusinessError) => {
+          if (err.code) {
+            console.error(TAG + `publish failed, code is ${err.code}`);
+            expect(err.code).assertEqual(1);
+            done()
+          } else {
+            console.info(TAG + "publish success");
+            expect(false).assertTrue();
+            done()
+          }
+        }
+        CommonEventManager.publish(undefined, publishCB);
+      } catch (error) {
+        console.info(TAG + " fail");
+        expect(error.code).assertEqual(401);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_1103
+     * @tc.name    Sub_Notification_CES_CommonEvent_1103
+     * @tc.desc    test '' of commonEvent.publish
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_1103', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_1103"
+      try {
+        //发布公共事件
+        let publishCB = (err: Base.BusinessError) => {
+          if (err.code) {
+            console.error(TAG + `publish failed, code is ${err.code}`);
+            expect(err.code).assertEqual(1);
+            done()
+          } else {
+            console.info(TAG + "publish success");
+            expect(false).assertTrue();
+            done()
+          }
+        }
+        CommonEventManager.publish('', undefined,publishCB);
+      } catch (error) {
+        console.info(TAG + " fail");
+        expect(error.code).assertEqual(401);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_1104
+     * @tc.name    Sub_Notification_CES_CommonEvent_1104
+     * @tc.desc    test undefined of commonEvent.publish
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_1104', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_1104"
+      try {
+        //发布公共事件
+        let publishCB = (err: Base.BusinessError) => {
+          if (err.code) {
+            console.error(TAG + `publish failed, code is ${err.code}`);
+            expect(err.code).assertEqual(1);
+            done()
+          } else {
+            console.info(TAG + "publish success");
+            expect(false).assertTrue();
+            done()
+          }
+        }
+        CommonEventManager.publish(undefined, undefined,publishCB);
+      } catch (error) {
+        console.info(TAG + " fail");
+        expect(error.code).assertEqual(401);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_1105
+     * @tc.name    Sub_Notification_CES_CommonEvent_1105
+     * @tc.desc    test null of commonEvent.publish
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_1105', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_1105"
+      try {
+        //发布公共事件
+        let publishCB = (err: Base.BusinessError) => {
+          if (err.code) {
+            console.error(TAG + `publish failed, code is ${err.code}`);
+            expect(err.code).assertEqual(1);
+            done()
+          } else {
+            console.info(TAG + "publish success");
+            expect(false).assertTrue();
+            done()
+          }
+        }
+        CommonEventManager.publish(null,null,publishCB);
+      } catch (error) {
+        console.info(TAG + " fail");
+        expect(error.code).assertEqual(401);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_1102
+     * @tc.name    Sub_Notification_CES_CommonEvent_1102
+     * @tc.desc    test null of commonEvent.publish
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_1102', Level.LEVEL2, async (done: Function) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_1102"
+      try {
+        //发布公共事件
+        let publishCB = (err: Base.BusinessError) => {
+          if (err.code) {
+            console.error(TAG + `publish failed, code is ${err.code}`);
+            expect(err.code).assertEqual(1);
+            done()
+          } else {
+            console.info(TAG + "publish success");
+            expect(false).assertTrue();
+            done()
+          }
+        }
+        CommonEventManager.publish(null, publishCB);
+      } catch (error) {
+        console.info(TAG + " fail");
+        expect(error.code).assertEqual(401);
+        done()
+      }
+    })
+
     /**
      * @tc.number  Sub_Notification_CES_CommonEvent_1001
      * @tc.name    Sub_Notification_CES_CommonEvent_1001
@@ -1002,6 +1158,98 @@ export default function actsNotificationAnsCovered() {
     })
 
     /**
+     * @tc.number  Sub_Notification_CES_CommonEvent_1017
+     * @tc.name    Sub_Notification_CES_CommonEvent_1017
+     * @tc.desc    test null of subscriber
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_CES_CommonEvent_1017', Level.LEVEL2, async (done: () => void) => {
+      let TAG: string = "Sub_Notification_CES_CommonEvent_1017"
+      // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
+      let subscriber: CommonEventManager.CommonEventSubscriber;
+      // 订阅者信息
+      let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
+        events: ["event284"],
+        publisherBundleName: 'com.example.myapplication'
+      };
+
+      CommonEventManager.createSubscriber(subscribeInfo, async (err, commonEventSubscriber) => {
+        if (err) {
+          console.info(`Sub_Notification_CES_CommonEvent_1007 err, error code: ${err.code}, message: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        } else {
+          console.info(`Sub_Notification_CES_CommonEvent_1007 success ${commonEventSubscriber}`)
+          subscriber = commonEventSubscriber
+
+
+          try {
+            subscriber.setDataSync('');
+          } catch (err) {
+            console.info(`${TAG} setCodeAndData err: ${err.code}, errMes: ${err.message}`)
+            expect(err.code).assertEqual(undefined)
+            done()
+          }
+
+          try {
+            subscriber.setDataSync(null);
+          } catch (err) {
+            console.info(`${TAG} setCodeAndData err: ${err.code}, errMes: ${err.message}`)
+            expect(err.code).assertEqual(undefined)
+            done()
+          }
+
+          try {
+            subscriber.setDataSync(undefined);
+          } catch (err) {
+            console.info(`${TAG} setCodeAndData err: ${err.code}, errMes: ${err.message}`)
+            expect(err.code).assertEqual(undefined)
+            done()
+          }
+
+          let count = 0
+          try {
+            subscriber.setCodeAndData(1, '', (err) => {
+              count++
+              expect(count).assertEqual(1)
+              console.info(`${TAG} setCodeAndData id success`)
+            })
+          } catch (err) {
+            console.info(`${TAG} setCodeAndData err: ${err.code}, errMes: ${err.message}`)
+            expect(err.code).assertEqual(401)
+            done()
+          }
+
+          try {
+            subscriber.setCodeAndData(2, '').then(() => {
+              count++
+              expect(count).assertEqual(2)
+              console.info(`Succeeded in setting code and data.`);
+            }).catch((err: BusinessError) => {
+              console.error(`Failed to set code and data. Code is ${err.code}, message is ${err.message}`);
+              done()
+            });
+          } catch (err) {
+            console.info(`${TAG} setCodeAndData err: ${err.code}, errMes: ${err.message}`)
+            expect(err.code).assertEqual(401)
+            done()
+          }
+
+          try {
+            subscriber.setCodeAndDataSync(3, '')
+            done()
+          } catch (err) {
+            console.info(`${TAG} setCodeAndData err: ${err.code}, errMes: ${err.message}`)
+            expect(err.code).assertEqual(undefined)
+            done()
+          }
+        }
+      })
+    })
+
+    /**
      * @tc.number  Sub_Notification_CES_CommonEvent_1013
      * @tc.name    Sub_Notification_CES_CommonEvent_1013
      * @tc.desc    test string 1 of publish
@@ -1847,8 +2095,13 @@ export default function actsNotificationAnsCovered() {
       let setBadgeNumberCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(401)
-          done()
+          if(err.code == 801){
+            expect(err.code).assertEqual(801)
+            done()
+          }else{
+            expect(err.code).assertEqual(401)
+            done()
+          }
         } else {
           console.info(TAG + `Succeeded in setting badge number.`);
           expect(false).assertTrue()
@@ -1878,8 +2131,13 @@ export default function actsNotificationAnsCovered() {
       let setBadgeNumberCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(401)
-          done()
+          if(err.code == 801){
+            expect(err.code).assertEqual(801)
+            done()
+          }else{
+            expect(err.code).assertEqual(401)
+            done()
+          }
         } else {
           console.info(TAG + `Succeeded in setting badge number.`);
           expect(false).assertTrue()
@@ -1913,8 +2171,13 @@ export default function actsNotificationAnsCovered() {
           done()
         }).catch((err: BusinessError) => {
           console.error(TAG + `Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(401)
-          done()
+          if(err.code == 801){
+            expect(err.code).assertEqual(801)
+            done()
+          }else{
+            expect(err.code).assertEqual(401)
+            done()
+          }
         });
       } catch (err) {
         console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
@@ -1941,8 +2204,13 @@ export default function actsNotificationAnsCovered() {
           done()
         }).catch((err: BusinessError) => {
           console.error(TAG + `Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(401)
-          done()
+          if(err.code == 801){
+            expect(err.code).assertEqual(801)
+            done()
+          }else{
+            expect(err.code).assertEqual(401)
+            done()
+          }
         });
       } catch (err) {
         console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);

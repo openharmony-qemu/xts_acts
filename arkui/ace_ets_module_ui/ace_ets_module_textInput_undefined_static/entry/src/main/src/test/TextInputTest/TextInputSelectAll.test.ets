@@ -22,6 +22,7 @@ import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, Component } from '@kit.TestKit';
+import { inputMethod } from '@kit.IMEKit';
 
 
 export default function TextInputSelectAllTest() {
@@ -75,7 +76,7 @@ export default function TextInputSelectAllTest() {
       let result = obj.getElement('$attrs').getBoolean('selectAll');
       expect(result).assertEqual(true);
       await CommonFunc.sleep(1000);
-      driver.pressBack();
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -87,7 +88,7 @@ export default function TextInputSelectAllTest() {
       result = obj.getElement('$attrs').getBoolean('selectAll');
       expect(result).assertEqual(false);
       await CommonFunc.sleep(1000);
-      driver.pressBack();
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -100,7 +101,7 @@ export default function TextInputSelectAllTest() {
       result = obj.getElement('$attrs').getBoolean('selectAll');
       expect(result).assertEqual(true);
       await CommonFunc.sleep(1000);
-      driver.pressBack();
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(1000);
 
       await button.click();
@@ -112,7 +113,7 @@ export default function TextInputSelectAllTest() {
       await CommonFunc.sleep(1000);
       result = obj.getElement('$attrs').getBoolean('selectAll');
       expect(result).assertEqual(false);
-      driver.pressBack();
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(1000);
 
       console.info('[TextInputSelectAllTest_static_0010] END');

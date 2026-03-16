@@ -18,6 +18,7 @@
         "MainAbility/pages/Rect/RectPage",
         "MainAbility/pages/Rect/RectCommonShapeMethodPage",
         "MainAbility/pages/Shape/shape",
+        "MainAbility/pages/Shape/BaseShapeWidthHeightNullUndefined",
        
         "MainAbility/pages/Circle/circleNew",
         "MainAbility/pages/Ellipse/ellipseNew",

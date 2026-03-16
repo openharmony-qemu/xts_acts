@@ -114,7 +114,7 @@ export default function injectOfflineResourcesTest() {
      */
     it('testInjectOfflineResources004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testInjectOfflineResources004", 148311)
-      Utils.registerBaseEvent("testInjectOfflineResources004", '17100002URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.', 148390, done,
+      Utils.registerBaseEvent("testInjectOfflineResources004", '17100002', 148390, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });
@@ -131,6 +131,22 @@ export default function injectOfflineResourcesTest() {
     it('testInjectOfflineResources005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testInjectOfflineResources005", 148311)
       Utils.registerBaseEvent("testInjectOfflineResources005", '17100001', 148400, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('injectOfflineResourcesTestButton',driver)
+    })
+    /**
+     * @tc.name   testInjectOfflineResources006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_0600
+     * @tc.desc   test injectOfflineResources first parameter1 is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testInjectOfflineResources006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testInjectOfflineResources006", 148311)
+      Utils.registerBaseEvent("testInjectOfflineResources006", '401', 148406, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected)
         });

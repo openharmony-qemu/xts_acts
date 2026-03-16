@@ -250,5 +250,107 @@ export default function ThermalControlMgrTest() {
             expect(level).assertEqual(7);
             done();
         })
+
+        /**
+         * @tc.name   ThermalControlMgrTest012
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_012
+         * @tc.desc   test request On null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("ThermalControlMgrTest012", Level.LEVEL0, async function (done) {
+            console.info('----------------------ThermalControlMgrTest012---------------------------');
+            function onSystemLoadChange(res) {
+                console.info('ThermalControlMgrTest012 res is ' + res);
+            }
+
+            try {
+                systemLoad.on(null, onSystemLoadChange);
+                console.info('ThermalControlMgrTest012 callback successful');
+                expect(false).assertTure();
+            } catch (err) {
+                console.error('ThermalControlMgrTest012 err.code is ' + JSON.stringify(err.code));
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   ThermalControlMgrTest013
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_013
+         * @tc.desc   test request On undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("ThermalControlMgrTest013", Level.LEVEL0, async function (done) {
+            console.info('----------------------ThermalControlMgrTest013---------------------------');
+            function onSystemLoadChange(res) {
+                console.info('ThermalControlMgrTest013 res is ' + res);
+            }
+
+            try {
+                systemLoad.on(undefined, onSystemLoadChange);
+                console.info('ThermalControlMgrTest013 callback successful');
+                expect(false).assertTure();
+            } catch (err) {
+                console.error('ThermalControlMgrTest013 err.code is ' + JSON.stringify(err.code));
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+
+        /**
+         * @tc.name   ThermalControlMgrTest014
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_014
+         * @tc.desc   test request Off null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("ThermalControlMgrTest014", Level.LEVEL0, async function (done) {
+            console.info('----------------------ThermalControlMgrTest014---------------------------');
+            function onSystemLoadChange(res) {
+                console.info('ThermalControlMgrTest014 res is ' + res);
+            }
+
+            try {
+                systemLoad.off(null, onSystemLoadChange);
+                console.info('ThermalControlMgrTest014 callback successful');
+                expect(false).assertTure();
+            } catch (err) {
+                console.error('ThermalControlMgrTest014 err.code is ' + JSON.stringify(err.code));
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   ThermalControlMgrTest015
+         * @tc.number SUB_RESOURCESCHEDULE_THERMAL_CONTROL_XTS_015
+         * @tc.desc   test request Off undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("ThermalControlMgrTest015", Level.LEVEL0, async function (done) {
+            console.info('----------------------ThermalControlMgrTest015---------------------------');
+            function onSystemLoadChange(res) {
+                console.info('ThermalControlMgrTest015 res is ' + res);
+            }
+
+            try {
+                systemLoad.off(undefined, onSystemLoadChange);
+                console.info('ThermalControlMgrTest015 callback successful');
+                expect(false).assertTure();
+            } catch (err) {
+                console.error('ThermalControlMgrTest015 err.code is ' + JSON.stringify(err.code));
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        })
+
     })
     }

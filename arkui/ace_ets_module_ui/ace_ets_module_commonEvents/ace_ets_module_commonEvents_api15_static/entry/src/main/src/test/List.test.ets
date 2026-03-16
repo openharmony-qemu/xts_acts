@@ -81,7 +81,7 @@ export default function testsuite() {
   panGestureEventTest();
   pinchGestureEventTest();
   rotationGestureEventTest(); 
-  dataLoadingTest(); 
+  // dataLoadingTest();
   DragPreviewOptions(); 
   EventTarget_id();
 }

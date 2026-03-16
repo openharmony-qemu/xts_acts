@@ -34,7 +34,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync001',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -60,6 +60,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -78,7 +79,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -102,6 +103,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -120,7 +122,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -144,6 +146,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -162,7 +165,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -202,7 +205,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -226,6 +229,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -244,7 +248,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -268,6 +272,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -286,7 +291,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync007',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -310,6 +315,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -328,7 +334,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync008',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -352,6 +358,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -370,7 +377,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync009',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -394,6 +401,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -412,7 +420,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync010',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -436,6 +444,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -454,7 +463,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync011',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -478,6 +487,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -496,7 +506,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync012',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -520,6 +530,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -538,7 +549,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync013',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -575,7 +586,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync014',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -614,7 +625,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync015',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -653,7 +664,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync016',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -692,7 +703,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync017',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -717,6 +728,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -735,7 +747,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync018',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -760,6 +772,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -778,7 +791,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync019',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -803,6 +816,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -821,7 +835,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync020',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -846,6 +860,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -864,7 +879,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync021',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -888,6 +903,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(false);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -906,7 +922,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync022',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -946,7 +962,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync023',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -986,7 +1002,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync024',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1021,7 +1037,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync025',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1056,7 +1072,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync026',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1097,7 +1113,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync027',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1139,7 +1155,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync028',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1181,7 +1197,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param001',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1204,6 +1220,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1222,7 +1239,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1243,6 +1260,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1261,7 +1279,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1282,6 +1300,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1300,7 +1319,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1337,7 +1356,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1358,6 +1377,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1376,7 +1396,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1397,6 +1417,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1415,7 +1436,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param007',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1436,6 +1457,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1454,7 +1476,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param008',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1475,6 +1497,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1493,7 +1516,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param009',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1514,6 +1537,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1532,7 +1556,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param010',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1553,6 +1577,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1571,7 +1596,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param011',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1592,6 +1617,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1610,7 +1636,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param012',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1644,7 +1670,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param013',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1678,7 +1704,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param014',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1712,7 +1738,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param015',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1748,7 +1774,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param016',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1770,6 +1796,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1788,7 +1815,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param017',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1810,6 +1837,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1828,7 +1856,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param018',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1850,6 +1878,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1868,7 +1897,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param019',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1890,6 +1919,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1908,7 +1938,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param020',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -1929,6 +1959,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(false);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;
@@ -1947,7 +1978,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync2Param021',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const pixelMap = image.createPixelMapUsingAllocatorSync(null, image.AllocatorType.AUTO);
         
@@ -1976,7 +2007,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync2Param022',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const pixelMap = image.createPixelMapUsingAllocatorSync(undefined, image.AllocatorType.AUTO);
         
@@ -2005,7 +2036,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapUsingAllocatorSync2Param023',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -2044,7 +2075,7 @@ export default function GraphicImageCreatePixelMap04() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapUsingAllocatorSync2Param024',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -2065,6 +2096,7 @@ export default function GraphicImageCreatePixelMap04() {
         expect(pixelMap !== null).assertTrue();
         expect(pixelMap.isEditable).assertEqual(true);
         expect(pixelMap.isStrideAlignment !== undefined).assertTrue();
+        await pixelMap.release();
         done();
       } catch (error) {
         const err = error as BusinessError;

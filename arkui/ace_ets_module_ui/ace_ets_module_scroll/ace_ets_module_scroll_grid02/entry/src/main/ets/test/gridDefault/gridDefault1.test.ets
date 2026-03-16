@@ -506,6 +506,27 @@ export default function gridDefaultTest1() {
       console.info('[gridScrollBarColorNullUndefined_0300] END');
     })
 
+    /**
+     * @tc.name   gridScrollBarColorNullUndefined_0400
+     * @tc.number gridScrollBarColorNullUndefined_0400
+     * @tc.desc   Test Grid scrollBarColor property with number
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('gridScrollBarColorNullUndefined_0400', Level.LEVEL0, async () => {
+      console.info('[gridScrollBarColorNullUndefined_0400] START');
+      let strJson: string = getInspectorByKey('grid_scrollBarColor_number');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[gridScrollBarColorNullUndefined_0400] type: " + JSON.stringify(obj.$type));
+      console.info("[gridScrollBarColorNullUndefined_0400] number is: " + JSON.stringify(obj.$attrs.scrollBarColor));
+
+      // Grid scrollBarColor 设置number
+      expect(obj.$attrs.scrollBarColor).assertEqual("#FFFFF000");
+      console.info('[gridScrollBarColorNullUndefined_0400] END');
+    })
+
     // ========== scrollBar tests ==========
     /**
      * @tc.name   gridScrollBarNullUndefined_0100

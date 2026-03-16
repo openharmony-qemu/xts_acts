@@ -53,7 +53,9 @@ let changedata: avSession.AVMetadata = {
   filter: 2,
   drmSchemes: ['123123','456456'],
   skipIntervals: 10,
-  displayTags: 1
+  displayTags: 1,
+  rewindSkipIntervals: 10,
+  fastForwardSkipIntervals: 10
 };
 
 let playbackstate: avSession.AVPlaybackState = {
@@ -3390,7 +3392,9 @@ export default function abilityTest() {
         filter: 3,
         drmSchemes: ['123123','4564561'],
         skipIntervals: 15,
-        displayTags: 1
+        displayTags: 1,
+        rewindSkipIntervals: 15,
+        fastForwardSkipIntervals: 15
       };
 
       await session.setAVMetadata(changedata1);
@@ -3416,7 +3420,7 @@ export default function abilityTest() {
       let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
         'album','writer','composer','duration','mediaImage','publishDate','subtitle',
         'description','lyric','singleLyricText','previousAssetId','nextAssetId',
-        'filter','drmSchemes','skipIntervals','displayTags']
+        'filter','drmSchemes','skipIntervals','displayTags', 'rewindSkipIntervals', 'fastForwardSkipIntervals']
       let flag = 0;
 
       await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {
@@ -3449,7 +3453,9 @@ export default function abilityTest() {
         filter: 3,
         drmSchemes: ['123123','4564561'],
         skipIntervals: 15,
-        displayTags: 1
+        displayTags: 1,
+        rewindSkipIntervals: 15,
+        fastForwardSkipIntervals: 15
       };
 
       await session.setAVMetadata(changedata1);
@@ -3476,7 +3482,7 @@ export default function abilityTest() {
       let filter = ['assetId','title','artist','author','avQueueName','avQueueId','avQueueImage',
         'album','writer','composer','duration','mediaImage','publishDate','subtitle',
         'description','lyric','singleLyricText','previousAssetId','nextAssetId',
-        'filter','drmSchemes','skipIntervals','displayTags']
+        'filter','drmSchemes','skipIntervals','displayTags', 'rewindSkipIntervals', 'fastForwardSkipIntervals']
       let flag = 0;
 
       await controller.on('metadataChange', filter, (metadata: avSession.AVMetadata) => {

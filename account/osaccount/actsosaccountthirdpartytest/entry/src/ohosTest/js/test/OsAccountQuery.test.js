@@ -1127,6 +1127,7 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       try {
         let data = await AccountManager.checkOsAccountConstraintEnabled(999, "constraint.fun");
         console.info("====>checkOsAccountConstraintEnabled data:" + JSON.stringify(data));
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
@@ -1172,11 +1173,49 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       try {
         await AccountManager.getOsAccountConstraints(9999);
         console.info("====>ActsOsAccountCheckConstraints_4200 run err");
+        console.info("====>run err");
         expect().assertFail();
         done();
       } catch (err) {
         console.info("====>ActsOsAccountCheckConstraints_4200 getOsAccountConstraints err:" + JSON.stringify(err));
         expect(err.code).assertEqual(12300003);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   OsAccountPermissionCheck_0100
+     * @tc.number OsAccountPermissionCheck_0100
+     * @tc.desc   check updateAccountInfo interface meeting ohos.permission.MANAGE_LOCAL_ACCOUNTS permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('OsAccountPermissionCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>OsAccountPermissionCheck_0100 ";
+      console.info(tag + "start====");
+      let key = '';
+      let oldDomainInfo = {
+        domain: key,
+        accountName: 'testAccount'
+      };
+      let newDomainInfo = {
+        domain: 'testDomain',
+        accountName: 'newTestAccountName'
+      };
+      try {
+        console.info(tag + "start updateAccountInfo");
+        await osaccount.DomainAccountManager.updateAccountInfo(oldDomainInfo, newDomainInfo);
+        console.info("====>run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        if (err.code === 801) {
+          console.info(tag + "Current device not support API: updateAccountInfo");
+        } else {
+          expect(err.code).assertEqual(12300003);
+        }
         done();
       }
     });

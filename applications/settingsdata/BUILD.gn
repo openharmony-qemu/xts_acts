@@ -15,6 +15,7 @@ group("settingsdata") {
   testonly = true
   deps = [
    "settings_ets:SettingsEtsTest",
+   "settings_ets_op:SettingsEtsOpTest",
    "settings_ets_static:SettingsEtsStaticTest",
   ]
 }

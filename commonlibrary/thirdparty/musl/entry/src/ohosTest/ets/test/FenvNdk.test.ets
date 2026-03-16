@@ -30,9 +30,9 @@ export default function fenvNdkTest() {
      * @tc.desc   test fetestexcept
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFEnvFeTestExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFEnvFeTestExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 0;
       let data: number = fenvndk.fetestexcept(a);
       expect(data).assertEqual(0);
@@ -45,9 +45,9 @@ export default function fenvNdkTest() {
      * @tc.desc   test fesetround
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFEnvFeSetRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFEnvFeSetRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 0x800000;
       let data: number = fenvndk.fesetround(a);
       expect(data).assertEqual(0);
@@ -60,9 +60,9 @@ export default function fenvNdkTest() {
      * @tc.desc   test fesetexceptflag
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFEnvFeSetExceptFlag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFEnvFeSetExceptFlag001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let data: number = fenvndk.fesetexceptflag(a);
       expect(data).assertEqual(0);
@@ -75,9 +75,9 @@ export default function fenvNdkTest() {
      * @tc.desc   test feraiseexcept
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFEnvFeRaiseExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFEnvFeRaiseExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let data: number = fenvndk.feraiseexcept(a);
       expect(data).assertEqual(0);
@@ -90,9 +90,9 @@ export default function fenvNdkTest() {
      * @tc.desc   test feclearexcept
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslFEnvFeClearExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslFEnvFeClearExcept001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 0;
       let data: number = fenvndk.feclearexcept(a);
       expect(data).assertEqual(0);

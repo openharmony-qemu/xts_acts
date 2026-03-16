@@ -185,8 +185,10 @@ async function testChangeTrack(fd: media.AVFileDescriptor, preparedOp: () => Pro
   }).catch(mediaTestBase.catchCallback);
 
   avPlayer!!.onStateChange((state, reason) => {
-    console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
-    await handleState(state, preparedOp, playedOp, stoppedOp);
+    waitForCompletion(async () => {
+      console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
+      await handleState(state, preparedOp, playedOp, stoppedOp);
+    })
   });
   avPlayer!!.onTrackChange((index, isSelection) => {
     console.info(`case trackChange called, index is ${index}, isSelection is ${isSelection}`);

@@ -27,10 +27,11 @@ struct webFantasyFont {
   @State defaultFontSize: number = 13
   @State minLogicalFontSize: number = 8
   controller: webView.WebviewController = new webView.WebviewController();
-  @State family: string = "fantasy";
-  @State family2: string = "cursive";
+  @State family: string|null|undefined = "fantasy";
+  @State family2: string|null|undefined = "cursive";
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+  @State selectionMenuOptions :Array<ExpandedMenuItemOptions>|undefined|null = []
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -79,7 +80,74 @@ struct webFantasyFont {
               Utils.emitEvent(CopyOptions.None, 150130)
               break;
             }
+            case "emitWebFantasyFont002": {
+              this.isPageEnd = -1;
+              this.family=''
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(CopyOptions.None, 121000)
+              break;
+            }
+            case "emitWebFantasyFont003": {
+              this.isPageEnd = -1;
+              this.family=null
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(true, 121010)
+              break;
+            }
+            case "emitWebFantasyFont004": {
+              this.isPageEnd = -1;
+              this.family=undefined
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(true, 121020)
+              break;
+            }
+            case "emitWebCursiveFont005": {
+              this.isPageEnd = -1;
+              this.family2=''
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(true, 121030)
+              break;
+            }
+            case "emitWebCursiveFont006": {
+              this.isPageEnd = -1;
+              this.family2=null
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(true, 121040)
+              break;
+            }
+            case "emitWebCursiveFont007": {
+              this.isPageEnd = -1;
+              this.family2=undefined
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(true, 121050)
+              break;
+            }
 
+            case "emitWebCursiveFont008": {
+              this.isPageEnd = -1;
+              this.family  = 'fantasy'
+              this.family2 = 'cursive'
+              this.selectionMenuOptions = null
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(true, 121060)
+              break;
+            }
+
+            case "emitWebCursiveFont009": {
+              this.isPageEnd = -1;
+              this.selectionMenuOptions = undefined
+              this.controller.refresh();
+              await waitForExist(() => this.isPageEnd, this.str, 0);
+              Utils.emitEvent(true, 121070)
+              break;
+            }
           }
         })
       }
@@ -88,12 +156,13 @@ struct webFantasyFont {
         .webFantasyFont(this.family)
         .webCursiveFont(this.family2)
         .copyOptions(CopyOptions.None)
+        .selectionMenuOptions(this.selectionMenuOptions)
         .onPageEnd((event) => {
-            if (event) {
-              this.isPageEnd = 0;
-              console.log('onPageEnd url:' + event.url);
-            }
-          })
+          if (event) {
+            this.isPageEnd = 0;
+            console.log('onPageEnd url:' + event.url);
+          }
+        })
 
     }
   }

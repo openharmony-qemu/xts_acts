@@ -85,15 +85,15 @@
  	     })
  	 
  	     /**
- 	      * @tc.name   SUB_WEB_WebNativeMessagingExtension_DisconnectNative_ConnectionId_Undefined_0200
- 	      * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_ConnectionId_Undefined_0200
+ 	      * @tc.name   SUB_WEB_WebNativeMessagingExtension_DisconnectNative_Undefined_0200
+ 	      * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_Undefined_0200
  	      * @tc.desc   Test disconnectNative with undefined connectionId parameter
  	      * @tc.type   FUNCTION
  	      * @tc.size   SMALLTEST
  	      * @tc.level  LEVEL2
  	      */
- 	     it('SUB_WEB_WebNativeMessagingExtension_DisconnectNative_ConnectionId_Undefined_0200', Level.LEVEL2, async () => {
- 	       const tcNumber = `SUB_WEB_WebNativeMessagingExtension_DisconnectNative_ConnectionId_Undefined_0200`;
+ 	     it('SUB_WEB_WebNativeMessagingExtension_DisconnectNative_Undefined_0200', Level.LEVEL2, async () => {
+ 	       const tcNumber = `SUB_WEB_WebNativeMessagingExtension_DisconnectNative_Undefined_0200`;
  	       hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
  	 
  	       try {

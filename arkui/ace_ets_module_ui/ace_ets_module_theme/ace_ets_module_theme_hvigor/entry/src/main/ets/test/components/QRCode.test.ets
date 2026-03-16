@@ -65,7 +65,7 @@ export default function qrCodeThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsQRCodeThemeColors_0100
+     * @tc.name   `ActsQRCodeThemeColors_0100`
      * @tc.number ActsQRCodeThemeColors_0100
      * @tc.desc   Check system colors values of QRCode component
      * @tc.type   FUNCTION
@@ -84,7 +84,7 @@ export default function qrCodeThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsQRCodeThemeColors_0200
+     * @tc.name   `ActsQRCodeThemeColors_0200`
      * @tc.number ActsQRCodeThemeColors_0200
      * @tc.desc   Check custom colors values of QRCode component
      * @tc.type   FUNCTION
@@ -105,7 +105,7 @@ export default function qrCodeThemeTest() {
     })
 
     /**
-     * @tc.name   ActsQRCodeThemeColors_0300
+     * @tc.name   `ActsQRCodeThemeColors_0300`
      * @tc.number ActsQRCodeThemeColors_0300
      * @tc.desc   Check custom colors values of QRCode component
      * @tc.type   FUNCTION

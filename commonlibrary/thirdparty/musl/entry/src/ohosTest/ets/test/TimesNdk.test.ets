@@ -31,9 +31,9 @@ export default function timesNdkTest() {
      * @tc.desc   test timess
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimesTimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimesTimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c: number = times.times();
       expect(c).assertEqual(0);
       done()

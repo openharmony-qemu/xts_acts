@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -111,6 +111,7 @@ export default function pasteboardDetectPatternsTest() {
         }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0200 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0300
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0300
@@ -221,6 +222,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0500 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0600
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0600
@@ -257,6 +259,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0600 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0700
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_0700
@@ -479,6 +482,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1200 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1300
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1300
@@ -554,6 +558,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1400 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1500
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1500
@@ -590,6 +595,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1500 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1600
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1600
@@ -626,6 +632,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1600 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1700
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1700
@@ -662,6 +669,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1700 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1800
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1800
@@ -698,6 +706,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1800 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1900
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1900
@@ -732,6 +741,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_1900 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2000
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2000
@@ -766,6 +776,7 @@ export default function pasteboardDetectPatternsTest() {
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2000 ---------end")
     });
+
     /**
      * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2100
      * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2100
@@ -799,6 +810,556 @@ export default function pasteboardDetectPatternsTest() {
         done()
       }
       console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2100 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2200
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2200
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2200 ---------start")
+      let textData = "https://www.baidu.com";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2200 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2300
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2300
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2300 ---------start")
+      const textData = "CA982";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+        }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2300 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2400
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2400
+     * @tc.desc   textData is "qqq@163.com",Patterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2400 ---------start")
+      const textData = "qqq@163.com";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns = [pasteboard.Pattern.HTTP_URL];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          const patterns1 = [];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.error(tag+'err.code' + err.code+'error.message'+err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        expect(null).assertFail()
+        console.log(tag+'err.code' + err.code+'error.message'+err.message)
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2400 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2500
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2500
+     * @tc.desc   textData is "qqq@163.com",Patterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2500 ---------start")
+      const textData = "qqq@163.com";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          const patterns1 = [];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.error(tag+'err.code' + err.code+'error.message'+err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        expect(null).assertFail()
+        console.log(tag+'err.code' + err.code+'error.message'+err.message)
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2500 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2600
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2600
+     * @tc.desc   pattterns value is pasteboard.Pattern.NUMBER/EMAIL_ADDRESS/URL/HTTP_URL/FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2600 ---------start")
+      const textData = "<!DOCTYPE html><html><head><title>" +
+        "的厚爱hi哦</title></head><body><h2>恶风无关痛痒和</h2>" +
+        "<p>Greg任何人https://exampsaole.com问我的<a href=\"https://exaeqdwerfmple.com\">" +
+        "如果qwiuyhw@huedqw.dsh站</a>CA982</p></body></html>";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns = [pasteboard.Pattern.NUMBER,pasteboard.Pattern.EMAIL_ADDRESS,pasteboard.Pattern.URL,pasteboard.Pattern.FLIGHT_NUMBER];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          console.log(tag+'patterns detectPatterns is: '+data.sort().join(''));
+          expect(data.length).assertEqual(4);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2600 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2700
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2700
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2700 ---------start")
+      let textData = "https://啊";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2700 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2800
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2800
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2800 ---------start")
+      let textData = "http://example.com.huhfbvhfbvfdbvhdf2432bhjb123jh3h3bh2、1b3h213b3h21b2311hbh222222222222222222^^89";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2800 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2900
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2900
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2900 ---------start")
+      let textData = "http://";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          const patterns1 = [];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_2900 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3000
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3000
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3000 ---------start")
+      let textData = "https://";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          const patterns1 = [];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3000 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3100
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3100
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3100 ---------start")
+      let textData = "htp://e";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          const patterns1 = [];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3100 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3200
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3200
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3200 ---------start")
+      let textData = "0C2094Z";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3200 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3300
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3300
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3300 ---------start")
+      let textData = "ZA039";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3300 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3400
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3400
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3400 ---------start")
+      let textData = "9A309";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          expect(data.length).assertEqual(1);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3400 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3500
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3500
+     * @tc.desc   pattterns value is pasteboard.Pattern.FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3500 ---------start")
+      let textData = "aC0294A 121234A ACB29A CA12 CA12345A AC02943 AC0294a";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          const patterns1 = [];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3500 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3600
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3600
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL/FLIGHT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3600 ---------start")
+      let textData = "1.jy:/*€ spuSHa9IGkDVaSζ) http://lag.c h@s.z CA9621";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.FLIGHT_NUMBER, pasteboard.Pattern.HTTP_URL, 
+      pasteboard.Pattern.URL, pasteboard.Pattern.EMAIL_ADDRESS, pasteboard.Pattern.NUMBER];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          expect(data.length).assertEqual(5);
+          expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3600 ---------end")
+    });
+
+    /**
+     * @tc.name   SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3700
+     * @tc.number SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3700
+     * @tc.desc   pattterns value is pasteboard.Pattern.HTTP_URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3700 ---------start")
+      let textData = "ceshihttp://aa.com";
+      let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN,textData);
+      await systemPasteboard.setData(pasteData);
+      let res: boolean = await systemPasteboard.hasData();
+      expect(res).assertEqual(true);
+      let patterns: Array<pasteboard.Pattern> = [pasteboard.Pattern.HTTP_URL];
+      try{
+        await systemPasteboard.detectPatterns(patterns).then((data: Array<pasteboard.Pattern>) => {
+          console.log(tag + "data.sort" + data.sort().join(''));
+          const patterns1 = [];
+          expect(data.sort().join('')).assertEqual(patterns1.sort().join(''));
+          done()
+        }).catch((err: BusinessError)=>{
+          console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+          expect(null).assertFail()
+          done()
+        })
+      }catch(err){
+        console.log(tag+'err.code' + err.code + 'error.message' + err.message);
+        expect(null).assertFail()
+        done()
+      }
+      console.info(tag + "SUB_Pasteboard_Local_SDk_SystemPasteboard_patterns_3700 ---------end")
     });
   })
 }

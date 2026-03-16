@@ -709,7 +709,7 @@ export default function ArrayTest() {
      */
     it("testArrayShrinkTo019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
-        let array1 = new Array<number>(1);
+        let array1 = new Array<number>(1, (i) => 0);
         array1.shrinkTo(Number.MIN_VALUE.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {
@@ -814,7 +814,7 @@ export default function ArrayTest() {
      */
     it("testArrayShrinkTo024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
-        let array1 = new Array<number>(1);
+        let array1 = new Array<number>(1, (i) => 0);
         array1.shrinkTo(Number.EPSILON.toInt());
         expect(array1.length).assertEqual(0);
       } catch (err) {

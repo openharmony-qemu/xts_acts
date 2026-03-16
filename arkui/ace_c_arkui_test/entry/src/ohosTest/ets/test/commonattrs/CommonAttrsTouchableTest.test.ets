@@ -35,9 +35,9 @@ export default function commonAttrsTouchableTest() {
      * @tc.level  LEVEL1
      */
     it('testCommonAttrsTouchable001', Level.LEVEL1, async (done: Function) => {
-      await Utils.pushPage(`commonattrs/CommonAttrsTouchableTest`, done);
+      await Utils.pushPage(`commonattrs/CommonAttrsTouchableTest`);
       await Utils.sleep(2000)
-      expect(Utils.getComponentInfoByKey('btnTouchable').$attrs.backgroundColor).assertEqual('#0xFF00FF00')
+      expect(Utils.getComponentInfoByKey('btnTouchable').$attrs.backgroundColor).assertEqual('#FFFF0000')
       done()
     })
 

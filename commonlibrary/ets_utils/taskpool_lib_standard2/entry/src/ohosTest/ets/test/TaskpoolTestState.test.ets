@@ -85,9 +85,9 @@ export default function TaskpoolTestState() {
      * @tc.desc   Perform serial tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTaskpoolState002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTaskpoolState002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testTaskpoolState002';
       console.info(`${caseName} test start`);
       try {

@@ -19,12 +19,12 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TimePickerDialogBGColor {
-  showDialog(color: ResourceColor | undefined | null | int) {
+  showDialog(color: ResourceColor | undefined) {
     this.getUIContext().showTimePickerDialog({
       format: TimePickerFormat.HOUR_MINUTE,
       useMilitaryTime: false,
       dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-      backgroundColor: (color as ResourceColor|undefined),
+      backgroundColor: (color as ResourceColor | undefined),
       backgroundBlurStyle: BlurStyle.NONE,
     })
 }
@@ -56,11 +56,6 @@ struct TimePickerDialogBGColor {
         })
         .id('colorBlueID')
 
-      Button('null')
-        .onClick((e: ClickEvent) => {
-          this.showDialog(null)
-        })
-        .id('nullID')
       Button('undefined')
         .onClick((e: ClickEvent) => {
           this.showDialog(undefined)

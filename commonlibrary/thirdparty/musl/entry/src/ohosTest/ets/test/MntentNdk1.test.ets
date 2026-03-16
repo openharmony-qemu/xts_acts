@@ -30,9 +30,9 @@ export default function mntentNdk1Test() {
      * @tc.desc   test getmntent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMntentGetMnTent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMntentGetMnTent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(mntent.getMnTent()).assertEqual(0)
       done()
     });
@@ -43,9 +43,9 @@ export default function mntentNdk1Test() {
      * @tc.desc   test getmntent_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslMntentGetMnTentR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslMntentGetMnTentR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(mntent.getMnTentR()).assertEqual(0)
       done()
     });

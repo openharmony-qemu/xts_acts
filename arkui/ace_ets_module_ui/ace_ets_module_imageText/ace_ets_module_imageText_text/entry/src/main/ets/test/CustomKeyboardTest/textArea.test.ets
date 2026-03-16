@@ -58,8 +58,13 @@ export default function customKeyboardTextAreaTest() {
       console.info('[customKeyboardTextAreaTest_0010] START');
 
       let driver:Driver = Driver.create();
-      let button: Component = await driver.findComponent(ON.id('BtnDelete'));
-      let text = await button.getText();
+      let textAreaTest: Component = await driver.findComponent(ON.id('textAreaTest'));
+      await CommonFunc.sleep(500);
+      await textAreaTest.click();
+      await CommonFunc.sleep(1000);
+      let buttonTest: Component = await driver.findComponent(ON.id('TextAreaBtnDelete'));
+      await CommonFunc.sleep(1000);
+      let text = await buttonTest.getText();
       
       console.info('[customKeyboardTextAreaTest_0010] textContent: ' + text);
       expect(text).assertEqual('delete');

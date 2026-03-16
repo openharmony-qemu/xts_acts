@@ -48,11 +48,6 @@
           }
         ]
       }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.GET_RUNNING_INFO"
-      }
     ]
   }
 }

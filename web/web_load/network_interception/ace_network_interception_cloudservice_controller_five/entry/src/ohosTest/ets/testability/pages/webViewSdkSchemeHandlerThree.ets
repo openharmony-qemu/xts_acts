@@ -312,6 +312,24 @@ struct webViewSdkSchemeHandlerThree {
                       }
                       break;
                     }
+                    case 'emitSdkSchemeHandlerOnRequestStartSetNull': {
+                      try {
+                        this.schemeHandler.onRequestStart(null);
+                      } catch (error) {
+                        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                        Utils.emitEvent(error.code, 26031068);
+                      }
+                      break;
+                    }
+                    case 'emitSdkSchemeHandlerOnRequestStartSetUndefined': {
+                      try {
+                        this.schemeHandler.onRequestStart(undefined);
+                      } catch (error) {
+                        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                        Utils.emitEvent(error.code, 26031069);
+                      }
+                      break;
+                    }
                   }
               })
           }

@@ -21,7 +21,7 @@ struct TabContentTest {
   @Local message: number = 0;
   @Local data: number[] = [0, 1];
   private controller: TabsController = new TabsController()
-
+  @Provider('infos') infos: number = 0;
   build() {
     Row() {
       Column() {
@@ -39,7 +39,6 @@ struct TabContentTest {
           this.controller.changeIndex(0);
         })
           .id('changeIndex0')
-
         Tabs({ controller: this.controller }) {
           ForEach(this.data, (item: number) => {
             TabContent() {
@@ -59,18 +58,20 @@ struct TabContentTest {
 struct FreezeChild2 {
   @Param message: number = 0;
   @Param index: number = 0;
-
+  @Consumer('infos') infos: number = 0;
+  @Local text1: string = '';
   @Monitor('message')
   onMessageUpdated(mon: IMonitor) {
-    prompt.showToast({
-      message: `FreezeChild message callback func ${this.message}, index: ${this.index}`,
-      duration: 500
-    })
+    this.infos ++ ;
+    this.text1  =`FreezeChild message callback func ${this.message}, index: ${this.index}, logNum: ${this.infos}`
   }
 
   build() {
-    Text('message' + `${this.message}, index: ${this.index}`)
-      .fontSize(9)
-      .fontWeight(FontWeight.Bold)
+    Column() {
+      Text('message' + `${this.message}, index: ${this.index}`)
+        .fontSize(9)
+        .fontWeight(FontWeight.Bold)
+      Text(this.text1).id('FreezeChild2_text_001').height('5%')
+    }
   }
 }

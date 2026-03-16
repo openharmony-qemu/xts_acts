@@ -1935,5 +1935,276 @@ export default function RDBStoreErrTest() {
             console.info(TAG + "************* RdbNotInErrTest001 end *************");
         })
 
+        /**
+       * @tc.name   RdbObtainDistributedTableNameErrTest001
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbObtainDistributedTableNameErrTest_0100
+       * @tc.desc   RdbObtainDistributedTableNameErrTest001
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbObtainDistributedTableNameErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest001 start *************");
+            try {
+                rdbStore.obtainDistributedTableName("", "EMPLOYEE", (err: BusinessError, tableName: String) => {
+                    if (err) {
+                      console.info(TAG + 'RdbObtainDistributedTableNameErrTest001 failed, err: ' + err.code + err.message);
+                      expect().assertFail();
+                      done();
+                    }
+                    console.info(TAG + 'RdbObtainDistributedTableNameErrTest001 successfully, tableName=.' + tableName);
+                    expect().assertFail();
+                    done();
+                  })
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest001 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+                done();
+            }
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest001 end *************");
+        })
+
+        /**
+       * @tc.name   RdbObtainDistributedTableNameErrTest002
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbObtainDistributedTableNameErrTest_0200
+       * @tc.desc   RdbObtainDistributedTableNameErrTest002
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbObtainDistributedTableNameErrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest002 start *************");
+            try {
+                rdbStore.obtainDistributedTableName(null, "EMPLOYEE", (err: BusinessError, tableName: String) => {
+                    if (err) {
+                      console.info(TAG + 'RdbObtainDistributedTableNameErrTest002 failed, err: ' + err.code + err.message);
+                      expect().assertFail();
+                      done();
+                    }
+                    console.info(TAG + 'RdbObtainDistributedTableNameErrTest002 successfully, tableName=.' + tableName);
+                    expect().assertFail();
+                    done();
+                  })
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest002 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+                done();
+            }
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest002 end *************");
+        })
+
+        /**
+       * @tc.name   RdbObtainDistributedTableNameErrTest003
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbObtainDistributedTableNameErrTest_0300
+       * @tc.desc   RdbObtainDistributedTableNameErrTest003
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbObtainDistributedTableNameErrTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest003 start *************");
+            try {
+                rdbStore.obtainDistributedTableName(undefined, "EMPLOYEE", (err: BusinessError, tableName: String) => {
+                    if (err) {
+                      console.info(TAG + 'RdbObtainDistributedTableNameErrTest003 failed, err: ' + err.code + err.message);
+                      expect().assertFail();
+                      done();
+                    }
+                    console.info(TAG + 'RdbObtainDistributedTableNameErrTest003 successfully, tableName=.' + tableName);
+                    expect().assertFail();
+                    done();
+                  })
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest003 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+                done();
+            }
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest003 end *************");
+        })
+
+        /**
+       * @tc.name   RdbObtainDistributedTableNameErrTest004
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbObtainDistributedTableNameErrTest_0400
+       * @tc.desc   RdbObtainDistributedTableNameErrTest004
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbObtainDistributedTableNameErrTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest004 start *************");
+            try {
+                rdbStore.obtainDistributedTableName("123", "", (err: BusinessError, tableName: String) => {
+                    if (err) {
+                      console.info(TAG + 'RdbObtainDistributedTableNameErrTest004 failed, err: ' + err.code + err.message);
+                      expect().assertFail();
+                      done();
+                    }
+                    console.info(TAG + 'RdbObtainDistributedTableNameErrTest004 successfully, tableName=.' + tableName);
+                    expect().assertFail();
+                    done();
+                  })
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest004 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+                done();
+            }
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest004 end *************");
+        })
+
+        /**
+       * @tc.name   RdbObtainDistributedTableNameErrTest005
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbObtainDistributedTableNameErrTest_0500
+       * @tc.desc   RdbObtainDistributedTableNameErrTest005
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbObtainDistributedTableNameErrTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest005 start *************");
+            try {
+                rdbStore.obtainDistributedTableName("123", null, (err: BusinessError, tableName: String) => {
+                    if (err) {
+                      console.info(TAG + 'RdbObtainDistributedTableNameErrTest005 failed, err: ' + err.code + err.message);
+                      expect().assertFail();
+                      done();
+                    }
+                    console.info(TAG + 'RdbObtainDistributedTableNameErrTest005 successfully, tableName=.' + tableName);
+                    expect().assertFail();
+                    done();
+                  })
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest005 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+                done();
+            }
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest005 end *************");
+        })
+
+        /**
+       * @tc.name   RdbObtainDistributedTableNameErrTest006
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbObtainDistributedTableNameErrTest_0600
+       * @tc.desc   RdbObtainDistributedTableNameErrTest006
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbObtainDistributedTableNameErrTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest006 start *************");
+            try {
+                rdbStore.obtainDistributedTableName("123", undefined, (err: BusinessError, tableName: String) => {
+                    if (err) {
+                      console.info(TAG + 'RdbObtainDistributedTableNameErrTest006 failed, err: ' + err.code + err.message);
+                      expect().assertFail();
+                      done();
+                    }
+                    console.info(TAG + 'RdbObtainDistributedTableNameErrTest006 successfully, tableName=.' + tableName);
+                    expect().assertFail();
+                    done();
+                  })
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest006 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+                done();
+            }
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest006 end *************");
+        })
+
+        /**
+       * @tc.name   RdbObtainDistributedTableNameErrTest007
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbObtainDistributedTableNameErrTest_0700
+       * @tc.desc   RdbObtainDistributedTableNameErrTest007
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbObtainDistributedTableNameErrTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest007 start *************");
+            try {
+                await rdbStore.obtainDistributedTableName("", "EMPLOYEE")
+                expect().assertFail();
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest007 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+            }
+            try {
+                await rdbStore.obtainDistributedTableName(null, "EMPLOYEE")
+                expect().assertFail();
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest007 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+            }
+            try {
+                await rdbStore.obtainDistributedTableName(undefined, "EMPLOYEE")
+                expect().assertFail();
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest007 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+            }
+            try {
+                await rdbStore.obtainDistributedTableName("123", "")
+                expect().assertFail();
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest007 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+            }
+            try {
+                await rdbStore.obtainDistributedTableName("123", null)
+                expect().assertFail();
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest007 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+            }
+            try {
+                await rdbStore.obtainDistributedTableName("123", undefined)
+                expect().assertFail();
+            } catch (err) {
+                console.error(TAG + " RdbObtainDistributedTableNameErrTest007 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+            }
+            console.info(TAG + "************* RdbObtainDistributedTableNameErrTest007 end *************");
+        })
+
+        /**
+       * @tc.name   RdbSyncErrTest001
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbSyncErrTest_0100
+       * @tc.desc   RdbSyncErrTest001
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbSyncErrTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+            console.info(TAG + "************* RdbSyncErrTest001 start *************");
+            try {
+                let predicates = new dataRdb.RdbPredicates("test");
+                await rdbStore.sync(dataRdb.SyncMode.SYNC_MODE_PUSH, null)
+                expect().assertFail();
+            } catch (err) {
+                console.error(TAG + " RdbSyncErrTest001 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+            }
+            console.info(TAG + "************* RdbSyncErrTest001 end *************");
+        })
+
+        /**
+       * @tc.name   RdbSyncErrTest002
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbSyncErrTest_0200
+       * @tc.desc   RdbSyncErrTest002
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+        it('RdbSyncErrTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+            console.info(TAG + "************* RdbSyncErrTest002 start *************");
+            try {
+                let predicates = new dataRdb.RdbPredicates("test");
+                await rdbStore.sync(dataRdb.SyncMode.SYNC_MODE_PULL, undefined)
+                expect().assertFail();
+            } catch (err) {
+                console.error(TAG + " RdbSyncErrTest002 failed" + err.code + err.message);
+                expect(err.code).assertEqual("401");
+            }
+            console.info(TAG + "************* RdbSyncErrTest002 end *************");
+        })
+
     })
 }

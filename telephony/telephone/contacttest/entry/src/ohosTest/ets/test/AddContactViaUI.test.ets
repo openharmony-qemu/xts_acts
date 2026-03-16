@@ -323,5 +323,53 @@ export default function AddContactViaUITest() {
       }
       console.info(`${caseName} test end `);
     });
+
+    /**
+     * @tc.name   contactsApi_addContactViaUI_empty_test_4200
+     * @tc.number contactsApi_addContactViaUI_empty_test_4200
+     * @tc.desc   Function test with undefined context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_addContactViaUI_empty_test_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_addContactViaUI_empty_test_4200";
+        console.info(`${caseName} test start`);
+        try {
+            let testContact: contact.Contact = {};
+            const result = await contact.addContactViaUI(undefined, testContact);
+            console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+            expect().assertFail();
+            done();
+        } catch (error) {
+            console.info(`${caseName} : addContactViaUI error = ${error.code}, ${error.message}`);
+            expect(error.code == 401).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   contactsApi_addContactViaUI_empty_test_4300
+     * @tc.number contactsApi_addContactViaUI_empty_test_4300
+     * @tc.desc   Function test with undefined contact object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("contactsApi_addContactViaUI_empty_test_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        const caseName: string = "contactsApi_addContactViaUI_empty_test_4300";
+        console.info(`${caseName} test start`);
+        try {
+            let context: Context = AppStorage.get('context') as Context;
+            const result = await contact.addContactViaUI(context, undefined);
+            console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+            expect().assertFail();
+            done();
+        } catch (error) {
+            console.info(`${caseName} : addContactViaUI error = ${error.code}, ${error.message}`);
+            expect(error != null).assertTrue();
+            done();
+        }
+    });
   });
 }

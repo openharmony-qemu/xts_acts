@@ -394,6 +394,56 @@ export default function NetworkManagerMdnsTest() {
     });
 
     /**
+     * @tc.name   testTelephonyNetManagerOnServiceFound0400
+     * @tc.number SUB_Telephony_NetManager_on_serviceFound_0400
+     * @tc.desc   Unsubscribe from notifications about MDNS service discovery.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyNetManagerOnServiceFound0400', Size.SMALLTEST | TestType.FUNCTION| Level.LEVEL3 , async  (done: Function) => {
+      let caseName = 'testTelephonyNetManagerOnServiceFound0400';
+      console.info(`${caseName} test start `);
+      try {
+        let callback: ()=>void = ()=>{
+          console.log(`${caseName}  on or off serviceFound  `);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }
+        let localServiceInfo = localServiceInfoTypeTcp();
+        let discoveryService = mdns.createDiscoveryService(context , serviceTypeTcp);
+        discoveryService.on('serviceFound', (data: mdns.LocalServiceInfo) => {
+          console.info('serviceFound', JSON.stringify(data));
+          mdns.resolveLocalService(context, data, (error: BusinessError, resolveData: mdns.LocalServiceInfo) => {
+            console.info('serviceFound', JSON.stringify(resolveData));
+          });
+        });
+        discoveryService.off("serviceFound", callback);
+        mdns.addLocalService(context , localServiceInfo, async (err, data) => {
+          if (err) {
+            console.log(`${caseName} addLocalService fail ${JSON.stringify(err)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.log(`${caseName} addLocalService success `);
+            discoveryService.startSearchingMDNS();
+            await sleep(500);
+            removeTheService(localServiceInfo);
+            ExpectTrue(data != null);
+            done();
+          }
+        });
+      }catch (err) {
+        console.info(`${caseName} catch err is `+JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testTelephonyNetManagerOnServiceLost0100
      * @tc.number SUB_Telephony_NetManager_on_serviceLost_0100
      * @tc.desc   Subscribe to the notification that the MDNS service is removed.

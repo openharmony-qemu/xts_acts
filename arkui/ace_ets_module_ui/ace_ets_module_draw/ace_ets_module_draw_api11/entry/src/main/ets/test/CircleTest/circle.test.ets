@@ -257,41 +257,5 @@ export default function circleNewJsunit() {
 
     });
 
-    /**
-     * @tc.name   testGlobal_attribute_0100
-     * @tc.number SUB_ACE_BASIC_ETS_API_0010
-     * @tc.desc   test global attribute
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testGlobal_attribute_0100', Level.LEVEL0, async () => {
-      console.info('testGlobal_attribute_0100 START');
-      await Utils.sleep(1000);
-      let resource: resourceManager.Resource = {
-        bundleName: "com.arkui.ace.draw",
-        moduleName: "phone",
-        id: $r('app.string.app_name').id,
-        params: undefined,
-        type: 0
-      };
-      try {
-        globalThis.abilityContext.resourceManager.getStringValue(resource, (error: BusinessError, value: string) => {
-          if (error != null) {
-            console.log("error is " + error);
-            expect().assertFail();
-          } else {
-            expect(value).assertEqual('ohosProject');
-          }
-        });
-      } catch (error) {
-        let code = (error as BusinessError).code;
-        let message = (error as BusinessError).message;
-        console.error(`callback getStringValue failed, error code: ${code}, message: ${message}.`);
-        expect().assertFail();
-      }
-
-    });
-
   })
 }

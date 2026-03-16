@@ -22,28 +22,40 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct SearchExample {
-  @State enterKeyType:string = '';
-  @State isOnSubmitValid:boolean = false;
-
+  @State state: boolean = false;
+  @State content: boolean = false;
+  @State text: string = 'As the sun begins to set, casting a warm golden hue across the sky,' +
+    'the world seems to slow down and breathe a sigh of relief. The sky is painted with hues of orange, ' +
+    ' pink, and lavender, creating a breathtaking tapestry that stretches as far as the eye can see.' +
+    'The air is filled with the sweet scent of blooming flowers, mingling with the earthy aroma of freshly turned soil.' +
+    'it casts a warm,' +
+    'golden hue that spreads like liquid amber across the vast expanse of the sky.' +
+    'The once-blue heavens gradually transform, ';
   build() {
     Row(undefined) {
-      Column(undefined) {
-        Text(`${this.enterKeyType}`)
-          .id('enterKeyType')
-        Search({value: ''})
-          .id('SearchTest')
-          .enterKeyType(EnterKeyType.Go)
-          .onSubmit(this.isOnSubmitValid ? (enterKey: string, event?: SubmitEvent) => {
-            this.enterKeyType = enterKey;
-            this.isOnSubmitValid = true;
-            console.info(`${enterKey}`);
-          } as SearchSubmitCallback : undefined)
-        Button('change isOnSubmitValid:' + this.isOnSubmitValid)
-          .onClick((event: ClickEvent) => {
-            this.enterKeyType = '';
-            this.isOnSubmitValid = !this.isOnSubmitValid;
+      Column( { space: 10 } as ColumnOptions ) {
+        Text(`${this.content}`)
+          .id('Text')
+        Button(`onSubmit: ${this.state}`)
+          .id('button_onSubmit')
+          .width(240)
+          .fontSize(16)
+          .margin(10)
+          .onClick((e: ClickEvent)=>{
+            this.content = false;
+            this.state = ! this.state;
           })
-          .id('changeIsOnSubmitValid')
+
+        Search({value: this.text})
+          .height(56)
+          .id('Search')
+          .enterKeyType(EnterKeyType.Go)
+          .onSubmit(this.state ? (enterKey: string, event?: SubmitEvent) => {
+            this.content = true;
+         } as SearchSubmitCallback : undefined)
+        Search({value: ''})
+          .id('Search2')
+
       }.width('100%')
     }
     .height('100%')

@@ -21,7 +21,7 @@ const triggerAction = 'accessibilityFocus';
 const eventType = 'accessibilityFocus';
 
 export default function AccessibleSendEvent() {
-describe('AccessibleSendEvent', function () {
+describe('AccessibleSendEventAdapt001', function () {
   beforeAll(async function (done) {
     let driver = Driver.create();
     console.info(`AccessibleSendEvent: beforeAll starts`);

@@ -14,8 +14,10 @@
  */
 import webJsunit from './WebJsunit.test';
 import onceStringError from './OnceStringError.test';
+import clientAuthenticationHandlerConfirm from './ClientAuthenticationHandlerConfirm.test';
 
 export default function testsuite() {
   webJsunit();
   onceStringError();
+  clientAuthenticationHandlerConfirm();
 }
