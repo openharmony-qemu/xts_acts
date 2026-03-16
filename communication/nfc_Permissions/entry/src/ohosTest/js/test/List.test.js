@@ -13,13 +13,7 @@
  * limitations under the License.
  */
 
-import nfcATagSessionTest from './ATagSession.test.js';
-import nfcControllerTest from './Controller.test.js';
-import nfcIsoDepTagTest from './IsoDepTag.test.js';
-import nfcMifareClassicTag from './MifareClassicTag.test.js';
-import nfcMifareUltralightTag from './MifareUltralightTag.test.js';
 import nfcTagABFVTest from './TagABFV.test.js';
-import nfcNDEFTagTest from './NDEFTag.test.js';
 import EmptyTest from './Empty.test.js';
 import GetParam from './GetParam.test.js';
 let info = canIUse("SystemCapability.Communication.NFC.Core");
