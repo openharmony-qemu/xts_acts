@@ -1161,7 +1161,8 @@ export default function Sim2Public() {
                 ];
                 if(data != undefined){
                   hilog.info(domain, tag, `${caseName} , data->${JSON.stringify(data)} `);
-                  ExpectTrue(simStateAry.includes(data));
+                  let type:boolean =simStateAry.includes(data);
+                  ExpectTrue(type);
                   done();
                 }
                 
@@ -1650,14 +1651,16 @@ export default function Sim2Public() {
             hilog.info(domain, tag, `${caseName}:success has SimCard1,data->${JSON.stringify(data)}`);
             sim.hasOperatorPrivileges(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
               hilog.info(domain, tag, `${caseName}:Invalid parameter value.000000 err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-              if (!data) {
+              if (data) {
+                hilog.info(domain, tag,
+                  `${caseName}. data->${JSON.stringify(data)}`);
+                  expect().assertFail();
+                  hilog.info(domain, tag, `${caseName} test end `);
+                  done();
+              } else {
                 hilog.info(domain, tag,
                   `${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-                expect(!data).assertTrue();
-                hilog.info(domain, tag, `${caseName} test end `);
-                done();
-              } else {
-                expect().assertFail();
+                ExpectTrue(true);
                 hilog.info(domain, tag, `${caseName} test end `);
                 done();
               }
