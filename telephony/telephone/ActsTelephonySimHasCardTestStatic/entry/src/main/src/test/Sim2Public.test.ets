@@ -1144,7 +1144,7 @@ export default function Sim2Public() {
           if (data) {
             hilog.info(domain, tag,
               `${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-            sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType | undefined) => {
+            sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType ) => {
               if (err?.code === 0) {
                 const simStateAry: sim.CardType[] = [
                   sim.CardType.UNKNOWN_CARD,
