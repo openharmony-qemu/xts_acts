@@ -217,7 +217,7 @@ export default function nfcNDEFErrorTest() {
                 try {
                     NdefTag.readNdef('test')((err, data)=> {
                         if (err) {
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                             console.info("[NFC_test]ndef4 readNdef errcode: " + err);
                         } else {
                             expect(data!=true).assertTrue();
@@ -347,7 +347,7 @@ export default function nfcNDEFErrorTest() {
                     NdefTag.writeNdef('test', (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]ndef6 writeNdef errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             expect(data).assertInstanceOf('Number')
                             console.info("[NFC_test]ndef6 writeNdef data: " + data);
