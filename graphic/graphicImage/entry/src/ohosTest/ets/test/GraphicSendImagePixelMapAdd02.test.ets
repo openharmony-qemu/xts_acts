@@ -37,6 +37,7 @@ class MySequence1 implements rpc.Parcelable {
       console.error(`www data createPixelMapFromParcel success.`);
       expect(this.pixel_map.isEditable).assertFalse();
       expect(this.pixel_map.isStrideAlignment).assertFalse();
+      this.pixel_map.release();
     } catch(e) {
       let error = e as BusinessError;
       console.error(`www data createPixelMapFromParcel error. code is ${error.code}, message is ${error.message}`);
@@ -61,6 +62,7 @@ class MySequence2 implements rpc.Parcelable {
       console.error(`www data createPixelMapFromParcel success.`);
       expect(this.pixel_map.isEditable).assertTrue();
       expect(this.pixel_map.isStrideAlignment).assertTrue();
+      this.pixel_map.release();
     } catch(e) {
       let error = e as BusinessError;
       console.error(`www data createPixelMapFromParcel error. code is ${error.code}, message is ${error.message}`);
@@ -88,8 +90,11 @@ class MySequence3 implements rpc.Parcelable {
         this.pixel_map = pixelMap;
         expect(this.pixel_map.isEditable).assertTrue();
         expect(this.pixel_map.isStrideAlignment).assertTrue();
-        pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
+        await pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
+          pixelMap.release();
+          this.pixel_map.release();
+          pixelParcel.release();
         })
       }).catch((err: BusinessError) => {
         console.info('www data unmarshalling error ', err);
@@ -118,8 +123,11 @@ class MySequence4 implements rpc.Parcelable {
         this.pixel_map = pixelMap;
         expect(this.pixel_map.isEditable).assertFalse();
         expect(this.pixel_map.isStrideAlignment).assertFalse();
-        pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
+        await pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
+          pixelMap.release();
+          this.pixel_map.release();
+          pixelParcel.release();
         })
       }).catch((err: BusinessError) => {
         console.info('www data unmarshalling error ', err);
