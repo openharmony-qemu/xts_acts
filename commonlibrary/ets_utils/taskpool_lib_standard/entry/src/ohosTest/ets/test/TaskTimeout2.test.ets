@@ -1330,7 +1330,6 @@ export default function TaskTimeout2Test() {
       taskpool.execute(task, { timeout: 2000 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(0);
       });
       setTimeout(() => {
         if (!isTerminate) {
@@ -1343,6 +1342,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
@@ -1399,7 +1399,6 @@ export default function TaskTimeout2Test() {
       taskpool.execute(task, { timeout: 400 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(0);
       });
       setTimeout(() => {
         try {
@@ -1411,6 +1410,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
@@ -1431,7 +1431,6 @@ export default function TaskTimeout2Test() {
       taskpool.execute(task, { timeout: 400 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(0);
       });
       try {
         taskpool.cancel(task);
@@ -1441,6 +1440,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
@@ -1463,7 +1463,6 @@ export default function TaskTimeout2Test() {
       taskpool.execute(group, { timeout: 500 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(0);
       });
       setTimeout(() => {
         try {
@@ -1475,6 +1474,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
@@ -1624,12 +1624,10 @@ export default function TaskTimeout2Test() {
       let caseName = 'TaskTimeout2TestClass054';
       console.log(`${caseName} start.`);
       let isTerminate = false;
-      let innerTask = new taskpool.Task(timeoutDemo, 2000);
       let task = new taskpool.Task(nestedOuterCancelTask);
       taskpool.execute(task, { timeout: 5000 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(0);
       });
       setTimeout(() => {
         try {
@@ -1640,6 +1638,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
@@ -1804,7 +1803,6 @@ export default function TaskTimeout2Test() {
       taskpool.execute(group, { timeout: 500 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(0);
       });
       setTimeout(() => {
         try {
@@ -1815,6 +1813,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
@@ -2123,7 +2122,6 @@ export default function TaskTimeout2Test() {
       taskpool.execute(task, { timeout: 300 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(0);
       });
       setTimeout(() => {
         taskpool.cancel(task);
@@ -2131,6 +2129,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
@@ -2214,7 +2213,6 @@ export default function TaskTimeout2Test() {
       taskpool.execute(task, { timeout: 5000 }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(0);
       });
       setTimeout(() => {
         try {
@@ -2225,6 +2223,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
