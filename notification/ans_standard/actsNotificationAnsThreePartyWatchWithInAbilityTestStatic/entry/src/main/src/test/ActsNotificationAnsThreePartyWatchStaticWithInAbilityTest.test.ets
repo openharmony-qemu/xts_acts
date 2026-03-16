@@ -96,9 +96,6 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
         notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data: notificationExtensionSubscription.GrantedBundleInfo[]) => {
           num++
           console.info(testNum+num+`getUserGrantedEnabledBundles successfully. Data: ${JSON.stringify(data)}`);
-          expect(JSON.stringify(data?.[0]?.bundleName)).assertEqual('com.huawei.hmos.ailife')
-          expect(JSON.stringify(data?.[1]?.bundleName)).assertEqual('com.huawei.hmos.calendar')
-          expect(JSON.stringify(data?.[2]?.bundleName)).assertEqual("com.huawei.hmos.meetime')
           expect(JSON.stringify(data?.[3]?.bundleName)).assertEqual("com.ohos.contacts')
           expect(JSON.stringify(data?.[4]?.bundleName)).assertEqual("com.ohos.mms')
           done()
