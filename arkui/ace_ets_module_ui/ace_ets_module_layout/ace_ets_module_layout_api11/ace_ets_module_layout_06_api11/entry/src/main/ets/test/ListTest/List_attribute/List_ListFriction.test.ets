@@ -68,14 +68,14 @@ export default function list_ListFrictionTest() {
     });
 
     /**
-     * @tc.name   testListFriction
+     * @tc.name   testListFrictionAdapt001
      * @tc.number SUB_ACE_LIST_LISTFRICTION_002
      * @tc.desc   set friction to 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testListFriction',  Level.LEVEL0, async  (done: Function)=> {
+    it('testListFrictionAdapt001',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testListFriction] START');
       globalThis.value.message.notify({name:'friction', value:10})
       await CommonFunc.sleep(2000);

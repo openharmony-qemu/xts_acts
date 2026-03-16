@@ -50,6 +50,33 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 Failed to get private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
+
+      try {
+        await certManager.getPrivateCertificate("");
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 private certificate success. `);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 Failed1 to get private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+
+      try {
+        await certManager.getPrivateCertificate(null);
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 private certificate success. `);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 Failed2 to get private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+
+      try {
+        await certManager.getPrivateCertificate(undefined);
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 private certificate success. `);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0100 Failed3 to get private certificate. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
       done();
     });
 
@@ -79,6 +106,51 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         expect(cmResult2 != undefined && cmResult2 != null).assertFail();
       } catch (err) {
         console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 Failed to get private certificate. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        cmResult2 = await new Promise<certManager.CMResult>((resolve, reject) => {
+          certManager.getPrivateCertificate("", (err: Error, CMResult: certManager.CMResult) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(CMResult);
+            }
+          });
+        });
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 Failed to get null private certificate. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        cmResult2 = await new Promise<certManager.CMResult>((resolve, reject) => {
+          certManager.getPrivateCertificate(null, (err: Error, CMResult: certManager.CMResult) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(CMResult);
+            }
+          });
+        });
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 Failed to get null private certificate. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(401);
+      }
+  
+      try {
+        cmResult2 = await new Promise<certManager.CMResult>((resolve, reject) => {
+          certManager.getPrivateCertificate(undefined, (err: Error, CMResult: certManager.CMResult) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(CMResult);
+            }
+          });
+        });
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0101 Failed to get undefined private certificate. Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401);
       }
       done();
@@ -126,6 +198,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
             } else {
               resolve(CMResult);
             }
+
+
           });
         });
         console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0103 private certificate success. `);
@@ -154,21 +228,43 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         padding: certManager.CmKeyPadding.CM_PADDING_PSS,
         digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
       }
-      try {
-        CMHandle1 = await new Promise<certManager.CMHandle>((resolve, reject) => {
-          certManager.init(null, req, (err: Error, CMHandle: certManager.CMHandle) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(CMHandle);
-            }
+      const param1 = ["", null, undefined];
+      for (let i = 0; i < param1.length; i++) {
+        try {
+          CMHandle1 = await new Promise<certManager.CMHandle>((resolve, reject) => {
+            certManager.init(param1[i], req, (err: Error, CMHandle: certManager.CMHandle) => {
+              if (err) {
+                reject(err);
+              } else {
+                resolve(CMHandle);
+              }
+            });
           });
-        });
-        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init success. `);
-        expect(CMHandle1 != undefined && CMHandle1 != null).assertFail();
-      } catch (err) {
-        console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init err: " + err.code);
-        expect(err.code).assertEqual(401);
+          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init success. `);
+          expect(CMHandle1 != undefined && CMHandle1 != null).assertFail();
+        } catch (err) {
+          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init err: " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
+      const param2 = [null, undefined];
+      for (let i = 0; i < param2.length; i++) {
+        try {
+          CMHandle1 = await new Promise<certManager.CMHandle>((resolve, reject) => {
+            certManager.init(uri, param2[i], (err: Error, CMHandle: certManager.CMHandle) => {
+              if (err) {
+                reject(err);
+              } else {
+                resolve(CMHandle);
+              }
+            });
+          });
+          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init success. `);
+          expect(CMHandle1 != undefined && CMHandle1 != null).assertFail();
+        } catch (err) {
+          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0105 init err: " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
       }
       done();
     });
@@ -190,13 +286,27 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         padding: certManager.CmKeyPadding.CM_PADDING_PSS,
         digest: certManager.CmKeyDigest.CM_DIGEST_SHA256
       }
-      try {
-        await certManager.init(null, req);
-        console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
-        expect(null).assertFail();
-      } catch (err) {
-        console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
-        expect(err.code).assertEqual(401);
+      const param1 = ["",null,undefined];
+      for(let i=0;i<param1.length;i++){
+        try {
+          await certManager.init(param1[i], req);
+          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
+          expect(null).assertFail();
+        } catch (err) {
+          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
+      }
+      const param2 = [null,undefined];
+      for(let i=0;i<param2.length;i++){
+        try {
+          await certManager.init(uri, param2[i]);
+          console.error(`SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init success. `);
+          expect(null).assertFail();
+        } catch (err) {
+          console.error("SUB_Security_CertManager_GetPriCertJsApi_Func_0106 init err: " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+        }
       }
       done();
     });

@@ -46,13 +46,13 @@ export default function alphabetIndexerThemeTest() {
   let colorValues: Map<string, string> | undefined = new Map<string, string>();
 
   describe(SUITE, () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlphabetIndexerPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const options: router.RouterOptions = {
           url: `MainAbility/pages/components/AlphabetIndexerPage`,

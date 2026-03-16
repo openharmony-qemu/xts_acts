@@ -52,7 +52,7 @@ const waitUiReadyMs = 1000;
 
 export default function ProvideJsunit() {
   describe('ProvideJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ProvideJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

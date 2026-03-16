@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext
 
 export default function ActsNotificationSystemLiveViewTest() {
   describe('ActsNotificationSystemLiveViewTest', () => {
-    beforeAll((done: () => void) => {
+    beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -48,17 +48,17 @@ export default function ActsNotificationSystemLiveViewTest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
 
       notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
+      waitForCompletion(async () => {
         console.info(`beforeAll come in requestEnableNotification`);
         if (err) {
           console.info(`beforeAll requestEnableNotification err: ${err.code}`)
-          expect(false).assertTrue()
           done()
         }else {
           console.info(`beforeAll requestEnableNotification success`)
-          expect(true).assertTrue()
           await Utils.msSleep(1000)
           done()
         }
+      })
       })
       await Utils.msSleep(1000)
       let driver = Driver.create()

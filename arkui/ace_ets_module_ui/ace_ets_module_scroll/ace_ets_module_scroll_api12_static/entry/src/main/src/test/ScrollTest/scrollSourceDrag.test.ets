@@ -36,7 +36,7 @@ const waitUiReadyMs = 1000;
 
 export default function scrollSourceDrag() {
   describe('scrollSourceDrag', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });

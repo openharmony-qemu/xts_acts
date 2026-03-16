@@ -62,7 +62,7 @@ export default function image10bitPixelMap() {
     let openHdrPic: HdrPicture | undefined;
     let isSupportHEICEncode: boolean;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined;
       cacheDir = Hypium.get('cacheDir') as string | undefined;
@@ -392,21 +392,23 @@ export default function image10bitPixelMap() {
           }
         } else {
           imagePacker.packToFile(pixelMap!, writeFile.fd, packOpt, (err: BusinessError|null) => {
-            if (!isSupportHdr) {
-              logger.log(`device not support hdr`);
-              expect(!isSupportHdr).assertTrue();
-              done();
-            } else {
-              if (err && err.code) {
-                logger.log(`packToFile callback error: ` + err.message);
-                expect(false).assertTrue();
+            waitForCompletion(async () => {
+              if (!isSupportHdr) {
+                logger.log(`device not support hdr`);
+                expect(!isSupportHdr).assertTrue();
+                done();
+              } else {
+                if (err && err.code) {
+                  logger.log(`packToFile callback error: ` + err.message);
+                  expect(false).assertTrue();
+                  done();
+                }
+                let ret = await checkPackResult(orgInfo, writeFile.fd, format, packOpt.format, logger);
+                fs.closeSync(writeFile.fd);
+                expect(ret).assertTrue();
                 done();
               }
-              let ret = await checkPackResult(orgInfo, writeFile.fd, format, packOpt.format, logger);
-              fs.closeSync(writeFile.fd);
-              expect(ret).assertTrue();
-              done();
-            }
+            })
           })
         }
       } catch (error) {

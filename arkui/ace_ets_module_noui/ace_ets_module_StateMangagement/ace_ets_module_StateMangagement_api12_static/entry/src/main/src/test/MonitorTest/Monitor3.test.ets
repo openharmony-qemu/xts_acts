@@ -50,7 +50,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function Monitor3Test() {
   describe('Monitor3Test', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Monitor3Test beforeEach start");
 
 

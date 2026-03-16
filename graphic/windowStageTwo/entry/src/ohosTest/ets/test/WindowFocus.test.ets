@@ -429,7 +429,6 @@ export default function windowFocusTest() {
       try{
         windowClass.isWindowHighlighted();
         await windowClass.destroyWindow();
-        expect(true).assertTrue()
         done();
       } catch(err) {
         console.log(`${caseName} :sub window setSubWindowZLevel fail1:`+err.code);
@@ -618,7 +617,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -649,13 +648,13 @@ export default function windowFocusTest() {
         });
         windowClass.off('noInteractionDetected');
         await sleep(3000);
-        expect(true).assertTrue();
+       
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -706,7 +705,7 @@ export default function windowFocusTest() {
           subWindowClass.destroyWindow();
           if (err.code == 801) {
             console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-            expect(true).assertTrue();
+           
             done();
           } else {
             console.log(msgStr + 'Failed to setWindowMask');
@@ -718,7 +717,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -775,7 +774,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -833,7 +832,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -890,7 +889,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -930,7 +929,7 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -965,11 +964,11 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else if (error.code == 401) {
           console.log(msgStr + '入参错误，不支持0.5');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -1002,11 +1001,11 @@ export default function windowFocusTest() {
         console.log(msgStr + 'Failed to register callback. Cause code:' + JSON.stringify(error.code) + error.message);
         if (error.code == 801) {
           console.log(msgStr + '此设备不支持注册noInteractionDetected监听');
-          expect(true).assertTrue();
+         
           done();
         } else if (error.code == 401) {
           console.log(msgStr + '入参错误，不支持-1');
-          expect(true).assertTrue();
+         
           done();
         } else {
           console.log(msgStr + 'Failed to setWindowMask');
@@ -1392,6 +1391,7 @@ export default function windowFocusTest() {
         done()
       }
     });
+    
 
     /**
      * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_0100

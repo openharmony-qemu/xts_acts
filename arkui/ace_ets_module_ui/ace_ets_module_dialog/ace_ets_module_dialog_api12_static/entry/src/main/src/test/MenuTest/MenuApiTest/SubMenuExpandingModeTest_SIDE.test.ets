@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SubMenuExpandingModeTest_SIDE() {
   describe('SubMenuExpandingModeTest_SIDE', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     })
     beforeEach(async (): Promise<void> => {

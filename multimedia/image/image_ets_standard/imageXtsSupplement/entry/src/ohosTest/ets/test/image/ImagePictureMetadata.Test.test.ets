@@ -95,6 +95,45 @@ export default function ImagePictureMetadataTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   PICTURE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_002
+     * @tc.number PICTURE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_002
+     * @tc.desc   GetHdrComposedPixelmapWithOptions  Unsupported operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('PICTURE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_002', Level.LEVEL0, async (done: Function,Picture:image.Picture) => {
+      const testName = 'PICTURE_GET_HDR_COMPOSED_PIXELMAP_WITH_OPTIONS_002';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let array = new ArrayBuffer(300000000);
+      let pathUri = 'AllAuxiliaryPictures_exclude_fragment.jpg';
+      let path = `file://${testContext.filesDir}/${pathUri}`;
+      console.info(TAG, testName, `path: ${path}`);
+      const fd = await fs.open(path, fs.OpenMode.READ_ONLY);
+      console.info(TAG, testName, `open: ${fd.fd}`);
+      let readLength = await fs.read(fd.fd, array);
+      console.info(TAG, testName, `readLength: ${readLength}`);
+      try {
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        }
+        let imageSource: image.ImageSource = image.createImageSource(array, ops);
+        let pixelMap: image.PixelMap = await imageSource.createPixelMap();
+        let pictureObj: image.Picture = image.createPicture(pixelMap);
+        console.info(TAG, testName, 'Create picture succeeded');
+        let hdrComposedPixelmap: image.PixelMap | undefined = await pictureObj.getHdrComposedPixelmapWithOptions(undefined);
+        console.info(TAG, testName, `hdrComposedPixelmap wanted be errcode 7600201`, hdrComposedPixelmap);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
+        expect(err.code).assertEqual('7600201');
+      }
+      done();
+    })
+
+
     /**
      * @tc.name   METADATA_SET_BLOB_001
      * @tc.number METADATA_SET_BLOB_001

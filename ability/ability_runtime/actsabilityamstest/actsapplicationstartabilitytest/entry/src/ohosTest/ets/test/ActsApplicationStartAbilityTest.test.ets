@@ -19,6 +19,7 @@ import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { common, wantConstant } from '@kit.AbilityKit';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import eventBusPlus from '../lib/EventBusPlus';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -33,12 +34,10 @@ export default function actsApplicationStartAbilityTest() {
       deviceType = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
       hilog.info(0x0000, 'testTag', '%{public}s',
           `current device is ` + deviceType);
-      setTimeout(() => {
-        context = getContext() as common.UIAbilityContext;
-        hilog.info(0x0000, 'testTag', '%{public}s',
-          `Succeeded in starting SpecifiedAbility11ww11` + JSON.stringify(context));
-        done();
-      }, 2000);
+      context = getContext() as common.UIAbilityContext;
+      hilog.info(0x0000, 'testTag', '%{public}s',
+        `Succeeded in starting SpecifiedAbility11ww11` + JSON.stringify(context));
+      done();
     });
 
     beforeEach(async () => {
@@ -690,7 +689,7 @@ export default function actsApplicationStartAbilityTest() {
                     instanceKey: TEST_CASE_NAME
                   }
                 };
-                await sleep(1000);
+                await eventBusPlus.onWait('Auxiliary2_MultipleEntryAbility_onBackground');
                 context.startAbility(want).then(() => {
                   hilog.info(0x0000, 'testTag', '%{public}s',
                     `${TEST_CASE_NAME} Succeeded in starting SpecifiedAbility`);

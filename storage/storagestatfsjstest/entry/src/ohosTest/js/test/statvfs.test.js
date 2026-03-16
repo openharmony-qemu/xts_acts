@@ -74,7 +74,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_free_size_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
     }
   });
 
@@ -92,7 +92,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_free_size_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
     }
   });
 
@@ -110,7 +110,43 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_free_size_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_free_size_sync_006
+   * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0600
+   * @tc.desc   Test getFreeSizeSync() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('statvfs_test_get_free_size_sync_006', Level.LEVEL3, async function () {
+    try {
+      statvfs.getFreeSizeSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('statvfs_test_get_free_size_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_free_size_sync_007
+   * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0700
+   * @tc.desc   Test getFreeSizeSync() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('statvfs_test_get_free_size_sync_007', Level.LEVEL3, async function () {
+    try {
+      statvfs.getFreeSizeSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('statvfs_test_get_free_size_sync_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -168,7 +204,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_total_size_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
     }
   });
 
@@ -186,7 +222,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_total_size_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
     }
   });
 
@@ -204,7 +240,43 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_total_size_sync_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_total_size_sync_005
+   * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0500
+   * @tc.desc   Test getTotalSizeSync() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('statvfs_test_get_total_size_sync_005', Level.LEVEL3, async function () {
+    try {
+      statvfs.getTotalSizeSync(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('statvfs_test_get_total_size_sync_005 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_total_size_sync_006
+   * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0600
+   * @tc.desc   Test getTotalSizeSync() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('statvfs_test_get_total_size_sync_006', Level.LEVEL3, async function () {
+    try {
+      statvfs.getTotalSizeSync(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('statvfs_test_get_total_size_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
     }
   });
 
@@ -269,7 +341,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_free_size_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -288,7 +360,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_free_size_async_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -307,7 +379,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_free_size_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -333,6 +405,94 @@ describe('statvfs_test', function () {
     } catch (e) {
       console.log('statvfs_test_get_free_size_async_005 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_free_size_async_006
+   * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0600
+   * @tc.desc   Test getFreeSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statvfs_test_get_free_size_async_006', Level.LEVEL0, async function (done) {
+    try {
+      await statvfs.getFreeSize(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('statvfs_test_get_free_size_async_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_free_size_async_007
+   * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0700
+   * @tc.desc   Test getFreeSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statvfs_test_get_free_size_async_007', Level.LEVEL0, async function (done) {
+    try {
+      await statvfs.getFreeSize(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('statvfs_test_get_free_size_async_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_free_size_async_008
+   * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0800
+   * @tc.desc   Test getFreeSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statvfs_test_get_free_size_async_008', Level.LEVEL0, async function (done) {
+    try {
+      statvfs.getFreeSize(null, (err) => {
+        if (err) {
+          console.log(
+            'statvfs_test_get_free_size_async_008 error package: {' + err.message + ', code: ' + err.code + '}');
+          expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('statvfs_test_get_free_size_async_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_free_size_async_009
+   * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0900
+   * @tc.desc   Test getFreeSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statvfs_test_get_free_size_async_009', Level.LEVEL0, async function (done) {
+    try {
+      statvfs.getFreeSize(undefined, (err) => {
+        if (err) {
+          console.log(
+            'statvfs_test_get_free_size_async_009 error package: {' + err.message + ', code: ' + err.code + '}');
+          expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('statvfs_test_get_free_size_async_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      done();
     }
   });
 
@@ -400,7 +560,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_total_size_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -420,7 +580,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_total_size_async_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -440,7 +600,7 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('statvfs_test_get_total_size_async_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -469,5 +629,98 @@ describe('statvfs_test', function () {
       expect(false).assertTrue();
     }
   });
+
+  /**
+   * @tc.name   statvfs_test_get_total_size_async_006
+   * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0600
+   * @tc.desc   Test getTotalSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statvfs_test_get_total_size_async_006', Level.LEVEL0, async function (done) {
+
+    try {
+      await statvfs.getTotalSize(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('statvfs_test_get_total_size_async_006 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_total_size_async_007
+   * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0700
+   * @tc.desc   Test getTotalSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statvfs_test_get_total_size_async_007', Level.LEVEL0, async function (done) {
+
+    try {
+      await statvfs.getTotalSize(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('statvfs_test_get_total_size_async_007 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_total_size_async_008
+   * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0800
+   * @tc.desc   Test getTotalSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statvfs_test_get_total_size_async_008', Level.LEVEL0, async function (done) {
+
+    try {
+      statvfs.getTotalSize(null, (err) => {
+        if (err) {
+          console.log(
+            'statvfs_test_get_total_size_async_008 error package: {' + err.message + ', code: ' + err.code + '}');
+          expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('statvfs_test_get_total_size_async_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   statvfs_test_get_total_size_async_009
+   * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0900
+   * @tc.desc   Test getTotalSize() interfaces, when the path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('statvfs_test_get_total_size_async_009', Level.LEVEL0, async function (done) {
+
+    try {
+      statvfs.getTotalSize(undefined, (err) => {
+        if (err) {
+          console.log(
+            'statvfs_test_get_total_size_async_009 error package: {' + err.message + ', code: ' + err.code + '}');
+          expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+          done();
+        }
+      });
+    } catch (e) {
+      console.log('statvfs_test_get_total_size_async_009 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      done();
+    }
+  });
+
 });
 }

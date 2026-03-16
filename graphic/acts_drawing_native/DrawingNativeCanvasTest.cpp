@@ -87,9 +87,9 @@ HWTEST_F(DrawingNativeCanvasTest, testCanvasDestroyNormal, Function | SmallTest 
  */
 HWTEST_F(DrawingNativeCanvasTest, testCanvasDestroyNull, Function | SmallTest | Level3) {
     // step 1
+    OH_Drawing_Canvas *canvas = nullptr;
     OH_Drawing_CanvasDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(canvas, nullptr);
 }
 
 /**

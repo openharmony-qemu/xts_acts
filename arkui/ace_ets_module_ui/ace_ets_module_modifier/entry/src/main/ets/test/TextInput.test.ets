@@ -363,7 +363,7 @@ export default function textInput() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[textInputJsunit_0118] obj is: " + JSON.stringify(obj.$attrs));
       // expect(obj.$attrs.fontColor).assertEqual('#FF123456');
-      expect(obj.$attrs.fontColor).assertNotNull;
+      expect(obj.$attrs.fontColor).not().assertNull();
       console.info('textInputJsunit_0118 END');
       done();
     });

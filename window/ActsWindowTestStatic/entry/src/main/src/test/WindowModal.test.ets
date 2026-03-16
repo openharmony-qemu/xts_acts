@@ -48,7 +48,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        await Utils.msSleep(1000)
+        waitForCompletion(async () => {await Utils.msSleep(1000)})
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -179,7 +179,6 @@ export default function WindowModalTest() {
                     if (err.code == 801) {
                         done();
                     } else if(err.code == 1300002){
-                        expect(true).assertTrue();
                         done();
                     }else{
                         expect(false).assertTrue();
@@ -215,7 +214,6 @@ export default function WindowModalTest() {
                     hilog.error(domain, tag,msgStr + `Failed to setSubWindowModal. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code == 1300004) {
                         hilog.info(domain, tag,msgStr + 'The mainWindow not support setSubWindowModal');
-                        expect(true).assertTrue();
                         done();
                     } else if(err.code == 801){
                         done();
@@ -254,7 +252,6 @@ export default function WindowModalTest() {
                     hilog.error(domain, tag,msgStr + `Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
                     if (err.code == 1300002) {
                         hilog.info(domain, tag,msgStr + 'The SubWindow is destroyed');
-                        expect(true).assertTrue();
                         done();
                     } else {
                         expect(false).assertTrue();
@@ -289,11 +286,9 @@ export default function WindowModalTest() {
                 }).catch((err: Error) :PromiseLike<void>|undefined => {
                     if (err.code == 801) {
                         hilog.info(domain, tag,`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-                        expect(false).assertFalse()
                         done()
                     } else if (err.code == 1300004) {
                         hilog.error(domain, tag,`${message} Unauthorized operation.`);
-                        expect(false).assertFalse()
                         done()
                     } else {
                         hilog.error(domain, tag,`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
@@ -361,7 +356,6 @@ export default function WindowModalTest() {
             try {
                 windowStage!.setWindowModal(false).then(() => {
                     hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowModal.');
-                    expect(true).assertTrue();
                     done()
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,msgStr + 'Failed to call setWindowModal. Cause: ' + JSON.stringify(err));

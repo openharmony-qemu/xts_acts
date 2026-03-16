@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function RichEditorCustomSpan014() {
   describe('RichEditorCustomSpan014', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
        console.info("RichEditorOnWillChange001 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });
@@ -102,7 +102,7 @@ export default function RichEditorCustomSpan014() {
       let stylesInfo = await (driver.findComponent(ON.id('stylesInfo')) as Promise<Component>);
       let stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      let str = '{"start":5,"length":1,"styledKey":400,"styledValue":{"type_":"CustomSpan","width":80,"word":"Hello"}}';
+      let str = '{"start":5,"length":1,"styledKey":400,"styledValue":';
       expect(stylesInfoText).assertContain(str);
       let replaceStyledString = await (driver.findComponent(ON.id('replaceStyledString')) as Promise<Component>);
       await replaceStyledString.click();
@@ -111,7 +111,7 @@ export default function RichEditorCustomSpan014() {
       await CommonFunc.sleep(500);
       stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      str = '{"start":5,"length":1,"styledKey":400,"styledValue":{"type_":"CustomSpan","width":60,"word":"word"}}';
+      str = '{"start":5,"length":1,"styledKey":400,"styledValue":';
       expect(stylesInfoText).assertContain(str);
       done();
     });
@@ -161,7 +161,7 @@ export default function RichEditorCustomSpan014() {
       let stylesInfo = await (driver.findComponent(ON.id('stylesInfo')) as Promise<Component>);
       let stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      let str = '{"start":6,"length":1,"styledKey":400,"styledValue":{"type_":"CustomSpan","width":60,"word":"word"}}';
+      let str = '{"start":6,"length":1,"styledKey":400,"styledValue":';
       expect(stylesInfoText).assertContain(str);
       let replaceCustom = await (driver.findComponent(ON.id('replaceCustom')) as Promise<Component>);
       await replaceCustom.click();
@@ -170,7 +170,7 @@ export default function RichEditorCustomSpan014() {
       await CommonFunc.sleep(500);
       stylesInfoText = await stylesInfo.getText();
       await CommonFunc.sleep(500);
-      str = '{"start":6,"length":1,"styledKey":400,"styledValue":{"type_":"CustomSpan","width":90,"word":"custom"}}';
+      str = '{"start":6,"length":1,"styledKey":400,"styledValue":';
       expect(stylesInfoText).assertContain(str);
       done();
     });

@@ -89,9 +89,10 @@ export default function graphicImagePixelMapTest() {
         try{
           pixelMap!.setTransferDetached(true)
           console.info( msg + ' Succeeded in setTransferDetached pixelMap.');
-          pixelMap!.rotate(180)
+          await pixelMap!.rotate(180)
           console.info( msg + ' Succeeded in rotate pixelMap.');
           console.log(msg + ' The main process can still invoke pixelmap attributes. Example end !')
+          await pixelMap!.release();
           done();
         }catch(error){
           console.error( msg + ` Failed to setTransferDetached pixelMap. code is ${error.code}, message is ${error.message}`);
@@ -130,14 +131,15 @@ export default function graphicImagePixelMapTest() {
         done();
       })
       try{
-        pixelMap!.rotate(60)
+        await pixelMap!.rotate(60)
         console.info( msg + ' Succeeded in rotate pixelMap.');
         try{
           pixelMap!.setTransferDetached(false)
           console.info( msg + ' Succeeded in setTransferDetached pixelMap.');
-          pixelMap!.rotate(180)
+          await pixelMap!.rotate(180)
           console.info( msg + ' Succeeded in rotate pixelMap.');
           console.log(msg + ' The main process can still invoke pixelmap attributes. Example end !')
+          await pixelMap!.release();
           done();
         }catch(error){
           console.error( msg + ` Failed to setTransferDetached pixelMap. code is ${error.code}, message is ${error.message}`);
@@ -263,6 +265,7 @@ export default function graphicImagePixelMapTest() {
           await pixelMap.setMetadata(1, staticMe)
           console.info( msg + ' Succeeded in pixelMap.setMetadata.');
           console.log(msg + ' Example end !')
+          await pixelMap.release();
           done();
         }catch(error){
           if(error == 62980173){
@@ -348,6 +351,7 @@ export default function graphicImagePixelMapTest() {
           await pixelMap.setMetadata(3, gain)
           console.info( msg + ' Succeeded in pixelMap.setMetadata.');
           console.log(msg + ' Example end !')
+          await pixelMap.release();
           done();
         }catch(error){
           if(error == 62980173){
@@ -410,12 +414,13 @@ export default function graphicImagePixelMapTest() {
       console.log(msg + " Example begin! ")
       const color: ArrayBuffer = new ArrayBuffer(96); // 96为需要创建的像素buffer大小，取值为：height * width *4
       let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 4, width: 6 } }
-      await image.createPixelMap(color, opts).then((pixelMap: image.PixelMap) => {
+      await image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
         console.info( msg + ' Succeeded in creating pixelMap.');
         try{
-          pixelMap.scale( 1, 2, image.AntiAliasingLevel.MEDIUM)
+          await pixelMap.scale( 1, 2, image.AntiAliasingLevel.MEDIUM)
           console.info( msg + ' Succeeded in scale pixelMap.');
           console.log(msg + ' Example end !')
+          await pixelMap.release();
           done();
         }catch(error){
           console.error( msg + ` Failed to scale pixelMap. code is ${error.code}, message is ${error.message}`);
@@ -496,6 +501,7 @@ export default function graphicImagePixelMapTest() {
           let bufferArr = new Uint8Array(bufferValue as ArrayBuffer)
           console.info( msg + ' 8 ');
           console.log(msg + ' Example end !')
+          await pixelMap.release();
           done();
         }catch(error){
           if(error == 62980173){
@@ -567,6 +573,7 @@ export default function graphicImagePixelMapTest() {
           let bufferArr = new Uint8Array(bufferValue as ArrayBuffer)
           console.info( msg + ' 8 ');
           console.log(msg + ' Example end !')
+          await pixelMap.release();
           done();
         }catch(error){
           if(error == 62980173){
@@ -638,6 +645,7 @@ export default function graphicImagePixelMapTest() {
           let bufferArr = new Uint8Array(bufferValue as ArrayBuffer)
           console.info( msg + ' 8 ');
           console.log(msg + ' Example end !')
+          await pixelMap.release();
           done();
         }catch(error){
           if(error == 62980173){
@@ -700,6 +708,7 @@ export default function graphicImagePixelMapTest() {
           try{
             pixelMap.setMemoryNameSync(nullName)
             console.info( msg + ' 7 ');
+            await pixelMap.release();
             expect().assertFail();
             done();
           }catch(error){
@@ -770,6 +779,7 @@ export default function graphicImagePixelMapTest() {
           let rightName = '123456789'
           try{
             pixelMap.setMemoryNameSync(rightName)
+            await pixelMap.release();
             console.info( msg + ' 7 ');
             done();
           }catch(error){
@@ -836,6 +846,7 @@ export default function graphicImagePixelMapTest() {
           try{
             pixelMap.setMemoryNameSync(moreThan32Name)
             console.info( msg + ' 7 ');
+            await pixelMap.release();
             expect().assertFail();
             done();
           }catch(error){
@@ -909,6 +920,7 @@ export default function graphicImagePixelMapTest() {
           try{
             pixelMap.setMemoryNameSync(average32Name)
             console.info( msg + ' 7 ');
+            await pixelMap.release();
             expect().assertFail();
             done();
           }catch(error){
@@ -960,6 +972,7 @@ export default function graphicImagePixelMapTest() {
       image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
         console.info( msg + ' Succeeded in creating pixelMap.');
           console.log(msg + ' Example end !')
+          await pixelMap.release();
           done();
       }).catch((error: BusinessError) => {
         console.error( msg + ` Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -984,6 +997,7 @@ export default function graphicImagePixelMapTest() {
       image.createPixelMap(color, opts).then(async (pixelMap: image.PixelMap) => {
         console.info( msg + ' Succeeded in creating pixelMap.');
         console.log(msg + ' Example end !')
+        await pixelMap.release();
         done();
       }).catch((error: BusinessError) => {
         console.error( msg + ` Failed to create pixelmap. code is ${error.code}, message is ${error.message}`);
@@ -1010,8 +1024,9 @@ export default function graphicImagePixelMapTest() {
         let scaleX: number = 2.0;
         let scaleY: number = 1.0;
         if (pixelMap != undefined) {
-            pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW).then((scaledPixelMap: image.PixelMap) => {
+            pixelMap.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(async (scaledPixelMap: image.PixelMap) => {
             console.info(msg + ' Succeeded in creating scaledPixelMap.');
+            await scaledPixelMap.release();
             done();
           }).catch((error: BusinessError) => {
             console.error(msg + ` Failed to create scaledPixelMap. Error code is ${error.code}, error message is ${error.message}`);
@@ -1047,6 +1062,7 @@ export default function graphicImagePixelMapTest() {
         if (pixelMap != undefined) {
           let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.LOW);
           console.info(msg + ' Succeeded in creating scaledPixelMap.');
+          await scaledPixelMap.release();
           done();
         }
       }).catch((error: BusinessError) => {
@@ -1075,6 +1091,7 @@ export default function graphicImagePixelMapTest() {
         if (pixelMap != undefined) {
           let clonedPixelMap = pixelMap.cloneSync();
           console.info(msg + ' Succeeded in creating cloneSync.');
+          await clonedPixelMap.release();
           done();
         }
       }).catch((error: BusinessError) => {

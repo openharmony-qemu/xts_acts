@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsOnContentWillChangeIndex03JsunitTest() {
   describe('tabsOnContentWillChangeIndex03JsunitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

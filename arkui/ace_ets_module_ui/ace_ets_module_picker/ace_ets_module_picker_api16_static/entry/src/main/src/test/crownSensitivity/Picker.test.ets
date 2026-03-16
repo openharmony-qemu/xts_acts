@@ -27,7 +27,7 @@ interface optionsObj {
 }
 export default function Picker() {
   describe('Picker', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Picker beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")

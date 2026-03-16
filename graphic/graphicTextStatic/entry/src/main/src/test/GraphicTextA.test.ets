@@ -41,7 +41,6 @@ export default function GraphicTextATest() {
         let fontCollection = new text.FontCollection;
         fontCollection.loadFontSync("test", "");
         console.log(msg + ' Succeed in fontCollection.loadFontSync.')
-        expect(true).assertTrue()
         done()
       } catch (err) {
         console.info(msg + ' Failed in fontCollection.loadFontSync.    Cause: ' + JSON.stringify(err));
@@ -97,7 +96,6 @@ export default function GraphicTextATest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -136,7 +134,6 @@ export default function GraphicTextATest() {
         console.log(msg + ' text.FontCollection.getGlobalInstance OK, fontCollection is  ' + fontCollection )
         fontCollection.loadFontSync('test', 'File://');
         console.log(msg + ' Succeed in fontCollection.loadFontSync.')
-        expect(true).assertTrue()
         done()
       } catch (err) {
         console.info(msg + ' Failed in fontCollection.loadFontSync.    Cause: ' + JSON.stringify(err));
@@ -171,7 +168,6 @@ export default function GraphicTextATest() {
         let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
         let paragraph = ParagraphGraphBuilder.build();
         console.log(msg + ' Succeed in getActualTextRange.')
-        expect(true).assertTrue()
         done()
       } catch (err) {
         console.info(msg + ' Failed in getActualTextRange.    Cause: ' + JSON.stringify(err));
@@ -207,7 +203,6 @@ export default function GraphicTextATest() {
         let paragraph = ParagraphGraphBuilder.build();
         let arrLineMetrc =  paragraph.getLineMetrics();
         console.log(msg + ' Succeed in getLineMetrics.');
-        expect(true).assertTrue()
         done()
       } catch (err) {
         console.info(msg + ' Failed in getLineMetrics.    Cause: ' + JSON.stringify(err));
@@ -243,7 +238,6 @@ export default function GraphicTextATest() {
         let paragraph = ParagraphGraphBuilder.build();
         let lineMetrics =  paragraph.getLineMetrics(0);
         console.log(msg + ' Succeed in getLineMetrics.')
-        expect(true).assertTrue()
         done()
       } catch (err) {
         console.info(msg + ' Failed in getLineMetrics.    Cause: ' + JSON.stringify(err));
@@ -278,7 +272,6 @@ export default function GraphicTextATest() {
         let paragraph = ParagraphGraphBuilder.build();
         console.log(msg + ' Succeed in addSymbol.')
         console.log(msg + ' Succeed in addSymbol.')
-        expect(true).assertTrue()
         done()
       } catch (err) {
         console.info(msg + ' Failed in addSymbol.    Cause: ' + JSON.stringify(err));

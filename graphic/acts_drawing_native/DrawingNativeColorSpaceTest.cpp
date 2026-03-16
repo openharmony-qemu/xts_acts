@@ -85,9 +85,9 @@ HWTEST_F(DrawingNativeColorSpaceTest, testColorSpaceCreateSrgbNormal, Function |
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorSpaceTest, testColorSpaceDestroyNull, Function | SmallTest | Level3) {
+    OH_Drawing_ColorSpace *colorSpace = nullptr;
     OH_Drawing_ColorSpaceDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(colorSpace, nullptr);
 }
 
 /**

@@ -39,7 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexWrapReverse_fixedParentChildVisibility() {
   describe('FlexWrapReverse_fixedParentChildVisibility', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FlexWrapReverse_fixedParentChildVisibility beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

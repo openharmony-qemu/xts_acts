@@ -22,6 +22,7 @@ const ARKUI_ERROR_CODE_ERROR = 1;
 export default function MindSporeDataTypeTest() {
   describe('MindSporeDataTypeTest', () => {
     beforeAll(async (done: Function) => {
+      done();
     });
     /**
      * @tc.name   testdatatypetest_001

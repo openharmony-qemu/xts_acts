@@ -59,6 +59,26 @@ add_library(nativeSourceType SHARED
     sourceType/SourceTypeTest.cpp
     NativeSourceTypeTest.cpp )
 
+add_library(nativeAccessibilityCustom SHARED
+    accessibilityCustom/Manager.cpp
+    accessibilityCustom/AccessibilityMaker.cpp
+    accessibilityCustom/AccessibilityDialog.cpp
+    accessibilityCustom/AccessibilityDialogSubWindow.cpp
+    NativeAccessibilityCustomTest.cpp)
+
+add_library(nativeGrid SHARED
+    NativeGridTest.cpp
+    grid/PluginManagerTest.cpp
+    grid/GridTest.cpp
+    component/button_component.cpp
+    component/grid_component.cpp
+    component/text_component.cpp
+    component/component.cpp )
+
+add_library(nativeDragDrop SHARED
+ 	draganddrop/PluginManagerTest.cpp
+ 	draganddrop/DragDropTest.cpp
+ 	NativeDragDropTest.cpp )
 
 find_library(
     # Sets the name of the path variable.
@@ -120,6 +140,10 @@ target_link_libraries(nativeKeyEvent PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
 target_link_libraries(nativeSourceType PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
+target_link_libraries(nativeGrid PUBLIC
+    ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
+target_link_libraries(nativeDragDrop PUBLIC
+    ${hilog-lib} ${libace-lib} ${libnapi-lib}  ${libnative_drawing})
 
 target_link_libraries(nativeDragEvent PUBLIC libace_napi.z.so)
 target_link_libraries(nativeDragEvent PUBLIC libace_ndk.z.so)
@@ -138,3 +162,12 @@ target_link_libraries(nativeDragAction PUBLIC libace_napi.z.so libhilog_ndk.z.so
 target_link_libraries(nativeDragAction PUBLIC libhilog_ndk.z.so libpixelmap.so)
 target_link_libraries(nativeDragAction PUBLIC libudmf.so)
 target_link_libraries(nativeDragAction PUBLIC libohfileio.so)
+
+target_link_libraries(nativeAccessibilityCustom PUBLIC 
+    ${hilog-lib} ${libace-lib} ${libnapi-lib} libability_base_want.so)
+target_link_libraries(nativeAccessibilityCustom PUBLIC 
+    ${hilog-lib} ${libace-lib} ${libnapi-lib} libability_base_want.so)
+
+target_link_libraries(nativeAccessibilityCustom PUBLIC libace_ndk.z.so)
+target_link_libraries(nativeAccessibilityCustom PUBLIC libace_napi.z.so)
+target_link_libraries(nativeDragDrop PUBLIC libace_napi.z.so libace_ndk.z.so libhilog_ndk.z.so libpixelmap.so)

@@ -1140,6 +1140,77 @@ export default function RdbstoreRekeysEtsTest() {
       }
       done();
     });
+
+    /**
+     * @tc.number testRekey0028
+     * @tc.name testRekey0028
+     * @tc.desc SHA256 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRekey0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* testRekey0028 start *************");
+      let storeConfig: data_relationalStore.StoreConfig = {
+        name: "testRekey0028.db",
+        securityLevel: data_relationalStore.SecurityLevel.S2,
+        encrypt: true,
+      }
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
+
+      let cryptoParam: data_relationalStore.CryptoParam = {
+        encryptionKey: new Uint8Array(),
+        hmacAlgo: data_relationalStore.HmacAlgo.SHA256,
+        kdfAlgo: data_relationalStore.KdfAlgo.KDF_SHA256
+      };
+
+      try {
+        await rdbStore.rekey(cryptoParam);
+      } catch (e) {
+        e = e as BusinessError;
+        console.log(TAG +"catch err: failed, err: code=" + e.code + " message=" + e.message);
+        expect().assertFail();
+        console.log(TAG + "************* testRekey0028 end *************");
+      }
+      done();
+      console.info(TAG + " ************* End*************");
+    });
+
+    /**
+     * @tc.number testRekey0029
+     * @tc.name testRekey0029
+     * @tc.desc exception hmacAlgo test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRekey0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* testRekey0029 start *************");
+      let storeConfig: data_relationalStore.StoreConfig = {
+        name: "testRekey0029.db",
+        securityLevel: data_relationalStore.SecurityLevel.S2,
+        encrypt: true,
+      }
+      let rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
+
+      let cryptoParam: data_relationalStore.CryptoParam = {
+        encryptionKey: new Uint8Array(),
+        encryptionAlgo: data_relationalStore.EncryptionAlgo.PLAIN_TEXT,
+      };
+
+      try {
+        await rdbStore.rekey(cryptoParam);
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.log(TAG +"catch err: failed, err: code=" + e.code + " message=" + e.message);
+        expect(String(e.code)).assertEqual(String(801));
+        console.log(TAG + "************* testRekey0029 end *************");
+      }
+      done();
+      console.info(TAG + " ************* End*************");
+    });
+
     console.log(TAG + "*************Unit Test End*************");
   })
 }

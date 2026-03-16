@@ -26,7 +26,7 @@ import {UtilsTest} from '../Util.test'
 
 export default function tapGestureAddInterfaceTest() {
   describe('tapGestureAddInterfaceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
 
@@ -59,8 +59,8 @@ export default function tapGestureAddInterfaceTest() {
       console.info("PapGestureAddInterfaceTest  after each called");
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   tapGestureAddInterfaceTest_static_0010
@@ -86,8 +86,8 @@ it('tapGestureAddInterfaceTest_static_0010', Level.LEVEL0, async (done: () => vo
       console.info('SwipeGestureExample02Test_0010 obj $attrs content '+ obj.getElement('$attrs').getString('content'));
       // check the click event  whether response
       let dataE = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE.getInteger('localX') - 10) <= 1).assertTrue();
-      expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE.getDouble('localX') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE.getDouble('localY') - 10) <= 1).assertTrue();
 
       // click the distanceThreshold range
       await driver.doubleClick(Math.round(column1.left + width/2 - uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int);
@@ -97,14 +97,14 @@ it('tapGestureAddInterfaceTest_static_0010', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0010 obj2 $attrs content '+ obj2.getElement('$attrs').getString('content'))
        // check the click event  whether response
       let dataE2 = JSON.parseJsonElement(obj2.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE2.getInteger('localX') - 90) <= 1).assertTrue();
-      expect(Math.abs(dataE2.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE2.getDouble('localX') - 90) <= 1).assertTrue();
+      expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
       console.info('tapGestureAddInterfaceTest_0010 end');
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   tapGestureAddInterfaceTest_static_0020
@@ -130,8 +130,8 @@ it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => vo
       console.info('SwipeGestureExample02Test_0010 obj $attrs content '+ obj.getElement('$attrs').getString('content'));
       // check the click event  whether response
       let dataE = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE.getInteger('localX') - 10) <= 1).assertTrue();
-      expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE.getDouble('localX') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE.getDouble('localY') - 10) <= 1).assertTrue();
 
       // swipe the distanceThreshold range
       await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(80)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
@@ -141,8 +141,8 @@ it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0020 obj2 $attrs content '+ obj2.getElement('$attrs').getString('content'))
       // check the click event  whether response
       let dataE2 = JSON.parseJsonElement(obj2.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE2.getInteger('localX') - 80) <= 1).assertTrue();
-      expect(Math.abs(dataE2.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE2.getDouble('localX') - 80) <= 1).assertTrue();
+      expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
 
        // swipe the distanceThreshold range
       await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(130)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
@@ -152,16 +152,16 @@ it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0020 obj3 $attrs content '+ obj3.getElement('$attrs').getString('content'))
       // check the click event  whether response
       let dataE3 = JSON.parseJsonElement(obj3.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE3.getInteger('localX') - 80) <= 1).assertTrue();
-      expect(Math.abs(dataE3.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE3.getDouble('localX') - 80) <= 1).assertTrue();
+      expect(Math.abs(dataE3.getDouble('localY') - 10) <= 1).assertTrue();
 
 
       console.info('tapGestureAddInterfaceTest_0020 end');
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   tapGestureAddInterfaceTest_static_0030
@@ -187,8 +187,8 @@ it('tapGestureAddInterfaceTest_static_0030', Level.LEVEL0, async (done: () => vo
       console.info('SwipeGestureExample02Test_0010 obj $attrs content '+ obj.getElement('$attrs').getString('content'));
       // check the click event  whether response
       let dataE = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE.getInteger('localX') - 10) <= 1).assertTrue();
-      expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE.getDouble('localX') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE.getDouble('localY') - 10) <= 1).assertTrue();
 
       // click the distanceThreshold range
       await driver.click(Math.round(column1.left + width/2 - uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int);
@@ -198,14 +198,14 @@ it('tapGestureAddInterfaceTest_static_0030', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0010 obj2 $attrs content '+ obj2.getElement('$attrs').getString('content'))
        // check the click event  whether response
       let dataE2 = JSON.parseJsonElement(obj2.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE2.getInteger('localX') - 90) <= 1).assertTrue();
-      expect(Math.abs(dataE2.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE2.getDouble('localX') - 90) <= 1).assertTrue();
+      expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
       console.info('tapGestureAddInterfaceTest_0010 end');
       done();
     });
 
-    
-    
+
+
 
 /**
      * @tc.number   tapGestureAddInterfaceTest_static_0040
@@ -231,8 +231,8 @@ it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => vo
       console.info('SwipeGestureExample02Test_0010 obj $attrs content '+ obj.getElement('$attrs').getString('content'));
       // check the click event  whether response
       let dataE = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE.getInteger('localX') - 10) <= 1).assertTrue();
-      expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE.getDouble('localX') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE.getDouble('localY') - 10) <= 1).assertTrue();
 
       // swipe the distanceThreshold range
       await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(80)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
@@ -242,8 +242,8 @@ it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0020 obj2 $attrs content '+ obj2.getElement('$attrs').getString('content'))
       // check the click event  whether response
       let dataE2 = JSON.parseJsonElement(obj2.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE2.getInteger('localX') - 80) <= 1).assertTrue();
-      expect(Math.abs(dataE2.getInteger('localY') - 10) <= 1).assertTrue();
+      expect(Math.abs(dataE2.getDouble('localX') - 80) <= 1).assertTrue();
+      expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
 
        // swipe out of the distanceThreshold range
       await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(130)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
@@ -253,9 +253,9 @@ it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0020 obj3 $attrs content '+ obj3.getElement('$attrs').getString('content'))
       // check the click event  whether response
       let dataE3 = JSON.parseJsonElement(obj3.getElement('$attrs').getString('content'));
-      expect(Math.abs(dataE3.getInteger('localX') - 80) <= 1 ).assertTrue();
-      expect(Math.abs(dataE3.getInteger('localY') - 10) <= 1).assertTrue();
-      
+      expect(Math.abs(dataE3.getDouble('localX') - 80) <= 1 ).assertTrue();
+      expect(Math.abs(dataE3.getDouble('localY') - 10) <= 1).assertTrue();
+
       console.info('tapGestureAddInterfaceTest_0020 end');
       done();
     });

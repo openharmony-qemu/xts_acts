@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function backgroundAndSizeSettingJsunit() {
   describe('backgroundAndSizeSettingTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundAndSizeSettingTest beforeEach start");
 
 

@@ -43,7 +43,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function setExpectedFrameRateRangeTest() {
   describe('setExpectedFrameRateRangeTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("setExpectedFrameRateRangeTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")

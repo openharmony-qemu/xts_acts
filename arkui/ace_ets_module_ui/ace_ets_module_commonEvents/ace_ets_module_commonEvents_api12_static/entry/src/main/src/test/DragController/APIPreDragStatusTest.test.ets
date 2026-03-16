@@ -45,9 +45,10 @@ const uiContext = new UIContext();
 
 export default function APIPreDragStatusTest() {
   describe('APIPreDragStatusTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
+      await CommonFunc.sleep(4000);
       
     });
     beforeEach(async (): Promise<void> => {
@@ -94,7 +95,8 @@ it('APIPreDragStatusTest_static_0010', Level.LEVEL0, async (done: () => void): P
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let obj1 = await driver.findComponent(ON.id('APIPreDragStatusColumn'));
+      let scrollBar = await driver.findComponent(ON.type('Scroll'));
+      let obj1 = await (scrollBar?.scrollSearch(ON.id('APIPreDragStatusColumn')) as Promise<Component | null>);
       await CommonFunc.sleep(2000);
       await (obj1?.longClick() as Promise<void>);
       let text2 = inspector.getInspectorByKey('APIPreDragStatusText01');

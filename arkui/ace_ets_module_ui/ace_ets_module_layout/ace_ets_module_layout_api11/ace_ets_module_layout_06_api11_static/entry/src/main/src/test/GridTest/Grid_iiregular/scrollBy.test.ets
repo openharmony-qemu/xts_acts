@@ -38,7 +38,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function scrollByJsunit() {
   describe('scrollByJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollByJsunit beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
@@ -54,7 +54,7 @@ export default function scrollByJsunit() {
         routerInstance.clear();
         let pages: router.RouterState = routerInstance.getState();
         console.info("get scrollByJsunit state pages: " + JSON.stringify(pages));
-        if (!("scrollBy" == pages.name)) {
+        if (!("scrollByJsunit" == pages.name)) {
           console.info("get scrollByJsunit state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

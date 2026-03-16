@@ -75,6 +75,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -126,6 +127,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -179,6 +181,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -230,6 +233,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -281,6 +285,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -332,6 +337,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -383,6 +389,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -434,6 +441,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -454,10 +462,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3500', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3500`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -490,6 +494,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -510,10 +515,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3600', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3600`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -546,6 +547,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -566,10 +568,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3700', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3700`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -602,6 +600,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -622,10 +621,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3800', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3800`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -658,6 +653,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -678,10 +674,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3900', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3900`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -714,6 +706,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -734,10 +727,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4000', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4000`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -770,6 +759,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -790,10 +780,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4100', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4100`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
 
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
@@ -826,6 +812,7 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {
@@ -846,11 +833,6 @@ export default function abilityTest() {
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4200', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4200`;
-      if(mpEnable !== 'true') {
-        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} current device not support feature.`);
-        done();
-      }
-
       hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
       let want: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
@@ -882,6 +864,215 @@ export default function abilityTest() {
               if (err.code !== 801) {
                 expect().assertFail();
               }
+              commonEventManager.unsubscribe(subscriber);
+              done();
+            });
+        } catch (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility failed: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_6100
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_6100
+     * @tc.desc   AppServiceExtensionContext startAbility with null want parameter 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_6100', Level.LEVEL0, async (done: Function) => {
+      const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_6100`;
+      hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
+      let want: Want = {
+        bundleName: 'com.acts.context.aappserviceextension',
+        abilityName: 'AppServiceExtAbility2',
+        parameters: {
+          TestFlag: 'startAbilityNullWant'
+        }
+      };
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['AppServiceExtension_4300']
+      };
+      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+        sub = subscriber;
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} createSubscriber succeed`);
+        commonEventManager.subscribe(sub, (err, commonEventData) => {
+          hilog.info(0x0000, 'testTag', '%{public}s',
+            `${tcNumber} subscribe callback result:${JSON.stringify(err)}`);
+          expect(commonEventData.parameters?.result).assertEqual(401);
+          commonEventManager.unsubscribe(subscriber);
+          done();
+        });
+        try {
+          context.startAppServiceExtensionAbility(want)
+            .then(() => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility succeed`);
+            })
+            .catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility error:${JSON.stringify(err)}`);
+              if (err.code !== 801) {
+                expect().assertFail();
+              }
+              commonEventManager.unsubscribe(subscriber);
+              done();
+            });
+        } catch (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility failed: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_6000
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_6000
+     * @tc.desc   AppServiceExtensionContext startAbility with undefined want parameter 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_6000', Level.LEVEL0, async (done: Function) => {
+      const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_6000`;
+      hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
+      let want: Want = {
+        bundleName: 'com.acts.context.aappserviceextension',
+        abilityName: 'AppServiceExtAbility2',
+        parameters: {
+          TestFlag: 'startAbilityUndefinedWant'
+        }
+      };
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['AppServiceExtension_4400']
+      };
+      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+        sub = subscriber;
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} createSubscriber succeed`);
+        commonEventManager.subscribe(sub, (err, commonEventData) => {
+          hilog.info(0x0000, 'testTag', '%{public}s',
+            `${tcNumber} subscribe callback result:${JSON.stringify(err)}`);
+          expect(commonEventData.parameters?.result).assertEqual(401);
+          commonEventManager.unsubscribe(subscriber);
+          done();
+        });
+        try {
+          context.startAppServiceExtensionAbility(want)
+            .then(() => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility succeed`);
+            })
+            .catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility error:${JSON.stringify(err)}`);
+              if (err.code !== 801) {
+                expect().assertFail();
+              }
+              commonEventManager.unsubscribe(subscriber);
+              done();
+            });
+        } catch (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility failed: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_5800
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_5800
+     * @tc.desc   AppServiceExtensionContext startAbility with null options parameter 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_5800', Level.LEVEL0, async (done: Function) => {
+      const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_5800`;
+      hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
+      let want: Want = {
+        bundleName: 'com.acts.context.aappserviceextension',
+        abilityName: 'AppServiceExtAbility2',
+        parameters: {
+          TestFlag: 'startAbilityNullOptions'
+        }
+      };
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['AppServiceExtension_5800']
+      };
+      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+        sub = subscriber;
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} createSubscriber succeed`);
+        commonEventManager.subscribe(sub, (err, commonEventData) => {
+          hilog.info(0x0000, 'testTag', '%{public}s',
+            `${tcNumber} subscribe callback result:${JSON.stringify(err)}`);
+          expect(commonEventData.parameters?.result).assertEqual(200);
+          commonEventManager.unsubscribe(subscriber);
+          done();
+        });
+        try {
+          context.startAppServiceExtensionAbility(want)
+            .then(() => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility succeed`);
+            })
+            .catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility error:${JSON.stringify(err)}`);
+              if (err.code !== 801) {
+                expect().assertFail();
+              }
+              commonEventManager.unsubscribe(subscriber);
+              done();
+            });
+        } catch (err) {
+          hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility failed: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_5900
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_5900
+     * @tc.desc   AppServiceExtensionContext startAbility with undefined options parameter 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_ABILITY_NewRule_AppServiceExtension_5900', Level.LEVEL0, async (done: Function) => {
+      const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_5900`;
+      hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} Begin`);
+      let want: Want = {
+        bundleName: 'com.acts.context.aappserviceextension',
+        abilityName: 'AppServiceExtAbility2',
+        parameters: {
+          TestFlag: 'startAbilityUndefinedOptions'
+        }
+      };
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['AppServiceExtension_5900']
+      };
+      await commonEventManager.createSubscriber(commonEventSubscribeInfo).then((subscriber) => {
+        sub = subscriber;
+        hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} createSubscriber succeed`);
+        commonEventManager.subscribe(sub, (err, commonEventData) => {
+          hilog.info(0x0000, 'testTag', '%{public}s',
+            `${tcNumber} subscribe callback result:${JSON.stringify(err)}`);
+          expect(commonEventData.parameters?.result).assertEqual(200);
+          commonEventManager.unsubscribe(subscriber);
+          done();
+        });
+        try {
+          context.startAppServiceExtensionAbility(want)
+            .then(() => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility succeed`);
+            })
+            .catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', `${tcNumber} startAppServiceExtensionAbility error:${JSON.stringify(err)}`);
+              if (err.code !== 801) {
+                expect().assertFail();
+              }
+              commonEventManager.unsubscribe(subscriber);
               done();
             });
         } catch (err) {

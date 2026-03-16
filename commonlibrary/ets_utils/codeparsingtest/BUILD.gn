@@ -38,6 +38,8 @@ group("codeparsingtest") {
       "dataviewtest:ActsDataViewTest",
       "symbol1test:ActsSymbol1Test",
       "symbol2test:ActsSymbol2Test",
+      "stringtest:ActsStringTest",
+      "jsontest:ActsJsonTest",
       "cachecombotest:ActsCacheComboTest",
       "base2libtest:ActsBase2LibTest",
     ]

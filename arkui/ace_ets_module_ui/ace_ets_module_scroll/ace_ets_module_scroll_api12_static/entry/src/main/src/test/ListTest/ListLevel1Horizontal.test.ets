@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function listLevel1HorizontalTest() {
   describe('listLevel1HorizontalTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")

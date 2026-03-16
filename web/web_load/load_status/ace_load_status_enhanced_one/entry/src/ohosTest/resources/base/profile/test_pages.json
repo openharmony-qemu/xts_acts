@@ -6,7 +6,9 @@
     "testability/pages/WebAttributeEnhancedTest",
     "testability/pages/WebBlockNetworkSpecial",
     "testability/pages/WebMixedModeSpecial",
-    "testability/pages/WebCacheModeSpecial"
+    "testability/pages/WebCacheModeSpecial",
+    "testability/pages/WebOnBeforeUnloadTwo",
+    "testability/pages/WebOnBeforeUnloadThree"
   ]
 }
 

@@ -26,7 +26,7 @@ export default function ForEachTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
 	   await Utils.msSleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -251,7 +251,7 @@ export default function ForEachTest() {
       let TAG = "testForEachdouble0007";
       try {
         let arr: FixedArray<double> = [0.3, 0.3333333333333333, 3.141592653589793];
-        let results: Array<double> = new Array<double>(arr.length);
+        let results: Array<double> = new Array<double>(arr.length, (i) => 0);
         let index = 0;
         forEach(arr, (value: double) => {
           results[index++] = value;

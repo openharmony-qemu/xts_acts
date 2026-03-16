@@ -57,6 +57,6 @@ struct SystemRouterA {
     .height('100%')
   }
 }
-class JsonObj1 {
+export class JsonObj1 {
   data: string = '';
 }

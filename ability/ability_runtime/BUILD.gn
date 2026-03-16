@@ -28,6 +28,7 @@ group("ability_runtime") {
       "abilitymonitorstatic:ActsAbilityMonitorStaticTest",
       "abilitymontior:ActsAbilityMonitorTest",
       "abilitymultiinstance:abilitymultiinstance",
+      "abilitystagecontextpermissionteststatic:AbilityStageContextPermissionStaticTest",
       "abilitystagecontextteststatic:AbilityStageContextStaticTest",
       "abilitystagemonitor:abilitystagemonitor",
       "abilitytoolabilitydelegatortest:abilitytoolabilitydelegatortest",
@@ -75,6 +76,7 @@ group("ability_runtime") {
       "actsgetwantagentwithuseridtest:ActsGetwantagentWithUseridTest",
       "actsintent:actsintent",
       "actsjsdataabilitytest:ActsJsDataAbilityTest",
+      "actskioskmanagerstatictest:ActsKioskManagerStaticTest",
       "actskioskmanagertest:ActsKioskManagerTest",
       "actslastexitreason:actslastexitreason",
       "actslifecycle:actslifecycle",
@@ -153,6 +155,8 @@ group("ability_runtime") {
       "wantagent:wantagent",
       "workercontextcover:workercontextcover",
       "actsGetAllWindowStagesTest:ActsGetAllWindowStagesTest",
+      "abilityactsabilityruntime:abilityactsabilityruntime",
+      "actsGetAllWindowStagesTestStatic:ActsGetAllWindowStagesStaticTest",
     ]
   }
 }

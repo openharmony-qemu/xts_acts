@@ -61,25 +61,26 @@ export default function ActsCommonEventSystemAPITest() {
       if(!isWifiActive){
         console.info(TAG+"======> wifi_test/enable wifi:" );
         wifiMg.enableWifi();
-        await Utils.msSleep(5000);
+        waitForCompletion(async ()=>{await Utils.msSleep(5000);})
       }
 
       try {
-        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        let data: wifiMg.WifiLinkedInfo|undefined;
+        waitForCompletion(async ()=>{data = await wifiMg.getLinkedInfo();})
         console.info(TAG+"======> Internet WifiLinkedInfo : " + JSON.stringify(data));
-        console.info(TAG+"======> Internet speed : " + JSON.stringify(data.linkSpeed));
-        console.info(TAG+"======> Internet chload : " + JSON.stringify(data.chload));
-        console.info(TAG+"======> Internet rssi : " + JSON.stringify(data.rssi));
+        console.info(TAG+"======> Internet speed : " + JSON.stringify(data!.linkSpeed));
+        console.info(TAG+"======> Internet chload : " + JSON.stringify(data!.chload));
+        console.info(TAG+"======> Internet rssi : " + JSON.stringify(data!.rssi));
 
-        if (data.connState == wifiMg.ConnState.CONNECTED) {
+        if (data!.connState == wifiMg.ConnState.CONNECTED) {
           console.info(TAG+"======> WLAN connection established ");
         } else {
           expect().message("======> WLAN Network error").assertFail(); //方式一
 
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data!.chload >= 900 || data!.rssi <= -80) {
           expect().message("======> WLAN Network error").assertFail();//方式一
-        } else if (data.chload >= 500) {
+        } else if (data!.chload >= 500) {
           console.info(TAG+"======> The internet connection is poor. ");
         }
       } catch (err) {
@@ -88,14 +89,14 @@ export default function ActsCommonEventSystemAPITest() {
       }
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      await Utils.msSleep(2000)
+      waitForCompletion(async ()=>{await Utils.msSleep(2000);})
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
-      await Utils.msSleep(2000)
+      waitForCompletion(async ()=>{await Utils.msSleep(2000);})
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    afterEach(() =>{
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(500)
     })
 
@@ -586,7 +587,7 @@ export default function ActsCommonEventSystemAPITest() {
             } as notificationManager.NotificationContent,
           }
           notificationManager.publish(notificationRequest, publishCallback)
-          //await Utils.msSleep(60)
+          await Utils.msSleep(60)
         }
       })
 

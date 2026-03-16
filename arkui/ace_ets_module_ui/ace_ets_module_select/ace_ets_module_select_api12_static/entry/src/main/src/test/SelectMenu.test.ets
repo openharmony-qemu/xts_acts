@@ -36,7 +36,7 @@ let emitKey = "emitUserAgent";
 export default function selectmenuTest() {
   describe('ActsSelectMenuTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SelectMenu beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api12.static", "EntryAbility")
       

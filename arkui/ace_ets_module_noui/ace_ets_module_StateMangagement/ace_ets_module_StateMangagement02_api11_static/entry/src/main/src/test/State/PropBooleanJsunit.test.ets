@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function PropBooleanJsunit() {
   describe('PropBooleanJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("PropBooleanJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

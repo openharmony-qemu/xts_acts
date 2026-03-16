@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,9 +14,8 @@
  */
 
 #include "nativeFontNdk.h"
+#include "common.h"
 
-#define SUCCESS 0
-#define FAIL (-1)
 #define ARR_NUM_0 0
 #define ARR_NUM_1 1
 #define ARR_NUM_2 2
@@ -83,7 +82,7 @@ static void PrepareCreateTextLine(const std::string &text)
     OH_Drawing_TypographyLayout(typography_, maxWidth);
     double position[2] = {DOUBLE_NUM_10, DOUBLE_NUM_15};
     cBitmap_ = OH_Drawing_BitmapCreate();
-    OH_Drawing_BitmapFormat cFormat {COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
+    OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
     uint32_t width = ALIGNMENT20;
     OH_Drawing_BitmapBuild(cBitmap_, width, height, &cFormat);
     canvas_ = OH_Drawing_CanvasCreate();
@@ -484,6 +483,7 @@ napi_value OHDrawingGetSystemFontFullNamesByType003(napi_env env, napi_callback_
     for (size_t i = 0; i < num; i++) {
         const OH_Drawing_String *fullName = OH_Drawing_GetSystemFontFullNameByIndex(ttfs, i);
         OH_Drawing_FontDescriptor *fd = OH_Drawing_GetFontDescriptorByFullName(fullName, CUSTOMIZED);
+        NAPI_ASSERT_NO_MES(fd != nullptr);
         if (strcmp(fd->fullName, "Noto Sans CJK JP") == 0) {
             napi_create_int32(env, SUCCESS, &result2);
         } else {
@@ -1456,7 +1456,7 @@ napi_value OHDrawingTextLinePaint001(napi_env env, napi_callback_info info)
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine *textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
         OH_Drawing_TextLine *truncatedLine =
-        OH_Drawing_TextLineCreateTruncatedLine(textLine, INT_NUM_100, ELLIPSIS_MODAL_HEAD, "...");
+            OH_Drawing_TextLineCreateTruncatedLine(textLine, INT_NUM_100, ELLIPSIS_MODAL_HEAD, "...");
         OH_Drawing_TextLinePaint(truncatedLine, canvas_, TEXTLINE30, TEXTLINE250);
         double count = OH_Drawing_TextLineGetGlyphCount(truncatedLine);
         if (count > 0) {

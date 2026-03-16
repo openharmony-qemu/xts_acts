@@ -31,7 +31,7 @@ const SUITE = 'NavigationParam'
 const waitUiReadyMs: number = 500;
 export default function NavigationParamTest() {
   describe('NavigationParamTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });
     beforeEach(async (): Promise<void> => {

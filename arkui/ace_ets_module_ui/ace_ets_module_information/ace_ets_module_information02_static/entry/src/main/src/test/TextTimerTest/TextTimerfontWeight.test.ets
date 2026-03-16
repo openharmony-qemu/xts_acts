@@ -28,7 +28,7 @@ import { UtilsTest } from '../Util.test';
 export default function textTimerFontWeightTest() {
   describe('textTimerFontWeightTest', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextTimerFontWeightTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.information02.static", "EntryAbility")
     });

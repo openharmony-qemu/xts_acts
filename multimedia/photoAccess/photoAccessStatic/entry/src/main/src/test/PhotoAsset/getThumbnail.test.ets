@@ -34,22 +34,24 @@ export default function getThumbnailTest() {
       try {
         let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, fetchOps);
         asset.getThumbnail((err: BusinessError | null, pixelMap: image.PixelMap | undefined): void => {
-          try {
-            if (err?.code !== 0) {
-              hilog.info(domain, tag, '%{public}s', `${testNum} getThumbnail failed; error: ${err}`);
-              expect(false).assertTrue();
-            } else {
-              const info = await (pixelMap as image.PixelMap).getImageInfo();
-              const defaultSize: image.Size = {
-                width: 256, height: 256
-              };
-              expect(info.size.width).assertEqual(defaultSize.width);
-              expect(info.size.height).assertEqual(defaultSize.height);
+          waitForCompletion(async () => {
+            try {
+              if (err?.code !== 0) {
+                hilog.info(domain, tag, '%{public}s', `${testNum} getThumbnail failed; error: ${err}`);
+                expect(false).assertTrue();
+              } else {
+                const info = await (pixelMap as image.PixelMap).getImageInfo();
+                const defaultSize: image.Size = {
+                  width: 256, height: 256
+                };
+                expect(info.size.width).assertEqual(defaultSize.width);
+                expect(info.size.height).assertEqual(defaultSize.height);
+              }
+            } catch (error) {
+              hilog.info(domain, tag, '%{public}s', `${testNum} error: ${error}`);
             }
-          } catch (error) {
-            hilog.info(domain, tag, '%{public}s', `${testNum} error: ${error}`);
-          }
-          done();
+            done();
+          })
         })
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', `${testNum} failed; error: ${error}`);
@@ -63,19 +65,21 @@ export default function getThumbnailTest() {
       try {
         let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, fetchOps);
         asset.getThumbnail(size, (err:BusinessError<void> | null, pixelMap: image.PixelMap | undefined):void => {
-          try {
-            if (err == undefined) {
-              hilog.info(domain, tag, '%{public}s', `${testNum} getThumbnail failed; error: ${err}`);
-              expect(false).assertTrue();
-            } else {
-              const info = await (pixelMap as image.PixelMap).getImageInfo();
-              expect(info?.size.width).assertEqual(expectSize.width);
-              expect(info?.size.height).assertEqual(expectSize.height);
+          waitForCompletion(async () => {
+            try {
+              if (err == undefined) {
+                hilog.info(domain, tag, '%{public}s', `${testNum} getThumbnail failed; error: ${err}`);
+                expect(false).assertTrue();
+              } else {
+                const info = await (pixelMap as image.PixelMap).getImageInfo();
+                expect(info?.size.width).assertEqual(expectSize.width);
+                expect(info?.size.height).assertEqual(expectSize.height);
+              }
+            } catch (error) {
+              console.info(`${testNum} error: ${error}`);
             }
-          } catch (error) {
-            console.info(`${testNum} error: ${error}`);
-          }
-          done();
+            done();
+          })
         })
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', `${testNum} failed; error: ${error}`);

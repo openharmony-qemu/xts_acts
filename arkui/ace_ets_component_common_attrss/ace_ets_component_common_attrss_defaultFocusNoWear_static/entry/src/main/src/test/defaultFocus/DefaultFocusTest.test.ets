@@ -65,7 +65,7 @@ export default function DefaultFocusTest() {
    */
 
   describe('DefaultFocusTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DefaultFocusTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.defaultfocus.testwear.static", "EntryAbility")
 

@@ -40,7 +40,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignStart_AddAlign() {
   describe('AlignStart_AddAlign', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignStart_AddAlign beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

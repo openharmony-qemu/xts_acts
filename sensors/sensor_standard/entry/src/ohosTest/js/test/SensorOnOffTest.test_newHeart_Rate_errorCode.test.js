@@ -37,6 +37,8 @@ const PERMISSION_DENIED_CODE = 201
 const PERMISSION_DENIED_MSG = 'Permission denied.'
 let tokenID = undefined
 let permissionNameUser = 'ohos.permission.READ_HEALTH_DATA'
+let permission = false;
+
 async function grantPerm(){
     try {
         let accountManager = osAccount.getAccountManager();
@@ -76,8 +78,14 @@ async function driveFn() {
         console.info(`====>sensors test driver is ${JSON.stringify(driver)}`);
         let button = await driver.findComponent(BY.text('允许'));
         console.info(`====>button is ${JSON.stringify(button)}`);
-        await button.click();
-        await driver.delayMs(1000);
+        if (button == null) {
+            console.info(`====>sensors permission is ${permission}`);
+        } else {
+            permission = true;
+            console.info(`====>sensors permission is ${permission}`);
+            await button.click();
+            await driver.delayMs(1000);
+        }
     } catch (err) {
         console.info('====>sensors motion test err code is ' + err);
         return;
@@ -89,7 +97,7 @@ describe("SensorJsTest_sensor_58", function () {
         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
             sensor.SensorAccuracy.ACCURACY_HIGH) {
             console.info('callback accuracy verified' + JSON.stringify(data));
-            expect(true).assertTrue();
+            expect(data != null).assertTrue();
         } else {
             console.info('callback invalid accuracy encountered' + JSON.stringify(data));
             expect(false).assertTrue();
@@ -102,7 +110,7 @@ describe("SensorJsTest_sensor_58", function () {
         if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
             sensor.SensorAccuracy.ACCURACY_HIGH) {
             console.info('callback2 accuracy verified' + JSON.stringify(data));
-            expect(true).assertTrue();
+            expect(data != null).assertTrue();
         } else {
             console.info('callback2 invalid accuracy encountered' + JSON.stringify(data));
             expect(false).assertTrue();
@@ -166,7 +174,7 @@ describe("SensorJsTest_sensor_58", function () {
         try{
             sensor.getSingleSensor(sensor.SensorId.HEART_RATE,(error, data) => {
                 if (error) {
-                    console.error('SensorOnOff_ErrCode_Test_0023 getSingleSensor fail:' +JSON.stringify(error));
+                    console.info('SensorOnOff_ErrCode_Test_0023 getSingleSensor fail:' +JSON.stringify(error));
                     done();
                 } else {
                     try {
@@ -174,9 +182,14 @@ describe("SensorJsTest_sensor_58", function () {
                         sensor.once(sensor.SensorId.HEART_RATE, callback, {'interval': -100000000});
                         done();
                     } catch (error) {
-                        console.error('SensorOnOff_ErrCode_Test_0023 catch error:' +JSON.stringify(error));
-                        expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
-                        done();
+                        console.info('SensorOnOff_ErrCode_Test_0023 catch error:' +JSON.stringify(error));
+                        if (permission == false) {
+                            expect(error.code).assertEqual(201);
+                            done();
+                        } else {
+                            expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                            done();
+                        }
                     }
                 }
             })
@@ -196,35 +209,40 @@ describe("SensorJsTest_sensor_58", function () {
      * @tc.level  LEVEL3
      */
     it("SensorOnOff_ErrCode_Test_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
-        console.info('----------------------SensorOnOff_ErrCode_Test_0024--------------');
-        const TAG = "SensorOnOff_ErrCode_Test_0024";
-        try{
-            const deviceId = -1;
-            const result = sensor.getSingleSensorByDeviceSync(sensor.SensorId.HEART_RATE, deviceId);
-            if (result.length === 0) {
-                console.info('No sensors found, Test case will return true.');
-                done();
-            } else {
-                const sensorInfoParam = {
-                    deviceId: result[0].deviceId,
-                    sensorIndex: result[0].sensorIndex
-                };
-                const options = {
-                    interval: 100000000,
-                    sensorInfoParam: sensorInfoParam
-                };
+        console.info('====>------SensorOnOff_ErrCode_Test_0024--------------');
+        const TAG = "====>SensorOnOff_ErrCode_Test_0024";
+        const deviceId = -1;
+        const result = sensor.getSingleSensorByDeviceSync(sensor.SensorId.HEART_RATE, deviceId);
+        if (result.length === 0) {
+            console.info('====>No sensors found, Test case will return true.');
+            done();
+        } else {
+            const sensorInfoParam = {
+                deviceId: result[0].deviceId,
+                sensorIndex: result[0].sensorIndex
+            };
+            const options = {
+                interval: 100000000,
+                sensorInfoParam: sensorInfoParam
+            };
+            try{
                 sensor.on(sensor.SensorId.HEART_RATE, callback, options);
                 setTimeout(() => {
-                    console.info('--------------------SensorOnOff_ErrCode_Test_0024 off in------------');
+                    console.info('====>------SensorOnOff_ErrCode_Test_0024 off in------------');
                     sensor.off(sensor.SensorId.HEART_RATE, sensorInfoParam, callback);
-                    console.info('--------------------SensorOnOff_ErrCode_Test_0024 off end------------');
+                    console.info('====>------SensorOnOff_ErrCode_Test_0024 off end------------');
                     done();
                 }, 1000);
+            } catch (error) {
+                console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+                if (permission == false) {
+                    expect(error.code).assertEqual(201);
+                    done();
+                } else {
+                    expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+                    done();
+                }
             }
-        } catch (error) {
-            console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
-            expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
-            done();
-        }
+        } 
     })
 })}

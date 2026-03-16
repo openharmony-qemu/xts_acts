@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function SearchTypeTest() {
   describe('SearchTypeTest', (): void => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
       

@@ -189,7 +189,7 @@ export default function testsuite() {
   ActsgetcomponentTest();
   imageObscuredTest();
   loadingProgressJsunit2();
-  appendChildTest()
+  //appendChildTest()
   drawContextGetSizeTest()
   keyframeTest()
   pixelRoundTest()

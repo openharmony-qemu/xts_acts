@@ -269,5 +269,21 @@ export default function ndkBlanklessInfoWithKeyTest() {
         });
       Utils.waitAndClickComponent('ndkBlanklessInfoWithKeyTestButton', driver);
     })
+    /**
+     * @tc.name   testndkBlanklessInfoWithKey015
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_NDKBLANKLESSINFOWITHKEYTEST_1050
+     * @tc.desc   test OH_NativeArkWeb_GetBlanklessInfoWithKey first parameter1's length is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testndkBlanklessInfoWithKey015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testndkBlanklessInfoWithKey015", 148101);
+      Utils.registerBaseEvent("testndkBlanklessInfoWithKey015", -2, 148241, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected)
+        });
+      Utils.waitAndClickComponent('ndkBlanklessInfoWithKeyTestButton', driver);
+    })
   })
 }

@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from './Util.test';
 import events_emitter from '@ohos.events.emitter';
 export default function checkboxJsunit() {
   describe('checkboxTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 

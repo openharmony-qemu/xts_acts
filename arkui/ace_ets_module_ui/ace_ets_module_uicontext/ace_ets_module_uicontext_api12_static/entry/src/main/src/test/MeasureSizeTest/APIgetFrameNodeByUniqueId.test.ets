@@ -28,7 +28,7 @@ import window from '@ohos.window';
 import { UIContext } from '@ohos.arkui.UIContext';
 export default function APIgetFrameNodeByUniqueId() {
   describe('APIgetFrameNodeByUniqueId', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIgetFrameNodeByUniqueId beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")

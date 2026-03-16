@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function textDataDataDetectorConfig() {
   describe('textDataDataDetectorConfig', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textDataDataDetectorConfig beforeEach start");
 
 

@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ParticleAnimatorTest() {
   describe('ParticleAnimatorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ParticleAnimatorTest beforeEach start");
 
       

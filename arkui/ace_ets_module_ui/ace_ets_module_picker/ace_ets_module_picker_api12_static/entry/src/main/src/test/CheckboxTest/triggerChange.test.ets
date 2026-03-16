@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function triggerChange() {
   describe('triggerChange', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("triggerChange beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

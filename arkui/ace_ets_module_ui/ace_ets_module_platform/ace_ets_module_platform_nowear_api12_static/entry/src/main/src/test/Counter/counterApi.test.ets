@@ -30,7 +30,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function counterApi() {
   describe('counterApi', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.platform.nowear.api12.static", "EntryAbility");
     });

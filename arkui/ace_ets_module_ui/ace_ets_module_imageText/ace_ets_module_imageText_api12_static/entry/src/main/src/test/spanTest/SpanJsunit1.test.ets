@@ -27,7 +27,7 @@ import common from '@ohos.app.ability.common';
 import { RecordData } from '@ohos.base';
 export default function spanTest() {
   describe('spanTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("FontSettingOptions beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

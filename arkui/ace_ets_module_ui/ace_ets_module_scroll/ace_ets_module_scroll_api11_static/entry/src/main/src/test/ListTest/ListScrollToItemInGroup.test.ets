@@ -49,7 +49,7 @@ export default function ListScrollToItemInGroup() {
   const waitUiReadyMs: int = 2000;
 
   describe('ListScrollToItemInGroup', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
 
@@ -62,7 +62,7 @@ export default function ListScrollToItemInGroup() {
         router.clear();
         let pages: router.RouterState = router.getState();
         if (pages == null || !("ListScrollToItemInGroup" == pages.name)) {
-          router.pushUrl(options).then(() => {
+          router.replaceUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           }).catch((err: Error) => {
             console.error(`${SUITE} router.pushUrl failed, code is ${err.code}, message is ${err.message}`);

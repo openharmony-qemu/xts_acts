@@ -43,7 +43,7 @@ import { RecordData } from '@ohos.base';
 
 export default function refreshDragJsunit() {
   describe('refreshDragTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
       

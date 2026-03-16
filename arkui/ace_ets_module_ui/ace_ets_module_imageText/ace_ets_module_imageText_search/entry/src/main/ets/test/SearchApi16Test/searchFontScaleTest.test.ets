@@ -78,7 +78,7 @@ export default function searchFontScaleTest() {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0002 START');
         await CommonFunc.sleep(1000);
-        let search2 = getInspectorByKey('search2');
+        let search2 = getInspectorByKey('searchFontScale2');
         let obj: ESObject = JSON.parse(search2);
         console.log('searchFontScaleTest0002---' + obj.$attrs.maxFontScale)
         console.log('searchFontScaleTest0002---' + obj.$attrs.minFontScale)
@@ -99,7 +99,7 @@ export default function searchFontScaleTest() {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0003 START');
         await CommonFunc.sleep(1000);
-        let search3 = getInspectorByKey('search3');
+        let search3 = getInspectorByKey('searchFontScale3');
         let obj: ESObject = JSON.parse(search3);
         console.log('searchFontScaleTest0003---' + obj.$attrs.maxFontScale)
 		console.log('searchFontScaleTest0003---' + obj.$attrs.minFontScale)
@@ -120,7 +120,7 @@ export default function searchFontScaleTest() {
         let driver = Driver.create();
         console.info('searchFontScaleTest searchFontScaleTest0004 START');
         await CommonFunc.sleep(1000);
-        let search4 = getInspectorByKey('search4');
+        let search4 = getInspectorByKey('searchFontScale4');
         let obj: ESObject = JSON.parse(search4);
         console.log('searchFontScaleTest0004---' + obj.$attrs.maxFontScale)
 		console.log('searchFontScaleTest0004---' + obj.$attrs.minFontScale)

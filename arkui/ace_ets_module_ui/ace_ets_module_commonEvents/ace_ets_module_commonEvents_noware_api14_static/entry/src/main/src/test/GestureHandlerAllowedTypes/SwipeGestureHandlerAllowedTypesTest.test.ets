@@ -26,7 +26,7 @@ import {UtilsTest} from '../Util.test'
 
 export default function SwipeGestureHandlerAllowedTypesTest() {
   describe('SwipeGestureHandlerAllowedTypesTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
 
       await UtilsTest.startAbility("com.open.harmony.nowearevent.static", "EntryAbility")

@@ -20,4 +20,7 @@ ohos_js_app_suite("ActsGetAllAccountsTest") {
   hap_name = "ActsGetAllAccountsTest"
   part_name = "os_account"
   subsystem_name = "account"
+  deps = [ 
+    "//test/xts/acts/account/appaccount/sceneProject/actsscenegetallaccounts:ActsSceneGetAllAccounts"
+  ]
 }

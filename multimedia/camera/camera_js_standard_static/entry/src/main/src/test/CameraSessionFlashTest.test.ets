@@ -426,7 +426,7 @@ export default function cameraSessionFlashTest() {
 
   describe('cameraSessionFlashTest', () => {
     console.info(TAG + '----------cameraSessionFlashTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -447,7 +447,7 @@ export default function cameraSessionFlashTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);

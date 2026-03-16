@@ -11,10 +11,10 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsModuleNormalizedNapiLoadTest-hspTwo-default-signed.hsp",
-                "ActsModuleNormalizedNapiLoadTest-hspOne-default-signed.hsp",
-                "ActsModuleNormalizedNapiLoadTest-sharedHspOne-default-signed.hsp",
-                "ActsModuleNormalizedNapiLoadTest-entry-default-signed.hap",
+                "ActsModuleNormalizedNapiLoadLibTest-hspTwo-default-signed.hsp",
+                "ActsModuleNormalizedNapiLoadLibTest-hspOne-default-signed.hsp",
+                "ActsModuleNormalizedNapiLoadLibTest-sharedHspOne-default-signed.hsp",
+                "ActsModuleNormalizedNapiLoadLibTest-entry-default-signed.hap",
                 "ActsModuleNormalizedNapiLoadTest.hap"
             ],
             "type": "AppInstallKit",

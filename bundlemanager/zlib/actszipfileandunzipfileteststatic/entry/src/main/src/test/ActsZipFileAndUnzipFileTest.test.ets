@@ -35,7 +35,7 @@ let INPUT_FILE_NOT_ZIP = 900003;
 
 export default function ActsZlibTest() {
   describe('ActsZlibTest', ():void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');

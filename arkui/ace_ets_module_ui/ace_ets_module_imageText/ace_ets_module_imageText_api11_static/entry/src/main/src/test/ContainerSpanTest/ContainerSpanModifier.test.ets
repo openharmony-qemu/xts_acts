@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ContainerSpanModifierTest() {
   describe('ContainerSpanModifierTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ContainerSpanModifierTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")

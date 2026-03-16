@@ -33,7 +33,7 @@ let tag: string = 'testTag';
 
 export default function calendarPickerDialogBlurStyleOptionsTest() {
   describe('CalendarPickerDialogBlurStyleOptionsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CalendarPickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

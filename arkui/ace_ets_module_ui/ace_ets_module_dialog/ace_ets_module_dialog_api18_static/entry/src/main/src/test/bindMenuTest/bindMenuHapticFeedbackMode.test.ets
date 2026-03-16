@@ -33,7 +33,7 @@ let emitKey = 'emitUserAgent';
 export default function bindMenuHapticFeedbackMode() {
   describe('bindMenuHapticFeedbackMode', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

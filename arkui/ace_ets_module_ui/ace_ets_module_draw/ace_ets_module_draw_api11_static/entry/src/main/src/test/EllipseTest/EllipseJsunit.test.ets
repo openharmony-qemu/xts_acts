@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ellipseJsunit() {
   describe('ellipseTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
 

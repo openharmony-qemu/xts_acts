@@ -31,7 +31,7 @@ import { UtilsTest, startAbility } from '../../Util.test';
 export default function ScrollToIndexForWaterFlowJsunit02() {
   describe('ScrollToIndexForWaterFlowJsunit02', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ScrollToIndexForWaterFlowJsunit02 beforeEach start");
       await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");

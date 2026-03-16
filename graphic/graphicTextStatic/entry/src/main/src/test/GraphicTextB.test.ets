@@ -93,7 +93,6 @@ export default function GraphicTextBTest() {
         expect(text.TextHeightBehavior.DISABLE_LAST_ASCENT).assertEqual(2)
         expect(text.TextHeightBehavior.DISABLE_ALL).assertEqual(3)
         console.log(msg + ' Succeed in Enum ')
-        expect(true).assertTrue()
         done()
       }catch(err){
         console.log(msg + ' Failed in Enum ' + err)
@@ -167,7 +166,6 @@ export default function GraphicTextBTest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -263,7 +261,6 @@ export default function GraphicTextBTest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -313,7 +310,6 @@ export default function GraphicTextBTest() {
         console.log(msg + ' Succeed in every Variable!')
         paragraph.paintOnPath(canvas, path, 0, 0);
         console.log(msg + ' Succeed in paragraph.paintOnPath')
-        expect(true).assertTrue()
         done()
       }catch(err){
         console.info(msg + 'test paragraph.paintOnPath error ' + JSON.stringify(err));
@@ -341,7 +337,6 @@ export default function GraphicTextBTest() {
         console.log(msg + ' text.FontCollection.getGlobalInstance OK, fontCollection is  ' + fontCollection )
         fontCollection.clearCaches();
         console.log(msg + ' Succeed in fontCollection.clearCaches.')
-        expect(true).assertTrue()
         done()
       } catch (err) {
         console.info(msg + ' Failed in fontCollection.getGlobalInstance.    Cause: ' + JSON.stringify(err));
@@ -421,7 +416,6 @@ export default function GraphicTextBTest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder, This case Pass !')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -522,7 +516,6 @@ export default function GraphicTextBTest() {
           try {
             let ParagraphGraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
             console.log(msg + ' Succeed in text.ParagraphBuilder, This case Pass !')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));
@@ -624,7 +617,6 @@ export default function GraphicTextBTest() {
             console.log(msg + ' Succeed in ParagraphBuilder')
             let paragraph = ParagraphGraphBuilder.build()
             console.log(msg + ' Succeed in build paragraph')
-            expect(true).assertTrue()
             done()
           } catch (err) {
             console.info(msg + ' Failed in fontCollection.ParagraphBuilder.    Cause: ' + JSON.stringify(err));

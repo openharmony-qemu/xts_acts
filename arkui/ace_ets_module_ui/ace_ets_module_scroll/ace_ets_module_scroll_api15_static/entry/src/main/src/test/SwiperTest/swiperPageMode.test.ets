@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function swiperPageMode() {
   describe('swiperPageMode', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperPageMode beforeEach start");
 
       

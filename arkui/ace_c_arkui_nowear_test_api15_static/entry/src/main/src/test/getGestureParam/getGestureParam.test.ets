@@ -27,7 +27,7 @@ let libUtil: LibUtil = new LibUtil();
 
 export default function GetGestureParamTest(){
   describe('GetGestureParamTest',  () =>{
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_nowear_api15_static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

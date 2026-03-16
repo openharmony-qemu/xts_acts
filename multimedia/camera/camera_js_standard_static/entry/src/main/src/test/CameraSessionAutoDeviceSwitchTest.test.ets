@@ -187,7 +187,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
 
   describe('cameraSessionAutoDeviceSwitchTest', () => {
     console.info(TAG + '----------cameraSessionAutoDeviceSwitchTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info('Enter createOutput');
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();

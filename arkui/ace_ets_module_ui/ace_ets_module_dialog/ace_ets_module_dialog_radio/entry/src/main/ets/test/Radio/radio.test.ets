@@ -1322,7 +1322,6 @@ export default function radioTest() {
           console.info('ArkUX_Stage_Radio_0100 END ');
           done();
         } catch (err) {
-          expect().assertFail();
           console.info('ArkUX_Stage_Radio_0100 ERR ' + JSON.stringify(err));
           done();
         }

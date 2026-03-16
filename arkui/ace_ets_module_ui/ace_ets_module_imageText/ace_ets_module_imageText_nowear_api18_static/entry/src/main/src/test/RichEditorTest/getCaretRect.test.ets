@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function getCaretRect() {
   describe('getCaretRect', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getCaretRect beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api18.static", "EntryAbility")
@@ -59,7 +59,7 @@ export default function getCaretRect() {
       }
       console.info("getCaretRect beforeEach end");
     });
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
       await CommonFunc.sleep(2000);

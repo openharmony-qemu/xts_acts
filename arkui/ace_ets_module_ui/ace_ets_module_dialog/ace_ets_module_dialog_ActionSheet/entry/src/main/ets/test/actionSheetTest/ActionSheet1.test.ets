@@ -45,13 +45,16 @@ export default function ActionSheet1() {
       }
       done();
     });
-    /* *
-    * @tc.number: ActionSheet1_0100
-    * @tc.name  : ActionSheet1_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
-    it('ActionSheet1_0100', Level.LEVEL2, async (done: Function) => {
+
+    /**
+     * @tc.number    SUB_ACE_ActionSheet1_0100
+     * @tc.name      ActionSheet1_0100
+     * @tc.desc      set api
+     * @tc.level:    Level 0
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ActionSheet1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheet1_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -71,13 +74,16 @@ export default function ActionSheet1() {
       console.info('[ActionSheet1_0100] END');
       done();
     });
-    /* *
-    * @tc.number: ActionSheet1_0200
-    * @tc.name  : ActionSheet1_0200
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
-    it('ActionSheet1_0200', Level.LEVEL2, async (done: Function) => {
+
+    /**
+     * @tc.number    SUB_ACE_ActionSheet1_0200
+     * @tc.name      ActionSheet1_0200
+     * @tc.desc      set api
+     * @tc.level:    Level 0
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ActionSheet1_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheet1_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

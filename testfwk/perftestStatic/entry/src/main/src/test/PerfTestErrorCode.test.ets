@@ -85,6 +85,24 @@ export default function perfTestErrorTest() {
                 console.log(`${TestTag}, test_PerfTest_create_32400003_static strategy.timeout = -10 error is: ${JSON.stringify(e)}`);
                 expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
             }
+            try {
+                let metrics: Array<PerfMetric> = []
+                let perfTestStrategy: PerfTestStrategy = {
+                    metrics: metrics,
+                    actionCode: (finish: Callback<boolean>) => {
+                        finish(true)
+                    },
+                    iterations: 5,
+                    resetCode: (finish: Callback<boolean>) => {
+                        finish(true)
+                    },
+                }
+                let perfTest: PerfTest = PerfTest.create(perfTestStrategy)
+                expect().assertFail();
+            }catch (e) {
+                console.log(`${TestTag}, test_PerfTest_create_32400003_static strategy.metrics = [] error is: ${JSON.stringify(e)}`);
+                expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
+            }
             console.log(`${TestTag}, test_PerfTest_create_32400003 end`);
         })
 
@@ -278,10 +296,12 @@ export default function perfTestErrorTest() {
                 let perfTestStrategy: PerfTestStrategy = {
                     metrics: metrics,
                     actionCode: (finish: Callback<boolean>) => {
+                        waitForCompletion(async () => {
                         console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static actionCode start`);
                         await Utils.msSleep(5000);
                         console.log(`${TestTag}, test_PerfTest_run_32400004_actionCodeTimeOut_static actionCode end`);
                         finish(true)
+                        })
                     },
                     iterations: 1,
                     resetCode: (finish: Callback<boolean>) => {
@@ -321,10 +341,12 @@ export default function perfTestErrorTest() {
                     },
                     iterations: 1,
                     resetCode: (finish: Callback<boolean>) => {
+                        waitForCompletion(async () => {
                         console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static resetCode start `);
                         await Utils.msSleep(5000);
                         console.log(`${TestTag}, test_PerfTest_run_32400004_resetCodeTimeOut_static resetCode end`);
                         finish(true)
+                        })
                     },
                     timeout: 2000,
                 }

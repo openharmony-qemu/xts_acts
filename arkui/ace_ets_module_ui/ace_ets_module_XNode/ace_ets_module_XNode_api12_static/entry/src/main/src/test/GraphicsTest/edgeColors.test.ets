@@ -24,7 +24,7 @@ import {UtilsTest,startAbility} from '../Util.test';
 import {MessageManager,Callback} from '../../../ets/MainAbility/utils/MessageManager';
 export default function edgeColors() {
   describe('edgeColors', () => { 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("edgeColors beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
@@ -78,7 +78,7 @@ it('edgeColors_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[edgeColors_0100] component obj is: " + JSON.stringify(obj));
       console.info("[edgeColors_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('edgeColorsValue:4278190335');//0xFF0000FF转换为十进制
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('edgeColorsValue:' + 0xFF0000FF.toInt());
       console.info('[edgeColors_0100] END');
       done();
     });

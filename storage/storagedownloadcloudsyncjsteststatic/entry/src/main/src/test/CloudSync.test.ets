@@ -939,7 +939,6 @@ export default function cloudCloudSyncTest() {
       }
       done();
     });
-
   })
   hilog.info(domain, tag, '%{public}s', 'cloud_sync_test end');
 

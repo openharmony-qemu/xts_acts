@@ -33,7 +33,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function backgroundBlurStyleTest() {
   describe('backgroundBlurStyleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("backgroundBrightness beforeAll start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api14.static", "EntryAbility")

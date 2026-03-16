@@ -1,6 +1,6 @@
 
 /**
- * Copyright (c) 2021 Huawei Device Co., Ltd.
+ * Copyright (c) 2021-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,8 +16,10 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import settings from '@ohos.settings';
 import { BusinessError } from '@ohos.base';
+import uitest from '@ohos.UiTest';
 import { mContext } from '../testability/TestAbility';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import CommonFunc from './Common';
 
 interface myObj {
   aa: string
@@ -38,8 +40,16 @@ function isDeviceTablet(): boolean {
   return deviceType === 'tablet';
 }
 
+function isDevicePC(): boolean {
+  return deviceType === '2in1';
+}
+
 function isDeviceSupportInputMethod(): boolean {
   return isDevicePhone() || isDeviceTablet();
+}
+
+function isDeviceSupportOpenNetWork(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
 export default function settingUiJsunit() {
@@ -77,8 +87,7 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('settings_uri_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let name = '';
-      let uri = settings.getUriSync(name);
+      let uri = settings.getUriSync('');
       console.info("[settings_uri_test_002] uri is: " + uri);
       expect(uri).assertEqual('datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=')
       done();
@@ -155,7 +164,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let name = null;
       try {
-        let uri = settings.getUriSync(name);
+        let uri = settings.getUriSync(null);
         console.info("[settings_get_value_014] uri is: " + uri);
       } catch (err) {
         let errMsg: string = err;
@@ -265,7 +274,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let name = null;
       try {
-        let uri = settings.getUriSync(name);
+        let uri = settings.getUriSync(null);
         console.info("[settings_set_value_027] uri is: " + uri);
       } catch (err) {
         let errMsg: string = err;
@@ -275,6 +284,30 @@ export default function settingUiJsunit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   settings_get_uri_sync_undefined
+     * @tc.number settings_get_uri_sync_undefined
+     * @tc.desc   settings_get_uri_sync_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_sync_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let uri = settings.getUriSync(undefined);
+          console.info("[settings_get_uri_sync_undefined] uri is: " + uri);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          let errMsg: string = err;
+          console.error("[settings_get_uri_sync_undefined] error = " + errMsg);
+          expect(errMsg == "Error: assertion (valueType == napi_string) failed: Wrong argument type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
 
     /**
      * @tc.name   settings_set_value_028
@@ -1463,6 +1496,31 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_enable_air_plane_mode_true
+     * @tc.number settings_enable_air_plane_mode_true
+     * @tc.desc   settings_enable_air_plane_mode_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_enable_air_plane_mode_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info('test settings_get_value_113 start');
+          settings.enableAirplaneMode(true, (err, data) => {
+            console.info('settings test enableAirplaneMode callback err' + JSON.stringify(err.code));
+            expect(JSON.stringify(err.code)).assertEqual("801");
+            done();
+          })
+        } catch (err) {
+          console.info('settings  test enableAirplaneMode try catch err');
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_get_value_114
      * @tc.number settings_get_value_114
      * @tc.desc   settings_get_value_114
@@ -1489,6 +1547,29 @@ export default function settingUiJsunit() {
         return;
       }
     });
+
+    /**
+     * @tc.name   settings_enable_air_plane_mode_promise_true
+     * @tc.number settings_enable_air_plane_mode_promise_true
+     * @tc.desc   settings_enable_air_plane_mode_promise_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_enable_air_plane_mode_promise_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.enableAirplaneMode(true);
+          console.info('settings settings_enable_air_plane_mode_promise_true result ' + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('settings settings_enable_air_plane_mode_promise_true err' + JSON.stringify(err));
+          expect(JSON.stringify(err.code)).assertEqual("801");
+          done();
+          return;
+        }
+      });
 
     /**
      * @tc.name   settings_get_value_115
@@ -1608,27 +1689,6 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.name   open_manager_settings_119
-     * @tc.number open_manager_settings_119
-     * @tc.desc   open_manager_settings_119
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('open_manager_settings_119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
-      let context = null;
-      try{
-        let value = settings.openNetworkManagerSettings(context);
-        expect(true).assertTrue();
-        done();
-      }catch (err) {
-        console.error("[open_manager_settings_119] error = " + err);
-        expect(err.code).assertEqual(14800000);
-      }
-      done();
-    });
-
-    /**
      * @tc.name   open_manager_settings_120
      * @tc.number open_manager_settings_120
      * @tc.desc   open_manager_settings_120
@@ -1638,8 +1698,18 @@ export default function settingUiJsunit() {
      */
     it('open_manager_settings_120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       try{
-        let value = settings.openNetworkManagerSettings(globalThis.abilityContext);
-        expect(true).assertTrue();
+        let value = await settings.openNetworkManagerSettings(mContext);
+        console.info("[open_manager_settings_120] result is:" + value);
+        if (!isDeviceSupportOpenNetWork()) {
+          console.info("[open_manager_settings_120] sleep 1s");
+          await CommonFunc.sleep(1000);
+          let driver = await uitest.Driver.create();
+          let textComponent = await driver.findComponent(uitest.ON.text('设置网络'));
+          console.info("[open_manager_settings_120] text = " + textComponent);
+          expect(textComponent === undefined || textComponent === null).assertTrue();
+        } else {
+          expect(value).assertTrue();
+        }
         done();
       }catch (err) {
         console.error("[open_manager_settings_120] error = " + err);
@@ -1675,6 +1745,32 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_set_value_context_undefined
+     * @tc.number settings_set_value_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
+      let name = 'settings.screen.brightness1112'; //关键字
+      let value = 'brightness111' //值
+      let defaultCode: number = 0;
+      try {
+        let result = await settings.setValue(undefined, name, value, settings.domainName.DEVICE_SHARED);
+        console.info("[settings_set_value_context_undefined] result = " + result);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error("[settings_set_value_context_undefined] error = " + err);
+        expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+          .assertTrue();
+        done();
+        return;
+      }
+    });
+
+    /**
      * @tc.name   settings_set_value_key_null
      * @tc.number settings_set_value_key_null
      * @tc.desc   MediumTest
@@ -1698,6 +1794,32 @@ export default function settingUiJsunit() {
         return;
       }
     });
+
+    /**
+     * @tc.name   settings_set_value_key_undefined
+     * @tc.number settings_set_value_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let value = 'brightness111'; //值
+        let defaultCode: number = 0;
+        try {
+          await settings.setValue(mContext, undefined, value, settings.domainName.DEVICE_SHARED);
+          console.info("[settings_set_value_key_undefined]");
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_key_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
 
     /**
      * @tc.name   settings_set_value_key_empty
@@ -1748,6 +1870,221 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_set_value_value_undefined
+     * @tc.number settings_set_value_value_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result =
+            await settings.setValue(mContext, 'setvaluenull', undefined, settings.domainName.DEVICE_SHARED);
+          console.info("[settings_set_value_value_undefined] result = " + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_value_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2], type. String expected")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_value_empty
+     * @tc.number settings_set_value_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let result =
+          await settings.setValue(mContext, 'setvalueempty', '', settings.domainName.DEVICE_SHARED);
+        console.info("[settings_set_value_value_undefined] result = " + result);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error("[settings_set_value_value_undefined] error = " + err);
+        expect(err.code).assertEqual(201);
+        done();
+        return;
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_domain_permission
+     * @tc.number settings_set_value_domain_permission
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_domain_permission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let result =
+          await settings.setValue(mContext, 'testkeydomian', 'testvalue', settings.domainName.DEVICE_SHARED);
+        console.info("[settings_set_value_domain_permission] result = " + result);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error("[settings_set_value_domain_permission] error = " + err);
+        expect(err.code).assertEqual(201);
+        done();
+        return;
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_callback_context_null
+     * @tc.number settings_set_value_callback_context_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(null, 'testkey', 'testvalue', (result) => {
+            console.info("[settings_set_value_callback_context_null] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_context_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_context_undefined
+     * @tc.number settings_set_value_callback_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(undefined, 'testkey', 'testvalue', (result) => {
+            console.info("[settings_set_value_callback_context_undefined] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_context_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_key_null
+     * @tc.number settings_set_value_callback_key_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(mContext, null, 'testvalue', (result) => {
+            console.info("[settings_set_value_callback_key_null] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_key_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_key_undefined
+     * @tc.number settings_set_value_callback_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(mContext, undefined, 'testvalue', (result) => {
+            console.info("[settings_set_value_callback_key_undefined] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_key_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_value_null
+     * @tc.number settings_set_value_callback_value_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(mContext, 'testkey', null, (result) => {
+            console.info("[settings_set_value_callback_value_null] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_value_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2], type. String expected")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_value_undefined
+     * @tc.number settings_set_value_callback_value_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.setValue(mContext, 'testkey', undefined, (result) => {
+            console.info("[settings_set_value_callback_value_undefined] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_value_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2], type. String expected")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
      * @tc.name   settings_set_value_domain_empty
      * @tc.number settings_set_value_domain_empty
      * @tc.desc   MediumTest
@@ -1770,6 +2107,52 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_set_value_domain_null
+     * @tc.number settings_set_value_domain_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_domain_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result =
+            await settings.setValue(mContext, 'setvalue1', 'value1', null);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_domain_null] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_domain_undefined
+     * @tc.number settings_set_value_domain_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_domain_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result =
+            await settings.setValue(mContext, 'setvalue1', 'value1', undefined);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_domain_undefined] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_set_value_sync_context_null
      * @tc.number settings_set_value_sync_context_null
      * @tc.desc   MediumTest
@@ -1785,6 +2168,29 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_sync_context_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_context_undefined
+     * @tc.number settings_set_value_sync_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: boolean = settings.setValueSync(undefined, 'name', 'value1', settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_context_undefined] error = " + err);
           expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
             .assertTrue();
           done();
@@ -1817,6 +2223,53 @@ export default function settingUiJsunit() {
       });
 
     /**
+     * @tc.name   settings_set_value_sync_key_undefined
+     * @tc.number settings_set_value_sync_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: boolean =
+            settings.setValueSync(mContext, undefined, 'value1', settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_key_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_key_empty
+     * @tc.number settings_set_value_sync_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: boolean =
+            settings.setValueSync(mContext, '', 'value1', settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_key_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_set_value_sync_value_null
      * @tc.number settings_set_value_sync_value_null
      * @tc.desc   MediumTest
@@ -1841,6 +2294,53 @@ export default function settingUiJsunit() {
       });
 
     /**
+     * @tc.name   settings_set_value_sync_value_undefined
+     * @tc.number settings_set_value_sync_value_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: boolean =
+            settings.setValueSync(mContext, 'testkey', undefined, settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_value_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_value_empty
+     * @tc.number settings_set_value_sync_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: boolean =
+            settings.setValueSync(mContext, 'testkey', '', settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_value_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_set_value_sync_domain_null
      * @tc.number settings_set_value_sync_domain_null
      * @tc.desc   MediumTest
@@ -1857,6 +2357,29 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_sync_domain_null] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_domain_undefined
+     * @tc.number settings_set_value_sync_domain_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_domain_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: boolean =
+            settings.setValueSync(mContext, 'testkey', 'testvalue', undefined);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_domain_undefined] error = " + err);
           expect().assertFail();
           done();
           return;
@@ -1904,6 +2427,260 @@ export default function settingUiJsunit() {
         } catch (err) {
           console.error("[settings_get_value_context_null] error = " + err);
           expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_key_null
+     * @tc.number settings_get_value_callback_key_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.getValue(mContext, null, (err: Error, value: string) => {
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_get_value_context_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_key_undefined
+     * @tc.number settings_get_value_callback_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.getValue(mContext, undefined, (err: Error, value: string) => {
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_get_value_context_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_context_undefined
+     * @tc.number settings_get_value_callback_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.getValue(undefined, 'testkey', (err: Error, value: string) => {
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_get_value_callback_context_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_context_null
+     * @tc.number settings_get_value_callback_context_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          settings.getValue(null, 'testkey', (err: Error, value: string) => {
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_get_value_callback_context_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_callback_null
+     * @tc.number settings_get_value_callback_callback_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.getValue(mContext, 'testkey', null);
+          console.info("[settings_get_value_callback_callback_null] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_callback_callback_null] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_callback_undefined
+     * @tc.number settings_get_value_callback_callback_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_callback_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.getValue(mContext, 'testkey', undefined);
+          console.info("[settings_get_value_callback_callback_undefined] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_callback_callback_undefined] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_callback_empty
+     * @tc.number settings_get_value_callback_callback_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_callback_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.getValue(mContext, 'testkey', '');
+          console.info("[settings_get_value_callback_callback_empty] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_callback_callback_empty] error = " + err);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_key_empty
+     * @tc.number settings_get_value_callback_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let value: string = 'value';
+          await settings.setValue(mContext, '', value,  settings.domainName.DEVICE_SHARED);
+          settings.getValue(mContext, '', (err: Error, value: string) => {
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_get_value_callback_key_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_promise_key_empty
+     * @tc.number settings_get_value_promise_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_promise_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let value: string = 'value';
+          await settings.setValue(mContext, '', value,  settings.domainName.DEVICE_SHARED);
+          let result = await settings.getValue(mContext, '');
+        } catch (err) {
+          console.error("[settings_get_value_promise_key_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_promise_key_null
+     * @tc.number settings_get_value_promise_key_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_promise_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.getValue(mContext, null);
+        } catch (err) {
+          console.error("[settings_get_value_promise_key_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_promise_key_undefined
+     * @tc.number settings_get_value_promise_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_promise_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.getValue(mContext, undefined);
+        } catch (err) {
+          console.error("[settings_get_value_promise_key_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
             .assertTrue();
           done();
           return;
@@ -2007,6 +2784,30 @@ export default function settingUiJsunit() {
       });
 
     /**
+     * @tc.name   settings_get_value_sync_context_undefined
+     * @tc.number settings_get_value_sync_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: string =
+            await settings.getValueSync(undefined, 'testkey', 'defValue', settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_context_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_get_value_sync_key_null
      * @tc.number settings_get_value_sync_key_null
      * @tc.desc   MediumTest
@@ -2023,6 +2824,30 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_key_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_key_undefined
+     * @tc.number settings_get_value_sync_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: string =
+            await settings.getValueSync(mContext, undefined, 'defValue', settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_key_undefined] error = " + err);
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
             .assertTrue();
           done();
@@ -2056,6 +2881,54 @@ export default function settingUiJsunit() {
       });
 
     /**
+     * @tc.name   settings_get_value_sync_defValue_null
+     * @tc.number settings_get_value_sync_defValue_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_defValue_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: string =
+            await settings.getValueSync(mContext, 'testkey', null, settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_defValue_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_defValue_undefined
+     * @tc.number settings_get_value_sync_defValue_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_defValue_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: string =
+            await settings.getValueSync(mContext, 'testkey', undefined, settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_defValue_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_get_value_sync_domain_null
      * @tc.number settings_get_value_sync_domain_null
      * @tc.desc   MediumTest
@@ -2066,14 +2939,38 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_domain_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          await settings.setValue(mContext, 'testkeyadfasdf', 'defValue',  settings.domainName.DEVICE_SHARED);
           let result: string =
             await settings.getValueSync(mContext, 'testkeyadfasdf', 'defValue', null);
-          expect().assertFail();
+          console.info("[settings_get_value_sync_domain_null] result = " + result);
+          expect(result === null).assertTrue();
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_domain_null] error = " + err);
-          expect(err.code).assertEqual(201);
+          expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_domain_undefined
+     * @tc.number settings_get_value_sync_domain_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_domain_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result: string =
+            await settings.getValueSync(mContext, 'testkeyadfasdf', 'defValue', undefined);
+          console.info("[settings_get_value_sync_domain_undefined] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_domain_undefined] error = " + err);
+          expect().assertFail();
           done();
           return;
         }
@@ -2115,6 +3012,31 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let result = settings.registerKeyObserver(null, 'testkey', settings.domainName.DEVICE_SHARED, (err, ret) => {
+            done();
+          })
+          expect(result).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_domain_empty] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_registerKeyObserver_context_undefined
+     * @tc.number settings_registerKeyObserver_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_registerKeyObserver_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.registerKeyObserver(undefined, 'testkey', settings.domainName.DEVICE_SHARED, (err, ret) => {
             done();
           })
           expect(result).assertTrue();
@@ -2177,22 +3099,103 @@ export default function settingUiJsunit() {
       });
 
     /**
-     * @tc.name   settings_registerKeyObserver_callback_null
-     * @tc.number settings_registerKeyObserver_callback_null
+     * @tc.name   settings_registerKeyObserver_key_undefined
+     * @tc.number settings_registerKeyObserver_key_undefined
      * @tc.desc   MediumTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('settings_registerKeyObserver_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('settings_registerKeyObserver_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.registerKeyObserver(mContext, 'testkey', settings.domainName.DEVICE_SHARED, null)
+          let result =
+            settings.registerKeyObserver(mContext, undefined, settings.domainName.DEVICE_SHARED, (err, ret) => {
+              done();
+            })
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_registerKeyObserver_key_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_registerKeyObserver_domain_empty
+     * @tc.number settings_registerKeyObserver_domain_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_registerKeyObserver_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result =
+            settings.registerKeyObserver(mContext, 'testkey', '', (err, ret) => {
+              done();
+            })
           expect(result).assertTrue();
           done();
         } catch (err) {
-          console.error("[settings_registerKeyObserver_callback_null] error = " + err);
+          console.error("[settings_registerKeyObserver_domain_empty] error = " + err);
           expect().assertFail();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_registerKeyObserver_domain_null
+     * @tc.number settings_registerKeyObserver_domain_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_registerKeyObserver_domain_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result =
+            settings.registerKeyObserver(mContext, 'testkey', null, (err, ret) => {
+              done();
+            })
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_registerKeyObserver_domain_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_registerKeyObserver_domain_undefined
+     * @tc.number settings_registerKeyObserver_domain_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_registerKeyObserver_domain_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result =
+            settings.registerKeyObserver(mContext, 'testkey', undefined, (err, ret) => {
+              done();
+            })
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_registerKeyObserver_domain_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
           done();
           return;
         }
@@ -2222,6 +3225,29 @@ export default function settingUiJsunit() {
       });
 
     /**
+     * @tc.name   settings_unregisterKeyObserver_context_undefined
+     * @tc.number settings_unregisterKeyObserver_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregisterKeyObserver_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let value = settings.unregisterKeyObserver(undefined, 'testkey', settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_unregisterKeyObserver_context_undefined] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
      * @tc.name   settings_unregisterKeyObserver_key_null
      * @tc.number settings_unregisterKeyObserver_key_null
      * @tc.desc   MediumTest
@@ -2237,6 +3263,29 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_unregisterKeyObserver_key_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_unregisterKeyObserver_key_undefined
+     * @tc.number settings_unregisterKeyObserver_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregisterKeyObserver_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let value = settings.unregisterKeyObserver(mContext, undefined, settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_unregisterKeyObserver_key_undefined] error = " + err);
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
             .assertTrue();
           done();
@@ -2282,6 +3331,29 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_unregisterKeyObserver_domain_null] error = " + err);
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+          return;
+        }
+      });
+
+    /**
+     * @tc.name   settings_unregisterKeyObserver_domain_undefined
+     * @tc.number settings_unregisterKeyObserver_domain_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregisterKeyObserver_domain_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.unregisterKeyObserver(mContext, 'testkey', undefined);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_unregisterKeyObserver_domain_undefined] error = " + err);
           expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
             .assertTrue();
           done();
@@ -2347,12 +3419,35 @@ export default function settingUiJsunit() {
         done();
         return;
       }
-      let context = null;
       let code = 0;
       try {
-        settings.openInputMethodSettings(context);
+        settings.openInputMethodSettings(null);
       } catch (err) {
         console.error("[openInputMethodSettings_invalid_context] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodSettings_invalid_context_undefined
+     * @tc.number openInputMethodSettings_invalid_context_undefined
+     * @tc.desc   openInputMethodSettings_invalid_context_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodSettings_invalid_context_undefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodSettings(undefined);
+      } catch (err) {
+        console.error("[openInputMethodSettings_invalid_context_undefined] error = " + err);
         code = err.code;
       }
       expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
@@ -2368,18 +3463,24 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
-      if (!isDeviceSupportInputMethod()) {
-        done();
-        return;
-      }
       let code = 0;
       try {
         settings.openInputMethodSettings(mContext);
       } catch (err) {
         console.error("[openInputMethodSettings_valid_param] error = " + err);
-        code = err.code;
+        code = err?.code;
       }
-      expect(code).assertEqual(0);
+      console.info("[openInputMethodSettings_valid_param] sleep 1s");
+      await CommonFunc.sleep(1000);
+      let driver = await uitest.Driver.create();
+      console.info("[openInputMethodSettings_valid_param] code = " + code);
+      let textComponent = await driver.findComponent(uitest.ON.text('输入法管理'));
+      console.info("[openInputMethodSettings_valid_param] text = " + textComponent);
+      if (!isDeviceSupportInputMethod()) {
+        expect(textComponent === undefined || textComponent === null).assertTrue();
+      } else {
+        expect(code).assertEqual(0);
+      }
       done();
     });
 
@@ -2399,9 +3500,34 @@ export default function settingUiJsunit() {
       let context = null;
       let code = 0;
       try {
-        settings.openInputMethodDetail(context, 'bundleName', 'inputMethodId');
+        settings.openInputMethodDetail(null, 'bundleName', 'inputMethodId');
       } catch (err) {
         console.error("[openInputMethodDetail_invalid_context] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_context_undefined
+     * @tc.number openInputMethodDetail_invalid_context_undefined
+     * @tc.desc   openInputMethodDetail_invalid_context_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_context_undefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let context = null;
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(undefined, 'bundleName', 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_context_undefined] error = " + err);
         code = err.code;
       }
       expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
@@ -2433,6 +3559,54 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   openInputMethodDetail_invalid_bundleName_empty
+     * @tc.number openInputMethodDetail_invalid_bundleName_empty
+     * @tc.desc   openInputMethodDetail_invalid_bundleName_empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_bundleName_empty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(mContext, '', 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_bundleName_empty] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_bundleName_undefined
+     * @tc.number openInputMethodDetail_invalid_bundleName_undefined
+     * @tc.desc   openInputMethodDetail_invalid_bundleName_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_bundleName_undefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(mContext, undefined, 'inputMethodId');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_bundleName_undefined] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
      * @tc.name   openInputMethodDetail_invalid_method
      * @tc.number openInputMethodDetail_invalid_method
      * @tc.desc   openInputMethodDetail_invalid_method
@@ -2457,6 +3631,54 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   openInputMethodDetail_invalid_method_undefined
+     * @tc.number openInputMethodDetail_invalid_method_undefined
+     * @tc.desc   openInputMethodDetail_invalid_method_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_method_undefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(mContext, 'bundleName', undefined);
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_method_undefined] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
+     * @tc.name   openInputMethodDetail_invalid_method_empty
+     * @tc.number openInputMethodDetail_invalid_method_empty
+     * @tc.desc   openInputMethodDetail_invalid_method_empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openInputMethodDetail_invalid_method_empty', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openInputMethodDetail(mContext, 'bundleName', '');
+      } catch (err) {
+        console.error("[openInputMethodDetail_invalid_method_empty] error = " + err);
+        code = err.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+    /**
      * @tc.name   openInputMethodDetail_valid_param
      * @tc.number openInputMethodDetail_valid_param
      * @tc.desc   openInputMethodDetail_valid_param
@@ -2465,10 +3687,6 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
-      if (!isDeviceSupportInputMethod()) {
-        done();
-        return;
-      }
       let code = 0;
       try {
         settings.openInputMethodDetail(mContext, 'bundleName', 'inputMethodId');
@@ -2476,8 +3694,664 @@ export default function settingUiJsunit() {
         console.error("[openInputMethodDetail_valid_param] error = " + err);
         code = err.code;
       }
-      expect(code).assertEqual(0);
+      console.info("[openInputMethodDetail_valid_param] sleep 1s");
+      await CommonFunc.sleep(1000);
+      let driver = await uitest.Driver.create();
+      let textComponent = await driver.findComponent(uitest.ON.text('输入法'));
+      console.info("[openInputMethodSettings_valid_param] text = " + textComponent);
+      if (!isDeviceSupportInputMethod()) {
+        expect(textComponent === undefined || textComponent === null).assertTrue();
+      } else {
+        expect(code).assertEqual(0);
+      }
       done();
     });
+
+    /**
+     * @tc.name   settings_get_uri_promise_empty
+     * @tc.number settings_get_uri_promise_empty
+     * @tc.desc   settings_get_uri_promise_empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_promise_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = await settings.getURI('');
+        console.info("[settings_get_uri_promise_empty] uri is: " + uri);
+        expect(uri).assertEqual('datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=')
+        done();
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_promise_empty] error = " + errMsg);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_get_uri_promise_null
+     * @tc.number settings_get_uri_promise_null
+     * @tc.desc   settings_get_uri_promise_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = await settings.getURI(null);
+        console.info("[settings_get_uri_promise_null] uri is: " + uri);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_promise_null] error = " + errMsg);
+        expect(errMsg ==
+          "Error: assertion (valueType == napi_string) failed: uri Wrong argument type. String expected.")
+          .assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_get_uri_promise_undefined
+     * @tc.number settings_get_uri_promise_undefined
+     * @tc.desc   settings_get_uri_promise_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_promise_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = await settings.getURI(undefined);
+        console.info("[settings_get_uri_promise_undefined] uri is: " + uri);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_promise_undefined] error = " + errMsg);
+        expect(errMsg ==
+          "Error: assertion (valueType == napi_string) failed: uri Wrong argument type. String expected.")
+          .assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_get_uri_callback_null
+     * @tc.number settings_get_uri_callback_null
+     * @tc.desc   settings_get_uri_callback_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = settings.getURI(null, (value) => {
+          console.info("[settings_get_uri_callback_null] value is: " + value);
+          expect().assertFail();
+          done();
+        });
+        console.info("[settings_get_uri_callback_null] uri is: " + uri);
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_callback_null] error = " + errMsg);
+        expect(errMsg ==
+          "Error: assertion (valueType == napi_string) failed: uri Wrong argument type. String expected.")
+          .assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   settings_get_uri_callback_undefined
+     * @tc.number settings_get_uri_callback_undefined
+     * @tc.desc   settings_get_uri_callback_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_uri_callback_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let uri = settings.getURI(undefined, (value) => {
+          console.info("[settings_get_uri_callback_undefined] value is: " + value);
+          expect().assertFail();
+          done();
+        });
+        console.info("[settings_get_uri_callback_undefined] uri is: " + uri);
+      } catch (err) {
+        let errMsg: string = err;
+        console.error("[settings_get_uri_callback_undefined] error = " + errMsg);
+        expect(errMsg ==
+          "Error: assertion (valueType == napi_string) failed: uri Wrong argument type. String expected.")
+          .assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain
+     * @tc.number settings_set_value_sync_no_domain
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.setValueSync(mContext, 'testkey', 'testvalue');
+          console.info("[settings_set_value_sync_no_domain] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_key_empty
+     * @tc.number settings_set_value_sync_no_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.setValueSync(mContext, '', 'testvalue');
+          console.info("[settings_set_value_sync_no_domain_key_empty] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain_key_empty] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_key_null
+     * @tc.number settings_set_value_sync_no_domain_key_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.setValueSync(mContext, null, 'testvalue');
+          console.info("[settings_set_value_sync_no_domain_key_null] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain_key_null] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_key_undefined
+     * @tc.number settings_set_value_sync_no_domain_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.setValueSync(mContext, undefined, 'testvalue');
+          console.info("[settings_set_value_sync_no_domain_key_undefined] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain_key_undefined] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_value_empty
+     * @tc.number settings_set_value_sync_no_domain_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.setValueSync(mContext, 'testkey', '');
+          console.info("[settings_set_value_sync_no_domain_value_empty] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain_value_empty] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_value_null
+     * @tc.number settings_set_value_sync_no_domain_value_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.setValueSync(mContext, 'testkey', null);
+          console.info("[settings_set_value_sync_no_domain_value_empty] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain_value_null] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_value_undefined
+     * @tc.number settings_set_value_sync_no_domain_value_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.setValueSync(mContext, 'testkey', undefined);
+          console.info("[settings_set_value_sync_no_domain_value_undefined] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain_value_undefined] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain
+     * @tc.number settings_get_value_sync_no_domain
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let defValue: string = 'defValue';
+          let result = settings.getValueSync(mContext, 'testkeydef', defValue);
+          console.info("[settings_get_value_sync_no_domain] result:" + result);
+          expect(result === defValue).assertTrue();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain] error is:" + String(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_key_empty
+     * @tc.number settings_get_value_sync_no_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let defValue: string = 'defValue';
+          let result = settings.getValueSync(mContext, '', defValue);
+          console.info("[settings_get_value_sync_no_domain_key_empty] result:" + result);
+          expect(result === defValue).assertTrue();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_key_empty] error is:" + String(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_key_null
+     * @tc.number settings_get_value_sync_no_domain_key_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let defValue: string = 'defValue';
+          let result = settings.getValueSync(mContext, null, defValue);
+          console.info("[settings_get_value_sync_no_domain_key_null] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_key_null] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_key_undefined
+     * @tc.number settings_get_value_sync_no_domain_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let defValue: string = 'defValue';
+          let result = settings.getValueSync(mContext, undefined, defValue);
+          console.info("[settings_get_value_sync_no_domain_key_undefined] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_key_undefined] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1] type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_value_empty
+     * @tc.number settings_get_value_sync_no_domain_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let defValue: string = '';
+          let result = settings.getValueSync(mContext, 'getValueSynckey1', '');
+          console.info("[settings_get_value_sync_no_domain_value_empty] result:" + result);
+          expect(result === defValue).assertTrue();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_value_empty] error is:" + String(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_value_null
+     * @tc.number settings_get_value_sync_no_domain_value_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.getValueSync(mContext, 'getValueSynckey1', null);
+          console.info("[settings_get_value_sync_no_domain_value_null] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_value_null] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_value_undefined
+     * @tc.number settings_get_value_sync_no_domain_value_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = settings.getValueSync(mContext, 'getValueSynckey1', undefined);
+          console.info("[settings_get_value_sync_no_domain_value_undefined] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_value_undefined] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain
+     * @tc.number settings_set_value_no_domain
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, 'setVlauekey1', 'value1');
+          console.info("[settings_set_value_no_domain] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_context_null
+     * @tc.number settings_set_value_no_domain_context_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(null, 'setVlauekey1', 'value1');
+          console.info("[settings_set_value_no_domain_context_null] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_context_null] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_context_undefined
+     * @tc.number settings_set_value_no_domain_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(undefined, 'setVlauekey1', 'value1');
+          console.info("[settings_set_value_no_domain_context_undefined] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_context_undefined] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_key_empty
+     * @tc.number settings_set_value_no_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, '', 'value1');
+          console.info("[settings_set_value_no_domain_key_empty] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_key_empty] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_key_null
+     * @tc.number settings_set_value_no_domain_key_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, null, 'value1');
+          console.info("[settings_set_value_no_domain_key_null] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_key_null] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_key_undefined
+     * @tc.number settings_set_value_no_domain_key_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_key_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, undefined, 'value1');
+          console.info("[settings_set_value_no_domain_key_undefined] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_key_undefined] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[1], type. String expected")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_value_empty
+     * @tc.number settings_set_value_no_domain_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, 'setvaluekey212', '');
+          console.info("[settings_set_value_no_domain_value_empty] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_value_empty] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_value_null
+     * @tc.number settings_set_value_no_domain_value_null
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_value_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, 'setvaluekey212', null);
+          console.info("[settings_set_value_no_domain_value_null] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_value_null] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2], type. String expected")
+            .assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_value_undefined
+     * @tc.number settings_set_value_no_domain_value_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_value_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let result = await settings.setValue(mContext, 'setvaluekey212', undefined);
+          console.info("[settings_set_value_no_domain_value_undefined] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_value_undefined] error is:" + String(err));
+          expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2], type. String expected")
+            .assertTrue();
+          done();
+        }
+      });
   })
 }

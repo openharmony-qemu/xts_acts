@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function row_TextPositionTest() {
   describe('Row_TextPositionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_TextPositionTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

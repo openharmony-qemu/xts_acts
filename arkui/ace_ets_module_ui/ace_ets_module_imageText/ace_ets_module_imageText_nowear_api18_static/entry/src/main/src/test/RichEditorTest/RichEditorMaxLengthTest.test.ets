@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditorMaxLengthTest() {
   describe('RichEditorMaxLengthTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorMaxLengthTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api18.static", "EntryAbility")

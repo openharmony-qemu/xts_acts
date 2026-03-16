@@ -25,7 +25,7 @@ import { RecordData } from '@ohos.base';
 
 export default function geometryTransitionJsunit() {
   describe('geometryTransitionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("geometryTransitionTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

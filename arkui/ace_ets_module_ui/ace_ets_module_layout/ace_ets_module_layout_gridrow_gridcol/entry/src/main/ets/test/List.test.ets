@@ -55,6 +55,8 @@ import gridColTest from './GridColTest/GridColJsunit.test';
 import GridRowNoColumnsTest from './GridRowTest/GridRowNoColumnsTest.test.ets'
 import GridRowFixAtIdealSizeTest from './GridRowTest/GridRowFixAtIdealSizeTest.ets'
 import GridColFixAtIdealSizeTest from './GridColTest/GridColFixAtIdealSizeTest.ets'
+import gridRowAlignItemsNullUndefinedTest from './GridRowTest/GridRowAlignItemsNullUndefined.test';
+import gridColSpanOffsetOrderNullUndefinedTest from './GridColTest/GridColSpanOffsetOrderNullUndefined.test';
 
 export default function testsuite() {
   grid_colSpanJsunit();
@@ -99,4 +101,6 @@ export default function testsuite() {
   GridRowNoColumnsTest();
   GridRowFixAtIdealSizeTest();
   GridColFixAtIdealSizeTest();
+  gridRowAlignItemsNullUndefinedTest();
+  gridColSpanOffsetOrderNullUndefinedTest();
 }

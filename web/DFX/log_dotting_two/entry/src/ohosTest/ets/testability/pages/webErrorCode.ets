@@ -653,7 +653,7 @@ struct Index {
                 Utils.emitEvent(this.no_error, 114600)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 114600)
+                Utils.emitEvent(error.code + error.message, 114600)
               }
               break;
             }

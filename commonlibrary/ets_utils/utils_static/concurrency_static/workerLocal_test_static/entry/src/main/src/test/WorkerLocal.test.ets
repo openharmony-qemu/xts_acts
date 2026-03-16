@@ -49,7 +49,7 @@ class TestObject {
 
 export default function workerLocalTest() {
   describe('workerLocalTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**
@@ -232,19 +232,21 @@ export default function workerLocalTest() {
         wl.set(Promise.resolve('resolve'))
         expect(await wl.get()).assertEqual('resolve')
         await taskpool.execute(() => {
-          await wl.get().then((res: string) => {
-            expect(res).assertEqual('new')
+          waitForCompletion(async () => {
+            await wl.get().then((res: string) => {
+              expect(res).assertEqual('new')
+            })
+            value = 'taskpool'
+            expect(await wl.get()).assertEqual('new')
+            wl.set(new Promise<string>((resolve) => {
+              setTimeout(() => {
+                resolve(value)
+              }, 10)
+            }))
+            expect(await wl.get()).assertEqual('taskpool')
+            wl.delete()
+            expect(await wl.get()).assertEqual('taskpool')
           })
-          value = 'taskpool'
-          expect(await wl.get()).assertEqual('new')
-          wl.set(new Promise<string>((resolve) => {
-            setTimeout(() => {
-              resolve(value)
-            }, 10)
-          }))
-          expect(await wl.get()).assertEqual('taskpool')
-          wl.delete()
-          expect(await wl.get()).assertEqual('taskpool')
         })
         expect(await wl.get()).assertEqual('resolve')
         Done()

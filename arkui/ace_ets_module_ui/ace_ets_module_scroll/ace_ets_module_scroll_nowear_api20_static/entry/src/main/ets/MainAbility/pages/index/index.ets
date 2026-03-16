@@ -26,6 +26,7 @@ struct Index {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
     } catch (error) {
       console.log('error ' + error);
     }

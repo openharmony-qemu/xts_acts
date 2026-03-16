@@ -30,7 +30,7 @@ import Utils from './Util.test';
 
 export default function EmojiRegExp() {
   describe('Emoji_RegExp', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**

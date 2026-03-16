@@ -1118,9 +1118,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = ["$100", "€50", "¥1000", "£20"];
       const jsonStr: string = JSON.stringify(originalArr);
       const parsedArr: jsonx.JsonElement = JSON.parseJsonElement(jsonStr);
@@ -1135,9 +1135,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: EmojiNestedObj = {
         user: {
           name: "😊 Alice",
@@ -1157,9 +1157,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: DefaultValueDeepObj = {
         config: {
           theme: "light",
@@ -1186,9 +1186,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: ZeroWidthCharObj = {
         text: {
           withJoiner: "a\u200Db",
@@ -1208,9 +1208,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: SpecialCharConfigObj = {
         settings: {
           api_endpoint: "https://api.example.com/v1",
@@ -1231,9 +1231,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalSet: Set<string> = new Set<string>(["b", "a", "c"]);
       const jsonStr: string = JSON.stringify(originalSet, (key:string, value: Any) =>
       value instanceof Set ? Array.from(value) : value
@@ -1249,9 +1249,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = [
         "/home/user/docs/file name.txt",
         "/var/log/app.log",
@@ -1271,9 +1271,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = [
         "?q=json&page=1&limit=10",
         "?category=books&sort=price&order=asc"
@@ -1291,9 +1291,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: ZeroWidthNonJoinerObj = {
         texts: {
           original: "a\u200Cb",
@@ -1312,9 +1312,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: ValueRangeCheckObj = {
         settings: { volume: 120, brightness: -10 }
       };
@@ -1335,9 +1335,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = [
         ".class-name > .child:nth-child(2)",
         "#id-name[data-attr='value']",
@@ -1356,9 +1356,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = [
         "npm install --save-dev typescript",
         "git commit -m 'fix: resolve issue'",
@@ -1378,9 +1378,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalArr: string[] = [
         "$.store.book[0].title",
         "$.store.book[*].author",
@@ -1401,9 +1401,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const originalObj: MultiLangPunctObj = {
         messages: {
           en: "Hello! How are you?",
@@ -1428,9 +1428,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: CharCount = { text: "abac", count: 0 };
       const json = JSON.stringify(obj);
       const parsed: CharCount = JSON.parse<CharCount>(json, (k: string, v: Any) => {
@@ -1456,9 +1456,9 @@ export default function Json5Test() {
      * @tc.desc   test Json
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('Json5Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('Json5Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const obj: StringReplace = { text: "abc", replaced: "" };
       const json = JSON.stringify(obj);
       const parsed: StringReplace = JSON.parse<StringReplace>(json, (k: string, v: Any) => {

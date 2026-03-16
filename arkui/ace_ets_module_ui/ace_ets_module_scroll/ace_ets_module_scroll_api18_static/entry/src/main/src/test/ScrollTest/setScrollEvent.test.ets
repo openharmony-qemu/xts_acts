@@ -34,7 +34,7 @@ const waitUiReadyMs = 1000;
 
 export default function setScrollEvent() {
   describe('setScrollEvent', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchTypeTest beforeEach start");
 
       

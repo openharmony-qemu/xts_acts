@@ -127,8 +127,55 @@ export default function drawingTsCanvasPart6Test() {
         expect().assertFail();
       }
     })
-
-
+    /**
+     * @tc.name   testCanvasDrawShadow2NormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_4506
+     * @tc.desc   testCanvasDrawShadow2NormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCanvasDrawShadow2NormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawShadow2NormalStatic';
+      const canvas = new drawing.Canvas(pixel!)
+      const path = new drawing.Path();
+      try {
+        canvas.drawShadow(path, {
+          x: 100.1, y: 80.1, z: 80.1
+        }, {
+          x: 200.1, y: 10.1, z: 40.1
+        }, 30.1, 100, 100, drawing.ShadowFlag.ALL);
+        console.info(msg + '1 test successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `1 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, -1, 500, 100, drawing.ShadowFlag.NONE);
+        console.info(msg + '2 test successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `2 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        path.addCircle(300.0, 600.0, 100.0, drawing.PathDirection.CLOCKWISE);
+        let point1 : common2D.Point3d = {x: 100.0, y: 80.0, z:80.0};
+        let point2 : common2D.Point3d = {x: 200.0, y: 10.0, z:40.0};
+        let shadowFlag : drawing.ShadowFlag = drawing.ShadowFlag.ALL;
+        canvas.drawShadow(path, point1, point2, 30.0, 0xFF0000FF.toInt(), 0xFFFF0000.toInt(), shadowFlag);
+        console.info(msg + '3 test successes');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `3 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
     /**
      * @tc.name   testCanvasDrawShadowMultipleCallsStatic
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_4501

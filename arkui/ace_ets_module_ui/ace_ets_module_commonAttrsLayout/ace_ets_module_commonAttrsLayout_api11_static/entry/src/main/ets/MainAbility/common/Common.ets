@@ -39,7 +39,7 @@ export default class CommonFunc {
   static getComponentRect(key: string): RectValue {
     console.log('test getData ')
     let strJson = inspector.getInspectorByKey(key);
-    await CommonFunc.sleep(2000);
+    waitForCompletion(async ()=>{await CommonFunc.sleep(2000);})
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     console.info("test: getComponentRect: " + str);

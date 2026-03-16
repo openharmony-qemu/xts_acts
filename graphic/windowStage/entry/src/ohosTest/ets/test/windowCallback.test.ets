@@ -767,6 +767,8 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
           navigationBarColor: tempColor,
           isNavigationBarLightIcon: false,
           navigationBarContentColor: tempColor,
+          enableNavigationBarAnimation: false,
+          enableStatusBarAnimation:false
         };
         (tempWnd as ohosWindow.Window).setSystemBarProperties(systemBarProperties, (err, data) => {
           console.log(msgStr + 'tempWnd.setSystemBarProperties data' + JSON.stringify(data));
@@ -1647,7 +1649,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1676,7 +1678,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1700,7 +1702,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let promise = windowStage.loadContentByName("Index1", abilityStorage);
         promise.then(() => {
           console.info(msg + 'Succeeded in loading the content.');
-          expect(true).assertTrue()
+          
           done()
         }).catch((err: BusinessError) => {
           console.error(msg + 'Failed to load the content. Cause:' + JSON.stringify(err));
@@ -1736,7 +1738,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
       } catch (error) {
         console.log(msgStr + 'Failed to get the area of title buttons. Cause: ' + JSON.stringify(error));
         if (error.code == 801) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1760,15 +1762,13 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let windowClass: ohosWindow.Window = await ohosWindow.getLastWindow(context);
         windowClass.on('windowTitleButtonRectChange', (titleButtonRect) => {
           console.log(msgStr + 'Succeeded in enabling the listener for window title buttons area changes. Data: ' + JSON.stringify(titleButtonRect));
-          expect(true).assertTrue();
           done();
         });
-        expect(true).assertTrue();
         done();
       } catch (err) {
         console.log(msgStr + 'Failed to enable the listener for window title buttons area changes. Cause: ' + JSON.stringify(err));
         if (err.code == 801) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1793,12 +1793,11 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let windowClass: ohosWindow.Window = await ohosWindow.getLastWindow(context);
         windowClass.off('windowTitleButtonRectChange');
         console.log(msgStr + 'Succeeded in enabling the listener for window title buttons area changes');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to disable the listener for window title buttons area changes. Cause: ' + JSON.stringify(error));
         if (error.code == 1300002) {
-          expect(true).assertTrue()
+          
           done()
         } else {
           expect().assertFail();
@@ -1866,7 +1865,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
 
@@ -1900,7 +1899,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
             done()
           } else {
             console.info(msg + 'Succeeded in loading the content.');
-            expect(true).assertTrue()
+            
             done()
           }
         });
@@ -1931,7 +1930,7 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let promise = windowClass.loadContentByName("Index1", storage);
         promise.then(() => {
           console.info(msg + 'Succeeded in loading the content.');
-          expect(true).assertTrue()
+          
           done()
         }).catch((err: BusinessError) => {
           console.error(msg + 'Failed to load the content. Cause:' + JSON.stringify(err));
@@ -1965,7 +1964,6 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         windowClass.on('noInteractionDetected', 60, () => {
           console.log(msgStr + 'no interaction in 60s');
         });
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -1997,7 +1995,6 @@ export default function windowCallbackTest(context: common.UIAbilityContext, win
         let windowClass: ohosWindow.Window = await ohosWindow.getLastWindow(context);
         windowClass.off('noInteractionDetected');
         console.log(msgStr + "noInteractionDetected");
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(error));

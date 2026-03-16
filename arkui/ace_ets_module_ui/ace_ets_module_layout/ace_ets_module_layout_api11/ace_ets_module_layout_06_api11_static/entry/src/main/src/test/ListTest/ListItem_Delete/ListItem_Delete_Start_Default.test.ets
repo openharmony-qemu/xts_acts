@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ListItem_Delete_Start_Default() {
   describe('ListItem_Delete_Start_Default', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_Delete_Start_Default beforeAll start111")
             
       await UtilsTest.msSleep(4000)

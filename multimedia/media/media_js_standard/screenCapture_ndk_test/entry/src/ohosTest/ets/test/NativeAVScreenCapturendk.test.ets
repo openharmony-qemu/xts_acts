@@ -539,6 +539,124 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PICKER_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PICKER_0100
+     * @tc.desc   OH_AVScreenCapture_PresentPicker 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PICKER_0100', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
+      let result1: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker3();
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      expect(result1).assertEqual(0);
+      expect(resultStop).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_EXCLUDECONTENT
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_EXCLUDECONTENT
+     * @tc.desc   OH_AVScreenCapture_PresentPicker 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_EXCLUDECONTENT', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop1();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      let result1: number = myScreenCaptureNdk.normalAVScreenCaptureExcludeContent();
+      let resultRelease: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestRelease1();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultRelease:" +
+        resultRelease);
+      expect(result1).assertEqual(0);
+      expect(resultStop).assertEqual(0);
+      expect(resultRelease).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PresentPicker_0001
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PresentPicker_0001
+     * @tc.desc   OH_AVScreenCapture_PresentPicker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_PresentPicker_0001', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCapturePresentPickerErr1-------------start :");
+      let result: number = myScreenCaptureNdk.normalAVScreenCapturePresentPickerErr1();
+      console.info(Tag + "normalAVScreenCapturePresentPickerErr1-------------res:" + result);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_RESIZECANVAS
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_RESIZECANVAS
+     * @tc.desc   OH_AVScreenCapture_ResizeCanvas 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_RESIZECANVAS', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
+      let result1: number = myScreenCaptureNdk.normalAVScreenCaptureResizeCanvas();
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      expect(result1).assertEqual(0);
+      expect(resultStop).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SETDISPLAYCALLBACK
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SETDISPLAYCALLBACK
+     * @tc.desc   OH_AVScreenCapture_SetDisplayCallback 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SETDISPLAYCALLBACK', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPicker();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPicker-------------res:" + result);
+      expect(result).assertEqual(0);
+      await Utils.btnPickerTextScreenCapture();
+      await Utils.btnTextScreenCapture();
+      let result1: number = myScreenCaptureNdk.normalAVScreenCaptureSetDisplayCallback();
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForForPickerTestStop();
+      console.info(Tag + "normalAVScreenCaptureStrategyForForPickerTestStop-------------resultStop:" +
+        resultStop);
+      expect(result1).assertEqual(0);
+      expect(resultStop).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PRIVACY_MASKMODE_0401
      * @tc.desc   OH_AVScreenCapture_StrategyForPrivacyMaskMode 1
@@ -1063,6 +1181,21 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0004
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0004
+     * @tc.desc   OH_AVScreenCapture_SetPickerMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0004', Level.LEVEL0, async (done: Function) => {
+      let expectedResult: number = 0;
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndWindow3();
+      expect(result).assertEqual(expectedResult);
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
      * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
      * @tc.desc   OH_AVScreenCapture_SetPickerMode
@@ -1072,12 +1205,7 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeWindowOnly();
-      let expectedResult: number;
-      if (deviceinfo.deviceType === '2in1' || deviceinfo.deviceType === 'phone' || deviceinfo.deviceType === 'tablet') {
-          expectedResult = 0;
-      } else {
-          expectedResult = 1;
-      }
+      let expectedResult: number = 0;
       expect(result).assertEqual(expectedResult);
       result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenOnly();
       expect(result).assertEqual(expectedResult);
@@ -1096,12 +1224,23 @@ export default function nativeAVScreenCaptureNdkTest() {
      */
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0001', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows();
-      let expectedResult: number;
-      if (deviceinfo.deviceType === '2in1' || deviceinfo.deviceType === 'phone' || deviceinfo.deviceType === 'tablet') {
-          expectedResult = 0;
-      } else {
-          expectedResult = 1;
-      }
+      let expectedResult: number = 0;
+      expect(result).assertEqual(expectedResult);
+      done();
+    });
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0102
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0102
+     * @tc.desc   OH_AVScreenCapture_ExcludePickerWindows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_EXCLUDE_PICKER_WINDOWS_0102', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows2();
+      let expectedResult: number = 0;
       expect(result).assertEqual(expectedResult);
       done();
     });
@@ -1243,6 +1382,22 @@ export default function nativeAVScreenCaptureNdkTest() {
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_STRATEGY_0100', Level.LEVEL0, async (done: Function) => {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategy1();
       expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501
+     * @tc.desc   normalMultiDisplayCaptureCapabilityTest 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_MULTIDISPLAY_CAPABILITY_0501', Level.LEVEL0, async (done: Function) => {
+      console.info(Tag + "normalMultiDisplayCaptureCapabilityTest-------------before click:");
+      let result: number = myScreenCaptureNdk.normalMultiDisplayCaptureCapabilityTest();
+      console.info(Tag + "normalMultiDisplayCaptureCapabilityTest-------------res:" + result);
+      expect(result).assertEqual(3);
       done();
     });
   })

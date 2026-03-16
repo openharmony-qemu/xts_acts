@@ -23,7 +23,7 @@ const TAG = "[CloudData_SetStratgey_Ets_test]";
 export default function cloudDataSetStrategyEtsTest() {
   describe('cloudDataSetStrategyEtsTest', () => {
     let currentDeviceIsWatch = false;
-    beforeAll(async (done: Function) => {
+    beforeAll(async () => {
       console.info('window_layout_test beforeAll begin');
       let deviceTypeInfo = deviceInfo.deviceType;
       currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
@@ -285,6 +285,35 @@ export default function cloudDataSetStrategyEtsTest() {
       }
       done();
       console.log(TAG + "************* setCloudStrategyTest009 end *************");
+    })
+
+     /**
+     * @tc.name   setCloudStrategyTest010
+     * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_1000
+     * @tc.desc   Test Js Api setCloudStrategy with null empty Arrary.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setCloudStrategyTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log(TAG + "************* setCloudStrategyTest010 start *************");
+      let num = 1;
+      try {
+        await cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, []).then(() => {
+          console.info(TAG + `setCloudStrategyTest010, setCloudStrategy success`);
+          expect(num).assertEqual(1);
+          done();
+        }).catch((err: BusinessError) => {
+          expect(err.code).assertEqual("801");
+          done();
+        });
+      } catch (err) {
+        console.error(TAG + `setCloudStrategyTest010, errcode:${JSON.stringify(err)}`);
+        expect(err.code).assertEqual("801");
+        done();
+      }
+    
+      console.log(TAG + "************* setCloudStrategyTest010 end *************");
     })
 
     console.log(TAG + "*************Unit Test End*************");

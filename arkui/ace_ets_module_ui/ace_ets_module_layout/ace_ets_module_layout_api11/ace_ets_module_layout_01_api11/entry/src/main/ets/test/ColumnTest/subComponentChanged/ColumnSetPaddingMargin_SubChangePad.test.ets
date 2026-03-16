@@ -20,7 +20,7 @@ import CommonFunc from "../../../MainAbility/common/Common";
 import { MessageManager, Callback } from '../../../MainAbility/common/MessageManager';
 
 export default function ColumnSetPaddingMargin_SubChange() {
-  describe('ColumnSetPaddingMarginTest', () => {
+  describe('ColumnSetPaddingMarginTestAdapt001', () => {
     beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Column/subcomponentChanged/ColumnSetPaddingMargin_SubChangePad',

@@ -26,7 +26,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function TextPickerTextStyleTest() {
   describe('TextPickerTextStyleTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextPickerTextStyleTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.textPicker.static", "EntryAbility")
     });

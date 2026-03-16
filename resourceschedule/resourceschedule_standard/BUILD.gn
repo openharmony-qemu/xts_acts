@@ -33,7 +33,8 @@ group("resourceschedule_standard") {
       "reminderagent_nop:resourceschedule_reminderagent_nop_test",
       "workscheduler:resourceschedule_workscheduler_js_test",
       "backgroundtask_errorcode:ActsBackgroundTaskErrorTest",
-      "ffrt_type_def:ActsFfrtTypeDefNativeTest"
+      "ffrt_type_def:ActsFfrtTypeDefNativeTest",
+      "ActsQosManagerTest:ActsQosManagerHapTest"
     ]
   }
 }

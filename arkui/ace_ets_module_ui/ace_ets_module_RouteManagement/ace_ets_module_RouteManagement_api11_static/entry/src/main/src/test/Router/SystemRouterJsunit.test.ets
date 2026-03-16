@@ -27,7 +27,7 @@ import { RecordData } from '@ohos.base';
 
 export default function systemRouterJsunit() {
   describe('systemRouterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

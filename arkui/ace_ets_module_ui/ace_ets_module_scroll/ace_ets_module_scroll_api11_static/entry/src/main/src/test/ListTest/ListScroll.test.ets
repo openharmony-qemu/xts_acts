@@ -50,7 +50,7 @@ export default function ListScrollTest() {
   const waitUiReadyMs: int = 500;
   describe('ListScrollTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

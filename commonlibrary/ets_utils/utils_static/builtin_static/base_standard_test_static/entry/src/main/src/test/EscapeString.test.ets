@@ -30,7 +30,7 @@ import Utils from './Util.test';
 
 export default function EscapeStringTest() {
   describe('EscapeStringaAbilityTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -58,9 +58,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \b
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0001";
       try {
         const str = "Hello\b";
@@ -79,9 +79,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \f
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0002";
       try {
         const str = "Hello\fWorld";
@@ -101,9 +101,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \n
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0003";
       try {
         const str = "Hello\nWorld";
@@ -122,9 +122,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \r
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0004";
       try {
         const str = "Hello\rWorld";
@@ -143,9 +143,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \t
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0005";
       try {
         const str = "Hello\tWorld";
@@ -164,9 +164,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \v
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0006";
       try {
         const str = "Hello\vWorld";
@@ -185,9 +185,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \x24
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0007";
       try {
         const str = "Hello\x24World";
@@ -206,9 +206,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \开
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0008";
       try {
         const str = "abc开";
@@ -227,9 +227,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \😊
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0009";
       try {
         const str = "Hello😊";
@@ -248,9 +248,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \0
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0010";
       try {
         const str = "Hello";
@@ -269,9 +269,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface split with input escape \\b
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSplit0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSplit0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSplit0011";
       try {
         const str = "Hello\b";
@@ -290,9 +290,9 @@ export default function EscapeStringTest() {
      * @tc.desc Testing the Buffer interface substring with input escape \b
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testBuilintsStringSubstring0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBuilintsStringSubstring0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testBuilintsStringSubstring0001";
       try {
         const str = "abc\b";

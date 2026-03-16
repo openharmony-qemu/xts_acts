@@ -36,22 +36,38 @@ export default function identifySensitiveContentTestUnit() {
      * @tc.level  LEVEL1
      */
     it('scanfileInputnull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
-        console.info('scanfileInputnull');
-        let policies:identifySensitiveContent.Policy[] =[];
-        try {
-          await identifySensitiveContent.scanFile(null,policies);
-          expect().assertFail();
-        }catch (error){
-          console.info('scanfileInputnull:'+error.code);
-          expect(error.code === 401  ||  error.code === 201 ).assertTrue();
-        }
-        try {
-          await identifySensitiveContent.scanFile(filePathTest,null);
-          expect().assertFail();
-        }catch (error){
-          console.info('scanfileInputnull:'+error.code);
-          expect(error.code === 401  ||  error.code === 201 ).assertTrue();
-        }
+      console.info('scanfileInputnull');
+      let policies:identifySensitiveContent.Policy[] =[];
+      try {
+        await identifySensitiveContent.scanFile("",policies);
+        expect().assertFail();
+      }catch (error){
+        expect(error.code === 19110001  ||  error.code === 201 ).assertTrue();
+      }
+      try {
+        await identifySensitiveContent.scanFile(null,policies);
+        expect().assertFail();
+      }catch (error){
+        expect(error.code === 401  ||  error.code === 201 ).assertTrue();
+      }
+      try {
+        await identifySensitiveContent.scanFile(undefined,policies);
+        expect().assertFail();
+      }catch (error){
+        expect(error.code === 401  ||  error.code === 201 ).assertTrue();
+      }
+      try {
+        await identifySensitiveContent.scanFile(filePathTest,null);
+        expect().assertFail();
+      }catch (error){
+        expect(error.code === 401  ||  error.code === 201 ).assertTrue();
+      }
+      try {
+        await identifySensitiveContent.scanFile(filePathTest,undefined);
+        expect().assertFail();
+      }catch (error){
+        expect(error.code === 401  ||  error.code === 201 ).assertTrue();
+      }
     })
 
     /**

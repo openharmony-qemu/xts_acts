@@ -34,7 +34,7 @@ import {
 } from '@ohos.UiTest';
 
 export default function swiperPadding() {
-  describe('swiperMarPadTest', () => {
+  describe('swiperMarPadTestAdapt001', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Swiper/Swiper_ParmsChange/swiperPadding',

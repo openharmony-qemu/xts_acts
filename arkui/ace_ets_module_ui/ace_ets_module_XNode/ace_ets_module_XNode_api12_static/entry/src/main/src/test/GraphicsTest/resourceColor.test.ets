@@ -24,7 +24,7 @@ import {UtilsTest,startAbility} from '../Util.test';
 import {MessageManager,Callback} from '../../../ets/MainAbility/utils/MessageManager';
 export default function resourceColor() {
   describe('resourceColor', () => { 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("resourceColor beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")

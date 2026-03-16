@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function customDialogLevelOrder() {
   describe('customDialogLevelOrder', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
       await CommonFunc.sleep(4000);
     })

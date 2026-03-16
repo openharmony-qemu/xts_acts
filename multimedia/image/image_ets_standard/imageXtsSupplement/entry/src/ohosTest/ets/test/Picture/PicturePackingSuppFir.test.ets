@@ -537,10 +537,10 @@ export default function PicturePackingPictureTestSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_013', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_013';
-      pictureCreatImageSource(done,testName ,'test_exif_v4.heic',  (imageSource) => {
+      pictureCreatImageSource(done,testName ,'test.jpeg',  (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.AUTO,
             quality: 0
           };
@@ -550,13 +550,13 @@ export default function PicturePackingPictureTestSupp() {
             console.info(TAG, testName,' In imagePackerObj.packing callback ！！！.');
             if (err) {
               console.error(TAG, testName,`Failed to pack the image.code ${err.code},message is ${err.message}`);
-              expect(err.code).assertUndefined();
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName,'Succeeded in packing the image.',data);
+              expect(data!=undefined).assertTrue();
               imageSource.release();
               console.info(TAG, testName,'imageSource release success.');
               done();
-            } else {
-              console.info(TAG, testName,'Succeeded in packing the image.',data);
-              expect().assertFail();
             }
           })
         }catch (err) {
@@ -576,10 +576,10 @@ export default function PicturePackingPictureTestSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_014';
-      pictureCreatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      pictureCreatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.SDR,
             quality: 0
           };
@@ -588,13 +588,13 @@ export default function PicturePackingPictureTestSupp() {
             console.info(TAG, testName,' In imagePackerObj.packing callback ！！！.');
             if (err) {
               console.error(TAG, testName,`Failed to pack the image.code ${err.code},message is ${err.message}`);
-              expect(err.code).assertUndefined();
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName,'Succeeded in packing the image.',data);
+              expect(data!=undefined).assertTrue();
               imageSource.release();
               console.info(TAG, testName,'imageSource release success.');
               done();
-            } else {
-              console.info(TAG, testName,'Succeeded in packing the image.',data);
-              expect().assertFail();
             }
           })
         }catch (err) {
@@ -615,10 +615,10 @@ export default function PicturePackingPictureTestSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_015';
-      pictureCreatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      pictureCreatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.SDR,
             quality: 0,
             needsPackProperties:false
@@ -628,13 +628,13 @@ export default function PicturePackingPictureTestSupp() {
             console.info(TAG, testName,' In imagePackerObj.packing callback ！！！.');
             if (err) {
               console.error(TAG, testName,`Failed to pack the image.code ${err.code},message is ${err.message}`);
-              expect(err.code).assertUndefined();
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName,'Succeeded in packing the image.',data);
+              expect(data!=undefined).assertTrue();
               imageSource.release();
               console.info(TAG, testName,'imageSource release success.');
               done();
-            } else {
-              console.info(TAG, testName,'Succeeded in packing the image.',data);
-              expect().assertFail();
             }
           })
         }catch (err) {
@@ -655,10 +655,10 @@ export default function PicturePackingPictureTestSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_packing_016';
-      pictureCreatImageSource(done,testName ,'test_exif_v4.heic', async (imageSource) => {
+      pictureCreatImageSource(done,testName ,'test.jpeg', async (imageSource) => {
         try {
           let packOpts: image.PackingOption = {
-            format: "image/heic",
+            format: "image/jpeg",
             desiredDynamicRange: image.PackingDynamicRange.SDR,
             quality: 0,
             needsPackProperties:true
@@ -669,13 +669,13 @@ export default function PicturePackingPictureTestSupp() {
             console.info(TAG, testName,' In imagePackerObj.packing callback ！！！.');
             if (err) {
               console.error(TAG, testName,`Failed to pack the image.code ${err.code},message is ${err.message}`);
-              expect(err.code).assertUndefined();
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName,'Succeeded in packing the image.',data);
+              expect(data!=undefined).assertTrue();
               imageSource.release();
               console.info(TAG, testName,'imageSource release success.');
               done();
-            } else {
-              console.info(TAG, testName,'Succeeded in packing the image.',data);
-              expect().assertFail();
             }
           })
         }catch (err) {
@@ -684,7 +684,6 @@ export default function PicturePackingPictureTestSupp() {
         }
       })
     })
-
 
   })
 }

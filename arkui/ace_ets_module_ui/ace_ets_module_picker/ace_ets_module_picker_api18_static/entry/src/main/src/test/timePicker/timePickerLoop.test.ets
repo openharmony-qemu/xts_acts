@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function timePickerLoopTest() {
   describe('timePickerLoopTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TimePickerAddApi beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api18.static", "EntryAbility")
 

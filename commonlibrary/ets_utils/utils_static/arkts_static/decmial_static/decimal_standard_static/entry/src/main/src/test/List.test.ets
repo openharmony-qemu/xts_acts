@@ -14,6 +14,8 @@
 */
 
 import decimalTest1 from "./decimal/Decimal1.test";
+import decimalTest2 from './decimal/Decimal2.test';
 export default function testsuite() {
     decimalTest1();
+    decimalTest2();
 }

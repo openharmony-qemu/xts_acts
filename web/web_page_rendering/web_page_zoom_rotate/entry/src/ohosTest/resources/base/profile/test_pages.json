@@ -10,6 +10,7 @@
     "testability/pages/WebViewEnumAndSetWebController",
     "testability/pages/WebViewOverviewModeAccess",
     "testability/pages/WebViewRotateRenderEffect",
-    "testability/pages/WebZoomControlAccess"
+    "testability/pages/WebZoomControlAccess",
+    "testability/pages/WebViewControllerZoomNull"
   ]
 }

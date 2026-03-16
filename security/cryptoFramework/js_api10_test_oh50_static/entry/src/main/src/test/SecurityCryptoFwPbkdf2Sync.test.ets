@@ -271,7 +271,7 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       let salt: string = "0123456789";
       let keySize: int = 16;
       let iterations: int = 10000;
-      let algName: string = "PBKDF2|SHA3-256";
+      let algName: string = "PBKDF2|SHA3-224";
       let spec: cryptoFramework.PBKDF2Spec = pbkdf2Utils.getPbkdf2Spec(password, isKeyString, salt, iterations, keySize);
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);

@@ -28,6 +28,7 @@
     },
     {
       "test-file-name": [
+        "ActsPhotoAccessXtsMainTest.hap",
         "ActsPhotoAccessXtsTest.hap"
       ],
       "type": "AppInstallKit",

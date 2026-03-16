@@ -30,9 +30,9 @@ export default function semNdkTest() {
      * @tc.desc   test semctl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSemSemctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSemSemctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = sem.semctl(0);
       expect(a).assertEqual(13);
       done()
@@ -44,9 +44,9 @@ export default function semNdkTest() {
      * @tc.desc   test semget
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSemSemget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSemSemget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = sem.semget();
       expect(a).assertEqual(-1);
       done()
@@ -58,9 +58,9 @@ export default function semNdkTest() {
      * @tc.desc   test semop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSemSemop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSemSemop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = sem.semop();
       expect(a).assertEqual(0);
       done()
@@ -71,9 +71,9 @@ export default function semNdkTest() {
      * @tc.desc   test semtimedop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSemSemtimedop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSemSemtimedop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = sem.semtimedop();
       expect(a).assertEqual(0);
       done()

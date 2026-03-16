@@ -32,7 +32,7 @@ import { BaseClass, Event } from '../utils/Model';
 
 export default function RWLockTest() {
   describe('RWLockTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
     /**
@@ -92,9 +92,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RWLockTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RWLockTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest002';
         console.info(`${tag} test start`);
@@ -142,9 +142,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RWLockTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RWLockTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest003';
         console.info(`${tag} test start`);
@@ -195,9 +195,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RWLockTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('RWLockTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest004';
         console.info(`${tag} test start`);
@@ -226,7 +226,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -255,7 +255,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -304,7 +304,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -358,7 +358,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -413,7 +413,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -452,9 +452,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RWLockTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('RWLockTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest010';
         console.info(`${tag} test start`);
@@ -558,9 +558,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RWLockTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RWLockTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest012';
         console.info(`${tag} test start`);
@@ -608,9 +608,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RWLockTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RWLockTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest013';
         console.info(`${tag} test start`);
@@ -661,9 +661,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RWLockTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('RWLockTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest014';
         console.info(`${tag} test start`);
@@ -692,7 +692,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -719,7 +719,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -764,7 +764,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -814,7 +814,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -865,7 +865,7 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('RWLockTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -905,9 +905,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RWLockTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RWLockTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest021';
         console.info(`${tag} test start`);
@@ -957,9 +957,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('RWLockTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('RWLockTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest022';
         console.info(`${tag} test start`);
@@ -1048,9 +1048,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RWLockTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('RWLockTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest024';
         console.info(`${tag} test start`);
@@ -1107,9 +1107,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RWLockTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('RWLockTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest025';
         console.info(`${tag} test start`);
@@ -1165,9 +1165,9 @@ export default function RWLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('RWLockTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('RWLockTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const tag: string = 'RWLockTest026';
         console.info(`${tag} test start`);

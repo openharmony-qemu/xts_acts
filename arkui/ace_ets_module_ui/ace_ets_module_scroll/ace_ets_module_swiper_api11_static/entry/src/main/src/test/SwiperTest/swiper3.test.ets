@@ -53,7 +53,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function swiperMaskJsunit() {
   describe('swiperMaskTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("swiperMaskJsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");

@@ -278,6 +278,24 @@ export default function uitestDriverErrorTest() {
         await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
           x: 100,
           y: 100
+        }, {x: 100, y: 100}, 199)
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error speed = 199: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: 100}, 4001)
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007_static error speed = 40001: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver!.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: 100
         }, {x: 100, y: 100}, 3000, 1499)
         expect().assertFail();
       }catch (e) {
@@ -380,6 +398,24 @@ export default function uitestDriverErrorTest() {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error speed = -1: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
+      try {
+        await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: 100}, 199)
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error speed = 199: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
+      try {
+        await driver!.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: 100}, 40001)
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static error speed = 40001: ${JSON.stringify(e)}`);
+        expect().assertFail();
+      }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007_static end`);
     })
@@ -394,6 +430,13 @@ export default function uitestDriverErrorTest() {
      */
     it('testKnuckleKnock_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testKnuckleKnock_17000007_static start`);
+      try {
+        await driver!.knuckleKnock([],  2)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007_static error point = []: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
+      }
       try {
         await driver!.knuckleKnock([{x: -1, y: 100}],  2)
         expect().assertFail();
@@ -491,6 +534,18 @@ export default function uitestDriverErrorTest() {
         console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static error speed = -1: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
       }
+      try {
+        await driver!.touchPadTwoFingersScroll({x: 100, y: 100,}, UiDirection.UP, 10, 0);
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static error speed = 0: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code == 17000005).assertTrue();
+      }
+      try {
+        await driver!.touchPadTwoFingersScroll({x: 100, y: 100,}, UiDirection.UP, 10, 501);
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static error speed = 501: ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code == 17000005).assertTrue();
+      }
       console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static end`);
     })
 
@@ -512,6 +567,22 @@ export default function uitestDriverErrorTest() {
       }catch (e) {
         console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static error s= -1: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code == 17000005||(e as BusinessError).code == 17000007).assertTrue();
+      }
+      try {
+        let pointers = PointerMatrix.create(1,1);
+        pointers.setPoint(0,0, {x: 100, y:100});
+        await driver!.injectKnucklePointerAction(pointers, 199);
+      }catch (e) {
+        console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static s= 199 error : ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code == 17000005).assertTrue();
+      }
+      try {
+        let pointers = PointerMatrix.create(1,1);
+        pointers.setPoint(0,0, {x: 100, y:100});
+        await driver!.injectKnucklePointerAction(pointers, 40001);
+      }catch (e) {
+        console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static s= 40001 error : ${JSON.stringify(e)}`);
+        expect((e as BusinessError).code == 17000005).assertTrue();
       }
       console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static end`);
     })

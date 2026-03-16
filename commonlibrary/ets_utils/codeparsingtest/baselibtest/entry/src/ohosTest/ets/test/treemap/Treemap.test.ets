@@ -2652,5 +2652,92 @@ export default function TreemapTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.name   testTreeMapSetAll001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREE_MAP_CASE_0100
+     * @tc.desc   Testing TreeMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTreeMapSetAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testTreeMapSetAll001';
+      let treeMap = new TreeMap<string, number | null | undefined>();
+      treeMap.set("squirrel", 123);
+      treeMap.set("sparrow", 356);
+      let map : TreeMap<string, number> = new TreeMap();
+      map.set("demo", 12);
+      map.setAll(treeMap);
+      map.forEach((value ?: number, key ?: string) : void => {
+        console.info("value: " + value, "key: " + key);
+      })
+      try {
+        treeMap.setAll(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        treeMap.setAll(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+    });
+
+    /**
+     * @tc.name   testTreeMapReplace001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREE_MAP_CASE_0200
+     * @tc.desc   Testing TreeMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTreeMapReplace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testTreeMapReplace001';
+      let treeMap = new TreeMap<string, number | null | undefined>();
+      treeMap.set("sparrow", 123);
+      let result = treeMap.replace("sparrow", 357);
+      console.info("sparrow:", treeMap.get("sparrow"));
+
+      let result1 = treeMap.replace("sparrow", null);
+      expect(result1).assertTrue();
+
+      let result2 = treeMap.replace("sparrow", undefined);
+      expect(result2).assertTrue()
+
+    });
+    /**
+     * @tc.name   testTreeMapForEach001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREE_MAP_CASE_0300
+     * @tc.desc   Testing TreeMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTreeMapForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let treeMap = new TreeMap<string, number | null | undefined>();
+      treeMap.set("sparrow", 123);
+      treeMap.set("gull", 357);
+      treeMap.forEach((value: number, key: string): void => {
+        console.info("value: " + value, "key: " + key);
+      });
+      try {
+        treeMap.forEach(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        treeMap.forEach(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
   })
 }

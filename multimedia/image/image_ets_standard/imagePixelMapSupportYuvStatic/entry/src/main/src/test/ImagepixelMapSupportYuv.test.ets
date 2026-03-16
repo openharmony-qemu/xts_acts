@@ -40,7 +40,7 @@ export default function imagepixelMapSupportYuv() {
     let filePath: string;
     let fdInt: int;
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       testContext = Hypium.get('context') as common.UIAbilityContext;
     })
@@ -159,18 +159,20 @@ export default function imagepixelMapSupportYuv() {
         result = checkArrayBuffer(readBuffer)
       }else if(type == "callback"){
         pixelMap.writeBufferToPixels(writeBuffer, (error: BusinessError|null) => {
-          if (error && error.code) {
-            hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to write data from a buffer to a PixelMap  ${error}`)
-            result = false
-          } else {
-          try {
-            await pixelMap.readPixelsToBuffer(readBuffer)
-            result = checkArrayBuffer(readBuffer)
-          } catch(error) {
-            hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to read image pixel data  ${error}`)
-            result = false
-          }
-        }
+          waitForCompletion(async () => {
+            if (error && error.code) {
+              hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to write data from a buffer to a PixelMap  ${error}`)
+              result = false
+            } else {
+            try {
+              await pixelMap.readPixelsToBuffer(readBuffer)
+              result = checkArrayBuffer(readBuffer)
+            } catch(error) {
+              hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:Failed to read image pixel data  ${error}`)
+              result = false
+            }
+            }
+          })
         });
         await sleep(1000)
       }else {

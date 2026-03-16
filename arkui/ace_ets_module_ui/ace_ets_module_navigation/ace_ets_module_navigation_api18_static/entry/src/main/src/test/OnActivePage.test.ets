@@ -41,7 +41,7 @@ import router from '@ohos.router';
 
 export default function OnActivePage() {
   describe('OnActivePage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation18.static", "EntryAbility")
 

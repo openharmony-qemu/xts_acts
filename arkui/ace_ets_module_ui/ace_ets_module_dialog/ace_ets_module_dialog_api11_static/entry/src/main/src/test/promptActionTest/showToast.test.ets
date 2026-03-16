@@ -58,7 +58,7 @@ let abilityStage = AppStorage.get<common.BaseContext>("abilityContext")
 
 export default function showToast() {
   describe('showToast', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("showToast beforeAll start")
 
 

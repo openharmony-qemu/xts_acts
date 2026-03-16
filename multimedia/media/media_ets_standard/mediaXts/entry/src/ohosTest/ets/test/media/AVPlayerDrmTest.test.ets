@@ -21,6 +21,7 @@ import { LOG_TAG, MAX_COUNT, SLEEP_TIME_200 } from "../Constants";
 import { fileIo as fs } from '@kit.CoreFileKit';
 import { sleep } from "../common";
 import { drm } from "@kit.DrmKit";
+import wifiMg from '@ohos.wifiManager';
 
 const TAG = LOG_TAG + 'AVPlayerDrmTest';
 const INITIALIZED = 'initialized';
@@ -36,8 +37,40 @@ if (isClearPlay) {
 
 export default function AVPlayerDrmTest() {
   describe('AVPlayerDrmTest', () => {
-    beforeAll(async () => {
+    beforeAll(async (done: Function) => {
       console.info(TAG, 'beforeAll case');
+      if(!wifiMg.isWifiActive()){
+        console.info("======> wifi is not Active");
+        wifiMg.enableWifi();
+      }
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+            
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail(); //方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();//方式一
+          //throw new Error("======> WLAN Network error");//方式二
+          done();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+            
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+        done();
+      }
+      done()
     });
 
     beforeEach(async () => {
@@ -98,7 +131,7 @@ export default function AVPlayerDrmTest() {
       const testName = 'getMediaKeySystemInfos_001';
       console.info(TAG, testName + ' begin.');
       let drmMediaKeySystem: drm.MediaKeySystem;
-      let url = "https://hwposter-inland.hwcloudtest.cn/rem/DTA/20240117/h264-sm4c-ts/ChinaDRMLab_Promo_210525-264-30-480P-2000K.sm4c.ts"
+      let url = "https://hwposter-inland.hwcloudtest.cn/rem/ruanjie/h264_480x270_0.2m_30fp_cenc/dash.mpd"
       try {
         drmMediaKeySystem = drm.createMediaKeySystem(systemName);
       } catch (err) {

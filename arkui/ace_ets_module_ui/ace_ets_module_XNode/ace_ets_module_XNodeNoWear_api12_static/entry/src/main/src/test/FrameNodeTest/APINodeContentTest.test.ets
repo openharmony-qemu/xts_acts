@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 export default function APINodeContentTest() {
   describe('APINodeContentTest', (): void => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APINodeContentTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNodeNoWear.api12.static", "EntryAbility")

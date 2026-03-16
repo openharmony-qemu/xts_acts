@@ -24,7 +24,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function onReadyModifierUndefinedTest() {
   describe('onReadyModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.richeditor.undefined.static", "EntryAbility");
       await UtilsTest.msSleep(4000);

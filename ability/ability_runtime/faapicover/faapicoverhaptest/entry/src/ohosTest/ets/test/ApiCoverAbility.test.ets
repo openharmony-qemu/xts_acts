@@ -94,7 +94,7 @@ export default function ApiCoverTest() {
         let appContext = featureAbility.getContext()
         appContext.getExternalCacheDir((err, data) => {
           console.info('SUB_AA_OpenHarmony_CoverApiContext_0100 successful. data: ' + JSON.stringify(data));
-          expect(true).assertTrue()
+          expect(data).assertEqual('')
           done()
         })
     })
@@ -112,7 +112,7 @@ export default function ApiCoverTest() {
         let appContext = featureAbility.getContext()
         appContext.getExternalCacheDir().then((data)=>{
           console.info('SUB_AA_OpenHarmony_CoverApiContext_0200 successful. data: ' + JSON.stringify(data));
-          expect(true).assertTrue()
+          expect(data).assertEqual('')
           done()
         }).catch((err:BusinessError)=>{
             expect().assertFalse();

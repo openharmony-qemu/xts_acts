@@ -30,9 +30,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __getitimer_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeGetITimerTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeGetITimerTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__getitimer_time64(0)).assertEqual(0);
       done()
     });
@@ -43,9 +43,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __getitimer_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeGetITimerTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeGetITimerTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__getitimer_time64(-1)).assertEqual(-1);
       done()
     });
@@ -56,9 +56,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __getrusage_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetRUsageTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetRUsageTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__getrusage_time64(0)).assertEqual(0);
       done()
     });
@@ -69,9 +69,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __getrusage_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslResourceGetRUsageTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslResourceGetRUsageTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__getrusage_time64(-2)).assertEqual(-1);
       done()
     });
@@ -82,9 +82,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __gettimeofday_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeGetTimeOfDayTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeGetTimeOfDayTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__gettimeofday_time64(0)).assertEqual(0);
       done()
     });
@@ -95,9 +95,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __gettimeofday_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeGetTimeOfDayTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeGetTimeOfDayTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__gettimeofday_time64(-1)).assertEqual(-1);
       done()
     });
@@ -108,9 +108,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __pselect_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSelectPSelectTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSelectPSelectTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__pselect_time64(1)).assertEqual(0);
       done()
     });
@@ -121,9 +121,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __pselect_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSelectPSelectTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSelectPSelectTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__pselect_time64(-1)).assertEqual(-1);
       done()
     });
@@ -134,9 +134,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __setitimer_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeSetItimerTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeSetItimerTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__setitimer_time64(0)).assertEqual(0);
       done()
     });
@@ -147,9 +147,9 @@ export default function fnmatch1NdkTest() {
      * @tc.desc   test __setitimer_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeSetItimerTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeSetItimerTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(fnmatchndk.__setitimer_time64(-1)).assertEqual(-1);
       done()
     });

@@ -36,8 +36,8 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetPaddingMargin_SubChange() {
-  describe('ColumnSetPaddingMarginTest', () => {
-    beforeAll(() => {
+  describe('ColumnSetPaddingMarginTestAdapt001', () => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetPaddingMarginTest beforeEach start");
 
 

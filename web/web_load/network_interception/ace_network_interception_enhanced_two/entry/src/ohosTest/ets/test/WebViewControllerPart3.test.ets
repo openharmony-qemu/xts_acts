@@ -14,6 +14,7 @@
  */
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -109,6 +110,38 @@ export default function webViewControllerPart3Test() {
       Utils.emitEvent("testSetNetworkAvailable002", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerEvent("testSetNetworkAvailable002", 'true', 142320, done);
       Utils.waitAndClickComponent(driver, "WebViewControllerTestButton");
+    })
+    /**
+     * @tc.name   testSetNetworkAvailableNull
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_ERROR_0100
+     * @tc.desc   test setNetworkAvailable null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetNetworkAvailableNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitSetNetworkAvailableNull', EVENT_ID_SET_EIMIT_KEY)
+      Utils.registerBaseEvent('testSetNetworkAvailableNull', '401', 26022703, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
+    })
+    /**
+     * @tc.name   testSetNetworkAvailableUndefined
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_ERROR_0200
+     * @tc.desc   test setNetworkAvailable undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testSetNetworkAvailableUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent('emitSetNetworkAvailableUndefined', EVENT_ID_SET_EIMIT_KEY)
+      Utils.registerBaseEvent('testSetNetworkAvailableUndefined', '401', 26022704, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
 
 

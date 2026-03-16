@@ -18,17 +18,16 @@ import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
+import commonEventManager from '@ohos.commonEventManager';
 
 export default class EntryAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.log("[Demo] EntryAbility onCreate");
-    setTimeout(()=>{
-      this.context.terminateSelf();
-    }, 500)
   }
 
   onDestroy() {
     console.log('[Demo] EntryAbility onDestroy');
+    commonEventManager.publish('CompletionHandlerRely_onDestroy', (err: BusinessError) => {});
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
@@ -45,6 +44,7 @@ export default class EntryAbility extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log('[Demo] EntryAbility onForeground');
+    this.context.terminateSelf();
   }
 
   onBackground() {

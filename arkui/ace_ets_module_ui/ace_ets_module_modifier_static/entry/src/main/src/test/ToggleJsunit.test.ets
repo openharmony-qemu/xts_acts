@@ -33,7 +33,7 @@ import { MessageManager, Callback } from '../../ets/MainAbility/common/MessageMa
 
 export default function toggleJsunit() {
   describe('toggleTest', () => {
-     beforeAll(() => {
+     beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
 

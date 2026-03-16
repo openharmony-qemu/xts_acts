@@ -530,6 +530,50 @@ export default function ConnectionTest() {
     });
   
     /**
+     * @tc.name   testNetworkConnectionsetPacUrl0300
+     * @tc.number SUB_Network_Connection_setPacUrl_0300
+     * @tc.desc   Set the system-level proxy auto-config (PAC) script URL to be null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkConnectionsetPacUrl0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkConnectionsetPacUrl0300';
+      console.info(`${caseName}---Start`);
+      try{
+        connection.setPacUrl(null);
+        ExpectFail();
+        done();
+      }catch (err){
+        ExpectTrue(err.code == 401)
+        console.log(`${caseName} Error in`,err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkConnectionsetPacUrl0400
+     * @tc.number SUB_Network_Connection_setPacUrl_0400
+     * @tc.desc   Set the system-level proxy auto-config (PAC) script URL to be undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkConnectionsetPacUrl0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName: string = 'testNetworkConnectionsetPacUrl0400';
+      console.info(`${caseName}---Start`);
+      try{
+        connection.setPacUrl(undefined);
+        ExpectFail();
+        done();
+      }catch (err){
+        ExpectTrue(err.code == 401)
+        console.log(`${caseName} Error in`,err);
+        done()
+      }
+    });
+
+    /**
      * @tc.name   testConnectionFindProxyForUrl0100
      * @tc.number SUB_Network_Connection_findProxyForUrl_0100
      * @tc.desc   The findProxyForURL interface passes in an unset pacURL address and returns an empty string.

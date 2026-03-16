@@ -40,7 +40,7 @@ interface ItemN {
 export default function scrollEnablePagingJsunit() {
   describe('scroll_enablePagingTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("scrollEnablePaging beforeEach start");
 
 

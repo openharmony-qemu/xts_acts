@@ -219,6 +219,11 @@ export default function verificationTest(){
         ability_featureAbility.getWindow((err, data) => {
           console.info(TAG + "getWindow err = " + JSON.stringify(err));
           console.info(TAG + "getWindow data = " + data);
+          if (err == null && data != null) {
+            let isFocused = data.isFocused();
+            console.info(TAG + "getWindow isFocused = " + isFocused);
+            expect(typeof isFocused).assertEqual("boolean");
+          }
           done();
         })
       } catch (err) {
@@ -241,6 +246,9 @@ export default function verificationTest(){
         ability_featureAbility.getWindow().then((data) => {
           console.info(TAG + "getWindow data = " + data);
           expect(data != null).assertTrue();
+          let isFocused = data.isFocused();
+          console.info(TAG + "getWindow isFocused = " + isFocused);
+          expect(typeof isFocused).assertEqual("boolean");
           done();
         }).catch((err: BusinessError) => {
           console.info(TAG + "getWindow err = " + err);
@@ -440,5 +448,326 @@ export default function verificationTest(){
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_GetWant_0100
+     * @tc.number SUB_AA_OpenHarmony_Test_GetWant_0100
+     * @tc.desc   Test getWant return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_GetWant_0100', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_GetWant_0100 ==>';
+      try {
+        await ability_featureAbility.getWant().then((data)=>{
+          console.info(TAG + "getWant data = " + JSON.stringify(data));
+          expect(data != null).assertTrue();
+          expect(data.deviceId == '0').assertTrue();
+          expect(data.bundleName == 'com.example.faapicoverhaptest').assertTrue();
+          expect(data.abilityName == 'com.example.faapicoverhaptest.TestAbility').assertTrue();
+          expect(data.moduleName == 'entry_test').assertTrue();
+          expect(data.uri == '').assertTrue();
+          expect(data.type == '').assertTrue();
+          expect(data.flags == 0).assertTrue();
+          expect(data.action == '').assertTrue();
+        }).catch(()=>{
+          expect().assertFail();
+        })
+        done();
+      } catch (err) {
+        console.info(TAG + "getWant catch err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbility_Null_0200
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbility_Null_0200
+     * @tc.desc   Test startAbility with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_StartAbility_Null_0200', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_StartAbility_Null_0200 ==>';
+      try {
+        await ability_featureAbility.startAbility(null).then((data) => {
+          console.info(TAG + "startAbility data = " + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(TAG + "startAbility err = " + JSON.stringify(err));
+          expect(err.code).assertEqual(202);
+          done();
+        });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbility_Undefined_0300
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbility_Undefined_0300
+     * @tc.desc   Test startAbility with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_StartAbility_Undefined_0300', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_StartAbility_Undefined_0300 ==>';
+      try {
+        await ability_featureAbility.startAbility(undefined).then((data) => {
+          console.info(TAG + "startAbility data = " + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(TAG + "startAbility err = " + JSON.stringify(err));
+          expect(err.code).assertEqual(202);
+          done();
+        });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbilityForResult_Null_0400
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbilityForResult_Null_0400
+     * @tc.desc   Test startAbilityForResult with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_StartAbilityForResult_Null_0400', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_StartAbilityForResult_Null_0400 ==>';
+      try {
+        await ability_featureAbility.startAbilityForResult(null).then((data) => {
+          console.info(TAG + "startAbilityForResult data = " + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(TAG + "startAbilityForResult err = " + JSON.stringify(err));
+          expect(err.code).assertEqual(202);
+          done();
+        });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbilityForResult_Undefined_0500
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbilityForResult_Undefined_0500
+     * @tc.desc   Test startAbilityForResult with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_StartAbilityForResult_Undefined_0500', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_StartAbilityForResult_Undefined_0500 ==>';
+      try {
+        await ability_featureAbility.startAbilityForResult(undefined).then((data) => {
+          console.info(TAG + "startAbilityForResult data = " + JSON.stringify(data));
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(TAG + "startAbilityForResult err = " + JSON.stringify(err));
+          expect(err.code).assertEqual(202);
+          done();
+        });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_GetWant_0600
+     * @tc.number SUB_AA_OpenHarmony_Test_GetWant_0600
+     * @tc.desc   Test getWant return value (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_GetWant_0600', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_GetWant_0600 ==>';
+      try {
+        ability_featureAbility.getWant((err: BusinessError, data: Want) => {
+          try {
+            if (err.code) {
+              console.info(TAG + "getWant err = " + JSON.stringify(err));
+              expect().assertFail();
+            } else {
+              console.info(TAG + "getWant data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
+              expect(data.deviceId == '0').assertTrue();
+              expect(data.bundleName == 'com.example.faapicoverhaptest').assertTrue();
+              expect(data.abilityName == 'com.example.faapicoverhaptest.TestAbility').assertTrue();
+              expect(data.moduleName == 'entry_test').assertTrue();
+              expect(data.uri == '').assertTrue();
+              expect(data.type == '').assertTrue();
+              expect(data.flags == 0).assertTrue();
+              expect(data.action == '').assertTrue();
+            }
+            done();
+          } catch (error) {
+            console.info(TAG + "getWant callback error = " + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(TAG + "getWant catch err = " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbility_Null_0700
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbility_Null_0700
+     * @tc.desc   Test startAbility with null parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_StartAbility_Null_0700', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_StartAbility_Null_0700 ==>';
+      try {
+        ability_featureAbility.startAbility(null, (err: BusinessError, data: number) => {
+          try {
+            if (err.code) {
+              console.info(TAG + "startAbility err = " + JSON.stringify(err));
+              expect(err.code).assertEqual(202);
+            } else {
+              console.info(TAG + "startAbility data = " + JSON.stringify(data));
+              expect().assertFail();
+            }
+            done();
+          } catch (error) {
+            console.info(TAG + "startAbility callback error = " + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(-1);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbility_Undefined_0800
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbility_Undefined_0800
+     * @tc.desc   Test startAbility with undefined parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_StartAbility_Undefined_0800', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_StartAbility_Undefined_0800 ==>';
+      try {
+        ability_featureAbility.startAbility(undefined, (err: BusinessError, data: number) => {
+          try {
+            if (err.code) {
+              console.info(TAG + "startAbility err = " + JSON.stringify(err));
+              expect(err.code).assertEqual(202);
+            } else {
+              console.info(TAG + "startAbility data = " + JSON.stringify(data));
+              expect().assertFail();
+            }
+            done();
+          } catch (error) {
+            console.info(TAG + "startAbility callback error = " + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(-1);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbilityForResult_Null_0900
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbilityForResult_Null_0900
+     * @tc.desc   Test startAbilityForResult with null parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_StartAbilityForResult_Null_0900', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_StartAbilityForResult_Null_0900 ==>';
+      try {
+        ability_featureAbility.startAbilityForResult(null, (err: BusinessError, data) => {
+          try {
+            if (err.code) {
+              console.info(TAG + "startAbilityForResult err = " + JSON.stringify(err));
+              expect(err.code).assertEqual(202);
+            } else {
+              console.info(TAG + "startAbilityForResult data = " + JSON.stringify(data));
+              expect().assertFail();
+            }
+            done();
+          } catch (error) {
+            console.info(TAG + "startAbilityForResult callback error = " + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(-1);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Test_StartAbilityForResult_Undefined_1000
+     * @tc.number SUB_AA_OpenHarmony_Test_StartAbilityForResult_Undefined_1000
+     * @tc.desc   Test startAbilityForResult with undefined parameter (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_OpenHarmony_Test_StartAbilityForResult_Undefined_1000', Level.LEVEL0, async (done: Function) => {
+      TAG = 'SUB_AA_OpenHarmony_Test_StartAbilityForResult_Undefined_1000 ==>';
+      try {
+        ability_featureAbility.startAbilityForResult(undefined, (err: BusinessError, data) => {
+          try {
+            if (err.code) {
+              console.info(TAG + "startAbilityForResult err = " + JSON.stringify(err));
+              expect(err.code).assertEqual(202);
+            } else {
+              console.info(TAG + "startAbilityForResult data = " + JSON.stringify(data));
+              expect().assertFail();
+            }
+            done();
+          } catch (error) {
+            console.info(TAG + "startAbilityForResult callback error = " + JSON.stringify(error));
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(TAG + "catch err = " + JSON.stringify(err));
+        expect((err as BusinessError).code).assertEqual(-1);
+        done();
+      }
+    })
+
   })
 }

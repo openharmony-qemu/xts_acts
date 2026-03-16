@@ -33,7 +33,7 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 
 export default function refreshTest() {
   describe('ActsRefreshTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextLineSpacingTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.refresh.static", "EntryAbility");
     })

@@ -617,7 +617,7 @@ export default function fileIORandomAccessFileWrite() {
     /**
      * @tc.name   fileIO_randomaccessfile_write_async_static_011
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1100
-     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously and checkout filePointer.
+     * @tc.desc   Test write() interface. return in callback mode. When offset is 1. Test write data asynchronously and checkout filePointer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -644,6 +644,157 @@ export default function fileIORandomAccessFileWrite() {
         });
       } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_011 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_012
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1200
+     * @tc.desc   Test write() interface. return in promise mode. When buffer is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_012');
+
+      try {
+        let randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let bytesWritten = await randomaccessfile.write("");
+        expect(bytesWritten == 0).assertTrue();
+        randomaccessfile.close();
+        fs.unlinkSync(fpath);
+        done();
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_012 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_013
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1300
+     * @tc.desc   Test write() interface. return in promise mode. When options is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_013');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let length = 20;
+        let bytesWritten = await randomaccessfile.write(new ArrayBuffer(length), undefined);
+        expect(bytesWritten == length).assertTrue();
+        randomaccessfile.close();
+        fs.unlinkSync(fpath);
+        done();
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_013 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_014
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1400
+     * @tc.desc   Test write() interface. return in callback mode. When buffer is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_014');
+
+      try {
+        let randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        randomaccessfile.write("", (err: BusinessError | null, bytesWritten: long | undefined) => {
+          expect(bytesWritten == 0).assertTrue();
+          randomaccessfile.close();
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_014 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_015
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1500
+     * @tc.desc   Test write() interface. return in callback mode. When buffer is empty string with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_015');
+
+      try {
+        let randomaccessfile = await fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let options: WriteOptions = {
+          offset: 0
+        };
+        randomaccessfile.write("", options, (err: BusinessError | null, bytesWritten: long | undefined) => {
+          expect(bytesWritten == 0).assertTrue();
+          randomaccessfile.close();
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_015 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_011
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_1100
+     * @tc.desc   Test writeSync() interface. When buffer is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_011');
+
+      try {
+        let randomaccessfile = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let bytesWritten = randomaccessfile.writeSync("");
+        expect(bytesWritten == 0).assertTrue();
+        randomaccessfile.close();
+        fs.unlinkSync(fpath);
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_011 has failed for ' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_012
+     * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_1200
+     * @tc.desc   Test writeSync() interface. When options is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_012');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let randomaccessfile = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
+        let length = 20;
+        let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length), undefined);
+        expect(bytesWritten == length).assertTrue();
+        randomaccessfile.close();
+        fs.unlinkSync(fpath);
+      } catch(err) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_012 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
     });

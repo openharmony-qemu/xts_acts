@@ -44,7 +44,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RepeatTest0040() {
   describe('RepeatTest0040', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RepeatTest0040 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
     });

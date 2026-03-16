@@ -83,16 +83,18 @@ export default function ActsReminderAgentManagerStaticTest() {
         let TEST_CASE_NAME = 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001'
         console.info(`${TEST_CASE_NAME} START requestEnableNotification`)
         notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
-          console.info(`${TEST_CASE_NAME} requestEnableNotification about is ${testAbilityContext}`)
-          console.info(`${TEST_CASE_NAME} come in requestEnableNotification`);
-          if (err) {
-            console.info(`${TEST_CASE_NAME} requestEnableNotification err: ${err.code}`)
-            expect(false).assertTrue()
-            done();
-          }else {
-            console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
-            await Utils.msSleep(1000)
-          }
+          waitForCompletion(async () => {
+            console.info(`${TEST_CASE_NAME} requestEnableNotification about is ${testAbilityContext}`)
+            console.info(`${TEST_CASE_NAME} come in requestEnableNotification`);
+            if (err) {
+              console.info(`${TEST_CASE_NAME} requestEnableNotification err: ${err.code}`)
+              expect(false).assertTrue()
+              done();
+            }else {
+              console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
+              await Utils.msSleep(1000)
+            }
+          })
         })
         await Utils.msSleep(1000)
         let driver = Driver.create()
@@ -757,11 +759,12 @@ export default function ActsReminderAgentManagerStaticTest() {
 
         try {
           reminderAgentManager.publishReminder(calendar).then((reminderId: int) => {
-            console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise, reminderId = " + reminderId);
-            expect(reminderId).assertLarger(0);
-
-            await reminderAgentManager.cancelAllReminders();
-            done();
+            waitForCompletion(async () => {
+              console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise, reminderId = " + reminderId);
+              expect(reminderId).assertLarger(0);
+              await reminderAgentManager.cancelAllReminders();
+              done();
+            })
           }).catch((err: Error) => {
             console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013 promise err code:" + err.code + " message:" + err.message);
           });
@@ -938,14 +941,14 @@ export default function ActsReminderAgentManagerStaticTest() {
                     console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 deleteExcludeDates promise");
 
                     reminderAgentManager.getExcludeDates(reminderId as int).then((dates3: Array<Date>) => {
-                      console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 getExcludeDates3 promise length: " + dates3.length);
-
-                      expect(dates3?.length).assertEqual(0);
-
-                      if(reminderId != undefined){
-                        await reminderAgentManager.cancelReminder(reminderId as int);
-                      }
-                      done();
+                      waitForCompletion(async () => {
+                        console.info("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 getExcludeDates3 promise length: " + dates3.length);
+                        expect(dates3?.length).assertEqual(0);
+                        if(reminderId != undefined){
+                          await reminderAgentManager.cancelReminder(reminderId as int);
+                        }
+                        done();
+                      })
                     }).catch((err: Error) => {
                       console.error("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019 getExcludeDates3 promise err code:" + err.code + " message:" + err.message);
                       expect(false).assertTrue();

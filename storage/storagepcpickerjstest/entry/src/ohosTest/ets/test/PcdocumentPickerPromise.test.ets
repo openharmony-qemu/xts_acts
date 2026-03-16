@@ -196,6 +196,35 @@ export default function documentpcPickerPromise(abilityContext: Context) {
     });
 
     /**
+     * @tc.name   test_Documentpicker_Select_Pc_Promise_007
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_PC_PROMISE_0700
+     * @tc.desc   select with option authMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Select_Pc_Promise_007", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Pc_Promise_007";
+      let option1 = new picker.DocumentSelectOptions();
+      option1.defaultFilePathUri = "file://docs/storage/Users/currentUser/test/test1";
+      option1.authMode = true;
+      try {
+        let documentPicker = new picker.DocumentViewPicker();
+        documentPicker.select(option1).then((result) => {
+          console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+          expect(result.length == 0).assertTrue();
+        }).catch((err: Error) => {
+          console.info(`${testNum}::selectWithOption err: ${JSON.stringify(err)}`);
+        })
+        done();
+      } catch (error) {
+        console.info(`${testNum}::selectWithOption error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   test_Documentpicker_Save_Pc_Promise_001
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_PC_PROMISE_0100
      * @tc.desc   save autoCreateEmptyFile=true

@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function geometryTransitionJsunit() {
   describe('geometryTransitionTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("geometryTransitionJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

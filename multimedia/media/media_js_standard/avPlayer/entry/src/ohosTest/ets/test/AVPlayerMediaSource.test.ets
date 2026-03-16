@@ -404,6 +404,53 @@ export default function AVPlayerMediaSource() {
       avPlayer.setMediaSource(mediaSource, playStrategy)
       console.log(`setMediaSource success`)
     });
-
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0801
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0801
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0801', Level.LEVEL0, async (done: Function) => {
+      let header: Record<string, string> = {
+        "User-Agent": "User-Agent-Value"
+      };
+      try{
+        let mediaSource = media.createMediaSourceWithUrl(undefined, header);
+        expect(mediaSource).assertUndefined()
+        console.info(' createMediaSourceWithUrl is Undefined')
+        let enable = true;
+        mediaSource.enableOfflineCache(enable);
+      }catch(err){
+        console.info('case media.createMediaSourceWithUr error code is' + err.code)
+        expect(err.code).assertUndefined();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0802
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0802
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0802', Level.LEVEL0, async (done: Function) => {
+      let header: Record<string, string> = {
+        "User-Agent": "User-Agent-Value"
+      };
+      try{
+        let mediaSource = media.createMediaSourceWithUrl(undefined, header);
+        expect(mediaSource).assertUndefined()
+        console.info(' createMediaSourceWithUrl is Undefined')
+        let enable = false;
+        mediaSource.enableOfflineCache(enable);
+      }catch(err){
+        console.info('case media.createMediaSourceWithUr error code is' + err.code)
+        expect(err.code).assertUndefined();
+      }
+      done();
+    });
   })
 }

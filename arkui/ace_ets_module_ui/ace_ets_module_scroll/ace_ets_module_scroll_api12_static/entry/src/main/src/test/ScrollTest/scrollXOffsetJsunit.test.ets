@@ -48,7 +48,7 @@ const waitUiReadyMs = 1000;
 
 export default function scrollXOffsetJsunit() {
   describe('scrollXOffsetJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
       
     });

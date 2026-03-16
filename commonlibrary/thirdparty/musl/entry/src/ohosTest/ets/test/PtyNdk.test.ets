@@ -30,9 +30,9 @@ export default function ptyNdkTest() {
      * @tc.desc   test forkpty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeForkpty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeForkpty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result:number = pty.forkpty();
       expect(result).assertEqual(resultTrue);
@@ -44,9 +44,9 @@ export default function ptyNdkTest() {
      * @tc.desc   openpty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPtyOpenpty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPtyOpenpty001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = pty.openpty();
       expect(result).assertEqual(0);
       done()

@@ -1122,5 +1122,366 @@ export default function CallbackTest() {
       })
 
 
+        /**
+     * @tc.name   SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300
+     * @tc.desc   getModifyTime  promise 14800033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(TAG + "************* SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300 start *************");
+      try {
+        let PRIKey: Array<data_relationalStore.PRIKeyType> = [30 as long, 31 as long];
+        await rdbStore!.getModifyTime("employee", "age", PRIKey);
+        console.log(TAG + 'modifyTime success');
+      } catch (err) {
+        console.log(TAG +
+          `SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300 get modify time fail, err code is ${err.code}, message is ${err.message}.`);
+        expect(err.code).assertEqual(14800033);
+      }
+      console.log(TAG + "************* SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0300 end *************");
+    })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400
+     * @tc.number SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400
+     * @tc.desc   Test obtainDistributedTableName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+       console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 start-----")
+       rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+       try {
+        if (rdbStore != undefined) {
+           (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("123456789", "", (err: BusinessError|null) => {
+            if(err){
+              expect(err.code).assertEqual(14800000);
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
+          })
+        }
+       } catch (err) {
+        console.info(TAG + "obtainDistributedTableName err.code" + err.code + "err.message" + err.message)
+        expect(err.code).assertEqual(14800000);  
+        done();
+       }  
+      
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0400 end-----")
+      
+     })
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500
+     * @tc.number SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500
+     * @tc.desc   Test obtainDistributedTableName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+       console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500 start-----")
+       rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+       try {
+        (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("", "EMPLOYEE", (err: BusinessError|null) => {
+          if(err){
+            expect(err.code).assertEqual(14800000);
+            done();
+          }else{
+            expect().assertFail();
+            done();
+          }
+         })
+       } catch (err) {
+        expect(err.code).assertEqual(14800000)  
+        done();
+       }  
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0500 end-----")
+  
+     })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0600
+     * @tc.number SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0600
+     * @tc.desc   Test obtainDistributedTableName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0600',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+       console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0600 start-----")
+       rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+       try {
+        await (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("", "EMPLOYEE")
+        expect().assertFail();
+       } catch (err) {
+        console.info(TAG + "obtainDistributedTableName err.code" + err.code + "err.message" + err.message)
+        expect(err.code).assertEqual(14800000);
+       }   
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0600 end-----")
+  
+     }) 
+
+     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0700
+     * @tc.number SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0700
+     * @tc.desc   Test obtainDistributedTableName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0700',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+       console.info(TAG +"-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0700 start-----")
+       rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG);
+       try {
+        await (rdbStore as data_relationalStore.RdbStore).obtainDistributedTableName("123456789", "")
+        expect().assertFail();
+       } catch (err) {
+        console.info(TAG + "obtainDistributedTableName err.code" + err.code + "err.message" + err.message)
+        expect(err.code).assertEqual(14800000);
+       }   
+       console.info(TAG + "-----SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0700 end-----")
+  
+     }) 
+
+
+
+     /**
+     * @tc.name   SUB_DistributedrelationalStore_remoteQuery_ErrTest_0001
+     * @tc.number SUB_DistributedrelationalStore_remoteQuery_ErrTest_0001
+     * @tc.desc   Test remoteQuery deviceId with ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedrelationalStore_remoteQuery_ErrTest_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0001 start *************");
+      const record: data_relationalStore.ValuesBucket = {
+        "name": "Jim",
+        "age": 30 as long,
+      }
+      let predicates = new data_relationalStore.RdbPredicates("employee");
+      predicates.equalTo("name", "Jim")
+      let rdbStore = await data_relationalStore.getRdbStore(context!, STORE_CONFIG2);
+      try {
+        await rdbStore!.remoteQuery("", "employee", predicates, ["ID", "name", "age"]);
+      } catch (err) {
+        console.info(TAG + "err.code" + err.code + "err.message" + err.message)
+        if (err.code === 401) {
+          expect(err.code).assertEqual(401);
+
+        } else {
+          expect(err.code).assertEqual(14800000);
+        }
+      }
+
+      try {
+        rdbStore!.remoteQuery("", "employee", predicates, ["ID", "name", "age"], (err) => {
+          if(err){
+            if(err.code === 401){
+              expect(err.code).assertEqual(401);
+              done();
+            }else{
+              expect(err.code).assertEqual(14800000);
+              done();
+            }
+          }else{
+            expect().assertFail();
+            done();
+          }
+        });
+     } catch (err) {
+       console.info(TAG + "err.code" + err.code + "err.message" + err.message)
+       if (err.code === 401) {
+         expect(err.code).assertEqual(401);
+         done();
+       } else {
+         expect(err.code).assertEqual(14800000);
+         done();
+       }
+     }
+
+      
+      console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0001 end *************");
+    })
+
+  /**
+   * @tc.name   SUB_DistributedrelationalStore_remoteQuery_ErrTest_0003
+   * @tc.number SUB_DistributedrelationalStore_remoteQuery_ErrTest_0003
+   * @tc.desc   Test remoteQuery table with ""
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedrelationalStore_remoteQuery_ErrTest_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+  async (done: () => void) => {
+    console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0003 start *************");
+    let predicates = new data_relationalStore.RdbPredicates("employee");
+    predicates.equalTo("name", "Jim")
+    try {
+      if (rdbStore != undefined) {
+        await (rdbStore as data_relationalStore.RdbStore)!.remoteQuery("123456789", "", predicates, ["ID", "name", "age"]);
+        expect().assertFail();
+      }   
+    } catch (err) {
+      console.info(TAG + "err.code" + err.code + "err.message" + err.message)
+      if(err.code === 401){
+        expect(err.code).assertEqual(401);
+      }else{
+        expect(err.code).assertEqual(14800000);
+      }  
+    }
+
+    try {
+      if (rdbStore != undefined) {
+        rdbStore!.remoteQuery("123456789", "", predicates, ["ID", "name", "age"], (err) => {
+          if(err){
+            if(err.code === 401){
+              expect(err.code).assertEqual(401);
+              done()
+            }else{
+              expect(err.code).assertEqual(14800000);
+              done()
+            }
+          }else{
+            expect().assertFail();
+          }
+          
+         });
+      }        
+    } catch (err) {
+      console.info(TAG + "err.code" + err.code + "err.message" + err.message)
+      if(err.code === 401){
+        expect(err.code).assertEqual(401);
+        done()
+      }else{
+        expect(err.code).assertEqual(14800000);
+        done()
+      }
+    }
+    console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0003 end *************");
+  })
+
+   /**
+   * @tc.name   SUB_DistributedrelationalStore_remoteQuery_ErrTest_0004
+   * @tc.number SUB_DistributedrelationalStore_remoteQuery_ErrTest_0004
+   * @tc.desc   Test remoteQuery with []
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+   it('SUB_DistributedrelationalStore_remoteQuery_ErrTest_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0004 start *************");
+      let predicates = new data_relationalStore.RdbPredicates("employee");
+      predicates.equalTo("name", "Jim")
+      try {
+        if (rdbStore != undefined) {
+          await (rdbStore as data_relationalStore.RdbStore)!.remoteQuery("123456789", "employee", predicates, []);
+          expect().assertFail();
+        }   
+      } catch (err) {
+        console.info(TAG + "err.code" + err.code + "err.message" + err.message)
+        if(err.code === 401){
+          expect(err.code).assertEqual(401);
+        }else{
+          expect(err.code).assertEqual(14800000);
+        }  
+      }
+  
+      try {
+        if (rdbStore != undefined) {
+          rdbStore!.remoteQuery("123456789", "employee", predicates, [], (err) => {
+            if(err){
+              if(err.code === 401){
+                expect(err.code).assertEqual(401);
+                done();
+              }else{
+                expect(err.code).assertEqual(14800000);
+                done();
+              }
+            }else{
+              expect().assertFail();
+              done();
+            }
+           
+           });
+        }        
+      } catch (err) {
+        console.info(TAG + "err.code" + err.code + "err.message" + err.message)
+        expect().assertFail();
+        done();
+      }
+      console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0004 end *************");
+    })
+
+    /**
+   * @tc.name   SUB_DistributedrelationalStore_remoteQuery_ErrTest_0005
+   * @tc.number SUB_DistributedrelationalStore_remoteQuery_ErrTest_0005
+   * @tc.desc   Test remoteQuery 
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it('SUB_DistributedrelationalStore_remoteQuery_ErrTest_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void) => {
+      console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0005 start *************");
+      let predicates = new data_relationalStore.RdbPredicates("employee");
+      predicates.equalTo("name", "Jim")
+      try {
+        if (rdbStore != undefined) {
+          let resset = await (rdbStore as data_relationalStore.RdbStore)!.remoteQuery("123456789", "employee", predicates, ["ID", "name", "age"]);
+          expect(typeof(!resset) === "object").assertTrue();
+        }   
+      } catch (err) {
+        console.info(TAG + "err.code" + err.code + "err.message" + err.message)
+        if(err.code === 401){
+          expect(err.code).assertEqual(401);
+        }else{
+          expect(err.code).assertEqual(14800000);
+        }  
+      }
+  
+      try {
+        if (rdbStore != undefined) {
+          rdbStore!.remoteQuery("123456789", "employee", predicates, ["ID", "name", "age"], (err: BusinessError | null, resset) => {
+            if(err){
+              if(err.code === 401){
+                expect(err.code).assertEqual(401);
+                done();
+              }else{
+                expect(err.code).assertEqual(14800000);
+                done();
+              }
+            }else{
+              expect(typeof(!resset) === "object").assertTrue();
+              done();
+            }
+           
+           });
+        }        
+      } catch (err) {
+        console.info(TAG + "err.code" + err.code + "err.message" + err.message)
+        expect().assertFail();
+        done();
+      }
+      console.info(TAG + "************* SUB_DistributedrelationalStore_remoteQuery_ErrTest_0005 end *************");
+    })
+  
+
+
+
+
   })
 }

@@ -192,8 +192,9 @@ describe('fileIO_randomAccessFile_write', function () {
         let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
 
         try {
-            randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
-            expect(true).assertTrue();
+            let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
+            console.info('fileIO_randomaccessfile_write_sync_006 bytesWritten ' + bytesWritten);
+            expect(bytesWritten == 4095).assertTrue();
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
         } catch(err) {
@@ -216,8 +217,9 @@ describe('fileIO_randomAccessFile_write', function () {
 
         try {
             let length = 4096;
-            randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
-            expect(true).assertTrue();
+            let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
+            console.info('fileIO_randomaccessfile_write_sync_007 bytesWritten ' + bytesWritten);
+            expect(bytesWritten == 4096).assertTrue();
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
         } catch(err) {
@@ -343,6 +345,130 @@ describe('fileIO_randomAccessFile_write', function () {
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
             expect(err.code == 13900020 && err.message == "Invalid argument").assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_013
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_SYNC_1300
+     * @tc.desc   Test writeSync() interface. When offset equals buffer length. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_013', Level.LEVEL0, async function () {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_sync_013');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+        try {
+            let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let length = 4096;
+            let bytesWritten = randomaccessfile.writeSync(null, { offset: length });
+            expect(false).assertTrue();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_sync_013 has failed for ' + err);
+            fileIO.unlinkSync(fpath);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_014
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_SYNC_1400
+     * @tc.desc   Test writeSync() interface. When offset equals buffer length. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_014', Level.LEVEL0, async function () {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_sync_014');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+        try {
+            let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let length = 4096;
+            let bytesWritten = randomaccessfile.writeSync(undefined, { offset: length });
+            expect(false).assertTrue();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_sync_014 has failed for ' + err);
+            fileIO.unlinkSync(fpath);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_015
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_SYNC_1500
+     * @tc.desc   Test writeSync() interface. When offset equals buffer length. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_015', Level.LEVEL0, async function () {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_sync_015');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+        try {
+            let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let length = 4096;
+            let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length), null);
+            expect(bytesWritten == length).assertTrue();
+            randomaccessfile.close();
+            fileIO.unlinkSync(fpath);
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_sync_015 has failed for ' + err);
+            expect(false).assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_016
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_SYNC_1600
+     * @tc.desc   Test writeSync() interface. When offset equals buffer length. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_016', Level.LEVEL0, async function () {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_sync_016');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+        try {
+            let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let length = 4096;
+            let bytesWritten = randomaccessfile.writeSync(new ArrayBuffer(length), undefined);
+            expect(bytesWritten == length).assertTrue();
+            randomaccessfile.close();
+            fileIO.unlinkSync(fpath);
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_sync_016 has failed for ' + err);
+            expect(false).assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_017
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_SYNC_1700
+     * @tc.desc   Test writeSync() interface. When offset equals buffer length. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_sync_017', Level.LEVEL0, async function () {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_sync_017');
+        expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+        try {
+            let randomaccessfile = fileIO.createRandomAccessFileSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let length = 4096;
+            let bytesWritten = randomaccessfile.writeSync("", { offset: length });
+            expect(bytesWritten == 0).assertTrue();
+            console.info('fileIO_randomaccessfile_write_sync_017 bytesWritten: ' + bytesWritten);
+            randomaccessfile.close();
+            fileIO.unlinkSync(fpath);
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_sync_017 has failed for ' + err);
+            expect(false).assertTrue();
         }
     });
 
@@ -523,7 +649,6 @@ describe('fileIO_randomAccessFile_write', function () {
         try {
             let length = 4096;
             await randomaccessfile.write(new ArrayBuffer(length), { offset: 5, length: 4095 });
-            expect(true).assertTrue();
             randomaccessfile.close();
             fileIO.unlinkSync(fpath);
             done();
@@ -691,6 +816,384 @@ describe('fileIO_randomAccessFile_write', function () {
         } catch(err) {
             console.info('fileIO_randomaccessfile_write_async_013 has failed for ' + err);
             expect(false).assertTrue();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_014
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_1400
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_014', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_014');
+
+        try {
+            let randomaccessfile = await fileIO.createRandomAccessFile(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let bytesWritten = await randomaccessfile.write(null, { offset: 1 });
+            expect(false).assertTrue();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_014 has failed for ' + err);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+            done()
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_015
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_1500
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_015', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_015');
+
+        try {
+            let randomaccessfile = await fileIO.createRandomAccessFile(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let bytesWritten = await randomaccessfile.write(undefined, { offset: 1 });
+            expect(false).assertTrue();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_015 has failed for ' + err);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_016
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_1600
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_016', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_016');
+
+        try {
+            let randomaccessfile = await fileIO.createRandomAccessFile(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let length = 20;
+            let bytesWritten = await randomaccessfile.write(new ArrayBuffer(length), null);
+            expect(bytesWritten == length).assertTrue();
+            randomaccessfile.close();
+            fileIO.unlinkSync(fpath);
+            done();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_016 has failed for ' + err);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_017
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_1700
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_017', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_017');
+
+        try {
+            let randomaccessfile = await fileIO.createRandomAccessFile(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let length = 20;
+            let bytesWritten = await randomaccessfile.write(new ArrayBuffer(length), undefined);
+            expect(bytesWritten == length).assertTrue();
+            randomaccessfile.close();
+            fileIO.unlinkSync(fpath);
+            done();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_017 has failed for ' + err);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_018
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_1800
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_018', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_018');
+
+        try {
+            let randomaccessfile = await fileIO.createRandomAccessFile(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+            let length = 20;
+            let bytesWritten = await randomaccessfile.write("", { offset: 1 });
+            expect(bytesWritten == 0).assertTrue();
+            console.info('fileIO_randomaccessfile_write_async_018 bytesWritten: ' + bytesWritten);
+            randomaccessfile.close();
+            fileIO.unlinkSync(fpath);
+            done();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_018 has failed for ' + err);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_019
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_1900
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_019', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_019');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            let length = 20;
+            randomaccessfile.write(null, function(err, bytesWritten) {
+                console.error("fileIO_randomaccessfile_write_async_019 write failed with error message: " + err.message + ", error code: " + err.code);
+                expect(false).assertTrue();
+            });
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_019 has failed for ' + err);
+            fileIO.unlinkSync(fpath);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_020
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_2000
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_020', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_020');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            let length = 20;
+            randomaccessfile.write(undefined, function(err, bytesWritten) {
+                console.error("fileIO_randomaccessfile_write_async_020 write failed with error message: " + err.message + ", error code: " + err.code);
+                expect(false).assertTrue();
+            });
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_020 has failed for ' + err);
+            fileIO.unlinkSync(fpath);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_021
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_2100
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_021', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_021');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            let length = 20;
+            randomaccessfile.write("", function(err, bytesWritten) {
+                console.error("fileIO_randomaccessfile_write_async_021 write failed with error message: " + err);
+                console.info('fileIO_randomaccessfile_write_async_021 bytesWritten: ' + bytesWritten);
+                expect(bytesWritten == 0).assertTrue();;
+            });
+            done();
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_021 has failed for ' + err);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_022
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_2200
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_022', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_022');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            randomaccessfile.write(null, { offset: 1 }, function(err, bytesWritten) {
+                console.error("fileIO_randomaccessfile_write_async_022 write failed with error message: " + err.message + ", error code: " + err.code);
+                expect(false).assertTrue();
+            });
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_022 has failed for ' + err);
+            fileIO.unlinkSync(fpath);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_023
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_2300
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_023', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_023');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            randomaccessfile.write(undefined, { offset: 1 }, function(err, bytesWritten) {
+                console.error("fileIO_randomaccessfile_write_async_023 write failed with error message: " + err.message + ", error code: " + err.code);
+                expect(false).assertTrue();
+            });
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_023 has failed for ' + err);
+            fileIO.unlinkSync(fpath);
+            expect(err.code === 13900020 && err.message == "Invalid argument").assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_024
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_2400
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_024', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_024');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            let length = 20;
+            randomaccessfile.write(new ArrayBuffer(length), null, function(err, bytesWritten) {
+                expect(bytesWritten == length).assertTrue();
+                randomaccessfile.close();
+                fileIO.closeSync(file.fd);
+                fileIO.unlinkSync(fpath);
+                done();
+            });
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_024 has failed for ' + err);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_025
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_2500
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_025', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_025');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            let length = 20;
+            randomaccessfile.write(new ArrayBuffer(length), undefined, function(err, bytesWritten) {
+                expect(bytesWritten == length).assertTrue();
+                randomaccessfile.close();
+                fileIO.closeSync(file.fd);
+                fileIO.unlinkSync(fpath);
+                done();
+            });
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_025 has failed for ' + err);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_026
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_2600
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_026', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_026');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            let length = 20;
+            randomaccessfile.write("new ArrayBuffer(length)", { offset: 1 }, function(err, bytesWritten) {
+                console.error("fileIO_randomaccessfile_write_async_026 write failed with error message: " + err);
+                console.info('fileIO_randomaccessfile_write_async_026 bytesWritten: ' + bytesWritten);
+                expect(bytesWritten == 23).assertTrue();
+                randomaccessfile.close();
+                fileIO.closeSync(file.fd);
+                fileIO.unlinkSync(fpath);
+                done();
+            });
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_026 has failed for ' + err);
+            expect(false).assertTrue();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   fileIO_randomaccessfile_write_async_027
+     * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_WRITE_ASYNC_2700
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_randomaccessfile_write_async_027', Level.LEVEL0, async function (done) {
+        let fpath = await nextFileName('fileIO_randomaccessfile_write_async_027');
+
+        try {
+            let file = fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.WRITE_ONLY);
+            let randomaccessfile = await fileIO.createRandomAccessFile(file);
+            let length = 20;
+            randomaccessfile.write("", { offset: 1 }, function(err, bytesWritten) {
+                console.error("fileIO_randomaccessfile_write_async_027 write failed with error message: " + err);
+                console.info('fileIO_randomaccessfile_write_async_027 bytesWritten: ' + bytesWritten);
+                expect(bytesWritten == 0).assertTrue();
+                randomaccessfile.close();
+                fileIO.closeSync(file.fd);
+                fileIO.unlinkSync(fpath);
+                done();
+            });
+        } catch(err) {
+            console.info('fileIO_randomaccessfile_write_async_027 has failed for ' + err);
+            expect(false).assertTrue();
+            done();
         }
     });
 })

@@ -65,7 +65,7 @@ describe('security_label', function () {
     } catch (e) {
       fileio.unlinkSync(fpath);
       console.log('securitylabel_test_set_security_label_sync_001 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -84,7 +84,7 @@ describe('security_label', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('securitylabel_test_set_security_label_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
     }
   });
 
@@ -106,7 +106,7 @@ describe('security_label', function () {
     } catch (e) {
       fileio.unlinkSync(fpath);
       console.log('securitylabel_test_set_security_label_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
+      expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
     }
   });
 
@@ -128,7 +128,7 @@ describe('security_label', function () {
     } catch (e) {
       fileio.unlinkSync(fpath);
       console.log('securitylabel_test_set_security_label_sync_004 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
     }
   });
 
@@ -151,7 +151,7 @@ describe('security_label', function () {
       } catch (e) {
         fileio.unlinkSync(fpath);
         console.log('securitylabel_test_set_security_label_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       }
     });
 
@@ -315,7 +315,7 @@ describe('security_label', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('securitylabel_test_set_security_label_async_005 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -335,7 +335,7 @@ describe('security_label', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('securitylabel_test_set_security_label_async_006 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
+      expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
       done();
     }
   });
@@ -355,7 +355,7 @@ describe('security_label', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('securitylabel_test_set_security_label_async_007 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -378,7 +378,7 @@ describe('security_label', function () {
     } catch (e) {
       fileio.unlinkSync(fpath);
       console.log('securitylabel_test_set_security_label_async_008 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -401,7 +401,7 @@ describe('security_label', function () {
     } catch (e) {
       fileio.unlinkSync(fpath);
       console.log('securitylabel_test_set_security_label_async_009 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -424,7 +424,7 @@ describe('security_label', function () {
     } catch (e) {
       fileio.unlinkSync(fpath);
       console.log('securitylabel_test_set_security_label_async_010 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -448,7 +448,7 @@ describe('security_label', function () {
     } catch (e) {
       fileio.unlinkSync(fpath);
       console.log('securitylabel_test_set_security_label_async_011 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -558,7 +558,7 @@ describe('security_label', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('securitylabel_test_get_security_label_sync_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
     }
   });
 
@@ -577,7 +577,7 @@ describe('security_label', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('securitylabel_test_get_security_label_sync_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
     }
   });
 
@@ -596,7 +596,7 @@ describe('security_label', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('securitylabel_test_get_security_label_async_000 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -637,7 +637,7 @@ describe('security_label', function () {
       expect(false).assertTrue();
     } catch (e) {
       console.log('securitylabel_test_get_security_label_async_002 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
@@ -661,9 +661,503 @@ describe('security_label', function () {
     } catch (e) {
       fileio.unlinkSync(fpath);
       console.log('securitylabel_test_get_security_label_async_003 has failed for ' + e.message + ', code: ' + e.code);
-      expect(e.code == 13900020 && e.message == "Invalid argument").assertTrue();
+      expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
       done();
     }
   });
+
+  /**
+    * @tc.name   securitylabel_test_set_security_label_async_014
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1400
+    * @tc.desc   Test setSecurityLabel() interfaces with null path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_014', Level.LEVEL3, async function (done) {
+      try {
+        await securityLabel.setSecurityLabel(null, 's0');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_async_014 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_015
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1500
+    * @tc.desc   Test setSecurityLabel() interfaces with undefined path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_015', Level.LEVEL3, async function (done) {
+      try {
+        await securityLabel.setSecurityLabel(undefined, 's0');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_async_015 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_016
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1600
+    * @tc.desc   Test setSecurityLabel() interfaces with null type parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_016', Level.LEVEL3, async function (done) {
+      let fpath = await nextFileName('test16.txt');
+      fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+  
+      try {
+        await securityLabel.setSecurityLabel(fpath, null);
+        expect(false).assertTrue();
+      } catch (e) {
+        fileio.unlinkSync(fpath);
+        console.log('securitylabel_test_set_security_label_async_016 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_017
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1700
+    * @tc.desc   Test setSecurityLabel() interfaces with undefined type parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_017', Level.LEVEL3, async function (done) {
+      let fpath = await nextFileName('test17.txt');
+      fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+  
+      try {
+        await securityLabel.setSecurityLabel(fpath, undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        fileio.unlinkSync(fpath);
+        console.log('securitylabel_test_set_security_label_async_017 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_018
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1800
+    * @tc.desc   Test setSecurityLabel() interfaces with empty path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_018', Level.LEVEL3, async function (done) {
+      try {
+        await securityLabel.setSecurityLabel("", 's0');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_async_018 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_019
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1900
+    * @tc.desc   Test setSecurityLabel() interfaces, callback with null path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_019', Level.LEVEL3, async function (done) {
+      try {
+        securityLabel.setSecurityLabel(null, 's0', (err) => {
+          expect(false).assertTrue();
+        });
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_async_019 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_020
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_2000
+    * @tc.desc   Test setSecurityLabel() interfaces, callback with undefined path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_020', Level.LEVEL3, async function (done) {
+      try {
+        securityLabel.setSecurityLabel(undefined, 's0', (err) => {
+          expect(false).assertTrue();
+        });
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_async_020 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_021
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_2100
+    * @tc.desc   Test setSecurityLabel() interfaces, callback with null type parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_021', Level.LEVEL3, async function (done) {
+      let fpath = await nextFileName('test21.txt');
+      fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+  
+      try {
+        securityLabel.setSecurityLabel(fpath, null, (err) => {
+          expect(false).assertTrue();
+        });
+        expect(false).assertTrue();
+      } catch (e) {
+        fileio.unlinkSync(fpath);
+        console.log('securitylabel_test_set_security_label_async_021 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_022
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_2200
+    * @tc.desc   Test setSecurityLabel() interfaces, callback with undefined type parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_022', Level.LEVEL3, async function (done) {
+      let fpath = await nextFileName('test22.txt');
+      fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+  
+      try {
+        securityLabel.setSecurityLabel(fpath, undefined, (err) => {
+          expect(false).assertTrue();
+        });
+        expect(false).assertTrue();
+      } catch (e) {
+        fileio.unlinkSync(fpath);
+        console.log('securitylabel_test_set_security_label_async_022 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_async_023
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_2300
+    * @tc.desc   Test setSecurityLabel() interfaces, callback with empty path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_async_023', Level.LEVEL3, async function (done) {
+      try {
+        securityLabel.setSecurityLabel("", 's0', (err) => {
+          if (err) {
+            console.log('securitylabel_test_set_security_label_async_023 error ' + err.message + ', code: ' + err.code);
+            expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_async_023 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_sync_006
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0600
+    * @tc.desc   Test setSecurityLabelSync() interfaces with null path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_sync_006', Level.LEVEL3, async function () {
+      try {
+        securityLabel.setSecurityLabelSync(null, 's0');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_sync_007
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0700
+    * @tc.desc   Test setSecurityLabelSync() interfaces with undefined path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_sync_007', Level.LEVEL3, async function () {
+      try {
+        securityLabel.setSecurityLabelSync(undefined, 's0');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_sync_007 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_sync_008
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0800
+    * @tc.desc   Test setSecurityLabelSync() interfaces with null type parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_sync_008', Level.LEVEL3, async function () {
+      let fpath = await nextFileName('test23.txt');
+      fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+  
+      try {
+        securityLabel.setSecurityLabelSync(fpath, null);
+        expect(false).assertTrue();
+      } catch (e) {
+        fileio.unlinkSync(fpath);
+        console.log('securitylabel_test_set_security_label_sync_008 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_sync_009
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0900
+    * @tc.desc   Test setSecurityLabelSync() interfaces with undefined type parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_sync_009', Level.LEVEL3, async function () {
+      let fpath = await nextFileName('test24.txt');
+      fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
+  
+      try {
+        securityLabel.setSecurityLabelSync(fpath, undefined);
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_sync_009 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_set_security_label_sync_010
+    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_1000
+    * @tc.desc   Test setSecurityLabelSync() interfaces with empty path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_set_security_label_sync_010', Level.LEVEL3, async function () {
+      try {
+        securityLabel.setSecurityLabelSync("", 's0');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_set_security_label_sync_010 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_async_004
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0400
+    * @tc.desc   Test getSecurityLabel() interfaces with null path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_async_004', Level.LEVEL3, async function (done) {
+      try {
+        await securityLabel.getSecurityLabel(null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_async_004 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_async_005
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0500
+    * @tc.desc   Test getSecurityLabel() interfaces with undefined path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_async_005', Level.LEVEL3, async function (done) {
+      try {
+        await securityLabel.getSecurityLabel(undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_async_005 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_async_006
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0600
+    * @tc.desc   Test getSecurityLabel() interfaces with empty path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_async_006', Level.LEVEL3, async function (done) {
+      try {
+        let Rtype = await securityLabel.getSecurityLabel("");
+        console.info("securitylabel_test_get_security_label_async_006, Label: " + Rtype);
+        done();
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_async_006 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_async_007
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0700
+    * @tc.desc   Test getSecurityLabel() interfaces, callback with null path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_async_007', Level.LEVEL3, async function (done) {
+      try {
+        securityLabel.getSecurityLabel(null, (err, dataLevel) => {
+          expect(false).assertTrue();
+        });
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_async_007 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_async_008
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0800
+    * @tc.desc   Test getSecurityLabel() interfaces, callback with undefined path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_async_008', Level.LEVEL3, async function (done) {
+      try {
+        securityLabel.getSecurityLabel(undefined, (err, dataLevel) => {
+          expect(false).assertTrue();
+        });
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_async_008 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_async_009
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0900
+    * @tc.desc   Test getSecurityLabel() interfaces, callback with empty path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_async_009', Level.LEVEL3, async function (done) {
+      try {
+        securityLabel.getSecurityLabel("", (err, dataLevel) => {
+          if (err) {
+            console.log('securitylabel_test_get_security_label_async_009 has failed for ' + err.message + ', code: ' + err.code);
+            expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
+            done();
+          }
+          console.info("securitylabel_test_get_security_label_async_009, Label: " + dataLevel);
+          done();
+        });
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_async_009 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_sync_004
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_SYNC_0400
+    * @tc.desc   Test getSecurityLabelSync() interfaces with null path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_sync_004', Level.LEVEL3, async function () {
+      try {
+        securityLabel.getSecurityLabelSync(null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_sync_004 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_sync_005
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_SYNC_0500
+    * @tc.desc   Test getSecurityLabelSync() interfaces with undefined path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_sync_005', Level.LEVEL3, async function () {
+      try {
+        securityLabel.getSecurityLabelSync(undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_sync_005 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020 && e.message == "Invalid argument").assertTrue();
+      }
+    });
+  
+    /**
+    * @tc.name   securitylabel_test_get_security_label_sync_006
+    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_SYNC_0600
+    * @tc.desc   Test getSecurityLabelSync() interfaces with empty path parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('securitylabel_test_get_security_label_sync_006', Level.LEVEL3, async function () {
+      try {
+        securityLabel.getSecurityLabelSync("");
+      } catch (e) {
+        console.log('securitylabel_test_get_security_label_sync_006 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+      }
+    });
 });
 }

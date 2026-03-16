@@ -30,9 +30,9 @@ export default function shmNdkTest() {
      * @tc.desc   test shmget
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslShmShmget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslShmShmget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a : number = shm.shmget();
       expect(a).assertEqual(0);
       done()
@@ -44,9 +44,9 @@ export default function shmNdkTest() {
      * @tc.desc   test shmctl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslShmShmctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslShmShmctl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a : number = shm.shmctl();
       expect(a).assertEqual(0);
       done()
@@ -57,9 +57,9 @@ export default function shmNdkTest() {
      * @tc.desc   test shmat
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslShmShmat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslShmShmat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a : number = shm.shmat();
       expect(a).assertEqual(0);
       done()
@@ -70,9 +70,9 @@ export default function shmNdkTest() {
      * @tc.desc   test shmdt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslShmShmdt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslShmShmdt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a : number = shm.shmdt();
       expect(a).assertEqual(0);
       done()

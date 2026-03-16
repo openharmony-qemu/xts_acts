@@ -76,7 +76,7 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
 
 export default function signNormalNotAccessBiometricExecute() {
   describe('signNormalNotAccessBiometricExecute', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({

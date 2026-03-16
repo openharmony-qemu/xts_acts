@@ -1317,7 +1317,7 @@ export default function SixPointZeroTest() {
      * @tc.level     Level 2
      */
     it('testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500', Level.LEVEL2, () => {
-      expect(testNapi.testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500()).assertTrue();
+      expect(testNapi.testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500()).assertEqual("527014800000,0");
     })
 
     /**
@@ -1329,7 +1329,7 @@ export default function SixPointZeroTest() {
      * @tc.level     Level 2
      */
     it('testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600', Level.LEVEL2, () => {
-      expect(testNapi.testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600()).assertTrue();
+      expect(testNapi.testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600()).assertEqual("-650019600000,0");
     })
 
     /**

@@ -70,7 +70,7 @@ export default function patternLockThemeTest() {
     });
 
     /**
-     * @tc.name   ActsPatternLockThemeColors_0100
+     * @tc.name   `ActsPatternLockThemeColors_0100`
      * @tc.number ActsPatternLockThemeColors_0100
      * @tc.desc   Check system colors values of PatternLock component
      * @tc.type   FUNCTION
@@ -89,18 +89,18 @@ export default function patternLockThemeTest() {
       const activeColor: string = attrsPatternLock?.activeColor?.toString().toUpperCase() ?? emptyAttr;
       const checkActiveColor: string = colorValues?.get(`compBackgroundNeutral`)?.toString().toUpperCase()
         ?? emptyCheck;
-      expect(activeColor, checkActiveColor);
+      expect(activeColor).assertEqual(checkActiveColor);
       const selectedColor: string = attrsPatternLock?.selectedColor?.toString().toUpperCase();
       const checkSelectedColor: string = colorValues?.get(`compBackgroundNeutral`)?.toString().toUpperCase()
         ?? emptyCheck;
-      expect(selectedColor, checkSelectedColor);
+      expect(selectedColor).assertEqual(checkSelectedColor);
       const pathColor: string = attrsPatternLock?.pathColor?.toString().toUpperCase();
       const checkPathColor: string = colorValues?.get(`compDivider`)?.toString().toUpperCase() ?? emptyCheck;
       expect(pathColor).assertEqual(checkPathColor);
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsPatternLockThemeColors_0200
+     * @tc.name   `ActsPatternLockThemeColors_0200`
      * @tc.number ActsPatternLockThemeColors_0200
      * @tc.desc   Check custom colors values of PatternLock component
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function patternLockThemeTest() {
     });
 
     /**
-     * @tc.name   ActsPatternLockThemeColors_0300
+     * @tc.name   `ActsPatternLockThemeColors_0300`
      * @tc.number ActsPatternLockThemeColors_0300
      * @tc.desc   Check custom colors values of PatternLock component
      * @tc.type   FUNCTION

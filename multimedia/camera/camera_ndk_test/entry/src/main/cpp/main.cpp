@@ -364,6 +364,15 @@ static napi_value CreateMetadataOutput(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value IsMetadataObjectTypeValid(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    bool ret = ndkCamera_->IsMetadataObjectTypeValid();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value CreateMetadataOutputWithObjectTypes(napi_env env, napi_callback_info info)
 {
     size_t argc;
@@ -3233,6 +3242,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "adjustHeifIdx", nullptr, AdjustHeifIdx, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createVideoOutput", nullptr, CreateVideoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createMetadataOutput", nullptr, CreateMetadataOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "IsMetadataObjectTypeValid", nullptr, IsMetadataObjectTypeValid, nullptr,
+ 	             nullptr, nullptr, napi_default, nullptr },
         { "CreateMetadataOutputWithObjectTypes", nullptr, CreateMetadataOutputWithObjectTypes,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createSession", nullptr, CreateSession, nullptr, nullptr, nullptr, napi_default, nullptr },

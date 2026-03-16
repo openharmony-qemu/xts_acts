@@ -39,7 +39,7 @@ const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function gaugeColorsJsunit() {
   describe('gaugeColorsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("gaugeColorsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

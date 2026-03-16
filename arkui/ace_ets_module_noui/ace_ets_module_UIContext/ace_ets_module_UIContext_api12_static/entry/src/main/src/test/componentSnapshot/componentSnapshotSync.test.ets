@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector'
 
 export default function ComponentSnapshotSync() {
   describe('componentSnapshotSync', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("componentSnapshotSync beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.UIContext12.static", "EntryAbility")

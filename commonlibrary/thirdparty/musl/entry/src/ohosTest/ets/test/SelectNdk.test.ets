@@ -29,9 +29,9 @@ export default function selectNdkTest() {
      * @tc.desc   test select
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSelectSelect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSelectSelect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let testParam = 0
       let result:number = select.select(testParam);
       expect(result).assertEqual(-1);
@@ -44,9 +44,9 @@ export default function selectNdkTest() {
      * @tc.desc   test select
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSelectSelect002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSelectSelect002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = select.select(1);
       expect(result).assertEqual(1);
       done()

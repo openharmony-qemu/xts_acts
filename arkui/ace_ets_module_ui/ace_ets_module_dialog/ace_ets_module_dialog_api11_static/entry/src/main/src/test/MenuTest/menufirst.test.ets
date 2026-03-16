@@ -68,7 +68,7 @@ function sleep(time: int) {
 
 export default function menuTest() {
   describe('ActsMenuFirstTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsMenuFirstTest beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

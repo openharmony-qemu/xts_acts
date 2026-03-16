@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
 		"MainAbility/pages/Preset/InputPreset",
         "MainAbility/pages/TextControllerTest/TextControllerTest",
+        "MainAbility/pages/TextControllerTest/TextContentControllerBaseMethodsTest",
         "MainAbility/pages/Font/APIgetUIFontConfig",
         "MainAbility/pages/Font/Font",
         "MainAbility/pages/Font/FontJsunit",
@@ -24,6 +25,7 @@
         "MainAbility/pages/Measure/TextCommonTextComputing0440",
         "MainAbility/pages/Measure/TextCommonTextComputing0570",
         "MainAbility/pages/Measure/TextGetParagraphsTest",
+        "MainAbility/pages/Measure/MeasureText",
 
         "MainAbility/pages/BindSelectionMenuTest",
         "MainAbility/pages/DisableMenuItems",
@@ -49,6 +51,12 @@
         "MainAbility/pages/TextDelete/TextAreaDelete",
         "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest",
         "MainAbility/pages/SetTextSelectionTest/SetTextSelectionTest",
-        "MainAbility/pages/CustomKeyboardContinueTest"
+        "MainAbility/pages/CustomKeyboardContinueTest",
+        "MainAbility/pages/TypeNodeTestPage",
+        "MainAbility/pages/MagnifierTestPage",
+        "MainAbility/pages/MeasureUtilsTestPage",
+        "MainAbility/pages/TextMenuControllerTestPage",
+        "MainAbility/pages/UIContext/UIContextFontRegisterFont",
+        "MainAbility/pages/Text/TextMethodsNull2"
     ]
 }

@@ -25,6 +25,19 @@ import ToggleContentEnabled from './Toggle/ToggleEnabled.test';
 import toggleNode from './Toggle/toggleNode.test';
 import toggleOnChangeModifierTest from './Toggle/toggleOnChangeModifier.test';
 
+import ToggleContentModifierNullTest from './Toggle/ToggleContentModifierNullTest.test';
+import ToggleSelectedColorNullTest from './Toggle/ToggleSelectedColorNullTest.test';
+import ToggleSwitchPointColorNullTest from './Toggle/ToggleSwitchPointColorNullTest.test';
+import ToggleSwitchStyleNullTest from './Toggle/ToggleSwitchStyleNullTest.test';
+
+import buttonContentModifierNullTest from './buttonNullTest/ButtonContentModifierNullTest.test';
+import buttonFontColorNullTest from './buttonNullTest/ButtonFontColorNullTest.test';
+import buttonFontFamilyNullTest from './buttonNullTest/ButtonFontFamilyNullTest.test';
+import buttonFontStyleNullTest from './buttonNullTest/ButtonFontStyleNullTest.test';
+import buttonFontWeightNullTest from './buttonNullTest/ButtonFontWeightNullTest.test';
+import buttonLabelStyleNullTest from './buttonNullTest/ButtonLabelStyleNullTest.test';
+import buttonRoleNormalTest from './buttonNullTest/ButtonRoleNormalTest.test';
+
 
 export default function testsuite() {
   toggleJsunit();
@@ -38,4 +51,16 @@ export default function testsuite() {
 
   toggleNode();
   toggleOnChangeModifierTest();
+
+  ToggleContentModifierNullTest();
+  ToggleSelectedColorNullTest();
+  ToggleSwitchPointColorNullTest();
+  ToggleSwitchStyleNullTest();
+
+  buttonFontColorNullTest();
+  buttonFontFamilyNullTest();
+  buttonFontStyleNullTest();
+  buttonFontWeightNullTest();
+  buttonLabelStyleNullTest();
+  buttonRoleNormalTest();
 }

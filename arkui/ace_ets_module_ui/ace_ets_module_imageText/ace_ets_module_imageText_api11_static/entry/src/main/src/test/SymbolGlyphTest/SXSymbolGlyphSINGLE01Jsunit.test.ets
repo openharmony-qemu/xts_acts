@@ -44,7 +44,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SXSymbolGlyphSINGLE01Jsunit() {
   describe('SXSymbolGlyphSINGLE01Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SXSymbolGlyphSINGLE01Jsunit beforeEach start");
 
 

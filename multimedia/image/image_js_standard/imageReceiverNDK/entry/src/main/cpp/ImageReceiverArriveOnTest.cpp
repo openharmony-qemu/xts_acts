@@ -997,7 +997,8 @@ static napi_value waitForCondition(napi_env env, napi_callback_info info)
         OH_LOG_INFO(LOG_APP, "waitForCondition myDataIndex: %{public}d.", g_myDataIndex);
         OH_LOG_INFO(LOG_APP, "waitForCondition sleep start!");
         std::unique_lock<std::mutex> lock(g_mtx);
-        if (!g_condVar.wait_for(lock, std::chrono::seconds(1), [userData, callBackId, userNum] {
+        int32_t maxWaitTimeSeconds = 2;
+        if (!g_condVar.wait_for(lock, std::chrono::seconds(maxWaitTimeSeconds), [userData, callBackId, userNum] {
             bool ret = (userData->callbackTriggered_ == true && userData->callBackId_ == callBackId &&
                 userData->num_ == userNum);
             userData->PrintMyData("waitForCondition userData wait_for");

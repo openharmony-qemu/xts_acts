@@ -47,7 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function AnimationJsunit() {
   describe('AnimationJsunit', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")

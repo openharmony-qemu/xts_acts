@@ -38,7 +38,7 @@ const uiContext = new UIContext();
 
 export default function text3Jsunit() {
   describe('text3Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("text3Jsunit beforeEach start");
 
 

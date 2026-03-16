@@ -1046,6 +1046,164 @@ export default function geolocationTest_geo1() {
         done();
     })
 
+    /**
+     * @tc.name   SUB_HSS_getAddressesFromLocation_0100
+     * @tc.number SUB_HSS_getAddressesFromLocation_0100
+     * @tc.desc   Address Resolution Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getAddressesFromLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let reverseGeocodeRequest = null;
+        try {
+            geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+                if (err) {
+                    console.info('[lbs_js]  getAddressesFromLocation_0100 callback err is : ' + JSON.stringify(err));
+                } else {
+                    console.info("[lbs_js]  getAddressesFromLocation_0100 callback data is: " + JSON.stringify(data));
+                    expect(true).assertEqual((JSON.stringify(data)) != null);
+                }
+            });
+        } catch (error) {
+            console.info("[lbs_js] getAddressesFromLocation_0100 callback try err:" + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_getAddressesFromLocation_0200
+     * @tc.number SUB_HSS_getAddressesFromLocation_0200
+     * @tc.desc   Address Resolution Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getAddressesFromLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let reverseGeocodeRequest = null;
+        try {
+            await geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                console.info('[lbs_js] getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
+                expect().assertFail();
+            }).catch(error => {
+                console.info("[lbs_js] getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
+                console.info('[lbs_js] not support now');
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            });
+        } catch (error) {
+            console.info("[lbs_js] getAddressesFromLocation_0200 promise try err:" + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_getAddressesFromLocationName_0100
+     * @tc.number SUB_HSS_getAddressesFromLocationName_0100
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getAddressesFromLocationName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocodeRequest = null;
+        try {
+            geolocation.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+                if (err) {
+                    console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0100 callback err is: " + JSON.stringify(err));
+                    expect(true).assertEqual((JSON.stringify(err)) != null);
+                } else {
+                    console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
+                    expect(true).assertEqual((JSON.stringify(data)) != null);
+                }
+                done();
+            });
+        }catch(error){
+            console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
+            expect(true).assertEqual((JSON.stringify(error.message)) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_getAddressesFromLocationName_0200
+     * @tc.number SUB_HSS_getAddressesFromLocationName_0200
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getAddressesFromLocationName_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocodeRequest = null;
+        try {
+            await geolocation.getAddressesFromLocationName(geocodeRequest).then((result) => {
+                console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0200 promise data: " + JSON.stringify(result));
+                expect(true).assertEqual((JSON.stringify(result)) != null);
+            }).catch((error) => {
+                console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
+                expect(true).assertEqual((JSON.stringify(error)) != null);
+            });
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
+            expect(true).assertEqual((JSON.stringify(error)) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_getAddressesFromLocation_0300
+     * @tc.number SUB_HSS_getAddressesFromLocation_0300
+     * @tc.desc   Address Resolution Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getAddressesFromLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let reverseGeocodeRequest = { "latitude": 31.265496, "longitude": 121.62771, "maxItems": 1, "locale": "" };
+        try {
+            await geolocation.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
+                console.info('[lbs_js] SUB_HSS_getAddressesFromLocation_0300 promise: ' + JSON.stringify(data));
+                expect(true).assertEqual(JSON.stringify(data) != null);
+            }).catch((error) => {
+                console.info("[lbs_js] SUB_HSS_getAddressesFromLocation_0300 promise then error." + JSON.stringify(error));
+                console.info('[lbs_js] not support now');
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            });
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_getAddressesFromLocation_0300 promise try err:" + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_HSS_getAddressesFromLocationName_0300
+     * @tc.number SUB_HSS_getAddressesFromLocationName_0300
+     * @tc.desc   Reverse address resolution test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_getAddressesFromLocationName_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let geocodeRequest = { "description": "上海市浦东新区金穗路1800号", "maxItems": 1, "locale": "" };
+        try {
+            await geolocation.getAddressesFromLocationName(geocodeRequest).then((result) => {
+                console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0300 promise data: " + JSON.stringify(result));
+                expect(true).assertEqual((JSON.stringify(result)) != null);
+            }).catch((error) => {
+                console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0300 promise then error." + JSON.stringify(error));
+                expect(true).assertEqual((JSON.stringify(error)) != null);
+            });
+        } catch (error) {
+            console.info("[lbs_js] SUB_HSS_getAddressesFromLocationName_0300 try err." + JSON.stringify(error));
+            expect(true).assertEqual((JSON.stringify(error)) != null);
+        }
+        done();
+    })
+
+
     })
 }
 

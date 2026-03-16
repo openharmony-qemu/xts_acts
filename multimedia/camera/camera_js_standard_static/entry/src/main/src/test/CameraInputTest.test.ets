@@ -341,7 +341,7 @@ let isEmpty08 = (data: BusinessError) => {
 
    describe('CameraInputTest', () => {
     console.info(TAG + '----------CameraInputTest--------------');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       try {
         await Utils.msSleep(1000);
         getPreviewOutputSurface();
@@ -355,7 +355,7 @@ let isEmpty08 = (data: BusinessError) => {
       }
     });
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1000);
       console.info('beforeEach case');
     });
@@ -364,7 +364,7 @@ let isEmpty08 = (data: BusinessError) => {
       console.info('afterEach case');
     });
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       console.info('afterAll case');
     });
@@ -393,12 +393,12 @@ let isEmpty08 = (data: BusinessError) => {
           mCameraInput!.onError(mCameraDevicesArray[i], (err: BusinessError) => {
             if (isEmpty08(err)) {
               console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 err == null || undefined");
-              await stopCameraSession();
+               waitForCompletion(async () => {await stopCameraSession();})
               expect().assertFail();
             } else {
               console.info(TAG + "SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 Callback SUCCESSFUL");
             }
-            await Utils.msSleep(1);
+             waitForCompletion(async () => {await Utils.msSleep(1);})
           })
 
           try {

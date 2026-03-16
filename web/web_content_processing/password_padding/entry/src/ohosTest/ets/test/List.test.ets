@@ -9,12 +9,16 @@
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * See the main License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+  
 import ActsAceWebviewGetAndSetHttpAuthUsernamePassword from './webviewGetAndSetHttpAuthUsernamePassword.test';
-
+import WebDataBaseGetHttpAuthCredentials from './WebDataBaseGetHttpAuthCredentials.test';
+import WebDataBaseSaveHttpAuthCredentials from './WebDataBaseSaveHttpAuthCredentials.test'
+ 
 export default function testsuite() {
-  ActsAceWebviewGetAndSetHttpAuthUsernamePassword()
+    ActsAceWebviewGetAndSetHttpAuthUsernamePassword()
+    WebDataBaseGetHttpAuthCredentials()
+    WebDataBaseSaveHttpAuthCredentials()
 }

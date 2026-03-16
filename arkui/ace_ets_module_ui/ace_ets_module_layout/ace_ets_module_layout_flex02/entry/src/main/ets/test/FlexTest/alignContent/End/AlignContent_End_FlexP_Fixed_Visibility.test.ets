@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,42 +82,48 @@ export default function AlignContent_End_FlexP_Fixed_Visibility() {
       JSON.stringify(AlignContentFlexEnd_3));
       console.log('AlignContentFlexEnd_4 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_4));
-      expect(Math.abs(Math.round(AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top) - Math.round(vp2px(100))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top) - Math.round(vp2px(150))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top) - Math.round(vp2px(200))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left) - Math.round(vp2px(150))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left) - Math.round(vp2px(150))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left) - Math.round(vp2px(150))) <= 1)
-        .assertTrue();
 
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi1:'+ Math.floor(Math.abs(AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top - vp2px(100))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top - vp2px(100))) <= 1)
+        .assertTrue();
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi2:'+ Math.floor(Math.abs(AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top - vp2px(150))) <= 1)
+        .assertTrue();
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi3:'+ Math.floor(Math.abs(AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top - vp2px(200))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top - vp2px(200))) <= 1)
+        .assertTrue();
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi4:'+ Math.floor(Math.abs(AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left - vp2px(150))) <= 1)
+        .assertTrue();
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi5:'+ Math.floor(Math.abs(AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left - vp2px(150))) <= 1)
+        .assertTrue();
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi6:'+ Math.floor(Math.abs(AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left - vp2px(150))) <= 1)
+        .assertTrue();
 
       expect(JSON.parse(strJson).$attrs.constructor.direction).assertEqual("FlexDirection.Row");
       expect(JSON.parse(strJson).$attrs.constructor.alignContent).assertEqual("FlexAlign.End");
       expect(JSON.parse(strJsonText1).$attrs.visibility).assertEqual("Visibility.Hidden");
 
-      expect(Math.abs(Math.round(AlignContentFlexEnd_flex001.bottom) - Math.round(AlignContentFlexEnd_4.bottom)) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi7:'+ Math.floor(Math.abs(AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom)))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.bottom)) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_3.top - AlignContentFlexEnd_flex001.top) - Math.round(vp2px(50))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi8:'+ Math.floor(Math.abs(AlignContentFlexEnd_3.top - AlignContentFlexEnd_flex001.top - vp2px(50))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3.top - AlignContentFlexEnd_flex001.top - vp2px(50))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_4.top) - Math.round(AlignContentFlexEnd_3.bottom)) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi9:'+ Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_3.bottom)))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_3.bottom)) <= 1)
         .assertTrue();
-
-
-      expect(Math.abs(Math.round(AlignContentFlexEnd_2.left - AlignContentFlexEnd_flex001.left) - Math.round(vp2px(150))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi10:'+ Math.floor(Math.abs(AlignContentFlexEnd_2.left - AlignContentFlexEnd_flex001.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2.left - AlignContentFlexEnd_flex001.left - vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.top) - Math.round(vp2px(200))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityHidden_chazhi11:'+ Math.floor(Math.abs(AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.top - vp2px(200))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_flex001.bottom - AlignContentFlexEnd_4.top - vp2px(200))) <= 1)
         .assertTrue();
-
 
       console.info('testAlignContentEndFlexfixedVisibilityHidden END');
-
     });
-
 
     /**
      * @tc.name   testAlignContentEndFlexfixedVisibilityNone
@@ -153,31 +159,40 @@ export default function AlignContent_End_FlexP_Fixed_Visibility() {
       console.log('AlignContentFlexEnd_4 rect_value is:' +
       JSON.stringify(AlignContentFlexEnd_4));
 
-      expect(Math.abs(Math.round(AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top) - Math.round(vp2px(100))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi1:'+ Math.floor(Math.abs(AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top - vp2px(100))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2.bottom - AlignContentFlexEnd_2.top - vp2px(100))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top) - Math.round(vp2px(150))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi2:'+ Math.floor(Math.abs(AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3.bottom - AlignContentFlexEnd_3.top - vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top) - Math.round(vp2px(200))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi3:'+ Math.floor(Math.abs(AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top - vp2px(200))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4.bottom - AlignContentFlexEnd_4.top - vp2px(200))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left) - Math.round(vp2px(150))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi4:'+ Math.floor(Math.abs(AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2.right - AlignContentFlexEnd_2.left - vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left) - Math.round(vp2px(150))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi5:'+ Math.floor(Math.abs(AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_3.right - AlignContentFlexEnd_3.left - vp2px(150))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left) - Math.round(vp2px(150))) <= 1)
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi6:'+ Math.floor(Math.abs(AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left - vp2px(150))))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4.right - AlignContentFlexEnd_4.left - vp2px(150))) <= 1)
         .assertTrue();
-
-
+      
       expect(JSON.parse(strJson).$attrs.constructor.direction).assertEqual("FlexDirection.Row");
       expect(JSON.parse(strJson).$attrs.constructor.alignContent).assertEqual("FlexAlign.End");
       expect(JSON.parse(strJsonText1).$attrs.visibility).assertEqual("Visibility.None");
 
-      expect(AlignContentFlexEnd_flex002.bottom).assertEqual(AlignContentFlexEnd_4.bottom);
-      expect(AlignContentFlexEnd_2.top).assertEqual(AlignContentFlexEnd_3.top);
-      expect(AlignContentFlexEnd_4.top).assertEqual(AlignContentFlexEnd_3.top);
-      expect(AlignContentFlexEnd_2.left).assertEqual(AlignContentFlexEnd_flex002.left);
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi7:'+ Math.floor(Math.abs(AlignContentFlexEnd_flex002.bottom - AlignContentFlexEnd_4.bottom)))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_flex002.bottom - AlignContentFlexEnd_4.bottom)) <= 1).assertTrue();
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi8:'+ Math.floor(Math.abs(AlignContentFlexEnd_2.top - AlignContentFlexEnd_3.top)))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2.top - AlignContentFlexEnd_3.top)) <= 1).assertTrue();
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi9:'+ Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_3.top)))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_4.top - AlignContentFlexEnd_3.top)) <= 1).assertTrue();
+      console.info('testAlignContentEndFlexfixedVisibilityNone_chazhi10:'+ Math.floor(Math.abs(AlignContentFlexEnd_2.left - AlignContentFlexEnd_flex002.left)))
+      expect(Math.floor(Math.abs(AlignContentFlexEnd_2.left - AlignContentFlexEnd_flex002.left)) <= 1).assertTrue();
 
       console.info('testAlignContentEndFlexfixedVisibilityNone END');
-
     });
+
   })
 }

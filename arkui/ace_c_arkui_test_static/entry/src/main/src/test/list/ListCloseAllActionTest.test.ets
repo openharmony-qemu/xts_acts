@@ -79,7 +79,7 @@ async function flingComponentH(key: string, isLeft: boolean, speed: Int = 10, di
 export default function listCloseAllActionTest() {
 
   describe('ListCloseAllActionTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_ani_test.static", "EntryAbility");
     });
 

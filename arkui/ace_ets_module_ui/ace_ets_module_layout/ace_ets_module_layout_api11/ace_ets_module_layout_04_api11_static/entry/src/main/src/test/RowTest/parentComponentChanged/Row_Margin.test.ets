@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Row_Margin() {
   describe('Row_Margin', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Row_Margin beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

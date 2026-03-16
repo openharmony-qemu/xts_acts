@@ -25,7 +25,7 @@ export default function GridTest() {
   const SUITE = 'GridTest'
 
   describe('GridPageTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

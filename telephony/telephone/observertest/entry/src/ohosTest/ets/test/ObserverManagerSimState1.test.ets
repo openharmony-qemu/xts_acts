@@ -83,6 +83,31 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
+     * @tc.name   testTelephonyObserverSimStateChangeOn1000
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOn_1000
+     * @tc.desc   Subscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOn1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOn1000';
+      console.info(`${caseName} test start`);
+      try {
+        observer.on(undefined, (data: observer.SimStateData) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
      * @tc.name   testTelephonyObserverSimStateChangeOnOptions1700
      * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_1700
      * @tc.desc   Subscribe to sim state change events with options.
@@ -137,6 +162,33 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
+     * @tc.name   testTelephonyObserverSimStateChangeOnOptions1900
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_1900
+     * @tc.desc   Subscribe to sim state change events with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOnOptions1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOnOptions1900';
+      console.info(`${caseName} test start`);
+      try {
+        observer.on(undefined, {
+          slotId: 0
+        }, (data: observer.SimStateData) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(false);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
      * @tc.name   testTelephonyObserverSimStateChangeOnOptions2000
      * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_2000
      * @tc.desc   Subscribe to sim state change events with options.
@@ -158,6 +210,216 @@ export default function observerManagerSimStateTest1() {
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOnOptions2100
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_2100
+     * @tc.desc   Subscribe to sim state change events with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOnOptions2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOnOptions2100';
+      console.info(`${caseName} test start`);
+      try {
+        observer.on("simStateChange", {
+          slotId: null
+        }, (data: observer.SimStateData) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(true);
+          observer.off('simStateChange');
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOnOptions2200
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOnOptions_2200
+     * @tc.desc   Subscribe to sim state change events with options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOnOptions2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOnOptions2200';
+      console.info(`${caseName} test start`);
+      try {
+        observer.on("simStateChange", {
+          slotId: undefined
+        }, (data: observer.SimStateData) => {
+          console.info(`${caseName} data ${JSON.stringify(data)}`);
+          ExpectTrue(true);
+          observer.off('simStateChange');
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOn2300
+     * @tc.number testTelephonyObserverSimStateChangeOn2300
+     * @tc.desc   Subscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOn2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOn2300';
+      console.info(`${caseName} test start`);
+      let hasSimCard: Boolean = await sim.hasSimCardSync(0);
+      if (!hasSimCard) {
+        console.info(`${caseName} failed, No SIM exists in slot 0`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+      try {
+        observer.on("simStateChange", (data: observer.SimStateData) => {
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]
+
+          const simStateAry1: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
+
+          const simStateAry2: number[] = [
+            observer.LockReason.SIM_NONE,
+            observer.LockReason.SIM_PIN,
+            observer.LockReason.SIM_PUK,
+            observer.LockReason.SIM_PN_PIN,
+            observer.LockReason.SIM_PN_PUK,
+            observer.LockReason.SIM_PU_PIN,
+            observer.LockReason.SIM_PU_PUK,
+            observer.LockReason.SIM_PP_PIN,
+            observer.LockReason.SIM_PP_PUK,
+            observer.LockReason.SIM_PC_PIN,
+            observer.LockReason.SIM_PC_PUK,
+            observer.LockReason.SIM_SIM_PIN,
+            observer.LockReason.SIM_SIM_PUK,
+          ];
+          if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
+            console.info(`${caseName} data success ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            observer.off('simStateChange');
+            done();
+          }else{
+            console.info(`${caseName} data fail ${JSON.stringify(data)}`);
+            ExpectTrue(false);
+            done();
+          }   
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOn2400
+     * @tc.number testTelephonyObserverSimStateChangeOn2400
+     * @tc.desc   Subscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOn2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOn2400';
+      console.info(`${caseName} test start`);
+      let hasSimCard: Boolean = await sim.hasSimCardSync(0);
+      if (!hasSimCard) {
+        console.info(`${caseName} failed, No SIM exists in slot 0`);
+        ExpectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+      try {
+        observer.on("simStateChange",  {
+          slotId: 0
+        }, (data: observer.SimStateData) => {
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]
+
+          const simStateAry1: number[] = [
+            sim.CardType.UNKNOWN_CARD,
+            sim.CardType.SINGLE_MODE_SIM_CARD,
+            sim.CardType.SINGLE_MODE_USIM_CARD,
+            sim.CardType.SINGLE_MODE_RUIM_CARD,
+            sim.CardType.DUAL_MODE_CG_CARD,
+            sim.CardType.CT_NATIONAL_ROAMING_CARD,
+            sim.CardType.CU_DUAL_MODE_CARD,
+            sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+            sim.CardType.DUAL_MODE_UG_CARD,
+            sim.CardType.SINGLE_MODE_ISIM_CARD
+          ];
+
+          const simStateAry2: number[] = [
+            observer.LockReason.SIM_NONE,
+            observer.LockReason.SIM_PIN,
+            observer.LockReason.SIM_PUK,
+            observer.LockReason.SIM_PN_PIN,
+            observer.LockReason.SIM_PN_PUK,
+            observer.LockReason.SIM_PU_PIN,
+            observer.LockReason.SIM_PU_PUK,
+            observer.LockReason.SIM_PP_PIN,
+            observer.LockReason.SIM_PP_PUK,
+            observer.LockReason.SIM_PC_PIN,
+            observer.LockReason.SIM_PC_PUK,
+            observer.LockReason.SIM_SIM_PIN,
+            observer.LockReason.SIM_SIM_PUK,
+          ];
+          if(simStateAry.includes(data.state) && simStateAry1.includes(data.type) && simStateAry2.includes(data.reason)){
+            console.info(`${caseName} data success ${JSON.stringify(data)}`);
+            ExpectTrue(true);
+            observer.off('simStateChange');
+            done();
+          }else{
+            console.info(`${caseName} data fail ${JSON.stringify(data)}`);
+            ExpectTrue(false);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(false);
         done();
       }
       console.info(`${caseName} test end`);
@@ -236,6 +498,28 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         observer.off(null);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code == 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverSimStateChangeOff0600
+     * @tc.number SUB_Telephony_Observer_SimStateChangeOff_0600
+     * @tc.desc   Unsubscribe to sim state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverSimStateChangeOff0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverSimStateChangeOff0600';
+      console.info(`${caseName} test start`);
+      try {
+        observer.off(undefined);
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
@@ -336,12 +620,12 @@ export default function observerManagerSimStateTest1() {
       try {
         let slotId: number = 1;
         observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
+          console.info(`${caseName} data: ${data}`);
           ExpectTrue(data);
         });
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
         done();
       }
@@ -362,13 +646,38 @@ export default function observerManagerSimStateTest1() {
       try {
         let slotId: number = 2;
         observer.onGetSimActiveState(slotId, (data: boolean) => {
+          console.info(`${caseName} data: ${data}`);
+          ExpectFail();
+        });
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 8300001);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0600
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0600
+     * @tc.desc   Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0600';
+      console.info(`${caseName} test start`);
+      try {
+        observer.onGetSimActiveState(undefined, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
         });
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 8300001);
+        ExpectTrue(error.code == 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -395,11 +704,15 @@ export default function observerManagerSimStateTest1() {
               console.info(`${caseName} res: ${res}}`);
               ExpectTrue(res);
             });
+          } else {
+            console.info(`${caseName} , The SIM card is not activated`);
+            ExpectFail();
+            done();
           }
         });
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
         done();
       }

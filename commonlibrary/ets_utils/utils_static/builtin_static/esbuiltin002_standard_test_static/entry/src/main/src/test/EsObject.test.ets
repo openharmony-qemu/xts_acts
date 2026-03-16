@@ -104,29 +104,6 @@ export default function EsObjectTest(){
     });
 
     /**
-     * @tc.number ES_BUILTINS_OBJECT_0002
-     * @tc.name ESObjectTest0002
-     * @tc.desc Test ES Builtins-Api in Object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    // it('ESObjectTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-    //   const caseName = 'ESObjectTest0002';
-    //   console.info(`${caseName}, test start`);
-    //   let target: Record<string, number> = {
-    //     'foo': 1
-    //   };
-    //   let target2: Record<string, number> = {
-    //     'a': 2
-    //   };
-    //   let result = Object.assign(target, target2);
-    //   expect(result.foo).assertEqual(1);
-    //   expect(result.a).assertEqual(2);
-    //   console.info(`${caseName}, test end`);
-    // });
-
-    /**
      * @tc.number ES_BUILTINS_OBJECT_0003
      * @tc.name ESObjectTest0003
      * @tc.desc Test ES Builtins-Api in Object

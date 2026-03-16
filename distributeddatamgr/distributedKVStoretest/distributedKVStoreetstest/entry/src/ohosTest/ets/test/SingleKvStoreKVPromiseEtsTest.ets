@@ -17,6 +17,8 @@ import factory from '@ohos.data.distributedKVStore'
 //import dataShare from '@ohos.data.dataSharePredicates'
 import abilityFeatureAbility from '@ohos.ability.featureAbility'
 import common from "@ohos.app.ability.common";
+import deviceInfo from '@ohos.deviceInfo';
+let currentDeviceIsWatch = false;
 
 let context: common.UIAbilityContext;
 const KEY_TEST_INT_ELEMENT = 'key_test_int';
@@ -70,6 +72,11 @@ export default function SingleKvStorePromiseTest(){
     }
 
     beforeAll(async function (done) {
+      console.info('beforeAll currentDeviceIsWatch');
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info( "the value of the deviceType is : " + deviceInfo.deviceType + ' currentDeviceIsWatch=' +currentDeviceIsWatch);
+
       context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
       const config = {
         bundleName : TEST_BUNDLE_NAME,
@@ -2648,6 +2655,11 @@ export default function SingleKvStorePromiseTest(){
      */
     it('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0100');
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         await kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT).then((err) => {
           console.info('SUB_DDM_DKV_SINGLEKVSTORE_REMOVEDEVICEDATA_PROMISE_0100 put success');

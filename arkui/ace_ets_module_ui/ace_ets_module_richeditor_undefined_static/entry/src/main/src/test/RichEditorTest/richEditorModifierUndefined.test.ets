@@ -41,7 +41,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function richEditorModifierUndefined() {
   describe('richEditorModifierUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("richEditorModifierUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

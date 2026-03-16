@@ -32,7 +32,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function OnTextSelectionChangeTest() {
   describe('OnTextSelectionChangeTest', () : void=> {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OnTextSelectionChangeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.static", "EntryAbility")

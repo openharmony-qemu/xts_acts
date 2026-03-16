@@ -43,13 +43,15 @@ struct StyledStringDemo {
 
   private getPixmapFromMedia(resource: Resource) {
     let unit8Array = this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id)
-    let data: ArrayBuffer =  (await unit8Array!).buffer.slice(0, (await unit8Array!).buffer.byteLength);
-    let imageSource = image.createImageSource(data)!
-    let createPixelMap: image.PixelMap =( await imageSource.createPixelMap({
-      desiredPixelFormat: image.PixelMapFormat.RGBA_8888
-    }))!
-    await imageSource.release()
-    return createPixelMap
+    let data: ArrayBuffer | undefined;
+    waitForCompletion(async ()=>{ data = (await unit8Array!).buffer.slice(0, (await unit8Array!).buffer.byteLength); })
+    let imageSource = image.createImageSource(data as ArrayBuffer)!
+    let createPixelMap: image.PixelMap | undefined;
+    waitForCompletion(async ()=>{
+      createPixelMap = ( await imageSource.createPixelMap({ desiredPixelFormat: image.PixelMapFormat.RGBA_8888 }))!;
+      await imageSource.release();
+    })
+    return createPixelMap as image.PixelMap;
   }
 
   onPageShow() {

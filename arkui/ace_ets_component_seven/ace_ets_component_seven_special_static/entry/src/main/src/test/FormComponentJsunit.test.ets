@@ -25,7 +25,7 @@ import { UtilsTest, startAbility } from './Util.test'
 
 export default function formComponentJsunitJsunit() {
   describe('formComponentJsunitTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("formComponentJsunitTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

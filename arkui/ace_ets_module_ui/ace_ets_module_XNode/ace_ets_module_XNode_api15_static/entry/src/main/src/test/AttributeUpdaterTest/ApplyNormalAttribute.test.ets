@@ -25,7 +25,7 @@ import {UtilsTest,startAbility} from '../Util.test'
 
 export default function ApplyNormalAttributeTest() {
   describe('ApplyNormalAttributeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ApplyNormalAttributeTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")

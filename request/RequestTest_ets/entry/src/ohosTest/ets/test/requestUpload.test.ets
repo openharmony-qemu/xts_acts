@@ -17,6 +17,7 @@ import fileio from '@ohos.fileio'
 import request from "@ohos.request";
 import featureAbility from '@ohos.ability.featureAbility';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "@ohos/hypium";
+import { WifiConnectStatus } from '../common/WifiConnectStatus';
 
 export default function requestUploadJSUnit() {
   describe('requestUploadTest', () => {
@@ -48,8 +49,11 @@ export default function requestUploadJSUnit() {
     /**
      * beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.
      */
-    beforeEach(() => {
-      console.info('====>beforeEach: Prerequisites is executed.');
+    beforeEach(async (done: Function) => {
+      console.info('====>beforeEach WifiConnectStatus start');
+      await WifiConnectStatus();
+      console.info('====>beforeEach WifiConnectStatus wend');
+      done();
     });
 
     /**
@@ -527,7 +531,7 @@ export default function requestUploadJSUnit() {
         request.upload(uploadConfig, (err, uploadTask) => {
           try {
             console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0500 into callback: ${JSON.stringify(err)}`);
-            expect().asserFail();
+            expect().assertFail();
           } catch (err) {
             done();
           }
@@ -608,7 +612,7 @@ export default function requestUploadJSUnit() {
         request.upload(uploadConfig, (err, uploadTask) => {
           try {
             console.info(`====>SUB_REQUEST_UPLOAD_SUPPLEMENTAL_0700 into callback: ${JSON.stringify(err)}`);
-            expect().asserFail();
+            expect().assertFail();
           } catch (err) {
             done();
           }

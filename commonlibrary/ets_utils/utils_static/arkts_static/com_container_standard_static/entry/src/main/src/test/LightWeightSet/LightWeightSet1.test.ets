@@ -40,7 +40,7 @@ class InfoC {
 
 export default function LightWeightSetTest1() {
   describe("LightWeightSetTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

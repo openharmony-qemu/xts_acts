@@ -41,7 +41,7 @@ import router from '@ohos.router';
 
 export default function ReplaceDestination1Test() {
   describe('ReplaceDestination1Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation16.static", "EntryAbility")
 

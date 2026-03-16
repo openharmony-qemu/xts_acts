@@ -112,6 +112,30 @@ export default function setShortcutVisible() {
       }
     })
 
+    /**
+     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_static_0300
+     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_static_0300
+     * @tc.desc   Test setShortcutVisibleForSelf with shortcut id is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Sub_Bms_Framework_Icon_ShortcutVisible_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_static_0300 begin');
+      try {
+        await shortcutManager.setShortcutVisibleForSelf('', true);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        error = error as BusinessError;
+        let msg: string = `setShortcutVisibleForSelf(empty,true) failed: ${JSON.stringify(error)}`;
+        hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
+        expect(error.code).assertEqual(17700070);
+        expect(error.message).assertEqual('BusinessError 17700070: The specified shortcut id is illegal.');
+        hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_static_0300 end');
+        done();
+      }
+    })
   })
 }
 

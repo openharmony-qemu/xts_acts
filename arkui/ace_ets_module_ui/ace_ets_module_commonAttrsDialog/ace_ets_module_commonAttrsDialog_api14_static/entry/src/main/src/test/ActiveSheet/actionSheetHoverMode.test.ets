@@ -47,8 +47,8 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function actionSheetHoverMode() {
-  describe('actionSheetHoverMode', () => {
-    beforeAll(() => {
+  describe('actionSheetHoverModeAdapt001', () => {
+    beforeAll(async (): Promise<void> => {
       console.info("actionSheetHoverMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
     });

@@ -55,7 +55,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function APIaccessibilityTextHint() {
   describe('APIaccessibilityTextHint', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("APIaccessibilityTextHint beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")

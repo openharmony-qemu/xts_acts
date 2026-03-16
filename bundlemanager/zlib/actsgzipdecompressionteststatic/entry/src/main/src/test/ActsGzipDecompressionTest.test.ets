@@ -33,7 +33,7 @@ let allFilePath: string = "";
 
 export default function ActsGzipDecompressionTest() {
   describe('ActsGzipDecompressionTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
@@ -2658,6 +2658,645 @@ export default function ActsGzipDecompressionTest() {
           hilog.info(domain, tag, " gzopen catch message:" + JSON.stringify(message));
         }
         hilog.info(domain, tag, "=====Test_ReturnStatus_0100 End=====");
+      })
+
+      /**
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700
+     * @tc.desc   test gzprintf parameter empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700 Start=====");
+        let gzip = zlib.createGZipSync();
+        await gzip.gzopen(allFilePath, "wb");
+        try {
+          await gzip.gzprintf("", "Tom").then((result) => {
+            hilog.info(domain, tag,
+              'SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700 gzprintf success.');
+            expect(result).assertEqual(0);
+          });
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700 errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        }
+
+        try {
+          await gzip.gzprintf("name is %s", "").then((result) => {
+            hilog.info(domain, tag,
+              'SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700 gzprintf success.');
+            expect(result).assertEqual(8);
+          });
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700 errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+        }
+        await gzip.gzclose();
+        done();
+        console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4700 End=====");
+      })
+
+      /**
+     * @tc.name   acts_zlibCompressFile_static_0100
+     * @tc.number acts_zlibCompressFile_static_0100
+     * @tc.desc   test compressFile promise strategy and pathSeparatorStrategy first parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0100 start==================");
+        let path30 = dir;
+        let zipDest30 = dir + "/test30.zip";
+        await zlib.compressFile(path30, zipDest30, {
+          strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY,
+          pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_DEFAULT
+        }).then(() => {
+          hilog.info(domain, tag, "acts_zlibCompressFile_static_0100 compressFile success");
+          try {
+            let data: boolean = fileIo.accessSync(zipDest30);
+            expect(data).assertTrue();
+            done();
+          } catch (err) {
+            let errData = err as BusinessError;
+            console.error(`acts_zlibCompressFile_static_0100 accessSync failed with errCode:${errData.code}  message:${errData.message}`);
+            expect(err).assertFail();
+            done();
+          }
+        }).catch((err: Error): void => {
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0100 compressFile failed errData is errCode:${err.code}  message:${err.message}`);
+          expect(err).assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFile_static_0200
+     * @tc.number acts_zlibCompressFile_static_0200
+     * @tc.desc   test compressFile promise pathSeparatorStrategy second parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0200 start==================");
+        let path35 = dir;
+        let zipDest35 = dir + "/test35.zip";
+        await zlib.compressFile(path35, zipDest35, {
+          strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY,
+          pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_REPLACE_BACKSLASH
+        }).then(() => {
+          hilog.info(domain, tag, "acts_zlibCompressFile_static_0200 compressFile success");
+          try {
+            let data: boolean = fileIo.accessSync(zipDest35);
+            expect(data).assertTrue();
+            done();
+          } catch (err) {
+            let errData = err as BusinessError;
+            console.error(`acts_zlibCompressFile_static_0200 accessSync failed with errCode:${errData.code}  message:${errData.message}`);
+            expect(err).assertFail();
+            done();
+          }
+        }).catch((err: Error): void => {
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0200 compressFile failed errData is errCode:${err.code}  message:${err.message}`);
+          expect(err).assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFile_static_0300
+     * @tc.number acts_zlibCompressFile_static_0300
+     * @tc.desc   test compressFile promise inFile empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0300 start==================");
+        let zipDest40 = dir + "/test40.zip";
+        try {
+          await zlib.compressFile("", zipDest40, {
+            level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
+            memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFile_static_0300 compressFile success");
+            expect().assertFail();
+            done();
+          }).catch((err: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFile_static_0300 compressFile failed errData is errCode:${err.code}  message:${err.message}`);
+            expect(err.code).assertEqual(900001);
+            expect(err.message).assertEqual("BusinessError 900001: The Input source file is invalid.");
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0300 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFile_static_0400
+     * @tc.number acts_zlibCompressFile_static_0400
+     * @tc.desc   test compressFile promise outFile empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0400 start==================");
+        let path45 = dir;
+        try {
+          await zlib.compressFile(path45, "", {
+            level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
+            memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFile_static_0400 compressFile success");
+            expect().assertFail();
+            done();
+          }).catch((err: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFile_static_0400 compressFile failed errData is errCode:${err.code}  message:${err.message}`);
+            expect(err.code).assertEqual(900002);
+            expect(err.message).assertEqual("BusinessError 900002: The Input destination file is invalid.");
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0400 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFile_static_0500
+     * @tc.number acts_zlibCompressFile_static_0500
+     * @tc.desc   test compressFile callback option level memLevel strategy first parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0500 start==================");
+        let path50 = dir;
+        let zipDest50 = dir + "/test50.zip";
+        try {
+          zlib.compressFile(path50, zipDest50, {
+            level: zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED,
+            memLevel: zlib.MemLevel.MEM_LEVEL_MIN,
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
+          }, (errData: BusinessError | null) => {
+            if (errData !== null) {
+              hilog.error(domain, tag,
+                `acts_zlibCompressFile_static_0500 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+              expect(errData).assertFail();
+              done();
+            } else {
+              hilog.info(domain, tag, "acts_zlibCompressFile_static_0500 compressFile success");
+              try {
+                let data: boolean = fileIo.accessSync(zipDest50);
+                expect(data).assertTrue();
+                done();
+              } catch (err) {
+                let errData = err as BusinessError;
+                console.error(`acts_zlibCompressFile_static_0200 accessSync failed with errCode:${errData.code}  message:${errData.message}`);
+                expect(err).assertFail();
+                done();
+              }
+            }
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0500 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFile_static_0600
+     * @tc.number acts_zlibCompressFile_static_0600
+     * @tc.desc   test compressFile callback option level memLevel strategy second parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0600 start==================");
+        let path55 = dir;
+        let zipDest55 = dir + "/test55.zip";
+        try {
+          zlib.compressFile(path55, zipDest55, {
+            level: zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION,
+            memLevel: zlib.MemLevel.MEM_LEVEL_MAX,
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED
+          }, (errData: BusinessError | null) => {
+            if (errData !== null) {
+              hilog.error(domain, tag,
+                `acts_zlibCompressFile_static_0600 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+              expect(errData).assertFail();
+              done();
+            } else {
+              hilog.info(domain, tag, "acts_zlibCompressFile_static_0600 compressFile success");
+              try {
+                let data: boolean = fileIo.accessSync(zipDest55);
+                expect(data).assertTrue();
+                done();
+              } catch (err) {
+                let errData = err as BusinessError;
+                console.error(`acts_zlibCompressFile_static_0600 accessSync failed with errCode:${errData.code}  message:${errData.message}`);
+                expect(err).assertFail();
+                done();
+              }
+            }
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0600 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFile_static_0700
+     * @tc.number acts_zlibCompressFile_static_0700
+     * @tc.desc   test compressFile option level memLevel strategy third parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0700 start==================");
+        let path60 = dir;
+        let zipDest60 = dir + "/test60.zip";
+        try {
+          zlib.compressFile(path60, zipDest60, {
+            level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
+            memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY
+          }, (errData: BusinessError | null) => {
+            if (errData !== null) {
+              hilog.error(domain, tag,
+                `acts_zlibCompressFile_static_0700 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+              expect(errData).assertFail();
+              done();
+            } else {
+              hilog.info(domain, tag, "acts_zlibCompressFile_static_0700 compressFile success");
+              try {
+                let data: boolean = fileIo.accessSync(zipDest60);
+                expect(data).assertTrue();
+                done();
+              } catch (err) {
+                let errData = err as BusinessError;
+                console.error(`acts_zlibCompressFile_static_0700 accessSync failed with errCode:${errData.code}  message:${errData.message}`);
+                expect(err).assertFail();
+                done();
+              }
+            }
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0700 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFile_static_0800
+     * @tc.number acts_zlibCompressFile_static_0800
+     * @tc.desc   test compressFile callback inFile empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0800 start==================");
+        let zipDest65 = dir + "/test65.zip";
+        try {
+          zlib.compressFile("", zipDest65, {
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_RLE,
+            parallel: zlib.ParallelStrategy.PARALLEL_STRATEGY_SEQUENTIAL,
+            pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_DEFAULT
+          }, (errData: BusinessError | null) => {
+            if (errData !== null) {
+              hilog.error(domain, tag,
+                `acts_zlibCompressFile_static_0800 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+              expect(errData.code).assertEqual(900001);
+              expect(errData.message).assertEqual("BusinessError 900001: The Input source file is invalid.");
+              done();
+            } else {
+              hilog.info(domain, tag, "acts_zlibCompressFile_static_0800 compressFile success");
+              expect().assertFail();
+              done();
+            }
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0800 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFile_static_0900
+     * @tc.number acts_zlibCompressFile_static_0900
+     * @tc.desc   test compressFile callback outFile empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFile_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFile_static_0900 start==================");
+        let path70 = dir;
+        try {
+          zlib.compressFile(path70, "", {
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED,
+            parallel: zlib.ParallelStrategy.PARALLEL_STRATEGY_PARALLEL_DECOMPRESSION,
+            pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_REPLACE_BACKSLASH
+          }, (errData: BusinessError | null) => {
+            if (errData !== null) {
+              hilog.error(domain, tag,
+                `acts_zlibCompressFile_static_0900 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+              expect(errData.code).assertEqual(900002);
+              expect(errData.message).assertEqual("BusinessError 900002: The Input destination file is invalid.");
+              done();
+            } else {
+              hilog.info(domain, tag, "acts_zlibCompressFile_static_0900 compressFile success");
+              expect().assertFail();
+              done();
+            }
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFile_static_0900 compressFile failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFiles_static_0100
+     * @tc.number acts_zlibCompressFiles_static_0100
+     * @tc.desc   test compressFiles promise level memLevel strategy first parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFiles_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFiles_static_0100 start==================");
+        let pathDir16 = dir;
+        let fpath16 = dir + '/test16.txt';
+        let zippath16 = dir + '/test16.zip';
+        try {
+          zlib.compressFiles([fpath16, pathDir16, pathDir16], zippath16, {
+            level: zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION,
+            memLevel: zlib.MemLevel.MEM_LEVEL_MIN,
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFiles_static_0100 compressFiles success");
+            expect().assertFail();
+            done();
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFiles_static_0100 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData.code).assertEqual(900001);
+            expect(errData.message).assertEqual("BusinessError 900001: The Input source file is invalid.");
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFiles_static_0100 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFiles_static_0200
+     * @tc.number acts_zlibCompressFiles_static_0200
+     * @tc.desc   test compressFiles promise level memLevel strategy second parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFiles_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFiles_static_0200 start==================");
+        let pathDir26 = dir;
+        let fpath26 = dir + '/test26.txt';
+        let zippath26 = dir + '/test26.zip';
+        try {
+          zlib.compressFiles([fpath26, pathDir26, pathDir26], zippath26, {
+            level: zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED,
+            memLevel: zlib.MemLevel.MEM_LEVEL_MAX,
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_HUFFMAN_ONLY
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFiles_static_0200 compressFiles success");
+            expect().assertFail();
+            done();
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFiles_static_0200 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData.code).assertEqual(900001);
+            expect(errData.message).assertEqual("BusinessError 900001: The Input source file is invalid.");
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFiles_static_0200 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFiles_static_0300
+     * @tc.number acts_zlibCompressFiles_static_0300
+     * @tc.desc   test compressFiles promise level memLevel strategy third parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFiles_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFiles_static_0300 start==================");
+        let pathDir36 = dir;
+        let fpath36 = dir + '/test36.txt';
+        let zippath36 = dir + '/test36.zip';
+        try {
+          zlib.compressFiles([fpath36, pathDir36, pathDir36], zippath36, {
+            level: zlib.CompressLevel.COMPRESS_LEVEL_BEST_COMPRESSION,
+            memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_RLE
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFiles_static_0300 compressFiles success");
+            expect().assertFail();
+            done();
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFiles_static_0300 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData.code).assertEqual(900001);
+            expect(errData.message).assertEqual("BusinessError 900001: The Input source file is invalid.");
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFiles_static_0300 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFiles_static_0400
+     * @tc.number acts_zlibCompressFiles_static_0400
+     * @tc.desc   test compressFiles strategy fourth parallel pathSeparatorStrategy second parameter and inFiles empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFiles_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFiles_static_0400 start==================");
+        let zippath46 = dir + '/test46.zip';
+        try {
+          await Utils.msSleep(1000);
+          zlib.compressFiles([""], zippath46, {
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED,
+            parallel: zlib.ParallelStrategy.PARALLEL_STRATEGY_SEQUENTIAL,
+            pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_DEFAULT
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFiles_static_0400 compressFiles success");
+            expect().assertFail();
+            done();
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFiles_static_0400 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData.code).assertEqual(900001);
+            expect(errData.message).assertEqual("BusinessError 900001: The Input source file is invalid.");
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFiles_static_0400 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFiles_static_0500
+     * @tc.number acts_zlibCompressFiles_static_0500
+     * @tc.desc   test compressFiles parallel pathSeparatorStrategy second parameter and outFile empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFiles_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFiles_static_0500 start==================");
+        let pathDir56 = dir;
+        let fpath56 = dir + '/test56.txt';
+        try {
+          zlib.compressFiles([fpath56, pathDir56, pathDir56], "", {
+            memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
+            parallel: zlib.ParallelStrategy.PARALLEL_STRATEGY_PARALLEL_DECOMPRESSION,
+            pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_REPLACE_BACKSLASH
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFiles_static_0500 compressFiles success");
+            expect().assertFail();
+            done();
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFiles_static_0500 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData.code).assertEqual(900002);
+            expect(errData.message).assertEqual("BusinessError 900002: The Input destination file is invalid.");
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFiles_static_0500 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+          expect(errData).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   acts_zlibCompressFiles_static_0600
+     * @tc.number acts_zlibCompressFiles_static_0600
+     * @tc.desc   test compressFiles strategy fourth parallel pathSeparatorStrategy inFiles empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('acts_zlibCompressFiles_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, "==================acts_zlibCompressFiles_static_0600 start==================");
+        let zippath46 = dir + '/test46.zip';
+        try {
+          await Utils.msSleep(1000);
+          zlib.compressFiles([], zippath46, {
+            strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED,
+            parallel: zlib.ParallelStrategy.PARALLEL_STRATEGY_SEQUENTIAL,
+            pathSeparatorStrategy: zlib.PathSeparatorStrategy.PATH_SEPARATOR_STRATEGY_DEFAULT
+          }).then(() => {
+            hilog.info(domain, tag, "acts_zlibCompressFiles_static_0600 compressFiles success");
+            expect().assertFail();
+            done();
+          }).catch((errData: Error): void => {
+            hilog.error(domain, tag,
+              `acts_zlibCompressFiles_static_0600 compressFiles failed errData is errCode:${errData.code}  message:${errData.message}`);
+            expect(errData.code).assertEqual(401);
+            expect(errData.message).assertEqual('BusinessError 401: Parameter error. The type of inFiles must be array.');
+            done();
+          })
+        } catch (err) {
+          let errData = err as BusinessError;
+          hilog.error(domain, tag,
+            `acts_zlibCompressFiles_static_0600 compressFiles error errData is errCode:${errData.code}  message:${errData.message}`);
+          expect().assertFail();
+          done();
+        }
       })
 
     /**

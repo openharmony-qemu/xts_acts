@@ -36,7 +36,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function tabsSec() {
   describe('ActsAceTabsTestSec', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -51,7 +51,7 @@ export default function tabsSec() {
         if (!("IndexSec" == pages.name)) {
           console.info("get IndexSec state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
-          routerAlp.pushUrl(options)
+          routerAlp.replaceUrl(options)
           // console.info("push IndexSec page success " + JSON.stringify(result));
         }
       } catch (err) {

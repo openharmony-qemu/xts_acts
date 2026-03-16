@@ -32,7 +32,7 @@ import Utils from '../Util.test';
 
 export default function Url_Emoji() {
   describe('Url_Emoji', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 

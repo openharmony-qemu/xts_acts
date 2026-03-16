@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function flexHeightModify_AutoJsunit() {
   describe('flexItemAlignAutoTest6', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexItemAlignAutoTest6 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
     });

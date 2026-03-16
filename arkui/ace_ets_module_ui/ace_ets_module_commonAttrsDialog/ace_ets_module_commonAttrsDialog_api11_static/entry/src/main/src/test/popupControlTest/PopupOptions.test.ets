@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function PopupOptions() {
   describe('PopupOptions', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
     });
 
@@ -103,7 +103,7 @@ it('PopupOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-       driver?.click(200, 200);
+       driver?.click(2, 2);
       await CommonFunc.sleep(1000);
       console.info('[PopupOptions_0100] END');
       done();

@@ -31,7 +31,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function QrcodeNodeTest() {
   describe('QrcodeNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("QrcodeNodeTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
     });

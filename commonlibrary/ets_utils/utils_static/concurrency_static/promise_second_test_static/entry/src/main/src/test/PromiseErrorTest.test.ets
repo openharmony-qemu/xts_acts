@@ -47,7 +47,7 @@ export default function PromiseErrorTest() {
      * @tc.desc async lazy import taskPool three nest
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseErrorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (Done: () => void):Promise<void> => {
       const asyncFunction = async () => {
@@ -77,7 +77,7 @@ export default function PromiseErrorTest() {
      * @tc.desc async lazy import taskPool three nest
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseErrorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (Done: () => void):Promise<void> => {
       const asyncFunction1 = async () => {

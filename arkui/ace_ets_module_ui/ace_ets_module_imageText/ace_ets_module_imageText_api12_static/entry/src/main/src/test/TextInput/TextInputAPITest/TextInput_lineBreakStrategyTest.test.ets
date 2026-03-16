@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextInput_lineBreakStrategyTest() {
   describe('TextInput_lineBreakStrategyTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextInput_lineBreakStrategyTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

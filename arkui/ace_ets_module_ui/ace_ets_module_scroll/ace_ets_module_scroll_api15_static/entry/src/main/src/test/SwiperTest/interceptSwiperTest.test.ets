@@ -44,7 +44,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function interceptSwiperTest() {
   describe('interceptSwiperTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("interceptSwiperTest beforeEach start");
 
       

@@ -60,7 +60,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ShowDialogJsunit() {
   describe('ShowDialogJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ShowDialogJsunit beforeAll start")
 
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")

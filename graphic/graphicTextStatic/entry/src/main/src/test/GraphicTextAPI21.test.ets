@@ -95,7 +95,8 @@ export default function GraphicTextAPI21Test() {
       let pixel = await image.createPixelMap(color, opts);
       let fontCollection = new text.FontCollection();
       let myTextStyle: text.TextStyle = {
-        color : {alpha: 255, red: 255, green: 0, blue: 0}
+        color : {alpha: 255, red: 255, green: 0, blue: 0},
+        fontWidth: text.FontWidth.ULTRA_CONDENSED,
       };
       let myParagraphStyle: text.ParagraphStyle = {
         textStyle : myTextStyle

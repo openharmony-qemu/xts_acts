@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "CheckboxStaticTest.hap"
+                "ActsCheckboxStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

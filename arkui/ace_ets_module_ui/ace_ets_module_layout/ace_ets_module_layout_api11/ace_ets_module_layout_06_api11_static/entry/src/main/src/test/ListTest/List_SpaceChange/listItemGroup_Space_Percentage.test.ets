@@ -37,7 +37,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function listItemGroup_Space_Percentage() {
   describe('listItemGroup_Space_Percentage', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("listItemGroup_Space_Percentage beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

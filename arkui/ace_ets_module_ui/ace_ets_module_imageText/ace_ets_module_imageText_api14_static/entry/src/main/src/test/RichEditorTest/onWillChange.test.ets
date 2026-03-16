@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditorOnWillChangeTest() {
   describe('RichEditorOnWillChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorOnWillChangeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

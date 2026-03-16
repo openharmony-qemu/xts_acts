@@ -17,8 +17,8 @@ group("dataShare_Static") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "dataShareConfigEtsTestStatic:ActsDataShareConfigEtsTestStatic",
-      "dataShareStaticConfigEtsTestStatic:ActsDataShareStaticConfigEtsTestStatic",
+      "dataShareConfigEtsTestStatic:ActsDataShareConfigEtsStaticTest",
+      "dataShareStaticConfigEtsTestStatic:ActsDataShareStaticConfigEtsStaticTest",
     ]
   }
 }

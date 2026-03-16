@@ -201,17 +201,18 @@ export default function kvStoreBackupCallbackJsunittest() {
       console.info(TAG + 'afterEach');
       try { //tmp
         await publicDeleteBackup(kvStore,files).then((data: Array<[string, int]>) => {
-
-            await (kvManager!.closeKVStore(BUNDLE_NAME, STORE_ID) as Promise<void>).then(async () => {
-              console.info(TAG + 'afterEach closeKVStore success');
-              files = [];
-              done();
-            }).catch((err: Error) => {
-              console.error(TAG + 'afterEach closeKVStore err ' +
-                `, error code is ${err.code}, message is ${err.message}`);
-              expect().assertFail();
-              done();
-            });
+            waitForCompletion(async () => {
+              await (kvManager!.closeKVStore(BUNDLE_NAME, STORE_ID) as Promise<void>).then(async () => {
+                console.info(TAG + 'afterEach closeKVStore success');
+                files = [];
+                done();
+              }).catch((err: Error) => {
+                console.error(TAG + 'afterEach closeKVStore err ' +
+                  `, error code is ${err.code}, message is ${err.message}`);
+                expect().assertFail();
+                done();
+              });
+            })
           }).catch((err: Error) => {
             console.warn(TAG + 'afterEach closeKVStore warning: ' +
               `code: ${err.code}, message: ${err.message}`);

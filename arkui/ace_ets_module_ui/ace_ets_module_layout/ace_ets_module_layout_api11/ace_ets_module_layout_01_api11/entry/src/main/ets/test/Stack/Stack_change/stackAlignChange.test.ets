@@ -302,14 +302,14 @@ export default function stackAlignChange() {
     });
 
     /**
-     * @tc.name   testStackAlignTopStartAlignmentEnd
+     * @tc.name   testStackAlignTopStartAlignmentEndAdapt001
      * @tc.number SUB_ACE_STACK_ALIGNCHANGED_0600
      * @tc.desc   Parent component set align 'Alignment.TopStart' and alignContent 'Alignment.End'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testStackAlignTopStartAlignmentEnd',  Level.LEVEL0, async (done: Function) => {
+    it('testStackAlignTopStartAlignmentEndAdapt001',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackAlignTopStartAlignmentEnd START');
       globalThis.value.message.notify({
         name: 'align', value: Alignment.TopStart

@@ -134,6 +134,7 @@ export default function NodeEventTypeTest() {
           await Utils.sleep(500);
           await Utils.driver.triggerKey(2047)
           await Utils.sleep(500);
+          await inputMethod.getController().stopInputSession();
           let result: number = nativerenderndk.NodeEventTypeTest_008();
           console.info(`====>testNODE_TEXT_INPUT_ON_WILL_CHANGE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);

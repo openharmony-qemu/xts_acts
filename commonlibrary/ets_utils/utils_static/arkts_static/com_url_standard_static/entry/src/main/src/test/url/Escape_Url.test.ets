@@ -31,7 +31,7 @@ import Utils from '../Util.test';
 
 export default function Escape_Url() {
   describe('Escape_Url', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
 

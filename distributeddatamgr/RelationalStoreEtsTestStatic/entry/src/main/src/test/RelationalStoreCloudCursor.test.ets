@@ -190,6 +190,239 @@ export default function relationalStoreCloudCursor() {
             console.log(TAG + "************* testRdbCleanDirtyData0002 end *************");
         })
 
+          /**
+         * @tc.name   testRdbCleanDirtyData0004
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0800
+         * @tc.desc   clean retain data promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+         it('testRdbCleanDirtyData0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          console.log(TAG + "************* testRdbCleanDirtyData0002 start *************");
+          if (rdbStore == undefined) {
+              console.log(TAG + "testRdbCleanDirtyData0004 rdbStore == undefined");
+              expect().assertFail();
+              return;
+          }
+          try {
+            await rdbStore!.cleanDirtyData("", 3);
+            console.log(TAG + `testRdbCleanDirtyData0004 cleanDirtyData success`);
+            done();
+          } catch (err) {
+            console.log(TAG + `testRdbCleanDirtyData0004 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+            expect(err.code).assertEqual(14800000);
+            done();
+          }
+          console.log(TAG + "************* testRdbCleanDirtyData0004 end *************");
+      })
+
+       /**
+         * @tc.name   testRdbCleanDirtyData0005
+         * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0900
+         * @tc.desc   clean retain data promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+       it('testRdbCleanDirtyData0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        console.log(TAG + "************* testRdbCleanDirtyData0005 start *************");
+        if (rdbStore == undefined) {
+            console.log(TAG + "testRdbCleanDirtyData0005 rdbStore == undefined");
+            expect().assertFail();
+            return;
+        }
+        try {
+          let res = await rdbStore!.cleanDirtyData("query_tb", undefined);
+          console.log(TAG + `testRdbCleanDirtyData0005 cleanDirtyData success`);
+          expect(res).assertEqual(undefined);
+          done();
+        } catch (err) {
+          console.log(TAG + `testRdbCleanDirtyData0005 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+          expect(err.code).assertEqual(14800000);
+          done();
+        }
+        console.log(TAG + "************* testRdbCleanDirtyData0005 end *************");
+    })
+
+     /**
+       * @tc.name   testRdbCleanDirtyData0006
+       * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1000
+       * @tc.desc   clean retain data callback.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+     it('testRdbCleanDirtyData0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* testRdbCleanDirtyData0006 start *************");
+      if (rdbStore == undefined) {
+          console.log(TAG + "testRdbCleanDirtyData0004 rdbStore == undefined");
+          expect().assertFail();
+          return;
+      }
+      try {
+        rdbStore!.cleanDirtyData("", (err) => {
+          if(err){
+            console.log(TAG + `testRdbCleanDirtyData0006 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+            expect(err.code).assertEqual(14800000);
+            done();
+          }else{
+            console.log(TAG + `testRdbCleanDirtyData0006 cleanDirtyData success`);
+            expect(null).assertFail();
+            done();
+          }
+        });
+        
+      } catch (err) {
+        console.log(TAG + `testRdbCleanDirtyData0006 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      console.log(TAG + "************* testRdbCleanDirtyData0006 end *************");
+  })
+
+  /**
+   * @tc.name   testRdbCleanDirtyData0007
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_1100
+   * @tc.desc   clean retain data callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+    it('testRdbCleanDirtyData0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* testRdbCleanDirtyData0007 start *************");
+      if (rdbStore == undefined) {
+          console.log(TAG + "testRdbCleanDirtyData0004 rdbStore == undefined");
+          expect().assertFail();
+          return;
+      }
+      try {
+        rdbStore!.cleanDirtyData("", 100, (err) => {
+          if(err){
+            console.log(TAG + `testRdbCleanDirtyData0007 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+            expect(err.code).assertEqual(14800000);
+            done();
+          }else{
+            console.log(TAG + `testRdbCleanDirtyData0007 cleanDirtyData success`);
+            expect(null).assertFail();
+            done();
+          }
+        });
+        
+      } catch (err) {
+        console.log(TAG + `testRdbCleanDirtyData0007 cleanDirtyData fail, errcode: ${JSON.stringify(err)}.`);
+        expect(err.code).assertEqual(401);
+        done();
+      }
+      console.log(TAG + "************* testRdbCleanDirtyData0007 end *************");
+  })
+
+  /**
+   * @tc.name   testRdbProgressDetailTest0100
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_ProgressDetailTest_0100
+   * @tc.desc   SYNC_BEGIN
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('testRdbProgressDetailTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    console.log(TAG + "************* testRdbProgressDetailTest0100 start *************");
+    let statistic1 : relationalStore.Statistic = {
+      total: 10,
+      successful: 8,
+      failed: 1,
+      remained: 1
+    }
+    let statistic2 : relationalStore.Statistic = {
+      total: 20,
+      successful: 15,
+      failed: 3,
+      remained: 2
+    }
+    let details : Record<string, relationalStore.TableDetails> = {"cloudSync": {"upload": statistic1, "download": statistic2}}
+    let progressDetail : relationalStore.ProgressDetails = {
+      schedule: relationalStore.Progress.SYNC_BEGIN,
+      code: relationalStore.ProgressCode.SUCCESS,
+      details: details
+    
+    }
+    expect(progressDetail.schedule).assertEqual(0)
+    expect(statistic1.total).assertEqual(10)
+    expect(statistic1.successful).assertEqual(8)
+    expect(statistic1.failed).assertEqual(1)
+    expect(statistic1.remained).assertEqual(1)
+    done();
+    console.log(TAG + "************* testRdbProgressDetailTest0100 end *************");
+  })
+
+  /**
+   * @tc.name   testRdbProgressDetailTest0200
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_ProgressDetailTest_0200
+   * @tc.desc   SYNC_IN_PROGRESS
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('testRdbProgressDetailTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    console.log(TAG + "************* testRdbProgressDetailTest0200 start *************");
+    let statistic1 : relationalStore.Statistic = {
+      total: 10,
+      successful: 8,
+      failed: 1,
+      remained: 1
+    }
+    let statistic2 : relationalStore.Statistic = {
+      total: 20,
+      successful: 15,
+      failed: 3,
+      remained: 2
+    }
+    let details : Record<string, relationalStore.TableDetails> = {"cloudSync": {"upload": statistic1, "download": statistic2}}
+    let progressDetail : relationalStore.ProgressDetails = {
+      schedule: relationalStore.Progress.SYNC_IN_PROGRESS,
+      code: relationalStore.ProgressCode.SUCCESS,
+      details: details
+    
+    }
+    expect(progressDetail.schedule).assertEqual(1)
+    done();
+    console.log(TAG + "************* testRdbProgressDetailTest0200 end *************");
+  })
+
+  /**
+   * @tc.name   testRdbProgressDetailTest0300
+   * @tc.number SUB_DistributedData_RelationalStore_SDK_ProgressDetailTest_0300
+   * @tc.desc   SYNC_FINISH
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('testRdbProgressDetailTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    console.log(TAG + "************* testRdbProgressDetailTest0300 start *************");
+    let statistic1 : relationalStore.Statistic = {
+      total: 10,
+      successful: 8,
+      failed: 1,
+      remained: 1
+    }
+    let statistic2 : relationalStore.Statistic = {
+      total: 20,
+      successful: 15,
+      failed: 3,
+      remained: 2
+    }
+    let details : Record<string, relationalStore.TableDetails> = {"cloudSync": {"upload": statistic1, "download": statistic2}}
+    let progressDetail : relationalStore.ProgressDetails = {
+      schedule: relationalStore.Progress.SYNC_FINISH,
+      code: relationalStore.ProgressCode.SUCCESS,
+      details: details
+    }
+    expect(progressDetail.schedule).assertEqual(2)
+    done();
+    console.log(TAG + "************* testRdbProgressDetailTest0300 end *************");
+  })
+
+
         console.log(TAG + "*************Unit Test End*************");
     })
 }

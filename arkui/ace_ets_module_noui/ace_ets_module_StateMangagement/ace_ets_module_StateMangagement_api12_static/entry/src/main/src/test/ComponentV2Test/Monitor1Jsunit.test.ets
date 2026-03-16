@@ -49,7 +49,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function Monitor1Jsunit() {
   describe('Monitor1Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("Monitor1Jsunit beforeEach start");
 
 

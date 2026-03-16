@@ -36,7 +36,7 @@ import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 export default function AttributeModifierDemoAPI02Jsunit() {
   describe('AttributeModifierDemoAPI02Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AttributeModifierDemoAPI02Jsunit beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.nowear.api11.static", "EntryAbility")

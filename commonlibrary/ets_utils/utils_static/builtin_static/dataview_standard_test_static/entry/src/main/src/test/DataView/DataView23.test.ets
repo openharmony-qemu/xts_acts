@@ -777,13 +777,12 @@ export default function DataView23Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // todo
-    // it('DataView23Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const typedArray56 = Array.from([10, 20, 30], (x: int) => x);
-    //   const buffer56 = new Uint16Array(typedArray56).buffer;
-    //   const dataView56 = new DataView(buffer56);
-    //   expect(dataView56.buffer).assertEqual(buffer56);
-    // });
+    it('DataView23Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const typedArray56 = Array.from([10, 20, 30], (x: int) => x);
+      const buffer56 = new Uint16Array(typedArray56).buffer;
+      const dataView56 = new DataView(buffer56);
+      expect(dataView56.buffer).assertEqual(buffer56);
+    });
 
     /**
      * @tc.name   DataView23Test057

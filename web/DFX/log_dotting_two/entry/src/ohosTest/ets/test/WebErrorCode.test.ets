@@ -782,7 +782,7 @@ export default function webErrorCode() {
      */
     it('testPrepareForPageLoadError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testPrepareForPageLoadError002", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testPrepareForPageLoadError002", "17100002", 114600, done);
+      Utils.registerEvent("testPrepareForPageLoadError002", "17100002URL error. The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.", 114600, done);
       await Utils.waitAndClickComponent(driver, "ErrorCodeTestSuiteButton");
     })
   })

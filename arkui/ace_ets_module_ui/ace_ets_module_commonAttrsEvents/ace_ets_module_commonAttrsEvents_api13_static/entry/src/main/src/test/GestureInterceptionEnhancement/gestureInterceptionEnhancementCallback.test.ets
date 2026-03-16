@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function gestureInterceptionEnhancementCallbackTest() {
   describe('gestureInterceptionEnhancementCallbackTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api13.static", "EntryAbility")
     });

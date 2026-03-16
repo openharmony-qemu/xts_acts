@@ -52,7 +52,7 @@ async function panAndPinchGesture(id: string) {
 export default function DragTest(){
 
   describe('DragTest', () => {
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
     });
     afterEach(async (): Promise<void> => {

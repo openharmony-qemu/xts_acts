@@ -1065,22 +1065,22 @@ napi_value captureCameraDeviceQueryInfoCameraTypeSizes(napi_env env, napi_callba
         break;
     case CASE_INDEX_2:
         if (found(queryInfo1)) {
-            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo1, &cameraSize, &cameras);
         }
         break;
     case CASE_INDEX_3:
         if (found(queryInfo2)) {
-            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo2, &cameraSize, &cameras);
         }
         break;
     case CASE_INDEX_4:
         if (found(queryInfo3)) {
-            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo3, &cameraSize, &cameras);
         }
         break;
     case CASE_INDEX_5:
         if (found(queryInfo4)) {
-            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo0, &cameraSize, &cameras);
+            result = OH_CameraManager_GetCameraDevices(cameraManager, &queryInfo4, &cameraSize, &cameras);
         }
         break;
     default:

@@ -343,6 +343,58 @@ export default function LifeCycleLinstenerStaticTest() {
           done();
         }
       })
+
+      /**
+     * @tc.name   SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300
+     * @tc.desc   onInteropAbilityLifecycle（）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300`;
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          let cb: InteropAbilityLifecycleCallback = new MyInteropAbilityLifecycleCallback()
+          hilog.info(domain, tag, `${itName} onInteropAbilityLifecycle`);
+          applicationContext?.onInteropAbilityLifecycle(cb)
+          hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
+          applicationContext?.offInteropAbilityLifecycle();
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
+          expect().assertFail();
+        }
+        hilog.info(domain, tag, `${itName} end`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400
+     * @tc.desc   offInteropAbilityLifecycle（） no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400`;
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          applicationContext?.offInteropAbilityLifecycle();
+          expect().assertFail()
+          done()
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
+          expect(err.code === 401).assertTrue();
+          hilog.info(domain, tag, `${itName} end`);
+          done();
+        }
+      })
   })
 }
 

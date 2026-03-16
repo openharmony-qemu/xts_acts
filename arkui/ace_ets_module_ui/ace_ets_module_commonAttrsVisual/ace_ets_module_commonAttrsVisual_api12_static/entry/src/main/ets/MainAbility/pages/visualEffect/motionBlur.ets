@@ -84,10 +84,10 @@ struct motionBlurTest1 {
               this.radius = 0;
             }
           })
-        // .motionBlur({
-        //   radius: this.radius,
-        //   anchor: { x: this.x, y: this.y } as MotionBlurAnchor
-        // } as MotionBlurOptions)
+        .motionBlur({
+          radius: this.radius,
+          anchor: { x: this.x, y: this.y } as MotionBlurAnchor
+        } as MotionBlurOptions)
       }
     }.width('100%').margin({ top: 5 } as Margin)
   }

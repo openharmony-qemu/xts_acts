@@ -129,6 +129,10 @@ struct ClipModel5 {
  */
 int SUBAINNRtFuncNorthClipBuild01()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -162,6 +166,10 @@ int SUBAINNRtFuncNorthClipBuild01()
  */
 int SUBAINNRtFuncNorthClipBuild02()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -195,6 +203,10 @@ int SUBAINNRtFuncNorthClipBuild02()
  */
 int SUBAINNRtFuncNorthClipBuild03()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -228,6 +240,10 @@ int SUBAINNRtFuncNorthClipBuild03()
  */
 int SUBAINNRtFuncNorthClipBuild04()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -261,6 +277,10 @@ int SUBAINNRtFuncNorthClipBuild04()
  */
 int SUBAINNRtFuncNorthClipBuild05()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+    
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 

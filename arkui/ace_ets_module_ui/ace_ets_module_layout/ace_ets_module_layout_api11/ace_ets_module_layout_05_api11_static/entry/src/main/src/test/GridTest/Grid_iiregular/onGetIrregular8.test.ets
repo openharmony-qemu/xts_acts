@@ -43,7 +43,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function onGetIrregular8Jsunit() {
   describe('onGetIrregular8Jsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onGetIrregular8Jsunit beforeEach start");
       console.info("Grid_Row_Columns beforeAll start");
            

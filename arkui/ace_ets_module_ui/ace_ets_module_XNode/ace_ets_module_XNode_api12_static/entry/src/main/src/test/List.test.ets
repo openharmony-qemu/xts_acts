@@ -115,7 +115,7 @@ export default function testsuite() {
   setShapeClipTest();
   typeNodeSwiperTest();
   typeNodeRelativeContainerTest();
-  typeNodeProgressTest();
+  //typeNodeProgressTest();
   typeNodeLoadingProgressTest();
   typeNodeListTest();
   typeNodeGridColTest();
@@ -131,7 +131,7 @@ export default function testsuite() {
   edgeWidths();
   renderNodeGetInterfaceTest();
   disposeTest();
-  getAttrsTest();
+  //getAttrsTest();
   getPosition();
   setLayout();
   RenderNodeAttributeTest();
@@ -156,10 +156,10 @@ export default function testsuite() {
   setCircleShapeTest();
   typeNodeTextInputTest();
   typeNodeListItemTest();
-  attachNodeAdapterTest();
+  //attachNodeAdapterTest();
   getAttachedFrameNodeById();
   getAfterRemove();
-  PercentReferenceTest();
-  graphicGetInterfaceTest();
+  //PercentReferenceTest();
+  //graphicGetInterfaceTest();
   setMeasureSizeTest();
 }

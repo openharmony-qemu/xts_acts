@@ -33,7 +33,7 @@ let emitKey = 'emitUserAgent';
 export default function buttonTypeTest() {
   describe('ActsbuttonTypeTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
     })
 

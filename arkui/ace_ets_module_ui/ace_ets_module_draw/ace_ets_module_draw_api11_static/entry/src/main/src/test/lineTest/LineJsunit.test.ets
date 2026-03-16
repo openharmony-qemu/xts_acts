@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function LineJsunit() {
   describe('LineTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
       

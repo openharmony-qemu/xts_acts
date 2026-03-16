@@ -15,8 +15,12 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { expect } from '@ohos/hypium';
-import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@ohos.UiTest';
+import systemDateTime from '@ohos.systemDateTime';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import fs from '@ohos.file.fs';
+import { BusinessError } from '@kit.BasicServicesKit';
+import webview from '@ohos.web.webview';
 
 export default class Utils {
   static sleep(time: number) {
@@ -28,9 +32,87 @@ export default class Utils {
       console.info(`sleep ${time} over...`)
     })
   }
-  
-  static registerBaseEvent(testCaseName: string, expected: Object, eventId: number, 
-                           done: Function, expectFunction: Function) {
+
+  static getSystemTime() {
+    return systemDateTime.getTime(true) / 1000
+  }
+
+  static copyRawFileToSandbox(rawFileName: string): string {
+    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+    let context = abilityDelegator.getAppContext();
+    let dir = context.filesDir + "/";
+    let rawFilePath = dir + rawFileName;
+    try {
+      let arrayBuffer = context.resourceManager.getRawFileContentSync(rawFileName);
+      let file = fs.openSync(rawFilePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+      fs.writeSync(file.fd, arrayBuffer.buffer);
+      fs.closeSync(file);
+      console.log(`[copyRawFileToSandbox] ${rawFileName} is copy success`);
+    } catch (error) {
+      console.info("[copyRawFileToSandbox] getRawFileDescriptor api run failed" + error);
+    }
+    console.info("[copyRawFileToSandbox] sandbox path:" + dir);
+    return rawFilePath
+  }
+
+  static deleteFile(filePath: string) {
+    console.info("[deleteFile] filePath:" + filePath);
+    try {
+      fs.unlinkSync(filePath)
+    } catch (error) {
+      console.info("[deleteFile] error:" + error);
+    }
+  }
+
+  static deleteDir(dirPath: string) {
+    console.info("[deleteFile] dirPath:" + dirPath);
+    try {
+      fs.rmdirSync(dirPath)
+    } catch (error) {
+      console.info("[deleteFile] error:" + error);
+    }
+  }
+
+  static listFile(dirPath: string): string[] {
+    console.info("[listFile] dirPath:" + dirPath);
+    try {
+      let files = fs.listFileSync(dirPath)
+      for ( let i = 0; i < files.length; i++) {
+        console.info('The name of file: ${files[i]}');
+      }
+      return files;
+    } catch (error) {
+      console.info("[listFile] error:" + error);
+      return [];
+    }
+  }
+
+  static isFileExist(filePath: string): boolean {
+    console.info("[isFileExist] filePath:" + filePath);
+    try {
+      let fileExist = fs.accessSync(filePath)
+      console.info("[isFileExist] return:" + fileExist);
+      return fileExist
+    } catch (error) {
+      console.info("[isFileExist] error:" + error);
+      return false;
+    }
+  }
+
+  static async clickComponent(id: string) {
+    let driver = Driver.create();
+    let component = await driver.findComponent(ON.id(id));
+    await component.click();
+  }
+
+  static async triggerKey(id: number) {
+    let driver = Driver.create();
+    await driver.triggerKey(id);
+  }
+
+
+  static registerBaseEvent(testCaseName: string, expected: Object, eventId: number,
+    done: Function, expectFunction: Function) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -47,22 +129,22 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      events_emitter.once(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack);
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
   }
-  
+
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-      Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-      });
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
+      expect(backData?.data?.ACTION).assertEqual(expected);
+    });
   }
-  
+
   static registerContainEvent(testCaseName: string, expectedValue: Object, eventId: number, done: Function) {
-      Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertContain(expected);
-      });
+    Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
+      expect(backData?.data?.ACTION).assertContain(expected);
+    });
   }
 
   static emitEvent(actualValue: boolean | string | number | object, eventId: number) {
@@ -83,23 +165,33 @@ export default class Utils {
     }
   }
 
+  static isPC(controller: webview.WebviewController) {
+    let userAgent: string = controller.getUserAgent();
+    console.info("userAgent" + userAgent);
+
+    try {
+      let isPc: boolean = userAgent.includes('PC') || userAgent.toLowerCase().includes('pc') || userAgent.includes("2in1")
+      console.log('device is pc:' + isPc)
+      return isPc
+    } catch (error) {
+      console.info("userAgent error:" + error);
+      return true
+    }
+  }
+
   static async waitForExist<T> (
     stateGetter: () => T,
     testsuite: string,
-    expectValue: string | number | null = null,
+    expectValue: string | number | boolean | null = null,
     interval=3000,
     tryTime=20
   ):Promise<T>{
-    console.log('=====>waitForExist：',testsuite)
     let nums = 0;
     let isSuccess = false;
     while (nums < tryTime) {
-      console.log('=====>while')
       const currentValue = await new Promise<T>((done) => {
         setTimeout(()=>done(stateGetter()), 0);
       })
-      console.log(testsuite + ' debug wait for exist' + nums + ' times, currentValue: ' + currentValue
-        + ',expectValue ' + expectValue)
 
       if (expectValue == null) {
         if (currentValue != null) {
@@ -108,7 +200,6 @@ export default class Utils {
           return currentValue
         }
       } else {
-        console.log('=====>currentValue',currentValue)
         if (currentValue == expectValue) {
           console.log(testsuite + ' debug wait for success exist');
           isSuccess = true;
@@ -117,6 +208,8 @@ export default class Utils {
       }
       await Utils.sleep(interval);
       nums++;
+      console.log(testsuite + ' debug wait for exist ' + nums + ' times, currentValue: ' + currentValue
+        + ', expectValue ' + expectValue);
     }
     if (!isSuccess) {
       console.log(testsuite + ' debug wait for failed')
@@ -148,8 +241,6 @@ export default class Utils {
           await Utils.sleep(500);
           retryTimes++;
           console.log('retryTimes = ' + retryTimes);
-        }else{
-          console.log('other error:',JSON.stringify(error))
         }
       }
     }

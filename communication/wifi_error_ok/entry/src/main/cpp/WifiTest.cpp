@@ -309,7 +309,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetDeviceMacAddress0200", nullptr, GetDeviceMacAddress0200, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0300", nullptr, GetDeviceMacAddress0300, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0400", nullptr, GetDeviceMacAddress0400, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetDeviceMacAddress0500", nullptr, GetDeviceMacAddress0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0500", nullptr, GetDeviceMacAddress0500, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0600", nullptr, GetDeviceMacAddress0600, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0700", nullptr, GetDeviceMacAddress0700, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0800", nullptr, GetDeviceMacAddress0800, nullptr, nullptr, nullptr, napi_default, nullptr},

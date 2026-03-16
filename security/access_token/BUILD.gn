@@ -20,9 +20,12 @@ group("access_token") {
       "AccessTokenTest_Normal_js:ActsAccessTokenApiJSNormalTest",
       "accesstokenNDKTest:ActsAccessTokenNDKTest",
       "dynamic/openPermissionOnSettingTest:ActsOpenPermissionOnSettingTest",
+      "dynamic/RequestFromUserServicePop:ActsRequestFromUserServicePopTest",
       "static/accessTokenFuncTestStatic:ActsAccessTokenFuncStaticTest",
       "static/requestPermissionOnSettingTestStatic:ActsRequestPermissionsOnSettingStaticTest",
       "static/requestPermissionsFromUserTestStatic:ActsRequestPermissionsFromUserStaticTest",
+      "static/requestFromUserServicePopTestStatic:ActsRequestFromUserServicePopStaticTest",
+      "static/openPermissionOnSettingTestStatic:ActsOpenPermissionOnSettingStaticTest",
     ]
   }
 }

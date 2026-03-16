@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchTypeTest() {
   describe('SearchTypeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SearchTypeTest beforeEach start");
 
 

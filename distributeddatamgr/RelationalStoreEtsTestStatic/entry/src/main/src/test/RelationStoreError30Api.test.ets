@@ -44,27 +44,6 @@ const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIM
 
 const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 
-const dbName = "testljj.db"
-let dbPath =  "";
-let dbPathWal =  "";
-let dbPathShm = "";
-async function CreateCorruptDb() {
-  try {
-    let fileExist = fs.accessSync(dbPath);
-    console.info(tag + "fileExist:"+fileExist)
-    expect(fileExist).assertTrue();
-    fs.truncateSync(dbPathWal, 4)
-    fs.truncateSync(dbPathShm, 4)
-    let file = fs.openSync(dbPath, fs.OpenMode.READ_ONLY | fs.OpenMode.TRUNC);
-    fs.truncateSync(file.fd, 4);
-    fs.fsyncSync(file.fd)
-    fs.closeSync(file)
-  } catch (err) {
-    err = err as BusinessError;
-    console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
-  }
-  console.info(tag, `quit create corrupt store`);
-}
 const valueBucket0 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
   "data2": 10 as long,
@@ -85,10 +64,6 @@ export default function RelationStoreError30Test() {
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
-      dbPath = context!.databaseDir + "/rdb/" + dbName;
-      dbPathWal = context!.databaseDir + "/rdb/" + dbName + "-wal";
-      context!.databaseDir + "/rdb/" + dbName + "-shm";
-      hilog.info(domain, tag, '%{public}s', 'onAbilityCreate enddatabaseDir:' + context!.databaseDir);
     })
 
     /**

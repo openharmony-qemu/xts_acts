@@ -271,6 +271,8 @@ export const MetadataOutputRemoveMetadataObjectTypes: () => number;
 export const MetadataOutputAddMetadataObjectTypes: () => number; 
 
 export const CreateMetadataOutputWithObjectTypes: () => number; 
+
+export const IsMetadataObjectTypeValid: () => number;
  	 
 export const sessionBegin: () => number;
 

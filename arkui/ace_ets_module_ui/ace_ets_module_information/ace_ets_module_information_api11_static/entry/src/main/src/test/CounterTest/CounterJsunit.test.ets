@@ -44,7 +44,7 @@ function sleep(time: int) {
 
 export default function counterJsunit() {
   describe('counterTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("counterTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
     });

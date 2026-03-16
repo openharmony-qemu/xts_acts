@@ -90,7 +90,7 @@ export default function displayTest() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let isSupportRotate = false;
-    let deviceType:string = deviceInfo.deviceType;
+    let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
@@ -100,28 +100,28 @@ export default function displayTest() {
       //isAutoWindow == '' 非PAD设备
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
-      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '', settings.domainName.DEVICE_SHARED);
       console.error(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
       //isPCStatus == '' 非PC设备
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
-      console.error(`beforeAll isPCStatus: `+ isPCStatus);
-      
+      console.error(`beforeAll isPCStatus: ` + isPCStatus);
+
       let windowClass = windowStage.getMainWindowSync();
       isFreeWindowMode = windowClass.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       try {
-          let driver = Driver.create();
-          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
-          console.log('findComponent allowed: ' + JSON.stringify(allowed));
-          if(allowed){
-            await allowed.click();
-          }
+        let driver = Driver.create();
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        console.log('findComponent allowed: ' + JSON.stringify(allowed));
+        if (allowed) {
+          await allowed.click();
+        }
       } catch (err) {
-          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        console.error('findComponent allowed failed: ' + JSON.stringify(err));
       }
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
       await sleep(300);
@@ -129,9 +129,9 @@ export default function displayTest() {
       await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
       await sleep(300);
       let Orientation2 = display.getDefaultDisplaySync().orientation;
-      if(Orientation1 != Orientation2){
+      if (Orientation1 != Orientation2) {
         isSupportRotate = true;
-      }else{
+      } else {
         isSupportRotate = false;
       }
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -395,6 +395,7 @@ export default function displayTest() {
         let promise = displayClass.getAvailableArea();
         promise.then((data) => {
           console.info(msgStr + 'Succeeded get the available area in this display. data: ' + JSON.stringify(data));
+          expect(data.top).assertLargerOrEqual(0);
           expect(data.left).assertEqual(0);
           expect(data.width).assertLarger(0);
           expect(data.height).assertLarger(0);
@@ -703,6 +704,9 @@ export default function displayTest() {
               console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
               sleep(500);
               expect(data.height).assertLarger(AvailableArea.height);
+              expect(data.left).assertLargerOrEqual(0);
+              expect(data.top).assertLargerOrEqual(0);
+              expect(data.width).assertLargerOrEqual(0);
               displayClass.off('availableAreaChange');
               mainWindowClass.recover();
               done();
@@ -749,11 +753,11 @@ export default function displayTest() {
       let num = 0;
       let callback1: Callback<display.Rect> = (data: display.Rect) => {
         num++;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
+        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
       };
       let callback2: Callback<display.Rect> = (data: display.Rect) => {
         num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
+        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
       };
       try {
         let mainWindowClass = await windowStage.getMainWindow();
@@ -814,11 +818,11 @@ export default function displayTest() {
       let num = 0;
       let callback1: Callback<display.Rect> = (data: display.Rect) => {
         num--;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
+        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
       };
       let callback2: Callback<display.Rect> = (data: display.Rect) => {
         num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
+        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
       };
       try {
         let mainWindowClass = await windowStage.getMainWindow();
@@ -880,11 +884,11 @@ export default function displayTest() {
       let num = 0;
       let callback1: Callback<display.Rect> = (data: display.Rect) => {
         num++;
-        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
+        console.info('Listening callback1 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
       };
       let callback2: Callback<display.Rect> = (data: display.Rect) => {
         num++;
-        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data)+' , num:'+num);
+        console.info('Listening callback2 enabled. Data: ' + JSON.stringify(data) + ' , num:' + num);
       };
       try {
         let mainWindowClass = await windowStage.getMainWindow();
@@ -943,10 +947,9 @@ export default function displayTest() {
       console.log(msgStr + 'begin');
       let displayClass: display.Display;
       try {
-          displayClass = display.getDefaultDisplaySync();
-          displayClass.off('availableAreaChange');
-          expect(true).assertTrue();
-          done();
+        displayClass = display.getDefaultDisplaySync();
+        displayClass.off('availableAreaChange');
+        done();
       }
       catch (err) {
         console.error(msgStr + `Failed to obtain the default display object. Code: ${err.code}, message: ${err.message}`);
@@ -984,7 +987,6 @@ export default function displayTest() {
       }).catch((err: BusinessError) => {
         if (err.code == 801) {
           console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
-          expect(true).assertTrue();
           done();
         } else {
           console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
@@ -1013,7 +1015,7 @@ export default function displayTest() {
         expect(displayInfo.availableHeight).assertLargerOrEqual(0);
         done();
       } catch (error) {
-        console.error(`jsunittets ${caseName} fail to get display available info :`+ error);
+        console.error(`jsunittets ${caseName} fail to get display available info :` + error);
         expect().assertFail();
         done();
       }
@@ -1032,9 +1034,9 @@ export default function displayTest() {
       console.log(msgStr + 'begin');
       expect(display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED).assertEqual(11);
       expect(display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_HALF_FOLDED).assertEqual(21);
-      expect(display.FoldStatus. FOLD_STATUS_FOLDED_WITH_SECOND_EXPANDED).assertEqual(12);
+      expect(display.FoldStatus.FOLD_STATUS_FOLDED_WITH_SECOND_EXPANDED).assertEqual(12);
       expect(display.FoldStatus.FOLD_STATUS_FOLDED_WITH_SECOND_HALF_FOLDED).assertEqual(22);
-      expect(display.FoldStatus. FOLD_STATUS_HALF_FOLDED_WITH_SECOND_EXPANDED).assertEqual(13);
+      expect(display.FoldStatus.FOLD_STATUS_HALF_FOLDED_WITH_SECOND_EXPANDED).assertEqual(13);
       expect(display.FoldStatus.FOLD_STATUS_HALF_FOLDED_WITH_SECOND_HALF_FOLDED).assertEqual(23);
       done();
 
@@ -1169,7 +1171,62 @@ export default function displayTest() {
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        expect(err.code == 801 || err.code == 401).assertTrue();
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      }
+    });
+    /**
+     * @tc.name   test_DestroyVirtualScreenErrorcode401_2
+     * @tc.number SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0300
+     * @tc.desc   test_DestroyVirtualScreenErrorcode_401 when got invalid screendId like -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_DestroyVirtualScreenErrorcode401_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_DestroyVirtualScreenErrorcode401_2 ';
+      try {
+        display.destroyVirtualScreen(null).then(() => {
+          console.info(caseName + 'succeeded in destroy virtual screen, data : ');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName+  `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+        });
+      } catch (err) {
+        console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        display.destroyVirtualScreen(undefined).then(() => {
+          console.info(caseName + 'succeeded in destroy virtual screen, data : ');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName+  `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+        });
+      } catch (err) {
+        console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
         done();
       }
     });
@@ -1234,7 +1291,7 @@ export default function displayTest() {
     it('test_MakeUniqueErrorcode_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_MakeUniqueErrorcode_401 ';
       try {
-        await display.makeUnique(-1).then(()=>{
+        await display.makeUnique(-1).then(() => {
           console.log(caseName + 'Succeeded in makeUnique');
           expect().assertFail();
           done();
@@ -1245,7 +1302,11 @@ export default function displayTest() {
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
-        expect(err.code == 401 || err.code == 801).assertTrue()
+        if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
         done();
       }
     });
@@ -1285,7 +1346,7 @@ export default function displayTest() {
           done();
         }).catch((err: BusinessError) => {
           console.log(caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
-          
+
           done();
         })
       } catch (err) {
@@ -1308,7 +1369,7 @@ export default function displayTest() {
         title: 'test_MakeUnique_01',
         decorEnabled: true,
       }
-      
+
       try {
         await windowStage.createSubWindowWithOptions('test_MakeUnique_01', options).then(async (subWindowClass) => {
           subWindowClass.setUIContent('testability/pages/makeUniqueTest')
@@ -1413,7 +1474,7 @@ export default function displayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('getDisplayByIdSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('getDisplayByIdSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "getDisplayByIdSync";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
@@ -1437,12 +1498,12 @@ export default function displayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('on_foldAngleChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('on_foldAngleChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "on_foldAngleChange";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
-        const callback = (res: Array<number>) => {}
+        const callback = (res: Array<number>) => { }
         display.on(null, callback);
         console.error(msgStr + 'Succeeded in calling on_foldAngleChange.');
         expect().assertFail();
@@ -1462,12 +1523,12 @@ export default function displayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('off_foldAngleChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('off_foldAngleChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "off_foldAngleChange";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
-        const callback = (res: Array<number>) => {}
+        const callback = (res: Array<number>) => { }
         display.off(null, callback);
         console.error(msgStr + 'Succeeded in calling off_foldAngleChange.');
         expect().assertFail();
@@ -1487,12 +1548,12 @@ export default function displayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('on_captureStatusChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('on_captureStatusChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "on_captureStatusChange";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
-        const callback = (res: boolean) => {}
+        const callback = (res: boolean) => { }
         display.on(null, callback);
         console.error(msgStr + 'Succeeded in calling on_captureStatusChange.');
         expect().assertFail();
@@ -1512,12 +1573,12 @@ export default function displayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('off_captureStatusChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('off_captureStatusChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "off_captureStatusChange";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
-        const callback = (res: boolean) => {}
+        const callback = (res: boolean) => { }
         display.off(null, callback);
         console.error(msgStr + 'Succeeded in calling off_captureStatusChange.');
         expect().assertFail();
@@ -1537,14 +1598,14 @@ export default function displayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('on_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('on_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "on_availableAreaChange";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
         let displayClass: display.Display | null = null;
         displayClass = display.getDefaultDisplaySync();
-        const callback = (res: display.Rect) => {}
+        const callback = (res: display.Rect) => { }
         displayClass.on(null, callback);
         console.error(msgStr + 'Succeeded in calling on_availableAreaChange.');
         expect().assertFail();
@@ -1564,14 +1625,14 @@ export default function displayTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('off_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('off_availableAreaChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "off_availableAreaChange";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       try {
         let displayClass: display.Display | null = null;
         displayClass = display.getDefaultDisplaySync();
-        const callback = (res: display.Rect) => {}
+        const callback = (res: display.Rect) => { }
         displayClass.off(null, callback);
         console.error(msgStr + 'Succeeded in calling off_availableAreaChange.');
         expect().assertFail();
@@ -1604,7 +1665,6 @@ export default function displayTest() {
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.top: ${info.waterfallDisplayAreaRects.top}`);
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.right: ${info.waterfallDisplayAreaRects.right}`);
         console.info(`${caseName} CutoutInfo.waterfallDisplayAreaRects.bottom: ${info.waterfallDisplayAreaRects.bottom}`);
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`jsunittets ${caseName} fail to get display available info :` + error);
@@ -1673,6 +1733,11 @@ export default function displayTest() {
       console.info(msgStr + 'getDefaultDisplaySync ScreenShape: ' + JSON.stringify(displayClass.screenShape));
       console.info(msgStr + 'getDefaultDisplaySync x: ' + JSON.stringify(displayClass.x));
       console.info(msgStr + 'getDefaultDisplaySync y: ' + JSON.stringify(displayClass.y));
+      expect(displayClass.sourceMode).assertLargerOrEqual(0);
+      expect(displayClass.x).assertLargerOrEqual(0);
+      expect(displayClass.y).assertLargerOrEqual(0);
+      expect(displayClass.screenShape).assertLargerOrEqual(0);
+      expect(displayClass.screenShape).assertLessOrEqual(1);
       done();
     });
     /**
@@ -1696,7 +1761,7 @@ export default function displayTest() {
         expect().assertFail();
         done();
       } catch (e) {
-        console.log(msgStr  + 'catched, err: ' + JSON.stringify(e.code));
+        console.log(msgStr + 'catched, err: ' + JSON.stringify(e.code));
         expect(e.code).assertEqual(401);
         done()
       }
@@ -1723,7 +1788,7 @@ export default function displayTest() {
         expect().assertFail();
         done();
       } catch (e) {
-        console.log(msgStr +  'catched, err: ' + JSON.stringify(e.code));
+        console.log(msgStr + 'catched, err: ' + JSON.stringify(e.code));
         expect(e.code).assertEqual(401);
         done()
       }
@@ -1852,15 +1917,15 @@ export default function displayTest() {
         console.log(`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
         if (result === undefined) {
           done();
-        } else if(result !=null) {
+        } else if (result != null) {
           let length = result.length;
           console.log(`${caseName} dresult.length: ${length}`);
-          for(let i=0;i<length-1;i++){
+          for (let i = 0; i < length - 1; i++) {
             console.log(`${caseName} i: i:${result[i]}`);
             //判断是否为正整数
             expect(regNum.test(String(result[i]))).assertTrue();
             //判断递增
-            expect(result[i]).assertLess(result[i+1]);
+            expect(result[i]).assertLess(result[i + 1]);
           }
           done();
         }
@@ -2029,7 +2094,7 @@ export default function displayTest() {
         let displays = await display.getAllDisplays();
         console.log(caseName + ' getAllDisplays: ' + JSON.stringify(displays));
         let outDisplayId = -1;
-        for (let i = 0; i< displays.length; i++) {
+        for (let i = 0; i < displays.length; i++) {
           if (displays[i].id == screenId) {
             outDisplayId = displays[i].id;
             break;
@@ -2191,7 +2256,7 @@ export default function displayTest() {
         let displays = await display.getAllDisplays();
         console.log(caseName + ' getAllDisplays: ' + JSON.stringify(displays));
         let outDisplayId = -1;
-        for (let i = 0; i< displays.length; i++) {
+        for (let i = 0; i < displays.length; i++) {
           if (displays[i].id == screenId) {
             outDisplayId = displays[i].id;
             break;
@@ -2320,19 +2385,21 @@ export default function displayTest() {
         expect(region.displayId).assertEqual(0)
         if (result) {
           if (region.creaseRects.length == 0) {
-            expect(true).assertTrue();
+            done();
           } else {
             for (let i = 0; i < region.creaseRects.length; i++) {
               expect(region.creaseRects[i].left).assertLargerOrEqual(0);
               expect(region.creaseRects[i].top).assertLargerOrEqual(0);
               expect(region.creaseRects[i].width).assertLargerOrEqual(0);
               expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+              done();
             }
           }
         } else {
           expect(region.creaseRects.length).assertEqual(0)
+          done();
         }
-        done();
+
       } catch (e) {
         console.error(`${caseName} Failed2. err: ${JSON.stringify(e)}`);
         if (e.code === 801) {
@@ -2375,7 +2442,7 @@ export default function displayTest() {
         console.log(caseName + ' success in createVirtualScreen ' + screenId);
         let displays = await display.getAllDisplays();
         let outDisplayId = -1;
-        for (let i = 0; i< displays.length; i++) {
+        for (let i = 0; i < displays.length; i++) {
           if (displays[i].id == screenId) {
             outDisplayId = displays[i].id;
             break;
@@ -2432,25 +2499,25 @@ export default function displayTest() {
       let caseName = 'testgetAllDisplay_promise_null';
       let mainWindow = windowStage.getMainWindowSync();
       const callback = async (data: window.WindowStageLifecycleEventType) => {
-        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        console.info(caseName + ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
         if (data === window.WindowStageLifecycleEventType.HIDDEN) {
-          console.info(caseName+ ' current window stage event is HIDDEN');
+          console.info(caseName + ' current window stage event is HIDDEN');
           let displays = await display.getAllDisplay();
-          console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
+          console.info(caseName + ` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
           expect(displays.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
-          console.info(caseName+ ' restore success');
+          console.info(caseName + ' restore success');
           done();
         }
       }
       try {
-        if(isPCStatus != ''){
+        if (deviceType === '2in1') {
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
-          console.info(caseName+ ' minimize success');
+          console.info(caseName + ' minimize success');
           await sleep(3000);
-        }else {
+        } else {
           done();
         }
 
@@ -2472,25 +2539,25 @@ export default function displayTest() {
       let caseName = 'testgetAllDisplay_Callback_null';
       let mainWindow = windowStage.getMainWindowSync();
       const callback = async (data: window.WindowStageLifecycleEventType) => {
-        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        console.info(caseName + ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
         if (data === window.WindowStageLifecycleEventType.HIDDEN) {
-          console.info(caseName+ ' current window stage event is HIDDEN');
+          console.info(caseName + ' current window stage event is HIDDEN');
           display.getAllDisplay(async (err: BusinessError, data: Array<display.Display>) => {
             const errCode: number = err.code;
             if (errCode) {
-              console.error(caseName+ ` Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
+              console.error(caseName + ` Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
               windowStage.off('windowStageLifecycleEvent', callback);
               await mainWindow.restore();
-              console.info(caseName+ ' restore success');
+              console.info(caseName + ' restore success');
               done();
-            }else {
-              console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
+            } else {
+              console.info(caseName + ` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
               let displays = data;
               expect(displays.length).assertLargerOrEqual(1);
               windowStage.off('windowStageLifecycleEvent', callback);
               await mainWindow.restore();
-              console.info(caseName+ ' restore success');
+              console.info(caseName + ' restore success');
               done();
             }
 
@@ -2498,12 +2565,12 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if (deviceType === '2in1') {
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
-          console.info(caseName+ ' minimize success');
+          console.info(caseName + ' minimize success');
           await sleep(3000);
-        }else {
+        } else {
           done();
         }
 
@@ -2525,25 +2592,25 @@ export default function displayTest() {
       let caseName = 'testgetAllDisplays_Callback_null';
       let mainWindow = windowStage.getMainWindowSync();
       const callback = async (data: window.WindowStageLifecycleEventType) => {
-        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        console.info(caseName + ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
         if (data === window.WindowStageLifecycleEventType.HIDDEN) {
-          console.info(caseName+ ' current window stage event is HIDDEN');
+          console.info(caseName + ' current window stage event is HIDDEN');
           display.getAllDisplays(async (err: BusinessError, data: Array<display.Display>) => {
             const errCode: number = err.code;
             if (errCode) {
-              console.error(caseName+ ` Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
+              console.error(caseName + ` Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
               windowStage.off('windowStageLifecycleEvent', callback);
               await mainWindow.restore();
-              console.info(caseName+ ' restore success');
+              console.info(caseName + ' restore success');
               done();
-            }else {
-              console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
+            } else {
+              console.info(caseName + ` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
               let displays = data;
               expect(displays.length).assertLargerOrEqual(1);
               windowStage.off('windowStageLifecycleEvent', callback);
               await mainWindow.restore();
-              console.info(caseName+ ' restore success');
+              console.info(caseName + ' restore success');
               done();
             }
 
@@ -2551,12 +2618,12 @@ export default function displayTest() {
         }
       }
       try {
-        if(isPCStatus != ''){
+        if (deviceType === '2in1') {
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
-          console.info(caseName+ ' minimize success');
+          console.info(caseName + ' minimize success');
           await sleep(3000);
-        }else {
+        } else {
           done();
         }
 
@@ -2578,25 +2645,25 @@ export default function displayTest() {
       let caseName = 'testgetAllDisplays_promise_null';
       let mainWindow = windowStage.getMainWindowSync();
       const callback = async (data: window.WindowStageLifecycleEventType) => {
-        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        console.info(caseName + ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
         if (data === window.WindowStageLifecycleEventType.HIDDEN) {
-          console.info(caseName+ ' current window stage event is HIDDEN');
+          console.info(caseName + ' current window stage event is HIDDEN');
           let displays = await display.getAllDisplays();
-          console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
+          console.info(caseName + ` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
           expect(displays.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
-          console.info(caseName+ ' restore success');
+          console.info(caseName + ' restore success');
           done();
         }
       }
       try {
-        if(isPCStatus != ''){
+        if (deviceType === '2in1') {
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
-          console.info(caseName+ ' minimize success');
+          console.info(caseName + ' minimize success');
           await sleep(3000);
-        }else {
+        } else {
           done();
         }
 
@@ -2618,25 +2685,25 @@ export default function displayTest() {
       let caseName = 'testgetAllDisplayPhysicalResolution_promise_null';
       let mainWindow = windowStage.getMainWindowSync();
       const callback = async (data: window.WindowStageLifecycleEventType) => {
-        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        console.info(caseName + ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
         if (data === window.WindowStageLifecycleEventType.HIDDEN) {
-          console.info(caseName+ ' current window stage event is HIDDEN');
+          console.info(caseName + ' current window stage event is HIDDEN');
           let resolutionObjects = await display.getAllDisplayPhysicalResolution();
-          console.info(caseName+` Succeeded in obtaining all the resolutionObjects . Data: ${JSON.stringify(resolutionObjects)}`);
+          console.info(caseName + ` Succeeded in obtaining all the resolutionObjects . Data: ${JSON.stringify(resolutionObjects)}`);
           expect(resolutionObjects.length).assertLargerOrEqual(1);
           windowStage.off('windowStageLifecycleEvent', callback);
           await mainWindow.restore();
-          console.info(caseName+ ' restore success');
+          console.info(caseName + ' restore success');
           done();
         }
       }
       try {
-        if(isPCStatus != ''){
+        if (deviceType === '2in1') {
           windowStage.on('windowStageLifecycleEvent', callback);
           await mainWindow.minimize();
-          console.info(caseName+ ' minimize success');
+          console.info(caseName + ' minimize success');
           await sleep(3000);
-        }else {
+        } else {
           done();
         }
 
@@ -3036,8 +3103,8 @@ export default function displayTest() {
       let caseName = 'testGetDisplayById__1';
       try {
         let displayClass = display.getDisplayByIdSync(-1);
-      } catch(e) {
-        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+      } catch (e) {
+        console.error(caseName + `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.code).assertEqual(401);
         expect(e.message).assertEqual('Parameter error.[display][getDisplayByIdSync]msg: displayid is invalid, less than 0');
         done();
@@ -3088,7 +3155,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport || deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3149,7 +3216,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3209,7 +3276,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3270,7 +3337,7 @@ export default function displayTest() {
           })
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
-          if (!isSupport) {
+          if (!isSupport|| deviceType === 'wearable') {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -3304,7 +3371,7 @@ export default function displayTest() {
         let roundedCorner = displayInfo.getRoundedCorner();
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-        if (deviceType == 'phone'||deviceType == 'tablet') {
+        if (deviceType == 'phone' || deviceType == 'tablet') {
           expect(roundedCorner.length).assertLarger(0)
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertEqual(roundedCorner[0].radius)
@@ -3404,7 +3471,7 @@ export default function displayTest() {
         let roundedCorner = displayInfo.getRoundedCorner();
         console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
         console.info(caseName + ' roundedCorner length: ' + JSON.stringify(roundedCorner.length));
-        if (deviceType == 'phone'||deviceType == 'tablet') {
+        if (deviceType == 'phone' || deviceType == 'tablet') {
           expect(roundedCorner[0].type).assertEqual(0)
           expect(roundedCorner[0].position.x).assertLarger(0)
           expect(roundedCorner[0].position.y).assertLarger(0)
@@ -3450,15 +3517,15 @@ export default function displayTest() {
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let windowClass = windowStage.getMainWindowSync();
       try {
-        if(isSupportRotate == true){
+        if (isSupportRotate == true) {
           let index1 = 0;
           let index2 = 0;
-          const callback1 = (res: number)=>{
+          const callback1 = (res: number) => {
             console.info(caseName + ' callback1 res: ' + res);
             index1++;
             console.info(caseName + ' callback1 index1: ' + index1);
           }
-          const callback2 = (res: number)=>{
+          const callback2 = (res: number) => {
             console.info(caseName + ' callback2 res: ' + res);
             index2++;
             console.info(caseName + ' callback2 index2: ' + index2);
@@ -3485,7 +3552,7 @@ export default function displayTest() {
           expect(index1).assertEqual(1);
           expect(index2).assertEqual(2);
           done();
-        }else{
+        } else {
           done();
         }
 
@@ -3517,7 +3584,7 @@ export default function displayTest() {
       let windowClass = windowStage.getMainWindowSync();
 
       try {
-        if(isSupportRotate == true) {
+        if (isSupportRotate == true) {
           let index1 = 0;
           let index2 = 0;
           const callback1 = (res: number) => {
@@ -3553,7 +3620,7 @@ export default function displayTest() {
           expect(index1).assertEqual(1);
           expect(index2).assertEqual(2);
           done();
-        }else{
+        } else {
           done();
         }
       } catch (e) {
@@ -3585,7 +3652,7 @@ export default function displayTest() {
       let diaplayId = display.getDefaultDisplaySync().id;
       console.info(caseName + 'diaplayId: ' + diaplayId);
       try {
-        if(isSupportRotate == true) {
+        if (isSupportRotate == true) {
           let index1 = 0;
           const callback1 = (res: number) => {
             console.info(caseName + ' callback1 res: ' + res);
@@ -3604,7 +3671,7 @@ export default function displayTest() {
           console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
           expect(index1).assertEqual(1);
           done();
-        }else{
+        } else {
           done();
         }
       } catch (e) {
@@ -3643,6 +3710,447 @@ export default function displayTest() {
         done()
       }
     });
+
+    /**
+     * @tc.name   testGetDisplaySync_null_undefined
+     * @tc.number SUB_WMS_GET_DISPLAY_BY_ID_SYNC_PARAMETER_0100
+     * @tc.desc   testGetDisplaySync_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetDisplaySync_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testGetDisplaySync_null_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.getDisplayByIdSync(null);
+        console.log(caseName + ' success1');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        display.getDisplayByIdSync(undefined);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testonChangeWithAttribute_null_undefined
+     * @tc.number SUB_WMS_ON_CHANGE_WITH_ATTRIBUTE_PARAMETER_0100
+     * @tc.desc   testonChangeWithAttribute_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testonChangeWithAttribute_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testonChangeWithAttribute_null_undefined ';
+      console.log(caseName + 'begin');
+      const callback = (res: number) => {
+        console.log(caseName + ' callback result: ' + res);
+      }
+      try {
+        display.onChangeWithAttribute(null, callback);
+        console.log(caseName + ' success1');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        display.onChangeWithAttribute(undefined, callback);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testonChangeWithAttribute_no_resiger
+     * @tc.number SUB_WMS_ON_CHANGE_WITH_ATTRIBUTE_PARAMETER_0200
+     * @tc.desc   testonChangeWithAttribute_no_resiger
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testonChangeWithAttribute_no_resiger', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testonChangeWithAttribute_no_resiger ';
+      console.log(caseName + 'begin');
+      const callback = (res: number) => {
+        console.log(caseName + ' callback result: ' + res);
+      }
+      try {
+        display.onChangeWithAttribute(null, callback);
+        console.log(caseName + ' success1');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        display.onChangeWithAttribute(undefined, callback);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+    /**
+     * @tc.name   testonChangeWithAttribute_nullArr
+     * @tc.number SUB_WMS_ON_CHANGE_WITH_ATTRIBUTE_PARAMETER_0300
+     * @tc.desc   testonChangeWithAttribute_nullArr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testonChangeWithAttribute_nullArr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testonChangeWithAttribute_nullArr ';
+      console.log(caseName + 'begin');
+      const callback = (res: number) => {
+        console.log(caseName + ' callback result: ' + res);
+      }
+      try {
+        display.onChangeWithAttribute([], callback);
+        display.off('change');
+        console.log(caseName + ' success1');
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e));
+        if (e.code === 801) {
+          done();
+        } else {
+          expect(true).assertFail();
+          done();
+        }
+
+      }
+
+    });
+
+    /**
+     * @tc.name   tesCreateVirtualScreen_null_undefined
+     * @tc.number SUB_WMS_CREATE_VIRTUAL_SCREEN_PARAMETER_0100
+     * @tc.desc   tesCreateVirtualScreen_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesCreateVirtualScreen_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesCreateVirtualScreen_null_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.createVirtualScreen(null);
+        console.log(caseName + ' success1');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed1. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        display.createVirtualScreen(undefined);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesSetVirtualScreenSurface_null
+     * @tc.number SUB_WMS_SETVIRTUAL_SCREEN_SURFACE_PARAMETER_0100
+     * @tc.desc   tesSetVirtualScreenSurface_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesSetVirtualScreenSurface_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesSetVirtualScreenSurface_null ';
+      console.log(caseName + 'begin');
+      try {
+        display.setVirtualScreenSurface(null, null);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesSetVirtualScreenSurface_undefined
+     * @tc.number SUB_WMS_SETVIRTUAL_SCREEN_SURFACE_PARAMETER_0200
+     * @tc.desc   tesSetVirtualScreenSurface_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesSetVirtualScreenSurface_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesSetVirtualScreenSurface_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.setVirtualScreenSurface(undefined, undefined);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(401);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesConvertGlobalToRelativeCoordinate_null
+     * @tc.number SUB_WMS_CONVERT_GLOBAL_TO_RELATIVE_COORDINATE_PARAMETER_0100
+     * @tc.desc   tesConvertGlobalToRelativeCoordinate_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesConvertGlobalToRelativeCoordinate_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesConvertGlobalToRelativeCoordinate_null ';
+      console.log(caseName + 'begin');
+      try {
+        display.convertGlobalToRelativeCoordinate(null, null);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(1400004);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesConvertGlobalToRelativeCoordinate_undefined
+     * @tc.number SUB_WMS_CONVERT_GLOBAL_TO_RELATIVE_COORDINATE_PARAMETER_0200
+     * @tc.desc   tesConvertGlobalToRelativeCoordinate_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesConvertGlobalToRelativeCoordinate_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesConvertGlobalToRelativeCoordinate_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.convertGlobalToRelativeCoordinate(undefined, undefined);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(1400004);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesConvertRelativeToGlobalCoordinate_null_undefined
+     * @tc.number SUB_WMS_CONVERT_RELATIVE_TO_GLOBAL_COORDINATE_PARAMETER_0100
+     * @tc.desc   tesConvertRelativeToGlobalCoordinate_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesConvertRelativeToGlobalCoordinate_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesConvertRelativeToGlobalCoordinate_null_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.convertRelativeToGlobalCoordinate(null);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(1400004);
+      }
+      try {
+        display.convertRelativeToGlobalCoordinate(undefined);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(1400004);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   tesGetBrightnessInfo_null_undefined
+     * @tc.number SUB_WMS_GET_BRIGHTNESSINFO_PARAMETER_0100
+     * @tc.desc   tesGetBrightnessInfo_null_undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesGetBrightnessInfo_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'tesGetBrightnessInfo_null_undefined ';
+      console.log(caseName + 'begin');
+      try {
+        display.getBrightnessInfo(null);
+        console.log(caseName + ' success');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(1400004);
+      }
+      try {
+        display.getBrightnessInfo(undefined);
+        console.log(caseName + ' success2');
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.error(caseName + ' Failed2. Cause: ' + JSON.stringify(e));
+        expect(e.code).assertEqual(1400004);
+        done()
+      }
+    });
+    /**
+     * @tc.name   test_makeUniqueErrorcode401_2
+     * @tc.number SUB_BASIC_WMS_makeUnique_ERRORCODE_0300
+     * @tc.desc   test_DestroyVirtualScreenErrorcode_401 when got invalid screendId like -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_makeUniqueErrorcode401_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'test_makeUniqueErrorcode401_2 ';
+      try {
+        display.makeUnique(null).then(() => {
+          console.info(caseName + 'succeeded in destroy virtual screen, data : ');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName+  `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+        });
+      } catch (err) {
+        console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        display.makeUnique(undefined).then(() => {
+          console.info(caseName + 'succeeded in destroy virtual screen, data : ');
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName+  `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
+          if (err.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+        });
+      } catch (err) {
+        console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+    * @tc.number SUB_WMS_DMS_CHANGE_SETPERFERORIENTATION_0100
+    * @tc.name   testOnChange_setPreferOrientation_0100
+    * @tc.desc   旋转后屏幕改变监听
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('testOnChange_setPreferOrientation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnChange_setPreferOrientation_0100';
+      let msgStr : string = 'jsunittest ' + caseName + ' ';
+      let windowClass:window.Window = windowStage!.getMainWindowSync();
+      let dis = display.getDefaultDisplaySync();
+      try {
+        if(isSupportRotate === true){
+          let index1 = 0;
+          let index2 = 0;
+          const callback1 = (res: number)=>{
+            console.info(caseName + ' callback1 res: ' + res);
+            expect(res).assertEqual(dis.id);
+            index1++;
+            console.info(caseName + ' callback1 index1: ' + index1);
+          }
+          const callback2 = (res: number)=>{
+            console.info(caseName + ' callback2 res: ' + res);
+            expect(res).assertEqual(dis.id);
+            index2++;
+            console.info(caseName + ' callback2 index2: ' + index2);
+          }
+          display.on('change', callback1);
+          display.on('change', callback2);
+          console.info(caseName + ' on change success' );
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          console.info(caseName + ' etPreferredOrientation(window.Orientation.LANDSCAPE) success' );
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation LANDSCAPE index2: ' + index2);
+          expect(index1).assertLarger(0);
+          expect(index2).assertLarger(0);
+          display.off('change',callback1);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(3000);
+          console.info(caseName + ' setOrientation index1: ' + index1);
+          console.info(caseName + ' setOrientation index2: ' + index2);
+          expect(index1).assertLarger(0);
+          expect(index2).assertLarger(0);
+          display.off('change');
+          await sleep(3000);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index1: ' + index1);
+          console.info(caseName + ' setPreferredOrientation PORTRAIT index2: ' + index2);
+          expect(index1).assertLarger(0);
+          expect(index2).assertLarger(0);
+          done();
+        }else{
+          done();
+        }
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        if (e.code === 801) {
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    
 
   })
 }

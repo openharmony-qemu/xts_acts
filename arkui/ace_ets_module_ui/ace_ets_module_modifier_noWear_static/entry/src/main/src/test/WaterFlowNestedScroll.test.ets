@@ -49,7 +49,7 @@ import { RecordData } from '@ohos.base';
 
 export default function waterFlowNestedScrollJsunit() {
   describe('waterFlow_NestedScrollTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.modifiernowear.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

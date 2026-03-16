@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 
 export default function SideBarContainerDivider() {
   describe('SideBarContainerDivider', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SideBarContainerDivider beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
 

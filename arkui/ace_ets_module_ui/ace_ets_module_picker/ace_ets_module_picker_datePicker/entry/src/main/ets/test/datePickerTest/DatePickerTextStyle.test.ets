@@ -1038,10 +1038,10 @@ export default function datepicker() {
       obj.$attrs.selectedTextStyle.font.weight);
 
       //打印分层参数返回值
-      console.info(" selectedTextStyle color sys:" + spliceColor($r('sys.color.ohos_id_color_text_primary_activated')));
+      console.info(" selectedTextStyle color sys:" + spliceColor($r('sys.color.textpicker_selected_text_color')));
       console.info(" selectedTextStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
 
-      expect(obj.$attrs.selectedTextStyle.color).assertEqual(spliceColor($r('sys.color.ohos_id_color_text_primary_activated')));
+      expect(obj.$attrs.selectedTextStyle.color).assertEqual(spliceColor($r('sys.color.textpicker_selected_text_color')));
       expect(obj.$attrs.selectedTextStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
       expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual('FontWeight.Normal');
       done();
@@ -1092,10 +1092,10 @@ export default function datepicker() {
       obj.$attrs.selectedTextStyle.font.weight);
 
       //打印分层参数返回值
-      console.info(" selectedTextStyle color sys:" + spliceColor($r('sys.color.ohos_id_color_text_primary_activated')));
+      console.info(" selectedTextStyle color sys:" + spliceColor($r('sys.color.textpicker_selected_text_color')));
       console.info(" selectedTextStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
 
-      expect(obj.$attrs.selectedTextStyle.color).assertEqual(spliceColor($r('sys.color.ohos_id_color_text_primary_activated')));
+      expect(obj.$attrs.selectedTextStyle.color).assertEqual(spliceColor($r('sys.color.textpicker_selected_text_color')));
       expect(obj.$attrs.selectedTextStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
       expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual('FontWeight.Lighter');
       done();

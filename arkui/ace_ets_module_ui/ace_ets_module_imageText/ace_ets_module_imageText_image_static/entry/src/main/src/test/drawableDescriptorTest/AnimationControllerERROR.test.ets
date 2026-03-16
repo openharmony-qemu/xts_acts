@@ -29,7 +29,7 @@ const SLEEP_TIME_S = 100;
 
 export default function ImageAnimationControllerERRORTest() {
   describe('AnimationController1Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AnimationController1Test beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });
@@ -67,7 +67,7 @@ export default function ImageAnimationControllerERRORTest() {
     it('AnimationControllerERROR_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('AnimationControllerERROR_static_001 START');
       const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('animated'));
+      const button = await driver.findComponent(ON.id('animatedUndefined'));
       await (button?.click() as Promise<void>);
       console.info('animated click success');
       await Utils.sleep(SLEEP_TIME_S);
@@ -81,6 +81,7 @@ export default function ImageAnimationControllerERRORTest() {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('undefined');
       done();
     })
+
     /**
      * @tc.number   AnimationControllerERROR_static_002
      * @tc.name     AnimationControllerERROR_static_002
@@ -104,6 +105,7 @@ export default function ImageAnimationControllerERRORTest() {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
       done();
     })
+
     /**
      * @tc.number   AnimationControllerERROR_static_003
      * @tc.name     AnimationControllerERROR_static_003
@@ -126,6 +128,7 @@ export default function ImageAnimationControllerERRORTest() {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
       done();
     })
+
     /**
      * @tc.number   AnimationControllerERROR_static_004
      * @tc.name     AnimationControllerERROR_static_004
@@ -148,6 +151,7 @@ export default function ImageAnimationControllerERRORTest() {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
       done();
     })
+
     /**
      * @tc.number   AnimationControllerERROR_static_005
      * @tc.name     AnimationControllerERROR_static_005
@@ -170,6 +174,7 @@ export default function ImageAnimationControllerERRORTest() {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('status = undefined');
       done();
     })
+
     /**
      * @tc.number   AnimationControllerERROR_static_006
      * @tc.name     AnimationControllerERROR_static_006

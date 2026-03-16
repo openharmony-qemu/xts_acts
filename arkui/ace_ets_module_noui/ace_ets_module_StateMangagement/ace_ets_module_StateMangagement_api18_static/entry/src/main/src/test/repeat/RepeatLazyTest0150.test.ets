@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RepeatLazyTest0150() {
   describe('RepeatLazyTest0150', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")

@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function gradientHeight() {
   describe('gradientHeight', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("gradientHeight beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

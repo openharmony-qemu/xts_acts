@@ -29,6 +29,11 @@ import GraphicTextAPI21Test from './GraphicTextAPI21Test.test'
 import GraphicTextAPI22 from './GraphicTextAPI22.test'
 import GraphicTextAPI23 from './GraphicTextAPI23.test'
 import graphicTextA1Test from './GraphicTextA1.test'
+import GraphicTextAdd01Test from './GraphicTextAdd01Test.test'
+import GraphicTextAdd02Test from './GraphicTextAdd02Test.test'
+import GraphicTextAdd03Test from './GraphicTextAdd03Test.test'
+import GraphicTextAdd04Test from './GraphicTextAdd04Test.test'
+import GraphicTextAdd05Test from './GraphicTextAdd05Test.test'
 
 export default function testsuite() {
   graphicTextATest();
@@ -48,4 +53,9 @@ export default function testsuite() {
   GraphicTextAPI22();
   GraphicTextAPI23();
   graphicTextA1Test();
+  GraphicTextAdd01Test();
+  GraphicTextAdd02Test();
+  GraphicTextAdd03Test();
+  GraphicTextAdd04Test();
+  GraphicTextAdd05Test();
 }

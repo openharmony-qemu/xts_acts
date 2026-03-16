@@ -36,7 +36,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function setCursorTest() {
   describe('setCursorTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("setCursorTest beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.nowear.api11.static", "EntryAbility")

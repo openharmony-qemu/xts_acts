@@ -38,7 +38,7 @@ interface optionsObj {
 }
 export default function imageSpanJsunit() {
   describe('imageSpanJsunit', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("imageSpanJsunit beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

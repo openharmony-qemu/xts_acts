@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function StateArrayJsunit() {
   describe('StateArrayJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("StateArrayJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

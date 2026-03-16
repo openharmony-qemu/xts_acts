@@ -34,7 +34,7 @@ import { UtilsTest } from './Util.test';
 
 export default function selectOnSelectJsunit() {
   describe('selectOnSelectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("selectOnSelectTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api12.static", "EntryAbility")
       

@@ -32,7 +32,7 @@ import Utils from '../Util.test';
 
 export default function XmlDynamicSerializerTest() {
   describe('XmlDynamicSerializerTest', (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

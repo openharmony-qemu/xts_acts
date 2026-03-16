@@ -24,7 +24,7 @@ import { startAbility, UtilsTest } from '../../Util.test';
 
 export default function RestoreLayerTest() {
   describe('RestoreLayerTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RestoreLayerTest beforeEach start");
 
 

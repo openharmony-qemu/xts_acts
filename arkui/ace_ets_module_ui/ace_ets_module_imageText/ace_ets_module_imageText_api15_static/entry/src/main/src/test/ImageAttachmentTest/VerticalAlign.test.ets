@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function VerticalAlignTest() {
   describe('VerticalAlignTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("VerticalAlignTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")

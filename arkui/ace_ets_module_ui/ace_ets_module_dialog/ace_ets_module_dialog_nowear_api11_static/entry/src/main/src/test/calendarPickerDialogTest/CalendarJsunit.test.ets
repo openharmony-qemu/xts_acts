@@ -31,7 +31,7 @@ import { RecordData } from '@ohos.base';
 
 export default function calendarJsunit() {
   describe('appInfoTest_four_1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_1 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
     })

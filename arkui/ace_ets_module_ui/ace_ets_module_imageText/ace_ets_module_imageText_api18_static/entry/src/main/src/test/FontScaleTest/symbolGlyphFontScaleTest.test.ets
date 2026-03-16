@@ -81,8 +81,8 @@ it('symbolGlyphFontScaleTest_static_0001', Level.LEVEL1, async () => {
       let obj = JSON.parseJsonElement(symbolGlyph1);
       console.log('symbolGlyphFontScaleTest0001---' + obj.getElement('$attrs').getString('maxFontScale'))
       console.log('symbolGlyphFontScaleTest0001---' + obj.getElement('$attrs').getString('minFontScale'))
-      expect(obj.getElement('$attrs').getString('maxFontScale')).assertEqual("1.000000");
-      expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("1.000000");
+      expect(obj.getElement('$attrs').getString('maxFontScale')).assertEqual("3.200000");
+      expect(obj.getElement('$attrs').getString('minFontScale')).assertEqual("0.850000");
       console.info("[symbolGlyphFontScaleTest0001] end");
     });
 

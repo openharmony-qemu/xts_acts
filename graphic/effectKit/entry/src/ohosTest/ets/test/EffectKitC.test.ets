@@ -785,6 +785,755 @@ export default function effectKitCTest() {
           done();
         })
       })
-      
+
+    /**
+     * @tc.name   createColorPicker_null_001
+     * @tc.number ACTS_ABILITY_CREATECOLORPICKER_001
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createColorPicker_null_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let caseName = 'createColorPicker_null_001';
+      let msgStr = 'www data ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let colorPicker = effectKit.createColorPicker(null);
+        console.info(msgStr + JSON.stringify(colorPicker));
+        done();
+      } catch(err){
+        console.info(msgStr + "expected error caught: " + err);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   createColorPicker_undefined_001
+     * @tc.number ACTS_ABILITY_CREATECOLORPICKER_002
+     * @tc.desc   Test createColorPicker with undefined pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createColorPicker_undefined_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let caseName = 'createColorPicker_undefined_001';
+      let msgStr = 'www data ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      try {
+        let colorPicker = effectKit.createColorPicker(undefined);
+        console.info(msgStr + JSON.stringify(colorPicker));
+        done();
+      } catch(err){
+        console.info(msgStr + "expected error caught: " + err);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   createColorPicker_undefined_002
+     * @tc.number ACTS_ABILITY_CREATECOLORPICKER_003
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('createColorPicker_undefined_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let caseName = 'createColorPicker_undefined_002';
+      let msgStr = 'www data ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      const color = new ArrayBuffer(96);
+      let opts : image.InitializationOptions = {
+        editable: true,
+        pixelFormat: 3,
+        size: {
+          height: 4,
+          width: 6
+        }
+      }
+      image.createPixelMap(color, opts).then((pixelMap) => {
+        effectKit.createColorPicker(pixelMap, undefined, (error, colorPicker) => {
+          if (error) {
+            console.error(msgStr + 'Failed to create color picker.');
+            done();
+          } else {
+            console.info(msgStr + 'Succeeded in creating color picker.');
+            done();
+          }
+        })
+      })
+    })
+
+    /**
+     * @tc.name   colorPicker_promise_one_0100
+     * @tc.number ACTS_CREATECOLORPICKER_PROMISE_ONE_001
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_promise_one_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_promise_one_0100';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + ' isEditable ', pixelMap.isEditable)
+          console.info(msgStr+ ' isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue(); // true
+          expect(pixelMap.isStrideAlignment).assertFalse(); // false
+          // Test createColorPicker with editable PixelMap
+          effectKit.createColorPicker(pixelMap).then(colorPicker => {
+            expect(colorPicker != null).assertTrue();
+            expect(typeof colorPicker === 'object').assertTrue();
+            console.info(msgStr + 'createColorPicker with editable PixelMap success');
+            done();
+          }).catch((ex:BusinessError) => {
+            console.error(msgStr + 'createColorPicker error' + ex.toString());
+            expect(true).assertFail();
+            done();
+          });
+        }).catch((err:Error) => {
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   colorPicker_promise_one_0200
+     * @tc.number ACTS_CREATECOLORPICKER_PROMISE_ONE_002
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_promise_one_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_promise_one_0200';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + ' isEditable ', pixelMap.isEditable)
+          console.info(msgStr+ ' isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse(); // false
+          expect(pixelMap.isStrideAlignment).assertFalse(); // false
+          // Test createColorPicker with editable PixelMap
+          effectKit.createColorPicker(pixelMap).then(colorPicker => {
+            expect(colorPicker != null).assertTrue();
+            expect(typeof colorPicker === 'object').assertTrue();
+            console.info(msgStr + 'createColorPicker with editable PixelMap success');
+            done();
+          }).catch((ex:BusinessError) => {
+            console.error(msgStr + 'createColorPicker error' + ex.toString());
+            expect(true).assertFail();
+            done();
+          });
+        }).catch((err:Error) => {
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   colorPicker_promise_one_0300
+     * @tc.number ACTS_CREATECOLORPICKER_PROMISE_ONE_003
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_promise_one_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_promise_one_0300';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.log(msgStr + 'isEditable=' + pixelMap.isEditable + ' isStrideAlignment=' + pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue(); // true
+          expect(pixelMap.isStrideAlignment).assertTrue(); // true
+          effectKit.createColorPicker(pixelMap).then(colorPicker => {
+            expect(colorPicker != null).assertTrue();
+            expect(typeof colorPicker === 'object').assertTrue();
+            console.info(msgStr + 'createColorPicker with editable PixelMap success');
+            done();
+          }).catch((ex:BusinessError) => {
+            console.error(msgStr + 'createColorPicker error' + ex.toString());
+            expect(true).assertFail();
+            done();
+          });
+        } catch(err){
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   colorPicker_promise_one_0400
+     * @tc.number ACTS_CREATECOLORPICKER_PROMISE_ONE_004
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_promise_one_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_promise_one_0400';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.log(msgStr + 'isEditable=' + pixelMap.isEditable + ' isStrideAlignment=' + pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse(); // false
+          expect(pixelMap.isStrideAlignment).assertTrue(); // true
+          effectKit.createColorPicker(pixelMap).then(colorPicker => {
+            expect(colorPicker != null).assertTrue();
+            expect(typeof colorPicker === 'object').assertTrue();
+            console.info(msgStr + 'createColorPicker with editable PixelMap success');
+            done();
+          }).catch((ex:BusinessError) => {
+            console.error(msgStr + 'createColorPicker error' + ex.toString());
+            expect(true).assertFail();
+            done();
+          });
+        } catch(err){
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   colorPicker_promise_two_0100
+     * @tc.number ACTS_CREATECOLORPICKER_PROMISE_TWO_001
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_promise_two_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_promise_two_0100';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + ' isEditable ', pixelMap.isEditable)
+          console.info(msgStr+ ' isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue(); // true
+          expect(pixelMap.isStrideAlignment).assertFalse(); // false
+          // Test createColorPicker with editable PixelMap
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]).then(colorPicker => {
+            expect(colorPicker != null).assertTrue();
+            expect(typeof colorPicker === 'object').assertTrue();
+            console.info(msgStr + 'createColorPicker with editable PixelMap success');
+            done();
+          }).catch((ex:BusinessError) => {
+            console.error(msgStr + 'createColorPicker error' + ex.toString());
+            expect(true).assertFail();
+            done();
+          });
+        }).catch((err:Error) => {
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   colorPicker_promise_two_0200
+     * @tc.number ACTS_CREATECOLORPICKER_PROMISE_TWO_002
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_promise_two_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_promise_two_0200';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + ' isEditable ', pixelMap.isEditable)
+          console.info(msgStr+ ' isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse(); // false
+          expect(pixelMap.isStrideAlignment).assertFalse(); // false
+          // Test createColorPicker with editable PixelMap
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]).then(colorPicker => {
+            expect(colorPicker != null).assertTrue();
+            expect(typeof colorPicker === 'object').assertTrue();
+            console.info(msgStr + 'createColorPicker with editable PixelMap success');
+            done();
+          }).catch((ex:BusinessError) => {
+            console.error(msgStr + 'createColorPicker error' + ex.toString());
+            expect(true).assertFail();
+            done();
+          });
+        }).catch((err:Error) => {
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   colorPicker_promise_two_0300
+     * @tc.number ACTS_CREATECOLORPICKER_PROMISE_TWO_003
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_promise_two_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_promise_two_0300';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.log(msgStr + 'isEditable=' + pixelMap.isEditable + ' isStrideAlignment=' + pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue(); // true
+          expect(pixelMap.isStrideAlignment).assertTrue(); // true
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]).then(colorPicker => {
+            expect(colorPicker != null).assertTrue();
+            expect(typeof colorPicker === 'object').assertTrue();
+            console.info(msgStr + 'createColorPicker with editable PixelMap success');
+            done();
+          }).catch((ex:BusinessError) => {
+            console.error(msgStr + 'createColorPicker error' + ex.toString());
+            expect(true).assertFail();
+            done();
+          });
+        } catch(err){
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   colorPicker_promise_two_0400
+     * @tc.number ACTS_CREATECOLORPICKER_PROMISE_TWO_004
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_promise_two_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_promise_two_0400';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.log(msgStr + 'isEditable=' + pixelMap.isEditable + ' isStrideAlignment=' + pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse(); // false
+          expect(pixelMap.isStrideAlignment).assertTrue(); // true
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]).then(colorPicker => {
+            expect(colorPicker != null).assertTrue();
+            expect(typeof colorPicker === 'object').assertTrue();
+            console.info(msgStr + 'createColorPicker with editable PixelMap success');
+            done();
+          }).catch((ex:BusinessError) => {
+            console.error(msgStr + 'createColorPicker error' + ex.toString());
+            expect(true).assertFail();
+            done();
+          });
+        } catch(err){
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   colorPicker_callback_one_0100
+     * @tc.number ACTS_CREATECOLORPICKER_CALLBACK_ONE_001
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_callback_one_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_callback_one_0100';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + ' isEditable ', pixelMap.isEditable)
+          console.info(msgStr+ ' isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue(); // true
+          expect(pixelMap.isStrideAlignment).assertFalse(); // false
+          // Test createColorPicker with editable Callback
+          effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+            if (error) {
+              console.error(msgStr + 'Failed to create color picker.');
+              expect().assertFail();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in creating color picker.');
+              expect(colorPicker !== null).assertTrue();
+              done();
+            }
+          })
+        }).catch((err:Error) => {
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   colorPicker_callback_one_0200
+     * @tc.number ACTS_CREATECOLORPICKER_CALLBACK_ONE_002
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_callback_one_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_callback_one_0200';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + ' isEditable ', pixelMap.isEditable)
+          console.info(msgStr+ ' isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse(); // false
+          expect(pixelMap.isStrideAlignment).assertFalse(); // false
+          // Test createColorPicker with editable Callback
+          effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+            if (error) {
+              console.error(msgStr + 'Failed to create color picker.');
+              expect().assertFail();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in creating color picker.');
+              expect(colorPicker !== null).assertTrue();
+              done();
+            }
+          })
+        }).catch((err:Error) => {
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   colorPicker_callback_one_0300
+     * @tc.number ACTS_CREATECOLORPICKER_CALLBACK_ONE_003
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_callback_one_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_callback_one_0300';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.log(msgStr + 'isEditable=' + pixelMap.isEditable + ' isStrideAlignment=' + pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue(); // true
+          expect(pixelMap.isStrideAlignment).assertTrue(); // true
+          // Test createColorPicker with editable Callback
+          effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+            if (error) {
+              console.error(msgStr + 'Failed to create color picker.');
+              expect().assertFail();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in creating color picker.');
+              expect(colorPicker !== null).assertTrue();
+              done();
+            }
+          })
+        } catch(err){
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   colorPicker_callback_one_0400
+     * @tc.number ACTS_CREATECOLORPICKER_CALLBACK_ONE_004
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_callback_one_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_callback_one_0400';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.log(msgStr + 'isEditable=' + pixelMap.isEditable + ' isStrideAlignment=' + pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse(); // false
+          expect(pixelMap.isStrideAlignment).assertTrue(); // true
+          // Test createColorPicker with editable Callback
+          effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
+            if (error) {
+              console.error(msgStr + 'Failed to create color picker.');
+              expect().assertFail();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in creating color picker.');
+              expect(colorPicker !== null).assertTrue();
+              done();
+            }
+          })
+        } catch(err){
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   colorPicker_callback_two_0100
+     * @tc.number ACTS_CREATECOLORPICKER_CALLBACK_TWO_001
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_callback_two_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_callback_two_0100';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + ' isEditable ', pixelMap.isEditable)
+          console.info(msgStr+ ' isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertTrue(); // true
+          expect(pixelMap.isStrideAlignment).assertFalse(); // false
+          // Test createColorPicker with editable Callback
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+            if (error) {
+              console.error(msgStr + 'Failed to create color picker.');
+              expect().assertFail();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in creating color picker.');
+              expect(colorPicker !== null).assertTrue();
+              done();
+            }
+          })
+        }).catch((err:Error) => {
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   colorPicker_callback_two_0200
+     * @tc.number ACTS_CREATECOLORPICKER_CALLBACK_TWO_002
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_callback_two_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_callback_two_0200';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 }
+        };
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          console.info(msgStr + ' isEditable ', pixelMap.isEditable)
+          console.info(msgStr+ ' isStrideAlignment ', pixelMap.isStrideAlignment)
+          expect(pixelMap.isEditable).assertFalse(); // false
+          expect(pixelMap.isStrideAlignment).assertFalse(); // false
+          // Test createColorPicker with editable Callback
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+            if (error) {
+              console.error(msgStr + 'Failed to create color picker.');
+              expect().assertFail();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in creating color picker.');
+              expect(colorPicker !== null).assertTrue();
+              done();
+            }
+          })
+        }).catch((err:Error) => {
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        })
+      })
+
+    /**
+     * @tc.name   colorPicker_callback_two_0300
+     * @tc.number ACTS_CREATECOLORPICKER_CALLBACK_TWO_003
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_callback_two_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_callback_two_0300';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.log(msgStr + 'isEditable=' + pixelMap.isEditable + ' isStrideAlignment=' + pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue(); // true
+          expect(pixelMap.isStrideAlignment).assertTrue(); // true
+          // Test createColorPicker with editable Callback
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+            if (error) {
+              console.error(msgStr + 'Failed to create color picker.');
+              expect().assertFail();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in creating color picker.');
+              expect(colorPicker !== null).assertTrue();
+              done();
+            }
+          })
+        } catch(err){
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   colorPicker_callback_two_0400
+     * @tc.number ACTS_CREATECOLORPICKER_CALLBACK_TWO_004
+     * @tc.desc   Test createColorPicker with null pixelMap parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('colorPicker_callback_two_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = 'colorPicker_callback_two_0400';
+        let msgStr = 'www data ' + caseName + ' ';
+        const color = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: false,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          size: { height: 4, width: 6 }
+        };
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+          console.log(msgStr + 'isEditable=' + pixelMap.isEditable + ' isStrideAlignment=' + pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertFalse(); // false
+          expect(pixelMap.isStrideAlignment).assertTrue(); // true
+          // Test createColorPicker with editable Callback
+          effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
+            if (error) {
+              console.error(msgStr + 'Failed to create color picker.');
+              expect().assertFail();
+              done();
+            } else {
+              console.info(msgStr + 'Succeeded in creating color picker.');
+              expect(colorPicker !== null).assertTrue();
+              done();
+            }
+          })
+        } catch(err){
+          console.info(msgStr + 'createPixelMap err', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }

@@ -44,7 +44,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function AbstractPropertyRefTest() {
   describe('AbstractPropertyRefTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AbstractPropertyRefTest beforeEach start");
 
 

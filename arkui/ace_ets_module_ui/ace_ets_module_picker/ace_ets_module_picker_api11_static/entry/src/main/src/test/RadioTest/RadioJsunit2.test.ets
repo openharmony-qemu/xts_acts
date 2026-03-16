@@ -31,7 +31,7 @@ import Utils  from "../../../ets/MainAbility/common/Utils";
 
 export default function radioJsunit2() {
   describe('radioJsunit2', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

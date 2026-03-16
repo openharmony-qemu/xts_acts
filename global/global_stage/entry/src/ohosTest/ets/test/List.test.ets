@@ -18,10 +18,12 @@ import i18nStageTest from './i18nstage.test.ets'
 import FivePointOne_resMgrStageTest from './FivePointOne_resMgrStage.test.ets'
 import SixPointZeroResMgrStageTest from './SixPointZeroResMgrStage.test.ets'
 import GlobalResMgrTest from './GlobalResMgr.test.ets'
+import InterfaceNullValueOverrideTest from './InterfaceNullValueOverride.test.ets'
 export default function testsuite() {
   globalStageTest()
   i18nStageTest()
   GlobalResMgrTest()
   FivePointOne_resMgrStageTest()
   SixPointZeroResMgrStageTest()
+  InterfaceNullValueOverrideTest()
 }

@@ -65,15 +65,15 @@ export default function taskPoolAsyncRunnerExecute() {
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNCRUNNER_EXECUTE_0100
-     * @tc.name taskPoolAsyncRunnerExecute1001
-     * @tc.desc test AsyncRunner
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNCRUNNER_EXECUTE_0100
+      * @tc.name taskPoolAsyncRunnerExecute1001
+      * @tc.desc test AsyncRunner
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerExecute1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerExecute1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count1: Number = 0;
@@ -101,14 +101,14 @@ export default function taskPoolAsyncRunnerExecute() {
       });
 
     /**
-     * @tc.number SUB_TASKPOOL_ASYNCRUNNER_EXECUTE_0200
-     * @tc.name taskPoolAsyncRunnerExecute1001_2
-     * @tc.desc test AsyncRunner error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+      * @tc.number SUB_TASKPOOL_ASYNCRUNNER_EXECUTE_0200
+      * @tc.name taskPoolAsyncRunnerExecute1001_2
+      * @tc.desc test AsyncRunner error
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerExecute1001_2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerExecute1001_2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(100, 5000);
         let count3: number = 0;
@@ -142,14 +142,14 @@ export default function taskPoolAsyncRunnerExecute() {
       });
 
     /**
-     * @tc.number SUB_TASKPOOL_ASYNCRUNNER_EXECUTE_0300
-     * @tc.name taskPoolAsyncRunnerExecute1002
-     * @tc.desc test GenericsTask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('taskPoolAsyncRunnerExecute1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      * @tc.number SUB_TASKPOOL_ASYNCRUNNER_EXECUTE_0300
+      * @tc.name taskPoolAsyncRunnerExecute1002
+      * @tc.desc test GenericsTask
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
+      */
+    it('taskPoolAsyncRunnerExecute1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count1: number = 0;
@@ -180,14 +180,14 @@ export default function taskPoolAsyncRunnerExecute() {
       });
 
     /**
-     * @tc.number SUB_TASKPOOL_ASYNCRUNNER_EXECUTE_0400
-     * @tc.name taskPoolAsyncRunnerExecute1002_2
-     * @tc.desc test GenericsTask error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+      * @tc.number SUB_TASKPOOL_ASYNCRUNNER_EXECUTE_0400
+      * @tc.name taskPoolAsyncRunnerExecute1002_2
+      * @tc.desc test GenericsTask error
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerExecute1002_2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerExecute1002_2', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         let count3: number = 0;
@@ -783,38 +783,40 @@ export default function taskPoolAsyncRunnerExecute() {
      */
     it('taskPoolAsyncRunnerExecute1013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => { //async (Done: Function) => {
-        let count: number = 0;
-        let count2: number = 0;
+        let workerCount1: number = 0;
+        let workerCount2: number = 0;
+        let mainCount1: number = 0;
+        let mainCount2: number = 0;
         let lock1 = new Mutex();
         let lock2 = new Mutex();
+        const incWorker1 = () => { lock1.lock(); workerCount1++; lock1.unlock(); };
+        const incWorker2 = () => { lock2.lock(); workerCount2++; lock2.unlock(); };
         let runner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
         for (let i = 0; i < 10; i++) {
           let task: taskpool.Task = new taskpool.Task(printArgs1, 1.0);
           let task2: taskpool.Task = new taskpool.Task(printArgs2, 1.0, 50.0);
           task.onExecutionSucceeded(() => {
-            lock1.lock();
-            count++;
-            lock1.unlock();
+            incWorker1();
           });
           task2.onExecutionSucceeded(() => {
-            lock2.lock();
-            count2++;
-            lock2.unlock();
+            incWorker2();
           })
           runner.execute(task).then(() => {
-            count++;
+            mainCount1++;
           }).catch((e) => {
           });
           runner.execute(task2).then(() => {
-            count2++;
+            mainCount2++;
           }).catch((e) => {
           });
         }
-        while (count2 < 20 || count < 20) {
+        while (workerCount1 < 10 || workerCount2 < 10 || mainCount1 < 10 || mainCount2 < 10) {
           await sleep(100);
         }
-        expect(20).assertEqual(count);
-        expect(20).assertEqual(count2);
+        expect(10).assertEqual(workerCount1);
+        expect(10).assertEqual(workerCount2);
+        expect(10).assertEqual(mainCount1);
+        expect(10).assertEqual(mainCount2);
         done();
       })
 

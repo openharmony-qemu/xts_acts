@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 export default function showActionSheetBlurStyleOptionsTest() {
   describe('ShowActionSheetBlurStyleOptionsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ShowActionSheetBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

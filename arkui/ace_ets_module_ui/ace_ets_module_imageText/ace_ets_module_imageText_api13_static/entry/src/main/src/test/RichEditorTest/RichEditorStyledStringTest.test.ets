@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RichEditorStyledStringTest() {
   describe('RichEditorStyledStringTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorStyledStringTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api13.static", "EntryAbility")

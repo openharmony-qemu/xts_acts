@@ -26,7 +26,7 @@ import {UtilsTest} from '../Util.test'
 
 export default function columnMonopolizeFalse() {
   describe('columnMonopolizeFalse', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
 

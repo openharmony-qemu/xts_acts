@@ -70,6 +70,8 @@ import TextAreaSetStyledPlaceholderTest from './TextAreaApi22Test/TextAreaSetSty
 import TextAreaOnWillAttachIMETest from './TextAreaApi22Test/TextAreaOnWillAttachIME.test';
 import TextAreaTextDirectionTest from './TextAreaApi23Test/TextAreaTextDirection.test';
 import TextAreaSpecialAttrsTest from './TextAreaTest/TextAreaSpecialAttrs.test';
+import TextAreaTypeTest from './TextAreaTest/TextAreaType.test';
+import TextAreaStyleTest from './TextAreaTest/TextAreaStyle.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
 import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
@@ -122,12 +124,29 @@ import TextInputEnableSelectedDataDetectorTest from './TextInputApi22Test/TextIn
 import TextInputSetStyledPlaceholderTest from './TextInputApi22Test/TextInputSetStyledPlaceholder.test';
 import TextInputOnWillAttachIMETest from './TextInputApi22Test/TextInputOnWillAttachIME.test';
 import TextInputTextDirectionTest from './TextInputApi23Test/TextInputTextDirection.test';
+import TextInputMethodsNullTest from './TextInputTest/TextInputMethodsNull.test';
+import TextInputControllerMethodsNullTest from './TextInputTest/TextInputControllerMethodsNull.test';
 
 import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
 import TextInputCompressLeadingPunctuation from './TextInputTest/TextInputCompressLeadingPunctuation.test';
 import TextInputCompressLeadingPunctuationModifier from './TextInputTest/TextInputCompressLeadingPunctuationModifier.test';
+import TextInputPropertiesNullUndefinedTest from './TextInputTest/TextInputPropertiesNullUndefined.test';
+import TextInputPropertiesNullUndefined02Test from './TextInputTest/TextInputPropertiesNullUndefined02.test';
+import TextInputPropertiesNullUndefined03Test from './TextInputTest/TextInputPropertiesNullUndefined03.test';
+import TextInputEnableKeyboardOnFocusNullUndefinedTest from './TextInputTest/TextInputEnableKeyboardOnFocusNullUndefined.test';
+import TextInputEnterKeyTypeNullUndefinedTest from './TextInputTest/TextInputEnterKeyTypeNullUndefined.test';
+import TextInputInputTypeNullUndefinedTest from './TextInputTest/TextInputInputTypeNullUndefined.test';
+import TextInputSelectAllNullUndefinedTest from './TextInputTest/TextInputSelectAllNullUndefined.test';
+import TextInputSelectionMenuHiddenNullUndefinedTest from './TextInputTest/TextInputSelectionMenuHiddenNullUndefined.test';
+import TextInputTypeParamTest from './TextInputTest/TextInputTypeParam.test';
+import TextInputContentTypeParamTest from './TextInputTest/TextInputContentTypeParam.test';
 
+import TextAreaPropertiesNullUndefinedTest from './TextAreaTest/TextAreaPropertiesNullUndefined.test';
+import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaPropertiesNullUndefined02.test';
+import TextAreaPropertiesNullUndefined03Test from './TextAreaTest/TextAreaPropertiesNullUndefined03.test';
+import TextAreaMethodsNullTest from './TextAreaTest/TextAreaMethodsNull.test';
+import TextAreaControllerMethodsNullTest from './TextAreaTest/TextAreaControllerMethodsNull.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -189,6 +208,8 @@ export default function testsuite() {
   TextAreaOnWillAttachIMETest()
   TextAreaTextDirectionTest()     // Api23
   TextAreaSpecialAttrsTest()
+  TextAreaTypeTest();
+  TextAreaStyleTest();
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()
@@ -246,4 +267,21 @@ export default function testsuite() {
   TextAreaCompressLeadingPunctuationModifier()
   TextInputCompressLeadingPunctuation()
   TextInputCompressLeadingPunctuationModifier()
+  TextInputPropertiesNullUndefinedTest()
+  TextInputPropertiesNullUndefined02Test();
+  TextInputPropertiesNullUndefined03Test();
+  TextInputTypeParamTest();
+  TextAreaPropertiesNullUndefinedTest();
+  TextAreaPropertiesNullUndefined02Test();
+  TextAreaPropertiesNullUndefined03Test();
+  TextAreaMethodsNullTest();
+  TextAreaControllerMethodsNullTest();
+  TextInputMethodsNullTest();
+  TextInputControllerMethodsNullTest();
+  TextInputEnableKeyboardOnFocusNullUndefinedTest();
+  TextInputEnterKeyTypeNullUndefinedTest();
+  TextInputInputTypeNullUndefinedTest();
+  TextInputSelectAllNullUndefinedTest();
+  TextInputSelectionMenuHiddenNullUndefinedTest();
+  TextInputContentTypeParamTest();
 }

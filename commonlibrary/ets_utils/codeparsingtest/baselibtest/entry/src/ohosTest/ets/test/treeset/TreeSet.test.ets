@@ -2185,5 +2185,37 @@ export default function TreeSetTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.name   testTreeSetForEach001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TreeSet_CASE_0100
+     * @tc.desc   Testing TreeSet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTreeSetForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testTreeSetForEach001';
+      let treeSet = new TreeSet<string | null | undefined>();
+      treeSet.add("sparrow");
+      treeSet.add("gull");
+      treeSet.forEach((value: string, key: string): void => {
+        console.info("value:" + value);
+      });
+
+      try {
+        treeSet.forEach(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        treeSet.forEach(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    })
   })
 }

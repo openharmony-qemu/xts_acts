@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ButtonApi1() {
   describe('ButtonApi1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ButtonApi1 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
 

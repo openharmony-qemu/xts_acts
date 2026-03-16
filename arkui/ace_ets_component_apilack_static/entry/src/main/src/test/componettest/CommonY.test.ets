@@ -47,7 +47,7 @@ let tag: string = 'testTag';
 
 export default function commonBackgroundBlurStyleJsunits() {
   describe('commonBackgroundBlurStyleTest1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       

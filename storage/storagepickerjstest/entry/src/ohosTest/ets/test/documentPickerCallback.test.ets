@@ -260,6 +260,99 @@ export default function documentPickerCallback(abilityContext: Context) {
     });
 
     /**
+     * @tc.name   test_Documentpicker_Select_Callback_016
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1600
+     * @tc.desc   select with option defaultFilePathUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Select_Callback_016", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Callback_016";
+      let option = new picker.DocumentSelectOptions();
+      option.defaultFilePathUri = "";
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Select_Callback_017
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1700
+     * @tc.desc   select with option audio fileSuffixFilters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Select_Callback_017", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Callback_017";
+      let option = new picker.DocumentSelectOptions();
+      option.fileSuffixFilters = [];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Select_Callback_018
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1800
+     * @tc.desc   select with option audio fileSuffixFilters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Select_Callback_018", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Callback_018";
+      let option = new picker.DocumentSelectOptions();
+      option.fileSuffixFilters = [""];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Select_Callback_019
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_1900
+     * @tc.desc   select with option multiAuthMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Select_Callback_019", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Callback_019";
+      let option = new picker.DocumentSelectOptions();
+      option.multiAuthMode = false;
+      option.multiUriArray = [];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Select_Callback_020
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_2000
+     * @tc.desc   select with option multiAuthMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Select_Callback_020", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Callback_020";
+      let option = new picker.DocumentSelectOptions();
+      option.multiAuthMode = false;
+      option.multiUriArray = [""];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Select_Callback_021
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_CALLBACK_2100
+     * @tc.desc   select with option multiAuthMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Select_Callback_021", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Callback_021";
+      let option = new picker.DocumentSelectOptions();
+      option.multiAuthMode = false;
+      option.multiUriArray = ["file://docs/storage/Users/currentUser/test1"];
+      await selectWithOption(testNum, done, option);
+    });
+
+    /**
      * @tc.name   test_Documentpicker_Save_Callback_000
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_0000
      * @tc.desc   save image in Pictures
@@ -425,6 +518,189 @@ export default function documentPickerCallback(abilityContext: Context) {
       option.pickerMode = picker.DocumentPickerMode.DEFAULT;
       await saveWithOption(testNum, done, option);
     });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_012
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1200
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_Documentpicker_Save_Callback_012", Level.LEVEL3, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Callback_012";
+      let option = new picker.DocumentSaveOptions();
+      option.newFileNames = [""];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_013
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1300
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("test_Documentpicker_Save_Callback_013", Level.LEVEL3, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Callback_013";
+      let option = new picker.DocumentSaveOptions();
+      option.newFileNames = [];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_014
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1400
+     * @tc.desc   save png in Pictures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Callback_014", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Callback_014";
+      let option = new picker.DocumentSaveOptions();
+      option.defaultFilePathUri = "";
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_015
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1500
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Callback_015", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Callback_015";
+      let option = new picker.DocumentSaveOptions();
+      option.fileSuffixChoices = [];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_016
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1600
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Callback_016", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Save_Callback_016";
+      let option = new picker.DocumentSaveOptions();
+      option.fileSuffixChoices = [""];
+      await saveWithOption(testNum, done, option);
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_select_callback_000
+     * @tc.number SUB_DF_DocumentViewPicker_select_callback_0000
+     * @tc.desc   Test DocumentViewPicker.elect() interfaces with null parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_select_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().select(null, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_select_callback_000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_select_callback_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_select_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_select_callback_001
+     * @tc.number SUB_DF_DocumentViewPicker_select_callback_0010
+     * @tc.desc   Test DocumentViewPicker.select() interfaces with undefined parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_select_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().select(undefined, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_select_callback_001 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_select_callback_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_sDocumentViewPicker_select_callback_001ave_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_save_callback_000
+     * @tc.number SUB_DF_DocumentViewPicker_save_callback_0000
+     * @tc.desc   Test DocumentViewPicker.save() interfaces with null parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_save_callback_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().save(null, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_save_callback_000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_save_callback_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_save_callback_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   DocumentViewPicker_save_callback_001
+     * @tc.number SUB_DF_DocumentViewPicker_save_callback_0010
+     * @tc.desc   Test DocumentViewPicker.save() interfaces with undefined parameter and callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('DocumentViewPicker_save_callback_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.DocumentViewPicker().save(undefined, (err, result) => {
+          if (err != undefined) {
+            console.info(`DocumentViewPicker_save_callback_001 err: ${JSON.stringify(err)}`);
+            done();
+          }
+          console.info(`DocumentViewPicker_save_callback_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('DocumentViewPicker_save_callback_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
   });
 }
 
@@ -438,9 +714,9 @@ async function select(testNum: string, done: Function) {
         return;
       }
       console.info(`${testNum}::select result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -460,9 +736,9 @@ async function selectWithOption(testNum: string, done: Function, option: picker.
         return;
       }
       console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -482,9 +758,9 @@ async function saveWithoutSelect(testNum: string, done: Function) {
         return;
       }
       console.info(`${testNum}::saveWithoutSelect result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -504,9 +780,9 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Do
         return;
       }
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {

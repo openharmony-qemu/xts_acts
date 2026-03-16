@@ -36,8 +36,8 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetFlexShink_SubChange() {
-  describe('ColumnSetFlexShinkTest', () => {
-    beforeAll(() => {
+  describe('ColumnSetFlexShinkTestAdapt001', () => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetFlexShinkTest beforeEach start");
 
 

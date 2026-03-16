@@ -37,7 +37,7 @@ export default function audioRendererTest() {
 
     beforeAll(async (): Promise<void> => {
       try {
-        console.info(' beforeAll start');
+        console.info('beforeAll start');
         g_context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
         let atManager = abilityAccessCtrl.createAtManager();
         let arr: Array<Permissions> = new Array<Permissions>();
@@ -49,12 +49,14 @@ export default function audioRendererTest() {
             console.info("getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        await Utils.msSleep(1000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
         }
       } catch (err) {
-        console.error(' beforeAll failed, err: ' + err);
+        console.error('beforeAll failed, err: ' + err);
       }
     })
     beforeEach(async () => {
@@ -675,7 +677,7 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: Get max stream volume Success! maxVolume: ${maxVolume}`);
           expect(maxVolume).assertEqual(testConst.OUTPUT_NUMBER_1);
           try {
-            await audioRen!.setVolume(maxVolume!);
+            waitForCompletion(async () => {await audioRen!.setVolume(maxVolume!);})
             console.info(`${TagFrmwkRender}:  setVolume to maxVolume Success! maxVolume: ${maxVolume}`);
             expect(true).assertTrue();
             done();
@@ -818,7 +820,7 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: Get min stream volume Success! minVolume: ${minVolume}`);
           expect(minVolume).assertEqual(testConst.OUTPUT_NUMBER_0);
           try {
-            await audioRen!.setVolume(minVolume!);
+             waitForCompletion(async () => {await audioRen!.setVolume(minVolume!);})
             console.info(`${TagFrmwkRender}:  setVolume to minVolume Success! minVolume: ${minVolume}`);
             done();
           } catch (err) {

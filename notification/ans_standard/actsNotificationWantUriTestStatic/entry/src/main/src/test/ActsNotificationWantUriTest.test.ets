@@ -92,7 +92,7 @@ function getWantAgentByUri(uri: string): WantAgent | undefined {
 
 export default function ActsNotificationWantUriTest() {
   describe('ActsNotificationWantUriTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll start`);
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(WAIT_TIME2000);

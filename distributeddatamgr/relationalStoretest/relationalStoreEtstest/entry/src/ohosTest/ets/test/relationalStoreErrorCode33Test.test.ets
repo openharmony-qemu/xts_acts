@@ -1733,6 +1733,275 @@ export default function relationalStoreErrorCode33Test() {
       });
       console.log(TAG + "************* testRdbStoreTrans010 end   *************");
     });
+
+     /**
+     * @tc.name   relationalStoreTest040
+     * @tc.number relationalStoreTest040
+     * @tc.desc   commit parm with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('relationalStoreTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest001 start *************");
+      try{
+        rdbStore.beginTrans().then(async (txId:number)=>{
+          await rdbStore.execute("delete FROM TEST", txId).then(() => {
+              rdbStore.commit(null);
+            });
+        });
+      }catch (e) {
+        console.error(TAG + "relationalStoreTest040 fail code is "+e.code + " message is "+ e.message);
+        expect(e.code).assertEqual("401");
+      }
+
+      try{
+        rdbStore.beginTrans().then(async (txId:number)=>{
+          await rdbStore.execute("delete FROM TEST", txId).then(() => {
+              rdbStore.commit(undefined);
+            });
+        });
+      }catch (e) {
+        console.error(TAG + "relationalStoreTest040 fail code is "+e.code + " message is "+ e.message);
+        expect(e.code).assertEqual("401");
+      }
+
+    })
+
+    /**
+     * @tc.name   relationalStoreTest041
+     * @tc.number relationalStoreTest041
+     * @tc.desc   commit parm with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest001 start *************");
+      try{
+        rdbStore.beginTrans().then(async (txId:number)=>{
+          await rdbStore.execute("delete FROM TEST", txId).then(async () => {
+              await rdbStore.close()
+              await rdbStore.commit(txId);
+            });
+        });
+      }catch (e) {
+        console.error(TAG + "relationalStoreTest041 fail code is "+e.code + " message is "+ e.message);
+        expect(e.code).assertEqual("14800014");
+      }
+      console.info(TAG + "************* relationalStoreTest041 end *************");
+    })
+
+    /**
+     * @tc.name   relationalStoreTest042
+     * @tc.number relationalStoreTest042
+     * @tc.desc   rollback param whth null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest001 start *************");
+      try{
+        rdbStore.beginTrans().then(async (txId:number)=>{
+          await rdbStore.execute("delete FROM TEST", txId).then(async () => {
+            await rdbStore.rollback(null);
+          });
+        });
+      }catch (e) {
+        console.error(TAG + "relationalStoreTest042 fail code is "+e.code + " message is "+ e.message);
+        expect(e.code).assertEqual("401");
+      }
+
+       try{
+        rdbStore.beginTrans().then(async (txId:number)=>{
+          await rdbStore.execute("delete FROM TEST", txId).then(async () => {
+            await rdbStore.rollback(undefined);
+          });
+        });
+      }catch (e) {
+        console.error(TAG + "relationalStoreTest042 fail code is "+e.code + " message is "+ e.message);
+        expect(e.code).assertEqual("401");
+      }
+      console.info(TAG + "************* relationalStoreTest042 end *************");
+    })
+
+    /**
+     * @tc.name   relationalStoreTest043
+     * @tc.number relationalStoreTest043
+     * @tc.desc   rollback param whth null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest043 start *************");
+      try{
+        rdbStore.beginTrans().then(async (txId:number)=>{
+          await rdbStore.execute("delete FROM TEST", txId).then(async () => {
+            await rdbStore.close();
+            await rdbStore.rollback(txId);
+          });
+        });
+      }catch (e) {
+        console.error(TAG + "relationalStoreTest043 fail code is "+e.code + " message is "+ e.message);
+        expect(e.code).assertEqual("14800014");
+      }
+      console.info(TAG + "************* relationalStoreTest043 end *************");
+    })
+
+    /**
+     * @tc.name   relationalStoreTest044
+     * @tc.number relationalStoreTest044
+     * @tc.desc   backup with null or undefined or "" callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest044 start *************");
+
+      try{
+          rdbStore.backup("", (err) => {
+          if (err) {
+            console.error(`relationalStoreTest044 failed, code is ${err.code},message is ${err.message}`);
+            expect(err.code).assertEqual("401");
+          }
+        })
+        }catch (e) {
+          console.error(TAG + "relationalStoreTest044 fail code is "+e.code + " message is "+ e.message);
+          expect(e.code).assertEqual("401");
+        }
+
+      try{
+        rdbStore.backup(null, (err) => {
+        if (err) {
+          console.error(`relationalStoreTest044 failed, code is ${err.code},message is ${err.message}`);
+          expect(err.code).assertEqual("401");
+        }
+      })
+      }catch (e) {
+        console.error(TAG + "relationalStoreTest044 fail code is "+e.code + " message is "+ e.message);
+        expect(e.code).assertEqual("401");
+      }
+
+      try{
+        rdbStore.backup(undefined, (err) => {
+        if (err) {
+          console.error(`relationalStoreTest044 failed, code is ${err.code},message is ${err.message}`);
+          expect(err.code).assertEqual("401");
+        }
+      })
+      }catch (e) {
+        console.error(TAG + "relationalStoreTest044 fail code is "+e.code + " message is "+ e.message);
+        expect(e.code).assertEqual("401");
+      }
+
+       console.info(TAG + "************* relationalStoreTest044 end *************");
+    })
+
+     /**
+     * @tc.name   relationalStoreTest045
+     * @tc.number relationalStoreTest045
+     * @tc.desc   backup with null or undefined or "" promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest045 start *************");
+
+      try{
+          await rdbStore.backup("").then(async () => {
+              console.info("backup success");
+          }).catch((e: BusinessError) => {
+             console.error(TAG + "relationalStoreTest045 fail code is "+e.code + " message is "+ e.message);
+             expect(e.code).assertEqual("401");
+          });
+        }catch (e) {
+          console.error(TAG + "relationalStoreTest045 fail code is "+e.code + " message is "+ e.message);
+          expect(e.code).assertEqual("401");
+        }
+
+      try{
+          await rdbStore.backup(null).then(async () => {
+              console.info("backup success");
+          }).catch((e: BusinessError) => {
+             console.error(TAG + "relationalStoreTest045 fail code is "+e.code + " message is "+ e.message);
+             expect(e.code).assertEqual("401");
+          });
+        }catch (e) {
+          console.error(TAG + "relationalStoreTest045 fail code is "+e.code + " message is "+ e.message);
+          expect(e.code).assertEqual("401");
+        }
+
+      try{
+          await rdbStore.backup(undefined).then(async () => {
+              console.info("backup success");
+          }).catch((err: BusinessError) => {
+             console.error(TAG + "relationalStoreTest045 fail code is "+err.code + " message is "+ err.message);
+             expect(err.code).assertEqual("401");
+          });
+        }catch (e) {
+          console.error(TAG + "relationalStoreTest045 fail code is "+e.code + " message is "+ e.message);
+          expect(e.code).assertEqual("401");
+        }
+
+       console.info(TAG + "************* relationalStoreTest045 end *************");
+    })
+
+    /**
+     * @tc.name   relationalStoreTest046
+     * @tc.number relationalStoreTest046
+     * @tc.desc   backup errCode 14800014 callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest046 start *************");
+
+      try{
+          await rdbStore.close();
+          rdbStore.backup("backup.db", (err) => {
+          if (err) {
+            console.error(`relationalStoreTest046 failed, code is ${err.code},message is ${err.message}`);
+            expect(err.code).assertEqual("14800014");
+          }
+        })
+        }catch (e) {
+          console.error(TAG + "relationalStoreTest046 fail code is "+e.code + " message is "+ e.message);
+          expect(e.code).assertEqual("14800014");
+        }
+       console.info(TAG + "************* relationalStoreTest046 end *************");
+    })
+
+    /**
+     * @tc.name   relationalStoreTest047
+     * @tc.number relationalStoreTest047
+     * @tc.desc   backup errCode 14800014 promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('relationalStoreTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+      console.info(TAG + "************* relationalStoreTest047 start *************");
+
+      try{
+          await rdbStore.close();
+          await rdbStore.backup("backup.db").then(async () => {
+              console.info("backup success");
+          }).catch((e: BusinessError) => {
+             console.error(TAG + "relationalStoreTest047 fail code is "+e.code + " message is "+ e.message);
+             expect(e.code).assertEqual("14800014");
+          });
+        }catch (e) {
+          console.error(TAG + "relationalStoreTest047 fail code is "+e.code + " message is "+ e.message);
+          expect(e.code).assertEqual("14800014");
+        }
+       console.info(TAG + "************* relationalStoreTest047 end *************");
+    })
+
   })
 
 

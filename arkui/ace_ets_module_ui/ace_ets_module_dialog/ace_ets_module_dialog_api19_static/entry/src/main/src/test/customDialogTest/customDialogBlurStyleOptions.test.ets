@@ -35,7 +35,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function customDialogBlurStyleOptionsTest() {
   describe('CustomDialogBlurStyleOptionsTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("CustomDialogBlurStyleOptionsTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api19.static", "EntryAbility")
     });

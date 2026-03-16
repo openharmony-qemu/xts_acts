@@ -43,8 +43,8 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function nextFocus2() {
-  describe('Button', () => {
-    beforeAll(() => {
+  describe('ButtonAdapt001', () => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi18.static", "EntryAbility")

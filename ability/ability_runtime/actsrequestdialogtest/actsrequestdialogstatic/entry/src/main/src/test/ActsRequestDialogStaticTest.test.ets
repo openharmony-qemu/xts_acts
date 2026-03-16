@@ -28,7 +28,7 @@ import { ProcessInfo } from 'app.processInfo';
 const domain: int = 0x0000;
 const tag: string = 'ActsRequestDialogStaticTest';
 const TEST_SUITE_NAME: string = 'ActsRequestDialogStaticTest';
-let testAbilityContext: common.UIAbilityContext | undefined;
+let testAbilityContext: common.UIAbilityContext | undefined; 
 let subscriber: CommonEventManager.CommonEventSubscriber | undefined;
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let commonEventSubscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
@@ -70,24 +70,28 @@ export default function ActsRequestDialogStaticTest() {
       console.log('ACTS_requestDialog_static_0100====<begin');
       let id: int;
       let resultCode: dialogRequest.ResultCode | undefined;
+      expect(0).assertEqual(dialogRequest.ResultCode.RESULT_OK);
+      expect(1).assertEqual(dialogRequest.ResultCode.RESULT_CANCEL);
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          if (err) {
-            console.info(`====>ACTS_requestDialog_static_0100 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
-          }
-          console.info("====>ACTS_requestDialog_static_0100 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
-          if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
-            console.info('====>ACTS_requestDialog_static_0100 ACTS_StartAbility_CommonEvent1 success=====>');
-            await Utils.msSleep(500);
-            console.info('====>ACTS_requestDialog_static_0100 processInfoCheck=====>');
-            expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
-            CommonEventManager.unsubscribe(subscriber!, () => {
-              console.info("====>UnSubscribe0100 CallBack====>");
-            });
-            done();
-          }
+          waitForCompletion(async () => {
+            if (err) {
+              console.info(`====>ACTS_requestDialog_static_0100 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+            }
+            console.info("====>ACTS_requestDialog_static_0100 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
+            if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+              console.info('====>ACTS_requestDialog_static_0100 ACTS_StartAbility_CommonEvent1 success=====>');
+              await Utils.msSleep(500);
+              console.info('====>ACTS_requestDialog_static_0100 processInfoCheck=====>');
+              expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+              CommonEventManager.unsubscribe(subscriber!, () => {
+                console.info("====>UnSubscribe0100 CallBack====>");
+              });
+              done();
+            }
+          })
         }
 
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
@@ -99,6 +103,7 @@ export default function ActsRequestDialogStaticTest() {
         let want: Want = {
           bundleName: 'com.acts.example.requestdialog.static',
           abilityName: 'EntryAbility',
+          action: 'RESULT_CANCEL'
         };
         let result = (err: BusinessError | null, result: dialogRequest.RequestResult | undefined) => {
           console.info("====>ACTS_requestDialog_static_0100 request end + result:" + JSON.stringify(result));
@@ -131,26 +136,28 @@ export default function ActsRequestDialogStaticTest() {
       let resultCode: dialogRequest.ResultCode | undefined;
       try {
         let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
-          if (err) {
-            console.info(`====>ACTS_requestDialog_static_0200 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
-          }
-          console.info("====>ACTS_requestDialog_static_0200 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
-          if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
-            console.info('====>ACTS_requestDialog_static_0200 ACTS_StartAbility_CommonEvent1 success=====>');
-            await Utils.msSleep(500);
-            console.info('====>ACTS_requestDialog_static_0200 processInfoCheck=====>');
-            expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
-            expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
-            expect(typeof AppStorage.get<int>("windowRectLeft")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectTop")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectWidth")!).assertEqual('int');
-            expect(typeof AppStorage.get<int>("windowRectHeight")!).assertEqual('int');
-            CommonEventManager.unsubscribe(subscriber!, () => {
-              console.info("====>UnSubscribe0100 CallBack====>");
-            });
-            done();
-          }
+          waitForCompletion(async () => {
+            if (err) {
+              console.info(`====>ACTS_requestDialog_static_0200 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+            }
+            console.info("====>ACTS_requestDialog_static_0200 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
+            if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+              console.info('====>ACTS_requestDialog_static_0200 ACTS_StartAbility_CommonEvent1 success=====>');
+              await Utils.msSleep(500);
+              console.info('====>ACTS_requestDialog_static_0200 processInfoCheck=====>');
+              expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+              expect(typeof AppStorage.get<int>("windowRectLeft")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectTop")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectWidth")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectHeight")!).assertEqual('int');
+              CommonEventManager.unsubscribe(subscriber!, () => {
+                console.info("====>UnSubscribe0100 CallBack====>");
+              });
+              done();
+            }
+          })
         }
 
         CommonEventManager.createSubscriber(commonEventSubscribeInfo)
@@ -162,6 +169,7 @@ export default function ActsRequestDialogStaticTest() {
         let want: Want = {
           bundleName: 'com.acts.example.requestdialog.static',
           abilityName: 'EntryAbility',
+          action: 'RESULT_OK'
         };
         let result = (err: BusinessError | null, result: dialogRequest.RequestResult | undefined) => {
           console.info("====>ACTS_requestDialog_static_0200 request end + result:" + JSON.stringify(result));
@@ -259,6 +267,224 @@ export default function ActsRequestDialogStaticTest() {
         done();
       }, CASE_TIMEOUT);
       console.log('Start ACTS_requestDialog_static_0500 timer id : ' + id);
+    })
+
+    /**
+     * @tc.name   ACTS_GetProcessInfo_static_0200
+     * @tc.number ACTS_GetProcessInfo_static_0200
+     * @tc.desc   reguest dialog service 16000010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_GetProcessInfo_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(0x0000, tag, 'ACTS_GetProcessInfo_static_0200====<begin');
+      expect(typeof (processInfo)).assertEqual("object");
+      expect(typeof (processInfo.processName)).assertEqual("string");
+      expect(typeof (processInfo.pid)).assertEqual("int");
+      done()
+    })
+
+    /**
+     * @tc.name   ACTS_requestDialog_static_0600
+     * @tc.number ACTS_requestDialog_static_0600
+     * @tc.desc   reguest dialog service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_requestDialog_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log('ACTS_requestDialog_static_0600====<begin');
+      let id: int;
+      let resultCode: dialogRequest.ResultCode | undefined;
+      try {
+        let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
+          waitForCompletion(async () => {
+            if (err) {
+              console.info(`====>ACTS_requestDialog_static_0600 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+            }
+            console.info("====>ACTS_requestDialog_static_0600 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
+            if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+              console.info('====>ACTS_requestDialog_static_0600 ACTS_StartAbility_CommonEvent1 success=====>');
+              await Utils.msSleep(500);
+              console.info('====>ACTS_requestDialog_static_0600 processInfoCheck=====>');
+              expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+              CommonEventManager.unsubscribe(subscriber!, () => {
+                console.info("====>UnSubscribe0100 CallBack====>");
+              });
+              done();
+            }
+          })
+        }
+        CommonEventManager.createSubscriber(commonEventSubscribeInfo)
+          .then((data: CommonEventManager.CommonEventSubscriber | null) => {
+            subscriber = data as CommonEventManager.CommonEventSubscriber;
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
+          })
+        let want: Want = {
+          bundleName: 'com.acts.example.requestdialog.static',
+          abilityName: 'EntryAbility',
+        };
+        testAbilityContext?.requestDialogService(want)
+          .then((result: dialogRequest.RequestResult | undefined) => {
+            console.info("====>ACTS_requestDialog_static_0600 request end + result:" + JSON.stringify(result));
+            resultCode = result?.result;
+          })
+          .catch((err) => {
+            console.info("====>ACTS_requestDialog_static_0600 requestDialogSerivce Error====>");
+          })
+      } catch (paramError) {
+        console.info("====>ACTS_requestDialog_static_0600 requestDialogSerivce paramError====>");
+      }
+      id = setTimeout(() => {
+        console.log('ACTS_requestDialog_static_0600 timeout.');
+        done();
+      }, CASE_TIMEOUT);
+      console.log('Start ACTS_requestDialog_static_0600 timer id : ' + id);
+    })
+
+    /**
+     * @tc.name   ACTS_requestDialog_static_0700
+     * @tc.number ACTS_requestDialog_static_0700
+     * @tc.desc   reguest dialog service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_requestDialog_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log('ACTS_requestDialog_static_0700====<begin');
+      let id: int;
+      let resultCode: dialogRequest.ResultCode | undefined;
+      try {
+        let SubscribeCallBack = (err: BusinessError | null, commonEventData: CommonEventManager.CommonEventData | undefined):void => {
+          waitForCompletion(async () => {
+            if (err) {
+              console.info(`====>ACTS_requestDialog_static_0700 Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+            }
+            console.info("====>ACTS_requestDialog_static_0700 Subscribe CallBack data:====>" + JSON.stringify(commonEventData));
+            if (commonEventData?.event == "ACTS_REQUEST_DIALOG_EVENT1") {
+              console.info('====>ACTS_requestDialog_static_0700 ACTS_StartAbility_CommonEvent1 success=====>');
+              await Utils.msSleep(500);
+              console.info('====>ACTS_requestDialog_static_0700 processInfoCheck=====>');
+              expect(AppStorage.get<boolean>("requestDialogSuccess")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestInfo")!).assertTrue();
+              expect(AppStorage.get<boolean>("validRequestCallback")!).assertTrue();
+              expect(typeof AppStorage.get<int>("windowRectLeft")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectTop")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectWidth")!).assertEqual('int');
+              expect(typeof AppStorage.get<int>("windowRectHeight")!).assertEqual('int');
+              CommonEventManager.unsubscribe(subscriber!, () => {
+                console.info("====>UnSubscribe0100 CallBack====>");
+              });
+              done();
+            }
+          })
+        }
+        CommonEventManager.createSubscriber(commonEventSubscribeInfo)
+          .then((data: CommonEventManager.CommonEventSubscriber | null) => {
+            subscriber = data as CommonEventManager.CommonEventSubscriber;
+            CommonEventManager.subscribe(subscriber!, SubscribeCallBack)
+          })
+
+        let want: Want = {
+          bundleName: 'com.acts.example.requestdialog.static',
+          abilityName: 'EntryAbility',
+        };
+        testAbilityContext?.requestDialogService(want)
+          .then((result: dialogRequest.RequestResult | undefined) => {
+            console.info("====>ACTS_requestDialog_static_0700 request end + result:" + JSON.stringify(result));
+            resultCode = result?.result;
+          })
+          .catch((err) => {
+            console.info("====>ACTS_requestDialog_static_0700 requestDialogSerivce Error====>");
+          })
+      } catch (paramError) {
+        console.info("====>ACTS_requestDialog_static_0700 requestDialogSerivce paramError====>");
+      }
+
+      id = setTimeout(() => {
+        console.log('ACTS_requestDialog_static_0700 timeout.');
+        done();
+      }, CASE_TIMEOUT);
+      console.log('Start ACTS_requestDialog_static_0700 timer id : ' + id);
+    })
+
+    /**
+     * @tc.name   ACTS_requestDialog_static_0800
+     * @tc.number ACTS_requestDialog_static_0800
+     * @tc.desc   reguest dialog service 16000001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_requestDialog_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log('ACTS_requestDialog_static_0800====<begin');
+      let id: int;
+      let resultCode: dialogRequest.ResultCode | undefined;
+      try {
+        let want: Want = {
+          bundleName: 'com.acts.example.requestdialog.static',
+          abilityName: 'EntryAbilityError',
+        };
+        testAbilityContext?.requestDialogService(want)
+          .then((result: dialogRequest.RequestResult | undefined) => {
+            console.info("====>ACTS_requestDialog_static_0800 request end + result:" + JSON.stringify(result));
+            resultCode = result?.result;
+          })
+          .catch((err) => {
+            console.info(`====>ACTS_requestDialog_static_0800 request failed, code is ${err?.code}, message is ${err?.message}`);
+            expect(err?.code).assertEqual(16000001);
+            done();
+          })
+      } catch (paramError) {
+        console.info("====>ACTS_requestDialog_static_0800 requestDialogSerivce paramError====>");
+      }
+
+      id = setTimeout(() => {
+        console.log('ACTS_requestDialog_static_0800 timeout.');
+        done();
+      }, CASE_TIMEOUT);
+      console.log('Start ACTS_requestDialog_static_0800 timer id : ' + id);
+    })
+
+    /**
+     * @tc.name   ACTS_requestDialog_static_0900
+     * @tc.number ACTS_requestDialog_static_0900
+     * @tc.desc   reguest dialog service 16000010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_requestDialog_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log('ACTS_requestDialog_static_0900====<begin');
+      let id: int;
+      let resultCode: dialogRequest.ResultCode | undefined;
+      try {
+        let want: Want = {
+          bundleName: 'com.acts.example.requestdialog.static',
+          abilityName: 'EntryAbility',
+          flags: -1
+        };
+        testAbilityContext?.requestDialogService(want)
+          .then((result: dialogRequest.RequestResult | undefined) => {
+            console.info("====>ACTS_requestDialog_static_0900 request end + result:" + JSON.stringify(result));
+            resultCode = result?.result;
+          })
+          .catch((err) => {
+            console.info(`====>ACTS_requestDialog_static_0900 request failed, code is ${err?.code}, message is ${err?.message}`);
+            expect(err?.code).assertEqual(16000010);
+            done();
+          })
+      } catch (paramError) {
+        console.info("====>ACTS_requestDialog_static_0900 requestDialogSerivce paramError====>");
+      }
+      id = setTimeout(() => {
+        console.log('ACTS_requestDialog_static_0900 timeout.');
+        done();
+      }, CASE_TIMEOUT);
+      console.log('Start ACTS_requestDialog_static_0900 timer id : ' + id);
     })
   })
 }

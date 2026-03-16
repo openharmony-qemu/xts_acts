@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function ConsumeNumber() {
   describe('ConsumeNumber', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ConsumeNumber beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");

@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { Queue } from '@kit.ArkTS';
 
 export default function QueueTest() {
@@ -452,6 +452,37 @@ export default function QueueTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testQueueForEach001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_CASE_0100
+     * @tc.desc   Testing Queue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testQueueForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let queue = new Queue<number | null | undefined>();
+      queue.add(2);
+      queue.add(4);
+      queue.add(5);
+      queue.add(4);
+      queue.forEach((value: number, index: number): void => {
+        console.info("value:" + value, "index:" + index);
+      });
 
+      try {
+        queue.forEach(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+
+      try {
+        queue.forEach(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
   })
 }

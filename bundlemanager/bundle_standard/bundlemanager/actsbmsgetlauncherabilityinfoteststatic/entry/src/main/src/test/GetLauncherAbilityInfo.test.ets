@@ -150,6 +150,41 @@ export default function actsGetLauncherAbilityInfoTest() {
       });
 
     /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_0400
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_0400
+     * @tc.desc   Test getLauncherAbilityInfoSync with bundle name is empty return errcode 17700001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TEST_CASE_NAME = 'Sub_Bms_Framework_GetLauncherAbilityInfoSync_0400';
+        try {
+          hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case start');
+          let data = launcherBundleManager.getLauncherAbilityInfoSync('', 100);
+          expect().assertFail();
+          done();
+          hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
+        } catch (errData) {
+          let errMsg = (errData as BusinessError).message;
+          let code = (errData as BusinessError).code;
+          hilog.info(0x0000, "Sub_Bms_Framework_GetLauncherAbilityInfoSync_0400",
+            `errData is errCode:${code} message:${errMsg}`);
+          if (code === 801) {
+            expect(code).assertEqual(801);
+            expect(errMsg).assertEqual('BusinessError 801: Capability not support.');
+            done();
+          } else {
+            expect(code).assertEqual(17700001);
+            expect(errMsg).assertEqual('BusinessError 17700001: The specified bundle is not found.');
+            done();
+          }
+          hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
+        }
+      });
+
+    /**
      * @tc.name   Sub_Bms_Framework_getAbilityInfo_static_00
      * @tc.number Sub_Bms_Framework_getAbilityInfo_static_00
      * @tc.desc   Test getAbilityInfo normal
@@ -207,6 +242,64 @@ export default function actsGetLauncherAbilityInfoTest() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_static_0100
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_static_0100
+     * @tc.desc   Test getAbilityInfo with valid value GET_ABILITY_INFO_DEFAULT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('Sub_Bms_Framework_GetAbilityInfo_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let uri = URI_0100;
+      let abilityFlags = bundleManager.AbilityFlag.GET_ABILITY_INFO_DEFAULT;
+      await bundleManager.getAbilityInfo(uri, abilityFlags).then((abilityInfos: Array<bundleManager.AbilityInfo>) => {
+        expect(abilityInfos.length).assertLarger(PARAM_0);
+        for (let index = 0; index < abilityInfos.length; index++) {
+          expect(abilityInfos[index].bundleName).assertEqual("ohos.acts.bms.getlauncherabilityinfo.test.static");
+          expect(abilityInfos[index].moduleName).assertEqual("entry");
+          expect(abilityInfos[index].name).assertEqual("EntryAbility");
+          expect(abilityInfos[index].label).assertEqual("label");
+          expect(abilityInfos[index].labelId).assertLarger(PARAM_0);
+          expect(abilityInfos[index].description).assertEqual("$string:EntryAbility_desc");
+          expect(abilityInfos[index].descriptionId).assertLarger(PARAM_0);
+          expect(abilityInfos[index].icon).assertEqual("$media:layered_image");
+          expect(abilityInfos[index].iconId).assertLarger(PARAM_0);
+          expect(abilityInfos[index].process).assertEqual("");
+          expect(abilityInfos[index].exported).assertEqual(true);
+          expect(abilityInfos[index].orientation).assertEqual(PARAM_0);
+          expect(abilityInfos[index].launchType).assertEqual(PARAM_0);
+          expect(abilityInfos[index].permissions.length).assertEqual(PARAM_0);
+          expect(abilityInfos[index].deviceTypes.length).assertEqual(PARAM_0);
+          expect(abilityInfos[index].applicationInfo).assertNull();
+          expect(abilityInfos[index].metadata.length).assertEqual(PARAM_0);
+          expect(abilityInfos[index].enabled).assertEqual(true);
+          expect(abilityInfos[index].supportWindowModes.length).assertLarger(PARAM_0);
+          expect(abilityInfos[index].windowSize.maxWindowRatio).assertEqual(PARAM_0);
+          expect(abilityInfos[index].windowSize.minWindowRatio).assertEqual(PARAM_0);
+          expect(abilityInfos[index].windowSize.maxWindowWidth).assertEqual(PARAM_0);
+          expect(abilityInfos[index].windowSize.minWindowWidth).assertEqual(PARAM_0);
+          expect(abilityInfos[index].windowSize.maxWindowHeight).assertEqual(PARAM_0);
+          expect(abilityInfos[index].windowSize.minWindowHeight).assertEqual(PARAM_0);
+          expect(abilityInfos[index].excludeFromDock).assertEqual(false);
+          expect(abilityInfos[index].skills.length).assertEqual(PARAM_0);
+          expect(abilityInfos[index].appIndex).assertEqual(PARAM_0);
+          expect(abilityInfos[index].orientationId).assertEqual(PARAM_0);
+        }
+        done();
+      }).catch((err: Error): void => {
+        hilog.error(domain, tag, `Sub_Bms_Framework_GetAbilityInfo_static_0100 catch failed errCode:${err.code} message:${err.message}`);
+        if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          expect(err.message).assertEqual('BusinessError 201: Permission denied. An attempt was made to GetAbilityInfos forbidden by permission: ohos.permission.GET_ABILITY_INFO.');
+          done();
+        }else{
+          expect().assertFail();
+          done();
+        }
+      });
+    })
+
+    /**
      * @tc.name   Sub_Bms_Framework_getAbilityInfo_static_01
      * @tc.number Sub_Bms_Framework_getAbilityInfo_static_01
      * @tc.desc   Test getAbilityInfo with error code
@@ -230,6 +323,34 @@ export default function actsGetLauncherAbilityInfoTest() {
           done();
         }
 
+      });
+    })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_static_1800
+     * @tc.number Sub_Bms_Framework_GetAbilityInfo_static_1800
+     * @tc.desc   Test getAbilityInfo with parameter uri " " invalid ERROR_CODE17700003.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Bms_Framework_GetAbilityInfo_static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let uri = " ";
+      let abilityFlags = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_APPLICATION;
+      await bundleManager.getAbilityInfo(uri, abilityFlags).then((data: Array<bundleManager.AbilityInfo>) => {
+        expect().assertFail();
+        done();
+      }).catch((err: Error): void => {
+        hilog.error(domain, tag, `Sub_Bms_Framework_GetAbilityInfo_static_1800 catch failed errCode:${err.code} message:${err.message}`);
+        if(err.code == 201){
+          expect(err.code).assertEqual(201);
+          expect(err.message).assertEqual('BusinessError 201: Permission denied. An attempt was made to GetAbilityInfos forbidden by permission: ohos.permission.GET_ABILITY_INFO.');
+          done();
+        }else{
+          expect(err.code).assertEqual(17700003);
+          expect(err.message).assertEqual('BusinessError 17700003: The specified ability is not found.');
+          done();
+        }
       });
     })
   })

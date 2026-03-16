@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function textInputJsunit3() {
   describe('appInfoTest_four_12', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_12 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
 

@@ -26,7 +26,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function ChipTest0010() {
   describe('ChipTest0010', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ChipTest0010 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.advanced.component.nowear.api18.static", "EntryAbility")
 

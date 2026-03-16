@@ -45,7 +45,7 @@ class Msg {
 
 export default function gestureInterceptionEnhancementCallbackSwiperTest() {
   describe('gestureInterceptionEnhancementCallbackSwiperTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api13.static", "EntryAbility")
     });

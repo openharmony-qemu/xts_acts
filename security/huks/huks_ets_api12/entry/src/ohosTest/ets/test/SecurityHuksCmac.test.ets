@@ -14,10 +14,10 @@
  */
 import { huks } from '@kit.UniversalKeystoreKit';
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils.ets';
-import { Logger } from './utils/common/Logger.ets';
-import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
-import { CheckSoftware, CheckWearable, GenParam, SetParam } from './utils/huks/HuksOptionsUtils.ets';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { Logger } from './utils/common/Logger';
+import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { CheckSoftware, CheckWearable, GenParam, SetParam } from './utils/huks/HuksOptionsUtils';
 
 export default function SecurityHuksCmacTest() {
   let useSoftware: boolean = true;

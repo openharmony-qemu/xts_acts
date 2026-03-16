@@ -44,7 +44,7 @@ export default function requestConfigSavesStaticTest() {
     /**
      * beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.
      */
-    beforeAll((done: () => void) => {
+    beforeAll(async (done: () => void): Promise<void> => {
       try {
         hilog.info(domain, tag, '%{public}s', 'beforeAll start');
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -2003,6 +2003,1104 @@ export default function requestConfigSavesStaticTest() {
         console.info("====>SUB_Request_Download_minSped_Static_1000 task.start");
       } catch (err) {
         console.info("====>SUB_Request_Download_minSped_Static_1000 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_minSped_Static_1100
+     * @tc.number SUB_Request_Download_minSped_Static_1100
+     * @tc.desc   minSpeed right.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Request_Download_minSped_Static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_minSped_Static_1100 is starting-----------------------");
+      let minSpeed: request.agent.MinSpeed = {
+        speed: 0,
+        duration: 1,
+      }
+      let config:request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'createTest',
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_minSped_Static_1100',
+        network: request.agent.Network.ANY,
+        minSpeed: minSpeed,
+        overwrite: true
+      };
+      try {
+
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_minSped_Static_1100 create success");
+        let completed = (pro: request.agent.Progress) => {
+          try {
+            task.offCompleted();
+            console.info("====>SUB_Request_Download_minSped_Static_1100 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Download_minSped_Static_1100 err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.onCompleted(completed)
+        await task.start();
+        console.info("====>SUB_Request_Download_minSped_Static_1100 task.start");
+      } catch (err) {
+        console.info("====>SUB_Request_Download_minSped_Static_1100 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_off_faultOccur_Static_0100
+     * @tc.number SUB_Request_Download_off_faultOccur_Static_0100
+     * @tc.desc   on faultOccur.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_off_faultOccur_Static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_Download_off_faultOccur_Static_0100 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/chenzhixue/downloadTest/releases/download/V1.0/test1.txt',
+        title: 'reeateTest',
+        overwrite: true,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_off_faultOccur_Static_0100.txt',
+        network: request.agent.Network.ANY,
+        mode:request.agent.Mode.BACKGROUND
+      };
+
+      let task: request.agent.Task = await request.agent.create(baseContext!, config);
+      console.info("====>SUB_Request_Download_off_faultOccur_Static_0100 create task success");
+      let arr1 = [0, 0, 0];
+      let faultOccurCallBack1 = (faults: request.agent.Faults) => {
+        arr1[0] = 1;
+        console.info("====>SUB_Request_Download_off_faultOccur_Static_0100 faultOccurCallBack1 faults: " + JSON.stringify(arr1));
+      }
+      let faultOccurCallBack2 = (faults: request.agent.Faults) => {
+        arr1[1] = 1;
+        console.info("====>SUB_Request_Download_off_faultOccur_Static_0100 faultOccurCallBack2 faults: " + JSON.stringify(arr1));
+      }
+      let faultOccurCallBack3 = (faults: request.agent.Faults) => {
+        try {
+          task.offFaultOccur();
+          console.info("====>SUB_Request_Download_off_faultOccur_Static_0100 faultOccurCallBack3 faults: " + JSON.stringify(faults));
+          arr1[2] = 1;
+          console.info("====>SUB_Request_Download_off_faultOccur_Static_0100 task3 progress on arr: " + JSON.stringify(arr1));
+          expect(JSON.stringify(arr1) === '[0,1,1]').assertTrue();
+          expect(faults).assertEqual(request.agent.Faults.PROTOCOL);
+          done();
+        } catch (err) {
+          console.info("====>SUB_Request_Download_off_faultOccur_Static_0100 catch err: " + JSON.stringify(err));
+          done();
+        }
+      }
+      task.onFaultOccur(faultOccurCallBack1);
+      task.offFaultOccur(faultOccurCallBack1);
+      task.onFaultOccur(faultOccurCallBack2);
+      task.onFaultOccur(faultOccurCallBack3);
+      await task.start();
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_off_faultOccur_Static_0200
+     * @tc.number SUB_Request_Download_off_faultOccur_Static_0200
+     * @tc.desc   on faultOccur.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_off_faultOccur_Static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_Download_off_faultOccur_Static_0200 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/chenzhixue/downloadTest/releases/download/V1.0/test1.txt',
+        title: 'reeateTest',
+        overwrite: true,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_off_faultOccur_Static_0200.txt',
+        network: request.agent.Network.ANY,
+        mode:request.agent.Mode.BACKGROUND
+      };
+
+      let task: request.agent.Task = await request.agent.create(baseContext!, config);
+      console.info("====>SUB_Request_Download_off_faultOccur_Static_0200 create task success");
+      let arr1 = [0, 0, 0]
+      let faultOccurCallBack1 = (faults: request.agent.Faults) => {
+        arr1[0] = 1;
+        console.info("====>SUB_Request_Download_off_faultOccur_Static_0200 faultOccurCallBack1 faults: " + JSON.stringify(arr1));
+      }
+      let faultOccurCallBack2 = (faults: request.agent.Faults) => {
+        arr1[1] = 1;
+        console.info("====>SUB_Request_Download_off_faultOccur_Static_0200 faultOccurCallBack2 faults: " + JSON.stringify(arr1));
+      }
+      let faultOccurCallBack3 = (faults: request.agent.Faults) => {
+        arr1[2] = 1;
+        console.info("====>SUB_Request_Download_off_faultOccur_Static_0200 faultOccurCallBack3 faults: " + JSON.stringify(arr1));
+      }
+      task.onFaultOccur(faultOccurCallBack1);
+      task.onFaultOccur(faultOccurCallBack2);
+      task.onFaultOccur(faultOccurCallBack3);
+      task.offFaultOccur();;
+      await task.start();
+      await Utils.msSleep(1000);
+      console.info("====>SUB_Request_Download_off_faultOccur_Static_0200 task3 progress on arr: " + JSON.stringify(arr1));
+      expect(arr1.join()).assertEqual('0,0,0');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_on_faultOccur_Static_0300
+     * @tc.number SUB_Request_Download_on_faultOccur_Static_0300
+     * @tc.desc   on faultOccur.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_on_faultOccur_Static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_Download_on_faultOccur_Static_0300 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https:////',
+        title: 'reeateTest',
+        overwrite: true,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_on_faultOccur_Static_0300.txt',
+        network: request.agent.Network.ANY,
+        mode:request.agent.Mode.BACKGROUND
+      };
+
+      let task: request.agent.Task = await request.agent.create(baseContext!, config);
+      console.info("====>SUB_Request_Download_on_faultOccur_Static_0300 create task success");
+      let arr1 = [0, 0, 0];
+      let faultOccurCallBack1 = (faults: request.agent.Faults) => {
+        try {
+          arr1[0] = 1;
+          console.info("====>SUB_Request_Download_on_faultOccur_Static_0300 info1: " + JSON.stringify(arr1));
+          expect(JSON.stringify(arr1) === '[1,0,0]').assertTrue();
+        } catch (err) {
+          console.info("====>SUB_Request_Download_on_faultOccur_Static_0300 info1 catch err: " + JSON.stringify(err));
+        }
+      }
+      let faultOccurCallBack2 = (faults: request.agent.Faults) => {
+        try {
+          arr1[1] = 1;
+          console.info("====>SUB_Request_Download_on_faultOccur_Static_0300 info2: " + JSON.stringify(arr1));
+          expect(JSON.stringify(arr1) === '[1,1,0]').assertTrue();
+        } catch (err) {
+          console.info("====>SUB_Request_Download_on_faultOccur_Static_0300 info2 catch err: " + JSON.stringify(err));
+        }
+      }
+      let faultOccurCallBack3 = (faults: request.agent.Faults) => {
+        try {
+          task.offFaultOccur();
+          console.info("====>SUB_Request_Download_on_faultOccur_Static_0300 faultOccurCallBack3 faults: " + faults);
+          arr1[2] = 1;
+          console.info("====>SUB_Request_Download_on_faultOccur_Static_0300 task3 progress on arr: " + JSON.stringify(arr1));
+          expect(JSON.stringify(arr1) === '[1,1,1]').assertTrue();
+          expect(faults).assertEqual(request.agent.Faults.PARAM);
+          done();
+        } catch (err) {
+          console.info("====>SUB_Request_Download_on_faultOccur_Static_0300 catch err: " + JSON.stringify(err));
+          done();
+        }
+      }
+      task.onFaultOccur(faultOccurCallBack1);
+      task.onFaultOccur(faultOccurCallBack2);
+      task.onFaultOccur(faultOccurCallBack3);
+      await task.start();
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_timeOut_Static_0200
+     * @tc.number SUB_Request_Download_timeOut_Static_0200
+     * @tc.desc   connectionTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_timeOut_Static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_Download_timeOut_Static_0200 is starting-----------------------");
+      let timeOut: request.agent.Timeout = {
+        connectionTimeout: 0,
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://222.111.222.111',
+        title: 'reeateTest',
+        overwrite: true,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_timeOut_Static_0200.txt',
+        network: request.agent.Network.ANY,
+        timeout: timeOut,
+        mode:request.agent.Mode.BACKGROUND
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_timeOut_Static_0200 create task success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_timeOut_Static_0200 faultOccurCallBack err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_timeOut_Static_0300
+     * @tc.number SUB_Request_Download_timeOut_Static_0300
+     * @tc.desc   totalTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_timeOut_Static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_Download_timeOut_Static_0300 is starting-----------------------");
+      let timeOut: request.agent.Timeout = {
+        totalTimeout: 0,
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://222.111.222.111',
+        title: 'reeateTest',
+        overwrite: true,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_timeOut_Static_0300.txt',
+        network: request.agent.Network.ANY,
+        timeout: timeOut,
+        mode:request.agent.Mode.BACKGROUND
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_timeOut_Static_0300 create task success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_timeOut_Static_0300 faultOccurCallBack err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_timeOut_Static_0400
+     * @tc.number SUB_Request_Download_timeOut_Static_0400
+     * @tc.desc   totalTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_timeOut_Static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_Download_timeOut_Static_0400 is starting-----------------------");
+      let timeOut: request.agent.Timeout = {
+        totalTimeout: 604801,
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://222.111.222.111',
+        title: 'reeateTest',
+        overwrite: true,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_timeOut_Static_0400.txt',
+        network: request.agent.Network.ANY,
+        timeout: timeOut,
+        mode:request.agent.Mode.BACKGROUND
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_timeOut_Static_0400 create task success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_timeOut_Static_0400 faultOccurCallBack err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_timeOut_Static_0500
+     * @tc.number SUB_Request_Download_timeOut_Static_0500
+     * @tc.desc   totalTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_timeOut_Static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_Download_timeOut_Static_0500 is starting-----------------------");
+      let timeOut: request.agent.Timeout = {
+        totalTimeout: 604800,
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'http://222.111.222.111',
+        title: 'reeateTest',
+        overwrite: true,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_timeOut_Static_0500.txt',
+        network: request.agent.Network.ANY,
+        timeout: timeOut,
+        mode:request.agent.Mode.BACKGROUND
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_timeOut_Static_0500 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_timeOut_Static_0500 faultOccurCallBack err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_timeOut_Static_0600
+     * @tc.number SUB_Request_Download_timeOut_Static_0600
+     * @tc.desc   totalTimeout error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_timeOut_Static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_Download_timeOut_Static_0600 is starting-----------------------");
+      let timeOut: request.agent.Timeout = {
+        connectionTimeout: 15,
+        totalTimeout: 2
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/BigFile.txt',
+        title: 'reeateTest',
+        overwrite: true,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_timeOut_Static_0600.txt',
+        network: request.agent.Network.ANY,
+        timeout: timeOut,
+        mode:request.agent.Mode.BACKGROUND
+      };
+
+      let task: request.agent.Task = await request.agent.create(baseContext!, config);
+      console.info("====>SUB_Request_Download_timeOut_Static_0600 create task success");
+      let faultsCallBack = (faults: request.agent.Faults) => {
+        try {
+          task.offFaultOccur();
+          console.info("====>SUB_Request_Download_timeOut_Static_0600 faults: " + faults);
+          expect(faults).assertEqual(request.agent.Faults.TIMEOUT);
+          done();
+        } catch (err) {
+          console.info("====>SUB_Request_Download_timeOut_Static_0600 faultOccurCallBack err: " + JSON.stringify(err));
+          done();
+        }
+      };
+      task.onFaultOccur(faultsCallBack);
+      task.start();
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_1200
+     * @tc.number SUB_Request_Download_visibility_Static_1200
+     * @tc.desc   visibility is three
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_1200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_1200 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_COMPLETION | request.agent.VISIBILITY_PROGRESS
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_Static_1200.txt',
+        network: request.agent.Network.ANY,
+      };
+      let task: request.agent.Task | null = null;
+      try {
+        console.info("====>SUB_Request_Download_visibility_Static_1200 notification: " + JSON.stringify(notification));
+        task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_visibility_Static_1200 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_1200 err: " + JSON.stringify(err));
+        console.info("====>SUB_Request_Download_visibility_Static_1200 err: " + err);
+        expect().assertFail();
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_1300
+     * @tc.number SUB_Request_Download_visibility_Static_1300
+     * @tc.desc   visibility is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_1300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_1300 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: undefined
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_Static_1300.txt',
+        network: request.agent.Network.ANY,
+      };
+      let task: request.agent.Task | null = null;
+      try {
+        console.info("====>SUB_Request_Download_visibility_Static_1300 notification: " + JSON.stringify(notification));
+        task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_visibility_Static_1300 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_1300 err: " + JSON.stringify(err));
+        expect().assertFail();
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_1400
+     * @tc.number SUB_Request_Download_visibility_Static_1400
+     * @tc.desc   visibility is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_1400', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_1400 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: 0
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_Static_1400.txt',
+        network: request.agent.Network.ANY,
+      };
+      try {
+        console.info("====>SUB_Request_Download_visibility_Static_1400 notification: " + JSON.stringify(notification));
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_visibility_Static_1400 create task success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_1400 err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_1500
+     * @tc.number SUB_Request_Download_visibility_Static_1500
+     * @tc.desc   request group visibility is 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_1500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_1500 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_COMPLETION | request.agent.VISIBILITY_PROGRESS
+      }
+      let groupConfig: request.agent.GroupConfig = {
+        notification: notification
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_Static_1500.txt',
+        network: request.agent.Network.ANY,
+      };
+
+      try {
+        let task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_visibility_Static_1500 config: " + JSON.stringify(config));
+        let onCompletedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.offCompleted();
+            console.info("====>SUB_Request_Download_visibility_Static_1500 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Download_visibility_Static_1500 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        let gid: string = await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_Static_1500 createGroup success"+ JSON.stringify(groupConfig));
+        expect(gid !== '').assertTrue();
+        expect(typeof gid === 'string').assertTrue();
+        await request.agent.attachGroup(gid, [task.tid]);
+        console.info("====>SUB_Request_Download_visibility_Static_1500 attachGroup success");
+        task.onCompleted(onCompletedCallback)
+        await task.start();
+        console.info("====>SUB_Request_Download_visibility_Static_1500 start success");
+        await request.agent.deleteGroup(gid);
+        console.info("====>SUB_Request_Download_visibility_Static_1500 deleteGroup success");
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_1500 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_1600
+     * @tc.number SUB_Request_Download_visibility_Static_1600
+     * @tc.desc   request group visibility is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_1600', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_1600 is starting-----------------------");
+      try {
+        let notification: request.agent.Notification = {
+          visibility: undefined
+        }
+        let groupConfig: request.agent.GroupConfig = {
+          notification: notification
+        }
+        console.info("====>SUB_Request_Download_visibility_Static_1600 notification: " + JSON.stringify(notification));
+        let gid: string = await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_Static_1600 createGroup success");
+        expect(gid !== '').assertTrue();
+        expect(typeof gid === 'string').assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_1600 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_1700
+     * @tc.number SUB_Request_Download_visibility_Static_1700
+     * @tc.desc   request group visibility is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_1700', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_1700 is starting-----------------------");
+      try {
+        let notification: request.agent.Notification = {
+          visibility: 0
+        }
+        let groupConfig: request.agent.GroupConfig = {
+          notification: notification
+        }
+        console.info("====>SUB_Request_Download_visibility_Static_1700 notification: " + JSON.stringify(notification));
+        await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_Static_1700 createGroup success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_1700 err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_1800
+     * @tc.number SUB_Request_Download_visibility_Static_1800
+     * @tc.desc   visibility is one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_1800', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_1800 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_COMPLETION
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_Static_1800.txt',
+        network: request.agent.Network.ANY,
+      };
+      let task: request.agent.Task | null = null;
+      try {
+        console.info("====>SUB_Request_Download_visibility_Static_1800 notification: " + JSON.stringify(notification));
+        task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_visibility_Static_1800 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_1800 err: " + JSON.stringify(err));
+        expect().assertFail();
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_1900
+     * @tc.number SUB_Request_Download_visibility_Static_1900
+     * @tc.desc   visibility is two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_1900', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_1900 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_PROGRESS
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_Static_1900.txt',
+        network: request.agent.Network.ANY,
+      };
+      let task: request.agent.Task | null = null;
+      try {
+        console.info("====>SUB_Request_Download_visibility_Static_1900 notification: " + JSON.stringify(notification));
+        task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_visibility_Static_1900 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_1900 err: " + JSON.stringify(err));
+        expect().assertFail();
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_2000
+     * @tc.number SUB_Request_Download_visibility_Static_2000
+     * @tc.desc   request group visibility is one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_2000', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_2000 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_COMPLETION
+      }
+      let groupConfig: request.agent.GroupConfig = {
+        notification: notification
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_Static_2000.txt',
+        network: request.agent.Network.ANY,
+      };
+
+      try {
+        let task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_visibility_Static_2000 config: " + JSON.stringify(config));
+        let onCompletedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.offCompleted();
+            console.info("====>SUB_Request_Download_visibility_Static_2000 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Download_visibility_Static_2000 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+
+        let gid: string = await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_Static_2000 createGroup success"+ JSON.stringify(groupConfig));
+        expect(gid !== '').assertTrue();
+        expect(typeof gid === 'string').assertTrue();
+        await request.agent.attachGroup(gid, [task.tid]);
+        console.info("====>SUB_Request_Download_visibility_Static_2000 attachGroup success");
+        task.onCompleted(onCompletedCallback)
+        await task.start();
+        console.info("====>SUB_Request_Download_visibility_Static_2000 start success");
+        await request.agent.deleteGroup(gid);
+        console.info("====>SUB_Request_Download_visibility_Static_2000 deleteGroup success");
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_2000 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_visibility_Static_2100
+     * @tc.number SUB_Request_Download_visibility_Static_2100
+     * @tc.desc   request group visibility is two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_visibility_Static_2100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_Static_2100 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_PROGRESS
+      }
+      let groupConfig: request.agent.GroupConfig = {
+        notification: notification
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_Static_2100.txt',
+        network: request.agent.Network.ANY,
+      };
+
+      try {
+        let task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Download_visibility_Static_2100 config: " + JSON.stringify(config));
+        let onCompletedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.offCompleted();
+            console.info("====>SUB_Request_Download_visibility_Static_2100 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Download_visibility_Static_2100 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+
+        let gid: string = await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_Static_2100 createGroup success"+ JSON.stringify(groupConfig));
+        expect(gid !== '').assertTrue();
+        expect(typeof gid === 'string').assertTrue();
+        await request.agent.attachGroup(gid, [task.tid]);
+        console.info("====>SUB_Request_Download_visibility_Static_2100 attachGroup success");
+        task.onCompleted(onCompletedCallback)
+        await task.start();
+        console.info("====>SUB_Request_Download_visibility_Static_2100 start success");
+        await request.agent.deleteGroup(gid);
+        console.info("====>SUB_Request_Download_visibility_Static_2100 deleteGroup success");
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_Static_2100 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Agent_NotificationrJumping_0800
+     * @tc.number SUB_Request_Agent_NotificationrJumping_0800
+     * @tc.desc   wantAgent test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_Agent_NotificationrJumping_0800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Agent_NotificationrJumping_0800 is starting-----------------------");
+      let wantAgentInfo: wantAgent.WantAgentInfo = {
+        wants: [
+          {
+            deviceId: '',
+            bundleName: 'com.acts.newRequestAuthority.static',
+            abilityName: 'EntryAbility',
+            action: '',
+            entities: [],
+            uri: '',
+            parameters: {}
+          }
+        ],
+        actionType: wantAgent.OperationType.START_ABILITY,
+        requestCode: 0,
+        actionFlags:[wantAgent.WantAgentFlags.CONSTANT_FLAG]
+      };
+      let notification: request.agent.Notification = {
+        wantAgent: await wantAgent.getWantAgent(wantAgentInfo)
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Agent_NotificationrJumping_0800.txt',
+        network: request.agent.Network.ANY,
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0800 create success");
+        let completed = (pro: request.agent.Progress) => {
+          try {
+            task.offCompleted();
+            console.info("====>SUB_Request_Agent_NotificationrJumping_0800 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Agent_NotificationrJumping_0800 err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.onCompleted(completed)
+        await task.start();
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0800 task.start");
+      } catch (err) {
+        console.info("====>SUB_Request_Agent_NotificationrJumping_0800 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_Agent_NotificationrJumping_Static_0900
+     * @tc.number SUB_Request_Agent_NotificationrJumping_Static_0900
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_Agent_NotificationrJumping_Static_0900', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_Agent_NotificationrJumping_Static_0900 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        wantAgent: undefined
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Agent_NotificationrJumping_Static_0900.txt',
+        network: request.agent.Network.ANY,
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_Agent_NotificationrJumping_Static_0900 create success");
+        let completed = (pro: request.agent.Progress) => {
+          try {
+            task.offCompleted();
+            console.info("====>SUB_Request_Agent_NotificationrJumping_Static_0900 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Agent_NotificationrJumping_Static_0900 err: " + JSON.stringify(err));
+            done();
+          }
+        }
+        task.onCompleted(completed)
+        await task.start();
+        console.info("====>SUB_Request_Agent_NotificationrJumping_Static_0900 task.start");
+      } catch (err) {
+        console.info("====>SUB_Request_Agent_NotificationrJumping_Static_0900 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0100
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0100
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0100 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        title: '',
+        text:''
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_downloadConfigSaves_Supplemental_0100.txt',
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        headers: {'Accept': '*/*'},
+        priority: 0,
+        extras:{'Accept': '*/*'},
+        multipart: false
+      };
+      try {
+        let time = new Date().getTime();
+        let filter: request.agent.Filter = {
+          before: time - 500,
+          after: time - 1000,
+          state: request.agent.State.REMOVED,
+          action: request.agent.Action.DOWNLOAD,
+          mode: request.agent.Mode.BACKGROUND,
+        };
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        let taskInfo = await request.agent.show(task!.tid);
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0100 ttaskInfo: ${JSON.stringify(taskInfo)}`);
+        let tasksData:Array<string>  = await request.agent.search(filter);
+        expect(taskInfo.saveas !== undefined).assertTrue();
+        expect(taskInfo.url !== undefined).assertTrue();
+        expect(taskInfo.data !== undefined).assertTrue();
+        expect(taskInfo.tid !== undefined).assertTrue();
+        expect(taskInfo.title !== undefined).assertTrue();
+        expect(taskInfo.description !== undefined).assertTrue();
+        expect(taskInfo.action !== undefined).assertTrue();
+        expect(taskInfo.mode !== undefined).assertTrue();
+        expect(taskInfo.priority !== undefined).assertTrue();
+        expect(taskInfo.mimeType !== undefined).assertTrue();
+        expect(taskInfo.progress !== undefined).assertTrue();
+        expect(taskInfo.gauge !== undefined).assertTrue();
+        expect(taskInfo.ctime !== undefined).assertTrue();
+        expect(taskInfo.mtime !== undefined).assertTrue();
+        expect(taskInfo.retry !== undefined).assertTrue();
+        expect(taskInfo.tries !== undefined).assertTrue();
+        expect(taskInfo.reason !== undefined).assertTrue();
+        expect(taskInfo.extras !== undefined).assertTrue();
+        expect(taskInfo.faults !== undefined).assertTrue();
+        done();
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0100 create success");
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0100 create catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0300
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0300
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0300 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_downloadConfigSaves_Supplemental_0300.txt',
+        network: request.agent.Network.ANY,
+        overwrite: true,
+        multipart: false
+      };
+      try {
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        let createOnCallback = (progress: request.agent.Progress) => {
+          console.info('upload task progress.');
+        };
+
+        let responseCallback = (response: request.agent.HttpResponse) => {
+          console.info('upload task response.');
+        };
+
+        let waitOnCallback = (reason: request.agent.WaitingReason) => {
+          console.info('upload task waiting.');
+        };
+
+        let faultOnCallback = (faults: request.agent.Faults) => {
+          console.info('upload task failed.');
+        };
+
+        task.onProgress(createOnCallback);
+        task.offProgress(createOnCallback);
+        task.offProgress();
+
+        task.onFailed(createOnCallback);
+        task.offFailed(createOnCallback);
+        task.offFailed();
+
+        task.onCompleted(createOnCallback);
+        task.offCompleted(createOnCallback);
+        task.offCompleted();
+
+        task.onPause(createOnCallback);
+        task.offPause(createOnCallback);
+        task.offPause();
+
+        task.onResume(createOnCallback);
+        task.offResume(createOnCallback);
+        task.offResume();
+
+        task.onRemove(createOnCallback);
+        task.offRemove(createOnCallback);
+        task.offRemove();
+
+        task.onResponse(responseCallback);
+        task.offResponse(responseCallback);
+        task.offResponse();
+
+        task.onFaultOccur(faultOnCallback);
+        task.offFaultOccur(faultOnCallback);
+        task.offFaultOccur();
+
+        task.onWait(waitOnCallback);
+        task.offWait(waitOnCallback);
+        task.offWait();
+
+        expect(task !== undefined).assertTrue();
+        done();
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0300 create success");
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0300 create catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

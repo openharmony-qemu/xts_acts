@@ -20,4 +20,5 @@ ohos_js_app_suite("ActsFWKDataAccessorTest") {
   hap_name = "ActsFWKDataAccessorTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
+  deps = [ "../actsdataabilityrelyhap:ActsDataAbilityRelyHap" ]
 }

@@ -41,7 +41,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function ShortcutKeyDPADUPTest() {
   describe('ShortcutKeyDPADUPTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
       

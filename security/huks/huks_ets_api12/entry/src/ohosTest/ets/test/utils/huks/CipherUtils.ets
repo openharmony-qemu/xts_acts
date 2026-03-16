@@ -56,13 +56,13 @@ export function GetCbcNoPaddingOptions(size: number): huks.HuksOptions {
   return huksOptions;
 }
 
-export function GetCbcPkcs7Options(size: number): huks.HuksOptions {
+export function GetCbcPkcs7Options(ivSize: number): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
     properties: new Array(
       GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
       GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_CBC),
       GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_PKCS7),
-      GenParam(huks.HuksTag.HUKS_TAG_IV, StringToUint8Array(GetDataBySize(size)))
+      GenParam(huks.HuksTag.HUKS_TAG_IV, StringToUint8Array(GetDataBySize(ivSize)))
     )
   };
   return huksOptions;

@@ -24,7 +24,7 @@ import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRota
 
 export default function frameNodeApi() {
   describe('frameNodeApi', () => {
-   beforeAll(() => {
+   beforeAll(async (): Promise<void> => {
       console.info("frameNodeApi beforeEach start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.performance.api18.static", "EntryAbility")

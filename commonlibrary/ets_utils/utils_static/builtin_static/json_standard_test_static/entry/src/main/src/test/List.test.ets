@@ -17,9 +17,11 @@ import Json5Test from "./Json/Json1.test";
 import Json4Test from "./Json/Json2.test";
 import Json2Test from "./Json/Json4.test";
 import Json1Test from "./Json/Json5.test";
+import JsonElement1Test from "./Json/JsonElement1.test";
 export default function testsuite() {
   Json1Test()
   Json2Test();
   Json4Test();
   Json5Test();
+  JsonElement1Test();
 }

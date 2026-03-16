@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function LazyForEachDelete() {
   describe('LazyForEachDelete', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachDelete beforeEach start");
 
 

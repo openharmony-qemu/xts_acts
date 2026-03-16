@@ -27,7 +27,7 @@ import { UtilsTest } from '../Util.test';
 export default function ResourceString() {
   describe('ResourceString', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ResourceString beforeAll start");
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")

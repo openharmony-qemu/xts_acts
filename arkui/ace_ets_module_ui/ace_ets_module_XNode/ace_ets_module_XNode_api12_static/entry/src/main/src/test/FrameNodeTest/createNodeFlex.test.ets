@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function createNodeFlex() {
   describe('createNodeFlex', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("createNodeFlex beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")

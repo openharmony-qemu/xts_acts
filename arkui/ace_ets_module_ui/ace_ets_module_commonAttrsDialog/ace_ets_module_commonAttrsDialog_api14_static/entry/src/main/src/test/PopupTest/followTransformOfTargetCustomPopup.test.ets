@@ -49,7 +49,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function followTransformOfTargetCustomPopup() {
   describe('followTransformOfTargetCustomPopup', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("followTransformOfTargetCustomPopup beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
     });

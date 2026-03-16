@@ -101,6 +101,190 @@ export default function audioPickerPromise(abilityContext: Context) {
       let testNum = "test_Audiopicker_Save_Promise_001";
       await saveWithoutSelect(testNum, done);
     });
+
+    /**
+     * @tc.name   test_Audiopicker_Save_Promise_002
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SAVE_PROMISE_0200
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_Audiopicker_Save_Promise_002", Level.LEVEL0, async (done: Function) => {
+      let testNum = "test_Audiopicker_Save_Promise_002";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = [];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+     * @tc.name   test_Audiopicker_Save_Promise_003
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SAVE_PROMISE_0300
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_Audiopicker_Save_Promise_003", Level.LEVEL0, async (done: Function) => {
+      let testNum = "test_Audiopicker_Save_Promise_003";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = [""];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_select_000
+    * @tc.number SUB_DF_AudioViewPicker_select_0000
+    * @tc.desc   Test AudioViewPicker.select() interfaces with null parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_select_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        await new picker.AudioViewPicker().select(null).then((result) => {
+          console.info(`AudioViewPicker_select_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        }).catch((err: Error) => {
+          console.info(`AudioViewPicker_select_000 err: ${JSON.stringify(err)}`);
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_select_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_select_001
+    * @tc.number SUB_DF_AudioViewPicker_select_0010
+    * @tc.desc   Test AudioViewPicker.select() interfaces with undefined parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_select_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.AudioViewPicker().select(undefined).then((result) => {
+          console.info(`AudioViewPicker_select_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        }).catch((err: Error) => {
+          console.info(`AudioViewPicker_select_001 err: ${JSON.stringify(err)}`);
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_select_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_save_000
+    * @tc.number SUB_DF_AudioViewPicker_save_0000
+    * @tc.desc   Test AudioViewPicker.save() interfaces with null parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_save_000', Level.LEVEL3, async (done: Function) => {
+      try {
+        await new picker.AudioViewPicker().save(null).then((result) => {
+          console.info(`AudioViewPicker_save_000 result: ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+          done();
+        }).catch((err: Error) => {
+          console.info(`AudioViewPicker_save_000 err: ${JSON.stringify(err)}`);
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_save_000 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_save_001
+    * @tc.number SUB_DF_AudioViewPicker_save_0010
+    * @tc.desc   Test AudioViewPicker.save() interfaces with undefined parameter
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_save_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        new picker.AudioViewPicker().save(undefined).then((result) => {
+          console.info(`AudioViewPicker_save_001 result: ${JSON.stringify(result)}`);
+          expect(result.length === 0).assertTrue();
+          done();
+        }).catch((err: Error) => {
+          console.info(`AudioViewPicker_save_001 err: ${JSON.stringify(err)}`);
+          done();
+        });
+        done();
+      } catch (e) {
+        console.log('AudioViewPicker_save_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_save_002
+    * @tc.number SUB_DF_AudioViewPicker_save_0020
+    * @tc.desc   Test AudioViewPicker.save() interfaces with empty newFileNames array
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_save_002', Level.LEVEL3, async (done: Function) => {
+      let testNum = "AudioViewPicker_save_002";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = [];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_save_003
+    * @tc.number SUB_DF_AudioViewPicker_save_0030
+    * @tc.desc   Test AudioViewPicker.save() interfaces with non-empty newFileNames array
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_save_003', Level.LEVEL3, async (done: Function) => {
+      let testNum = "AudioViewPicker_save_002";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = ['test.mp3'];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
+
+    /**
+    * @tc.name   AudioViewPicker_save_004
+    * @tc.number SUB_DF_AudioViewPicker_save_0040
+    * @tc.desc   Test AudioViewPicker.save() interfaces with empty newFileNames string
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it('AudioViewPicker_save_004', Level.LEVEL3, async (done: Function) => {
+      let testNum = "AudioViewPicker_save_002";
+      let option = new picker.AudioSaveOptions();
+      option.newFileNames = [''];
+      let saveDir = "Audios";
+      await saveWithOption(testNum, done, option, saveDir);
+    });
   });
 }
 
@@ -110,13 +294,13 @@ async function select(testNum: string, done: Function, dirName: string, fileName
     let audioPicker = new picker.AudioViewPicker();
     audioPicker.select().then((result) => {
       console.info(`${testNum}::select result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::select err: ${JSON.stringify(err)}`);
       done();
       return;
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -132,13 +316,13 @@ async function selectWithOption(testNum: string, done: Function, option: picker.
     let audioPicker = new picker.AudioViewPicker();
     audioPicker.select(option).then((result) => {
       console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::selectWithOption err: ${JSON.stringify(err)}`);
       done();
       return;
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -153,13 +337,13 @@ async function saveWithoutSelect(testNum: string, done: Function) {
     let audioPicker = new picker.AudioViewPicker();
     audioPicker.save().then((result) => {
       console.info(`${testNum}::saveWithoutSelect result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithoutSelect err: ${JSON.stringify(err)}`);
       done();
       return;
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {
@@ -174,13 +358,13 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Au
     let audioPicker = new picker.AudioViewPicker();
     audioPicker.save(option).then((result) => {
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
+      expect(result.length === 0).assertTrue();
       done();
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithOption err: ${JSON.stringify(err)}`);
       done();
       return;
     });
-    expect(true).assertTrue();
     done();
   }
   catch (error) {

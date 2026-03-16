@@ -69,8 +69,6 @@ namespace {
     const char* TEST_FONT_FAMILY = "TestFontFamily";
     const char* EMPTY_FONT_FAMILY = "";
     const char* EMPTY_FONT_PATH = "";
-    // 测试结果常量
-    constexpr int FAILURE = -1;
     // 字符串长度限制常量
     constexpr size_t MAX_PATH_LENGTH = 1024;
     constexpr size_t MAX_NAME_LENGTH = 512;
@@ -566,9 +564,8 @@ napi_value OHDrawingRegisterFontByIndex004(napi_env env, napi_callback_info info
 
     uint32_t errorCode = OH_Drawing_RegisterFontByIndex(fontCollection,
         NULL_FONT_FAMILY, TEST_FONT_PATH, VALID_INDEX);
-
-    // null字体名应该返回错误
-    NAPI_ASSERT_NO_MES(errorCode != OH_DRAWING_SUCCESS);
+    // null字体名称返回成功
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
 
     OH_Drawing_DestroyFontCollection(fontCollection);
     napi_create_int32(env, SUCCESS, &result);
@@ -780,9 +777,8 @@ napi_value OHDrawingRegisterFontBufferByIndex004(napi_env env, napi_callback_inf
 
     uint32_t errorCode = OH_Drawing_RegisterFontBufferByIndex(fontCollection,
         NULL_FONT_FAMILY, fontBuffer, fileSize, VALID_INDEX);
-
-    // 验证返回错误码
-    NAPI_ASSERT_NO_MES(errorCode != OH_DRAWING_SUCCESS);
+    // null字体名称返回成功
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
 
     delete[] fontBuffer;
     OH_Drawing_DestroyFontCollection(fontCollection);
@@ -1325,8 +1321,8 @@ napi_value OHDrawingGetFontUnicodeArrayFromFile001(napi_env env, napi_callback_i
         fontSrc, index, &unicodeArray, &arrayLength);
 
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
-    NAPI_ASSERT_NO_MES(unicodeArray != nullptr || arrayLength == ZERO_LENGTH);
-    NAPI_ASSERT_NO_MES(arrayLength >= 0);
+    NAPI_ASSERT_NO_MES(unicodeArray != nullptr);
+    NAPI_ASSERT_NO_MES(arrayLength > 0);
 
     if (unicodeArray != nullptr) {
         free(unicodeArray);
@@ -1427,9 +1423,9 @@ napi_value OHDrawingGetFontUnicodeArrayFromBuffer001(napi_env env, napi_callback
         fontBuffer, bufferSize, index, &unicodeArray, &arrayLength);
 
     NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
-    NAPI_ASSERT_NO_MES(unicodeArray != nullptr || arrayLength == 0);
-    NAPI_ASSERT_NO_MES(arrayLength >= 0);
-
+    NAPI_ASSERT_NO_MES(unicodeArray != nullptr);
+    NAPI_ASSERT_NO_MES(arrayLength > 0);
+    
     if (unicodeArray != nullptr && arrayLength > 0) {
         for (int32_t i = 0; i < arrayLength; i++) {
             int32_t codePoint = unicodeArray[i];
@@ -1585,7 +1581,8 @@ napi_value OHDrawingGetFontPathsByType001(napi_env env, napi_callback_info info)
 
     OH_Drawing_String* fontPaths = OH_Drawing_GetFontPathsByType(fontType, &pathCount);
 
-    NAPI_ASSERT_NO_MES(fontPaths != nullptr || pathCount == 0);
+    NAPI_ASSERT_NO_MES(fontPaths != nullptr);
+    NAPI_ASSERT_NO_MES(pathCount > 0);
 
     if (fontPaths != nullptr) {
         for (size_t i = 0; i < pathCount; i++) {
@@ -1637,14 +1634,15 @@ napi_value OHDrawingGetFontPathsByType003(napi_env env, napi_callback_info info)
         size_t pathCount = 0;
         OH_Drawing_String* fontPaths = OH_Drawing_GetFontPathsByType(fontTypes[i], &pathCount);
 
-        NAPI_ASSERT_NO_MES(fontPaths != nullptr || pathCount == 0);
-
         if (fontPaths != nullptr) {
+            NAPI_ASSERT_NO_MES(pathCount > 0);
             // 使用SafeFreeStringData释放每个字符串
             for (size_t j = 0; j < pathCount; j++) {
                 SafeFreeStringData(&fontPaths[j]);
             }
             free(fontPaths);
+        } else {
+            NAPI_ASSERT_NO_MES(pathCount == 0);
         }
     }
 

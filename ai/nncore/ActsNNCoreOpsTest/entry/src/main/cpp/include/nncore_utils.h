@@ -72,6 +72,7 @@ void FreeTensorDescVec(std::vector<NN_TensorDesc*> tensorDescVec);
 int CompileGraphMock(OH_NNCompilation* compilation, const OHNNCompileParam& compileParam);
 OH_NN_UInt32Array GetUInt32Array(std::vector<uint32_t> indices);
 OH_NN_ReturnCode GetDeviceID(size_t* deviceId);
+bool IsSupportNPU();
 
 } // namespace Test
 } // namespace NeuralNetworkRuntime

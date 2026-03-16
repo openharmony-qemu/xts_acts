@@ -56,7 +56,7 @@ function tabsDefaultFontSize(sysWidth: Resource) {
 export default function tabsThird() {
   describe('ActsAceTabsTestThird', () => {
     let count: int = 0
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
@@ -71,7 +71,7 @@ export default function tabsThird() {
         if (!("IndexThird" == pages.name)) {
           console.info("get IndexThird state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
-          routerAlp.pushUrl(options)
+          routerAlp.replaceUrl(options)
           await Utils.sleep(2000);
           // console.info("push IndexThird page success " + JSON.stringify(result));
         }

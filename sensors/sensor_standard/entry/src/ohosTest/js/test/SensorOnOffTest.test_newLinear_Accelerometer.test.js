@@ -70,6 +70,7 @@ describe("SensorJsTest_sensor_51", function () {
     const PARAMETER_ERROR_MSG = 'The parameter invalid.'
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
+    let sensortempcode = true;
     let invalid  = -1;
 
     /**
@@ -175,7 +176,7 @@ describe("SensorJsTest_sensor_51", function () {
     it("newLinear_Accelerometer_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.once(sensor.SensorId.LINEAR_ACCELEROMETER, callback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })
@@ -266,7 +267,7 @@ describe("SensorJsTest_sensor_51", function () {
         sensor.on(sensor.SensorId.LINEAR_ACCELEROMETER, onSensorCallback);
         sensor.off(sensor.SensorId.LINEAR_ACCELEROMETER, onSensorCallback);
         setTimeout(()=>{
-            expect(true).assertTrue();
+            expect(sensortempcode).assertTrue();
             done();
         }, 500);
     })

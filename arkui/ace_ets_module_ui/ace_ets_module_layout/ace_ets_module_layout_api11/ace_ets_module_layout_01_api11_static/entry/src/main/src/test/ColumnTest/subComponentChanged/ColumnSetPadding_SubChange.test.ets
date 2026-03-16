@@ -37,7 +37,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetPadding__SubChange() {
   describe('ColumnSetPadding__SubChange', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ColumnSetPadding__SubChange beforeEach start");
 
 

@@ -801,8 +801,8 @@ static napi_value NAPI_TestSetVideoSuperResolution(napi_env env, napi_callback_i
 {
     napi_value result;
     napi_create_object(env, &result);
-    size_t argc = 2;
-    napi_value args[PARAM_2] = {nullptr};
+    size_t argc = 3;
+    napi_value args[PARAM_3] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t fd = 0;
     int64_t offset;
@@ -810,13 +810,15 @@ static napi_value NAPI_TestSetVideoSuperResolution(napi_env env, napi_callback_i
     ExtractFileDescriptor(env, args[PARAM_0], fd, offset, size);
     bool isEnableSuperResolution = false;
     napi_get_value_bool(env, args[PARAM_1], &isEnableSuperResolution);
+    bool isEnable = false;
+    napi_get_value_bool(env, args[PARAM_2], &isEnable);
     NdkAVPlayerUser *ndkAVPlayerUser = new NdkAVPlayerUser();
     ndkAVPlayerUser->stateChangeFuncs_ = {
         { AV_INITIALIZED,
-            [ndkAVPlayerUser]() {
+            [ndkAVPlayerUser, isEnable]() {
                 ndkAVPlayerUser->playbackStrategy = OH_AVPlaybackStrategy_Create();
                 OH_AVErrCode ret = OH_AVPlaybackStrategy_SetSuperResolutionEnable(ndkAVPlayerUser->playbackStrategy,
-                    true);
+                    isEnable);
                 LOG("SetSuperResolutionEnable ret:%{public}d", ret);
                 ret = OH_AVPlayer_SetPlaybackStrategy(ndkAVPlayerUser->player, ndkAVPlayerUser->playbackStrategy);
                 LOG("SetPlaybackStrategy ret:%{public}d", ret);
@@ -833,6 +835,16 @@ static napi_value NAPI_TestSetVideoSuperResolution(napi_env env, napi_callback_i
     ndkAVPlayerUser->InitAVPlayer(fd, offset, size);
     SetInt32NamedProperty(env, result, "result", SUCCESS);
     SetUserDataProperty(env, result, "userData", &ndkAVPlayerUser);
+    return result;
+}
+
+static napi_value NAPI_TestSetVideoSuperResolutionStatusIdle(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    OH_AVErrCode errorCode = OH_AVPlayer_SetVideoSuperResolutionEnable(player, false);
+    napi_create_int32(env, errorCode, &result);
+    OH_AVPlayer_Release(player);
     return result;
 }
 
@@ -914,8 +926,8 @@ static napi_value NAPI_TestSetTargetVideoWindowSize(napi_env env, napi_callback_
 {
     napi_value result;
     napi_create_object(env, &result);
-    size_t argc = 3;
-    napi_value args[PARAM_3] = {nullptr};
+    size_t argc = 4;
+    napi_value args[PARAM_4] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t fd = 0;
     int64_t offset;
@@ -925,15 +937,17 @@ static napi_value NAPI_TestSetTargetVideoWindowSize(napi_env env, napi_callback_
     int32_t height;
     napi_get_value_int32(env, args[PARAM_1], &width);
     napi_get_value_int32(env, args[PARAM_2], &height);
+    bool isEnable = false;
+    napi_get_value_bool(env, args[PARAM_3], &isEnable);
     NdkAVPlayerUser *ndkAVPlayerUser = new NdkAVPlayerUser();
     ndkAVPlayerUser->width = width;
     ndkAVPlayerUser->height = height;
     ndkAVPlayerUser->stateChangeFuncs_ = {
         { AV_INITIALIZED,
-            [ndkAVPlayerUser]() {
+            [ndkAVPlayerUser, isEnable]() {
                 ndkAVPlayerUser->playbackStrategy = OH_AVPlaybackStrategy_Create();
                 OH_AVErrCode ret = OH_AVPlaybackStrategy_SetSuperResolutionEnable(
-                    ndkAVPlayerUser->playbackStrategy, true);
+                    ndkAVPlayerUser->playbackStrategy, isEnable);
                 LOG("SetSuperResolutionEnable ret:%{public}d", ret);
                 ret = OH_AVPlayer_SetPlaybackStrategy(ndkAVPlayerUser->player, ndkAVPlayerUser->playbackStrategy);
                 LOG("SetPlaybackStrategy ret:%{public}d", ret);
@@ -947,6 +961,16 @@ static napi_value NAPI_TestSetTargetVideoWindowSize(napi_env env, napi_callback_
     ndkAVPlayerUser->InitAVPlayer(fd, offset, size);
     SetInt32NamedProperty(env, result, "result", SUCCESS);
     SetUserDataProperty(env, result, "userData", &ndkAVPlayerUser);
+    return result;
+}
+
+static napi_value NAPI_TestSetTargetVideoWindowSizeStatusIdle(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    OH_AVErrCode errorCode = OH_AVPlayer_SetTargetVideoWindowSize(player, 720, 480);
+    napi_create_int32(env, errorCode, &result);
+    OH_AVPlayer_Release(player);
     return result;
 }
 
@@ -1553,6 +1577,8 @@ static napi_value NAPI_TestMediaSourceSetMimeType(napi_env env, napi_callback_in
         errorCode = OH_AVMediaSource_SetMimeType(mediaSource, "");
     } else if (stringType == PARAM_2) {
         errorCode = OH_AVMediaSource_SetMimeType(mediaSource, nullptr);
+    } else if (stringType == PARAM_3) {
+        errorCode = OH_AVMediaSource_SetMimeType(mediaSource, "application");
     } else {
         errorCode = OH_AVMediaSource_SetMimeType(mediaSource, "application/m3u8");
     }
@@ -1591,6 +1617,19 @@ static napi_value NAPI_TestAVMediaSourceLoaderDestroyError(napi_env env, napi_ca
     napi_value result;
     OH_AVErrCode errorCode = OH_AVMediaSourceLoader_Destroy(nullptr);
     napi_create_int32(env, errorCode, &result);
+    return result;
+}
+
+static napi_value NAPI_TestAVMediaSourceLoaderDestroy(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AVMediaSourceLoader* loader = OH_AVMediaSourceLoader_Create();
+    OH_AVErrCode errorCode = OH_AVMediaSourceLoader_Destroy(loader);
+    int32_t res = 1;
+    if (errorCode == AV_ERR_OK) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
     return result;
 }
 
@@ -1747,6 +1786,33 @@ static napi_value OhAVPlayerSetPlaybackRange(napi_env env, napi_callback_info in
     SetUserDataProperty(env, result, "userData", &ndkAVPlayerUser);
     return result;
 }
+
+static napi_value OhAVPlayerSetPlaybackRangeError(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    OH_AVErrCode errorCode = OH_AVPlayer_SetPlaybackRange(player, -1, -1, false);
+    napi_create_int32(env, errorCode, &result);
+    OH_AVPlayer_Release(player);
+    return result;
+}
+
+static napi_value OhAVPlayerSetPlaybackRangeErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVPlayer *player = nullptr;
+    int64_t start = 0;
+    int64_t end = 0;
+    bool closestRange = false;
+    OH_AVErrCode errCode = OH_AVPlayer_SetPlaybackRange(player, start, end, closestRange);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
 static napi_value OhAVPlayerSetMediaMuted(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -2709,6 +2775,295 @@ static napi_value NAPI_AVPlaybackStrategyDestoyErr(napi_env env, napi_callback_i
     napi_create_int32(env, res, &result);
     return result;
 }
+
+static void OnSubTitleUpdataCb(OH_AVPlayer *player, OH_AVFormat *infoBody, NdkAVPlayerUser *ndkAVPlayerUser)
+{
+    LOG("OnSubTitleUpdataCb called");
+    int32_t duration = 0;
+    bool ret = false;
+    ret = OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_SUBTITLE_UPDATE_INFO_DURATION, &duration);
+    if (ret) {
+        LOG("OnSubTitleUpdataCb duration=%{public}d", duration);
+    } else {
+        LOG("OnSubTitleUpdataCb get duration failed");
+        ndkAVPlayerUser->errorCode = FAIL;
+    }
+    int32_t startTime = 0;
+    ret = OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_SUBTITLE_UPDATE_INFO_START_TIME, &startTime);
+    if (ret) {
+        LOG("OnSubTitleUpdataCb startTime=%{public}d", startTime);
+    } else {
+        LOG("OnSubTitleUpdataCb get startTime failed");
+        ndkAVPlayerUser->errorCode = FAIL;
+    }
+    const char *text = nullptr;
+    ret = OH_AVFormat_GetStringValue(infoBody, OH_PLAYER_SUBTITLE_UPDATE_INFO_TEXT, &text);
+    if (ret && text != nullptr) {
+        LOG("OnSubTitleUpdataCb text=%{public}s", text);
+    } else {
+        LOG("OnSubTitleUpdataCb get text failed");
+        ndkAVPlayerUser->errorCode = FAIL;
+    }
+}
+
+static napi_value NAPI_AVPlayerOnSubtitleInfoUpdate(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 2;
+    napi_value args[PARAM_2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t fd = 0;
+    int64_t offset;
+    int64_t size;
+    ExtractFileDescriptor(env, args[PARAM_0], fd, offset, size);
+    int32_t subtitleFd = 0;
+    napi_get_value_int32(env, args[PARAM_1], &subtitleFd);
+    NdkAVPlayerUser *ndkAVPlayerUser = new NdkAVPlayerUser();
+    ndkAVPlayerUser->onInfoFuncs_.emplace(
+        AV_INFO_TYPE_SUBTITLE_UPDATE, [ndkAVPlayerUser](OH_AVPlayer *player, OH_AVFormat *infoBody) {
+            OnSubTitleUpdataCb(player, infoBody, ndkAVPlayerUser);
+            LOG("OnSubTitleUpdataCb finished");
+        });
+    ndkAVPlayerUser->InitAVPlayer(fd, offset, size);
+    ndkAVPlayerUser->errorCode = OH_AVPlayer_AddFdSubtitleSource(ndkAVPlayerUser->player, subtitleFd, 0, -1);
+    LOG("OH_AVPlayer_AddFdSubtitleSource called in prepared state, errorCode: %{public}d",
+        ndkAVPlayerUser->errorCode);
+    napi_create_object(env, &result);
+    SetInt32NamedProperty(env, result, "result", ndkAVPlayerUser->errorCode);
+    SetUserDataProperty(env, result, "userData", &ndkAVPlayerUser);
+    return result;
+}
+static napi_value NAPI_AVMediaSourceDestroy(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVHttpHeader* header = OH_AVHttpHeader_Create();
+    OH_AVMediaSource *mediaSource = OH_AVMediaSource_CreateWithUrl("http://example.com/video.mp4", header);
+    OH_AVErrCode errCode = OH_AVMediaSource_Destroy(mediaSource);
+    OH_AVHttpHeader_Destroy(header);
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+ 	 
+static napi_value NAPI_AVMediaSourceDestroyAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVErrCode errCode = OH_AVMediaSource_Destroy(nullptr);
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value OhAVPlayerAddFDSubtitleSourceErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t subtitleFd = 0;
+    int64_t subtitleOffset = 0;
+    int64_t subtitleSize = 0;
+    OH_AVPlayer *player = nullptr;
+    OH_AVErrCode errCode = OH_AVPlayer_AddFdSubtitleSource(player, subtitleFd, subtitleOffset, subtitleSize);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlayerSelectTrackWithModeErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t trackIndex = -1;
+    int32_t switchMode = 0;
+    AVPlayerTrackSwitchMode switchType = static_cast<AVPlayerTrackSwitchMode>(switchMode);
+    OH_AVPlayer *player = nullptr;
+    OH_AVErrCode errCode = OH_AVPlayer_SelectTrackWithMode(player, trackIndex, switchType);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetPreferHDRErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool enabled = false;
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetPreferredHdr(strategy, enabled);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetPreferredHeightErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    uint32_t height = 0;
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetPreferredHeight(strategy, height);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetPreferredWidthErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    uint32_t width = 0;
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetPreferredWidth(strategy, width);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetPreferredBufferDurationErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    uint32_t bufferDuration = 0;
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetPreferredBufferDuration(strategy, bufferDuration);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetMutedMediaTypeErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    int32_t mediaType = 1;
+    OH_MediaType mutedMediaType = static_cast<OH_MediaType>(mediaType);
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetMutedMediaType(strategy, mutedMediaType);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetPreferredAudioLanguageErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    char audioLanguage[64] = {0};
+    napi_get_value_string_utf8(env, args[PARAM_0], audioLanguage, sizeof(audioLanguage), nullptr);
+    const char* audioLangPtr = audioLanguage;
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetPreferredAudioLanguage(strategy, audioLangPtr);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetPreferredSubtitleLanguageErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    char subtitleLanguage[64] = {0};
+    napi_get_value_string_utf8(env, args[PARAM_0], subtitleLanguage, sizeof(subtitleLanguage), nullptr);
+    const char* subtitleLangPtr = subtitleLanguage;
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetPreferredSubtitleLanguage(strategy, subtitleLangPtr);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetShowFirstFrameOnPrepareErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    bool showFirstFrameOnPrepare;
+    napi_get_value_bool(env, args[PARAM_0], &showFirstFrameOnPrepare);
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetShowFirstFrameOnPrepare(strategy, showFirstFrameOnPrepare);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetPreferredBufferDurationForPlayingErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    double buffer;
+    napi_get_value_double(env, args[PARAM_0], &buffer);
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetPreferredBufferDurationForPlaying(strategy, buffer);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetThresholdForAutoQuickPlayErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    double threshold;
+    napi_get_value_double(env, args[PARAM_0], &threshold);
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetThresholdForAutoQuickPlay(strategy, threshold);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value OhAVPlaybackStrategySetKeepDecodingOnMuteErr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    OH_AVPlaybackStrategy *strategy = nullptr;
+    bool keep;
+    napi_get_value_bool(env, args[PARAM_0], &keep);
+    OH_AVErrCode errCode = OH_AVPlaybackStrategy_SetKeepDecodingOnMute(strategy, keep);
+    int32_t res = 1;
+    if (errCode == AV_ERR_INVALID_VAL) {
+        res = 0;
+    }
+    napi_create_int32(env, res, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2720,11 +3075,15 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"testSetVideoSuperResolutionError", nullptr, NAPI_TestSetVideoSuperResolutionError, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"testSetVideoSuperResolutionForStatusIdle", nullptr, NAPI_TestSetVideoSuperResolutionStatusIdle, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
         {"testSetTargetVideoWindowSize", nullptr, NAPI_TestSetTargetVideoWindowSize, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"releaseUserData", nullptr, NAPI_ReleaseUserData, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSetTargetVideoWindowSizeError", nullptr, NAPI_TestSetTargetVideoWindowSizeError, nullptr, nullptr,
             nullptr, napi_default, nullptr},
+        {"testSetTargetVideoWindowSizeForStatusIdle", nullptr, NAPI_TestSetTargetVideoWindowSizeStatusIdle, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
         {"testSetDataSource", nullptr, NAPI_TestSetDataSource, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"checkPlaybackInfo", nullptr, NAPI_CheckPlaybackInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testGetPlaybackInfo", nullptr, NAPI_TestGetPlaybackInfo, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -2767,6 +3126,8 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"testAVMediaSourceLoaderDestroyError", nullptr, NAPI_TestAVMediaSourceLoaderDestroyError, nullptr, nullptr,
             nullptr, napi_default, nullptr},
+        {"testAVMediaSourceLoaderDestroy", nullptr, NAPI_TestAVMediaSourceLoaderDestroy, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
         {"testAVMediaSourceSetMediaSourceLoaderError", nullptr, NAPI_TesAVMediaSourceSetMediaSourceLoaderError, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"testAVMetaSourceLoadingRequestGetUrlError", nullptr, NAPI_TestAVMetaSourceLoadingRequestGetUrlError, nullptr,
@@ -2781,6 +3142,10 @@ static napi_value Init(napi_env env, napi_value exports)
             NAPI_TestAVMediaSourceLoadingRequestGetHttpHeaderError, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OhAVPlayerSetPlaybackRange", nullptr, OhAVPlayerSetPlaybackRange, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        {"OhAVPlayerSetPlaybackRangeError", nullptr, OhAVPlayerSetPlaybackRangeError, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"OhAVPlayerSetPlaybackRangeErr", nullptr, OhAVPlayerSetPlaybackRangeErr, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"OhAVPlayerSetMediaMuted", nullptr, OhAVPlayerSetMediaMuted, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OhAVPlayerAddURLSubtitleSource", nullptr, OhAVPlayerAddURLSubtitleSource, nullptr, nullptr, nullptr,
             napi_default, nullptr},
@@ -2844,6 +3209,10 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr},
         {"AVPlayerSetAmplitudeUpdateCallbackError", nullptr, NAPI_AVPlayerSetAmplitudeUpdateCallbackError, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"AVMediaSourceDestroy", nullptr, NAPI_AVMediaSourceDestroy, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"AVMediaSourceDestroyAbnormal", nullptr, NAPI_AVMediaSourceDestroyAbnormal, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"AVLoadingRequestError", nullptr, NAPI_AVLoadingRequestError, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"AVHttpHeaderDestroy", nullptr, NAPI_AVHttpHeaderDestroy, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -2866,6 +3235,34 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"AVPlaybackStrategyDestoyErr", nullptr, NAPI_AVPlaybackStrategyDestoyErr, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"AVPlayerOnSubtitleInfoUpdate", nullptr, NAPI_AVPlayerOnSubtitleInfoUpdate, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"OhAVPlayerAddFDSubtitleSourceErr", nullptr, OhAVPlayerAddFDSubtitleSourceErr, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"OhAVPlayerSelectTrackWithModeErr", nullptr, OhAVPlayerSelectTrackWithModeErr, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"OhAVPlaybackStrategySetPreferHDRErr", nullptr, OhAVPlaybackStrategySetPreferHDRErr, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"OhAVPlaySetPreferredHeightErr", nullptr, OhAVPlaybackStrategySetPreferredHeightErr, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"OhSetPreferredWidthErr", nullptr, OhAVPlaybackStrategySetPreferredWidthErr, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"OhAVPlaySetPreferredBufferDurationErr", nullptr, OhAVPlaybackStrategySetPreferredBufferDurationErr,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OhAVPlaybackStrategySetMutedMediaTypeErr", nullptr, OhAVPlaybackStrategySetMutedMediaTypeErr, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"OhAVPlaybackStrategySetPreferredAudioLanguageErr", nullptr, OhAVPlaybackStrategySetPreferredAudioLanguageErr,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OhAVPlaySetPreferredSubtitleLanguageErr", nullptr, OhAVPlaybackStrategySetPreferredSubtitleLanguageErr,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OhAVPlaybackStrategySetShowFirstFrameOnPrepareErr", nullptr,
+            OhAVPlaybackStrategySetShowFirstFrameOnPrepareErr, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OhAVPlayBufferDurationForPlayingErr", nullptr, OhAVPlaybackStrategySetPreferredBufferDurationForPlayingErr,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OhAVPlaybackStrategySetThresholdForAutoQuickPlayErr", nullptr,
+            OhAVPlaybackStrategySetThresholdForAutoQuickPlayErr, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OhAVPlaybackStrategySetKeepDecodingOnMuteErr", nullptr, OhAVPlaybackStrategySetKeepDecodingOnMuteErr,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     SampleManager::GetInstance()->Export(env, exports);

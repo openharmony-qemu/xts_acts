@@ -258,9 +258,7 @@ export default function WindowEnterpriseTest() {
               await terminateAbility3(caseName);
               done()
             }else{
-
               await terminateAbility3(caseName);
-              expect(true).assertTrue();
               done();
             }
 

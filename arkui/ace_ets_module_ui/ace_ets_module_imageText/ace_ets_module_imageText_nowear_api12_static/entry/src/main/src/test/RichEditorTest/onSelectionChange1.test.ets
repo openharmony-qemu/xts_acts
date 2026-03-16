@@ -31,7 +31,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function onSelectionChange1() {
   describe('onSelectionChange1', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onSelectionChange1 beforeEach start");
 
 

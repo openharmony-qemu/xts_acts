@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import url from '@ohos.url';
 
 let TAG = '';
@@ -514,5 +514,196 @@ export default function ActsUrlParameterTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   testUrlParameter026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2600
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlParameter026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let urlObject = url.URL.parseURL('https://developer.exampleUrl/?fod=1&bard=2');
+      let params = new url.URLParams(urlObject.search.slice(1));
+      params.append('fod', '3');
+      let res1 = params.getAll('').toString();
+      expect(res1.length).assertEqual(0);
+      expect(res1.toString()).assertEqual("");
+      try {
+        let res2 = params.getAll(null).toString();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let res3 = params.getAll(undefined).toString();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testUrlParameter027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2700
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlParameter027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let paramsObject = new url.URLParams('name=Jonathan&age=18');
+      let res1 = paramsObject.get('1');
+      expect(res1?.length).assertEqual(undefined);
+      expect(res1?.toString()).assertEqual(undefined);
+      try {
+        let res2 = paramsObject.get(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let res3 = paramsObject.get(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testUrlParameter028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2800
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlParameter028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let urlObject = new url.URL('https://developer.exampleUrl/?fod=1&bard=2');
+      let params = new url.URLSearchParams(urlObject.search.slice(1));
+      params.append('fod', '3')
+      let res1 = params.getAll('').toString();
+      expect(res1.length).assertEqual(0);
+      expect(res1?.toString()).assertEqual("");
+      let res2 = params.getAll(null);
+      expect(res2?.toString()).assertEqual(undefined);
+      let res3 = params.getAll(undefined);
+      expect(res3?.toString()).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.name   testUrlParameter029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2900
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlParameter029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let paramsObject = new url.URLSearchParams('name=Jonathan&age=18');
+      let res1 = paramsObject.get('');
+      expect(res1?.length).assertEqual(undefined);
+      expect(res1?.toString()).assertEqual(undefined);
+      let res2 = paramsObject.get(null);
+      expect(res2?.toString()).assertEqual(undefined);
+      let res3 = paramsObject.get(undefined);
+      expect(res3?.toString()).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.name   testUrlParameter030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_3000
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlParameter030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let mm = 'https://username:password@host:8080/test/test1/test3';
+      let urlObject = url.URL.parseURL(mm);
+      let url1 = url.URL.parseURL('', 'https://www.example.com/test/test1');
+      expect(url1.toString()).assertEqual("https://www.example.com/test/test1");
+      try {
+        let url2 = url.URL.parseURL(null, 'https://www.example.com/test/test1');
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let url3 = url.URL.parseURL(undefined, 'https://www.example.com/test/test1');
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+    /**
+     * @tc.name   testUrlParameter031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_3100
+     * @tc.desc   The test parameter is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUrlParameter031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let objectParams1 = new url.URLParams({ "fod": '1', "bard": '2' });
+      objectParams1.append("", "3");
+      expect(objectParams1.toString()).assertEqual("fod=1&bard=2&=3")
+      try {
+        objectParams1.append(null, "3");
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.append(undefined, "3");
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      objectParams1.delete("");
+      try {
+        objectParams1.delete(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.delete(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      objectParams1.has("");
+      try {
+        objectParams1.has(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.has(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      objectParams1.set("", "7");
+      expect(objectParams1.toString()).assertEqual('fod=1&bard=2&=7')
+      try {
+        objectParams1.set(null, "3");
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.set(undefined, "3");
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      objectParams1.set("cc", "");
+      expect(objectParams1.toString()).assertEqual('fod=1&bard=2&=7&cc=')
+      try {
+        objectParams1.set("cc", null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        objectParams1.set("cc", undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
   })
 }

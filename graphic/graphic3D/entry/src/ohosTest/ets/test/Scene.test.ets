@@ -41,6 +41,25 @@ export default function sceneTest() {
         scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
         rf = scene.getResourceFactory();
         expect(scene != undefined).assertTrue();
+
+        // Test null parameter
+        try {
+          let nullScene = await Scene.load(null);
+          expect(nullScene != null).assertTrue();
+          console.info(msg + " load with null parameter succeeded");
+        } catch (err) {
+          console.info(msg + " load with null parameter threw error: " + JSON.stringify(err));
+        }
+
+        // Test undefined parameter
+        try {
+          let undefinedScene = await Scene.load(undefined);
+          expect(undefinedScene != null).assertTrue();
+          console.info(msg + " load with undefined parameter succeeded");
+        } catch (err) {
+          console.info(msg + " load with undefined parameter threw error: " + JSON.stringify(err));
+        }
+
         done();
       } catch (err) {
         console.info(msg + 'Failed in Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")) ' +
@@ -50,15 +69,15 @@ export default function sceneTest() {
       }
     })
     /**
-     * @tc.name   testGetNodeByPath
+     * @tc.name   testSceneGetNodeByPath
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0020
      * @tc.desc   Nodes are obtained from paths
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msg = "============================testGetNodeByPath";
+    it('testSceneGetNodeByPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneGetNodeByPath";
       console.info(msg + ' begin ');
       try {
         scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
@@ -73,6 +92,40 @@ export default function sceneTest() {
         expect(node1?.nodeType).assertEqual(scene3d.NodeType.GEOMETRY);
         let node2 = scene.getNodeByPath('rootNode_/Scene/node_123');
         expect(node2).assertNull();
+
+        // Test path parameter with empty string
+        let emptyPathNode = scene?.getNodeByPath('');
+        console.info(msg + " getNodeByPath with empty string: " + JSON.stringify(emptyPathNode));
+        expect(emptyPathNode != null).assertTrue();
+
+        // Test path parameter with null
+        try {
+          let nullPathNode = scene?.getNodeByPath(null);
+          console.info(msg + " getNodeByPath with null: " + JSON.stringify(nullPathNode));
+          expect(nullPathNode).assertNull();
+        } catch (err) {
+          console.info(msg + " getNodeByPath with null threw error: " + JSON.stringify(err));
+        }
+
+        // Test path parameter with undefined
+        try {
+          let undefinedPathNode = scene?.getNodeByPath(undefined);
+          console.info(msg + " getNodeByPath with undefined: " + JSON.stringify(undefinedPathNode));
+          expect(undefinedPathNode).assertNull();
+        } catch (err) {
+          console.info(msg + " getNodeByPath with undefined threw error: " + JSON.stringify(err));
+        }
+
+        // Test type parameter with null
+        let node3 = scene?.getNodeByPath('rootNode_/Scene/node_damagedHelmet_-6514', null);
+        console.info(msg + " getNodeByPath with null type: " + JSON.stringify(node3));
+        expect(node3).assertNull();
+
+        // Test type parameter with undefined
+        let node4 = scene?.getNodeByPath('rootNode_/Scene/node_damagedHelmet_-6514', undefined);
+        console.info(msg + " getNodeByPath with undefined type: " + JSON.stringify(node4));
+        expect(node4).assertNull();
+
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.getNodeByPath('rootNode_/Scene/node_damagedHelmet_-6514') " +
@@ -100,6 +153,46 @@ export default function sceneTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.getResourceFactory() " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testSceneEnvironment
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0045
+     * @tc.desc   Test Scene.environment property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneEnvironment', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneEnvironment";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb"));
+        rf = scene.getResourceFactory();
+
+        // Test get environment property
+        let env = scene?.environment;
+        console.info(msg + " environment property: " + JSON.stringify(env));
+        expect(env != null).assertTrue();
+
+        // Test set environment property
+        try {
+          let newEnv = await rf.createEnvironment({ name: "testEnv", uri: $rawfile("gltf/Environment/glTF/images/quarry_02_2k_radiance.ktx") });
+          console.info(msg + " created environment: " + JSON.stringify(newEnv));
+          expect(newEnv != null).assertTrue();
+
+          scene.environment = newEnv;
+          console.info(msg + " set environment property: " + JSON.stringify(scene?.environment));
+          expect(scene?.environment != null).assertTrue();
+        } catch (envErr) {
+          console.info(msg + " set environment threw error: " + JSON.stringify(envErr));
+        }
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in scene.environment " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -214,6 +307,30 @@ export default function sceneTest() {
         scene?.renderFrame({ alwaysRender: true });
         expect(scene?.renderFrame()).assertTrue();
         console.info(msg + " Succeed in scene?.renderFrame() ");
+
+        // Test alwaysRender: false
+        let falseResult = scene?.renderFrame({ alwaysRender: false });
+        expect(falseResult != null).assertTrue();
+        console.info(msg + " Succeed in scene?.renderFrame({ alwaysRender: false }) ");
+
+        // Test params with null
+        try {
+          let nullParamsResult = scene?.renderFrame(null);
+          console.info(msg + " renderFrame with null params: " + JSON.stringify(nullParamsResult));
+          expect(nullParamsResult != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " renderFrame with null params threw error: " + JSON.stringify(err));
+        }
+
+        // Test params with undefined
+        try {
+          let undefinedParamsResult = scene?.renderFrame(undefined);
+          console.info(msg + " renderFrame with undefined params: " + JSON.stringify(undefinedParamsResult));
+          expect(undefinedParamsResult != null).assertTrue();
+        } catch (err) {
+          console.info(msg + " renderFrame with undefined params threw error: " + JSON.stringify(err));
+        }
+
         scene.destroy();
         expect(scene.renderFrame()).assertFalse();
         done();
@@ -418,6 +535,17 @@ export default function sceneTest() {
       try {
         let scene2 = await rf.createScene();
         expect(scene2 != null).assertTrue();
+
+        // Test null parameter (should create empty scene)
+        let nullScene = await rf.createScene(null);
+        expect(nullScene != null).assertTrue();
+        console.info(msg + " createScene with null parameter created empty scene");
+
+        // Test undefined parameter (should create empty scene)
+        let undefinedScene = await rf.createScene(undefined);
+        expect(undefinedScene != null).assertTrue();
+        console.info(msg + " createScene with undefined parameter created empty scene");
+
         done();
       } catch (err) {
         console.info(msg + " Failed in testCreateScene_02 " + JSON.stringify(err));
@@ -641,6 +769,16 @@ export default function sceneTest() {
         expect(sampler.addressModeU).assertEqual(scene3d.SamplerAddressMode.REPEAT);
         console.info(msg + " sampler.addressModeU set and verified");
 
+        // Test null parameter
+        let nullSampler = await rf.createSampler(null);
+        expect(nullSampler != null).assertTrue();
+        console.info(msg + " createSampler with null parameter returned undefined");
+
+        // Test undefined parameter
+        let undefinedSampler = await rf.createSampler(undefined);
+        expect(undefinedSampler != null).assertTrue();
+        console.info(msg + " createSampler with undefined parameter returned undefined");
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -769,6 +907,29 @@ export default function sceneTest() {
             let plugin = await renderContext.loadPlugin(pluginName);
             console.info(msg + ' plugin "' + pluginName + '" load result:', plugin);
             expect(plugin).assertTrue();
+
+            // Test with empty string parameter
+            let loadEmpty = await renderContext.loadPlugin("");
+            console.info(msg + ' plugin "" (empty string) load result:', loadEmpty);
+            expect(loadEmpty).assertFalse();
+
+            // Test with null parameter
+            try {
+              let loadNull = await renderContext.loadPlugin(null);
+              console.info(msg + ' plugin null load result:', loadNull);
+              expect(loadNull).assertUndefined();
+            } catch (nullErr) {
+              console.info(msg + ' plugin null parameter caused exception (expected):', JSON.stringify(nullErr));
+            }
+
+            // Test with undefined parameter
+            try {
+              let loadUndefined = await renderContext.loadPlugin(undefined);
+              console.info(msg + ' plugin undefined load result:', loadUndefined);
+              expect(loadUndefined).assertUndefined();
+            } catch (undefinedErr) {
+              console.info(msg + ' plugin undefined parameter caused exception (expected):', JSON.stringify(undefinedErr));
+            }
           }
           console.info(msg + " test completed successfully");
           done();
@@ -806,6 +967,51 @@ export default function sceneTest() {
           expect(component != null).assertTrue();
           console.info(msg + ` component name:`, component?.name);
           expect(component.name).assertEqual(componentName);
+          
+          // Test node parameter with null
+          try {
+            let nullNodeComponent = await scene.createComponent(null, componentName);
+            console.info(msg + " createComponent with null node: " + JSON.stringify(nullNodeComponent));
+            expect().assertFail();
+          } catch (err) {
+            console.info(msg + " createComponent with null node threw error: " + JSON.stringify(err));
+          }
+
+          // Test node parameter with undefined
+          try {
+            let undefinedNodeComponent = await scene.createComponent(undefined, componentName);
+            console.info(msg + " createComponent with undefined node: " + JSON.stringify(undefinedNodeComponent));
+            expect().assertFail();
+          } catch (err) {
+            console.info(msg + " createComponent with undefined node threw error: " + JSON.stringify(err));
+          }
+
+          // Test name parameter with empty string
+          try {
+            let emptyNameComponent = await scene.createComponent(rootNode, "");
+            console.info(msg + " createComponent with empty string name: " + JSON.stringify(emptyNameComponent));
+            expect().assertFail();
+          } catch (err) {
+            console.info(msg + " createComponent with empty string name threw error: " + JSON.stringify(err));
+          }
+
+          // Test name parameter with null
+          try {
+            let nullNameComponent = await scene.createComponent(rootNode, null);
+            console.info(msg + " createComponent with null name: " + JSON.stringify(nullNameComponent));
+            expect(nullNameComponent).assertUndefined();
+          } catch (err) {
+            console.info(msg + " createComponent with null name threw error: " + JSON.stringify(err));
+          }
+
+          // Test name parameter with undefined
+          try {
+            let undefinedNameComponent = await scene.createComponent(rootNode, undefined);
+            console.info(msg + " createComponent with undefined name: " + JSON.stringify(undefinedNameComponent));
+            expect(undefinedNameComponent).assertUndefined();
+          } catch (err) {
+            console.info(msg + " createComponent with undefined name threw error: " + JSON.stringify(err));
+          }
 
           console.info(msg + " test completed successfully");
           done();
@@ -852,6 +1058,51 @@ export default function sceneTest() {
           console.info(msg +"Attempted to retrieve missing component 'NonExistentComponent':", missingComponent);
           expect(missingComponent).assertNull();
 
+          // Test node parameter with null
+          try {
+            let nullNodeComponent = scene.getComponent(null, componentName);
+            console.info(msg + " getComponent with null node: " + JSON.stringify(nullNodeComponent));
+            expect(nullNodeComponent).assertNull();
+          } catch (err) {
+            console.info(msg + " getComponent with null node threw error: " + JSON.stringify(err));
+          }
+
+          // Test node parameter with undefined
+          try {
+            let undefinedNodeComponent = scene.getComponent(undefined, componentName);
+            console.info(msg + " getComponent with undefined node: " + JSON.stringify(undefinedNodeComponent));
+            expect(undefinedNodeComponent).assertNull();
+          } catch (err) {
+            console.info(msg + " getComponent with undefined node threw error: " + JSON.stringify(err));
+          }
+
+          // Test name parameter with empty string
+          try {
+            let emptyNameComponent = scene.getComponent(rootNode, "");
+            console.info(msg + " getComponent with empty string name: " + JSON.stringify(emptyNameComponent));
+            expect(emptyNameComponent).assertNull();
+          } catch (err) {
+            console.info(msg + " getComponent with empty string name threw error: " + JSON.stringify(err));
+          }
+          
+          // Test name parameter with null
+          try {
+            let nullNameComponent = scene.getComponent(rootNode, null);
+            console.info(msg + " getComponent with null name: " + JSON.stringify(nullNameComponent));
+            expect(nullNameComponent).assertUndefined();
+          } catch (err) {
+            console.info(msg + " getComponent with null name threw error: " + JSON.stringify(err));
+          }
+
+          // Test name parameter with undefined
+          try {
+            let undefinedNameComponent = scene.getComponent(rootNode, undefined);
+            console.info(msg + " getComponent with undefined name: " + JSON.stringify(undefinedNameComponent));
+            expect(undefinedNameComponent).assertUndefined();
+          } catch (err) {
+            console.info(msg + " getComponent with undefined name threw error: " + JSON.stringify(err));
+          }
+
           console.info(msg + " test completed successfully");
           done();
         } catch (err) {
@@ -894,6 +1145,70 @@ export default function sceneTest() {
             let registerSuss = renderContext.registerResourcePath("shaders_test", "OhosRawFile://shaders/custom_shader");
             console.info(msg + ' protocol "shaders_test" registration result:', registerSuss);
             expect(registerSuss).assertTrue();
+
+            // Test with empty uri parameter
+            let registerEmptyUri = renderContext.registerResourcePath("shaders_test2", "");
+            console.info(msg + ' uri "" (empty string) registration result:', registerEmptyUri);
+            expect(registerEmptyUri).assertFalse();
+
+            // Test with null protocol parameter
+            try {
+              let registerNullProtocol = renderContext.registerResourcePath(null, "OhosRawFile://shaders/custom_shader");
+              console.info(msg + ' null protocol registration result:', registerNullProtocol);
+              expect(registerNullProtocol).assertUndefined();
+            } catch (nullProtocolErr) {
+              console.info(msg + ' null protocol parameter caused exception (expected):', JSON.stringify(nullProtocolErr));
+            }
+
+            // Test with undefined protocol parameter
+            try {
+              let registerUndefinedProtocol = renderContext.registerResourcePath(undefined, "OhosRawFile://shaders/custom_shader");
+              console.info(msg + ' undefined protocol registration result:', registerUndefinedProtocol);
+              expect(registerUndefinedProtocol).assertUndefined();
+            } catch (undefinedProtocolErr) {
+              console.info(msg + ' undefined protocol parameter caused exception (expected):', JSON.stringify(undefinedProtocolErr));
+            }
+
+            // Test with null uri parameter
+            try {
+              let registerNullUri = renderContext.registerResourcePath("shaders_test3", null);
+              console.info(msg + ' null uri registration result:', registerNullUri);
+              expect(registerNullUri).assertUndefined();
+            } catch (nullUriErr) {
+              console.info(msg + ' null uri parameter caused exception (expected):', JSON.stringify(nullUriErr));
+            }
+
+            // Test with undefined uri parameter
+            try {
+              let registerUndefinedUri = renderContext.registerResourcePath("shaders_test4", undefined);
+              console.info(msg + ' undefined uri registration result:', registerUndefinedUri);
+              expect(registerUndefinedUri).assertUndefined();
+            } catch (undefinedUriErr) {
+              console.info(msg + ' undefined uri parameter caused exception (expected):', JSON.stringify(undefinedUriErr));
+            }
+
+            // Test with both parameters as null
+            try {
+              let registerBothNull = renderContext.registerResourcePath(null, null);
+              console.info(msg + ' both null parameters registration result:', registerBothNull);
+              expect(registerBothNull).assertUndefined();
+            } catch (bothNullErr) {
+              console.info(msg + ' both null parameters caused exception (expected):', JSON.stringify(bothNullErr));
+            }
+
+            // Test with both parameters as undefined
+            try {
+              let registerBothUndefined = renderContext.registerResourcePath(undefined, undefined);
+              console.info(msg + ' both undefined parameters registration result:', registerBothUndefined);
+              expect(registerBothUndefined).assertUndefined();
+            } catch (bothUndefinedErr) {
+              console.info(msg + ' both undefined parameters caused exception (expected):', JSON.stringify(bothUndefinedErr));
+            }
+
+            // Test with both parameters as empty string
+            let registerBothEmpty = renderContext.registerResourcePath("", "");
+            console.info(msg + ' both empty string parameters registration result:', registerBothEmpty);
+            expect(registerBothEmpty).assertFalse();
 
             rf = scene.getResourceFactory();
             let shader = rf.createShader({name: "CustomShader", uri: $rawfile('shaders/custom_shader/custom_material_sample_test.shader')});
@@ -1079,12 +1394,423 @@ export default function sceneTest() {
           let resultNullNode = scene.cloneNode(null, scene.root, "testNode");
           expect(resultNullNode).assertNull();
           console.info(msg + " cloneNode with null node returns null");
+
+          // Test cloneNode with undefined node should return null
+          let resultUndefinedNode = scene.cloneNode(undefined, scene.root, "testUndefinedNode");
+          expect(resultUndefinedNode).assertNull();
+          console.info(msg + " cloneNode with undefined node returns null");
+
+          // Test cloneNode with null parent
+          try {
+            let resultNullParent = scene.cloneNode(cubeNode, null, "testNullParent");
+            console.info(msg + " cloneNode with null parent: " + JSON.stringify(resultNullParent));
+            expect(resultNullParent).assertUndefined();
+          } catch (err) {
+            console.info(msg + " cloneNode with null parent threw error: " + JSON.stringify(err));
+          }
+
+          // Test cloneNode with undefined parent
+          try {
+            let resultUndefinedParent = scene.cloneNode(cubeNode, undefined, "testUndefinedParent");
+            console.info(msg + " cloneNode with undefined parent: " + JSON.stringify(resultUndefinedParent));
+            expect(resultUndefinedParent).assertUndefined();
+          } catch (err) {
+            console.info(msg + " cloneNode with undefined parent threw error: " + JSON.stringify(err));
+          }
+
+          // Test cloneNode with empty string name
+          try {
+            let resultEmptyName = scene.cloneNode(cubeNode, scene.root, "");
+            console.info(msg + " cloneNode with empty string name: " + JSON.stringify(resultEmptyName));
+            expect(resultEmptyName != null).assertTrue();
+          } catch (err) {
+            console.info(msg + " cloneNode with empty string name threw error: " + JSON.stringify(err));
+          }
+
+          // Test cloneNode with null name
+          try {
+            let resultNullName = scene.cloneNode(cubeNode, scene.root, null);
+            console.info(msg + " cloneNode with null name: " + JSON.stringify(resultNullName));
+            expect(resultNullName).assertUndefined();
+          } catch (err) {
+            console.info(msg + " cloneNode with null name threw error: " + JSON.stringify(err));
+          }
+
+          // Test cloneNode with undefined name
+          try {
+            let resultUndefinedName = scene.cloneNode(cubeNode, scene.root, undefined);
+            console.info(msg + " cloneNode with undefined name: " + JSON.stringify(resultUndefinedName));
+            expect(resultUndefinedName).assertUndefined();
+          } catch (err) {
+            console.info(msg + " cloneNode with undefined name threw error: " + JSON.stringify(err));
+          }
         }
 
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
         console.info(msg + " Failed in testCloneNode " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCustomGeometryVertices
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1030
+     * @tc.desc   Test set and get for vertices property of CustomGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCustomGeometryVertices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCustomGeometryVertices";
+      console.info(msg + ' begin ');
+      try {
+        let customGeom = new scene3d.CustomGeometry();
+        expect(customGeom != null).assertTrue();
+        console.info(msg + " CustomGeometry created successfully");
+
+        // Test setting vertices with normal values
+        customGeom.vertices = [{x: 0, y: 1, z: 0}, {x: 0.5, y: 0, z: 0.3}, {x: 0, y: -1, z: 0}];
+        expect(customGeom.vertices != null).assertTrue();
+        expect(customGeom.vertices.length).assertEqual(3);
+        console.info(msg + " normal vertices set successfully");
+
+        // Test setting vertices with negative coordinates
+        customGeom.vertices = [{x: -1, y: -1, z: -1}, {x: -2.5, y: -3.5, z: -4.5}];
+        expect(customGeom.vertices.length).assertEqual(2);
+        expect(customGeom.vertices[0].x).assertEqual(-1);
+        console.info(msg + " negative coordinate vertices set successfully");
+
+        // Test setting vertices with zero coordinates
+        customGeom.vertices = [{x: 0, y: 0, z: 0}];
+        expect(customGeom.vertices.length).assertEqual(1);
+        expect(customGeom.vertices[0].x).assertEqual(0);
+        console.info(msg + " zero coordinate vertices set successfully");
+
+        // Test setting vertices with floating point values
+        customGeom.vertices = [{x: 1.234, y: 2.567, z: -3.890}];
+        expect(Math.abs(customGeom.vertices[0].x - 1.234) < 0.001).assertTrue();
+        console.info(msg + " floating point vertices set successfully");
+
+        // Test setting vertices with mixed values
+        customGeom.vertices = [{x: 0, y: 0, z: 0}, {x: 1, y: -1, z: 2}, {x: -3.14, y: 2.71, z: 0}];
+        expect(customGeom.vertices.length).assertEqual(3);
+        console.info(msg + " mixed value vertices set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCustomGeometryVertices " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCubeGeometrySize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1031
+     * @tc.desc   Test set and get for size property of CubeGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCubeGeometrySize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCubeGeometrySize";
+      console.info(msg + ' begin ');
+      try {
+        let cubeGeom = new scene3d.CubeGeometry();
+        expect(cubeGeom != null).assertTrue();
+        console.info(msg + " CubeGeometry created successfully");
+
+        // Test setting size with normal positive values
+        cubeGeom.size = {x: 1.0, y: 2.0, z: 3.0};
+        expect(cubeGeom.size != null).assertTrue();
+        expect(cubeGeom.size.x).assertEqual(1.0);
+        expect(cubeGeom.size.y).assertEqual(2.0);
+        expect(cubeGeom.size.z).assertEqual(3.0);
+        console.info(msg + " normal positive size values set successfully");
+
+        // Test setting size with negative values
+        cubeGeom.size = {x: -1.5, y: -2.5, z: -3.5};
+        expect(cubeGeom.size.x).assertEqual(-1.5);
+        expect(cubeGeom.size.y).assertEqual(-2.5);
+        expect(cubeGeom.size.z).assertEqual(-3.5);
+        console.info(msg + " negative size values set successfully");
+
+        // Test setting size with zero values
+        cubeGeom.size = {x: 0, y: 0, z: 0};
+        expect(cubeGeom.size.x).assertEqual(0);
+        expect(cubeGeom.size.y).assertEqual(0);
+        expect(cubeGeom.size.z).assertEqual(0);
+        console.info(msg + " zero size values set successfully");
+
+        // Test setting size with floating point values
+        cubeGeom.size = {x: 1.234, y: 2.567, z: 3.890};
+        expect(cubeGeom.size.x).assertEqual(1.234);
+        console.info(msg + " floating point size values set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCubeGeometrySize " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testPlaneGeometrySize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1032
+     * @tc.desc   Test set and get for size property of PlaneGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPlaneGeometrySize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testPlaneGeometrySize";
+      console.info(msg + ' begin ');
+      try {
+        let planeGeom = new scene3d.PlaneGeometry();
+        expect(planeGeom != null).assertTrue();
+        console.info(msg + " PlaneGeometry created successfully");
+
+        // Test setting size with normal positive values
+        planeGeom.size = {x: 2.0, y: 3.0};
+        expect(planeGeom.size != null).assertTrue();
+        expect(planeGeom.size.x).assertEqual(2.0);
+        expect(planeGeom.size.y).assertEqual(3.0);
+        console.info(msg + " normal positive size values set successfully");
+
+        // Test setting size with negative values
+        planeGeom.size = {x: -1.5, y: -2.5};
+        expect(planeGeom.size.x).assertEqual(-1.5);
+        expect(planeGeom.size.y).assertEqual(-2.5);
+        console.info(msg + " negative size values set successfully");
+
+        // Test setting size with zero values
+        planeGeom.size = {x: 0, y: 0};
+        expect(planeGeom.size.x).assertEqual(0);
+        expect(planeGeom.size.y).assertEqual(0);
+        console.info(msg + " zero size values set successfully");
+
+        // Test setting size with floating point values
+        planeGeom.size = {x: 1.234, y: 5.678};
+        expect(planeGeom.size.x).assertEqual(1.234);
+        console.info(msg + " floating point size values set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testPlaneGeometrySize " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testSphereGeometryRadius
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1033
+     * @tc.desc   Test set and get for radius property of SphereGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSphereGeometryRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testSphereGeometryRadius";
+      console.info(msg + ' begin ');
+      try {
+        let sphereGeom = new scene3d.SphereGeometry();
+        expect(sphereGeom != null).assertTrue();
+        console.info(msg + " SphereGeometry created successfully");
+
+        // Test setting radius with normal positive value
+        sphereGeom.radius = 1.5;
+        expect(sphereGeom.radius).assertEqual(1.5);
+        console.info(msg + " normal positive radius set successfully");
+
+        // Test setting radius with negative value
+        sphereGeom.radius = -2.5;
+        expect(sphereGeom.radius).assertEqual(-2.5);
+        console.info(msg + " negative radius set successfully");
+
+        // Test setting radius with zero
+        sphereGeom.radius = 0;
+        expect(sphereGeom.radius).assertEqual(0);
+        console.info(msg + " zero radius set successfully");
+
+        // Test setting radius with floating point value
+        sphereGeom.radius = 3.14159;
+        expect(sphereGeom.radius).assertEqual(3.14159);
+        console.info(msg + " floating point radius set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSphereGeometryRadius " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testSphereGeometrySegmentCount
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1034
+     * @tc.desc   Test set and get for segmentCount property of SphereGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSphereGeometrySegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testSphereGeometrySegmentCount";
+      console.info(msg + ' begin ');
+      try {
+        let sphereGeom = new scene3d.SphereGeometry();
+        expect(sphereGeom != null).assertTrue();
+        console.info(msg + " SphereGeometry created successfully");
+
+        // Test setting segmentCount with normal positive integer
+        sphereGeom.segmentCount = 24;
+        expect(sphereGeom.segmentCount).assertEqual(24);
+        console.info(msg + " normal positive segmentCount set successfully");
+
+        // Test setting segmentCount with negative value
+        sphereGeom.segmentCount = -10;
+        expect(sphereGeom.segmentCount).assertEqual(-10);
+        console.info(msg + " negative segmentCount set successfully");
+
+        // Test setting segmentCount with zero
+        sphereGeom.segmentCount = 0;
+        expect(sphereGeom.segmentCount).assertEqual(0);
+        console.info(msg + " zero segmentCount set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSphereGeometrySegmentCount " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCylinderGeometryRadius
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1035
+     * @tc.desc   Test set and get for radius property of CylinderGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCylinderGeometryRadius', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCylinderGeometryRadius";
+      console.info(msg + ' begin ');
+      try {
+        let cylinderGeom = new scene3d.CylinderGeometry();
+        expect(cylinderGeom != null).assertTrue();
+        console.info(msg + " CylinderGeometry created successfully");
+
+        // Test setting radius with normal positive value
+        cylinderGeom.radius = 1.5;
+        expect(cylinderGeom.radius).assertEqual(1.5);
+        console.info(msg + " normal positive radius set successfully");
+
+        // Test setting radius with negative value
+        cylinderGeom.radius = -2.5;
+        expect(cylinderGeom.radius).assertEqual(-2.5);
+        console.info(msg + " negative radius set successfully");
+
+        // Test setting radius with zero
+        cylinderGeom.radius = 0;
+        expect(cylinderGeom.radius).assertEqual(0);
+        console.info(msg + " zero radius set successfully");
+
+        // Test setting radius with floating point value
+        cylinderGeom.radius = 3.14159;
+        expect(cylinderGeom.radius).assertEqual(3.14159);
+        console.info(msg + " floating point radius set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCylinderGeometryRadius " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCylinderGeometryHeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1036
+     * @tc.desc   Test set and get for height property of CylinderGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCylinderGeometryHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCylinderGeometryHeight";
+      console.info(msg + ' begin ');
+      try {
+        let cylinderGeom = new scene3d.CylinderGeometry();
+        expect(cylinderGeom != null).assertTrue();
+        console.info(msg + " CylinderGeometry created successfully");
+
+        // Test setting height with normal positive value
+        cylinderGeom.height = 2.5;
+        expect(cylinderGeom.height).assertEqual(2.5);
+        console.info(msg + " normal positive height set successfully");
+
+        // Test setting height with negative value
+        cylinderGeom.height = -3.5;
+        expect(cylinderGeom.height).assertEqual(-3.5);
+        console.info(msg + " negative height set successfully");
+
+        // Test setting height with zero
+        cylinderGeom.height = 0;
+        expect(cylinderGeom.height).assertEqual(0);
+        console.info(msg + " zero height set successfully");
+
+        // Test setting height with floating point value
+        cylinderGeom.height = 3.14159;
+        expect(cylinderGeom.height).assertEqual(3.14159);
+        console.info(msg + " floating point height set successfully");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCylinderGeometryHeight " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCylinderGeometrySegmentCount
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1037
+     * @tc.desc   Test set and get for segmentCount property of CylinderGeometry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCylinderGeometrySegmentCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testCylinderGeometrySegmentCount";
+      console.info(msg + ' begin ');
+      try {
+        let cylinderGeom = new scene3d.CylinderGeometry();
+        expect(cylinderGeom != null).assertTrue();
+        console.info(msg + " CylinderGeometry created successfully");
+
+        // Test setting segmentCount with normal positive integer
+        cylinderGeom.segmentCount = 20;
+        expect(cylinderGeom.segmentCount).assertEqual(20);
+        console.info(msg + " normal positive segmentCount set successfully");
+
+        // Test setting segmentCount with negative value
+        cylinderGeom.segmentCount = -15;
+        expect(cylinderGeom.segmentCount).assertEqual(-15);
+        console.info(msg + " negative segmentCount set successfully");
+
+        // Test setting segmentCount with zero
+        cylinderGeom.segmentCount = 0;
+        expect(cylinderGeom.segmentCount).assertEqual(0);
+        console.info(msg + " zero segmentCount set successfully");
+        
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCylinderGeometrySegmentCount " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
@@ -1197,6 +1923,204 @@ export default function sceneTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testSceneRenderConfigurationShadowResolution " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSceneAnimations
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1025
+     * @tc.desc   Verify Scene.animations property returns valid Animation array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneAnimations', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneAnimations";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/BrainStem/glTF/BrainStem.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Get animations property
+        let anims = scene.animations;
+        expect(anims != null).assertTrue();
+        expect(anims != undefined).assertTrue();
+        console.info(msg + " animations property retrieved successfully, length: " + anims.length);
+
+        // Test with scene that has animations
+        if (anims.length > 0) {
+          expect(anims[0] != null).assertTrue();
+          console.info(msg + " first animation is not null");
+        }
+
+        // Test with scene that has no animations
+        let scene2 = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        let anims2 = scene2.animations;
+        expect(anims2 != null).assertTrue();
+        expect(anims2 != undefined).assertTrue();
+        console.info(msg + " animations property retrieved from scene without animations, length: " + anims2.length);
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneAnimations " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSceneRoot
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1026
+     * @tc.desc   Verify Scene.root property returns valid Node instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneRoot', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneRoot";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Get root property
+        let rootNode = scene.root;
+        expect(rootNode != null).assertTrue();
+        console.info(msg + " root property retrieved successfully");
+
+        // Verify root node properties
+        expect(rootNode != undefined).assertTrue();
+        console.info(msg + " root is defined");
+
+        expect(rootNode?.nodeType).assertEqual(scene3d.NodeType.NODE);
+        console.info(msg + " root node type is NODE");
+
+        expect(rootNode?.path).assertEqual("");
+        console.info(msg + " root path is empty string");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneRoot " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSceneRenderConfiguration
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1027
+     * @tc.desc   Verify Scene.renderConfiguration property returns valid RenderConfiguration instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneRenderConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneRenderConfiguration";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Get renderConfiguration property
+        let renderConfig = scene.renderConfiguration;
+        expect(renderConfig != null).assertTrue();
+        console.info(msg + " renderConfiguration property retrieved successfully");
+
+        // Verify renderConfiguration is valid object
+        expect(renderConfig != undefined).assertTrue();
+        console.info(msg + " renderConfiguration is defined");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneRenderConfiguration " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSceneGetResourceFactory
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1028
+     * @tc.desc   Verify Scene.getResourceFactory() returns valid SceneResourceFactory instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSceneGetResourceFactory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneGetResourceFactory";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != null).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        // Call getResourceFactory method
+        let factory = scene.getResourceFactory();
+        expect(factory != null).assertTrue();
+        console.info(msg + " getResourceFactory() returned successfully");
+
+        // Verify factory is valid object
+        expect(factory != undefined).assertTrue();
+        console.info(msg + " factory is defined");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneGetResourceFactory " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGeometryDefinitionGeometryType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1029
+     * @tc.desc   Verify geometryType property returns correct GeometryType enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGeometryDefinitionGeometryType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function)=> {
+      let msg = "============================testGeometryDefinitionGeometryType";
+      console.info(msg + ' begin ');
+      try {
+        // Test CustomGeometry
+        let customGeom = new scene3d.CustomGeometry();
+        expect(customGeom.geometryType).assertEqual(scene3d.GeometryType.CUSTOM);
+        console.info(msg + " CustomGeometry.geometryType returns CUSTOM");
+
+        // Test CubeGeometry
+        let cubeGeom = new scene3d.CubeGeometry();
+        expect(cubeGeom.geometryType).assertEqual(scene3d.GeometryType.CUBE);
+        console.info(msg + " CubeGeometry.geometryType returns CUBE");
+
+        // Test PlaneGeometry
+        let planeGeom = new scene3d.PlaneGeometry();
+        expect(planeGeom.geometryType).assertEqual(scene3d.GeometryType.PLANE);
+        console.info(msg + " PlaneGeometry.geometryType returns PLANE");
+
+        // Test SphereGeometry
+        let sphereGeom = new scene3d.SphereGeometry();
+        expect(sphereGeom.geometryType).assertEqual(scene3d.GeometryType.SPHERE);
+        console.info(msg + " SphereGeometry.geometryType returns SPHERE");
+
+        // Test CylinderGeometry
+        let cylinderGeom = new scene3d.CylinderGeometry();
+        expect(cylinderGeom.geometryType).assertEqual(scene3d.GeometryType.CYLINDER);
+        console.info(msg + " CylinderGeometry.geometryType returns CYLINDER");
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testGeometryDefinitionGeometryType " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

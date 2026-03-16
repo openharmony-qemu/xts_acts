@@ -13,13 +13,9 @@
  * limitations under the License.
  */
 
-import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test'
 import WebViewEnumAndFontLibraryTwo from './WebViewEnumAndFontLibraryTwo.test'
-
 
 export default function testsuite() {
 
   WebViewEnumAndFontLibraryTwo()
-  WebViewEnumAndFontLibrary()
-
 }

@@ -60,7 +60,7 @@ async function CreateCorruptDb() {
     expect(fileExist).assertTrue();
     fs.truncateSync(dbPathWal, 4)
     fs.truncateSync(dbPathShm, 4)
-    let file = fs.openSync(dbPath, fs.OpenMode.READ_ONLY | fs.OpenMode.TRUNC);
+    let file = fs.openSync(dbPath, fs.OpenMode.READ_WRITE | fs.OpenMode.TRUNC);
     fs.truncateSync(file.fd, 4);
     fs.fsyncSync(file.fd)
     fs.closeSync(file)

@@ -147,5 +147,98 @@ export default function webViewContStoreWebArchiveError() {
       Utils.registerEvent("testStoreWebArchivePromiseUnAccessErr", "Invalid resource path or file type", 112210, done);
       await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
     })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWERROR_5700
+     * @tc.name       testStoreWebArchiveCallBackEmpty
+     * @tc.desc       test interface of storeWebArchive promise with resource path cannot access
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testStoreWebArchiveCallBackEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitStoreWebArchiveCallBackEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveCallBackEmpty", '401', 112201, done);
+      await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
+    })
+
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWERROR_5800
+     * @tc.name       testStoreWebArchiveCallBackNull
+     * @tc.desc       test interface of storeWebArchive promise with resource path cannot access
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testStoreWebArchiveCallBackNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitStoreWebArchiveCallBackNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveCallBackNull", '401', 112202, done);
+      await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWERROR_5900
+     * @tc.name       testStoreWebArchiveCallBackUndefined
+     * @tc.desc       test interface of storeWebArchive promise with resource path cannot access
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testStoreWebArchiveCallBackUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitStoreWebArchiveCallBackUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchiveCallBackUndefined", '401', 112203, done);
+      await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWERROR_6000
+     * @tc.name       testStoreWebArchivePromiseEmpty
+     * @tc.desc       test interface of storeWebArchive promise with wrong resource path
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testStoreWebArchivePromiseEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitStoreWebArchivePromiseEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchivePromiseEmpty", '401', 112204, done);
+      await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWERROR_6100
+     * @tc.name       testStoreWebArchivePromiseNull
+     * @tc.desc       test interface of storeWebArchive promise with wrong resource path
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testStoreWebArchivePromiseNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitStoreWebArchivePromiseNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchivePromiseNull", '401', 112205, done);
+      await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
+    })
+
+    /**
+     * @tc.number     SUB_ACE_BASIC_ETS_WEBVIEWERROR_6200
+     * @tc.name       testStoreWebArchivePromiseUndefined
+     * @tc.desc       test interface of storeWebArchive promise with wrong resource path
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testStoreWebArchivePromiseUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      emitKey = "emitStoreWebArchivePromiseUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testStoreWebArchivePromiseUndefined", '401', 112206, done);
+      await Utils.waitAndClickComponent(driver, "webViewContStoreWebArchiveError");
+    })
+
+
   })
 }

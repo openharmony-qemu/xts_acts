@@ -34,7 +34,7 @@ let count: int = 0;
 export default function ActsNotificationRequestTest() {
   describe('SUB_NOTIFICATION_ANS_REQUEST_TEST', () => {
     const TAG = 'SUB_NOTIFICATION_ANS_REQUEST_TEST ===>';
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
@@ -69,7 +69,7 @@ export default function ActsNotificationRequestTest() {
             console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
             count++;
             expect(count).assertEqual(1);
-            await Utils.msSleep(1000)
+            waitForCompletion(async () => {await Utils.msSleep(1000)})
             done()
           }
         })
@@ -102,7 +102,7 @@ export default function ActsNotificationRequestTest() {
           overlayIcon : pixelMap
         }
         hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case start`);
-        await Utils.msSleep(3000)
+        waitForCompletion(async () => {await Utils.msSleep(3000)})
         count = 0;
         try {
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
@@ -115,7 +115,7 @@ export default function ActsNotificationRequestTest() {
               console.info(`${TEST_CASE_NAME} publish success`)
               count++;
               expect(count).assertEqual(1);
-              await Utils.msSleep(1000)
+              waitForCompletion(async () => {await Utils.msSleep(1000)})
               done()
             }
             hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case end`);

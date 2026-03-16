@@ -37,7 +37,7 @@ const waitUiReadyMs = 1000;
 
 export default function RouterPushUrlJsunit() {
   describe('RouterPushUrlJsunit', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
     });

@@ -39,11 +39,8 @@ import { BusinessError } from '@ohos.base';
 
 export default function OnNewParamRouter() {
   describe('OnNewParamRouter', () => {
-    beforeAll(() => {
-
-      
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api18.static", "EntryAbility")
-      
     });
     beforeEach(async (): Promise<void> => {
       console.info("OnNewParamRouter beforeEach start");
@@ -51,13 +48,15 @@ export default function OnNewParamRouter() {
         url: 'MainAbility/pages/router/OnNewParamRouter',
       }
       try {
+        await CommonFunc.sleep(5000);
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get OnNewParamRouter state success " + JSON.stringify(pages));
         if (!("OnNewParamRouter" == pages.name)) {
           console.info("get OnNewParamRouter state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push OnNewParamRouter page error:" + err);
@@ -90,7 +89,7 @@ it('OnNewParamRouter_static_0100', Level.LEVEL2, async (done: () => void): Promi
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
-      await driver.delayMs(500);
+      await driver.delayMs(1000);
 
       let btn1 = await driver.findComponent(ON.id('pushId'));
       await (btn1?.click() as Promise<void>)

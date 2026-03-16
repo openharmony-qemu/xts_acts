@@ -1,5 +1,5 @@
-/**
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -30,7 +31,7 @@ export default function RequestDownloadStaticTest() {
   describe("RequestDownloadStaticTest", (): void => {
   hilog.info(domain, tag, '%{public}s', 'RequestDownloadStaticTest start');
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -95,6 +96,249 @@ export default function RequestDownloadStaticTest() {
       hilog.info(domain, tag, "====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010 end-----------------------");
       done();
     })
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_API_Static_00001
+     * @tc.number SUB_REQUEST_UPLOAD_API_Static_00001
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_UPLOAD_API_Static_00001', Level.LEVEL2, async (done: () => void) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_00001 is starting-----------------------");
+      try {
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_00001 request.NETWORK_MOBILE:" + request.NETWORK_MOBILE);
+        expect(request.NETWORK_MOBILE).assertEqual(1);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_00001 request.NETWORK_WIFI:" + request.NETWORK_WIFI);
+        expect(request.NETWORK_WIFI).assertEqual(65536);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_00001 request.ERROR_CANNOT_RESUME:" + request.ERROR_CANNOT_RESUME);
+        expect(request.ERROR_CANNOT_RESUME).assertEqual(0);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_00001 request.ERROR_DEVICE_NOT_FOUND:" + request.ERROR_DEVICE_NOT_FOUND);
+        expect(request.ERROR_DEVICE_NOT_FOUND).assertEqual(1);
+      } catch (err) {
+        expect().assertFail();
+        console.error("====>SUB_REQUEST_UPLOAD_API_Static_00001 error: " + err);
+      }
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_00001 end-----------------------");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_API_Static_0002
+     * @tc.number SUB_REQUEST_UPLOAD_API_Static_0002
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_UPLOAD_API_Static_0002', Level.LEVEL2, async (done: () => void) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0002 is starting-----------------------");
+      try {
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0002 request.ERROR_FILE_ALREADY_EXISTS:" + request.ERROR_FILE_ALREADY_EXISTS);
+        expect(request.ERROR_FILE_ALREADY_EXISTS).assertEqual(2);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0002 request.ERROR_FILE_ERROR:" + request.ERROR_FILE_ERROR);
+        expect(request.ERROR_FILE_ERROR).assertEqual(3);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0002 request.ERROR_HTTP_DATA_ERROR:" + request.ERROR_HTTP_DATA_ERROR);
+        expect(request.ERROR_HTTP_DATA_ERROR).assertEqual(4);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0002 request.ERROR_INSUFFICIENT_SPACE:" + request.ERROR_INSUFFICIENT_SPACE);
+        expect(request.ERROR_INSUFFICIENT_SPACE).assertEqual(5);
+      } catch (err) {
+        expect().assertFail();
+        console.error("====>SUB_REQUEST_UPLOAD_API_Static_0002 error: " + err);
+      }
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0002 end-----------------------");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_API_Static_0003
+     * @tc.number SUB_REQUEST_UPLOAD_API_Static_0003
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_UPLOAD_API_Static_0003', Level.LEVEL2, async (done: () => void) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0003 is starting-----------------------");
+      try {
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0003 request.ERROR_TOO_MANY_REDIRECTS:" + request.ERROR_TOO_MANY_REDIRECTS);
+        expect(request.ERROR_TOO_MANY_REDIRECTS).assertEqual(6);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0003 request.ERROR_UNHANDLED_HTTP_CODE:" + request.ERROR_UNHANDLED_HTTP_CODE);
+        expect(request.ERROR_UNHANDLED_HTTP_CODE).assertEqual(7);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0003 request.ERROR_UNKNOWN:" + request.ERROR_UNKNOWN);
+        expect(request.ERROR_UNKNOWN).assertEqual(8);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0003 request.PAUSED_QUEUED_FOR_WIFI:" + request.PAUSED_QUEUED_FOR_WIFI);
+        expect(request.PAUSED_QUEUED_FOR_WIFI).assertEqual(0);
+      } catch (err) {
+        expect().assertFail();
+        console.error("====>SUB_REQUEST_UPLOAD_API_Static_0003 error: " + err);
+      }
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0003 end-----------------------");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_API_Static_0004
+     * @tc.number SUB_REQUEST_UPLOAD_API_Static_0004
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_UPLOAD_API_Static_0004', Level.LEVEL2, async (done: () => void) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0004 is starting-----------------------");
+      try {
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0004 request.PAUSED_UNKNOWN:" + request.PAUSED_UNKNOWN);
+        expect(request.PAUSED_UNKNOWN).assertEqual(4);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0004 request.PAUSED_WAITING_FOR_NETWORK:" + request.PAUSED_WAITING_FOR_NETWORK);
+        expect(request.PAUSED_WAITING_FOR_NETWORK).assertEqual(1);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0004 request.PAUSED_WAITING_TO_RETRY:" + request.PAUSED_WAITING_TO_RETRY);
+        expect(request.PAUSED_WAITING_TO_RETRY).assertEqual(2);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0004 request.PAUSED_BY_USER:" + request.PAUSED_BY_USER);
+        expect(request.PAUSED_BY_USER).assertEqual(3);
+      } catch (err) {
+        expect().assertFail();
+        console.error("====>SUB_REQUEST_UPLOAD_API_Static_0004 error: " + err);
+      }
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0004 end-----------------------");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_API_Static_0005
+     * @tc.number SUB_REQUEST_UPLOAD_API_Static_0005
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_UPLOAD_API_Static_0005', Level.LEVEL2, async (done: () => void) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0005 is starting-----------------------");
+      try {
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0005 request.SESSION_FAILED:" + request.SESSION_FAILED);
+        expect(request.SESSION_FAILED).assertEqual(4);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0005 request.SESSION_PAUSED:" + request.SESSION_PAUSED);
+        expect(request.SESSION_PAUSED).assertEqual(3);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0005 request.SESSION_PENDING:" + request.SESSION_PENDING);
+        expect(request.SESSION_PENDING).assertEqual(2);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0005 request.SESSION_RUNNING:" + request.SESSION_RUNNING);
+        expect(request.SESSION_RUNNING).assertEqual(1);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0005 request.SESSION_SUCCESSFUL:" + request.SESSION_SUCCESSFUL);
+        expect(request.SESSION_SUCCESSFUL).assertEqual(0);
+      } catch (err) {
+        expect().assertFail();
+        console.error("====>SUB_REQUEST_UPLOAD_API_Static_0005 error: " + err);
+      }
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0005 end-----------------------");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_REQUEST_UPLOAD_API_Static_0006
+     * @tc.number SUB_REQUEST_UPLOAD_API_Static_0006
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_REQUEST_UPLOAD_API_Static_0006', Level.LEVEL2, async (done: () => void) => {
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0006 is starting-----------------------");
+      try {
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.EXCEPTION_PERMISSION:" + request.EXCEPTION_PERMISSION);
+        expect(request.EXCEPTION_PERMISSION).assertEqual(201);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.EXCEPTION_PARAMCHECK:" + request.EXCEPTION_PARAMCHECK);
+        expect(request.EXCEPTION_PARAMCHECK).assertEqual(401);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.EXCEPTION_UNSUPPORTED:" + request.EXCEPTION_UNSUPPORTED);
+        expect(request.EXCEPTION_UNSUPPORTED).assertEqual(801);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.EXCEPTION_FILEIO:" + request.EXCEPTION_FILEIO);
+        expect(request.EXCEPTION_FILEIO).assertEqual(13400001);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.EXCEPTION_FILEPATH:" + request.EXCEPTION_FILEPATH);
+        expect(request.EXCEPTION_FILEPATH).assertEqual(13400002);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.EXCEPTION_SERVICE:" + request.EXCEPTION_SERVICE);
+        expect(request.EXCEPTION_SERVICE).assertEqual(13400003);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.EXCEPTION_OTHERS:" + request.EXCEPTION_OTHERS);
+        expect(request.EXCEPTION_OTHERS).assertEqual(13499999);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.ERROR_OFFLINE:" + request.ERROR_OFFLINE);
+        expect(request.ERROR_OFFLINE).assertEqual(9);
+        console.info("====>SUB_REQUEST_UPLOAD_API_Static_0006 request.ERROR_UNSUPPORTED_NETWORK_TYPE:" + request.ERROR_UNSUPPORTED_NETWORK_TYPE);
+        expect(request.ERROR_UNSUPPORTED_NETWORK_TYPE).assertEqual(10);
+      } catch (err) {
+        expect().assertFail();
+        console.error("====>SUB_REQUEST_UPLOAD_API_Static_0006 error: " + err);
+      }
+      console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_Static_0006 end-----------------------");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010
+     * @tc.number SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010', Level.LEVEL2, async (done: () => void) => {
+      console.info("====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 is starting-----------------------");
+      try {
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.OTHERS: " + request.agent.Faults.OTHERS);
+        expect(request.agent.Faults.OTHERS).assertEqual(255);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.DISCONNECTED: " + request.agent.Faults.DISCONNECTED);
+        expect(request.agent.Faults.DISCONNECTED).assertEqual(0);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.TIMEOUT: " + request.agent.Faults.TIMEOUT);
+        expect(request.agent.Faults.TIMEOUT).assertEqual(16);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.PROTOCOL: " + request.agent.Faults.PROTOCOL);
+        expect(request.agent.Faults.PROTOCOL).assertEqual(32);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.FSIO: " + request.agent.Faults.FSIO);
+        expect(request.agent.Faults.FSIO).assertEqual(64);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.PARAM: " + request.agent.Faults.PARAM);
+        expect(request.agent.Faults.PARAM).assertEqual(48);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.DNS: " + request.agent.Faults.DNS);
+        expect(request.agent.Faults.DNS).assertEqual(80);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.TCP: " + request.agent.Faults.TCP);
+        expect(request.agent.Faults.TCP).assertEqual(96);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.SSL: " + request.agent.Faults.SSL);
+        expect(request.agent.Faults.SSL).assertEqual(112);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.REDIRECT: " + request.agent.Faults.REDIRECT);
+        expect(request.agent.Faults.REDIRECT).assertEqual(128);
+        console.info("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 request.agent.Faults.LOW_SPEED: " + request.agent.Faults.LOW_SPEED);
+        expect(request.agent.Faults.LOW_SPEED).assertEqual(144);
+      } catch (err) {
+        console.error("====>SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 error: " + err);
+        expect().assertFail();
+      }
+      console.info("====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_faults_Static_0010 end-----------------------");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Request_Download_on_waitingReason_Static_1000
+     * @tc.number SUB_Request_Download_on_waitingReason_Static_1000
+     * @tc.desc   download task of WaitingReason.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Request_Download_on_waitingReason_Static_1000', Level.LEVEL2, async (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_Download_on_waitingReason_Static_1000 is starting-----------------------");
+      try {
+        console.info("====>SUB_Request_Download_on_waitingReason_Static_1000 request.agent.WaitingReason.TASK_QUEUE_FULL: " + request.agent.WaitingReason.TASK_QUEUE_FULL);
+        expect(request.agent.WaitingReason.TASK_QUEUE_FULL).assertEqual(0);
+        console.info("====>SUB_Request_Download_on_waitingReason_Static_1000 request.agent.WaitingReason.NETWORK_NOT_MATCH: " + request.agent.WaitingReason.NETWORK_NOT_MATCH);
+        expect(request.agent.WaitingReason.NETWORK_NOT_MATCH).assertEqual(1);
+        console.info("====>SUB_Request_Download_on_waitingReason_Static_1000 request.agent.WaitingReason.APP_BACKGROUND: " + request.agent.WaitingReason.APP_BACKGROUND);
+        expect(request.agent.WaitingReason.APP_BACKGROUND).assertEqual(2);
+        console.info("====>SUB_Request_Download_on_waitingReason_Static_1000 request.agent.WaitingReason.USER_INACTIVATED: " + request.agent.WaitingReason.USER_INACTIVATED);
+        expect(request.agent.WaitingReason.USER_INACTIVATED).assertEqual(3);
+        console.info("====>-----------------------SUB_Request_Download_on_waitingReason_Static_1000 end-----------------------");
+        done();
+      } catch (err) {
+        console.error("====>SUB_Request_Download_on_waitingReason_Static_1000 error: " + err);
+        expect().assertFail();
+        done();
+      }
+    });
 
     /**
      * @tc.name   SUB_Misc_REQUEST_Create_Download_Promise_Static_0010
@@ -563,6 +807,7 @@ export default function RequestDownloadStaticTest() {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 create success");
         let on_completedCallback = (pro: request.agent.Progress): void => {
+          waitForCompletion(async () => {
           try {
             let task: request.agent.Task = await request.agent.create(baseContext!, config);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start twice");
@@ -575,6 +820,7 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 err: " + JSON.stringify(err));
             done();
           }
+          })
         }
         task.onCompleted(on_completedCallback);
         await task.start();

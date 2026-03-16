@@ -497,12 +497,14 @@ export default function InjectTouchEvent() {
           console.info(`${Tag}: ${caseName} newText: ${newText}`);
           await sleep(200);
           if (newText == '40') {
-            expect(true).assertTrue();
+            await subWindowClass.destroyWindow();
+            done()
           } else {
             expect(false).assertTrue();
+            await subWindowClass.destroyWindow();
+            done()
           }
-          await subWindowClass.destroyWindow();
-          done()
+          
         }
 
         
@@ -759,12 +761,14 @@ export default function InjectTouchEvent() {
           console.info(`${Tag}: ${caseName} newText: ${newText}`);
           await sleep(200);
           if (newText != '40') {
-            expect(true).assertTrue();
+            await subWindowClass.destroyWindow();
+            done()
           } else {
             expect(false).assertTrue();
+            await subWindowClass.destroyWindow();
+            done()
           }
-          await subWindowClass.destroyWindow();
-          done()
+          
         }
         
       } catch (err) {
@@ -924,12 +928,14 @@ export default function InjectTouchEvent() {
           let newText = await sliderText.getText();
           await sleep(200);
           if (newText != '100') {
-            expect(true).assertTrue();
+            await subWindowClass.destroyWindow();
+            done()
           } else {
             expect(false).assertTrue();
+            await subWindowClass.destroyWindow();
+            done()
           }
-          await subWindowClass.destroyWindow();
-          done()
+          
         }
         
       } catch (err) {

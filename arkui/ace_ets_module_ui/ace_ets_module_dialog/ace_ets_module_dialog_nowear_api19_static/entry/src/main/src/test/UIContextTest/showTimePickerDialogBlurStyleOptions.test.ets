@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 export default function showTimePickerDialogBlurStyleOptionsTest() {
   describe('ShowTimePickerDialogBlurStyleOptionsTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ShowTimePickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

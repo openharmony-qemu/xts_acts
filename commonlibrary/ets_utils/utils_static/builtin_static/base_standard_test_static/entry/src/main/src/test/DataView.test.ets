@@ -28,7 +28,7 @@ import Utils from './Util.test';
 
 export default function DataViewTest() {
   describe("dataViewTest", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     /**
@@ -37,9 +37,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint32().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint320001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint320001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint320001";
       try {
         const buffer = new ArrayBuffer(16);
@@ -59,9 +59,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint32().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint320002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint320002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint320002";
       try {
         const buffer = new ArrayBuffer(16);
@@ -81,9 +81,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint32().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint320003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint320003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint320003";
       try {
         const buffer = new ArrayBuffer(16);
@@ -103,9 +103,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint32().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint320004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint320004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint320004";
       try {
         const buffer = new ArrayBuffer(8);
@@ -129,9 +129,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint32().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint320005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint320005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint320005";
       try {
         const buffer = new ArrayBuffer(8);
@@ -155,9 +155,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint16().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint160001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint160001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint160001";
       try {
         const buffer = new ArrayBuffer(8);
@@ -177,9 +177,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint16().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint160002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint160002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint160002";
       try {
         const buffer = new ArrayBuffer(8);
@@ -199,9 +199,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint16().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint160003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint160003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint160003";
       try {
         const buffer = new ArrayBuffer(8);
@@ -220,9 +220,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface setUint16().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetuint160004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetuint160004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetuint160004";
       try {
         const buffer = new ArrayBuffer(8);
@@ -246,9 +246,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface toExponential().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetUint160005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetUint160005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetUint160005";
       try {
         const buffer = new ArrayBuffer(8);
@@ -272,9 +272,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface toExponential().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetUint80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetUint80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetUint80001";
       try {
         const buffer = new ArrayBuffer(64);
@@ -294,9 +294,9 @@ export default function DataViewTest() {
      * @tc.desc Test the function of the Interface toExponential().
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testDataViewSetUint80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testDataViewSetUint80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = "testDataViewSetUint80002";
       try {
         const buffer = new ArrayBuffer(64);

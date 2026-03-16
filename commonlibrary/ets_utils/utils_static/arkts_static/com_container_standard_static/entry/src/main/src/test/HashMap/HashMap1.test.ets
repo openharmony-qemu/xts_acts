@@ -30,7 +30,7 @@ import Utils from '../Util.test';
 
 export default function HashMapTest1() {
   describe("HashMapTest1", (): void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)
     })
     /**

@@ -266,6 +266,52 @@ describe('ActsBmsHasInstalldTest', function () {
         })
     });
 
+     /**
+     * @tc.name   testHasInstalledOptionsNull
+     * @tc.number Sub_Bms_Framework_Status_Query_1500
+     * @tc.desc   Test hasInstalled when options is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+      it('testHasInstalledOptionsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+         try {
+             let data = pkg.hasInstalled(null);
+             expect(data).assertEqual(undefined);
+             done();
+
+         } catch(err) {
+             console.info("testHasInstalledOptionsNull ==>" +JSON.stringify(err));
+             expect().assertFail()
+             done();
+         }
+       
+    });
+
+    /**
+     * @tc.name   testHasInstalledOptionsUndefined
+     * @tc.number Sub_Bms_Framework_Status_Query_1600
+     * @tc.desc   Test hasInstalled when options is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHasInstalledOptionsUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+        try {
+            let data = pkg.hasInstalled(undefined);
+            expect(data).assertEqual(undefined);
+            done();
+
+        } catch(err) {
+            console.info("testHasInstalledOptionsNull ==>" +JSON.stringify(err));
+            expect().assertFail()
+            done();
+        }
+    });
+
+
+
+
     async function sleep(time) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {

@@ -31,7 +31,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function BadgeNodeTest() {
   describe('BadgeNodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BadgeNodeTest beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
     });

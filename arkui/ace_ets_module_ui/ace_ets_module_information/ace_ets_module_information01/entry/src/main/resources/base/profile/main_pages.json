@@ -14,6 +14,8 @@
         "MainAbility/pages/DataPanel/DataPanelContentModifier",
         "MainAbility/pages/DataPanel/DataPanelTest",
         "MainAbility/pages/DataPanel/DataPanelCloseEffect",
+        "MainAbility/pages/DataPanel/DataPanelPropertiesNullUndefinedTest",
+        "MainAbility/pages/DataPanel/PanelPropertiesNullUndefinedTest",
 
         "MainAbility/pages/Gauge/Gauge3Jsunit",
         "MainAbility/pages/Gauge/GaugeColorsTest",
@@ -21,16 +23,20 @@
         "MainAbility/pages/Gauge/GaugePrivacySensitive",
         "MainAbility/pages/Gauge/GaugeUxTest",
         "MainAbility/pages/Gauge/GaugeContentModifier",
+        "MainAbility/pages/Gauge/GaugePropertiesNullUndefinedTest",
 
         "MainAbility/pages/PatternLock/PatternLock11Jsunit",
         "MainAbility/pages/PatternLock/PatternLockActivateCircleStyle1",
         "MainAbility/pages/PatternLock/PatternLockPage",
+        "MainAbility/pages/PatternLock/PatternLockPropertiesNullUndefined",
+        "MainAbility/pages/PatternLock/PatternLockEnableForeground",
 
         "MainAbility/pages/QRCode/QRCodeApiTest",
         "MainAbility/pages/QRCode/QRCodeAttrTest",
         "MainAbility/pages/QRCode/QRCodeJsunitTest",
         "MainAbility/pages/QRCode/QRCodeNodeTest",
         "MainAbility/pages/QRCode/QRCodeResourceStrTest",
-        "MainAbility/pages/QRCode/QRCodeUIJsunit"
+        "MainAbility/pages/QRCode/QRCodeUIJsunit",
+        "MainAbility/pages/QRCode/QrcodePropertiesNullUndefinedTest"
     ]
 }

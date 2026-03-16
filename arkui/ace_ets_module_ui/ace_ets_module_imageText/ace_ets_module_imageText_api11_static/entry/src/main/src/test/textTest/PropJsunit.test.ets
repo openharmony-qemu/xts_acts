@@ -43,7 +43,7 @@ export default function propJsunit() {
 
   describe('propTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("propTest beforeEach start");
 
 

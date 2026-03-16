@@ -36,19 +36,17 @@ export default class MainAbility extends Ability {
   onForeground() {
     console.log("MainAbility3 onForeground");
     let sendMessageTime = 1000;
-    setTimeout(() => {
-      globalThis.abilityContext3.terminateSelfWithResult(
-        {
-          resultCode: 1,
-          want: {
-            action: 'ACTION'
-          }
-        }, (err, data) => {
-        console.info("MainAbility3====>terminateSelfWithResult succese err====>" + JSON.stringify(err));
-        console.info("MainAbility3====>terminateSelfWithResult succese data====>" + JSON.stringify(data));
-      });
-      console.info("MainAbility3====>terminateSelf end====>");
-    }, sendMessageTime);
+    globalThis.abilityContext3.terminateSelfWithResult(
+      {
+        resultCode: 1,
+        want: {
+          action: 'ACTION'
+        }
+      }, (err, data) => {
+      console.info("MainAbility3====>terminateSelfWithResult succese err====>" + JSON.stringify(err));
+      console.info("MainAbility3====>terminateSelfWithResult succese data====>" + JSON.stringify(data));
+    });
+    console.info("MainAbility3====>terminateSelf end====>");
   }
 
   onBackground() {

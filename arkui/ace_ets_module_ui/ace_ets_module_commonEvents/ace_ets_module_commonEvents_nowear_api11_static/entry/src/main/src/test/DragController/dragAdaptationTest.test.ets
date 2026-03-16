@@ -38,7 +38,7 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 export default function dragAdaptationTest() {
   describe('dragAdaptationTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("assemblyCallbackTest beforeAll start");
 
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.nowear.api11.static", "EntryAbility")

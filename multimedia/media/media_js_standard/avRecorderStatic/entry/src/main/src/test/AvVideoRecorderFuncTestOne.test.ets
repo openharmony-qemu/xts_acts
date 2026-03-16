@@ -548,13 +548,15 @@ export function avVideoRecorderTestOne() {
       });
       // 错误上报回调函数
       avRecorder.onError((err: BusinessError | null) => {
-        try {
-          console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
-          await releaseRecorderPromise(avRecorder, done);
-        } catch (error) {
-          // 处理错误
-          console.error(TAG + 'when error on execute releaseRecorderPromise error message is ' + error);
-        }
+        waitForCompletion(async () => {
+          try {
+            console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
+            await releaseRecorderPromise(avRecorder, done);
+          } catch (error) {
+            // 处理错误
+            console.error(TAG + 'when error on execute releaseRecorderPromise error message is ' + error);
+          }
+        })
       });
     };
 

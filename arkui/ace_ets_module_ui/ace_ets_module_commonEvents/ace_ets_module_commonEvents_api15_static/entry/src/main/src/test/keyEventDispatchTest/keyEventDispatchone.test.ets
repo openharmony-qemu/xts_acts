@@ -34,7 +34,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function keyEventDispatchTest() {
   describe('keyEventDispatchTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
       

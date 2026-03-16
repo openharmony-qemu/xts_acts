@@ -38,7 +38,7 @@ export default function textClockJsunit() {
   describe('appInfoTest_four_11', () => {
 
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("appInfoTest_four_11 beforeEach start");
 
 

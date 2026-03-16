@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listItem_InSertChange() {
 
   describe('ListItem_InSertChangeTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.log("ListItem_InSertChangeTest beforeAll start111")
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")

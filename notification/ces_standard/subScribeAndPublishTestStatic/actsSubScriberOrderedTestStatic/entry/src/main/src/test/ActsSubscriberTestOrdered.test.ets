@@ -40,7 +40,7 @@ export default function ActsSubscriberTestOrder() {
   describe('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST',  () => {
     let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST ===>'
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST START`)
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
 
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()

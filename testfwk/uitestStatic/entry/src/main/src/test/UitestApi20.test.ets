@@ -106,6 +106,43 @@ export default function uitestEnumTest() {
         hilog.info(domain, tag, `test_origin_static originText1: ${JSON.stringify(originText1)}`);
         expect(originText1 == 'next page').assertTrue()
       }
+      let button3 = await driver!.findComponent(ON.originalText('', MatchPattern.EQUALS).text('next page'))
+      expect(button3).assertNull()
+      let button4 = await driver!.findComponent(ON.originalText('next page', MatchPattern.CONTAINS))
+      expect(button4 != null).assertTrue()
+      if (button4 != null) {
+        let originText4 = await button4!.getOriginalText();
+        console.log(`${TestTag}, test_origin originText4: ${JSON.stringify(originText4)}`);
+        expect(originText4).assertEqual('next page')
+      }
+      let button5 = await driver!.findComponent(ON.originalText('page', MatchPattern.ENDS_WITH))
+      expect(button5 != null).assertTrue()
+      if (button5 != null) {
+        let originText5 = await button5!.getOriginalText();
+        console.log(`${TestTag}, test_origin originText5: ${JSON.stringify(originText5)}`);
+        expect(originText5).assertEqual('next page')
+      }
+      let button6 = await driver!.findComponent(ON.originalText('next page', MatchPattern.REG_EXP))
+      expect(button6 != null).assertTrue()
+      if (button6 != null) {
+        let originText6 = await button6!.getOriginalText();
+        console.log(`${TestTag}, test_origin originText6: ${JSON.stringify(originText6)}`);
+        expect(originText6).assertEqual('next page')
+      }
+      let button7 = await driver!.findComponent(ON.originalText('next page', MatchPattern.REG_EXP_ICASE))
+      expect(button7 != null).assertTrue()
+      if (button7 != null) {
+        let originText7 = await button7!.getOriginalText();
+        console.log(`${TestTag}, test_origin originText7: ${JSON.stringify(originText7)}`);
+        expect(originText7).assertEqual('next page')
+      }
+      let button8 = await driver!.findComponent(ON.originalText('next page', undefined))
+      expect(button8 != null).assertTrue()
+      if (button8 != null) {
+        let originText8 = await button8!.getOriginalText();
+        console.log(`${TestTag}, test_origin originText8: ${JSON.stringify(originText8)}`);
+        expect(originText8).assertEqual('next page')
+      }
       await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, `test_origin_static end`);
     })
@@ -570,6 +607,7 @@ export default function uitestEnumTest() {
       let s = await driver!.getDisplayDensity(disPlay.id.toInt())
       expect(s.x != 0).assertTrue()
       expect(s.y != 0).assertTrue()
+      expect(s.displayId == disPlay.id).assertTrue()
       await stopApplication('com.uitestScene.acts')
       hilog.info(domain, tag, `testGetDisplayDensityWithId_static end`);
     })

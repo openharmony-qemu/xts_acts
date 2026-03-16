@@ -19,7 +19,7 @@ import Utils from './Util.test';
 
 export default function Float32ArrayTest() {
   describe('Float32ArrayTest', ():void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     // let value: string;

@@ -64,7 +64,15 @@ export default function ChipApi1() {
       let text = getInspectorByKey('ChipApi1_text');
       expect(JSON.stringify(JSON.parse(text).$attrs.content)).assertEqual('\"#FFFF0000\"');
       await CommonFunc.sleep(1000);
-
+      let rom: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let btn: ESObject = rom
+        .$children[0]
+        .$children[0]
+        .$children[0]
+        .$children[2]
+      console.info('[ChipApi1_0100] btn.$attrs.accessibilityDescription is: ' +
+      JSON.stringify(btn.$attrs.accessibilityDescription));
+      expect(btn.$attrs.accessibilityDescription).assertEqual('helloActivate');
       console.info('ChipApi1_0100 END');
       done();
     });

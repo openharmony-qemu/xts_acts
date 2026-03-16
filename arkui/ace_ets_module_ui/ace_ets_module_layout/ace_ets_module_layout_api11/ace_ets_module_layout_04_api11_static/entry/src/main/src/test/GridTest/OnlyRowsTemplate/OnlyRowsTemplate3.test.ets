@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function OnlyRowsTemplate3() {
   describe('OnlyRowsTemplate3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("OnlyRowsTemplate3 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
     });

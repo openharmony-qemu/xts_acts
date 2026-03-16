@@ -80,6 +80,10 @@ namespace NnCoreOps {
  */
 int SUBAINNRtFuncNorthSwishBuild01()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -113,6 +117,10 @@ int SUBAINNRtFuncNorthSwishBuild01()
  */
 int SUBAINNRtFuncNorthSwishBuild02()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 
@@ -146,6 +154,10 @@ int SUBAINNRtFuncNorthSwishBuild02()
  */
 int SUBAINNRtFuncNorthSwishBuild03()
 {
+    if (IsSupportNPU() == false) {
+        return OH_NN_SUCCESS;
+    }
+    
     OH_NNModel* model = OH_NNModel_Construct();
     EXPECT_NE(nullptr, model);
 

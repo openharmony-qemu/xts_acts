@@ -26,18 +26,58 @@ let btAddr: common.BluetoothAddress = {
     "address": "11:22:33:44:55:66",
     "addressType": common.BluetoothAddressType.REAL,
 };
+let btAddr1: common.BluetoothAddress = {
+    "address": "11:22:33",
+    "addressType": common.BluetoothAddressType.VIRTUAL,
+};
+let btAddr2: common.BluetoothAddress = {
+    "address": "11:22:33:44:55:66",
+    "addressType": common.BluetoothAddressType.VIRTUAL,
+};
 let deviceAddress: partnerAgent.PartnerDeviceAddress = {
     "bluetoothAddress": btAddr,
+};
+let deviceAddress1: partnerAgent.PartnerDeviceAddress = {
+    "bluetoothAddress": btAddr1,
+};
+let deviceAddress2: partnerAgent.PartnerDeviceAddress = {
+    "bluetoothAddress": btAddr2,
 };
 let deviceCapability: partnerAgent.DeviceCapability = {
     "supportBR": true,
     "supportBleAdvertiser": true,
 };
+let deviceCapability1: partnerAgent.DeviceCapability = {
+    "supportBR": false,
+    "supportBleAdvertiser": true,
+};
+let deviceCapability2: partnerAgent.DeviceCapability = {
+    "supportBR": false,
+    "supportBleAdvertiser": false,
+};
+let deviceCapability3: partnerAgent.DeviceCapability = {
+    "supportBR": true,
+    "supportBleAdvertiser": false,
+};
 let businessCapability: partnerAgent.BusinessCapability = {
     "supportMediaControl": true,
     "supportTelephonyControl": true,
 };
+let businessCapability1: partnerAgent.BusinessCapability = {
+    "supportMediaControl": false,
+    "supportTelephonyControl": true,
+};
+let businessCapability2: partnerAgent.BusinessCapability = {
+    "supportMediaControl": true,
+    "supportTelephonyControl": false,
+};
+let businessCapability3: partnerAgent.BusinessCapability = {
+    "supportMediaControl": false,
+    "supportTelephonyControl": false,
+};
+
 let partnerAgentExtensionAbilityName: string = "testAbilityName";
+
 function sleep(delay : number) : Promise<void> {
     return new Promise(resolve => setTimeout(resolve, delay));
 }
@@ -201,7 +241,12 @@ export default function fusionAgentTest() {
                 expect(is_boolean == true || is_boolean == false).assertTrue();
             } catch (err) {
                 console.error("[fusion_js]isDeviceBound is fail , errCode:" + err.code + ",errMessage:" + err.message);
-                expect().assertFail();
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })
@@ -220,7 +265,12 @@ export default function fusionAgentTest() {
                 expect(is_boolean == true || is_boolean == false).assertTrue();
             } catch (err) {
                 console.error("[fusion_js]isDeviceControlEnabled is fail , errCode:" + err.code + ",errMessage:" + err.message);
-                expect().assertFail();
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
             }
             done();
         })
@@ -236,12 +286,19 @@ export default function fusionAgentTest() {
          it('SUB_COMMUNICATION_FUSION_AGENT_BINDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             try {
                 await partnerAgent.bindDevice(deviceAddress, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
             } catch (err) {
                 console.error("[fusion_js]bindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(34900003);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(34900003);
+                }
             }
             done();
         })
+
         /**
          * @tc.name   SUB_COMMUNICATION_FUSION_AGENT_BINDEVICE_0200
          * @tc.number SUB_COMMUNICATION_FUSION_AGENT_BINDEVICE_0200
@@ -256,9 +313,15 @@ export default function fusionAgentTest() {
                 await clickRequestPermission(CLOSE_BT_TEXT);
                 await sleep(5000);
                 await partnerAgent.bindDevice(deviceAddress, deviceCapability, businessCapability, partnerAgentExtensionAbilityName);
+                expect().assertFail();
             } catch (err) {
                 console.error("[fusion_js]bindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(34900005);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(34900005);
+                }
             }
             done();
         })
@@ -274,9 +337,425 @@ export default function fusionAgentTest() {
          it('SUB_COMMUNICATION_FUSION_AGENT_UNBINDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
             try {
                 await partnerAgent.unbindDevice(deviceAddress);
+                expect().assertFail();
             } catch (err) {
-                console.error("[fusion_js]unbindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(34900001);
+                console.error("[fusion_js]unbindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);    
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(34900001);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_AGENT_GETDEVICE_0100
+         * @tc.number SUB_COMMUNICATION_FUSION_AGENT_GETDEVICE_0100
+         * @tc.desc   Test function getBoundDevices;API 23 
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_AGENT_GETDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let result_list = partnerAgent.getBoundDevices();
+                if (result_list.length > 0) {
+                    console.info('[bluetooth_js] getBoundDevices' + JSON.stringify(result_list[0]));
+                    expect(result_list.length > 0).assertTrue();
+                    done();
+                }
+                else {
+                    expect(result_list.length == 0).assertTrue();
+                    done();
+                }
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);    
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0100
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0100
+         * @tc.desc   Test isDeviceBound 入参不合法返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceBound(deviceAddress1);
+                console.info("[fusion_js]isDeviceBound value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0200
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0200
+         * @tc.desc   Test isDeviceControlEnabled 入参不合法返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceControlEnabled(deviceAddress1);
+                console.info("[fusion_js]isDeviceControlEnabled  value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0300
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0300
+         * @tc.desc   Test unbindDevice 入参不合法返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.unbindDevice(deviceAddress1);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);    
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0400
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0400
+         * @tc.desc   Test isDeviceBound 入参null 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceBound(null);
+                console.info("[fusion_js]isDeviceBound value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0500
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0500
+         * @tc.desc   Test isDeviceControlEnabled 入参null 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceControlEnabled(null);
+                console.info("[fusion_js]isDeviceControlEnabled  value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0600
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0600
+         * @tc.desc   Test unbindDevice 入参null 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.unbindDevice(null);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);    
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0700
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0700
+         * @tc.desc   Test bindDevice 参数1null 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(null, deviceCapability1, businessCapability2, '');
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0800
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0800
+         * @tc.desc   Test bindDevice 参数2null 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddress1, null, businessCapability1, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_0900
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_0900
+         * @tc.desc   Test bindDevice 参数3null 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddress2, deviceCapability2, null, partnerAgentExtensionAbilityName);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1000
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1000
+         * @tc.desc   Test bindDevice 参数4null 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.bindDevice(deviceAddress, deviceCapability3, businessCapability3, null);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]bindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })     
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1100
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1100
+         * @tc.desc   Test isDeviceBound 参数undefined 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceBound(undefined);
+                console.info("[fusion_js]isDeviceBound value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1200
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1200
+         * @tc.desc   Test isDeviceControlEnabled 参数undefined 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceControlEnabled(undefined);
+                console.info("[fusion_js]isDeviceControlEnabled  value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1300
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1300
+         * @tc.desc   Test unbindDevice 参数undefined 返回401 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.unbindDevice(undefined);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);    
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(401);
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1400
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1400
+         * @tc.desc   Test isDeviceBound 参数覆盖  API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceBound(deviceAddress2);
+                console.info("[fusion_js]isDeviceBound value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceBound is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1500
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1500
+         * @tc.desc   Test isDeviceControlEnabled 没有对端设备返回false 参数覆盖 API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                let is_boolean = partnerAgent.isDeviceControlEnabled(deviceAddress2);
+                console.info("[fusion_js]isDeviceControlEnabled  value is: " + JSON.stringify(is_boolean));
+                expect(is_boolean == true || is_boolean == false).assertTrue();
+            } catch (err) {
+                console.error("[fusion_js]isDeviceControlEnabled is fail , errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_FUSION_ADD_1600
+         * @tc.number SUB_COMMUNICATION_FUSION_ADD_1600
+         * @tc.desc   Test unbindDevice 设备未注册01 参数覆盖API 23
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('SUB_COMMUNICATION_FUSION_ADD_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                await partnerAgent.unbindDevice(deviceAddress2);
+                expect().assertFail();
+            } catch (err) {
+                console.error("[fusion_js]unbindDevice : The device is not paired. errCode:" + err.code + ",errMessage:" + err.message);    
+                if (Number(err.code) === 801) {
+                    console.info("设备 is not support.");
+                    expect(Number(err.code)).assertEqual(801);
+                } else {
+                    expect(Number(err.code)).assertEqual(34900001);
+                }
             }
             done();
         })

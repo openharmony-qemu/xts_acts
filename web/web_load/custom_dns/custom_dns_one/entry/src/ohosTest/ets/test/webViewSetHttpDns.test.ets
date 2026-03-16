@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import {describe, beforeEach, afterEach, it, expect, beforeAll, TestType, Size, Level } from "@ohos/hypium";
+import webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 // import router from '@system.router';
@@ -138,6 +139,86 @@ export default function webViewSetHttpDns() {
       emitKey="emitSetHttpDnsOffExample";
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("SetHttpDnsOffExample", "OpenAtom OpenHarmony",340040, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
+    })
+
+    /**
+     * @tc.name   testClearHostIPError01
+     * @tc.number SUB_ACE_WEBVIEWCONTROLLER_CLEARHOSTIP_ERROR_API_0100
+     * @tc.desc   test clearHostIP null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testClearHostIPError01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) =>{
+      try {
+        webview.WebviewController.clearHostIP(null)
+      } catch(error) {
+        let errorCode = Number(error.code)
+        expect(errorCode).assertEqual(401)
+      }
+      done();
+    })
+    /**
+     * @tc.name   testClearHostIPError02
+     * @tc.number SUB_ACE_WEBVIEWCONTROLLER_CLEARHOSTIP_ERROR_API_0200
+     * @tc.desc   test clearHostIP undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testClearHostIPError02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) =>{
+      try {
+        webview.WebviewController.clearHostIP(undefined)
+      } catch(error) {
+        let errorCode = Number(error.code)
+        expect(errorCode).assertEqual(401)
+      }
+      done();
+    })
+    /**
+     * @tc.name   testSetHttpDnsAutoEmpty
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0500
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetHttpDnsAutoEmpty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+      emitKey="testSetHttpDnsAutoEmpty";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetHttpDnsAutoEmpty", "401",340050, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
+    })
+    /**
+     * @tc.name   testSetHttpDnsAutoNull
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0600
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetHttpDnsAutoNull',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+      emitKey="testSetHttpDnsAutoNull";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetHttpDnsAutoNull", "401",340060, done);
+      let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
+      await StartModel.click();
+    })
+    /**
+     * @tc.name   testSetHttpDnsAutoUndefined
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0700
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetHttpDnsAutoUndefined',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+      emitKey="testSetHttpDnsAutoUndefined";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetHttpDnsAutoUndefined", "401",340070, done);
       let StartModel = await driver.findComponent(ON.id("webViewSetHttpDns"));
       await StartModel.click();
     })

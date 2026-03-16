@@ -30,11 +30,6 @@ const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRI
 const CREATE_TABLE_TEST =
   "CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY,name TEXT NOT NULL, age INTEGER, salary REAL, data4 BLOB,data5 asset,data6 assets)";
 
-const STORE_CONFIG_NORMAL: relationalStore.StoreConfig = {
-  name: "NormalRdbErrorCode801.db",
-  securityLevel: relationalStore.SecurityLevel.S1,
-}
-
 const STORE_CONFIG_MEMORY: relationalStore.StoreConfig = {
   name: "MemoryRdbErrorCode801.db",
   securityLevel: relationalStore.SecurityLevel.S1,
@@ -87,7 +82,7 @@ export default function RdbErrorCode801() {
       let rdbStore = await relationalStore.getRdbStore(context!, readOnlyConf);
       await rdbStore.executeSql(CREATE_TABLE_TEST1);
       await rdbStore.insert("test", valueBucket);
-      rdbStore.close();
+      await rdbStore.close();
       console.info(TAG + 'beforeAll end');
     })
 
@@ -113,12 +108,13 @@ export default function RdbErrorCode801() {
 
     afterEach(async (): Promise<void> => {
       console.info(TAG + 'afterEach begin');
-      await relationalStore.deleteRdbStore(context!, STORE_CONFIG_NORMAL);
+      await rdbStoreMemory!.close();
       await relationalStore.deleteRdbStore(context!, STORE_CONFIG_MEMORY);
       if (relationalStore.isVectorSupported()) {
+        await rdbStoreVector!.close();
         await relationalStore.deleteRdbStore(context!, STORE_CONFIG_VECTOR);
       }
-      rdbStoreReadOnly!.close();
+      await rdbStoreReadOnly!.close();
       console.info(TAG + 'afterEach end');
     })
 
@@ -319,42 +315,6 @@ export default function RdbErrorCode801() {
           expect(err.code).assertEqual(801)
         }
         console.info(TAG + "-----RdbOnDataChange801_002 end-----")
-        done();
-      })
-
-    /**
-     * @tc.name   RdbOnStatistics801_001
-     * @tc.number RdbOnStatistics801_001
-     * @tc.desc   Test onStatistics
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('RdbOnStatistics801_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        console.info(TAG + "-----RdbOnStatistics801_001 start-----")
-        if (!relationalStore.isVectorSupported()) {
-          console.info(TAG + "The device does not support the vector database.");
-          done();
-          return;
-        }
-        let sqlExecutionInfo = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
-          console.info(`sql: ${sqlExecutionInfo.sql[0]}`);
-          console.info(`totalTime: ${sqlExecutionInfo.totalTime}`);
-          console.info(`waitTime: ${sqlExecutionInfo.waitTime}`);
-          console.info(`prepareTime: ${sqlExecutionInfo.prepareTime}`);
-          console.info(`executeTime: ${sqlExecutionInfo.executeTime}`);
-        }
-
-        try {
-          rdbStoreVector!.onStatistics(sqlExecutionInfo);
-          console.info(TAG + 'on success.');
-          expect().assertFail();
-        } catch (err) {
-          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual(801)
-        }
-        console.info(TAG + "-----RdbOnStatistics801_001 end-----")
         done();
       })
 
@@ -661,6 +621,125 @@ export default function RdbErrorCode801() {
         console.log(TAG + "************* RdbBatchInsertSync801_001 end *************");
         done();
       })
+
+       /**
+     * @tc.name RdbExecute801_003
+     * @tc.number RdbExecute801_003
+     * @tc.desc 1. set isReadOnly as true
+     *          2. open read-only database
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('RdbExecute801_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void): Promise<void> => {
+      console.info(TAG + "************* RdbExecute801_003 start *************");
+
+      try {
+        let textId = await rdbStoreMemory!.beginTrans()
+       await rdbStoreReadOnly!.execute("DELETE FROM test WHERE age = ?", textId, [18 as long]) 
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG +
+          `RdbExecute801_003 execute is failed, code is ${err.code},message is ${err.message}`);
+        expect(err.code).assertEqual(801);
+      }
+      console.log(TAG + "************* RdbExecute801_003 end *************");
+      done();
+  })
+
+  /**
+    * @tc.name   RdboffAutoSyncProgress801_001
+    * @tc.number RdboffAutoSyncProgress801_001
+    * @tc.desc   sync test
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+  it('RdboffAutoSyncProgress801_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+  async (done: () => void): Promise<void> => {
+
+    let progressDetail = (progressDetail: relationalStore.ProgressDetails) => {
+      console.info(`progress: ${progressDetail}`);
+    }
+    try {
+      rdbStoreMemory!.onAutoSyncProgress(progressDetail);
+      rdbStoreMemory!.offAutoSyncProgress(progressDetail);
+      console.info(TAG + 'offAutoSyncProgress on success.');
+      expect().assertFail();
+      done();
+    } catch (err) {
+      console.error(TAG + 'offAutoSyncProgress Failed to on.Code: ' + err.code + ',message:' + err.message);
+      expect(err.code).assertEqual(801);
+      done();
+    }
+  })
+
+   /**
+     * @tc.name   RdboffStatistics801_001
+     * @tc.number RdboffStatistics801_001
+     * @tc.desc   1. Register callback for offStatistics
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+   it('RdboffStatistics801_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+   async (done: () => void): Promise<void> => {
+     console.info(TAG + "************* RdboffStatistics801_001 start *************");
+     if (!relationalStore.isVectorSupported()) {
+      console.info(TAG + "The device does not support the vector database.");
+      done();
+      return;
+    }
+    let observer = (sqlExecutionInfo: relationalStore.SqlExecutionInfo) => {
+      console.info(TAG + 'in observer.');
+    };
+    try {
+      rdbStoreVector!.onPerfStat(observer);
+      rdbStoreVector!.offStatistics(observer);
+      console.info(TAG + 'offStatistics on success.');
+      expect().assertFail();
+      done();
+    } catch (err) {
+      console.error(TAG + 'offStatistics Failed to on.Code: ' + err.code + ',message:' + err.message);
+      expect(err.code).assertEqual(801);
+      done();
+    }
+     console.info(TAG + "************* RdboffStatistics801_001 end *************");
+  })
+
+   /**
+     * @tc.name   RdboffDataChange801_001
+     * @tc.number RdboffDataChange801_001
+     * @tc.desc   sync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+   it('RdboffDataChange801_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+   async (done: () => void): Promise<void> => {
+    console.info(TAG + "************* RdboffDataChange801_001 start *************");
+     let storeObserver = (devices: Array<string>) => {
+      if (devices != undefined) {
+        for (let i = 0; i < devices.length; i++) {
+          console.info(TAG + `device= ${devices[i]} data changed`);
+        }
+      }
+    }
+    try {
+      rdbStoreMemory!.onDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE, storeObserver);
+      rdbStoreMemory!.offDataChange(relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,storeObserver);
+      console.info(TAG + 'on success.');
+      expect().assertFail();
+      done();
+    } catch (err) {
+      console.error(TAG + 'onDataChange Failed to on.Code: ' + err.code + ',message:' + err.message);
+      expect(err.code).assertEqual(801)
+      done();
+    }
+    console.info(TAG + "************* RdboffDataChange801_001 end *************");
+  
+   })
 
   })
 }

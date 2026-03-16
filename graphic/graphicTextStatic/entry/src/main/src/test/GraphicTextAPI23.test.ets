@@ -401,7 +401,7 @@ export default function GraphicTextAPI23() {
      */
     it('testParagraphStyleStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msg  = "====testParagraphStyleStatic_0100===="
+        let msg  = "====www data testParagraphStyleStatic_0100===="
         let fontCollection: text.FontCollection = new text.FontCollection();
         try {
           let fontFamilies: Array<string> = ["Clock_01"]
@@ -654,7 +654,6 @@ export default function GraphicTextAPI23() {
         await fontCollection.unloadFont(fontFamily);
         done();
     })
-
-
+    
   })
 }

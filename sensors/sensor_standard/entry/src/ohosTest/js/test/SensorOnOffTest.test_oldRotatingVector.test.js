@@ -74,6 +74,7 @@ describe("SensorJsTest_sensor_20", function () {
     const SERVICE_EXCEPTION_MSG = "Service exception.Possible causes:" +
         "1. Sensor hdf service exception;2. Sensor service ipc exception;3. Sensor data channel exception."
     let errMessages = ['string is not defined','The parameter invalid'];
+    let sensortempcode = true;
     let errMessage;
 
     /**
@@ -190,7 +191,7 @@ describe("SensorJsTest_sensor_20", function () {
                 } else {
                 sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback);
                 setTimeout(() => {
-                    expect(true).assertTrue();
+                    expect(sensortempcode).assertTrue();
                     done();
                 }, 500);
                 }

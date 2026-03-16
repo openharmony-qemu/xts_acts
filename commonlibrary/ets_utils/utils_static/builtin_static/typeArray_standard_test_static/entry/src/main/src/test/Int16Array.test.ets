@@ -19,7 +19,7 @@ import Utils from './Util.test';
 
 export default function Int16ArrayTest() {
   describe('Int16ArrayTest', ():void => {
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
     })
     let value: string;

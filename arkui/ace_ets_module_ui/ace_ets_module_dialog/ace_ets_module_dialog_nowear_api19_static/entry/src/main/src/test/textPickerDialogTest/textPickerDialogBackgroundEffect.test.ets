@@ -31,7 +31,7 @@ import { UtilsTest } from '../Util.test';
 export default function textPickerDialogBackgroundEffectTest() {
   describe('TextPickerDialogBackgroundEffectTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("textPickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
     });

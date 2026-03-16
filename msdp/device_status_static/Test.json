@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "60000",
         "shell-timeout": "60000",
-        "bundle-name": "com.example.mydevicestatusapp.Static",
+        "bundle-name": "com.example.mydevicestatusapp",
         "module-name": "entry",
         "testcase-timeout": "70000"
     },

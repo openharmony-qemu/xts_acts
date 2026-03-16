@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { List } from '@kit.ArkTS';
 
 class Temp {
@@ -991,7 +991,7 @@ export default function ArkListTest() {
         let index = 0;
         list.forEach((value) => {
           expect(list.get(Math.floor(index ?? 0))).assertEqual(value);
-          index ++;
+          index++;
         });
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1032,7 +1032,7 @@ export default function ArkListTest() {
         let index = 0;
         list.forEach((value) => {
           expect(list.get(Math.floor(index ?? 0))).assertEqual(value);
-          index ++;
+          index++;
         }, listNew);
         expect(listNew.convertToArray().toString()).assertEqual("0");
       } catch (err) {
@@ -1077,6 +1077,321 @@ export default function ArkListTest() {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
       }
+    });
+    /**
+     * @tc.name   testListCase001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list: List<number | null | undefined> = new List();
+      try {
+        list.insert(null, 2);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(10200001);
+      }
+      try {
+        list.insert(undefined, 3);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(10200001);
+      }
+      try {
+        list.insert(1, null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        list.insert(0, undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testListCase002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number>()
+      list.add(2);
+      list.add(4);
+      try {
+        let result1 = list.get(null);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result2 = list.get(undefined);
+        expect().assertFail();
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+    /**
+     * @tc.name   testListCase003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number | null | undefined>();
+      list.add(2);
+      list.add(4);
+      let result1 = list.getIndexOf(null);
+      expect(result1).assertEqual(-1);
+      let result2 = list.getIndexOf(undefined);
+      expect(result2).assertEqual(-1);
+    });
+
+    /**
+     * @tc.name   testListCase004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0400
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number | null | undefined>();
+      list.add(4);
+      try {
+        let result1 = list.removeByIndex(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result2 = list.removeByIndex(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testListCase005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0500
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number | null | undefined>();
+      list.add(2);
+      let result1 = list.remove(null);
+      expect(result1).assertFalse();
+      let result2 = list.remove(undefined);
+      expect(result2).assertFalse();
+    });
+
+    /**
+     * @tc.name   testListCase006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0600
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number | null | undefined>();
+      list.add(2);
+      let result1 = list.getLastIndexOf(null);
+      expect(result1).assertEqual(-1);
+      let result2 = list.getLastIndexOf(undefined);
+      expect(result2).assertEqual(-1);
+    });
+
+    /**
+     * @tc.name   testListCase007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0700
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number | null | undefined>();
+      try {
+        list.set(null, 1);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        list.set(undefined, 1);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      list.add(1);
+      list.add(2);
+      list.set(0, null);
+      list.set(1, undefined);
+      expect(JSON.stringify(list)).assertEqual('{"0":null}');
+    });
+
+    /**
+     * @tc.name   testListCase008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0800
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number>();
+      list.add(2);
+      list.add(4);
+      list.add(5);
+      let result1 = list.equal(null);
+      expect(result1).assertFalse();
+      let result2 = list.equal(undefined);
+      expect(result2).assertFalse();
+    });
+
+    /**
+     * @tc.name   testListCase009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0900
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number>()
+      list.add(2);
+      list.add(4);
+      try {
+        list.forEach(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        list.forEach(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testListCase010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1000
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number>()
+      list.add(2);
+      list.add(4);
+      try {
+        list.sort(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        list.sort(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testListCase011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1100
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number | null | undefined>();
+      list.add(2);
+      try {
+        let result1 = list.getSubList(null, 3);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result2 = list.getSubList(undefined, 3);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result3 = list.getSubList(1, null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let result4 = list.getSubList(0, undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testListCase012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1200
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number>()
+      list.add(2);
+      try {
+        list.replaceAllElements(null);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        list.replaceAllElements(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   testListCase013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1300
+     * @tc.desc   Testing List
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListCase013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let list = new List<number>()
+      list.add(2);
+      list.add(4);
+      list.add(5);
+      list.add(4);
+      list.replaceAllElements((value: number) => {
+        if (value === 5) {
+          return value * 2;
+        }
+        return value;
+      }, null);
+      expect(JSON.stringify(list)).assertEqual('{"0":2,"1":4,"2":10,"3":4}');
+      list.replaceAllElements((value: number) => {
+        if (value === 10) {
+          return value * 2;
+        }
+        return value + 3;
+      }, undefined);
+      expect(JSON.stringify(list)).assertEqual('{"0":5,"1":7,"2":20,"3":7}');
     });
   });
 }

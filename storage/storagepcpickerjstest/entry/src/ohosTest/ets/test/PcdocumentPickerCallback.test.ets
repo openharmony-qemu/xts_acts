@@ -191,6 +191,33 @@ export default function documentpcPickerCallback(abilityContext: Context) {
     });
 
     /**
+     * @tc.name   test_Documentpicker_Select_Pc_Callback_007
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_PC_CALLBACK_0700
+     * @tc.desc   select with option authMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Select_Pc_Callback_007", Level.LEVEL1, async (done: Function) => {
+      let testNum = "test_Documentpicker_Select_Pc_Callback_007";
+      let option = new picker.DocumentSelectOptions();
+      option.authMode = true;
+      try {
+        let documentPicker = new picker.DocumentViewPicker();
+        documentPicker.select(option, (err, result) => {
+          console.info(`${testNum}::selectWithOption result: ${JSON.stringify(result)}`);
+          expect(result.length == 0).assertTrue();
+        });
+        done();
+      }
+      catch (error) {
+        console.info(`${testNum}::selectWithOption error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   test_Documentpicker_Save_Pc_Callback_001
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_PC_CALLBACK_0100
      * @tc.desc   test getSelectdIndex

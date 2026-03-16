@@ -23,7 +23,7 @@ import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 export default function EllipseResourceTest() {
   describe('EllipseResourceTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("EllipseResourceTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")

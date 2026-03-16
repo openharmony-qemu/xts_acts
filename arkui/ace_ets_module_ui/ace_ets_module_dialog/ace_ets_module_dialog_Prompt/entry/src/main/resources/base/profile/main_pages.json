@@ -27,7 +27,6 @@
     "MainAbility/pages/promptAction/showToast",
     "MainAbility/pages/promptAction/showDialog",
     "MainAbility/pages/promptAction/ShowDialogOptions",
-	
     "MainAbility/pages/customDialog/CustomDialog1",
     "MainAbility/pages/customDialog/customdialog2",
     "MainAbility/pages/customDialog/CustomDialog3",
@@ -40,19 +39,15 @@
     "MainAbility/pages/customDialog/KeyboardAvoidMode/PromptAction",
     "MainAbility/pages/customDialog/CustomDialogBorderColor",
     "MainAbility/pages/customDialog/dialogTransitionTest",
-	
     "MainAbility/pages/Dialog/dialogApi",
     "MainAbility/pages/Dialog/InterstitialDialogAction",
     "MainAbility/pages/Dialog/dialogButtonStyle",
-	
     "MainAbility/pages/UIContext/closeCustomDialog",
     "MainAbility/pages/UIContext/openCustomDialog",
     "MainAbility/pages/UIContext/updateCustomDialog",
-	
     "MainAbility/pages/openCustomDialog/openCustomDialog1",
     "MainAbility/pages/openCustomDialog/openCustomDialog2",
     "MainAbility/pages/openCustomDialog/openCustomDialog3",
-	
     "MainAbility/pages/promptAction/openCustomDialog2",
     "MainAbility/pages/promptAction/closeCustomDialog",
     "MainAbility/pages/promptAction/updateCustomDialog",
@@ -60,7 +55,6 @@
     "MainAbility/pages/promptAction/showDialogTest",
     "MainAbility/pages/UIContext/index",
     "MainAbility/pages/actionSheet/index",
-	
     "MainAbility/pages/UIContext/overlayManager",
     "MainAbility/pages/UIContext/uiOpenCustomDialogMode",
     "MainAbility/pages/UIContext/openCustomDialogWithCtrMode",
@@ -70,7 +64,6 @@
     "MainAbility/pages/prompt/openCustomDialogMode",
     "MainAbility/pages/prompt/showActionMenuMode",
     "MainAbility/pages/prompt/promptActionKeyboardAvoidDistance",
-	
     "MainAbility/pages/dialogLife/CustomDialogLife",
     "MainAbility/pages/promptAction/openPopup",
     "MainAbility/pages/promptAction/updatePopup",
@@ -86,7 +79,6 @@
     "MainAbility/pages/Dialog/getDialogControllerTest",
     "MainAbility/pages/Dialog/getDialogControllerReturn",
     "MainAbility/pages/overlayManager/overlayManagerTest",
-	
     "MainAbility/pages/UIContext/openCustomDialogBlurStyleOptions",
     "MainAbility/pages/UIContext/openCustomDialogBackgroundEffect",
     "MainAbility/pages/UIContext/presentCustomDialogBlurStyleOptions",
@@ -106,8 +98,9 @@
     "MainAbility/pages/promptAction/showDialogBackgroundEffect1",
     "MainAbility/pages/promptAction/showDialogBlurStyleOptions2",
     "MainAbility/pages/promptAction/showDialogBackgroundEffect2",
-	
+    "MainAbility/pages/prompt/promptNullUndefined",
     "MainAbility/pages/customDialog/customdialog4",
-    "MainAbility/pages/promptAction/closeToastTest2"
+    "MainAbility/pages/promptAction/closeToastTest2",
+    "MainAbility/pages/prompt/PromptActionShowActionMenuNullTest"
   ]
 }

@@ -45,15 +45,19 @@ export async function test2(): Promise<string> {
 
 export async function testUI(): Promise<string> {
   return new Promise<string>((re, je) => {
-    await testUISec()
-    re('')
+    waitForCompletion(async () => {
+      await testUISec()
+      re('')
+    })
   })
 }
 
 export async function testUI1(): Promise<string> {
   return new Promise<string>((re, je) => {
-    await testUISec1()
-    re('')
+    waitForCompletion(async () => {
+      await testUISec()
+      re('')
+    })
   })
 }
 

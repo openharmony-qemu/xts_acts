@@ -46,7 +46,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function onSelectionChange3() {
   describe('onSelectionChange3', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("onSelectionChange3 beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility");
     });

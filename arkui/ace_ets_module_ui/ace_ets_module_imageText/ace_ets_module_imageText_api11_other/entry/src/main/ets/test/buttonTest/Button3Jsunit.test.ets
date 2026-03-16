@@ -416,8 +416,8 @@ export default function button3Jsunit() {
         try {
             expect(Math.abs(vp2px(ScreenX) - point.x + globalThis.winLeft) <= 1).assertTrue()
             expect(Math.abs(vp2px(ScreenY) - point.y + globalThis.winTop)  <= 1).assertTrue()
-            expect(Math.trunc(JSON.parse(eventData.data?.event).x)).assertEqual(100)
-            expect(Math.trunc(JSON.parse(eventData.data?.event).y)).assertEqual(50)
+            expect(Math.abs(JSON.parse(eventData.data?.event).x - 100)  <= 1).assertTrue()
+            expect(Math.abs(JSON.parse(eventData.data?.event).y - 50)  <= 1).assertTrue()
         } catch (err) {
           console.info("[testButton12_] expection err : " + JSON.stringify(err));
           expect().assertFail();

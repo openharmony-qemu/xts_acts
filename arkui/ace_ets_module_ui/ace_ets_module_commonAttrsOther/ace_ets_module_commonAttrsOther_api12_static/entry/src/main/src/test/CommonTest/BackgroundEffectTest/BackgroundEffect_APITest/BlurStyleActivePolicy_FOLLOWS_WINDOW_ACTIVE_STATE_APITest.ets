@@ -38,7 +38,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function BlurStyleActivePolicy_FOLLOWS_WINDOW_ACTIVE_STATE_APITest() {
   describe('BlurStyleActivePolicy_FOLLOWS_WINDOW_ACTIVE_STATE_APITest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

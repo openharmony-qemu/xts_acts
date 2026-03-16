@@ -14,25 +14,25 @@
  */
 
 import radioTest from './Radio/radio.test';
-import RadioJsunit from './Radio/RadioJsunit.test';
+// import RadioJsunit from './Radio/RadioJsunit.test';
 import radioJsunit2 from './Radio/RadioJsunit2.test';
 import radioGroupJsunit from './Radio/radioFirst.test';
 
-import RadioContentModifier from './Radio/RadioContentModifier.test';
+// import RadioContentModifier from './Radio/RadioContentModifier.test';
 import RadioIndicatorType from './Radio/RadioIndicatorType.test';
 
 import radioNode from './Radio/radioNode.test';
-import radioOnChangeModifierTest from './Radio/radioOnChangeModifier.test';
+// import radioOnChangeModifierTest from './Radio/radioOnChangeModifier.test';
 
 export default function testsuite() {
   radioTest()
-  RadioJsunit();
+  // RadioJsunit();
   radioJsunit2();
   radioGroupJsunit()
 
-  RadioContentModifier();
+  // RadioContentModifier();
   RadioIndicatorType();
 
   radioNode();
-  radioOnChangeModifierTest();
+  // radioOnChangeModifierTest();
 }

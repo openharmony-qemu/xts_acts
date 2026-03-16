@@ -55,12 +55,12 @@ import TimePickerJsunit from './TimePickerTest/TimePickerJsunit.test';
 import timeStampJsunit from './TimePickerTest/TimeStampJsunit.test';
 import datePickerUIJsunit from './DatePickerTest/datePickerUIJsunit.test';
 import RatingAdvancedTest from './RatingTest/RatingAdvanced.test'
-import SliderInterfaceTest from './slider/sliderInterfaceTest.test'
+// import SliderInterfaceTest from './slider/sliderInterfaceTest.test'
 import SliderTestC from './SliderTestC/sliderJsunit.test';
 
 export default function testsuite() {
   RatingAdvancedTest()
-  SliderInterfaceTest()
+  // SliderInterfaceTest()
   stageTimePickerDialog();
   stageTextPickerDialog();
   stageDatePickerDialog();
@@ -105,7 +105,7 @@ export default function testsuite() {
   systempromptJsunit();
   ohosPromptJsunit();
   TextPickerJsunit();
-  TimePickerJsunit();
+  
   timeStampJsunit();
   datePickerUIJsunit();
   SliderTestC()

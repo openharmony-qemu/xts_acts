@@ -35,7 +35,7 @@ let tag: string = 'testTag';
 export default function ModifierTextStyleTest() {
   describe('ModifierTextStyleTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ModifierTextStyleTest beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.picker.api15.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

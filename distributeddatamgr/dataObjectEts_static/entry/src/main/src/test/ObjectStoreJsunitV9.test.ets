@@ -972,6 +972,865 @@ export default function objectStoreTestV9() {
         done();
       })
 
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_create_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_create_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc distributedDataObject function create(context: Context, source: object): DataObject;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_create_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_create_0100 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        console.info(TAG + 'g_object=' + g_object);
+        expect(g_object == undefined).assertEqual(false);
+        expect(g_object["name"]).assertEqual("Amy");
+        expect(g_object["age"]).assertEqual(18);
+        expect(g_object["isVis"]).assertEqual(false);
+
+        await g_object.setSessionId("create_0100").then(() => {
+          console.info(TAG + "join session");
+        }).catch((error) => {
+          console.info(TAG + error.code + error.message);
+        });
+
+        done();
+      } catch (err) {
+        console.info(TAG + ` catch err code is ${err.code}, message is ${err.message}.`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setSessionId_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_setSessionId_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setSessionId(sessionId: string, callback: AsyncCallback): void;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setSessionId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setSessionId_0100 begin---------  ');
+      try {
+       let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+       let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+       console.info(TAG + 'g_object=' + g_object);
+       expect(g_object == undefined).assertEqual(false);
+
+        g_object.setSessionId('', (err)=>{
+          console.info(TAG + "join session, err=" + err);
+          expect(err).assertEqual(null);
+          done();
+        });
+      } catch (err) {
+        if (err.code === 201) {
+          console.error(TAG + 'Permission verification failed. Code: ' + err.code + ',message: ' + err.message);
+          expect(err.code).assertEqual(201);
+        } else {
+          console.error(TAG + 'Failed to bindAssetStore. Code: ' + err.code + ',message: ' + err.message);
+          expect().assertFail();
+        }
+      }
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setSessionId_0101
+     * @tc.name SUB_DDM_SKV_ObjectNull_setSessionId_0101
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setSessionId(sessionId: string, callback: AsyncCallback): void;  err=401
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setSessionId_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setSessionId_0101 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        console.info(TAG + 'g_object=' + g_object);
+        expect(g_object == undefined).assertEqual(false);
+
+        g_object.setSessionId('123456@#123', (err)=>{
+          console.info(TAG + "join session, err=" + err!);
+          expect(err!.code).assertEqual(401);
+          done();
+        });
+      } catch (err) {
+          console.error(TAG + 'catch failed. Code: ' + err.code + ',message: ' + err.message);
+          expect().assertFail();
+          done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setSessionId_Promise_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setSessionId(sessionId?: string): Promise;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0100 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        console.info(TAG + 'g_object=' + g_object);
+        expect(g_object == undefined).assertEqual(false);
+
+        await g_object.setSessionId("").then(() => {
+          console.info(TAG + "join session");
+          done();
+        });
+
+      } catch (err) {
+        if (err.code === 201) {
+          console.error(TAG + 'Permission verification failed. Code: ' + err.code + ',message: ' + err.message);
+          expect(err.code).assertEqual(201);
+        } else {
+          console.error(TAG + 'Failed to bindAssetStore. Code: ' + err.code + ',message: ' + err.message);
+          expect().assertFail();
+        }
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setSessionId_Promise_0101
+     * @tc.name SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0101
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setSessionId(sessionId?: string): Promise; err=401
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setSessionId_Promise_0101 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        console.info(TAG + 'g_object=' + g_object);
+        expect(g_object == undefined).assertEqual(false);
+
+        await g_object.setSessionId('123456@#123').then(() => {
+          console.info(TAG + "join session");
+          expect().assertFail();
+          done();
+        });
+
+      } catch (err) {
+          console.error(TAG + 'Permission verification failed. Code: ' + err.code + ',message: ' + err.message);
+          expect(err.code).assertEqual(401);
+          done();
+      }
+
+    })
+
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_save_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_save_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject save(deviceId: string, callback: AsyncCallback): void;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_save_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_save_0100 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("save_0100").then(() => {
+          console.info(TAG + "join session");
+        }).catch((error: Error) => {
+          console.info(TAG + error.code + error.message);
+        });
+
+        g_object!.save("local", (err, result): void => {
+          let ret: distributedObject.SaveSuccessResponse|undefined = result;
+          console.info(TAG + "save callback");
+          console.info(TAG + "save sessionId: " + ret!.sessionId);
+          console.info(TAG + "save version: " + ret!.version);
+          console.info(TAG + "save deviceId:  " + ret!.deviceId);
+          expect(ret!.sessionId).assertEqual("save_0100");
+          expect(ret!.version).assertEqual(g_object["__version"]);
+          expect(ret!.deviceId).assertEqual("local");
+          done();
+        });
+
+      } catch (err) {
+        console.log(TAG + ` catch err code is ${err.code}, message is ${err.message}.`);
+        expect().assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_save_0102
+     * @tc.name SUB_DDM_SKV_ObjectNull_save_0102
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject save(deviceId: string, callback: AsyncCallback): void;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_save_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_save_0102 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("save_0102").then(() => {
+          console.info(TAG + "join session");
+        }).catch((error: Error) => {
+          console.info(TAG + error.code + error.message);
+        });
+
+        g_object!.save("", (err, result): void => {
+          console.info(TAG + "save callback, err=" + err!.code + err!.message);
+          expect(err!.code).assertEqual(401);
+          done();
+        });
+
+      } catch (err) {
+        console.log(TAG + ` catch err code is ${err.code}, message is ${err.message}.`);
+        expect().assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_save_0103
+     * @tc.name SUB_DDM_SKV_ObjectNull_save_0103
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject save(deviceId: string, callback: AsyncCallback): void; 801
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_save_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_save_0103 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("save_0103");
+
+        g_object!.save("local", (err, result): void => {
+          let ret: distributedObject.SaveSuccessResponse|undefined = result;
+          console.info(TAG + "save sessionId: " + ret!.sessionId);
+          expect(ret!.sessionId).assertEqual("save_0103");
+          done();
+        });
+
+      } catch (err) {
+        if (err.code === 801) {
+          console.error(TAG + 'This device type does not support. Code: ' + err.code + ',message: ' + err.message);
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          console.error(TAG + 'catch err Code: ' + err.code + ',message: ' + err.message);
+          expect().assertFail();
+          done();
+        }
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_save_Promise_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_save_Promise_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject save(deviceId: string): Promise<SaveSuccessResponse>
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_save_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_save_Promise_0100 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("save_Promise_0100").then(() => {
+          console.info(TAG + "join session");
+        }).catch((error: Error) => {
+          console.info(TAG + error.code + error.message);
+        });
+
+        await g_object.save("local").then((result: distributedObject.SaveSuccessResponse) => {
+          let ret: distributedObject.SaveSuccessResponse|undefined = result;
+          console.info(TAG + "save callback");
+          console.info(TAG + "save sessionId: " + ret!.sessionId);
+          console.info(TAG + "save version: " + ret!.version);
+          console.info(TAG + "save deviceId:  " + ret!.deviceId);
+          expect(ret!.sessionId).assertEqual("save_Promise_0100");
+          expect(ret!.version).assertEqual(g_object["__version"]);
+          expect(ret!.deviceId).assertEqual("local");
+          done();
+        });
+
+      } catch (err) {
+        console.log(TAG + ` catch err code is ${err.code}, message is ${err.message}.`);
+        expect().assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_save_Promise_0102
+     * @tc.name SUB_DDM_SKV_ObjectNull_save_Promise_0102
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject save(deviceId: string): Promise<SaveSuccessResponse>
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_save_Promise_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_save_Promise_0102 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("save_Promise_0102").then(() => {
+          console.info(TAG + "join session");
+        }).catch((error: Error) => {
+          console.info(TAG + error.code + error.message);
+        });
+
+        await g_object.save("").then((result: distributedObject.SaveSuccessResponse) => {
+          expect().assertFail();
+          done();
+        }).catch((err) => {
+          console.error(TAG + "save failed, error code = " + err.code + err.message);
+          expect(err!.code).assertEqual(401);
+          done();
+        });
+
+      } catch (e) {
+        console.log(TAG + ` catch err code is ${e.code}, message is ${e.message}.`);
+        expect().assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_save_Promise_0103
+     * @tc.name SUB_DDM_SKV_ObjectNull_save_Promise_0103
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject save(deviceId: string): Promise<SaveSuccessResponse>
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_save_Promise_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_save_Promise_0103 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("save_Promise_0103");
+
+        await g_object.save("local").then((result: distributedObject.SaveSuccessResponse) => {
+          let ret: distributedObject.SaveSuccessResponse|undefined = result;
+          console.info(TAG + "save callback");
+          expect(ret!.sessionId).assertEqual("save_Promise_0103");
+          done();
+        });
+
+      } catch (err) {
+        if (err.code === 801) {
+          console.error(TAG + 'This device type does not support. Code: ' + err.code + ',message: ' + err.message);
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          console.error(TAG + 'catch err Code: ' + err.code + ',message: ' + err.message);
+          expect().assertFail();
+          done();
+        }
+      }
+
+    })
+
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_revokeSave_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_revokeSave_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject revokeSave(callback: AsyncCallback<RevokeSaveSuccessResponse>): void
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_revokeSave_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_revokeSave_0100 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("revokeSave_0100").then(() => {
+          console.info(TAG + "join session");
+        }).catch((error: Error) => {
+          console.info(TAG + error.code + error.message);
+        });
+
+        await g_object.save("local").then((result: distributedObject.SaveSuccessResponse) => {
+          let ret: distributedObject.SaveSuccessResponse|undefined = result;
+          console.info(TAG + "save callback");
+          console.info(TAG + "save sessionId: " + ret!.sessionId);
+          console.info(TAG + "save version: " + ret!.version);
+          console.info(TAG + "save deviceId:  " + ret!.deviceId);
+          expect(ret!.sessionId).assertEqual("revokeSave_0100");
+          expect(ret!.version).assertEqual(g_object["__version"]);
+          expect(ret!.deviceId).assertEqual("local");
+        });
+
+        // 删除持久化保存的数据
+        g_object.revokeSave((err, result) => {
+          console.info(TAG + "revokeSave sessionId=" + result!.sessionId);
+          let ret: distributedObject.RevokeSaveSuccessResponse|undefined = result;
+          expect(ret!.sessionId).assertEqual("revokeSave_0100");
+          done();
+        });
+
+      } catch (e) {
+        console.log(TAG + ` catch err code is ${e.code}, message is ${e.message}.`);
+        expect().assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_revokeSave_0102
+     * @tc.name SUB_DDM_SKV_ObjectNull_revokeSave_0102
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject revokeSave(callback: AsyncCallback<RevokeSaveSuccessResponse>): void 801
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_revokeSave_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_revokeSave_0102 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("revokeSave_0102");
+        await g_object.save("local");
+
+        // 删除持久化保存的数据
+        g_object.revokeSave((err, result) => {
+          console.info(TAG + "revokeSave sessionId=" + result!.sessionId);
+          let ret: distributedObject.RevokeSaveSuccessResponse|undefined = result;
+          expect(ret!.sessionId).assertEqual("revokeSave_0102");
+          done();
+        });
+
+      } catch (err) {
+        if (err.code === 801) {
+          console.error(TAG + 'This device type does not support. Code: ' + err.code + ',message: ' + err.message);
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          console.error(TAG + 'catch err Code: ' + err.code + ',message: ' + err.message);
+          expect().assertFail();
+          done();
+        }
+      }
+
+    })
+
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_revokeSave_Promise_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_revokeSave_Promise_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject revokeSave(): Promise<RevokeSaveSuccessResponse>
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_revokeSave_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_revokeSave_Promise_0100 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("revokeSave_Promise_0100").then(() => {
+          console.info(TAG + "join session");
+        }).catch((error: Error) => {
+          console.info(TAG + error.code + error.message);
+        });
+
+        await g_object.save("local").then((result: distributedObject.SaveSuccessResponse) => {
+          let ret: distributedObject.SaveSuccessResponse|undefined = result;
+          console.info(TAG + "save callback");
+          console.info(TAG + "save sessionId: " + ret!.sessionId);
+          console.info(TAG + "save version: " + ret!.version);
+          console.info(TAG + "save deviceId:  " + ret!.deviceId);
+          expect(ret!.sessionId).assertEqual("revokeSave_Promise_0100");
+          expect(ret!.version).assertEqual(g_object["__version"]);
+          expect(ret!.deviceId).assertEqual("local");
+        });
+
+        // 删除持久化保存的数据
+        await g_object.revokeSave().then((result: distributedObject.RevokeSaveSuccessResponse) => {
+          console.info(TAG + "revokeSave sessionId=" + result!.sessionId);
+          expect(result!.sessionId).assertEqual("revokeSave_Promise_0100");
+          done();
+        }).catch((err)=> {
+          console.error(TAG + "revokeSave failed, error code = " + err.code +err.message);
+          expect().assertFail();
+          done();
+        });
+
+      } catch (e) {
+        console.log(TAG + ` catch err code is ${e.code}, message is ${e.message}.`);
+        expect().assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_revokeSave_Promise_0102
+     * @tc.name SUB_DDM_SKV_ObjectNull_revokeSave_Promise_0102
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject revokeSave(): Promise<RevokeSaveSuccessResponse> 801
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_revokeSave_Promise_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_revokeSave_Promise_0102 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        expect(g_object == undefined).assertEqual(false);
+        await g_object.setSessionId("revokeSave_Promise_0102");
+        await g_object.save("local");
+
+        // 删除持久化保存的数据
+        await g_object.revokeSave().then((result: distributedObject.RevokeSaveSuccessResponse) => {
+          console.info(TAG + "revokeSave sessionId=" + result!.sessionId);
+          expect(result!.sessionId).assertEqual("revokeSave_Promise_0102");
+          done();
+        });
+      } catch (err) {
+        if (err.code === 801) {
+          console.error(TAG + 'This device type does not support. Code: ' + err.code + ',message: ' + err.message);
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          console.error(TAG + 'catch err Code: ' + err.code + ',message: ' + err.message);
+          expect().assertFail();
+          done();
+        }
+      }
+
+    })
+
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_bindAssetStore_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_bindAssetStore_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject bindAssetStore(assetKey: string, bindInfo: BindInfo, callback: AsyncCallback): void;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_bindAssetStore_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_bindAssetStore_0100 begin---------  ');
+      let asset010: commonType.Asset = {
+        name: "1.txt",
+        uri: "file://com.example.myapp/data/dir/1.txt",
+        path: "/dir/1.txt",
+        createTime: "2023/11/30 19:48:00",
+        modifyTime: "2023/11/30 20:10:00",
+        size: "1",
+        status: commonType.AssetStatus.ASSET_NORMAL,
+      }
+      let source: Record<String, object> = {
+        "title": "bindAssettest-title",
+        "content": "bindAssettest-content",
+        "mark": "no mark",
+        "asset010": asset010
+      }
+
+      let g_object = distributedObject.create(context1!, source);
+      expect(g_object == undefined).assertEqual(false);
+      await g_object.setSessionId("sessionNullBA010");
+
+      let asset1: commonType.Asset = {
+        name: "name1",
+        uri: "uri1",
+        createTime: "createTime1",
+        modifyTime: "modifyTime1",
+        size: "size1",
+        path: "path1",
+        status: commonType.AssetStatus.ASSET_NORMAL,
+      };
+      let asset2: commonType.Asset = {
+        name: "name2",
+        uri: "uri2",
+        createTime: "createTime2",
+        modifyTime: "modifyTime2",
+        size: "size2",
+        path: "path2",
+        status: commonType.AssetStatus.ASSET_UPDATE,
+      };
+      let asset3: commonType.Asset = {
+        name: "name3",
+        uri: "uri3",
+        createTime: "createTime3",
+        modifyTime: "modifyTime3",
+        size: "size3",
+        path: "path3",
+      };
+      let result = new Uint8Array();
+      let arr = [asset1, asset2];
+      let bindInfo: distributedObject.BindInfo = {
+        storeName: "store1",
+        tableName: "table1",
+        primaryKey: {
+          "data1": 123.0,
+          "data2": arr,
+          "data3": asset3,
+          "data4": 101.5,
+          "data5": result,
+          "data6": false,
+          "data7": null,
+          "data8": "test1"
+        },
+        field: "field1",
+        assetName: "asset1"
+      };
+      try {
+        g_object.bindAssetStore("", bindInfo, (err) => {
+          console.info(TAG + ' bindAssetStore success,err= ' + err!.code + err!.message);
+          expect(err!.message).assertEqual("operation failed");
+          done();
+        });
+      } catch (e) {
+        console.error(TAG + `catch err is: ${e.code} and msg is: ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_bindAssetStore_Promise_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_bindAssetStore_Promise_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject DataObject bindAssetStore(assetKey: string, bindInfo: BindInfo): Promise;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_bindAssetStore_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_bindAssetStore_Promise_0100 begin---------  ');
+      let assetPromise010: commonType.Asset = {
+        name: "1.txt",
+        uri: "file://com.example.myapp/data/dir/1.txt",
+        path: "/dir/1.txt",
+        createTime: "2023/11/30 19:48:00",
+        modifyTime: "2023/11/30 20:10:00",
+        size: "1",
+        status: commonType.AssetStatus.ASSET_NORMAL,
+      }
+      let source: Record<String, object> = {
+        "title": "bindAssettest-title",
+        "content": "bindAssettest-content",
+        "mark": "no mark",
+        "assetPromise010": assetPromise010
+      }
+      let g_object = distributedObject.create(context1!, source);
+      expect(g_object == undefined).assertEqual(false);
+      await g_object.setSessionId("sessionNullBAassetPromise010");
+      let asset1: commonType.Asset = {
+        name: "name1",
+        uri: "uri1",
+        createTime: "createTime1",
+        modifyTime: "modifyTime1",
+        size: "size1",
+        path: "path1",
+        status: commonType.AssetStatus.ASSET_NORMAL,
+      };
+      let asset2: commonType.Asset = {
+        name: "name2",
+        uri: "uri2",
+        createTime: "createTime2",
+        modifyTime: "modifyTime2",
+        size: "size2",
+        path: "path2",
+        status: commonType.AssetStatus.ASSET_UPDATE,
+      };
+      let asset3: commonType.Asset = {
+        name: "name3",
+        uri: "uri3",
+        createTime: "createTime3",
+        modifyTime: "modifyTime3",
+        size: "size3",
+        path: "path3",
+      };
+      let result = new Uint8Array(8);
+      for (let i = 0; i < 8; i++) {
+        result[i] = 1;
+      }
+      let arr = [asset1, asset2];
+      let bindInfo: distributedObject.BindInfo = {
+        storeName: "store1",
+        tableName: "table1",
+        primaryKey: {
+          "data1": 123.0,
+          "data2": arr,
+          "data3": asset3,
+          "data4": 101.5,
+          "data5": result,
+          "data6": false,
+          "data7": null,
+          "data8": "test1"
+        },
+        field: "field1",
+        assetName: "asset1"
+      };
+
+      try {
+        await g_object.bindAssetStore("", bindInfo).then(() => {
+          console.info(TAG +' bindAssetStore_Promise success.');
+          expect().assertFail();
+          done();
+        }).catch((error: Error) => {
+          console.info(TAG +`fail err is: ${error.code} and msg is: ${error.message}`);
+          expect(error!.message).assertEqual("operation failed");
+          done();
+        });
+
+      } catch (e) {
+        console.error(TAG + `catch err is: ${e.code} and msg is: ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setAsset_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_setAsset_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setAsset(assetKey: string, uri: string): Promise;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setAsset_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setAsset_0100 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        await g_object.setAsset('', 'file:1.text');
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + ` catch err code is ${err.code}, message is ${err.message}.`);
+        expect(err!.code).assertEqual(15400002);
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setAsset_0200
+     * @tc.name SUB_DDM_SKV_ObjectNull_setAsset_0200
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setAsset(assetKey: string, uri: string): Promise;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setAsset_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setAsset_0200 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        await g_object.setAsset('file', '');
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + ` catch err code is ${err.code}, message is ${err.message}.`);
+        expect(err!.code).assertEqual(15400002);
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setAssets_0100
+     * @tc.name SUB_DDM_SKV_ObjectNull_setAssets_0100
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setAssets(assetKey: string, uris: Array): Promise;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setAssets_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setAssets_0100 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        await g_object.setAssets('', ['file:1.text']);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + ` catch err code is ${err.code}, message is ${err.message}.`);
+        expect(err!.code).assertEqual(15400002);
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.number SUB_DistributedData_KVStore_SDK_ObjectNull_setAssets_0200
+     * @tc.name SUB_DDM_SKV_ObjectNull_setAssets_0200
+     * @tc.type FUNC
+     * @tc.size MediumTest
+     * @tc.level Level 2
+     * @tc.desc DataObject setAssets(assetKey: string, uris: Array): Promise;
+     * p1='', p2=''
+     */
+    it('SUB_DDM_SKV_ObjectNull_setAssets_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.info(TAG + ' --------- SUB_DDM_SKV_ObjectNull_setAssets_0200 begin---------  ');
+      try {
+        let source: Record<String, object> = { "name": "Amy", "age": 18, "isVis": false }
+        let g_object: distributedObject.DataObject = distributedObject.create(context1!, source);
+        await g_object.setAssets('file', []);
+        expect(null).assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + ` catch err code is ${err.code}, message is ${err.message}.`);
+        expect(err!.code).assertEqual(15400002);
+        done();
+      }
+
+    })
+
+
     console.info(TAG + "*************Unit Test End*************");
   })
 }

@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function borderJsunit() {
   describe('borderTest_five_1', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("borderTest_five_1 beforeEach start");
 
 

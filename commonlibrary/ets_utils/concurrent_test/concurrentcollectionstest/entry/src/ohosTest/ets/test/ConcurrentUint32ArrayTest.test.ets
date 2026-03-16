@@ -813,7 +813,7 @@ export default function Uint32ArrayTest() {
             group.addTask(test_uint32Array_020, uint32Array, caseName, i)
           }
           await taskpool.execute(group).then((res) => {
-            expect(res).assertContain('4,3,2,1')
+            expect(JSON.stringify(res)).assertContain('4,3,2,1')
             console.info(`${caseName} Task execution success`);
           }).catch((e: BusinessError) => {
             console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);

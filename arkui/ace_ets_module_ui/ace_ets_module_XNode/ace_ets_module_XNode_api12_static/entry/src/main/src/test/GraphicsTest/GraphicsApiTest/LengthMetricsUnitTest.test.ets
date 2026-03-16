@@ -23,7 +23,7 @@ import {UtilsTest,startAbility} from '../../Util.test';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from "@ohos.UiTest";
 export default function LengthMetricsUnitTest() {
   describe("LengthMetricsUnitTest", () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LengthMetricsUnitTest beforeEach start");
       await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")

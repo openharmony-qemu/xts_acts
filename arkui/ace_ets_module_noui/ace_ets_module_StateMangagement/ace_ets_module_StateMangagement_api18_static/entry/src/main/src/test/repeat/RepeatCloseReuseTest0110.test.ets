@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function RepeatCloseReuseTest0110() {
   describe('RepeatCloseReuseTest0110', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
 

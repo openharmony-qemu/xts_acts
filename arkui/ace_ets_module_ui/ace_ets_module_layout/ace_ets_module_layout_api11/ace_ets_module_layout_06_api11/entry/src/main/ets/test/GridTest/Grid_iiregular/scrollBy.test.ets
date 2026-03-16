@@ -43,7 +43,7 @@ export default function scrollByJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get scrollByJsunit state pages: " + JSON.stringify(pages));
-        if (!("scrollBy" == pages.name)) {
+        if (!("scrollByJsunit" == pages.name)) {
           console.info("get scrollByJsunit state pages.name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);

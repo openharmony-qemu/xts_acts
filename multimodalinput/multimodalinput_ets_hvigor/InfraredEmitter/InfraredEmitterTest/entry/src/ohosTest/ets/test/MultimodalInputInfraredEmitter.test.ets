@@ -242,6 +242,110 @@ export default function MultimodalInputInfraredEmitterTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0900
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0900
+     * @tc.desc   Test transmitInfrared interface when the infraredFrequency is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0900";
+      console.info(`${caseName} enter`);
+      try {
+        let infraredFrequency: number | null = null;
+        let pattern: Array<number> = [100, 200, 300, 400];
+        infraredEmitter.transmitInfrared(infraredFrequency, pattern);
+        console.info(`${caseName} transmitInfrared success.`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1000
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1000
+     * @tc.desc   Test transmitInfrared interface when the infraredFrequency is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1000";
+      console.info(`${caseName} enter`);
+      try {
+        let infraredFrequency: number | undefined = undefined;
+        let pattern: Array<number> = [100, 200, 300, 400];
+        infraredEmitter.transmitInfrared(infraredFrequency, pattern);
+        console.info(`${caseName} transmitInfrared success.`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1100
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1100
+     * @tc.desc   Test transmitInfrared interface when the pattern is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1100";
+      console.info(`${caseName} enter`);
+      try {
+        let infraredFrequency: number = 38000;
+        let pattern: Array<number> | null = null;
+        infraredEmitter.transmitInfrared(infraredFrequency, pattern);
+        console.info(`${caseName} transmitInfrared success.`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1200
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1200
+     * @tc.desc   Test transmitInfrared interface when the pattern is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_1200";
+      console.info(`${caseName} enter`);
+      try {
+        let infraredFrequency: number = 38000;
+        let pattern: Array<number> | undefined = undefined;
+        infraredEmitter.transmitInfrared(infraredFrequency, pattern);
+        console.info(`${caseName} transmitInfrared success.`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0100
      * @tc.desc   Test getInfraredFrequencies interface to query the frequency range of infrared signals supported by the phone.

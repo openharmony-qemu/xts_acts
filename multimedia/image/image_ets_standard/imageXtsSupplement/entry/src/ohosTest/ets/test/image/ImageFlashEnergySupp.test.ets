@@ -619,8 +619,16 @@ export default function ImageFlashEnergySupp() {
       try {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.subjectLocation);
-        expect(result.exifMetadata?.subjectLocation).assertContain('100');
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(result.exifMetadata?.subjectLocation));
+        if (result.exifMetadata != undefined && result.exifMetadata?.subjectLocation != undefined) {
+          console.info(TAG, testName, `result.exifMetadata?.subjectLocation[0] is:`, JSON.stringify(result.exifMetadata?.subjectLocation[0]));
+          expect(result.exifMetadata?.subjectLocation[0]).assertEqual(100);
+          console.info(TAG, testName, `result.exifMetadata?.subjectLocation[1] is:`, JSON.stringify(result.exifMetadata?.subjectLocation[1]));
+          expect(result.exifMetadata?.subjectLocation[1]).assertEqual(100);
+        } else {
+          console.info(TAG, testName, `Failed to write and read ImageMetadata`);
+          expect().assertFail();
+        }
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -646,8 +654,14 @@ export default function ImageFlashEnergySupp() {
       try {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.subjectLocation);
-        expect(result.exifMetadata?.subjectLocation).assertContain('0');
+        if (result.exifMetadata != undefined && result.exifMetadata?.subjectLocation != undefined) {
+          console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(result.exifMetadata?.subjectLocation));
+          expect(result.exifMetadata?.subjectLocation[0]).assertEqual(0);
+          expect(result.exifMetadata?.subjectLocation[1]).assertEqual(0);
+        } else {
+          console.info(TAG, testName, `Failed to write and read ImageMetadata`);
+          expect().assertFail();
+        }
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();

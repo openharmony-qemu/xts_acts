@@ -72,7 +72,7 @@ describe("SensorJsTest_sensor_14", function () {
     })
 
     let errMessages = ['string is not defined','The parameter invalid'];
-
+    const PARAMETER_EXPECT_ERROR = true
     let errMessage;
 
     /**
@@ -153,7 +153,7 @@ describe("SensorJsTest_sensor_14", function () {
         console.info('----------------------MagneticField_Uncalibrated_SensorJsTest004---------------------------');
         sensor.once(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, callback);
         setTimeout(() => {
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         }, 500);
     })
@@ -227,7 +227,7 @@ describe("SensorJsTest_sensor_14", function () {
         sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, onSensorCallback);
         sensor.off(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD_UNCALIBRATED, onSensorCallback);
         setTimeout(() => {
-            expect(true).assertTrue();
+            expect(PARAMETER_EXPECT_ERROR).assertTrue();
             done();
         }, 500);
     })

@@ -96,6 +96,90 @@ describe('fileio_fdatasync', async function () {
   });
 
   /**
+    * @tc.name   fileio_test_fdatasync_async_003
+    * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0030
+    * @tc.desc   Test fdatasync() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileio_test_fdatasync_async_003', Level.LEVEL0, async function (done) {
+    try {
+      await fileio.fdatasync(null);
+      expect(null).assertFail();
+      done()
+    } catch (e) {
+      console.info('fileio_test_fdatasync_async_003 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
+      done();
+    }
+  });
+
+  /**
+    * @tc.name   fileio_test_fdatasync_async_004
+    * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0040
+    * @tc.desc   Test fdatasync() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileio_test_fdatasync_async_004', Level.LEVEL0, async function (done) {
+    try {
+      await fileio.fdatasync(undefined);
+      expect(null).assertFail();
+      done()
+    } catch (e) {
+      console.info('fileio_test_fdatasync_async_004 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_test_fdatasync_async_005
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0500
+   * @tc.desc   Test fdatasync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_test_fdatasync_async_005', Level.LEVEL0, async function () {
+    try {
+      fileio.fdatasync(null, function (err) {
+        if (err) {
+          console.log('fileio_test_fdatasync_async_005 has failed for ' + err);
+          expect(err.message == 'Invalid fd').assertTrue();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_test_fdatasync_async_005 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_test_fdatasync_async_006
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_ASYNC_0600
+   * @tc.desc   Test fdatasync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_test_fdatasync_async_006', Level.LEVEL0, async function () {
+    try {
+      fileio.fdatasync(undefined, function (err) {
+        if (err) {
+          console.log('fileio_test_fdatasync_async_006 has failed for ' + err);
+          expect(err.message == 'Invalid fd').assertTrue();
+        }
+      });
+    } catch (e) {
+      console.log('fileio_test_fdatasync_async_006 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
+    }
+  });
+
+  /**
    * @tc.name   fileio_test_fdatasync_sync_000
    * @tc.number SUB_DF_FILEIO_FDATASYNC_SYNC_0000
    * @tc.desc   Test fdatasyncSync() interfaces.
@@ -132,6 +216,42 @@ describe('fileio_fdatasync', async function () {
       expect(null).assertFail();
     } catch (e) {
       console.log('fileio_test_fdatasync_sync_001 has failed for ' + e);
+    }
+  });
+
+  /**
+   * @tc.name   fileio_test_fdatasync_sync_002
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_SYNC_0020
+   * @tc.desc   Test fdatasyncSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_test_fdatasync_sync_002', Level.LEVEL0, async function () {
+    try {
+      fileio.fdatasyncSync(null);
+      expect(null).assertFail();
+    } catch (e) {
+      console.log('fileio_test_fdatasync_sync_002 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
+    }
+  });
+
+  /**
+   * @tc.name   fileio_test_fdatasync_sync_003
+   * @tc.number SUB_DF_FILEIO_FDATASYNC_SYNC_0030
+   * @tc.desc   Test fdatasyncSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileio_test_fdatasync_sync_003', Level.LEVEL0, async function () {
+    try {
+      fileio.fdatasyncSync(undefined);
+      expect(null).assertFail();
+    } catch (e) {
+      console.log('fileio_test_fdatasync_sync_003 has failed for ' + e);
+      expect(e.message == 'Invalid fd').assertTrue();
     }
   });
 });

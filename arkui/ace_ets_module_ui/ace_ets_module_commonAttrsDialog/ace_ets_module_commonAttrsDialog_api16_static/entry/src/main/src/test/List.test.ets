@@ -15,5 +15,5 @@
  */
 import BindSheetTest from './BindSheetTest/bindSheetRadius.test';
 export default function testsuite() {
-  BindSheetTest();//pass:4
+  BindSheetTest();
 }

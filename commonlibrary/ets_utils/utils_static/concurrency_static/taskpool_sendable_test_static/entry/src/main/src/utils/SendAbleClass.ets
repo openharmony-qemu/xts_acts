@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2025 Huawei Device Co., Ltd.
+ *  Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -127,7 +127,7 @@ export class MyClass2 {
 
 export class ClassB2 extends MyClass2 {
   constructor() {
-    super(new Array<Number>(2));
+    super(Array.create<Number>(2, NaN));
   }
 }
 

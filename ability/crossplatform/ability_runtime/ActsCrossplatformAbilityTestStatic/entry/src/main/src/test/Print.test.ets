@@ -130,5 +130,22 @@ export default function PrintTest() {
       expect(true).assertTrue();
       done();
     });
+
+    /**
+     * @tc.name   ACTS_PRINT_SYNC_0007
+     * @tc.number ACTS_PRINT_SYNC_0007
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("ACTS_PRINT_SYNC_0007", Level.LEVEL2, async (done: () => void): Promise<void> =>{
+      console.log("ACTS_PRINT_SYNC_0007 :start");
+      let msg: string = "";
+      abilityDelegator.printSync(msg);
+      abilityDelegator.printSync("ACTS_PRINT_SYNC_0007 printSync");
+      expect(true).assertTrue();
+      done();
+    });
   });
 }

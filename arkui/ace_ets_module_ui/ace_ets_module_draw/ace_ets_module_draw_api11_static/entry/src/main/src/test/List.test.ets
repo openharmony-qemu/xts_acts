@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ import columnJsunit from './ColumnJsunit.test';
 import drawCanvas from './CanvasTest/drawCanvas.test';
 
 import Matrix2DTest from './Matrix2D/Matrix2DTest.test';
-
+import Matrix2DAttrsTest from './Matrix2D/Matrix2DAttrsTest.test';
 import OffScreenCanvasTest from './OffScreenCanvasTest/OffScreenCanvas.test';
 import panelBackgroundMaskJsunit from './panelTest/panel.test';
 import ParticleJsunit from './ParticleTest/ParticlePropertyJsunit.test';
@@ -80,4 +80,6 @@ export default function testsuite() {
   CanvasAPICanvasRenderTest()
   CanvasShaderTest()
   curvesStepsJsunit()
+  Matrix2DTest()
+  Matrix2DAttrsTest()
 }

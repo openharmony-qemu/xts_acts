@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Huawei Device Co., Ltd.
+ * Copyright (C) 2023-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import uniformTypeDescriptor from '@ohos.data.uniformTypeDescriptor';
 import { BusinessError } from '@ohos.base';
 import uniformDataStruct from '@ohos.data.uniformDataStruct';
 let resProgressInfo:unifiedDataChannel.ProgressInfo;
+let TAG = "ttt"
 
 export default function UDMFApiTest() {
   describe('UDMFApiTest', () => {
@@ -4770,8 +4771,10 @@ export default function UDMFApiTest() {
       let summary: unifiedDataChannel.Summary = new unifiedDataChannel.Summary;
       let result_1 = Array.isArray(summary.summary);
       let result_2 = Array.isArray(summary.overview);
+      let result_3 = summary.totalSize;
       expect(result_1).assertEqual(true);
       expect(result_2).assertEqual(false);
+      expect(result_3).assertEqual(0);
       console.info('SummaryOverviewTest01 end');
     })
 
@@ -4811,6 +4814,1231 @@ export default function UDMFApiTest() {
       expect(records.length == 1).assertEqual(true);
       console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152 start');
       done();
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0100
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0100 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        key: ""
+      };
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try{
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0100 " + data);
+        expect(data).assertInstanceOf("String")
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0100 e" + e.code + e.message);
+        expect().assertFail();
+      } 
+      console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0100 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0200
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0200 start');
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try{
+        let data = await unifiedDataChannel.insertData(null, unifiedData);
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0200 " + data);
+          expect().assertFail();
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0200 e" + e.code + e.message);
+        expect(e.code).assertEqual("401");
+      } 
+      console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0200 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0300
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0300 start');
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try{
+        let data = await unifiedDataChannel.insertData(undefined, unifiedData);
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0300 " + data);
+          expect().assertFail();
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0300 e" + e.code + e.message);
+        expect(e.code).assertEqual("401");
+      } 
+      console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0300 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0400
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0400 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+      };
+      try{
+        let data = await unifiedDataChannel.insertData(options, null);
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0400 " + data);
+        expect().assertFail();
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0400 e" + e.code + e.message);
+        expect(e.code).assertEqual("401");
+      } 
+      console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0400 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0500
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0500 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+      };
+      try{
+        let data = await unifiedDataChannel.insertData(options, undefined);
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0500 " + data);
+        expect().assertFail();
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0500 e" + e.code + e.message);
+        expect(e.code).assertEqual("401");
+      } 
+      console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0500 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0600
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0600 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        key: "",
+        visibility: unifiedDataChannel.Visibility.ALL
+      };
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try{
+        unifiedDataChannel.insertData(options, unifiedData, (err, data) => {
+          if (err === undefined) {
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0600 " + data);
+            expect(data).assertInstanceOf("String");
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0600 end");
+            done();
+          } else {
+            console.error(`Failed to insert data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0600 e" + e.code + e.message);
+        expect().assertFail();
+      } 
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0700
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0700 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        key: "",
+        visibility: unifiedDataChannel.Visibility.OWN_PROCESS
+      };
+      try{
+        unifiedDataChannel.insertData(options, null, (err, data) => {
+          if (err === undefined) {
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0700 " + data);
+            expect(data).assertInstanceOf("String");
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0700 end");
+            done();
+          } else {
+            console.error(`Failed to insert data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0700 e" + e.code + e.message);
+        expect(e.code).assertEqual("401");
+        done();
+      } 
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0800
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0800 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB,
+        key: "",
+        visibility: unifiedDataChannel.Visibility.OWN_PROCESS
+      };
+      try{
+        unifiedDataChannel.insertData(options, undefined, (err, data) => {
+          if (err === undefined) {
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0800 " + data);
+            expect(data).assertInstanceOf("String");
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0800 end");
+            done();
+          } else {
+            console.error(`Failed to insert data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0800 e" + e.code + e.message);
+        expect(e.code).assertEqual("401");
+        done();
+      } 
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_0900
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest0900 start');
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try{
+        unifiedDataChannel.insertData(null, unifiedData, (err, data) => {
+          if (err === undefined) {
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0900 " + data);
+            expect(data).assertInstanceOf("String");
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0900 end");
+            done();
+          } else {
+            console.error(`Failed to insert data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest0900 e" + e.code + e.message);
+        expect(e.code).assertEqual("401");
+        done();
+      } 
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelInsertDataErrTest1000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelInsertDataErrTest_1000
+     * @tc.desc   Test UnifiedDataChannelInsertData.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelInsertDataErrTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelInsertDataErrTest1000 start');
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try{
+        unifiedDataChannel.insertData(undefined, unifiedData, (err, data) => {
+          if (err === undefined) {
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest1000 " + data);
+            expect(data).assertInstanceOf("String");
+            console.info(TAG + "testUnifiedDataChannelInsertDataErrTest1000 end");
+            done();
+          } else {
+            console.error(`Failed to insert data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });
+      }catch(e){
+        console.info(TAG + "testUnifiedDataChannelInsertDataErrTest1000 e" + e.code + e.message);
+        expect(e.code).assertEqual("401");
+        done();
+      } 
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0100
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        unifiedDataChannel.updateData({
+          intention: unifiedDataChannel.Intention.DRAG,
+          key: ""
+        }, unifiedData, (err, ret) => {
+          if (err === undefined) {
+            console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+            expect(err === undefined).assertTrue()
+            done();
+          } else {
+            console.info(TAG + `UpdateData failed. code is ${err.code},message is ${err.message} `);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0200
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        unifiedDataChannel.updateData({
+          intention: unifiedDataChannel.Intention.SYSTEM_SHARE,
+          key: "",
+          visibility: unifiedDataChannel.Visibility.ALL
+        }, null, (err, ret) => {
+          if (err === undefined) {
+            console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+            expect(err === undefined).assertTrue()
+            done();
+          } else {
+            console.info(TAG + `UpdateData failed. code is ${err.code},message is ${err.message} `);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0300
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        unifiedDataChannel.updateData({
+          intention: unifiedDataChannel.Intention.MENU,
+          key: "",
+          visibility: unifiedDataChannel.Visibility.OWN_PROCESS
+        }, undefined, (err, ret) => {
+          if (err === undefined) {
+            console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+            expect(err === undefined).assertTrue()
+            done();
+          } else {
+            console.info(TAG + `UpdateData failed. code is ${err.code},message is ${err.message} `);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0400
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        unifiedDataChannel.updateData(null, unifiedData, (err, ret) => {
+          if (err === undefined) {
+            console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+            expect(err === undefined).assertTrue()
+            done();
+          } else {
+            console.info(TAG + `UpdateData failed. code is ${err.code},message is ${err.message} `);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0500
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        unifiedDataChannel.updateData(undefined, unifiedData, (err, ret) => {
+          if (err === undefined) {
+            console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+            expect(err === undefined).assertTrue()
+            done();
+          } else {
+            console.info(TAG + `UpdateData failed. code is ${err.code},message is ${err.message} `);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0600
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        let ret = await unifiedDataChannel.updateData({
+          intention: unifiedDataChannel.Intention.DRAG,
+          key: ""
+        }, null);
+        console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0700
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        let ret = await unifiedDataChannel.updateData({
+          intention: unifiedDataChannel.Intention.DATA_HUB,
+        }, undefined);
+        console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0800
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        let ret = await unifiedDataChannel.updateData(null, unifiedData);
+        console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelUpdateDataErrTest0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelUpdateDataErrTest_0900
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelUpdateDataErrTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let options:unifiedDataChannel.Options= {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      }
+      let plainText = new unifiedDataChannel.PlainText();
+      plainText.textContent = "hello world!";
+      let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info( TAG + `insertData0100 success; data = ${data}, options = ${options}`);
+        let ret = await unifiedDataChannel.updateData(undefined, unifiedData);
+        console.info( TAG + `updateData success; data = ${ret}, options = ${options}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG + `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0100
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0100 start');
+      let options1: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.PICKER,
+        key:"",
+        visibility:unifiedDataChannel.Visibility.ALL
+      };
+      try {
+        unifiedDataChannel.queryData(options1,async (err, ret) => {
+          if (err === undefined) {
+            let size = ret.length;
+            console.info(`data.size = ${size}`);
+            expect(size > 0).assertTrue();
+          } else {
+            console.error(TAG + `Failed to query data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });        
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0100 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0200
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0200 start');
+      let options1: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.MENU,
+        key:"",
+        visibility:unifiedDataChannel.Visibility.OWN_PROCESS
+      };
+      try {
+        unifiedDataChannel.queryData(options1,async (err, ret) => {
+          if (err === undefined) {
+            let size = ret.length;
+            console.info(`data.size = ${size}`);
+            expect(size > 0).assertTrue();
+          } else {
+            console.error(TAG + `Failed to query data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });        
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0200 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0300
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0300 start');
+      try {
+        unifiedDataChannel.queryData(null, async (err, ret) => {
+          if (err === undefined) {
+            let size = ret.length;
+            console.info(`data.size = ${size}`);
+          } else {
+            console.error(TAG + `Failed to query data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });        
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0300 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0400
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0400 start');
+      try {
+        unifiedDataChannel.queryData(undefined, async (err, ret) => {
+          if (err === undefined) {
+            let size = ret.length;
+            console.info(`data.size = ${size}`);
+          } else {
+            console.error(TAG + `Failed to query data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });        
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0400 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0500
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0500 start');
+      try {
+        let ret = await unifiedDataChannel.queryData(null);
+        console.info(TAG + `queryData success`);   
+        expect().assertFail();     
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+      }
+      console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0500 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0600
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0600 start');
+      try {
+        let ret = await unifiedDataChannel.queryData(undefined);
+        console.info(TAG + `queryData success`);   
+        expect().assertFail();     
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+      }
+      console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0600 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelQueryDataErrTest0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelQueryDataErrTest_0700
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelQueryDataErrTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info(TAG + 'testUnifiedDataChannelQueryDataErrTest0700 start');
+      let options1: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.SYSTEM_SHARE,
+        key:"",
+        visibility:unifiedDataChannel.Visibility.OWN_PROCESS
+      };
+      try {
+        unifiedDataChannel.queryData(options1,async (err, ret) => {
+          if (err === undefined) {
+            let size = ret.length;
+            console.info(`data.size = ${size}`);
+            expect(size > 0).assertTrue();
+          } else {
+            console.error(TAG + `Failed to query data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail();
+          }
+        });        
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + "testUnifiedDataChannelQueryDataErrTest0700 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0100
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0100 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.SYSTEM_SHARE
+      };
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info(TAG + "insertdata success " + data);
+        let options1: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.SYSTEM_SHARE,
+          key:data
+        };
+        unifiedDataChannel.deleteData(options1, (err, ret) => {
+          if (err === undefined) {
+            console.info(TAG + `Succeeded in deleting data.`);
+            expect(ret.length > 0).assertTrue();
+            done()
+          } else {
+            console.error(TAG + `Failed to delete data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail(); 
+          }         
+        });
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect().assertFail();  
+      }
+      console.info(TAG + "testUnifiedDataChannelDeleteDataErrTest0100 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0200
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0200 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.SYSTEM_SHARE
+      };
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info(TAG + "insertdata success " + data);
+        let options1: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.PICKER,
+          key:data,
+          visibility:unifiedDataChannel.Visibility.OWN_PROCESS
+        };
+        unifiedDataChannel.deleteData(options1, (err, ret) => {
+          if (err === undefined) {
+            console.info(TAG + `Succeeded in deleting data.`);
+            expect().assertFail(); 
+          } else {
+            console.error(TAG + `Failed to delete data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail(); 
+          }         
+        });
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done(); 
+      }
+      console.info(TAG + "testUnifiedDataChannelDeleteDataErrTest0200 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0300
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0300 start');
+      let options: unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.SYSTEM_SHARE
+      };
+      let plainTextDetails: Record<string, string> = {
+        'attr1': 'value1',
+        'attr2': 'value2',
+      }
+      let plainText: uniformDataStruct.PlainText = {
+        uniformDataType: 'general.plain-text',
+        textContent: 'This is plainText textContent example',
+        abstract: 'this is abstract',
+        details: plainTextDetails,
+      }
+      let unifiedData = new unifiedDataChannel.UnifiedData();
+      let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+      unifiedData.addRecord(contentFormRecord);
+      try {
+        let data = await unifiedDataChannel.insertData(options, unifiedData);
+        console.info(TAG + "insertdata success " + data);
+        let options1: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.MENU,
+          key:data,
+          visibility:unifiedDataChannel.Visibility.ALL
+        };
+        unifiedDataChannel.deleteData(options1, (err, ret) => {
+          if (err === undefined) {
+            console.info(TAG + `Succeeded in deleting data.`);
+            expect().assertFail(); 
+          } else {
+            console.error(TAG + `Failed to delete data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail(); 
+          }         
+        });
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done(); 
+      }
+      console.info(TAG + "testUnifiedDataChannelDeleteDataErrTest0300 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0400
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0400 start');
+      try {
+        unifiedDataChannel.deleteData(null, (err, ret) => {
+          if (err === undefined) {
+            console.info(TAG + `Succeeded in deleting data.`);
+            expect().assertFail(); 
+          } else {
+            console.error(TAG + `Failed to delete data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail(); 
+          }         
+        });
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done(); 
+      }
+      console.info(TAG + "testUnifiedDataChannelDeleteDataErrTest0400 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0500
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0500 start');
+      try {
+        unifiedDataChannel.deleteData(undefined, (err, ret) => {
+          if (err === undefined) {
+            console.info(TAG + `Succeeded in deleting data.`);
+            expect().assertFail(); 
+          } else {
+            console.error(TAG + `Failed to delete data. code is ${err.code}, message is ${err.message} `);
+            expect().assertFail(); 
+          }         
+        });
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+        done(); 
+      }
+      console.info(TAG + "testUnifiedDataChannelDeleteDataErrTest0500 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0600
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0600 start');
+      try {
+        await unifiedDataChannel.deleteData(null);
+        console.info(TAG + `Succeeded in deleting data.`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+      }
+      console.info(TAG + "testUnifiedDataChannelDeleteDataErrTest0600 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelDeleteDataErrTest0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelDeleteDataTest_0700
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelDeleteDataErrTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(TAG + 'testUnifiedDataChannelDeleteDataErrTest0700 start');
+      try {
+        await unifiedDataChannel.deleteData(undefined);
+        console.info(TAG + `Succeeded in deleting data.`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG + `Failed. code is ${error.code}, message is ${error.message} `);
+        expect(error.code).assertEqual("401");
+      }
+      console.info(TAG + "testUnifiedDataChannelDeleteDataErrTest0700 end");
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0100
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.SYSTEM_SHARE, unifiedDataChannel.ShareOptions.CROSS_APP);
+        console.info(TAG, `setAppShareOptions is successed`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code ).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0200
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.PICKER, unifiedDataChannel.ShareOptions.CROSS_APP);
+        console.info(TAG, `setAppShareOptions is successed`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code ).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelSetAppShareOptionsErrTest0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataChannelSetAppShareOptionsErr_0300
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelSetAppShareOptionsErrTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.MENU, unifiedDataChannel.ShareOptions.CROSS_APP);
+        console.info(TAG, `setAppShareOptions is successed`);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code ).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0100
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelRemoveAppShareOptionsErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.SYSTEM_SHARE);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code ).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0200
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelRemoveAppShareOptionsErrTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.PICKER);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code ).assertEqual('401');
+      }
+    })
+
+    /**
+     * @tc.name   testUnifiedDataChannelRemoveAppShareOptionsErrTest0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_RemoveAppShareOptionsErr_0300
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnifiedDataChannelRemoveAppShareOptionsErrTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      try {
+        unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.MENU);
+        expect().assertFail();
+      } catch (error) {
+        console.error(TAG, `Failed, code is ${error.code},message is ${error.message} `);
+        expect(error.code ).assertEqual('401');
+      }
     })
 
   })

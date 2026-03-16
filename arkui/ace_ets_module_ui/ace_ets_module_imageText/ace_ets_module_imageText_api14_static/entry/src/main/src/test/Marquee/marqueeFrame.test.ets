@@ -44,7 +44,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SetFrameRateRangeTest() {
   describe('setFrameRateRangeTest', (): void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SetFrameRateRangeTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility")

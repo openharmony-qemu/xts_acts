@@ -109,6 +109,105 @@ export default function isDefaultApplicationTest() {
       })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_static_2560
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_static_2560
+     * @tc.desc   Type is empty. (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Sub_Bms_Framework_Status_DefaultApp_static_2560", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          defaultAppManager.isDefaultApplication('', (err: BusinessError<void> | null, result: boolean | undefined) => {
+            if (err !== null && err.code != null && err.code != 0) {
+              hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_2560 failed: %{public}s',
+                JSON.stringify(err));
+              expect().assertFail();
+              done()
+            } else {
+              hilog.info(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_2560 success, boolean: ' + result);
+              expect(result).assertFalse();
+              done();
+            }
+          });
+        } catch (err) {
+          err = err as BusinessError;
+          hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_2560 failed: %{public}s', JSON.stringify(err));
+          expect(err.code == 801).assertTrue()
+          expect(err.message).assertEqual('BusinessError 801: Capability not support.');
+          done();
+        }
+      })
+
+      /**
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_static_2580
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_static_2580
+     * @tc.desc   Type is empty. (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Sub_Bms_Framework_Status_DefaultApp_static_2580", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let damp1 = defaultAppManager.isDefaultApplication('');
+          damp1.then((result: boolean) => {
+            hilog.info(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_2580 success, boolean: ' + result);
+            expect(result).assertFalse();
+            done();
+          }, (err: Error): void => {
+            if (err.code != 0) {
+              hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_2580 failed: %{public}s',
+                JSON.stringify(err));
+              expect().assertFail();
+              done()
+            }
+          });
+        } catch (err) {
+          err = err as BusinessError;
+          if(err.code === 801){
+            hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_2580 failed: %{public}s', JSON.stringify(err));
+            expect(err.code == 801).assertTrue()
+            expect(err.message).assertEqual('BusinessError 801: Capability not support.');
+            done(); 
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Status_DefaultApp_static_2570
+     * @tc.number Sub_Bms_Framework_Status_DefaultApp_static_2570
+     * @tc.desc   Type is empty. (sync)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("Sub_Bms_Framework_Status_DefaultApp_static_2570", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          boolResult = defaultAppManager.isDefaultApplicationSync('');
+          hilog.info(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_2570 success, boolean: ' + boolResult);
+          expect(boolResult).assertFalse();
+          done();
+        } catch (err) {
+          err = err as BusinessError;
+          if (err.code != 0) {
+            hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_2570 failed: %{public}s', JSON.stringify(err));
+            expect(err.code == 801).assertTrue()
+            expect(err.message).assertEqual('BusinessError 801: Capability not support.');
+            done()
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+      
+    /**
      * @tc.name   Sub_Bms_Framework_Status_DefaultApp_static_1200
      * @tc.number Sub_Bms_Framework_Status_DefaultApp_static_1200
      * @tc.desc   ApplicationType is string

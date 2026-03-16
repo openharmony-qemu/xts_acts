@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function NavigationMode11Jsunit() {
   describe('NavigationMode11Jsunit',  () =>{
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });

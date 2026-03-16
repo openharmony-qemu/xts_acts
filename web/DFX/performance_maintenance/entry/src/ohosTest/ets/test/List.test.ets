@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import webViewPressureLevel from './webViewPressureLevel.test';
+import trimMemoryByPressureLevelTest from './TrimMemoryByPressureLevel.test';
 
 export default function testsuite() {
   webViewPressureLevel()
+  trimMemoryByPressureLevelTest()
 }

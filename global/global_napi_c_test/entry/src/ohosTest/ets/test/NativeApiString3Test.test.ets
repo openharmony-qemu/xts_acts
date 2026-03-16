@@ -199,10 +199,11 @@ export default function NativeApiString3Test() {
     it('TestGetDirectionVertical0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetDirectionVertical0100 start====");
+        let context = (GlobalContext.getContext().getObject('abilityContext') as common.UIAbilityContext);
+        nativeTest.GetResourceManager3(context.resourceManager);
         let result: number = nativeTest.GetDirectionVertical0100();
         console.info(`====>TestGetDirectionVertical0100 result====${result}`);
-        let num: number = display.getDefaultDisplaySync().orientation;
-        expect(result).assertEqual(num % 2);
+        expect(result).assertEqual(context.config.direction);
         done()
       } catch (err) {
         console.error("====>TestGetDirectionVertical0100 catch err: " + err);
@@ -515,10 +516,11 @@ export default function NativeApiString3Test() {
     it('TestGetConfigurations0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetConfigurations0100 start====");
+        let context = (GlobalContext.getContext().getObject('abilityContext') as common.UIAbilityContext);
+        nativeTest.GetResourceManager3(context.resourceManager);
         let result: number = nativeTest.GetConfigurations0100();
         console.info(`====>TestGetConfigurations0100 result====${result}`);
-        let num: number = display.getDefaultDisplaySync().orientation;
-        expect(result).assertEqual(num % 2);
+        expect(result).assertEqual(context.config.direction);
         done()
       } catch (err) {
         console.error("====>TestGetConfigurations0100 catch err: " + err);

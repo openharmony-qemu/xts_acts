@@ -45,7 +45,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SubAbstractPropertyLinkTest() {
   describe('SubAbstractPropertyLinkTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("SubAbstractPropertyLinkTest beforeEach start");
 
 

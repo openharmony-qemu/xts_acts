@@ -986,14 +986,6 @@ export default function asyncSecTest(): void {
     });
 
     /**
-     * @tc.name   asyncResourceTest002
-     * @tc.number SUB_BUILTINS_asyncResource_TEST_002
-     * @tc.desc   Verify cleanup of Timers/Locks/External resources upon exception
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    /**
      * @tc.name   asyncSecTest0025
      * @tc.number ASYNC_SEC_TEST_0025
      * @tc.desc   Verify cleanup of Timers/Locks/External resources upon exception

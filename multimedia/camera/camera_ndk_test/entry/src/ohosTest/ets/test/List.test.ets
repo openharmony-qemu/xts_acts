@@ -41,8 +41,8 @@ import CameraSessionControlCenterTest from './CameraSessionControlCenterTest.tes
 let voice = call.hasVoiceCapability()
 
 export default function testsuite() {
-  CameraSessionQualityPrioritizationTest();
   PhotoTest();
+  CameraSessionQualityPrioritizationTest();
   SessionTest();
   SecureCameraTest();
   SecureCameraErrorCodeTest();

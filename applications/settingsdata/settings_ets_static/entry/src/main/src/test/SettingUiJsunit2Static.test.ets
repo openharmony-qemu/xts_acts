@@ -41,7 +41,7 @@ function isDeviceSupportInputMethod(): boolean {
 }
 
 export default function settingUiJsunit() {
-  beforeAll(() => {
+  beforeAll(async (): Promise<void> => {
     console.info("beforeAll start");
     let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
     console.info("beforeAll end abilityDelegator");

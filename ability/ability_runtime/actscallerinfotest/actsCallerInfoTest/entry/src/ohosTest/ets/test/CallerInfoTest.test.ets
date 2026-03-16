@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { common, OpenLinkOptions } from '@kit.AbilityKit';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import eventBusPlus from '../lib/EventBusPlus';
 
 let context = getContext(this) as common.UIAbilityContext;
 let ACTS_EVENT: commonEventManager.CommonEventSubscribeInfo = {
@@ -48,7 +49,6 @@ export default function callerInfoTest() {
     beforeEach(() => {
     })
     afterEach(async () => {
-      await sleep(2500);
     })
     afterAll(() => {
     })
@@ -64,87 +64,114 @@ export default function callerInfoTest() {
     it('SUB_Ability_AbilityRuntime_CallerInfo_0100', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0100"
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
-      commonEventManager.createSubscriber(ACTS_EVENT)
-        .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
-          subscriber = commonEventSubscriber;
-          let unSubscribeCallback = () => {
-            setTimeout(async () => {
-              hilog.info(0x0000, 'testTag', `${tag} unSubscribeCallback`);
-              hilog.info(0x0000, 'testTag', '%{public}s', `${tag} end`);
-              done();
-            }, 1000);
-          }
-          let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success`)
-            if (data.event == 'ACTS_TEST_START') {
-              setTimeout(() => {
-                try {
-                  context.startAbility(
-                    {
-                      bundleName: 'com.acts.actsCallerInfoTest',
-                      abilityName: 'callerInfo01'
-                    }).then(() => {
-                    hilog.info(0x0000, 'testTag', '%{public}s', `${tag} startAbility end`);
-                  })
-                } catch (err) {
-                  // 处理入参错误异常
-                  let code = (err as BusinessError).code;
-                  let message = (err as BusinessError).message;
-                  hilog.info(0x0000, 'testTag', '%{public}s',
-                    `startAbility failed, error.code: ${code}, error.message: ${message}`);
-                }
-              }, 500);
-            }
-            if (data.event == 'ACTS_TEST_ON_CREATE_WANT') {
-              hilog.info(0x0000, 'testTag',
-                `%{public}s', onNewWant, ACTS_TEST_ON_CREATE_WANT data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
-              try{
-                expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
-                expect(data.parameters?.result['debugApp']).assertEqual(false);
-                expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
-                expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
-              }catch{}
-            }
-            if (data.event == 'ACTS_TEST_ON_CREATE_WANT_ASSIST') {
-              hilog.info(0x0000, 'testTag',
-                `%{public}s', onNewWant, ACTS_TEST_ON_CREATE_WANT_ASSIST data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
-              try{
-                expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
-                expect(data.parameters?.result['debugApp']).assertEqual(undefined);
-                expect(data.parameters?.result['moduleName']).assertEqual('entry');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('callerInfo01');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
-                expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
-              }catch{}
-            }
-            if (data.event == 'ACTS_TEST_ON_NEW_WANT') {
-              hilog.info(0x0000, 'testTag',
-                `%{public}s', onNewWant, ACTS_TEST_ON_NEW_WANT data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
-              try{
-                expect(data.parameters?.result['component.startup.newRules']).assertEqual(undefined);
-                expect(data.parameters?.result['debugApp']).assertEqual(false);
-                expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('callerInfo02');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
-                expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
-              }catch{}
-            }
-            if (data.event == 'ACTS_TEST_DESTROY') {
-              setTimeout(() => {
-                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
-              }, 500);
-            }
-          }
-          commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(() => {
-            commonEventManager.publish('ACTS_TEST_START', publishCB);
-          }, 100)
+      try {
+        context.startAbility(
+          {
+            bundleName: 'com.acts.actsCallerInfoTest',
+            abilityName: 'callerInfo01'
+          }).then(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `${tag} startAbility end`);
         })
+      } catch (err) {
+        // 处理入参错误异常
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `startAbility failed, error.code: ${code}, error.message: ${message}`);
+      }
+
+      let dataList: commonEventManager.CommonEventData[] = await Promise.all([
+        eventBusPlus.onWait('ACTS_TEST_ON_CREATE_WANT'),
+        eventBusPlus.onWait('CallerInfo01_onForeground'),
+      ]);
+      let data: commonEventManager.CommonEventData = dataList[0];
+
+      hilog.info(0x0000, 'testTag',
+        `%{public}s', onNewWant, ACTS_TEST_ON_CREATE_WANT data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
+      try{
+        expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
+        expect(data.parameters?.result['debugApp']).assertEqual(false);
+        expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
+      }catch{}
+
+      try {
+        globalThis.CallerInfo01.startAbility(
+          {
+            bundleName: 'com.acts.actsCallerInfoAssist01Test',
+            abilityName: 'AssistAbility01'
+          }).then(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `CallerInfo01 startAbility end`);
+        })
+      } catch (err) {
+        // 处理入参错误异常
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, 'testTag', '%{public}s', `startAbility failed, error.code: ${code}, error.message: ${message}`);
+      }
+
+      data = await eventBusPlus.onWait('ACTS_TEST_ON_CREATE_WANT_ASSIST');
+
+      hilog.info(0x0000, 'testTag',
+        `%{public}s', onNewWant, ACTS_TEST_ON_CREATE_WANT_ASSIST data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
+      try{
+        expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
+        expect(data.parameters?.result['debugApp']).assertEqual(undefined);
+        expect(data.parameters?.result['moduleName']).assertEqual('entry');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('callerInfo01');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
+      }catch{}
+
+      // AssistAbility01 will start CallerInfo02
+      await eventBusPlus.onWait('CallerInfo02_onForeground');
+
+      try {
+        globalThis.CallerInfo02.startAbility(
+          {
+            bundleName: 'com.acts.actsCallerInfoTest',
+            abilityName: 'callerInfo01'
+          }).then(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `CallerInfo02 startAbility end`);
+        })
+      } catch (err) {
+        // 处理入参错误异常
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, 'testTag', '%{public}s', `startAbility failed, error.code: ${code}, error.message: ${message}`);
+      }
+
+      dataList = await Promise.all([
+        eventBusPlus.onWait('ACTS_TEST_ON_NEW_WANT'),
+        eventBusPlus.onWait('CallerInfo01_onForeground'),
+        eventBusPlus.onWait('CallerInfo02_onBackground'),
+      ]);
+      data = dataList[0];
+
+      hilog.info(0x0000, 'testTag',
+        `%{public}s', onNewWant, ACTS_TEST_ON_NEW_WANT data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
+      try{
+        expect(data.parameters?.result['component.startup.newRules']).assertEqual(undefined);
+        expect(data.parameters?.result['debugApp']).assertEqual(false);
+        expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('callerInfo02');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
+      }catch{}
+
+      globalThis.CallerInfo01.terminateSelf();
+      globalThis.CallerInfo02.terminateSelf();
+      await Promise.all([
+        eventBusPlus.onWait('ACTS_TEST_DESTROY'),
+        eventBusPlus.onWait('CallerInfo02_onDestroy'),
+      ]);
+
+      done();
     });
 
     /**
@@ -158,60 +185,45 @@ export default function callerInfoTest() {
     it('SUB_Ability_AbilityRuntime_CallerInfo_0200', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0200"
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
-      commonEventManager.createSubscriber(ACTS_EVENT)
-        .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
-          subscriber = commonEventSubscriber;
-          let unSubscribeCallback = () => {
-            setTimeout(async () => {
-              hilog.info(0x0000, 'testTag', `${tag} unSubscribeCallback`);
-              hilog.info(0x0000, 'testTag', '%{public}s', `${tag} end`);
-              done();
-            }, 1000);
-          }
-          let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success`)
-            if (data.event == 'ACTS_TEST_START') {
-              try {
-                context.startAbility(
-                  {
-                    bundleName: "com.acts.actsCallerInfoTest",
-                    moduleName: "entry_test",
-                    action:"callerInfo03"
-                  }).then(() => {
-                  hilog.info(0x0000, 'testTag', '%{public}s', `${tag} startAbility end`);
-                })
-              } catch (err) {
-                // 处理入参错误异常
-                let code = (err as BusinessError).code;
-                let message = (err as BusinessError).message;
-                hilog.info(0x0000, 'testTag', '%{public}s',
-                  `startAbility failed, error.code: ${code}, error.message: ${message}`);
-              }
-            }
-            if (data.event == 'ACTS_TEST_ON_CREATE_WANT') {
-              hilog.info(0x0000, 'testTag',
-                `%{public}s', onNewWant, data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
-              try{
-                expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
-                expect(data.parameters?.result['debugApp']).assertEqual(false);
-                expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
-                expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
-              }catch{}
-            }
-            if (data.event == 'ACTS_TEST_DESTROY') {
-              setTimeout(() => {
-                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
-              }, 500);
-            }
-          }
-          commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(() => {
-            commonEventManager.publish('ACTS_TEST_START', publishCB);
-          }, 100)
+      try {
+        context.startAbility(
+          {
+            bundleName: "com.acts.actsCallerInfoTest",
+            moduleName: "entry_test",
+            action:"callerInfo03"
+          }).then(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `${tag} startAbility end`);
         })
+      } catch (err) {
+        // 处理入参错误异常
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `startAbility failed, error.code: ${code}, error.message: ${message}`);
+      }
+
+      let dataList: commonEventManager.CommonEventData[] = await Promise.all([
+        eventBusPlus.onWait('ACTS_TEST_ON_CREATE_WANT'),
+        eventBusPlus.onWait('CallerInfo03_onForeground')
+      ]);
+      let data: commonEventManager.CommonEventData = dataList[0];
+
+      hilog.info(0x0000, 'testTag',
+        `%{public}s', onNewWant, data.parameters.result: ${JSON.stringify(data.parameters?.result)}`);
+      try{
+        expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
+        expect(data.parameters?.result['debugApp']).assertEqual(false);
+        expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
+      }catch{}
+
+      globalThis.CallerInfo03.terminateSelf();
+      await eventBusPlus.onWait('ACTS_TEST_DESTROY');
+
+      done();
     });
 
     /**
@@ -225,65 +237,50 @@ export default function callerInfoTest() {
     it('SUB_Ability_AbilityRuntime_CallerInfo_0400', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0400"
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
-      commonEventManager.createSubscriber(ACTS_EVENT)
-        .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
-          subscriber = commonEventSubscriber;
-          let unSubscribeCallback = () => {
-            setTimeout(async () => {
-              hilog.info(0x0000, 'testTag', `${tag} unSubscribeCallback`);
-              hilog.info(0x0000, 'testTag', '%{public}s', `${tag} end`);
-              done();
-            }, 1000);
+      let want: Want = {
+        bundleName: "com.acts.actsCallerInfoTest",
+        moduleName: "entry_test",
+        abilityName: 'callerInfo06'
+      };
+      try {
+        context.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
+          if (err.code) {
+            // 处理业务逻辑错误
+            hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${err.code}, error.message: ${err.message}`);
+            return;
           }
-          let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success`)
-            if (data.event == 'ACTS_TEST_START') {
-              let want: Want = {
-                bundleName: "com.acts.actsCallerInfoTest",
-                moduleName: "entry_test",
-                abilityName: 'callerInfo06'
-              };
-              try {
-                context.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
-                  if (err.code) {
-                    // 处理业务逻辑错误
-                    hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${err.code}, error.message: ${err.message}`);
-                    return;
-                  }
-                  // 执行正常业务
-                  hilog.info(0x0000, 'testTag', '%{public}s', 'startAbilityForResult success test.ets!');
-                });
-              } catch (err) {
-                // 处理入参错误异常
-                let code = (err as BusinessError).code;
-                let message = (err as BusinessError).message;
-                hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${code}, error.message: ${message}`);
-              }
-            }
-            if (data.event == 'ACTS_TEST_ON_CREATE_WANT') {
-              hilog.info(0x0000, 'testTag',
-                `%{public}s', onCreate, want is: ${JSON.stringify(data.parameters?.result)}`);
-              try{
-                expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
-                expect(data.parameters?.result['debugApp']).assertEqual(false);
-                expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
-                expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
-              }catch{}
-            }
-            if (data.event == 'ACTS_TEST_DESTROY') {
-              setTimeout(() => {
-                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
-              }, 500);
-            }
-          }
-          commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(() => {
-            commonEventManager.publish('ACTS_TEST_START', publishCB);
-          }, 100)
-        })
+          // 执行正常业务
+          hilog.info(0x0000, 'testTag', '%{public}s', 'startAbilityForResult success test.ets!');
+        });
+      } catch (err) {
+        // 处理入参错误异常
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${code}, error.message: ${message}`);
+      }
+
+      let dataList: commonEventManager.CommonEventData[] = await Promise.all([
+        eventBusPlus.onWait('ACTS_TEST_ON_CREATE_WANT'),
+        eventBusPlus.onWait('CallerInfo06_onForeground')
+      ]);
+      let data: commonEventManager.CommonEventData = dataList[0];
+
+      hilog.info(0x0000, 'testTag',
+        `%{public}s', onCreate, want is: ${JSON.stringify(data.parameters?.result)}`);
+      try{
+        expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
+        expect(data.parameters?.result['debugApp']).assertEqual(false);
+        expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
+      }catch{}
+
+      globalThis.CallerInfo06.terminateSelf();
+      await eventBusPlus.onWait('ACTS_TEST_DESTROY');
+
+      done();
     });
 
     /**
@@ -297,65 +294,50 @@ export default function callerInfoTest() {
     it('SUB_Ability_AbilityRuntime_CallerInfo_0500', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0500"
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
-      commonEventManager.createSubscriber(ACTS_EVENT)
-        .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
-          subscriber = commonEventSubscriber;
-          let unSubscribeCallback = () => {
-            setTimeout(async () => {
-              hilog.info(0x0000, 'testTag', `${tag} unSubscribeCallback`);
-              hilog.info(0x0000, 'testTag', '%{public}s', `${tag} end`);
-              done();
-            }, 1000);
+      let want: Want = {
+        bundleName: "com.acts.actsCallerInfoTest",
+        moduleName: "entry_test",
+        action: 'callerInfo07'
+      };
+      try {
+        context.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
+          if (err.code) {
+            // 处理业务逻辑错误
+            hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${err.code}, error.message: ${err.message}`);
+            return;
           }
-          let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success`)
-            if (data.event == 'ACTS_TEST_START') {
-              let want: Want = {
-                bundleName: "com.acts.actsCallerInfoTest",
-                moduleName: "entry_test",
-                action: 'callerInfo07'
-              };
-              try {
-                context.startAbilityForResult(want, (err: BusinessError, result: common.AbilityResult) => {
-                  if (err.code) {
-                    // 处理业务逻辑错误
-                    hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${err.code}, error.message: ${err.message}`);
-                    return;
-                  }
-                  // 执行正常业务
-                  hilog.info(0x0000, 'testTag', '%{public}s', 'startAbilityForResult success test.ets!');
-                });
-              } catch (err) {
-                // 处理入参错误异常
-                let code = (err as BusinessError).code;
-                let message = (err as BusinessError).message;
-                hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${code}, error.message: ${message}`);
-              }
-            }
-            if (data.event == 'ACTS_TEST_ON_CREATE_WANT') {
-              hilog.info(0x0000, 'testTag',
-                `%{public}s', onCreate, want is: ${JSON.stringify(data.parameters?.result)}`);
-              try{
-                expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
-                expect(data.parameters?.result['debugApp']).assertEqual(false);
-                expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
-                expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
-              }catch{}
-            }
-            if (data.event == 'ACTS_TEST_DESTROY') {
-              setTimeout(() => {
-                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
-              }, 500);
-            }
-          }
-          commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(() => {
-            commonEventManager.publish('ACTS_TEST_START', publishCB);
-          }, 100)
-        })
+          // 执行正常业务
+          hilog.info(0x0000, 'testTag', '%{public}s', 'startAbilityForResult success test.ets!');
+        });
+      } catch (err) {
+        // 处理入参错误异常
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, 'testTag', '%{public}s', `startAbilityForResult failed, error.code: ${code}, error.message: ${message}`);
+      }
+
+      let dataList: commonEventManager.CommonEventData[] = await Promise.all([
+        eventBusPlus.onWait('ACTS_TEST_ON_CREATE_WANT'),
+        eventBusPlus.onWait('CallerInfo07_onForeground')
+      ]);
+      let data: commonEventManager.CommonEventData = dataList[0];
+
+      hilog.info(0x0000, 'testTag',
+        `%{public}s', onCreate, want is: ${JSON.stringify(data.parameters?.result)}`);
+      try{
+        expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
+        expect(data.parameters?.result['debugApp']).assertEqual(false);
+        expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
+      }catch{}
+
+      globalThis.CallerInfo07.terminateSelf();
+      await eventBusPlus.onWait('ACTS_TEST_DESTROY');
+
+      done();
     });
 
     /**
@@ -369,60 +351,45 @@ export default function callerInfoTest() {
     it('SUB_Ability_AbilityRuntime_CallerInfo_0700', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0700"
       hilog.info(0x0000, 'testTag', '%{public}s', `${tag} start`);
-      commonEventManager.createSubscriber(ACTS_EVENT)
-        .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
-          subscriber = commonEventSubscriber;
-          let unSubscribeCallback = () => {
-            setTimeout(async () => {
-              hilog.info(0x0000, 'testTag', `${tag} unSubscribeCallback`);
-              hilog.info(0x0000, 'testTag', '%{public}s', `${tag} end`);
-              done();
-            }, 1000);
-          }
-          let subscribeCallBack = (err: BusinessError, data: commonEventManager.CommonEventData) => {
-            hilog.info(0x0000, 'testTag', '%{public}s', `subscribeCallBack success`)
-            if (data.event == 'ACTS_TEST_START') {
-              try {
-                context.startAbility(
-                  {
-                    bundleName: "com.acts.actsCallerInfoTest",
-                    moduleName: "entry_test",
-                    abilityName: 'callerInfo10'
-                  }).then(() => {
-                  hilog.info(0x0000, 'testTag', '%{public}s', `${tag} startAbility end`);
-                })
-              } catch (err) {
-                // 处理入参错误异常
-                let code = (err as BusinessError).code;
-                let message = (err as BusinessError).message;
-                hilog.info(0x0000, 'testTag', '%{public}s',
-                  `startAbility failed, error.code: ${code}, error.message: ${message}`);
-              }
-            }
-            if (data.event == 'ACTS_TEST_ON_CREATE_WANT') {
-              hilog.info(0x0000, 'testTag',
-                `%{public}s', onCreate, want is: ${JSON.stringify(data.parameters?.result)}`);
-              try{
-                expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
-                expect(data.parameters?.result['debugApp']).assertEqual(false);
-                expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
-                expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
-                expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
-              }catch{}
-            }
-            if (data.event == 'ACTS_TEST_DESTROY') {
-              setTimeout(() => {
-                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
-              }, 500);
-            }
-          }
-          commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(() => {
-            commonEventManager.publish('ACTS_TEST_START', publishCB);
-          }, 100)
+      try {
+        context.startAbility(
+          {
+            bundleName: "com.acts.actsCallerInfoTest",
+            moduleName: "entry_test",
+            abilityName: 'callerInfo10'
+          }).then(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', `${tag} startAbility end`);
         })
+      } catch (err) {
+        // 处理入参错误异常
+        let code = (err as BusinessError).code;
+        let message = (err as BusinessError).message;
+        hilog.info(0x0000, 'testTag', '%{public}s',
+          `startAbility failed, error.code: ${code}, error.message: ${message}`);
+      }
+
+      let dataList: commonEventManager.CommonEventData[] = await Promise.all([
+        eventBusPlus.onWait('ACTS_TEST_ON_CREATE_WANT'),
+        eventBusPlus.onWait('CallerInfo10_onForeground')
+      ]);
+      let data: commonEventManager.CommonEventData = dataList[0];
+
+      hilog.info(0x0000, 'testTag',
+        `%{public}s', onCreate, want is: ${JSON.stringify(data.parameters?.result)}`);
+      try{
+        expect(data.parameters?.result['component.startup.newRules']).assertEqual(true);
+        expect(data.parameters?.result['debugApp']).assertEqual(false);
+        expect(data.parameters?.result['moduleName']).assertEqual('entry_test');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAbilityName']).assertEqual('TestAbility');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppIdentifier']).assertEqual('');
+        expect(data.parameters?.result['ohos.aafwk.param.callerAppId']).assertEqual('com.acts.actsCallerInfoTest_BCtwbrrZTeauTbNG/l1Ke4eowNrJ4I6h8q1xuy6k/XA3i/OlSG8a8Z3HbAVqe2Ic8rHq3139L51ZTFTZKDqc6fw=');
+        expect(data.parameters?.result['ohos.aafwk.param.callerBundleName']).assertEqual('com.acts.actsCallerInfoTest');
+      }catch{}
+
+      globalThis.CallerInfo10.terminateSelf();
+      await eventBusPlus.onWait('ACTS_TEST_DESTROY');
+
+      done();
     });
   })
 }

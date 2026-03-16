@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '@ohos/hypium';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import base, { BusinessError } from '@ohos.base';
 import { abilityAccessCtrl, common } from '@kit.AbilityKit';
@@ -64,14 +64,15 @@ export default function UIExtensionContentSessionWithoutPerTest() {
           subscriber = commonEventSubscriber;
           let unSubscribeCallback = () => {
             setTimeout(async () => {
-              console.info(`====>${tag} unSubscribeCallback`);
+              console.info(tag + `====>${tag} unSubscribeCallback`);
               done();
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log(tag + "subscribeCallBack success " + JSON.stringify(data))
             if (data.event == 'ACTS_TEST_DESTROY') {
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              expect(data?.parameters?.result).assertEqual(201)
+              console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -107,14 +108,154 @@ export default function UIExtensionContentSessionWithoutPerTest() {
           subscriber = commonEventSubscriber;
           let unSubscribeCallback = () => {
             setTimeout(async () => {
-              console.info(`====>${tag} unSubscribeCallback`);
+              console.info(tag + `====>${tag} unSubscribeCallback`);
               done();
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log(tag + "subscribeCallBack success")
             if (data.event == 'ACTS_TEST_DESTROY') {
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              expect(data?.parameters?.result).assertEqual(201)
+              console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          setTimeout(async () => {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :',err);
+            }
+          }, 2000);
+        })
+    })
+
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_1100
+     * @tc.number Sub_UIExtensionContentSession_errorCode_1100
+     * @tc.desc   setWindowPrivacyMode(true) Promise function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_UIExtensionContentSession_errorCode_1100', Level.LEVEL0, (done: Function) => {
+      let tag:string = `Sub_UIExtensionContentSession_errorCode_1100`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(tag + `====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log(tag + "subscribeCallBack success")
+            if (data.event == 'ACTS_TEST_DESTROY') {
+              expect(data?.parameters?.result).assertEqual(201)
+              console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          setTimeout(async () => {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :',err);
+            }
+          }, 2000);
+        })
+    })
+
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_1200
+     * @tc.number Sub_UIExtensionContentSession_errorCode_1200
+     * @tc.desc   setWindowPrivacyMode(true) callback function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_UIExtensionContentSession_errorCode_1200', Level.LEVEL0, (done: Function) => {
+      let tag:string = `Sub_UIExtensionContentSession_errorCode_1200`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(tag + `====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log(tag + "subscribeCallBack success")
+            if (data.event == 'ACTS_TEST_DESTROY') {
+              expect(data?.parameters?.result).assertEqual(201)
+              console.log(tag + "subscribeCallBack ACTS_TEST_DESTROY")
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          setTimeout(async () => {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :',err);
+            }
+          }, 2000);
+        })
+    })
+
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_1300
+     * @tc.number Sub_UIExtensionContentSession_errorCode_1300
+     * @tc.desc   getUIExtensionWindowProxy function test with rect values validation (width>0, height>0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_UIExtensionContentSession_errorCode_1300', Level.LEVEL0, (done: Function) => {
+      let tag:string = `Sub_UIExtensionContentSession_errorCode_1300`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(tag + `====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log(tag + "subscribeCallBack success")
+            if (data.event == 'ACTS_TEST_DESTROY') {
+                const left:number = data?.parameters?.left as number;
+                const top:number = data?.parameters?.top as number;
+                const width:number = data?.parameters?.width as number;
+                const height:number = data?.parameters?.height as number;
+                console.log(tag + `Rect values - left: ${left}, top: ${top}, width: ${width}, height: ${height}`);
+                expect(left).assertLarger(0);
+                expect(top).assertLarger(0);
+                expect(width).assertLarger(0);
+                expect(height).assertLarger(0);
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);

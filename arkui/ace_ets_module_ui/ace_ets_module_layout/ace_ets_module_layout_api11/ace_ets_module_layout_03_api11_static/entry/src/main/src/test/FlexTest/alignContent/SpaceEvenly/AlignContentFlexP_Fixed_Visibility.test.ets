@@ -38,7 +38,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function AlignContentFlexP_Fixed_Visibility() {
 
   describe('AlignContentFlexP_Fixed_Visibility', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("AlignContentFlexP_Fixed_Visibility beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

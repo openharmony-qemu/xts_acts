@@ -30,7 +30,7 @@ interface optionsObj {
 
 export default function featureAbilityStartAbilityJsunit() {
   describe('featureAbilityStartAbilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("featureAbilityStartAbilityJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
     });

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -17,6 +17,7 @@ import dataShareConfigGetTest from './DataShareConfigGetTest.test';
 import dataShareConfigPublishTest from './DataShareConfigPublishTest.test';
 import dataShareConfigSubscribeTest from './DataShareConfigSubscribeTest.test';
 import dataShareConfigUnSubscribeTest from './DataShareConfigUnSubscribeTest.test';
+import DataSharePredicatesErrTest from './DataSharePredicatesErrTest.test';
 
 export default function testsuite() {
   dataShareConfigDeleteTest();
@@ -24,4 +25,5 @@ export default function testsuite() {
   dataShareConfigPublishTest();
   dataShareConfigSubscribeTest();
   dataShareConfigUnSubscribeTest();
+  DataSharePredicatesErrTest();
 }

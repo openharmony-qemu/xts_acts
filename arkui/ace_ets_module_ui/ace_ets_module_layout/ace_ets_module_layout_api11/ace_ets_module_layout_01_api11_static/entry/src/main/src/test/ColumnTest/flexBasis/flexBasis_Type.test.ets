@@ -36,7 +36,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexBasis_Type() {
   describe('flexBasis_Type', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flexBasis_Type beforeEach start");
 
 

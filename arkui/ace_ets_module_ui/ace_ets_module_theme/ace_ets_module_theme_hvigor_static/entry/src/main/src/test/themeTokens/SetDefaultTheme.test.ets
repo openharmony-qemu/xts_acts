@@ -49,7 +49,7 @@ export default function setDefaultThemeTest() {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     })
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       try {
         const options: router.RouterOptions = {
           url: "MainAbility/pages/themeTokensPages/SetDefaultThemeTestPage",

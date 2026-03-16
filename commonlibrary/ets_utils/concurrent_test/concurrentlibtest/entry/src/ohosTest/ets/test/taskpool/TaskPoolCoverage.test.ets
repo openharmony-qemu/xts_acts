@@ -15,12 +15,16 @@
 
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { taskpool } from '@kit.ArkTS';
-import assertNaN from '@ohos/hypium/src/main/module/assert/assertNaN';
 
 // 测试函数定义
 @Concurrent
 function simpleFunc(arg: number): number {
   return arg * 2;
+}
+
+@Concurrent
+function simpleFuncNull(arg: number | null | undefined): number | null | undefined {
+  return arg;
 }
 
 @Concurrent
@@ -563,6 +567,49 @@ export default function taskPoolCoverageTest() {
       });
 
     /**
+     * @tc.name   testExecuteFuncArgsWithNull
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_0031
+     * @tc.desc   Test taskpool.execute with null args parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteFuncArgsWithNull', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
+      let tag = "testExecuteFuncArgsWithNull"
+      console.log(`${tag} test start.`)
+      try {
+        let result = await taskpool.execute(simpleFuncNull, null);
+        expect(result).assertEqual(null);
+        done();
+      } catch (error) {
+        console.log(`${tag} test catch: ${error.code}`)
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testExecuteFuncArgsWithUndefined
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_0041
+     * @tc.desc   Test taskpool.execute with undefined args parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteFuncArgsWithUndefined', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let tag = "testExecuteFuncArgsWithUndefined"
+        console.log(`${tag} test start.`)
+        try {
+          let result = await taskpool.execute(simpleFuncNull, undefined);
+          expect(result).assertUndefined()
+          done();
+        } catch (error) {
+          console.log(`${tag} test catch: ${error.code}`)
+          done();
+        }
+      });
+
+    /**
      * @tc.name   testExecuteVerifyArgsWithNull
      * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_003
      * @tc.desc   Test taskpool.execute with null args parameter.
@@ -574,12 +621,12 @@ export default function taskPoolCoverageTest() {
       let tag = "testExecuteVerifyArgsWithNull"
       console.log(`${tag} test start.`)
       try {
-        let result = await taskpool.execute<number[], number>(simpleFunc, null);
-        expect(result).assertEqual(0);
-        done();
+        let result = await taskpool.execute<Object[], number | null | undefined>(simpleFuncNull, null);
+        expect(result).assertEqual(null);
       } catch (error) {
         console.log(`${tag} test catch: ${error.code}`)
       }
+      done();
     });
 
     /**
@@ -595,8 +642,8 @@ export default function taskPoolCoverageTest() {
         let tag = "testExecuteVerifyArgsWithUndefined"
         console.log(`${tag} test start.`)
         try {
-          let result = await taskpool.execute<number[], number>(simpleFunc, undefined);
-          expect(result).assertNaN()
+          let result = await taskpool.execute<Object[], number | null | undefined>(simpleFuncNull, undefined);
+          expect(result).assertUndefined()
           done();
         } catch (error) {
           console.log(`${tag} test catch: ${error.code}`)

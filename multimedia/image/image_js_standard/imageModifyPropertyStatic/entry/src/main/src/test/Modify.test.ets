@@ -48,7 +48,7 @@ export default function imageModifyProperty() {
     const GIF_LOOP_COUNT = image.PropertyKey.GIF_LOOP_COUNT;
     let globalpixelmap: image.PixelMap | undefined = undefined;
     let globalimageSource: image.ImageSource | undefined = undefined;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
     })

@@ -39,7 +39,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function select() {
   describe('ActsAceSelectTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ActsAceSelectTest beforeEach start");
 
 

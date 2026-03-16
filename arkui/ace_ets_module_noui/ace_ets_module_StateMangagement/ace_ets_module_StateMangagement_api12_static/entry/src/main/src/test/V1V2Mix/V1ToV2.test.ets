@@ -52,7 +52,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function V1ToV2() {
   describe('V1ToV2', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("V1ToV2 beforeEach start");
 
 

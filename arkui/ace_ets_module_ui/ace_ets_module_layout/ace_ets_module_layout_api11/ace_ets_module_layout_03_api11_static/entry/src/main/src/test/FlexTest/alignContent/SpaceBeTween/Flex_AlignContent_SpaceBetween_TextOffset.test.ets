@@ -36,7 +36,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function flex_AlignContent_SpaceBetween_TextOffsetTest() {
   describe('Flex_AlignContent_SpaceBetween_TextOffsetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("flex_AlignContent_SpaceBetween_TextOffsetTest beforeEach start");
      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });

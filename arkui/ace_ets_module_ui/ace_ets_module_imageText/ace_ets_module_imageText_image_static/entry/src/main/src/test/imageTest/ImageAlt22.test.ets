@@ -29,7 +29,7 @@ const SLEEP_TIME_S = 100;
 
 export default function ImageAlt22Test() {
   describe('ImageAlt22Test', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ImageAlt22Test beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
     });

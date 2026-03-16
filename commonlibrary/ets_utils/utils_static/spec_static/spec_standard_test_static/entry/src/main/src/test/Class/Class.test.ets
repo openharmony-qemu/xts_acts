@@ -282,7 +282,7 @@ export default function ClassLateInitizationTest() {
      */
     it('ClassLateInitizationTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
-        let a: Base2 = {};
+        let a: Base2 = new Base2();
         expect(a.g).assertEqual("aa");
       } catch (e) {
         expect(e instanceof NullPointerError).assertTrue();

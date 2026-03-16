@@ -15,6 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import factory from '@ohos.data.distributedKVStore';
 import common from "@ohos.app.ability.common";
+import deviceInfo from '@ohos.deviceInfo';
 
 const KEY_TEST_INT_ELEMENT = 'key_test_int_2';
 const KEY_TEST_FLOAT_ELEMENT = 'key_test_float_2';
@@ -56,6 +57,8 @@ function putBatchString(len, prefix) {
   return entries;
 }
 
+let currentDeviceIsWatch = false;
+
 export default function singleKvStoreCallbackStageTest(){
   describe('singleKvStoreCallbackStageTest', function () {
     const options = {
@@ -69,6 +72,11 @@ export default function singleKvStoreCallbackStageTest(){
     }
 
     beforeAll(async function (done) {
+      console.info('beforeAll currentDeviceIsWatch');
+      let deviceTypeInfo = deviceInfo.deviceType;
+      currentDeviceIsWatch = deviceTypeInfo === 'wearable' ? true : false;
+      console.info( "the value of the deviceType is : " + deviceInfo.deviceType + ' currentDeviceIsWatch=' +currentDeviceIsWatch);
+
       context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
       const config = {
         bundleName: TEST_BUNDLE_NAME,
@@ -1878,6 +1886,11 @@ export default function singleKvStoreCallbackStageTest(){
      */
     it('testEtsSingleKvStoreRemoveDeviceData101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testSingleKvStoreRemoveDeviceData101');
+      if (currentDeviceIsWatch) {
+        console.info(' currentDeviceIsWatch=' +currentDeviceIsWatch);
+        done();
+        return;
+      }
       try {
         await kvStore.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, async function (err,data) {
           console.info('testSingleKvStoreRemoveDeviceData101 put success');

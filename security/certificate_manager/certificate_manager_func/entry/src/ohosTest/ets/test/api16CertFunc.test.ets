@@ -273,6 +273,15 @@ export default function api16CertFuncTestUnit() {
         let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), pwd, alias, level);
         console.info('Security_CertManager_InstallPrivateCertificate_Func_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri))
         keyUri = result.uri;
+        let signSpec: certManager.CMSignatureSpec = {
+          purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
+          padding: certManager.CmKeyPadding.CM_PADDING_PSS,
+          digest: certManager.CmKeyDigest.CM_DIGEST_SHA256,
+        }
+        certManager.init(keyUri,signSpec,(err:Error,CMHandle:certManager.CMHandle)=>{
+          console.info("Security_CertManager_InstallPrivateCertificate_Func_0010 init success");
+          expect(CMHandle.handle != null).assertTrue();
+        })
       } catch (e) {
         console.log("Security_CertManager_InstallPrivateCertificate_Func_0010: e.code " + e.code);
       }
@@ -371,7 +380,21 @@ export default function api16CertFuncTestUnit() {
       try {
         let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), pwd, alias, level);
       } catch (e) {
-        console.log("Security_CertManager_InstallPrivateCertificate_Func_0013: e.code " + e.code);
+        console.log("Security_CertManager_InstallPrivateCertificate_Func_0013 error1: e.code " + e.code);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), "", alias, level);
+      } catch (e) {
+        console.log("Security_CertManager_InstallPrivateCertificate_Func_0013 error2: e.code " + e.code);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), pwd, "", level);
+      } catch (e) {
+        console.log("Security_CertManager_InstallPrivateCertificate_Func_0013 error3: e.code " + e.code);
         expect(e.code).assertEqual(401);
       }
       console.log("Security_CertManager_InstallPrivateCertificate_Func_0013: success.");
@@ -465,6 +488,22 @@ export default function api16CertFuncTestUnit() {
       }
       try {
         let userCACurrentPath = certManager.getCertificateStorePath(property);
+        console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: userCACurrentPath " + userCACurrentPath);
+        expect(null).assertFail();
+      } catch (err) {
+        console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: e.code " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let userCACurrentPath = certManager.getCertificateStorePath(null);
+        console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: userCACurrentPath " + userCACurrentPath);
+        expect(null).assertFail();
+      } catch (err) {
+        console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: e.code " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      try {
+        let userCACurrentPath = certManager.getCertificateStorePath(undefined);
         console.log("SUB_Security_CertManager_GetCertificateStorePath_Func_0011: userCACurrentPath " + userCACurrentPath);
         expect(null).assertFail();
       } catch (err) {
@@ -712,6 +751,28 @@ export default function api16CertFuncTestUnit() {
           console.error("Security_CertManager_VerifyPromiseSM3_Func_0011 get err.code: " + err.code);
           expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_GENERIC);
         });
+        try{
+          await certManager.uninstallPrivateCertificate("");
+          expect(null).assertFail();
+        }catch(err){
+          console.info("Security_CertManager_VerifyPromiseSM3_Func_0011 uninstallPrivateCertificate failed, err.code:"+err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try{
+          await certManager.uninstallPrivateCertificate(null);
+          expect(null).assertFail();
+        }catch(err){
+          console.info("Security_CertManager_VerifyPromiseSM3_Func_0011 uninstallPrivateCertificate failed, err.code:"+err.code);
+          expect(err.code).assertEqual(401);
+        }
+        try{
+          await certManager.uninstallPrivateCertificate(undefined);
+          expect(null).assertFail();
+        }catch(err){
+          console.info("Security_CertManager_VerifyPromiseSM3_Func_0011 uninstallPrivateCertificate failed, err.code:"+err.code);
+          expect(err.code).assertEqual(401);
+        }
+
         await certManager.uninstallPrivateCertificate(keyUri);
         console.info('Security_CertManager_VerifyPromiseSM3_Func_0011 uninstallPrivateCertificate promise success! ')
       } else {
@@ -880,9 +941,16 @@ export default function api16CertFuncTestUnit() {
         console.error(`SUB_Security_CertManager_InstallUserTrustedCertificates_0011 error.code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
       }
-
       try {
         let result: certManager.CMResult = certManager.installUserTrustedCertificateSync(caCert1, certManager.CertScope.CURRENT_USER);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_InstallUserTrustedCertificates_0011 error.code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+      }
+      console.info('SUB_Security_CertManager_InstallUserTrustedCertificates_0011 end');
+      try {
+        let result: certManager.CMResult = certManager.installUserTrustedCertificateSync(undefined, certManager.CertScope.CURRENT_USER);
         expect(null).assertFail();
       } catch (error) {
         console.error(`SUB_Security_CertManager_InstallUserTrustedCertificates_0011 error.code: ${error.code}, message: ${error.message}`);

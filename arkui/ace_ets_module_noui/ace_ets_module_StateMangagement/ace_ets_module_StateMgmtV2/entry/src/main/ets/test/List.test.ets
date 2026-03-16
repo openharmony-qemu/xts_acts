@@ -30,6 +30,7 @@ import Monitor0260Test from './MonitorTest/Monitor0260Test.test';
 import Monitor0280Test from './MonitorTest/Monitor0280Test.test';
 import Monitor0290Test from './MonitorTest/Monitor0290Test.test';
 import Monitor0300Test from './MonitorTest/Monitor0300Test.test';
+import monitorValueTest from './MonitorTest/MonitorValueTest.test';
 import Monitor_NullTest from './MonitorTest/Monitor_Null.test';
 import ExtendTrackTest from './ObservedV2Test/ExtendTrackTest.test';
 import NestTrackTest from './ObservedV2Test/NestTrackTest.test';
@@ -70,6 +71,8 @@ import Consumer0140Test from './consumerTest/Consumer0140Test.test';
 import Consumer0170Test from './consumerTest/Consumer0170Test.test';
 import SyncMonitor0010Test from './SyncMonitorTest/SyncMonitor0010Test.test';
 import SyncMonitor0020Test from './SyncMonitorTest/SyncMonitor0020Test.test';
+import appStorageV2NullUndefinedTest from './appstoragev2/AppStorageV2NullUndefinedTest.test';
+import persistenceV2NullUndefinedTest from './PersistenceV2Test/PersistenceV2NullUndefinedTest.test';
 export default function testsuite() {
 	ArrayLikeStringTest();
     Env001();
@@ -89,6 +92,7 @@ export default function testsuite() {
     Monitor0290Test();
     Monitor0300Test();
     Monitor_NullTest();
+    monitorValueTest();
     ExtendTrackTest();
     NestTrackTest();
     ObjectArrayTest();
@@ -128,4 +132,6 @@ export default function testsuite() {
     Consumer0170Test();
     SyncMonitor0010Test();
     SyncMonitor0020Test();
+    persistenceV2NullUndefinedTest();
+    appStorageV2NullUndefinedTest();
 }

@@ -128,15 +128,15 @@ export default function taskPoolAsyncRunnerAbility() {
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0100
-     * @tc.name taskPoolAsyncRunnerAbility0100
-     * @tc.desc Create two tasks with string parameters and string return values, and execute them 10 times.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0100
+      * @tc.name taskPoolAsyncRunnerAbility0100
+      * @tc.desc Create two tasks with string parameters and string return values, and execute them 10 times.
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerAbility0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerAbility0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('taskPoolAsyncRunnerAbility0100: start');
         const str1: string = 'q1';
@@ -178,15 +178,16 @@ export default function taskPoolAsyncRunnerAbility() {
       })
 
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0200
-     * @tc.name taskPoolAsyncRunnerAbility0200
-     * @tc.desc Create two tasks with string parameters and string return values, and execute them 10 times,error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0200
+      * @tc.name taskPoolAsyncRunnerAbility0200
+      * @tc.desc Create two tasks with string parameters and string return values, and execute them 10 times,error.
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerAbility0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerAbility0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('taskPoolAsyncRunnerAbility0200: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -239,15 +240,15 @@ export default function taskPoolAsyncRunnerAbility() {
         console.info('taskPoolAsyncRunnerAbility0200: end');
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0300
-     * @tc.name taskPoolAsyncRunnerAbility0300
-     * @tc.desc Create two tasks with number parameters and number return values, and execute them 10 times.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0300
+      * @tc.name taskPoolAsyncRunnerAbility0300
+      * @tc.desc Create two tasks with number parameters and number return values, and execute them 10 times.
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerAbility0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerAbility0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('taskPoolAsyncRunnerAbility0300: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -278,15 +279,15 @@ export default function taskPoolAsyncRunnerAbility() {
         console.info('taskPoolAsyncRunnerAbility0300: end');
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0400
-     * @tc.name taskPoolAsyncRunnerAbility0400
-     * @tc.desc Create two tasks with number parameters and number return values, and execute them 10 times,error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0400
+      * @tc.name taskPoolAsyncRunnerAbility0400
+      * @tc.desc Create two tasks with number parameters and number return values, and execute them 10 times,error.
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerAbility0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerAbility0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('taskPoolAsyncRunnerAbility0400: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -332,15 +333,15 @@ export default function taskPoolAsyncRunnerAbility() {
         console.info('taskPoolAsyncRunnerAbility0400: end');
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0500
-     * @tc.name taskPoolAsyncRunnerAbility0500
-     * @tc.desc Create two tasks with boolean parameters and boolean return values, and execute them 10 times.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0500
+      * @tc.name taskPoolAsyncRunnerAbility0500
+      * @tc.desc Create two tasks with boolean parameters and boolean return values, and execute them 10 times.
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerAbility0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerAbility0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('taskPoolAsyncRunnerAbility0500: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -370,15 +371,15 @@ export default function taskPoolAsyncRunnerAbility() {
         console.info('taskPoolAsyncRunnerAbility0500: end');
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0600
-     * @tc.name taskPoolAsyncRunnerAbility0600
-     * @tc.desc Create two tasks with boolean parameters and boolean return values, and execute them 10 times,error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0600
+      * @tc.name taskPoolAsyncRunnerAbility0600
+      * @tc.desc Create two tasks with boolean parameters and boolean return values, and execute them 10 times,error.
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerAbility0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerAbility0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('taskPoolAsyncRunnerAbility0600: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -427,15 +428,15 @@ export default function taskPoolAsyncRunnerAbility() {
         console.info('taskPoolAsyncRunnerAbility0600: end');
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0700
-     * @tc.name taskPoolAsyncRunnerAbility0700
-     * @tc.desc Create two tasks with bigint parameters and bigint return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_0700
+      * @tc.name taskPoolAsyncRunnerAbility0700
+      * @tc.desc Create two tasks with bigint parameters and bigint return values, and execute them 10 times
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerAbility0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerAbility0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('taskPoolAsyncRunnerAbility0700: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -559,15 +560,15 @@ export default function taskPoolAsyncRunnerAbility() {
 
       })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_1000
-     * @tc.name taskPoolAsyncRunnerAbility1000
-     * @tc.desc Create two tasks with undefined parameters and undefined return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_1000
+      * @tc.name taskPoolAsyncRunnerAbility1000
+      * @tc.desc Create two tasks with undefined parameters and undefined return values, and execute them 10 times,error
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
      */
-    it('taskPoolAsyncRunnerAbility1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+    it('taskPoolAsyncRunnerAbility1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.info('taskPoolAsyncRunnerAbility1000: start');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);

@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function GridRowCol() {
   describe('GridRowCol', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("GridRowCol beforeAll start");
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await UtilsTest.msSleep(4000)

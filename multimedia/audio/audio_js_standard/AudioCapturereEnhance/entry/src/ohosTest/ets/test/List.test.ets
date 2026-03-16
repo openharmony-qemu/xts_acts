@@ -19,8 +19,8 @@ import onOffInputDeviceChangeTest from './OnOffInputDeviceChange.test';
 
 
 export default function testsuite() {
-  audioCapturerEnhanceTest();
-  getCurrentInputDevicesTest();
   onOffAudioCapturerChangeTest();
+  audioCapturerEnhanceTest();
+  getCurrentInputDevicesTest();  
   onOffInputDeviceChangeTest();
 }

@@ -364,7 +364,7 @@ export default function cameraVideoCodecTypeTest() {
 
   describe('CameraVideoCodecTypeTest', () => {
     console.info(TAG + '----------CameraVideoCodecTypeTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getPreviewOutputSurface();
       await getPhotoReceiverSurface();
@@ -384,7 +384,7 @@ export default function cameraVideoCodecTypeTest() {
       console.info('afterEach case');
     })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('afterAll case');

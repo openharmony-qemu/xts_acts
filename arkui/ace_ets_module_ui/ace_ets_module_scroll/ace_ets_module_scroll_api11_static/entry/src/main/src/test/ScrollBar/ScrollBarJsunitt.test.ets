@@ -26,7 +26,7 @@ import { RecordData } from '@ohos.base';
 
 export default function scrollBarJsunitt() {
   describe('scrollBarJsunitt', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
 
       
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")

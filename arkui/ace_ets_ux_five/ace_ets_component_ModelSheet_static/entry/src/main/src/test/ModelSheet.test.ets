@@ -41,7 +41,7 @@ class TitleSub {
 
 export default function ModelSheetTest() {
   describe('ModelSheetTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ModelSheetTest beforeAll start");
       
       await UtilsTest.startAbility("com.example.ModelSheet.static", "EntryAbility")

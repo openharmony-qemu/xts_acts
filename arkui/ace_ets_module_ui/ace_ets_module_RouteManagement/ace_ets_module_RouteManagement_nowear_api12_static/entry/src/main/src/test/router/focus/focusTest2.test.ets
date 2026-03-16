@@ -25,7 +25,7 @@ import { UtilsTest, startAbility } from '../../Util.test'
 
 export default function focus() {
   describe('focus', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("focus beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.RouteManagementnowear.api12.static", "EntryAbility")
     });

@@ -36,7 +36,7 @@ export default function WebViewEnumAndFontLibrary() {
 
   describe('WebViewEnumAndFontLibraryTest', (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await Utils.sleep(2000)
       await Utils.emitEvent('pages/WebViewEnumAndFontLibrary', 10)
       await Utils.sleep(2000)
@@ -225,7 +225,7 @@ export default function WebViewEnumAndFontLibrary() {
         done()
       })
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
       Utils.emitEvent('back', 10)
       await Utils.sleep(2000);

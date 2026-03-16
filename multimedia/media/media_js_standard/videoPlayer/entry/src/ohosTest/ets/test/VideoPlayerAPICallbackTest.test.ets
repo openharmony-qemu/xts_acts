@@ -2574,5 +2574,167 @@ export default function VideoPlayerAPICallbackTest() {
       }
       done();
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0009
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0009
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0009', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface('', (err: BusinessError) => {
+              if (err) {
+                console.error('Failed to set DisplaySurface!');
+              } else {
+                console.info('Succeeded in setting DisplaySurface!');
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0010
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0010
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0010', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface(null, (err: BusinessError) => {
+              if (err) {
+                console.error('Failed to set DisplaySurface!');
+              } else {
+                console.info('Succeeded in setting DisplaySurface!');
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0011
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0011
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0011', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface(undefined, (err: BusinessError) => {
+              if (err) {
+                console.error('Failed to set DisplaySurface!');
+              } else {
+                console.info('Succeeded in setting DisplaySurface!');
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0012
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0012
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0012', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface('').then(() => {
+              console.info('Succeeded in setting DisplaySurface');
+            }).catch((error: BusinessError) => {
+              console.error(`video catchCallback, error:${error}`);
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0013
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0013
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0013', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface(null).then(() => {
+              console.info('Succeeded in setting DisplaySurface');
+            }).catch((error: BusinessError) => {
+              console.error(`video catchCallback, error:${error}`);
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0014
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0014
+     * @tc.desc   Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_NULL_UNDERFINED_0014', Level.LEVEL0,async (done: Function) => {
+      try {
+        media.createVideoPlayer((err, video) => {
+          if (video != null) {
+            let videoPlayer = video;
+            videoPlayer.setDisplaySurface(undefined).then(() => {
+              console.info('Succeeded in setting DisplaySurface');
+            }).catch((error: BusinessError) => {
+              console.error(`video catchCallback, error:${error}`);
+            });
+          }
+        });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }

@@ -55,7 +55,7 @@ export default function cameraSessionMultiSessionTest() {
 
   describe('CameraSessionMultiSessionTest', () => {
     console.info(TAG + '----------CameraSessionMultiSessionTest--------------')
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       Utils.msSleep(100);
       getCameraManagerInstance();
       mCameraManager!.offCameraStatus();
@@ -65,12 +65,12 @@ export default function cameraSessionMultiSessionTest() {
       await Utils.msSleep(500);
     })
 
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(100);
       console.info('beforeEach case');
     })
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info('afterEach case');
       await Utils.msSleep(100);
     })

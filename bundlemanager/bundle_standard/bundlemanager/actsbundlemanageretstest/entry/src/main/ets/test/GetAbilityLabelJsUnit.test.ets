@@ -173,6 +173,45 @@ export default function getAbilityLabel() {
             });
         });
 
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Label_4600
+         * @tc.number Sub_Bms_Framework_Query_Label_4600
+         * @tc.desc   Test getAbilityLabel with null bundleName and abilityName.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('Sub_Bms_Framework_Query_Label_4600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
+            await Bundle.getAbilityLabel(null, OTHER_ABILITY_NAME).then((data) => {
+                expect(data).assertFail();
+            }).catch((error) => {
+                expect(error).assertEqual(2);
+            });
+            await Bundle.getAbilityLabel(OTHER_BUNDLE_NAME, null).then((data) => {
+                expect(data).assertFail();
+            }).catch((error) => {
+                expect(error).assertEqual(2);
+            });
+            await Bundle.getAbilityLabel(null, null).then((data) => {
+                expect(data).assertFail();
+            }).catch((error) => {
+                expect(error).assertEqual(2);
+            });
+            Bundle.getAbilityLabel(null, OTHER_ABILITY_NAME, (error, data) => {
+                expect(error).assertEqual(2);
+                expect(data).assertEqual(undefined);
+                Bundle.getAbilityLabel(OTHER_BUNDLE_NAME, null, (error, data) => {
+                    expect(error).assertEqual(2);
+                    expect(data).assertEqual(undefined);
+                    Bundle.getAbilityLabel(null, null, (error, data) => {
+                        expect(error).assertEqual(2);
+                        expect(data).assertEqual(undefined);
+                        done();
+                    });
+                });
+            });
+        });
+
     })
 
 }

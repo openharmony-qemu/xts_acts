@@ -13,7 +13,12 @@
  * limitations under the License.
  */
 import webViewNativeMediaPlayerProps from './WebViewNativeMediaPlayerProps.test';
-
+import WebViewNativeMediaPlayerSeek1 from './WebViewNativeMediaPlayerSeek1.test';
+import WebViewNativeMediaPlayerUpdateRect1 from './WebViewNativeMediaPlayerUpdateRect1.test'
+import WebViewNativeMediaPlayerUpdateRect2 from './WebViewNativeMediaPlayerUpdateRect2.test'
 export default function testsuite() {
   webViewNativeMediaPlayerProps()
+  WebViewNativeMediaPlayerUpdateRect1()
+  WebViewNativeMediaPlayerUpdateRect2()
+  WebViewNativeMediaPlayerSeek1()
 }

@@ -964,5 +964,366 @@ describe('fileIO_fs_FdOpenStream', async function () {
       expect(false).assertTrue();
     }
   });
+
+  /**
+ 	    * @tc.name   fileIO_test_fdopenstream_async_020
+ 	    * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2000
+ 	    * @tc.desc   Test fdopenStream() interface. Promise. Fd is null.
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL0
+ 	    */
+ 	   it('fileIO_test_fdopenstream_async_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+ 	     try {
+ 	       await fileIO.fdopenStream(null, 'r');
+ 	       expect(false).assertTrue();
+ 	       done();
+ 	     } catch (e) {
+ 	       console.log('fileIO_test_fdopenstream_async_020 has failed for ' + e.message + ', code: ' + e.code);
+ 	       expect(e.code).assertEqual(13900020);
+ 	       done();
+ 	     }
+ 	   });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_021
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2100
+  * @tc.desc   Test fdopenStream() interface. Promise. Fd is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      await fileIO.fdopenStream(undefined, 'r');
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      console.log('fileIO_test_fdopenstream_async_021 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+ 	 
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_022
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2200
+  * @tc.desc   Test fdopenStream() interface. Promise. Mode is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_async_022');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      await fileIO.fdopenStream(file.fd, '');
+      expect(false).assertTrue();
+      done();
+    } catch (e) {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_fdopenstream_async_022 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_023
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2300
+  * @tc.desc   Test fdopenStream() interface. Promise. Mode is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_async_023');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      await fileIO.fdopenStream(file.fd, null);
+      expect(false).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_fdopenstream_async_023 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_024
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2400
+  * @tc.desc   Test fdopenStream() interface. Promise. Mode is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_async_024');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      await fileIO.fdopenStream(file.fd, undefined);
+      expect(false).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      done();
+    } catch (e) {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_fdopenstream_async_024 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_025
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2500
+  * @tc.desc   Test fdopenStream() interface. Callback. Fd is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      fileIO.fdopenStream(null, 'r', (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_fdopenstream_async_025 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_026
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2600
+  * @tc.desc   Test fdopenStream() interface. Callback. Fd is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    try {
+      fileIO.fdopenStream(undefined, 'r', (err) => {
+        expect(false).assertTrue();
+      });
+    } catch (e) {
+      console.log('fileIO_test_fdopenstream_async_026 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_027
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2700
+  * @tc.desc   Test fdopenStream() interface. Callback. Mode is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_async_027');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+
+    try {
+      fileIO.fdopenStream(file.fd, '', (err) => {
+        console.log('fileIO_test_fdopenstream_async_027 err ' + err.message + ', code: ' + err.code);
+        expect(err.code).assertEqual(13900020);
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+        done();
+      });
+    } catch (e) {
+      console.log('fileIO_test_fdopenstream_async_027 has failed for ' + e.message + ', code: ' + e.code);
+      expect(false).assertTrue();
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_028
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2800
+  * @tc.desc   Test fdopenStream() interface. Callback. Mode is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_async_028');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.fdopenStream(file.fd, null, (err) => {
+        console.log('fileIO_test_fdopenstream_async_028 err ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        done();
+      });
+    } catch (e) {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_fdopenstream_async_028 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_async_029
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_ASYNC_2900
+  * @tc.desc   Test fdopenStream() interface. Callback. Mode is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_async_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_async_029');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.fdopenStream(file.fd, undefined, (err) => {
+        console.log('fileIO_test_fdopenstream_async_029 err ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+        done();
+      });
+    } catch (e) {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_fdopenstream_async_029 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+      done();
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_sync_020
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_2000
+  * @tc.desc   Test fdopenStreamSync() interface. Fd is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_sync_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.fdopenStreamSync(null, 'r');
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_fdopenstream_sync_020 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_sync_021
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_2100
+  * @tc.desc   Test fdopenStreamSync() interface. Fd is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_sync_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    try {
+      fileIO.fdopenStreamSync(undefined, 'r');
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_fdopenstream_sync_021 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_sync_022
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_2200
+  * @tc.desc   Test fdopenStreamSync() interface. Mode is empty string.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_sync_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_sync_022');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.fdopenStreamSync(file.fd, '');
+      expect(false).assertTrue();
+    } catch (e) {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_fdopenstream_sync_022 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_sync_023
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_2300
+  * @tc.desc   Test fdopenStreamSync() interface. Mode is null.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_sync_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_sync_023');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    try {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.fdopenStreamSync(file.fd, null);
+      expect(false).assertTrue();
+    } catch (e) {
+      let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_fdopenstream_sync_023 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
+
+  /**
+  * @tc.name   fileIO_test_fdopenstream_sync_024
+  * @tc.number SUB_DF_FILEIO_FDOPENSTREAM_SYNC_2400
+  * @tc.desc   Test fdopenStreamSync() interface. Mode is undefined.
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
+  it('fileIO_test_fdopenstream_sync_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_fdopenstream_sync_024');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+    let file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+
+    try {
+      fileIO.fdopenStreamSync(file.fd, undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+      console.log('fileIO_test_fdopenstream_sync_024 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code).assertEqual(13900020);
+    }
+  });
 });
 }

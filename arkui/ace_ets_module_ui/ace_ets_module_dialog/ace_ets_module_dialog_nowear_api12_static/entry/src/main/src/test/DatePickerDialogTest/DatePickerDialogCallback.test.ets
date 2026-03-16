@@ -32,7 +32,7 @@ import { RecordData } from '@ohos.base';
 export default function DatePickerDialogCallback() {
   describe('DatePickerDialogCallback', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("DatePickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
 

@@ -41,7 +41,7 @@ import { UtilsTest, startAbility } from '../Util.test';
 
 export default function RichEditorUndefinedTest() {
   describe('richEditorReturnUndefined', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("RichEditorReturnUndefined beforeAll start");
 
       await UtilsTest.msSleep(4000)

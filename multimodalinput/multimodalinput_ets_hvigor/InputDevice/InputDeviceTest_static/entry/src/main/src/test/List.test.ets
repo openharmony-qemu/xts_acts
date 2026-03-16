@@ -15,7 +15,11 @@
 
 import InputDeviceTest from "./InputDevice.test";
 import InputConsumerTest from "./InputConsumer.test";
+import InputConsumerComplementTest from "./InputConsumerComplement.test";
+import InputDeviceComplementTest from "./InputDeviceComplement.test";
 export default function testsuite() {
     InputDeviceTest();
     InputConsumerTest();
+    InputConsumerComplementTest();
+    InputDeviceComplementTest();
 }

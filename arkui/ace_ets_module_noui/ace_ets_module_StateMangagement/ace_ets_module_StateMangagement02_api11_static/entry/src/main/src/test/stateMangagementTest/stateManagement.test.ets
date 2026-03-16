@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function stateManagementDARKJsunit() {
   describe('stateManagementDARKTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("stateManagementDARKJsunit beforeEach start");
       
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");

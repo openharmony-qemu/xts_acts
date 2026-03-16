@@ -64,7 +64,7 @@ export default function zIndexTest() {
   }]
 
   describe('ZIndexTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("ZIndexTest beforeEach start");
       
       await UtilsTest.msSleep(4000)

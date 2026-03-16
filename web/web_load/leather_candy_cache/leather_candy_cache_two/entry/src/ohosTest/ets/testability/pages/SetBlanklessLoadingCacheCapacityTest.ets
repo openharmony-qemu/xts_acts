@@ -160,9 +160,13 @@ struct setBlanklessLoadingCacheCapacityTest {
                 try {
                   let cacheCapacity = webview.WebviewController.setBlanklessLoadingCacheCapacity(null);
                 } catch (error) {
-                  console.log(msg, `入参:null`,`预期值：401`,`实际值${error.code}`);
-                  Utils.emitEvent(401, 148250)
-                  console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(401, 148250)
+                  } else {
+                    console.log(msg, `入参:null`,`预期值：401`,`实际值${error.code}`);
+                    Utils.emitEvent(401, 148250)
+                    console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+                  }
                 }
                 break;
               }
@@ -214,14 +218,43 @@ struct setBlanklessLoadingCacheCapacityTest {
                 }
                 break;
               }
+              case 'testsetBlanklessLoadingCacheCapacity010': {
+                let msg = 'testsetBlanklessLoadingCacheCapacity010'
+                try {
+                  let cacheCapacity = webview.WebviewController.setBlanklessLoadingCacheCapacity(undefined);
+                  console.log(msg, `入参:undefined`,`预期值：401`,`实际值${cacheCapacity}`);
+                  Utils.emitEvent(cacheCapacity, 148291)
+                } catch (error) {
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent('401', 148291)
+                  } else {
+                    console.log(msg, `入参:undefined`,`expect value: 401`,`actual value: ${error.code}`);
+                    Utils.emitEvent(error.code, 148291)
+                    console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+                  }
+                }
+                break;
+              }
+              case 'testsetBlanklessLoadingCacheCapacity011': {
+                let msg = 'testsetBlanklessLoadingCacheCapacity011'
+                let cacheCapacity: number = testNapi.setCacheCapacity100(this.webTag)
+                console.log(msg, `parameter: 100`,`expect value: 100`,`actual value: ${cacheCapacity}`);
+                if (cacheCapacity == 0) {
+                  Utils.emitEvent(100, 148292)
+                } else {
+                  Utils.emitEvent(cacheCapacity, 148292)
+                }
+                break;
+              }
             }
           })
       }
 
       Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
-        .onPageEnd(() => {
+        .onLoadIntercept((event) => {
           this.isPageEnd = 0
+          return false;
         })
     }
   }

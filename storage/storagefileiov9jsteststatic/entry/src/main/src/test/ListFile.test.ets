@@ -1865,5 +1865,762 @@ export default function fileIOListfile() {
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_030
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3000
+     * @tc.desc   Test listFile() interfaces. Promise. First parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        await fs.listFile("");
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_030 end error ' + e.message);
+        expect(e.code === 13900002 && e.message == 'No such file or directory').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_031
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3100
+     * @tc.desc   Test listFile() interfaces. Promise. Filter suffix as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_031');
+      let fpath1 = dpath + '/listfile_async_031.txt';
+      let fpath2 = dpath + '/listfile_async_031.doc';
+      let fpath3 = dpath + '/listfile_async_031.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(false).assertTrue();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_031 end error' + JSON.stringify(e));
+        fs.rmdirSync(dpath);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_032
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3200
+     * @tc.desc   Test listFile() interfaces. Promise. Filter suffix as non-empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_032');
+      let fpath1 = dpath + '/listfile_async_032.txt';
+      let fpath2 = dpath + '/listfile_async_032.doc';
+      let fpath3 = dpath + '/listfile_async_032.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc"],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        });
+        expect(dirents.length == 2).assertTrue();
+        fs.rmdirSync(dpath);
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_032 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_033
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3300
+     * @tc.desc   Test listFile() interfaces. Promise. Filter suffix as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_033');
+      let fpath1 = dpath + '/listfile_async_033.txt';
+      let fpath2 = dpath + '/listfile_async_033.doc';
+      let fpath3 = dpath + '/listfile_async_033.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [""],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_033 end error' + JSON.stringify(e));
+        fs.rmdirSync(dpath);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_034
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3400
+     * @tc.desc   Test listFile() interfaces. Promise. Filter displayName as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_034');
+      let fpath1 = dpath + '/listfile_async_034.txt';
+      let fpath2 = dpath + '/listfile_async_034.doc';
+      let fpath3 = dpath + '/listfile_async_034.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: [],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_034 end error' + JSON.stringify(e));
+        fs.rmdirSync(dpath);
+        expect(e.code === 13900020 && e.message == 'Invalid argument').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_035
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3500
+     * @tc.desc   Test listFile() interfaces. Promise. Filter displayName as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_035');
+      let fpath1 = dpath + '/listfile_async_035.txt';
+      let fpath2 = dpath + '/listfile_async_035.doc';
+      let fpath3 = dpath + '/listfile_async_035.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: [""],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_035 res: ' + dirents.length);
+        expect(dirents.length == 0).assertTrue();
+        fs.rmdirSync(dpath);
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_035 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_036
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3600
+     * @tc.desc   Test listFile() interfaces. Promise. Filter mimeType as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_036');
+      let fpath1 = dpath + '/listfile_async_036.txt';
+      let fpath2 = dpath + '/listfile_async_036.doc';
+      let fpath3 = dpath + '/listfile_async_036.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt"],
+          mimeType: [],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        });
+        expect(dirents.length == 1).assertTrue();
+        fs.rmdirSync(dpath);
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_036 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_037
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3700
+     * @tc.desc   Test listFile() interfaces. Promise. Filter mimeType as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_037');
+      let fpath1 = dpath + '/listfile_async_037.txt';
+      let fpath2 = dpath + '/listfile_async_037.doc';
+      let fpath3 = dpath + '/listfile_async_037.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          mimeType: [""],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        });
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_037 res: ' + dirents.length);
+        expect(dirents.length == 3).assertTrue();
+        fs.rmdirSync(dpath);
+        done();
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_037 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_038
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3800
+     * @tc.desc   Test listFile() interfaces. Promise. Filter excludeMedia as true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_038');
+      let fpath1 = dpath + '/listfile_async_038.txt';
+      let fpath2 = dpath + '/listfile_async_038.doc';
+      let fpath3 = dpath + '/listfile_async_038.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3,
+          excludeMedia: true
+        };
+        let dirents = await fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        });
+        expect(dirents.length == 3).assertTrue();
+        fs.rmdirSync(dpath);
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_038 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_039
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3900
+     * @tc.desc   Test listFile() interfaces. Callback. First parameter as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        fs.listFile("", (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_039 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900002 && err?.message == 'No such file or directory').assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_039 end error ' + e.message);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_040
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4000
+     * @tc.desc   Test listFile() interfaces. Callback. Filter suffix as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_040');
+      let fpath1 = dpath + '/listfile_async_031.txt';
+      let fpath2 = dpath + '/listfile_async_031.doc';
+      let fpath3 = dpath + '/listfile_async_031.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_040 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_040 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_041
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4100
+     * @tc.desc   Test listFile() interfaces. Callback. Filter suffix as non-empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_041');
+      let fpath1 = dpath + '/listfile_async_032.txt';
+      let fpath2 = dpath + '/listfile_async_032.doc';
+      let fpath3 = dpath + '/listfile_async_032.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc"],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_041 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length == 2).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_041 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_042
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4200
+     * @tc.desc   Test listFile() interfaces. Callback. Filter suffix as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_042');
+      let fpath1 = dpath + '/listfile_async_033.txt';
+      let fpath2 = dpath + '/listfile_async_033.doc';
+      let fpath3 = dpath + '/listfile_async_033.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [""],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_042 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_042 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_043
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4300
+     * @tc.desc   Test listFile() interfaces. Callback. Filter displayName as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_043');
+      let fpath1 = dpath + '/listfile_async_034.txt';
+      let fpath2 = dpath + '/listfile_async_034.doc';
+      let fpath3 = dpath + '/listfile_async_034.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: [],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 3,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_043 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            fs.rmdirSync(dpath);
+            done();
+          }
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_043 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_044
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4400
+     * @tc.desc   Test listFile() interfaces. Callback. Filter displayName as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_044');
+      let fpath1 = dpath + '/listfile_async_035.txt';
+      let fpath2 = dpath + '/listfile_async_035.doc';
+      let fpath3 = dpath + '/listfile_async_035.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: [""],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_044 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length === 0).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_044 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_045
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4500
+     * @tc.desc   Test listFile() interfaces. Callback. Filter mimeType as empty array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_045');
+      let fpath1 = dpath + '/listfile_async_036.txt';
+      let fpath2 = dpath + '/listfile_async_036.doc';
+      let fpath3 = dpath + '/listfile_async_036.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt"],
+          mimeType: [],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_045 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length === 1).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_045 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_046
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4600
+     * @tc.desc   Test listFile() interfaces. Callback. Filter mimeType as empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_listfile_async_static_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_046');
+      let fpath1 = dpath + '/listfile_async_037.txt';
+      let fpath2 = dpath + '/listfile_async_037.doc';
+      let fpath3 = dpath + '/listfile_async_037.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          mimeType: [""],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_046 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length === 3).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        e = e as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_046 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_listfile_async_static_047
+     * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_4700
+     * @tc.desc   Test listFile() interfaces. Callback. Filter excludeMedia as true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_listfile_async_static_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let dpath = await Utils.nextFileName('fileIO_test_listfile_async_static_047');
+      let fpath1 = dpath + '/listfile_async_038.txt';
+      let fpath2 = dpath + '/listfile_async_038.doc';
+      let fpath3 = dpath + '/listfile_async_038.png';
+      fs.mkdirSync(dpath);
+      expect(await Utils.prepareFile(fpath1, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath2, FILE_CONTENT)).assertTrue();
+      expect(await Utils.prepareFile(fpath3, FILE_CONTENT)).assertTrue();
+
+      try {
+        let time = new Date().getTime() / 1000;
+        let filter: Filter = {
+          suffix: [".txt", ".doc", ".png"],
+          displayName: ["*listfile*"],
+          fileSizeOver: 0,
+          lastModifiedAfter: time - 3,
+          excludeMedia: true
+        };
+        fs.listFile(dpath, {
+          listNum: 0,
+          recursion: false,
+          filter: filter
+        }, (err: BusinessError | null, dirents: Array<string> | undefined) => {
+          if (err?.code != 0) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_047 err package ' + err?.message + ', code:' + err?.code);
+            expect(err?.code === 13900020 && err?.message == 'Invalid argument').assertTrue();
+            done();
+          }
+          expect(dirents?.length === 3).assertTrue();
+          fs.rmdirSync(dpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_listfile_async_static_047 end error' + JSON.stringify(e));
+        expect(false).assertTrue();
+        done();
+      }
+    });
   });
 }

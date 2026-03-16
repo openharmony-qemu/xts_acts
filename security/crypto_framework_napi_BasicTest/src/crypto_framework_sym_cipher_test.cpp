@@ -1354,6 +1354,7 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
     ASSERT_EQ(OH_CryptoSymCipher_Init(encCtx, CRYPTO_ENCRYPT_MODE, keyCtx, params), CRYPTO_SUCCESS);
     ASSERT_EQ(OH_CryptoSymCipher_Update(encCtx, (Crypto_DataBlob *)&keyBlob, &outUpdate), CRYPTO_OPERTION_ERROR);
 
+    OH_CryptoSymCipherParams_Destroy(params);
     OH_CryptoSymCipher_Destroy(encCtx);
     OH_CryptoSymKeyGenerator_Destroy(genCtx);
     OH_CryptoSymKey_Destroy(keyCtx);

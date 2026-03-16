@@ -240,7 +240,7 @@ export default function abilityTest() {
                 if (bufferArr0[i] !== bufferArr2[i]) {
                     expect(false).assertTrue();
                 } else {
-                    expect(true).assertTrue();
+                    console.info(`${TAG}: readPixelsToBuffer Successfully`);
                 }
             }
             done();
@@ -268,7 +268,6 @@ export default function abilityTest() {
             }catch(err){
                 if (err.code == 6600102) {
                     console.info(`${TAG}: setCallMetadata without avsession test success, error: code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: setCallMetadata errorCode != 6600102, error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
@@ -303,7 +302,6 @@ export default function abilityTest() {
                 data = await controller!.getCallMetadata()
                 if (data.name === '12345678') {
                     console.info(`${TAG}: getCallMetadata get name Successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getCallMetadata get name failed`);
                     console.info(`${TAG}: name is: ${data.name}`);
@@ -342,7 +340,6 @@ export default function abilityTest() {
                 data = await controller!.getCallMetadata()
                 if (data.phoneNumber === '65432111') {
                     console.info(`${TAG}: getCallMetadata get phoneNumber Successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getCallMetadata get phoneNumber failed`);
                     console.info(`${TAG}: phoneNumber is: ${data.phoneNumber}`);
@@ -397,7 +394,7 @@ export default function abilityTest() {
                 if (bufferArr0[i] !== bufferArr2[i]) {
                     expect(false).assertTrue();
                 } else {
-                    expect(true).assertTrue();
+                    console.info(`${TAG}: readPixelsToBuffer successfully`);
                 }
             }
             done();
@@ -430,7 +427,6 @@ export default function abilityTest() {
                 if (err) {
                 if (err.code == 6600102) {
                     console.info(`${TAG}: getCallMetadata without avsession test success, error: code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getCallMetadata errorCode != 6600102, error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
@@ -474,7 +470,6 @@ export default function abilityTest() {
                 if (err.code) {
                     if (err.code == 6600103) {
                         console.info(`${TAG}: getCallMetadata without controller test success, error: code: ${err.code}, message: ${err.message}`);
-                        expect(true).assertTrue();
                     } else {
                         console.info(`${TAG}: getCallMetadata errorCode != 6600103, error: code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
@@ -532,7 +527,7 @@ export default function abilityTest() {
                                 let pixelSize: number = pixMap!.getPixelBytesNumber();
                                 console.info(`${TAG}: pixelSize is: ${pixelSize}`);
                                 let readBuffer = new ArrayBuffer(pixelSize);
-                                await pixMap!.readPixelsToBuffer(readBuffer);
+                                waitForCompletion(async () => {await pixMap!.readPixelsToBuffer(readBuffer);})
                                 let bufferArr2 = new Uint8Array(readBuffer);
                                 console.info(`${TAG}: buffer0Size is: ${bufferArr0.length}`);
                                 console.info(`${TAG}: buffer2Size is: ${bufferArr2.length}`);
@@ -540,7 +535,7 @@ export default function abilityTest() {
                                     if (bufferArr0[i] !== bufferArr2[i]) {
                                         expect(false).assertTrue();
                                     } else {
-                                        expect(true).assertTrue();
+                                        console.info(`${TAG}: readPixelsToBuffer Successfully`);
                                     }
                                 }
                                 done();
@@ -575,7 +570,6 @@ export default function abilityTest() {
                     if (err?.code) {
                         if (err?.code == 6600102) {
                             console.info(`${TAG}: setCallMetadataCallback without avsession test success, error: code: ${err?.code}, message: ${err?.message}`);
-                            expect(true).assertTrue();
                         } else {
                             console.info(`${TAG}: setCallMetadataCallback errorCode != 6600102, error: code: ${err?.code}, message: ${err?.message}`);
                             expect(false).assertTrue();
@@ -615,10 +609,9 @@ export default function abilityTest() {
                     } else {
                         console.info(`${TAG}: setCallMetadataCallback set name successfully`);
                         try{
-                            let data: avSession.CallMetadata = await controller!.getCallMetadata();
+                            let data: avSession.CallMetadata = waitForCompletion(async () => { return await controller!.getCallMetadata();})
                             if (data.name === '12345678') {
                                 console.info(`${TAG}: getCallMetadata get name Successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getCallMetadata get name failed`);
                                 console.info(`${TAG}: name is: ${data.name}`);
@@ -660,10 +653,9 @@ export default function abilityTest() {
                     } else {
                         console.info(`${TAG}: setCallMetadataCallback set phoneNumber successfully`);
                         try{
-                            let data: avSession.CallMetadata = await controller!.getCallMetadata();
+                            let data: avSession.CallMetadata = waitForCompletion(async () => {return await controller!.getCallMetadata();})
                             if (data.phoneNumber === '65432111') {
                                 console.info(`${TAG}: getCallMetadata get phoneNumber Successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getCallMetadata get phoneNumber failed`);
                                 console.info(`${TAG}: name is: ${data.name}`);
@@ -718,7 +710,7 @@ export default function abilityTest() {
                                 let pixelSize: number = pixMap!.getPixelBytesNumber();
                                 console.info(`${TAG}: pixelSize is: ${pixelSize}`);
                                 let readBuffer = new ArrayBuffer(pixelSize);
-                                await pixMap!.readPixelsToBuffer(readBuffer);
+                                waitForCompletion(async () => {await pixMap!.readPixelsToBuffer(readBuffer);})
                                 let bufferArr2 = new Uint8Array(readBuffer);
                                 console.info(`${TAG}: buffer0Size is: ${bufferArr0.length}`);
                                 console.info(`${TAG}: buffer2Size is: ${bufferArr2.length}`);
@@ -726,7 +718,7 @@ export default function abilityTest() {
                                     if (bufferArr0[i] !== bufferArr2[i]) {
                                         expect(false).assertTrue();
                                     } else {
-                                        expect(true).assertTrue();
+                                        console.info(`${TAG}: readPixelsToBuffer  successfully`);
                                     }
                                 }
                                 done();
@@ -756,7 +748,6 @@ export default function abilityTest() {
                 if (err) {
                     if (err.code == 6600102) {
                         console.info(`${TAG}: getCallMetadataCallback without avsession test success, error: code: ${err.code}, message: ${err.message}`);
-                        expect(true).assertTrue();
                     } else {
                         console.info(`${TAG}: getCallMetadataCallback errorCode != 6600102, error: code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
@@ -791,7 +782,6 @@ export default function abilityTest() {
                     if (err?.code) {
                         if (err?.code == 6600103) {
                             console.info(`${TAG}: getCallMetadataCallback without controller test success, error: code: ${err?.code}, message: ${err?.message}`);
-                            expect(true).assertTrue();
                         } else {
                             console.info(`${TAG}: getCallMetadataCallback errorCode != 6600103, error: code: ${err?.code}, message: ${err?.message}`);
                             expect(false).assertTrue();
@@ -836,7 +826,6 @@ export default function abilityTest() {
                 data = await controller!.getAVCallState()
                 if (data.state === 2 && data.muted) {
                     console.info(`${TAG}: getAVCallState successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getAVCallState failed, callState: ${JSON.stringify(data)}`);
                     expect(false).assertTrue();
@@ -874,7 +863,6 @@ export default function abilityTest() {
                 data = await controller!.getAVCallState()
                 if (data.state === 0 && data.muted) {
                     console.info(`${TAG}: getAVCallState successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getAVCallState failed, callState: ${JSON.stringify(data)}`);
                     expect(false).assertTrue();
@@ -912,7 +900,6 @@ export default function abilityTest() {
                 data = await controller!.getAVCallState()
                 if (data.state === 1 && data.muted) {
                     console.info(`${TAG}: getAVCallState successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
@@ -950,7 +937,6 @@ export default function abilityTest() {
                 data = await controller!.getAVCallState()
                 if (data.state === 3 && data.muted) {
                     console.info(`${TAG}: getAVCallState successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
@@ -988,7 +974,6 @@ export default function abilityTest() {
                 data = await controller!.getAVCallState()
                 if (data.state === 4 && data.muted) {
                     console.info(`${TAG}: getAVCallState successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
@@ -1026,7 +1011,6 @@ export default function abilityTest() {
                 data = await controller!.getAVCallState()
                 if (data.state === 5 && data.muted) {
                     console.info(`${TAG}: getAVCallState successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
@@ -1064,7 +1048,6 @@ export default function abilityTest() {
                 data = await controller!.getAVCallState()
                 if (data.state === 6 && data.muted) {
                     console.info(`${TAG}: getAVCallState successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
@@ -1102,7 +1085,6 @@ export default function abilityTest() {
                 data = await controller!.getAVCallState()
                 if (data.state === 0 && !data.muted) {
                     console.info(`${TAG}: getAVCallState successfully`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: getAVCallState failed`);
                     expect(false).assertTrue();
@@ -1136,7 +1118,6 @@ export default function abilityTest() {
             }catch(err){
                 if (err.code == 6600102) {
                     console.info(`${TAG}: setAVCallState without avsession test success, error: code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: setAVCallState errorCode != 6600102, error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
@@ -1172,7 +1153,6 @@ export default function abilityTest() {
                 }).catch((err: Error) => {
                     if (err.code == 6600102) {
                         console.info(`${TAG}: getCallMetadata without session test success, error: code: ${err.code}, message: ${err.message}`);
-                        expect(true).assertTrue();
                     } else {
                         console.info(`${TAG}: getCallMetadata errorCode != 6600102, error: code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
@@ -1217,7 +1197,6 @@ export default function abilityTest() {
                 }catch(err){
                     if (err.code == 6600103) {
                         console.info(`${TAG}: getCallMetadata without controller test success, error: code: ${err.code}, message: ${err.message}`);
-                        expect(true).assertTrue();
                     } else {
                         console.info(`${TAG}: getCallMetadata errorCode != 6600103, error: code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
@@ -1260,7 +1239,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             } else if (data?.state === avSession.CallState.CALL_STATE_ACTIVE && data?.muted) {
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getAVCallStateCallback failed`);
                                 expect(false).assertTrue();
@@ -1304,7 +1282,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             } else if (data?.state === avSession.CallState.CALL_STATE_IDLE && data?.muted) {
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getAVCallStateCallback failed`);
                                 expect(false).assertTrue();
@@ -1348,7 +1325,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             } else if (data?.state === avSession.CallState.CALL_STATE_INCOMING && data?.muted) {
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getAVCallStateCallback failed`);
                                 expect(false).assertTrue();
@@ -1392,7 +1368,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             } else if (data?.state === avSession.CallState.CALL_STATE_DIALING && data?.muted) {
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getAVCallStateCallback failed`);
                                 expect(false).assertTrue();
@@ -1436,7 +1411,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             } else if (data?.state === avSession.CallState.CALL_STATE_WAITING && data?.muted) {
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getAVCallStateCallback failed`);
                                 expect(false).assertTrue();
@@ -1480,7 +1454,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             } else if (data?.state === avSession.CallState.CALL_STATE_HOLDING && data?.muted) {
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getAVCallStateCallback failed`);
                                 expect(false).assertTrue();
@@ -1524,7 +1497,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             } else if (data?.state === avSession.CallState.CALL_STATE_DISCONNECTING && data?.muted) {
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getAVCallStateCallback failed`);
                                 expect(false).assertTrue();
@@ -1568,7 +1540,6 @@ export default function abilityTest() {
                                 expect(false).assertTrue();
                             } else if (data?.state === avSession.CallState.CALL_STATE_IDLE && !data?.muted) {
                                 console.info(`${TAG}: getAVCallStateCallback successfully`);
-                                expect(true).assertTrue();
                             } else {
                                 console.info(`${TAG}: getAVCallStateCallback failed`);
                                 expect(false).assertTrue();
@@ -1604,7 +1575,6 @@ export default function abilityTest() {
                     if (err?.code) {
                         if (err?.code == 6600102) {
                             console.info(`${TAG}: setAVCallStateCallback without avsession test success, error: code: ${err?.code}, message: ${err?.message}`);
-                            expect(true).assertTrue();
                         } else {
                             console.info(`${TAG}: setAVCallStateCallback errorCode != 6600102, error: code: ${err?.code}, message: ${err?.message}`);
                             expect(false).assertTrue();
@@ -1638,7 +1608,6 @@ export default function abilityTest() {
                 if (err) {
                     if (err.code == 6600102) {
                     console.info(`${TAG}: getAVCallStateCallback without avsession test success, error: code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertTrue();
                     } else {
                     console.info(`${TAG}: getAVCallStateCallback errorCode != 6600102, error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
@@ -1673,7 +1642,6 @@ export default function abilityTest() {
                     if (err?.code) {
                         if (err?.code == 6600103) {
                             console.info(`${TAG}: getAVCallStateCallback without controller test success, error: code: ${err?.code}, message: ${err?.message}`);
-                            expect(true).assertTrue();
                         } else {
                             console.info(`${TAG}: getAVCallStateCallback errorCode != 6600102, error: code: ${err?.code}, message: ${err?.message}`);
                             expect(false).assertTrue();
@@ -1714,7 +1682,7 @@ export default function abilityTest() {
                         console.error(`${TAG}: on callMetadataChange received callMetadata unmatch`);
                         expect(false).assertTrue();
                     } else {
-                        expect(true).assertTrue();
+                        console.info(`${TAG}: onCallMetadataChange successful!`);
                     }
                     done();
                 });
@@ -1748,7 +1716,7 @@ export default function abilityTest() {
                         console.error(`${TAG}: on callMetadataChange received callMetadata unmatch`);
                         expect(false).assertTrue();
                     } else {
-                        expect(true).assertTrue();
+                        console.info(`${TAG}: onCallMetadataChange successful!`);
                     }
                     done();
                 });
@@ -1788,7 +1756,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.info(`${TAG}: callMetadataChange off`);
-                    expect(true).assertTrue();
                 }
                 done();
             } catch (error) {
@@ -1826,7 +1793,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (receivedCallback1 && receivedCallback2) {
                     console.log(`${TAG}: on callMetadataChange called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: on callMetadataChange not received`);
                     expect(false).assertTrue();
@@ -1871,7 +1837,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (!receivedCallback1 && receivedCallback2) {
                     console.log(`${TAG}: off callMetadataChange success and on callMetadataChange called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -1916,7 +1881,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (!receivedCallback1 && !receivedCallback2) {
                     console.log(`${TAG}: off callMetadataChange success!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -1954,7 +1918,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                     } else {
                         console.info(`${TAG}: callMetadata is empty, test success`);
-                        expect(true).assertTrue();
                     }
                     done();
                 });
@@ -1988,7 +1951,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600103) {
                     console.info(`${TAG}: on callMetadataChange without controller test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: on callMetadataChange errorCode != 6600103, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2017,7 +1979,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600101) {
                     console.info(`${TAG}: on callMetadataChange with error metadata test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: on callMetadataChange errorCode != 6600101, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2043,7 +2004,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600103) {
                     console.info(`${TAG}: off callMetadataChange without controller test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: off callMetadataChange errorCode != 6600103, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2073,7 +2033,7 @@ export default function abilityTest() {
                         console.error(`${TAG}: on callStateChange received callState unmatch`);
                         expect(false).assertTrue();
                     } else {
-                        expect(true).assertTrue();
+                        console.info(`${TAG}: onCallStateChange successful!`);
                     }
                     done();
                 });
@@ -2106,7 +2066,7 @@ export default function abilityTest() {
                         console.error(`${TAG}: on callStateChange received callState unmatch`);
                         expect(false).assertTrue();
                     } else {
-                        expect(true).assertTrue();
+                        console.info(`${TAG}: onCallStateChange successful!`);
                     }
                     done();
                 });
@@ -2146,7 +2106,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.info(`${TAG}: callStateChange off`);
-                    expect(true).assertTrue();
                 }
                 done();
             } catch (error) {
@@ -2183,7 +2142,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (receivedCallback1 && receivedCallback2) {
                     console.log(`${TAG}: on callStateChange called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: on callStateChange not received`);
                     expect(false).assertTrue();
@@ -2227,7 +2185,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (receivedCallback1 && !receivedCallback2) {
                     console.log(`${TAG}: off callStateChange success and on callStateChange called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -2271,7 +2228,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (!receivedCallback1 && !receivedCallback2) {
                     console.log(`${TAG}: off callStateChange success!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -2308,7 +2264,6 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                     } else {
                         console.info(`${TAG}: on callStateChange test success, muted is empty`);
-                        expect(true).assertTrue();
                     }
                     done();
                 });
@@ -2342,7 +2297,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600103) {
                     console.info(`${TAG}: on callStateChange without controller test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: on callStateChange errorCode != 6600103, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2371,7 +2325,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600101) {
                     console.info(`${TAG}: on callStateChange with error param test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: on callStateChange errorCode != 6600101, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2397,7 +2350,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600103) {
                     console.info(`${TAG}: off callStateChange without controller test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: off callStateChange errorCode != 6600103, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2422,7 +2374,6 @@ export default function abilityTest() {
             try {
                 session!.onAnswer(() => {
                     console.info(`${TAG}: on answer called`);
-                    expect(true).assertTrue();
                     done();
                 });
                 await controller!.sendControlCommand(command);
@@ -2460,7 +2411,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.info(`${TAG}: answer off`);
-                    expect(true).assertTrue();
                 }
                 done();
             } catch (error) {
@@ -2496,7 +2446,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (receivedCallback1 && receivedCallback2) {
                     console.log(`${TAG}: on answer called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: on answer not received`);
                     expect(false).assertTrue();
@@ -2539,7 +2488,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (!receivedCallback1 && receivedCallback2) {
                     console.log(`${TAG}: off answer success and on answer called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -2582,7 +2530,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (!receivedCallback1 && !receivedCallback2) {
                     console.log(`${TAG}: answer off called`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -2618,7 +2565,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: on answer test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: on answer errorCode != 6600102, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2645,7 +2591,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: off answer test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: off answer errorCode != 6600102, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2670,7 +2615,6 @@ export default function abilityTest() {
             try {
                 session!.onHangUp(() => {
                     console.info(`${TAG}: on hangUp called`);
-                    expect(true).assertTrue();
                     done();
                 });
                 await controller!.sendControlCommand(command);
@@ -2708,7 +2652,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.info(`${TAG}: hangUp off`);
-                    expect(true).assertTrue();
                 }
                 done();
             } catch (error) {
@@ -2744,7 +2687,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (receivedCallback1 && receivedCallback2) {
                     console.log(`${TAG}: on hangUp called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: on hangUp not received`);
                     expect(false).assertTrue();
@@ -2787,7 +2729,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (receivedCallback1 && !receivedCallback2) {
                     console.log(`${TAG}: off hangUp success and on hangUp called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -2830,7 +2771,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (!receivedCallback1 && !receivedCallback2) {
                     console.log(`${TAG}: hangUp off called`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -2866,7 +2806,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: on hangUp without avsession test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: on hangUp errorCode != 6600102, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2892,7 +2831,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: off hangUp without avsession test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: off hangUp errorCode != 6600102, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -2918,7 +2856,6 @@ export default function abilityTest() {
             try {
                 session!.onToggleCallMute(() => {
                     console.info(`${TAG}: on toggleCallMute called`);
-                    expect(true).assertTrue();
                     done();
                 });
                 await controller!.sendControlCommand(command);
@@ -2956,7 +2893,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.info(`${TAG}: toggleCallMute off`);
-                    expect(true).assertTrue();
                 }
                 done();
             } catch (error) {
@@ -2992,7 +2928,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (receivedCallback1 && receivedCallback2) {
                     console.log(`${TAG}: on toggleCallMute called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: on toggleCallMute not received`);
                     expect(false).assertTrue();
@@ -3035,7 +2970,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (receivedCallback1 && !receivedCallback2) {
                     console.log(`${TAG}: off toggleCallMute success and on toggleCallMute called!`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -3078,7 +3012,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if (!receivedCallback1 && !receivedCallback2) {
                     console.log(`${TAG}: toggleCallMute off called`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: receivedCallback1: ${receivedCallback1}, receivedCallback2: ${receivedCallback2}`);
                     expect(false).assertTrue();
@@ -3114,7 +3047,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: on toggleCallMute without avsession test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: on toggleCallMute errorCode != 6600102, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -3200,7 +3132,6 @@ export default function abilityTest() {
                 await Utils.msSleep(500);
                 if ((assetId1 === assetId) && (assetId2 === assetId)) {
                     console.log(`${TAG}: on playWithAssetId called`);
-                    expect(true).assertTrue();
                 } else {
                     console.error(`${TAG}: on playWithAssetId not received`);
                     expect(false).assertTrue();
@@ -3236,7 +3167,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: on playWithAssetId without avsession test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: on playWithAssetId errorCode != 6600102, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -3276,7 +3206,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.info(`${TAG}: playWithAssetId off`);
-                    expect(true).assertTrue();
                 }
             } catch (error) {
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
@@ -3313,7 +3242,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 } else {
                     console.error(`${TAG}: on playWithAssetId not received`);
-                    expect(true).assertTrue();
                 }
                 assetId1 = '';
                 assetId2 = '';
@@ -3371,7 +3299,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600101) {
                     console.info(`${TAG}: off playWithAssetId without avsession test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: off playWithAssetId errorCode != 6600101, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();
@@ -3396,7 +3323,6 @@ export default function abilityTest() {
                 error = error as BusinessError;
                 if (error.code == 6600102) {
                     console.info(`${TAG}: off playWithAssetId without avsession test success, error: code: ${error.code}, message: ${error.message}`);
-                    expect(true).assertTrue();
                 } else {
                     console.info(`${TAG}: off playWithAssetId errorCode != 6600102, error: code: ${error.code}, message: ${error.message}`);
                     expect(false).assertTrue();

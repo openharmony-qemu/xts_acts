@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function addOrDelText() {
   describe('addOrDelText', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("addOrDelText beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");

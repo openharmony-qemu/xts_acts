@@ -251,7 +251,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookie001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testFetchCookie001", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testFetchCookie001", '17100002', 113690, done);
+      Utils.registerEvent("testFetchCookie001", '17100002URL error. No valid cookie found for the specified URL.', 113690, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -265,7 +265,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookie002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testFetchCookie002", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testFetchCookie002", '17100002', 113700, done);
+      Utils.registerEvent("testFetchCookie002", '17100002URL error. No valid cookie found for the specified URL.', 113700, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -279,7 +279,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookie003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testFetchCookie003", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testFetchCookie003", '17100002', 113710, done);
+      Utils.registerEvent("testFetchCookie003", '17100002URL error. No valid cookie found for the specified URL.', 113710, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -293,7 +293,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookie004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testFetchCookie004", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testFetchCookie004", '17100002', 113720, done);
+      Utils.registerEvent("testFetchCookie004", '17100002URL error. No valid cookie found for the specified URL.', 113720, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -307,7 +307,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookie005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testFetchCookie005", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testFetchCookie005", '17100002', 113730, done);
+      Utils.registerEvent("testFetchCookie005", '17100002URL error. No valid cookie found for the specified URL.', 113730, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -321,7 +321,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookie006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testFetchCookie006", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testFetchCookie006", '17100002', 113740, done);
+      Utils.registerEvent("testFetchCookie006", '17100002URL error. No valid cookie found for the specified URL.', 113740, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -335,7 +335,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookie007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testFetchCookie007", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testFetchCookie007", '17100002', 113750, done);
+      Utils.registerEvent("testFetchCookie007", '17100002URL error. No valid cookie found for the specified URL.', 113750, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -349,7 +349,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testFetchCookie008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testFetchCookie008", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testFetchCookie008", '17100002', 113760, done);
+      Utils.registerEvent("testFetchCookie008", '17100002URL error. No valid cookie found for the specified URL.', 113760, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -433,7 +433,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookie001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testConfigCookie001", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testConfigCookie001", '17100002', 113820, done);
+      Utils.registerEvent("testConfigCookie001", '17100002URL error. No valid cookie found for the specified URL.', 113820, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -447,7 +447,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookie002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testConfigCookie002", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testConfigCookie002", '17100002', 113830, done);
+      Utils.registerEvent("testConfigCookie002", '17100002URL error. No valid cookie found for the specified URL.', 113830, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -461,7 +461,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookie003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testConfigCookie003", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testConfigCookie003", '17100002', 113840, done);
+      Utils.registerEvent("testConfigCookie003", '17100002URL error. No valid cookie found for the specified URL.', 113840, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -475,7 +475,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookie004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testConfigCookie004", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testConfigCookie004", '17100002', 113850, done);
+      Utils.registerEvent("testConfigCookie004", '17100002URL error. No valid cookie found for the specified URL.', 113850, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -503,7 +503,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookie006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testConfigCookie006", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testConfigCookie006", '17100002', 113870, done);
+      Utils.registerEvent("testConfigCookie006", '17100002URL error. No valid cookie found for the specified URL.', 113870, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -517,7 +517,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookie007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testConfigCookie007", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testConfigCookie007", '17100002', 113880, done);
+      Utils.registerEvent("testConfigCookie007", '17100002URL error. No valid cookie found for the specified URL.', 113880, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -531,7 +531,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookie008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testConfigCookie008", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testConfigCookie008", '17100002', 113890, done);
+      Utils.registerEvent("testConfigCookie008", '17100002URL error. No valid cookie found for the specified URL.', 113890, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
@@ -545,7 +545,7 @@ export default function webCookieManagerErrorCode() {
      */
     it('testConfigCookie009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testConfigCookie009", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerEvent("testConfigCookie009", '17100002', 113900, done);
+      Utils.registerEvent("testConfigCookie009", '17100002URL error. No valid cookie found for the specified URL.', 113900, done);
       await Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 

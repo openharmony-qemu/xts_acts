@@ -34,7 +34,7 @@ let tag: string = 'testTag';
 export default function triggerSelect() {
   describe('triggerSelect', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("triggerSelect beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
     });

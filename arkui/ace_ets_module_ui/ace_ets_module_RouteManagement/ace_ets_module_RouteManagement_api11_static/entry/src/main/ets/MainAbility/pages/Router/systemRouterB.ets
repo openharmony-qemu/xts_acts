@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Entry,Component,FlexDirection,ItemAlign, Button, FlexAlign, ClickEvent, Flex, FontWeight, Text, Margin } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
+import { JsonObj1 } from './systemRouterA'
 
 @Entry
 @Component
@@ -32,10 +33,10 @@ struct SystemRouterB {
   }
 
   onPageShow() {
-    let params = this.getUIContext().getRouter().getParams() as Record<String,undefined|null|Object>;
-    if (params && params['data']) {
-      console.info("[SystemRouterB] getParams result: " + params['data']);
-      this.getRouterParams(params['data']!);
+    let params = this.getUIContext().getRouter().getParams() as JsonObj1;
+    if (params && params.data) {
+      console.info('[SystemRouterB] getParams result: ' + params.data);
+      this.getRouterParams(params.data!);
     }
   }
 

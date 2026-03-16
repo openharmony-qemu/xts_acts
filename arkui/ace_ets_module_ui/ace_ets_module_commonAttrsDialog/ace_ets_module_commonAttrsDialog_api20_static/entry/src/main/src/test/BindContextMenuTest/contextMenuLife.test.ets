@@ -39,7 +39,7 @@ export default function ContextMenuLife() {
   describe('ContextMenuLife', () => {
     const SLEEP_TIME_1000 = 1000;
     const SLEEP_TIME_2000 = 2000;
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("BindContextMenu beforeEach start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });

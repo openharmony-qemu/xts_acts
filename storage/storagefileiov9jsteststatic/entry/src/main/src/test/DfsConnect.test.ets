@@ -85,5 +85,54 @@ export default function fileIODfsConnect() {
       done();
     }
   });
+
+  /**
+   * @tc.name   fileIO_test_connectDfs_static_003
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_connectDfs_0300
+   * @tc.desc   Test connectDfs() interfaces, networkId is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_connectDfs_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+    let testNum: string = 'fileIO_test_connectDfs_static_003';
+    let networkId: string = '';
+    let DFSListener: fs.DfsListeners = {
+      onStatus(networkId: string, status: int) {
+        hilog.info(domain, tag, '%{public}s', testNum + "connectDfs onStatus");
+      }
+    }
+    try {
+      await fs.connectDfs(networkId, DFSListener);
+      expect(false).assertTrue();
+    } catch (e) {
+      e = e as BusinessError;
+      hilog.info(domain, tag, '%{public}s', testNum + 'connectDfs has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900004 && e.message == 'Interrupted system call').assertTrue();
+      done();
+    }
+  });
+
+  /**
+   * @tc.name   fileIO_test_connectDfs_static_004
+   * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_connectDfs_0400
+   * @tc.desc   Test disconnectDfs() interfaces, networkId is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
+  it('fileIO_test_connectDfs_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+    let testNum: string = 'fileIO_test_connectDfs_static_004';
+    let networkId: string = '';
+    try {
+      await fs.disconnectDfs(networkId);
+      expect(false).assertTrue();
+    } catch (e) {
+      e = e as BusinessError;
+      hilog.info(domain, tag, '%{public}s', testNum + 'disconnectDfs has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900004 && e.message == 'Interrupted system call').assertTrue();
+      done();
+    }
+  });
 });
 }

@@ -25,7 +25,7 @@ import { UtilsTest } from '../Util.test';
 
 export default function qRCodeResourceStrTest() {
   describe('qRCodeResourceStrTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("QRCodeResourceStrTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.information02.static", "EntryAbility")
     });

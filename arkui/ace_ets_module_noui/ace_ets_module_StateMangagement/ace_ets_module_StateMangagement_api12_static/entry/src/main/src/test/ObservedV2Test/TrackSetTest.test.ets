@@ -51,7 +51,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function TrackSetTest() {
   describe('TrackSetTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TrackSetTest beforeEach start");
 
 

@@ -126,7 +126,7 @@ export default function paddingTest1() {
    * Create test suite.
    */
   describe('PaddingBaseTest', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.padding.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });

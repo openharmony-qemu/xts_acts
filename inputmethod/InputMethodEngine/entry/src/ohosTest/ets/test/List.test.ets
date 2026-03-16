@@ -15,9 +15,11 @@
 import inputMethodEngine from './inputMethodEngine.test';
 import inputMethodAbility from './inputMethodAbility.test';
 import inputMethodEngineKey from './inputMethodEngineKey.test';
+import InputMethodEngineNew from './InputMethodEngineNew.test';
 
 export default function testsuite() {
   inputMethodEngine();
+  InputMethodEngineNew();
   inputMethodAbility();
   inputMethodEngineKey();
 }

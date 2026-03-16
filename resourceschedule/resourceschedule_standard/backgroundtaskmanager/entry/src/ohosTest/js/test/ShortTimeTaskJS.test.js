@@ -17,7 +17,7 @@ import backgroundTaskManager from '@ohos.resourceschedule.backgroundTaskManager'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
 
 export default function ShortTimeTasksJSTest() {
-describe("ShortTimeTasksJSTest", function () {
+describe("ShortTimeTasksJSTestAdapt001", function () {
     beforeAll(function() {
         
         /*

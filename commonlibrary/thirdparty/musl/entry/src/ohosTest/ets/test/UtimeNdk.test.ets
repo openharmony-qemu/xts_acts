@@ -33,9 +33,9 @@ export default function utimeNdkTest() {
      * @tc.desc   test utime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslUtimeUtime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslUtimeUtime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let context = abilityDelegator.getAppContext();
       let filesDir = context.filesDir;

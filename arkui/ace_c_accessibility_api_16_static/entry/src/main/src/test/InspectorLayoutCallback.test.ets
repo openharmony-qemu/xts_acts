@@ -25,7 +25,7 @@ export default function InspectorLayoutCallbackTest() {
   describe('InspectorLayoutCallbackTest', (): void => {
 
     let PAGE_TAG = 'InspectorLayoutCallback';
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.openharmony.arkui_capi_inspector_xts_api16.static", "EntryAbility")
     });
 

@@ -34,7 +34,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function getLineMetrics() {
   describe('getLineMetrics', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("getLineMetrics beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.static", "EntryAbility")
     });

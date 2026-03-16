@@ -53,7 +53,7 @@ export default function ActsAccountOnOffStatic() {
       }
     }    
     
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsaccountoperatetest.static");
@@ -554,6 +554,7 @@ export default function ActsAccountOnOffStatic() {
           hilog.info(0x0000, tag, "====>receive change 0800 data: " + data);
           try {
             if (data) {
+              expect(data.length > 0).assertTrue();
               hilog.info(0x0000, tag, "====>data.length: " + data.length);
               for (let i: int = 0; i < data.length; i++) {
                 if (data[i]) {

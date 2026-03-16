@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import commonEventManager from '@ohos.commonEventManager';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default function OnWindowStageWillDestroyTest() {
   describe('OnWindowStageWillDestroyTest', function () {
@@ -27,11 +28,10 @@ export default function OnWindowStageWillDestroyTest() {
 
     afterEach(async (done) => {
       if (subscriber) {
-        commonEventManager.unsubscribe(subscriber)
+        commonEventManager.unsubscribe(subscriber, () => {
+          done();
+        })
       }
-      setTimeout(()=>{
-        done()
-      }, 1000)
     });
 
     /**
@@ -115,9 +115,7 @@ export default function OnWindowStageWillDestroyTest() {
           if (mainAbility13onForeground == 1) {
             delegator.getCurrentTopAbility().then(ab=>{
               ability13 = ab;
-              setTimeout(()=>{
-                delegator.doAbilityBackground(ability13);
-              }, 500)
+              delegator.doAbilityBackground(ability13);
             }).catch((error)=>{
               console.info(TAG + ' getCurrentTopAbility , catch error = ' + JSON.stringify(error));
               console.info(TAG + ' getCurrentTopAbility , catch error = ' + error);
@@ -152,11 +150,12 @@ export default function OnWindowStageWillDestroyTest() {
       let destoryCount = 0;
       commonEventManager.createSubscriber({
         events: events
-      }).then((data) => {
+      }).then(async (data) => {
         console.info(TAG + ' createSubscriber successful. ');
         subscriber = data;
         commonEventManager.subscribe(subscriber, subscribeCallBack);
         console.info(TAG + ' subscriber successful. ');
+        let ab13DestPromise = eventBusPlus.onWait('MainAbility13onDestroy');
         globalThis.abilityContext.startAbility({
           abilityName:'MainAbility13',
           bundleName:'com.example.lifecycle_xts',
@@ -164,15 +163,14 @@ export default function OnWindowStageWillDestroyTest() {
             type:0
           }
         })
-        setTimeout(()=>{
-          globalThis.abilityContext.startAbility({
-            abilityName:'MainAbility13',
-            bundleName:'com.example.lifecycle_xts',
-            parameters:{
-              type:0
-            }
-          })
-        }, 5000)
+        await ab13DestPromise;
+        globalThis.abilityContext.startAbility({
+          abilityName:'MainAbility13',
+          bundleName:'com.example.lifecycle_xts',
+          parameters:{
+            type:0
+          }
+        })
       })
       let subscribeCallBack = (err, data) => {
         console.info(TAG + ' subscribeCallBack , data = ' + JSON.stringify(data));

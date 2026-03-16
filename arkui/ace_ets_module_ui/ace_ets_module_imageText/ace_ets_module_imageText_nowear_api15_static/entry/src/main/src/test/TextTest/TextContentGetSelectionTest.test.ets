@@ -32,7 +32,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function TextContentGetSelectionTest() {
   describe('TextContentGetSelectionTest', () : void => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("TextContentGetSelectionTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api15.static", "EntryAbility")

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect , TestType, Size, Level} from "@ohos/hypium"
+import { describe, beforeAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 import ohosWindow from '@ohos.window';
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -34,7 +34,7 @@ function unexpectedError(TRUE_FLAG: boolean, error: BusinessError, caseName: str
 
 async function sleep(time: number) {
   let timeoutId: number = 0;
-  let promise = new Promise<string>(resolve => {
+  let promise = new Promise < string > (resolve => {
     timeoutId = setTimeout(() => {
       resolve('sleep finished');
     }, time);
@@ -46,13 +46,13 @@ async function sleep(time: number) {
 export default function windowCallbackTest() {
   describe('windowCallback_test', () => {
     console.log('describe testets start!!')
-    let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
-    let windowStage:ohosWindow.WindowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
+    let context: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+    let windowStage: ohosWindow.WindowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
 
     const TRUE_FLAG = true;
     let currentDeviceIsRk = false;
     beforeAll(() => {
-      
+
     })
     /**
      * @tc.name   testGetCutoutInfo_Callbcak
@@ -70,11 +70,38 @@ export default function windowCallbackTest() {
       expect(!!dpClass).assertTrue();
       dpClass.getCutoutInfo((err, data) => {
         if (err && err.code) {
-          console.log(caseName + ', err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err.message));
-          expect(err.message!=null).assertTrue();
+          console.log(caseName + ', err : ' + JSON.stringify(err) + ',msg:' + JSON.stringify(err.message));
+          expect(err.message != null).assertTrue();
           unexpectedError(TRUE_FLAG, err, caseName, 'displayClass.getCutoutInfo', done);
         } else {
           console.info(msgStr + 'Succeeded in getting cutoutInfo. Data: ' + JSON.stringify(data));
+          expect(data.boundingRects.length).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.left.left).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.left.top).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.left.width).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.left.height).assertLargerOrEqual(0);
+
+          expect(data.waterfallDisplayAreaRects.top.left).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.top.top).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
+
+          expect(data.waterfallDisplayAreaRects.right.left).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.right.top).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
+
+          expect(data.waterfallDisplayAreaRects.bottom.left).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.bottom.top).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
+          expect(data.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
+
+          for (let i = 0; i < data.boundingRects.length; i++) {
+            expect(data.boundingRects[i].left).assertLargerOrEqual(0);
+            expect(data.boundingRects[i].top).assertLargerOrEqual(0);
+            expect(data.boundingRects[i].width).assertLargerOrEqual(0);
+            expect(data.boundingRects[i].height).assertLargerOrEqual(0);
+          }
           done();
         }
       })
@@ -121,10 +148,38 @@ export default function windowCallbackTest() {
       expect(!!dpClass).assertTrue();
       dpClass.getCutoutInfo().then((data: display.CutoutInfo) => {
         console.info('Succeeded in getting cutoutInfo. Data: ' + JSON.stringify(data));
+
+        expect(data.boundingRects.length).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.left.left).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.left.top).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.left.width).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.left.height).assertLargerOrEqual(0);
+
+        expect(data.waterfallDisplayAreaRects.top.left).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.top.top).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.top.width).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.top.height).assertLargerOrEqual(0);
+
+        expect(data.waterfallDisplayAreaRects.right.left).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.right.top).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.right.width).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.right.height).assertLargerOrEqual(0);
+
+        expect(data.waterfallDisplayAreaRects.bottom.left).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.bottom.top).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.bottom.width).assertLargerOrEqual(0);
+        expect(data.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
+
+        for (let i = 0; i < data.boundingRects.length; i++) {
+          expect(data.boundingRects[i].left).assertLargerOrEqual(0);
+          expect(data.boundingRects[i].top).assertLargerOrEqual(0);
+          expect(data.boundingRects[i].width).assertLargerOrEqual(0);
+          expect(data.boundingRects[i].height).assertLargerOrEqual(0);
+        }
         done();
       }).catch((err: BusinessError) => {
-        console.log(caseName + ', err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err.message));
-        expect(err.message!=null).assertTrue();
+        console.log(caseName + ', err : ' + JSON.stringify(err) + ',msg:' + JSON.stringify(err.message));
+        expect(err.message != null).assertTrue();
         unexpectedError(TRUE_FLAG, err, caseName, 'displayClass.getCutoutInfo', done);
       });
     })

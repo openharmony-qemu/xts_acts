@@ -14,6 +14,8 @@
  */
 
 import ActsDAGetSetTestStatic from './ActsDSGetSetStatic.test'
+import DistributedAccountParamCheckStatic from './DistributedAccountParamCheckStatic.test'
 export default function testsuite() {
   ActsDAGetSetTestStatic();
+  DistributedAccountParamCheckStatic();
 }

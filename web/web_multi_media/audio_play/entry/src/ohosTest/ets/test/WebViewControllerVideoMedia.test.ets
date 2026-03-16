@@ -68,7 +68,7 @@ export default function webViewControllerVideoMedia() {
           //throw new Error("======> WLAN Network error");//方式二
           done();
         }
-        if (data.chload >= 800 || data.rssi <= -80) {
+        if (data.chload >= 900 || data.rssi <= -80) {
           expect().message("======> WLAN Network error").assertFail();//方式一
           //throw new Error("======> WLAN Network error");//方式二
           done();

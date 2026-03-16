@@ -43,7 +43,7 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function LazyForEachTest0470() {
   describe('LazyForEachTest0470', () => {
-    beforeAll(() => {
+    beforeAll(async (): Promise<void> => {
       console.info("LazyForEachTest0470 beforeEach start");
 
 

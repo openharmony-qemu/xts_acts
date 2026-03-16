@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -74,7 +74,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test TaskGroup
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -109,7 +109,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test TaskGroup error
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1001_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -154,7 +154,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test GenericsTask
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -187,7 +187,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test GenericsTask
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1002_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -228,7 +228,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test task1.name
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -264,7 +264,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test isCanceled
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -280,10 +280,12 @@ export default function taskPoolTaskGroupExecuteTest() {
           Count1.count = Count1.count + (num[0] as Number)
           Count2.count = Count2.count + (num[1] as Number)
           console.info('======', Count1.count)
+          count1++
         }).catch((e: Any) => {
           //expect((e as BusinessError)?.name).assertContain('BusinessError')
-          count1++
           console.info('======e', JSON.stringify(e))
+          // The task of ArkTS-Sta is canceled at runtime and enters "then" instead of "reject", but the uncertainty of the number of workers in the taskpool (when the number of workers is only 1) will lead to task2 being canceled before it runs and entering "reject".
+          count1++
         })
         await sleep(1000)
         taskpool.cancel(task2)
@@ -302,7 +304,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onEnqueued
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -351,7 +353,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onEnqueued
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -407,7 +409,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onStartExecution
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -454,7 +456,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onStartExecution
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -513,7 +515,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onExecutionSucceeded
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -553,7 +555,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test onExecutionSucceeded
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1013_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -604,7 +606,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test isDone
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -631,7 +633,7 @@ export default function taskPoolTaskGroupExecuteTest() {
      * @tc.desc test isDone
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('taskPoolTaskGroupExecute1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

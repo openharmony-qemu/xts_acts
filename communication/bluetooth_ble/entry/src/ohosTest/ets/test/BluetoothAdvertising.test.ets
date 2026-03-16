@@ -27,20 +27,6 @@ function sleep(delay : number) :Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay))
 }
 
-async function openPhone() {
-  try{
-    let drivers = Driver.create();
-    console.info('[bluetooth_js] bt driver create:'+ drivers);
-    await drivers.delayMs(1000);
-    await drivers.wakeUpDisplay();
-    await drivers.delayMs(5000);
-    await drivers.swipe(1500, 1000, 1500, 100);
-    await drivers.delayMs(10000);
-  } catch (error) {
-    console.info('[bluetooth_js] driver error info:'+ error);
-  }
-}
-
 async function clickRequestPermission(text:string) {
   console.info('[bluetooth_js] clickRequestPermission start');
   let PERMISSION_TEXT:string = "允许";
@@ -133,7 +119,7 @@ export default function bluetoothAdvertisingTest() {
 
     beforeAll(async (done : Function) =>  {
       await clickRequestPermission(PERMISSION_TEXT);
-      await openPhone();
+
       console.info('beforeAll called');
       done();
     })
@@ -209,10 +195,10 @@ export default function bluetoothAdvertisingTest() {
       } catch (err) {
         console.info("01errCode:" + err.code + ",01errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect().assertFail();
+          expect().assertFail();
         }
       }
       await bluetooth.off('advertisingStateChange', onReceiveEvent);
@@ -264,10 +250,10 @@ export default function bluetoothAdvertisingTest() {
       }catch (err) {
         console.info("02errCode:" + err.code + ",02errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect().assertFail();
+          expect().assertFail();
         }
       }
       await sleep(2000);
@@ -291,22 +277,17 @@ export default function bluetoothAdvertisingTest() {
       }
       let advHandle = 0xFF;
       try {
-        bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
-          console.info('[bluetooth_js]startAdvertising promise info03:' + JSON.stringify(outAdvHandle));
-          advHandle = outAdvHandle;
-          console.info('[bluetooth_js]startAdvertising promise info03:'+JSON.stringify(advHandle));
-        });
-        await sleep(655350);
-        await bluetooth.stopAdvertising(advHandle).then((data) => {
-          console.info('[bluetooth_js] stopAdvertising promise result03:' + JSON.stringify(data));
-        });
+        advHandle = await bluetooth.startAdvertising(advertisingParams);
+        console.info('[bluetooth_js] startAdvertising promise result03:' + JSON.stringify(advHandle));
+        let data = await bluetooth.stopAdvertising(advHandle);
+        console.info('[bluetooth_js] stopAdvertising promise result03:' + JSON.stringify(data));
       } catch (err) {
         console.info("03errCode:" + err.code + ",03errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect().assertFail();
+          expect().assertFail();
         }
       }
       await sleep(2000);
@@ -342,10 +323,10 @@ export default function bluetoothAdvertisingTest() {
       } catch (err) {
         console.info("04errCode:" + err.code + ",04errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect(Number(err.code)).assertEqual(401);
+          expect(Number(err.code)).assertEqual(401);
         }
       }
       await sleep(2000);
@@ -381,10 +362,10 @@ export default function bluetoothAdvertisingTest() {
       } catch (err) {
         console.info("05errCode:" + err.code + ",05errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect(Number(err.code)).assertEqual(401);
+          expect(Number(err.code)).assertEqual(401);
         }
       }
       await sleep(2000);
@@ -419,10 +400,10 @@ export default function bluetoothAdvertisingTest() {
       }catch (err) {
         console.info("09errCode:" + err.code + ",09errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect().assertFail();
+          expect().assertFail();
         }
       }
       await sleep(2000);
@@ -488,10 +469,10 @@ export default function bluetoothAdvertisingTest() {
       catch (err) {
         console.info(":10errCode" + err.code + ",10errMessage10:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect().assertFail();
+          expect().assertFail();
         }
       }
       await sleep(2000);
@@ -558,10 +539,10 @@ export default function bluetoothAdvertisingTest() {
       catch (err) {
         console.info("11errCode:" + err.code + ",11errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect().assertFail();
+          expect().assertFail();
         }
       }
       await sleep(2000);
@@ -602,10 +583,10 @@ export default function bluetoothAdvertisingTest() {
       catch (err) {
         console.info("12errCode:" + err.code + ",12errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect(Number(err.code)).assertEqual(401);
+          expect(Number(err.code)).assertEqual(401);
         }
       }
       await bluetooth.stopAdvertising(advHandle).then((data) => {
@@ -658,10 +639,10 @@ export default function bluetoothAdvertisingTest() {
       catch (err) {
         console.info("13errCode:" + err.code + ",13errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect().assertFail();
+          expect().assertFail();
         }
       }
       await sleep(2000);
@@ -725,10 +706,10 @@ export default function bluetoothAdvertisingTest() {
       catch (err) {
         console.info("14errCode:" + err.code + ",14errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect().assertFail();
+          expect().assertFail();
         }
       }
       await sleep(2000);
@@ -775,10 +756,10 @@ export default function bluetoothAdvertisingTest() {
       catch (err) {
         console.info("15errCode:" + err.code + ",15errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-           expect(Number(err.code)).assertEqual(2900003);
+          expect(Number(err.code)).assertEqual(2900003);
         }
       }
       await sleep(2000);
@@ -813,8 +794,8 @@ export default function bluetoothAdvertisingTest() {
       catch (err) {
         console.info("16errCode:" + err.code + ",16errMessage:" + err.message);
         if (err.code == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         }
       }
       await sleep(2000);
@@ -917,39 +898,39 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       let advertisingParams: bluetooth.AdvertisingParams = {
-          advertisingSettings: setting,
-          advertisingData: advData,
-          advertisingResponse: advResponse,
-          duration: 0,
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 0,
       }
       try {
-          for (let count = 0; count < 17; count++) {
-              await bluetooth.startAdvertising(advertisingParams);
-              console.info('[bluetooth_js]startAdvertising count:' + count);
-              if (count == 16) {
-                console.info('[bluetooth_js]startAdvertising count success');
-                expect().assertFail();
-              }
+        for (let count = 0; count < 17; count++) {
+          await bluetooth.startAdvertising(advertisingParams);
+          console.info('[bluetooth_js]startAdvertising count:' + count);
+          if (count == 16) {
+            console.info('[bluetooth_js]startAdvertising count success');
+            expect().assertFail();
           }
+        }
       } catch (err) {
         console.info("startAdvertising errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect(2900010).assertEqual(Number(err.code));
+          expect(2900010).assertEqual(Number(err.code));
         }
       }
 
       try {
-          bluetooth.stopAdvertising();
+        bluetooth.stopAdvertising();
       } catch (err) {
         console.info("stopAdvertising errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect().assertFail();
+          expect().assertFail();
         }
       }
       done();
@@ -965,41 +946,41 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       let advertisingParams: bluetooth.AdvertisingParams = {
-          advertisingSettings: setting,
-          advertisingData: advData,
-          advertisingResponse: advResponse,
-          duration: 0,
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 0,
       }
       try {
-          for (let count = 0; count < 17; count++) {
-              await bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
-              console.info('[bluetooth_js]startAdvertising return outAdvHandle:' + JSON.stringify(outAdvHandle));
-              });
-              console.info('[bluetooth_js]startAdvertising count:' + count);
-              if (count == 16) {
-                console.info('[bluetooth_js]startAdvertising count success');
-                expect().assertFail();
-              }
+        for (let count = 0; count < 17; count++) {
+          await bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
+            console.info('[bluetooth_js]startAdvertising return outAdvHandle:' + JSON.stringify(outAdvHandle));
+          });
+          console.info('[bluetooth_js]startAdvertising count:' + count);
+          if (count == 16) {
+            console.info('[bluetooth_js]startAdvertising count success');
+            expect().assertFail();
           }
+        }
       } catch (err) {
         console.info("startAdvertising promise errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect(2900010).assertEqual(Number(err.code));
+          expect(2900010).assertEqual(Number(err.code));
         }
       }
 
       try {
-          bluetooth.stopAdvertising();
+        bluetooth.stopAdvertising();
       } catch (err) {
         console.info("stopAdvertising errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect().assertFail();
+          expect().assertFail();
         }
       }
       done();
@@ -1015,57 +996,57 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       let advertisingParams: bluetooth.AdvertisingParams = {
-          advertisingSettings: setting,
-          advertisingData: advData,
-          advertisingResponse: advResponse,
-          duration: 0,
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 0,
       }
       let startAdvertisingCallback = () => {
-          return new Promise<void>((resolve,reject) => {
-            bluetooth.startAdvertising(advertisingParams, (err, outAdvHandle)=> {
-              if (err) {
-                console.info('startAdvertising failed' + JSON.stringify(err));
-                reject(err.code);
-              } else
-              {
-                console.info('[bluetooth_js]startAdvertising result:'+JSON.stringify(outAdvHandle));
-              }
-              resolve();
-            });
+        return new Promise<void>((resolve,reject) => {
+          bluetooth.startAdvertising(advertisingParams, (err, outAdvHandle)=> {
+            if (err) {
+              console.info('startAdvertising failed' + JSON.stringify(err));
+              reject(err.code);
+            } else
+            {
+              console.info('[bluetooth_js]startAdvertising result:'+JSON.stringify(outAdvHandle));
+            }
+            resolve();
+          });
+        });
+      }
+      try {
+        for (let count = 0; count < 17; count++) {
+          await startAdvertisingCallback().then((data) => {
+            console.info('[bluetooth_js] startAdvertisingCallback result:' + JSON.stringify(data));
+            console.info('[bluetooth_js]startAdvertising count:' + count);
+            if (count == 16) {
+              console.info('[bluetooth_js]startAdvertising count success');
+              expect().assertFail();
+              done();
+            }
+          }).catch((error : BusinessError) => {
+            console.info("startAdvertisingCallback errCode:" + error.code + ",errMessage:" + error.message);
+            if (Number(error) == 801) {
+              console.info('[bluetooth_js]api is not support');
+              expect(true).assertTrue();
+            } else {
+              expect(2900010).assertEqual(Number(error));
+            }
           });
         }
-      try {
-          for (let count = 0; count < 17; count++) {
-              await startAdvertisingCallback().then((data) => {
-                console.info('[bluetooth_js] startAdvertisingCallback result:' + JSON.stringify(data));
-                console.info('[bluetooth_js]startAdvertising count:' + count);
-                if (count == 16) {
-                  console.info('[bluetooth_js]startAdvertising count success');
-                  expect().assertFail();
-                  done();
-                }
-              }).catch((error : BusinessError) => {
-                console.info("startAdvertisingCallback errCode:" + error.code + ",errMessage:" + error.message);
-                if (Number(error) == 801) {
-                    console.info('[bluetooth_js]api is not support');
-                    expect(true).assertTrue();
-                } else {
-                    expect(2900010).assertEqual(Number(error));
-                }
-              });
-          }
       } catch (err) {
         console.info("startAdvertising errCode:" + err.code + ",errMessage:" + err.message);}
 
       try {
-          bluetooth.stopAdvertising();
+        bluetooth.stopAdvertising();
       } catch (err) {
         console.info("stopAdvertising errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect().assertFail();
+          expect().assertFail();
         }
       }
       done();
@@ -1081,8 +1062,8 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       let advertisingEnableParams: bluetooth.AdvertisingEnableParams = {
-          advertisingId: 0XFF
-        };
+        advertisingId: 0XFF
+      };
 
       let enableAdvertisingCallback = () => {
         return new Promise<void>((resolve, reject) => {
@@ -1125,20 +1106,20 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       let advertisingEnableParams: bluetooth.AdvertisingEnableParams = {
-          advertisingId: 0XFF
-        };
+        advertisingId: 0XFF
+      };
 
       try {
-          await bluetooth.enableAdvertising(advertisingEnableParams).then(() => {});
-          console.info('[bluetooth_js]enableAdvertising use Invalid advertising id success');
-          expect().assertFail();
+        await bluetooth.enableAdvertising(advertisingEnableParams).then(() => {});
+        console.info('[bluetooth_js]enableAdvertising use Invalid advertising id success');
+        expect().assertFail();
       } catch (err) {
         console.info("enableAdvertising errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect(2902055).assertEqual(Number(err.code));
+          expect(2902055).assertEqual(Number(err.code));
         }
       }
       done();
@@ -1154,8 +1135,8 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       let advertisingDisableParams: bluetooth.AdvertisingDisableParams = {
-          advertisingId: 0XFF
-        };
+        advertisingId: 0XFF
+      };
 
       let disableAdvertisingCallback = () => {
         return new Promise<void>((resolve, reject) => {
@@ -1198,20 +1179,20 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       let advertisingDisableParams: bluetooth.AdvertisingDisableParams = {
-          advertisingId: 0XFF
-        };
+        advertisingId: 0XFF
+      };
 
       try {
-          await bluetooth.disableAdvertising(advertisingDisableParams).then(() => {});
-          console.info('[bluetooth_js]disableAdvertising use Invalid advertising id success');
-          expect().assertFail();
+        await bluetooth.disableAdvertising(advertisingDisableParams).then(() => {});
+        console.info('[bluetooth_js]disableAdvertising use Invalid advertising id success');
+        expect().assertFail();
       } catch (err) {
         console.info("disableAdvertising errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect(2902055).assertEqual(Number(err.code));
+          expect(2902055).assertEqual(Number(err.code));
         }
       }
       done();
@@ -1268,16 +1249,16 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
       try {
-          await bluetooth.stopAdvertising(0XFF).then(() => {});
-          console.info('[bluetooth_js]stopAdvertising use Invalid advertising id success');
-          expect().assertFail();
+        await bluetooth.stopAdvertising(0XFF).then(() => {});
+        console.info('[bluetooth_js]stopAdvertising use Invalid advertising id success');
+        expect().assertFail();
       } catch (err) {
         console.info("stopAdvertising errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect(2902055).assertEqual(Number(err.code));
+          expect(2902055).assertEqual(Number(err.code));
         }
       }
       done();
@@ -1301,29 +1282,29 @@ export default function bluetoothAdvertisingTest() {
         manufactureValue:manufactureValueBuffers.buffer
       };
       let advDatas: bluetooth.AdvertiseData = {
-          serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-          manufactureData:[manufactureDataUnits],
-          serviceData:[serviceDataUnit],
-          includeDeviceName:false,
-          includeTxPower:false
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnits],
+        serviceData:[serviceDataUnit],
+        includeDeviceName:false,
+        includeTxPower:false
       };
       let advertisingParams: bluetooth.AdvertisingParams = {
-          advertisingSettings: setting,
-          advertisingData: advDatas,
-          advertisingResponse: advResponse,
-          duration: 0,
+        advertisingSettings: setting,
+        advertisingData: advDatas,
+        advertisingResponse: advResponse,
+        duration: 0,
       }
       try {
-          await bluetooth.startAdvertising(advertisingParams);
-          console.info('[bluetooth_js]startAdvertising The length of the advertising data exceeds the upper limit success');
-          expect().assertFail();
+        await bluetooth.startAdvertising(advertisingParams);
+        console.info('[bluetooth_js]startAdvertising The length of the advertising data exceeds the upper limit success');
+        expect().assertFail();
       } catch (err) {
         console.info("startAdvertising errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect(2902054).assertEqual(Number(err.code));
+          expect(2902054).assertEqual(Number(err.code));
         }
       }
       done();
@@ -1347,31 +1328,31 @@ export default function bluetoothAdvertisingTest() {
         manufactureValue:manufactureValueBuffers.buffer
       };
       let advDatas: bluetooth.AdvertiseData = {
-          serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-          manufactureData:[manufactureDataUnits],
-          serviceData:[serviceDataUnit],
-          includeDeviceName:false,
-          includeTxPower:false
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnits],
+        serviceData:[serviceDataUnit],
+        includeDeviceName:false,
+        includeTxPower:false
       };
       let advertisingParams: bluetooth.AdvertisingParams = {
-          advertisingSettings: setting,
-          advertisingData: advDatas,
-          advertisingResponse: advResponse,
-          duration: 0,
+        advertisingSettings: setting,
+        advertisingData: advDatas,
+        advertisingResponse: advResponse,
+        duration: 0,
       }
       try {
-          await bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
-              console.info('[bluetooth_js]startAdvertising return outAdvHandle:' + JSON.stringify(outAdvHandle));
-          });
-          console.info('[bluetooth_js]startAdvertising The length of the advertising data exceeds the upper limit success');
-          expect().assertFail();
+        await bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
+          console.info('[bluetooth_js]startAdvertising return outAdvHandle:' + JSON.stringify(outAdvHandle));
+        });
+        console.info('[bluetooth_js]startAdvertising The length of the advertising data exceeds the upper limit success');
+        expect().assertFail();
       } catch (err) {
         console.info("startAdvertising promise errCode:" + err.code + ",errMessage:" + err.message);
         if (Number(err.code) == 801) {
-            console.info('[bluetooth_js]api is not support');
-            expect(true).assertTrue();
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
         } else {
-            expect(2902054).assertEqual(Number(err.code));
+          expect(2902054).assertEqual(Number(err.code));
         }
       }
       done();
@@ -1395,48 +1376,873 @@ export default function bluetoothAdvertisingTest() {
         manufactureValue:manufactureValueBuffers.buffer
       };
       let advDatas: bluetooth.AdvertiseData = {
-          serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-          manufactureData:[manufactureDataUnits],
-          serviceData:[serviceDataUnit],
-          includeDeviceName:false,
-          includeTxPower:false
+        serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
+        manufactureData:[manufactureDataUnits],
+        serviceData:[serviceDataUnit],
+        includeDeviceName:false,
+        includeTxPower:false
       };
       let advertisingParams: bluetooth.AdvertisingParams = {
-          advertisingSettings: setting,
-          advertisingData: advDatas,
-          advertisingResponse: advResponse,
-          duration: 0,
+        advertisingSettings: setting,
+        advertisingData: advDatas,
+        advertisingResponse: advResponse,
+        duration: 0,
       }
       let startAdvertisingCallback = () => {
-          return new Promise<void>((resolve,reject) => {
-            bluetooth.startAdvertising(advertisingParams, (err, outAdvHandle)=> {
+        return new Promise<void>((resolve,reject) => {
+          bluetooth.startAdvertising(advertisingParams, (err, outAdvHandle)=> {
+            if (err) {
+              console.info('startAdvertising failed' + JSON.stringify(err));
+              reject(err.code);
+            } else
+            {
+              console.info('[bluetooth_js]startAdvertising result:'+JSON.stringify(outAdvHandle));
+            }
+            resolve();
+          });
+        });
+      }
+      try {
+        await startAdvertisingCallback().then((data) => {
+          console.info('[bluetooth_js] startAdvertising result:' + JSON.stringify(data));
+          console.info('[bluetooth_js]startAdvertising The length of the advertising data exceeds the upper limit success');
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          console.info("startAdvertisingCallback errCode:" + error.code + ",errMessage:" + error.message);
+          if (Number(error) == 801) {
+            console.info('[bluetooth_js]api is not support');
+            expect(true).assertTrue();
+          } else {
+            expect(2902054).assertEqual(Number(error));
+          }
+        });
+      } catch (err) {console.info("startAdvertising errCode:" + err.code + ",errMessage:" + err.message);}
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0100
+     * @tc.desc   Test the function that the first parameter of the enableAdvertising interface(promise) is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = 'SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0100'
+      try {
+        console.info(`${caseName} test start`)
+        await bluetooth.enableAdvertising(null).then((data) => {
+          console.info(`${caseName} `+'[bluetooth_js] enableAdvertising promise result16:' + JSON.stringify(data));
+        }).catch((err: BusinessError) => {
+          console.info('bluetooth enableAdvertising has error: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        });
+      }
+      catch (err) {
+        console.info(`${caseName} `+"16errCode:" + err.code + ",16errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        }else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      await sleep(2000);
+      console.info(`${caseName} test end`)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0200
+     * @tc.desc   Test the function that the first parameter of the enableAdvertising interface((promise)) is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = 'SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0200'
+      try {
+        console.info(`${caseName} test start`)
+        await bluetooth.enableAdvertising(undefined).then((data) => {
+          console.info(`${caseName} `+'[bluetooth_js] enableAdvertising promise result16:' + JSON.stringify(data));
+        }).catch((err: BusinessError) => {
+          console.info('bluetooth enableAdvertising has error: ' + JSON.stringify(err));
+          expect().assertFail();
+        });
+
+      }
+      catch (err) {
+        console.info(`${caseName} `+"16errCode:" + err.code + ",16errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        }else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      await sleep(2000);
+      console.info(`${caseName} test end`)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0300
+     * @tc.desc   Test the function that the first parameter of the enableAdvertising interface(callback) is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+
+      let enableAdvertisingCallback = () => {
+        return new Promise<void>((resolve, reject) => {
+          bluetooth.enableAdvertising(null, (err, data) => {
+            if (err) {
+              console.info('enableAdvertising failed' + err);
+              reject(err.code);
+            }
+            else {
+              console.info('[bluetooth_js]enableAdvertising info:' + JSON.stringify(data));
+            }
+            resolve();
+          });
+        });
+      }
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0300"
+      console.info(`${caseName} test start`)
+      await enableAdvertisingCallback().then((data) => {
+        console.info('[bluetooth_js] enableAdvertising result:' + JSON.stringify(data));
+        console.info('[bluetooth_js] enableAdvertising use Invalid parameter success');
+        expect().assertFail();
+      }).catch((error : BusinessError) => {
+        console.info("enableAdvertisingCallback errCode:" + error.code + ",errMessage:" + error.message);
+        if (Number(error.code) == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(401);
+        }
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0400
+     * @tc.desc   Test the function that the first parameter of the enableAdvertising interface(callback) is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+
+      let enableAdvertisingCallback = () => {
+        return new Promise<void>((resolve, reject) => {
+          bluetooth.enableAdvertising(undefined, (err, data) => {
+            if (err) {
+              console.info('enableAdvertising failed' + err);
+              reject(err.code);
+            }
+            else {
+              console.info('[bluetooth_js]enableAdvertising info:' + JSON.stringify(data));
+            }
+            resolve();
+          });
+        });
+      }
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0400"
+      console.info(`${caseName} test start`)
+      await enableAdvertisingCallback().then((data) => {
+        console.info('[bluetooth_js] enableAdvertising result:' + JSON.stringify(data));
+        console.info('[bluetooth_js] enableAdvertising use Invalid parameter success');
+        expect().assertFail();
+      }).catch((error : BusinessError) => {
+        console.info("enableAdvertisingCallback errCode:" + error.code + ",errMessage:" + error.message);
+        if (Number(error.code) == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(401);
+        }
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0500
+     * @tc.desc   Test the function that the first parameter of the enableAdvertising interface(promise) is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = 'SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0500'
+      try {
+        await bluetooth.disableAdvertising(undefined).then((data) => {
+          console.info(`${caseName} ` + '[bluetooth_js] disableAdvertising promise success:' + JSON.stringify(data));
+        });
+        expect().assertFail();
+      }catch (err) {
+        console.info(`${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
+        expect(Number(err.code)).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0600
+     * @tc.desc   Test the function that the first parameter of the enableAdvertising interface(callback) is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = 'SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0600'
+      try {
+        console.info(`${caseName} test start`)
+        let disableAdv = () => {
+          return new Promise<void>((resolve, reject) => {
+            bluetooth.disableAdvertising(undefined, (err, data) => {
               if (err) {
-                console.info('startAdvertising failed' + JSON.stringify(err));
+                console.info(`${caseName} ` + 'disableAdvertising callback failed' + err);
                 reject(err.code);
-              } else
-              {
-                console.info('[bluetooth_js]startAdvertising result:'+JSON.stringify(outAdvHandle));
+              }
+              else {
+                console.info(`${caseName} ` + '[bluetooth_js]disableAdvertising callback info:' + JSON.stringify(data));
               }
               resolve();
             });
           });
         }
+
+        await disableAdv().then((data) => {
+          console.info(`${caseName} ` + '[bluetooth_js] disableAdvertising promise result:' + JSON.stringify(data));
+        });
+        expect().assertFail();
+      }catch (err) {
+        console.info(`${caseName} ` + "errCode:" + err.code + ",errMessage:" + err.message);
+        expect(Number(err.code)).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0700
+     * @tc.desc   Test the function that the first parameter of the stopAdvertising interface(callback) is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      let stopAdvertisingCallback = () => {
+        return new Promise<void>((resolve, reject) => {
+          bluetooth.stopAdvertising(undefined, (err, data) => {
+            if (err) {
+              console.info('stopAdvertising failed' + err);
+              reject(err.code);
+            }
+            else {
+              console.info('[bluetooth_js]stopAdvertising info:' + JSON.stringify(data));
+            }
+            resolve();
+          });
+        });
+      }
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0700"
+      console.info(`${caseName} test start`)
+      await stopAdvertisingCallback().then((data) => {
+        console.info('[bluetooth_js] stopAdvertising result:' + JSON.stringify(data));
+        console.info('[bluetooth_js] stopAdvertising use Invalid advertising id success');
+        expect().assertFail();
+        done();
+      }).catch((error : BusinessError) => {
+        console.info("disableAdvertisingCallback errCode:" + error.code + ",errMessage:" + error.message);
+        if (Number(error.code) == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(401);
+        }
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0800
+     * @tc.desc   Test the function that the first parameter of the stopAdvertising interface(callback) is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      let stopAdvertisingCallback = () => {
+        return new Promise<void>((resolve, reject) => {
+          bluetooth.stopAdvertising(null, (err, data) => {
+            if (err) {
+              console.info('stopAdvertising failed' + err);
+              reject(err.code);
+            }
+            else {
+              console.info('[bluetooth_js]stopAdvertising info:' + JSON.stringify(data));
+            }
+            resolve();
+          });
+        });
+      }
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0800"
+      console.info(`${caseName} test start`)
+      await stopAdvertisingCallback().then((data) => {
+        console.info('[bluetooth_js] stopAdvertising result:' + JSON.stringify(data));
+        console.info('[bluetooth_js] stopAdvertising use Invalid advertising id success');
+        expect().assertFail();
+        done();
+      }).catch((error : BusinessError) => {
+        console.info("disableAdvertisingCallback errCode:" + error.code + ",errMessage:" + error.message);
+        if (Number(error.code) == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(error.code)).assertEqual(401);
+        }
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0900
+     * @tc.desc   Test the function that the first parameter of the stopAdvertising interface(callback) is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_0900"
       try {
-          await startAdvertisingCallback().then((data) => {
-              console.info('[bluetooth_js] startAdvertising result:' + JSON.stringify(data));
-              console.info('[bluetooth_js]startAdvertising The length of the advertising data exceeds the upper limit success');
-              expect().assertFail();
-              done();
-          }).catch((error: BusinessError) => {
-              console.info("startAdvertisingCallback errCode:" + error.code + ",errMessage:" + error.message);
-              if (Number(error) == 801) {
-                  console.info('[bluetooth_js]api is not support');
-                  expect(true).assertTrue();
-              } else {
-                  expect(2902054).assertEqual(Number(error));
-                }
+        console.info(`${caseName} test start`)
+        await bluetooth.stopAdvertising(undefined).then(() => {});
+        console.info('[bluetooth_js]stopAdvertising use Invalid advertising id success');
+        expect().assertFail();
+      } catch (err) {
+        console.info("stopAdvertising errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1000
+     * @tc.desc   Test the function that the first parameter of the stopAdvertising interface(callback) is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1000"
+      try {
+        console.info(`${caseName} test start`)
+        await bluetooth.stopAdvertising(null).then(() => {});
+        console.info('[bluetooth_js]stopAdvertising use Invalid advertising id success');
+        expect().assertFail();
+      } catch (err) {
+        console.info("stopAdvertising errCode:" + err.code + ",errMessage:" + err.message);
+        if (Number(err.code) == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1100
+     * @tc.desc   Test the function that the first parameter of the on_advertisingStateChange interface is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1100"
+      let advStatus: Number = 0;
+      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+        console.info('bluetooth advertising state11 = ' + JSON.stringify(AdvertisingStateChangeInfo));
+        console.info('bluetooth advertising state11 = ' + AdvertisingStateChangeInfo.state);
+        console.info('bluetooth advertising state11 = ' + AdvertisingStateChangeInfo.advertisingId);
+        advStatus = AdvertisingStateChangeInfo.state;
+        console.info('bluetooth advertising state11 = ' + advStatus);
+      }
+
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 100,
+      };
+      let advHandle = 0xFF;
+      try {
+        console.info(`${caseName} test start`)
+        await bluetooth.on(null, onReceiveEvent);
+        await bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
+          console.info('[bluetooth_js]startAdvertising promise info11:' + JSON.stringify(outAdvHandle));
+          advHandle = outAdvHandle;
+          console.info('[bluetooth_js]startAdvertising promise info11:' + JSON.stringify(advHandle));
+        });
+        await sleep(500);
+      }
+      catch (err) {
+        console.info("11errCode:" + err.code + ",11errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1200
+     * @tc.desc   Test the function that the first parameter of the on_advertisingStateChange interface is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1200"
+      let advStatus: Number = 0;
+      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+        console.info('bluetooth advertising state12 = ' + JSON.stringify(AdvertisingStateChangeInfo));
+        console.info('bluetooth advertising state12 = ' + AdvertisingStateChangeInfo.state);
+        console.info('bluetooth advertising state12 = ' + AdvertisingStateChangeInfo.advertisingId);
+        advStatus = AdvertisingStateChangeInfo.state;
+        console.info('bluetooth advertising state12 = ' + advStatus);
+      }
+
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 100,
+      };
+      let advHandle = 0xFF;
+      try {
+        console.info(`${caseName} test start`)
+        await bluetooth.on(undefined, onReceiveEvent);
+        await bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
+          console.info('[bluetooth_js]startAdvertising promise info12:' + JSON.stringify(outAdvHandle));
+          advHandle = outAdvHandle;
+          console.info('[bluetooth_js]startAdvertising promise info12:' + JSON.stringify(advHandle));
+        });
+        await sleep(500);
+      }
+      catch (err) {
+        console.info("12errCode:" + err.code + ",12errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1300
+     * @tc.desc   Test the function that the first parameter of the on_advertisingStateChange interface is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1300"
+      let advStatus: Number = 0;
+      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+        console.info('bluetooth advertising state13 = ' + JSON.stringify(AdvertisingStateChangeInfo));
+        console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.state);
+        console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.advertisingId);
+        advStatus = AdvertisingStateChangeInfo.state;
+        console.info('bluetooth advertising state13 = ' + advStatus);
+      }
+      try {
+        console.info(`${caseName} test start`)
+        await bluetooth.off(null, onReceiveEvent);
+      }
+      catch (err) {
+        console.info("13errCode:" + err.code + ",13errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1400
+     * @tc.desc   Test the function that the first parameter of the on_advertisingStateChange interface is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1400"
+      let advStatus: Number = 0;
+      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+        console.info('bluetooth advertising state14 = ' + JSON.stringify(AdvertisingStateChangeInfo));
+        console.info('bluetooth advertising state14 = ' + AdvertisingStateChangeInfo.state);
+        console.info('bluetooth advertising state14 = ' + AdvertisingStateChangeInfo.advertisingId);
+        advStatus = AdvertisingStateChangeInfo.state;
+        console.info('bluetooth advertising state14 = ' + advStatus);
+      }
+      try {
+        console.info(`${caseName} test start`)
+        await bluetooth.off(undefined, onReceiveEvent);
+      }
+      catch (err) {
+        console.info("offReceive errCode:" + err.code + ",onReceive errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect(Number(err.code)).assertEqual(401);
+        }
+      }
+      await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1500
+     * @tc.desc   Test bluetoothBle api11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1500"
+      let setting: bluetooth.AdvertiseSetting = {
+        interval:32,
+        txPower:1,
+        connectable:false,
+      };
+      let advData: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+        includeDeviceName:true,
+        includeTxPower:true
+      };
+      let advResponse: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+        includeDeviceName:true,
+        includeTxPower:true
+      };
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 100,
+      }
+      let advHandle = 0xFF;
+      try {
+        console.info(`${caseName} test start`)
+        bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
+          console.info('[bluetooth_js]startAdvertising promise info02:' + JSON.stringify(outAdvHandle));
+          advHandle = outAdvHandle;
+          console.info('[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
+        });
+        await sleep(500);
+        await sleep(900);
+        await bluetooth.stopAdvertising(advHandle).then((data) => {
+          console.info('[bluetooth_js] stopAdvertising promise result01: ' + JSON.stringify(data));
+        });
+      }catch (err) {
+        console.info("02errCode:" + err.code + ",02errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1600
+     * @tc.desc   Test bluetoothBle api11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1600"
+      let setting: bluetooth.AdvertiseSetting = {
+        interval:32,
+        txPower:1,
+        connectable:false,
+      };
+      let advData: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+        includeDeviceName:true,
+        includeTxPower:true
+      };
+      let advResponse: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+        includeDeviceName:false,
+        includeTxPower:false
+      };
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 100,
+      }
+      let advHandle = 0xFF;
+      try {
+        console.info(`${caseName} test start`)
+        bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
+          console.info('[bluetooth_js]startAdvertising promise info02:' + JSON.stringify(outAdvHandle));
+          advHandle = outAdvHandle;
+          console.info('[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
+        });
+        await sleep(500);
+        await sleep(900);
+        await bluetooth.stopAdvertising(advHandle).then((data) => {
+          console.info('[bluetooth_js] stopAdvertising promise result01: ' + JSON.stringify(data));
+        });
+      }catch (err) {
+        console.info("02errCode:" + err.code + ",02errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1700
+     * @tc.desc   Test bluetoothBle api11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1700"
+      let advStatus: Number = 0;
+      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+        console.info('bluetooth advertising state = ' + JSON.stringify(AdvertisingStateChangeInfo));
+        console.info('bluetooth advertising state = ' + AdvertisingStateChangeInfo.state);
+        advStatus = AdvertisingStateChangeInfo.state;
+        console.info('bluetooth advertising state = ' + advStatus);
+      }
+      let setting: bluetooth.AdvertiseSetting = {
+        interval:32,
+        txPower:1,
+        connectable:false,
+      };
+      let advData: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+        includeDeviceName:true,
+        includeTxPower:true
+      };
+      let advResponse: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+        includeDeviceName:true,
+        includeTxPower:true
+      };
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 0,
+      }
+
+      let advHandle = 0xFF;
+      try {
+        console.info(`${caseName} test start`)
+        bluetooth.on('advertisingStateChange', onReceiveEvent);
+        let startAdv = () => {
+          return new Promise<void>((resolve,reject) => {
+            bluetooth.startAdvertising(advertisingParams, (err, outAdvHandle)=> {
+              if (err) {
+                console.info('startAdvertising callback failed' + err);
+                reject(err.code);
+                expect().assertFail()
+              } else
+              {
+                console.info('[bluetooth_js]startAdvertising callback info016:'+JSON.stringify(outAdvHandle));
+                advHandle = outAdvHandle;
+                console.info('[bluetooth_js]startAdvertising callback info016:'+JSON.stringify(advHandle));
+              }
+              resolve();
             });
-      } catch (err) {console.info("startAdvertising errCode:" + err.code + ",errMessage:" + err.message);}
+          });
+        }
+        await startAdv().then((data) => {
+          console.info('[bluetooth_js] startAdv promise result016:' + JSON.stringify(data));
+        });
+        await sleep(300);
+        expect(advStatus).assertEqual(1);
+        await sleep(5000);
+        await bluetooth.stopAdvertising(advHandle).then((data) => {
+          console.info('[bluetooth_js] stopAdvertising promise result01: ' + JSON.stringify(data));
+        });
+        let count = 0;
+        while(advStatus == 1) {
+          await sleep(100);
+          count = count+=1;
+        }
+        console.info('[bluetooth_js] advStatus change count promise result01: ' + count);
+        expect(advStatus).assertEqual(4);
+      } catch (err) {
+        console.info("[bluetooth_js] errCode:" + err.code + ",01errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      await bluetooth.off('advertisingStateChange', onReceiveEvent);
+      await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800
+     * @tc.desc   Test bluetoothBle api11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800"
+      let advStatus: Number = 0;
+      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+        console.info('bluetooth advertising state = ' + JSON.stringify(AdvertisingStateChangeInfo));
+        console.info('bluetooth advertising state = ' + AdvertisingStateChangeInfo.state);
+        advStatus = AdvertisingStateChangeInfo.state;
+        console.info('bluetooth advertising state = ' + advStatus);
+      }
+      let setting: bluetooth.AdvertiseSetting = {
+        interval:32,
+        txPower:1,
+        connectable:false,
+      };
+      let advData: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+        includeDeviceName:false,
+        includeTxPower:false
+      };
+      let advResponse: bluetooth.AdvertiseData = {
+        serviceUuids:[],
+        manufactureData:[],
+        serviceData:[],
+        includeDeviceName:false,
+        includeTxPower:false
+      };
+      let advertisingParams: bluetooth.AdvertisingParams = {
+        advertisingSettings: setting,
+        advertisingData: advData,
+        advertisingResponse: advResponse,
+        duration: 0,
+      }
+
+      let advHandle = 0xFF;
+      try {
+        console.info(`${caseName} test start`)
+        bluetooth.on('advertisingStateChange', onReceiveEvent);
+        let startAdv = () => {
+          return new Promise<void>((resolve,reject) => {
+            bluetooth.startAdvertising(advertisingParams, (err, outAdvHandle)=> {
+              if (err) {
+                console.info('startAdvertising callback failed' + err);
+                reject(err.code);
+                expect().assertFail()
+              } else
+              {
+                console.info('[bluetooth_js]startAdvertising callback info016:'+JSON.stringify(outAdvHandle));
+                advHandle = outAdvHandle;
+                console.info('[bluetooth_js]startAdvertising callback info016:'+JSON.stringify(advHandle));
+              }
+              resolve();
+            });
+          });
+        }
+        await startAdv().then((data) => {
+          console.info('[bluetooth_js] startAdv promise result016:' + JSON.stringify(data));
+        });
+        await sleep(300);
+        expect(advStatus).assertEqual(1);
+        await sleep(5000);
+        await bluetooth.stopAdvertising(advHandle).then((data) => {
+          console.info('[bluetooth_js] stopAdvertising promise result01: ' + JSON.stringify(data));
+        });
+        let count = 0;
+        while(advStatus == 1) {
+          await sleep(100);
+          count = count+=1;
+        }
+        console.info('[bluetooth_js] advStatus change count promise result01: ' + count);
+        expect(advStatus).assertEqual(4);
+      } catch (err) {
+        console.info("01errCode:" + err.code + ",01errMessage:" + err.message);
+        if (err.code == 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(true).assertTrue();
+        } else {
+          expect().assertFail();
+        }
+      }
+      await bluetooth.off('advertisingStateChange', onReceiveEvent);
+      await sleep(2000);
       done();
     })
   })

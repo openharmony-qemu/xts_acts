@@ -193,7 +193,7 @@ struct SearchExample {
       Text('onSubmit:' + this.submitValue).fontSize(18).margin(15)
       Search({ placeholder: 'Type to search...' })
         .attributeModifier(this._SearchModifier)
-        .key('search')
+        .key('search_SearchModifier')
         //.selectionMenuHidden(true)
         // .caretStyle({
         //   width: '1.5vp',

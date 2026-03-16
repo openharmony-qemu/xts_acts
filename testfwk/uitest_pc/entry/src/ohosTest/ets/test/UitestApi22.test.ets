@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType,
-    WindowChangeType } from '@ohos.UiTest'
+    WindowChangeType } from '@kit.TestKit'
 import ability_featureAbility from '@ohos.ability.featureAbility';
 import { BusinessError } from '@ohos.base';
 import display from '@ohos.display';
@@ -111,6 +111,11 @@ export default function UiTest() {
                     expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
                     expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_ADDED).assertTrue();
                     expect(elementInfo.windowId != 0).assertTrue();
+                    expect(elementInfo.text != null).assertTrue()
+                    expect(elementInfo.type == '').assertTrue()
+                    expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_UNDEFINED).assertTrue();
+                    expect(elementInfo.componentId == '').assertTrue();
+                    expect(elementInfo.componentRect != null).assertTrue();
                 } catch (err) {
                     console.log(`${TestTag}, testWindowChangeAddOptionsMonitor callback error ,${JSON.stringify(err)}`);
                 }
