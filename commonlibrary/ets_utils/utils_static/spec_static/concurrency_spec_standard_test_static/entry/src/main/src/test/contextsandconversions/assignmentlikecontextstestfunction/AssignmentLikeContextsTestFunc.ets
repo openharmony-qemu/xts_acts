@@ -1983,3 +1983,1989 @@ export function testAssignmentLikeContexts0041(){
       }
 }
 
+export function testAssignmentLikeContexts0042(){
+  const TAG = 'testAssignmentLikeContexts0042';
+  let v1: Byte = new Byte(-128 as byte);
+        let v2: Byte = new Byte(0 as byte);
+        let v3: Byte = new Byte(127 as byte);
+        let c: A11 = new A11(v1.toFloat(), v2.toFloat(), v3.toFloat());
+        c.foo(v1.toFloat(), v2.toFloat(), v3.toFloat());
+  if(c.fld_1 !== v1.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toFloat()');
+      }
+
+  if(c.fld_2 !== v2.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toFloat()');
+      }
+
+  if(c.fld_3 !== v3.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 check failed, expected v3.toFloat()');
+      }
+}
+
+export function testAssignmentLikeContexts0043(){
+  const TAG = 'testAssignmentLikeContexts0043';
+  let v1: Byte = new Byte(-128 as byte);
+        let v2: Byte = new Byte(0 as byte);
+        let v3: Byte = new Byte(127 as byte);
+        let c: A12 = new A12(v1.toDouble(), v2.toDouble(), v3.toDouble());
+        c.foo(v1.toDouble(), v2.toDouble(), v3.toDouble());
+  if(c.fld_1 !== v1.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toDouble()');
+      }
+
+  if(c.fld_2 !== v2.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toDouble()');
+      }
+
+  if(c.fld_3 !== v3.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 check failed, expected v3.toDouble()');
+      }
+}
+
+export function testAssignmentLikeContexts0044(){
+  const TAG = 'testAssignmentLikeContexts0044';
+  let v1: Short = new Short(Short.MIN_VALUE);
+        let v2: Short = new Short((255).toShort());
+        let c: A13 = new A13(v1.toInt(), v2.toInt());
+        c.foo(v1.toInt(), v2.toInt());
+  if(c.fld_1 !== v1.toInt()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toInt()');
+      }
+
+  if(c.fld_2 !== v2.toInt()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toInt()');
+      }
+}
+
+export function testAssignmentLikeContexts0045(){
+  const TAG = 'testAssignmentLikeContexts0045';
+  let v1: Short = new Short(Short.MIN_VALUE);
+        let v2: Short = new Short((255).toShort());
+        let c: A14 = new A14(v1.toLong(), v2.toLong());
+        c.foo(v1.toLong(), v2.toLong());
+  if(c.fld_1 !== v1.toLong()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toLong()');
+      }
+
+  if(c.fld_2 !== v2.toLong()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toLong()');
+      }
+}
+
+export function testAssignmentLikeContexts0046(){
+  const TAG = 'testAssignmentLikeContexts0046';
+  let v1: Short = new Short(Short.MIN_VALUE);
+        let v2: Short = new Short((255).toShort());
+        let c: A15 = new A15(v1.toFloat(), v2.toFloat());
+        c.foo(v1.toFloat(), v2.toFloat());
+  if(c.fld_1 !== v1.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toFloat()');
+      }
+
+  if(c.fld_2 !== v2.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toFloat()');
+      }
+}
+
+export function testAssignmentLikeContexts0047(){
+  const TAG = 'testAssignmentLikeContexts0047';
+  let v1: Short = new Short(Short.MIN_VALUE);
+        let v2: Short = new Short((255).toShort());
+        let c: A16 = new A16(v1.toDouble(), v2.toDouble());
+        c.foo(v1.toDouble(), v2.toDouble());
+  if(c.fld_1 !== v1.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toDouble()');
+      }
+
+  if(c.fld_2 !== v2.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toDouble()');
+      }
+}
+
+export function testAssignmentLikeContexts0048(){
+  const TAG = 'testAssignmentLikeContexts0048';
+  let v1: Int = new Int(127);
+        let v2: Int = new Int(32767);
+        let v3: Int = new Int(Int.MAX_VALUE);
+        let c: A17 = new A17(v1.toLong(), v2.toLong(), v3.toLong());
+        c.foo(v1.toLong(), v2.toLong(), v3.toLong());
+  if(c.fld_1 !== v1.toLong()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toLong()');
+      }
+
+  if(c.fld_2 !== v2.toLong()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toLong()');
+      }
+
+  if(c.fld_3 !== v3.toLong()){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 check failed, expected v3.toLong()');
+      }
+}
+
+export function testAssignmentLikeContexts0049(){
+  const TAG = 'testAssignmentLikeContexts0049';
+  let v1: Int = new Int(127);
+        let v2: Int = new Int(32767);
+        let v3: Int = new Int(Int.MAX_VALUE);
+        let c: A18 = new A18(v1.toFloat(), v2.toFloat(), v3.toFloat());
+        c.foo(v1.toFloat(), v2.toFloat(), v3.toFloat());
+  if(c.fld_1 !== v1.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toFloat()');
+      }
+
+  if(c.fld_2 !== v2.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toFloat()');
+      }
+
+  if(c.fld_3 !== v3.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 check failed, expected v3.toFloat()');
+      }
+}
+
+export function testAssignmentLikeContexts0050(){
+  const TAG = 'testAssignmentLikeContexts0050';
+  let v1: Int = new Int(127);
+        let v2: Int = new Int(32767);
+        let v3: Int = new Int(Int.MAX_VALUE);
+        let c: A19 = new A19(v1.toDouble(), v2.toDouble(), v3.toDouble());
+        c.foo(v1.toDouble(), v2.toDouble(), v3.toDouble());
+  if(c.fld_1 !== v1.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toDouble()');
+      }
+
+  if(c.fld_2 !== v2.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toDouble()');
+      }
+
+  if(c.fld_3 !== v3.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 check failed, expected v3.toDouble()');
+      }
+}
+
+export function testAssignmentLikeContexts0051(){
+  const TAG = 'testAssignmentLikeContexts0051';
+  let v1: Long = new Long(Long.MIN_VALUE);
+        let v2: Long = new Long((9223372036854775807).toLong());
+        let c: A20 = new A20(v1.toFloat(), v2.toFloat());
+        c.foo(v1.toFloat(), v2.toFloat());
+  if(c.fld_1 !== v1.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toFloat()');
+      }
+
+  if(c.fld_2 !== v2.toFloat()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toFloat()');
+      }
+}
+
+export function testAssignmentLikeContexts0052(){
+  const TAG = 'testAssignmentLikeContexts0052';
+  let v1: Long = new Long(Long.MIN_VALUE);
+        let v2: Long = new Long((9223372036854775807).toLong());
+        let c: A21 = new A21(v1.toDouble(), v2.toDouble());
+        c.foo(v1.toDouble(), v2.toDouble());
+  if(c.fld_1 !== v1.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toDouble()');
+      }
+
+  if(c.fld_2 !== v2.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toDouble()');
+      }
+}
+
+export function testAssignmentLikeContexts0053(){
+  const TAG = 'testAssignmentLikeContexts0053';
+  let v1: Float = new Float(1.401298464324817e-45f);
+        let v2: Float = new Float(Float.MAX_VALUE);
+        let c: A22 = new A22(v1.toDouble(), v2.toDouble());
+        c.foo(v1.toDouble(), v2.toDouble());
+  if(c.fld_1 !== v1.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected v1.toDouble()');
+      }
+
+  if(c.fld_2 !== v2.toDouble()){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected v2.toDouble()');
+      }
+}
+
+export function testAssignmentLikeContexts0054(){
+  const TAG = 'testAssignmentLikeContexts0054';
+  let src_1: Char = new Char(c'\u0000');
+        let dst_1: Int = new Int(src_1.toInt());
+
+        let src_2: Char = new Char(c'X');
+        let dst_2: Int = new Int(src_2.toInt());
+
+        let src_3: Char = new Char(c'\uffff');
+        let dst_3: Int = new Int(src_3.toInt());
+  if(dst_1 !== src_1.toInt()){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1.toInt()');
+      }
+
+  if(dst_2 !== src_2.toInt()){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2.toInt()');
+      }
+
+  if(dst_3 !== src_3.toInt()){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 check failed, expected src_3.toInt()');
+      }
+}
+
+export function testAssignmentLikeContexts0055(){
+  const TAG = 'testAssignmentLikeContexts0055';
+  let src_1: Char = new Char(c'\u0000');
+        let dst_1: Long = new Long(src_1.toLong());
+
+        let src_2: Char = new Char(c'X');
+        let dst_2: Long = new Long(src_2.toLong());
+
+        let src_3: Char = new Char(c'\uffff');
+        let dst_3: Long = new Long(src_3.toLong());
+  if(dst_1 !== src_1.toLong()){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1.toLong()');
+      }
+
+  if(dst_2 !== src_2.toLong()){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2.toLong()');
+      }
+
+  if(dst_3 !== src_3.toLong()){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 check failed, expected src_3.toLong()');
+      }
+}
+
+export function testAssignmentLikeContexts0056(){
+  const TAG = 'testAssignmentLikeContexts0056';
+  let src_1: Char = new Char(c'\u0000');
+        let dst_1: Float = new Float(src_1.toFloat());
+
+        let src_2: Char = new Char(c'X');
+        let dst_2: Float = new Float(src_2.toFloat());
+
+        let src_3: Char = new Char(c'\uffff');
+        let dst_3: Float = new Float(src_3.toFloat());
+  if(dst_1 !== src_1.toFloat()){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1.toFloat()');
+      }
+
+  if(dst_2 !== src_2.toFloat()){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2.toFloat()');
+      }
+
+  if(dst_3 !== src_3.toFloat()){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 check failed, expected src_3.toFloat()');
+      }
+}
+
+export function testAssignmentLikeContexts0057(){
+  const TAG = 'testAssignmentLikeContexts0057';
+  let src_1: Char = new Char(c'\u0000');
+        let dst_1: Double = new Double(src_1.toDouble());
+
+        let src_2: Char = new Char(c'X');
+        let dst_2: Double = new Double(src_2.toDouble());
+
+        let src_3: Char = new Char(c'\uffff');
+        let dst_3: Double = new Double(src_3.toDouble());
+  if(dst_1 !== src_1.toDouble()){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1.toDouble()');
+      }
+
+  if(dst_2 !== src_2.toDouble()){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2.toDouble()');
+      }
+
+  if(dst_3 !== src_3.toDouble()){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 check failed, expected src_3.toDouble()');
+      }
+}
+
+export function testAssignmentLikeContexts0058(){
+  const TAG = 'testAssignmentLikeContexts0058';
+  let src_1: Boolean[] = new Boolean[1];
+        let dst_1: Boolean[] = src_1;
+
+        let src_2: Byte[] = new Byte[1];
+        let dst_2: Byte[] = src_2;
+
+        let src_3: Char[] = new Char[1];
+        let dst_3: Char[] = src_3;
+
+        let src_4: Short[] = new Short[1];
+        let dst_4: Short[] = src_4;
+
+        let src_5: Int[] = new Int[1];
+        let dst_5: Int[] = src_5;
+
+        let src_6: Long[] = new Long[1];
+        let dst_6: Long[] = src_6;
+
+        let src_7: Float[] = new Float[1];
+        let dst_7: Float[] = src_7;
+
+        let src_8: Double[] = new Double[1];
+        let dst_8: Double[] = src_8;
+
+        let src_9: boolean[] = new boolean[1];
+        let dst_9: boolean[] = src_9;
+
+        let src_10: byte[] = new byte[1];
+        let dst_10: byte[] = src_10;
+
+        let src_11: char[] = new char[1];
+        let dst_11: char[] = src_11;
+
+        let src_12: short[] = new short[1];
+        let dst_12: short[] = src_12;
+
+        let src_13: int[] = new int[1];
+        let dst_13: int[] = src_13;
+
+        let src_14: long[] = new long[1];
+        let dst_14: long[] = src_14;
+
+        let src_15: float[] = new float[1];
+        let dst_15: float[] = src_15;
+
+        let src_16: double[] = new double[1];
+        let dst_16: double[] = src_16;
+  if(dst_1 !== src_1){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1');
+      }
+
+  if(dst_2 !== src_2){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2');
+      }
+
+  if(dst_3 !== src_3){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 check failed, expected src_3');
+      }
+
+  if(dst_4 !== src_4){
+        console.info(`${TAG} Task execution failed: dst_4: ${dst_4}`);
+        throw new Error('dst_4 check failed, expected src_4');
+      }
+
+  if(dst_5 !== src_5){
+        console.info(`${TAG} Task execution failed: dst_5: ${dst_5}`);
+        throw new Error('dst_5 check failed, expected src_5');
+      }
+
+  if(dst_6 !== src_6){
+        console.info(`${TAG} Task execution failed: dst_6: ${dst_6}`);
+        throw new Error('dst_6 check failed, expected src_6');
+      }
+
+  if(dst_7 !== src_7){
+        console.info(`${TAG} Task execution failed: dst_7: ${dst_7}`);
+        throw new Error('dst_7 check failed, expected src_7');
+      }
+
+  if(dst_8 !== src_8){
+        console.info(`${TAG} Task execution failed: dst_8: ${dst_8}`);
+        throw new Error('dst_8 check failed, expected src_8');
+      }
+
+  if(dst_9 !== src_9){
+        console.info(`${TAG} Task execution failed: dst_9: ${dst_9}`);
+        throw new Error('dst_9 check failed, expected src_9');
+      }
+
+  if(dst_10 !== src_10){
+        console.info(`${TAG} Task execution failed: dst_10: ${dst_10}`);
+        throw new Error('dst_10 check failed, expected src_10');
+      }
+
+  if(dst_11 !== src_11){
+        console.info(`${TAG} Task execution failed: dst_11: ${dst_11}`);
+        throw new Error('dst_11 check failed, expected src_11');
+      }
+
+  if(dst_12 !== src_12){
+        console.info(`${TAG} Task execution failed: dst_12: ${dst_12}`);
+        throw new Error('dst_12 check failed, expected src_12');
+      }
+
+  if(dst_13 !== src_13){
+        console.info(`${TAG} Task execution failed: dst_13: ${dst_13}`);
+        throw new Error('dst_13 check failed, expected src_13');
+      }
+
+  if(dst_14 !== src_14){
+        console.info(`${TAG} Task execution failed: dst_14: ${dst_14}`);
+        throw new Error('dst_14 check failed, expected src_14');
+      }
+
+  if(dst_15 !== src_15){
+        console.info(`${TAG} Task execution failed: dst_15: ${dst_15}`);
+        throw new Error('dst_15 check failed, expected src_15');
+      }
+
+  if(dst_16 !== src_16){
+        console.info(`${TAG} Task execution failed: dst_16: ${dst_16}`);
+        throw new Error('dst_16 check failed, expected src_16');
+      }
+}
+
+export function testAssignmentLikeContexts0059(){
+  const TAG = 'testAssignmentLikeContexts0059';
+  let src_1: FixedArray<Boolean> = new FixedArray<Boolean>(1);
+        let dst_1: FixedArray<boolean> = new FixedArray<boolean>(1);
+        // 预期编译阶段校验类型兼容性
+        dst_1 = src_1 as FixedArray<boolean>;
+  if(dst_1.length !== src_1.length){
+        console.info(`${TAG} Task execution failed: dst_1.length: ${dst_1.length}`);
+        throw new Error('dst_1.length check failed, expected src_1.length');
+      }
+}
+
+export function testAssignmentLikeContexts0060(){
+  const TAG = 'testAssignmentLikeContexts0060';
+  let src_2: FixedArray<Byte> = new FixedArray<Byte>(1);
+        let dst_2: FixedArray<byte> = new FixedArray<byte>(1);
+        dst_2 = src_2 as FixedArray<byte>;
+  if(dst_2.length !== src_2.length){
+        console.info(`${TAG} Task execution failed: dst_2.length: ${dst_2.length}`);
+        throw new Error('dst_2.length check failed, expected src_2.length');
+      }
+}
+
+export function testAssignmentLikeContexts0061(){
+  const TAG = 'testAssignmentLikeContexts0061';
+  let src_11: FixedArray<char> = new FixedArray<char>(1);
+        let dst_11: FixedArray<Char> = new FixedArray<Char>(1);
+        dst_11 = src_11 as FixedArray<Char>;
+  if(dst_11.length !== src_11.length){
+        console.info(`${TAG} Task execution failed: dst_11.length: ${dst_11.length}`);
+        throw new Error('dst_11.length check failed, expected src_11.length');
+      }
+}
+
+export function testAssignmentLikeContexts0062(){
+  const TAG = 'testAssignmentLikeContexts0062';
+  let src_12: FixedArray<short> = new FixedArray<short>(1);
+        let dst_12: FixedArray<Short> = new FixedArray<Short>(1);
+        dst_12 = src_12 as FixedArray<Short>;
+  if(dst_12.length !== src_12.length){
+        console.info(`${TAG} Task execution failed: dst_12.length: ${dst_12.length}`);
+        throw new Error('dst_12.length check failed, expected src_12.length');
+      }
+}
+
+export function testAssignmentLikeContexts0063(){
+  const TAG = 'testAssignmentLikeContexts0063';
+  let src_13: FixedArray<int> = new FixedArray<int>(1);
+        let dst_13: FixedArray<Int> = new FixedArray<Int>(1);
+        dst_13 = src_13 as FixedArray<Int>;
+  if(dst_13.length !== src_13.length){
+        console.info(`${TAG} Task execution failed: dst_13.length: ${dst_13.length}`);
+        throw new Error('dst_13.length check failed, expected src_13.length');
+      }
+}
+
+export function testAssignmentLikeContexts0064(){
+  const TAG = 'testAssignmentLikeContexts0064';
+  let src_14: FixedArray<long> = new FixedArray<long>(1);
+        let dst_14: FixedArray<Long> = new FixedArray<Long>(1);
+        dst_14 = src_14 as FixedArray<Long>;
+  if(dst_14.length !== src_14.length){
+        console.info(`${TAG} Task execution failed: dst_14.length: ${dst_14.length}`);
+        throw new Error('dst_14.length check failed, expected src_14.length');
+      }
+}
+
+export function testAssignmentLikeContexts0065(){
+  const TAG = 'testAssignmentLikeContexts0065';
+  let src_15: FixedArray<float> = new FixedArray<float>(1);
+        let dst_15: FixedArray<Float> = new FixedArray<Float>(1);
+        dst_15 = src_15 as FixedArray<Float>;
+  if(dst_15.length !== src_15.length){
+        console.info(`${TAG} Task execution failed: dst_15.length: ${dst_15.length}`);
+        throw new Error('dst_15.length check failed, expected src_15.length');
+      }
+}
+
+export function testAssignmentLikeContexts0066(){
+  const TAG = 'testAssignmentLikeContexts0066';
+  let src_16: FixedArray<double> = new FixedArray<double>(1);
+        let dst_16: FixedArray<Double> = new FixedArray<Double>(1);
+        dst_16 = src_16 as FixedArray<Double>;
+  if(dst_16.length !== src_16.length){
+        console.info(`${TAG} Task execution failed: dst_16.length: ${dst_16.length}`);
+        throw new Error('dst_16.length check failed, expected src_16.length');
+      }
+}
+
+export function testAssignmentLikeContexts0067(){
+  const TAG = 'testAssignmentLikeContexts0067';
+  let src_3: FixedArray<Char> = new FixedArray<Char>(1);
+        let dst_3: FixedArray<char> = new FixedArray<char>(1);
+        dst_3 = src_3 as FixedArray<char>;
+  if(dst_3.length !== src_3.length){
+        console.info(`${TAG} Task execution failed: dst_3.length: ${dst_3.length}`);
+        throw new Error('dst_3.length check failed, expected src_3.length');
+      }
+}
+
+export function testAssignmentLikeContexts0068(){
+  const TAG = 'testAssignmentLikeContexts0068';
+  let src_4: FixedArray<Short> = new FixedArray<Short>(1);
+        let dst_4: FixedArray<short> = new FixedArray<short>(1);
+        dst_4 = src_4 as FixedArray<short>;
+  if(dst_4.length !== src_4.length){
+        console.info(`${TAG} Task execution failed: dst_4.length: ${dst_4.length}`);
+        throw new Error('dst_4.length check failed, expected src_4.length');
+      }
+}
+
+export function testAssignmentLikeContexts0069(){
+  const TAG = 'testAssignmentLikeContexts0069';
+  let src_5: FixedArray<Int> = new FixedArray<Int>(1);
+        let dst_5: FixedArray<int> = new FixedArray<int>(1);
+        dst_5 = src_5 as FixedArray<int>;
+  if(dst_5.length !== src_5.length){
+        console.info(`${TAG} Task execution failed: dst_5.length: ${dst_5.length}`);
+        throw new Error('dst_5.length check failed, expected src_5.length');
+      }
+}
+
+export function testAssignmentLikeContexts0070(){
+  const TAG = 'testAssignmentLikeContexts0070';
+  let src_6: FixedArray<Long> = new FixedArray<Long>(1);
+        let dst_6: FixedArray<long> = new FixedArray<long>(1);
+        dst_6 = src_6 as FixedArray<long>;
+  if(dst_6.length !== src_6.length){
+        console.info(`${TAG} Task execution failed: dst_6.length: ${dst_6.length}`);
+        throw new Error('dst_6.length check failed, expected src_6.length');
+      }
+}
+
+export function testAssignmentLikeContexts0071(){
+  const TAG = 'testAssignmentLikeContexts0071';
+  let src_7: FixedArray<Float> = new FixedArray<Float>(1);
+        let dst_7: FixedArray<float> = new FixedArray<float>(1);
+        dst_7 = src_7 as FixedArray<float>;
+  if(dst_7.length !== src_7.length){
+        console.info(`${TAG} Task execution failed: dst_7.length: ${dst_7.length}`);
+        throw new Error('dst_7.length check failed, expected src_7.length');
+      }
+}
+
+export function testAssignmentLikeContexts0072(){
+  const TAG = 'testAssignmentLikeContexts0072';
+  let src_8: FixedArray<Double> = new FixedArray<Double>(1);
+        let dst_8: FixedArray<double> = new FixedArray<double>(1);
+        dst_8 = src_8 as FixedArray<double>;
+  if(dst_8.length !== src_8.length){
+        console.info(`${TAG} Task execution failed: dst_8.length: ${dst_8.length}`);
+        throw new Error('dst_8.length check failed, expected src_8.length');
+      }
+}
+
+export function testAssignmentLikeContexts0073(){
+  const TAG = 'testAssignmentLikeContexts0073';
+  let src_9: FixedArray<boolean> = new FixedArray<boolean>(1);
+        let dst_9: FixedArray<Boolean> = new FixedArray<Boolean>(1);
+        dst_9 = src_9 as FixedArray<Boolean>;
+  if(dst_9.length !== src_9.length){
+        console.info(`${TAG} Task execution failed: dst_9.length: ${dst_9.length}`);
+        throw new Error('dst_9.length check failed, expected src_9.length');
+      }
+}
+
+export function testAssignmentLikeContexts0074(){
+  const TAG = 'testAssignmentLikeContexts0074';
+  let src_10: FixedArray<byte> = new FixedArray<byte>(1);
+        let dst_10: FixedArray<Byte> = new FixedArray<Byte>(1);
+        dst_10 = src_10 as FixedArray<Byte>;
+  if(dst_10.length !== src_10.length){
+        console.info(`${TAG} Task execution failed: dst_10.length: ${dst_10.length}`);
+        throw new Error('dst_10.length check failed, expected src_10.length');
+      }
+}
+
+export function testAssignmentLikeContexts0075(){
+  const TAG = 'testAssignmentLikeContexts0075';
+  let src_1: byte = -128 as byte;
+        let dst_1: Byte = new Byte(src_1);
+
+        let src_2: byte = 0 as byte;
+        let dst_2: Byte = new Byte(src_2);
+
+        let src_3: byte = 127 as byte;
+        let dst_3: Byte = new Byte(src_3);
+  if(dst_1 !== src_1){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1');
+      }
+
+  if(dst_2 !== src_2){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2');
+      }
+
+  if(dst_3 !== src_3){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 check failed, expected src_3');
+      }
+}
+
+export function testAssignmentLikeContexts0076(){
+  const TAG = 'testAssignmentLikeContexts0076';
+  let src_1: char = c'\u0000';
+        let dst_1: Char = new Char(src_1);
+
+        let src_2: char = c'X';
+        let dst_2: Char = new Char(src_2);
+
+        let src_3: char = c'\uffff';
+        let dst_3: Char = new Char(src_3);
+  if(dst_1 !== src_1){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1');
+      }
+
+  if(dst_2 !== src_2){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2');
+      }
+
+  if(dst_3 !== src_3){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 check failed, expected src_3');
+      }
+}
+
+export function testAssignmentLikeContexts0077(){
+  const TAG = 'testAssignmentLikeContexts0077';
+  let src_1: short = Short.MIN_VALUE;
+        let dst_1: Short = new Short(src_1);
+
+        let src_2: short = (255).toShort();
+        let dst_2: Short = new Short(src_2);
+  if(dst_1 !== src_1){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1');
+      }
+
+  if(dst_2 !== src_2){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2');
+      }
+}
+
+export function testAssignmentLikeContexts0078(){
+  const TAG = 'testAssignmentLikeContexts0078';
+  let src_1: int = 127;
+        let dst_1: Int = new Int(src_1);
+
+        let src_2: int = 32767;
+        let dst_2: Int = new Int(src_2);
+
+        let src_3: int = Int.MAX_VALUE;
+        let dst_3: Int = new Int(src_3);
+  if(dst_1 !== src_1){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1');
+      }
+
+  if(dst_2 !== src_2){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2');
+      }
+
+  if(dst_3 !== src_3){
+        console.info(`${TAG} Task execution failed: dst_3: ${dst_3}`);
+        throw new Error('dst_3 check failed, expected src_3');
+      }
+}
+
+export function testAssignmentLikeContexts0079(){
+  const TAG = 'testAssignmentLikeContexts0079';
+  let src_1: long = Long.MIN_VALUE;
+        let dst_1: Long = new Long(src_1);
+
+        let src_2: long = (9223372036854775807).toLong();
+        let dst_2: Long = new Long(src_2);
+  if(dst_1 !== src_1){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1');
+      }
+
+  if(dst_2 !== src_2){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2');
+      }
+}
+
+export function testAssignmentLikeContexts0080(){
+  const TAG = 'testAssignmentLikeContexts0080';
+  let src_1: float = 1.401298464324817e-45f;
+        let dst_1: Float = new Float(src_1);
+
+        let src_2: float = Float.MAX_VALUE;
+        let dst_2: Float = new Float(src_2);
+  if(dst_1 !== src_1){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1');
+      }
+
+  if(dst_2 !== src_2){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2');
+      }
+}
+
+export function testAssignmentLikeContexts0081(){
+  const TAG = 'testAssignmentLikeContexts0081';
+  let src_1: double = -1.401298464324817e-45;
+        let dst_1: Double = new Double(src_1);
+
+        let src_2: double = Double.MAX_VALUE;
+        let dst_2: Double = new Double(src_2);
+  if(dst_1 !== src_1){
+        console.info(`${TAG} Task execution failed: dst_1: ${dst_1}`);
+        throw new Error('dst_1 check failed, expected src_1');
+      }
+
+  if(dst_2 !== src_2){
+        console.info(`${TAG} Task execution failed: dst_2: ${dst_2}`);
+        throw new Error('dst_2 check failed, expected src_2');
+      }
+}
+
+export function testAssignmentLikeContexts0082(){
+  const TAG = 'testAssignmentLikeContexts0082';
+  let v1: boolean = true;
+        let v2: boolean = false;
+        let c: A23 = new A23(new Boolean(v1), new Boolean(v2));
+        c.foo(new Boolean(v1), new Boolean(v2));
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0083(){
+  const TAG = 'testAssignmentLikeContexts0083';
+  let v1: byte = -128 as byte;
+        let v2: byte = 0 as byte;
+        let v3: byte = 127 as byte;
+        let c: A24 = new A24(new Byte(v1), new Byte(v2), new Byte(v3));
+        c.foo(new Byte(v1), new Byte(v2), new Byte(v3));
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+
+  if(c.fld_3 === null){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0084(){
+  const TAG = 'testAssignmentLikeContexts0084';
+  let v1: float = 1.401298464324817e-45f;
+        let v2: float = Float.MAX_VALUE;
+        let c: A25 = new A25(new Float(v1), new Float(v2));
+        c.foo(new Float(v1), new Float(v2));
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0085(){
+  const TAG = 'testAssignmentLikeContexts0085';
+  let v1: float = 1.401298464324817e-45f;
+        let v2: float = Float.MAX_VALUE;
+        let c: A26 = new A26(new Float(v1) as Floating, new Float(v2) as Floating);
+        c.foo(new Float(v1) as Floating, new Float(v2) as Floating);
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0086(){
+  const TAG = 'testAssignmentLikeContexts0086';
+  let v1: double = -1.401298464324817e-45;
+        let v2: double = Double.MAX_VALUE;
+        let c: A27 = new A27(new Double(v1), new Double(v2));
+        c.foo(new Double(v1), new Double(v2));
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0087(){
+  const TAG = 'testAssignmentLikeContexts0087';
+  let v1: double = -1.401298464324817e-45;
+        let v2: double = Double.MAX_VALUE;
+        let c: A28 = new A28(new Double(v1) as Floating, new Double(v2) as Floating);
+        c.foo(new Double(v1) as Floating, new Double(v2) as Floating);
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0088(){
+  const TAG = 'testAssignmentLikeContexts0088';
+  let v1: char = c'\u0000';
+        let v2: char = c'X';
+        let v3: char = c'\uffff';
+        let c: A29 = new A29(new Char(v1), new Char(v2), new Char(v3));
+        c.foo(new Char(v1), new Char(v2), new Char(v3));
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+
+  if(c.fld_3 === null){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0089(){
+  const TAG = 'testAssignmentLikeContexts0089';
+  let v1: short = Short.MIN_VALUE;
+        let v2: short = (255).toShort();
+        let c: A30 = new A30(new Short(v1), new Short(v2));
+        c.foo(new Short(v1), new Short(v2));
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0090(){
+  const TAG = 'testAssignmentLikeContexts0090';
+  let v1: short = Short.MIN_VALUE;
+        let v2: short = (255).toShort();
+        let c: A31 = new A31(new Short(v1) as Integral, new Short(v2) as Integral);
+        c.foo(new Short(v1) as Integral, new Short(v2) as Integral);
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0091(){
+  const TAG = 'testAssignmentLikeContexts0091';
+  let v1: int = 127;
+        let v2: int = 32767;
+        let v3: int = Int.MAX_VALUE;
+        let c: A32 = new A32(new Int(v1), new Int(v2), new Int(v3));
+        c.foo(new Int(v1), new Int(v2), new Int(v3));
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+
+  if(c.fld_3 === null){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0092(){
+  const TAG = 'testAssignmentLikeContexts0092';
+  let v1: int = 127;
+        let v2: int = 32767;
+        let v3: int = Int.MAX_VALUE;
+        let c: A33 = new A33(new Int(v1) as Integral, new Int(v2) as Integral, new Int(v3) as Integral);
+        c.foo(new Int(v1) as Integral, new Int(v2) as Integral, new Int(v3) as Integral);
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+
+  if(c.fld_3 === null){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0093(){
+  const TAG = 'testAssignmentLikeContexts0093';
+  let v1: long = Long.MIN_VALUE;
+        let v2: long = (9223372036854775807).toLong();
+        let c: A34 = new A34(new Long(v1), new Long(v2));
+        c.foo(new Long(v1), new Long(v2));
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0094(){
+  const TAG = 'testAssignmentLikeContexts0094';
+  let v1: long = Long.MIN_VALUE;
+        let v2: long = (9223372036854775807).toLong();
+        let c: A35 = new A35(new Long(v1) as Integral, new Long(v2) as Integral);
+        c.foo(new Long(v1) as Integral, new Long(v2) as Integral);
+  if(c.fld_1 === null){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 should not be null');
+      }
+
+  if(c.fld_2 === null){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 should not be null');
+      }
+}
+
+export function testAssignmentLikeContexts0095(){
+  const TAG = 'testAssignmentLikeContexts0095';
+  let v1: boolean = true;
+        let v2: boolean = false;
+        let c: A36 = new A36(new Boolean(v1), new Boolean(v2));
+        c.foo(new Boolean(v1), new Boolean(v2));
+  if(c.fld_1 !== new Boolean(v1)){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected new Boolean(v1)');
+      }
+
+  if(c.fld_2 !== new Boolean(v2)){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected new Boolean(v2)');
+      }
+}
+
+export function testAssignmentLikeContexts0096(){
+  const TAG = 'testAssignmentLikeContexts0096';
+  let v1: byte = -128 as byte;
+        let v2: byte = 0 as byte;
+        let v3: byte = 127 as byte;
+        let c: A37 = new A37(new Byte(v1), new Byte(v2), new Byte(v3));
+        c.foo(new Byte(v1), new Byte(v2), new Byte(v3));
+  if(c.fld_1 !== new Byte(v1)){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected new Byte(v1)');
+      }
+
+  if(c.fld_2 !== new Byte(v2)){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected new Byte(v2)');
+      }
+
+  if(c.fld_3 !== new Byte(v3)){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 check failed, expected new Byte(v3)');
+      }
+}
+
+export function testAssignmentLikeContexts0097(){
+  const TAG = 'testAssignmentLikeContexts0097';
+  let v1: char = c'\u0000';
+        let v2: char = c'X';
+        let v3: char = c'\uffff';
+        let c: A38 = new A38(new Char(v1), new Char(v2), new Char(v3));
+        c.foo(new Char(v1), new Char(v2), new Char(v3));
+  if(c.fld_1 !== new Char(v1)){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected new Char(v1)');
+      }
+
+  if(c.fld_2 !== new Char(v2)){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected new Char(v2)');
+      }
+
+  if(c.fld_3 !== new Char(v3)){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 check failed, expected new Char(v3)');
+      }
+}
+
+export function testAssignmentLikeContexts0098(){
+  const TAG = 'testAssignmentLikeContexts0098';
+  let v1: short = Short.MIN_VALUE;
+        let v2: short = (255).toShort();
+        let c: A39 = new A39(new Short(v1), new Short(v2));
+        c.foo(new Short(v1), new Short(v2));
+  if(c.fld_1 !== new Short(v1)){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected new Short(v1)');
+      }
+
+  if(c.fld_2 !== new Short(v2)){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected new Short(v2)');
+      }
+}
+
+export function testAssignmentLikeContexts0099(){
+  const TAG = 'testAssignmentLikeContexts0099';
+  let v1: int = 127;
+        let v2: int = 32767;
+        let v3: int = Int.MAX_VALUE;
+        let c: A40 = new A40(new Int(v1), new Int(v2), new Int(v3));
+        c.foo(new Int(v1), new Int(v2), new Int(v3));
+  if(c.fld_1 !== new Int(v1)){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected new Int(v1)');
+      }
+
+  if(c.fld_2 !== new Int(v2)){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected new Int(v2)');
+      }
+
+  if(c.fld_3 !== new Int(v3)){
+        console.info(`${TAG} Task execution failed: c.fld_3: ${c.fld_3}`);
+        throw new Error('c.fld_3 check failed, expected new Int(v3)');
+      }
+}
+
+export function testAssignmentLikeContexts0100(){
+  const TAG = 'testAssignmentLikeContexts0100';
+  let v1: long = Long.MIN_VALUE;
+        let v2: long = (9223372036854775807).toLong();
+        let c: A41 = new A41(new Long(v1), new Long(v2));
+        c.foo(new Long(v1), new Long(v2));
+  if(c.fld_1 !== new Long(v1)){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected new Long(v1)');
+      }
+
+  if(c.fld_2 !== new Long(v2)){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected new Long(v2)');
+      }
+}
+
+export function testAssignmentLikeContexts0101(){
+  const TAG = 'testAssignmentLikeContexts0101';
+  let v1: float = 1.401298464324817e-45f;
+        let v2: float = Float.MAX_VALUE;
+        let c: A42 = new A42(new Float(v1), new Float(v2));
+        c.foo(new Float(v1), new Float(v2));
+  if(c.fld_1 !== new Float(v1)){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected new Float(v1)');
+      }
+
+  if(c.fld_2 !== new Float(v2)){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected new Float(v2)');
+      }
+}
+
+export function testAssignmentLikeContexts0102(){
+  const TAG = 'testAssignmentLikeContexts0102';
+  let v1: double = -1.401298464324817e-45;
+        let v2: double = Double.MAX_VALUE;
+        let c: A43 = new A43(new Double(v1), new Double(v2));
+        c.foo(new Double(v1), new Double(v2));
+  if(c.fld_1 !== new Double(v1)){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected new Double(v1)');
+      }
+
+  if(c.fld_2 !== new Double(v2)){
+        console.info(`${TAG} Task execution failed: c.fld_2: ${c.fld_2}`);
+        throw new Error('c.fld_2 check failed, expected new Double(v2)');
+      }
+}
+
+export function testAssignmentLikeContexts0103(){
+  const TAG = 'testAssignmentLikeContexts0103';
+  // 基本类型身份转换
+        let src_1: boolean = false;
+        let dst_1: boolean = src_1;
+
+        let src_2: byte = 127;
+        let dst_2: byte = src_2;
+
+        let src_3: short = 32767;
+        let dst_3: short = src_3;
+
+        let src_4: int = 2147483647;
+        let dst_4: int = src_4;
+
+        let src_5: long = 9223372036854775807;
+        let dst_5: long = src_5;
+
+        let src_6: float = 3.40282346e38f;
+        let dst_6: float = src_6;
+
+        let src_7: double = 1.7976931348623157e308;
+        let dst_7: double = src_7;
+
+        let src_8: char = c'A';
+        let dst_8: char = src_8;
+
+        // 包装类型身份转换
+        let src_9: Boolean = new Boolean(false);
+        let dst_9: Boolean = src_9;
+
+        let src_10: Byte = new Byte(new Int(1).toByte());
+        let dst_10: Byte = src_10;
+
+        let src_11: Char = new Char(c'A');
+        let dst_11: Char = src_11;
+
+        // 引用类型身份转换
+        let src_12: Error = new Error("msg");
+        let dst_12: Error = src_12;
+
+        let src_13: char[] = [c'A', c'B'];
+        let dst_13: char[] = src_13;
+  if(src_1 !== dst_1){
+        console.info(`${TAG} Task execution failed: src_1: ${src_1}`);
+        throw new Error('src_1 check failed, expected dst_1');
+      }
+
+  if(src_2 !== dst_2){
+        console.info(`${TAG} Task execution failed: src_2: ${src_2}`);
+        throw new Error('src_2 check failed, expected dst_2');
+      }
+
+  if(src_3 !== dst_3){
+        console.info(`${TAG} Task execution failed: src_3: ${src_3}`);
+        throw new Error('src_3 check failed, expected dst_3');
+      }
+
+  if(src_4 !== dst_4){
+        console.info(`${TAG} Task execution failed: src_4: ${src_4}`);
+        throw new Error('src_4 check failed, expected dst_4');
+      }
+
+  if(src_5 !== dst_5){
+        console.info(`${TAG} Task execution failed: src_5: ${src_5}`);
+        throw new Error('src_5 check failed, expected dst_5');
+      }
+
+  if(src_6 !== dst_6){
+        console.info(`${TAG} Task execution failed: src_6: ${src_6}`);
+        throw new Error('src_6 check failed, expected dst_6');
+      }
+
+  if(src_7 !== dst_7){
+        console.info(`${TAG} Task execution failed: src_7: ${src_7}`);
+        throw new Error('src_7 check failed, expected dst_7');
+      }
+
+  if(src_8 !== dst_8){
+        console.info(`${TAG} Task execution failed: src_8: ${src_8}`);
+        throw new Error('src_8 check failed, expected dst_8');
+      }
+
+  if(src_9 !== dst_9){
+        console.info(`${TAG} Task execution failed: src_9: ${src_9}`);
+        throw new Error('src_9 check failed, expected dst_9');
+      }
+
+  if(src_10 !== dst_10){
+        console.info(`${TAG} Task execution failed: src_10: ${src_10}`);
+        throw new Error('src_10 check failed, expected dst_10');
+      }
+
+  if(src_11 !== dst_11){
+        console.info(`${TAG} Task execution failed: src_11: ${src_11}`);
+        throw new Error('src_11 check failed, expected dst_11');
+      }
+
+  if(src_12 !== dst_12){
+        console.info(`${TAG} Task execution failed: src_12: ${src_12}`);
+        throw new Error('src_12 check failed, expected dst_12');
+      }
+
+  if(src_13 !== dst_13){
+        console.info(`${TAG} Task execution failed: src_13: ${src_13}`);
+        throw new Error('src_13 check failed, expected dst_13');
+      }
+}
+
+export function testAssignmentLikeContexts0104(){
+  const TAG = 'testAssignmentLikeContexts0104';
+  // 数值类型身份转换
+        let src_1: long = Long.MAX_VALUE;
+        let dst_1: long = src_1;
+
+        let src_2: float = Float.POSITIVE_INFINITY;
+        let dst_2: float = src_2;
+
+        // 函数类型身份转换
+        let src_3: (a: Boolean) => Object[] = (a: Boolean): Object[] => { return [a]; };
+        let dst_3: (a: Boolean) => Object[] = src_3;
+
+        // 可空类型身份转换
+        let src_4: String|null = null;
+        let dst_4: String|null = src_4;
+
+        let src_5: ((a: Object) => Object)[]|null = [];
+        let dst_5: ((a: Object) => Object)[]|null = src_5;
+
+        // 多维数组身份转换
+        let src_6: (double|null)[][] = [[1.0, 2.0, null]];
+        let dst_6: (double|null)[][] = src_6;
+
+        // 接口类型身份转换
+
+        let src_7: I = new A44();
+        let dst_7: I = src_7;
+
+        // 枚举类型身份转换
+        let src_8: Color = Color.Red;
+        let dst_8: Color = src_8;
+  if(src_1 !== dst_1){
+        console.info(`${TAG} Task execution failed: src_1: ${src_1}`);
+        throw new Error('src_1 check failed, expected dst_1');
+      }
+
+  if(src_2 !== dst_2){
+        console.info(`${TAG} Task execution failed: src_2: ${src_2}`);
+        throw new Error('src_2 check failed, expected dst_2');
+      }
+
+  if(src_3 !== dst_3){
+        console.info(`${TAG} Task execution failed: src_3: ${src_3}`);
+        throw new Error('src_3 check failed, expected dst_3');
+      }
+
+  if(src_4 !== dst_4){
+        console.info(`${TAG} Task execution failed: src_4: ${src_4}`);
+        throw new Error('src_4 check failed, expected dst_4');
+      }
+
+  if(src_5 !== dst_5){
+        console.info(`${TAG} Task execution failed: src_5: ${src_5}`);
+        throw new Error('src_5 check failed, expected dst_5');
+      }
+
+  if(src_6 !== dst_6){
+        console.info(`${TAG} Task execution failed: src_6: ${src_6}`);
+        throw new Error('src_6 check failed, expected dst_6');
+      }
+
+  if(src_7 !== dst_7){
+        console.info(`${TAG} Task execution failed: src_7: ${src_7}`);
+        throw new Error('src_7 check failed, expected dst_7');
+      }
+
+  if(src_8 !== dst_8){
+        console.info(`${TAG} Task execution failed: src_8: ${src_8}`);
+        throw new Error('src_8 check failed, expected dst_8');
+      }
+}
+
+export function testAssignmentLikeContexts0105(){
+  const TAG = 'testAssignmentLikeContexts0105';
+  let src: B<A45> = new B<A45>();
+        let dst: B<A45> = src;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
+export function testAssignmentLikeContexts0106(){
+  const TAG = 'testAssignmentLikeContexts0106';
+  let src: B1<A45> = new B1<A45>();
+        let dst: B1<A45> = src;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
+export function testAssignmentLikeContexts0107(){
+  const TAG = 'testAssignmentLikeContexts0107';
+  let c: A46 = new A46(
+          false,
+          127 as byte,
+          (32767).toShort(),
+          2147483647,
+          (9223372036854775807).toLong(),
+          3.40282346e38f,
+        1.7976931348623157e308,
+        c'A',
+        new Boolean(false),
+        new Byte(new Int(1).toByte()),
+        new Char(c'A'),
+        new Error("msg"),
+        bar,
+        [bar]
+        );
+        c.foo(
+          c.fld_1,
+          c.fld_2,
+          c.fld_3,
+          c.fld_4,
+          c.fld_5,
+          c.fld_6,
+          c.fld_7,
+          c.fld_8,
+          c.fld_9,
+          c.fld_10,
+          c.fld_11,
+          c.fld_12,
+          c.fld_13,
+          c.fld_14
+        );
+  if(c.fld_1 !== false){
+        console.info(`${TAG} Task execution failed: c.fld_1: ${c.fld_1}`);
+        throw new Error('c.fld_1 check failed, expected false');
+      }
+}
+
+export function testAssignmentLikeContexts0108(){
+  const TAG = 'testAssignmentLikeContexts0108';
+  // 包装类型及数组、函数类型的 null 赋值
+        let v_Boolean: Boolean|null = null;
+        let a_Boolean: (Boolean[])|null = null;
+        let f_Boolean: ((p: Boolean) => Boolean)|null = null;
+
+        let v_Byte: Byte|null = null;
+        let a_Byte: (Byte[])|null = null;
+        let f_Byte: ((p: Byte) => Byte)|null = null;
+
+        let v_Char: Char|null = null;
+        let a_Char: (Char[])|null = null;
+        let f_Char: ((p: Char) => Char)|null = null;
+
+        let v_Double: Double|null = null;
+        let a_Double: (Double[])|null = null;
+        let f_Double: ((p: Double) => Double)|null = null;
+
+        let v_Float: Float|null = null;
+        let a_Float: (Float[])|null = null;
+        let f_Float: ((p: Float) => Float)|null = null;
+
+        let v_Int: Int|null = null;
+        let a_Int: (Int[])|null = null;
+        let f_Int: ((p: Int) => Int)|null = null;
+
+        let v_Long: Long|null = null;
+        let a_Long: (Long[])|null = null;
+        let f_Long: ((p: Long) => Long)|null = null;
+
+        let v_Short: Short|null = null;
+        let a_Short: (Short[])|null = null;
+        let f_Short: ((p: Short) => Short)|null = null;
+  if(v_Boolean !== null){
+        console.info(`${TAG} Task execution failed: v_Boolean: ${v_Boolean}`);
+        throw new Error('v_Boolean check failed, expected null');
+      }
+
+  if(a_Boolean !== null){
+        console.info(`${TAG} Task execution failed: a_Boolean: ${a_Boolean}`);
+        throw new Error('a_Boolean check failed, expected null');
+      }
+
+  if(f_Boolean !== null){
+        console.info(`${TAG} Task execution failed: f_Boolean: ${f_Boolean}`);
+        throw new Error('f_Boolean check failed, expected null');
+      }
+
+  if(v_Byte !== null){
+        console.info(`${TAG} Task execution failed: v_Byte: ${v_Byte}`);
+        throw new Error('v_Byte check failed, expected null');
+      }
+
+  if(a_Byte !== null){
+        console.info(`${TAG} Task execution failed: a_Byte: ${a_Byte}`);
+        throw new Error('a_Byte check failed, expected null');
+      }
+
+  if(f_Byte !== null){
+        console.info(`${TAG} Task execution failed: f_Byte: ${f_Byte}`);
+        throw new Error('f_Byte check failed, expected null');
+      }
+
+  if(v_Char !== null){
+        console.info(`${TAG} Task execution failed: v_Char: ${v_Char}`);
+        throw new Error('v_Char check failed, expected null');
+      }
+
+  if(a_Char !== null){
+        console.info(`${TAG} Task execution failed: a_Char: ${a_Char}`);
+        throw new Error('a_Char check failed, expected null');
+      }
+
+  if(f_Char !== null){
+        console.info(`${TAG} Task execution failed: f_Char: ${f_Char}`);
+        throw new Error('f_Char check failed, expected null');
+      }
+
+  if(v_Double !== null){
+        console.info(`${TAG} Task execution failed: v_Double: ${v_Double}`);
+        throw new Error('v_Double check failed, expected null');
+      }
+
+  if(a_Double !== null){
+        console.info(`${TAG} Task execution failed: a_Double: ${a_Double}`);
+        throw new Error('a_Double check failed, expected null');
+      }
+
+  if(f_Double !== null){
+        console.info(`${TAG} Task execution failed: f_Double: ${f_Double}`);
+        throw new Error('f_Double check failed, expected null');
+      }
+
+  if(v_Float !== null){
+        console.info(`${TAG} Task execution failed: v_Float: ${v_Float}`);
+        throw new Error('v_Float check failed, expected null');
+      }
+
+  if(a_Float !== null){
+        console.info(`${TAG} Task execution failed: a_Float: ${a_Float}`);
+        throw new Error('a_Float check failed, expected null');
+      }
+
+  if(f_Float !== null){
+        console.info(`${TAG} Task execution failed: f_Float: ${f_Float}`);
+        throw new Error('f_Float check failed, expected null');
+      }
+
+  if(v_Int !== null){
+        console.info(`${TAG} Task execution failed: v_Int: ${v_Int}`);
+        throw new Error('v_Int check failed, expected null');
+      }
+
+  if(a_Int !== null){
+        console.info(`${TAG} Task execution failed: a_Int: ${a_Int}`);
+        throw new Error('a_Int check failed, expected null');
+      }
+
+  if(f_Int !== null){
+        console.info(`${TAG} Task execution failed: f_Int: ${f_Int}`);
+        throw new Error('f_Int check failed, expected null');
+      }
+
+  if(v_Long !== null){
+        console.info(`${TAG} Task execution failed: v_Long: ${v_Long}`);
+        throw new Error('v_Long check failed, expected null');
+      }
+
+  if(a_Long !== null){
+        console.info(`${TAG} Task execution failed: a_Long: ${a_Long}`);
+        throw new Error('a_Long check failed, expected null');
+      }
+
+  if(f_Long !== null){
+        console.info(`${TAG} Task execution failed: f_Long: ${f_Long}`);
+        throw new Error('f_Long check failed, expected null');
+      }
+
+  if(v_Short !== null){
+        console.info(`${TAG} Task execution failed: v_Short: ${v_Short}`);
+        throw new Error('v_Short check failed, expected null');
+      }
+
+  if(a_Short !== null){
+        console.info(`${TAG} Task execution failed: a_Short: ${a_Short}`);
+        throw new Error('a_Short check failed, expected null');
+      }
+
+  if(f_Short !== null){
+        console.info(`${TAG} Task execution failed: f_Short: ${f_Short}`);
+        throw new Error('f_Short check failed, expected null');
+      }
+}
+
+export function testAssignmentLikeContexts0109(){
+  const TAG = 'testAssignmentLikeContexts0109';
+  let v_Console: Console|null = null;
+        let a_Console: (Console[])|null = null;
+        let f_Console: ((p: Console) => Console)|null = null;
+
+        let v_Floating: Floating|null = null;
+        let a_Floating: (Floating[])|null = null;
+        let f_Floating: ((p: Floating) => Floating)|null = null;
+
+        let v_Integral: Integral|null = null;
+        let a_Integral: (Integral[])|null = null;
+        let f_Integral: ((p: Integral) => Integral)|null = null;
+
+        let v_OutOfMemoryError: OutOfMemoryError|null = null;
+        let a_OutOfMemoryError: (OutOfMemoryError[])|null = null;
+        let f_OutOfMemoryError: ((p: OutOfMemoryError) => OutOfMemoryError)|null = null;
+
+        let v_AssertionError: AssertionError|null = null;
+        let a_AssertionError: (AssertionError[])|null = null;
+        let f_AssertionError: ((p: AssertionError) => AssertionError)|null = null;
+
+        let v_DivideByZeroError: DivideByZeroError|null = null;
+        let a_DivideByZeroError: (DivideByZeroError[])|null = null;
+        let f_DivideByZeroError: ((p: DivideByZeroError) => DivideByZeroError)|null = null;
+
+        let v_NullPointerError: NullPointerError|null = null;
+        let a_NullPointerError: (NullPointerError[])|null = null;
+        let f_NullPointerError: ((p: NullPointerError) => NullPointerError)|null = null;
+
+        let v_Error: Error|null = null;
+        let a_Error: (Error[])|null = null;
+        let f_Error: ((p: Error) => Error)|null = null;
+  if(v_Console !== null){
+        console.info(`${TAG} Task execution failed: v_Console: ${v_Console}`);
+        throw new Error('v_Console check failed, expected null');
+      }
+
+  if(a_Console !== null){
+        console.info(`${TAG} Task execution failed: a_Console: ${a_Console}`);
+        throw new Error('a_Console check failed, expected null');
+      }
+
+  if(f_Console !== null){
+        console.info(`${TAG} Task execution failed: f_Console: ${f_Console}`);
+        throw new Error('f_Console check failed, expected null');
+      }
+
+  if(v_Floating !== null){
+        console.info(`${TAG} Task execution failed: v_Floating: ${v_Floating}`);
+        throw new Error('v_Floating check failed, expected null');
+      }
+
+  if(a_Floating !== null){
+        console.info(`${TAG} Task execution failed: a_Floating: ${a_Floating}`);
+        throw new Error('a_Floating check failed, expected null');
+      }
+
+  if(f_Floating !== null){
+        console.info(`${TAG} Task execution failed: f_Floating: ${f_Floating}`);
+        throw new Error('f_Floating check failed, expected null');
+      }
+
+  if(v_Integral !== null){
+        console.info(`${TAG} Task execution failed: v_Integral: ${v_Integral}`);
+        throw new Error('v_Integral check failed, expected null');
+      }
+
+  if(a_Integral !== null){
+        console.info(`${TAG} Task execution failed: a_Integral: ${a_Integral}`);
+        throw new Error('a_Integral check failed, expected null');
+      }
+
+  if(f_Integral !== null){
+        console.info(`${TAG} Task execution failed: f_Integral: ${f_Integral}`);
+        throw new Error('f_Integral check failed, expected null');
+      }
+
+  if(v_OutOfMemoryError !== null){
+        console.info(`${TAG} Task execution failed: v_OutOfMemoryError: ${v_OutOfMemoryError}`);
+        throw new Error('v_OutOfMemoryError check failed, expected null');
+      }
+
+  if(a_OutOfMemoryError !== null){
+        console.info(`${TAG} Task execution failed: a_OutOfMemoryError: ${a_OutOfMemoryError}`);
+        throw new Error('a_OutOfMemoryError check failed, expected null');
+      }
+
+  if(f_OutOfMemoryError !== null){
+        console.info(`${TAG} Task execution failed: f_OutOfMemoryError: ${f_OutOfMemoryError}`);
+        throw new Error('f_OutOfMemoryError check failed, expected null');
+      }
+
+  if(v_AssertionError !== null){
+        console.info(`${TAG} Task execution failed: v_AssertionError: ${v_AssertionError}`);
+        throw new Error('v_AssertionError check failed, expected null');
+      }
+
+  if(a_AssertionError !== null){
+        console.info(`${TAG} Task execution failed: a_AssertionError: ${a_AssertionError}`);
+        throw new Error('a_AssertionError check failed, expected null');
+      }
+
+  if(f_AssertionError !== null){
+        console.info(`${TAG} Task execution failed: f_AssertionError: ${f_AssertionError}`);
+        throw new Error('f_AssertionError check failed, expected null');
+      }
+
+  if(v_DivideByZeroError !== null){
+        console.info(`${TAG} Task execution failed: v_DivideByZeroError: ${v_DivideByZeroError}`);
+        throw new Error('v_DivideByZeroError check failed, expected null');
+      }
+
+  if(a_DivideByZeroError !== null){
+        console.info(`${TAG} Task execution failed: a_DivideByZeroError: ${a_DivideByZeroError}`);
+        throw new Error('a_DivideByZeroError check failed, expected null');
+      }
+
+  if(f_DivideByZeroError !== null){
+        console.info(`${TAG} Task execution failed: f_DivideByZeroError: ${f_DivideByZeroError}`);
+        throw new Error('f_DivideByZeroError check failed, expected null');
+      }
+
+  if(v_NullPointerError !== null){
+        console.info(`${TAG} Task execution failed: v_NullPointerError: ${v_NullPointerError}`);
+        throw new Error('v_NullPointerError check failed, expected null');
+      }
+
+  if(a_NullPointerError !== null){
+        console.info(`${TAG} Task execution failed: a_NullPointerError: ${a_NullPointerError}`);
+        throw new Error('a_NullPointerError check failed, expected null');
+      }
+
+  if(f_NullPointerError !== null){
+        console.info(`${TAG} Task execution failed: f_NullPointerError: ${f_NullPointerError}`);
+        throw new Error('f_NullPointerError check failed, expected null');
+      }
+
+  if(v_Error !== null){
+        console.info(`${TAG} Task execution failed: v_Error: ${v_Error}`);
+        throw new Error('v_Error check failed, expected null');
+      }
+
+  if(a_Error !== null){
+        console.info(`${TAG} Task execution failed: a_Error: ${a_Error}`);
+        throw new Error('a_Error check failed, expected null');
+      }
+
+  if(f_Error !== null){
+        console.info(`${TAG} Task execution failed: f_Error: ${f_Error}`);
+        throw new Error('f_Error check failed, expected null');
+      }
+}
+
+export function testAssignmentLikeContexts0110(){
+  const TAG = 'testAssignmentLikeContexts0110';
+  let v_String: String|null = null;
+        let a_String: (String[])|null = null;
+        let f_String: ((p: String) => String)|null = null;
+
+        let v_StringBuilder: StringBuilder|null = null;
+        let a_StringBuilder: (StringBuilder[])|null = null;
+        let f_StringBuilder: ((p: StringBuilder) => StringBuilder)|null = null;
+
+        let v_Type: Type|null = null;
+        let a_Type: (Type[])|null = null;
+        let f_Type: ((p: Type) => Type)|null = null;
+
+        let v_Date: Date|null = null;
+        let a_Date: (Date[])|null = null;
+        let f_Date: ((p: Date) => Date)|null = null;
+
+        let v_StackTrace: StackTrace|null = null;
+        let a_StackTrace: (StackTrace[])|null = null;
+        let f_StackTrace: ((p: StackTrace) => StackTrace)|null = null;
+
+        let v_StackTraceElement: StackTraceElement|null = null;
+        let a_StackTraceElement: (StackTraceElement[])|null = null;
+        let f_StackTraceElement: ((p: StackTraceElement) => StackTraceElement)|null = null;
+  if(v_String !== null){
+        console.info(`${TAG} Task execution failed: v_String: ${v_String}`);
+        throw new Error('v_String check failed, expected null');
+      }
+
+  if(a_String !== null){
+        console.info(`${TAG} Task execution failed: a_String: ${a_String}`);
+        throw new Error('a_String check failed, expected null');
+      }
+
+  if(f_String !== null){
+        console.info(`${TAG} Task execution failed: f_String: ${f_String}`);
+        throw new Error('f_String check failed, expected null');
+      }
+
+  if(v_StringBuilder !== null){
+        console.info(`${TAG} Task execution failed: v_StringBuilder: ${v_StringBuilder}`);
+        throw new Error('v_StringBuilder check failed, expected null');
+      }
+
+  if(a_StringBuilder !== null){
+        console.info(`${TAG} Task execution failed: a_StringBuilder: ${a_StringBuilder}`);
+        throw new Error('a_StringBuilder check failed, expected null');
+      }
+
+  if(f_StringBuilder !== null){
+        console.info(`${TAG} Task execution failed: f_StringBuilder: ${f_StringBuilder}`);
+        throw new Error('f_StringBuilder check failed, expected null');
+      }
+
+  if(v_Type !== null){
+        console.info(`${TAG} Task execution failed: v_Type: ${v_Type}`);
+        throw new Error('v_Type check failed, expected null');
+      }
+
+  if(a_Type !== null){
+        console.info(`${TAG} Task execution failed: a_Type: ${a_Type}`);
+        throw new Error('a_Type check failed, expected null');
+      }
+
+  if(f_Type !== null){
+        console.info(`${TAG} Task execution failed: f_Type: ${f_Type}`);
+        throw new Error('f_Type check failed, expected null');
+      }
+
+  if(v_Date !== null){
+        console.info(`${TAG} Task execution failed: v_Date: ${v_Date}`);
+        throw new Error('v_Date check failed, expected null');
+      }
+
+  if(a_Date !== null){
+        console.info(`${TAG} Task execution failed: a_Date: ${a_Date}`);
+        throw new Error('a_Date check failed, expected null');
+      }
+
+  if(f_Date !== null){
+        console.info(`${TAG} Task execution failed: f_Date: ${f_Date}`);
+        throw new Error('f_Date check failed, expected null');
+      }
+
+  if(v_StackTrace !== null){
+        console.info(`${TAG} Task execution failed: v_StackTrace: ${v_StackTrace}`);
+        throw new Error('v_StackTrace check failed, expected null');
+      }
+
+  if(a_StackTrace !== null){
+        console.info(`${TAG} Task execution failed: a_StackTrace: ${a_StackTrace}`);
+        throw new Error('a_StackTrace check failed, expected null');
+      }
+
+  if(f_StackTrace !== null){
+        console.info(`${TAG} Task execution failed: f_StackTrace: ${f_StackTrace}`);
+        throw new Error('f_StackTrace check failed, expected null');
+      }
+
+  if(v_StackTraceElement !== null){
+        console.info(`${TAG} Task execution failed: v_StackTraceElement: ${v_StackTraceElement}`);
+        throw new Error('v_StackTraceElement check failed, expected null');
+      }
+
+  if(a_StackTraceElement !== null){
+        console.info(`${TAG} Task execution failed: a_StackTraceElement: ${a_StackTraceElement}`);
+        throw new Error('a_StackTraceElement check failed, expected null');
+      }
+
+  if(f_StackTraceElement !== null){
+        console.info(`${TAG} Task execution failed: f_StackTraceElement: ${f_StackTraceElement}`);
+        throw new Error('f_StackTraceElement check failed, expected null');
+      }
+}
+
+export function testAssignmentLikeContexts0111(){
+  const TAG = 'testAssignmentLikeContexts0111';
+  let origin: byte = 0 as byte;
+        let xshort: short = origin;
+        let xint: int = origin;
+        let xlong: long = origin;
+        let xfloat: float = origin;
+        let xdouble: double = origin;
+
+  if(xshort !== origin){
+        console.info(`${TAG} Task execution failed: xshort: ${xshort}`);
+        throw new Error('xshort check failed, expected origin');
+      }
+
+  if(xint !== origin){
+        console.info(`${TAG} Task execution failed: xint: ${xint}`);
+        throw new Error('xint check failed, expected origin');
+      }
+
+  if(xlong !== origin){
+        console.info(`${TAG} Task execution failed: xlong: ${xlong}`);
+        throw new Error('xlong check failed, expected origin');
+      }
+
+  if(xfloat !== origin){
+        console.info(`${TAG} Task execution failed: xfloat: ${xfloat}`);
+        throw new Error('xfloat check failed, expected origin');
+      }
+
+  if(xdouble !== origin){
+        console.info(`${TAG} Task execution failed: xdouble: ${xdouble}`);
+        throw new Error('xdouble check failed, expected origin');
+      }
+}
+
+export function testAssignmentLikeContexts0112(){
+  const TAG = 'testAssignmentLikeContexts0112';
+  let origin: short = 0 as short;
+        let xint: int = origin;
+        let xlong: long = origin;
+        let xfloat: float = origin;
+        let xdouble: double = origin;
+
+  if(xint !== origin){
+        console.info(`${TAG} Task execution failed: xint: ${xint}`);
+        throw new Error('xint check failed, expected origin');
+      }
+
+  if(xlong !== origin){
+        console.info(`${TAG} Task execution failed: xlong: ${xlong}`);
+        throw new Error('xlong check failed, expected origin');
+      }
+
+  if(xfloat !== origin){
+        console.info(`${TAG} Task execution failed: xfloat: ${xfloat}`);
+        throw new Error('xfloat check failed, expected origin');
+      }
+
+  if(xdouble !== origin){
+        console.info(`${TAG} Task execution failed: xdouble: ${xdouble}`);
+        throw new Error('xdouble check failed, expected origin');
+      }
+}
+
+export function testAssignmentLikeContexts0113(){
+  const TAG = 'testAssignmentLikeContexts0113';
+  let origin: int = 0;
+        let xlong: long = origin;
+        let xfloat: float = origin;
+        let xdouble: double = origin;
+
+  if(xlong !== origin){
+        console.info(`${TAG} Task execution failed: xlong: ${xlong}`);
+        throw new Error('xlong check failed, expected origin');
+      }
+
+  if(xfloat !== origin){
+        console.info(`${TAG} Task execution failed: xfloat: ${xfloat}`);
+        throw new Error('xfloat check failed, expected origin');
+      }
+
+  if(xdouble !== origin){
+        console.info(`${TAG} Task execution failed: xdouble: ${xdouble}`);
+        throw new Error('xdouble check failed, expected origin');
+      }
+}
+
+export function testAssignmentLikeContexts0114(){
+  const TAG = 'testAssignmentLikeContexts0114';
+  let origin: long = 0 as long;
+        let xfloat: float = origin;
+        let xdouble: double = origin;
+
+  if(xfloat !== origin){
+        console.info(`${TAG} Task execution failed: xfloat: ${xfloat}`);
+        throw new Error('xfloat check failed, expected origin');
+      }
+
+  if(xdouble !== origin){
+        console.info(`${TAG} Task execution failed: xdouble: ${xdouble}`);
+        throw new Error('xdouble check failed, expected origin');
+      }
+}
+
+export function testAssignmentLikeContexts0115(){
+  const TAG = 'testAssignmentLikeContexts0115';
+  let origin: float = 0.0f;
+        let xdouble: double = origin;
+
+  if(xdouble !== origin){
+        console.info(`${TAG} Task execution failed: xdouble: ${xdouble}`);
+        throw new Error('xdouble check failed, expected origin');
+      }
+}
+
+export function testAssignmentLikeContexts0116(){
+  const TAG = 'testAssignmentLikeContexts0116';
+  let src: Object[] = new Object[1];
+        let dst: Object = src as Object;
+  if(src !== dst){
+        console.info(`${TAG} Task execution failed: src: ${src}`);
+        throw new Error('src check failed, expected dst');
+      }
+}
+
