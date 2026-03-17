@@ -1708,6 +1708,7 @@ export default function TaskTimeout2Test() {
       while (!isTerminate) {
         await promiseCase();
       }
+      expect(isTerminate).assertEqual(true);
       console.log(`${caseName} end.`);
       done();
     })
