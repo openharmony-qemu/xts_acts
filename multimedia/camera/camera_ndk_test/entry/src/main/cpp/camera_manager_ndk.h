@@ -368,6 +368,8 @@ public:
     Camera_ErrorCode IsTorchSupported(int useCaseCode);
     Camera_ErrorCode IsTorchSupportedByTorchMode(int useCaseCode);
     Camera_ErrorCode SetTorchMode(int useCaseCode);
+    bool IsTorchLevelControlSupported();
+    Camera_ErrorCode SetTorchModeOnWithLevel(double level);
     Camera_ErrorCode GetExposureValue(int useCaseCode);
     Camera_ErrorCode GetFocalLength(int useCaseCode);
     Camera_ErrorCode SetSmoothZoom(int useCaseCode);
