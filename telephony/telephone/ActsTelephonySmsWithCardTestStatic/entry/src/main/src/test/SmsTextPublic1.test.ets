@@ -284,10 +284,17 @@ export default function smsTextNoCardPublic() {
         0x01, 0x02, 0x14, 0x23, 0x02, 0xC1, 0x30
       ];
       sms.createMessage(rawArray, '3gpp').then((shortMessage: sms.ShortMessage|undefined) => {
+        expect(shortMessage?.visibleMessageBody == "Aa").assertTrue();
+        expect(shortMessage?.visibleRawAddress.length !== 0).assertTrue();
+        expect(Number(shortMessage?.messageClass) !== -1).assertTrue();
         expect(shortMessage?.protocolId !== -1).assertTrue();
+        expect(shortMessage?.scAddress.length !== 0).assertTrue();
         expect(shortMessage?.scTimestamp !== 0).assertTrue();
+        expect(shortMessage?.isReplaceMessage).assertFalse();
+        expect(shortMessage?.hasReplyPath).assertFalse();
         expect(shortMessage?.pdu == undefined).assertFalse();
         expect(shortMessage?.status !== -1).assertTrue();
+        expect(shortMessage?.isSmsStatusReportMessage).assertTrue();
         done();
       }).catch((err: Error) => {
         let error = err as BusinessError;
