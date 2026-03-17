@@ -44,7 +44,7 @@ class EntryAbility3 extends UIAbility {
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility3 onForeground');
     hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility3 specifiedId' + this.specifiedId);
-    AppStorage.setOrCreate<undefined|String>('specifiedId', this.specifiedId)
+    AppStorage.setOrCreate<string>('specifiedId', this.specifiedId + '')
   }
 
   onDestroy(): Promise<void> | undefined {
