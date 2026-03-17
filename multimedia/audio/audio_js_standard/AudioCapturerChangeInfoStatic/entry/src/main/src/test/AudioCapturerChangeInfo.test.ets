@@ -710,7 +710,7 @@ export default function audioCapturerChange() {
               done();
             }
             else {
-              console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0900 devDescriptor is null: ${devDescriptor}`);
+              console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0900 fail`);
               expect(false).assertTrue();
               done();
             }
@@ -994,7 +994,7 @@ export default function audioCapturerChange() {
               done();
             }
             else {
-              console.info(`SUB_MULTIMEDIA_AUDIO_OFF_CAPTURER_CHANGE_0500 devDescriptor is null: ${devDescriptor}`);
+              console.info(`SUB_MULTIMEDIA_AUDIO_OFF_CAPTURER_CHANGE_0500 fail`);
               expect(false).assertTrue();
               done();
             }

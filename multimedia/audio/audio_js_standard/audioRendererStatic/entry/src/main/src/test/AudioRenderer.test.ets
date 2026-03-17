@@ -2597,7 +2597,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(audioStreamInfo.samplingRate).assertEqual(audioRate.SAMPLE_RATE_44100);
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_44100);
       done();
     })
 
