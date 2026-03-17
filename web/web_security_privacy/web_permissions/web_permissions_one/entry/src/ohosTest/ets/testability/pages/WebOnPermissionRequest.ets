@@ -210,7 +210,7 @@ struct WebOnPermissionRequest {
                           if (this.permissionRequest) {
                             try {
                               this.permissionRequest.grant(null)
-                              Utils.emitEvent('grant', 160900)
+                              Utils.emitEvent('"grant"', 160900)
                             } catch(error) {
                               Utils.emitEvent(error.code, 160900)
                             }
@@ -288,7 +288,7 @@ struct WebOnPermissionRequest {
                           if (this.permissionRequest) {
                             try {
                               this.permissionRequest.grant(undefined)
-                              Utils.emitEvent('grant', 160920)
+                              Utils.emitEvent('"grant"', 160920)
                             } catch(error) {
                               Utils.emitEvent(error.code, 160920)
                             }
@@ -366,7 +366,7 @@ struct WebOnPermissionRequest {
                           if (this.permissionRequest) {
                             try {
                               this.permissionRequest.grant([])
-                              Utils.emitEvent('grant', 160940)
+                              Utils.emitEvent('"grant"', 160940)
                             } catch(error) {
                               Utils.emitEvent(error.code, 160940)
                             }
