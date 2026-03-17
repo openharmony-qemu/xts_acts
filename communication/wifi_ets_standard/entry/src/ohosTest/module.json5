@@ -26,15 +26,30 @@
       {
         "name" : "ohos.permission.SET_WIFI_INFO"
 		  },
-		  {
-        "name" : "ohos.permission.MANAGE_WIFI_CONNECTION"
-		  },
       {
         "name" : "ohos.permission.GET_WIFI_LOCAL_MAC"
       },
  	    {
  	      "name" : "ohos.permission.GET_WIFI_CONFIG"
-		  }
+		  },
+      {
+        "name": "ohos.permission.SET_WIFI_CONFIG",
+      },
+      {
+        "name": "ohos.permission.GET_WIFI_PEERS_MAC",
+      },
+      {
+        "name": "ohos.permission.MANAGE_WIFI_HOTSPOT_EXT",
+      },
+      {
+        "name": "ohos.permission.LOCATION",
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+      },
+      {
+        "name": "ohos.permission.MANAGE_ENTERPRISE_WIFI_CONNECTION",
+      }
     ],
     "deliveryWithInstall": true,
     "installationFree": false,
