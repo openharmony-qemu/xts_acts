@@ -360,7 +360,6 @@ export default function WindowOrientationTest() {
                 subWindowClass.offRotationChange(rotationCallback);
                 hilog.info(0x0000, '[ANI]',`${caseName} :on rotationChange success. `);
                 await subWindowClass.destroyWindow()
-                expect(true).assertTrue();
                 done();
             } catch (err) {
                 err = err as BusinessError;
@@ -397,7 +396,6 @@ export default function WindowOrientationTest() {
                 subWindowClass.offRotationChange();
                 hilog.info(0x0000, '[ANI]',`${caseName} :off rotationChange success. `);
                 await subWindowClass.destroyWindow()
-                expect(true).assertTrue();
                 done();
             } catch (err) {
                 err = err as BusinessError;

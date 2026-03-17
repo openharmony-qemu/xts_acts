@@ -21,12 +21,10 @@ import common from '@ohos.app.ability.common';
 import CompletionHandler from '@ohos.app.ability.CompletionHandler';
 import bundleManager from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base'
-import eventBus from '../lib/EventBus';
-import eventBusPlus from '../lib/EventBusPlus';
 
 const DOMAIN = 0x0000;
 const LOG_TAG = 'COMPLETION_HANDLER_TEST';
-const DELAY_TIME = 2500;
+const DELAY_TIME = 2000;
 
 let sleep = async (millis: number) => {
   return new Promise<void>(resolve => setTimeout(resolve, millis));
@@ -156,6 +154,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
+      await sleep(5000);
       done();
     })
     afterAll(() => {
@@ -180,11 +179,6 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         return;
       }
 
-      const handlerDonePromise = eventBus.onWait('handler_done', 10000);
-      const relyOnDestroyPromise = eventBusPlus.onWait('CompletionHandlerRely_onDestroy', 10000);
-      const testAbilityOnForePromise = eventBus.onWait('TestAbility_onForeground', 10000);
-      let handlerRequestSuccess = false;
-
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 onRequestSuccess called,
@@ -192,14 +186,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
           expect(element.abilityName).assertEqual('EntryAbility');
           expect(message).assertContain('Succeeded');
-          handlerRequestSuccess = true;
-          eventBus.emit('handler_done');
+          done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           expect().assertFail();
-          eventBus.emit('handler_done');
+          done();
         }
       }
 
@@ -214,24 +207,23 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 startAbility failed, err=${JSON.stringify(err)}`);
           expect().assertFail();
+          done();
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 startAbility failed, ${JSON.stringify(e)}`);
         expect().assertFail();
+        done();
       }
       if(isOpen){
+        await sleep(500);
         try {
           await allowOpen();
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           expect().assertFail();
+          done();
         }
       }
-      await handlerDonePromise;
-      if (handlerRequestSuccess) {
-        await Promise.all([relyOnDestroyPromise, testAbilityOnForePromise]);
-      }
-      done();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 end');
     })
 
@@ -252,11 +244,6 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         return;
       }
 
-      const handlerDonePromise = eventBus.onWait('handler_done', 10000);
-      const relyOnDestroyPromise = eventBusPlus.onWait('CompletionHandlerRely_onDestroy', 10000);
-      const testAbilityOnForePromise = eventBus.onWait('TestAbility_onForeground', 10000);
-      let handlerRequestSuccess = false;
-
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200 onRequestSuccess called,
@@ -264,8 +251,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           if (buttonClicked) {
             expect().assertFail();
           }
-          handlerRequestSuccess = true;
-          eventBus.emit('handler_done');
+          done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200 onRequestFailure called,
@@ -273,7 +259,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
           expect(element.abilityName).assertEqual('EntryAbility');
           expect(message).assertContain('User refused redirection');
-          eventBus.emit('handler_done');
+          done();
         }
       }
 
@@ -288,24 +274,23 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200 startAbility failed, err=${JSON.stringify(err)}`);
           expect().assertFail();
+          done();
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200 startAbility failed, ${JSON.stringify(e)}`);
         expect().assertFail();
+        done();
       }
       if(isOpen){
+        await sleep(500);
         try {
           await disallowOpen();
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200 disallowOpen failed, ${JSON.stringify(e)}`);
           expect().assertFail();
+          done();
         }
       }
-      await handlerDonePromise;
-      if (handlerRequestSuccess) {
-        await Promise.all([relyOnDestroyPromise, testAbilityOnForePromise]);
-      }
-      done();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200 end');
     })
 
@@ -326,11 +311,6 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         return;
       }
 
-      const handlerDonePromise = eventBus.onWait('handler_done', 10000);
-      const relyOnDestroyPromise = eventBusPlus.onWait('CompletionHandlerRely_onDestroy', 10000);
-      const testAbilityOnForePromise = eventBus.onWait('TestAbility_onForeground', 10000);
-      let handlerRequestSuccess = false;
-
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 onRequestSuccess called,
@@ -338,17 +318,18 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
           expect(element.abilityName).assertEqual('EntryAbility');
           expect(message).assertContain('Succeeded');
-          handlerRequestSuccess = true;
-          eventBus.emit('handler_done');
+          done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           if(message.indexOf('Failed to call startAbility') != -1){
+            done();
           }else{
             expect().assertFail();
+            done();
+            done();
           }
-          eventBus.emit('handler_done');
         }
       }
 
@@ -364,26 +345,25 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           isOpen = false;
           if(err?.code == 16000050){}else{
             expect().assertFail();
+            done();
           }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 startAbility failed, ${JSON.stringify(e)}`);
         expect().assertFail();
+        done();
       }
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 isNeedOpen ' + isOpen);
       if(isOpen){
+        await sleep(500);
         try {
           await openDialog('选择打开方式', 'CompletionHandlerRely');
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 openDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
-        }
-        await handlerDonePromise;
-        if (handlerRequestSuccess) {
-          await Promise.all([relyOnDestroyPromise, testAbilityOnForePromise]);
+          done();
         }
       }
-      done();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 end');
     })
 
@@ -404,29 +384,24 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         return;
       }
 
-      const handlerDonePromise = eventBus.onWait('handler_done', 10000);
-      const relyOnDestroyPromise = eventBusPlus.onWait('CompletionHandlerRely_onDestroy', 10000);
-      const testAbilityOnForePromise = eventBus.onWait('TestAbility_onForeground', 10000);
-      let handlerRequestSuccess = false;
-
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 onRequestSuccess called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           expect().assertFail();
-          handlerRequestSuccess = true;
-          eventBus.emit('handler_done');
+          done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           if(message.indexOf('Failed to call startAbility') != -1){
+            done();
           }else{
             expect(element.bundleName.length).assertEqual(0);
             expect(element.abilityName.length).assertEqual(0);
             expect(message).assertContain('User closed the implicit startup picker');
+            done();
           }
-          eventBus.emit('handler_done');
         }
       }
 
@@ -441,28 +416,28 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
           if(err?.code == 16000050){
+            done();
           }else{
             expect().assertFail();
+            done();
           }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 startAbility failed, ${JSON.stringify(e)}`);
         expect().assertFail();
+        done();
       }
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 isNeedOpen ' + isOpen);
       if(isOpen){
+        await sleep(500);
         try {
           await closeDialog('选择打开方式');
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 closeDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
-        }
-        await handlerDonePromise;
-        if (handlerRequestSuccess) {
-          await Promise.all([relyOnDestroyPromise, testAbilityOnForePromise]);
+          done();
         }
       }
-      done();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 end');
     })
 
@@ -483,18 +458,12 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         return;
       }
 
-      const handlerDonePromise = eventBus.onWait('handler_done', 10000);
-      const relyOnDestroyPromise = eventBusPlus.onWait('CompletionHandlerRely_onDestroy', 10000);
-      const testAbilityOnForePromise = eventBus.onWait('TestAbility_onForeground', 10000);
-      let handlerRequestSuccess = false;
-
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 onRequestSuccess called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           expect().assertFail();
-          handlerRequestSuccess = true;
-          eventBus.emit('handler_done');
+          done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 onRequestFailure called,
@@ -502,7 +471,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           expect(element.bundleName.length).assertEqual(0);
           expect(element.abilityName.length).assertEqual(0);
           expect(message).assertContain('Failed to call startAbility');
-          eventBus.emit('handler_done');
+          done();
         }
       }
 
@@ -520,18 +489,15 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 startAbility failed, ${JSON.stringify(e)}`);
       }
       if(isOpen){
+        await sleep(500);
         try {
           await openDialog('暂无可用打开方式', '知道了');
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 openDialog failed, ${JSON.stringify(e)}`);
           expect().assertFail();
+          done();
         }
       }
-      await handlerDonePromise;
-      if (handlerRequestSuccess) {
-        await Promise.all([relyOnDestroyPromise, testAbilityOnForePromise]);
-      }
-      done();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 end');
     })
 
@@ -552,11 +518,6 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         return;
       }
 
-      const handlerDonePromise = eventBus.onWait('handler_done', 10000);
-      const relyOnDestroyPromise = eventBusPlus.onWait('CompletionHandlerRely_onDestroy', 10000);
-      const testAbilityOnForePromise = eventBus.onWait('TestAbility_onForeground', 10000);
-      let handlerRequestSuccess = false;
-
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600 onRequestSuccess called,
@@ -564,17 +525,17 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
           expect(element.abilityName).assertEqual('EntryAbility');
           expect(message).assertContain('Succeeded');
-          handlerRequestSuccess = true;
-          eventBus.emit('handler_done');
+          done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           if(message.indexOf('Failed to call startAbility') != -1){
+            done();
           }else{
             expect().assertFail();
+            done();
           }
-          eventBus.emit('handler_done');
         }
       }
 
@@ -590,25 +551,24 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           isOpen = false;
           if(err?.code == 16000050){}else{
             expect().assertFail();
+            done();
           }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600 startAbility failed, ${JSON.stringify(e)}`);
         expect().assertFail();
+        done();
       }
       if(isOpen){
+        await sleep(500);
         try {
           await allowOpen();
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600 allowOpen failed, ${JSON.stringify(e)}`);
           expect().assertFail();
-        }
-        await handlerDonePromise;
-        if (handlerRequestSuccess) {
-          await Promise.all([relyOnDestroyPromise, testAbilityOnForePromise]);
+          done();
         }
       }
-      done();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600 end');
     })
 
@@ -629,11 +589,6 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         return;
       }
 
-      const handlerDonePromise = eventBus.onWait('handler_done', 10000);
-      const relyOnDestroyPromise = eventBusPlus.onWait('CompletionHandlerRely_onDestroy', 10000);
-      const testAbilityOnForePromise = eventBus.onWait('TestAbility_onForeground', 10000);
-      let handlerRequestSuccess = false;
-
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700 onRequestSuccess called,
@@ -641,19 +596,19 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           if (buttonClicked) {
             expect().assertFail();
           }
-          handlerRequestSuccess = true;
-          eventBus.emit('handler_done');
+          done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           if(message.indexOf('Failed to call startAbility') != -1){
+            done();
           }else{
             expect(element.bundleName).assertEqual('com.example.completionhandlerrely');
             expect(element.abilityName).assertEqual('EntryAbility');
             expect(message).assertContain('User refused redirection');
+            done();
           }
-          eventBus.emit('handler_done');
         }
       }
 
@@ -669,26 +624,25 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           isOpen = false;
           if(err?.code == 16000050){}else{
             expect().assertFail();
+            done();
           }
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700 startAbility failed, ${JSON.stringify(e)}`);
         expect().assertFail();
+        done();
       }
       
       if(isOpen){
+        await sleep(500);
         try {
           await disallowOpen();
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700 disallowOpen failed, ${JSON.stringify(e)}`);
           expect().assertFail();
-        }
-        await handlerDonePromise;
-        if (handlerRequestSuccess) {
-          await Promise.all([relyOnDestroyPromise, testAbilityOnForePromise]);
+          done();
         }
       }
-      done();
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700 end');
     })
 
@@ -709,8 +663,6 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         return;
       }
 
-      const handlerDonePromise = eventBus.onWait('handler_done', 10000);
-
       let handler: CompletionHandler = {
         onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800 onRequestSuccess called,
@@ -718,18 +670,18 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
           expect(element.bundleName).assertEqual('com.example.completionhandlertest');
           expect(element.abilityName).assertEqual('Ability2');
           expect(message).assertContain('Succeeded');
-          eventBus.emit('handler_done');
+          done();
         },
         onRequestFailure: (element: bundleManager.ElementName, message: string) => {
           hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800 onRequestFailure called,
             element: ${JSON.stringify(element)}, message: ${message}`);
           expect().assertFail();
-          eventBus.emit('handler_done');
+          done();
         }
       }
 
       try {
-        testContext.startAbility({
+        await testContext.startAbility({
           bundleName: 'com.example.completionhandlertest',
           abilityName: 'Ability2',
         }, {
@@ -739,15 +691,14 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800 startAbility failed, err=${JSON.stringify(err)}`);
           expect().assertFail();
+          done();
         })
       } catch (e) {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800 startAbility failed, ${JSON.stringify(e)}`);
         expect().assertFail();
+        done();
       }
-      await Promise.all([handlerDonePromise, eventBus.onWait('Ability2_onForeground', 10000)]);
-      globalThis.ability2Context.terminateSelf();
-      await eventBus.onWait('Ability2_onDestroy');
-      done();
+
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800 end');
     })
   })

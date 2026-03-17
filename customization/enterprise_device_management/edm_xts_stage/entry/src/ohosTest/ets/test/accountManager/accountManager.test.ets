@@ -187,7 +187,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -323,7 +323,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_009 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -492,7 +492,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isOsAccountAdditionDisallowed_test_005 error 9200002 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_005  -------- END --------');
@@ -514,7 +514,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isOsAccountAdditionDisallowed_test_006 error 9200002 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_006  -------- END --------');
@@ -584,7 +584,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addOsAccountAsync_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -740,7 +740,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addOsAccountAsync_test_008 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1148,7 +1148,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_074 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disallowOsAccountAddition_test_074  -------- END --------');
@@ -1171,7 +1171,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_075 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disallowOsAccountAddition_test_075  -------- END --------');
@@ -1194,7 +1194,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_076 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disallowOsAccountAddition_test_076  -------- END --------');
@@ -1217,7 +1217,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_077 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disallowOsAccountAddition_test_077  -------- END --------');
@@ -1240,7 +1240,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isOsAccountAdditionDisallowed_test_044 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_044  -------- END --------');
@@ -1263,7 +1263,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isOsAccountAdditionDisallowed_test_045 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_045  -------- END --------');
@@ -1286,7 +1286,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isOsAccountAdditionDisallowed_test_046 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_046  -------- END --------');
@@ -1309,7 +1309,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addOsAccountAsync_test_060 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addOsAccountAsync_test_060  -------- END --------');
@@ -1332,7 +1332,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addOsAccountAsync_test_061 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addOsAccountAsync_test_061  -------- END --------');
@@ -1355,7 +1355,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_102 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disallowOsAccountAddition_test_102  -------- END --------');
@@ -1378,7 +1378,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_103 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disallowOsAccountAddition_test_103  -------- END --------');
@@ -1401,7 +1401,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_104 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disallowOsAccountAddition_test_104  -------- END --------');
@@ -1424,7 +1424,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- disallowOsAccountAddition_test_105 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- disallowOsAccountAddition_test_105  -------- END --------');
@@ -1447,7 +1447,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isOsAccountAdditionDisallowed_test_072 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_072  -------- END --------');
@@ -1470,7 +1470,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isOsAccountAdditionDisallowed_test_073 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_073  -------- END --------');
@@ -1493,7 +1493,7 @@ export default function accountManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- isOsAccountAdditionDisallowed_test_074 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- isOsAccountAdditionDisallowed_test_074  -------- END --------');

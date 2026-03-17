@@ -98,7 +98,7 @@ function testSetNTPSever() {
       systemManager.setNTPServer(INVALID_WANT, '');
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -119,7 +119,7 @@ function testSetNTPSever() {
       systemManager.setNTPServer(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -209,7 +209,7 @@ function testGetNTPSever() {
       systemManager.getNTPServer(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -336,7 +336,7 @@ function testSetOtaUpdatePolicy() {
       systemManager.setOtaUpdatePolicy(SELFWANT, policy);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -388,7 +388,7 @@ function testSetOtaUpdatePolicy() {
       systemManager.setOtaUpdatePolicy(SELFWANT, policy);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -641,7 +641,7 @@ function testGetOtaUpdatePolicy() {
       systemManager.getOtaUpdatePolicy(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -765,7 +765,7 @@ function testNotifyUpdatePackages() {
         expect(false).assertTrue();
       })
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -901,7 +901,7 @@ function testGetUpdateResult() {
         expect(false).assertTrue();
       })
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -938,7 +938,7 @@ function testGetUpdateAuthData() {
     try {
       let authData: string = await systemManager.getUpdateAuthData(INVALID_WANT);
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2249,7 +2249,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setNTPServer_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setNTPServer_test_001  -------- END --------');
@@ -2272,7 +2272,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setNTPServer_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setNTPServer_test_002  -------- END --------');
@@ -2295,7 +2295,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getNTPServer_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getNTPServer_test_001  -------- END --------');
@@ -2318,7 +2318,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getNTPServer_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getNTPServer_test_002  -------- END --------');
@@ -2346,7 +2346,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setOtaUpdatePolicy_test_001  -------- END --------');
@@ -2374,7 +2374,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setOtaUpdatePolicy_test_002  -------- END --------');
@@ -2397,7 +2397,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_003 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setOtaUpdatePolicy_test_003  -------- END --------');
@@ -2420,7 +2420,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_004 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setOtaUpdatePolicy_test_004  -------- END --------');
@@ -2443,7 +2443,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getOtaUpdatePolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getOtaUpdatePolicy_test_001  -------- END --------');
@@ -2466,7 +2466,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getOtaUpdatePolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getOtaUpdatePolicy_test_002  -------- END --------');
@@ -2506,7 +2506,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- notifyUpdatePackages_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- notifyUpdatePackages_test_001  -------- END --------');
@@ -2546,7 +2546,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- notifyUpdatePackages_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- notifyUpdatePackages_test_002  -------- END --------');
@@ -2569,7 +2569,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- notifyUpdatePackages_test_003 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- notifyUpdatePackages_test_003  -------- END --------');
@@ -2592,7 +2592,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- notifyUpdatePackages_test_004 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- notifyUpdatePackages_test_004  -------- END --------');
@@ -2615,7 +2615,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateResult_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateResult_test_001  -------- END --------');
@@ -2638,7 +2638,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateResult_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateResult_test_002  -------- END --------');
@@ -2661,7 +2661,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateAuthData_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateAuthData_test_001  -------- END --------');
@@ -2684,7 +2684,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateAuthData_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateAuthData_test_002  -------- END --------');
@@ -2711,7 +2711,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- addKeyEventPolicies_test_001  -------- END --------');
@@ -2738,7 +2738,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- addKeyEventPolicies_test_002  -------- END --------');
@@ -2761,7 +2761,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_003 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- addKeyEventPolicies_test_003  -------- END --------');
@@ -2784,7 +2784,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_004 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- addKeyEventPolicies_test_004  -------- END --------');
@@ -2807,7 +2807,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- removeKeyEventPolicies_test_001  -------- END --------');
@@ -2830,7 +2830,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- removeKeyEventPolicies_test_002  -------- END --------');
@@ -2853,7 +2853,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_003 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- removeKeyEventPolicies_test_003  -------- END --------');
@@ -2876,7 +2876,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_004 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- removeKeyEventPolicies_test_004  -------- END --------');
@@ -2899,7 +2899,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getKeyEventPolicies_test_001  -------- END --------');
@@ -2922,7 +2922,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getKeyEventPolicies_test_002  -------- END --------');
@@ -2944,7 +2944,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getNTPServer_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getNTPServer_test_015  -------- END --------');
@@ -2967,7 +2967,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getNTPServer_test_016 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getNTPServer_test_016  -------- END --------');
@@ -2989,7 +2989,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getOtaUpdatePolicy_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getOtaUpdatePolicy_test_015  -------- END --------');
@@ -3012,7 +3012,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getOtaUpdatePolicy_test_016 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getOtaUpdatePolicy_test_016  -------- END --------');
@@ -3034,7 +3034,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateAuthData_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateAuthData_test_015  -------- END --------');
@@ -3057,7 +3057,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateAuthData_test_016 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateAuthData_test_016  -------- END --------');
@@ -3079,7 +3079,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getKeyEventPolicies_test_015  -------- END --------');
@@ -3102,7 +3102,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_016 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getKeyEventPolicies_test_016  -------- END --------');

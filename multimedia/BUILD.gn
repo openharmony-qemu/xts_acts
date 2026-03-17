@@ -71,9 +71,6 @@ group("multimedia") {
       "audio/ActsAudioOHndkTest:ActsAudioOHndkTest",
       "audio_ndk/oh_audio_render_test:ActsAudioRenderTest",
       "av_codec/audio_encoder:ActsAvbufferEncoderTest",
-      "av_codec/audio_test:ActsAvAudioEncoderCapiNdkTest",
-      "av_codec/avcencInfo:ActsAvcencInfoTest",
-      "av_codec/capability:ActsCapabilityTest",
       "av_codec/demuxer:ActsDemuxerTest",
       "av_codec/ActsDemuxerTest:ActsDemuxerHapTest",
       "av_codec/vcodec/encoder:ActsEncoderTest",
@@ -81,7 +78,6 @@ group("multimedia") {
       "av_codec/vcodec/hevchwhdrcodec:ActsHevcHdrcodecTest",
       "av_codec/vcodec/hwdecoder:ActsHwdecoderTest",
       "av_codec/vcodec/swdecoder:ActsSwDecodeTest",
-      "av_codec/vcodec/h263swdecoder:ActsH263SwDecodeTest",
       "av_codec/vcodec/ActsH263SwDecoderTest:ActsH263swDecoderHapTest",
       "av_codec/vcodec/hevcswdecoder:ActsHevcSwdecoderTest",
       "av_codec/vcodec/mpeg2swdecoder:ActsMpeg2SwdecoderTest",
@@ -232,7 +228,9 @@ group("multimedia") {
       "avMusicTemplate/avMusicTemplate_ets_standard/avMusicTemplateNoPermissionStatic:ActsAVMusicTemplateNoPermissionStaticTest",
       "av_codec/vcodec/ActsMpeg2SwDecoderTest:ActsMpeg2SwDecoderHapTest",
       "media/ActsMediaCppStandardTest:ActsMediaCppStandardHapTest",     
+      "av_codec/vcodec/ActshevchwhdrcodecTest:ActshevchwhdrcodecHapTest",
       "av_codec/vcodec/ActsMpeg4swdecoderTest:ActsMpeg4swdecoderHapTest",
+      "av_codec/vcodec/ActsHdrCodecTest:ActsHdrCodecHapTest",
     ]
   } else {
     deps += [
