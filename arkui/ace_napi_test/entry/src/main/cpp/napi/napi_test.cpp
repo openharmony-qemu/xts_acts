@@ -17989,7 +17989,7 @@ static napi_value NapiThrowBusinessErrorPendingError(napi_env env, napi_callback
 static napi_value NapiRunScriptPathTest01(napi_env env, napi_callback_info info)
 {
     napi_value value;
-    const char* path =  "pages/Xqkdvzmslwbhfrugoyatnciepabjqwertyuiopasdfghjklzxcvbnmqazwsxedcrfvtgbyhnujmikolpaxsokfnvbjrtmzghwueyqlcpgidxrntbfvamsjohzekw.ets";
+    const char* path =  "pages/Xqkdvzms.ets";
     napi_status status = napi_run_script_path(env, path, &value);
     NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
     NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
@@ -18003,7 +18003,7 @@ static napi_value NapiRunScriptPathTest01(napi_env env, napi_callback_info info)
 static napi_value NapiRunScriptPathTest02(napi_env env, napi_callback_info info)
 {
     napi_value value;
-    const char* path =  "pages/OpenHarmony_NAPI_测试文件_2026_马年大吉_ArkTS与Cpp交互验证_AsyncPromise_GetterSetter_极限用例_涵盖所有基础类型与复杂对象的序列化反序列化测试_@#$%^&()_开发提测版本V589_构建时间20260304120000_成功回调与失败捕获的完整性校验.ets";
+    const char* path =  "pages/OpenHarmony_NAPI_测试文件_成功回调与失败.ets";
     napi_status status = napi_run_script_path(env, path, &value);
     NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
     NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
