@@ -562,7 +562,7 @@ function testSetActivationLockDisabled() {
     let credential: string = "test";
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
-    }).catch ((error) => {
+    }).catch ((error: BusinessError) => {
       expect(Number(error.code) === 801 || Number(error.code) === 201).assertTrue();
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
@@ -585,7 +585,7 @@ function testIsActivationLockDisabled() {
     try {
       systemManager.isActivationLockDisabled(SELFWANT);
       expect(false).assertTrue();
-    } catch (error) {
+    } catch (error: BusinessError) {
       expect(Number(error.code) === 801 || Number(error.code) === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
