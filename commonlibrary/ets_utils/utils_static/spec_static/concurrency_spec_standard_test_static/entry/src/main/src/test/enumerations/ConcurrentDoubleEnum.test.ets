@@ -321,7 +321,6 @@ export default function ConcurrentDoubleEnumTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-
     it('concurrent_DoubleEnumIndexTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testTag', '%{public}s', 'it begin');
       let caseName = 'concurrent_DoubleEnumIndexTest001'
