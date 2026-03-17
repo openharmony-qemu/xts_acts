@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import AnnotationsTest from "./Annotations/annotations.test";
+import AssignmentLikeContextsTest from "./contextsandconversions/AssignmentLikeContextsTest.test";
 import AttemptInvalidTypeConversionTest from "./contextsandconversions/AttemptInvalidTypeConversionTest.test";
 import NumericOperatorContextsTest from "./contextsandconversions/NumericOperatorContextsTest.test";
 import StringOperatorContextsTest from "./contextsandconversions/StringOperatorContextsTest.test";
@@ -20,6 +21,7 @@ import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.t
 import UndefinedTypeSafetyTest from "./undefined/UndefinedTypeSafety.test";
 import StatementsTest from "./statements/StatementsTest.test";
 export default function testsuite() {
+  AssignmentLikeContextsTest();
   AnnotationsTest();
   AttemptInvalidTypeConversionTest();
   NumericOperatorContextsTest();
