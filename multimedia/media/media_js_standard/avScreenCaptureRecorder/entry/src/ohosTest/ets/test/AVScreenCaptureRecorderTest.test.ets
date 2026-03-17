@@ -954,6 +954,138 @@ export default function AVScreenCaptureRecorderTest() {
       expect(mediaTestBase.isTestSucceeded()).assertTrue();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTUREPRIVACYMASKMODE_0200 end')
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_001
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_001', Level.LEVEL0, async (done: Function) => {
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
+        avScreenCaptureRecorder.on(null, (err: BusinessError) => {
+        console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
+            });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_002
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_002', Level.LEVEL0, async (done: Function) => {
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
+        avScreenCaptureRecorder.on(undefined, (err: BusinessError) => {
+        console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
+            });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_003
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_003
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_003', Level.LEVEL0, async (done: Function) => {
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
+        avScreenCaptureRecorder.on(null, (state: media.AVScreenCaptureStateCode) => {
+            console.info('avScreenCaptureRecorder stateChange to ' + state);
+            });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_004
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_004
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_004', Level.LEVEL0, async (done: Function) => {
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
+        avScreenCaptureRecorder.on(undefined, (state: media.AVScreenCaptureStateCode) => {
+            console.info('avScreenCaptureRecorder stateChange to ' + state);
+            });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_005
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_005
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_005', Level.LEVEL0, async (done: Function) => {
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
+        avScreenCaptureRecorder.off(null, (err: BusinessError) => {
+        console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
+            });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_006
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_006
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_NULL_UNDERFINED_006', Level.LEVEL0, async (done: Function) => {
+      let avScreenCaptureRecorder = await media.createAVScreenCaptureRecorder();
+      try {
+        avScreenCaptureRecorder.off(undefined, (err: BusinessError) => {
+        console.error(`avScreenCaptureRecorder error: Code: ${err.code}, message: ${err.message}`);
+            });
+      } catch (err) {
+        console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+        expect().assertFail();
+      }
+      avScreenCaptureRecorder.release();
+      done();
+    })
   })
 }
 

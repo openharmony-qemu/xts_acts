@@ -42,7 +42,6 @@ function createAVImageGeneratorCallback(done: Function, testName: string, fileNa
       console.info(TAG,
         testName + ' Succeeded in creating AVImageGenerator, fd: ' + mImageGenerator.fdSrc?.fd + ', offset: ' +
           mImageGenerator.fdSrc?.offset + ', length: ' + mImageGenerator.fdSrc?.length);
-      expect(true).assertTrue();
     } else {
       console.error(TAG,
         testName + ' Failed to create AVImageGenerator, code: ' + error.code + ', msg: ' + error.message);
@@ -61,7 +60,6 @@ async function createAVImageGeneratorPromise(done: Function, testName: string, f
       console.info(TAG,
         testName + ' Succeeded in creating AVImageGenerator, fd: ' + mImageGenerator.fdSrc?.fd + ', offset: ' +
           mImageGenerator.fdSrc?.offset + ', length: ' + mImageGenerator.fdSrc?.length);
-      expect(true).assertTrue();
     }
     done();
   }).catch((error: BusinessError) => {
@@ -219,7 +217,6 @@ function releaseCallback(done: Function, testName: string, fileName: string) {
         } else {
           console.info(TAG, testName + ' release AVImageGenerator success.');
           mImageGenerator = undefined;
-          expect(true).assertTrue();
         }
       });
     }
@@ -236,7 +233,6 @@ async function releasePromise(done: Function, testName: string, fileName: string
     await mImageGenerator.release().then(async () => {
       console.info(TAG, testName + ' release AVImageGenerator success.');
       mImageGenerator = undefined;
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG,
         testName + ' Failed to release AVImageGenerator, code: ' + error.code + ', msg: ' + error.message);
@@ -267,7 +263,6 @@ function releaseCallbackNoFdSrc(done: Function, testName: string) {
         } else {
           console.info(TAG, testName + ' release AVImageGenerator success.');
           mImageGenerator = undefined;
-          expect(true).assertTrue();
         }
       });
     }
@@ -283,7 +278,6 @@ async function releasePromiseNoFdSrc(done: Function, testName: string) {
     await mImageGenerator.release().then(async () => {
       console.info(TAG, testName + ' release AVImageGenerator success.');
       mImageGenerator = undefined;
-      expect(true).assertTrue();
     }).catch((error: BusinessError) => {
       console.error(TAG,
         testName + ' Failed to release AVImageGenerator, code: ' + error.code + ', msg: ' + error.message);
