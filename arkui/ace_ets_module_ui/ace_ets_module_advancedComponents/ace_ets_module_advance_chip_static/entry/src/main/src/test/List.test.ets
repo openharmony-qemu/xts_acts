@@ -16,8 +16,12 @@
 
 import chipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
 import chipTest0010 from './ChipTest/ChipTest0010.test';
+import chipSizeTest from './ChipTest/chipSizeTest.test';
+import prefixIconTest from './ChipTest/prefixIconTest.test';
 
 export default function testsuite() {
   chipGroupIconItemOptionsTest();
   chipTest0010();
+  chipSizeTest();
+  prefixIconTest();
 }
