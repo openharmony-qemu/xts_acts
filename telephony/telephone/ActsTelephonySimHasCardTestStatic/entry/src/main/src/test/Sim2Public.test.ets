@@ -1635,46 +1635,6 @@ export default function Sim2Public() {
     });
 
     /**
-     * @tc.name   testTelephonySimHasOperaterPrivileges_static_0900
-     * @tc.number SUB_Telephony_Sim_HasOperaterPrivileges_0900
-     * @tc.desc   SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous callback.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("testTelephonySimHasOperaterPrivileges_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        let caseName: string = 'testTelephonySimHasOperaterPrivileges_static_0900';
-        hilog.info(domain, tag, `${caseName} test start `);
-        sim.hasSimCard(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
-          if (data) {
-            hilog.info(domain, tag, `${caseName}:success has SimCard1,data->${JSON.stringify(data)}`);
-            sim.hasOperatorPrivileges(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
-              hilog.info(domain, tag, `${caseName}:Invalid parameter value.000000 err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-              if (!data) {
-                hilog.info(domain, tag,
-                  `${caseName}. data->${JSON.stringify(data)}`);
-                  expect(data).assertFalse();
-                  hilog.info(domain, tag, `${caseName} test end `);
-                  done();
-              } else {
-                hilog.info(domain, tag,
-                  `${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
-                  expect(data).assertTrue();
-                hilog.info(domain, tag, `${caseName} test end `);
-                done();
-              }
-            });
-          } else {
-            hilog.info(domain, tag, `${caseName}:fail Do not have SimCard1,data->${JSON.stringify(data)}`);
-            ExpectFail();
-            hilog.info(domain, tag, `${caseName} test end `);
-            done();
-          }
-        });
-      });
-
-    /**
      * @tc.name   testTelephonySimHasOperaterPrivileges_static_1700
      * @tc.number SUB_Telephony_Sim_HasOperaterPrivileges_1700
      * @tc.desc   SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous promise.
