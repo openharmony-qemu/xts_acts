@@ -44,9 +44,9 @@ export default function ChipGroupIconItemOptionsTest() {
         console.info("get ChipGroupIconItemOptionsTest state pages:" + JSON.stringify(pages));
         if (!("ChipGroupIconItemOptionsPage" == pages.name)) {
           console.info("get ChipGroupIconItemOptionsTest pages.name:" + JSON.stringify(pages.name));
-                    routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-                  }
+        }
       } catch (err) {
         console.error("push ChipGroupIconItemOptionsTest page error:" + err);
       }
