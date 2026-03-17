@@ -652,7 +652,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
         let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
         }).catch((err: BusinessError) => {
-          if(err.code != 801){
+          if(err.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0010 failed. Code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(17500001);
           }
@@ -680,7 +680,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
         let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
         }).catch((err: BusinessError) => {
-          if(err.code != 801){
+          if(err.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0011 failed. Code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(17500001);
           }
@@ -708,7 +708,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
         let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
         }).catch((err: BusinessError) => {
-          if(err.code != 801){
+          if(err.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0012 failed. Code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(17500001);
           }
@@ -736,7 +736,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo).then((cmResult: certManager.CMResult) => {
         let list: Array<certManager.Credential> = cmResult.credentialDetailList ?? [];
         }).catch((err: BusinessError) => {
-          if(err.code != 801){
+          if(err.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0013 failed. Code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(17500001);
           }

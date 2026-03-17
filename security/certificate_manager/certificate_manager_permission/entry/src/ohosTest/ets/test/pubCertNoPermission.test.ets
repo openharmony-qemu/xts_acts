@@ -219,7 +219,7 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
       } catch (error) {
-        if(error.code != 801){
+        if(error.code !== 801){
           console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0030 failed. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
         }
