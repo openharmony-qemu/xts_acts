@@ -101,7 +101,7 @@ export default function webOnPermissionRequest() {
      */
     it('testPermissionRequestGrantGroup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitPermissionRequestGrant002", 160860)
-      Utils.registerBaseEvent("testPermissionRequestGrantGroup002", 'grant', 160900,
+      Utils.registerBaseEvent("testPermissionRequestGrantGroup002", '"grant"', 160900,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -119,7 +119,7 @@ export default function webOnPermissionRequest() {
      */
     it('testPermissionRequestGrantGroup003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitPermissionRequestGrant003", 160860)
-      Utils.registerBaseEvent("testPermissionRequestGrantGroup003", 'grant', 160920,
+      Utils.registerBaseEvent("testPermissionRequestGrantGroup003", '"grant"', 160920,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
@@ -136,7 +136,7 @@ export default function webOnPermissionRequest() {
      */
     it('testPermissionRequestGrantGroup004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitPermissionRequestGrant004", 160860)
-      Utils.registerBaseEvent("testPermissionRequestGrantGroup004", 'grant', 160940,
+      Utils.registerBaseEvent("testPermissionRequestGrantGroup004", '"grant"', 160940,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
