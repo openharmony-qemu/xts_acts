@@ -1,4 +1,4 @@
-# the minimum version of CMake.
+multimedia/media/ActsMediaCppStandardTest/entry/src/main/cpp/CMakeLists.txt# the minimum version of CMake.
 cmake_minimum_required(VERSION 3.4.1)
 project(ActsMediaCppStandardTest)
 
@@ -17,12 +17,12 @@ add_library(mediacppstandard_test SHARED
     ADecEncNativeSample.cpp
     VDecEncNativeSample.cpp
     SecurecTest.cpp
-    syscap_stub.c
 )
 
 target_link_libraries(mediacppstandard_test PUBLIC
     libace_napi.z.so
     libhilog_ndk.z.so
+    libdeviceinfo_ndk.z.so
     libnative_media_codecbase.so
     libnative_media_core.so
     libnative_media_adec.so

@@ -87,7 +87,7 @@ public:
     int32_t ReleaseEnc();
     int32_t CalcuError();
 
-    void SetReadPath(const char* inpPath, uint32_t esData[], uint32_t length);
+    void SetReadPath(const char* inpPath, const uint32_t* esData, uint32_t length);
     void SetEosState(bool needSetEos);
     void SetSavePath(const char* outpPath);
     void ReRead();
@@ -135,7 +135,7 @@ private:
     std::string outDir_ = "/data/media/out.aac";
     const char* inpFile;
     const char* outFile;
-    uint32_t* es;
+    const uint32_t* es;
     uint32_t esLength = 0;
 };
 }

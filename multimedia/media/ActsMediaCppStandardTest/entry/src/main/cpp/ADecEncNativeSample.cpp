@@ -813,7 +813,7 @@ void ADecEncNativeSample::OutputFuncEnc()
     }
 }
 
-void ADecEncNativeSample::SetReadPath(const char* inpPath, uint32_t esData[], uint32_t length)
+void ADecEncNativeSample::SetReadPath(const char* inpPath, const uint32_t* esData, uint32_t length)
 {
     inpFile = inpPath;
     es = esData;
