@@ -132,9 +132,7 @@ struct WebPageSnapshot {
         .onPageEnd((event) => {
           if (event) {
             this.isPageEnd = 1;
-            this.pageEnd = event.url
             console.log("onPageEnd==> event.url:" + event.url)
-            console.log("onPageEnd==> this.pageEnd:" + this.pageEnd)
           }
     
     }
