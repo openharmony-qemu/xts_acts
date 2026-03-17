@@ -1201,15 +1201,15 @@ export default function CameraGetActiveProfileTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001
-     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00001
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00001
      * @tc.desc   createPhotoOutput format CAMERA_FORMAT_RGBA_8888
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0001';
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00001';
       try {
         if (mCameraDeviceArray.length > 0) {
           let cameraOutputCapability =
@@ -1241,15 +1241,15 @@ export default function CameraGetActiveProfileTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002
-     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00002
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00002
      * @tc.desc   createPhotoOutput format CAMERA_FORMAT_JPEG
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0002';
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00002', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00002';
       try {
         if (mCameraDeviceArray.length > 0) {
           let cameraOutputCapability =
@@ -1281,15 +1281,15 @@ export default function CameraGetActiveProfileTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003
-     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00003
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00003
      * @tc.desc   createPhotoOutput format CAMERA_FORMAT_YCBCR_P010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0003';
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00003', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00003';
       try {
         if (mCameraDeviceArray.length > 0) {
           let cameraOutputCapability =
@@ -1321,15 +1321,15 @@ export default function CameraGetActiveProfileTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004
-     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004
+     * @tc.name   SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00004
+     * @tc.number SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00004
      * @tc.desc   createPhotoOutput format CAMERA_FORMAT_YCRCB_P010
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_0004';
+    it('SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00004', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_MANAGER_CREATE_PHOTO_OUTPUT_00004';
       try {
         if (mCameraDeviceArray.length > 0) {
           let cameraOutputCapability =
@@ -1360,7 +1360,7 @@ export default function CameraGetActiveProfileTest() {
         done();
       }
     })
-    /**
+        /**
      * @tc.name   SUB_CAMERA_SET_EXPOSURE_MODE_00001
      * @tc.number SUB_CAMERA_SET_EXPOSURE_MODE_00001
      * @tc.desc   Camera ExposureMode isExposureModeSupported EXPOSURE_MODE_UNSPECIFIED
@@ -1368,59 +1368,59 @@ export default function CameraGetActiveProfileTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_SET_EXPOSURE_MODE_00001', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_SET_EXPOSURE_MODE_00001';
-      try {
-        if(mCameraDeviceArray.length > 0) {
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput,mPhotoOutput);
-          let isSupported = mPhotoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED)
-          console.info(TAG, testName, 'isSupported',isSupported);
-          expect(isSupported).not().assertUndefined();
-        }
-        await releasePhotoSession();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, error, error.code)
-        expect().assertFail();
-        await releasePhotoSession();
-        done();
-      }
-    })
-    /**
-     * @tc.name   SUB_CAMERA_SET_EXPOSURE_MODE_00002
-     * @tc.number SUB_CAMERA_SET_EXPOSURE_MODE_00002
-     * @tc.desc   Camera ExposureMode setExposureMode EXPOSURE_MODE_UNSPECIFIED
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_CAMERA_SET_EXPOSURE_MODE_00002', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_SET_EXPOSURE_MODE_00002';
-      try {
-        if(mCameraDeviceArray.length > 0) {
-          createPhotoOutput();
-          await getCreatePhotoSession(mPreviewOutput,mPhotoOutput);
-          let isSupported = mPhotoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED)
-          console.info(TAG, testName, 'isSupported',isSupported);
-          if(isSupported) {
-            mPhotoSession.setExposureMode(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED);
-            let resMode = mPhotoSession.getExposureMode()
-            console.info(TAG, testName, 'resMode',resMode);
-            expect(resMode).assertEqual(0);
-          }else{
-            console.info(TAG,testName,"该设备不支持");
+        it('SUB_CAMERA_SET_EXPOSURE_MODE_00001', Level.LEVEL2, async (done: Function) => {
+          const testName = 'SUB_CAMERA_SET_EXPOSURE_MODE_00001';
+          try {
+            if(mCameraDeviceArray.length > 0) {
+              createPhotoOutput();
+              await getCreatePhotoSession(mPreviewOutput,mPhotoOutput);
+              let isSupported = mPhotoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED)
+              console.info(TAG, testName, 'isSupported',isSupported);
+              expect(isSupported).not().assertUndefined();
+            }
+            await releasePhotoSession();
+            done();
+          } catch (error) {
+            console.error(TAG, testName, error, error.code)
+            expect().assertFail();
+            await releasePhotoSession();
+            done();
           }
-        }
-        await releasePhotoSession();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, error, error.code)
-        expect().assertFail();
-        await releasePhotoSession();
-        done();
-      }
-    })
+        })
+        /**
+         * @tc.name   SUB_CAMERA_SET_EXPOSURE_MODE_00002
+         * @tc.number SUB_CAMERA_SET_EXPOSURE_MODE_00002
+         * @tc.desc   Camera ExposureMode setExposureMode EXPOSURE_MODE_UNSPECIFIED
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_CAMERA_SET_EXPOSURE_MODE_00002', Level.LEVEL2, async (done: Function) => {
+          const testName = 'SUB_CAMERA_SET_EXPOSURE_MODE_00002';
+          try {
+            if(mCameraDeviceArray.length > 0) {
+              createPhotoOutput();
+              await getCreatePhotoSession(mPreviewOutput,mPhotoOutput);
+              let isSupported = mPhotoSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED)
+              console.info(TAG, testName, 'isSupported',isSupported);
+              if(isSupported) {
+                mPhotoSession.setExposureMode(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED);
+                let resMode = mPhotoSession.getExposureMode()
+                console.info(TAG, testName, 'resMode',resMode);
+                expect(resMode).assertEqual(0);
+              }else{
+                console.info(TAG,testName,"该设备不支持");
+              }
+            }
+            await releasePhotoSession();
+            done();
+          } catch (error) {
+            console.error(TAG, testName, error, error.code)
+            expect().assertFail();
+            await releasePhotoSession();
+            done();
+          }
+        })
     /**
      * @tc.name   SUB_CAMERA_SET_EXPOSURE_MODE_00003
      * @tc.number SUB_CAMERA_SET_EXPOSURE_MODE_00003
