@@ -1832,5 +1832,1643 @@ export default function NumericOperatorContextsTest() {
       expect((y != x)).assertEqual(false);
     });
 
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12000
+     * @tc.name      testNumericOperatorContexts0120
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12100
+     * @tc.name      testNumericOperatorContexts0121
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12200
+     * @tc.name      testNumericOperatorContexts0122
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12300
+     * @tc.name      testNumericOperatorContexts0123
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12400
+     * @tc.name      testNumericOperatorContexts0124
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12500
+     * @tc.name      testNumericOperatorContexts0125
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12600
+     * @tc.name      testNumericOperatorContexts0126
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12700
+     * @tc.name      testNumericOperatorContexts0127
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12800
+     * @tc.name      testNumericOperatorContexts0128
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    // ----------------- conversions_int 系列 (共32个用例) -----------------
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_12900
+     * @tc.name      testNumericOperatorContexts0129
+     * @tc.desc      Widening numeric operands to the largest type with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: int = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13000
+     * @tc.name      testNumericOperatorContexts0130
+     * @tc.desc      Widening numeric operands to the largest type with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: int = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13100
+     * @tc.name      testNumericOperatorContexts0131
+     * @tc.desc      Widening numeric operands to the largest type with int and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: long = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13200
+     * @tc.name      testNumericOperatorContexts0132
+     * @tc.desc      Widening numeric operands to the largest type with int and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: long = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13300
+     * @tc.name      testNumericOperatorContexts0133
+     * @tc.desc      Widening numeric operands to the largest type with int and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: long = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13400
+     * @tc.name      testNumericOperatorContexts0134
+     * @tc.desc      Widening numeric operands to the largest type with int and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: long = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13500
+     * @tc.name      testNumericOperatorContexts0135
+     * @tc.desc      Widening numeric operands to the largest type with int and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: long = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13600
+     * @tc.name      testNumericOperatorContexts0136
+     * @tc.desc      Widening numeric operands to the largest type with int and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: long = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13700
+     * @tc.name      testNumericOperatorContexts0137
+     * @tc.desc      Widening numeric operands to the largest type with int and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: float = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13800
+     * @tc.name      testNumericOperatorContexts0138
+     * @tc.desc      Widening numeric operands to the largest type with int and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: float = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_13900
+     * @tc.name      testNumericOperatorContexts0139
+     * @tc.desc      Widening numeric operands to the largest type with int and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: float = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14000
+     * @tc.name      testNumericOperatorContexts0140
+     * @tc.desc      Widening numeric operands to the largest type with int and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: float = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14100
+     * @tc.name      testNumericOperatorContexts0141
+     * @tc.desc      Widening numeric operands to the largest type with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: int = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14200
+     * @tc.name      testNumericOperatorContexts0142
+     * @tc.desc      Widening numeric operands to the largest type with int and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: float = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14300
+     * @tc.name      testNumericOperatorContexts0143
+     * @tc.desc      Widening numeric operands to the largest type with int and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14400
+     * @tc.name      testNumericOperatorContexts0144
+     * @tc.desc      Widening numeric operands to the largest type with int and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14500
+     * @tc.name      testNumericOperatorContexts0145
+     * @tc.desc      Widening numeric operands to the largest type with int and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: float = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14600
+     * @tc.name      testNumericOperatorContexts0146
+     * @tc.desc      Widening numeric operands to the largest type with int and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: double = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14700
+     * @tc.name      testNumericOperatorContexts0147
+     * @tc.desc      Widening numeric operands to the largest type with int and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: double = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14800
+     * @tc.name      testNumericOperatorContexts0148
+     * @tc.desc      Widening numeric operands to the largest type with int and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: double = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_14900
+     * @tc.name      testNumericOperatorContexts0149
+     * @tc.desc      Widening numeric operands to the largest type with int and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: double = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15000
+     * @tc.name      testNumericOperatorContexts0150
+     * @tc.desc      Widening numeric operands to the largest type with int and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: double = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15100
+     * @tc.name      testNumericOperatorContexts0151
+     * @tc.desc      Widening numeric operands to the largest type with int and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: double = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15200
+     * @tc.name      testNumericOperatorContexts0152
+     * @tc.desc      Widening numeric operands to the largest type with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: int = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15300
+     * @tc.name      testNumericOperatorContexts0153
+     * @tc.desc      Widening numeric operands to the largest type with int and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: double = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15400
+     * @tc.name      testNumericOperatorContexts0154
+     * @tc.desc      Widening numeric operands to the largest type with int and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: double = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15500
+     * @tc.name      testNumericOperatorContexts0155
+     * @tc.desc      Widening numeric operands to the largest type with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: int = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15600
+     * @tc.name      testNumericOperatorContexts0156
+     * @tc.desc      Widening numeric operands to the largest type with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: int = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15700
+     * @tc.name      testNumericOperatorContexts0157
+     * @tc.desc      Widening numeric operands to the largest type with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: int = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15800
+     * @tc.name      testNumericOperatorContexts0158
+     * @tc.desc      Widening numeric operands to the largest type with int and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: int = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_15900
+     * @tc.name      testNumericOperatorContexts0159
+     * @tc.desc      Widening numeric operands to the largest type with int and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: long = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16000
+     * @tc.name      testNumericOperatorContexts0160
+     * @tc.desc      Widening numeric operands to the largest type with int and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: int = 1;
+      let y: long = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    // ----------------- conversions_long 系列 (共32个用例) -----------------
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16100
+     * @tc.name      testNumericOperatorContexts0161
+     * @tc.desc      Widening numeric operands to the largest type with long and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: long = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16200
+     * @tc.name      testNumericOperatorContexts0162
+     * @tc.desc      Widening numeric operands to the largest type with long and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: long = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16300
+     * @tc.name      testNumericOperatorContexts0163
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16400
+     * @tc.name      testNumericOperatorContexts0164
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16500
+     * @tc.name      testNumericOperatorContexts0165
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16600
+     * @tc.name      testNumericOperatorContexts0166
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16700
+     * @tc.name      testNumericOperatorContexts0167
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16800
+     * @tc.name      testNumericOperatorContexts0168
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_16900
+     * @tc.name      testNumericOperatorContexts0169
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17000
+     * @tc.name      testNumericOperatorContexts0170
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17100
+     * @tc.name      testNumericOperatorContexts0171
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17200
+     * @tc.name      testNumericOperatorContexts0172
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17300
+     * @tc.name      testNumericOperatorContexts0173
+     * @tc.desc      Widening numeric operands to the largest type with long and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: long = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17400
+     * @tc.name      testNumericOperatorContexts0174
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17500
+     * @tc.name      testNumericOperatorContexts0175
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17600
+     * @tc.name      testNumericOperatorContexts0176
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17700
+     * @tc.name      testNumericOperatorContexts0177
+     * @tc.desc      Widening numeric operands to the largest type with long and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: double = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17800
+     * @tc.name      testNumericOperatorContexts0178
+     * @tc.desc      Widening numeric operands to the largest type with long and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: long = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_17900
+     * @tc.name      testNumericOperatorContexts0179
+     * @tc.desc      Widening numeric operands to the largest type with long and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: long = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18000
+     * @tc.name      testNumericOperatorContexts0180
+     * @tc.desc      Widening numeric operands to the largest type with long and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: long = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18100
+     * @tc.name      testNumericOperatorContexts0181
+     * @tc.desc      Widening numeric operands to the largest type with long and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: long = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18200
+     * @tc.name      testNumericOperatorContexts0182
+     * @tc.desc      Widening numeric operands to the largest type with long and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: long = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18300
+     * @tc.name      testNumericOperatorContexts0183
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18400
+     * @tc.name      testNumericOperatorContexts0184
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18500
+     * @tc.name      testNumericOperatorContexts0185
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18600
+     * @tc.name      testNumericOperatorContexts0186
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18700
+     * @tc.name      testNumericOperatorContexts0187
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18800
+     * @tc.name      testNumericOperatorContexts0188
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_18900
+     * @tc.name      testNumericOperatorContexts0189
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19000
+     * @tc.name      testNumericOperatorContexts0190
+     * @tc.desc      Widening numeric operands to the largest type with long and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: long = 1;
+      let y: float = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    // ----------------- conversions_short 系列 (共40个用例) -----------------
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19100
+     * @tc.name      testNumericOperatorContexts0191
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: short = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19200
+     * @tc.name      testNumericOperatorContexts0192
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: short = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19300
+     * @tc.name      testNumericOperatorContexts0193
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: int = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19400
+     * @tc.name      testNumericOperatorContexts0194
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: int = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19500
+     * @tc.name      testNumericOperatorContexts0195
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: int = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19600
+     * @tc.name      testNumericOperatorContexts0196
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: int = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19700
+     * @tc.name      testNumericOperatorContexts0197
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0197", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: int = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19800
+     * @tc.name      testNumericOperatorContexts0198
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0198", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: int = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_19900
+     * @tc.name      testNumericOperatorContexts0199
+     * @tc.desc      Widening numeric operands to the largest type with short and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0199", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: long = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20000
+     * @tc.name      testNumericOperatorContexts0200
+     * @tc.desc      Widening numeric operands to the largest type with short and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: long = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20100
+     * @tc.name      testNumericOperatorContexts0201
+     * @tc.desc      Widening numeric operands to the largest type with short and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: long = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20200
+     * @tc.name      testNumericOperatorContexts0202
+     * @tc.desc      Widening numeric operands to the largest type with short and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: long = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20300
+     * @tc.name      testNumericOperatorContexts0203
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: short = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20400
+     * @tc.name      testNumericOperatorContexts0204
+     * @tc.desc      Widening numeric operands to the largest type with short and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: long = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20500
+     * @tc.name      testNumericOperatorContexts0205
+     * @tc.desc      Widening numeric operands to the largest type with short and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0205", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: long = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20600
+     * @tc.name      testNumericOperatorContexts0206
+     * @tc.desc      Widening numeric operands to the largest type with short and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0206", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: long = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20700
+     * @tc.name      testNumericOperatorContexts0207
+     * @tc.desc      Widening numeric operands to the largest type with short and long
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0207", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: long = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20800
+     * @tc.name      testNumericOperatorContexts0208
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0208", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: float = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_20900
+     * @tc.name      testNumericOperatorContexts0209
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0209", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: float = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21000
+     * @tc.name      testNumericOperatorContexts0210
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: float = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21100
+     * @tc.name      testNumericOperatorContexts0211
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0211", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: float = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21200
+     * @tc.name      testNumericOperatorContexts0212
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0212", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: float = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21300
+     * @tc.name      testNumericOperatorContexts0213
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0213", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21400
+     * @tc.name      testNumericOperatorContexts0214
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0214", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: short = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21500
+     * @tc.name      testNumericOperatorContexts0215
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0215", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: float = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21600
+     * @tc.name      testNumericOperatorContexts0216
+     * @tc.desc      Widening numeric operands to the largest type with short and float
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0216", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: float = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21700
+     * @tc.name      testNumericOperatorContexts0217
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0217", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: double = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21800
+     * @tc.name      testNumericOperatorContexts0218
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0218", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: double = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_21900
+     * @tc.name      testNumericOperatorContexts0219
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0219", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: double = 1;
+      expect((x < y)).assertEqual(false);
+      expect((y < x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22000
+     * @tc.name      testNumericOperatorContexts0220
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: double = 1;
+      expect((x <= y)).assertEqual(true);
+      expect((y <= x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22100
+     * @tc.name      testNumericOperatorContexts0221
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0221", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: double = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22200
+     * @tc.name      testNumericOperatorContexts0222
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0222", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: double = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22300
+     * @tc.name      testNumericOperatorContexts0223
+     * @tc.desc      Widening numeric operands to the largest type with short and double
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0223", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: double = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22400
+     * @tc.name      testNumericOperatorContexts0224
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0224", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: short = 1;
+      expect((x == y)).assertEqual(true);
+      expect((y == x)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22500
+     * @tc.name      testNumericOperatorContexts0225
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0225", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: short = 1;
+      expect((x != y)).assertEqual(false);
+      expect((y != x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22600
+     * @tc.name      testNumericOperatorContexts0226
+     * @tc.desc      Widening numeric operands to the largest type with short and short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0226", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: short = 1;
+      expect((x !== y)).assertEqual(false);
+      expect((y !== x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22700
+     * @tc.name      testNumericOperatorContexts0227
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0227", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: int = 1;
+      expect((x > y)).assertEqual(false);
+      expect((y > x)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_NUMERIC_OPERATOR_CONTEXTS_22800
+     * @tc.name      testNumericOperatorContexts0228
+     * @tc.desc      Widening numeric operands to the largest type with short and int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNumericOperatorContexts0228", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: short = 1;
+      let y: int = 1;
+      expect((x >= y)).assertEqual(true);
+      expect((y >= x)).assertEqual(true);
+    });
+
   });
 }
