@@ -81,8 +81,7 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('settings_uri_test_static_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let name = '';
-      let uri = settings.getUriSync(name);
+      let uri = settings.getUriSync('');
       console.info("[settings_uri_test_static_002] uri is: " + uri);
       expect(uri).assertEqual('datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=')
       done();
@@ -119,6 +118,29 @@ export default function settingUiJsunit() {
       expect(value).assertEqual("test getValueSync");
       done();
     });
+
+    /**
+     * @tc.name   settings_get_value_sync_no_domain_key_empty
+     * @tc.number settings_get_value_sync_no_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          let defValue: string = 'defValue';
+          let result = settings.getValueSync(abilityContext!, '', defValue);
+          console.info("[settings_get_value_sync_no_domain_key_empty] result:" + result);
+          expect(result === defValue).assertTrue();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_key_empty] error is:" + String(err));
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.name   settings_get_value_static_119
