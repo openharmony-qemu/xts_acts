@@ -2173,7 +2173,7 @@ export default function audioRendererTest() {
 
       await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-\      }).catch((err: Error) => {
+      }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
         done();
@@ -2531,7 +2531,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await play(audioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(audioStream.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_24000);
+      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_24000);
       done();
     })
 
@@ -10355,7 +10355,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await playbackPromise_92(AudioRendererOptions, filePath, done);
       await Utils.msSleep(100);
-      expect(audioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_8000);
+      expect(AudioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_8000);
       done();
     })
 
@@ -10388,7 +10388,7 @@ export default function audioRendererTest() {
       await getFdRead(readPath, done);
       await playWithVideoStream(AudioRendererOptions, filePath, done);
       await Utils.msSleep(2000);
-      expect(AudioStreamInfo.samplingRate).assertEqual(audio.Audio.SAMPLE_RATE_16000);
+      expect(AudioStreamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_16000);
       done();
     })
 
