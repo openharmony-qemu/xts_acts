@@ -77,9 +77,6 @@ struct WebPageSnapshot {
           switch (this.str) {
             case "testWebPageSnapshot001": {
               try {
-                this.isPageEnd = -1
-                this.controller.loadUrl("resource://rawfile/indexCopy.html");
-                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
                   this.controller.webPageSnapshot(null,
                     (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
                       if (error) {
