@@ -3334,8 +3334,7 @@ function testIsActivationLockDisabled() {
   */
   it("test_is_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-    let credential: string = "test";
-    await systemManager.isActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+    await systemManager.isActivationLockDisabled(SELFWANT).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
       if (Number(error.code) === 801) {
