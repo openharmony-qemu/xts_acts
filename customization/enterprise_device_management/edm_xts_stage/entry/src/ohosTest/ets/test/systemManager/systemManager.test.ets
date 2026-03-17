@@ -3175,7 +3175,11 @@ function testSetActivationLockDisabled() {
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
-      expect(Number(error.code) === 801 || Number(error.code) === 9200001).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
     });
     done();
   });
@@ -3194,7 +3198,11 @@ function testSetActivationLockDisabled() {
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
-      expect(Number(error.code) == 801 || Number(error.code) == 9200002).assertTrue();
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
@@ -3215,7 +3223,11 @@ function testSetActivationLockDisabled() {
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
-      expect(Number(error.code) === 801 || Number(error.code) === 9200012).assertTrue();   
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }   
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
@@ -3238,9 +3250,17 @@ function testSetActivationLockDisabled() {
       expect(false).assertTrue();
     }).catch ((error: BusinessError)=> {
         if (info == "true") {
-            expect(Number(error.code) === 801 || Number(error.code) === 9201011).assertTrue();
+          if (Number(error.code) === 801) {
+            expect(Number(error.code) === 801).assertTrue();
+          } else {
+            expect(Number(error.code) === 9201011).assertTrue();
+          }
         } else {
-            expect(Number(error.code) === 801 || Number(error.code) === 9201012).assertTrue();
+          if (Number(error.code) === 801) {
+            expect(Number(error.code) === 801).assertTrue();
+          } else {
+            expect(Number(error.code) === 9201012).assertTrue();
+          }
         }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
@@ -3267,9 +3287,13 @@ function testSetActivationLockDisabled() {
       }
     }).catch ((error: BusinessError)=> {
       if (info == "true") {
-          expect(Number(error.code) === 801).assertTrue();
+        expect(Number(error.code) === 801).assertTrue();
       } else {
-          expect(Number(error.code) === 801 || Number(error.code) === 9201012).assertTrue();
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201012).assertTrue();
+        }
       }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
@@ -3288,12 +3312,15 @@ function testIsActivationLockDisabled() {
   * @tc.level  LEVEL2
   */
   it("test_is_activation_lock_disabled_0001", Level.LEVEL2, async (done: Function) => {
-    try {
-      await systemManager.isActivationLockDisabled(SELFWANT);
+    await systemManager.isActivationLockDisabled(SELFWANT).then(()=>{
       expect(false).assertTrue();
-    } catch (error: BusinessError) {
-      expect(Number(error.code) === 801 || Number(error.code) === 9200001).assertTrue();
-    }
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    });
     done();
   });
 
@@ -3307,14 +3334,18 @@ function testIsActivationLockDisabled() {
   */
   it("test_is_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-    try {
-      await systemManager.isActivationLockDisabled(SELFWANT);
+    let credential: string = "test";
+    await systemManager.isActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
-    } catch (error: BusinessError) {
-      expect(Number(error.code) === 801 || Number(error.code) === 9200002).assertTrue();
-    } finally {
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
-    }
+    });
     done();
   });
 }
