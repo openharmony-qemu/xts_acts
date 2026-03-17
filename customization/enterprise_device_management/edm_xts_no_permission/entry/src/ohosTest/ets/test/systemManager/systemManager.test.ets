@@ -585,7 +585,7 @@ function testIsActivationLockDisabled() {
     try {
       systemManager.isActivationLockDisabled(SELFWANT);
       expect(false).assertTrue();
-    } catch (error: BusinessError) {
+    } catch (error) {
       expect(Number(error.code) === 801 || Number(error.code) === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
