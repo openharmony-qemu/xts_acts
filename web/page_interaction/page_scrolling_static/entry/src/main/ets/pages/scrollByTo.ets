@@ -63,8 +63,6 @@ struct WebComponent{
     }
   }
 
-
-
   build(){
     Column(){
       Row(){

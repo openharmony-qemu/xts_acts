@@ -71,6 +71,26 @@ export default function webViewControllerPart3Test() {
     })
 
     /**
+     * @tc.name   testRestoreWebStateStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_RESTOREWEBSTATE_0200
+     * @tc.desc   test restoreWebState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRestoreWebStateStatic002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>   {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testRestoreWebState002", 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testRestoreWebState002", "17100001", 1000831, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
      * @tc.name   emitonSwitchNextPage
      * @tc.number emitonSwitchNextPage
      * @tc.desc   emitonSwitchNextPage
