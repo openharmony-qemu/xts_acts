@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Scroll, Column, ColumnOptions, Text, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,
+import { Entry, Component, Scroll, Column, ColumnOptions, Text, Row, 
+  FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,
   ClickEvent,
   $r,
   Color

@@ -4,6 +4,7 @@
     "MainAbility/pages/ChipGroup/ChipGroupIconItemOptionsPage",
     "MainAbility/pages/Chip/ChipPage",
     "MainAbility/pages/Chip/chipSizeTest",
-    "MainAbility/pages/Chip/prefixIconTest"
+    "MainAbility/pages/Chip/prefixIconTest",
+    "MainAbility/pages/Chip/ChipApi1"
   ]
 }

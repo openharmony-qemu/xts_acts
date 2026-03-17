@@ -68,8 +68,8 @@ export default function chipSizeTest() {
      * @tc.desc     chipSizeTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-    it('chipSizeTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[chipSizeTest_static_001] START');
+    it('chipSizeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[chipSizeTest_static_0010] START');
       await CommonFunc.sleep(1000);
 
       let btnElement = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -82,9 +82,9 @@ export default function chipSizeTest() {
         .getArray("$children")[2]
         .getArray("$children")[0]
 
-      console.info("[chipSizeTest_static_001] btnElement constraintSize is: " +
+      console.info("[chipSizeTest_static_0010] btnElement constraintSize is: " +
         JSON.stringify(btnElement.getElement('$attrs').getString('constraintSize')));
-      console.info("[chipSizeTest_static_001] unElement constraintSize is: " +
+      console.info("[chipSizeTest_static_0010] unElement constraintSize is: " +
         JSON.stringify(unElement.getElement('$attrs').getString('constraintSize')));
 
       let constraintSize1 = JSON.parseJsonElement(btnElement.getElement('$attrs').getString('constraintSize'))
@@ -94,7 +94,7 @@ export default function chipSizeTest() {
       expect(constraintSize1.getString('maxWidth')).assertEqual(constraintSizeUn.getString('maxWidth'));
       expect(constraintSize1.getString('minHeight')).assertEqual(constraintSizeUn.getString('minHeight'));
       expect(constraintSize1.getString('maxHeight')).assertEqual(constraintSizeUn.getString('maxHeight'));
-      console.info('[chipSizeTest_static_001] END');
+      console.info('[chipSizeTest_static_0010] END');
       done();
     });
     
@@ -104,8 +104,8 @@ export default function chipSizeTest() {
      * @tc.desc     chipSizeTest_static_0020
      * @tc.level    Level.LEVEL1
      */
-    it('chipSizeTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[chipSizeTest_static_002] START');
+    it('chipSizeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[chipSizeTest_static_0020] START');
       await CommonFunc.sleep(1000);
 
       let btnElement = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -118,9 +118,9 @@ export default function chipSizeTest() {
         .getArray("$children")[2]
         .getArray("$children")[0]
 
-      console.info("[chipSizeTest_static_002] btnElement constraintSize is: " +
+      console.info("[chipSizeTest_static_0020] btnElement constraintSize is: " +
         JSON.stringify(btnElement.getElement('$attrs').getString('constraintSize')));
-      console.info("[chipSizeTest_static_002] unElement constraintSize is: " +
+      console.info("[chipSizeTest_static_0020] unElement constraintSize is: " +
         JSON.stringify(unElement.getElement('$attrs').getString('constraintSize')));
 
       let constraintSize1 = JSON.parseJsonElement(btnElement.getElement('$attrs').getString('constraintSize'))
@@ -129,7 +129,7 @@ export default function chipSizeTest() {
       expect(constraintSize1.getString('minWidth')).assertEqual(constraintSizeUn.getString('minWidth'));
       expect(constraintSize1.getString('maxWidth')).assertEqual(constraintSizeUn.getString('maxWidth'));
       expect(constraintSize1.getString('maxHeight')).assertEqual(constraintSizeUn.getString('maxHeight'));
-      console.info('[chipSizeTest_static_002] END');
+      console.info('[chipSizeTest_static_0020] END');
       done();
     });
 
