@@ -24,7 +24,6 @@ import {
   TestType,
   Size
 } from "../../../../hypium/index";
-// import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import router from '@ohos.router';
 import {
   Component,
@@ -302,91 +301,6 @@ export default function MultiSegmentButtonV2PageTest() {
       done();
     })
 
-    /**
-     * @tc.name   MultiSegmentButtonV2PageTest_010
-     * @tc.number MultiSegmentButtonV2PageTest_010
-     * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundEffect
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    // it('MultiSegmentButtonV2PageTest_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.log("[MultiSegmentButtonV2PageTest_010] START");
-    //   const driver = Driver.create();
-    //   await CommonFunc.sleep(1000);
-    //   await CommonFunc.sleep(1000);
-    //
-    //   let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-    //   let scroll = tree.getArray("$children")[0];
-    //   let column = scroll.getArray("$children")[0];
-    //   let common = column.getArray("$children")[1];
-    //   let flex = common.getArray("$children")[0];
-    //   let itemBtn0 = flex.getArray("$children")[0];
-    //
-    //   let jsonOption: string = JSON.stringify(itemBtn0.getElement('$attrs').getString('backgroundEffect'));
-    //
-    //   expect(jsonOption)
-    //     .assertEqual('{"options":{"radius":10,"saturation":25,"brightness":1.5,"color":"#FFFF00FF","adaptiveColor":"AdaptiveColor.Average","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"WITHIN_WINDOW","inactiveColor":"#FF0000FF","blurOption":"[20.000000,40.000000]"}}');
-    //   console.log("[MultiSegmentButtonV2PageTest_010] END");
-    //   done();
-    // })
-
-    /**
-     * @tc.name   MultiSegmentButtonV2PageTest_011
-     * @tc.number MultiSegmentButtonV2PageTest_011
-     * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundBlurStyle
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    // it('MultiSegmentButtonV2PageTest_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.log("[MultiSegmentButtonV2PageTest_011] START");
-    //   const driver = Driver.create();
-    //   await CommonFunc.sleep(1000);
-    //   await CommonFunc.sleep(1000);
-    //
-    //   let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-    //   let scroll = tree.getArray("$children")[0];
-    //   let column = scroll.getArray("$children")[0];
-    //   let common = column.getArray("$children")[3];
-    //   let flex = common.getArray("$children")[0];
-    //   let itemBtn0 = flex.getArray("$children")[0];
-    //   let common1 = itemBtn0.getArray("$children")[0];
-    //   let jsonOption: string = JSON.stringify(common1.getElement('$attrs').getString('backgroundBlurStyle'));
-    //   expect(jsonOption)
-    //     .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1}}');
-    //   console.log("[MultiSegmentButtonV2PageTest_011] END");
-    //   done();
-    // })
-
-    /**
-     * @tc.name   MultiSegmentButtonV2PageTest_012
-     * @tc.number MultiSegmentButtonV2PageTest_012
-     * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundBlurStyleOptions
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    // it('MultiSegmentButtonV2PageTest_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.log("[MultiSegmentButtonV2PageTest_012] START");
-    //   const driver = Driver.create();
-    //   await CommonFunc.sleep(1000);
-    //   await CommonFunc.sleep(1000);
-    //
-    //   let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-    //   let scroll = tree.getArray("$children")[0];
-    //   let column = scroll.getArray("$children")[0];
-    //   let common = column.getArray("$children")[3];
-    //   let flex = common.getArray("$children")[0];
-    //   let itemBtn0 = flex.getArray("$children")[0];
-    //   let common1 = itemBtn0.getArray("$children")[0];
-    //   let jsonOption: string = JSON.stringify(common1.getElement('$attrs').getString('backgroundBlurStyle'));
-    //
-    //   expect(jsonOption)
-    //     .assertEqual('{"value":"BlurStyle.Thin","options":{"colorMode":"ThemeColorMode.System","adaptiveColor":"AdaptiveColor.Default","policy":"BlurStyleActivePolicy.ALWAYS_INACTIVE","type":"BlurType.WITHIN_WINDOW","inactiveColor":"#FFCCCCCC","scale":1}}');
-    //   console.log("[MultiSegmentButtonV2PageTest_012] END");
-    //   done();
-    // })
 
     /**
      * @tc.name   MultiSegmentButtonV2PageTest_015
