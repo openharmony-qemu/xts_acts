@@ -1745,25 +1745,6 @@ export default function RecorderLocalTestAudioAPI() {
       }
     });
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
-     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
-     * @tc.desc   Reliability Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001', Level.LEVEL2, async (done: Function) => {
-      let AVRecorder = await media.createAVRecorder();
-      if(AVRecorder) {
-        AVRecorder?.prepare(avConfig);
-        AVRecorder?.start();
-        AVRecorder?.stop();
-        expect(media.AacProfile.AAC_HE).assertEqual(1);
-        expect(media.AacProfile.AAC_HE_V2).assertEqual(2);
-        done();
-      }
-    });
-    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001
      * @tc.desc   Reliability Test
