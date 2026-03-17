@@ -72,25 +72,24 @@ struct WebPageSnapshot {
       Row() {
         Button("web click").key('webWebPageSnapshot').onClick(async () => {
           console.info("key==>" + this.str)
-          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           switch (this.str) {
             case "testWebPageSnapshot001": {
               try {
                 this.isPageEnd = -1
                 this.controller.loadUrl("resource://rawfile/indexCopy.html");
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                if(this.controller.webPageSnapshot) {
-                  this.controller.webPageSnapshot(null, (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
-                    if (error) {
-                      console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                      Utils.emitEvent("null_error", 154100)
-                    } else {
-                      console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
-                      Utils.emitEvent("null", 154100)
-                    }
-                  });
-                }
+                await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
+                  this.controller.webPageSnapshot(null,
+                    (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
+                      if (error) {
+                        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                        Utils.emitEvent("null_error", 154100)
+                      } else {
+                        console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
+                        Utils.emitEvent("null", 154100)
+                      }
+                    });
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent("null_error", 154100)
@@ -101,15 +100,16 @@ struct WebPageSnapshot {
             }
             case "testWebPageSnapshot002": {
               try {
-                this.controller.webPageSnapshot(undefined, (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
-                  if (error) {
-                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent("undefined_error", 154110)
-                  } else {
-                    console.log('testWebPageSnapshot002 result is :' + JSON.stringify(result));
-                    Utils.emitEvent("undefined", 154110)
-                  }
-                });
+                this.controller.webPageSnapshot(undefined,
+                  (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
+                    if (error) {
+                      console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                      Utils.emitEvent("undefined_error", 154110)
+                    } else {
+                      console.log('testWebPageSnapshot002 result is :' + JSON.stringify(result));
+                      Utils.emitEvent("undefined", 154110)
+                    }
+                  });
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent("undefined_error", 154110)
@@ -134,7 +134,7 @@ struct WebPageSnapshot {
             this.isPageEnd = 1;
             console.log("onPageEnd==> event.url:" + event.url)
           }
-    
+        })
+       }
     }
   }
-}
