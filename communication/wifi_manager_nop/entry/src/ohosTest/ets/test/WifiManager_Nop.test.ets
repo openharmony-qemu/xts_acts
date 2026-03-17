@@ -1186,9 +1186,877 @@ export default function wifiManagerTest() {
       done();
     });
 
-  });
-}
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_Scan_Nop
+     * @tc.number Sub_Communication_WiFiManager_Scan_Nop
+     * @tc.desc   Test scan API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_Scan_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_Scan_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          wifiManager.scan();
+          console.log(`${caseName} get result success`);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
 
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetScanResults_Nop_001
+     * @tc.number Sub_Communication_WiFiManager_GetScanResults_Nop_001
+     * @tc.desc   Test getScanResults Promise API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetScanResults_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetScanResults_Nop_001'
+        console.info(`${caseName} test start`);
+        try {
+          let result = await wifiManager.getScanResults();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetScanResults_Nop_002
+     * @tc.number Sub_Communication_WiFiManager_GetScanResults_Nop_002
+     * @tc.desc   Test getScanResults callback API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetScanResults_Nop_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetScanResults_Nop_002'
+        console.info(`${caseName} test start`);
+        try {
+          wifiManager.getScanResults((err, data) => {
+            if (err) {
+              console.info(`${caseName} callback error`, JSON.stringify(err));
+              expect(Number(err.code)).assertEqual(NOT_PERMISSION);
+              done();
+              return;
+            }
+            console.log(`${caseName} callback success `, JSON.stringify(data));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetScanResultsSync_Nop
+     * @tc.number Sub_Communication_WiFiManager_GetScanResultsSync_Nop
+     * @tc.desc   Test getScanResultsSync API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetScanResultsSync_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetScanResultsSync_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let result = wifiManager.getScanResultsSync();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetScanInfoList_Nop
+     * @tc.number Sub_Communication_WiFiManager_GetScanInfoList_Nop
+     * @tc.desc   Test getScanInfoList API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetScanInfoList_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetScanInfoList_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let result = wifiManager.getScanInfoList();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_AddDeviceConfig_Nop_001
+     * @tc.number Sub_Communication_WiFiManager_AddDeviceConfig_Nop_001
+     * @tc.desc   Test addDeviceConfig Promise API without permission
+     * @tc
+    .type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_AddDeviceConfig_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_AddDeviceConfig_Nop_001'
+        console.info(`${caseName} test start`);
+        try {
+          let config: wifiManager.WifiDeviceConfig = {
+            ssid: "test",
+            preSharedKey: "12345678",
+            securityType: 0
+          };
+          let result = await wifiManager.addDeviceConfig(config);
+          console.log(`${caseName} get result success `, result);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_AddDeviceConfig_Nop_002
+     * @tc.number Sub_Communication_WiFiManager_AddDeviceConfig_Nop_002
+     * @tc.desc   Test addDeviceConfig callback API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_AddDeviceConfig_Nop_002', TestType.FUNCTION | Size
+      .MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'Sub_Communication_WiFiManager_AddDeviceConfig_Nop_002'
+      console.info(`${caseName} test start`);
+      try {
+        let config: wifiManager.WifiDeviceConfig = {
+          ssid: "test",
+          preSharedKey: "12345678",
+          securityType: 0
+        };
+        wifiManager.addDeviceConfig(config, (err, data) => {
+          if (err) {
+            console.info(`${caseName} callback error`, JSON.stringify(err));
+            expect(Number(err.code)).assertEqual(NOT_PERMISSION);
+            done();
+            return;
+          }
+          console.log(`${caseName} callback success `, data);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} error`, JSON.stringify(error));
+        if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+          expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_AddCandidateConfig_Nop_001
+     * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_Nop_001
+     * @tc.desc   Test addCandidateConfig Promise API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_AddCandidateConfig_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_Nop_001'
+        console.info(`${caseName} test start`);
+        try {
+          let config: wifiManager.WifiDeviceConfig = {
+            ssid: "test",
+            preSharedKey: "12345678",
+            securityType: 0
+          };
+          let result = await wifiManager.addCandidateConfig(config);
+          console.log(`${caseName} get result success `, result);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_AddCandidateConfig_Nop_002
+     * @tc.number Sub_Communication_WiFiManager_AddCandidateConfig_Nop_002
+     * @tc.desc   Test addCandidateConfig callback API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_AddCandidateConfig_Nop_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_AddCandidateConfig_Nop_002'
+        console.info(`${caseName} test start`);
+        try {
+          let config: wifiManager.WifiDeviceConfig = {
+            ssid: "test",
+            preSharedKey: "12345678",
+            securityType: 0
+          };
+          wifiManager.addCandidateConfig(config, (err, data) => {
+            if (err) {
+              console.info(`${caseName} callback error`, JSON.stringify(err));
+              expect(Number(err.code)).assertEqual(NOT_PERMISSION);
+              done();
+              return;
+            }
+            console.log(`${caseName} callback success `, data);
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Nop_001
+     * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Nop_001
+     * @tc.desc   Test removeCandidateConfig Promise API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Nop_001',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Nop_001'
+        console.info(`${caseName} test start`);
+        try {
+          let networkId = 0;
+          let result = await wifiManager.removeCandidateConfig(networkId);
+          console.log(`${caseName} get result success `, result);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_RemoveCandidateConfig_Nop_002
+     * @tc.number Sub_Communication_WiFiManager_RemoveCandidateConfig_Nop_002
+     * @tc.desc   Test removeCandidateConfig callback API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_RemoveCandidateConfig_Nop_002',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_RemoveCandidateConfig_Nop_002'
+        console.info(`${caseName} test start`);
+        try {
+          let networkId = 0;
+          wifiManager.removeCandidateConfig(networkId, (err, data) => {
+            if (err) {
+              console.info(`${caseName} callback error`, JSON.stringify(err));
+              expect(Number(err.code)).assertEqual(NOT_PERMISSION);
+              done();
+              return;
+            }
+            console.log(`${caseName} callback success `, data);
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetCandidateConfigs_Nop
+     * @tc.number Sub_Communication_WiFiManager_GetCandidateConfigs_Nop
+     * @tc.desc   Test getCandidateConfigs API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetCandidateConfigs_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetCandidateConfigs_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let result = wifiManager.getCandidateConfigs();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_ConnectToCandidateConfig_Nop
+     * @tc.number Sub_Communication_WiFiManager_ConnectToCandidateConfig_Nop
+     * @tc.desc   Test connectToCandidateConfig API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_ConnectToCandidateConfig_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_ConnectToCandidateConfig_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let networkId = 0;
+          wifiManager.connectToCandidateConfig(networkId);
+          console.log(`${caseName} get result success`);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetSignalLevel_Nop
+     * @tc.number Sub_Communication_WiFiManager_GetSignalLevel_Nop
+     * @tc.desc   Test getSignalLevel API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetSignalLevel_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetSignalLevel_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let result = wifiManager.getSignalLevel(-50, 1);
+          console.log(`${caseName} get result success `, result);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetLinkedInfo_Nop_001
+     * @tc.number Sub_Communication_WiFiManager_GetLinkedInfo_Nop_001
+     * @tc.desc   Test getLinkedInfo Promise API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetLinkedInfo_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetLinkedInfo_Nop_001'
+        console.info(`${caseName} test start`);
+        try {
+          let result = await wifiManager.getLinkedInfo();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetLinkedInfo_Nop_002
+     * @tc.number Sub_Communication_WiFiManager_GetLinkedInfo_Nop_002
+     * @tc.desc   Test getLinkedInfo callback API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetLinkedInfo_Nop_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetLinkedInfo_Nop_002'
+        console.info(`${caseName} test start`);
+        try {
+          wifiManager.getLinkedInfo((err, data) => {
+            if (err) {
+              console.info(`${caseName} callback error`, JSON.stringify(err));
+              expect(Number(err.code)).assertEqual(NOT_PERMISSION);
+              done();
+              return;
+            }
+            console.log(`${caseName} callback success `, JSON.stringify(data));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_IsConnected_Nop
+     * @tc.number Sub_Communication_WiFiManager_IsConnected_Nop
+     * @tc.desc   Test isConnected API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_IsConnected_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_IsConnected_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let result = wifiManager.isConnected();
+          console.log(`${caseName} get result success `, result);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_IsFeatureSupported_Nop
+     * @tc.number Sub_Communication_WiFiManager_IsFeatureSupported_Nop
+     * @tc.desc   Test isFeatureSupported API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_IsFeatureSupported_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_IsFeatureSupported_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let result = wifiManager.isFeatureSupported(0);
+          console.log(`${caseName} get result success `, result);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetIpInfo_Nop
+     * @tc.number Sub_Communication_WiFiManager_GetIpInfo_Nop
+     * @tc.desc   Test getIpInfo API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetIpInfo_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetIpInfo_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let result = wifiManager.getIpInfo();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetP2pLinkedInfo_Nop_001
+     * @tc.number Sub_Communication_WiFiManager_GetP2pLinkedInfo_Nop_001
+     * @tc.desc   Test getP2pLinkedInfo Promise API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetP2pLinkedInfo_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetP2pLinkedInfo_Nop_001'
+        console.info(`${caseName} test start`);
+        try {
+          let result = await wifiManager.getP2pLinkedInfo();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetP2pLinkedInfo_Nop_002
+     * @tc.number Sub_Communication_WiFiManager_GetP2pLinkedInfo_Nop_002
+     * @tc.desc   Test getP2pLinkedInfo callback API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetP2pLinkedInfo_Nop_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetP2pLinkedInfo_Nop_002'
+        console.info(`${caseName} test start`);
+        try {
+          wifiManager.getP2pLinkedInfo((err, data) => {
+            if (err) {
+              console.info(`${caseName} callback error`, JSON.stringify(err));
+              expect(Number(err.code)).assertEqual(NOT_PERMISSION);
+              done();
+              return;
+            }
+            console.log(`${caseName} callback success `, JSON.stringify(data));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetP2pPeerDevices_Nop_001
+     * @tc.number Sub_Communication_WiFiManager_GetP2pPeerDevices_Nop_001
+     * @tc.desc   Test getP2pPeerDevices Promise API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetP2pPeerDevices_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetP2pPeerDevices_Nop_001'
+        console.info(`${caseName} test start`);
+        try {
+          let result = await wifiManager.getP2pPeerDevices();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetP2pPeerDevices_Nop_002
+     * @tc.number Sub_Communication_WiFiManager_GetP2pPeerDevices_Nop_002
+     * @tc.desc   Test getP2pPeerDevices callback API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetP2pPeerDevices_Nop_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetP2pPeerDevices_Nop_002'
+        console.info(`${caseName} test start`);
+        try {
+          wifiManager.getP2pPeerDevices((err, data) => {
+            if (err) {
+              console.info(`${caseName} callback error`, JSON.stringify(err));
+              expect(Number(err.code)).assertEqual(NOT_PERMISSION);
+              done();
+              return;
+            }
+            console.log(`${caseName} callback success `, JSON.stringify(data));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetP2pLocalDevice_Nop_001
+     * @tc.number Sub_Communication_WiFiManager_GetP2pLocalDevice_Nop_001
+     * @tc.desc   Test getP2pLocalDevice Promise API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetP2pLocalDevice_Nop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetP2pLocalDevice_Nop_001'
+        console.info(`${caseName} test start`);
+        try {
+          let result = await wifiManager.getP2pLocalDevice();
+          console.log(`${caseName} get result success `, JSON.stringify(result));
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_GetP2pLocalDevice_Nop_002
+     * @tc.number Sub_Communication_WiFiManager_GetP2pLocalDevice_Nop_002
+     * @tc.desc   Test getP2pLocalDevice callback API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_GetP2pLocalDevice_Nop_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_GetP2pLocalDevice_Nop_002'
+        console.info(`${caseName} test start`);
+        try {
+          wifiManager.getP2pLocalDevice((err, data) => {
+            if (err) {
+              console.info(`${caseName} callback error`, JSON.stringify(err));
+              expect(Number(err.code)).assertEqual(NOT_PERMISSION);
+              done();
+              return;
+            }
+            console.log(`${caseName} callback success `, JSON.stringify(data));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_P2pConnect_Nop
+     * @tc.number Sub_Communication_WiFiManager_P2pConnect_Nop
+     * @tc.desc   Test p2pConnect API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_P2pConnect_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_P2pConnect_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let config: wifiManager.WifiP2PConfig = {
+            deviceAddress: "00:11:22:33:44:55",
+            netId: -1,
+            passphrase: "12345678",
+            groupName: "test",
+            goBand: 0
+          };
+          let result = wifiManager.p2pConnect(config);
+          console.log(`${caseName} get result success `, result);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+
+    /**
+     * @tc.name   Sub_Communication_WiFiManager_P2pCancelConnect_Nop
+     * @tc.number Sub_Communication_WiFiManager_P2pCancelConnect_Nop
+     * @tc.desc   Test p2pCancelConnect API without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Communication_WiFiManager_P2pCancelConnect_Nop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'Sub_Communication_WiFiManager_P2pCancelConnect_Nop'
+        console.info(`${caseName} test start`);
+        try {
+          let result = wifiManager.p2pCancelConnect();
+          console.log(`${caseName} get result success `, result);
+          expect().assertFail();
+        } catch (error) {
+          console.info(`${caseName} error`, JSON.stringify(error));
+          if (error.code === 801) {
+            console.info('[bluetooth_js]descriptorWrite is not support');
+            expect(801).assertEqual(error.code);
+          } else {
+            expect(Number(error.code)).assertEqual(NOT_PERMISSION);
+          }
+        }
+        console.info(`${caseName} test end`);
+        done();
+      });
+  })
+}
 function wifiManagerExtAvailable(): boolean {
   const isAvailable = canIUse("SystemCapability.Communication.wifiMg.AP.Extension");
   if (isAvailable) {
