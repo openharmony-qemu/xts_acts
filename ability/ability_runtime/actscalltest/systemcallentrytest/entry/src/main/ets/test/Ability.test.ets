@@ -72,7 +72,7 @@ class MySequenceable {
 }
 
 export default function abilityTest() {
-  describe('ActsAbilityTest', () => {
+  describe('ActsAbilityTestAdapt001', () => {
 
     afterEach(async (done: Function) => {
       if (subscriber != null) {

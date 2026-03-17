@@ -15,6 +15,8 @@
  */
 
 import chipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
+import ChipGroupItemOptionsTest from './ChipGroupTest/ChipGroupItemOptionsTest.test';
+import ChipGroupSymbolItemOptionsTest from './ChipGroupTest/ChipGroupSymbolItemOptionsTest.test';
 import chipTest0010 from './ChipTest/ChipTest0010.test';
 import chipSizeTest from './ChipTest/chipSizeTest.test';
 import prefixIconTest from './ChipTest/prefixIconTest.test';
@@ -22,6 +24,8 @@ import ChipApi1 from './ChipTest/ChipApi1.test';
 
 export default function testsuite() {
   chipGroupIconItemOptionsTest();
+  ChipGroupItemOptionsTest();
+  ChipGroupSymbolItemOptionsTest();
   chipTest0010();
   chipSizeTest();
   prefixIconTest();
