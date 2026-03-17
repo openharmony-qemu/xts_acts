@@ -15,7 +15,9 @@
 
 import wifiSta from './WifiManagerSTA.test'
 import wifiManagerTest from './WifiManagerReturnValue.test'
+import wifiManagerCoverage from './WifiManagerCoverage.test'
 export default function testsuite() {
   wifiSta();
+  wifiManagerCoverage();
   wifiManagerTest();
 }
