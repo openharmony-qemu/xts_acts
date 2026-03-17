@@ -207,12 +207,27 @@ static napi_value MUnLock(napi_env env, napi_callback_info info)
 static napi_value MUnLockAll(napi_env env, napi_callback_info info)
 {
     int ret = FAIL;
-    char *memory = static_cast<char *>(malloc(TEST_SIZE));
-    memset(memory, '\0', TEST_SIZE);
-    mlockall(MCL_CURRENT);
-    ret = munlockall();
-    free(memory);
-    memory = nullptr;
+    long pageSize = sysconf(_SC_PAGESIZE);   // 获取系统页大小（通常4KB）
+    // 校验内存申请大小合法性：必须大于0且不超过系统允许的最大
+    long totalMemPages = sysconf(_SC_PHYS_PAGES) * sysconf(_SC_PAGESIZE);
+    if (pageSize > 0 && pageSize <= static_cast<long>(totalMemPages)) {
+        char *mem = (char*)malloc(pageSize);
+        if (mem) {
+            memset_s(mem, pageSize, 0, pageSize);
+            if (mlock(mem, pageSize) == 0) {
+                // 锁定成功，调用 munlockall 解锁所有
+                ret = munlockall();
+            } else {
+                // 锁定失败（如权限或资源不足），仍调用 munlockall（应成功）
+                ret = munlockall();
+            }
+            free(mem);
+        } else {
+            ret = munlockall();
+        }
+    } else {
+        ret = munlockall();
+    }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
     return result;
