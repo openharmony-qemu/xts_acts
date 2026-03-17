@@ -80,7 +80,7 @@ export default function lazyForEachTest() {
       }
     });
     /**
-     * @tc.name   ActsLazyForEachThemeColors_0100
+     * @tc.name   `ActsLazyForEachThemeColors_0100`
      * @tc.number ActsLazyForEachThemeColors_0100
      * @tc.desc   check system colors values of the LazyForEach component
      * @tc.type   FUNCTION
@@ -102,7 +102,7 @@ export default function lazyForEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsLazyForEachThemeColors_0200
+     * @tc.name   `ActsLazyForEachThemeColors_0200`
      * @tc.number ActsLazyForEachThemeColors_0200
      * @tc.desc   check custom colors values of the LazyForEach component
      * @tc.type   FUNCTION
@@ -124,7 +124,7 @@ export default function lazyForEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsLazyForEachThemeColors_0300
+     * @tc.name   `ActsLazyForEachThemeColors_0300`
      * @tc.number ActsLazyForEachThemeColors_0300
      * @tc.desc   check system colors values of the LazyForEach component
      * @tc.type   FUNCTION
@@ -147,7 +147,7 @@ export default function lazyForEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsLazyForEachThemeColors_0400
+     * @tc.name   `ActsLazyForEachThemeColors_0400`
      * @tc.number ActsLazyForEachThemeColors_0400
      * @tc.desc   check system colors values of the LazyForEach component
      * @tc.type   FUNCTION
@@ -170,7 +170,7 @@ export default function lazyForEachTest() {
     });
 
     /**
-     * @tc.name   ActsLazyForEachThemeColors_0500
+     * @tc.name   `ActsLazyForEachThemeColors_0500`
      * @tc.number ActsLazyForEachThemeColors_0500
      * @tc.desc   check custom colors values of the LazyForEach component
      * @tc.type   FUNCTION
@@ -192,7 +192,7 @@ export default function lazyForEachTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsLazyForEachThemeColors_0600
+     * @tc.name   `ActsLazyForEachThemeColors_0600`
      * @tc.number ActsLazyForEachThemeColors_0600
      * @tc.desc   check system colors values of the LazyForEach component
      * @tc.type   FUNCTION

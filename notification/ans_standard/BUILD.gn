@@ -63,7 +63,10 @@ group("ans_standard") {
       "actsNotificationAnsPrioritySettingRefactoringNoSystem:ActsNotificationAnsPrioritySettingRefactoringNoSystemTest",
       "actsNotificationPriorityRefactorNosystemTestStatic:ActsNotificationPriorityRefactorNoSystemStaticTest",
       "actsNotificationAnsCoveredTest:ActsNotificationAnsCoveredTest",
-      "actsNotificationAnsCoveredTestStatic:ActsNotificationAnsCoverStaticTest"
+      "actsNotificationAnsCoveredTestStatic:ActsNotificationAnsCoverStaticTest",
+      "actsNotificationAnsThreePartyWatchWithOutAbilityNoPermissionTestStatic:ActsNotificationAnsThreePartyWatchStaticWithOutAbilityNoPermissionTest",
+      "actsNotificationAnsThreePartyWatchWithInAbilityTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityStaticTest",
+      "actsNotificationAnsThreePartyWatchWithOutAbilityTestStatic:ActsNotificationAnsThreePartyWatchWithOutAbilityStaticTest"
     ]
   }
 }

@@ -1944,6 +1944,7 @@ export default function extensionWindowPropertiesTest() {
         expect(uiExtension.EventFlag.EVENT_PAN_GESTURE_DOWN).assertEqual(0x00000008)
         expect(uiExtension.EventFlag.EVENT_CLICK).assertEqual(0x00000100)
         expect(uiExtension.EventFlag.EVENT_LONG_PRESS).assertEqual(0x00000200)
+        expect(uiExtension.RectChangeReason.HOST_WINDOW_RECT_CHANGE).assertEqual(0x0001)
         done()
       } catch (exception) {
         console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))

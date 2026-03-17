@@ -146,7 +146,7 @@ export default function deviceSettingsTest() {
         deviceSettings.getValue(null, ITEM_SCREEN_OFF);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -228,7 +228,7 @@ export default function deviceSettingsTest() {
         deviceSettings.getValue(null, ITEM_EYE_COMFORT);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -307,7 +307,8 @@ export default function deviceSettingsTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         deviceSettings.setValue(SELFWANT, ITEM_SCREEN_OFF, '30000');
-        expect(true).assertTrue();
+        let result: string = deviceSettings.getValue(SELFWANT, ITEM_SCREEN_OFF);
+        expect(result == '30000').assertTrue();
       } catch (error) {
         expect().assertFail();
       } finally {
@@ -330,7 +331,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_SCREEN_OFF, '1234567891023687999710');
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -348,10 +349,11 @@ export default function deviceSettingsTest() {
     it("test_device_settings_set_value_0600", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        deviceSettings.setValue(SELFWANT, ITEM_DATE_TIME, new Date().getTime().toString());
-        expect(true).assertTrue();
+        let time = new Date().getTime().toString();
+        let ret = deviceSettings.setValue(SELFWANT, ITEM_DATE_TIME, time);
+        expect(ret == null).assertTrue();
       } catch (error) {
-        expect().assertFail();
+        expect(false).assertFail();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -372,7 +374,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_DATE_TIME, '12345678910236879997100');
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -400,7 +402,8 @@ export default function deviceSettingsTest() {
           powerPolicy: powerPolicy
         });
         deviceSettings.setValue(SELFWANT, ITEM_POWER_POLICY, value);
-        expect(true).assertTrue();
+        let result: string = deviceSettings.getValue(SELFWANT, ITEM_POWER_POLICY);
+        expect(JSON.parse(result)).not().assertUndefined();
       } catch (error) {
         expect().assertFail();
       } finally {
@@ -428,7 +431,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_POWER_POLICY, value);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -449,7 +452,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_POWER_POLICY, '');
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -473,7 +476,7 @@ export default function deviceSettingsTest() {
         }));
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -501,7 +504,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_POWER_POLICY, value);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -526,7 +529,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_POWER_POLICY, value);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -550,7 +553,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_POWER_POLICY, value);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -574,7 +577,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_POWER_POLICY, value);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -599,7 +602,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_POWER_POLICY, value);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -659,7 +662,6 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_EYE_COMFORT, 'off');
         let result: string = deviceSettings.getValue(SELFWANT, ITEM_EYE_COMFORT);
         expect(result).assertEqual('off');
-        expect(true).assertTrue();
       } catch (error) {
         expect().assertFail();
       } finally {
@@ -682,7 +684,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_EYE_COMFORT, 'onoff111');
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -741,7 +743,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(null, ITEM_DEFAULT_INPUT_METHOD, 'com.example.inputmethod');
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     });
@@ -760,7 +762,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, 'com.example.inputmethod');
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -779,8 +781,8 @@ export default function deviceSettingsTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName = inputMethod.getCurrentInputMethod().name;
-        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, bundleName);
-        expect(true).assertTrue();
+        let ret = deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, bundleName);
+        expect(ret == null).assertTrue();
       } catch (error) {
         expect().assertFail();
       } finally {
@@ -992,7 +994,7 @@ export default function deviceSettingsTest() {
         deviceSettings.getValueForAccount(null, deviceSettings.SettingsItem.DEVICE_NAME, 100);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1115,7 +1117,7 @@ export default function deviceSettingsTest() {
         deviceSettings.setValueForAccount(null, deviceSettings.SettingsItem.DEVICE_NAME, 100, 'deviceName');
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1259,7 +1261,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setValue_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setValue_test_001  -------- END --------');
@@ -1282,7 +1284,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setValue_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setValue_test_002  -------- END --------');
@@ -1305,7 +1307,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getValue_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getValue_test_001  -------- END --------');
@@ -1328,7 +1330,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getValue_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getValue_test_002  -------- END --------');
@@ -1351,7 +1353,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setHomeWallpaper_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setHomeWallpaper_test_001  -------- END --------');
@@ -1374,7 +1376,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setHomeWallpaper_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setHomeWallpaper_test_002  -------- END --------');
@@ -1397,7 +1399,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setHomeWallpaper_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setHomeWallpaper_test_003  -------- END --------');
@@ -1420,7 +1422,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setHomeWallpaper_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setHomeWallpaper_test_004  -------- END --------');
@@ -1443,7 +1445,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUnlockWallpaper_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUnlockWallpaper_test_001  -------- END --------');
@@ -1466,7 +1468,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUnlockWallpaper_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUnlockWallpaper_test_002  -------- END --------');
@@ -1489,7 +1491,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUnlockWallpaper_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUnlockWallpaper_test_003  -------- END --------');
@@ -1512,7 +1514,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUnlockWallpaper_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUnlockWallpaper_test_004  -------- END --------');
@@ -1535,7 +1537,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setValueForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setValueForAccount_test_001  -------- END --------');
@@ -1558,7 +1560,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setValueForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setValueForAccount_test_002  -------- END --------');
@@ -1581,7 +1583,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setValueForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setValueForAccount_test_003  -------- END --------');
@@ -1604,7 +1606,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setValueForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setValueForAccount_test_004  -------- END --------');
@@ -1627,7 +1629,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getValueForAccount_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getValueForAccount_test_001  -------- END --------');
@@ -1650,7 +1652,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getValueForAccount_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getValueForAccount_test_002  -------- END --------');
@@ -1673,7 +1675,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getValueForAccount_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getValueForAccount_test_003  -------- END --------');
@@ -1696,7 +1698,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getValueForAccount_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getValueForAccount_test_004  -------- END --------');
@@ -1718,7 +1720,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setHomeWallpaper_test_029 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setHomeWallpaper_test_029  -------- END --------');
@@ -1741,7 +1743,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setHomeWallpaper_test_030 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setHomeWallpaper_test_030  -------- END --------');
@@ -1764,7 +1766,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setHomeWallpaper_test_031 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setHomeWallpaper_test_031  -------- END --------');
@@ -1787,7 +1789,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setHomeWallpaper_test_032 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setHomeWallpaper_test_032  -------- END --------');
@@ -1810,7 +1812,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUnlockWallpaper_test_029 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUnlockWallpaper_test_029  -------- END --------');
@@ -1833,7 +1835,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUnlockWallpaper_test_030 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUnlockWallpaper_test_030  -------- END --------');
@@ -1856,7 +1858,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUnlockWallpaper_test_031 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUnlockWallpaper_test_031  -------- END --------');
@@ -1879,7 +1881,7 @@ export default function deviceSettingsTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUnlockWallpaper_test_032 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUnlockWallpaper_test_032  -------- END --------');

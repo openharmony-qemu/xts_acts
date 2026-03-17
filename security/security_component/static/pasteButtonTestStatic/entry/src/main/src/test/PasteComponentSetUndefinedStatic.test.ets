@@ -249,6 +249,28 @@ export default function pasteComponentSetUndefinedStaticTest() {
     });
 
     /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_0800
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_0800
+     * @tc.desc   Test SecurityComponent fontFamily set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_0800';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = inspector.getInspectorByKey('setUndefined7');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual('HarmonyOS Sans');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+    /**
      * @tc.name   Test_Security_PasteButton_SetUndefined_0900
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_0900
      * @tc.desc   Test SecurityComponent fontColor set undefined is Default and Authorization is successful

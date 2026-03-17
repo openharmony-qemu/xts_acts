@@ -379,11 +379,13 @@ export default function FloatingBallTest() {
             expect(false).assertTrue();
             done();
           }).catch((err: Error):void => {
+            waitForCompletion(async () => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController1.stopFloatingBall();
             expect(err.code).assertEqual(1300021);
             expect(err.message!=null).assertTrue();
             done();
+            })
           });
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -432,11 +434,13 @@ export default function FloatingBallTest() {
             expect(false).assertTrue();
             done();
           }).catch((err: Error):void => {
+            waitForCompletion(async () => {
             console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
             await floatingBallController1.stopFloatingBall();
             expect(err.code).assertEqual(1300022);
             expect(err.message!=null).assertTrue();
             done();
+            })
           });
         }).catch((err: Error):void => {
           console.error(CaseName+ ` floatingBallController1 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
@@ -2031,25 +2035,27 @@ export default function FloatingBallTest() {
         floatingBallController.startFloatingBall(startParams).then(() => {
           console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
           floatingBallController.stopFloatingBall().then(() => {
-            console.info(CaseName+ ' Succeeded in stopping 1 floating ball.');
-            await Utils.msSleep(800);
-            floatingBallController.startFloatingBall(startParams).then(() => {
-              console.info(CaseName+ ' Succeeded in starting 2 floating ball.');
-              floatingBallController.stopFloatingBall().then(() => {
-                console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
-                done()
+            waitForCompletion(async () => {
+              console.info(CaseName+ ' Succeeded in stopping 1 floating ball.');
+              await Utils.msSleep(800);
+              floatingBallController.startFloatingBall(startParams).then(() => {
+                console.info(CaseName+ ' Succeeded in starting 2 floating ball.');
+                floatingBallController.stopFloatingBall().then(() => {
+                  console.info(CaseName+ ' Succeeded in stopping 2 floating ball.');
+                  done()
+                }).catch((err: Error):void => {
+                  console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
+                  expect(err.message!=null).assertTrue();
+                  expect(false).assertTrue();
+                  done()
+                });
               }).catch((err: Error):void => {
-                console.error(CaseName+ ` Failed to stop 2 floating ball. Cause:${err.code}, message:${err.message}`);
+                console.error(CaseName+ ` Failed to starting 2 floating ball. Cause:${err.code}, message:${err.message}`);
                 expect(err.message!=null).assertTrue();
                 expect(false).assertTrue();
-                done()
+                done();
               });
-            }).catch((err: Error):void => {
-              console.error(CaseName+ ` Failed to starting 2 floating ball. Cause:${err.code}, message:${err.message}`);
-              expect(err.message!=null).assertTrue();
-              expect(false).assertTrue();
-              done();
-            });
+            })
           }).catch((err: Error):void => {
             console.error(CaseName+ ` Failed to stop 1 floating ball. Cause:${err.code}, message:${err.message}`);
             expect(err.message!=null).assertTrue();

@@ -43,3 +43,4 @@ export const OH_Scan_SetScannerParameter1: () => number;
 export const OH_Scan_StartScan1: () => number;
 export const OH_Scan_CancelScan1: () => number;
 export const OH_Scan_GetPictureScanProgress1: () => number;
+export const OH_Scan_GetScannerParameter: () => number;

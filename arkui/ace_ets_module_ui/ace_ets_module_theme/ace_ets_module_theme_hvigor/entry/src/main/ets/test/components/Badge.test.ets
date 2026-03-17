@@ -69,7 +69,7 @@ export default function badgeThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsBadgeThemeTest_0100
+     * @tc.name   `ActsBadgeThemeTest_0100`
      * @tc.number ActsBadgeThemeTest_0100
      * @tc.desc   Check system colors values of Badge component
      * @tc.type   FUNCTION
@@ -94,7 +94,7 @@ export default function badgeThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsBadgeThemeTest_0200
+     * @tc.name   `ActsBadgeThemeTest_0200`
      * @tc.number ActsBadgeThemeTest_0200
      * @tc.desc   Check custom colors values of Badge component
      * @tc.type   FUNCTION
@@ -120,7 +120,7 @@ export default function badgeThemeTest() {
     });
 
     /**
-     * @tc.name   ActsBadgeThemeTest_0300
+     * @tc.name   `ActsBadgeThemeTest_0300`
      * @tc.number ActsBadgeThemeTest_0300
      * @tc.desc   Check custom colors values of Badge component
      * @tc.type   FUNCTION

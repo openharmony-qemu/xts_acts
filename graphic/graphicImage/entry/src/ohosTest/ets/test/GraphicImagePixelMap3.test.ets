@@ -51,12 +51,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -84,12 +85,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -117,12 +119,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -150,12 +153,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -183,12 +187,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -216,12 +221,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -249,12 +255,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -282,12 +289,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -314,12 +322,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = await image.createPixelMap(color, opts);
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect(err).assertEqual(62980096);
+          done();
         }
-        done();
       })
 
     /**
@@ -346,12 +355,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = await image.createPixelMap(color, opts);
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect(err).assertEqual(62980096);
+          done();
         }
-        done();
       })
 
     /**
@@ -378,12 +388,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = await image.createPixelMap(color, opts);
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect(err).assertEqual(62980096);
+          done();
         }
-        done();
       })
 
     /**
@@ -410,12 +421,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = await image.createPixelMap(color, opts);
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect().assertFail();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect(err).assertEqual(62980096);
+          done();
         }
-        done();
       })
 
     /**
@@ -443,12 +455,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -790,6 +803,7 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.info(msgStr + `Failed to create pixelmap. code is ${error}`);
             expect(error).assertEqual(62980096);
+            pixelMap?.release();
             done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
@@ -824,6 +838,7 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error}`);
             expect(error).assertEqual(62980096);
+            pixelMap?.release();
             done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
@@ -858,6 +873,7 @@ export default function graphicImagePixelMap3() {
           if(error) {
             console.error(msgStr + `Failed to create pixelmap. code is ${error}`);
             expect(error).assertEqual(62980096);
+            pixelMap?.release();
             done();
           } else {
             console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
@@ -928,12 +944,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -960,11 +977,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -991,11 +1010,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1022,11 +1043,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1054,12 +1077,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1086,11 +1110,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1117,11 +1143,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1148,11 +1176,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1180,12 +1210,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1212,11 +1243,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1243,11 +1276,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1274,11 +1309,13 @@ export default function graphicImagePixelMap3() {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
           expect(pixelMap).assertUndefined();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1306,12 +1343,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1337,11 +1375,13 @@ export default function graphicImagePixelMap3() {
         try {
           let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
           console.info(msgStr + 'success ', pixelMap);
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1368,12 +1408,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1400,12 +1441,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1432,12 +1474,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1464,12 +1507,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1496,12 +1540,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1528,12 +1573,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1560,12 +1606,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1592,12 +1639,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1624,12 +1672,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1656,12 +1705,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1688,12 +1738,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1720,12 +1771,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1752,12 +1804,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1784,12 +1837,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1817,12 +1871,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1850,12 +1905,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1952,12 +2008,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1984,12 +2041,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -2017,12 +2075,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -2050,12 +2109,13 @@ export default function graphicImagePixelMap3() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
-          pixelMap.release();
+          await pixelMap?.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
   })

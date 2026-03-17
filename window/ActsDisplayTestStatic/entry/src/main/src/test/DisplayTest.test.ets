@@ -34,6 +34,7 @@ import type { AsyncCallback, Callback} from '@ohos.base'
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
 import StartOptions from '@ohos.app.ability.StartOptions'
+import deviceInfo from '@ohos.deviceInfo';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -89,7 +90,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
       });
     }
-    await Utils.msSleep(1000)
+    waitForCompletion(async () => {await Utils.msSleep(1000)})
     let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
     resolve(windowStageStart);
   })
@@ -122,6 +123,7 @@ export default function DisplayTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
+        let deviceType: string = deviceInfo.deviceType;
         let displayClass = display.getDefaultDisplaySync();
         let foldStatus:string= '';
         let foldDisplayMode:string= '';
@@ -1888,12 +1890,9 @@ export default function DisplayTest() {
         hilog.info(0x0000, '[ANI]',msgStr + 'getDefaultDisplaySync y: ' + displayClass!.y);
         expect(sourceMode).assertEqual(1);
         expect(displayClass!.screenShape !=null ).assertTrue();
-        if (displayClass!.x != undefined) {
-            expect(displayClass!.x).assertLargerOrEqual(0);
-        }
-        if (displayClass!.y != undefined) {
-            expect(displayClass!.y).assertLargerOrEqual(0);
-        }
+        expect(displayClass!.x).assertLargerOrEqual(0);
+        expect(displayClass!.y).assertLargerOrEqual(0);
+        
         done();
       });
 
@@ -2483,7 +2482,7 @@ export default function DisplayTest() {
                 let region:display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
                 hilog.info(domain, tag,`${caseName} region: ${JSON.stringify(region)}`);
                 expect(region.displayId).assertEqual(0)
-                if (result && isExpand === 1) {
+                if (result) {
                     if (region.creaseRects.length === 0) {
                         done();
                     } else {
@@ -2678,6 +2677,7 @@ export default function DisplayTest() {
                 console.log(caseName + 'createVirtualScreen success');
                 await display.makeUnique(displayId);
                 display.makeUnique(displayId).then(() => {
+                    waitForCompletion(async () => {
                     console.log(caseName + 'succeeded in makeUnique');
                     let options: StartOptions = {
                         displayId: displayId
@@ -2691,6 +2691,7 @@ export default function DisplayTest() {
                     console.log(caseName + 'setWindowFocusable true ssuccess');
                     await terminateAbility(caseName);
                     done();
+                    })
                 }).catch(async (err: Error) => {
                     console.error(caseName + 'failed in makeUnique, err : ' + err+ err.code);
                     if (err.code == 801) {
@@ -3534,6 +3535,75 @@ export default function DisplayTest() {
             }
         }
     });
+
+    /**
+     * @tc.number      SUB_BASIC_WMS_GET_PICK_801_Static_0100
+     * @tc.name        testPick_unPC_Static
+     * @tc.desc        验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testPick_unPC_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName:string = "testPick_unPC_Static";
+        let msgStr:string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+        try {
+            if (deviceType !== '2in1') {
+                let promise = screenshot.pick();
+                promise.then((pickInfo: screenshot.PickInfo) => {
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error) => {
+                    console.error(`Failed to pick. Code: ' + Code: ${err?.code}, message: ${err?.message}`);
+                    expect(err.code === 801).assertTrue();
+                    done();
+                });
+            } else {
+              hilog.info(0x0000, '[ANI]', msgStr + 'PC can use this Interface');
+              done();
+            }
+        } catch (exception) {
+            let error = exception as BusinessError;
+            console.error(`Failed to pick Code: ' + Code: ${error.code}, message: ${error.message}`);
+            if (error.code === 801) {
+                done()
+            } else {
+                expect(false).assertTrue();
+                done();
+            }
+        };
+    })
+
+    /**
+    * @tc.number      SUB_BASIC_WMS_GET_DISPLAY_CAPABILITY_Static_0100
+    * @tc.name        test_get_display_capability_Static_0100
+    * @tc.desc        验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 3
+    */
+    it('test_get_display_capability_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName:string = "test_get_display_capability_Static_0100";
+        let msgStr:string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+        try {
+        let displayClass = display.getDefaultDisplaySync();
+        let capabilityData:string = displayClass.getDisplayCapability();
+        console.log(0x0000, '[ANI]', msgStr + 'deviceMessage =' + JSON.stringify(capabilityData));
+        expect(capabilityData !== null).assertTrue();
+        done();
+        } catch (exception) {
+        let error = exception as BusinessError;
+        console.error(0x0000, '[ANI]', msgStr + `Failed Code: ' + Code: ${error.code}, message: ${error.message}`);
+        if (error.code == 801) {
+            done()
+        } else {
+            expect(false).assertTrue();
+            done();
+        }
+        };
+    })
 
 
 

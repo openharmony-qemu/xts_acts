@@ -598,6 +598,90 @@ describe("VibratorJsTest_misc_4", function () {
         console.info(TAG + ` data6: ${data6}`);
         expect(data6).assertEqual('haptic.notice.warning');
         done();
+
+        vibrator.startVibration(null, null, (error) => {
+            if (error) {
+                expect(false).assertTrue();
+            } else {
+                expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+            }
+            done()
+        });
+        vibrator.startVibration(undefined, undefined, (error) => {
+            if (error) {
+                expect(false).assertTrue();
+            } else {
+                expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+            }
+            done()
+        });
+        let data = await vibrator.startVibration(null, null, (error) => {
+            if (error) {
+                expect(false).assertTrue();
+            } else {
+                expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+            }
+            done()
+        });
+        let data = await vibrator.startVibration(undefined, undefined, (error) => {
+            if (error) {
+                expect(false).assertTrue();
+            } else {
+                expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+            }
+            done()
+        });
+        vibrator.isSupportEffect(null, (error, state) => {
+            if (error) {
+                expect(false).assertTrue();
+                done();
+            } else {
+                expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                done();
+            }
+        });
+        vibrator.isSupportEffect(undefined, (error, state) => {
+            if (error) {
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + 'isSupportEffect success');
+                expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                done();
+            }
+        });
+        let data = await vibrator.isSupportEffect(null, (error, state) => {
+            if (error) {
+                expect(false).assertTrue();
+                done();
+            } else {
+                expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                done();
+            }
+        });
+        let data = await vibrator.isSupportEffect(undefined, (error, state) => {
+            if (error) {
+                expect(false).assertTrue();
+            } else {
+                console.info(TAG + 'isSupportEffect success');
+                expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                done();
+            }
+        });
+        let ret1 = vibrator.isSupportEffectSync(null);
+        expect(data !== undefined).assertTrue();
+        let ret1 = vibrator.isSupportEffectSync(undefined);
+        expect(data !== undefined).assertTrue();
+
+        let builder = new vibrator.VibratorPatternBuilder();
+        try {
+            builder.addTransientEvent(null, null);
+            builder.addTransientEvent(undefined, undefined);
+            builder.addContinuousEvent(null, null, null);
+            builder.addContinuousEvent(undefined, undefined, undefined);
+            builder.addContinuousEvent(1, 2, { intensity:97, frequency:34, points:[], index:0 });
+        }catch (error){
+            console.info(TAG + " TransientParam error: " + JSON.stringify(error));
+        }
     })
 })
 }

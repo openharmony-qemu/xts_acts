@@ -168,16 +168,18 @@ export default function KvStoreResultSetTest(){
       }
         if (kvManager) {
           await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-            console.info('afterEach closeKVStore success');
-            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-              console.info('afterEach deleteKVStore success');
-              kvStore = null;
-              resultSet = null;
-              done();
-            }).catch((err: Error) => {
-              console.error('afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
-              done();
-            });
+            waitForCompletion(async () => {
+              console.info('afterEach closeKVStore success');
+              await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+                console.info('afterEach deleteKVStore success');
+                kvStore = null;
+                resultSet = null;
+                done();
+              }).catch((err: Error) => {
+                console.error('afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+                done();
+              });
+            })
           }).catch((err: Error) => {
             console.error('afterEach closeKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
             done();

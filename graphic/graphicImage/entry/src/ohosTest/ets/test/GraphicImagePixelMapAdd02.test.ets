@@ -52,10 +52,11 @@ export default function graphicImagePixelMapAdd02() {
         );
 
         const region: image.Region = { x: 0, y: 0, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} crop001: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} crop001 failed: ${error}`);
@@ -85,10 +86,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 1, y: 1, size: { width: 2, height: 1 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} crop002: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} crop002 failed: ${error}`);
@@ -118,10 +120,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 4, height: 4 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} crop003: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} crop003 failed: ${error}`);
@@ -151,10 +154,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 2, y: 2, size: { width: 1, height: 1 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} crop004: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} crop004 failed: ${error}`);
@@ -184,10 +188,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 3, y: 0, size: { width: 1, height: 4 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} crop005: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} crop005 failed: ${error}`);
@@ -217,10 +222,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 3, size: { width: 4, height: 1 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} crop006: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} crop006 failed: ${error}`);
@@ -249,7 +255,16 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} cropInvalid001: Starting test with negative x.`);
 
         const region: image.Region = { x: -1, y: 0, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        try {
+          await pixelMap.crop(region);
+          await pixelMap?.release();
+          expect().assertFail();
+          done();
+        }catch(err){
+          expect(err).assertEqual(62980109);
+          await pixelMap?.release();
+          done();
+        }
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropInvalid001: Failed with negative x as expected, code: ${error}`);
@@ -278,8 +293,16 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} cropInvalid002: Starting test with negative y.`);
 
         const region: image.Region = { x: 0, y: -1, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
-        done();
+        try {
+          await pixelMap.crop(region);
+          await pixelMap?.release();
+          expect().assertFail();
+          done();
+        }catch(err){
+          expect(err).assertEqual(62980109);
+          await pixelMap?.release();
+          done();
+        }
       } catch (error) {
         console.error(`${LOG_PREFIX} cropInvalid002: Failed with negative y as expected, code: ${error}`);
         expect().assertFail();
@@ -307,8 +330,16 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} cropInvalid003: Starting test with zero width.`);
 
         const region: image.Region = { x: 0, y: 0, size: { width: 0, height: 2 } };
-        pixelMap.crop(region);
-        done();
+        try {
+          await pixelMap.crop(region);
+          await pixelMap?.release();
+          expect().assertFail();
+          done();
+        }catch(err){
+          expect(err).assertEqual(62980109);
+          await pixelMap?.release();
+          done();
+        }
       } catch (error) {
         console.error(`${LOG_PREFIX} cropInvalid003: Failed with zero width as expected, code: ${error}`);
         expect().assertFail();
@@ -336,8 +367,16 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} cropInvalid004: Starting test with zero height.`);
 
         const region: image.Region = { x: 0, y: 0, size: { width: 2, height: 0 } };
-        pixelMap.crop(region);
-        done();
+        try {
+          await pixelMap.crop(region);
+          await pixelMap?.release();
+          expect().assertFail();
+          done();
+        }catch(err){
+          expect(err).assertEqual(62980109);
+          await pixelMap?.release();
+          done();
+        }
       } catch (error) {
         console.error(`${LOG_PREFIX} cropInvalid004: Failed with zero height as expected, code: ${error}`);
         expect().assertFail();
@@ -365,8 +404,16 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} cropInvalid005: Starting test with region exceeding bounds.`);
 
         const region: image.Region = { x: 1, y: 0, size: { width: 4, height: 4 } };
-        pixelMap.crop(region);
-        done();
+        try {
+          await pixelMap.crop(region);
+          await pixelMap?.release();
+          expect().assertFail();
+          done();
+        }catch(err){
+          expect(err).assertEqual(62980109);
+          await pixelMap?.release();
+          done();
+        }
       } catch (error) {
         console.error(`${LOG_PREFIX} cropInvalid005: Failed with out-of-bounds region as expected, code: ${error}`);
         expect().assertFail();
@@ -394,7 +441,16 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} cropInvalid006: Starting test with null region.`);
 
         const nullRegion: image.Region | null = null;
-        pixelMap.crop(nullRegion);
+        try {
+          await pixelMap.crop(nullRegion);
+          await pixelMap?.release();
+          expect().assertFail();
+          done();
+        }catch(err){
+          expect(err).assertEqual(62980115);
+          await pixelMap?.release();
+          done();
+        }
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropInvalid006: Failed with null region as expected, code: ${error}`);
@@ -422,7 +478,16 @@ export default function graphicImagePixelMapAdd02() {
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} cropInvalid007: Starting test with null region.`);
         const region: image.Region = { x: 10, y: 10, size: { width: 8, height: 8 } };
-        pixelMap.crop(region);
+        try {
+          await pixelMap.crop(region);
+          await pixelMap?.release();
+          expect().assertFail();
+          done();
+        }catch(err){
+          expect(err).assertEqual(62980109);
+          await pixelMap?.release();
+          done();
+        }
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropInvalid007: Failed with null region as expected, code: ${error}`);
@@ -452,10 +517,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 3, y: 0, size: { width: 1, height: 4 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary001: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary001 failed: ${error}`);
@@ -485,10 +551,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 4, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary002: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary002 failed: ${error}`);
@@ -518,10 +585,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 2, height: 4 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary003: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary003 failed: ${error}`);
@@ -551,10 +619,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 3, y: 0, size: { width: 1, height: 4 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary004: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary004 failed: ${error}`);
@@ -584,10 +653,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 3, size: { width: 4, height: 1 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary005: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary005 failed: ${error}`);
@@ -617,10 +687,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 3, y: 3, size: { width: 1, height: 1 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary006: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary006 failed: ${error}`);
@@ -650,10 +721,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 1, y: 1, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary007: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary007 failed: ${error}`);
@@ -683,10 +755,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary008: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary008 failed: ${error}`);
@@ -716,10 +789,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 4, height: 4 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary009: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary009 failed: ${error}`);
@@ -749,10 +823,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 1, y: 1, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary010: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary010 failed: ${error}`);
@@ -782,10 +857,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 4, height: 4 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary011: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary011 failed: ${error}`);
@@ -815,10 +891,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 3, height: 3 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary012: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary012 failed: ${error}`);
@@ -848,10 +925,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 1, y: 1, size: { width: 2, height: 2 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary013: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary013 failed: ${error}`);
@@ -881,10 +959,11 @@ export default function graphicImagePixelMapAdd02() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 2, y: 2, size: { width: 1, height: 1 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
 
         expect(pixelMap.isEditable).assertTrue();
         console.info(`${LOG_PREFIX} cropBoundary014: Succeeded in cropping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropBoundary014 failed: ${error}`);
@@ -916,7 +995,9 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} flip001 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            done();
           } else {
+            pixelMap?.release();
             console.info(`${LOG_PREFIX} flip001: Succeeded in flipping horizontally.`);
             done();
           }
@@ -951,7 +1032,9 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} flip002 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            done();
           } else {
+            pixelMap?.release();
             console.info(`${LOG_PREFIX} flip002: Succeeded in flipping vertically.`);
             done();
           }
@@ -986,7 +1069,9 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} flip003 failed: code ${error.code}, message ${error.message}`);
             expect().assertFail();
+            done();
           } else {
+            pixelMap?.release();
             console.info(`${LOG_PREFIX} flip003: Succeeded in flipping both horizontally and vertically.`);
             done();
           }
@@ -1021,10 +1106,13 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} flipNull001: Failed with null horizontal as expected, code: ${error}`);
             expect(error).assertEqual(62980115); // Parameter error
+            pixelMap?.release();
+            done();
           } else {
+            pixelMap?.release();
             expect().assertFail(); // Should not succeed with null parameter
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} flipNull001: Unexpected error: ${error}`);
@@ -1056,10 +1144,13 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} flipNull002: Failed with null vertical as expected, code: ${error}`);
             expect(error).assertEqual(62980115); // Parameter error
+            pixelMap?.release();
+            done();
           } else {
+            pixelMap?.release();
             expect().assertFail(); // Should not succeed with null parameter
+            done();
           }
-          done();
         });
       } catch (error) {
         expect(error.code).assertEqual(401); // Parameter error
@@ -1093,10 +1184,13 @@ export default function graphicImagePixelMapAdd02() {
               `${LOG_PREFIX} flipUndefined001: Failed with undefined horizontal as expected, code: ${error}`
             );
             expect(error).assertEqual(62980115); // Parameter error
+            pixelMap?.release();
+            done();
           } else {
             expect().assertFail(); // Should not succeed with undefined parameter
+            pixelMap?.release();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} flipUndefined001: Unexpected error: ${error}`);
@@ -1128,10 +1222,13 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} flipUndefined002: Failed with undefined vertical as expected, code: ${error}`);
             expect(error).assertEqual(62980115); // Parameter error
+            pixelMap?.release();
+            done();
           } else {
             expect().assertFail(); // Should not succeed with undefined parameter
+            pixelMap?.release();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} flipUndefined002: Unexpected error: ${error}`);
@@ -1163,10 +1260,13 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} flipString001: Failed with string horizontal as expected, code: ${error}`);
             expect().assertFail();
+            pixelMap?.release();
+            done();
           } else {
             console.info(`${LOG_PREFIX} flipString001: success`);
+            pixelMap?.release();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} flipString001: Unexpected error: ${error}`);
@@ -1198,10 +1298,13 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} flipString002: Failed with string vertical as expected, code: ${error}`);
             expect().assertFail();
+            pixelMap?.release();
+            done();
           } else {
             console.info(`${LOG_PREFIX} flipString002: success`);
+            pixelMap?.release();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} flipString002: Unexpected error: ${error}`);
@@ -1231,6 +1334,7 @@ export default function graphicImagePixelMapAdd02() {
 
         await pixelMap.flip(false, true);
         console.info(`${LOG_PREFIX} flipPromise001: Succeeded in flipping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipPromise001 failed: ${error}`);
@@ -1257,13 +1361,18 @@ export default function graphicImagePixelMapAdd02() {
         };
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} flipPromiseNull001: Starting test with null horizontal parameter.`);
-
-        await pixelMap.flip(null, true);
-        expect().assertFail(); // Should not reach here
-        done();
+        try {
+          await pixelMap.flip(null, true);
+          expect().assertFail(); // Should not reach here
+          done();
+        } catch(err){
+          expect(err).assertEqual(62980115);
+          await pixelMap?.release();
+          done();
+        }
       } catch (error) {
         console.error(`${LOG_PREFIX} flipPromiseNull001: Failed with null horizontal as expected, code: ${error}`);
-        expect(error).assertEqual(62980115); // Should not reach here
+        expect().assertFail(); // Should not reach here
         done();
       }
     });
@@ -1286,13 +1395,18 @@ export default function graphicImagePixelMapAdd02() {
         };
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} flipPromiseNull002: Starting test with null vertical parameter.`);
-
-        await pixelMap.flip(true, null);
-        expect().assertFail(); // Should not reach here
-        done();
+        try {
+          await pixelMap.flip(true, null);
+          expect().assertFail(); // Should not reach here
+          done();
+        } catch(err){
+          expect(err).assertEqual(62980115);
+          await pixelMap?.release();
+          done();
+        }
       } catch (error) {
         console.error(`${LOG_PREFIX} flipPromiseNull002: Failed with null vertical as expected, code: ${error}`);
-        expect(error).assertEqual(62980115); // Should not reach here
+        expect().assertFail();
         done();
       }
     });
@@ -1315,15 +1429,20 @@ export default function graphicImagePixelMapAdd02() {
         };
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} flipPromiseUndefined001: Starting test with undefined horizontal parameter.`);
-
-        await pixelMap.flip(undefined, true);
-        expect().assertFail(); // Should not reach here
-        done();
+        try {
+          await pixelMap.flip(undefined, true);
+          expect().assertFail(); // Should not reach here
+          done();
+        } catch(err){
+          expect(err).assertEqual(62980115);
+          await pixelMap?.release();
+          done();
+        }
       } catch (error) {
         console.error(
           `${LOG_PREFIX} flipPromiseUndefined001: Failed with undefined horizontal as expected, code: ${error}`
         );
-        expect(error).assertEqual(62980115); // Should not reach here
+        expect().assertFail(); // Should not reach here
         done();
       }
     });
@@ -1346,15 +1465,20 @@ export default function graphicImagePixelMapAdd02() {
         };
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} flipPromiseUndefined002: Starting test with undefined vertical parameter.`);
-
-        await pixelMap.flip(true, undefined);
-        expect().assertFail(); // Should not reach here
-        done();
+        try {
+          await pixelMap.flip(true, undefined);
+          expect().assertFail(); // Should not reach here
+          done();
+        } catch(err){
+          expect(err).assertEqual(62980115);
+          await pixelMap?.release();
+          done();
+        }
       } catch (error) {
         console.error(
           `${LOG_PREFIX} flipPromiseUndefined002: Failed with undefined vertical as expected, code: ${error.code}`
         );
-        expect(error).assertEqual(62980115); // Should not reach here
+        expect().assertFail(); // Should not reach here
         done();
       }
     });
@@ -1380,6 +1504,7 @@ export default function graphicImagePixelMapAdd02() {
 
         pixelMap.flipSync(false, true);
         console.info(`${LOG_PREFIX} flipSync001: Succeeded in flipping.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSync001 failed: ${error}`);
@@ -1408,6 +1533,7 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} flipSyncNull001: Starting test with null horizontal parameter.`);
 
         pixelMap.flipSync(null, true);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSyncNull001: Failed with null horizontal as expected, code: ${error}`);
@@ -1436,6 +1562,7 @@ export default function graphicImagePixelMapAdd02() {
         console.info(`${LOG_PREFIX} flipSyncNull002: Starting test with null vertical parameter.`);
 
         pixelMap.flipSync(true, null);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSyncNull002: Failed with null vertical as expected, code: ${error}`);
@@ -1465,6 +1592,7 @@ export default function graphicImagePixelMapAdd02() {
 
         await pixelMap.flip(false, false);
         console.info(`${LOG_PREFIX} flipBoundary001: Succeeded in flipping with both false.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipBoundary001 failed: ${error}`);
@@ -1503,6 +1631,7 @@ export default function graphicImagePixelMapAdd02() {
         expect(info.size.height).assertEqual(4);
 
         console.info(`${LOG_PREFIX} getImageInfo001: Succeeded in getting image info.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} getImageInfo001 failed: ${error}`);
@@ -1535,6 +1664,7 @@ export default function graphicImagePixelMapAdd02() {
         expect(info.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
 
         console.info(`${LOG_PREFIX} getImageInfo002: Succeeded in getting image info.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} getImageInfo002 failed: ${error}`);
@@ -1572,6 +1702,7 @@ export default function graphicImagePixelMapAdd02() {
         expect(info.size.height).assertEqual(2);
 
         console.info(`${LOG_PREFIX} getImageInfo003: Succeeded in getting image info after crop.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} getImageInfo003 failed: ${error}`);
@@ -1608,6 +1739,7 @@ export default function graphicImagePixelMapAdd02() {
         expect(info.size.height).assertEqual(8);
 
         console.info(`${LOG_PREFIX} getImageInfo004: Succeeded in getting image info after scale.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} getImageInfo004 failed: ${error}`);
@@ -1640,6 +1772,7 @@ export default function graphicImagePixelMapAdd02() {
             expect().assertFail();
           } else {
             console.info(`${LOG_PREFIX} opacity001: Succeeded in setting opacity.`);
+            pixelMap?.release();
             done();
           }
         });
@@ -1670,6 +1803,7 @@ export default function graphicImagePixelMapAdd02() {
 
         await pixelMap.opacity(0.8);
         console.info(`${LOG_PREFIX} opacity002: Succeeded in setting opacity.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacity002 failed: ${error}`);
@@ -1698,6 +1832,7 @@ export default function graphicImagePixelMapAdd02() {
 
         pixelMap.opacitySync(0.3);
         console.info(`${LOG_PREFIX} opacitySync001: Succeeded in setting opacity.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacitySync001 failed: ${error}`);
@@ -1730,10 +1865,13 @@ export default function graphicImagePixelMapAdd02() {
           if (error) {
             console.error(`${LOG_PREFIX} opacityNull001: Failed with null rate as expected, code: ${error}`);
             expect(error).assertEqual(62980115); // Parameter error
+            pixelMap?.release();
+            done();
           } else {
+            pixelMap?.release();
             expect().assertFail(); // Should not succeed with null parameter
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} opacityNull001: Unexpected error: ${error}`);
@@ -1768,10 +1906,13 @@ export default function graphicImagePixelMapAdd02() {
               `${LOG_PREFIX} opacityUndefined001: Failed with undefined rate as expected, code: ${error.code}`
             );
             expect(error).assertEqual(62980115); // Parameter error
+            pixelMap?.release();
+            done();
           } else {
             expect().assertFail(); // Should not succeed with undefined parameter
+            pixelMap?.release();
+            done();
           }
-          done();
         });
       } catch (error) {
         console.error(`${LOG_PREFIX} opacityUndefined001: Unexpected error: ${error}`);
@@ -1807,6 +1948,7 @@ export default function graphicImagePixelMapAdd02() {
         await pixelMap.opacity(0.75);
 
         console.info(`${LOG_PREFIX} opacityDifferentValues001: Succeeded in testing different opacity values.`);
+        await pixelMap?.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacityDifferentValues001 failed: ${error}`);
@@ -1833,14 +1975,19 @@ export default function graphicImagePixelMapAdd02() {
         };
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} opacityPromiseNull001: Starting test with null rate parameter.`);
-
-        // Test with null rate parameter
-        await pixelMap.opacity(null);
-        expect().assertFail(); // Should not reach here
-        done();
+        try {
+          // Test with null rate parameter
+          await pixelMap.opacity(null);
+          expect().assertFail(); // Should not reach here
+          done();
+        } catch(err){
+          expect(err).assertEqual(62980115); // Parameter error
+          await pixelMap.release();
+          done();
+        }
       } catch (error) {
         console.error(`${LOG_PREFIX} opacityPromiseNull001: Failed with null rate as expected, code: ${error}`);
-        expect(error).assertEqual(62980115); // Parameter error
+        expect().assertFail();
         done();
       }
     });
@@ -1863,16 +2010,21 @@ export default function graphicImagePixelMapAdd02() {
         };
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} opacityPromiseUndefined001: Starting test with undefined rate parameter.`);
-
-        // Test with undefined rate parameter
-        await pixelMap.opacity(undefined);
-        expect().assertFail(); // Should not reach here
-        done();
+        try {
+          // Test with undefined rate parameter
+          await pixelMap.opacity(undefined);
+          expect().assertFail(); // Should not reach here
+          done();
+        } catch(err){
+          expect(err).assertEqual(62980115); // Parameter error
+          await pixelMap.release();
+          done();
+        }
       } catch (error) {
         console.error(
           `${LOG_PREFIX} opacityPromiseUndefined001: Failed with undefined rate as expected, code: ${error}`
         );
-        expect(error).assertEqual(62980115); // Parameter error
+        expect().assertFail();
         done();
       }
     });
@@ -1898,6 +2050,7 @@ export default function graphicImagePixelMapAdd02() {
 
         // Test with null rate parameter
         pixelMap.opacitySync(null);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacitySyncNull001: Failed with null rate as expected, code: ${error}`);
@@ -1927,6 +2080,7 @@ export default function graphicImagePixelMapAdd02() {
 
         // Test with undefined rate parameter
         pixelMap.opacitySync(undefined);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacitySyncUndefined001: Failed with undefined rate as expected, code: ${error}`);
@@ -1953,16 +2107,21 @@ export default function graphicImagePixelMapAdd02() {
         };
         const pixelMap = image.createPixelMapSync(color, opts);
         console.info(`${LOG_PREFIX} opacityDifferentValues002: Starting test with different opacity values.`);
-
-        // Test with different opacity values
-        await pixelMap.opacity(0.0);
-
-        console.info(`${LOG_PREFIX} opacityDifferentValues002: Succeeded in testing different opacity values.`);
-        expect().assertFail();
+        try {
+          // Test with different opacity values
+          await pixelMap.opacity(0.0);
+          console.info(`${LOG_PREFIX} opacityDifferentValues002: Succeeded in testing different opacity values.`);
+          expect().assertFail();
+          done();
+        }catch(err){
+          expect(err).assertEqual(62980115);
+          await pixelMap.release();
+          done();
+        }
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} opacityDifferentValues002 failed: ${error}`);
-        expect(error).assertEqual(62980115);
+        expect().assertFail();
         done();
       }
     });

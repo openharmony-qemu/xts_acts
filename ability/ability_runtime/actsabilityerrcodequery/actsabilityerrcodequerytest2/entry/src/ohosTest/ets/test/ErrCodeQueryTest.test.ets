@@ -20,6 +20,7 @@ import { common, UIAbility, Want, StartOptions, InsightIntentContext,
 import dialogRequest from '@ohos.app.ability.dialogRequest'
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { BusinessError, commonEventManager, systemParameterEnhance } from '@kit.BasicServicesKit';
+import eventBusPlus from '../lib/EventBusPlus';
 
 let TAG = 'RunTimeTest';
 let uiAbilityContext = getContext(this) as common.UIAbilityContext;
@@ -64,7 +65,6 @@ export default function errCodeQueryTest() {
 
     afterEach(async () => {
       console.log(`[${TAG}] sleep start`);
-      await sleep(1500);
       console.log(`[${TAG}] sleep over`);
     })
 
@@ -481,6 +481,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200_event"]
         };
@@ -495,8 +497,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -545,6 +548,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300_event"]
         };
@@ -559,8 +564,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -608,6 +614,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500_event"]
         };
@@ -622,8 +630,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -671,6 +680,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700_event"]
         };
@@ -685,8 +696,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -734,6 +746,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800_event"]
         };
@@ -748,8 +762,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -797,6 +812,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200_event"]
         };
@@ -811,8 +828,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -860,6 +878,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300_event"]
         };
@@ -874,8 +894,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -923,6 +944,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500_event"]
         };
@@ -937,8 +960,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -986,6 +1010,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700_event"]
         };
@@ -1000,8 +1026,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })
@@ -1049,6 +1076,8 @@ export default function errCodeQueryTest() {
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800';
       if (mpEnable === 'true') {
+        let entryAbility1 = eventBusPlus.onWait('EntryAbility1_onDestroy');
+        let uiExtension = eventBusPlus.onWait('UIExtension_onDestroy');
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800_event"]
         };
@@ -1063,8 +1092,9 @@ export default function errCodeQueryTest() {
               } catch {
               }
               commonEventManager.publish("terminateEntryAbility1",() => {});
-              commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
+              commonEventManager.unsubscribe(commonEventSubscriber, async (err, data) => {
                 console.info(`[${TAG}] unsubscribe succeed`);
+                await Promise.all([uiExtension,entryAbility1]);
                 done();
               });
             })

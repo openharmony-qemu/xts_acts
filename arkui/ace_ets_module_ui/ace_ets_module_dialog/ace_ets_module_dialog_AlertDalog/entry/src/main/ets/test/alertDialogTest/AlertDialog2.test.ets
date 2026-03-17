@@ -45,7 +45,7 @@ export default function AlertDialog2() {
     });
     /* *
     * @tc.number: AlertDialog2_0100
-    * @tc.name  : AlertDialog2_0100
+    * @tc.name  AlertDialog2_0100
     * @tc.desc  : To test that the Provide decorator supports union types.
     * @tc.level : Level 2
     */

@@ -29,9 +29,9 @@ export default function RegExpTest() {
      * @tc.desc Test the function of the interface RegExpPrototypeToString.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegExpPrototypeToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testRegExpPrototypeToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testRegExpPrototypeToString0001";
         try {
@@ -51,9 +51,9 @@ export default function RegExpTest() {
      * @tc.desc Test the function of the interface RegExpPrototypeToString.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegExpPrototypeToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testRegExpPrototypeToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testRegExpPrototypeToString0002";
         try {
@@ -72,9 +72,9 @@ export default function RegExpTest() {
      * @tc.desc Test the function of the interface RegExpPrototypeToString.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegExpPrototypeToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testRegExpPrototypeToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testRegExpPrototypeToString0003";
         try {
@@ -93,9 +93,9 @@ export default function RegExpTest() {
      * @tc.desc Test the function of the interface RegExpPrototypeToString.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegExpPrototypeToString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testRegExpPrototypeToString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testRegExpPrototypeToString0004";
         try {
@@ -114,9 +114,9 @@ export default function RegExpTest() {
      * @tc.desc Test the function of the interface RegExpPrototypeToString.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegExpPrototypeToString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testRegExpPrototypeToString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testRegExpPrototypeToString0005";
         try {
@@ -134,9 +134,9 @@ export default function RegExpTest() {
      * @tc.desc Test the function of the interface RegExpPrototypeToString.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testRegExpPrototypeToString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testRegExpPrototypeToString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testRegExpPrototypeToString0007";
         try {

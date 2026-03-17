@@ -68,7 +68,7 @@ export default function taskPoolSequenceRunnerActTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolSequenceRunnerActTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerActTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1 = 0;
@@ -118,7 +118,7 @@ export default function taskPoolSequenceRunnerActTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolSequenceRunnerActTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerActTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1 = 0;
@@ -169,7 +169,7 @@ export default function taskPoolSequenceRunnerActTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolSequenceRunnerActTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerActTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1 = 0;
@@ -219,7 +219,7 @@ export default function taskPoolSequenceRunnerActTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolSequenceRunnerActTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerActTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1 = 0;
@@ -270,7 +270,7 @@ export default function taskPoolSequenceRunnerActTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolSequenceRunnerActTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerActTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1 = 0;
@@ -310,7 +310,7 @@ export default function taskPoolSequenceRunnerActTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolSequenceRunnerActTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerActTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1 = 0;
@@ -360,7 +360,7 @@ export default function taskPoolSequenceRunnerActTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolSequenceRunnerActTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerActTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1 = 0;
@@ -405,7 +405,7 @@ export default function taskPoolSequenceRunnerActTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('taskPoolSequenceRunnerActTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('taskPoolSequenceRunnerActTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (): Promise<void> => {
         const runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
         let count1 = 0;

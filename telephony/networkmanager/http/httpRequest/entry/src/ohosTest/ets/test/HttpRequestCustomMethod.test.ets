@@ -63,13 +63,28 @@ const HttpRequest = (customMethod: string, url: string, state: boolean): Promise
       });
   });
 }
+function generateTimeRandomStr(): string {
+  try {
+    const timestamp = Date.now().toString();
+    const random = Math.floor(Math.random() * 999).toString().padStart(3, '0');
+    return `${timestamp}_${random}`;
+  } catch (err) {
+    console.error(`random failed: ${(err as BusinessError).message}`);
+    return `xts_test_${Date.now()}`;
+  }
+}
 
 export default function HttpRequestCustomMethodTest() {
   describe('HttpRequestCustomMethodTest', () => {
     let lockToken: string = '';
+    let random: string = generateTimeRandomStr();
+    let textName: string = 'text' + random + '.txt';
+    let rename: string = 'renameText' + random + '.txt';
+    let fileName: string = 'mkcolTest' + random + '/';
+    let copyName: string = 'file' + random + '.txt';
     afterAll(async () => {
-      await HttpRequest('DELETE', XTS_TEST_HTTP_URL + 'renameText.txt', true);
-      await HttpRequest('DELETE', XTS_TEST_HTTP_URL + 'text.txt', true);
+      await HttpRequest('DELETE', XTS_TEST_HTTP_URL + rename, true);
+      await HttpRequest('DELETE', XTS_TEST_HTTP_URL + textName, true);
     })
 
     /**
@@ -93,26 +108,28 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'PUT'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'text.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 201);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -134,26 +151,28 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'GET',
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'text.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 200);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -174,26 +193,28 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'MKCOL'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'mkcolTest/', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + fileName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 201);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -215,26 +236,28 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'DELETE'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'mkcolTest/', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + fileName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 200);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -252,30 +275,32 @@ export default function HttpRequestCustomMethodTest() {
         try {
           let httpRequestOptions: http.HttpRequestOptions = {
             expectDataType: http.HttpDataType.STRING,
-            header: { 'Destination': XTS_TEST_HTTP_URL + 'file.txt' }, // copy路径
+            header: { 'Destination': XTS_TEST_HTTP_URL + copyName }, // copy路径
             customMethod: 'COPY'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'text.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 201);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -293,30 +318,32 @@ export default function HttpRequestCustomMethodTest() {
         try {
           let httpRequestOptions: http.HttpRequestOptions = {
             expectDataType: http.HttpDataType.STRING,
-            header: { 'Destination': XTS_TEST_HTTP_URL + 'renameText.txt' }, // move目标路径
+            header: { 'Destination': XTS_TEST_HTTP_URL + rename }, // move目标路径
             customMethod: 'MOVE'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'file.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + copyName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 201);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -341,26 +368,28 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'PROPPATCH'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'text.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 207);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -385,26 +414,28 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'PROPFIND'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'text.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 207);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -432,12 +463,13 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'LOCK'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'text.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 let lockTokenRegex = /<D:href>(urn:uuid:[a-fA-F0-9\-]+)<\/D:href>/;
@@ -448,15 +480,16 @@ export default function HttpRequestCustomMethodTest() {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 200);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -481,26 +514,28 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'UNLOCK'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'text.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 204);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -526,20 +561,22 @@ export default function HttpRequestCustomMethodTest() {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 400);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
       });
 
     /**
@@ -556,7 +593,7 @@ export default function HttpRequestCustomMethodTest() {
         console.info(`${caseName}---Start`);
         try {
           for (let i = 0; i < 10; i++) {
-            await HttpRequest('GET', XTS_TEST_HTTP_URL + 'text.txt', true);
+            await HttpRequest('GET', XTS_TEST_HTTP_URL + textName, true);
           }
           done();
         } catch (err) {
@@ -580,9 +617,9 @@ export default function HttpRequestCustomMethodTest() {
         const caseName: string = 'testHttpRequestCustomMethodTest1300';
         console.info(`${caseName}---Start`);
         try {
-          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + 'mkcolTest/', false);
-          await HttpRequest('MKCOL', XTS_TEST_HTTP_URL + 'mkcolTest/', false);
-          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + 'mkcolTest/', true);
+          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + fileName, false);
+          await HttpRequest('MKCOL', XTS_TEST_HTTP_URL + fileName, false);
+          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + fileName, true);
           done();
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
@@ -605,10 +642,10 @@ export default function HttpRequestCustomMethodTest() {
         const caseName: string = 'testHttpRequestCustomMethodTest1400';
         console.info(`${caseName}---Start`);
         try {
-          await HttpRequest('MKCOL', XTS_TEST_HTTP_URL + 'mkcolTest/', false);
-          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + 'mkcolTest/', true);
-          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + 'mkcolTest/', false);
-          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + 'mkcolTest/', false);
+          await HttpRequest('MKCOL', XTS_TEST_HTTP_URL + fileName, false);
+          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + fileName, true);
+          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + fileName, false);
+          await HttpRequest('DELETE', XTS_TEST_HTTP_URL + fileName, false);
           done();
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
@@ -637,26 +674,148 @@ export default function HttpRequestCustomMethodTest() {
             customMethod: 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
           }
           let httpRequest: http.HttpRequest = http.createHttp();
-          httpRequest.request(XTS_TEST_HTTP_URL + 'text.txt', httpRequestOptions,
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
             (err: Error, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
                 ExpectFail();
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
                 ExpectTrue(data.responseCode == 200);
                 httpRequest.destroy();
+                console.info(`${caseName}---End `);
                 done();
               }
             });
         } catch (err) {
           console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
           ExpectFail();
+          console.info(`${caseName}---End `);
           done();
         }
-        console.info(`${caseName}---End `);
+      });
+    /**
+     * @tc.name   testHttpRequestCustomMethodTest1600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestCustomMethodTest_1600
+     * @tc.desc   Test HttpRequestCustomMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestCustomMethodTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testHttpRequestCustomMethodTest1600';
+        console.info(`${caseName}---Start`);
+        try {
+          let httpRequestOptions: http.HttpRequestOptions = {
+            header: { 'Content-Type': 'text/xml' },
+            expectDataType: http.HttpDataType.STRING,
+            customMethod: ''
+          }
+          let httpRequest: http.HttpRequest = http.createHttp();
+          httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions).then((res) => {
+            console.info(`${caseName} data: --- ${JSON.stringify(res)}`);
+            ExpectTrue(res.responseCode == 200);
+            httpRequest.destroy();
+            console.info(`${caseName}---End `);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} catch ERROR: ${JSON.stringify(err)}`);
+            ExpectFail();
+            httpRequest.destroy();
+            console.info(`${caseName}---End `);
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName}---End `);
+          done();
+        }
+      });
+    /**
+     * @tc.name   testHttpRequestCustomMethodTest1700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestCustomMethodTest_1700
+     * @tc.desc   Test HttpRequestCustomMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestCustomMethodTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testHttpRequestCustomMethodTest1700';
+        console.info(`${caseName}---Start`);
+        try {
+          let httpRequestOptions: http.HttpRequestOptions = {
+            header: { 'Content-Type': 'text/xml' },
+            expectDataType: http.HttpDataType.STRING,
+            customMethod: ''
+          }
+          let httpRequest: http.HttpRequest = http.createHttp();
+          httpRequest.requestInStream(XTS_TEST_HTTP_URL + textName, httpRequestOptions,
+            (err: Error, data: number) => {
+              if (err) {
+                console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
+                ExpectFail();
+                httpRequest.destroy();
+                console.info(`${caseName}---End `);
+                done();
+              } else {
+                console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
+                ExpectTrue(data == 200);
+                httpRequest.destroy();
+                console.info(`${caseName}---End `);
+                done();
+              }
+            });
+        } catch (err) {
+          console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName}---End `);
+          done();
+        }
+      });
+    /**
+     * @tc.name   testHttpRequestCustomMethodTest1800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestCustomMethodTest_1800
+     * @tc.desc   Test HttpRequestCustomMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHttpRequestCustomMethodTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testHttpRequestCustomMethodTest1800';
+        console.info(`${caseName}---Start`);
+        try {
+          let httpRequestOptions: http.HttpRequestOptions = {
+            header: { 'Content-Type': 'text/xml' },
+            expectDataType: http.HttpDataType.STRING,
+            customMethod: ''
+          }
+          let httpRequest: http.HttpRequest = http.createHttp();
+          httpRequest.requestInStream(XTS_TEST_HTTP_URL + textName, httpRequestOptions).then((res) => {
+            console.info(`${caseName} data: --- ${JSON.stringify(res)}`);
+            ExpectTrue(res == 200);
+            httpRequest.destroy();
+            console.info(`${caseName}---End `);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} catch ERROR: ${JSON.stringify(err)}`);
+            ExpectFail();
+            httpRequest.destroy();
+            console.info(`${caseName}---End `);
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          console.info(`${caseName}---End `);
+          done();
+        }
       });
   });
 }

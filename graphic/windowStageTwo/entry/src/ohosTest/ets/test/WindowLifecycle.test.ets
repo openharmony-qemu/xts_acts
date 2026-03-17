@@ -122,9 +122,9 @@ async function terminateAbility3(caseName: string) {
   await sleep(1000)
 }
 
-function getPermision(){
-  let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-  let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+function getPermision() {
+  let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let context: common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
   let permissions: Permissions[] = ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
   atManager.requestPermissionsFromUser(context, permissions, (err: BusinessError, data: PermissionRequestResult) => {
     if (err) {
@@ -156,7 +156,7 @@ export default function WindowLifecycle() {
     let isAutoWindow: string = '';
     let windowclassArr: Array<window.Window>;
     let isFreeWindowMode = false;
-    let deviceType:string = deviceInfo.deviceType;
+    let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -342,7 +342,7 @@ export default function WindowLifecycle() {
           if (tempWnd != null) {
             console.log(msgStr + 'findWindow success');
             await subWindow.destroyWindow();
-            
+
             done();
           } else {
             await subWindow.destroyWindow();
@@ -388,7 +388,7 @@ export default function WindowLifecycle() {
             if (tempWnd != null) {
               console.log(msgStr + 'findWindow success');
               await subWindow.destroyWindow();
-              
+
               done();
             } else {
               expect(false).assertTrue();
@@ -429,7 +429,7 @@ export default function WindowLifecycle() {
         tempWnd = window.findWindow(mainWindowName);
         if (tempWnd != null) {
           console.log(msgStr + 'findWindow success');
-          
+
           done();
         } else {
           expect(false).assertTrue();
@@ -477,7 +477,7 @@ export default function WindowLifecycle() {
             if (tempWnd != null) {
               console.log(msgStr + 'findWindow success');
               await subWindow.destroyWindow();
-              
+
               done();
             } else {
               subWindow.destroyWindow();
@@ -514,7 +514,7 @@ export default function WindowLifecycle() {
         windowStage.on('windowStageEvent', (data) => {
           console.info(msgStr + 'Succeeded in enabling the listener for window stage event changes. Data: ' +
             JSON.stringify(data));
-          
+
         });
       } catch (exception) {
         console.error(msgStr + 'Failed to enable the listener for window stage event changes. Cause:' +
@@ -525,7 +525,7 @@ export default function WindowLifecycle() {
       try {
         windowStage.off('windowStageEvent');
         console.log(msgStr + 'windowStageEvent success first');
-        
+
       } catch (exception) {
         console.error(msgStr + 'Failed to disable the listener for window stage event changes. Cause:' +
           JSON.stringify(exception));
@@ -535,7 +535,7 @@ export default function WindowLifecycle() {
       try {
         windowStage.off('windowStageEvent');
         console.log(msgStr + 'windowStageEvent success second');
-        
+
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed to disable the listener for window stage event changes. Cause:' +
@@ -1072,7 +1072,7 @@ export default function WindowLifecycle() {
         expect(!!tempWnd).assertTrue();
         await tempWnd.destroyWindow().then(() => {
           console.info(msgStr + 'Succeeded in destroying the window.');
-          
+
           try {
             let findWnd = window.findWindow('testDestroyWindow_Promise');
             expect().assertFail();
@@ -1166,7 +1166,7 @@ export default function WindowLifecycle() {
         }
         try {
           win.off('windowEvent');
-          
+
         } catch (exception) {
           console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
           await win.destroyWindow();
@@ -1176,7 +1176,7 @@ export default function WindowLifecycle() {
         try {
           win.off('windowEvent');
           await win.destroyWindow();
-          
+
           done();
         } catch (exception) {
           console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
@@ -1224,7 +1224,7 @@ export default function WindowLifecycle() {
         }
         try {
           subWindow.showWindow();
-          
+
         } catch (exception) {
           console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
           subWindow.destroyWindow();
@@ -1258,7 +1258,7 @@ export default function WindowLifecycle() {
           subWindow.on('windowEvent', async (data) => {
             console.info(msgStr + 'Window event happened. Event:' + JSON.stringify(data));
             if (data == 2) {
-              
+
               subWindow.off('windowEvent');
               subWindow.destroyWindow();
               done();
@@ -1274,7 +1274,7 @@ export default function WindowLifecycle() {
         }
         try {
           subWindow.showWindow();
-          
+
         } catch (exception) {
           console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
           await subWindow.destroyWindow();
@@ -1355,7 +1355,7 @@ export default function WindowLifecycle() {
             let promise = window.shiftAppWindowFocus(subWindowClassId, windowClassId);
             promise.then(() => {
               console.info(msgStr + 'Succeeded in shifting app window focus');
-              
+
             }).catch(async (err: BusinessError) => {
               console.error(msgStr +
                 `Failed to shift app window focus. Cause code: ${err.code}, message: ${err.message}`);
@@ -1425,7 +1425,7 @@ export default function WindowLifecycle() {
         try {
           await subWindow.showWindow();
           console.log(msgStr + 'windowStage.show SubWindow success');
-          
+
           await sleep(1000);
         } catch (exception) {
           console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
@@ -1482,7 +1482,7 @@ export default function WindowLifecycle() {
         try {
           await subWindow.destroyWindow();
           console.log(msgStr + ' SubWindow  destroy success');
-          
+
           await sleep(1000);
         } catch (exception) {
           console.error(msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
@@ -1535,7 +1535,7 @@ export default function WindowLifecycle() {
           subWindow.showWindow();
           await sleep(1000);
           if (num >= 2) {
-            
+
             subWindow.off('windowEvent');
             subWindow.destroyWindow();
             done();
@@ -1691,7 +1691,7 @@ export default function WindowLifecycle() {
       try {
         (win as window.Window).off('windowVisibilityChange');
         await (win as window.Window).destroyWindow();
-        
+
         done();
       } catch (exception) {
         await (win as window.Window).destroyWindow();
@@ -1778,7 +1778,7 @@ export default function WindowLifecycle() {
         windowClass.on('windowVisibilityChange', (boolean) => {
           console.log(msgStr + 'Window visibility changed, isVisible=' + boolean);
         });
-        
+
         windowClass.off('windowVisibilityChange');
         done();
       } catch (error) {
@@ -1811,7 +1811,7 @@ export default function WindowLifecycle() {
         let windowClass = await windowStage.getMainWindow();
         windowClass.off('windowVisibilityChange');
         console.log(msgStr + 'Window visibility changed');
-        
+
         done();
       } catch (error) {
         console.log(msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -1888,7 +1888,7 @@ export default function WindowLifecycle() {
       try {
         windowStage.removeStartingWindow().then(() => {
           console.info('Succeeded in removing starting window.');
-          
+
           done();
         }).catch((err: BusinessError) => {
           console.error(`Failed to remove starting window. Cause code: ${err.code}, message: ${err.message}`);
@@ -1946,7 +1946,7 @@ export default function WindowLifecycle() {
       try {
         windowStage.loadContentByName(LoadContentByName.entryName).then(async () => {
           console.info('Succeeded in loadContentByName.');
-          
+
           await windowStage.loadContent('testability/pages/Index');
           done();
         }).catch(async (err: BusinessError) => {
@@ -2666,7 +2666,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -2703,7 +2703,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -2741,7 +2741,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -2752,7 +2752,7 @@ export default function WindowLifecycle() {
         done();
       }
     });
-    
+
 
     /**
      * @tc.name   testGetMainWindowSnapshot_0500
@@ -2780,7 +2780,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -2818,7 +2818,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -2856,7 +2856,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -2927,7 +2927,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -2962,7 +2962,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -3069,7 +3069,7 @@ export default function WindowLifecycle() {
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
           if (err.code == 401) {
-            
+
             done();
           } else {
             expect().assertFail();
@@ -3115,12 +3115,12 @@ export default function WindowLifecycle() {
           console.info(`${msgStr} terminateSelf end.`);
           done();
         }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to starting ability.Cause code: ${ err.code }, message: ${ err.message }`);
+          console.error(msgStr + `Failed to starting ability.Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
           done();
         });
       } catch (err) {
-        console.error(msgStr + `Failed to starting ability.outcatch Cause code: ${ err.code }, message: ${ err.message }`);
+        console.error(msgStr + `Failed to starting ability.outcatch Cause code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -3138,7 +3138,7 @@ export default function WindowLifecycle() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let wantInfo: Want = {
-        bundleName:AppStorage.get('bundleName'),
+        bundleName: AppStorage.get('bundleName'),
         abilityName: 'StartTestAbility'
       };
       let animation_param: window.StartAnimationParams = {
@@ -3160,12 +3160,12 @@ export default function WindowLifecycle() {
           console.info(`${msgStr} terminateSelf end.`);
           done();
         }).catch((err: BusinessError) => {
-          console.error(msgStr + `Failed to starting ability.Cause code: ${ err.code }, message: ${ err.message }`);
+          console.error(msgStr + `Failed to starting ability.Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
           done();
         });
       } catch (err) {
-        console.error(msgStr + `Failed to starting ability.outcatch Cause code: ${ err.code }, message: ${ err.message }`);
+        console.error(msgStr + `Failed to starting ability.outcatch Cause code: ${err.code}, message: ${err.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -3182,7 +3182,7 @@ export default function WindowLifecycle() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("testRestoreMainWindow_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it("testRestoreMainWindow_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testRestoreMainWindow_0100";
       console.log(caseName + " begin");
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
@@ -3249,7 +3249,7 @@ export default function WindowLifecycle() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("testRestoreMainWindow_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it("testRestoreMainWindow_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testRestoreMainWindow_0200";
       console.log(caseName + " begin");
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
@@ -3289,7 +3289,7 @@ export default function WindowLifecycle() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("testRestoreMainWindow_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it("testRestoreMainWindow_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testRestoreMainWindow_0300";
       console.log(caseName + " begin");
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
@@ -3492,7 +3492,7 @@ export default function WindowLifecycle() {
         name: "testcreateWindowCallback1300002_0100",
         windowType: window.WindowType.TYPE_FLOAT,
         ctx: context,
-        decorEnabled:false,
+        decorEnabled: false,
       };
       try {
         window.createWindow(windowConfig, async (err, data) => {
@@ -3537,8 +3537,8 @@ export default function WindowLifecycle() {
         name: "testcreateWindowCallback_0100",
         windowType: window.WindowType.TYPE_MAIN,
         ctx: context,
-        decorEnabled:true,
-        title:''
+        decorEnabled: true,
+        title: ''
 
       };
       try {
@@ -3575,14 +3575,14 @@ export default function WindowLifecycle() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("testcreateWindowPromise_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it("testcreateWindowPromise_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testcreateWindowPromise_0100";
       console.log(caseName + " begin");
       let config: window.Configuration = {
         name: "testRestoreMainWindow_0300",
         windowType: window.WindowType.TYPE_MAIN,
         ctx: context,
-        decorEnabled:false,
+        decorEnabled: false,
       };
       try {
         window.createWindow(config).then(async (data) => {
@@ -3591,11 +3591,11 @@ export default function WindowLifecycle() {
         }).catch(async (err: BusinessError) => {
           console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
           if (err!.code === 801) {
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
         });
       } catch (err) {
         console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
@@ -3604,8 +3604,80 @@ export default function WindowLifecycle() {
       }
     });
 
-    
-    
+    /**
+* @tc.name testReleaseUIContent_0100
+* @tc.number testReleaseUIContent_0100
+* @tc.desc test releaseUIContent when windowStage destroy
+* @tc.type FUNCTION
+* @tc.size MEDIUMTEST
+* @tc.level LEVEL3
+*/
+    it('testReleaseUIContent_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testReleaseUIContent_0100";
+      console.log(caseName + ' begin ');
+      let windowStageStart: window.WindowStage = await startAbility(caseName, context);
+      await sleep(300);
+      await terminateAbility(caseName);
+      await sleep(300);
+      try {
+        windowStageStart.releaseUIContent().then(() => {
+          console.info(caseName + ' Succeeded in releasing the content.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName + `Failed to create the Window.Cause code: ${ err.code }, message: ${ err.message }`);
+          expect(err.code).assertEqual(1300002);
+          expect(err.message).assertEqual('This window state is abnormal.[window][loadContent]msg: The window is not created or destroyed.');
+          done();
+        });
+      } catch (exception) {
+        console.error(caseName +` Failed to release the content.Cause code: ${ exception.code }, message: ${ exception.message }`);
+        expect(false).assertTrue();
+        done();
+      }
+
+    })
+    /**
+     * @tc.name   testReleaseUIContent_0200
+     * @tc.number testReleaseUIContent_0200
+     * @tc.desc   test releaseUIContent when windowStage backgound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testReleaseUIContent_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testReleaseUIContent_0200";
+      console.log(caseName + ' begin ');
+      if (deviceType === '2in1') {
+        let windowStageStart: window.WindowStage = await startAbility(caseName, context);
+        await sleep(300);
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow.minimize();
+        await sleep(300);
+        try {
+          windowStageStart.releaseUIContent().then(async () => {
+            console.info(caseName + ' Succeeded in releasing the content.');
+            await mainWindow.restore();
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(caseName + ` Failed to release the content. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        done();
+      }
+    })
+
+
+
 
   })
 

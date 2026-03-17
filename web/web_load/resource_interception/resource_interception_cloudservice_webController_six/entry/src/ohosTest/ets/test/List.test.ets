@@ -14,8 +14,12 @@
  */
 import webViewSdkSchemeHandlerEnhanced from './webViewSdkSchemeHandlerEnhanced.test'
 import webViewSdkSchemeHandlerEnhancedThree from './WebViewSdkSchemeHandlerThree.test'
+import webResourceHandlerSetNullUndefined from './WebResourceHandlerSetNullUndefined.test'
+import webHttpBodyStreamSetNullUndefined from './WebHttpBodyStreamSetNullUndefined.test'
 
 export default function testsuite() {
   webViewSdkSchemeHandlerEnhanced()
   webViewSdkSchemeHandlerEnhancedThree()
+  webResourceHandlerSetNullUndefined()
+  webHttpBodyStreamSetNullUndefined()
 }

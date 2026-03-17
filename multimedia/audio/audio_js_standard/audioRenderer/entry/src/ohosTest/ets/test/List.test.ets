@@ -27,10 +27,10 @@ import audioGetRendererInfoTest from  './AudioGetRendererInfo.test'
 let voice = call.hasVoiceCapability()
 export default function testsuite() {
     if (voice){
+        AudioRendererInterruptUnitTest()
         audioLoudnessGainTest()
         audioSessionManagerTest()
-        audioRendererTest()
-        AudioRendererInterruptUnitTest()
+        audioRendererTest()        
         AudioEffectTest()
         maxAmplitudeFor()
         audioSessionManagerErrorTest()

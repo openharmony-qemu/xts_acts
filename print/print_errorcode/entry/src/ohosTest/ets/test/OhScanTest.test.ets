@@ -249,6 +249,27 @@ export default function ActsScanErrorTest() {
         done()
       }
     });
+
+    /**
+     * @tc.name   SUB_OH_Scan_GetScannerParameter_1300
+     * @tc.number SUB_OH_Scan_GetScannerParameter_1300
+     * @tc.desc   Test OH_Scan_GetScannerParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_OH_Scan_GetScannerParameter_1300', Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_OH_Scan_GetScannerParameter_1300 start====");
+        let result = printerror.OH_Scan_GetScannerParameter();
+        expect(result).assertEqual(ERR_OK);
+        console.info("====>SUB_OH_Scan_GetScannerParameter_1300 result: " + result);
+        done();
+      } catch (err) {
+        console.error("====>SUB_OH_Scan_GetScannerParameter_1300 catch err: " + err);
+        done()
+      }
+    });
   })
 }
 

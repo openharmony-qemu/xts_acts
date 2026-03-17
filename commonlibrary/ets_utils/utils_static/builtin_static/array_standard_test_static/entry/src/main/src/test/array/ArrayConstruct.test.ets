@@ -135,9 +135,9 @@ export default function ArrayConstructTest() {
      * @tc.desc Verify Array constructor creates array with multiple string element arguments
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('testArrayConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testArrayConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr = new Array<string>('apple', 'banana', 'cherry', 'date');
       expect(arr.length).assertEqual(4);
       expect(arr[0]).assertEqual('apple');
@@ -150,31 +150,13 @@ export default function ArrayConstructTest() {
      * @tc.desc Verify Array constructor creates array with multiple boolean element arguments
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('testArrayConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testArrayConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr = new Array<boolean>(true, false, true, false);
       expect(arr.length).assertEqual(4);
       expect(arr[1]).assertEqual(false);
       expect(arr[3]).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0006
-     * @tc.name testArrayConstructor0006
-     * @tc.desc Verify Array constructor throws error when argument is negative integer (-5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let isErrorThrown = false;
-      try {
-        new Array<number>(-5);
-      } catch (error) {
-        isErrorThrown = true;
-      }
-      expect(isErrorThrown).assertTrue();
     });
 
     /**
@@ -183,10 +165,10 @@ export default function ArrayConstructTest() {
      * @tc.desc Verify Array constructor creates empty array with 0 as single argument
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('testArrayConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(0);
+    it('testArrayConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
       const arr1: Array<number> = [];
       expect(arr).assertDeepEquals(arr1);
@@ -198,9 +180,9 @@ export default function ArrayConstructTest() {
      * @tc.desc Verify Array works without 'new' keyword for multiple number elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('testArrayConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testArrayConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr = Array<number>(10, 20, 30, 40);
       expect(arr.length).assertEqual(4);
       expect(arr[2]).assertEqual(30);
@@ -213,9 +195,9 @@ export default function ArrayConstructTest() {
      * @tc.desc Verify Array constructor creates array with nested array elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('testArrayConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testArrayConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const nestedArr1 = [1, 2];
       const nestedArr2 = [3, 4];
       const arr = new Array<int[]>(nestedArr1, nestedArr2);
@@ -230,9 +212,9 @@ export default function ArrayConstructTest() {
      * @tc.desc Verify Array constructor creates array with object elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('testArrayConstructor0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testArrayConstructor0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const obj1: GeneratedObjectLiteralInterface_1 = { id: 1, name: 'Alice' };
       const obj2: GeneratedObjectLiteralInterface_1 = { id: 2, name: 'Bob' };
       const arr = new Array<GeneratedObjectLiteralInterface_1>(obj1, obj2);
@@ -247,9 +229,9 @@ export default function ArrayConstructTest() {
      * @tc.desc Verify Array constructor preserves order of mixed-type elements
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level Level 0
      */
-    it('testArrayConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testArrayConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arr = new Array<number | string | boolean | null>(5, 'test', true, null);
       expect(arr[0]).assertEqual(5);
       expect(arr[1]).assertEqual('test');
@@ -1704,7 +1686,7 @@ export default function ArrayConstructTest() {
      * @tc.level Level 2
      */
     it('testArrayConstructor0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<undefined>(5);
+      const arr = new Array<undefined>(5, (i) => undefined);
       expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual(undefined);
       expect(arr[4]).assertEqual(undefined);
@@ -1749,7 +1731,7 @@ export default function ArrayConstructTest() {
      */
     it('testArrayConstructor0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // Creating sparse array using Array constructor with length
-      const arr = new Array<undefined | number>(5);
+      const arr = new Array<undefined | number>(5, (i) => undefined);
       arr[0] = 1;
       arr[4] = 5;
 

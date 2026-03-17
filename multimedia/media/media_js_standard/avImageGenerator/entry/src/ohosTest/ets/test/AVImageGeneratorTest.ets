@@ -555,14 +555,14 @@ export default function AVImageGeneratorTest() {
         })
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100Adapt001
          * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100
          * @tc.desc   AvImageGenerator fetchFrameByTime test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100', Level.LEVEL0, async (done : Function) => {
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_0100Adapt001', Level.LEVEL0, async (done : Function) => {
             media.createAVImageGenerator((err: BusinessError, generator: media.AVImageGenerator) => {
                 if (generator != null) {
                     let avImageGenerator = generator;

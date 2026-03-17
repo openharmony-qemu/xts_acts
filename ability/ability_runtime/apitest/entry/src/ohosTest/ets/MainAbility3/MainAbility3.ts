@@ -14,48 +14,49 @@
 */
 import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
+import commonEventManger from '@ohos.commonEventManager';
+
 function PublishCallBackOne() {
-    console.debug("====>Publish CallBack ACTS_DoAbilityForeground_0300_Event====>");
+    console.debug('====>Publish CallBack ACTS_DoAbilityForeground_0300_Event====>');
     globalThis.abilityContextMainAbility3.terminateSelf().then(()=>{
-        console.debug("====>MainAbility3 terminateSelf====>");
+        console.debug('====>MainAbility3 terminateSelf====>');
     });
 }
 export default class MainAbility3 extends Ability {
     onCreate(want, launchParam) {
-        console.log("[Demo] MainAbility3 onCreate")
-        globalThis.abilityContextMainAbility3 = this.context
+        console.log('[Demo] MainAbility3 onCreate');
+        globalThis.abilityContextMainAbility3 = this.context;
     }
 
-    onDestroy() {
-        console.log("[Demo] MainAbility3 onDestroy")
+    async onDestroy():Promise<void> {
+        console.log('[Demo] MainAbility3 onDestroy');
+        commonEventManger.publish('MainAbility3_onDestroy', (result) => {});
     }
 
     onWindowStageCreate(windowStage) {
         // Main window is created, set main page for this ability
-        console.log("[Demo] MainAbility3 onWindowStageCreate")
+        console.log('[Demo] MainAbility3 onWindowStageCreate');
 
-        windowStage.setUIContent(this.context, "pages/index", null)
+        windowStage.setUIContent(this.context, "pages/index", null);
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("[Demo] MainAbility3 onWindowStageDestroy")
+        console.log('[Demo] MainAbility3 onWindowStageDestroy');
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("[Demo] MainAbility3 onForeground");
-        setTimeout(() => {
-          globalThis.abilitydelegator.getCurrentTopAbility().then((data)=>{
-            globalThis.ability3 = data
+        console.log('[Demo] MainAbility3 onForeground');
+        globalThis.abilitydelegator.getCurrentTopAbility().then((data)=>{
+            globalThis.ability3 = data;
             console.debug("====>MainAbility getCurrentTopAbility:====>" + JSON.stringify(globalThis.ability3));
             commonEvent.publish("ACTS_DoAbility_Event", PublishCallBackOne);
-        })
-        }, 1000);
+        });
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("[Demo] MainAbility3 onBackground")
+        console.log('[Demo] MainAbility3 onBackground');
     }
 };

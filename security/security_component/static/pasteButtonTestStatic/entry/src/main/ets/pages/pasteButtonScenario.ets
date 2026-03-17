@@ -58,6 +58,7 @@ struct pasteButtonScenario {
   @State fontSize: number | undefined = 16
   @State fontStyle: FontStyle | undefined = FontStyle.Normal
   @State fontWeight: FontWeight | undefined = FontWeight.Medium
+  @State fontFamily: string | undefined = 'HarmonyOS Sans'
   @State fontColor: string | Color | undefined = '#ffffffff'
   @State iconColor: string | Color | undefined = '#ffffffff'
   @State bgColor: string | Color | undefined = '#ff007dff'
@@ -116,6 +117,9 @@ struct pasteButtonScenario {
       }
       if (data['fontWeight'] != null) {
         this.fontWeight = data['fontWeight'] as FontWeight
+      }
+      if (data['fontFamily'] != null) {
+        this.fontFamily = data['fontFamily'] as String
       }
       if ((data['fontColor'] != null) && (data['fontColor'] != Color.Transparent)) {
         this.fontColor = data['fontColor'] as String
@@ -228,6 +232,7 @@ struct pasteButtonScenario {
             .fontSize(this.fontSize)
             .fontStyle(this.fontStyle)
             .fontWeight(this.fontWeight)
+            .fontFamily(this.fontFamily)
             .fontColor(this.fontColor)
             .iconColor(this.iconColor)
             .backgroundColor(this.bgColor)

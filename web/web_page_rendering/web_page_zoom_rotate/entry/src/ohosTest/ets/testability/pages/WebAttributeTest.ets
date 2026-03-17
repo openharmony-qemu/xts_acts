@@ -22,7 +22,7 @@ import { waitForExist } from '../../test/WaitTest.test';
 struct WebAttributeTest {
   controller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
-  @State initialScale: number = 100
+  @State initialScale: number|null|undefined= 100
   @State newScale: number = 0
   @State oldScale: number = 0
   @State text: boolean = true;
@@ -101,6 +101,40 @@ struct WebAttributeTest {
                   this.controller.loadUrl("resource://rawfile/index.html");
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 153880)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+              case "emitInitialScale003": {
+                try {
+                  this.isScaleEnd = -1;
+                  this.initialScale = null;
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  this.isScaleEnd = -1;
+                  this.initialScale = 90
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl("resource://rawfile/index.html");
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 153900)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+              case "emitInitialScale004": {
+                try {
+                  this.isScaleEnd = -1;
+                  this.initialScale = undefined;
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  this.isScaleEnd = -1;
+                  this.initialScale = 90
+                  await Utils.waitForExist(()=>this.isScaleEnd,'WebSetNetErrorCode2ButtonlsReceive',1,1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl("resource://rawfile/index.html");
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(`oldScale=${this.oldScale},newScale=${this.newScale}`, 153910)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }

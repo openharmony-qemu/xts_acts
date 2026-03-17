@@ -103,25 +103,6 @@ async function routeToUrl(options: router.RouterOptions) {
   }
 }
 
-async function closePermissionDialog() {
-  let driver = Driver.create();
-
-  for (let i = 0; i < 5; i++) {
-    await driver.delayMs(500);
-
-    let allowBtn = await driver.findComponent(ON.text('Allow'));
-    if (!allowBtn) {
-      allowBtn = await driver.findComponent(ON.text('Deny'));
-    }
-
-    if (allowBtn) {
-      await allowBtn.click();
-      return;
-    }
-  }
-}
-
-
 function getSheetPickerOptions(): photoAccessHelper.PhotoSelectOptions {
   let sheetPickerOptions = new photoAccessHelper.PhotoSelectOptions();
   sheetPickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
@@ -1656,7 +1637,7 @@ export default function TextPicker() {
         try {
           let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
 
-          await closePermissionDialog();
+          await driveFn();
 
           let result = await createPromise;
           expect(result).not().assertUndefined();
@@ -2756,7 +2737,9 @@ export default function TextPicker() {
         selectedRecommendationType: 0,
         time: 1756371999125,
         version: 1.0,
-        gridLevel: 1
+        gridLevel: 1,
+        sortRule: '',
+        fileSize: 0
       };
       sheetPickerOptions.contextRecoveryInfo = contextRecoveryInfo;
       sheetPickerOptions.isMovingPhotoBadgeShown = true;

@@ -186,7 +186,7 @@ export default function MifareClassicErrorTest() {
                     MifareClassicTag.readSingleBlock('test', (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareClassic4 readSingleBlock errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             if (data.length > 0) {
                                 expect(data.length > 0).assertTrue();
@@ -254,7 +254,7 @@ export default function MifareClassicErrorTest() {
                     MifareClassicTag.writeSingleBlock('test', rawData, (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareClassic6 writeSingleBlock errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             console.info("[NFC_test]mifareClassic6 writeSingleBlock data: " + data + "json6:" + JSON.stringify(data));
                             expect(data).assertTrue();
@@ -317,7 +317,7 @@ export default function MifareClassicErrorTest() {
                     MifareClassicTag.incrementBlock(blockIndex, 'test', (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareClassic8 incrementBlock errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             console.info("[NFC_test]mifareClassic8 incrementBlock data: " + data );
                             expect(data).assertInstanceOf('Number')
@@ -380,7 +380,7 @@ export default function MifareClassicErrorTest() {
                     MifareClassicTag.decrementBlock('test', value, (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareClassic10 decrementBlock errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             console.info("[NFC_test]mifareClassic10 decrementBlock data: " + data + "json10:" + JSON.stringify(data));
                             expect(data).assertInstanceOf('Number')
@@ -441,7 +441,7 @@ export default function MifareClassicErrorTest() {
                     MifareClassicTag.transferToBlock('test', (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareClassic12 transferToBlock errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             console.info("[NFC_test]mifareClassic12 transferToBlock data: " + data + "json10:" + JSON.stringify(data));
                             expect(data).assertInstanceOf('Number')
@@ -502,7 +502,7 @@ export default function MifareClassicErrorTest() {
                     MifareClassicTag.restoreFromBlock('test', (err, data)=> {
                         if (err) {
                             console.info("[NFC_test]mifareClassic14 restoreFromBlock2 errcode: " + err);
-                            expect(true).assertEqual(true);
+                            expect().assertFail();
                         } else {
                             console.info("[NFC_test]mifareClassic14 restoreFromBlock2 data: " + data + "json12:" + JSON.stringify(data));
                             expect(data).assertInstanceOf('Number')

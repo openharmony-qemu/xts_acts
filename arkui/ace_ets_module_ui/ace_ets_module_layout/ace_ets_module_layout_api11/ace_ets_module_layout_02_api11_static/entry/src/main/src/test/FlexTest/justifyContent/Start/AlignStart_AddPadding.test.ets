@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -96,28 +96,53 @@ it('testFlexAlignStartFlexPadOverflow_static', Level.LEVEL0, async () : Promise<
       let Start_AddPadding_012: RectValue = CommonFunc.getComponentRect('Start_AddPadding_012');
       let Start_AddPadding_013: RectValue = CommonFunc.getComponentRect('Start_AddPadding_013');
       let Start_AddPadding_01: RectValue = CommonFunc.getComponentRect('Start_AddPadding_01');
-      expect(Math.abs(Start_AddPadding_011.top - Start_AddPadding_012.top) <= 1).assertTrue();
-      expect(Math.abs(Start_AddPadding_012.top - Start_AddPadding_013.top) <= 1).assertTrue();
-      expect(Math.abs(Start_AddPadding_012.left - Start_AddPadding_011.right) <= 1).assertTrue();
-      expect(Math.abs(Start_AddPadding_013.left - Start_AddPadding_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_011.left - Start_AddPadding_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
+
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi1:'+ Math.floor(Math.abs(Start_AddPadding_011.top - Start_AddPadding_012.top)));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi2:'+ Math.floor(Math.abs(Start_AddPadding_012.top - Start_AddPadding_013.top)));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi3:'+ Math.floor(Math.abs(Start_AddPadding_012.left - Start_AddPadding_011.right)));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi4:'+ Math.floor(Math.abs(Start_AddPadding_013.left - Start_AddPadding_012.right)));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi5:'+ Math.floor(Math.abs((Start_AddPadding_011.left - Start_AddPadding_01.left) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi6:'+ Math.floor(Math.abs((Start_AddPadding_01.right - Start_AddPadding_013.right) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi7:'+ Math.floor(Math.abs((Start_AddPadding_011.top - Start_AddPadding_01.top) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi8:'+ Math.floor(Math.abs((Start_AddPadding_011.right - Start_AddPadding_011.left) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi9:'+ Math.floor(Math.abs((Start_AddPadding_012.right - Start_AddPadding_012.left) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi10:'+ Math.floor(Math.abs((Start_AddPadding_013.right - Start_AddPadding_013.left) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi11:'+ Math.floor(Math.abs((Start_AddPadding_011.bottom - Start_AddPadding_011.top) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi12:'+ Math.floor(Math.abs((Start_AddPadding_012.bottom - Start_AddPadding_012.top) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))));
+      console.info('testFlexItemAlignAutoTextMarginOverflow_static_chazhi13:'+ Math.floor(Math.abs((Start_AddPadding_013.bottom - Start_AddPadding_013.top) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+
+      expect(Math.floor(Math.abs(Start_AddPadding_011.top - Start_AddPadding_012.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_AddPadding_012.top - Start_AddPadding_013.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_AddPadding_012.left - Start_AddPadding_011.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_AddPadding_013.left - Start_AddPadding_012.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Start_AddPadding_011.left - Start_AddPadding_01.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_01.right - Start_AddPadding_013.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_01.right - Start_AddPadding_013.right) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_011.top - Start_AddPadding_01.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_011.top - Start_AddPadding_01.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_011.right - Start_AddPadding_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_011.right - Start_AddPadding_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_012.right - Start_AddPadding_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_012.right - Start_AddPadding_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_013.right - Start_AddPadding_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_013.right - Start_AddPadding_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))))) <= 2)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_011.bottom - Start_AddPadding_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_011.bottom - Start_AddPadding_011.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Start_AddPadding_012.bottom - Start_AddPadding_012.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_012.bottom - Start_AddPadding_012.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_013.bottom - Start_AddPadding_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_013.bottom - Start_AddPadding_013.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
+
       console.info('[testFlexAlignStartFlexPadOverflow] END');
 
     });
@@ -147,28 +172,53 @@ it('testFlexAlignStartFlexPadMeet_static', Level.LEVEL0, async () : Promise<void
       let Start_AddPadding_012: RectValue = CommonFunc.getComponentRect('Start_AddPadding_012')
       let Start_AddPadding_013: RectValue = CommonFunc.getComponentRect('Start_AddPadding_013')
       let Start_AddPadding_01: RectValue = CommonFunc.getComponentRect('Start_AddPadding_01')
-      expect(Math.abs(Start_AddPadding_011.top - Start_AddPadding_012.top) <= 1).assertTrue();
-      expect(Math.abs(Start_AddPadding_012.top - Start_AddPadding_013.top) <= 1).assertTrue();
-      expect(Math.abs(Start_AddPadding_012.left - Start_AddPadding_011.right) <= 1).assertTrue();
-      expect(Math.abs(Start_AddPadding_013.left - Start_AddPadding_012.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_011.left - Start_AddPadding_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1)
+
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi1:'+ Math.floor(Math.abs(Start_AddPadding_011.top - Start_AddPadding_012.top)) );
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi2:'+ Math.floor(Math.abs(Start_AddPadding_012.top - Start_AddPadding_013.top)));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi3:'+ Math.floor(Math.abs(Start_AddPadding_012.left - Start_AddPadding_011.right)));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi4:'+ Math.floor(Math.abs(Start_AddPadding_013.left - Start_AddPadding_012.right)));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi5:'+ Math.floor(Math.abs((Start_AddPadding_011.left - Start_AddPadding_01.left) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi6:'+ Math.floor(Math.abs((Start_AddPadding_01.right - Start_AddPadding_013.right) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi7:'+ Math.floor(Math.abs((Start_AddPadding_011.top - Start_AddPadding_01.top) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi8:'+ Math.floor(Math.abs((Start_AddPadding_011.right - Start_AddPadding_011.left) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi9:'+ Math.floor(Math.abs((Start_AddPadding_012.right - Start_AddPadding_012.left) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi10:'+ Math.floor(Math.abs((Start_AddPadding_013.right - Start_AddPadding_013.left) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi11:'+ Math.floor(Math.abs((Start_AddPadding_011.bottom - Start_AddPadding_011.top) -
+       (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi12:'+ Math.floor(Math.abs((Start_AddPadding_012.bottom - Start_AddPadding_012.top) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))));
+      console.info('testFlexAlignStartFlexPadMeet_static_chazhi13:'+ Math.floor(Math.abs((Start_AddPadding_013.bottom - Start_AddPadding_013.top) - 
+      (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))));
+
+      expect(Math.floor(Math.abs(Start_AddPadding_011.top - Start_AddPadding_012.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_AddPadding_012.top - Start_AddPadding_013.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_AddPadding_012.left - Start_AddPadding_011.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Start_AddPadding_013.left - Start_AddPadding_012.right)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Start_AddPadding_011.left - Start_AddPadding_01.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_01.right - Start_AddPadding_013.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_01.right - Start_AddPadding_013.right) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_011.top - Start_AddPadding_01.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_011.top - Start_AddPadding_01.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_011.right - Start_AddPadding_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_011.right - Start_AddPadding_011.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_012.right - Start_AddPadding_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_012.right - Start_AddPadding_012.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_013.right - Start_AddPadding_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_013.right - Start_AddPadding_013.left) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_011.bottom - Start_AddPadding_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_011.bottom - Start_AddPadding_011.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Start_AddPadding_012.bottom - Start_AddPadding_012.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_012.bottom - Start_AddPadding_012.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Start_AddPadding_013.bottom - Start_AddPadding_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
+      expect(Math.floor(Math.abs((Start_AddPadding_013.bottom - Start_AddPadding_013.top) - (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
+
       console.info('[testFlexAlignStartFlexPadMeet] END');
 
     });

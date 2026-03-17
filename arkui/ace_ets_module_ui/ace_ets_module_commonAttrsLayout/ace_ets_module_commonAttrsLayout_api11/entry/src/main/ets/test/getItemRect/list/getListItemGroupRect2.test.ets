@@ -134,14 +134,14 @@ export default function getListItemGroupRect2() {
 
 
     /**
-     * @tc.name   getListItemGroupRect2_0100
+     * @tc.name   getListItemGroupRect2_0100Adapt001
      * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect2_0100
      * @tc.desc   set index to 0,set offset of listItemGroup0 to {x:20,y:0}
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('getListItemGroupRect2_0100', Level.LEVEL0, async (done: Function) => {
+    it('getListItemGroupRect2_0100Adapt001', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect2_0100] START');
       globalThis.value.message.notify({

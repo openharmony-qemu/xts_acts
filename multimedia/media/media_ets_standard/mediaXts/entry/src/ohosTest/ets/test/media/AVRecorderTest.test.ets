@@ -2839,14 +2839,14 @@ export default function AVRecorderTest() {
         });*/
 
     /**
-     * @tc.name   resume_callback_abnormal_001
+     * @tc.name   resume_callback_abnormal_001Adapt001
      * @tc.number AV_RECORDER_FUNC_TEST_106
      * @tc.desc   Test abnormal scene of resume avRecord callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('resume_callback_abnormal_001', Level.LEVEL2, async (done: Function) => {
+    it('resume_callback_abnormal_001Adapt001', Level.LEVEL2, async (done: Function) => {
       await createAvRecorderPromise();
       await initConfigAndPreparedPromise(media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT);
       avRecorderResumeCallbackAbnormal();

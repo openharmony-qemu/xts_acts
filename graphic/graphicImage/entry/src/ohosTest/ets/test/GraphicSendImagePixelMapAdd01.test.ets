@@ -49,6 +49,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         await pixelMap.translate(10, 20);
         console.info(`${LOG_PREFIX} translateSendable001: Succeeded in translating.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} translateSendable001 failed: ${error}`);
@@ -78,6 +79,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         await pixelMap.translate(-10, -20);
         console.info(`${LOG_PREFIX} translateSendable002: Succeeded in translating.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} translateSendable002 failed: ${error}`);
@@ -107,6 +109,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         pixelMap.translateSync(10, 20);
         console.info(`${LOG_PREFIX} translateSyncSendable001: Succeeded in translating.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} translateSyncSendable001 failed: ${error}`);
@@ -136,6 +139,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // pixelMap.translateSync(null, 10);
         console.info(`${LOG_PREFIX} translateSyncSendableNull001: success.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} translateSyncSendableNull001: Failed with null x as expected, code: ${error}`);
@@ -165,6 +169,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // pixelMap.translateSync(10, null);
         console.info(`${LOG_PREFIX} translateSyncSendableNull002: success.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} translateSyncSendableNull002: Failed with null y as expected, code: ${error}`);
@@ -197,6 +202,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
           // pixelMap.translateSync(undefined, 10);
           console.info(`${LOG_PREFIX} translateSyncSendableUndefined001: success.`);
+          await pixelMap.release();
           done();
         } catch (error) {
           console.error(
@@ -232,6 +238,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
           // pixelMap.translateSync(10, undefined);
           console.info(`${LOG_PREFIX} translateSyncSendableUndefined002: success.`);
+          await pixelMap.release();
           done();
         } catch (error) {
           console.error(
@@ -264,6 +271,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         await pixelMap.rotate(90);
         console.info(`${LOG_PREFIX} rotateSendable001: Succeeded in rotating.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} rotateSendable001 failed: ${error}`);
@@ -293,6 +301,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         pixelMap.rotateSync(90);
         console.info(`${LOG_PREFIX} rotateSyncSendable001: Succeeded in rotating.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} rotateSyncSendable001 failed: ${error}`);
@@ -322,6 +331,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // pixelMap.rotateSync(null);
         console.info(`${LOG_PREFIX} rotateSyncSendableNull001: success.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} rotateSyncSendableNull001: Failed with null angle as expected, code: ${error}`);
@@ -351,6 +361,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // pixelMap.rotateSync(undefined);
         console.info(`${LOG_PREFIX} rotateSyncSendableUndefined001: success.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(
@@ -382,6 +393,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         await pixelMap.flip(false, true);
         console.info(`${LOG_PREFIX} flipSendable001: Succeeded in flipping.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSendable001 failed: ${error}`);
@@ -411,6 +423,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         await pixelMap.flip(true, true);
         console.info(`${LOG_PREFIX} flipSendable002: Succeeded in flipping both axes.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSendable002 failed: ${error}`);
@@ -440,6 +453,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         await pixelMap.flip(false, false);
         console.info(`${LOG_PREFIX} flipSendable003: Succeeded in flipping with no flip.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSendable003 failed: ${error}`);
@@ -469,6 +483,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         pixelMap.flipSync(false, true);
         console.info(`${LOG_PREFIX} flipSyncSendable001: Succeeded in flipping.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSyncSendable001 failed: ${error}`);
@@ -498,6 +513,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         pixelMap.flipSync(true, true);
         console.info(`${LOG_PREFIX} flipSyncSendable002: Succeeded in flipping both axes.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSyncSendable002 failed: ${error}`);
@@ -527,6 +543,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         pixelMap.flipSync(false, false);
         console.info(`${LOG_PREFIX} flipSyncSendable003: Succeeded in flipping with no flip.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} flipSyncSendable003 failed: ${error}`);
@@ -564,6 +581,7 @@ export default function GraphicSendImagePixelMapAdd01() {
         };
         await pixelMap.crop(region);
         console.info(`${LOG_PREFIX} cropSendable001: Succeeded in cropping.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropSendable001 failed: ${error}`);
@@ -601,6 +619,7 @@ export default function GraphicSendImagePixelMapAdd01() {
         };
         pixelMap.cropSync(region);
         console.info(`${LOG_PREFIX} cropSyncSendable001: Succeeded in cropping.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropSyncSendable001 failed: ${error}`);
@@ -630,6 +649,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // pixelMap.cropSync(null);
         console.info(`${LOG_PREFIX} cropSyncSendableNull001: success.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} cropSyncSendableNull001: Failed with null region as expected, code: ${error}`);
@@ -659,6 +679,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // pixelMap.cropSync(undefined);
         console.info(`${LOG_PREFIX} cropSyncSendableUndefined001: success.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(
@@ -691,6 +712,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // Note: ColorSpaceManager is not available in test environment
         // This test verifies the API exists and can be called
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} setColorSpaceSendable001 failed: ${error}`);
@@ -721,6 +743,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // Note: ColorSpaceManager is not available in test environment
         // This test verifies the API exists and can be called
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} applyColorSpaceSendable001 failed: ${error}`);
@@ -750,6 +773,7 @@ export default function GraphicSendImagePixelMapAdd01() {
         expect(pixelMap !== undefined).assertTrue();
         // Note: MessageSequence is not available in test environment
         // This test verifies the API exists and can be called
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} marshallingSendable001 failed: ${error}`);
@@ -779,6 +803,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
         // pixelMap.marshalling(null);
         console.info(`${LOG_PREFIX} marshallingSendableNull001: success.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} marshallingSendableNull001: Failed with null as expected, code: ${error}`);
@@ -811,6 +836,7 @@ export default function GraphicSendImagePixelMapAdd01() {
 
           // pixelMap.marshalling(undefined);
           console.info(`${LOG_PREFIX} marshallingSendableUndefined001: success.`);
+          await pixelMap.release();
           done();
         } catch (error) {
           console.error(

@@ -34,7 +34,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromParcel001',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -52,6 +52,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap !== null).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -69,6 +70,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         // Verify basic properties
         console.info(`${LOG_PREFIX} dstPixelMap size: ${JSON.stringify(dstPixelMap)}`);
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel001 success`);
         expect(false).assertTrue();
@@ -90,7 +92,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromParcel002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -108,6 +110,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap.isEditable).assertEqual(true);
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -122,6 +125,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
         expect(dstPixelMap.isEditable).assertEqual(true);
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel002 success`);
         expect(false).assertTrue();
@@ -143,7 +147,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromParcel003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -161,6 +165,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap.isEditable).assertEqual(false);
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -175,6 +180,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         console.info(`${LOG_PREFIX} dstPixelMap isEditable: ${dstPixelMap.isEditable}`);
         expect(dstPixelMap.isEditable).assertEqual(false);
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel003 success`);
         expect(false).assertTrue();
@@ -196,7 +202,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromParcel004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -214,6 +220,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap.isStrideAlignment !== undefined).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -228,6 +235,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
         expect(dstPixelMap.isStrideAlignment !== undefined).assertTrue();
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel004 success`);
         expect(false).assertTrue();
@@ -249,7 +257,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromParcel005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 5;
         const height = 7; // Non-standard dimensions might affect stride alignment
@@ -267,6 +275,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap.isStrideAlignment !== undefined).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -281,6 +290,7 @@ export default function GraphicImageCreatePixelMap01() {
         
         console.info(`${LOG_PREFIX} dstPixelMap isStrideAlignment: ${dstPixelMap.isStrideAlignment}`);
         expect(dstPixelMap.isStrideAlignment !== undefined).assertTrue();
+        await dstPixelMap.release();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel005 success`);
         expect(false).assertTrue();
@@ -302,7 +312,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Test with null sequence
         const pixelMap = image.createPixelMapFromParcel(null);
@@ -327,7 +337,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel007',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Test with undefined sequence
         const pixelMap = image.createPixelMapFromParcel(undefined);
@@ -352,7 +362,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel008',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Create empty MessageSequence
         const sequence = new rpc.MessageSequence();
@@ -380,7 +390,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel009',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Create MessageSequence with invalid data
         const sequence = new rpc.MessageSequence();
@@ -412,7 +422,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel010',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Create MessageSequence with corrupted data
         const sequence = new rpc.MessageSequence();
@@ -444,7 +454,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel011',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Create MessageSequence
         const sequence = new rpc.MessageSequence();
@@ -476,7 +486,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel012',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Create MessageSequence with data that might cause PixelMap creation failure
         const sequence = new rpc.MessageSequence();
@@ -512,7 +522,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel013',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Create MessageSequence with data that might cause buffer size exception
         const sequence = new rpc.MessageSequence();
@@ -548,7 +558,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel014',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Create MessageSequence with data that might cause FD mapping failure
         const sequence = new rpc.MessageSequence();
@@ -584,7 +594,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromParcel015',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Create MessageSequence with data that might cause read PixelMap failure
         const sequence = new rpc.MessageSequence();
@@ -618,7 +628,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromParcel016',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 1024;
         const height = 1024;
@@ -636,6 +646,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap !== null).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -649,9 +660,6 @@ export default function GraphicImageCreatePixelMap01() {
         const dstPixelMap = image.createPixelMapFromParcel(sequence);
         
         console.info(`${LOG_PREFIX} large dstPixelMap: ${dstPixelMap}`);
-        expect(dstPixelMap !== null).assertTrue();
-        
-        // Verify size is maintained
         expect(dstPixelMap !== null).assertTrue();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel016 success`);
@@ -674,7 +682,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromParcel017',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 1;
         const height = 1;
@@ -692,6 +700,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const srcPixelMap = image.createPixelMapUsingAllocatorSync(colorBuffer, srcOpts);
         expect(srcPixelMap !== null).assertTrue();
+        await srcPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -705,9 +714,6 @@ export default function GraphicImageCreatePixelMap01() {
         const dstPixelMap = image.createPixelMapFromParcel(sequence);
         
         console.info(`${LOG_PREFIX} minimum dstPixelMap: ${dstPixelMap}`);
-        expect(dstPixelMap !== null).assertTrue();
-        
-        // Verify size is maintained
         expect(dstPixelMap !== null).assertTrue();
         
         console.info(`${LOG_PREFIX} createPixelMapFromParcel017 success`);
@@ -730,7 +736,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromParcel018',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const width = 4;
         const height = 6;
@@ -749,6 +755,7 @@ export default function GraphicImageCreatePixelMap01() {
 
         const rgbPixelMap = image.createPixelMapUsingAllocatorSync(rgbColorBuffer, rgbOpts);
         expect(rgbPixelMap !== null).assertTrue();
+        await rgbPixelMap.release();
         
         // Create MessageSequence
         // Note: In a real implementation, we would need to serialize the PixelMap data
@@ -1514,7 +1521,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSync001',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Test with valid parameters
         const surfaceId = "testSurfaceSync001";
@@ -1549,7 +1556,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSync002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Test with valid parameters
         const surfaceId = "testSurfaceSync002";
@@ -1581,7 +1588,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSync003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Test with valid parameters
         const surfaceId = "testSurfaceSync003";
@@ -1613,7 +1620,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromSurfaceSync004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Test with invalid surfaceId
         const surfaceId = "";
@@ -1641,7 +1648,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromSurfaceSync005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Test with non-existent surfaceId
         const surfaceId = "nonExistentSurface";
@@ -1669,7 +1676,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromSurfaceSync006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         // Test with invalid region size
         const surfaceId = "testSurfaceSync006";
@@ -1697,7 +1704,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSync007',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Test with region.x as 0
         const surfaceId = "testSurfaceSync007";
@@ -1728,7 +1735,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSync008',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Test with region.y as 0
         const surfaceId = "testSurfaceSync008";
@@ -1759,7 +1766,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSync009',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         // Test with boundary values
         const surfaceId = "testSurfaceSync009";
@@ -1790,7 +1797,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam001',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "testSurfaceSync001";
         
@@ -1826,7 +1833,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "testSurfaceSync002";
         
@@ -1857,7 +1864,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "testSurfaceSync003";
         
@@ -1888,7 +1895,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "testSurfaceSync004";
         
@@ -1923,7 +1930,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromSurfaceSyncSingleParam005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const surfaceId = "";
         
@@ -1949,7 +1956,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromSurfaceSyncSingleParam006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const surfaceId = "nonExistentSurfaceSync12345";
         
@@ -1975,7 +1982,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromSurfaceSyncSingleParam007',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const surfaceId = null;
         
@@ -2001,7 +2008,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromSurfaceSyncSingleParam008',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const surfaceId = undefined;
         
@@ -2027,7 +2034,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam009',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "testSurfaceSync009";
         
@@ -2065,7 +2072,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam010',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "testSurfaceSyncWithAVeryLongNameThatContainsManyCharacters010";
         
@@ -2094,7 +2101,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam011',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "test_SurfaceSync-001.Special@Char";
         
@@ -2123,7 +2130,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam012',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "123456789";
         
@@ -2152,7 +2159,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam013',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "testSurfaceSync013";
         
@@ -2185,7 +2192,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL1
      */
     it('createPixelMapFromSurfaceSyncSingleParam014',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         const surfaceId = "testSurfaceSync014";
         
@@ -2217,7 +2224,7 @@ export default function GraphicImageCreatePixelMap01() {
      * @tc.level   LEVEL2
      */
     it('createPixelMapFromSurfaceSyncSingleParam015',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         const surfaceId = "invalidSurfaceIdForErrorSyncTest015";
         

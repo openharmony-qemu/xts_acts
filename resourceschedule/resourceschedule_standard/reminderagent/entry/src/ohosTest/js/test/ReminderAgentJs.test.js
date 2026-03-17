@@ -3280,6 +3280,684 @@ export default function ReminderAgentTest() {
             }
             done();
         })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0117
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0117
+         * @tc.desc   test publish reminder SlotType.UNKNOWN_TYPE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0117', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0117---------------------------');
+            reminderAgent.cancelAllReminders(() =>{
+                console.info("testPublishReminderNorAlarmFun_0117 cancelAllReminders promise");
+
+            })
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 35,
+                slotType: notification.SlotType.UNKNOWN_TYPE
+            }
+            try {
+                reminderAgent.publishReminder(alarm).then((reminderId) => {
+                    console.info("promise the testPublishReminderNorAlarmFun_0117 reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done()
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0117 slot err.code" + error.code)
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0118
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0118
+         * @tc.desc   test publish reminder SlotType.SOCIAL_COMMUNICATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0118', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0118---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.SOCIAL_COMMUNICATION
+            }
+            try {
+                reminderAgent.publishReminder(alarm).then((reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0119 promise the testPublishReminderNorAlarmFun_0118 reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done()
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0118 slot err.code")
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0119
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0119
+         * @tc.desc   test publish reminder SlotType.SERVICE_INFORMATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0119', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0119---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.SERVICE_INFORMATION
+            }
+            try {
+                reminderAgent.publishReminder(alarm).then((reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0119 promise the testPublishReminderNorAlarmFun_0119 reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done()
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0119 slot err.code")
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0120
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0120
+         * @tc.desc   test publish reminder SlotType.CONTENT_INFORMATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0120', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0120---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.CONTENT_INFORMATION
+            }
+            try {
+                reminderAgent.publishReminder(alarm).then((reminderId) => {
+                    console.info("promise the testPublishReminderNorAlarmFun_0120 reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done()
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0120 slot err.code")
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0121
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0121
+         * @tc.desc   test publish reminder SlotType.OTHER_TYPES.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0121', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0121---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.OTHER_TYPES
+            }
+            try {
+                reminderAgent.publishReminder(alarm).then((reminderId) => {
+                    console.info("promise the testPublishReminderNorAlarmFun_0121 reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done()
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0121 slot err.code")
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0122
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0122
+         * @tc.desc   test publish reminder is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0122', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0122---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.OTHER_TYPES
+            }
+            try {
+                reminderAgent.publishReminder(null).then((reminderId) => {
+                    console.info("promise the testPublishReminderNorAlarmFun_0122 reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done()
+                }).catch((error) => {
+                    console.error(`testPublishReminderNorAlarmFun_0122 failed code is ${error.code} message is ${error.message}`);
+                    expect(reminderId).assertEqual(-1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0122 slot err.code");
+                expect(error.code).assertLarger(0);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0123
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0123
+         * @tc.desc   test publish reminder is undifined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0123', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0123---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.OTHER_TYPES
+            }
+            try {
+                reminderAgent.publishReminder(undefined).then((reminderId) => {
+                    console.info("promise the testPublishReminderNorAlarmFun_0123 reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done()
+                }).catch((error) => {
+                    console.error(`testPublishReminderNorAlarmFun_0123 failed code is ${error.code} message is ${error.message}`);
+                    expect(reminderId).assertEqual(-1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0123 slot err.code");
+                expect(error.code).assertLarger(0);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0124
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0124
+         * @tc.desc   test publish reminder SlotType.UNKNOWN_TYPE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0124', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0124---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.UNKNOWN_TYPE
+            }
+            try {
+                reminderAgent.publishReminder(alarm, (err, reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0124 callback, reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0124 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0125
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0125
+         * @tc.desc   test publish reminder with SlotType.SOCIAL_COMMUNICATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0125', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0125---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.SOCIAL_COMMUNICATION
+            }
+            try {
+                reminderAgent.publishReminder(alarm, (err, reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0125 callback, reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0125 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0126
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0126
+         * @tc.desc   test publish reminder SlotType.SERVICE_INFORMATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0126', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0126---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.SERVICE_INFORMATION
+            }
+            try {
+                reminderAgent.publishReminder(alarm, (err, reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0126 callback, reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0126 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0127
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0127
+         * @tc.desc   test publish reminder SlotType.CONTENT_INFORMATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0127', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0127---------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.CONTENT_INFORMATION
+            }
+            try {
+                reminderAgent.publishReminder(alarm, (err, reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0127 callback, reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0127 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0128
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0128
+         * @tc.desc   test publish reminder SlotType.OTHER_TYPES.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0128', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0128--------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.OTHER_TYPES
+            }
+            try {
+                reminderAgent.publishReminder(alarm, (err, reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0128 callback, reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0128 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0129
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0129
+         * @tc.desc   test publish reminder is null.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0129', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0129--------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.OTHER_TYPES
+            }
+            try {
+                reminderAgent.publishReminder(null, (err, reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0129 callback, reminderId =" + reminderId);
+                    expect(reminderId).assertEqual(-1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0129 slot err.code");
+                expect(reminderId).assertEqual(-1);
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testPublishReminderNorAlarmFun_0130
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0130
+         * @tc.desc   test publish reminder is undifined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testPublishReminderNorAlarmFun_0130', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0130--------------------------');
+            let alarm = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_ALARM,
+                hour: 21,
+                minute: 21,
+                slotType: notification.SlotType.OTHER_TYPES
+            }
+            try {
+                reminderAgent.publishReminder(null, (err, reminderId) => {
+                    console.info("testPublishReminderNorAlarmFun_0130 callback, reminderId =" + reminderId);
+                    expect(reminderId).assertLarger(-1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testPublishReminderNorAlarmFun_0130 slot err.code");
+                expect(reminderId).assertLarger(-1);
+                done();
+            }
+        })
+        
+        /**
+         * @tc.name   testremoveNotificationSlot_0131
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0131
+         * @tc.desc   test testremoveNotificationSlot slotType is UNKNOWN_TYPE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0131', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0131--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.UNKNOWN_TYPE
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type, (err, data) => {
+                    console.info("testremoveNotificationSlot_0131 callback, err =" + err.code);
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0131 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0132
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0132
+         * @tc.desc   test testremoveNotificationSlot slotType is UNKNOWN_TYPE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0132', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0132--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.SOCIAL_COMMUNICATION
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type, (err, data) => {
+                    console.info("testremoveNotificationSlot_0132 callback, err =" + err.code);
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0132 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0133
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0133
+         * @tc.desc   test testremoveNotificationSlot slotType is SERVICE_INFORMATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0133', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0133--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.SERVICE_INFORMATION
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type, (err, data) => {
+                    console.info("testremoveNotificationSlot_0133 callback, err =" + err.code);
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0133 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0134
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0134
+         * @tc.desc   test testremoveNotificationSlot slotType is CONTENT_INFORMATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0134', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0134--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.CONTENT_INFORMATION
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type, (err, data) => {
+                    console.info("testremoveNotificationSlot_0134 callback, err =" + err.code);
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0134 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0135
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0135
+         * @tc.desc   test testremoveNotificationSlot slotType is OTHER_TYPES.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0135', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0135--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.OTHER_TYPES
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type, (err, data) => {
+                    console.info("testremoveNotificationSlot_0135 callback, err =" + err.code);
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0135 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0136
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0136
+         * @tc.desc   test testremoveNotificationSlot slotType is OTHER_TYPES.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0136', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0136--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.OTHER_TYPES
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type).then(() => {
+                    console.info("testremoveNotificationSlot_0136 removeNotificationSlot");
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0136 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0137
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0137
+         * @tc.desc   test testremoveNotificationSlot slotType is CONTENT_INFORMATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0137', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0137--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.CONTENT_INFORMATION
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type).then(() => {
+                    console.info("testremoveNotificationSlot_0137 removeNotificationSlot");
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0137 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0138
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0138
+         * @tc.desc   test testremoveNotificationSlot slotType is SERVICE_INFORMATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0138', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0138--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.SERVICE_INFORMATION
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type).then(() => {
+                    console.info("testremoveNotificationSlot_0138 removeNotificationSlot");
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0138 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0139
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0139
+         * @tc.desc   test testremoveNotificationSlot slotType is SOCIAL_COMMUNICATION.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0139', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0138--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.SOCIAL_COMMUNICATION
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type).then(() => {
+                    console.info("testremoveNotificationSlot_0139 removeNotificationSlot");
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0139 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   testremoveNotificationSlot_0140
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0140
+         * @tc.desc   test testremoveNotificationSlot slotType is UNKNOWN_TYPE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testremoveNotificationSlot_0140', Level.LEVEL0, async function (done) {
+            console.info('----------------------testPublishReminderNorAlarmFun_0140--------------------------');
+            let tarRemoveSlot = {
+                type: notification.SlotType.UNKNOWN_TYPE
+            }
+            try {
+                let flag = 1;
+                reminderAgent.removeNotificationSlot(tarRemoveSlot.type).then(() => {
+                    console.info("testremoveNotificationSlot_0140 removeNotificationSlot");
+                    expect(flag).assertEqual(1);
+                    done();
+                })
+            } catch (error) {
+                console.info("testremoveNotificationSlot_0140 slot err.code");
+                expect(false).assertTrue();
+                done();
+            }
+        })
     })
 
 }

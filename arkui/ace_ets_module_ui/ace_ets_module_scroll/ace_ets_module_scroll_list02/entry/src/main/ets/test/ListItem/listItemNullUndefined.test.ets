@@ -169,6 +169,27 @@ export default function listItemNullUndefinedTest() {
       console.info('[listItemEditableNullUndefined_0300] END');
     })
 
+    /**
+     * @tc.name   listItemEditableNullUndefined_0400
+     * @tc.number listItemEditableNullUndefined_0400
+     * @tc.desc   Test ListItem editable property with false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('listItemEditableNullUndefined_0400', Level.LEVEL0, async () => {
+      console.info('[listItemEditableNullUndefined_0400] START');
+      let strJson: string = getInspectorByKey('listItem_editable_false');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[listItemEditableNullUndefined_0400] type: " + JSON.stringify(obj.$type));
+      console.info("[listItemEditableNullUndefined_0400] false obj is: " + JSON.stringify(obj.$attrs.editable));
+
+      // ListItem editable 设置false
+      expect(obj.$attrs.editable).assertEqual(false);
+      console.info('[listItemEditableNullUndefined_0400] END');
+    })
+
     // ========== selectable tests (boolean) ==========
     /**
      * @tc.name   listItemSelectableNullUndefined_0100

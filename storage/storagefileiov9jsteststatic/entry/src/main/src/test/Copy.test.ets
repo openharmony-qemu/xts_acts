@@ -463,7 +463,7 @@ export default function fileIOCopy() {
       hilog.info(domain, tag, '%{public}s', 'fileIO_copy_async_static_016 stat1: ' + stat1.size);
       let progressListener: fs.ProgressListener = (progress: fs.Progress) => {
         console.info(`fileIO_copy_async_static_016: ${progress.processedSize}, totalSize16: ${progress.totalSize}`);
-        if (progress.processedSize / progress.totalSize > 0.1) {
+        if (progress.processedSize * 1.0 / progress.totalSize > 0.1) {
           copySignal.cancel();
         }
       }; 

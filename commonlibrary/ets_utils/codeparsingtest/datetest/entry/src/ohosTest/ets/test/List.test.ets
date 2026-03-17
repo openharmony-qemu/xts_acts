@@ -20,6 +20,13 @@ import Date4Test from './Date/Date4.test';
 import Date5Test from './Date/Date5.test';
 import Date6Test from './Date/Date6.test';
 import Date7Test from './Date/Date7.test';
+import DateTestCase001Test from './DateTestCase001.test';
+import DateTestCase002Test from './DateTestCase002.test';
+import DateTestCase003Test from './DateTestCase003.test';
+import DateTestCase004Test from './DateTestCase004.test';
+import DateTestCase005Test from './DateTestCase005.test';
+import DateTestCase006Test from './DateTestCase006.test';
+import DateTestCase007Test from './DateTestCase007.test';
 
 export default function testsuite() {
   dateTest();
@@ -30,4 +37,12 @@ export default function testsuite() {
   Date5Test();
   Date6Test();
   Date7Test();
+
+  DateTestCase001Test();
+  DateTestCase002Test();
+  DateTestCase003Test();
+  DateTestCase004Test();
+  DateTestCase005Test();
+  DateTestCase006Test();
+  DateTestCase007Test();
 }

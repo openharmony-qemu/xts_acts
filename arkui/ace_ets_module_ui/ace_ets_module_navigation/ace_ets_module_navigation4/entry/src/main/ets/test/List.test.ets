@@ -17,6 +17,12 @@ import QueryNavDestinationSize from './UIobserver/Navigation/QueryNavDestination
 import NavDestinationSizeUnique from './UIobserver/Navigation/NavDestinationSizeUnique.test';
 import GetStackSize from './Router/GetStackSize.test';
 import NavigationDivider from './Navigation/NavigationDivider.test';
+import NavPathStackGet from './Navigation/NavPathStackGet.test';
+import NavPathStackParam from './Navigation/NavPathStackParam.test';
+import NavPathStackPop from './Navigation/NavPathStackPop.test';
+import NavPathStackRemove from './Navigation/NavPathStackRemove.test';
+import NavPathStackReplaceDestination from './Navigation/NavPathStackReplaceDestination.test';
+import NavPathStackReplacePath from './Navigation/NavPathStackReplacePath.test';
 import NavigationAttributeNullUndefinedTest from './Navigation/NavigationAttributeNullUndefined.test';
 import NavigatorAttributeNullUndefinedTest from './navigator/NavigatorAttributeNullUndefined.test';
 import NavDestinationAttributeNullUndefinedTest from './navDestination/NavDestinationAttributeNullUndefined.test';
@@ -24,10 +30,22 @@ import TabsControllerNullUndefined from './TabsNullUndefined/TabsControllerNullU
 import TabsAttributeNullUndefined from './TabsNullUndefined/TabsAttributeNullUndefined.test';
 import AlphabetIndexerPropertiesNullUndefined from './AlphabetIndexNullUndefined/AlphabetIndexerPropertiesNullUndefined.test';
 
+import routerApiNullUndefinedTest from './Router/routerApiNullUndefinedTest.test'
+import ParticleApiNullUndefinedTest from './Router/ParticleApiNullUndefinedTest.test'
+import IndicatorComponentNullUndefinedTest from './Router/IndicatorComponentNullUndefinedTest.test'
+import SideBarContainerControlButtonNullUndefinedTest from './Router/SideBarContainerControlButtonNullUndefinedTest.test'
+import StepperItemApiNullUndefinedTest from './Router/StepperItemApiNullUndefinedTest.test'
+
 export default function testsuite() {
   GetStackSize()
   RouterPageSizeChange()
   QueryNavDestinationSize()
+  NavPathStackGet()
+  NavPathStackParam()
+  NavPathStackPop()
+  NavPathStackRemove()
+  NavPathStackReplaceDestination()
+  NavPathStackReplacePath()
   NavDestinationSizeUnique()
   NavigationDivider()
   NavigationAttributeNullUndefinedTest()
@@ -36,4 +54,10 @@ export default function testsuite() {
   TabsControllerNullUndefined()
   TabsAttributeNullUndefined()
   AlphabetIndexerPropertiesNullUndefined()
+
+  routerApiNullUndefinedTest()
+  ParticleApiNullUndefinedTest()
+  IndicatorComponentNullUndefinedTest()
+  SideBarContainerControlButtonNullUndefinedTest()
+  StepperItemApiNullUndefinedTest()
 }

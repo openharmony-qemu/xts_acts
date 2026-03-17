@@ -814,6 +814,203 @@ export default function netWorkSecurityTest() {
       }
       console.info(`${caseName} test end`);
     });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1200
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_1200
+     * @tc.desc  Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1200';
+      console.info(`${caseName} test start`);
+      try {
+        const cert: networkSecurity.CertBlob = {
+          type: networkSecurity.CertType.CERT_TYPE_PEM,
+          data: '-----BEGIN CERTIFICATE-----\n... (certificate data) ...\n-----END CERTIFICATE-----',
+        };
+        networkSecurity.certVerification(cert, undefined).then((result) => {
+          console.info(`${caseName} Certificate verification result:, ${JSON.stringify(result)}`);
+          expectFalse(true, caseName);
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} Certificate verification failed:', ${JSON.stringify(error)}`);
+          expectTrue(error.code == 401, caseName);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName}  err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1300
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_1300
+     * @tc.desc   Obtain system preset CA certificates and user installed CA certificates from certificate management, and verify the certificate chain passed in by the application.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1300';
+      console.info(`${caseName} test start`);
+      try {
+        try {
+          let resultSync: number = networkSecurity.certVerificationSync(undefined, undefined);
+          console.info(`${caseName} Synchronous CERT_TYPE_DER Result:, ${JSON.stringify(resultSync)}`);
+          expectTrue(resultSync == 401, caseName);
+          done();
+        } catch (err) {
+          let e: BusinessError = err as BusinessError;
+          console.info(`${caseName}  err:${JSON.stringify(e)}`);
+          expectFalse(true, caseName);
+          done();
+        }
+      } catch (err) {
+        console.info(`${caseName}  err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1400
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_1400
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1400',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1400';
+      console.info(`${caseName} test start`);
+      try {
+        let resultSync: boolean = networkSecurity.isCleartextPermittedByHostName("");
+        console.info(`${caseName} is cleartextPermittedByHostName Result:: ${JSON.stringify(resultSync)}`);
+        expectTrue(resultSync == true, caseName);
+        done();
+      } catch (err) {
+        console.info(`${caseName}  err:${err}`);
+        expectFalse(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1500
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_1500
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1500',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1500';
+      console.info(`${caseName} test start`);
+      try {
+        let resultSync: boolean = networkSecurity.isCleartextPermittedByHostName(null);
+        console.info(`${caseName} is cleartextPermittedByHostName Result:: ${JSON.stringify(resultSync)}`);
+        expectFalse(true, caseName);
+        done();
+      } catch (err) {
+        console.info(`${caseName}  err:${err}`);
+        expectTrue(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1600
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_1600
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1600',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1600';
+      console.info(`${caseName} test start`);
+      try {
+        let resultSync: boolean = networkSecurity.isCleartextPermittedByHostName(undefined);
+        console.info(`${caseName} is cleartextPermittedByHostName Result:: ${JSON.stringify(resultSync)}`);
+        expectFalse(true, caseName);
+        done();
+      } catch (err) {
+        console.info(`${caseName}  err:${err}`);
+        expectTrue(true, caseName);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1700
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_1700
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,
+      async (done: Function) => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1700';
+        console.info(`${caseName} test start`);
+        try {
+          let resultSync: boolean = networkSecurity.isCleartextPermitted();
+          console.info(`${caseName} is cleartextPermittedByHostName Result:: ${JSON.stringify(resultSync)}`);
+
+          if (resultSync === true) {
+            console.info(`${caseName} Cleartext is permitted.`);
+            expectTrue(resultSync == true, caseName);
+          } else {
+            console.info(`${caseName} Cleartext is NOT permitted.`);
+            expectFalse(resultSync == false, caseName);
+          }
+
+          done();
+        } catch (err) {
+          console.info(`${caseName}  err:${err}`);
+          expectFalse(true, caseName);
+          done();
+        }
+        console.info(`${caseName} test end`);
+      });
+    /**
+     * @tc.name   testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1800
+     * @tc.number SUB_NetworkMgr_NetworkSecurity_IsCleartextPermittedByHostName_1800
+     * @tc.desc   Obtains whether plaintext HTTP access is allowed. By default, plaintext HTTP access is allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,
+      async (done: Function) => {
+        let caseName: string = 'testNetworkMgrNetworkSecurityIsCleartextPermittedByHostName_1800';
+        console.info(`${caseName} test start`);
+        try {
+          let resultSync: boolean = networkSecurity.isCleartextPermittedByHostName("passport.baidu.com");
+          console.info(`${caseName} is cleartextPermittedByHostName Result:: ${JSON.stringify(resultSync)}`);
+
+          if (resultSync === true) {
+            console.info(`${caseName} Cleartext is permitted.`);
+            expectTrue(resultSync == true, caseName);
+          } else {
+            console.info(`${caseName} Cleartext is NOT permitted.`);
+            expectFalse(resultSync == false, caseName);
+          }
+
+          done();
+        } catch (err) {
+          console.info(`${caseName}  err:${err}`);
+          expectFalse(true, caseName);
+          done();
+        }
+        console.info(`${caseName} test end`);
+      });
 
   });
 }

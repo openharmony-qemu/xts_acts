@@ -27,7 +27,7 @@ interface  ObserverInterface {
 }
 
 export default function abilityTest() {
-  describe('ActsAbilityTest', () => {
+  describe('ActsAbilityTestAdapt001', () => {
     let observer: ObserverInterface;
     beforeAll(() => {
       observer = {

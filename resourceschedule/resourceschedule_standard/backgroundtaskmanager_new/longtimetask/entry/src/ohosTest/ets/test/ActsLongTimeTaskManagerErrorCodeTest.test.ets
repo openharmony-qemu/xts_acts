@@ -943,5 +943,85 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 end---');
       })
 
+    /**
+ 	    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018
+ 	    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018
+ 	    * @tc.desc   Test that the continuousTaskRequest function requestAuthFromUser conext is null
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL3
+ 	    */
+ 	   it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+ 	     async (done: Function) => {
+ 	       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018 begin---');
+
+ 	       let callbackAuth = (authResult: backgroundTaskManager.UserAuthResult) => {
+ 	         console.info("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018 Operation requestAuthFromUser success. auth result: " + JSON.stringify(authResult));
+ 	       };
+
+ 	       let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+ 	       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018 try begin---');
+ 	       wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+ 	         let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+ 	         delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+ 	           try {
+ 	             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018 requestAuthFromUser try begin---');
+ 	             continuousTaskRequest.requestAuthFromUser(null, callbackAuth);
+ 	           } catch (error) {
+ 	             console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+ 	             expect(error.code == 9800005).assertTrue();
+ 	             done();
+ 	             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018 requestAuthFromUser try end---');
+ 	           }
+ 	         }).catch((error: BusinessError) => {
+ 	           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+ 	         });
+ 	       }).catch((error: BusinessError) => {
+ 	       hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018 getWantAgent error: %{public}s', JSON.stringify(error));
+ 	       })
+
+ 	       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_018 end---');
+ 	     })
+ 	  
+ 	  /**
+ 	    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019
+ 	    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019
+ 	    * @tc.desc   Test that the continuousTaskRequest function requestAuthFromUser error call and errocode is 9800005
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL3
+ 	    */
+ 	   it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+ 	     async (done: Function) => {
+ 	       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019 begin---');
+
+ 	       let callbackAuth = (authResult: backgroundTaskManager.UserAuthResult) => {
+ 	         console.info("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019 Operation requestAuthFromUser success. auth result: " + JSON.stringify(authResult));
+ 	       };
+
+ 	       let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+ 	       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019 try begin---');
+ 	       wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+ 	         let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+ 	         delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+ 	           try {
+ 	             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019 requestAuthFromUser try begin---');
+ 	             continuousTaskRequest.requestAuthFromUser(undefined, callbackAuth);
+ 	           } catch (error) {
+ 	             console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+ 	             expect(error.code == 9800005).assertTrue();
+ 	             done();
+ 	             hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019 requestAuthFromUser try end---');
+ 	           }
+ 	         }).catch((error: BusinessError) => {
+ 	           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+ 	         });
+ 	       }).catch((error: BusinessError) => {
+ 	       hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019 getWantAgent error: %{public}s', JSON.stringify(error));
+ 	       })
+
+ 	       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_019 end---');
+ 	     })
+
   })
 }

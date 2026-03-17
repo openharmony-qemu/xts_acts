@@ -572,21 +572,21 @@ export default function UDMFApiUtdUds() {
                             let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
                             let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
                             if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
+                                let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await record.pixelMap.getImageInfo();})
                                 expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
                                 expect(imageInfo.size.height).assertEqual(opt.size.height);
                                 expect(imageInfo.size.width).assertEqual(opt.size.width);
                             }
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 }).catch((err) => {
                     expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 });
-                await unifiedDataChannel.deleteData(options1);
+                waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
             }).catch((err) => {
                 expect().assertFail();
                 done();
@@ -631,7 +631,7 @@ export default function UDMFApiUtdUds() {
                             let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
                             let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
                             if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
+                                let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await record.pixelMap.getImageInfo();})
                                 expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
                                 expect(imageInfo.size.height).assertEqual(opt.size.height);
                                 expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -640,14 +640,14 @@ export default function UDMFApiUtdUds() {
                             }
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 }).catch((err) => {
                     expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 });
-                await unifiedDataChannel.deleteData(options1);
+                waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
             }).catch((err) => {
                 expect().assertFail();
                 done();
@@ -692,7 +692,7 @@ export default function UDMFApiUtdUds() {
                             let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
                             let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
                             if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
+                                let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await record.pixelMap.getImageInfo();})
                                 expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
                                 expect(imageInfo.size.height).assertEqual(opt.size.height);
                                 expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -703,14 +703,14 @@ export default function UDMFApiUtdUds() {
                             }
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 }).catch((err) => {
                     expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
+                     waitForCompletion(async () => { return await unifiedDataChannel.deleteData(options1);})
                     done();
                 });
-                await unifiedDataChannel.deleteData(options1);
+                waitForCompletion(async () => { return await unifiedDataChannel.deleteData(options1);})
             }).catch((err) => {
                 expect().assertFail();
                 done();
@@ -755,7 +755,7 @@ export default function UDMFApiUtdUds() {
                             let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
                             let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
                             if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
+                                let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await record.pixelMap.getImageInfo();})
                                 expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
                                 expect(imageInfo.size.height).assertEqual(opt.size.height);
                                 expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -768,14 +768,14 @@ export default function UDMFApiUtdUds() {
                             }
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 }).catch((err) => {
                     expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 });
-                await unifiedDataChannel.deleteData(options1);
+                waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
             }).catch((err) => {
                 expect().assertFail();
                 done();
@@ -819,7 +819,7 @@ export default function UDMFApiUtdUds() {
                             let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
                             let record = unifiedDataRecord.getValue() as uniformDataStruct.PixelMap;
                             if (record != undefined) {
-                                let imageInfo:image.ImageInfo = await record.pixelMap.getImageInfo();
+                                let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await record.pixelMap.getImageInfo();})
                                 expect(record.uniformDataType).assertEqual(pixelMap.uniformDataType);
                                 expect(imageInfo.size.height).assertEqual(opt.size.height);
                                 expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -832,14 +832,14 @@ export default function UDMFApiUtdUds() {
                             }
                         }
                     }
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 }).catch((err) => {
                     expect().assertFail();
-                    await unifiedDataChannel.deleteData(options1);
+                    waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
                     done();
                 });
-                await unifiedDataChannel.deleteData(options1);
+                waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
             }).catch((err) => {
                 expect().assertFail();
                 done();

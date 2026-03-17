@@ -18,6 +18,7 @@ import window from '@ohos.window';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default class Main3Ability extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -26,9 +27,10 @@ export default class Main3Ability extends UIAbility {
     globalThis.main3Context = this.context;
   }
 
-  onDestroy() {
+  async onDestroy(): Promise<void> {
     console.log('testTag', '%{public}s', 'Ability onDestroy');
     globalThis.main3Context = undefined;
+    await eventBusPlus.emit('main3Ability_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
@@ -48,9 +50,10 @@ export default class Main3Ability extends UIAbility {
     console.log('testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
-  onForeground() {
+  async onForeground(): Promise<void> {
     // Ability has brought to foreground
     console.log('testTag', '%{public}s', 'Ability onForeground');
+    await eventBusPlus.emit('main3Ability_onForeground');
   }
 
   onBackground() {
