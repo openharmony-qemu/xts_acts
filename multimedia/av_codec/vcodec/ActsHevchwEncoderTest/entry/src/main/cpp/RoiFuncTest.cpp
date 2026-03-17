@@ -29,8 +29,6 @@
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "ActsHevchwEncoderTestTag"
 
-extern bool g_flagValue;
-
 namespace {
 OH_AVCodec *g_venc = nullptr;
 OH_AVCapability *g_capHevc = nullptr;

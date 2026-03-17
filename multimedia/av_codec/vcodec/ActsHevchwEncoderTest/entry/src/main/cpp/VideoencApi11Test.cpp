@@ -381,7 +381,6 @@ void VEncAPI11Sample::WaitForEOS()
         inputLoop_->join();
     }
     if (outputLoop_) {
-
         outputLoop_->join();
     }
     inputLoop_ = nullptr;
