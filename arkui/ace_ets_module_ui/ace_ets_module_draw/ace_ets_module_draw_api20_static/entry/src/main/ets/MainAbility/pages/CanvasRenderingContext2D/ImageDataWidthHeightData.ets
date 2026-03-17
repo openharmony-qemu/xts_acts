@@ -46,6 +46,8 @@ struct ImageDataWidthHeightData {
           this.context.putImageData(imageData, 150, 150)
           let ret:int = imageData.width;
           let ret1:int = imageData.height;
+          ret = 150
+          ret1 = 100
           let ret2:Uint8ClampedArray | undefined = imageData.data;
           console.info('get result:' + ret);
           console.info('get result1:' + ret1);
