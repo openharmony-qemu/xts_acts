@@ -17,6 +17,8 @@ import { image } from '@kit.ImageKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import { common } from '@kit.AbilityKit';
 import { fileIo as fs } from '@kit.CoreFileKit';
+import { isEmpty } from '../common';
+
 const TAG = 'Xts.ImageSupplementTest'
 let fdNumber: number;
 let imageSourceApi: image.ImageSource;
@@ -238,32 +240,21 @@ export default function ImageSupplementTest() {
     /**
      * @tc.number     SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001
      * @tc.name       SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001
-     * @tc.desc       Metadata -makerNoteHuaweiMetadata -getAllProperties -返回值为空
+     * @tc.desc       Metadata -makerNoteHuaweiMetadata -getAllProperties -返回值不为空
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001';
-      const path = 'test.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      imageSourceApi = await getImageSource(path);
+      let metadata: image.MakerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
       try {
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.makerNoteHuaweiMetadata != undefined) {
-          let res = await metaData.makerNoteHuaweiMetadata.getAllProperties();
-          expect().assertFail();
-        } else {
-          console.error(TAG, testName, 'metadata is null. ');
-          expect().assertFail();
-        }
-      } catch (error) {
-        console.error(TAG, testName, 'makerNoteHuaweiMetadata getProperties error', error.message, error.code);
-        expect(error.code).assertUndefined();
+        let res = await metadata.getAllProperties();
+        expect(res != undefined).assertTrue();
         done();
-      } finally {
-        await imageSourceApi?.release();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
         done();
       }
     });
