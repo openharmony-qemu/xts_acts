@@ -143,6 +143,102 @@ export default function settingUiJsunit() {
       });
 
     /**
+     * @tc.name   settings_get_value_sync_no_domain_value_empty
+     * @tc.number settings_get_value_sync_no_domain_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let defValue: string = '';
+          let result = settings.getValueSync(abilityContext!, 'getValueSynckey1', '');
+          console.info("[settings_get_value_sync_no_domain_value_empty] result:" + result);
+          expect(result === defValue).assertTrue();
+          done();
+        } catch (err) {
+          console.info("[settings_get_value_sync_no_domain_value_empty] error is:" + String(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_key_empty
+     * @tc.number settings_get_value_sync_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          await settings.setValue(abilityContext!, '', value,  settings.domainName.DEVICE_SHARED);
+          let result: string =
+            await settings.getValueSync(abilityContext!, '', 'defValue', settings.domainName.DEVICE_SHARED);
+          console.info("[settings_get_value_sync_key_empty] result = " + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_key_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_value_empty
+     * @tc.number settings_get_value_sync_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          let result: string =
+            await settings.getValueSync(abilityContext!, 'keyvalueemptystatic', value, settings.domainName.DEVICE_SHARED);
+          console.info("[settings_get_value_sync_value_empty] result = " + result);
+          expect(result === value).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_value_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_sync_domain_empty
+     * @tc.number settings_get_value_sync_domain_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_sync_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          let result: string =
+            await settings.getValueSync(abilityContext!, 'keyvalueemptystatic', value, '');
+          console.info("[settings_get_value_sync_domain_empty] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_sync_domain_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
      * @tc.name   settings_get_value_static_119
      * @tc.number settings_get_value_static_119
      * @tc.desc   check getValueSync value
@@ -188,6 +284,303 @@ export default function settingUiJsunit() {
       } catch(err){
         console.info("[settings_get_value_033] error is: " + String(err));
         expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_key_empty
+     * @tc.number settings_set_value_sync_no_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result = settings.setValueSync(abilityContext!, '', 'testvalue');
+          console.info("[settings_set_value_sync_no_domain_key_empty] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain_key_empty] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_no_domain_value_empty
+     * @tc.number settings_set_value_sync_no_domain_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result = settings.setValueSync(abilityContext!, 'testkey', '');
+          console.info("[settings_set_value_sync_no_domain_value_empty] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_sync_no_domain_value_empty] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_callback_key_empty
+     * @tc.number settings_get_value_callback_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          settings.getValue(abilityContext, '', (err, value: string) => {
+            console.error("[settings_get_value_callback_key_empty] value = " + value);
+            expect(value === '' || value === undefined).assertTrue();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_get_value_callback_key_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_promise_no_domain_key_empty
+     * @tc.number settings_get_value_promise_no_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_promise_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          let result = await settings.getValue(abilityContext, '');
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_promise_no_domain_key_empty] error = " + err);
+          expect(err===undefined).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_promise_has_domain_key_empty
+     * @tc.number settings_get_value_promise_has_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_promise_has_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          let result = await settings.getValue(abilityContext, '', settings.domainName.DEVICE_SHARED);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_promise_has_domain_key_empty] error = " + err);
+          expect(err===undefined).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_get_value_promise_has_domain_domain_empty
+     * @tc.number settings_get_value_promise_has_domain_domain_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_promise_has_domain_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          let result = await settings.getValue(abilityContext, 'key', '');
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_get_value_promise_has_domain_domain_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_key_empty
+     * @tc.number settings_set_value_callback_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          settings.setValue(abilityContext, '', value, (result: boolean) => {
+            console.error("[settings_set_value_callback_key_empty] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_key_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_callback_value_empty
+     * @tc.number settings_set_value_callback_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let value: string = 'value';
+          settings.setValue(abilityContext, 'key', '', (result: boolean) => {
+            console.error("[settings_set_value_callback_value_empty] result = " + result);
+            expect().assertFail();
+            done();
+          });
+        } catch (err) {
+          console.error("[settings_set_value_callback_value_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_key_empty
+     * @tc.number settings_set_value_no_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result = await settings.setValue(abilityContext, '', 'value1');
+          console.info("[settings_set_value_no_domain_key_empty] result:" + result);
+          expect(result).assertTrue();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_key_empty] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_no_domain_value_empty
+     * @tc.number settings_set_value_no_domain_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_no_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result = await settings.setValue(abilityContext, 'setvaluekey212', '');
+          console.info("[settings_set_value_no_domain_value_empty] result:" + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info("[settings_set_value_no_domain_value_empty] error is:" + String(err));
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_has_domain_key_empty
+     * @tc.number settings_set_value_has_domain_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_has_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let value = 'brightness111'; //值
+      try {
+        let result =
+          await settings.setValue(abilityContext, '', value, settings.domainName.DEVICE_SHARED);
+        console.info("[settings_set_value_has_domain_key_empty] result = " + result);
+        expect(result).assertTrue();
+        done();
+      } catch (err) {
+        console.error("[settings_set_value_has_domain_key_empty] error = " + err);
+        expect(err?.code === 201).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_has_domain_value_empty
+     * @tc.number settings_set_value_has_domain_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_has_domain_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      let value = 'brightness111'; //值
+      try {
+        let result =
+          await settings.setValue(abilityContext, 'key', '', settings.domainName.DEVICE_SHARED);
+        console.info("[settings_set_value_has_domain_value_empty] result = " + result);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error("[settings_set_value_has_domain_key_empty] error = " + err);
+        expect(err?.code === 201).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_has_domain_domain_empty
+     * @tc.number settings_set_value_has_domain_domain_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_has_domain_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        let result =
+          await settings.setValue(abilityContext, 'setvalue1', 'value1', '');
+        console.info("[settings_set_value_has_domain_domain_empty] result = " + result);
+        expect(result === null).assertTrue();
+        done();
+      } catch (err) {
+        console.error("[settings_set_value_has_domain_domain_empty] error = " + err);
+        expect().assertFail();
         done();
       }
     });
@@ -241,6 +634,75 @@ export default function settingUiJsunit() {
         done();
       }
     });
+
+    /**
+     * @tc.name   settings_set_value_sync_key_empty
+     * @tc.number settings_set_value_sync_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result: boolean =
+            settings.setValueSync(abilityContext!, '', 'value1', settings.domainName.DEVICE_SHARED);
+          console.info("[settings_set_value_sync_key_empty] result = " + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_key_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_value_empty
+     * @tc.number settings_set_value_sync_value_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result: boolean =
+            settings.setValueSync(abilityContext!, 'testkey', '', settings.domainName.DEVICE_SHARED);
+          console.info("[settings_set_value_sync_value_empty] result = " + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_value_empty] error = " + err);
+          expect(err.code).assertEqual(201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_set_value_sync_domain_empty
+     * @tc.number settings_set_value_sync_domain_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_sync_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result: boolean =
+            settings.setValueSync(abilityContext!, 'testkey', 'testvalue', '');
+          console.info("[settings_set_value_sync_domain_empty] result = " + result);
+          expect(result === null).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_set_value_sync_domain_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.name   settings_get_value_static_035
@@ -1370,6 +1832,52 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_enable_air_plane_mode_true
+     * @tc.number settings_enable_air_plane_mode_true
+     * @tc.desc   settings_enable_air_plane_mode_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_enable_air_plane_mode_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          console.info('test settings_enable_air_plane_mode_true start');
+          settings.enableAirplaneMode(true, (err, data) => {
+            console.info('settings test settings_enable_air_plane_mode_true callback err' + JSON.stringify(err.code));
+            expect(JSON.stringify(err.code)).assertEqual("801");
+            done();
+          })
+        } catch (err) {
+          console.info('settings  test settings_enable_air_plane_mode_true try catch err');
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_enable_air_plane_mode_promise_true
+     * @tc.number settings_enable_air_plane_mode_promise_true
+     * @tc.desc   settings_enable_air_plane_mode_promise_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_enable_air_plane_mode_promise_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result = await settings.enableAirplaneMode(true);
+          console.info('settings settings_enable_air_plane_mode_promise_true result ' + result);
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info('settings settings_enable_air_plane_mode_promise_true err' + JSON.stringify(err));
+          expect(JSON.stringify(err.code)).assertEqual("801");
+          done();
+        }
+      });
+
+    /**
      * @tc.name   settings_get_value_static_114
      * @tc.number settings_get_value_static_114
      * @tc.desc   check settings get value
@@ -1511,6 +2019,55 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_registerKeyObserver_key_empty
+     * @tc.number settings_registerKeyObserver_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_registerKeyObserver_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result = settings.registerKeyObserver(abilityContext!, '', settings.domainName.DEVICE_SHARED, (err, ret) => {
+            done();
+          })
+          console.info("[settings_registerKeyObserver_key_empty] result = " + result);
+          expect(result).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_registerKeyObserver_key_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_registerKeyObserver_domain_empty
+     * @tc.number settings_registerKeyObserver_domain_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_registerKeyObserver_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result =
+            settings.registerKeyObserver(abilityContext!, 'testkey', '', (err, ret) => {
+              done();
+            })
+          console.info("[settings_registerKeyObserver_domain_empty] result = " + result);
+          expect(result).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_registerKeyObserver_domain_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
      * @tc.name   settings_get_value_static_122
      * @tc.number settings_get_value_static_122
      * @tc.desc   check unregisterKeyObserver
@@ -1538,6 +2095,50 @@ export default function settingUiJsunit() {
         done();
       }
     });
+
+    /**
+     * @tc.name   settings_unregisterKeyObserver_key_empty
+     * @tc.number settings_unregisterKeyObserver_key_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregisterKeyObserver_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result = settings.unregisterKeyObserver(abilityContext!, '', settings.domainName.DEVICE_SHARED);
+          console.info("[settings_unregisterKeyObserver_key_empty] result = " + result);
+          expect(result).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_unregisterKeyObserver_key_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   settings_unregisterKeyObserver_domain_empty
+     * @tc.number settings_unregisterKeyObserver_domain_empty
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregisterKeyObserver_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          let result = settings.unregisterKeyObserver(abilityContext!, 'testkeytet', '');
+          console.info("[settings_unregisterKeyObserver_domain_empty] result = " + result);
+          expect(result === false).assertTrue();
+          done();
+        } catch (err) {
+          console.error("[settings_unregisterKeyObserver_domain_empty] error = " + err);
+          expect().assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.name   open_manager_settings_static_119
