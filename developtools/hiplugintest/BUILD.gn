@@ -20,7 +20,7 @@ config("module_private_config") {
   visibility = [ ":*" ]
 }
 
-ohos_moduletest_suite("hipluginmoduleapitest") {
+ohos_moduletest_suite("ActsHiPluginModuleApiAdapt001Test") {
   deps = [
     "${OHOS_PROFILER_DIR}/device/plugins/memory_plugin:memdataplugin",
     "${OHOS_PROFILER_DIR}/protos/types/plugins/memory_data:memory_data_cpp",
