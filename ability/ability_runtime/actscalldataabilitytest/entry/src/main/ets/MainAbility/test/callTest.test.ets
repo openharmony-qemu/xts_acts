@@ -56,7 +56,7 @@ export default function callTest() {
     }
   }
 
-  describe('callTest', Level.LEVEL0, () => {
+  describe('callTestAdapt001', Level.LEVEL0, () => {
     /**
      * @tc.name   CallTest_0100
      * @tc.number CallTest_0100
