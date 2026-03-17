@@ -305,11 +305,11 @@ export default function smsTextNoCardPublic() {
     });
 
     /**
+     * @tc.name    Telephony_SmsMms_createMessage_Async_0100
      * @tc.number  Telephony_SmsMms_createMessage_Async_0100
-     * @tc.name    Call interface CreateMessage,
+     * @tc.desc    Call interface CreateMessage,
      *             pass in the PDU(rawArray) in line with the coding specification, the specification is 3GPP,
      *             shortMessage Don't empty
-     * @tc.desc    Function test
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
