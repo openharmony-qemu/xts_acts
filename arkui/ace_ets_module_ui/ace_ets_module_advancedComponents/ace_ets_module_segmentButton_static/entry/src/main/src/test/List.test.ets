@@ -17,9 +17,13 @@
 import SegBtnItemTest0010 from './segmentButton/SegBtnItemTest0010.test';
 import MultiSegmentButtonV2PageTest from './segmentButtonV2/MultiSegmentButtonV2PageTest.test';
 import SegmentButtonV2Test from './capsuleSegmentButtonV2/SegmentButtonV2.test';
+import SegmentButtonV2Test0010 from './segmenButtonV2/SegmentButtonV2Test0010.test';
+import TabSegmentButtonV2Test from './tabSegmentButtonV2/TabSegmentButtonV2Test.test';
 
 export default function testsuite() {
   SegBtnItemTest0010();
   MultiSegmentButtonV2PageTest();
   SegmentButtonV2Test();
+  SegmentButtonV2Test0010();
+  TabSegmentButtonV2Test();
 }

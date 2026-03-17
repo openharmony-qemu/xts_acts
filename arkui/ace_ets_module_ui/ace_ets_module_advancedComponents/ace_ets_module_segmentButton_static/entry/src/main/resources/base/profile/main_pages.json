@@ -3,6 +3,8 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/segmentButton/SegBtnItem0010",
     "MainAbility/pages/segmentButtonV2/MultiSegmentButtonV2Page",
-    "MainAbility/pages/capsuleSegmentButtonV2/SegmentButtonV2Test"
+    "MainAbility/pages/capsuleSegmentButtonV2/SegmentButtonV2Test",
+    "MainAbility/pages/segmentButtonV2/SegmentButtonV20010",
+    "MainAbility/pages/tabSegmentButtonV2/TabSegmentButtonV2Example"
   ]
 }
