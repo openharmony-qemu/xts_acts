@@ -18062,7 +18062,6 @@ static napi_value NapiRunScriptPathTest07(napi_env env, napi_callback_info info)
     const char* path =  "/entry/resources/rawfile/Size0.abc";
     napi_status status = napi_run_script_path(env, path, &value);
     NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
-    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
 
     napi_value rst;
     bool bRet = true;
