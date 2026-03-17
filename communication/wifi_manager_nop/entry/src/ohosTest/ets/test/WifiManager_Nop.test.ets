@@ -444,7 +444,7 @@ export default function wifiManagerTest() {
         done();
       } catch (error) {
         hilog.error(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_IsBandTypeSupported_Nop failed ' + JSON.stringify(error));
-        if (error.code == NOT_PERMISSION) {
+        if (error.code === NOT_PERMISSION) {
           expect(Number(error.code)).assertEqual(NOT_PERMISSION);
         } else {
           expect(Number(error.code)).assertEqual(PARAMETER_ERROR);
@@ -1126,7 +1126,7 @@ export default function wifiManagerTest() {
         expect().assertFail();
       } catch (error) {
         hilog.error(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_ConnectToCandidateConfigWithUserAction_Nop failed ' + JSON.stringify(error));
-        if (Number(error.code) == 801) {
+        if (Number(error.code) === 801) {
             console.info('[wifi_js]api is not support');
             expect(true).assertTrue();
         } else {
@@ -1151,7 +1151,7 @@ export default function wifiManagerTest() {
         expect().assertFail();
       } catch (error) {
         hilog.error(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_DisableWifi_Nop failed ' + JSON.stringify(error));
-        if (Number(error.code) == 801) {
+        if (Number(error.code) === 801) {
             console.info('[wifi_js]api is not support');
             expect(true).assertTrue();
         } else {
@@ -1176,7 +1176,7 @@ export default function wifiManagerTest() {
         expect().assertFail();
       } catch (error) {
         hilog.error(0x0000, 'wifiManagerTag', '%{public}s', 'SUB_Communication_WiFi_StartScan_Nop failed ' + JSON.stringify(error));
-        if (Number(error.code) == 801) {
+        if (Number(error.code) === 801) {
             console.info('[wifi_js]api is not support');
             expect(true).assertTrue();
         } else {
