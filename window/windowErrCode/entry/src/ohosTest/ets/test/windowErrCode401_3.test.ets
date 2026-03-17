@@ -3544,7 +3544,7 @@ export default function windowErrCode401_3() {
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
       let windowClass = windowStage.getMainWindowSync()
-      let options: window.ShowWindowOptions|null = null;
+      let options: ohosWindow.ShowWindowOptions|null = null;
       try {
         windowClass.showWindow(options).then(() => {
           console.info(caseName+'Succeeded in showing window');
@@ -3560,7 +3560,7 @@ export default function windowErrCode401_3() {
         done();
       }
       try {
-        let options1: window.ShowWindowOptions|undefined = undefined;
+        let options1: ohosWindow.ShowWindowOptions|undefined = undefined;
         windowClass.showWindow(options1).then(() => {
           console.info(caseName+'Succeeded in showing 2 window');
           done();
