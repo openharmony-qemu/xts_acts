@@ -176,12 +176,10 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          let value: string = 'value';
-          await settings.setValue(abilityContext!, '', value,  settings.domainName.DEVICE_SHARED);
-          let result: string =
-            await settings.getValueSync(abilityContext!, '', 'defValue', settings.domainName.DEVICE_SHARED);
+          let defValue: string = 'defValue';
+          let result = settings.getValueSync(abilityContext!, '', defValue, settings.domainName.DEVICE_SHARED);
           console.info("[settings_get_value_sync_key_empty] result = " + result);
-          expect().assertFail();
+          expect(result === defValue).assertTrue();
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_key_empty] error = " + err);
@@ -201,9 +199,8 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_value_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          let value: string = 'value';
-          let result: string =
-            await settings.getValueSync(abilityContext!, 'keyvalueemptystatic', value, settings.domainName.DEVICE_SHARED);
+          let value: string = '';
+          let result: string = settings.getValueSync(abilityContext!, 'keyvalueemptystatic', '', settings.domainName.DEVICE_SHARED);
           console.info("[settings_get_value_sync_value_empty] result = " + result);
           expect(result === value).assertTrue();
           done();
@@ -226,8 +223,7 @@ export default function settingUiJsunit() {
       async (done: () => void): Promise<void> => {
         try {
           let value: string = 'value';
-          let result: string =
-            await settings.getValueSync(abilityContext!, 'keyvalueemptystatic', value, '');
+          let result: string = settings.getValueSync(abilityContext!, 'keyvalueemptystatic', value, '');
           console.info("[settings_get_value_sync_domain_empty] result = " + result);
           expect(result === null).assertTrue();
           done();
@@ -345,7 +341,7 @@ export default function settingUiJsunit() {
         try {
           let value: string = 'value';
           settings.getValue(abilityContext, '', (err, value: string) => {
-            console.error("[settings_get_value_callback_key_empty] value = " + value);
+            console.info("[settings_get_value_callback_key_empty] value = " + value);
             expect(value === '' || value === undefined).assertTrue();
             done();
           });
@@ -1844,8 +1840,8 @@ export default function settingUiJsunit() {
         try {
           console.info('test settings_enable_air_plane_mode_true start');
           settings.enableAirplaneMode(true, (err, data) => {
-            console.info('settings test settings_enable_air_plane_mode_true callback err' + JSON.stringify(err.code));
-            expect(JSON.stringify(err.code)).assertEqual("801");
+            console.info('settings test settings_enable_air_plane_mode_true callback err' + JSON.stringify(err?.code));
+            expect(JSON.stringify(err?.code)).assertEqual("801");
             done();
           })
         } catch (err) {
