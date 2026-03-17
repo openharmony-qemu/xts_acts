@@ -1378,6 +1378,7 @@ export default function api16CertFuncTestTwoUnit() {
           await certManager.installUserTrustedCertificate(certBlob).then((cmResult: certManager.CMResult) => {
             let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
             expect(uri).assertContain("oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA");
+            certManager.uninstallUserTrustedCertificateSync(uri);
           }).catch((err: BusinessError) => {
             console.info("SUB_Security_CertManager_installUserTrustedCertificate_0010 failed.");
           })
@@ -1434,6 +1435,7 @@ export default function api16CertFuncTestTwoUnit() {
           await certManager.installUserTrustedCertificate(certBlob).then((cmResult: certManager.CMResult) => {
             let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
             expect(uri).assertContain("oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA");
+            certManager.uninstallUserTrustedCertificateSync(uri);
           }).catch((err: BusinessError) => {
             console.info("SUB_Security_CertManager_installUserTrustedCertificate_0012 failed.");
           })
