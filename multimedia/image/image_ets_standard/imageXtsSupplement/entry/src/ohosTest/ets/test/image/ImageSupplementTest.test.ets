@@ -299,36 +299,24 @@ export default function ImageSupplementTest() {
         done();
       }
     });
-
     /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_003
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_003
-     * @tc.desc       Metadata -ExifMetadata -getAllProperties -返回值为空
+     * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002
+     * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002
+     * @tc.desc       Metadata -ExifMetadata -getAllProperties -返回值为undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_003', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_003';
-      const path = 'test.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      imageSourceApi = await getImageSource(path);
+    it('SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002';
+      let testExifMetadata: image.ExifMetadata = image.ExifMetadata.createInstance();
       try {
-        let metaData = await imageSourceApi.readImageMetadata();
-        if (metaData != undefined && metaData.exifMetadata != undefined) {
-          let res = await metaData.exifMetadata.getAllProperties();
-          expect().assertFail();
-        } else {
-          console.error(TAG, testName, 'metadata is null. ');
-          expect().assertFail();
-        }
+        let res = await testExifMetadata.getAllProperties();
+        expect(res).assertUndefined();
+        done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code).assertUndefined();
-        done();
-      } finally {
-        await imageSourceApi?.release();
+        expect().assertFail();
         done();
       }
     });
