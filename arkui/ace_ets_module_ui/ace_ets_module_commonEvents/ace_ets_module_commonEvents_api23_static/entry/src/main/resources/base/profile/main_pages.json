@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/Select/Select"
+    "MainAbility/pages/colorModeOptions/colorModeOptions",
+    "MainAbility/pages/snapshotOptions/snapshotOptions"
   ]
 }

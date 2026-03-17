@@ -31,7 +31,7 @@ export default function SnapshotOptionsTest() {
   describe('SnapshotOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("[ARKUI_NEW] SnapshotOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.select.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.common.componentSnapshot.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

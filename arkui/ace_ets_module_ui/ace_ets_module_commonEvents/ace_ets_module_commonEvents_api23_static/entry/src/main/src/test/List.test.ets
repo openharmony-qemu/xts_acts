@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
+import ColorModeOptionsTest from './ColorModeOptionsTest/ColorModeOptions.test';
+import SnapshotOptionsTest from './SnapshotOptionsTest/SnapshotOptions.test';
 
 export default function testsuite() {
-
+  ColorModeOptionsTest();
+  SnapshotOptionsTest();
 }
