@@ -55,8 +55,8 @@ const options2:dataPreferences.Options = {
   storageType:dataPreferences.StorageType.GSKV
 }
 
-let mPreferences: dataPreferences.Preferences;
-let context: common.UIAbilityContext;
+let mPreferences: dataPreferences.Preferences |undefined = undefined;
+let context: common.UIAbilityContext | undefined = undefined;
 const TAG = '[PREFERENCES_CALLBACK_JSUNIT_TEST]'
 
 class User {
@@ -86,7 +86,7 @@ export default function preferencePromiseStaticTest() {
         moduleName: "entry",
         onAbilityCreate: (abilitys: UIAbility): void => {
           context = abilitys.context
-          context.stageMode = true;
+          context!.stageMode = true;
           hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end');
         },
       }, (err: BusinessError | null): void => {
@@ -107,15 +107,15 @@ export default function preferencePromiseStaticTest() {
     })
 
     beforeEach(async () : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'beforeEach, stagemode is ' + context.stageMode)
-      mPreferences = await dataPreferences.getPreferences(context, NAME);
-      mPreferences.clearSync();
-      mPreferences.flush();
+      hilog.info(domain, tag, '%{public}s', 'beforeEach, stagemode is ' + context!.stageMode)
+      mPreferences = await dataPreferences.getPreferences(context!, NAME);
+      mPreferences!.clearSync();
+      mPreferences!.flush();
     })
 
     afterEach(async () : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterEach')
-      await dataPreferences.deletePreferences(context, NAME);
+      await dataPreferences.deletePreferences(context!, NAME);
     })
 
     /**
@@ -128,7 +128,7 @@ export default function preferencePromiseStaticTest() {
      */
     it("testPreferencesGetPreferencesPromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let mPreferences = await dataPreferences.getPreferences(context, "");
+        let mPreferences = await dataPreferences.getPreferences(context!, "");
         console.info("testPreferencesGetPreferencesPromiseErr0300" + mPreferences);
         expect(mPreferences).assertUndefined();
         done();
@@ -150,7 +150,7 @@ export default function preferencePromiseStaticTest() {
      */
     it("testPreferencesDeletePreferencesPromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let mPreferences = await dataPreferences.deletePreferences(context, "");
+        let mPreferences = await dataPreferences.deletePreferences(context!, "");
         console.info("testPreferencesGetPreferencesPromiseErr0300" + mPreferences);
         expect(mPreferences).assertUndefined();
         done();
@@ -172,9 +172,9 @@ export default function preferencePromiseStaticTest() {
      */
     it("testPreferencesRemovePreferencesFromCachePromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let mPreferences = await dataPreferences.removePreferencesFromCache(context, "");
+        let mPreferences = await dataPreferences.removePreferencesFromCache(context!, "");
         console.info("testPreferencesRemovePreferencesFromCachePromiseErr0100" + mPreferences);
-        expect(mPreferences).assertUndefined();
+        expect(mPreferences!).assertUndefined();
         done();
       } catch (err) {
         console.info("testPreferencesRemovePreferencesFromCachePromiseErr0100 fail: " + err.message + "code: " + err.code);
@@ -194,7 +194,7 @@ export default function preferencePromiseStaticTest() {
      */
     it("testPreferencesPutPromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await mPreferences.put(KEY_TEST_STRING_ELEMENT, "");
+        await mPreferences!.put(KEY_TEST_STRING_ELEMENT, "");
         console.info("testPreferencesRemovePreferencesFromCachePromiseErr0100");
         expect().assertFail();
         done();
@@ -216,7 +216,7 @@ export default function preferencePromiseStaticTest() {
      */
     it("testPreferencesGetPromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await mPreferences.get(KEY_TEST_STRING_ELEMENT, "");
+        await mPreferences!.get(KEY_TEST_STRING_ELEMENT, "");
         console.info("testPreferencesRemovePreferencesFromCachePromiseErr0100");
         expect().assertFail();
         done();
@@ -238,7 +238,7 @@ export default function preferencePromiseStaticTest() {
      */
     it("testPreferencesDeletePromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        await mPreferences.delete("");
+        await mPreferences!.delete("");
         console.info("testPreferencesDeletePromiseErr0100");
         expect().assertFail();
         done();
@@ -260,7 +260,7 @@ export default function preferencePromiseStaticTest() {
      */
     it("testPreferencesHasPromiseErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let ret = await mPreferences.has("");
+        let ret = await mPreferences!.has("");
         console.info("testPreferencesDeletePromiseErr0100");
         expect(ret).assertEqual(false);
         done();
@@ -270,6 +270,6 @@ export default function preferencePromiseStaticTest() {
         done();
       }
     });
-    
+
   })
 }
