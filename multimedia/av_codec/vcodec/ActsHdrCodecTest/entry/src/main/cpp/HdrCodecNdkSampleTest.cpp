@@ -152,7 +152,7 @@ static int32_t SendData(OH_AVCodec* codec, uint32_t index, OH_AVMemory* data, HD
         cout << "Fatal: buffer too small" << endl;
         return 0;
     }
-    memcpy(avBuffer,fileBuffer, bufferSize);
+    std::copy(fileBuffer, fileBuffer + bufferSize, avBuffer);
     delete[] fileBuffer;
     attr.pts = GetSystemTimeUs();
     attr.size = bufferSize;
