@@ -114,8 +114,8 @@ export default function callJsunit() {
             hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback success->');
             done();
           }).catch((err: Error) => {
-            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
-            expect((err as BusinessError)?.code).assertEqual(8300001);
+            hilog.info(domain, tag, `${caseName} makeCall err: ${JSON.stringify(err)}`);
+            expect(false).assertTrue();
             done();
           });
         } catch (err) {
