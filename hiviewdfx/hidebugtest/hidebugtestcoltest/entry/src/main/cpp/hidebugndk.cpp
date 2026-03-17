@@ -295,7 +295,9 @@ __attribute((noinline)) __attribute((optnone)) void TestNativeFrames(int i)
 __attribute((noinline)) __attribute((optnone)) napi_value GetBacktraceFromFp(napi_env env, napi_callback_info info)
 {
     TestNativeFrames(1);
-    return 0;
+    napi_value result;
+    napi_status status = napi_create_int32(env, 0, &result);
+    return result;
 }
 
 __attribute((noinline)) __attribute((optnone)) void TestNativeInvaildFrames(int i)
@@ -310,7 +312,9 @@ __attribute((noinline)) __attribute((optnone)) void TestNativeInvaildFrames(int 
 __attribute((noinline)) __attribute((optnone)) napi_value GetBacktraceInvaildFromFp(napi_env env, napi_callback_info info)
 {
     TestNativeFrames(1); 
-    return 0;
+    napi_value result;
+    napi_status status = napi_create_int32(env, 0, &result);
+    return result;
 }
 
 static void* MyMalloc(size_t size)
