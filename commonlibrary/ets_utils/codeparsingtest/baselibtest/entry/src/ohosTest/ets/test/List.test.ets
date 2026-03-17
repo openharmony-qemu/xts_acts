@@ -23,6 +23,7 @@ import uriTest from './uri/Uri.test';
 import uri2Test from './uri/Uri2.test';
 import urlTest from './url/Url.test';
 import url2Test from './url/Url2.test';
+import utilTest from './util/Util.test';
 import UtilTypeTest from './util/UtilType.test';
 import util2Test from './util/Util2.test';
 import util3Test from './util/Util3.test';
@@ -73,6 +74,7 @@ export default function testsuite() {
   uri2Test();
   urlTest();
   url2Test();
+  utilTest();
   util2Test();
   util3Test();
   UtilTypeTest();

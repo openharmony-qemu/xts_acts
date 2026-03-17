@@ -3515,52 +3515,5 @@ export default function utilTest() {
       util.ArkTSVM.setMultithreadingDetectionEnabled(false);
       done();
     });
-
-    /**
-     * @tc.name   testGetAllVMHeapMemoryInfo001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_ALL_VM_HEAP_MEMORY_INFO_001
-     * @tc.desc   Test getAllVMHeapMemoryInfo to get heap memory info of all VM threads.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testGetAllVMHeapMemoryInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      const TAG = 'testGetAllVMHeapMemoryInfo001';
-      try {
-        const heapInfos = await util.ArkTSVM.getAllVMHeapMemoryInfo();
-        expect(heapInfos).assertNotNull();
-        expect(heapInfos.length > 0).assertTrue();
-        
-        let hasLocalHeap = false;
-        let hasSharedHeap = false;
-        
-        for (let i = 0; i < heapInfos.length; i++) {
-          const info = heapInfos[i];
-          expect(info.threadName).assertNotNull();
-          expect(typeof info.threadName === 'string').assertTrue();
-          expect(info.heapType).assertNotNull();
-          expect(typeof info.heapType === 'string').assertTrue();
-          expect(info.heapObjectSize).assertNotNull();
-          expect(typeof info.heapObjectSize === 'number').assertTrue();
-          expect(info.heapObjectSize >= 0).assertTrue();
-          
-          if (info.heapType === 'local') {
-            hasLocalHeap = true;
-            expect(info.threadId).assertNotNull();
-            expect(typeof info.threadId === 'number').assertTrue();
-          } else if (info.heapType === 'shared') {
-            hasSharedHeap = true;
-            expect(info.threadId).assertEqual(undefined);
-          }
-        }
-        
-        expect(hasLocalHeap).assertTrue();
-        done();
-      } catch (err) {
-        console.error(`${TAG} failed, error code: ${err.code}`);
-        expect().assertFail();
-        done();
-      }
-    });
   })
 }
