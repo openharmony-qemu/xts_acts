@@ -187,12 +187,12 @@ struct WebOnPermissionRequest {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                   if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {
                     console.info('[TAO]PC or Wearable');
-                    Utils.emitEvent('"grant"', 160880)
+                    Utils.emitEvent('"grant"', 160900)
                     break;
                   }
 
                   if (deviceProductModel === 'emulator') {
-                    Utils.emitEvent('"grant"', 160880)
+                    Utils.emitEvent('"grant"', 160900)
                     break;
                   }
                   try {
@@ -210,7 +210,7 @@ struct WebOnPermissionRequest {
                           if (this.permissionRequest) {
                             try {
                               this.permissionRequest.grant(null)
-                              Utils.emitEvent('grant', 160900)
+                              Utils.emitEvent('"grant"', 160900)
                             } catch(error) {
                               Utils.emitEvent(error.code, 160900)
                             }
@@ -251,26 +251,26 @@ struct WebOnPermissionRequest {
                       })
                     }, "getResult", '"grant"')
 
-                    Utils.emitEvent(result, 160880)
+                    Utils.emitEvent(result, 160900)
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   }
                   break;
                 } else {
-                  Utils.emitEvent('"grant"', 160880)
+                  Utils.emitEvent('"grant"', 160900)
                 }
               }
               case 'emitPermissionRequestGrant003': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                   if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {
                     console.info('[TAO]PC or Wearable');
-                    Utils.emitEvent('"grant"', 160880)
+                    Utils.emitEvent('"grant"', 160920)
                     break;
                   }
 
                   if (deviceProductModel === 'emulator') {
-                    Utils.emitEvent('"grant"', 160880)
+                    Utils.emitEvent('"grant"', 160920)
                     break;
                   }
                   try {
@@ -288,7 +288,7 @@ struct WebOnPermissionRequest {
                           if (this.permissionRequest) {
                             try {
                               this.permissionRequest.grant(undefined)
-                              Utils.emitEvent('grant', 160920)
+                              Utils.emitEvent('"grant"', 160920)
                             } catch(error) {
                               Utils.emitEvent(error.code, 160920)
                             }
@@ -329,26 +329,26 @@ struct WebOnPermissionRequest {
                       })
                     }, "getResult", '"grant"')
 
-                    Utils.emitEvent(result, 160880)
+                    Utils.emitEvent(result, 160920)
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   }
                   break;
                 } else {
-                  Utils.emitEvent('"grant"', 160880)
+                  Utils.emitEvent('"grant"', 160920)
                 }
               }
               case 'emitPermissionRequestGrant004': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                   if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {
                     console.info('[TAO]PC or Wearable');
-                    Utils.emitEvent('"grant"', 160880)
+                    Utils.emitEvent('"grant"', 160940)
                     break;
                   }
 
                   if (deviceProductModel === 'emulator') {
-                    Utils.emitEvent('"grant"', 160880)
+                    Utils.emitEvent('"grant"', 160940)
                     break;
                   }
                   try {
@@ -366,7 +366,7 @@ struct WebOnPermissionRequest {
                           if (this.permissionRequest) {
                             try {
                               this.permissionRequest.grant([])
-                              Utils.emitEvent('grant', 160940)
+                              Utils.emitEvent('"grant"', 160940)
                             } catch(error) {
                               Utils.emitEvent(error.code, 160940)
                             }
@@ -407,14 +407,14 @@ struct WebOnPermissionRequest {
                       })
                     }, "getResult", '"grant"')
 
-                    Utils.emitEvent(result, 160880)
+                    Utils.emitEvent(result, 160940)
 
                   } catch (error) {
                     console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   }
                   break;
                 } else {
-                  Utils.emitEvent('"grant"', 160880)
+                  Utils.emitEvent('"grant"', 160940)
                 }
               }
             }
