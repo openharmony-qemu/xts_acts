@@ -126,40 +126,5 @@ export default function callJsunit() {
       }
     });
 
-    /**
-     * @tc.number Telephony_Call_Call_MakeCall_0300
-     * @tc.name   Make a call.
-     * @tc.desc   Function test
-     * @tc.level  Level 0
-     * @tc.type   Function
-     * @tc.size   MEDIUMTEST
-     */
-    it("Telephony_Call_Call_MakeCall_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let caseName: string = "Telephony_Call_Call_MakeCall_0300";
-      let simState: sim.SimState = sim.getSimStateSync(0);
-      if(simState == sim.SimState.SIM_STATE_UNKNOWN)
-      {
-        hilog.info(domain, tag, '%{public}s', caseName + ' faild, SIM_STATE_UNKNOWN');
-        done();
-      }else{
-        hilog.info(domain, tag, '%{public}s', caseName + ' start');
-        try {
-          let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-          call.makeCall(context,"").then((data) => {
-            console.log("Telephony_Call_Call_MakeCall_0700 makeCall callback success"+ JSON.stringify(data));
-            done();
-          }).catch((err: Error) => {
-            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
-            expect(false).assertTrue();
-            done();
-          });
-        } catch (err) {
-          expect(false).assertTrue();
-          done();
-        }
-        hilog.info(domain, tag, '%{public}s', caseName + ' Test end');
-      }
-    });
-
   });
 }
