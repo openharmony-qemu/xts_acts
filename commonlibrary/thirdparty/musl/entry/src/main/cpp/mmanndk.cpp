@@ -31,6 +31,7 @@
 #include <unistd.h>
 #include <utmp.h>
 #include <uv.h>
+#include <securec.h>
 
 #define PARAM_1 1
 #define PARAM_2 2
