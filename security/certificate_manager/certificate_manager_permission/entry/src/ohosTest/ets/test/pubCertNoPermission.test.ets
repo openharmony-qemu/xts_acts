@@ -201,5 +201,30 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0030
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0030
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0030: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
+      } catch (error) {
+        if(error.code != 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0030 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+        }
+      }
+      done();
+    });
   })
 }
