@@ -107,6 +107,7 @@ export default function webOnPermissionRequest() {
         });
       await Utils.waitAndClickComponent(driver, "WebOnPermissionRequestTestButton");
     })
+	
 
     /**
      * @tc.name   testPermissionRequestGrantGroup003
