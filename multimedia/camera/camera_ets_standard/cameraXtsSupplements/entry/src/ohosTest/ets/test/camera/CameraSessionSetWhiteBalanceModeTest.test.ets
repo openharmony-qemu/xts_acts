@@ -1136,6 +1136,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
+     * @tc.name   CAMERA_GET_ACTIVE_FRAMERATE_001
      * @tc.number CAMERA_GET_ACTIVE_FRAMERATE_001
      * @tc.desc   getActiveFrameRate activeFrameRate min
      * @tc.type   FUNCTION
