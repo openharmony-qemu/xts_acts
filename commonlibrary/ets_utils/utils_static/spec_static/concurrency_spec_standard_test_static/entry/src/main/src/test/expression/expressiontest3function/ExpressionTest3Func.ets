@@ -1991,3 +1991,49 @@ export function ExpressionTest0476() {
   }
 }
 
+export function ExpressionTest0477() {
+  const TAG = 'ExpressionTest0477';
+  const str: string = "abcdefghij";
+  const start: int = 2;
+  const length: int = 4;
+  const result: string = str.substr(start, length);
+  if (result !== "cdef") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected cdef');
+  }
+}
+
+export function ExpressionTest0478() {
+  const TAG = 'ExpressionTest0478';
+  const num: number = 15;
+  const result: string = `Negative: ${-num}, Absolute: ${-(-num)}`;
+  if (result !== "Negative: -15, Absolute: 15") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected Negative: -15, Absolute: 15');
+  }
+}
+
+export function ExpressionTest0479() {
+  const TAG = 'ExpressionTest0479';
+  const a: number = 10;
+  const b: number = 5;
+  const result: boolean = -a < -b;
+  // -10 < -5 is true
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0480() {
+  const TAG = 'ExpressionTest0480';
+  let num: number = 10;
+  num += 5; // 15
+  num *= 2; // 30
+  num -= 8; // 22
+  num /= 2; // 11
+  if (num !== 11) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected 11');
+  }
+}

@@ -1987,3 +1987,1080 @@ export function ExpressionTest0647() {
   }
 }
 
+export function ExpressionTest0648() {
+  const TAG = 'ExpressionTest0648';
+  let result: string = "";
+  let count: number = 0;
+  do {
+    result += count++ + " ";
+  } while (count < 4);
+  if (result !== "0 1 2 3 ") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 0 1 2 3 ');
+  }
+}
+
+export function ExpressionTest0649() {
+  const TAG = 'ExpressionTest0649';
+  const a: number = 9;
+  const b: number = 12;
+  const result: boolean = (a & b) < (a | b);
+  // 8 < 13 is true
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0650() {
+  const TAG = 'ExpressionTest0650';
+  const str: string = "abcdefgh";
+  let result: string = "";
+  let i: int, chunk: string;
+  for (i = 0, chunk = str.substring(i, i + 2); i < str.length; i += 2, chunk = str.substring(i, i + 2)) {
+    result += chunk + "|";
+  }
+  if (result !== "ab|cd|ef|gh|") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected ab|cd|ef|gh|');
+  }
+}
+
+export function ExpressionTest0651() {
+  const TAG = 'ExpressionTest0651';
+  const str: string = "TypeScript";
+  const result: string = str + (str.startsWith("Type") && str.length > 5 ? " is valid" : " is invalid");
+  if (result !== "TypeScript is valid") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected TypeScript is valid');
+  }
+}
+
+export function ExpressionTest0652() {
+  const TAG = 'ExpressionTest0652';
+  const a: string = "15";
+  const b: string = "7";
+  const result: number = +Number(a) - +Number(b) * 2;
+  if (result !== 1) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 1');
+  }
+}
+
+export function ExpressionTest0653() {
+  const TAG = 'ExpressionTest0653';
+  let result: number = 0;
+  let i: number, value: number;
+  for (i = 0, value = 1; i < 5; i++, value = value << 1) {
+    result += value;
+  }
+  if (result !== 1 + 2 + 4 + 8 + 16) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 1 + 2 + 4 + 8 + 16');
+  }
+}
+
+export function ExpressionTest0654() {
+  const TAG = 'ExpressionTest0654';
+  const str: string = "test";
+  const result: boolean = !(str.length > 5);
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0655() {
+  const TAG = 'ExpressionTest0655';
+  const a: number = 13;
+  const b: number = 7;
+  const result: boolean = (a ^ b) === 10;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0656() {
+  const TAG = 'ExpressionTest0656';
+  const value: number = 23;
+  let result: string = "Value " + value + " is ";
+  result += value > 50 ? "large" : value > 20 ? "medium" : "small";
+  if (result !== "Value 23 is medium") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected Value 23 is medium');
+  }
+}
+
+export function ExpressionTest0657() {
+  const TAG = 'ExpressionTest0657';
+  const a: number = 8;
+  const result: number = -(a >> 1);
+  if (result !== -4) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected -4');
+  }
+}
+
+export function ExpressionTest0658() {
+  const TAG = 'ExpressionTest0658';
+  const str: string = "abcdefghijklmno";
+  let count: number = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (i % 4 === 0) {
+      count++;
+    }
+  }
+  if (count !== 4) {
+    console.info(`${TAG} Task execution failed: count: ${count}`);
+    throw new Error('count check failed, expected 4');
+  }
+}
+
+export function ExpressionTest0659() {
+  const TAG = 'ExpressionTest0659';
+  const a: number = 12;
+  const b: number = 8;
+  const result: boolean = a > 10 && b < 10 && a > b;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0660() {
+  const TAG = 'ExpressionTest0660';
+  const str: string = "example";
+  const num: number = 4;
+  const result: boolean = str.length > 8 || num > 5 || str.endsWith("ple");
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0661() {
+  const TAG = 'ExpressionTest0661';
+  let value: number = 0b0010;
+  value |= 0b0100; // 0b0110
+  value |= 0b1000; // 0b1110
+  if (value !== 0b1110) {
+    console.info(`${TAG} Task execution failed: value: ${value}`);
+    throw new Error('value check failed, expected 0b1110');
+  }
+}
+
+export function ExpressionTest0662() {
+  const TAG = 'ExpressionTest0662';
+  const a: number = 25;
+  const b: number = 4;
+  const result: string = `${a} / ${b} = ${a / b}, floor = ${Math.floor(a / b)}`;
+  if (result !== "25 / 4 = 6.25, floor = 6") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 25 / 4 = 6.25, floor = 6');
+  }
+}
+
+export function ExpressionTest0663() {
+  const TAG = 'ExpressionTest0663';
+  let num: number = 3;
+  const result: number = ++num * 3 - ++num;
+  // 4 * 3 - 5 = 12 - 5 = 7
+  if (result !== 7) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 7');
+  }
+
+  if (num !== 5) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected 5');
+  }
+}
+
+export function ExpressionTest0664() {
+  const TAG = 'ExpressionTest0664';
+  let num: number = 10;
+  const firstPart: number = (num--) / 2;
+  const secondPart: number = num--;
+  const result: number = firstPart + secondPart;
+  if (result !== 14) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 14');
+  }
+
+  if (num !== 8) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected 8');
+  }
+}
+
+export function ExpressionTest0665() {
+  const TAG = 'ExpressionTest0665';
+  const str: string = "0123456789";
+  let result: string = "";
+  let i: int, step: int;
+  for (i = 0, step = 2; i < str.length; i += step, step = step < 4 ? step + 1 : 2) {
+    result += str[i];
+  }
+  if (result !== "0259") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 0259');
+  }
+}
+
+export function ExpressionTest0666() {
+  const TAG = 'ExpressionTest0666';
+  const str1: string = "Hello";
+  const str2: string = "HELLO";
+  const result: boolean = str1.toLowerCase() === str2.toLowerCase();
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0667() {
+  const TAG = 'ExpressionTest0667';
+  let result: number = 0;
+  for (let i = 1; i <= 15; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      result += i;
+    }
+  }
+  if (result !== 15) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 15');
+  }
+}
+
+export function ExpressionTest0668() {
+  const TAG = 'ExpressionTest0668';
+  const configValue: number | null = null;
+  const defaultValue: number = 100;
+  const result: number = configValue ?? defaultValue;
+  if (result !== 100) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 100');
+  }
+}
+
+export function ExpressionTest0669() {
+  const TAG = 'ExpressionTest0669';
+  const a: number = -15;
+  const b: number = -7;
+  const result: number = a | b;
+  if (result !== -7) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected -7');
+  }
+}
+
+export function ExpressionTest0670() {
+  const TAG = 'ExpressionTest0670';
+  const str: string = "abcdefghijklmnopqrstuvwxyz";
+  let index: int = 2;
+  index = index * 3 + 1;
+  const result: string = str[index];
+  if (result !== "h") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected h');
+  }
+}
+
+export function ExpressionTest0673() {
+  const TAG = 'ExpressionTest0673';
+  const a: number = 7;
+  const result: boolean = (a << 3) === 56;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0674() {
+  const TAG = 'ExpressionTest0674';
+  const base: number = 5;
+  const exp: number = 3;
+  const result: string = base + " to the power of " + exp + " is " + (base**exp);
+  if (result !== "5 to the power of 3 is 125") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 5 to the power of 3 is 125');
+  }
+}
+
+export function ExpressionTest0675() {
+  const TAG = 'ExpressionTest0675';
+  const a: number = 10;
+  const b: number = 3;
+  const c: number = 2;
+  const result1: number = a - b * c;
+  const result2: number = (a - b) * c;
+  if (result1 !== 4) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 4');
+  }
+
+  if (result2 !== 14) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected 14');
+  }
+}
+
+export function ExpressionTest0676() {
+  const TAG = 'ExpressionTest0676';
+  const x: number = 9;
+  const y: number = 4;
+  const result: string = `${x} + ${y} * 2 = ${x + y * 2}, (${x} + ${y}) * 2 = ${(x + y) * 2}`;
+  if (result !== "9 + 4 * 2 = 17, (9 + 4) * 2 = 26") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 9 + 4 * 2 = 17, (9 + 4) * 2 = 26');
+  }
+}
+
+export function ExpressionTest0677() {
+  const TAG = 'ExpressionTest0677';
+  const str: string = "abcdefghijklmnopqrstuvwxyz";
+  const start: int = 5;
+  const length: int = 3;
+  const result: string = str.substr(start, length * 2);
+  if (result !== "fghijk") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected fghijk');
+  }
+}
+
+export function ExpressionTest0678() {
+  const TAG = 'ExpressionTest0678';
+  const a: number = 12;
+  const b: number = 5;
+  const result: string = `-${a} + ${b} = ${-a + b}`;
+  if (result !== "-12 + 5 = -7") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected -12 + 5 = -7');
+  }
+}
+
+export function ExpressionTest0679() {
+  const TAG = 'ExpressionTest0679';
+  const a: number = 6;
+  const b: number = 4;
+  const result: boolean = +a > -b * 2;
+  // 6 > -8 is true
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0680() {
+  const TAG = 'ExpressionTest0680';
+  let num: number = 5;
+  num += 3; // 8
+  num *= 2; // 16
+  num -= 4; // 12
+  if (num !== 12) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected 12');
+  }
+}
+
+export function ExpressionTest0681() {
+  const TAG = 'ExpressionTest0681';
+  let result: string = "";
+  const str: string = "abcdefghijklmno";
+  for (let i = 0; i < str.length; i++) {
+    if (i > 5 && i < 10) {
+      result += str[i];
+    }
+  }
+  if (result !== "ghij") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected ghij');
+  }
+}
+
+export function ExpressionTest0682() {
+  const TAG = 'ExpressionTest0682';
+  const num: number = 38;
+  const mod: number = 7;
+  const remainder: number = num % mod;
+  const result: boolean = remainder >= 3 && remainder <= 5;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0683() {
+  const TAG = 'ExpressionTest0683';
+  const a: number = 11;
+  const b: number = 5;
+  const result: string = a + " & " + b + " = " + (a & b);
+  if (result !== "11 & 5 = 1") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 11 & 5 = 1');
+  }
+}
+
+export function ExpressionTest0684() {
+  const TAG = 'ExpressionTest0684';
+  const num: number = 5;
+  const result: boolean = ~num === -6;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0685() {
+  const TAG = 'ExpressionTest0685';
+  const a: number = 8;
+  const b: number = 3;
+  const result: string = `${a} > ${b}: ${a > b}, ${a} / ${b} = ${a / b}, ${a} % ${b} = ${a % b}`;
+  if (result !== "8 > 3: true, 8 / 3 = 2.6666666666666665, 8 % 3 = 2") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 8 > 3: true, 8 / 3 = 2.6666666666666665, 8 % 3 = 2');
+  }
+}
+
+export function ExpressionTest0686() {
+  const TAG = 'ExpressionTest0686';
+  const str: string = "abcdefghij";
+  const result: number = str.length | 0x0F;
+  // 10 | 15 = 15
+  if (result !== 15) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 15');
+  }
+}
+
+export function ExpressionTest0687() {
+  const TAG = 'ExpressionTest0687';
+  const str: string = "0123456789abcdef";
+  const a: int = 7;
+  const b: int = 3;
+  const result: string = str[a ^ b];
+  if (result !== "4") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 4');
+  }
+}
+
+export function ExpressionTest0688() {
+  const TAG = 'ExpressionTest0688';
+  const a: number = 15;
+  const b: number = 4;
+  const result: string = `${a} >> ${b} = ${a >> b}, ${a} >>> ${b} = ${a >>> b}`;
+  if (result !== "15 >> 4 = 0, 15 >>> 4 = 0") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 15 >> 4 = 0, 15 >>> 4 = 0');
+  }
+}
+
+export function ExpressionTest0689() {
+  const TAG = 'ExpressionTest0689';
+  const a: number = 32;
+  const b: number = 3;
+  const result: boolean = (a >> b) === 4;
+  // 32 >> 3 = 4
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0690() {
+  const TAG = 'ExpressionTest0690';
+  const count: number = 7;
+  const result: string = "Count " + count + ": " +
+    (count > 10 ? "many" :
+      count > 5 ? "several" :
+        count > 1 ? "a few" : "one");
+  if (result !== "Count 7: several") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected Count 7: several');
+  }
+}
+
+export function ExpressionTest0691() {
+  const TAG = 'ExpressionTest0691';
+  const temperature: number = 98.6;
+  const result: boolean = temperature >= 97 && temperature <= 99;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0692() {
+  const TAG = 'ExpressionTest0692';
+  const str: string = "abcdefghijklmnopqrstuvwxyz";
+  const result: number = (str.length - 6) & 0x1F;
+  // 20 & 31 = 20
+  if (result !== 20) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 20');
+  }
+}
+
+export function ExpressionTest0693() {
+  const TAG = 'ExpressionTest0693';
+  const score: number = 89;
+  const result: string = score >= 95 ? "A+" :
+    score >= 90 ? "A" :
+      score >= 85 ? "A-" :
+        score >= 80 ? "B+" : "B";
+  if (result !== "A-") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected A-');
+  }
+}
+
+export function ExpressionTest0694() {
+  const TAG = 'ExpressionTest0694';
+  let result: number = 0;
+  let i: number, j: number;
+  for (i = 1, j = 1; i <= 5; i++, j *= 2) {
+    result += i * j;
+  }
+  if (result !== 1 * 1 + 2 * 2 + 3 * 4 + 4 * 8 + 5 * 16) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 1 * 1 + 2 * 2 + 3 * 4 + 4 * 8 + 5 * 16');
+  }
+}
+
+export function ExpressionTest0695() {
+  const TAG = 'ExpressionTest0695';
+  const str: string = "Hello World";
+  const substr: string = "lo W";
+  const result: boolean = str.substring(3, 7) === substr;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0696() {
+  const TAG = 'ExpressionTest0696';
+  let num: number = 4;
+  const result: number = ~num + (-num) * 2;
+  // -5 + (-4) * 2 = -5 - 8 = -13
+  if (result !== -13) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected -13');
+  }
+}
+
+export function ExpressionTest0697() {
+  const TAG = 'ExpressionTest0697';
+  const value: number = 0b1101;
+  const mask: number = 0b1000;
+  const result: boolean = (value & mask) !== 0;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0698() {
+  const TAG = 'ExpressionTest0698';
+  let result: string = "";
+  let count: number = 1;
+  while (count <= 5) {
+    result += (count % 2 === 0 ? "even" : "odd") + count + " ";
+    count++;
+  }
+  if (result !== "odd1 even2 odd3 even4 odd5 ") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected odd1 even2 odd3 even4 odd5 ');
+  }
+}
+
+export function ExpressionTest0699() {
+  const TAG = 'ExpressionTest0699';
+  const a: number = 22;
+  const b: number = 15;
+  const result: boolean = (a ^ b) > (a & b);
+  // 27 > 14 is true
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0700() {
+  const TAG = 'ExpressionTest0700';
+  const str: string = "abcdefghijklmnop";
+  let result: string = "";
+  let i: int, chunkSize: int;
+  for (i = 0, chunkSize = 1; i < str.length; i += chunkSize, chunkSize = Math.min(chunkSize + 1, 4).toInt()) {
+    result += str.substr(i, chunkSize) + "|";
+  }
+  if (result !== "a|bc|def|ghij|klmn|op|") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected a|bc|def|ghij|klmn|op|');
+  }
+}
+
+export function ExpressionTest0701() {
+  const TAG = 'ExpressionTest0701';
+  const str: string = "Hello";
+  const result: string = str + (str.length > 3 || str.startsWith("X") ? " is valid" : " is invalid");
+  if (result !== "Hello is valid") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected Hello is valid');
+  }
+}
+
+export function ExpressionTest0702() {
+  const TAG = 'ExpressionTest0702';
+  const a: string = "25";
+  const b: string = "7";
+  const result: number = (+Number(a) % +Number(b)) * 2;
+  if (result !== 8) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 8');
+  }
+}
+
+export function ExpressionTest0703() {
+  const TAG = 'ExpressionTest0703';
+  let result: number = 0;
+  let i: number, mask: number;
+  for (i = 0, mask = 1; i < 8; i++, mask <<= 1) {
+    if (i % 2 === 0) {
+      result |= mask;
+    }
+  }
+  if (result !== 1 + 4 + 16 + 64) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 1 + 4 + 16 + 64');
+  }
+}
+
+export function ExpressionTest0704() {
+  const TAG = 'ExpressionTest0704';
+  const num: number = 7;
+  const result: boolean = !(num % 2 === 0);
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0705() {
+  const TAG = 'ExpressionTest0705';
+  const a: number = 22;
+  const b: number = 15;
+  const result: boolean = (a & b) === 14;
+  if (result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not false');
+  }
+}
+
+export function ExpressionTest0706() {
+  const TAG = 'ExpressionTest0706';
+  const value: number = 3.7;
+  let result: string = "Value " + value + " is ";
+  result += value > 5 ? "high" : value > 3 ? "medium" : "low";
+  if (result !== "Value 3.7 is medium") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected Value 3.7 is medium');
+  }
+}
+
+export function ExpressionTest0707() {
+  const TAG = 'ExpressionTest0707';
+  const a: number = 15;
+  const result: number = -(a >>> 2);
+  if (result !== -3) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected -3');
+  }
+}
+
+export function ExpressionTest0708() {
+  const TAG = 'ExpressionTest0708';
+  const str: string = "abcdefghijklmnopqrstuvwxyz";
+  let result: string = "";
+  for (let i = 0; i < str.length; i += Math.floor(str.length / 5)) {
+    result += str[i];
+  }
+  if (result !== "afkpuz") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected afkpuz');
+  }
+}
+
+export function ExpressionTest0709() {
+  const TAG = 'ExpressionTest0709';
+  const a: number = 18;
+  const b: number = 12;
+  const result: boolean = a > 15 && b < 15 && a - b > 5;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0710() {
+  const TAG = 'ExpressionTest0710';
+  const str: string = "typescript";
+  const num: number = 5;
+  const result: boolean = str.length < 5 || num < 3 || str.includes("script");
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0711() {
+  const TAG = 'ExpressionTest0711';
+  let value: number = 0b1100;
+  value ^= 0b0101; // 0b1001
+  value ^= 0b1110; // 0b0111
+  if (value !== 0b0111) {
+    console.info(`${TAG} Task execution failed: value: ${value}`);
+    throw new Error('value check failed, expected 0b0111');
+  }
+}
+
+export function ExpressionTest0712() {
+  const TAG = 'ExpressionTest0712';
+  const a: number = 3;
+  const b: number = 4;
+  const c: number = 5;
+  const result: string = `${a}^2 + ${b}^2 = ${c}^2: ${a**2 + b**2 === c**2}`;
+  if (result !== "3^2 + 4^2 = 5^2: true") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 3^2 + 4^2 = 5^2: true');
+  }
+}
+
+export function ExpressionTest0713() {
+  const TAG = 'ExpressionTest0713';
+  let num: number = 2;
+  const result: number = ++num * 2 + ++num * 3;
+  // 3 * 2 + 4 * 3 = 6 + 12 = 18
+  if (result !== 18) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 18');
+  }
+
+  if (num !== 4) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected 4');
+  }
+}
+
+export function ExpressionTest0714() {
+  const TAG = 'ExpressionTest0714';
+  let num: number = 15;
+  const result: number = num--
+  / 3 + num-- * 2;
+  // 15 / 3 + 14 * 2 = 5 + 28 = 33
+  if (result !== 33) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 33');
+  }
+
+  if (num !== 13) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected 13');
+  }
+}
+
+export function ExpressionTest0715() {
+  const TAG = 'ExpressionTest0715';
+  const str: string = "0123456789abcdefghijklmnopqrstuvwxyz";
+  let result: string = "";
+  let i: int, step: int;
+  for (i = 0, step = 3; i < str.length; i += step, step = step < 5 ? step + 1 : 3) {
+    result += str[i];
+  }
+  if (result !== "037cfjorv") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 037cfjorv');
+  }
+}
+
+export function ExpressionTest0716() {
+  const TAG = 'ExpressionTest0716';
+  const str1: string = "Hello World";
+  const str2: string = "hello world";
+  const result: boolean = str1.toUpperCase() === str2.toUpperCase();
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0717() {
+  const TAG = 'ExpressionTest0717';
+  let result: string = "";
+  for (let i = 1; i <= 20; i++) {
+    if (i % 3 === 0) {
+      result += "Fizz";
+    }
+    if (i % 5 === 0) {
+      result += "Buzz";
+    }
+    if (i % 3 !== 0 && i % 5 !== 0) {
+      result += i;
+    }
+    result += " ";
+  }
+  if (result !== "1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz ") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz ');
+  }
+}
+
+export function ExpressionTest0718() {
+  const TAG = 'ExpressionTest0718';
+  const config: GeneratedTypeLiteralInterface_4 = {};
+  const defaultTimeout: number = 5000;
+  const result: number = config.timeout ?? defaultTimeout;
+  if (result !== 5000) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 5000');
+  }
+}
+
+export function ExpressionTest0719() {
+  const TAG = 'ExpressionTest0719';
+  const a: number = -12;
+  const b: number = -8;
+  const result: number = a ^ b;
+  if (result !== 12) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 12');
+  }
+}
+
+export function ExpressionTest0720() {
+  const TAG = 'ExpressionTest0720';
+  const str: string = "abcdefghijklmnopqrstuvwxyz";
+  let index: int = 1;
+  index = index * 5 + 3;
+  const result: string = str[index];
+  if (result !== "i") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected i');
+  }
+}
+
+export function ExpressionTest0723() {
+  const TAG = 'ExpressionTest0723';
+  const a: number = 9;
+  const result: boolean = (a << 2) === 36;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0724() {
+  const TAG = 'ExpressionTest0724';
+  const base: number = 4;
+  const exp: number = 3;
+  const result: string = base + " raised to " + exp + " is " + (base**exp);
+  if (result !== "4 raised to 3 is 64") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 4 raised to 3 is 64');
+  }
+}
+
+export function ExpressionTest0725() {
+  const TAG = 'ExpressionTest0725';
+  const a: number = 15;
+  const b: number = 5;
+  const c: number = 2;
+  const result1: number = a / b + c;
+  const result2: number = a / (b + c);
+  if (result1 !== 5) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 5');
+  }
+
+  if (Math.abs(result2 - 2.1428571) > 0.0000001) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}, expected: 2.1428571, delta: 0.0000001`);
+    throw new Error('result2 is not close to 2.1428571 (within 0.0000001)');
+  }
+}
+
+export function ExpressionTest0726() {
+  const TAG = 'ExpressionTest0726';
+  const x: number = 7;
+  const y: number = 3;
+  const result: string = `${x} * ${y} + 5 = ${x * y + 5}, ${x} * (${y} + 5) = ${x * (y + 5)}`;
+  if (result !== "7 * 3 + 5 = 26, 7 * (3 + 5) = 56") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 7 * 3 + 5 = 26, 7 * (3 + 5) = 56');
+  }
+}
+
+export function ExpressionTest0727() {
+  const TAG = 'ExpressionTest0727';
+  const str: string = "abcdefghijklmnopqrstuvwxyz";
+  const position: int = 4;
+  const result: string = str.slice(position, position + 6);
+  if (result !== "efghij") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected efghij');
+  }
+}
+
+export function ExpressionTest0728() {
+  const TAG = 'ExpressionTest0728';
+  const a: number = 18;
+  const b: number = 7;
+  const result: string = `-${a} / ${b} = ${-a / b}`;
+  if (result !== "-18 / 7 = -2.5714285714285716") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected -18 / 7 = -2.5714285714285716');
+  }
+}
+
+export function ExpressionTest0729() {
+  const TAG = 'ExpressionTest0729';
+  const a: number = 9;
+  const b: number = 5;
+  const result: boolean = ~a < -b;
+  // -10 < -5 is true
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0730() {
+  const TAG = 'ExpressionTest0730';
+  let num: number = 30;
+  num -= 5; // 25
+  num /= 5; // 5
+  num += 8; // 13
+  if (num !== 13) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected 13');
+  }
+}
+
+export function ExpressionTest0731() {
+  const TAG = 'ExpressionTest0731';
+  let result: string = "";
+  const str: string = "abcdefghijklmnopqrstuvwxyz";
+  for (let i = 0; i < str.length; i++) {
+    if (i === 5 || i === 10 || i === 15 || i === 20) {
+      result += str[i];
+    }
+  }
+  if (result !== "fkpu") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected fkpu');
+  }
+}
+
+export function ExpressionTest0732() {
+  const TAG = 'ExpressionTest0732';
+  const num: number = 47;
+  const mod: number = 9;
+  const remainder: number = num % mod;
+  const result: boolean = remainder < 3 || remainder > 7;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0733() {
+  const TAG = 'ExpressionTest0733';
+  const a: number = 21;
+  const b: number = 13;
+  const result: string = a + " | " + b + " = " + (a | b);
+  if (result !== "21 | 13 = 29") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 21 | 13 = 29');
+  }
+}
+
+export function ExpressionTest0734() {
+  const TAG = 'ExpressionTest0734';
+  const num: number = 8;
+  const result: boolean = ~num === -9;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0735() {
+  const TAG = 'ExpressionTest0735';
+  const a: number = 12;
+  const b: number = 5;
+  const result: string = `${a} > ${b}: ${a > b}, ${a} * 2 = ${a * 2}, ${b} + ${a} = ${b + a}`;
+  if (result !== "12 > 5: true, 12 * 2 = 24, 5 + 12 = 17") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 12 > 5: true, 12 * 2 = 24, 5 + 12 = 17');
+  }
+}
+
+export function ExpressionTest0736() {
+  const TAG = 'ExpressionTest0736';
+  const str: string = "abcdefghijklmnopqrstuvwxyz";
+  const result: number = str.length ^ 0x1F;
+  // 26 ^ 31 = 5
+  if (result !== 5) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 5');
+  }
+}
+
+export function ExpressionTest0737() {
+  const TAG = 'ExpressionTest0737';
+  const str: string = "0123456789abcdefghijklmnopqrstuvwxyz";
+  const a: int = 10;
+  const b: int = 3;
+  const result: string = str[a >> b];
+  if (result !== "1") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 1');
+  }
+}
+
+export function ExpressionTest0738() {
+  const TAG = 'ExpressionTest0738';
+  const a: number = 25;
+  const b: number = 3;
+  const result: string = `${a} << ${b} = ${a << b}, ${a} >> ${b} = ${a >> b}`;
+  if (result !== "25 << 3 = 200, 25 >> 3 = 3") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 25 << 3 = 200, 25 >> 3 = 3');
+  }
+}
+
+export function ExpressionTest0739() {
+  const TAG = 'ExpressionTest0739';
+  const a: number = 48;
+  const b: number = 4;
+  const result: boolean = (a >> b) === 3;
+  // 48 >> 4 = 3
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0740() {
+  const TAG = 'ExpressionTest0740';
+  const value: number = 0.75;
+  const result: string = "Value " + value + ": " +
+    (value > 0.8 ? "high" :
+      value > 0.5 ? "medium" :
+        value > 0.2 ? "low" : "very low");
+  if (result !== "Value 0.75: medium") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected Value 0.75: medium');
+  }
+}

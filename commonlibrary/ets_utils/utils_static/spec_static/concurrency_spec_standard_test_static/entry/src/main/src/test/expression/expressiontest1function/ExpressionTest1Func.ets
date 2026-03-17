@@ -1981,3 +1981,250 @@ export function ExpressionTest0177() {
   }
 }
 
+export function ExpressionTest0178() {
+  const TAG = 'ExpressionTest0178';
+  let a: number = -5;
+  let result: boolean = !a;
+  let expected: boolean = false;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0179() {
+  const TAG = 'ExpressionTest0179';
+  let a: number = 255;
+  let b: number = 0;
+  let result: number = a & b;
+  let expected: number = 0;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0180() {
+  const TAG = 'ExpressionTest0180';
+  let a: number = 123;
+  let b: number = 0xff;
+  let result: number = a | b;
+  let expected: number = 255;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0181() {
+  const TAG = 'ExpressionTest0181';
+  let a: number = 42;
+  let result: number = a ^ a;
+  let expected: number = 0;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0182() {
+  const TAG = 'ExpressionTest0182';
+  let a: number = 0;
+  let result: number = ~a;
+  let expected: number = -1;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0183() {
+  const TAG = 'ExpressionTest0183';
+  let a: int = 1;
+  let result: int = a << 32;
+  let expected: int = 1;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0184() {
+  const TAG = 'ExpressionTest0184';
+  let a: number = 255;
+  let result: number = a >> 10;
+  let expected: number = 0;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0185() {
+  const TAG = 'ExpressionTest0185';
+  let a: int = -1;
+  let result: int = a >>> 0;
+  let expected: int = -1;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0186() {
+  const TAG = 'ExpressionTest0186';
+  let a: number = NaN;
+  let result: string = a ? "truthy" : "falsy";
+  let expected: string = "falsy";
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0187() {
+  const TAG = 'ExpressionTest0187';
+  let sum: number = 0;
+  let product: number = 1;
+  let i: number, j: number;
+  for (i = 1, j = 5; i <= 5; i++, j--) {
+    sum += i + j;
+    product *= i;
+  }
+  let expectedSum: number = 30;
+  let expectedProduct: number = 120;
+  if (sum !== expectedSum) {
+    console.info(`${TAG} Task execution failed: sum: ${sum}`);
+    throw new Error('sum check failed, expected expectedSum');
+  }
+
+  if (product !== expectedProduct) {
+    console.info(`${TAG} Task execution failed: product: ${product}`);
+    throw new Error('product check failed, expected expectedProduct');
+  }
+}
+
+export function ExpressionTest0188() {
+  const TAG = 'ExpressionTest0188';
+  let symbolCounter = 0;
+  let createSymbol: (description: string) => string = (description: string): string => {
+    return `Symbol(${description})_${symbolCounter++}`;
+  };
+  let sym: string = createSymbol("test");
+  let result: string = typeof sym;
+  let expected: string = "string";
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+
+  if (!sym.includes("test")) {
+    console.info(`${TAG} Task execution failed: sym: ${sym}`);
+    throw new Error('sym does not contain test');
+  }
+}
+
+export function ExpressionTest0189() {
+  const TAG = 'ExpressionTest0189';
+  let a: number = 42;
+  let result: string = typeof a;
+  let expected: string = "number";
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0190() {
+  const TAG = 'ExpressionTest0190';
+  let a: number = 0;
+  let result: number = +a;
+  let expected: number = 0;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0191() {
+  const TAG = 'ExpressionTest0191';
+  let a: number = 0;
+  let result: number = -a;
+  let expected: number = 0;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0196() {
+  const TAG = 'ExpressionTest0196';
+  let a: number = 5;
+  let b: number = 3;
+  let c: number = 7;
+  let bitwiseResult: number = a & b;
+  let comparisonResult: boolean = c > 5;
+  let result: boolean = (bitwiseResult !== 0) || comparisonResult;
+  if (!result) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result is not true');
+  }
+}
+
+export function ExpressionTest0197() {
+  const TAG = 'ExpressionTest0197';
+  let obj: OuterClass5 | null = new OuterClass5();
+  let result1: number | undefined = obj?.inner?.value;
+  obj = null;
+  let expected1: number = 10;
+  if (result1 !== expected1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected expected1');
+  }
+}
+
+export function ExpressionTest0198() {
+  const TAG = 'ExpressionTest0198';
+  let a: number = 0;
+  let b: number = 1;
+  for (let i = 0; i < 5; i++, a += b, b *= 2) {
+  }
+  let expectedA: number = 31;
+  let expectedB: number = 32;
+  if (a !== expectedA) {
+    console.info(`${TAG} Task execution failed: a: ${a}`);
+    throw new Error('a check failed, expected expectedA');
+  }
+
+  if (b !== expectedB) {
+    console.info(`${TAG} Task execution failed: b: ${b}`);
+    throw new Error('b check failed, expected expectedB');
+  }
+}
+
+export function ExpressionTest0199() {
+  const TAG = 'ExpressionTest0199';
+  let a: number = 10;
+  let b: number = 5;
+  let c: number = 3;
+  let result: boolean = a / b > c;
+  let expected: boolean = false;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
+
+export function ExpressionTest0200() {
+  const TAG = 'ExpressionTest0200';
+  let result: number = 0;
+  let i: number, j: number;
+  for (i = (5 - 2), j = (3 * 4); i < j; i++, j--) {
+    result += i + j;
+  }
+  let expected: number = 75;
+  if (result !== expected) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected expected');
+  }
+}
