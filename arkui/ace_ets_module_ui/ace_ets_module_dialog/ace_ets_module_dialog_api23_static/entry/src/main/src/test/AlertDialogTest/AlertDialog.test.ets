@@ -33,7 +33,7 @@ export default function AlertDialogTest() {
   describe('AlertDialogTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("[ARKUI_NEW] AlertDialogTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.select.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api23.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

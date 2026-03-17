@@ -47,7 +47,7 @@ export default function LoadingDialogTest() {
   describe('LoadingDialogTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("[ARKUI_NEW] LoadingDialogTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.select.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api23.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

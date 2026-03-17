@@ -32,7 +32,7 @@ export default function ConfirmDialogTest() {
   describe('ConfirmDialogTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("[ARKUI_NEW] ConfirmDialogTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.select.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api23.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

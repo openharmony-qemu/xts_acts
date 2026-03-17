@@ -13,8 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import TipsDialogTest from './TipsDialogTest/TipsDialog.test';
+import TipsDialogTest from './TipsDialogTest/TipsDialog.test';  
+import SelectDialogTest from './SelectDialogTest/SelectDialog.test'; 
+import ConfirmDialogTest from './ConfirmDialogTest/ConfirmDialog.test'; 
+import AlertDialogTest from './AlertDialogTest/AlertDialog.test'; 
+import LoadingDialogTest from './LoadingDialogTest/LoadingDialog.test'; 
+import CustomContentDialogTest from './CustomContentDialogTest/CustomContentDialog.test'; 
 
 export default function testsuite() {
   TipsDialogTest();
+  SelectDialogTest();
+  ConfirmDialogTest();
+  AlertDialogTest();
+  CustomContentDialogTest();
+  LoadingDialogTest();
 }
