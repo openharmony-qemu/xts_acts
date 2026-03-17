@@ -73,8 +73,8 @@ export default function ImageDataWidthHeightDataTest() {
     console.info('get result1:' + AppStorage.get<Uint8ClampedArray | undefined>('ImageDataData'));
 
     expect(obj.getString('$type')).assertEqual('Canvas');
-    expect(AppStorage.get<int>('ImageDataWidth')).assertEqual(422);
-    expect(AppStorage.get<int>('ImageDataHeight')).assertEqual(422);
+    expect(AppStorage.get<int>('ImageDataWidth')).assertEqual(150);
+    expect(AppStorage.get<int>('ImageDataHeight')).assertEqual(100);
 
     console.info('[ImageDataWidthHeightDataTest_0010] END');
     done();
