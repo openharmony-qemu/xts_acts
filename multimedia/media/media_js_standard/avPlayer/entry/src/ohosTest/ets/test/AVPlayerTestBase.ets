@@ -70,6 +70,138 @@ export function setSubtitle(avPlayer: media.AVPlayer | null, src: string | media
   }
 }
 
+export function setSubtitle301(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error('case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle case fdsrc test');
+    console.info('setSubtitle fdsrc.fd: ' + src.fd);
+    console.info('setSubtitle fdsrc.offset: ' + src.offset);
+    console.info('setSubtitle fdsrc.length: ' + src.length);
+    avPlayer.addSubtitleFromFd(null, src.offset, src.length);
+  }
+
+  avPlayer?.on('error', async (err: BusinessError) => {
+    console.error(`case error called, errMessage is ${err.message}`);
+    except(err.code == 401).assertTrue();
+  });
+}
+
+export function setSubtitle302(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error('case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle case fdsrc test');
+    console.info('setSubtitle fdsrc.fd: ' + src.fd);
+    console.info('setSubtitle fdsrc.offset: ' + src.offset);
+    console.info('setSubtitle fdsrc.length: ' + src.length);
+    avPlayer.addSubtitleFromFd(undefined, src.offset, src.length);
+  }
+
+  avPlayer?.on('error', async (err: BusinessError) => {
+    console.error(`case error called, errMessage is ${err.message}`);
+    except(err.code == 401).assertTrue();
+  });
+}
+
+export function setSubtitle303(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error('case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle case fdsrc test');
+    console.info('setSubtitle fdsrc.fd: ' + src.fd);
+    console.info('setSubtitle fdsrc.offset: ' + src.offset);
+    console.info('setSubtitle fdsrc.length: ' + src.length);
+    avPlayer.addSubtitleFromFd(src.fd, null, src.length);
+  }
+
+  avPlayer?.on('error', async (err: BusinessError) => {
+    console.error(`case error called, errMessage is ${err.message}`);
+    except(err.code == 401).assertTrue();
+  });
+}
+
+export function setSubtitle304(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error('case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle case fdsrc test');
+    console.info('setSubtitle fdsrc.fd: ' + src.fd);
+    console.info('setSubtitle fdsrc.offset: ' + src.offset);
+    console.info('setSubtitle fdsrc.length: ' + src.length);
+    avPlayer.addSubtitleFromFd(src.fd, undefined, src.length);
+  }
+
+  avPlayer?.on('error', async (err: BusinessError) => {
+    console.error(`case error called, errMessage is ${err.message}`);
+    except(err.code == 401).assertTrue();
+  });
+}
+
+export function setSubtitle305(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error('case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle case fdsrc test');
+    console.info('setSubtitle fdsrc.fd: ' + src.fd);
+    console.info('setSubtitle fdsrc.offset: ' + src.offset);
+    console.info('setSubtitle fdsrc.length: ' + src.length);
+    avPlayer.addSubtitleFromFd(src.fd, src.offset, null);
+  }
+
+  avPlayer?.on('error', async (err: BusinessError) => {
+    console.error(`case error called, errMessage is ${err.message}`);
+    except(err.code == 401).assertTrue();
+  });
+}
+
+export function setSubtitle306(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
+  if (!avPlayer) {
+    console.error('case avPlayer is null');
+    return;
+  }
+  if (typeof (src) === 'string') {
+    console.info('case src test');
+    avPlayer.addSubtitleFromUrl(src);
+  } else {
+    console.info('setSubtitle case fdsrc test');
+    console.info('setSubtitle fdsrc.fd: ' + src.fd);
+    console.info('setSubtitle fdsrc.offset: ' + src.offset);
+    console.info('setSubtitle fdsrc.length: ' + src.length);
+    avPlayer.addSubtitleFromFd(src.fd, src.offset, undefined);
+  }
+
+  avPlayer?.on('error', async (err: BusinessError) => {
+    console.error(`case error called, errMessage is ${err.message}`);
+    except(err.code == 401).assertTrue();
+  });
+}
+
 export function setSubtitle3(avPlayer: media.AVPlayer | null, src: string | media.AVFileDescriptor) {
   if (!avPlayer) {
     console.error(TAG, ' case avPlayer is null');
