@@ -1995,3 +1995,1224 @@ export function ExpressionTest1033() {
   }
 }
 
+export function ExpressionTest1034() {
+  const TAG = 'ExpressionTest1034';
+  let inf: number = Infinity;
+  let negInf: number = -Infinity;
+
+  let result1: number = inf + inf;
+  let result2: number = negInf + negInf;
+  let result3: number = inf * negInf;
+  let result4: number = inf + negInf;
+
+  if (result1 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected Infinity');
+  }
+
+  if (result2 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected -Infinity');
+  }
+
+  if (result3 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected -Infinity');
+  }
+
+  if (!isNaN(result4)) {
+    console.info(`${TAG} Task execution failed: isNaN(result4): ${isNaN(result4)}`);
+    throw new Error('isNaN(result4) is not true');
+  }
+}
+
+export function ExpressionTest1035() {
+  const TAG = 'ExpressionTest1035';
+  let num: number = -5;
+  let zero: number = 0;
+
+  let result1: number = num / zero;
+  let result2: number = num / -zero;
+  let result3: number = zero / num;
+
+  if (result1 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected -Infinity');
+  }
+
+  if (result2 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected Infinity');
+  }
+
+  if (1 / result3 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: 1 / result3: ${1 / result3}`);
+    throw new Error('1 / result3 check failed, expected -Infinity');
+  }
+}
+
+export function ExpressionTest1036() {
+  const TAG = 'ExpressionTest1036';
+  let num: number = 10;
+  let nanVal: number = NaN;
+
+  num += nanVal;
+
+  num = 10;
+  num *= nanVal;
+
+  num = 10;
+  num -= nanVal;
+  if (!isNaN(num)) {
+    console.info(`${TAG} Task execution failed: isNaN(num): ${isNaN(num)}`);
+    throw new Error('isNaN(num) is not true');
+  }
+
+  if (!isNaN(num)) {
+    console.info(`${TAG} Task execution failed: isNaN(num): ${isNaN(num)}`);
+    throw new Error('isNaN(num) is not true');
+  }
+
+  if (!isNaN(num)) {
+    console.info(`${TAG} Task execution failed: isNaN(num): ${isNaN(num)}`);
+    throw new Error('isNaN(num) is not true');
+  }
+}
+
+export function ExpressionTest1037() {
+  const TAG = 'ExpressionTest1037';
+  let inf_init: number = Infinity;
+  let inf: int = inf_init.toInt();
+  let num: int = 0b1111;
+  let result1: number = inf & num;
+  let result2: number = inf | num;
+  let result3: number = inf ^ num;
+
+  if (result1 !== 15) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 15');
+  }
+
+  if (result2 !== 2147483647) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected 2147483647');
+  }
+
+  if (result3 !== 2147483632) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected 2147483632');
+  }
+}
+
+export function ExpressionTest1038() {
+  const TAG = 'ExpressionTest1038';
+  let maxVal: number = Number.MAX_VALUE;
+  let inf: number = Infinity;
+
+  let result1: boolean = inf > maxVal;
+  let result2: boolean = maxVal < inf;
+  let result3: boolean = maxVal === inf;
+
+  if (!result1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 is not true');
+  }
+
+  if (!result2) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 is not true');
+  }
+
+  if (result3) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 is not false');
+  }
+}
+
+export function ExpressionTest1039() {
+  const TAG = 'ExpressionTest1039';
+  let negNum: int = -5;
+
+  let result1: int = negNum & 0b1111;
+  let result2: int = negNum << 1;
+  let result3: int = negNum >>> 2;
+
+  if (result1 !== 11) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 11');
+  }
+
+  if (result2 !== -10) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected -10');
+  }
+
+  if (result3 !== 1073741822) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected 1073741822');
+  }
+}
+
+export function ExpressionTest1040() {
+  const TAG = 'ExpressionTest1040';
+  let minInt: number = -2147483648;
+  let maxInt: number = 2147483647;
+  let str: string = "Min int: " + minInt + ", Max int: " + maxInt;
+  if (str !== "Min int: -2147483648, Max int: 2147483647") {
+    console.info(`${TAG} Task execution failed: str: ${str}`);
+    throw new Error('str check failed, expected Min int: -2147483648, Max int: 2147483647');
+  }
+}
+
+export function ExpressionTest1041() {
+  const TAG = 'ExpressionTest1041';
+  let base: number = 2;
+  let largeExp: number = 1024;
+  let result1: number = base**largeExp;
+  base = 1.1;
+  result1 = base**largeExp;
+  if (result1 !== 2.432817896953684e+42) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 2.432817896953684e+42');
+  }
+}
+
+export function ExpressionTest1042() {
+  const TAG = 'ExpressionTest1042';
+  let num: number = -10;
+  let zero: number = 0;
+
+  let result1: number = num % zero;
+  let result2: number = zero % num;
+
+  if (!isNaN(result1)) {
+    console.info(`${TAG} Task execution failed: isNaN(result1): ${isNaN(result1)}`);
+    throw new Error('isNaN(result1) is not true');
+  }
+
+  if (result2 !== 0) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected 0');
+  }
+}
+
+export function ExpressionTest1044() {
+  const TAG = 'ExpressionTest1044';
+  let negZero: number = -0.0;
+
+  let result1: number = negZero++;
+  let result2: number = ++negZero;
+
+  if (1 / result1 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: 1 / result1: ${1 / result1}`);
+    throw new Error('1 / result1 check failed, expected -Infinity');
+  }
+
+  if (result2 !== 2) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected 2');
+  }
+}
+
+export function ExpressionTest1045() {
+  const TAG = 'ExpressionTest1045';
+  let arr: int[] = new Array<int>(3);
+  arr[0] = 1;
+  arr[2] = 3;
+  let err1: Error | undefined;
+  let err2: Error | undefined;
+  try {
+    let result1: int | undefined = arr[1];
+  } catch (err) {
+    err1 = err;
+  }
+  try {
+    let result2: int = arr.length;
+    arr[result2] = 4;
+  } catch (err) {
+    err2 = err;
+  }
+  let result3: int = arr.length;
+  if (err1 && err1.name !== "ClassCastError") {
+    console.info(`${TAG} Task execution failed: err1.name: ${err1.name}`);
+    throw new Error('err1.name check failed, expected ClassCastError');
+  }
+
+  if (err2 && err2.name !== "RangeError") {
+    console.info(`${TAG} Task execution failed: err2.name: ${err2.name}`);
+    throw new Error('err2.name check failed, expected RangeError');
+  }
+
+  if (result3 !== 3) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected 3');
+  }
+}
+
+export function ExpressionTest1046() {
+  const TAG = 'ExpressionTest1046';
+  let x: number = -1e-308;
+  let y: number = -1e-308;
+
+  let result1: number = x / y;
+  let result2: number = x / 2;
+
+  if (result1 !== 1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 1');
+  }
+
+  if (1 / result2 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: 1 / result2: ${1 / result2}`);
+    throw new Error('1 / result2 check failed, expected -Infinity');
+  }
+}
+
+export function ExpressionTest1047() {
+  const TAG = 'ExpressionTest1047';
+  let value: number = NaN;
+  let result: string = isNaN(value) ? "Not a number" : value.toString();
+  if (result !== "Not a number") {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected Not a number');
+  }
+}
+
+export function ExpressionTest1048() {
+  const TAG = 'ExpressionTest1048';
+  let minInt: number = -2147483648;
+  let maxInt: number = 2147483647;
+
+  let result1: number = minInt ^ maxInt;
+  let result2: number = minInt ^ -1;
+
+  if (result1 !== -1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected -1');
+  }
+
+  if (result2 !== maxInt) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected maxInt');
+  }
+}
+
+export function ExpressionTest1049() {
+  const TAG = 'ExpressionTest1049';
+  let large: number = 1e308;
+  let inf: number = Infinity;
+
+  let result1: number = large + large;
+  let result2: number = inf - large;
+  let result3: number = large * 2;
+
+  if (result1 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected Infinity');
+  }
+
+  if (result2 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected Infinity');
+  }
+
+  if (result3 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected Infinity');
+  }
+}
+
+export function ExpressionTest1050() {
+  const TAG = 'ExpressionTest1050';
+  let nanVal: number = NaN;
+  let inf: number = Infinity;
+  let result: number;
+
+  result = 5;
+
+  let i: number, sum: number;
+  for (i = 0, sum = 0; i < 3; i++, sum += i) {
+  }
+  if (result !== 5) {
+    console.info(`${TAG} Task execution failed: result: ${result}`);
+    throw new Error('result check failed, expected 5');
+  }
+
+  if (sum !== 6) {
+    console.info(`${TAG} Task execution failed: sum: ${sum}`);
+    throw new Error('sum check failed, expected 6');
+  }
+}
+
+export function ExpressionTest1071() {
+  const TAG = 'ExpressionTest1071';
+  let nanVal: number = NaN;
+  let zero: number = 0.0;
+  let negZero: number = -0.0;
+  let negInf: number = -Infinity;
+
+  let result1: number = nanVal ?? 10;
+  let result2: number = zero ?? 20;
+  let result3: number = negZero ?? 30;
+  let result4: number = negInf ?? 40;
+
+  if (!Number.isNaN(result1)) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 is not NaN');
+  }
+
+  if (result2 !== 0) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected 0');
+  }
+
+  if (1 / result3 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: 1 / result3: ${1 / result3}`);
+    throw new Error('1 / result3 check failed, expected -Infinity');
+  }
+
+  if (result4 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 check failed, expected -Infinity');
+  }
+}
+
+export function ExpressionTest1075() {
+  const TAG = 'ExpressionTest1075';
+  let nanVal: number = NaN;
+  let inf: number = Infinity;
+  let negInf: number = -Infinity;
+
+  let result1: string = isNaN(nanVal) ? "invalid" : "valid"; // "invalid"
+  let result2: number = inf > 1e308 ? inf - 1e308 : inf; // Infinity
+  let result3: number = negInf < -1e308 ? negInf + 1e308 : 0; // -Infinity
+
+  if (result1 !== "invalid") {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected invalid');
+  }
+
+  if (result2 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected Infinity');
+  }
+
+  if (result3 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected -Infinity');
+  }
+}
+
+export function ExpressionTest1077() {
+  const TAG = 'ExpressionTest1077';
+  let negNum: number = -100;
+  let negInf: number = -Infinity;
+  let nanVal: number = NaN;
+  let minVal: number = Number.MIN_VALUE;
+
+  let result1: number = +negNum; // -100
+  let result2: number = +negInf; // -Infinity
+  let result3: number = +nanVal; // NaN
+  let result4: number = +minVal; // MIN_VALUE
+
+  if (result1 !== -100) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected -100');
+  }
+
+  if (result2 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected -Infinity');
+  }
+
+  if (!isNaN(result3)) {
+    console.info(`${TAG} Task execution failed: isNaN(result3): ${isNaN(result3)}`);
+    throw new Error('isNaN(result3) is not true');
+  }
+
+  if (result4 !== Number.MIN_VALUE) {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 check failed, expected Number.MIN_VALUE');
+  }
+}
+
+export function ExpressionTest1078() {
+  const TAG = 'ExpressionTest1078';
+  let maxVal: number = Number.MAX_VALUE;
+  let inf: number = Infinity;
+  let zero: number = 0;
+  let nanVal: number = NaN;
+
+  let result1: number = -maxVal; // -MAX_VALUE
+  let result2: number = -inf; // -Infinity
+  let result3: number = -zero; // -0
+  let result4: number = -nanVal; // NaN
+
+  if (result1 !== -maxVal) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected -maxVal');
+  }
+
+  if (result2 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected -Infinity');
+  }
+
+  if (1 / result3 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: 1 / result3: ${1 / result3}`);
+    throw new Error('1 / result3 check failed, expected -Infinity');
+  }
+
+  if (!isNaN(result4)) {
+    console.info(`${TAG} Task execution failed: isNaN(result4): ${isNaN(result4)}`);
+    throw new Error('isNaN(result4) is not true');
+  }
+}
+
+export function ExpressionTest1079() {
+  const TAG = 'ExpressionTest1079';
+  let maxSafe: number = Number.MAX_SAFE_INTEGER;
+  let minSafe: number = Number.MIN_SAFE_INTEGER;
+
+  let result1: number = ++maxSafe; // MAX_SAFE_INTEGER + 1 (loses precision)
+  let result2: number = minSafe--; // MIN_SAFE_INTEGER (postfix)
+  let result3: number = minSafe; // MIN_SAFE_INTEGER - 1 (loses precision)
+
+  if (result1 !== 9007199254740992) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 9007199254740992');
+  }
+
+  if (result2 !== -9007199254740991) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected -9007199254740991');
+  }
+
+  if (result3 !== -9007199254740992) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected -9007199254740992');
+  }
+}
+
+export function ExpressionTest1080() {
+  const TAG = 'ExpressionTest1080';
+  let maxSafe: number = Number.MAX_SAFE_INTEGER;
+  let minSafe: number = Number.MIN_SAFE_INTEGER;
+  let zero: number = 0;
+
+  let result1: number = --maxSafe;
+  let result2: number = minSafe--;
+  let result3: number = --zero;
+
+  if (result1 !== 9007199254740990) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 9007199254740990');
+  }
+
+  if (result2 !== -9007199254740991) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected -9007199254740991');
+  }
+
+  if (result3 !== -1) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected -1');
+  }
+}
+
+export function ExpressionTest1081() {
+  const TAG = 'ExpressionTest1081';
+  let num1: number = 2;
+  let num2: number = 0.5;
+  let num3: number = -3;
+  num1 **= 53;
+  num2 **= 1000;
+  num3 **= 3;
+  if (num1 !== 9007199254740992) {
+    console.info(`${TAG} Task execution failed: num1: ${num1}`);
+    throw new Error('num1 check failed, expected 9007199254740992');
+  }
+
+  if (num2 !== 9.332636185032189e-302) {
+    console.info(`${TAG} Task execution failed: num2: ${num2}`);
+    throw new Error('num2 check failed, expected 9.332636185032189e-302');
+  }
+
+  if (num3 !== -27) {
+    console.info(`${TAG} Task execution failed: num3: ${num3}`);
+    throw new Error('num3 check failed, expected -27');
+  }
+}
+
+export function ExpressionTest1082() {
+  const TAG = 'ExpressionTest1082';
+  let maxVal: number = Number.MAX_VALUE;
+  let inf: number = Infinity;
+  let negNum: number = -100;
+
+  maxVal /= 2; // MAX_VALUE / 2
+  inf /= 1000; // Still Infinity
+  negNum /= 3; // -33.333...
+
+  if (maxVal !== Number.MAX_VALUE / 2) {
+    console.info(`${TAG} Task execution failed: maxVal: ${maxVal}`);
+    throw new Error('maxVal check failed, expected Number.MAX_VALUE / 2');
+  }
+
+  if (inf !== Infinity) {
+    console.info(`${TAG} Task execution failed: inf: ${inf}`);
+    throw new Error('inf check failed, expected Infinity');
+  }
+
+  if (negNum !== -33.333333333333336) {
+    console.info(`${TAG} Task execution failed: negNum: ${negNum}`);
+    throw new Error('negNum check failed, expected -33.333333333333336');
+  }
+}
+
+export function ExpressionTest1083() {
+  const TAG = 'ExpressionTest1083';
+  let halfMax: number = Number.MAX_VALUE / 2;
+  let tiny: number = Number.MIN_VALUE;
+  let negTiny: number = -Number.MIN_VALUE;
+
+  halfMax *= 2; // MAX_VALUE
+  tiny *= 0.5; // 0 (underflow)
+  negTiny *= 0.5; // -0 (underflow)
+
+  if (halfMax !== Number.MAX_VALUE) {
+    console.info(`${TAG} Task execution failed: halfMax: ${halfMax}`);
+    throw new Error('halfMax check failed, expected Number.MAX_VALUE');
+  }
+
+  if (tiny !== 0) {
+    console.info(`${TAG} Task execution failed: tiny: ${tiny}`);
+    throw new Error('tiny check failed, expected 0');
+  }
+
+  if (1 / negTiny !== -Infinity) {
+    console.info(`${TAG} Task execution failed: 1 / negTiny: ${1 / negTiny}`);
+    throw new Error('1 / negTiny check failed, expected -Infinity');
+  }
+}
+
+export function ExpressionTest1084() {
+  const TAG = 'ExpressionTest1084';
+  let zero: number = 0;
+  let minVal: number = Number.MIN_VALUE;
+  let maxVal: number = Number.MAX_VALUE;
+
+  zero -= minVal; // -MIN_VALUE
+  minVal -= minVal; // 0
+  maxVal -= Number.MAX_VALUE / 2; // MAX_VALUE / 2
+
+  if (zero !== -Number.MIN_VALUE) {
+    console.info(`${TAG} Task execution failed: zero: ${zero}`);
+    throw new Error('zero check failed, expected -Number.MIN_VALUE');
+  }
+
+  if (minVal !== 0) {
+    console.info(`${TAG} Task execution failed: minVal: ${minVal}`);
+    throw new Error('minVal check failed, expected 0');
+  }
+
+  if (maxVal !== Number.MAX_VALUE / 2) {
+    console.info(`${TAG} Task execution failed: maxVal: ${maxVal}`);
+    throw new Error('maxVal check failed, expected Number.MAX_VALUE / 2');
+  }
+}
+
+export function ExpressionTest1085() {
+  const TAG = 'ExpressionTest1085';
+  let halfMax: number = Number.MAX_VALUE / 2;
+  let inf: number = Infinity;
+  let negInf: number = -Infinity;
+
+  halfMax += halfMax;
+  inf += 1e308;
+  negInf += -1e308;
+
+  if (halfMax !== Number.MAX_VALUE) {
+    console.info(`${TAG} Task execution failed: halfMax: ${halfMax}`);
+    throw new Error('halfMax check failed, expected Number.MAX_VALUE');
+  }
+
+  if (inf !== Infinity) {
+    console.info(`${TAG} Task execution failed: inf: ${inf}`);
+    throw new Error('inf check failed, expected Infinity');
+  }
+
+  if (negInf !== -Infinity) {
+    console.info(`${TAG} Task execution failed: negInf: ${negInf}`);
+    throw new Error('negInf check failed, expected -Infinity');
+  }
+}
+
+export function ExpressionTest1086() {
+  const TAG = 'ExpressionTest1086';
+  let large: number = 1e308;
+  let mod: number = 1e307;
+  let negLarge: number = -1e308;
+  large %= mod;
+  negLarge %= mod;
+  if (large !== 2.4948003869184e+291) {
+    console.info(`${TAG} Task execution failed: large: ${large}`);
+    throw new Error('large check failed, expected 2.4948003869184e+291');
+  }
+
+  if (1 / negLarge !== -4.008336720017946e-292) {
+    console.info(`${TAG} Task execution failed: 1 / negLarge: ${1 / negLarge}`);
+    throw new Error('1 / negLarge check failed, expected -4.008336720017946e-292');
+  }
+}
+
+export function ExpressionTest1087() {
+  const TAG = 'ExpressionTest1087';
+  let maxInt: number = 2147483647;
+  let minInt: number = -2147483648;
+  let mask: number = 0x0000FFFF;
+
+  maxInt &= mask;
+  minInt &= mask;
+
+  if (maxInt !== 65535) {
+    console.info(`${TAG} Task execution failed: maxInt: ${maxInt}`);
+    throw new Error('maxInt check failed, expected 65535');
+  }
+
+  if (minInt !== 0) {
+    console.info(`${TAG} Task execution failed: minInt: ${minInt}`);
+    throw new Error('minInt check failed, expected 0');
+  }
+}
+
+export function ExpressionTest1088() {
+  const TAG = 'ExpressionTest1088';
+  let num: number = 0;
+  let maxInt: number = 2147483647;
+  let mask: number = 0x80000000.toInt();
+  num |= maxInt;
+  num |= mask;
+  if (num !== -1) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected -1');
+  }
+}
+
+export function ExpressionTest1089() {
+  const TAG = 'ExpressionTest1089';
+  let maxInt: number = 2147483647;
+  let allOnes: number = -1;
+
+  maxInt ^= allOnes;
+
+  if (maxInt !== -2147483648) {
+    console.info(`${TAG} Task execution failed: maxInt: ${maxInt}`);
+    throw new Error('maxInt check failed, expected -2147483648');
+  }
+}
+
+export function ExpressionTest1090() {
+  const TAG = 'ExpressionTest1090';
+  let num: int = 1;
+  let negNum: int = -1;
+
+  num <<= 31;
+  negNum <<= 31;
+
+  if (num !== -2147483648) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected -2147483648');
+  }
+
+  if (negNum !== -2147483648) {
+    console.info(`${TAG} Task execution failed: negNum: ${negNum}`);
+    throw new Error('negNum check failed, expected -2147483648');
+  }
+}
+
+export function ExpressionTest1091() {
+  const TAG = 'ExpressionTest1091';
+  let minInt: number = -2147483648;
+  let maxInt: number = 2147483647;
+  minInt >>= 31;
+  maxInt >>= 30;
+  if (minInt !== -1) {
+    console.info(`${TAG} Task execution failed: minInt: ${minInt}`);
+    throw new Error('minInt check failed, expected -1');
+  }
+
+  if (maxInt !== 1) {
+    console.info(`${TAG} Task execution failed: maxInt: ${maxInt}`);
+    throw new Error('maxInt check failed, expected 1');
+  }
+}
+
+export function ExpressionTest1092() {
+  const TAG = 'ExpressionTest1092';
+  let minInt: int = -2147483648;
+  let maxInt: int = 2147483647;
+  minInt >>>= 1;
+  maxInt >>>= 30;
+  if (minInt !== 1073741824) {
+    console.info(`${TAG} Task execution failed: minInt: ${minInt}`);
+    throw new Error('minInt check failed, expected 1073741824');
+  }
+
+  if (maxInt !== 1) {
+    console.info(`${TAG} Task execution failed: maxInt: ${maxInt}`);
+    throw new Error('maxInt check failed, expected 1');
+  }
+}
+
+export function ExpressionTest1093() {
+  const TAG = 'ExpressionTest1093';
+  let maxVal: number = Number.MAX_VALUE;
+  let inf: number = Infinity;
+  let negInf: number = -Infinity;
+  let minVal: number = Number.MIN_VALUE;
+
+  let result1: boolean = inf > maxVal;
+  let result2: boolean = negInf < -maxVal;
+  let result3: boolean = 0 > minVal;
+  let result4: boolean = -0 < 0;
+
+  if (!result1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 is not true');
+  }
+
+  if (!result2) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 is not true');
+  }
+
+  if (result3) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 is not false');
+  }
+
+  if (result4) {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 is not false');
+  }
+}
+
+export function ExpressionTest1094() {
+  const TAG = 'ExpressionTest1094';
+  let maxSafe: number = Number.MAX_SAFE_INTEGER;
+  let aboveSafe: number = maxSafe + 1;
+  let zero: number = 0;
+  let negZero: number = -0;
+
+  let result1: boolean = aboveSafe >= maxSafe;
+  let result2: boolean = maxSafe <= aboveSafe;
+  let result3: boolean = zero >= negZero;
+  let result4: boolean = negZero <= zero;
+
+  if (!result1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 is not true');
+  }
+
+  if (!result2) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 is not true');
+  }
+
+  if (!result3) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 is not true');
+  }
+
+  if (!result4) {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 is not true');
+  }
+}
+
+export function ExpressionTest1095() {
+  const TAG = 'ExpressionTest1095';
+  let zero: number = 0;
+  let negZero: number = -0;
+  let nanVal: number = NaN;
+  let inf: number = Infinity;
+  let negInf: number = -Infinity;
+
+  let result1: boolean = zero === negZero;
+  let result2: boolean = nanVal === nanVal;
+  let result3: boolean = inf === -inf;
+  let result4: boolean = (1 / zero) === inf;
+
+  if (!result1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 is not true');
+  }
+
+  if (result2) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 is not false');
+  }
+
+  if (result3) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 is not false');
+  }
+
+  if (!result4) {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 is not true');
+  }
+}
+
+export function ExpressionTest1096() {
+  const TAG = 'ExpressionTest1096';
+  let maxVal: number = Number.MAX_VALUE;
+  let inf: number = Infinity;
+  let zero: number = 0;
+  let negZero: number = -0;
+  let nanVal: number = NaN;
+
+  let result1: boolean = maxVal !== inf;
+  let result2: boolean = zero !== negZero;
+  let result3: boolean = nanVal !== 0;
+  let result4: boolean = nanVal !== nanVal;
+
+  if (!result1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 is not true');
+  }
+
+  if (result2) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 is not false');
+  }
+
+  if (!result3) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 is not true');
+  }
+
+  if (!result4) {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 is not true');
+  }
+}
+
+export function ExpressionTest1097() {
+  const TAG = 'ExpressionTest1097';
+  let inf: number = Infinity;
+  let negInf: number = -Infinity;
+  let nanVal: number = NaN;
+  let maxVal: number = Number.MAX_VALUE;
+
+  let result1: string = "Value: " + inf;
+  let result2: string = negInf + " is small";
+  let result3: string = nanVal + "";
+  let result4: string = maxVal + " is big";
+
+  if (result1 !== "Value: Infinity") {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected Value: Infinity');
+  }
+
+  if (result2 !== "-Infinity is small") {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected -Infinity is small');
+  }
+
+  if (result3 !== "NaN") {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected NaN');
+  }
+
+  if (result4 !== Number.MAX_VALUE + " is big") {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 check failed, expected Number.MAX_VALUE + " is big"');
+  }
+}
+
+export function ExpressionTest1098() {
+  const TAG = 'ExpressionTest1098';
+  let inf: number = Infinity;
+  let negInf: number = -Infinity;
+  let nanVal: number = NaN;
+  let zero: number = 0;
+  let negZero: number = -0;
+
+  let result1: string = typeof inf;
+  let result2: string = typeof negInf;
+  let result3: string = typeof nanVal;
+  let result4: string = typeof negZero;
+
+  if (result1 !== "number") {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected number');
+  }
+
+  if (result2 !== "number") {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected number');
+  }
+
+  if (result3 !== "number") {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected number');
+  }
+
+  if (result4 !== "number") {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 check failed, expected number');
+  }
+}
+
+export function ExpressionTest1100() {
+  const TAG = 'ExpressionTest1100';
+  let numObj: Number = new Number(Number.MAX_VALUE);
+  let arr: number[] = new Array<number>(0);
+  let strObj: String = new String("");
+
+  let result1: boolean = numObj instanceof Number;
+  let result2: boolean = arr instanceof Array;
+  let result3: boolean = strObj instanceof String;
+
+  if (!result1) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 is not true');
+  }
+
+  if (!result2) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 is not true');
+  }
+
+  if (!result3) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 is not true');
+  }
+}
+
+export function ExpressionTest1101() {
+  const TAG = 'ExpressionTest1101';
+  let maxInt: number = 2147483647;
+  let minInt: number = -2147483648;
+  let zero: number = 0;
+  let one: number = 1;
+
+  let result1: number = ~maxInt;
+  let result2: number = ~minInt;
+  let result3: number = ~zero;
+  let result4: number = ~one;
+
+  if (result1 !== -2147483648) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected -2147483648');
+  }
+
+  if (result2 !== 2147483647) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected 2147483647');
+  }
+
+  if (result3 !== -1) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected -1');
+  }
+
+  if (result4 !== -2) {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 check failed, expected -2');
+  }
+}
+
+export function ExpressionTest1102() {
+  const TAG = 'ExpressionTest1102';
+  let val1: number = Infinity;
+  let val2: number = -Infinity;
+  let val3: number = NaN;
+
+  let result1: string = val1 > 1e308 ? "infinite" : "finite";
+  let result2: string = val2 < -1e308 ? "negative infinite" : "finite";
+  let result3: string = isNaN(val3) ? "not a number" : val3.toString();
+
+  if (result1 !== "infinite") {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected infinite');
+  }
+
+  if (result2 !== "negative infinite") {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected negative infinite');
+  }
+
+  if (result3 !== "not a number") {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected not a number');
+  }
+}
+
+export function ExpressionTest1103() {
+  const TAG = 'ExpressionTest1103';
+  let num: number = 1;
+  num <<= 30;
+  num *= 2;
+  num /= 2;
+  num -= 1;
+  num &= 0xFF;
+  if (num !== 255) {
+    console.info(`${TAG} Task execution failed: num: ${num}`);
+    throw new Error('num check failed, expected 255');
+  }
+}
+
+export function ExpressionTest1104() {
+  const TAG = 'ExpressionTest1104';
+  let maxVal: number = Number.MAX_VALUE;
+  let halfMax: number = maxVal / 2;
+
+  // Without parentheses
+  let result1: number = maxVal + halfMax * 2;
+  // With parentheses
+  let result2: number = (maxVal + halfMax) * 2;
+
+  if (result1 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected Infinity');
+  }
+
+  if (result2 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected Infinity');
+  }
+}
+
+export function ExpressionTest1106() {
+  const TAG = 'ExpressionTest1106';
+  let inf: number = Infinity;
+  let negInf: number = -Infinity;
+  let nanVal: number = NaN;
+  let zero: number = 0;
+
+  let result1: number = inf && negInf;
+  let result2: number = nanVal || inf;
+  let result3: boolean = !(zero);
+
+  if (result1 !== -Infinity) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected -Infinity');
+  }
+
+  if (result2 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected Infinity');
+  }
+
+  if (!result3) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 is not true');
+  }
+}
+
+export function ExpressionTest1107() {
+  const TAG = 'ExpressionTest1107';
+  let base1: number = 2;
+  let base2: number = 0.5;
+  let exp1: number = 1023;
+  let exp2: number = 1024;
+
+  let result1: number = base1**exp1;
+  let result2: number = base1**exp2;
+  let result3: number = base2**exp1;
+  let result4: number = base2**exp2;
+
+  if (result1 >= Infinity) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 is not less than Infinity');
+  }
+
+  if (result2 !== Infinity) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected Infinity');
+  }
+
+  if (result3 <= 0) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 is not larger than 0');
+  }
+
+  if (result4 !== 5.562684646268003e-309) {
+    console.info(`${TAG} Task execution failed: result4: ${result4}`);
+    throw new Error('result4 check failed, expected 5.562684646268003e-309');
+  }
+}
+
+export function ExpressionTest1108() {
+  const TAG = 'ExpressionTest1108';
+  let maxInt: number = 2147483647;
+  let minInt: number = -2147483648;
+  let mask: number = 0x0F;
+
+  let result1: number = (maxInt ^ minInt) & mask;
+  let result2: number = (minInt >> 28) | mask;
+
+  if (result1 !== 15) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 15');
+  }
+
+  if (result2 !== -1) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected -1');
+  }
+}
+
+export function ExpressionTest1109() {
+  const TAG = 'ExpressionTest1109';
+  let longStr: string = "a".repeat(10000);
+  let emptyStr: string = "";
+
+  let result1: string = longStr + emptyStr;
+  let result2: number = result1.length;
+  let result3: string = emptyStr + longStr;
+
+  if (result1 !== longStr) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected longStr');
+  }
+
+  if (result2 !== 10000) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected 10000');
+  }
+
+  if (result3 !== longStr) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected longStr');
+  }
+}
+
+export function ExpressionTest1110() {
+  const TAG = 'ExpressionTest1110';
+  let arr: number[] = new Array<number>(3);
+  let maxSafe: number = Number.MAX_SAFE_INTEGER;
+  arr[0] = maxSafe;
+  arr[1] = maxSafe + 1;
+  arr[2] = -maxSafe;
+  let result1: number = arr[0];
+  let result2: number = arr[1];
+  let result3: number = arr[2];
+  if (result1 !== 9007199254740991) {
+    console.info(`${TAG} Task execution failed: result1: ${result1}`);
+    throw new Error('result1 check failed, expected 9007199254740991');
+  }
+
+  if (result2 !== 9007199254740992) {
+    console.info(`${TAG} Task execution failed: result2: ${result2}`);
+    throw new Error('result2 check failed, expected 9007199254740992');
+  }
+
+  if (result3 !== -9007199254740991) {
+    console.info(`${TAG} Task execution failed: result3: ${result3}`);
+    throw new Error('result3 check failed, expected -9007199254740991');
+  }
+}

@@ -1989,3 +1989,299 @@ export function ExpressionTest0883() {
   }
 }
 
+export function ExpressionTest0884() {
+  const TAG = 'ExpressionTest0884';
+  let numArray: number[] = [1, 2, 3, 4, 5];
+  let boolVar: boolean = (numArray.length & 1) === 1;
+
+  if (!boolVar) {
+    console.info(`${TAG} Task execution failed: boolVar: ${boolVar}`);
+    throw new Error('boolVar is not true');
+  }
+  numArray.push(6);
+  boolVar = (numArray.length & 1) === 1;
+  if (boolVar) {
+    console.info(`${TAG} Task execution failed: boolVar: ${boolVar}`);
+    throw new Error('boolVar is not false');
+  }
+}
+
+export function ExpressionTest0885() {
+  const TAG = 'ExpressionTest0885';
+  let strArray: string[] = ["zero", "one", "two", "three", "four", "five", "six", "seven"];
+  let numVar: int = 6 ^ 3;
+  let strVar: string = strArray[numVar];
+  if (strVar !== "five") {
+    console.info(`${TAG} Task execution failed: strVar: ${strVar}`);
+    throw new Error('strVar check failed, expected five');
+  }
+}
+
+export function ExpressionTest0886() {
+  const TAG = 'ExpressionTest0886';
+  let numArray: number[] = [4, 8, 12, 16, 20];
+  let numVar: int = 2;
+  let strVar: string = `arr[${numVar}] = ${numArray[numVar]}, arr[${numVar}] / 2 = ${numArray[numVar] / 2}`;
+  if (strVar !== "arr[2] = 12, arr[2] / 2 = 6") {
+    console.info(`${TAG} Task execution failed: strVar: ${strVar}`);
+    throw new Error('strVar check failed, expected arr[2] = 12, arr[2] / 2 = 6');
+  }
+}
+
+export function ExpressionTest0887() {
+  const TAG = 'ExpressionTest0887';
+  let numArray: number[] = [10, 20, 30, 40];
+  let numVar: number = 3;
+  let boolVar: boolean = numArray.length > numVar * 2;
+  if (boolVar) {
+    console.info(`${TAG} Task execution failed: boolVar: ${boolVar}`);
+    throw new Error('boolVar is not false');
+  }
+}
+
+export function ExpressionTest0888() {
+  const TAG = 'ExpressionTest0888';
+  let numArray: int[] = [5, 15, 25, 35, 45, 55];
+  let numVar: int = 30;
+  let strVar: string = "Numbers greater than " + numVar + ": ";
+  let first: boolean = true;
+  for (let i: int = 0; i < numArray.length; i++) {
+    if (numArray[i] > numVar) {
+      strVar += (first ? "" : ", ") + numArray[i];
+      first = false;
+    }
+  }
+  if (strVar !== "Numbers greater than 30: 35, 45, 55") {
+    console.info(`${TAG} Task execution failed: strVar: ${strVar}`);
+    throw new Error('strVar check failed, expected Numbers greater than 30: 35, 45, 55');
+  }
+}
+
+export function ExpressionTest0889() {
+  const TAG = 'ExpressionTest0889';
+  let numArray: int[] = [12, 22, 32, 42];
+  let numVar: int = 0;
+  const min: int = 15;
+  const max: int = 40;
+  for (let i: int = 0; i < numArray.length; i++) {
+    if (numArray[i] >= min && numArray[i] <= max) {
+      numVar++;
+    }
+  }
+  if (numVar !== 2) {
+    console.info(`${TAG} Task execution failed: numVar: ${numVar}`);
+    throw new Error('numVar check failed, expected 2');
+  }
+}
+
+export function ExpressionTest0890() {
+  const TAG = 'ExpressionTest0890';
+  let numArray: number[] = [1, 2, 3, 4, 5, 6];
+  let numVar: number = (numArray.length + 2) | 0x0F;
+  if (numVar !== 15) {
+    console.info(`${TAG} Task execution failed: numVar: ${numVar}`);
+    throw new Error('numVar check failed, expected 15');
+  }
+}
+
+export function ExpressionTest0891() {
+  const TAG = 'ExpressionTest0891';
+  let numArray: int[] = [75, 85, 95, 65, 55];
+  let strVar: string = "";
+  for (let i: int = 0; i < numArray.length; i++) {
+    strVar += numArray[i] >= 90 ? "A " :
+      numArray[i] >= 80 ? "B " :
+        numArray[i] >= 70 ? "C " :
+          numArray[i] >= 60 ? "D " : "F ";
+  }
+  if (strVar !== "C B A D F ") {
+    console.info(`${TAG} Task execution failed: strVar: ${strVar}`);
+    throw new Error('strVar check failed, expected C B A D F ');
+  }
+}
+
+export function ExpressionTest0892() {
+  const TAG = 'ExpressionTest0892';
+  let numArray: int[] = [1, 2, 3, 4, 5];
+  let transformed: int[] = [];
+  let i: int, factor: int;
+  for (i = 0, factor = 1; i < numArray.length; i++, factor *= 2) {
+    transformed.push(numArray[i] * factor);
+  }
+  if (JSON.stringify(transformed) !== JSON.stringify([1 * 1, 2 * 2, 3 * 4, 4 * 8, 5 * 16])) {
+    console.info(`${TAG} Task execution failed: transformed: ${transformed}`);
+    throw new Error('transformed does not deeply equal [1 * 1, 2 * 2, 3 * 4, 4 * 8, 5 * 16]');
+  }
+}
+
+export function ExpressionTest0893() {
+  const TAG = 'ExpressionTest0893';
+  let strArray: string[] = ["apple", "banana", "cherry", "date"];
+  let strVar: string = "cherry";
+  let boolVar: boolean = false;
+  for (let i: int = 0; i < strArray.length; i++) {
+    if (strArray[i] === strVar && strArray[i].length === strVar.length) {
+      boolVar = true;
+      break;
+    }
+  }
+  if (!boolVar) {
+    console.info(`${TAG} Task execution failed: boolVar: ${boolVar}`);
+    throw new Error('boolVar is not true');
+  }
+}
+
+export function ExpressionTest0894() {
+  const TAG = 'ExpressionTest0894';
+  let numArray: number[] = [6, 4, 9, 3];
+  let numVar: number = ~numArray[0] + (-numArray[1]) * numArray[2] - +numArray[3];
+  if (numVar !== -46) {
+    console.info(`${TAG} Task execution failed: numVar: ${numVar}`);
+    throw new Error('numVar check failed, expected -46');
+  }
+}
+
+export function ExpressionTest0895() {
+  const TAG = 'ExpressionTest0895';
+  let numArray: int[] = [0b1010, 0b0110, 0b1100, 0b0011];
+  let mask: int = 0b1000;
+  let numVar: int = 0;
+  for (let i: int = 0; i < numArray.length; i++) {
+    if ((numArray[i] & mask) !== 0) {
+      numVar += numArray[i] >> 3;
+    }
+  }
+  if (numVar !== 2) {
+    console.info(`${TAG} Task execution failed: numVar: ${numVar}`);
+    throw new Error('numVar check failed, expected 2');
+  }
+}
+
+export function ExpressionTest0896() {
+  const TAG = 'ExpressionTest0896';
+  let numArray: number[] = [];
+  let numVar: number = 1;
+  while (numVar <= 5) {
+    numArray.push(numVar * numVar);
+    numVar++;
+  }
+  const target: number[] = [1, 4, 9, 16, 25];
+  if (JSON.stringify(numArray) !== JSON.stringify(target)) {
+    console.info(`${TAG} Task execution failed: numArray: ${numArray}`);
+    throw new Error('numArray does not deeply equal target');
+  }
+}
+
+export function ExpressionTest0897() {
+  const TAG = 'ExpressionTest0897';
+  let numArray: number[] = [18, 4, 6, 12];
+  let boolVar: boolean = (numArray[0] / numArray[1]) > (numArray[2] * 2);
+  if (boolVar) {
+    console.info(`${TAG} Task execution failed: boolVar: ${boolVar}`);
+    throw new Error('boolVar is not false');
+  }
+}
+
+export function ExpressionTest0898() {
+  const TAG = 'ExpressionTest0898';
+  let numArray: int[] = [3, 6, 9, 12, 15, 18, 21, 24];
+  let filtered: int[] = [];
+  let i: int, divisor: int;
+  for (i = 0, divisor = 2; i < numArray.length; i++, divisor++) {
+    if (numArray[i] % divisor === 0) {
+      filtered.push(numArray[i]);
+    }
+  }
+  if (JSON.stringify(filtered) !== JSON.stringify([6])) {
+    console.info(`${TAG} Task execution failed: filtered: ${filtered}`);
+    throw new Error('filtered does not deeply equal [6]');
+  }
+}
+
+export function ExpressionTest0899() {
+  const TAG = 'ExpressionTest0899';
+  let strArray: string[] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
+  let numVar: int = 2;
+  let strVar: string = strArray[numVar] + " comes after " + strArray[numVar - 1] +
+    " and before " + strArray[numVar + 1];
+  if (strVar !== "Mar comes after Feb and before Apr") {
+    console.info(`${TAG} Task execution failed: strVar: ${strVar}`);
+    throw new Error('strVar check failed, expected Mar comes after Feb and before Apr');
+  }
+}
+
+export function ExpressionTest0900() {
+  const TAG = 'ExpressionTest0900';
+  let strArray: string[] = ["12.5", "3.2", "4.7"];
+  let numVar: number = +Number(strArray[0]) * +Number(strArray[1]) - +Number(strArray[2]);
+  if (Math.abs(numVar - (12.5 * 3.2) + 4.7) > 0.001) {
+    console.info(`${TAG} Task execution failed: numVar: ${numVar}, expected: 12.5 * 3.2 - 4.7, delta: 0.001`);
+    throw new Error('numVar is not close to 12.5 * 3.2 - 4.7 (within 0.001)');
+  }
+}
+
+export function ExpressionTest0901() {
+  const TAG = 'ExpressionTest0901';
+  let numArray: int[] = [10, 20, 30, 40, 50];
+  let numVar: int = 0;
+  let i: int, addend: int;
+  for (i = 0, addend = 1; i < numArray.length; i++, addend *= 2) {
+    numVar += numArray[i] + addend;
+  }
+  if (numVar !== (10 + 1) + (20 + 2) + (30 + 4) + (40 + 8) + (50 + 16)) {
+    console.info(`${TAG} Task execution failed: numVar: ${numVar}`);
+    throw new Error('numVar check failed, expected (10 + 1) + (20 + 2) + (30 + 4) + (40 + 8) + (50 + 16)');
+  }
+}
+
+export function ExpressionTest0902() {
+  const TAG = 'ExpressionTest0902';
+  let numArray: int[] = [0, 1, -1, 0, 5];
+  let numVar: int = 0;
+  for (let i: int = 0; i < numArray.length; i++) {
+    if (!numArray[i]) {
+      numVar++;
+    }
+  }
+  if (numVar !== 2) {
+    console.info(`${TAG} Task execution failed: numVar: ${numVar}`);
+    throw new Error('numVar check failed, expected 2');
+  }
+}
+
+export function ExpressionTest0903() {
+  const TAG = 'ExpressionTest0903';
+  let numArray: int[] = [0b0011, 0b0101, 0b1001];
+  let numVar: int = 0;
+  for (let i: int = 0; i < numArray.length; i++) {
+    numVar |= numArray[i];
+  }
+  if (numVar !== 0b1111) {
+    console.info(`${TAG} Task execution failed: numVar: ${numVar}`);
+    throw new Error('numVar check failed, expected 0b1111');
+  }
+}
+
+export function ExpressionTest0904() {
+  const TAG = 'ExpressionTest0904';
+  let numArray: number[] = [21, 13];
+  let strVar: string = numArray[0] + " in binary is " + numArray[0].toString(2) +
+    ", after XOR with " + numArray[1] + ": " + (numArray[0] ^ numArray[1]).toString(2);
+  if (strVar !== "21 in binary is 10101, after XOR with 13: 11000") {
+    console.info(`${TAG} Task execution failed: strVar: ${strVar}`);
+    throw new Error('strVar check failed, expected 21 in binary is 10101, after XOR with 13: 11000');
+  }
+}
+
+export function ExpressionTest0905() {
+  const TAG = 'ExpressionTest0905';
+  let numArray: int[] = [5, -3, 0, 8, -2];
+  let strVar: string = "";
+  for (let i: int = 0; i < numArray.length; i++) {
+    strVar += -numArray[i] > 0 ? "positive " : "non-positive ";
+  }
+  if (strVar !== "non-positive positive non-positive non-positive positive ") {
+    console.info(`${TAG} Task execution failed: strVar: ${strVar}`);
+    throw new Error('strVar check failed, expected non-positive positive non-positive non-positive positive ');
+  }
+}
