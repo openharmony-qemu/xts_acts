@@ -1358,5 +1358,92 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0010
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0010
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0010 start');
+      try {
+        let certBlob: certManager.CertBlob = {
+          certData: caCert,
+          certFormat: certManager.CertFileFormat.PEM_DER,
+          certScope: certManager.CertScope.CURRENT_USER
+          };
+          await certManager.installUserTrustedCertificate(certBlob).then((cmResult: certManager.CMResult) => {
+            let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+            expect(uri).assertContain("oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA");
+            certManager.uninstallUserTrustedCertificateSync(uri);
+          }).catch((err: BusinessError) => {
+            console.info("SUB_Security_CertManager_installUserTrustedCertificate_0010 failed.");
+          })
+      } catch (error) {
+          console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0010 failed. code:${error.code}`);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0011
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0011
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0011 start');
+      try {
+        let certBlob: certManager.CertBlob = {
+          certData: caCert,
+          certFormat: certManager.CertFileFormat.P7B,
+          certScope: certManager.CertScope.CURRENT_USER
+          };
+          await certManager.installUserTrustedCertificate(certBlob).then((cmResult: certManager.CMResult) => {
+            let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+            expect(null).assertFail();
+          }).catch((err: BusinessError) => {
+            console.info("SUB_Security_CertManager_installUserTrustedCertificate_0011 failed.");
+            expect(err.code).assertEqual(17500003);
+          })
+      } catch (error) {
+          console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0011 failed. code:${error.code}`);
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0012
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0012
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0012 start');
+      try {
+        let certBlob: certManager.CertBlob = {
+          certData: caCert,
+          certFormat: certManager.CertFileFormat.PEM_DER,
+          certScope: certManager.CertScope.GLOBAL_USER
+          };
+          await certManager.installUserTrustedCertificate(certBlob).then((cmResult: certManager.CMResult) => {
+            let uri: string = (cmResult?.uri == undefined) ? '' : cmResult.uri;
+            expect(uri).assertContain("oh:t=c;o=vBBPFaSL5wncpUKn4dS5328FRSfoAuqpLVlURCWK_nEA");
+            certManager.uninstallUserTrustedCertificateSync(uri);
+          }).catch((err: BusinessError) => {
+            console.info("SUB_Security_CertManager_installUserTrustedCertificate_0012 failed.");
+          })
+      } catch (error) {
+          console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0012 failed. code:${error.code}`);
+      }
+      done();
+    });
+
   })
 }
