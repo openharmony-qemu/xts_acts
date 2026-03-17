@@ -2490,7 +2490,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequestOptions: http.HttpRequestOptions = {
                             method: http.RequestMethod.GET,
                             resumeTo: 4294967299,
-                            addressFamily: http.AddressFamily.ONLY_V4
+                            addressFamily: http.AddressFamily.ONLY_V6
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
@@ -2626,7 +2626,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequestOptions: http.HttpRequestOptions = {
                             method: http.RequestMethod.GET,
                             resumeTo: 4294967299,
-                            addressFamily: http.AddressFamily.ONLY_V4
+                            addressFamily: http.AddressFamily.ONLY_V6
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions, (err: Error, data: http.HttpResponse) => {
@@ -3388,7 +3388,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequestOptions: http.HttpRequestOptions = {
                             method: http.RequestMethod.GET,
                             resumeTo: 4294967299,
-                            addressFamily: http.AddressFamily.ONLY_V4
+                            addressFamily: http.AddressFamily.ONLY_V6
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions, (err: Error, data: number) => {
@@ -3531,7 +3531,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequestOptions: http.HttpRequestOptions = {
                             method: http.RequestMethod.GET,
                             resumeTo: 4294967299,
-                            addressFamily: http.AddressFamily.ONLY_V4
+                            addressFamily: http.AddressFamily.ONLY_V6
                         }
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: number) => {
