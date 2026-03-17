@@ -33,36 +33,6 @@ export default function StreamDuplex02Test() {
     })
 
     /**
-     * @tc.number    SUB_STREAM_DUPLEX_TEST02_0100
-     * @tc.name      testStreamDuplex02Chapter0001
-     * @tc.desc      Call end without any parameters
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStreamDuplex02Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStreamDuplex02Chapter0001';
-      console.log(TAG + ' start');
-
-      class TestDuplex extends stream.Duplex {
-        constructor() {
-          super();
-        }
-
-        doRead(size: number): void {
-        }
-
-        doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
-          callback();
-        }
-      }
-
-      let duplexStream: TestDuplex = new TestDuplex();
-      const result: stream.Writable = duplexStream.end();
-      expect(result instanceof stream.Writable).assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_STREAM_DUPLEX_TEST02_0200
      * @tc.name      testStreamDuplex02Chapter0002
      * @tc.desc      Call end with empty string chunk

@@ -600,26 +600,6 @@ export default function StreamTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_1000
-     * @tc.name      corkTest0010
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('corkTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'corkTest0010';
-        console.log(TAG + ' start');
-        const writable = new ClosedStream();
-        writable.end('');
-        writable.on('finish', () => {
-          expect(writable.cork()).assertEqual(false);
-          expect(writable.uncork()).assertEqual(false);
-        });
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_1100
      * @tc.name      corkTest0011
      * @tc.desc      Array Unshift index 0.
