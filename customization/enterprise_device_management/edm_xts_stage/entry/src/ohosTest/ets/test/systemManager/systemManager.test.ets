@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID, getErrorCode } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID } from '../commom';
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -43,7 +43,7 @@ export default function systemManagerTest() {
     testStartCollectLog();
     testFinishLogCollected();
     testSetActivationLockDisabled();
- 	  testIsActivationLockDisabled();
+    testIsActivationLockDisabled();
   })
 }
 
@@ -3174,9 +3174,8 @@ function testSetActivationLockDisabled() {
     let credential: string = "test";
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
-    }).catch ((err)=> {
-      const errorCode = getErrorCode(err);
-      expect(errorCode === 801 || errorCode === 9200001).assertTrue();
+    }).catch ((error)=> {
+      expect(Number(error.code) === 801 || Number(error.code) === 9200001).assertTrue();
     });
     done();
   });
@@ -3194,9 +3193,8 @@ function testSetActivationLockDisabled() {
     let credential: string = "test";
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
-    }).catch ((err)=> {
-      const errorCode = getErrorCode(err);
-      expect(errorCode == 801 || errorCode == 9200002).assertTrue();
+    }).catch ((error)=> {
+      expect(Number(error.code) == 801 || Number(error.code) == 9200002).assertTrue();
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
@@ -3216,9 +3214,8 @@ function testSetActivationLockDisabled() {
     let credential: string = "";
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
-    }).catch ((err)=> {
-      const errorCode = getErrorCode(err);
-      expect(errorCode === 801 || errorCode === 9200012).assertTrue();   
+    }).catch ((error)=> {
+      expect(Number(error.code) === 801 || Number(error.code) === 9200012).assertTrue();   
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
@@ -3239,12 +3236,11 @@ function testSetActivationLockDisabled() {
     let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
-    }).catch ((err)=> {
-        const errorCode = getErrorCode(err);
+    }).catch ((error)=> {
         if (info == "true") {
-            expect(errorCode === 801 || errorCode === 9201011).assertTrue();
+            expect(Number(error.code) === 801 || Number(error.code) === 9201011).assertTrue();
         } else {
-            expect(errorCode === 801 || errorCode === 9201012).assertTrue();
+            expect(Number(error.code) === 801 || Number(error.code) === 9201012).assertTrue();
         }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
@@ -3269,12 +3265,11 @@ function testSetActivationLockDisabled() {
       } else {
         expect(false).assertTrue();
       }
-    }).catch ((err)=> {
-      const errorCode = getErrorCode(err);
+    }).catch ((error)=> {
       if (info == "true") {
-          expect(errorCode === 801).assertTrue();
+          expect(Number(error.code) === 801).assertTrue();
       } else {
-          expect(errorCode === 801 || errorCode === 9201012).assertTrue();
+          expect(Number(error.code) === 801 || Number(error.code) === 9201012).assertTrue();
       }
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
@@ -3296,9 +3291,8 @@ function testIsActivationLockDisabled() {
     try {
       await systemManager.isActivationLockDisabled(SELFWANT);
       expect(false).assertTrue();
-    } catch (err) {
-      const errorCode = getErrorCode(err);
-      expect(errorCode === 801 || errorCode === 9200001).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801 || Number(error.code) === 9200001).assertTrue();
     }
     done();
   });
@@ -3316,9 +3310,8 @@ function testIsActivationLockDisabled() {
     try {
       await systemManager.isActivationLockDisabled(SELFWANT);
       expect(false).assertTrue();
-    } catch (err) {
-      const errorCode = getErrorCode(err);
-      expect(errorCode === 801 || errorCode === 9200002).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801 || Number(error.code) === 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

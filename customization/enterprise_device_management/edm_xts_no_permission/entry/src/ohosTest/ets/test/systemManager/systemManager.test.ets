@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID, getErrorCode } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID } from '../commom';
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -562,9 +562,8 @@ function testSetActivationLockDisabled() {
     let credential: string = "test";
     await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
       expect(false).assertTrue();
-    }).catch ((err) => {
-      const errorCode = getErrorCode(err);
-      expect(errorCode === 801 || errorCode === 201).assertTrue();
+    }).catch ((error) => {
+      expect(Number(error.code) === 801 || Number(error.code) === 201).assertTrue();
     }).finally(async () => {
       await adminManager.disableAdmin(SELFWANT);
     });
@@ -586,9 +585,8 @@ function testIsActivationLockDisabled() {
     try {
       systemManager.isActivationLockDisabled(SELFWANT);
       expect(false).assertTrue();
-    } catch (err) {
-      const errorCode = getErrorCode(err);
-      expect(errorCode === 801 || errorCode === 201).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801 || Number(error.code) === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
