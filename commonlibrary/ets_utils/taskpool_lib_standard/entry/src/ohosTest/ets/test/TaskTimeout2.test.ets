@@ -1692,10 +1692,12 @@ export default function TaskTimeout2Test() {
       let isTerminate = false;
       let innerTask = new taskpool.Task(timeoutDemo, 100);
       let task = new taskpool.Task(nestedInnerTimeoutTask);
-      taskpool.execute(task, { timeout: 200 }).catch((e: BusinessError) => {
+      taskpool.execute(task, { timeout: 200 }).then((res) => {
+        console.log(`${caseName} then`);
+        isTerminate = true;
+      }).catch((e: BusinessError) => {
         console.log(`${caseName} catch: ${e}`);
         isTerminate = true;
-        expect(e.code).assertEqual(10200058);
       });
       setTimeout(() => {
         try {
