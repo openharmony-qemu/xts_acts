@@ -253,7 +253,6 @@ export default function AudioRoutingManagerTest() {
         audioRoutingManager.offAvailableDeviceChange((data: audio.DeviceChangeAction) => {
           console.info(`${Tag}:  off_availableDeviceChange 'availableDeviceChange': SUCCESS`);
         });
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
@@ -275,7 +274,6 @@ export default function AudioRoutingManagerTest() {
           console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
         });
         audioRoutingManager.offAvailableDeviceChange();
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
@@ -302,7 +300,6 @@ export default function AudioRoutingManagerTest() {
             if (deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.BLOCKED ||
               deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.UNBLOCKED) {
               console.info(`${Tag}:  on_micBlockStatusChanged: SUCCESS`);
-              expect(true).assertTrue();
             } else {
               console.info(`${Tag}:  on_micBlockStatusChanged: SUCCESS`);
               expect(false).assertTrue();
@@ -310,7 +307,6 @@ export default function AudioRoutingManagerTest() {
           })
           audioRoutingManager.offMicBlockStatusChanged(micBlockStatusCallback)
         }
-        expect(true).assertTrue();
       } catch (error) {
         console.error(`${Tag}:  on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
@@ -338,7 +334,6 @@ export default function AudioRoutingManagerTest() {
               console.info(`${Tag}: audioDevices[0].id: ${audioDevices[0].id}`);
               expect(audioDevices[0].id).assertLargerOrEqual(0);
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
-              expect(true).assertTrue();
             } else {
               console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
               expect(false).assertTrue();
@@ -346,7 +341,6 @@ export default function AudioRoutingManagerTest() {
           })
           audioRoutingManager.offMicBlockStatusChanged()
         }
-        expect(true).assertTrue();
       } catch (error) {
         console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();

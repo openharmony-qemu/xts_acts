@@ -166,7 +166,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager!.getVolumeSync(audio.AudioVolumeType.RINGTONE);
         console.info(`${TagFrmwk}: Media getVolumeSync : success :${data}`);
-        expect(true).assertTrue();
         done();
       } catch (err) {
         err = err as BusinessError;
@@ -189,7 +188,6 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.MEDIA);
         if (data == 0) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
           done();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
@@ -216,7 +214,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.RINGTONE);
         console.log('getMinVolumeSync success');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         err = err as BusinessError;
@@ -240,10 +237,8 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
         if (data == maxVol) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
         } else if (data == maxVolPc) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
           expect(false).assertTrue();
@@ -269,7 +264,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.ALARM);
         console.log('getMaxVolumeSync success');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         err = err as BusinessError;
@@ -292,7 +286,6 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.ACCESSIBILITY);
         console.log('isMuteSync success');
-        expect(true).assertTrue();
         done();
       } catch (err) {
         err = err as BusinessError;
@@ -850,7 +843,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
             expect(false).assertTrue();
@@ -885,7 +877,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null
             && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -920,7 +911,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -954,7 +944,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
             expect(false).assertTrue();
@@ -988,7 +977,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -1022,7 +1010,6 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-            expect(true).assertTrue();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
@@ -1048,7 +1035,6 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : PASS`);
-        expect(true).assertTrue();
       } else {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : FAIL`);
         expect(false).assertTrue();
@@ -1072,7 +1058,6 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-        expect(true).assertTrue();
       } else {
         console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
         expect(false).assertTrue();
@@ -1095,7 +1080,6 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-        expect(true).assertTrue();
       } else {
         console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
         expect(false).assertTrue();
@@ -1148,7 +1132,6 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : PASS`);
-        expect(true).assertTrue();
       } else {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : FAIL`);
         expect(false).assertTrue();
@@ -1194,7 +1177,6 @@ export default function audioFramework() {
         console.info(`Fail, error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
         expect(false).assertTrue();
       }
-      expect(true).assertTrue();
       done();
     })
 

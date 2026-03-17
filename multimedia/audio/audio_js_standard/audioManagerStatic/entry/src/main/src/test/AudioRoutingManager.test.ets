@@ -280,7 +280,6 @@ export default function audioRoutingManager() {
         let data = await routingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS` +
         JSON.stringify(data));
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
@@ -310,7 +309,6 @@ export default function audioRoutingManager() {
           done();
         }
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0500 SUCCESS`);
-        expect(true).assertTrue();
         done();
       });
     })
@@ -329,7 +327,6 @@ export default function audioRoutingManager() {
         routingManager.offPreferOutputDeviceChangeForRendererInfo((data: audio.AudioDeviceDescriptors) => {
         });
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
@@ -351,7 +348,6 @@ export default function audioRoutingManager() {
       try {
         routingManager.offPreferOutputDeviceChangeForRendererInfo();
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200 SUCCESS`);
-        expect(true).assertTrue();
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0200 ERROR: ${e.message}`);

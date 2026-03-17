@@ -155,6 +155,11 @@ export default function audioCapturerChange() {
             await audioCap.release();
             done();
           }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0100 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
+            done();
+          }
         }
       });
       try {
@@ -223,6 +228,11 @@ export default function audioCapturerChange() {
             }).catch((err: BusinessError) => {
               console.info(`${Tag}: Capturer release :ERROR :${err.message}`);
             });
+          }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0200 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
+            done();
           }
         }
       });
@@ -441,6 +451,11 @@ export default function audioCapturerChange() {
             audioStreamManager.off('audioCapturerChange');
             done();
           }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0500 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
+            done();            
+          }
         }
       });
       try {
@@ -559,6 +574,11 @@ export default function audioCapturerChange() {
             audioStreamManager.off('audioCapturerChange');
             done();
           }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0700 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
+            done();
+          }
         }
       });
       try {
@@ -609,6 +629,11 @@ export default function audioCapturerChange() {
           }
           if (clientUid != undefined && capFlags == 0 && devDescriptor != null) {
             audioStreamManager.off('audioCapturerChange');
+            done();
+          }
+          else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0800 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
             done();
           }
         }
@@ -665,6 +690,11 @@ export default function audioCapturerChange() {
               audioStreamManager.off('audioCapturerChange');
               done();
             }
+            else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0900 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
+            done();
+          }
           }
         }
       });
@@ -935,6 +965,11 @@ export default function audioCapturerChange() {
             if (Id > 0 && dType == 15 && dRole == 1 && sRate != null && cCount != null && cMask != null) {
               audioStreamManager.off('audioCapturerChange');
               done();
+            }
+            else {
+            console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0900 devDescriptor is null: ${devDescriptor}`);
+            expect(false).assertTrue();
+            done();
             }
           }
         }
