@@ -92,9 +92,9 @@ export default function callJsunit() {
       });
 
     /**
+     * @tc.name   Telephony_Call_Call_MakeCall_0200
      * @tc.number Telephony_Call_Call_MakeCall_0200
-     * @tc.name   Make a call.
-     * @tc.desc   Function test
+     * @tc.desc   Make a call
      * @tc.level  Level 0
      * @tc.type   Function
      * @tc.size   MEDIUMTEST
