@@ -64,32 +64,31 @@ export default function intelligenceStaticErrTest() {
      * @tc.level  LEVEL2
      */
     it("intelligenceGetEmbeddingErrTest0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info(TAG + "intelligenceGetEmbeddingErrTest0100 start");
+      console.info(TAG + "intelligenceApiTest0700 start");
+
       if (currentDeviceIsPc) {
         intelligence.getTextEmbeddingModel(textConfig)
-          .then(async (data:intelligence.TextEmbedding) => {
-            console.info(TAG + "intelligenceGetEmbeddingErrTest0100 get result: " + data);
-            await data.loadModel();
+          .then((data:intelligence.TextEmbedding) => {
+            console.info(TAG + "get intelligenceGetEmbeddingErrTest0100 result:" + data);
             data.getEmbedding('')
-              .then((loadData:Array<Array<double>>) => {
-                console.info(TAG + "getEmbedding result 0900: " + loadData);
+              .then((loadData) => {
+                console.info(TAG + "700 getEmbedding result:" + loadData);
                 let dataSize:number = loadData.length;
                 let ret = dataSize > 0;
-                expect(ret).assertEqual(true);
+                expect().assertFail();
                 done();
               })
-              .catch ((err) =>{
-                console.info(TAG + "getEmbedding result:" + err.code + err.message);
-                expect(err.code).assertEqual(31300000);
+              .catch((err) => {
+                let error: BusinessError = err as BusinessError;
+                expect(error.code).assertEqual(31300000);
                 done();
               })
           })
       } else {
         intelligence.getTextEmbeddingModel(textConfig)
           .then((data) => {
-            console.info(TAG + "get result: " + data);
+            console.info(TAG + "get result:" + data);
             expect().assertFail();
-            done();
           })
           .catch((err) => {
             let error: BusinessError = err as BusinessError;
