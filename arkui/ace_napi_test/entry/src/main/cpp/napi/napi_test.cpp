@@ -18260,7 +18260,7 @@ static napi_value NapiLoadModuleInfoTest03(napi_env env, napi_callback_info info
 {
     napi_value objectUtils = nullptr;
     napi_status status = 
-        napi_load_module_with_info(env, "test/pages/ObjectUtils", "com.acts.ace.napitest/entry_test", &objectUtils);
+        napi_load_module_with_info(env, "pages/ObjectUtils", "com.acts.ace.napitest/entry_test", &objectUtils);
     NAPI_ASSERT(env, status != napi_ok, "path is null, napi_load_module_with_info status failed.");
     NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
     
