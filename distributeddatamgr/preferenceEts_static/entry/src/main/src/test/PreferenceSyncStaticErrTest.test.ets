@@ -86,7 +86,7 @@ export default function preferenceSyncStaticTest() {
         moduleName: "entry",
         onAbilityCreate: (abilitys: UIAbility): void => {
           context = abilitys.context
-          context.stageMode = true;
+          context!.stageMode = true;
           hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end');
         },
       }, (err: BusinessError | null): void => {
@@ -107,15 +107,15 @@ export default function preferenceSyncStaticTest() {
     })
 
     beforeEach(async () : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'beforeEach, stagemode is ' + context.stageMode)
-      mPreferences = await dataPreferences.getPreferences(context, NAME);
+      hilog.info(domain, tag, '%{public}s', 'beforeEach, stagemode is ' + context!.stageMode)
+      mPreferences = await dataPreferences.getPreferences(context!, NAME);
       mPreferences!.clearSync();
       mPreferences!.flush();
     })
 
     afterEach(async () : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterEach')
-      await dataPreferences.deletePreferences(context, NAME);
+      await dataPreferences.deletePreferences(context!, NAME);
     })
 
 
@@ -149,7 +149,7 @@ export default function preferenceSyncStaticTest() {
      */
     it("testPreferencesGetPreferencesSyncStaticErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let mPreferences = dataPreferences.getPreferences(context, "");
+        let mPreferences = dataPreferences.getPreferences(context!, "");
         console.info("testPreferencesGetPreferencesSyncStaticErr0100" + mPreferences);
         expect(mPreferences).assertUndefined();
         done();
@@ -171,7 +171,7 @@ export default function preferenceSyncStaticTest() {
      */
     it("testPreferencesDeletePreferencesSyncStaticErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let mPreferences = dataPreferences.deletePreferences(context, "");
+        let mPreferences = dataPreferences.deletePreferences(context!, "");
         console.info("testPreferencesDeletePreferencesSyncStaticErr0100" + mPreferences);
         expect(mPreferences).assertUndefined();
         done();
@@ -193,7 +193,7 @@ export default function preferenceSyncStaticTest() {
      */
     it("testPreferencesRemovePreferencesFromCacheSyncStaticErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        dataPreferences.removePreferencesFromCacheSync(context, "");
+        dataPreferences.removePreferencesFromCacheSync(context!, "");
         console.info("testPreferencesRemovePreferencesFromCacheSyncStaticErr0100");
         expect().assertFail();
         done();
