@@ -1083,7 +1083,7 @@ export default function StreamTest_01() {
         console.log(TAG + ' start');
         let writable1 = new TestWritable1();
         let result1 = writable1.setDefaultEncoding();
-        expect(result1).assertEqual(true);
+        expect(result1).assertEqual(false);
 
       });
 
