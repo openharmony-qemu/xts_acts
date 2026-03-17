@@ -48,6 +48,7 @@ import selectApiTest1 from './selectTest/selectApi1.test'
 import triggerSelect from './select/triggerSelect.test'
 import triggerSelectTest from './selectTest/triggerSelect.test'
 import selectJsunit2 from './select/SelectJsunit.test'
+import AdvancedPopupTest from './popup/AdvancedPopup.test';
 
 export default function testsuite() {
 	SelectJsunit01();
@@ -83,4 +84,5 @@ export default function testsuite() {
     selectNodeTest();
 	SliderEnableHapticFeedbackTest();
 	ActsgetcomponentaddTest();
+    AdvancedPopupTest();
 }

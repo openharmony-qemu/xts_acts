@@ -47,43 +47,48 @@ export default function graphicImagePixelMap2() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
         if (pixelMap != undefined) {
           await pixelMap!.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.NONE)
-            .then((scaledPixelMap: image.PixelMap) => {
+            .then(async (scaledPixelMap: image.PixelMap) => {
               console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
               expect(scaledPixelMap !== undefined).assertTrue();
               expect(scaledPixelMap.isEditable).assertFalse();
               expect(scaledPixelMap.isStrideAlignment).assertFalse();
+              await scaledPixelMap.release();
             }).catch((error: BusinessError) => {
               console.error(msgStr, `Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
           await pixelMap!.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.LOW)
-            .then((scaledPixelMap: image.PixelMap) => {
+            .then(async (scaledPixelMap: image.PixelMap) => {
               console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
               expect(scaledPixelMap !== undefined).assertTrue();
+              await scaledPixelMap.release();
             }).catch((error: BusinessError) => {
               console.error(msgStr, `Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
           await pixelMap!.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM)
-            .then((scaledPixelMap: image.PixelMap) => {
+            .then(async (scaledPixelMap: image.PixelMap) => {
               console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
               expect(scaledPixelMap !== undefined).assertTrue();
+              await scaledPixelMap.release();
             }).catch((error: BusinessError) => {
               console.error(msgStr, `Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
           await pixelMap!.createScaledPixelMap(scaleX, scaleY, image.AntiAliasingLevel.HIGH)
-            .then((scaledPixelMap: image.PixelMap) => {
+            .then(async (scaledPixelMap: image.PixelMap) => {
               console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
               expect(scaledPixelMap !== undefined).assertTrue();
+              await scaledPixelMap.release();
             }).catch((error: BusinessError) => {
               console.error(msgStr, `Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
             })
           await pixelMap!.createScaledPixelMap(scaleX, scaleY)
-            .then((scaledPixelMap: image.PixelMap) => {
+            .then(async (scaledPixelMap: image.PixelMap) => {
               console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
               expect(scaledPixelMap !== undefined).assertTrue();
+              await scaledPixelMap.release();
             }).catch((error: BusinessError) => {
               console.error(msgStr, `Failed to create scaledPixelMap. Error code is ${error.code}`);
               expect().assertFail();
@@ -117,6 +122,7 @@ export default function graphicImagePixelMap2() {
             expect(scaledPixelMap !== undefined).assertTrue();
             expect(scaledPixelMap.isEditable).assertFalse();
             expect(scaledPixelMap.isStrideAlignment).assertFalse();
+            await scaledPixelMap.release();
           } catch (err) {
             expect().assertFail();
           }
@@ -124,6 +130,7 @@ export default function graphicImagePixelMap2() {
             let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.LOW);
             console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
             expect(scaledPixelMap !== undefined).assertTrue();
+            await scaledPixelMap.release();
           } catch (err) {
             expect().assertFail();
           }
@@ -131,6 +138,7 @@ export default function graphicImagePixelMap2() {
             let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.MEDIUM);
             console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
             expect(scaledPixelMap !== undefined).assertTrue();
+            await scaledPixelMap.release();
           } catch (err) {
             expect().assertFail();
           }
@@ -138,6 +146,7 @@ export default function graphicImagePixelMap2() {
             let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.HIGH);
             console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
             expect(scaledPixelMap !== undefined).assertTrue();
+            await scaledPixelMap.release();
           } catch (err) {
             expect().assertFail();
           }
@@ -145,6 +154,7 @@ export default function graphicImagePixelMap2() {
             let scaledPixelMap = pixelMap!.createScaledPixelMapSync(scaleX, scaleY);
             console.info(msgStr, scaledPixelMap.isEditable, scaledPixelMap.isStrideAlignment);
             expect(scaledPixelMap !== undefined).assertTrue();
+            await scaledPixelMap.release();
           } catch (err) {
             expect().assertFail();
           }
@@ -201,15 +211,16 @@ export default function graphicImagePixelMap2() {
         }
         let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
         if (pixelMap != undefined) {
-          await pixelMap!.translate(translateX, translateY).then(() => {
+          await pixelMap!.translate(translateX, translateY).then(async () => {
             console.info('Succeeded in translating pixelmap.');
+            await pixelMap.release();
+            done();
           }).catch((err: BusinessError) => {
             console.error(`Failed to translate pixelmap. code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
+            done();
           })
         }
-        await pixelMap.release();
-        done();
       })
 
     /**
@@ -231,12 +242,13 @@ export default function graphicImagePixelMap2() {
         if (pixelMap != undefined) {
           try {
             pixelMap!.translateSync(translateX, translateY);
+            await pixelMap?.release();
+            done();
           } catch (err) {
             expect().assertFail();
+            done();
           }
         }
-        await pixelMap?.release();
-        done();
       })
 
     /**
@@ -261,12 +273,13 @@ export default function graphicImagePixelMap2() {
             expect(clonePixelMap.isEditable).assertTrue();
             expect(clonePixelMap.isStrideAlignment).assertFalse();
             await pixelMap.release();
+            done();
           }).catch((error: BusinessError) => {
             console.error(`www data Failed to clone pixelmap. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         }
-        done();
       })
 
     /**
@@ -295,13 +308,14 @@ export default function graphicImagePixelMap2() {
             expect(clonePixelMap.isEditable).assertTrue();
             expect(clonePixelMap.isStrideAlignment).assertFalse();
             await pixelMap.release();
+            done();
           } catch(e) {
             let error = e as BusinessError;
             console.error(`www data clone pixelmap error. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
+            done();
           }
         }
-        done();
       })
 
     /**
@@ -328,15 +342,17 @@ export default function graphicImagePixelMap2() {
           editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
         }
         let pixelMap: image.PixelMap = image.createPixelMapSync(opts);
-        await pixelMap?.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, staticMetadata).then(() => {
+        await pixelMap?.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, staticMetadata).then(async () => {
           console.info('www data Succeeded in setting pixelMap metadata.');
           expect().assertFail();
-        }).catch((error: BusinessError) => {
+          await pixelMap?.release();
+          done();
+        }).catch(async (error: BusinessError) => {
           console.error("www data Failed to set the metadata.code ", error);
           expect(Number(error) == 62980173).assertTrue();
+          await pixelMap?.release();
+          done();
         })
-        await pixelMap.release();
-        done();
       })
 
     /**
@@ -359,18 +375,21 @@ export default function graphicImagePixelMap2() {
             let staticMetadata = pixelMap!.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
             console.info(`www data getMetadata:${staticMetadata}`);
             expect().assertFail();
+            await pixelMap.release();
+            done();
           } catch (error) {
             error = error as BusinessError;
             console.error('www data pixelmap create failed' + error);
             console.error('www data pixelmap create failed' + JSON.stringify(error));
             expect(Number(error.code)).assertEqual(62980173);
+            await pixelMap.release();
+            done();
           }
         } else {
           console.error('www data Failed to create pixelMap.');
           expect().assertFail();
+          done();
         }
-        await pixelMap.release();
-        done();
       })
 
     /**
@@ -489,12 +508,13 @@ export default function graphicImagePixelMap2() {
         if (pixelMap != undefined) {
           try {
             pixelMap!.setTransferDetached(true);
+            await pixelMap.release();
+            done();
           } catch (err) {
             expect().assertFail();
+            done();
           }
         }
-        await pixelMap.release();
-        done();
       })
 
     /**
@@ -515,13 +535,14 @@ export default function graphicImagePixelMap2() {
           try {
             pixelMap!.setTransferDetached(false);
             console.info('www data graphicImagePixelMap2_1400 success');
+            await pixelMap.release();
+            done();
           } catch (err) {
             console.info('www data graphicImagePixelMap2_1400 err ', err);
             expect().assertFail();
+            done();
           }
         }
-        await pixelMap.release();
-        done();
       })
 
     /**
@@ -971,13 +992,14 @@ export default function graphicImagePixelMap2() {
         try {
           pixelMap!.flip(false, true, (err: BusinessError | null) => {
             console.info('www data graphicImagePixelMap2_3100 succeed')
+            pixelMap!.release();
+            done();
           })
         } catch (err) {
           console.info('www data graphicImagePixelMap2_3100 failed', JSON.stringify(err));
           expect().assertFail();
+          done();
         }
-        await pixelMap.release();
-        done();
       })
 
     /**
@@ -997,7 +1019,6 @@ export default function graphicImagePixelMap2() {
         try {
           await pixelMap!.flip(false, false).then(() => {
             console.info('www data graphicImagePixelMap2_3200 Succeeded in flipping pixelmap.');
-
           }).catch((err: BusinessError) => {
             console.error('www data graphicImagePixelMap2_3200 Failed to flip pixelmap.', JSON.stringify(err));
             expect().assertFail();
@@ -1267,7 +1288,7 @@ export default function graphicImagePixelMap2() {
           pixelMap!.getImageInfo((err: BusinessError | null, imageInfoCallback: image.ImageInfo | undefined) => {
             if (err) {
               console.error(`www data Failed to obtain the image pixel map information. code is ${err.code}`);
-              return;
+              done();
             } else {
               console.info('www data graphicImagePixelMap2_4000 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.size.width).assertLargerOrEqual(0);
@@ -1278,13 +1299,14 @@ export default function graphicImagePixelMap2() {
               expect(imageInfoCallback?.mimeType === '').assertTrue();
               expect(imageInfoCallback?.alphaType).assertEqual(image.AlphaType.PREMUL);
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+              pixelMap.release();
+              done();
             }
           })
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        await pixelMap.release();
-        done();
       })
 
     /**
@@ -1311,13 +1333,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_4100 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1347,13 +1370,14 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_4200 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.ARGB_8888);
               expect(imageInfoCallback?.isHdr).assertFalse();
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1383,13 +1407,14 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_4300 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGB_565);
               expect(imageInfoCallback?.alphaType).assertEqual(image.AlphaType.OPAQUE);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1419,13 +1444,14 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_4400 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
               expect(imageInfoCallback?.alphaType).assertEqual(image.AlphaType.UNPREMUL);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1452,13 +1478,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_4500 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.BGRA_8888);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1485,13 +1512,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_4600 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGB_888);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1518,13 +1546,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_4700 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_8);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1551,13 +1580,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_4800 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_F16);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1584,13 +1614,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_4900 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.NV21);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1617,13 +1648,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_5000 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.NV12);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1650,13 +1682,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_5100 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.YCBCR_P010);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1683,13 +1716,14 @@ export default function graphicImagePixelMap2() {
             if(imageInfoCallback !== undefined){
               console.info('www data graphicImagePixelMap2_5200 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1720,13 +1754,14 @@ export default function graphicImagePixelMap2() {
               console.info('www data graphicImagePixelMap2_5300 ', JSON.stringify(imageInfoCallback));
               expect(imageInfoCallback?.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
               expect(imageInfoCallback?.isHdr).assertTrue();
+              pixelMap.release();
+              done();
             }
           })
-          await pixelMap.release();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -1760,13 +1795,14 @@ export default function graphicImagePixelMap2() {
             expect(clonePixelMap.isEditable).assertFalse();
             expect(clonePixelMap.isStrideAlignment).assertTrue();
             await pixelMap.release();
+            done();
           } catch(e) {
             let error = e as BusinessError;
             console.error(`www data clone pixelmap error. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
+            done();
           }
         }
-        done();
       })
 
     /**
@@ -1800,13 +1836,14 @@ export default function graphicImagePixelMap2() {
             expect(clonePixelMap.isEditable).assertFalse();
             expect(clonePixelMap.isStrideAlignment).assertTrue();
             await pixelMap.release();
+            done();
           } catch(e) {
             let error = e as BusinessError;
             console.error(`www data clone pixelmap error. code is ${error.code}, message is ${error.message}`);
             expect().assertFail();
+            done();
           }
         }
-        done();
       })
 
     /**
@@ -1893,11 +1930,12 @@ export default function graphicImagePixelMap2() {
           expect(imgInfo.mimeType === '').assertTrue();
           expect(imgInfo.alphaType).assertEqual(image.AlphaType.OPAQUE);
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
+          await pixelMap.release();
+          done();
         } catch (err) {
           expect().assertFail();
+          done();
         }
-        await pixelMap.release();
-        done();
       })
 
   })

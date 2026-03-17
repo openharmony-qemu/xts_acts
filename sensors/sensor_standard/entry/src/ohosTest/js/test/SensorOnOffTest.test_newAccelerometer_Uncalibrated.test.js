@@ -586,10 +586,10 @@ describe("SensorJsTest_sensor_40", function () {
      it("newAccelerometer_Uncalibrated_SensorJsTest032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('---------newAccelerometer_Uncalibrated_SensorJsTest032--------------');
         async function onSensorCallback(data) {
-            sensor.on(null, (data) => {}, { interval: 100000000 });
-            sensor.on(undefined, (data) => {}, { interval: 100000000 });
-            sensor.off(null, (data) => {}, { interval: 100000000 });
-            sensor.off(undefined, (data) => {}, { interval: 100000000 });
+            sensor.on(null, null, null, (data) => {}, { interval: 100000000 });
+            sensor.on(undefined, undefined, undefined, (data) => {}, { interval: 100000000 });
+            sensor.off(null, null, (data) => {}, { interval: 100000000 });
+            sensor.off(undefined, undefined, (data) => {}, { interval: 100000000 });
             sensor.once(null, (data) => {}, { interval: 100000000 });
             sensor.once(undefined, (data) => {}, { interval: 100000000 });
             done();
@@ -1481,6 +1481,17 @@ describe("SensorJsTest_sensor_40", function () {
                 }
                 done()
             })
+            sensor.transformCoordinateSystem([], {
+                'x': 1,
+                'y': 2
+            }, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
             sensor.transformCoordinateSystem(null, null, (error, data) => {
                 if (error) {
                     expect(false).assertTrue();
@@ -1578,6 +1589,14 @@ describe("SensorJsTest_sensor_40", function () {
                 }
                 done()
             })
+            sensor.createQuaternion([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
             sensor.createQuaternion(null, (error, data) => {
                 if (error) {
                     expect(false).assertTrue();
@@ -1595,6 +1614,14 @@ describe("SensorJsTest_sensor_40", function () {
                 done()
             })
             let data = await sensor.createQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createQuaternion([], (error, data) => {
                 if (error) {
                     expect(false).assertTrue();
                 } else {
@@ -1626,6 +1653,14 @@ describe("SensorJsTest_sensor_40", function () {
                 }
                 done()
             })
+            sensor.getQuaternion([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
             sensor.getQuaternion(null, (error, data) => {
                 if (error) {
                     expect(false).assertTrue();
@@ -1643,6 +1678,14 @@ describe("SensorJsTest_sensor_40", function () {
                 done()
             })
             let data = await sensor.getQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getQuaternion([], (error, data) => {
                 if (error) {
                     expect(false).assertTrue();
                 } else {
@@ -1770,14 +1813,7 @@ describe("SensorJsTest_sensor_40", function () {
                 }
                 done()
             })
-            let gravity = [
-                [9, 9, 9], [91, 92, 93], [-9, -12, -35], [NaN, NaN, NaN], [3.40282e+38, 3.40282e+38, 3.40282e+38],
-                [3.40282e+39, 3.40282e+39, 3.40282e+39]
-            ]
-            let geomagnetic = [
-                [30, 25, 41], [3, 2, 4], [-123, -456, -564], [3.40282e+38, 3.40282e+38, 3.40282e+38], [NaN, NaN, NaN]
-            ]
-            sensor.createRotationMatrix(gravity[0], geomagnetic[0], (error, data) => {
+            sensor.createRotationMatrix(gravity[9, 9, 9], geomagnetic[30, 25, 41], (error, data) => {
                 if (error) {
                     expect(false).assertTrue();
                 } else {
@@ -1809,7 +1845,182 @@ describe("SensorJsTest_sensor_40", function () {
                 }
                 done()
             })
+            let data = await sensor.createRotationMatrix(gravity[9, 9, 9], geomagnetic[30, 25, 41], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix([], [], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getGeomagneticField(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            sensor.getGeomagneticField(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getGeomagneticField(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getGeomagneticField(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);   
+                }
+                done()
+            })
+            let data = await sensor.getInclination([], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            sensor.createRotationMatrix([9, 9, 9], [30, 25, 41], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            sensor.createRotationMatrix([], [], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            sensor.createRotationMatrix(null, null, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            sensor.createRotationMatrix(undefined, undefined, (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(undefined, [], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            let data = await sensor.createRotationMatrix(null, [30, 25, 41], (error, data) => {
+                if (error) {
+                    expect(false).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
 
+            let data = await sensor.transformCoordinateSystem([1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5] , { 'x': 1, 'y': 2 })
+            expect(data.length > 0).assertTrue();
+            sensor.transformCoordinateSystem([1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5], {
+                'x': 1,
+                'y': 2
+            }, (error, data) => {
+                if (error) {
+                    expect(data.length > 0).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+
+            let data = await sensor.transformRotationMatrix([], {'x':1, 'y':2});
+            expect(data.length === 0).assertTrue();
+
+            sensor.createQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(data.length === 0).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            let data = await sensor.createQuaternion([0, 0, 0])
+            expect(data.length === 0).assertTrue();
+
+            sensor.getQuaternion([0, 0, 0], (error, data) => {
+                if (error) {
+                    expect(data.length === 0).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            let data = await sensor.getQuaternion([0, 0, 0])
+            expect(data.length === 0).assertTrue();
+
+            let data = await sensor.getDirection([1,1,1]);
+            expect(data.length === 0).assertTrue();
+
+            let data = await sensor.getOrientation([2,2,2])
+            expect(data.length === 0).assertTrue();
+
+            sensor.createRotationMatrix([0,1,2], [0,1,2], (error, data) => {
+                if (error) {
+                    expect(data.rotation !== undefined).assertTrue();
+                    expect(data.inclination !== undefined).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+                }
+                done()
+            })
+            
         } catch (error) {
             console.info("newAccelerometer_Uncalibrated_SensorJsTest032 error:" + error);
             expect(error.code).assertEqual(PARAMETER_ERROR_CODE);

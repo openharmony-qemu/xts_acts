@@ -78,7 +78,7 @@ export default function webPageSnapshotTest() {
         let tcName = 'testWebPageSnapshot001';
         let isReturn = false;
         Utils.emitEvent(emitKey, 154080);
-        Utils.registerEvent(tcName, "null_error", 154100, () => {
+        Utils.registerEvent(tcName, "null", 154100, () => {
           isReturn = true
         });
         Utils.waitAndClickComponent(driver, "webWebPageSnapshot", tcName);

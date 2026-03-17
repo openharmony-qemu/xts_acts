@@ -237,8 +237,7 @@ export default function ConcurrentSetTest() {
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const str = new Array<[number, number]>(1);
-      str[0] = [0, 1];
+      const str = new Array<[number, number]>([0, 1]);
       const arrayLike = str as ArrayLike<[number, number]>;
       const concurrentSet = new containers.ConcurrentSet<[number, number]>(arrayLike);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
@@ -740,7 +739,7 @@ export default function ConcurrentSetTest() {
      */
     it("concurrent_Set_Constructor_Test_static_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
-      arrayTest.push(new Array<Array<number>>(new Array<number>(0)));
+      arrayTest.push(new Array<Array<number>>(new Array<number>()));
       const concurrentSet: containers.ConcurrentSet<Array<Array<number>>> = new containers.ConcurrentSet<Array<Array<number>>>(arrayTest);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
@@ -757,7 +756,7 @@ export default function ConcurrentSetTest() {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
       const totalCount: number = 1000;
       for (let index = 0; index < totalCount; index++) {
-        arrayTest.push(new Array<Array<number>>(new Array<number>(index)));
+        arrayTest.push(new Array<Array<number>>(Array.create<number>(index, 0)));
       }
       const concurrentSet: containers.ConcurrentSet<Array<Array<number>>> = new containers.ConcurrentSet<Array<Array<number>>>(arrayTest);
       expect(JSON.stringify(concurrentSet.size)).assertEqual(JSON.stringify(totalCount));
@@ -788,7 +787,7 @@ export default function ConcurrentSetTest() {
      */
     it("concurrent_Set_Constructor_Test_static_047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
-      arrayTest.push(new Array<Array<number>>(new Array<number>(0)));
+      arrayTest.push(new Array<Array<number>>(new Array<number>()));
       const iter = arrayTest.values();
       const concurrentSet: containers.ConcurrentSet<Array<Array<number>>> = new containers.ConcurrentSet<Array<Array<number>>>(iter);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
@@ -806,7 +805,7 @@ export default function ConcurrentSetTest() {
       const arrayTest: Array<Array<Array<number>>> = new Array<Array<Array<number>>>();
       const totalCount: number = 1000;
       for (let index = 0; index < totalCount; index++) {
-        arrayTest.push(new Array<Array<number>>(new Array<number>(index)));
+        arrayTest.push(new Array<Array<number>>(Array.create<number>(index, 0)));
       }
       const iter = arrayTest.values();
       const concurrentSet: containers.ConcurrentSet<Array<Array<number>>> = new containers.ConcurrentSet<Array<Array<number>>>(iter);
@@ -2586,42 +2585,30 @@ export default function ConcurrentSetTest() {
      */
     it("concurrent_Set_Async_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-      let arrayNull = new Array<number>(0);
+      let arrayNull = new Array<number>();
 
-      let array1 = new Array<number>(1);
-      array1[0] = 0;
+      let array1 = Array.create<number>(1, 0);
 
-      let array10 = new Array<number>(10);
-      for (let i = 0; i < array10.length; i++) {
-        array10[i] = i;
-      }
+      let array10 = new Array<number>(10, (i) => i);
 
-      let array100 = new Array<number>(100);
-      for (let i = 0; i < array100.length; i++) {
-        array100[i] = i;
-      }
+      let array100 = new Array<number>(100, (i) => i);
 
-      let arrNull = new Array<number>(0);
+      let arrNull = new Array<number>();
       let arrNullLike = arrNull as ArrayLike<number>;
 
-      let arr = new Array<number>(5);
-      for (let i = 0; i < arr.length; i++) {
-        arr[i] = i;
-      }
+      let arr = new Array<number>(5, (i: int) => i);
       let arrLike = arr as ArrayLike<number>;
 
       let tupleNull = new Array<[number, number]>();
       let tupleNullLike = tupleNull as ArrayLike<[number, number]>;
 
-      let tuple = new Array<[number, number]>(1);
-      tuple[0] = [0, 1];
+      let tuple = new Array<[number, number]>([0, 1]);
       let tupleLike = tuple as ArrayLike<[number, number]>;
 
       let strNull = new Array<string>();
       let strNullLike = strNull as ArrayLike<string>;
 
-      let str = new Array<string>(1);
-      str[0] = "test";
+      let str = new Array<string>('test');
       let strLike = str as ArrayLike<string>;
 
       taskGroup.addTask(createConcurrentSetFromArrayLikeTask, arrayNull);

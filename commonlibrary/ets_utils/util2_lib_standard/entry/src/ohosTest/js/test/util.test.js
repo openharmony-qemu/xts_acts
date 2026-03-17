@@ -4547,8 +4547,8 @@ describe('LRUCacheTest', function () {
           {
             if (isEvict === false)
             {
-              arrk = Array.from(key);
-              arrv = Array.from(value);
+              arrk.push(key);
+              arrv.push(value);
             }
           }
         }

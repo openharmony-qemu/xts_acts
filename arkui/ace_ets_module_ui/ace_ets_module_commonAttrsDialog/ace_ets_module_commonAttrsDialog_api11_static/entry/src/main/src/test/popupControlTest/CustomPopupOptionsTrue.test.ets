@@ -103,7 +103,7 @@ it('CustomPopupOptionsTrue_static_0100', Level.LEVEL0, async (done: () => void):
       expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
-       driver?.click(200, 200);
+       driver?.click(2, 2);
       await CommonFunc.sleep(1000);
       console.info('[CustomPopupOptionsTrue_0100] END');
       done();

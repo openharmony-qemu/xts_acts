@@ -17,10 +17,12 @@ import webConfigCookieCharacter from './WebConfigCookieCharacter.test'
 import webConfigCookieSyncCharacter from './WebConfigCookieSyncCharacter.test'
 import webClearAllCookiesCharacter from './WebClearAllCookiesCharacter.test.ets'
 import webClearAllCookiesSyncCharacter from './WebClearAllCookiesSyncCharacter.test.ets'
+import webCookieManagerError from './WebCookieManagerError.test.ets'
 
 export default function testsuite() {
   webConfigCookieCharacter()
   webConfigCookieSyncCharacter()
   webClearAllCookiesCharacter()
   webClearAllCookiesSyncCharacter()
+  webCookieManagerError()
 }

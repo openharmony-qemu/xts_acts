@@ -36,6 +36,7 @@ import onkeyEventDispatchTest7 from './keyEventDispatchTest/onkeyEventDispatchse
 import onkeyEventDispatchTest8 from './keyEventDispatchTest/onkeyEventDispatcheight.test';
 import KeyEventGetModifierKeyStateTest from './KeyEvent/getModifierKeyStateNullAndUndefinedTest.test';
 import UIContextDispatchKeyEventTest from './UIContext/dispatchKeyEventNullAndUndefinedTest.test';
+import keyboardShortcutNullTest from './keyboardShortcutNull/keyboardShortcutNullTest.test';
 
 export default function testsuite() {
   ShortcutKeyTABTest();
@@ -61,4 +62,5 @@ export default function testsuite() {
   onkeyEventDispatchTest8();
   KeyEventGetModifierKeyStateTest();
   UIContextDispatchKeyEventTest();
+  keyboardShortcutNullTest();
 }

@@ -30,9 +30,9 @@ export default function SysInfoNdkTest() {
      * @tc.desc   test get_phys_pages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSysInfoGetPhysPages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSysInfoGetPhysPages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: boolean = sysInfo.getPhysPages();
       expect(result).assertEqual(resultTrue);
@@ -45,9 +45,9 @@ export default function SysInfoNdkTest() {
      * @tc.desc   test get_nprocs_conf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSysInfoGetNprocsConf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSysInfoGetNprocsConf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: boolean = sysInfo.getNprocsConf();
       expect(result).assertEqual(resultTrue);
@@ -60,9 +60,9 @@ export default function SysInfoNdkTest() {
      * @tc.desc   test get_nprocs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSysInfoGetNprocs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSysInfoGetNprocs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: boolean = sysInfo.getNprocs();
       expect(result).assertEqual(resultTrue);
@@ -75,9 +75,9 @@ export default function SysInfoNdkTest() {
      * @tc.desc   test get_avphys_pages
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSysInfoGetAvphysPages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSysInfoGetAvphysPages001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: boolean = sysInfo.getAvphysPages();
       expect(result).assertEqual(resultTrue);

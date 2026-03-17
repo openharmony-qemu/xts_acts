@@ -40,6 +40,7 @@ import PatternLock11Jsunit from './PatternLockTest/PatternLock11Jsunit.test';
 import PatternLockActivateCircleStyle1 from './PatternLockTest/PatternLockActivateCircleStyle1.test';
 import PatternLockJsunit from './PatternLockTest/PatternLockJsunit.test';
 import PatternLockPropertiesNullUndefinedTest from './PatternLockTest/PatternLockPropertiesNullUndefined.test';
+import PatternLockEnableForegroundTest from './PatternLockTest/PatternLockEnableForeground.test';
 
 import QRCodeApiTest from './QRCodeTest/QRCodeApiTest.test';
 import QRCodeAttrTest from './QRCodeTest/QRCodeAttrTest.test';
@@ -79,6 +80,7 @@ export default function testsuite() {
     PatternLockActivateCircleStyle1()
     PatternLockJsunit()
     PatternLockPropertiesNullUndefinedTest()
+    PatternLockEnableForegroundTest()
     // QRCodeTest
     QRCodeApiTest()
     QRCodeAttrTest()

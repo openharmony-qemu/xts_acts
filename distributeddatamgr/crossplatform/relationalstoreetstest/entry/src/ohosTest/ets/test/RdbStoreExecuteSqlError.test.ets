@@ -547,6 +547,23 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             done();
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG_S2)
+          try{
+            await relationalStore.getRdbStore(context, STORE_CONFIG_S2, (err, store) => {
+              if(err){
+                expect(err.code).assertEqual("801");
+                done();
+              }else{
+                expect(typeof(store) === "object").assertTrue();
+                done();
+              }
+            })
+           
+          }catch (e) {
+            console.error(TAG + `testGetRdbStoreConfig0100 failed, code is ${e.code},message is ${e.message}`);
+            expect(e.code).assertEqual("801");
+            done();
+          }
+          await relationalStore.deleteRdbStore(context, STORE_CONFIG_S2)
         console.info(TAG + "************* testGetRdbStoreConfig0100 end   *************");
       });
 
@@ -570,6 +587,24 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             done();
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG_S3)
+
+          try{
+            await relationalStore.getRdbStore(context, STORE_CONFIG_S3, (err, store) => {
+              if(err){
+                expect(err.code).assertEqual("801");
+                done();
+              }else{
+                expect(typeof(store) === "object").assertTrue();
+                done();
+              }
+            })
+           
+          }catch (e) {
+            console.error(TAG + `testGetRdbStoreConfig0100 failed, code is ${e.code},message is ${e.message}`);
+            expect(e.code).assertEqual("801");
+            done();
+          }
+          await relationalStore.deleteRdbStore(context, STORE_CONFIG_S3)
         console.info(TAG + "************* testGetRdbStoreConfig0200 end   *************");
       });
 
@@ -589,6 +624,24 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             done();
           }catch (e) {
             console.error(TAG + `testGetRdbStoreConfig0300 failed, code is ${e.code},message is ${e.message}`);
+            expect(e.code).assertEqual("801");
+            done();
+          }
+          await relationalStore.deleteRdbStore(context, STORE_CONFIG_S4)
+
+          try{
+            await relationalStore.getRdbStore(context, STORE_CONFIG_S4, (err, store) => {
+              if(err){
+                expect(err.code).assertEqual("801");
+                done();
+              }else{
+                expect(typeof(store) === "object").assertTrue();
+                done();
+              }
+            })
+           
+          }catch (e) {
+            console.error(TAG + `testGetRdbStoreConfig0100 failed, code is ${e.code},message is ${e.message}`);
             expect(e.code).assertEqual("801");
             done();
           }
@@ -1313,6 +1366,17 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
           expect(err.code).assertEqual("14800014")
         }
+
+        try {
+          if (store != undefined) {
+          
+            (store as relationalStore.RdbStore).on("perfStat", sqlExecutionInfo);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual("14800014")
+        }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1600 end-----")
       })
 
@@ -1587,6 +1651,17 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
         expect(err.code).assertEqual("14800014")
       }
+
+      try {
+        if (store != undefined) {
+          await store.close();
+          (store as relationalStore.RdbStore).on('autoSyncProgress', progressDetail);
+          console.info(TAG + 'off success.');
+        }
+      } catch (err) {
+        console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("14800014")
+      }
       console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1400 end-----")
     })
 
@@ -1630,6 +1705,17 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         if (store != undefined) {
           await store.close();
           (store as relationalStore.RdbStore).off('statistics');
+          console.info(TAG + 'off success.');
+        }
+      } catch (err) {
+        console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
+        expect(err.code).assertEqual("14800014")
+      }
+
+      try {
+        if (store != undefined) {
+          await store.close();
+          (store as relationalStore.RdbStore).off('perfStat');
           console.info(TAG + 'off success.');
         }
       } catch (err) {

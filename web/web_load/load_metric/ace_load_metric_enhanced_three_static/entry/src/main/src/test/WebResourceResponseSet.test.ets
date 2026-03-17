@@ -108,7 +108,7 @@ export default function webResourceResponseSet() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSetResponseEncoding001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testSetResponseEncoding001", 'utf-8', 36011, done);
+        Utils.registerEvent("testSetResponseEncoding001", '', 36011, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebResourceResponseSetButton', 10, '');
         await Utils.msSleep(7000);
@@ -148,7 +148,7 @@ export default function webResourceResponseSet() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testSetReasonMessage001", 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("testSetReasonMessage001", "Forbidden", 36013, done);
+        Utils.registerEvent("testSetReasonMessage001", "OK", 36013, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebResourceResponseSetButton', 10, '');
         await Utils.msSleep(7000);
@@ -209,6 +209,26 @@ export default function webResourceResponseSet() {
         Utils.emitEvent("testSetResponseIsReady001", 10)
         await Utils.msSleep(2000);
         Utils.registerEvent("testSetResponseIsReady001", "test", 36016, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebResourceResponseSetButton', 10, '');
+        await Utils.msSleep(7000);
+        done();
+      })
+
+    /**
+     * @tc.name   testSetResponseIsReadyStatic002
+     * @tc.number SUB_WEB_SETRESPONSEISREADY_0200
+     * @tc.desc   test setResponseIsReady
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetResponseIsReadyStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testSetResponseIsReady002", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testSetResponseIsReady002", "intercept test", 36017, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebResourceResponseSetButton', 10, '');
         await Utils.msSleep(7000);

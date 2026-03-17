@@ -59,9 +59,9 @@ export default function promiseRejectTest(){
      * @tc.desc Promise returned by Promise.reject can be caught via catch(), verify capture logic
      * @tc.size SmallTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let capturedReason = '';
       const customError = new Error('Custom error object');
 
@@ -79,9 +79,9 @@ export default function promiseRejectTest(){
      * @tc.desc Promise.reject combined with Promise.all, verify all rejection behavior
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let allRejectionReason = '';
       const promise1 = Promise.resolve(10);
       const promise2 = Promise.reject(new Error('Second promise rejected'));
@@ -102,9 +102,9 @@ export default function promiseRejectTest(){
      * @tc.desc Promise.reject vs throwing error in async function, compare behaviors
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const rejectViaApi = Promise.reject(new Error('Rejected via Promise.reject'));
       const rejectViaThrow = (async () => {
         throw new Error('Rejected via throw');
@@ -124,9 +124,9 @@ export default function promiseRejectTest(){
      * @tc.desc Promise.reject in race condition with Promise.race, verify early rejection
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let raceOutcome = '';
       const fastReject = Promise.reject(new Error('Fast rejection'));
       const slowResolve = new Promise<string>(resolve => {setTimeout(()=>{resolve("ssss")}, 100, 'Slow resolve')});
@@ -146,9 +146,9 @@ export default function promiseRejectTest(){
      * @tc.desc Chained catch() after Promise.reject, verify error recovery
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const finalResult = await Promise.reject(new Error('Original error'))
         .catch((err: Error) => {
           return Promise.resolve(`Recovered from: ${err.message}`);
@@ -164,9 +164,9 @@ export default function promiseRejectTest(){
      * @tc.desc Promise.reject in nested new Promise, verify rejection propagation to outer
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const outerPromise: Promise<string> = new Promise<string>((resolve, reject) => {
         const innerPromise: Promise<number> = new Promise<number>((resolve, innerReject) => {
           innerReject(new Error('Inner rejection'));
@@ -187,9 +187,9 @@ export default function promiseRejectTest(){
      * @tc.desc Promise.reject combined with new Promise in Promise.race, verify priority
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const delayedResolve: Promise<number> = new Promise<number>((resolve) => {
         setTimeout(() => resolve(100), 50);
       });
@@ -211,9 +211,9 @@ export default function promiseRejectTest(){
      * @tc.desc new Promise wrapping Promise.reject with timeout, verify timing of rejection
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const start = Date.now();
       const timedReject: Promise<void> = new Promise<void>((resolve, reject) => {
         setTimeout(() => {
@@ -233,9 +233,9 @@ export default function promiseRejectTest(){
      * @tc.desc new Promise with Promise.reject vs direct reject, compare behaviors
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const rejectWithApi: Promise<string> = new Promise<string>((resolve, reject) => {
         reject(new Error('Via Promise.reject'));
       });
@@ -257,9 +257,9 @@ export default function promiseRejectTest(){
      * @tc.desc Promise.reject in new Promise with async/await, verify sync rejection handling
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const asyncHandler = async (): Promise<string> => {
         const promise: Promise<string> = new Promise<string>((resolve, reject) => {
           reject(new Error('Async rejection'));
@@ -280,9 +280,9 @@ export default function promiseRejectTest(){
      * @tc.desc new Promise with Promise.reject in Promise.all, verify early termination
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const promise1: Promise<number> = new Promise<number>((resolve) => {setTimeout(()=>{resolve(1)}, 50, 1)});
       const promise2: Promise<string> = new Promise<string>((resolve, reject) => {
         // Fix: Reject directly without wrapping in Promise.reject
@@ -306,9 +306,9 @@ export default function promiseRejectTest(){
      * @tc.desc Typed new Promise with Promise.reject and custom error class
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const validate: Promise<type22> = new Promise<type22>((resolve, reject) => {
         reject(new ValidationError('ID must be positive'));
       });
@@ -327,9 +327,9 @@ export default function promiseRejectTest(){
      * @tc.desc Typed new Promise with Promise.reject and Promise.any, verify recovery
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const promiseA: Promise<string> = new Promise<string>((resolve, reject) => {
         reject(new Error('A fail'));
       });
@@ -350,9 +350,9 @@ export default function promiseRejectTest(){
      * @tc.desc new Promise with Promise.reject and finally, verify cleanup execution
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 3
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let cleanupExecuted = false;
       const promise: Promise<number> = new Promise<number>((resolve, reject) => {
         reject(new Error('Cleanup test'));
@@ -371,9 +371,9 @@ export default function promiseRejectTest(){
      * @tc.desc Async nested new Promise with Promise.reject, verify 3-level propagation timing
      * @tc.size LargeTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest031', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest031', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
       const start = Date.now();
       const level3: Promise<number> = new Promise<number>((resolve, reject) =>{
       setTimeout(() => reject(new Error('L3 delay 20ms')), 20)});
@@ -395,9 +395,9 @@ export default function promiseRejectTest(){
      * @tc.desc Async Promise.reject with typed error in nested async functions
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 4
+     * @tc.level Level 0
      */
-    it('PromiseRejectTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const fetchData = async (delay: int): Promise<string> => {
         return new Promise<string>((resolve, reject) => {
           // Fix: Reject directly with TimeoutError (no Promise.reject wrap)

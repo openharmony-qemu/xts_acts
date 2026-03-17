@@ -119,6 +119,74 @@ struct WebInitTest {
                 }
                 break;
               }
+
+              case "testCustomizeSchemesNull": {
+                try {
+                  webView.WebviewController.customizeSchemes(null)
+                } catch (error) {
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  Utils.emitEvent(e.code, 119790);
+                }
+                break;
+              }
+
+              case "testCustomizeSchemesUndefined": {
+                try {
+                  webView.WebviewController.customizeSchemes(undefined)
+                } catch (error) {
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  Utils.emitEvent(e.code, 119800);
+                }
+                break;
+              }
+
+              case "testCustomizeSchemesEmptyArray": {
+                try {
+                  webView.WebviewController.customizeSchemes([])
+                  Utils.emitEvent('noError', 119810);
+                } catch (error) {
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  Utils.emitEvent(e.code, 119810);
+                }
+                break;
+              }
+
+              case "testCustomizeSchemesNull2": {
+                try {
+                  webView.WebviewController.customizeSchemes(null,true)
+                } catch (error) {
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  Utils.emitEvent(e.code, 119820);
+                }
+                break;
+              }
+
+              case "testCustomizeSchemesUndefined2": {
+                try {
+                  webView.WebviewController.customizeSchemes(undefined,true)
+                } catch (error) {
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  Utils.emitEvent(e.code, 119830);
+                }
+                break;
+              }
+
+              case "testCustomizeSchemesEmptyArray2": {
+                try {
+                  webView.WebviewController.customizeSchemes([],true)
+                  Utils.emitEvent('noError', 119840);
+                } catch (error) {
+                  let e: business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                  Utils.emitEvent(e.code, 119840);
+                }
+                break;
+              }
             }
           })
 

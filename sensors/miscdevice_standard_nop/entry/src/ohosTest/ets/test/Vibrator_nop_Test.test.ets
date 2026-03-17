@@ -525,6 +525,23 @@ export default function vibrator_nop_Test() {
           expect(false).assertTrue();
           done();
         }
+        try {
+          const effectId:string = "haptic.clock.timer";
+          const vibrators = vibrator.getVibratorInfoSync();
+          const vibratorInfoParam:vibrator.VibratorInfoParam = {
+            deviceId: vibrators[0].deviceId,
+            vibratorId: vibrators[0].vibratorId
+          };
+          const jsEffectInfo = vibrator.getEffectInfoSync('', vibratorInfoParam);
+          if (!jsEffectInfo.isEffectSupported) {
+            done();
+          }
+          expect(jsEffectInfo.isEffectSupported).assertFalse();
+          done();
+        } catch (error) {
+          expect(false).assertTrue();
+          done();
+        }
         let builder = new vibrator.VibratorPatternBuilder();
         try {
           let pattern = builder.build();

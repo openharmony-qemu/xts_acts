@@ -17,6 +17,7 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 import { Driver, ON, Component } from "@ohos.UiTest";
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import eventBusPlus from '../lib/EventBusPlus';
 
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
@@ -36,7 +37,6 @@ export default function StartAbilityTest() {
 
 
     beforeEach(async (done: Function) => {
-      await sleep(500);
       done();
     })
 
@@ -57,34 +57,7 @@ export default function StartAbilityTest() {
 
     afterEach(async (done: Function) => {
       console.log(TAG, ' afterEach start');
-      let intervalId: number;
-      let count: number = 0;
-      if (globalThis.main3Context) {
-        console.log(TAG, ' terminateSelf main3 start');
-        globalThis.main3Context.terminateSelf();
-        intervalId = setInterval(() => {
-          count++;
-          if (count > 10 || !globalThis.main3Context) {
-            console.log(TAG, ' terminateSelf main3 end');
-            clearInterval(intervalId);
-            done();
-          }
-        }, 200)
-      } else if (globalThis.main4AbilityContext) {
-        console.log(TAG, ' terminateSelf main4 start');
-        globalThis.main4AbilityContext.terminateSelf()
-        intervalId = setInterval(() => {
-          count++;
-          if (count > 10 || !globalThis.main4AbilityContext) {
-            console.log(TAG, ' terminateSelf main4 end');
-            clearInterval(intervalId);
-            done();
-          }
-        }, 200)
-      } else {
-        console.log(TAG, ' afterEach end');
-        done();
-      }
+      done();
     });
 
     /**
@@ -98,22 +71,20 @@ export default function StartAbilityTest() {
     it("ACTS_START_ABILITY_CALLBACK_0001", Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_START_ABILITY_CALLBACK_0001';
       console.log(TAG, ' start');
-      setTimeout(() => {
-        console.log(TAG, ' timeout1 start');
         abilityDelegator.startAbility({
           bundleName: "com.example.crossplatformstartability",
           moduleName: "entry_test",
           abilityName: "Main4Ability",
-        }, () => {
+        }, async () => {
           console.log(TAG, ' startAbility callback');
           abilityDelegator.printSync(
             "ACTS_STARTABILITY_CALLBACK_0001 startAbility callback"
           );
-          setTimeout(() => {
+          await eventBusPlus.onWait('main4Ability_onForeground');
             console.log(TAG, ' timeout2 start');
             try {
               abilityDelegator.getCurrentTopAbility(
-                (err: BusinessError, ability: UIAbility) => {
+                async (err: BusinessError, ability: UIAbility) => {
                   console.log(TAG, ' getCurrentTopAbility callback, ability != null' + (ability != null));
                   if (ability != null) {
                     abilityDelegator.printSync(
@@ -125,6 +96,8 @@ export default function StartAbilityTest() {
                     abilityDelegator.printSync(
                       "ACTS_STARTABILITY_CALLBACK_0001 pass."
                     );
+                    globalThis.main4AbilityContext.terminateSelf();
+                    await eventBusPlus.onWait('main4Ability_onDestroy');
                     done();
                   } else {
                     console.log(TAG, ' getCurrentTopAbility end,ability is null,err=' + JSON.stringify(err));
@@ -141,9 +114,7 @@ export default function StartAbilityTest() {
               expect().assertFail();
               done();
             }
-          }, 2000);
         });
-      }, 2000);
     });
 
     /**
@@ -167,15 +138,15 @@ export default function StartAbilityTest() {
           keyForDouble: 99.99,
           keyForBoolean: true,
         },
-      }, () => {
+      }, async () => {
         console.log(TAG, ' startAbility callback');
         abilityDelegator.printSync(
           "ACTS_START_ABILITY_CALLBACK_PARAMETER_0002 startAbility callback"
         );
-        setTimeout(() => {
+        await eventBusPlus.onWait('main3Ability_onForeground');
           console.log(TAG, ' timeout callback');
           try {
-            abilityDelegator.getCurrentTopAbility((err: BusinessError, ability: UIAbility) => {
+            abilityDelegator.getCurrentTopAbility(async (err: BusinessError, ability: UIAbility) => {
               abilityDelegator.printSync(
                 "ACTS_START_ABILITY_CALLBACK_PARAMETER_0002 getCurrentTopAbility: " +
                 ability.context.abilityInfo.name
@@ -194,6 +165,8 @@ export default function StartAbilityTest() {
                 true
               );
               console.log(TAG, "ACTS_START_ABILITY_CALLBACK_PARAMETER_0002 pass");
+              globalThis.main3Context.terminateSelf();
+              await eventBusPlus.onWait('main3Ability_onDestroy');
               done();
             });
           } catch (error) {
@@ -201,7 +174,6 @@ export default function StartAbilityTest() {
             expect().assertFail();
             done();
           }
-        }, 3000);
       });
     });
 
@@ -221,17 +193,18 @@ export default function StartAbilityTest() {
         moduleName: "entry_test",
         bundleName: "com.example.crossplatformstartability",
         abilityName: "Main4Ability",
-      }).then((data) => {
+      }).then(async (data) => {
         console.log(TAG, ' startAbility promise success');
-        setTimeout(() => {
-          abilityDelegator.getCurrentTopAbility((err: BusinessError, ability: UIAbility) => {
+        await eventBusPlus.onWait('main4Ability_onForeground');
+          abilityDelegator.getCurrentTopAbility(async (err: BusinessError, ability: UIAbility) => {
             console.log(TAG, ' getCurrentTopAbility callback, err=' + JSON.stringify(err));
             console.log(TAG, ' getCurrentTopAbility callback, ability=' + JSON.stringify(ability));
             expect(ability.context.abilityInfo.name).assertEqual("Main4Ability");
             console.log(TAG, " ACTS_STARTABILITY_PROMISE_0001 pass");
+            globalThis.main4AbilityContext.terminateSelf();
+            await eventBusPlus.onWait('main4Ability_onDestroy');
             done();
           });
-        }, 3000)
       }).catch((e:BusinessError) => {
         console.log(TAG, " startAbility promise pass");
         console.log(TAG, ' catch error, e=' + JSON.stringify(e));
@@ -261,11 +234,11 @@ export default function StartAbilityTest() {
           keyForDouble: 99.99,
           keyForBoolean: true,
         },
-      }).then((data) => {
+      }).then(async (data) => {
         console.log(TAG, ' startAbility promise, data=', JSON.stringify(data));
-        setTimeout(() => {
+        await eventBusPlus.onWait('main3Ability_onForeground');
           try {
-            abilityDelegator.getCurrentTopAbility((err: BusinessError, ability: UIAbility) => {
+            abilityDelegator.getCurrentTopAbility(async (err: BusinessError, ability: UIAbility) => {
               console.log(TAG, ' getCurrentTopAbility callback, err=', JSON.stringify(err));
               console.log(TAG, ' getCurrentTopAbility callback, ability=', JSON.stringify(ability));
               abilityDelegator.printSync(
@@ -288,6 +261,8 @@ export default function StartAbilityTest() {
                 true
               );
               console.log("ACTS_START_ABILITY_PROMISE_PARAMETER_0002 pass");
+              globalThis.main3Context.terminateSelf();
+              await eventBusPlus.onWait('main3Ability_onDestroy');
               done()
             });
           } catch (error) {
@@ -298,7 +273,6 @@ export default function StartAbilityTest() {
             expect().assertFail();
             done();
           }
-        }, 3000);
       });
     });
 

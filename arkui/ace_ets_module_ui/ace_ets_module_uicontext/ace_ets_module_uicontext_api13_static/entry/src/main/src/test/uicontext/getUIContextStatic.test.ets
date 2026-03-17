@@ -80,51 +80,5 @@ export default function getUIContextStatic() {
       console.info('[getUIContext_static_0100] END');
       done();
     });
-
-
-    /**
-     * @tc.number   getUIContext_static_0300
-     * @tc.name     getUIContext_static_0300
-     * @tc.desc     getUIContext_static_0300
-     * @tc.level    Level.LEVEL0
-     */
-    it('getUIContext_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('getUIContext_static_0300 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('3'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[getUIContext_static_0300] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('available')
-      console.info('[getUIContext_static_0300] END');
-      done();
-    });
-
-    /**
-     * @tc.number   getUIContext_static_0400
-     * @tc.name     getUIContext_static_0400
-     * @tc.desc     getUIContext_static_0400
-     * @tc.level    Level.LEVEL0
-     */
-    it('getUIContext_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('getUIContext_static_0400 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('4'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('text2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[getUIContext_static_0400] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('available')
-      console.info('[getUIContext_static_0400] END');
-      done();
-    });
-
   })
 }

@@ -15,9 +15,13 @@
 import sceneTest from './Scene.test'
 import sceneNodeTest from './SceneNode.test'
 import sceneResourcesTest from './SceneResources.test'
+import scenePostProcessSettingsTest from './ScenePostProcessSettings.test'
+import sceneTypesTest from './SceneTypes.test'
 
 export default function testsuite() {
   sceneTest()
   sceneNodeTest()
   sceneResourcesTest()
+  scenePostProcessSettingsTest()
+  sceneTypesTest()
 }

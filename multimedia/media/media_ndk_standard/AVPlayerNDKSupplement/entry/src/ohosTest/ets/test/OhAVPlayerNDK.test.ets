@@ -39,6 +39,8 @@ enum OH_AVErrCode {
 
   AV_ERR_INVALID_STATE = 8,
 
+  AV_ERR_UNSUPPORTED_FORMAT = 11,
+
   AV_ERR_SUPER_RESOLUTION_NOT_ENABLED = 5410004,
 }
 const MAX_COUNT = 999999999;
@@ -1004,6 +1006,19 @@ export default function OhAVPlayerNDKTest() {
     it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0004', Level.LEVEL0, async (done: Function) => {
       let testResult = avplayer.testMediaSourceSetMimeType(0, 0);
       expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_OK);
+      done();
+    });
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005
+     * @tc.desc   Test OH_MediaSource_SetMimeType
+     *            testOhAvMediaSourceSetMimeType0005
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_MEDIASOURCE_SETMIMETYPE_0005', Level.LEVEL0, async (done: Function) => {
+      let testResult = avplayer.testMediaSourceSetMimeType(0, 3);
+      expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_UNSUPPORTED_FORMAT);
       done();
     });
     /**

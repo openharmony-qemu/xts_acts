@@ -17,7 +17,7 @@ import backgroundTaskManager from '@ohos.backgroundTaskManager'
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium'
 
 export default function ShortTaskMgrApiTest() {
-describe("ShortTaskMgrApiTest", function () {
+describe("ShortTaskMgrApiTestAdapt001", function () {
     beforeAll(function() {
         
         /*

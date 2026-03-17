@@ -130,7 +130,7 @@ export default function imageJsTest() {
                 expect(false).assertTrue();
                 logger.log("getImageInfo failed.");
               }
-              await imageSourceApi.release();
+              waitForCompletion(async () => {await imageSourceApi!.release();})
               done();
             });
           } else if (flag == 'CallbackNumber') {
@@ -146,7 +146,7 @@ export default function imageJsTest() {
                 expect(false).assertTrue();
                 logger.log("getImageInfo failed.");
               }
-              await imageSourceApi.release();
+              waitForCompletion(async () => {await imageSourceApi!.release();})
               done();
             });
           }

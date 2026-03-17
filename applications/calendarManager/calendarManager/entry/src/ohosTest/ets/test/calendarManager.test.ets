@@ -5293,5 +5293,1733 @@ export default function CalendarManagerTest() {
         });
 
       });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined
+     * @tc.number SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,() => {
+        let CaseName = 'SUB_Application_CalendarManagerApi_DeleteCalendar_AsyncCallback_undefined';
+
+
+        // calendarMgr?.deleteCalendar(undefined).then(() => {
+        //   console.info("Succeeded in deleting calendar");
+        // }).catch((err: BusinessError) => {
+        //   console.error(`Failed to delete calendar. Code: ${err.code}, message: ${err.message}`);
+        // });
+
+        calendarMgr?.deleteCalendar(undefined, (err) => {
+          if (err) {
+            console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+            expect(err.code).assertEqual(401);
+          } else {
+            console.info(CaseName + "Succeeded in creating calendar");
+          }
+        });
+
+      });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0100
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0100", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0100';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: true,
+        attendee: [],
+        reminderTime: [],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.MONTHLY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+          excludedDates: [],
+          daysOfWeek: [],
+          daysOfMonth: [],
+          daysOfYear: [],
+          weeksOfMonth: [],
+          weeksOfYear: [],
+          monthsOfYear: [],
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.MEETING,
+          uri: '',
+          description: '',
+        },
+        isLunar: false
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0200
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0200", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0200';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        attendee: [
+          {
+            name: '',
+            email: '',
+            role: calendarManager.AttendeeRole.ORGANIZER,
+            type: calendarManager.AttendeeType.REQUIRED,
+            status: calendarManager.AttendeeStatus.UNKNOWN
+          },
+          {
+            name: '1',
+            email: '1',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.OPTIONAL,
+            status: calendarManager.AttendeeStatus.TENTATIVE
+          },
+          {
+            name: '2',
+            email: '2',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.ACCEPTED
+          },
+          {
+            name: '3',
+            email: '3',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.DECLINED
+          },
+          {
+            name: '4',
+            email: '4',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.UNRESPONSIVE
+          },
+        ],
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.WEEKLY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+          excludedDates: [1,2],
+          daysOfWeek: [1,2],
+          daysOfMonth: [1,2],
+          daysOfYear: [1,2],
+          weeksOfMonth: [1,2],
+          weeksOfYear: [1,2],
+          monthsOfYear: [1,2],
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.WATCHING,
+          uri: '',
+          description: '',
+        },
+        isLunar: true
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0300
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0300", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0300';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.REPAYMENT,
+          uri: '',
+          description: '',
+        },
+        isLunar: false
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0400
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0400", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0400';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.LIVE,
+          uri: '',
+          description: '',
+        },
+        isLunar: false
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0500
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0500", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0500';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.SHOPPING,
+          uri: '',
+          description: '',
+        },
+        isLunar: false
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0600
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0600", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0600';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.TRIP,
+          uri: '',
+          description: '',
+        },
+        isLunar: false
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0700
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0700", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0700';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.CLASS,
+          uri: '',
+          description: '',
+        },
+        isLunar: false
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0900
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0900", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0900';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.SPORTS_EVENTS,
+          uri: '',
+          description: '',
+        },
+        isLunar: false
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_0800
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_0800", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_0800';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      const date = new Date();
+      let Schedule: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.SPORTS_EXERCISE,
+          uri: '',
+          description: '',
+        },
+        isLunar: false
+
+      }
+      try {
+        let eventId = calendarMgr?.editEvent(Schedule);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_EditEvent_test_undefined
+     * @tc.number SUB_Application_CalendarManagerApi_EditEvent_test_undefined
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_EditEvent_test_undefined", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_EditEvent_test_undefined';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      try {
+        let eventId = calendarMgr?.editEvent(undefined);
+        expect(eventId != null).assertTrue();
+      } catch (err) {
+        console.info(CaseName + "Failed to editEvent" + JSON.stringify(err));
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0100
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0100", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0100';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event =
+        {
+          title: '',
+          type: calendarManager.EventType.IMPORTANT,
+          startTime: date.getTime(),
+          endTime: date.getTime() + 60 * 60 * 1000,
+          location: {
+            location: '',
+          },
+          timeZone: '',
+          isAllDay: true,
+          attendee: [],
+          reminderTime: [],
+          recurrenceRule: {
+            recurrenceFrequency: calendarManager.RecurrenceFrequency.MONTHLY,
+            count: 100,
+            interval: 2,
+            expire: date.getTime() + 60 * 60 * 1000 * 3,
+            excludedDates: [],
+            daysOfWeek: [],
+            daysOfMonth: [],
+            daysOfYear: [],
+            weeksOfMonth: [],
+            weeksOfYear: [],
+            monthsOfYear: [],
+          },
+          description: '',
+          service: {
+            type: calendarManager.ServiceType.MEETING,
+            uri: '',
+            description: '',
+          },
+          isLunar: false
+
+        }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+            
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+        
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0200
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0200", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0200';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        attendee: [
+          {
+            name: '',
+            email: '',
+            role: calendarManager.AttendeeRole.ORGANIZER,
+            type: calendarManager.AttendeeType.REQUIRED,
+            status: calendarManager.AttendeeStatus.UNKNOWN
+          },
+          {
+            name: '1',
+            email: '1',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.OPTIONAL,
+            status: calendarManager.AttendeeStatus.TENTATIVE
+          },
+          {
+            name: '2',
+            email: '2',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.ACCEPTED
+          },
+          {
+            name: '3',
+            email: '3',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.DECLINED
+          },
+          {
+            name: '4',
+            email: '4',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.UNRESPONSIVE
+          },
+        ],
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.WEEKLY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+          excludedDates: [1,2],
+          daysOfWeek: [1,2],
+          daysOfMonth: [1,2],
+          daysOfYear: [1,2],
+          weeksOfMonth: [1,2],
+          weeksOfYear: [1,2],
+          monthsOfYear: [1,2],
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.WATCHING,
+          uri: '',
+          description: '',
+        },
+        isLunar: true
+
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+            
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+        
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0300
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0300", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0300';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        attendee: [
+          {
+            name: '',
+            email: '',
+            role: calendarManager.AttendeeRole.ORGANIZER,
+            type: calendarManager.AttendeeType.REQUIRED,
+            status: calendarManager.AttendeeStatus.UNKNOWN
+          },
+          {
+            name: '1',
+            email: '1',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.OPTIONAL,
+            status: calendarManager.AttendeeStatus.TENTATIVE
+          },
+          {
+            name: '2',
+            email: '2',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.ACCEPTED
+          },
+          {
+            name: '3',
+            email: '3',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.DECLINED
+          },
+          {
+            name: '4',
+            email: '4',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.UNRESPONSIVE
+          },
+        ],
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+          excludedDates: [1,2],
+          daysOfWeek: [1,2],
+          daysOfMonth: [1,2],
+          daysOfYear: [1,2],
+          weeksOfMonth: [1,2],
+          weeksOfYear: [1,2],
+          monthsOfYear: [1,2],
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.REPAYMENT,
+          uri: '',
+          description: '',
+        },
+        isLunar: true
+
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+            
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+        
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0400
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0400", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0400';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        attendee: [
+          {
+            name: '',
+            email: '',
+            role: calendarManager.AttendeeRole.ORGANIZER,
+            type: calendarManager.AttendeeType.REQUIRED,
+            status: calendarManager.AttendeeStatus.UNKNOWN
+          },
+          {
+            name: '1',
+            email: '1',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.OPTIONAL,
+            status: calendarManager.AttendeeStatus.TENTATIVE
+          },
+          {
+            name: '2',
+            email: '2',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.ACCEPTED
+          },
+          {
+            name: '3',
+            email: '3',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.DECLINED
+          },
+          {
+            name: '4',
+            email: '4',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.UNRESPONSIVE
+          },
+        ],
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+          excludedDates: [1,2],
+          daysOfWeek: [1,2],
+          daysOfMonth: [1,2],
+          daysOfYear: [1,2],
+          weeksOfMonth: [1,2],
+          weeksOfYear: [1,2],
+          monthsOfYear: [1,2],
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.LIVE,
+          uri: '',
+          description: '',
+        },
+        isLunar: true
+
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+        
+      });
+      
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0500
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0500", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0500';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        attendee: [
+          {
+            name: '',
+            email: '',
+            role: calendarManager.AttendeeRole.ORGANIZER,
+            type: calendarManager.AttendeeType.REQUIRED,
+            status: calendarManager.AttendeeStatus.UNKNOWN
+          },
+          {
+            name: '1',
+            email: '1',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.OPTIONAL,
+            status: calendarManager.AttendeeStatus.TENTATIVE
+          },
+          {
+            name: '2',
+            email: '2',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.ACCEPTED
+          },
+          {
+            name: '3',
+            email: '3',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.DECLINED
+          },
+          {
+            name: '4',
+            email: '4',
+            role: calendarManager.AttendeeRole.PARTICIPANT,
+            type: calendarManager.AttendeeType.RESOURCE,
+            status: calendarManager.AttendeeStatus.UNRESPONSIVE
+          },
+        ],
+        timeZone: '',
+        reminderTime: [10,20],
+        recurrenceRule: {
+          recurrenceFrequency: calendarManager.RecurrenceFrequency.DAILY,
+          count: 100,
+          interval: 2,
+          expire: date.getTime() + 60 * 60 * 1000 * 3,
+          excludedDates: [1,2],
+          daysOfWeek: [1,2],
+          daysOfMonth: [1,2],
+          daysOfYear: [1,2],
+          weeksOfMonth: [1,2],
+          weeksOfYear: [1,2],
+          monthsOfYear: [1,2],
+        },
+        description: '',
+        service: {
+          type: calendarManager.ServiceType.SHOPPING,
+          uri: '',
+          description: '',
+        },
+        isLunar: true
+
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+    });
+
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0600
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0600", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0600';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        isLunar: true,
+        service: {
+          type: calendarManager.ServiceType.TRIP,
+          uri: '',
+          description: '',
+        }
+
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then( (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0700
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0700", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_test_Promise_0700';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        isLunar: true,
+        service: {
+          type: calendarManager.ServiceType.CLASS,
+          uri: '',
+          description: '',
+        }
+
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0900
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0900", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0900';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        isLunar: true,
+        service: {
+          type: calendarManager.ServiceType.SPORTS_EVENTS,
+          uri: '',
+          description: '',
+        }
+
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then( (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvents");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_0800
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_0800", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_0800';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      const date = new Date();
+      let Event: calendarManager.Event = {
+        title: '1',
+        type: calendarManager.EventType.IMPORTANT,
+        startTime: date.getTime(),
+        endTime: date.getTime() + 60 * 60 * 1000,
+        location: {
+          location: '',
+        },
+        isAllDay: false,
+        isLunar: true,
+        service: {
+          type: calendarManager.ServiceType.SPORTS_EXERCISE,
+          uri: '',
+          description: '',
+        }
+
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(Event).then((data:number) => {
+          console.info(CaseName + "Succeeded in addEvent");
+          expect(data != 0).assertTrue();
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvent, Code is ${err.code}, message is ${err.message}`);
+          
+        });
+        Calendar.addEvent(Event, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+          } else {
+            expect(data != 0).assertTrue();
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+    });
+
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvent_test_undefined
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvent_test_undefined
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvent_test_undefined", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvent_test_undefined';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvent(undefined).then(() => {
+          console.info(CaseName + "Succeeded in addEvents");
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          expect(err?.code).assertEqual(401);
+          
+        });
+        Calendar.addEvent(undefined, (err: BusinessError, data: number): void => {
+          if (err) {
+            console.error(`Failed to addEvent. Code: ${err.code}, message: ${err.message}`);
+            expect(err?.code).assertEqual(401);
+          } else {
+            console.info(`Succeeded in adding event, id -> ${data}`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvents_test_undefined
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvents_test_undefined
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvents_test_undefined", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvents_test_undefined';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvents(undefined).then(() => {
+          console.info(CaseName + "Succeeded in addEvents");
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          expect(err?.code).assertEqual(401);
+          
+        });
+        Calendar.addEvents(undefined,  (err: BusinessError) => {
+          if (err) {
+            console.error(`Failed to addEvents. Code: ${err.code}, message: ${err.message}`);
+            expect(err?.code).assertEqual(401);
+          } else {
+            console.info(`Succeeded in adding event`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_AddEvents_test_empty
+     * @tc.number SUB_Application_CalendarManagerApi_AddEvents_test_empty
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_AddEvents_test_empty", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_AddEvents_test_empty';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.addEvents([]).then(() => {
+          console.info(CaseName + "Succeeded in addEvents");
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to addEvents, Code is ${err.code}, message is ${err.message}`);
+          expect(err?.code).assertEqual(23900001);
+          
+        });
+        Calendar.addEvents([],  (err: BusinessError) => {
+          if (err) {
+            console.error(`Failed to addEvents. Code: ${err.code}, message: ${err.message}`);
+            expect(err?.code).assertEqual(23900001);
+          } else {
+            console.info(`Succeeded in adding event`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined
+     * @tc.number SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvent_test_undefined';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.deleteEvent(undefined).then(() => {
+          console.info(CaseName + "Succeeded in deleteEvent");
+          return;
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to deleteEvent, Code is ${err.code}, message is ${err.message}`);
+          expect(err?.code).assertEqual(401);
+        });
+        Calendar.deleteEvent(undefined,  (err: BusinessError) => {
+          if (err) {
+            console.error(`Failed to deleteEvent. Code: ${err.code}, message: ${err.message}`);
+            expect(err?.code).assertEqual(401);
+          } else {
+            console.info(`Succeeded in deleteEvent`);
+          }
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined
+     * @tc.number SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvents_test_undefined';
+      let TimeZone = '';
+      systemDateTime.getTimezone((error, data) => {
+        if (error) {
+          console.info(`Failed to get timezone. message: ${error.message}, code: ${error.code}`);
+          return;
+        }
+        console.info(`Succeeded in get timezone : ${data}`);
+        TimeZone = data;
+      });
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.deleteEvents(undefined).then(() => {
+          console.info(CaseName + "Succeeded in deleteEvents");
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to deleteEvents, Code is ${err.code}, message is ${err.message}`);
+          expect(err?.code).assertEqual(401);
+          
+        });
+        Calendar.deleteEvents(undefined,  (err: BusinessError) => {
+          if (err) {
+            console.error(`Failed to deleteEvents. Code: ${err.code}, message: ${err.message}`);
+            expect(err?.code).assertEqual(401);
+            
+          } else {
+            console.info(`Succeeded in deleteEvents`);
+          }
+        });
+
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+
+    });
+
+    /**
+     * @tc.name   SUB_Application_CalendarManagerApi_DeleteEvents_test_empty
+     * @tc.number SUB_Application_CalendarManagerApi_DeleteEvents_test_empty
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_DeleteEvents_test_empty", Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_DeleteEvents_test_empty';
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.deleteEvents([]).then(() => {
+          console.info(CaseName + "Succeeded in deleteEvents");
+        }).catch((err: BusinessError) => {
+          console.info(CaseName + `Failed to deleteEvents, Code is ${err.code}, message is ${err.message}`);
+          expect(err?.code).assertEqual(23900001);
+
+        });
+        Calendar.deleteEvents([],  (err: BusinessError) => {
+          if (err) {
+            console.error(`Failed to deleteEvents. Code: ${err.code}, message: ${err.message}`);
+            expect(err?.code).assertEqual(23900001);
+
+          } else {
+            console.info(`Succeeded in deleteEvents`);
+          }
+        });
+
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+      });
+
+    });
   });
 }

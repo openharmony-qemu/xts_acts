@@ -139,6 +139,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to setTransferDetached. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 501).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -168,6 +169,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to getMetaData. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 501 || Number(error.code) == 62980173).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -196,6 +198,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to getMetaData. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 501 || Number(error.code) == 62980173).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -222,6 +225,7 @@ export default function imagePixelMapErrorCodeTest() {
         } catch(error) {
           console.info('pixelMap create failed' + error);
           expect(Number(error.code) == 62980173).assertTrue();
+          await pixelMap.release();
           done();
         }
       } else {
@@ -253,6 +257,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to getMetaData. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 62980302 || Number(error.code) == 62980173).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -279,6 +284,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to getMetaData. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 401).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -305,6 +311,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to cloneSync. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 62980103).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -333,6 +340,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to cloneSync. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 501).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -359,6 +367,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to cloneSync. code is ${error.code}, message is ${error.message}`);
         expect(Number(error) == 62980104 || Number(error) == 62980103).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -387,6 +396,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to clone. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 501).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -477,9 +487,10 @@ export default function imagePixelMapErrorCodeTest() {
           console.info("www data after toSdr ,imageInfo isHdr:" + imageInfo.isHdr);
           expect().assertFail();
           done();
-        }).catch((error: BusinessError) => {
+        }).catch(async (error: BusinessError) => {
           console.error(`www data Failed to set sdr. code is ${error.code}, message is ${error.message}`);
           expect(Number(error.code) == 62980137).assertTrue();
+          await pixelmap.release();
           done();
         });
       } else {
@@ -511,6 +522,7 @@ export default function imagePixelMapErrorCodeTest() {
       } catch(error){
         console.error(`www data Failed to imageInfo. code is ${error.code}, message is ${error.message}`);
         expect(Number(error.code) == 501).assertTrue();
+        await pixelMap.release();
         done();
       }
     });
@@ -580,6 +592,7 @@ export default function imagePixelMapErrorCodeTest() {
           if (err) {
             console.error(`www data Failed to set opacity. code is ${err.code}, message is ${err.message}`);
             expect(Number(err) == 62980103).assertTrue();
+            pixelMap.release();
             done();
           } else {
             console.info("www data Succeeded in setting opacity.");
@@ -613,6 +626,7 @@ export default function imagePixelMapErrorCodeTest() {
             done();
           } else {
             console.info("www data Succeeded in setting opacity.");
+            pixelMap.release();
             done();
           }
         })
@@ -635,8 +649,9 @@ export default function imagePixelMapErrorCodeTest() {
       let pixelMap : image.PixelMap = image.createPixelMapSync(color, opts);
       let rate: number = 0.5;
       if (pixelMap != undefined) {
-        pixelMap.opacity(rate).then(() => {
+        pixelMap.opacity(rate).then(async () => {
           console.info('www data Succeeded in setting opacity.');
+          await pixelMap.release();
           done();
         }).catch((err: BusinessError) => {
           console.error(`www data Failed to set opacity. code is ${err.code}, message is ${err.message}`);
@@ -666,6 +681,7 @@ export default function imagePixelMapErrorCodeTest() {
         try {
           pixelMap.setColorSpace(csm);
           console.error('www data succeed in setColorSpace.');
+          await pixelMap.release();
           done();
         } catch(err){
           console.error(`www data Failed to. code is ${err.code}, message is ${err.message}`);
@@ -697,6 +713,7 @@ export default function imagePixelMapErrorCodeTest() {
         } catch(err){
           console.error(`www data Failed to. code is ${err.code}, message is ${err.message}`);
           expect(Number(err.code) == 62980115).assertTrue();
+          await pixelMap.release();
           done();
         }
       }
@@ -735,6 +752,7 @@ export default function imagePixelMapErrorCodeTest() {
         }).catch((error: BusinessError) => {
           console.error(`Failed to set the metadata.code ${error.code},message is ${error.message}`);
           expect(Number(error) == 501).assertTrue();
+          pixelMap.release();
           done();
         })
       }
@@ -764,6 +782,7 @@ export default function imagePixelMapErrorCodeTest() {
             done();
           } else {
             console.info('Succeeded in applying color space for pixelmap object.');
+            pixelMap.release();
             done();
           }
         })
@@ -787,8 +806,9 @@ export default function imagePixelMapErrorCodeTest() {
       let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
       let targetColorSpace: colorSpaceManager.ColorSpaceManager = colorSpaceManager.create(colorSpaceName);
       if (pixelMap != undefined) {
-        pixelMap.applyColorSpace(targetColorSpace).then(() => {
+        pixelMap.applyColorSpace(targetColorSpace).then(async () => {
           console.info('Succeeded in applying color space for pixelmap object.');
+          await pixelMap.release();
           done();
         }).catch((error: BusinessError) => {
           console.error(`Failed to apply color space for pixelmap object, error code is ${error}`);
@@ -817,6 +837,7 @@ export default function imagePixelMapErrorCodeTest() {
           if (error) {
             console.error(`Failed to apply color space for pixelmap object, error code is ${error}`);
             expect(Number(error) == 62980115).assertTrue();
+            pixelMap.release();
             done();
           } else {
             console.info('Succeeded in applying color space for pixelmap object.');
@@ -846,9 +867,10 @@ export default function imagePixelMapErrorCodeTest() {
           console.info('Succeeded in applying color space for pixelmap object.');
           expect().assertFail();
           done();
-        }).catch((error: BusinessError) => {
+        }).catch(async (error: BusinessError) => {
           console.error(`Failed to apply color space for pixelmap object, error code is ${error}`);
           expect(Number(error) == 62980115).assertTrue();
+          await pixelMap.release();
           done();
         })
       }

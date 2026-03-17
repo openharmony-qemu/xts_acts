@@ -323,6 +323,28 @@ struct webViewContZoomAndOthersError {
               Utils.emitEvent(this.errorMsg, 112690)
               break;
             }
+            case "emitZoomInitNull": {
+              try {
+                this.controllerTwo.zoom(null);
+              } catch (error) {
+                console.error(`emitZoomInitNull ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+              }
+              Utils.emitEvent(this.errorCode, 112700)
+              break;
+            }
+            case "emitZoomInitUndefined": {
+              try {
+                this.controllerTwo.zoom(undefined);
+              } catch (error) {
+                console.error(`emitZoomInitUndefined ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+              }
+              Utils.emitEvent(this.errorCode, 112720)
+              break;
+            }
           }
         })
       }

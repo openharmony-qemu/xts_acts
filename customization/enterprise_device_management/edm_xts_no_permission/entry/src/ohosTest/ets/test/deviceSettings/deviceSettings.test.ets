@@ -231,9 +231,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100, '0');
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 201 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -253,9 +256,12 @@ export default function deviceSettingsTest() {
       try {
         deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
         expect(false).assertTrue();
-      } catch (err) {
-        const errorCode = getErrorCode(err);
-        expect(errorCode === 201 || errorCode === 801).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }

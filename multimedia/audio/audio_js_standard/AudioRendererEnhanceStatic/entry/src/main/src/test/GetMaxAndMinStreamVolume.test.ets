@@ -677,7 +677,7 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: Get max stream volume Success! maxVolume: ${maxVolume}`);
           expect(maxVolume).assertEqual(testConst.OUTPUT_NUMBER_1);
           try {
-            await audioRen!.setVolume(maxVolume!);
+            waitForCompletion(async () => {await audioRen!.setVolume(maxVolume!);})
             console.info(`${TagFrmwkRender}:  setVolume to maxVolume Success! maxVolume: ${maxVolume}`);
             expect(true).assertTrue();
             done();
@@ -820,7 +820,7 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: Get min stream volume Success! minVolume: ${minVolume}`);
           expect(minVolume).assertEqual(testConst.OUTPUT_NUMBER_0);
           try {
-            await audioRen!.setVolume(minVolume!);
+             waitForCompletion(async () => {await audioRen!.setVolume(minVolume!);})
             console.info(`${TagFrmwkRender}:  setVolume to minVolume Success! minVolume: ${minVolume}`);
             done();
           } catch (err) {

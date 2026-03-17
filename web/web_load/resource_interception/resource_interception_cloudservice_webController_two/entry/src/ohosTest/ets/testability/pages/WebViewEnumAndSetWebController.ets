@@ -16,6 +16,7 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
+import { URL} from '../../test/Config.test';
 
 const EVENT_ID_SET_EMIT_KEY = 202360;
 
@@ -98,8 +99,13 @@ struct WebViewEnumAndSetWebController {
           console.info("key==>" + this.str)
           this.isReceive = -1;
           switch (this.str) {
-            case "emitOnTouchIconUrlReceived": {
-              this.controller.loadUrl("resource://rawfile/indexFour.html")
+            case 'emitOnTouchIconUrlReceived':
+            case 'emitOnTouchIconUrlReceived02': {
+              this.controller.loadUrl('resource://rawfile/indexFour.html')
+              break;
+            }
+            case 'emitOnFaviconReceived001': {
+              this.controller.loadUrl(URL)
               break;
             }
           }
@@ -119,6 +125,12 @@ struct WebViewEnumAndSetWebController {
         .key("WebViewEnumAndSetWebControllerWebView")
         .blockNetwork(Boolean(this.block))
         .cacheMode(this.CacheMode)
+        .onFaviconReceived((event) => {
+          console.info('onFaviconReceived');
+          if (event.favicon) {
+            Utils.emitEvent(true, 26031002)
+          }
+        })
         .onShowFileSelector((event) => {
           if (event) {
             let fileSelectorObj: FileSelectorParam = event.fileSelector
@@ -143,6 +155,7 @@ struct WebViewEnumAndSetWebController {
           console.log('onTouchIconUrlReceived:' + event.precomposed)
           this.precomposedResult = event.precomposed
           Utils.emitEvent(event.url + '', 202370)
+          Utils.emitEvent(event.precomposed, 26031001)
           setTimeout(() => {
             this.controller.loadUrl("resource://rawfile/fullScreenEnter.html")
           }, 2000)

@@ -839,14 +839,14 @@ export default function webgl1_common() {
         })
 
         /**
-         * @tc.name   webgl_test_isContextLost
+         * @tc.name   webgl_test_isContextLostAdapt001
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0038
          * @tc.desc   Test isContextLost.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('webgl_test_isContextLost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        it('webgl_test_isContextLostAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isContextLost] isContextLost");
             const isContextLostValue = gl.isContextLost();
             console.info("webgltest isContextLost: " + isContextLostValue);

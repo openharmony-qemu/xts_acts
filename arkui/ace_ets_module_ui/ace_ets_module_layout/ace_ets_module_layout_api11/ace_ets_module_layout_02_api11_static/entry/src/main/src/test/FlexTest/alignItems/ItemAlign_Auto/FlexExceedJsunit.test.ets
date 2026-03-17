@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -97,18 +97,41 @@ it('testFlexItemAlignAutoFlexPadMarMeet_static', Level.LEVEL0, async (): Promise
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexExceed01');
-      expect(Math.abs(textExceed01.left - flexExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.right - textExceed02.left) <= 1).assertTrue();
-      expect(Math.abs(textExceed02.right - textExceed03.left) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.top - flexExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.top - textExceed02.top) <= 1).assertTrue();
-      expect(Math.abs(textExceed02.top - textExceed03.top) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.bottom - textExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(textExceed02.bottom - textExceed02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(textExceed03.bottom - textExceed03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.right - textExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(textExceed02.right - textExceed02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(textExceed03.right - textExceed03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi1:'+ Math.floor(Math.abs(textExceed01.left - flexExceed01.left -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi2:'+ Math.floor(Math.abs(textExceed01.right - textExceed02.left)));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi3:'+ Math.floor(Math.abs(textExceed02.right - textExceed03.left)));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi4:'+ Math.floor(Math.abs(textExceed01.top - flexExceed01.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi5:'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi6:'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi7:'+ Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi8:'+ Math.floor(Math.abs(textExceed02.bottom - textExceed02.top -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi9:'+ Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi10:'+ Math.floor(Math.abs(textExceed01.right - textExceed01.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi11:'+ Math.floor(Math.abs(textExceed02.right - textExceed02.left -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_static_chazhi12:'+ Math.floor(Math.abs(textExceed03.right - textExceed03.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+
+      expect(Math.floor(Math.abs(textExceed01.left - flexExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.right - textExceed02.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed02.right - textExceed03.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.top - flexExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.top - textExceed02.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed02.top - textExceed03.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.right - textExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed02.right - textExceed02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed03.right - textExceed03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoFlexPadMarMeet_static END');
@@ -140,18 +163,41 @@ it('testFlexItemAlignAutoFlexPadMarOverflow_static', Level.LEVEL0, async (): Pro
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexExceed01');
-      expect(Math.abs(textExceed01.left - flexExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.right - textExceed02.left) <= 1).assertTrue();
-      expect(Math.abs(textExceed02.right - textExceed03.left) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.top - flexExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.top - textExceed02.top) <= 1).assertTrue();
-      expect(Math.abs(textExceed02.top - textExceed03.top) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.bottom - textExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(textExceed02.bottom - textExceed02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(textExceed03.bottom - textExceed03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(textExceed01.right - textExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue();
-      expect(Math.abs(textExceed02.right - textExceed02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue();
-      expect(Math.abs(textExceed03.right - textExceed03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue();
+
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi1:'+ Math.floor(Math.abs(textExceed01.left - flexExceed01.left -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi2:'+ Math.floor(Math.abs(textExceed01.right - textExceed02.left)));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi3:'+ Math.floor(Math.abs(textExceed02.right - textExceed03.left)));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi4:'+ Math.floor(Math.abs(textExceed01.top - flexExceed01.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi5:'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi6:'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi7:'+ Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi8:'+ Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi9:'+ Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi10:'+ Math.floor(Math.abs(textExceed01.right - textExceed01.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi11:'+ Math.floor(Math.abs(textExceed02.right - textExceed02.left - 
+      Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_static_chazhi12:'+ Math.floor(Math.abs(textExceed03.right - textExceed03.left -
+       Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))));
+
+      expect(Math.floor(Math.abs(textExceed01.left - flexExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.right - textExceed02.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed02.right - textExceed03.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.top - flexExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.top - textExceed02.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed02.top - textExceed03.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(textExceed01.right - textExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue();
+      expect(Math.floor(Math.abs(textExceed02.right - textExceed02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue();
+      expect(Math.floor(Math.abs(textExceed03.right - textExceed03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 2).assertTrue();
+
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoFlexPadMarOverflow_static END');

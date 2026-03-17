@@ -91,7 +91,6 @@ struct IndexPage {
     { title: 'Rating', uri: 'pages/ArkUI/Rating' },
     { title: 'Search', uri: 'pages/ArkUI/Search' },
     { title: 'Magnifier', uri: 'pages/ArkUI/Magnifier' },
-    { title: 'SegmentButton', uri: 'pages/ArkUI/SegmentButton' },
     { title: 'SharedTransition', uri: 'pages/ArkUI/SharedTransition' },
     { title: 'Swiper', uri: 'pages/ArkUI/Swiper' },
     { title: 'Gauge', uri: 'pages/ArkUI/Gauge' },

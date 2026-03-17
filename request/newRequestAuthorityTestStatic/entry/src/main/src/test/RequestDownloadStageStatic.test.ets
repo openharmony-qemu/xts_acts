@@ -223,6 +223,512 @@ export default function requestDownloadStageStaticUnit() {
         done();
       }
     });
-    
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_0400
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_0400
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let File: request.File = {
+        filename: '',
+        name: '',
+        uri: '',
+        type: ''
+      }
+
+      let RequestData: request.RequestData = {
+        name: '',
+        value: ''
+      }
+
+      let config: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: { 'Accept': '*/*' },
+        method: "POST",
+        files: [File],
+        data: [RequestData],
+      }
+      console.info('====>SUB_Request_downloadStage_Supplemental_Static_0400 config_multi: ' + JSON.stringify(config));
+      try {
+        request.uploadFile(baseContext!, config, (err, data) => {
+          if (err) {
+            console.error(`====>SUB_Request_downloadStage_Supplemental_Static_0400 err Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+        });
+        console.info('====>SUB_Request_downloadStage_Supplemental_Static_0400 onFail success');
+        expect().assertFail();
+      }catch (err) {
+        console.info('====>SUB_Request_downloadStage_Supplemental_Static_0400 uploadFile err: ' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(13400001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_0500
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_0500
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_0500 is starting-----------------------");
+      let downloadFilePath = `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0500.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0500.txt`)
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test002.hap',
+        header: {
+          'headers': 'http'
+        },
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        networkType: request.NETWORK_WIFI,
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+        background: false
+      }
+      try{
+        let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
+        let progressCallback = (receivedSize: Long, totalSize: Long) => {
+          console.info("download receivedSize:" + receivedSize + " totalSize:" + totalSize);
+        };
+        let completeCallback = () => {
+          console.info('Download task completed.');
+        };
+        let pauseCallback = () => {
+          console.info('Download task pause.');
+        };
+        let removeCallback = () => {
+          console.info('Download task remove.');
+        };
+        let failCallback = (err: int) => {
+          console.error(`Failed to download the task. Code: ${err}`);
+        };
+        downloadTask.onProgress(progressCallback);
+        downloadTask.offProgress(progressCallback);
+        downloadTask.offProgress();
+
+        downloadTask.onComplete(completeCallback);
+        downloadTask.offComplete(completeCallback);
+        downloadTask.offComplete();
+
+        downloadTask.onPause(pauseCallback);
+        downloadTask.offPause(pauseCallback);
+        downloadTask.offPause();
+
+
+        downloadTask.offRemove(removeCallback);
+        downloadTask.offRemove(removeCallback);
+        downloadTask.offRemove();
+
+        downloadTask.onFail(failCallback);
+        downloadTask.offFail(failCallback);
+        downloadTask.offFail();
+
+        let ifExit = await downloadTask.delete();
+        expect(ifExit === true).assertEqual(true);
+        fs.unlinkSync(downloadFilePath);
+        done();
+        console.info("====>-----------------------SUB_Request_downloadStage_Supplemental_Static_0500 end-----------------------");
+      } catch(err){
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0500 except error: ${JSON.stringify(err)}`)
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_0600
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_0600
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_0600 is starting-----------------------");
+      let downloadFilePath = `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0600.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0600.txt`)
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test002.hap',
+        header: {
+          'headers': 'http'
+        },
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        networkType: request.NETWORK_WIFI,
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+        background: false
+      }
+      try{
+        let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
+        downloadTask.delete((err, result) => {
+          try {
+            if (err) {
+              console.error(`====>SUB_Request_downloadStage_Supplemental_Static_0600 Code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_0600 Succeeded in delete the download task.');
+            expect(result === true).assertEqual(true);
+          } catch (err) {
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_0600 Succeeded delete error.');
+          }
+        });
+
+        let result = await downloadTask.delete();
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0600 result: ${result}`);
+        expect(result === true).assertEqual(true);
+        fs.unlinkSync(downloadFilePath);
+        done();
+        console.info("====>-----------------------SUB_Request_downloadStage_Supplemental_Static_0600 end-----------------------");
+      } catch(err){
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0600 except error: ${JSON.stringify(err)}`)
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_0700
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_0700
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_0700 is starting-----------------------");
+      let downloadFilePath = `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0700.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0700.txt`)
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test002.hap',
+        header: {
+          'headers': 'http'
+        },
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        networkType: request.NETWORK_WIFI,
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+        background: false
+      }
+      try{
+        let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
+        downloadTask.suspend((err, result) => {
+          try {
+            if (err) {
+              console.error(`====>SUB_Request_downloadStage_Supplemental_Static_0700 Code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_0700 Succeeded in suspend the download task.');
+            expect(result === true).assertEqual(true);
+          } catch (err) {
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_0700 Succeeded suspend error.');
+          }
+        });
+
+        let result = await downloadTask.suspend();
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0700 result: ${result}`);
+        expect(result === true).assertEqual(true);
+        fs.unlinkSync(downloadFilePath);
+        done();
+        console.info("====>-----------------------SUB_Request_downloadStage_Supplemental_Static_0700 end-----------------------");
+      } catch(err){
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0700 except error: ${JSON.stringify(err)}`)
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_0800
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_0800
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_0800 is starting-----------------------");
+      let downloadFilePath = `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0800.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0800.txt`)
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test002.hap',
+        header: {
+          'headers': 'http'
+        },
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        networkType: request.NETWORK_WIFI,
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+        background: false
+      }
+      try{
+        let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
+        downloadTask.restore((err, result) => {
+          try {
+            if (err) {
+              console.error(`====>SUB_Request_downloadStage_Supplemental_Static_0800 Code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_0800 Succeeded in restore the download task.');
+            expect(result === true).assertEqual(true);
+          } catch (err) {
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_0800 Succeeded restore error.');
+          }
+        });
+
+        let result = await downloadTask.restore();
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0800 result: ${result}`);
+        expect(result === true).assertEqual(true);
+        fs.unlinkSync(downloadFilePath);
+        done();
+        console.info("====>-----------------------SUB_Request_downloadStage_Supplemental_Static_0800 end-----------------------");
+      } catch(err){
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0800 except error: ${JSON.stringify(err)}`)
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_0900
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_0900
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_0900 is starting-----------------------");
+      let downloadFilePath = `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0900.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_0900.txt`)
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test002.hap',
+        header: {
+          'headers': 'http'
+        },
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        networkType: request.NETWORK_WIFI,
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+        background: false
+      }
+      try{
+        let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
+        downloadTask.getTaskInfo((err, taskInfo) => {
+          try {
+            if (err) {
+              console.error(`====>SUB_Request_downloadStage_Supplemental_Static_0900 Code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_0900 Succeeded in getTaskInfo the download task.');
+            expect(taskInfo !== undefined).assertEqual(true);
+          } catch (err) {
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_0900 Succeeded getTaskInfo error.');
+          }
+        });
+
+        let taskInfo = await downloadTask.getTaskInfo();
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0900 result: ${taskInfo}`);
+        expect(taskInfo !== undefined).assertEqual(true);
+        fs.unlinkSync(downloadFilePath);
+        done();
+        console.info("====>-----------------------SUB_Request_downloadStage_Supplemental_Static_0900 end-----------------------");
+      } catch(err){
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_0900 except error: ${JSON.stringify(err)}`)
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1000
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1000
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_1000 is starting-----------------------");
+      let downloadFilePath = `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_1000.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_1000.txt`)
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test002.hap',
+        header: {
+          'headers': 'http'
+        },
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        networkType: request.NETWORK_WIFI,
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+        background: false
+      }
+      try{
+        let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
+        downloadTask.getTaskMimeType((err, taskInfo) => {
+          try {
+            if (err) {
+              console.error(`====>SUB_Request_downloadStage_Supplemental_Static_1000 Code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_1000 Succeeded in getTaskInfo the download task.');
+            expect(taskInfo !== undefined).assertEqual(true);
+          } catch (err) {
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_1000 Succeeded getTaskInfo error.');
+          }
+        });
+
+        let taskInfo = await downloadTask.getTaskMimeType();
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_1000 result: ${taskInfo}`);
+        expect(taskInfo !== undefined).assertEqual(true);
+        fs.unlinkSync(downloadFilePath);
+        done();
+        console.info("====>-----------------------SUB_Request_downloadStage_Supplemental_Static_1000 end-----------------------");
+      } catch(err){
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_1000 except error: ${JSON.stringify(err)}`)
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1100
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1100
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let File: request.File = {
+        filename: '',
+        name: '',
+        uri: '',
+        type: ''
+      }
+
+      let RequestData: request.RequestData = {
+        name: '',
+        value: ''
+      }
+
+      let config: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: { 'Accept': '*/*' },
+        method: "POST",
+        files: [File],
+        data: [RequestData],
+        index: 0,
+        begins: 0,
+        ends: 1,
+      }
+      console.info('====>SUB_Request_downloadStage_Supplemental_Static_1100 config_multi: ' + JSON.stringify(config));
+      try {
+        let uploadTask: request.UploadTask = await request.uploadFile(baseContext!, config);
+        let progressCallback = (receivedSize: Long, totalSize: Long) => {
+          console.info("download receivedSize:" + receivedSize + " totalSize:" + totalSize);
+        };
+
+        let headerCallback = (headers: object) => {
+          console.info("upOnHeader headers:" + JSON.stringify(headers));
+        };
+
+        let completeCallback = (taskStates: Array<request.TaskState>) => {
+          console.info('Upload delete complete notification.');
+          for (let i = 0; i < taskStates.length; i++) {
+            console.info('taskState:' + JSON.stringify(taskStates[i]));
+          }
+        };
+
+        let failCallback =  (taskStates: Array<request.TaskState>) => {
+          console.info('Upload delete fail notification.');
+          for (let i = 0; i < taskStates.length; i++) {
+            console.info('taskState:' + JSON.stringify(taskStates[i]));
+          }
+        };
+
+        uploadTask.onProgress(progressCallback);
+        uploadTask.offProgress(progressCallback);
+        uploadTask.offProgress();
+
+        uploadTask.onHeaderReceive(headerCallback);
+        uploadTask.offHeaderReceive(headerCallback);
+        uploadTask.offHeaderReceive();
+
+        uploadTask.onComplete(completeCallback);
+        uploadTask.offComplete(completeCallback);
+        uploadTask.offComplete();
+
+        uploadTask.onFail(failCallback);
+        uploadTask.offFail(failCallback);
+        uploadTask.offFail();
+
+        console.info('====>SUB_Request_downloadStage_Supplemental_Static_1100 onFail success');
+        expect().assertFail();
+      }catch (err) {
+        console.info('====>SUB_Request_downloadStage_Supplemental_Static_1100 uploadFile err: ' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(13400001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1200
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1200
+     * @tc.desc   different index,begins and ends.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let config: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: { 'Accept': '*/*' },
+        method: "POST",
+        files: [],
+        data: [],
+        index: 0,
+        begins: 0,
+        ends: 1,
+      }
+      console.info('====>SUB_Request_downloadStage_Supplemental_Static_1200 config_multi: ' + JSON.stringify(config));
+      try {
+        let uploadTask: request.UploadTask = await request.uploadFile(baseContext!, config);
+        uploadTask.delete((err, result) => {
+          try {
+            if (err) {
+              console.error(`====>SUB_Request_downloadStage_Supplemental_Static_1200 Failed errCode: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_1200 delete Succeeded.');
+            expect(result === true).assertEqual(true);
+          } catch (err) {
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_1200 restore error.');
+          }
+
+        });
+        let result = await uploadTask.delete();
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_1200 result: ${result}`);
+        expect(result === true).assertEqual(true);
+        done();
+      }catch (err) {
+        console.info('====>SUB_Request_downloadStage_Supplemental_Static_1200 uploadFile err: ' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
   });
 }

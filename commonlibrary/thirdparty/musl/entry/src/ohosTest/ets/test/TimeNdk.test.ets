@@ -33,9 +33,9 @@ export default function timeNdkTest() {
      * @tc.desc   test setitimer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeSetitimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeSetitimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a:number = time.setitimer(0, 100000, 0, 100000);
       expect(a).assertEqual(0);
       done()
@@ -46,9 +46,9 @@ export default function timeNdkTest() {
      * @tc.desc   test setitimer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeSetitimer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeSetitimer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a:number = time.setitimer(0, 0, 0, 100000);
       expect(a).assertEqual(0);
       done()
@@ -59,9 +59,9 @@ export default function timeNdkTest() {
      * @tc.desc   test setitimer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeSetitimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeSetitimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a:number = time.setitimer(0, 100000, 0, 0);
       expect(a).assertEqual(0);
       done()
@@ -72,9 +72,9 @@ export default function timeNdkTest() {
      * @tc.desc   test setitimer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeSetitimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeSetitimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a:number = time.setitimer(100000, 100000, 100000, 0);
       expect(a).assertEqual(0);
       done()
@@ -85,9 +85,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%c"
       let c:String = time.strftime(a);
       expect(c).assertEqual("Sat Jul 30 18:40:14 2022");
@@ -99,9 +99,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%D"
       let c:String = time.strftime(a);
       expect(c).assertEqual("07/30/22");
@@ -113,9 +113,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%I"
       let c:String = time.strftime(a);
       expect(c).assertEqual("06");
@@ -127,9 +127,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%F"
       let c:String = time.strftime(a);
       expect(c).assertEqual("2022-07-30");
@@ -141,9 +141,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%j"
       let c:String = time.strftime(a);
       expect(c).assertEqual("211");
@@ -155,9 +155,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%R"
       let c:String = time.strftime(a);
       expect(c).assertEqual("18:40");
@@ -169,9 +169,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%v"
       let c:String = time.strftime(a);
       expect(c).assertEqual("30-Jul-2022");
@@ -183,9 +183,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%P"
       let c:String = time.strftime(a);
       expect(c).assertEqual("pm");
@@ -197,9 +197,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%T"
       let c: String = time.strftime(a);
       expect(c).assertEqual("18:40:14");
@@ -211,9 +211,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftime010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftime010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%k"
       let c: String = time.strftime(a);
       expect(c).assertEqual("18");
@@ -226,9 +226,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftimeL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftimeL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%c"
       let c: String = time.strftime_l(a);
       expect(c).assertEqual("Sat Jul 30 18:40:14 2022");
@@ -240,9 +240,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftimeL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftimeL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%D"
       let c: String = time.strftime_l(a);
       expect(c).assertEqual("07/30/22");
@@ -254,9 +254,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftimeL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftimeL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%I"
       let c: String = time.strftime_l(a);
       expect(c).assertEqual("06");
@@ -268,9 +268,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftimeL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftimeL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%F"
       let c: String = time.strftime_l(a);
       expect(c).assertEqual("2022-07-30");
@@ -282,9 +282,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strftime_l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrftimeL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrftimeL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%j"
       let c: String = time.strftime_l(a);
       expect(c).assertEqual("211");
@@ -297,9 +297,9 @@ export default function timeNdkTest() {
      * @tc.desc   test timegm
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTimegm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTimegm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c: number = time.timegm();
       expect(c).assertEqual(1659206414);
       done()
@@ -311,9 +311,9 @@ export default function timeNdkTest() {
      * @tc.desc   test timespec_get
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTimespecget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTimespecget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let c: number = time.timespec_get(a);
       expect(c).assertEqual(1);
@@ -325,9 +325,9 @@ export default function timeNdkTest() {
      * @tc.desc   test timer_create
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTimerCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTimerCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let c: number = time.timer_create(a);
       expect(c).assertEqual(-1);
@@ -340,9 +340,9 @@ export default function timeNdkTest() {
      * @tc.desc   test timer_getoverrun
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTimerGetoverrun001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTimerGetoverrun001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let c: number = time.timer_getoverrun(a);
       expect(c).assertEqual(-1);
@@ -355,9 +355,9 @@ export default function timeNdkTest() {
      * @tc.desc   test timer_gettime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTimerGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTimerGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = 1;
       let c: number = time.timer_gettime(a);
       expect(c).assertEqual(-1);
@@ -369,9 +369,9 @@ export default function timeNdkTest() {
      * @tc.desc   test strptime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeStrptime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeStrptime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a = "%u"
       let c: String = time.strptime(a);
       expect(c).assertEqual("");
@@ -384,9 +384,9 @@ export default function timeNdkTest() {
      * @tc.desc   test tzset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTzset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTzset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = time.tzset();
       expect(a).assertEqual(1);
       done()
@@ -398,9 +398,9 @@ export default function timeNdkTest() {
      * @tc.desc   test ctime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeCTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeCTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time.ctime()).assertEqual(0);
       done()
     });
@@ -411,9 +411,9 @@ export default function timeNdkTest() {
      * @tc.desc   test ctime_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeCTimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeCTimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(time.ctime_r()).assertEqual(0);
       done()
     });
@@ -424,9 +424,9 @@ export default function timeNdkTest() {
      * @tc.desc   test difftime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeDiffTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeDiffTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let backParam = false;
       if (time.difftime() >= 0 || time.difftime() <= 0) {
         backParam = true;
@@ -441,9 +441,9 @@ export default function timeNdkTest() {
      * @tc.desc   test asctime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeAsctime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeAsctime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = time.asctime();
       expect(result).assertEqual(resultTrue);
@@ -456,9 +456,9 @@ export default function timeNdkTest() {
      * @tc.desc   test asctime_r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeAsctimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeAsctimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = time.asctimeR();
       expect(result).assertEqual(resultTrue);
@@ -471,9 +471,9 @@ export default function timeNdkTest() {
      * @tc.desc   test clock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = time.clock();
       expect(result).assertEqual(resultTrue);
@@ -486,9 +486,9 @@ export default function timeNdkTest() {
      * @tc.desc   test clock_getcpuclockid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockGetcpuclockid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockGetcpuclockid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = time.clockGetcpuclockid();
       expect(result).assertEqual(resultTrue);
@@ -501,9 +501,9 @@ export default function timeNdkTest() {
      * @tc.desc   test clock_getres
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockGetres001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockGetres001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = time.clockGetres();
       expect(result).assertEqual(resultTrue);
@@ -516,9 +516,9 @@ export default function timeNdkTest() {
      * @tc.desc   test clock_gettime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockGettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = time.clockGettime();
       expect(result).assertEqual(resultTrue);
@@ -531,9 +531,9 @@ export default function timeNdkTest() {
      * @tc.desc   test clock_nanosleep
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockNanosleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockNanosleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = time.clockNanosleep();
       expect(result).assertEqual(resultTrue);
@@ -546,9 +546,9 @@ export default function timeNdkTest() {
      * @tc.desc   test clock_settime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockSettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockSettime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = time.clockSettime();
       expect(result).assertEqual(resultTrue);
@@ -561,9 +561,9 @@ export default function timeNdkTest() {
      * @tc.desc   test localtime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeLocaltime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeLocaltime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = time.localtime();
       expect(a).assertEqual(0);
       done()
@@ -575,9 +575,9 @@ export default function timeNdkTest() {
      * @tc.desc   test localtimeR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeLocaltimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeLocaltimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = time.localtimeR();
       expect(a).assertEqual(0);
       done()
@@ -589,9 +589,9 @@ export default function timeNdkTest() {
      * @tc.desc   test mktime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeMkTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeMkTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = time.mkTime();
       expect(a).assertEqual(0);
       done()
@@ -603,9 +603,9 @@ export default function timeNdkTest() {
      * @tc.desc   test gmtime
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeGmtime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeGmtime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = time.gmtime();
       expect(a).assertEqual(0);
       done()
@@ -617,9 +617,9 @@ export default function timeNdkTest() {
      * @tc.desc   test gmtimeR
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeGmtimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeGmtimeR001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = time.gmtimeR();
       expect(a).assertEqual(0);
       done()
@@ -631,9 +631,9 @@ export default function timeNdkTest() {
      * @tc.desc   test lutimes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeLutimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeLutimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = time.lutimes();
       expect(a).assertEqual(0);
       done()
@@ -645,9 +645,9 @@ export default function timeNdkTest() {
      * @tc.desc   test nanosleep
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeNanosleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeNanosleep001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = time.nanosleep();
       expect(a).assertEqual(0);
       done()
@@ -658,9 +658,9 @@ export default function timeNdkTest() {
      * @tc.desc   test timezone
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTimeZone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTimeZone001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = time.timeZone();
       console.info("Test NAPI data= " + JSON.stringify(data));
       expect(data).assertEqual(0);
@@ -673,9 +673,9 @@ export default function timeNdkTest() {
      * @tc.desc   test time
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeTime001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = time.time();
       console.info("Test result= " + result);
       expect(result).assertLarger(0);
@@ -688,9 +688,9 @@ export default function timeNdkTest() {
      * @tc.desc   test getdate_err
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeGetDateErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeGetDateErr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = time.getdateErr();
       console.info("Test result= " + result);
       expect(result).assertEqual(1);
@@ -703,9 +703,9 @@ export default function timeNdkTest() {
      * @tc.desc   test daylight
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeDaylight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeDaylight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = time.daylight();
       console.info("Test result= " + result);
       expect(result).assertEqual(1);

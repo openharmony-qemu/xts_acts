@@ -68,6 +68,12 @@ async function exitInputMethod() {
     if (softKeyBoard != null) {
         await driver.pressBack()
     }
+    await driver.delayMs(2000)
+    let keyCanvasKeyboard = await driver.findComponent(ON.id('KeyCanvasKeyboard'))
+    console.log(`${TestTag},keyCanvasKeyboard: ${JSON.stringify(keyCanvasKeyboard)}`);
+    if (keyCanvasKeyboard != null) {
+        await driver.pressBack()
+    }
 }
 
 async function getInputMethodPermission() {
@@ -994,6 +1000,7 @@ export default function UiTest() {
             let center = await text.getBoundsCenter()
             await driver.delayMs(2000);
             await driver.inputText(center, '123', { paste: false, addition: false })
+            await driver.delayMs(2000);
             await exitInputMethod();
             await driver.delayMs(2000);
             let text1 = await driver.findComponent(ON.type('TextInput'))

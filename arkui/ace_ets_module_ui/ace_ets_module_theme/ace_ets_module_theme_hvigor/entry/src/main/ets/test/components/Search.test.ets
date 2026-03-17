@@ -70,7 +70,7 @@ export default function SearchThemeTest() {
       }
     });
     /**
-     * @tc.name   ActsSearchThemeColors_0100
+     * @tc.name   `ActsSearchThemeColors_0100`
      * @tc.number ActsSearchThemeColors_0100
      * @tc.desc   Сheck system colors values of the Search
      * @tc.type   FUNCTION
@@ -101,7 +101,7 @@ export default function SearchThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsSearchThemeColors_0200
+     * @tc.name   `ActsSearchThemeColors_0200`
      * @tc.number ActsSearchThemeColors_0200
      * @tc.desc   Сheck custom colors values of the Search
      * @tc.type   FUNCTION
@@ -133,7 +133,7 @@ export default function SearchThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsSearchThemeColors_0300
+     * @tc.name   `ActsSearchThemeColors_0300`
      * @tc.number ActsSearchThemeColors_0300
      * @tc.desc   Сheck system colors values of the Search
      * @tc.type   FUNCTION

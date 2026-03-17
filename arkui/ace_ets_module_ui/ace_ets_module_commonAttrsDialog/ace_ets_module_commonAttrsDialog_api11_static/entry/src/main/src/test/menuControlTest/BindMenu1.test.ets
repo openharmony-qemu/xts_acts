@@ -103,7 +103,7 @@ it('bindMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       expect(properties.type == 1 || properties.type == 0).assertTrue()
 
       await CommonFunc.sleep(1000);
-       driver?.click(200, 200);
+       driver?.click(2, 2);
       await CommonFunc.sleep(1000);
       console.info('[bindMenu_0100] END');
       done();

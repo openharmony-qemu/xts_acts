@@ -6213,5 +6213,173 @@ export default function InterfaceNullValueOverrideTest() {
       expect(value).assertEqual(undefined);
     })
 
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_0100
+     * @tc.number i18n_HolidayInfoItem_test_0100
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_0100', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[0].baseName);
+        console.log('i18n_HolidayInfoItem_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_0200
+     * @tc.number i18n_HolidayInfoItem_test_0200
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_0200', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[1].year);
+        console.log('i18n_HolidayInfoItem_test_0200 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_0200 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_0300
+     * @tc.number i18n_HolidayInfoItem_test_0300
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_0300', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[2].month);
+        console.log('i18n_HolidayInfoItem_test_0300 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_0300 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayInfoItem_test_0400
+     * @tc.number i18n_HolidayInfoItem_test_0400
+     * @tc.desc with HolidayInfoItem
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayInfoItem_test_0400', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[3].day);
+        console.log('i18n_HolidayInfoItem_test_0400 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayInfoItem_test_0400 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayLocalName_test_0100
+     * @tc.number i18n_HolidayLocalName_test_0100
+     * @tc.desc with HolidayLocalName
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayLocalName_test_0100', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[0].localNames![1].language);
+        console.log('i18n_HolidayLocalName_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayLocalName_test_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_HolidayLocalName_test_0200
+     * @tc.number i18n_HolidayLocalName_test_0200
+     * @tc.desc with HolidayLocalName
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_HolidayLocalName_test_0200', Level.LEVEL3, () => {
+      try {
+        let holiday = new i18n.HolidayManager('/system/lib/US.ics');
+        let item = holiday.getHolidayInfoItemArray(2023);
+        let value = JSON.stringify(item[0].localNames![1].name);
+        console.log('i18n_HolidayLocalName_test_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('i18n_HolidayLocalName_test_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(undefined);
+      }
+    })
+
+    /**
+     * @tc.name i18n_removePreferredLanguage_NonePermissions_test_0100
+     * @tc.number i18n_removePreferredLanguage_NonePermissions_test_0100
+     * @tc.desc with NonePermissions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_removePreferredLanguage_NonePermissions_test_0100', Level.LEVEL3, () => {
+      let value = i18n.removePreferredLanguage(0);
+      console.log('i18n_removePreferredLanguage_NonePermissions_test_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name i18n_set24HourClock_NonePermissions_test_0100
+     * @tc.number i18n_set24HourClock_NonePermissions_test_0100
+     * @tc.desc with NonePermissions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_set24HourClock_NonePermissions_test_0100', Level.LEVEL3, () => {
+      let value = i18n.set24HourClock(true);
+      console.log('i18n_set24HourClock_NonePermissions_test_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name i18n_addPreferredLanguage_NonePermissions_test_0100
+     * @tc.number i18n_addPreferredLanguage_NonePermissions_test_0100
+     * @tc.desc with NonePermissions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('i18n_addPreferredLanguage_NonePermissions_test_0100', Level.LEVEL3, () => {
+      let value = i18n.addPreferredLanguage('zh');
+      console.log('i18n_addPreferredLanguage_NonePermissions_test_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
   })
 }

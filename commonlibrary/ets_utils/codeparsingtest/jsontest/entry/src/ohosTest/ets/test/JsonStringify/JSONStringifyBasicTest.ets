@@ -110,9 +110,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test string serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_String_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_String_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify("foo");
       expect(result).assertEqual('"foo"');
     });
@@ -123,9 +123,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test number serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Number_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Number_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify(123);
       expect(result).assertEqual('123');
     });
@@ -136,9 +136,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test boolean true serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Boolean_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Boolean_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify(true);
       expect(result).assertEqual('true');
     });
@@ -149,9 +149,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test boolean false serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Boolean_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Boolean_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify(false);
       expect(result).assertEqual('false');
     });
@@ -162,9 +162,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test null serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Null_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Null_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify(null);
       expect(result).assertEqual('null');
     });
@@ -175,9 +175,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test empty object serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Object_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Object_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj: Record<string, never> = {};
       let result: string = JSON.stringify(obj);
       expect(result).assertEqual('{}');
@@ -189,9 +189,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test simple object serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Object_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Object_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj: TestObj = { x: 5 };
       let result: string = JSON.stringify(obj);
       expect(result).assertEqual('{"x":5}');
@@ -203,9 +203,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test multi-property object serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Object_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Object_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj: TestObj = { x: 5, y: 6 };
       let result: string = JSON.stringify(obj);
       expect(result).assertEqual('{"x":5,"y":6}');
@@ -217,9 +217,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test empty array serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Array_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Array_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let arr: never[] = [];
       let result: string = JSON.stringify(arr);
       expect(result).assertEqual('[]');
@@ -231,9 +231,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test simple array serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Array_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Array_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let arr: (number | string | boolean)[] = [1, "false", false];
       let result: string = JSON.stringify(arr);
       expect(result).assertEqual('[1,"false",false]');
@@ -245,9 +245,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test nested array serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Array_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Array_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let arr: (number | number[])[] = [1, [2, 3], 4];
       let result: string = JSON.stringify(arr);
       expect(result).assertEqual('[1,[2,3],4]');
@@ -259,9 +259,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test object containing array
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Mixed_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Mixed_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj: TestObj = { arr: [1, 2, 3] };
       let result: string = JSON.stringify(obj);
       expect(result).assertEqual('{"arr":[1,2,3]}');
@@ -273,9 +273,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test array containing objects
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Mixed_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Mixed_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let arr: TestObj[] = [{ x: 1 }, { y: 2 }];
       let result: string = JSON.stringify(arr);
       expect(result).assertEqual('[{"x":1},{"y":2}]');
@@ -287,9 +287,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test deep nested structure
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Basic_Mixed_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Basic_Mixed_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj: TestObj = { a: { b: { c: [1, 2] } } };
       let result: string = JSON.stringify(obj);
       expect(result).assertEqual('{"a":{"b":{"c":[1,2]}}}');
@@ -302,9 +302,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test direct circular reference - object self-reference
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Circular_Object_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Circular_Object_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj:ESObject = {};
       obj.self = obj;
       try {
@@ -321,9 +321,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test direct circular reference - array self-reference
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Circular_Array_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Circular_Array_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let arr:ESObject = [];
       arr[0] = arr;
       try {
@@ -339,9 +339,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test indirect circular reference - two objects referencing each other
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Circular_Indirect_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Circular_Indirect_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj1:ESObject = {};
       let obj2:ESObject = {};
       obj1.ref = obj2;
@@ -359,9 +359,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test multiple objects forming circular reference
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Circular_Multiple_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Circular_Multiple_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj1:ESObject = {};
       let obj2:ESObject = {};
       let obj3:ESObject = {};
@@ -381,9 +381,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test deep nested circular reference
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Circular_Deep_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Circular_Deep_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj:ESObject = { a: { b: { c: {} as ESObject }  as ESObject}  as ESObject};
       obj.a.b.c.ref = obj;
       try {
@@ -399,9 +399,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test object and array circular reference
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Circular_Array_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Circular_Array_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj:ESObject = {};
       let arr:ESObject = [];
       obj.arr = arr;
@@ -419,9 +419,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test circular reference error message
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_TypeError_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_TypeError_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj:ESObject = {};
       obj.self = obj;
       try {
@@ -438,9 +438,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test Error object serialization
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Error_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Error_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify(new Error("error"));
       expect(result).assertEqual('{}');
     });
@@ -451,9 +451,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test Error object in array
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Error_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Error_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify([new Error("error")]);
       expect(result).assertEqual('[{}]');
     });
@@ -464,9 +464,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test Error object in object
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Error_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Error_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify({ err: new Error("error") });
       expect(result).assertEqual('{"err":{}}');
     });
@@ -478,9 +478,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test null is valid and serializable
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_InvalidInput_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_InvalidInput_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify(null);
       expect(result).assertEqual('null');
     });
@@ -491,9 +491,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test replacer function that throws error
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_ReplacerThrow_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_ReplacerThrow_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let replacer = (key: string, value: ESObject) => {
         throw new Error("Replacer error");
       };
@@ -511,9 +511,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test toJSON method that throws error
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_ToJSONThrow_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_ToJSONThrow_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let obj:ESObject = {
         toJSON() {
           throw new Error("toJSON error");
@@ -535,9 +535,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test regular enumerable properties
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Enumerable_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Enumerable_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result: string = JSON.stringify({ a: 1, b: 2 });
       expect(result).assertEqual('{"a":1,"b":2}');
     });
@@ -548,9 +548,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test enumerable properties defined with Object.defineProperty
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_Enumerable_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_Enumerable_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
 
       expect(JSONStringify_Enumerable_002()).assertEqual('{"a":1}');
     });
@@ -562,9 +562,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test non-enumerable properties are ignored
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_NonEnumerable_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_NonEnumerable_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(JSONStringify_NonEnumerable_001()).assertEqual('{}');
     });
 
@@ -574,9 +574,9 @@ export default function JSONStringifyBasicTest() {
      * @tc.desc   Test mixed enumerable and non-enumerable properties
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JSONStringify_NonEnumerable_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('JSONStringify_NonEnumerable_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       expect(JSONStringify_NonEnumerable_002()).assertEqual('{"b":2}');
     });
 

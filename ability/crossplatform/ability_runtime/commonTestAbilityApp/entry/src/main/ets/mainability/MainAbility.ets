@@ -18,6 +18,7 @@ import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import { BusinessError } from '@ohos.base';
+import commonEventManager from '@ohos.commonEventManager';
 
 export default class MainAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -26,9 +27,12 @@ export default class MainAbility extends UIAbility {
     globalThis.commonList1.push('common MainAbility onCreate');
   }
 
-  onDestroy() {
+  async onDestroy():Promise<void> {
     console.log('testTag', '%{public}s', 'Ability onDestroy');
     globalThis.commonList1.push('common MainAbility onDestroy');
+    commonEventManager.publish('CommonMainAbility_onDestroy', (err, data) => {
+      console.log('CommonMainAbility onDestroy publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+    });
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
@@ -55,15 +59,16 @@ export default class MainAbility extends UIAbility {
     // Ability has brought to foreground
     console.log('testTag', '%{public}s', 'Ability onForeground');
     globalThis.commonList1.push('common MainAbility onForeground');
-    setTimeout(() => {
-      console.log("[Demo] MainAbility onForeground after 1500ms")
-      globalThis.commonAbilityContext.terminateSelf()
-        .then((data: ESObject) => {
-          console.info('[Demo] MainAbility terminateself succeeded: ' + data);
-        }).catch((error: BusinessError) => {
-        console.error('[Demo] MainAbility terminateself failed. Cause: ' + error);
-      })
-    }, 1500);
+    commonEventManager.publish('CommonMainAbility_onForeground', (err, data) => {
+      console.log('CommonMainAbility onForeground publish succeed' + JSON.stringify(err) + JSON.stringify(data));
+    });
+    console.log("[Demo] MainAbility onForeground after 1500ms")
+    globalThis.commonAbilityContext.terminateSelf()
+      .then((data: ESObject) => {
+        console.info('[Demo] MainAbility terminateself succeeded: ' + data);
+      }).catch((error: BusinessError) => {
+      console.error('[Demo] MainAbility terminateself failed. Cause: ' + error);
+    })
   }
 
   onBackground() {

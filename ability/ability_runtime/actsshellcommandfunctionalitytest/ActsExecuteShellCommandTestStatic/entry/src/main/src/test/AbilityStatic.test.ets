@@ -137,6 +137,51 @@ export default function abilityTestStatic() {
     })
 
     /**
+     * @tc.name   ACTS_ExecuteShellCommand_Callback_Static_0600
+     * @tc.number ACTS_ExecuteShellCommand_Callback_Static_0600
+     * @tc.desc   Execute a shell command without arguments (AsyncCallback), empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_ExecuteShellCommand_Callback_Static_0600', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Callback_Static_0600 --- start")
+      let cmd = ''
+      abilityDelegator.executeShellCommand(cmd, (err: BusinessError | null, data: AbilityDelegatorRegistry.ShellCmdResult | undefined) => {
+        hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Callback_Static_0600 - executeShellCommand: start '+ JSON.stringify(data))
+        expect(data).assertEqual(undefined);
+        hilog.info(domain, tag,
+          `ACTS_ExecuteShellCommand_Callback_Static_0600. Code is ${err?.code}, message is ${err?.message}`);
+        expect(err?.code).assertEqual(16000100);
+        hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Callback_Static_0600 - executeShellCommand: end')
+        done()
+      })
+    })
+
+    /**
+     * @tc.name   ACTS_ExecuteShellCommand_Callback_Static_0700
+     * @tc.number ACTS_ExecuteShellCommand_Callback_Static_0700
+     * @tc.desc   With timeout parameter for executing shell command (AsyncCallback), empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_ExecuteShellCommand_Callback_Static_0700', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Callback_Static_0700 --- start")
+      let cmd = ''
+      abilityDelegator.executeShellCommand(cmd, 1, (err: BusinessError | null, data: AbilityDelegatorRegistry.ShellCmdResult | undefined) => {
+        hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Callback_Static_0700 - executeShellCommand: start '+ JSON.stringify(data))
+        hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Callback_Static_0700 stdResult = ' + data?.stdResult)
+        expect(data).assertEqual(undefined);
+        hilog.info(domain, tag,
+          `ACTS_ExecuteShellCommand_Callback_Static_0700. Code is ${err?.code}, message is ${err?.message}`);
+        expect(err?.code).assertEqual(16000100);
+        hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Callback_Static_0700 - executeShellCommand: end')
+        done()
+      })
+    })
+
+    /**
      * @tc.name   ACTS_ExecuteShellCommand_Promise_Static_0100
      * @tc.number ACTS_ExecuteShellCommand_Promise_Static_0100
      * @tc.desc   Execute a shell command without arguments (Promise).,Verify that the interface executes the Shell command successfully.
@@ -225,6 +270,30 @@ export default function abilityTestStatic() {
         let i:number = data.stdResult.indexOf(escresult);
         hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Promise_Static_0500 query string i = ' + i);
         expect(data.exitCode).assertEqual(0);
+        hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Promise_Static_0500 - executeShellCommand: end')
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   ACTS_ExecuteShellCommand_Promise_Static_0600
+     * @tc.number ACTS_ExecuteShellCommand_Promise_Static_0600
+     * @tc.desc   Invalid timeout parameter for executing shell command (Promise),The timeout parameter for executing shell commands on the authentication interface is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ACTS_ExecuteShellCommand_Promise_Static_0600', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "ACTS_ExecuteShellCommand_Promise_Static_0600 --- start")
+      let cmd = ''
+      abilityDelegator.executeShellCommand(cmd, 1).then<void>((data:AbilityDelegatorRegistry.ShellCmdResult): void => {
+        hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Promise_Static_0600 - executeShellCommand: start ')
+        expect().assertFail();
+        done();
+      }).catch((err: Error): void => {
+        hilog.info(domain, tag,
+          `ACTS_ExecuteShellCommand_Promise_Static_0600. Code is ${err?.code}, message is ${err?.message}`);
+        expect(err?.code).assertEqual(16000100);
         hilog.info(domain, tag, '%{public}s', 'ACTS_ExecuteShellCommand_Promise_Static_0500 - executeShellCommand: end')
         done();
       })

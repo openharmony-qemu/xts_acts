@@ -190,6 +190,29 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0900
+     * @tc.number SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0900
+     * @tc.desc   API test for context.setRestoreEnabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_BackgroundRecovery_Static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let flag: boolean = false
+      try {
+        context?.setRestoreEnabled(false);
+        hilog.info(domain, tag, 'setRestoreEnabled success ');
+        flag = true
+        expect(flag).assertTrue()
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, 'setRestoreEnabled failed ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
      * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
      * @tc.desc   API test for context.SetAbilityInstanceInfo errcode 401

@@ -39,7 +39,7 @@ export default function SelectTest() {
 
     /*
      *@tc.number ArkUX_Select_Visual_0030
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
+     *@tc.name   ArkUX_Select_Visual_0030
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to 200
      */
     it('ArkUX_Select_Visual_0030', Level.LEVEL1, async (done: Function) => {
@@ -65,7 +65,7 @@ export default function SelectTest() {
 
     /*
      *@tc.number ArkUX_Select_Visual_0040
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
+     *@tc.name   ArkUX_Select_Visual_0040
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to 400
      */
     it('ArkUX_Select_Visual_0040', Level.LEVEL1, async (done: Function) => {
@@ -91,7 +91,7 @@ export default function SelectTest() {
 
     /*
      *@tc.number ArkUX_Select_Visual_0050
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
+     *@tc.name   ArkUX_Select_Visual_0050
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_TRIGGER and 600
      */
     it('ArkUX_Select_Visual_0050', Level.LEVEL1, async (done: Function) => {
@@ -117,7 +117,7 @@ export default function SelectTest() {
 
     /*
      *@tc.number ArkUX_Select_Visual_0060
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
+     *@tc.name   ArkUX_Select_Visual_0060
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_CONTENT and 600
      */
     it('ArkUX_Select_Visual_0060', Level.LEVEL1, async (done: Function) => {
@@ -143,7 +143,7 @@ export default function SelectTest() {
 
     /*
      *@tc.number ArkUX_Select_Visual_0070
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
+     *@tc.name   ArkUX_Select_Visual_0070
      *@tc.desc   Sets the optionWidth and optionHeight property parameter to default value
      */
     it('ArkUX_Select_Visual_0070', Level.LEVEL1, async (done: Function) => {

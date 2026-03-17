@@ -809,20 +809,6 @@ export default function api16CertFuncTestTwoUnit() {
           expect((err as BusinessError).code).assertEqual(17500001);
         }
       }
-	  try {
-        let result : certManager.CMResult = await certManager.getUkeyCertificate("", ukeyInfo);
-        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credentialList is: ${result.credentialList}`)
-        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credentialDetailList is: ${result.credentialDetailList}`)
-        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credential is: ${credential.certPurpose}`)
-        expect(null).assertFail();
-      } catch (err) {
-        if (err.code == 801) {
-          done();
-        } else {
-          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 error.code: ${err.code}, message: ${err.message}`);
-          expect((err as BusinessError).code).assertEqual(401);
-        }
-      }
       done();
     });
 

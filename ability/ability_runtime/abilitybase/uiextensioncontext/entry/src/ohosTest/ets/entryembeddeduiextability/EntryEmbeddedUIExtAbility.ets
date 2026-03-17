@@ -1149,7 +1149,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
                 'result': err?.code,
               }
             }
-            commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4201_event', commonEventData, (result) => {
+            commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4300_event', commonEventData, (result) => {
               hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4201: ${JSON.stringify(result)}`);
               this.context.terminateSelf()
             });
@@ -1164,7 +1164,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4201_event', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4300_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4201: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1182,7 +1182,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
                 'result': err?.code,
               }
             }
-            commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4202_event', commonEventData, (result) => {
+            commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4400_event', commonEventData, (result) => {
               hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4202: ${JSON.stringify(result)}`);
               this.context.terminateSelf()
             });
@@ -1193,7 +1193,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4202_event', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4400_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4202: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1206,7 +1206,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4202_event', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4400_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `openLink_4202: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1227,7 +1227,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
               'result': err.code,
             }
           }
-          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4500', commonEventData, (result) => {
+          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4500_event', commonEventData, (result) => {
             hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4500: ${JSON.stringify(result)}`);
             this.context.terminateSelf()
           });
@@ -1239,7 +1239,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4500', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4500_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4500: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1257,7 +1257,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4600', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4600_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4600: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1275,7 +1275,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4700', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4700_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4700: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1299,7 +1299,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
               'result': err.code,
             }
           }
-          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4800', commonEventData, (result) => {
+          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4800_event', commonEventData, (result) => {
             hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4800: ${JSON.stringify(result)}`);
             this.context.terminateSelf()
           });
@@ -1311,7 +1311,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4800', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4800_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4800: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1335,7 +1335,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
               'result': err.code,
             }
           }
-          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4900', commonEventData, (result) => {
+          commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4900_event', commonEventData, (result) => {
             hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4900: ${JSON.stringify(result)}`);
             this.context.terminateSelf()
           });
@@ -1347,7 +1347,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
             'result': err?.code,
           }
         }
-        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4900', commonEventData, (result) => {
+        commonEventManager.publish('SUB_Ability_AbilityRuntime_UIExtensionContext_4900_event', commonEventData, (result) => {
           hilog.info(0x0000, 'testTag', '%{public}s', `SUB_Ability_AbilityRuntime_UIExtensionContext_4900: ${JSON.stringify(result)}`);
           this.context.terminateSelf()
         });
@@ -1368,7 +1368,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         });
         let testWant: Want = {
           bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryAbility1",
+          abilityName: "EntryAbility2",
           action: "result"
         };
         this.context.startAbility(testWant, null, (err: BusinessError) => {
@@ -1406,7 +1406,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         });
         let testWant: Want = {
           bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryAbility1",
+          abilityName: "EntryAbility2",
           action: "result"
         };
         this.context.startAbility(testWant, undefined, (err: BusinessError) => {
@@ -1435,7 +1435,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         // Test startAbilityForResult with valid want and null options parameter
         let testWant: Want = {
           bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryAbility1",
+          abilityName: "EntryAbility2",
           action: "result"
         };
         this.context.startAbilityForResult(testWant, null, (err: BusinessError, result: common.AbilityResult) => {
@@ -1465,7 +1465,7 @@ export default class EntryEmbeddedUIExtAbility extends EmbeddedUIExtensionAbilit
         // Test startAbilityForResult with valid want and undefined options parameter
         let testWant: Want = {
           bundleName: "com.acts.uiextensioncontexttest",
-          abilityName: "EntryAbility1",
+          abilityName: "EntryAbility2",
           action: "result"
         };
         this.context.startAbilityForResult(testWant, undefined, (err: BusinessError, result: common.AbilityResult) => {

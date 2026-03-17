@@ -160,14 +160,14 @@ export default function webJsunit() {
         })
 
         /**
-         * @tc.name   testweb07
+         * @tc.name   testweb07Adapt001
          * @tc.number testweb07
          * @tc.desc   testweb07
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("testweb07", Level.LEVEL0, async () => {
+        it("testweb07Adapt001", Level.LEVEL0, async () => {
             emitKey = "emitclearClientAuthenticationCache"
             Utils.registerContainEvent(
                 "clearClientAuthenticationCache",

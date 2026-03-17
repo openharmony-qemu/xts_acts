@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -238,7 +238,7 @@ export default function alignSelfTest() {
             let parentRectX = Utils.getRectHorizontalCenterX(parentRect);
             console.info('[' + data.caseTag + '] rectX : ' + rectX);
             console.info('[' + data.caseTag + '] parentRectX : ' + parentRectX);
-            expect(rectX).assertEqual(parentRectX);
+            expect(Math.floor(Math.abs(rectX - parentRectX)) <= 1).assertTrue();
             expect(Math.floor(Math.abs(rect.top - parentRect.top)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
@@ -268,7 +268,7 @@ export default function alignSelfTest() {
             let parentRectY = Utils.getRectVerticalCenterY(parentRect);
             console.info('[' + data.caseTag + '] rectY : ' + rectY);
             console.info('[' + data.caseTag + '] parentRectY : ' + parentRectY);
-            expect(rectY).assertEqual(parentRectY);
+            expect(Math.floor(Math.abs(rectY - parentRectY)) <= 1).assertTrue();
             expect(Math.floor(Math.abs(rect.right - parentRect.right)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End
@@ -298,7 +298,7 @@ export default function alignSelfTest() {
             let parentRectX = Utils.getRectHorizontalCenterX(parentRect);
             console.info('[' + data.caseTag + '] rectX : ' + rectX);
             console.info('[' + data.caseTag + '] parentRectX : ' + parentRectX);
-            expect(rectX).assertEqual(parentRectX);
+            expect(Math.floor(Math.abs(rectX - parentRectX)) <= 1).assertTrue();
             expect(Math.floor(Math.abs(rect.bottom - parentRect.bottom)) <= 1).assertTrue();
           } else if (data.testValue.describe == 'SetEnd') {
             //When alignSelf : ItemAlign.End

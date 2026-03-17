@@ -30,9 +30,9 @@ export default function inotify1NdkTest() {
      * @tc.desc   test inotify_add_watch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInotifyInotifyAddWatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInotifyInotifyAddWatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inotify.inotifyAddWatch();
       expect(data).assertEqual(-1);
       done()
@@ -44,9 +44,9 @@ export default function inotify1NdkTest() {
      * @tc.desc   test inotify_rm_watch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslInotifyInotifyRmWatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslInotifyInotifyRmWatch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = inotify.inotifyRmWatch();
       expect(data).assertEqual(-1);
       done()

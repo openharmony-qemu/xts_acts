@@ -47,7 +47,7 @@ export default function webFantasyFont() {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
       console.info("web beforeEach start");
@@ -69,6 +69,124 @@ export default function webFantasyFont() {
       await component.click();
     })
 
+    /**
+     * @tc.name   emitWebFantasyFont002
+     * @tc.number emitWebFantasyFont002
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('emitWebFantasyFont002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebFantasyFont002", 150120)
+      Utils.registerEvent("emitWebFantasyFont002", 0, 121000, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
+    })
 
+    /**
+     * @tc.name   emitWebFantasyFont003
+     * @tc.number emitWebFantasyFont003
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('emitWebFantasyFont003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebFantasyFont003", 150120)
+      Utils.registerEvent("emitWebFantasyFont003", true, 121010, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   emitWebFantasyFont004
+     * @tc.number emitWebFantasyFont004
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('emitWebFantasyFont004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebFantasyFont004", 150120)
+      Utils.registerEvent("emitWebFantasyFont004", true, 121020, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   emitWebCursiveFont005
+     * @tc.number emitWebCursiveFont005
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('emitWebCursiveFont005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebCursiveFont005", 150120)
+      Utils.registerEvent("emitWebCursiveFont005", true, 121030, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   emitWebCursiveFont006
+     * @tc.number emitWebCursiveFont006
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('emitWebCursiveFont006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebCursiveFont006", 150120)
+      Utils.registerEvent("emitWebCursiveFont006", true, 121040, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   emitWebCursiveFont007
+     * @tc.number emitWebCursiveFont007
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('emitWebCursiveFont007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebCursiveFont007", 150120)
+      Utils.registerEvent("emitWebCursiveFont007", true, 121050, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   emitWebCursiveFont008
+     * @tc.number emitWebCursiveFont008
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('emitWebCursiveFont008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebCursiveFont008", 150120)
+      Utils.registerEvent("emitWebCursiveFont008", true, 121060, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   emitWebCursiveFont009
+     * @tc.number emitWebCursiveFont009
+     * @tc.desc   test minLogicalFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('emitWebCursiveFont009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitWebCursiveFont009", 150120)
+      Utils.registerEvent("emitWebCursiveFont009", true, 121070, done);
+      let component = await driver.findComponent(ON.id("WebFantasyFontButton"));
+      await component.click();
+    })
   })
 }

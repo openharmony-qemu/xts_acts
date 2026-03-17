@@ -47,7 +47,6 @@ export default function writeTest() {
           } as Record<string, Double|string|boolean|(Double|string|boolean)[]>
         })
         hilog.info(domain, tag, 'success to write event');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         error = error as BusinessError;
@@ -377,12 +376,10 @@ export default function writeTest() {
         }, (err: BusinessError<void> | null) => {
           if (err) {
             hilog.error(domain, tag, `HiAppEventSub37 > code: ${err.code}, message: ${err.message}`);
-            expect(true).assertTrue()
             done()
             return;
           } else {
             hilog.info(domain, tag, `success to write event`);
-            expect(true).assertTrue()
             done()
           }
         });

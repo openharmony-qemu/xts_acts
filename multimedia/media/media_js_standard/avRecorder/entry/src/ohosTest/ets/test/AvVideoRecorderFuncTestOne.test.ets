@@ -264,6 +264,7 @@ export function avVideoRecorderTestOne() {
     const PREPARE_PROMISE_EVENT = 'preparePromise';
     const GETINPUTSURFACE_PROMISE_EVENT = 'getInputSurfacePromise';
     const GETAVRECORDERCONFIG_PROMISE_EVENT = 'getAVRecorderConfigPromise';
+    const GETAVRECORDERCONFIG_CALLBACK_EVENT = 'getAVRecorderConfigCallback';
     const STARTRECORDER_PROMISE_EVENT = 'startPromise';
     const PAUSERECORDER_PROMISE_EVENT = 'pausePromise';
     const RESUMERECORDER_PROMISE_EVENT = 'resumePromise';
@@ -765,13 +766,42 @@ export function avVideoRecorderTestOne() {
       data?.mySteps.shift();
       await commonFun.sleep(1000)
       data?.avRecorder.getAVRecorderConfig().then((config: media.AVRecorderConfig) => {
-        console.info('getAVRecorderConfig success');
+        console.info('getAVRecorderConfig success ' + JSON.stringify(config));
         expect(config.audioSourceType).assertEqual(avConfig.audioSourceType);
-        expect(config['audioBitrate']).assertEqual(avConfig['audioBitrate']);
+        expect(config.profile).not().assertNull();
+        expect(config.url).not().assertNull();
+        expect(config.location).not().assertNull();
+        expect(config.metadata).not().assertNull();
+        expect(config.maxDuration).not().assertNull();
+        expect(config.fileGenerationMode).not().assertNull();
+        expect(config.videoSourceType).not().assertNull();
         toNextStep(data?.avRecorder, data?.avConfig, data?.recorderTime, data?.mySteps, data?.done);
       }).catch((err: BusinessError) => {
         console.info('getAVRecorderConfig failed and catch error is ' + err.message);
         toNextStep(data?.avRecorder, data?.avConfig, data?.recorderTime, data?.mySteps, data?.done);
+      });
+    });
+
+    eventEmitter.on(GETAVRECORDERCONFIG_CALLBACK_EVENT, async (eventData) => {
+      let data = eventData.data;
+      data?.mySteps.shift();
+      await commonFun.sleep(1000)
+      data?.getAVRecorderConfig((err: BusinessError, config: media.AVRecorderConfig) => {
+        if (err) {
+          console.error(`Failed to get avConfig and error is: Code: ${err.code}, message: ${err.message}`);
+          toNextStep(data?.avRecorder, data?.avConfig, data?.recorderTime, data?.mySteps, data?.done);
+        } else {
+            console.info('getAVRecorderConfig success ' + JSON.stringify(config));
+            expect(config.audioSourceType).not().assertNull();
+            expect(config.profile).not().assertNull();
+            expect(config.url).not().assertNull();
+            expect(config.location).not().assertNull();
+            expect(config.metadata).not().assertNull();
+            expect(config.maxDuration).not().assertNull();
+            expect(config.fileGenerationMode).not().assertNull();
+            expect(config.videoSourceType).not().assertNull();
+            toNextStep(data?.avRecorder, data?.avConfig, data?.recorderTime, data?.mySteps, data?.done);
+        }
       });
     });
 
@@ -9712,6 +9742,43 @@ export function avVideoRecorderTestOne() {
         GETINPUTSURFACE_PROMISE_EVENT, INITCAMERA_EVENT,
         // getAVRecorderConfigPromise
         GETAVRECORDERCONFIG_PROMISE_EVENT,
+        // release avRecorder and camera
+        RELEASECORDER_PROMISE_EVENT, RELEASECAMERA_EVENT,
+        // end
+        END_EVENT
+      );
+      eventEmitterFun(avRecorder, avConfigH264Aac, recorderTime, mySteps, done);
+
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_PROMISE_0100 end');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_CALLBACK_EVENT_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_CALLBACK_EVENT_0100
+     * @tc.desc   1.create 2.prepare 3.getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_CALLBACK_EVENT_0100', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportCameraVideoProfiles) {
+        console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
+        expect(isSupportCameraVideoProfiles).assertFalse();
+        done();
+      }
+      console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_GETAVRECORDERCONFIG_CALLBACK_EVENT_0100 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfigH264Aac.url = fdPath;
+      let mySteps = new Array(
+        // init avRecorder
+        CREATE_PROMISE_EVENT, SETONCALLBACK_EVENT, PREPARE_PROMISE_EVENT,
+        // init camera
+        GETINPUTSURFACE_PROMISE_EVENT, INITCAMERA_EVENT,
+        // getAVRecorderConfigCallback
+        GETAVRECORDERCONFIG_CALLBACK_EVENT,
         // release avRecorder and camera
         RELEASECORDER_PROMISE_EVENT, RELEASECAMERA_EVENT,
         // end
