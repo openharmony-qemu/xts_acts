@@ -126,9 +126,9 @@ export default function settingUiJsunit() {
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
-     *//*
+     */
     it('settings_get_value_sync_no_domain_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      async (done: () => void): Promise<void> => {
         try {
           let defValue: string = 'defValue';
           let result = settings.getValueSync(abilityContext!, '', defValue);
@@ -140,7 +140,7 @@ export default function settingUiJsunit() {
           expect().assertFail();
           done();
         }
-      });*/
+      });
 
     /**
      * @tc.name   settings_get_value_static_119
