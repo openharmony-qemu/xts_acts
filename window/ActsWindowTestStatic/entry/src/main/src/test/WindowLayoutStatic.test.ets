@@ -50,6 +50,10 @@ export default function WindowLayoutStaticTest() {
         let windowStage: window.WindowStage | undefined;
         let win: window.Window | undefined;
         let context: common.UIAbilityContext | undefined;
+        let deviceType:string = deviceInfo.deviceType;
+        hilog.info(domain, tag, `deviceType: ${deviceType}`);
+        let driver: Driver;
+        let isFreeWindowMode:boolean = false;
 
         beforeAll(() => {
             try {
