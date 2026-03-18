@@ -29,11 +29,11 @@ import sliderBlockColorTest from './sliderTest/sliderBlockColorTest.test'
 import sliderTest from './sliderTest/sliderTest.test'
 
 export default function testsuite() {
+  PresentCustomDialogGetStateTest()
   BindPopupAvoidTargetTest()
   CustomDialogGetStateTest()
   OpenCustomDialogWithControllerGetStateTest()
   OpenPopupAvoidTargetTest()
-  PresentCustomDialogGetStateTest()
   ShowActionMenuLifeTest()
   RatingStarStyleOptionsTest()
   SelectModifierTest()
