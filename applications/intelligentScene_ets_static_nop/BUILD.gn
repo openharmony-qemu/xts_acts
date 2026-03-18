@@ -18,6 +18,6 @@ ohos_js_app_static_suite("ActsIntelligentSceneEtsNopStaticTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsIntelligentSceneEtsNopStaticTest"
-  part_name = "form_fwk"
-  subsystem_name = "ability"
+  part_name = "settings"
+  subsystem_name = "applications"
 }

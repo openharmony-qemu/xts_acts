@@ -17,13 +17,6 @@ import { Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.
 import { State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { FormLink } from '@ohos.arkui.component';
-import formProvider from '@ohos.app.form.formProvider';
-import formInfo from '@ohos.app.form.formInfo';
-import formError from '@ohos.application.formError';
-import batteryInfo from '@ohos.batteryInfo';
-import formBindingData from '@ohos.app.form.formBindingData';
-
 
 const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag';
@@ -36,22 +29,6 @@ struct MyStateSample {
 
   aboutToAppear() {
     hilog.info(DOMAIN, TAG, `Index enter`);
-
-    try {
-      hilog.info(DOMAIN, TAG, `Index enter1 ${formInfo.PublishFormErrorCode.SUCCESS === 0}`);
-    } catch (err) {
-      hilog.info(DOMAIN, TAG, `Index enter1 ${err.message}`);
-    }
-    try {
-      hilog.info(DOMAIN, TAG, `Index enter2 ${batteryInfo.BatteryCapacityLevel.LEVEL_FULL}`);
-    } catch (err) {
-      hilog.info(DOMAIN, TAG, `Index enter2 ${err.message}`);
-    }
-    try {
-      hilog.info(DOMAIN, TAG, `Index enter3 ${formError.FormError.ERR_COMMON}`);
-    } catch (err) {
-      hilog.info(DOMAIN, TAG, `Index enter3 ${err.message}`);
-    }
   }
 
   changeValue() {
@@ -62,94 +39,6 @@ struct MyStateSample {
   build() {
     Column(undefined) {
       Text('Hellooooooooooooooooooo World').fontSize(20)
-
-      Button('XtsFormBindingData.router.push').backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormBindingData.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({url: 'testform/pages/XtsFormBindingData'});
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
-
-      Button('XtsFormComponent.router.push').backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormComponent.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({url: 'testform/pages/XtsFormComponent'});
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
-
-      Button('XtsFormInfo.router.push').backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormInfo.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({url: 'testform/pages/XtsFormInfo'});
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
-
-      Button('XtsFormLink.router.push').backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormLink.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({url: 'testform/pages/XtsFormLink'});
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
-
-      Button('XtsFormProvider.router.push').backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormProvider.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({url: 'testform/pages/XtsFormProvider'});
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
-
-      Button('XtsFormAgent.router.push').backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormAgent.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({url: 'testform/pages/XtsFormAgent'});
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
-
-      Button('XtsFormObserver.router.push') .backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormObserver.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({url: 'testform/pages/XtsFormObserver'});
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
-
-        Button('XtsFormHost.router.push').backgroundColor('#ff35e288')
-        .onClick((event: ClickEvent) => {
-          hilog.info(DOMAIN, TAG, 'onClick XtsFormHost.router.push');
-          let aRouter = this.getUIContext().getRouter();
-          try {
-            aRouter.pushUrl({ url: 'testform/pages/XtsFormHost' });
-          } catch (err) {
-            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
-          }
-        })
 
       Text(this.stateVar).fontSize(20)
       Child({ stateVar: this.stateVar } as __Options_Child)
