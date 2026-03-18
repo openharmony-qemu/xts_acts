@@ -23,18 +23,17 @@ group("ActsAceEtsModuleUIContextTest") {
       "ace_ets_module_UIContext02:ActsAceBasicContext02Test",
       "ace_ets_module_uicontext_api12_static:ActsAceBasicContextStaticTest",
       "ace_ets_module_uicontext_api13_static:ActsAceBasicContext13StaticTest",
-      "ace_ets_module_uicontext_api23_static:ActsAceEtsModuleUiContextApi23StaticTest"
     ]
   } else {
     deps = [
       "ace_ets_module_uicontext_api12:ActsAceBasicContextTest",
       "ace_ets_module_uicontext_api13:ActsAceBasicContext13Test",
       "ace_ets_module_uicontext_api22:ActsAceBasicContext22Test",
+      "ace_ets_module_uicontext_api23_static:ActsAceEtsModuleUiContextApi23StaticTest",
       "ace_ets_module_UIContext01:ActsAceBasicContext01Test",
       "ace_ets_module_UIContext02:ActsAceBasicContext02Test",
       "ace_ets_module_uicontext_api12_static:ActsAceBasicContextStaticTest",
       "ace_ets_module_uicontext_api13_static:ActsAceBasicContext13StaticTest",
-      "ace_ets_module_uicontext_api23_static:ActsAceEtsModuleUiContextApi23StaticTest"
     ]
   }
 }
