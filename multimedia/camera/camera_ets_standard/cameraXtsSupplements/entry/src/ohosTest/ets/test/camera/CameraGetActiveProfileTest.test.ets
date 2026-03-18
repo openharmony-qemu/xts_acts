@@ -1433,7 +1433,7 @@ export default function CameraGetActiveProfileTest() {
       const testName = 'SUB_CAMERA_SET_EXPOSURE_MODE_00003';
       try {
         if(mCameraDeviceArray.length > 0) {
-          expect(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED).assertUndefined();
+          expect(-1).assertEqual(camera.ExposureMode.EXPOSURE_MODE_UNSPECIFIED);
         }
         done();
       } catch (error) {
