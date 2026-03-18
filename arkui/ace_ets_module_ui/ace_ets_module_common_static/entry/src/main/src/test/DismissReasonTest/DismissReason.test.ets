@@ -1,0 +1,50 @@
+'use static';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import router from '@ohos.router';
+import { Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import { UtilsTest } from '../Util.test';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+
+const SLEEP_TIME = 1000;
+const PAGE_URL = 'MainAbility/pages/DismissReason/DismissReasonIndex';
+const PAGE_NAME = 'DismissReasonIndex';
+
+function getContentByKey(key: string): string {
+  const inspectorText = inspector.getInspectorByKey(key);
+  const inspectorObj = JSON.parseJsonElement(inspectorText);
+  return inspectorObj.getElement('$attrs').getString('content');
+}
+
+export default function DismissReasonTest() {
+  describe('DismissReasonTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.common.static', 'EntryAbility');
+    });
+    beforeEach(async (): Promise<void> => {
+      const options: router.RouterOptions = { url: PAGE_URL };
+      const routerInstance = AppStorage.get<Router>('router') as Router;
+      routerInstance.clear();
+      routerInstance.replaceUrl(options);
+      await CommonFunc.sleep(SLEEP_TIME);
+      expect(routerInstance.getState().name).assertEqual(PAGE_NAME);
+    });
+    afterEach(async (): Promise<void> => {
+      await CommonFunc.sleep(SLEEP_TIME);
+    });
+
+    /**
+     * @tc.number DismissReasonTest_001
+     * @tc.name slide
+     * @tc.desc Verify DismissReason.SLIDE enum value
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('slide', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      expect(getContentByKey('dismissReasonSlideValue')).assertEqual('4');
+      done();
+    });
+  });
+}
