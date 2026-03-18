@@ -6906,32 +6906,8 @@ export default function SoundPoolTest() {
     })
 
     /**
-     * @tc.name   unload_null_callback_001
-     * @tc.number SOUND_POOL_FUNC_TEST_381
-     * @tc.desc   Test abnormal scene of unload soundPool callback.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('unload_null_callback_001', Level.LEVEL0, async (done: Function) => {
-      await unloadSoundPoolCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
-    })
-
-    /**
-     * @tc.name   unload_null_promise_001
-     * @tc.number SOUND_POOL_FUNC_TEST_382
-     * @tc.desc   Test abnormal scene of unload soundPool promise.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('unload_null_promise_001', Level.LEVEL0, async (done: Function) => {
-      await unloadSoundPoolPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
-    })
-
-    /**
      * @tc.name   stopSoundPool_null_callback_001
-     * @tc.number SOUND_POOL_FUNC_TEST_383
+     * @tc.number SOUND_POOL_FUNC_TEST_381
      * @tc.desc   Test abnormal scene of stop soundPool callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6943,7 +6919,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   stopSoundPool_null_promise_001
-     * @tc.number SOUND_POOL_FUNC_TEST_384
+     * @tc.number SOUND_POOL_FUNC_TEST_382
      * @tc.desc   Test abnormal scene of stop soundPool promise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6955,7 +6931,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   setLoop_null_callback_001
-     * @tc.number SOUND_POOL_FUNC_TEST_385
+     * @tc.number SOUND_POOL_FUNC_TEST_383
      * @tc.desc   Test abnormal scene of setLoop soundPool callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6967,7 +6943,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   setLoop_null_promise_001
-     * @tc.number SOUND_POOL_FUNC_TEST_386
+     * @tc.number SOUND_POOL_FUNC_TEST_384
      * @tc.desc   Test abnormal scene of setLoop soundPool promise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6979,7 +6955,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   setPriority_null_callback_001
-     * @tc.number SOUND_POOL_FUNC_TEST_387
+     * @tc.number SOUND_POOL_FUNC_TEST_385
      * @tc.desc   Test abnormal scene of setPriority soundPool callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6991,7 +6967,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   setPriority_null_promise_001
-     * @tc.number SOUND_POOL_FUNC_TEST_388
+     * @tc.number SOUND_POOL_FUNC_TEST_386
      * @tc.desc   Test adnormal scene of setPriority soundPool promise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7003,7 +6979,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   setRate_null_callback_001
-     * @tc.number SOUND_POOL_FUNC_TEST_389
+     * @tc.number SOUND_POOL_FUNC_TEST_387
      * @tc.desc   Test abnormal scene of setRate soundPool callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7015,7 +6991,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   setRate_null_promise_001
-     * @tc.number SOUND_POOL_FUNC_TEST_390
+     * @tc.number SOUND_POOL_FUNC_TEST_388
      * @tc.desc   Test abnormal scene of setRate soundPool promise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7027,7 +7003,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   setVolume_null_callback_001
-     * @tc.number SOUND_POOL_FUNC_TEST_391
+     * @tc.number SOUND_POOL_FUNC_TEST_389
      * @tc.desc   Test abnormal scene of setVolume soundPool callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7039,7 +7015,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   setVolume_null_promise_001
-     * @tc.number SOUND_POOL_FUNC_TEST_392
+     * @tc.number SOUND_POOL_FUNC_TEST_390
      * @tc.desc   Test abnormal scene of setVolume soundPool callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7051,7 +7027,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   unload_null_callback_001
-     * @tc.number SOUND_POOL_FUNC_TEST_393
+     * @tc.number SOUND_POOL_FUNC_TEST_391
      * @tc.desc   Test abnormal scene of unload soundPool callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7063,7 +7039,7 @@ export default function SoundPoolTest() {
 
     /**
      * @tc.name   unload_null_promise_001
-     * @tc.number SOUND_POOL_FUNC_TEST_394
+     * @tc.number SOUND_POOL_FUNC_TEST_392
      * @tc.desc   Test abnormal scene of unload soundPool promise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
