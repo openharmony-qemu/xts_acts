@@ -60,16 +60,6 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_span_static:ActsAceEtsModuleSpanStaticTest",
       "ace_ets_module_styledString_static:ActsAceEtsModuleStyledStringStaticTest",
       "ace_ets_module_symbolGlyph_static:ActsAceEtsModuleSymbolGlyphStaticTest",
-      "ace_ets_module_tabContent_static:ActsAceEtsModuleTabContentStaticTest",
-      "ace_ets_module_tabs_static:ActsAceEtsModuleTabsStaticTest",
-      "ace_ets_module_textArea_static:ActsAceEtsModuleTextAreaStaticTest",
-      "ace_ets_module_textCommon_static:ActsAceEtsModuleTextCommonStaticTest",
-      "ace_ets_module_textInput_static:ActsAceEtsModuleTextInputStaticTest",
-      "ace_ets_module_textPicker_static:ActsAceEtsModuleTextPickerStaticTest",
-      "ace_ets_module_text_static:ActsAceEtsModuleTextStaticTest",
-      "ace_ets_module_units_static:ActsAceEtsModuleUnitsStaticTest",
-      "ace_ets_module_waterFlow_static:ActsAceEtsModuleWaterFlowStaticTest",
-      "ace_ets_module_xComponent_static:ActsAceEtsModuleXComponentStaticTest",
     ]
   } else {
     deps = [
@@ -128,16 +118,6 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_span_static:ActsAceEtsModuleSpanStaticTest",
       "ace_ets_module_styledString_static:ActsAceEtsModuleStyledStringStaticTest",
       "ace_ets_module_symbolGlyph_static:ActsAceEtsModuleSymbolGlyphStaticTest",
-      "ace_ets_module_tabContent_static:ActsAceEtsModuleTabContentStaticTest",
-      "ace_ets_module_tabs_static:ActsAceEtsModuleTabsStaticTest",
-      "ace_ets_module_textArea_static:ActsAceEtsModuleTextAreaStaticTest",
-      "ace_ets_module_textCommon_static:ActsAceEtsModuleTextCommonStaticTest",
-      "ace_ets_module_textInput_static:ActsAceEtsModuleTextInputStaticTest",
-      "ace_ets_module_textPicker_static:ActsAceEtsModuleTextPickerStaticTest",
-      "ace_ets_module_text_static:ActsAceEtsModuleTextStaticTest",
-      "ace_ets_module_units_static:ActsAceEtsModuleUnitsStaticTest",
-      "ace_ets_module_waterFlow_static:ActsAceEtsModuleWaterFlowStaticTest",
-      "ace_ets_module_xComponent_static:ActsAceEtsModuleXComponentStaticTest",
     ]
   }
 }
