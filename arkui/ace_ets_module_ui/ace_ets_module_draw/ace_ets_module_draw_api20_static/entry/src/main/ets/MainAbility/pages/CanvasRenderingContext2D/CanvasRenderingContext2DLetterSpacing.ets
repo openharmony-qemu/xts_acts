@@ -65,7 +65,7 @@ struct CanvasRenderingContext2DLetterSpacing {
           .height(20)
           .onClick(() => {
             this.contextSpacing15.letterSpacing = new LengthMetrics(15, LengthUnit.VP);
-            this.letterSpacingClickResult = "letterSpacing set to 15vp";
+            this.letterSpacingClickResult = 'letterSpacing set to 15vp';
           })
         Text(`Result: ${this.letterSpacingClickResult}`)
           .id('text_letterSpacing_15vp_result')

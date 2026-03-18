@@ -70,7 +70,7 @@ struct CanvasRenderingContext2DGlobalAlpha {
           .height(20)
           .onClick(() => {
             this.contextAlpha06.globalAlpha = 0.6;
-            this.globalAlphaClickResult = "globalAlpha set to 0.6";
+            this.globalAlphaClickResult = 'globalAlpha set to 0.6';
           })
         Text(`Result: ${this.globalAlphaClickResult}`)
           .height(30)

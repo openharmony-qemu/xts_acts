@@ -72,8 +72,8 @@ export default function CanvasWidthHeightCanvasTest() {
     console.info('get result1:' + AppStorage.get<double>('CanvasHeight'));
     
     expect(obj.getString('$type')).assertEqual('Canvas');
-    expect(AppStorage.get<double>('CanvasWidth')).assertEqual(150);
-    expect(AppStorage.get<double>('CanvasHeight')).assertEqual(100);
+    expect(AppStorage.get<double>('CanvasWidth')).assertEqual(Math.floor(150));
+    expect(AppStorage.get<double>('CanvasHeight')).assertEqual(Math.floor(100));
 
     console.info('[CanvasWidthHeightCanvasTest_0010] END');
     done();

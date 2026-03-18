@@ -52,19 +52,19 @@ export default function CanvasRenderingContext2DGlobalAlphaTest() {
     });
 
     /**
-     * @tc.number    CanvasRenderingContext2DGlobalAlphaTest_static_0200
-     * @tc.name      CanvasRenderingContext2DGlobalAlphaTest_static_0200
+     * @tc.number    CanvasRenderingContext2DGlobalAlphaTest_static_0100
+     * @tc.name      CanvasRenderingContext2DGlobalAlphaTest_static_0100
      * @tc.desc      Test CanvasRenderingContext2D globalAlpha with value 0.6 through Button click callback
      * @tc.level     Level.LEVEL1
      */
     it('CanvasRenderingContext2DGlobalAlphaTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[CanvasRenderingContext2DGlobalAlphaTest_static_0200] START');
+      console.info('[CanvasRenderingContext2DGlobalAlphaTest_static_0100] START');
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('text_globalAlpha_06_result');
       await CommonFunc.sleep(1000);
-      console.info("[CanvasRenderingContext2DGlobalAlphaTest_static_0200] Initial content: " +
+      console.info("[CanvasRenderingContext2DGlobalAlphaTest_static_0100] Initial content: " +
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
 
       let button = await driver.findComponent(ON.id('button_globalAlpha_06'));
@@ -73,14 +73,14 @@ export default function CanvasRenderingContext2DGlobalAlphaTest() {
 
       strJson = inspector.getInspectorByKey('text_globalAlpha_06_result');
       await CommonFunc.sleep(1000);
-      console.info("[CanvasRenderingContext2DGlobalAlphaTest_static_0200] Result after click: " +
+      console.info("[CanvasRenderingContext2DGlobalAlphaTest_static_0100] Result after click: " +
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('content')))
         .assertEqual('"Result: globalAlpha set to 0.6"');
 
-      console.info('[CanvasRenderingContext2DGlobalAlphaTest_static_0200] END');
+      console.info('[CanvasRenderingContext2DGlobalAlphaTest_static_0100] END');
       done();
     });
 
