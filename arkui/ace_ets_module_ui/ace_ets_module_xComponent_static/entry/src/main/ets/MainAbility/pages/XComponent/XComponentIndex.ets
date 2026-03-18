@@ -49,9 +49,8 @@ struct XComponentIndex {
         Text('XComponent Test Page')
           .fontSize(16)
           .key('xComponentPageTitle')
-
-        // ---------- XComponent with XComponentOptions (SURFACE type) ----------
-        XComponent({ type: XComponentType.SURFACE, controller: this.xController })
+          
+        XComponent({controller: this.xController})
           .key('xComponentSurface')
           .height(100)
           .width(100)
