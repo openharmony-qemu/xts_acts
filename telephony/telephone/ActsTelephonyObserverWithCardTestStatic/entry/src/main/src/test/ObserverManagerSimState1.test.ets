@@ -143,7 +143,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverSimStateChangeOn2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverSimStateChangeOn2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOn2300';
       console.info(`${caseName} test start`);
       let hasSimCard: Boolean = await sim.hasSimCardSync(0);
@@ -219,7 +219,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverSimStateChangeOn2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverSimStateChangeOn2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverSimStateChangeOn2400';
       console.info(`${caseName} test start`);
       let hasSimCard: Boolean = await sim.hasSimCardSync(0);
@@ -363,7 +363,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOnGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOnGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0200';
       console.info(`${caseName} test start`);
       try {
@@ -389,7 +389,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOnGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOnGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0300';
       console.info(`${caseName} test start`);
       try {
@@ -415,7 +415,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOnGetSimActiveState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOnGetSimActiveState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0400';
       console.info(`${caseName} test start`);
       try {
@@ -441,7 +441,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOnGetSimActiveState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOnGetSimActiveState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0500';
       console.info(`${caseName} test start`);
       try {
@@ -467,7 +467,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOffGetSimActiveState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOffGetSimActiveState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0100';
       console.info(`${caseName} test start`);
       try {
@@ -503,7 +503,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOffGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOffGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0200';
       console.info(`${caseName} test start`);
       try {
@@ -535,7 +535,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOffGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOffGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
       console.info(`${caseName} test start`);
       try {
@@ -647,7 +647,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOnSimStateChange2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOnSimStateChange2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOnSimStateChange2300';
       console.info(`${caseName} test start`);
       let hasSimCard: Boolean = await sim.hasSimCardSync(0);
@@ -723,7 +723,7 @@ export default function observerManagerSimStateTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOnSimStateChangeOn2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testTelephonyObserverOnSimStateChangeOn2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOnSimStateChangeOn2400';
       console.info(`${caseName} test start`);
       let hasSimCard: Boolean = await sim.hasSimCardSync(0);
