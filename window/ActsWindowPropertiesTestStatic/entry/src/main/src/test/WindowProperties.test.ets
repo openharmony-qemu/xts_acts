@@ -3377,9 +3377,9 @@ export default function WindowPropertiesTest() {
         });
 
         /**
-         * @tc.number    SUB_BASIC_WMS_GETWINDOWSBYCOORDINATE_static_parameter_0200
+         * @tc.number    testGetWindowsByCoordinate_static_parameter_0200
          * @tc.name      testGetWindowsByCoordinate_static_parameter_0200
-         * @tc.desc      Test getWindowsByCoordinate with negative int parameters
+         * @tc.desc      testGetWindowsByCoordinate_static_parameter_0200
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level3
