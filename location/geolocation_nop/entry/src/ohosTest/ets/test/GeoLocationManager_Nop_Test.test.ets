@@ -83,11 +83,11 @@ export default function geoLocationManager_nop_test() {
           done();
         } catch (err) {
           console.info('---geoLocationManager_nop_test_001  catch ---' + typeof err.code + ',err:' + err.code);
-          if (err.code == 201) {
-            expect(err.code == 201).assertTrue();
+          if (number(err.code) === 201) {
+            expect(number(err.code) === 201).assertTrue();
             done();
           } else {
-            expect(err.code == 401).assertTrue();
+            expect(number(err.code) === 401).assertTrue();
             done();
           }
         }
@@ -129,11 +129,11 @@ export default function geoLocationManager_nop_test() {
           done();
         } catch (err) {
           console.info('---geoLocationManager_nop_test_002  catch ---' + typeof err.code + ',err:' + err.code);
-          if (err.code == 201) {
-            expect(err.code == 201).assertTrue();
+          if (number(err.code) === 201) {
+            expect(number(err.code) === 201).assertTrue();
             done();
           } else {
-            expect(err.code == 401).assertTrue();
+            expect(number(err.code) === 401).assertTrue();
             done();
           }
         }
@@ -159,8 +159,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_nop_test_003  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_nop_test_003  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -190,8 +190,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_nop_test_004  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_nop_test_004  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -224,8 +224,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_nop_test_005  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_nop_test_005  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -258,8 +258,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_nop_test_006  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_nop_test_006  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -296,8 +296,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_nop_test_007  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_nop_test_007  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -334,8 +334,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geolocation_locationChange_nop_test_001 catch end type---' + typeof err.code + ',err:' + err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -364,8 +364,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geolocation_locationServiceState_nop_test_002 catch end type---' + typeof err.code + ',err:' + err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -395,8 +395,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geolocation_cachedGnssLocationsReporting_nop_test_003 catch end type---' + typeof err.code + ',err:' + err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -425,8 +425,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geolocation_gnssStatusChange_nop_test_004 catch end type---' + typeof err.code + ',err:' + err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -456,8 +456,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geolocation_nmeaMessageChange_nop_test_005 catch end type---' + typeof err.code + ',err:' + err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -507,7 +507,7 @@ export default function geoLocationManager_nop_test() {
           done();
         } catch (err) {
           console.info('---geolocation_fenceStatusChange_nop_test_006  catch end type---' + typeof err.code + ',err:' + err.code);
-          expect(err.code == 106).assertTrue();
+          expect(number(err.code) === 106).assertTrue();
           done();
         }
       });
@@ -529,7 +529,7 @@ export default function geoLocationManager_nop_test() {
         geolocation.getLastLocation((err: BusinessError, data) => {
           if (err) {
             console.info('geolocation_getLastLocation_nop_test_010 getLastLocation: err=' + JSON.stringify(err) + ", errtype:" + typeof err.code);
-            expect(err.code).assertEqual(106);
+            expect(number(err.code)).assertEqual(106);
             done();
           }
           else if (data) {
@@ -562,10 +562,12 @@ export default function geoLocationManager_nop_test() {
       try {
         const result = await geolocation.getLastLocation();
         console.info('geolocation_getLastLocation_nop_test_011 getLastLocation: result: ' + JSON.stringify(result));
+        expect(result).toBeDefined();
         throw new Error('geolocation_getLastLocation_nop_test_011, result: unexpected');
       } catch (err) {
         console.info('---geolocation_getLastLocation_nop_test_011 catch ---' + ", errtype:" + typeof err.code + ", err:" + err.code);
-        if (err.code !== 106) {
+        if (number(err.code) !== 106) {
+          expect(err).toBe;
           throw new Error('geolocation_getLastLocation_nop_test_011: unexpected err code' + ", errtype:" + typeof err.code + ", err:" + err.code);
         }
         console.info('---geolocation_getLastLocation_nop_test_011 catch end err ---' + ", errtype:" + typeof err.code + ", err:" + err.code);
@@ -586,8 +588,8 @@ export default function geoLocationManager_nop_test() {
         geolocation.isLocationEnabled((err: BusinessError, data: boolean) => {
           if (err) {
             console.info('geolocation_isLocationEnabled_nop_test_012 getLastLocation: err=' + JSON.stringify(err) + ", errtype:" + typeof err.code);
-            if (err.code === 106) {
-              expect(err.code).assertEqual(106);
+            if (number(err.code) === 106) {
+              expect(number(err.code)).assertEqual(106);
               done();
             } else {
               expect(false).assertTrue();
@@ -652,8 +654,8 @@ export default function geoLocationManager_nop_test() {
         geolocation.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
           if (err) {
             console.info('geolocation_getAddressesFromLocation_nop_test_014 getAddressesFromLocation: err=' + JSON.stringify(err) + ', type:' + typeof err.code);
-            if (err.code === 106) {
-              expect(err.code).assertEqual(106);
+            if (number(err.code) === 106) {
+              expect(number(err.code)).assertEqual(106);
               done();
             } else {
               expect().assertFalse();
@@ -672,8 +674,8 @@ export default function geoLocationManager_nop_test() {
         });
       } catch (err) {
         console.info('---geolocation_getAddressesFromLocation_nop_test_014 catch end---' + err.code + ', type:' + typeof err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -705,8 +707,8 @@ export default function geoLocationManager_nop_test() {
         });
       } catch (err) {
         console.info('---geolocation_getAddressesFromLocation_nop_test_015 catch end---' + err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -730,7 +732,7 @@ export default function geoLocationManager_nop_test() {
         geolocation.getAddressesFromLocationName(geocodeRequest, (err: BusinessError, data) => {
           if (err) {
             console.info('geolocation_getAddressesFromLocationName_nop_test_016 getAddressesFromLocationName: err=' + JSON.stringify(err));
-            expect(err.code).assertEqual(106);
+            expect(number(err.code)).assertEqual(106);
             done();
           }
           if (data) {
@@ -788,7 +790,7 @@ export default function geoLocationManager_nop_test() {
         geolocation.isGeoServiceAvailable((err: BusinessError, data: boolean) => {
           if (err) {
             console.info('geolocation_isGeoServiceAvailable_nop_test_018 isGeoServiceAvailable: err=' + JSON.stringify(err));
-            expect(err.code).assertEqual(106);
+            expect(number(err.code)).assertEqual(106);
             done();
           }
           if (data) {
@@ -822,8 +824,8 @@ export default function geoLocationManager_nop_test() {
         });
       } catch (err) {
         console.info('---geolocation_isGeoServiceAvailable_nop_test_019 catch end---' + err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -850,8 +852,8 @@ export default function geoLocationManager_nop_test() {
         });
       } catch (err) {
         console.info('---geolocation_getCachedGnssLocationsSize_nop_test_020 catch end---' + err.code);
-        if (err.code === 106) {
-          expect(err.code).assertEqual(106);
+        if (number(err.code) === 106) {
+          expect(number(err.code)).assertEqual(106);
           done();
         } else {
           expect().assertFalse();
@@ -901,7 +903,7 @@ export default function geoLocationManager_nop_test() {
         geolocation.flushCachedGnssLocations((err: BusinessError, result: boolean) => {
           if (err) {
             console.info('geolocation_flushCachedGnssLocations_nop_test_022 flushCachedGnssLocations: err=' + JSON.stringify(err));
-            expect(err.code).assertEqual(100);
+            expect(number(err.code)).assertEqual(100);
             done();
           }
           if (result) {
@@ -959,7 +961,7 @@ export default function geoLocationManager_nop_test() {
         geolocation.sendCommand(requestInfo, (err: BusinessError, result) => {
           if (err) {
             console.info('geolocation_sendCommand_nop_test_024 sendCommand: err=' + JSON.stringify(err));
-            expect(err.code).assertEqual(100);
+            expect(number(err.code)).assertEqual(100);
             done();
           }
           if (result) {
@@ -998,8 +1000,8 @@ export default function geoLocationManager_nop_test() {
         });
       } catch (err) {
         console.info("errCode:" + err.code + ", message:" + err.message);
-        if (err.code === 201) {
-          expect(err.code).assertEqual(201);
+        if (number(err.code) === 201) {
+          expect(number(err.code)).assertEqual(201);
           done();
         } else {
           expect().assertFalse();
@@ -1033,8 +1035,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_locationError_nop_test_001 locationChange catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_locationError_nop_test_001 locationChange end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1051,8 +1053,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_locationError_nop_test_001 locationError catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_locationError_nop_test_001 locationError end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1087,8 +1089,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_locationError_nop_test_002 locationChange catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_locationError_nop_test_002 locationChange end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1105,8 +1107,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_locationError_nop_test_002 locationError catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(number(err.code)) === 201) {
+          expect(number(number(err.code)) === 201).assertTrue();
           console.info('---geoLocationManager_locationError_nop_test_002 locationError end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1138,8 +1140,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_cachedGnssLocationsChange_nop_test_003  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(number(err.code)) === 201) {
+          expect(number(number(err.code)) === 201).assertTrue();
           console.info('---geoLocationManager_cachedGnssLocationsChange_nop_test_003  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1188,8 +1190,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_satellitestatuschange_nop_test_004  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_satellitestatuschange_nop_test_004  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1219,8 +1221,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_satellitestatuschange_nop_test_005  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_satellitestatuschange_nop_test_005  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1248,8 +1250,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_nmeaMessage_nop_test_006  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_nmeaMessage_nop_test_006  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1279,8 +1281,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_bluetoothScanResultChange_nop_test_007  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_bluetoothScanResultChange_nop_test_007  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1304,7 +1306,7 @@ export default function geoLocationManager_nop_test() {
       let locationChange = (err: BusinessError, location: geolocation.Location): void => {
         if (err) {
           console.info('geoLocationManager_getCurrentLocation_nop_test_009 locationChanger: err=' + JSON.stringify(err));
-          expect(err.code).assertEqual(201);
+          expect(number(err.code)).assertEqual(201);
           done();
         }
         if (location) {
@@ -1319,8 +1321,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_getCurrentLocation_nop_test_009 catch ---' + ', type err: ' + typeof err.code + ', err: ' + err.code);
-        if (err.code === 201) {
-          expect(err.code).assertEqual(201);
+        if (number(err.code) === 201) {
+          expect(number(err.code)).assertEqual(201);
           done();
         } else {
           expect().assertFalse();
@@ -1348,7 +1350,7 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.info('---geoLocationManager_getCachedGnssLocationsSize_nop_test_013 catch ---' + ', type err: ' + typeof err.code + ', err: ' + err.code);
-        expect(err.code).assertEqual(201);
+        expect(number(err.code)).assertEqual(201);
         console.info('geoLocationManager_getCachedGnssLocationsSize_nop_test_013 end');
         done();
       }
@@ -1367,7 +1369,7 @@ export default function geoLocationManager_nop_test() {
         geoLocationManager.flushCachedGnssLocations((err) => {
           if (err) {
             console.info('flushCachedGnssLocations: err=' + JSON.stringify(err));
-            expect(err.code).assertEqual(201);
+            expect(number(err.code)).assertEqual(201);
             done();
           }
         });
@@ -1471,7 +1473,7 @@ export default function geoLocationManager_nop_test() {
           done();
         }).catch((err: BusinessError) => {
           console.info("geoLocationManager_addGnssGeofence_nop_test_016 failed, promise errCode:" + err.code + ",errMessage:" + err.message);
-          expect(err.code).assertEqual(201);
+          expect(number(err.code)).assertEqual(201);
           done();
         });
       } catch (err) {
@@ -1498,7 +1500,7 @@ export default function geoLocationManager_nop_test() {
           done();
         }).catch((err: BusinessError) => {
           console.info("removeGnssGeofence: error=" + JSON.stringify(err));
-          expect(err.code).assertEqual(201);
+          expect(number(err.code)).assertEqual(201);
           done();
         });
       } catch (err) {
@@ -1524,8 +1526,8 @@ export default function geoLocationManager_nop_test() {
         done();
       } catch (err) {
         console.error("geoLocationManager_getCurrentWifiBssidForLocating_nop_test_018: errCode" + err.code + ", errMessage" + err.message);
-        if (err.code === 201) {
-          expect(err.code).assertEqual(201);
+        if (number(err.code) === 201) {
+          expect(number(err.code)).assertEqual(201);
           done();
         } else {
           expect().assertFalse();
@@ -1554,7 +1556,7 @@ export default function geoLocationManager_nop_test() {
             }
           }).catch((err: BusinessError) => {
             console.info('geoLocationManager_getPoiInfo_nop_test_019 promise, getPoiInfo: ' + typeof err.code + ',err:' + err.code);
-            expect(err.code).assertEqual(201);
+            expect(number(err.code)).assertEqual(201);
             done();
           });
         } else {
@@ -1564,8 +1566,8 @@ export default function geoLocationManager_nop_test() {
         }
       } catch (err) {
         console.info('---geoLocationManager_getPoiInfo_nop_test_019  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code).assertEqual(201);
+        if (number(err.code) === 201) {
+          expect(number(err.code)).assertEqual(201);
           console.info('---geoLocationManager_getPoiInfo_nop_test_019  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1617,13 +1619,13 @@ export default function geoLocationManager_nop_test() {
           done();
         }).catch((err: BusinessError) => {
           console.info('geoLocationManager_addBeaconFence_nop_test_020 promise, addBeaconFence: err=' + JSON.stringify(err) + 'type:' + typeof err.code);
-          expect(err.code).assertEqual(201);
+          expect(number(err.code)).assertEqual(201);
           done();
         });
       } catch (err) {
         console.info('---geoLocationManager_addBeaconFence_nop_test_020  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code == 201).assertTrue();
+        if (number(err.code) === 201) {
+          expect(number(err.code) === 201).assertTrue();
           console.info('---geoLocationManager_addBeaconFence_nop_test_020  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1665,13 +1667,13 @@ export default function geoLocationManager_nop_test() {
           done();
         }).catch((err: BusinessError) => {
           console.info("geoLocationManager_removeBeaconFence_nop_test_021 promise, errtype:" + typeof err.code + ", errCode:" + err.code + ", errMessage:" + err.message);
-          expect(err.code).assertEqual(201);
+          expect(number(err.code)).assertEqual(201);
           done();
         });
       } catch (err) {
         console.info('---geoLocationManager_removeBeaconFence_nop_test_021  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code).assertEqual(201);
+        if (number(err.code) === 201) {
+          expect(number(err.code)).assertEqual(201);
           console.info('---geoLocationManager_removeBeaconFence_nop_test_021  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
@@ -1708,8 +1710,8 @@ export default function geoLocationManager_nop_test() {
         })
       } catch (err) {
         console.info('---geoLocationManager_isWlanBssidMatched_nop_test_022  catch ---' + typeof err.code + ',err:' + err.code);
-        if (err.code == 201) {
-          expect(err.code).assertEqual(201);
+        if (number(err.code) === 201) {
+          expect(number(err.code)).assertEqual(201);
           console.info('---geoLocationManager_isWlanBssidMatched_nop_test_022  end type---' + typeof err.code + ',err:' + err.code);
           done();
         } else {
