@@ -98,7 +98,8 @@ struct SearchStylePage {
         .id('toggleSearchTextDirectionBtn')
         .key('toggleSearchTextDirectionBtn')
         .onClick(() => {
-          this.textDirectionValue = this.textDirectionValue === TextDirection.LTR ? TextDirection.RTL : TextDirection.LTR;
+          this.textDirectionValue = this.textDirectionValue ===
+          TextDirection.LTR ? TextDirection.RTL : TextDirection.LTR;
           this.syncStateToStorage();
         })
       Text(`search.textDirection=${this.textDirectionValue}`)
