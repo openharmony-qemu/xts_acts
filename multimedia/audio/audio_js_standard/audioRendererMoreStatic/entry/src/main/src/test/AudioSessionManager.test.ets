@@ -864,5 +864,731 @@ export default function audioSessionManagerTest() {
         done();
       }
     })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0200
+    * @tc.desc   setDefaultOutputDevice -6800301
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.EARPIECE);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        if (6800301 == Number(err.code)) {
+            expect(Number(err.code)).assertEqual(6800301);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0300
+    * @tc.desc   setDefaultOutputDevice -6800301
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.SPEAKER);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        if (6800301 == Number(err.code)) {
+            expect(Number(err.code)).assertEqual(6800301);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0400
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0500
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0600
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0700
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0800
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0900
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1000
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1100
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1200
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1300
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1400
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1500
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1600
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1700
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1800
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1900
+    * @tc.desc   setDefaultOutputDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+        /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0200
+    * @tc.desc   inputAudioDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_INPUT_DEVICES);
+        console.info('Succeeded in doing getAvailableDevices.');
+        if (data[0]) {
+          await audioSessionManager.selectMediaInputDevice(data[0]).then(() => {
+            console.info('Succeeded in doing selectMediaInputDevice.');
+            let device: audio.AudioDeviceDescriptor = audioSessionManager.getSelectedMediaInputDevice();
+            console.info(`DeviceInfo id: ${device.id}`);
+            expect(device.id).assertLargerOrEqual(0);
+            console.info(`DeviceInfo type: ${device.deviceType}`);
+            expect(device.deviceType >= 0).assertEqual(true);
+            console.info(`DeviceInfo role: ${device.deviceRole}`);
+            expect(device.deviceRole >= 0).assertEqual(true);
+            console.info(`DeviceInfo name: ${device.name}`);
+            expect(device.name).assertInstanceOf('String');
+            console.info(`DeviceInfo address: ${device.address}`);
+            expect(device.address).assertInstanceOf('String');
+            console.info(`DeviceInfo samplerate: ${device.sampleRates[0]}`);
+            expect(device.sampleRates[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelcount: ${device.channelCounts[0]}`);
+            expect(device.channelCounts[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelMasks: ${device.channelMasks[0]}`);
+            expect(device.channelMasks[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo displayName: ${device.displayName}`);
+            expect(device.displayName).assertInstanceOf('String');
+            console.info(`DeviceInfo encodingTypes: ${device.encodingTypes?.[0]}`);
+            expect(device.encodingTypes?.[0] !== undefined && device.encodingTypes![0] >= 0 as audio.AudioEncodingType).assertEqual(true);
+            console.info(`DeviceInfo spatializationSupported: ${device.spatializationSupported}`);
+            expect(device.spatializationSupported).assertInstanceOf('Boolean');
+            console.info(`DeviceInfo model: ${device.model}`);
+            expect(device.model).assertInstanceOf('String');
+            console.info(`DeviceInfo capabilities: ${device.capabilities}`);
+            expect(device.capabilities).assertInstanceOf('Array');
+            console.info('Succeeded in doing getSelectedMediaInputDevice.');
+            done();
+          }).catch((selectErr) => {
+            console.error(`Failed to selectMediaInputDevice. Code: ${selectErr.code}, message: ${selectErr.message}`);
+          });
+        }
+        done();
+      } catch (err) {
+        console.error(`Failed to getSelectedMediaInputDevice. Code: ${err.code}, message: ${err.message}`);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0300
+    * @tc.desc   inputAudioDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.ALL_MEDIA_DEVICES);
+        console.info('Succeeded in doing getAvailableDevices.');
+        if (data[0]) {
+          await audioSessionManager.selectMediaInputDevice(data[0]).then(() => {
+            console.info('Succeeded in doing selectMediaInputDevice.');
+            let device: audio.AudioDeviceDescriptor = audioSessionManager.getSelectedMediaInputDevice();
+            console.info(`DeviceInfo id: ${device.id}`);
+            expect(device.id).assertLargerOrEqual(0);
+            console.info(`DeviceInfo type: ${device.deviceType}`);
+            expect(device.deviceType >= 0).assertEqual(true);
+            console.info(`DeviceInfo role: ${device.deviceRole}`);
+            expect(device.deviceRole >= 0).assertEqual(true);
+            console.info(`DeviceInfo name: ${device.name}`);
+            expect(device.name).assertInstanceOf('String');
+            console.info(`DeviceInfo address: ${device.address}`);
+            expect(device.address).assertInstanceOf('String');
+            console.info(`DeviceInfo samplerate: ${device.sampleRates[0]}`);
+            expect(device.sampleRates[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelcount: ${device.channelCounts[0]}`);
+            expect(device.channelCounts[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelMasks: ${device.channelMasks[0]}`);
+            expect(device.channelMasks[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo displayName: ${device.displayName}`);
+            expect(device.displayName).assertInstanceOf('String');
+            console.info(`DeviceInfo encodingTypes: ${device.encodingTypes?.[0]}`);
+            expect(device.encodingTypes?.[0] !== undefined && device.encodingTypes![0] >= 0 as audio.AudioEncodingType).assertEqual(true);
+            console.info(`DeviceInfo spatializationSupported: ${device.spatializationSupported}`);
+            expect(device.spatializationSupported).assertInstanceOf('Boolean');
+            console.info(`DeviceInfo model: ${device.model}`);
+            expect(device.model).assertInstanceOf('String');
+            console.info(`DeviceInfo capabilities: ${device.capabilities}`);
+            expect(device.capabilities).assertInstanceOf('Array');
+            console.info('Succeeded in doing getSelectedMediaInputDevice.');
+            done();
+          }).catch((selectErr) => {
+            console.error(`Failed to selectMediaInputDevice. Code: ${selectErr.code}, message: ${selectErr.message}`);
+          });
+        }
+        done();
+      } catch (err) {
+        console.error(`Failed to getSelectedMediaInputDevice. Code: ${err.code}, message: ${err.message}`);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0400
+    * @tc.desc   inputAudioDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.CALL_OUTPUT_DEVICES);
+        console.info('Succeeded in doing getAvailableDevices.');
+        if (data[0]) {
+          await audioSessionManager.selectMediaInputDevice(data[0]).then(() => {
+            console.info('Succeeded in doing selectMediaInputDevice.');
+            let device: audio.AudioDeviceDescriptor = audioSessionManager.getSelectedMediaInputDevice();
+            console.info(`DeviceInfo id: ${device.id}`);
+            expect(device.id).assertLargerOrEqual(0);
+            console.info(`DeviceInfo type: ${device.deviceType}`);
+            expect(device.deviceType >= 0).assertEqual(true);
+            console.info(`DeviceInfo role: ${device.deviceRole}`);
+            expect(device.deviceRole >= 0).assertEqual(true);
+            console.info(`DeviceInfo name: ${device.name}`);
+            expect(device.name).assertInstanceOf('String');
+            console.info(`DeviceInfo address: ${device.address}`);
+            expect(device.address).assertInstanceOf('String');
+            console.info(`DeviceInfo samplerate: ${device.sampleRates[0]}`);
+            expect(device.sampleRates[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelcount: ${device.channelCounts[0]}`);
+            expect(device.channelCounts[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelMasks: ${device.channelMasks[0]}`);
+            expect(device.channelMasks[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo displayName: ${device.displayName}`);
+            expect(device.displayName).assertInstanceOf('String');
+            console.info(`DeviceInfo encodingTypes: ${device.encodingTypes?.[0]}`);
+            expect(device.encodingTypes?.[0] !== undefined && device.encodingTypes![0] >= 0 as audio.AudioEncodingType).assertEqual(true);
+            console.info(`DeviceInfo spatializationSupported: ${device.spatializationSupported}`);
+            expect(device.spatializationSupported).assertInstanceOf('Boolean');
+            console.info(`DeviceInfo model: ${device.model}`);
+            expect(device.model).assertInstanceOf('String');
+            console.info(`DeviceInfo capabilities: ${device.capabilities}`);
+            expect(device.capabilities).assertInstanceOf('Array');
+            console.info('Succeeded in doing getSelectedMediaInputDevice.');
+            done();
+          }).catch((selectErr) => {
+            console.error(`Failed to selectMediaInputDevice. Code: ${selectErr.code}, message: ${selectErr.message}`);
+          });
+        }
+        done();
+      } catch (err) {
+        console.error(`Failed to getSelectedMediaInputDevice. Code: ${err.code}, message: ${err.message}`);
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0500
+    * @tc.desc   inputAudioDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.CALL_INPUT_DEVICES);
+        console.info('Succeeded in doing getAvailableDevices.');
+        if (data[0]) {
+          await audioSessionManager.selectMediaInputDevice(data[0]).then(() => {
+            console.info('Succeeded in doing selectMediaInputDevice.');
+            let device: audio.AudioDeviceDescriptor = audioSessionManager.getSelectedMediaInputDevice();
+            console.info(`DeviceInfo id: ${device.id}`);
+            expect(device.id).assertLargerOrEqual(0);
+            console.info(`DeviceInfo type: ${device.deviceType}`);
+            expect(device.deviceType >= 0).assertEqual(true);
+            console.info(`DeviceInfo role: ${device.deviceRole}`);
+            expect(device.deviceRole >= 0).assertEqual(true);
+            console.info(`DeviceInfo name: ${device.name}`);
+            expect(device.name).assertInstanceOf('String');
+            console.info(`DeviceInfo address: ${device.address}`);
+            expect(device.address).assertInstanceOf('String');
+            console.info(`DeviceInfo samplerate: ${device.sampleRates[0]}`);
+            expect(device.sampleRates[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelcount: ${device.channelCounts[0]}`);
+            expect(device.channelCounts[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelMasks: ${device.channelMasks[0]}`);
+            expect(device.channelMasks[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo displayName: ${device.displayName}`);
+            expect(device.displayName).assertInstanceOf('String');
+            console.info(`DeviceInfo encodingTypes: ${device.encodingTypes?.[0]}`);
+            expect(device.encodingTypes?.[0] !== undefined && device.encodingTypes![0] >= 0 as audio.AudioEncodingType).assertEqual(true);
+            console.info(`DeviceInfo spatializationSupported: ${device.spatializationSupported}`);
+            expect(device.spatializationSupported).assertInstanceOf('Boolean');
+            console.info(`DeviceInfo model: ${device.model}`);
+            expect(device.model).assertInstanceOf('String');
+            console.info(`DeviceInfo capabilities: ${device.capabilities}`);
+            expect(device.capabilities).assertInstanceOf('Array');
+            console.info('Succeeded in doing getSelectedMediaInputDevice.');
+            done();
+          }).catch((selectErr) => {
+            console.error(`Failed to selectMediaInputDevice. Code: ${selectErr.code}, message: ${selectErr.message}`);
+          });
+        }
+        done();
+      } catch (err) {
+        console.error(`Failed to getSelectedMediaInputDevice. Code: ${err.code}, message: ${err.message}`);
+      }
+      done();
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0600
+    * @tc.desc   inputAudioDevice
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETSELECTMEDIAINPUTDEVICE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        let data: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.ALL_CALL_DEVICES);
+        console.info('Succeeded in doing getAvailableDevices.');
+        if (data[0]) {
+          await audioSessionManager.selectMediaInputDevice(data[0]).then(() => {
+            console.info('Succeeded in doing selectMediaInputDevice.');
+            let device: audio.AudioDeviceDescriptor = audioSessionManager.getSelectedMediaInputDevice();
+            console.info(`DeviceInfo id: ${device.id}`);
+            expect(device.id).assertLargerOrEqual(0);
+            console.info(`DeviceInfo type: ${device.deviceType}`);
+            expect(device.deviceType >= 0).assertEqual(true);
+            console.info(`DeviceInfo role: ${device.deviceRole}`);
+            expect(device.deviceRole >= 0).assertEqual(true);
+            console.info(`DeviceInfo name: ${device.name}`);
+            expect(device.name).assertInstanceOf('String');
+            console.info(`DeviceInfo address: ${device.address}`);
+            expect(device.address).assertInstanceOf('String');
+            console.info(`DeviceInfo samplerate: ${device.sampleRates[0]}`);
+            expect(device.sampleRates[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelcount: ${device.channelCounts[0]}`);
+            expect(device.channelCounts[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo channelMasks: ${device.channelMasks[0]}`);
+            expect(device.channelMasks[0]).assertLargerOrEqual(0);
+            console.info(`DeviceInfo displayName: ${device.displayName}`);
+            expect(device.displayName).assertInstanceOf('String');
+            console.info(`DeviceInfo encodingTypes: ${device.encodingTypes?.[0]}`);
+            expect(device.encodingTypes?.[0] !== undefined && device.encodingTypes![0] >= 0 as audio.AudioEncodingType).assertEqual(true);
+            console.info(`DeviceInfo spatializationSupported: ${device.spatializationSupported}`);
+            expect(device.spatializationSupported).assertInstanceOf('Boolean');
+            console.info(`DeviceInfo model: ${device.model}`);
+            expect(device.model).assertInstanceOf('String');
+            console.info(`DeviceInfo capabilities: ${device.capabilities}`);
+            expect(device.capabilities).assertInstanceOf('Array');
+            console.info('Succeeded in doing getSelectedMediaInputDevice.');
+            done();
+          }).catch((selectErr) => {
+            console.error(`Failed to selectMediaInputDevice. Code: ${selectErr.code}, message: ${selectErr.message}`);
+          });
+        }
+        done();
+      } catch (err) {
+        console.error(`Failed to getSelectedMediaInputDevice. Code: ${err.code}, message: ${err.message}`);
+      }
+      done();
+    })
   })
 }
