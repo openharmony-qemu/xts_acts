@@ -88,7 +88,7 @@ export function setSubtitle301(avPlayer: media.AVPlayer | null, src: string | me
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue();
+    expect(err.code == 401).assertTrue()
   });
 }
 
@@ -110,7 +110,7 @@ export function setSubtitle302(avPlayer: media.AVPlayer | null, src: string | me
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue();
+    expect(err.code == 401).assertTrue()
   });
 }
 
@@ -132,7 +132,7 @@ export function setSubtitle303(avPlayer: media.AVPlayer | null, src: string | me
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue();
+    expect(err.code == 401).assertTrue()
   });
 }
 
@@ -154,7 +154,7 @@ export function setSubtitle304(avPlayer: media.AVPlayer | null, src: string | me
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue();
+    expect(err.code == 401).assertTrue()
   });
 }
 
@@ -176,7 +176,7 @@ export function setSubtitle305(avPlayer: media.AVPlayer | null, src: string | me
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue();
+    expect(err.code == 401).assertTrue()
   });
 }
 
@@ -198,7 +198,7 @@ export function setSubtitle306(avPlayer: media.AVPlayer | null, src: string | me
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue();
+    expect(err.code == 401).assertTrue()
   });
 }
 
