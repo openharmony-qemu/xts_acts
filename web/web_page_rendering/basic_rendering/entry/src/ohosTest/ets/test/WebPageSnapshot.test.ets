@@ -141,8 +141,8 @@ export default function webPageSnapshotTest() {
       });
 
     /**
-     * @tc.name   testWebPageSnapshot002
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_WEBPAGESNAPSHOT_0200
+     * @tc.name   testWebPageSnapshot003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_WEBPAGESNAPSHOT_0300
      * @tc.desc   test webPageSnapshot with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
