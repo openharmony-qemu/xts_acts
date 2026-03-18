@@ -45,7 +45,7 @@ export default function ButtonOptionsTest() {
   describe('ButtonOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("[ARKUI_NEW] ButtonOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.button.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.api23.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

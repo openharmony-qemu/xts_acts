@@ -3,7 +3,6 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/index/second",
     "MainAbility/pages/Button/ButtonIndex",
-    "MainAbility/pages/Button/modifier",
-    "MainAbility/pages/buttonOptions/buttonOptions"
+    "MainAbility/pages/Button/modifier"
   ]
 }

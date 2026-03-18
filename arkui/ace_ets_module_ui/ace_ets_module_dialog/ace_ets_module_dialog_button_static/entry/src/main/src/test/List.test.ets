@@ -16,10 +16,8 @@
 
 import ButtonTest from './ButtonTest/Button.test';
 import ArcButtonEnumTest from './ButtonTest/ArcButtonEnum.test';
-import ButtonOptionsTest from './ButtonOptionsTest/ButtonOptions.test';
 
 export default function testsuite() {
   ButtonTest();
   ArcButtonEnumTest();
-  ButtonOptionsTest();
 }
