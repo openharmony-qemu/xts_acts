@@ -129,7 +129,7 @@ struct ChipGroupOptionsPage {
         selectedIndexes: this.selected_index,
         multiple: false,
         chipGroupSpace: { itemSpace: 8, startSpace: '20vp', endSpace: 0 },
-        chipGroupPadding: { top: 10, bottom: 10 },
+        chipGroupPadding: { top: '20vp', bottom: '20vp' },
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
@@ -151,7 +151,7 @@ struct ChipGroupOptionsPage {
         selectedIndexes: this.selected_index,
         multiple: false,
         chipGroupSpace: { itemSpace: 8, startSpace: 20, endSpace: 0 },
-        chipGroupPadding: { top: 10, bottom: 10 },
+        chipGroupPadding: { top: 20, bottom: 20 },
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
@@ -174,7 +174,30 @@ struct ChipGroupOptionsPage {
         selectedIndexes: this.selected_index,
         multiple: false,
         chipGroupSpace: { itemSpace: 8, startSpace: undefined, endSpace: 0 },
-        chipGroupPadding: { top: 10, bottom: 10 },
+        chipGroupPadding: undefined,
+        onChange: (activatedChipsIndex: Array<int>) => {
+          console.info('chips on clicked, activated index ' + activatedChipsIndex);
+        },
+      })
+
+      ChipGroup({
+        items: [
+          {
+            prefixIcon: { src: $r('sys.media.ohos_ic_public_cast_mirror') },
+            label: { text: '空字符串' },
+          } as ChipGroupItemOptions,
+        ],
+        itemStyle: {
+          size: ChipSize.SMALL,
+          backgroundColor: $r('sys.color.ohos_id_color_button_normal'),
+          fontColor: $r('sys.color.ohos_id_color_text_primary'),
+          selectedBackgroundColor: $r('sys.color.ohos_id_color_emphasize'),
+          selectedFontColor: $r('sys.color.ohos_id_color_text_primary_contrary'),
+        },
+        selectedIndexes: this.selected_index,
+        multiple: false,
+        chipGroupSpace: { itemSpace: 8, startSpace: '', endSpace: 0 },
+        chipGroupPadding: { top: '', bottom: '' },
         onChange: (activatedChipsIndex: Array<int>) => {
           console.info('chips on clicked, activated index ' + activatedChipsIndex);
         },
