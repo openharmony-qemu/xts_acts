@@ -488,7 +488,7 @@ export default function settingUiJsunit() {
         })
       } catch(err) {
         console.error("[settings_set_value_callback_domain_key_empty] error is:" + err);
-        expect(err?.code).assertEqual(201);
+        expect(err?.message).assertEqual("Permission denied");
         done();
       }
     });
@@ -505,6 +505,7 @@ export default function settingUiJsunit() {
       let name = 'brightness113valueempty';//关键字
       let value = 'brightness113'//值
       try{
+        settings.setValueSync(abilityContext!, name, value);
         settings.setValue(abilityContext!, name, '', (result) => {
           console.info("[settings_set_value_callback_domain_key_empty] result is:" + result);
           expect(!result).assertTrue();
@@ -512,7 +513,7 @@ export default function settingUiJsunit() {
         })
       } catch(err) {
         console.error("[settings_set_value_callback_domain_key_empty] error is:" + err);
-        expect(err?.code).assertEqual(201);
+        expect(err?.message).assertEqual("Permission denied");
         done();
       }
     });
@@ -1773,6 +1774,37 @@ export default function settingUiJsunit() {
           }
           done();
         })
+    });
+
+    /**
+     * @tc.name   open_manager_settings_result_false
+     * @tc.number open_manager_settings_result_false
+     * @tc.desc   check open manager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('open_manager_settings_result_false', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let tmpAbilityContext: common.UIAbilityContext | undefined;
+        let value = settings.openNetworkManagerSettings(tmpAbilityContext!)
+          .then((status)=> {
+            console.info("[open_manager_settings_result_false] value is:" + status);
+            expect(status).assertFalse();
+            done();
+          })
+          .catch((err: Error)=>{
+            console.error("[open_manager_settings_result_false] error = " + err);
+            if ((err as BusinessError).code) {
+              expect(err?.code == 14800000 || 14800010).assertTrue();
+            }
+            done();
+          })
+      } catch (err) {
+        console.error("[open_manager_settings_result_false] error = " + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
