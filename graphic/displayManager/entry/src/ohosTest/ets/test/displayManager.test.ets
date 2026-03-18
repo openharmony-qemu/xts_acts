@@ -1968,6 +1968,12 @@ export default function displayTest() {
         let result = display.getDisplayByIdSync(screenId).supportedRefreshRates;
         console.log(`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
         expect(result?.length).assertLarger(0);
+        await sleep(2000);
+        await display.destroyVirtualScreen(screenId).then(() => {
+            console.info(caseName + 'Succeeded in destroyVirtualScreen1');
+        }).catch((err: BusinessError) => {
+          console.info(caseName + 'Failed in destroyVirtualScreen1');
+        })
         done();
       } catch (e) {
         console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
