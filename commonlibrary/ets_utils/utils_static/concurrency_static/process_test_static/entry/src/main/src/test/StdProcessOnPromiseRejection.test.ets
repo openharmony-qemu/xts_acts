@@ -739,14 +739,9 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 const TAG: string = 'testTaskGroupMultipleTasksRejection';
                 console.info(`${TAG} test start`);
 
-                let callCount: number = 0;
-                const capturedReasons: string[] = [];
-
-
+                let concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
                 const listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object): void => {
-                    console.info(`${TAG} listener triggered, count: ${callCount}`);
-                    callCount++;
-                    capturedReasons.push(reason.message);
+                    concurrentSet.add(reason.message);
                 };
 
                 StdProcess.on("unhandledPromiseRejection", listener);
@@ -780,14 +775,9 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 await taskpool.execute(taskGroup);
 
                 await Utils.msSleep(50);
-
-                console.info(`${TAG} total calls: ${callCount}`);
-                console.info(`${TAG} captured reasons: ${capturedReasons}`);
-                expect(callCount).assertEqual(3);
-                expect(capturedReasons.length).assertEqual(3);
-                expect(capturedReasons).assertContain("TaskGroup task 1 error");
-                expect(capturedReasons).assertContain("TaskGroup task 2 error");
-                expect(capturedReasons).assertContain("TaskGroup task 3 error");
+                expect(concurrentSet.has("TaskGroup task 1 error")).assertTrue();
+                expect(concurrentSet.has("TaskGroup task 2 error")).assertTrue();
+                expect(concurrentSet.has("TaskGroup task 3 error")).assertTrue();
                 console.info(`${TAG} test passed`);
                 done();
             });
@@ -852,13 +842,10 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 const TAG: string = 'testTaskPoolDifferentPriorityTasksRejection';
                 console.info(`${TAG} test start`);
 
-                let callCount: number = 0;
-                const capturedReasons: string[] = [];
+                let concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
 
                 const listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object): void => {
-                    console.info(`${TAG} listener triggered, count: ${callCount}`);
-                    callCount++;
-                    capturedReasons.push(reason.message);
+                    concurrentSet.add(reason.message);
                 };
 
                 StdProcess.on("unhandledPromiseRejection", listener);
@@ -895,14 +882,9 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 await Promise.all([promise1, promise2, promise3]);
 
                 await Utils.msSleep(50);
-
-                console.info(`${TAG} total calls: ${callCount}`);
-                console.info(`${TAG} captured reasons: ${capturedReasons}`);
-                expect(callCount).assertEqual(3);
-                expect(capturedReasons.length).assertEqual(3);
-                expect(capturedReasons).assertContain("High priority error");
-                expect(capturedReasons).assertContain("Medium priority error");
-                expect(capturedReasons).assertContain("Low priority error");
+                expect(concurrentSet.has("High priority error")).assertTrue();
+                expect(concurrentSet.has("Medium priority error")).assertTrue();
+                expect(concurrentSet.has("Low priority error")).assertTrue();
                 console.info(`${TAG} test passed`);
                 done();
             });
