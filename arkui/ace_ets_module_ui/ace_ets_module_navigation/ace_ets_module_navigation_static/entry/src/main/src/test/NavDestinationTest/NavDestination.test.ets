@@ -57,6 +57,11 @@ export default function NavDestinationTest() {
       console.info('NavDestinationTest after each called');
     });
 
+    /**
+     * @tc.number NavDestinationTest01
+     * @tc.name visibilityChangeReasonTransition
+     * @tc.desc visibilityChangeReasonTransition
+     */
     it('visibilityChangeReasonTransition', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('NavDestinationTest execute: visibilityChangeReasonTransition START');
       try {
@@ -75,6 +80,11 @@ export default function NavDestinationTest() {
       }
     });
 
+    /**
+     * @tc.number NavDestinationTest02
+     * @tc.name visibilityChangeReasonContentCover
+     * @tc.desc visibilityChangeReasonContentCover
+     */
     it('visibilityChangeReasonContentCover', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('NavDestinationTest execute: visibilityChangeReasonContentCover START');
       try {
@@ -93,6 +103,11 @@ export default function NavDestinationTest() {
       }
     });
 
+    /**
+     * @tc.number NavDestinationTest03
+     * @tc.name visibilityChangeReasonAppState
+     * @tc.desc visibilityChangeReasonAppState
+     */
     it('visibilityChangeReasonAppState', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('NavDestinationTest execute: visibilityChangeReasonAppState START');
       try {
