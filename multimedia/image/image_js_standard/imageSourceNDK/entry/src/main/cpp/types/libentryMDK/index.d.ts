@@ -12,6 +12,17 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */
+interface myRawData {
+    buffer: ArrayBuffer;
+    length: number;
+    bitsPerPixel: number;
+}
+
+interface ErrorCode {
+    errcode1: number;
+    errcode2: number;
+    errcode3: number;
+}
 
 import image from "@ohos.multimedia.image";
 import colorSpaceManager from "@ohos.graphics.colorSpaceManager";
@@ -41,14 +52,14 @@ export const SetMimeTypeToTestPackingOptions: (packing: image.PackingOption, for
 export const SetQualityToTestPackingOptions: (packing: image.PackingOption, quality: number) => void;
 export const SetNeedsPackPropertiesToTestPackingOptions: (packing: image.PackingOption, needpackExif: boolean) => void;
 export const CreatePackingOptions: () => image.PackingOption;
-export const TestGetImagePropertyShort: (fd: number, key: image.PropertyKey) => number;
-export const TestGetImagePropertyLong: (fd: number, key: image.PropertyKey) => number;
-export const TestGetImagePropertyDouble: (fd: number, key: image.PropertyKey) => number;
-export const TestGetImagePropertyArraySize: (fd: number, key: image.PropertyKey) => number;
-export const TestGetImagePropertyString: (fd: number, key: image.PropertyKey, size: number) => string | number;
-export const TestGetImagePropertyIntArray: (fd: number, key: image.PropertyKey, size: number) => Array<number> | number;
-export const TestGetImagePropertyDoubleArray: (fd: number, key: image.PropertyKey, size: number) => Array<number> | number;
-export const TestGetImagePropertyBlob: (fd: number, key: image.PropertyKey, size: number) => ArrayBuffer | number;
+export const TestGetImagePropertyShort: (fd: number, key: image.PropertyKey|image.DngPropertyKey) => number;
+export const TestGetImagePropertyLong: (fd: number, key: image.PropertyKey|image.DngPropertyKey) => number;
+export const TestGetImagePropertyDouble: (fd: number, key: image.PropertyKey|image.DngPropertyKey) => number;
+export const TestGetImagePropertyArraySize: (fd: number, key: image.PropertyKey|image.DngPropertyKey) => number;
+export const TestGetImagePropertyString: (fd: number, key: image.PropertyKey|image.DngPropertyKey, size: number) => string | number;
+export const TestGetImagePropertyIntArray: (fd: number, key: image.PropertyKey|image.DngPropertyKey, size: number) => Array<number> | number;
+export const TestGetImagePropertyDoubleArray: (fd: number, key: image.PropertyKey|image.DngPropertyKey, size: number) => Array<number> | number;
+export const TestGetImagePropertyBlob: (fd: number, key: image.PropertyKey|image.DngPropertyKey, size: number) => ArrayBuffer | number;
 export const TestGetImagePropertyError: (type: string) => number;
 export const TestModifyImagePropertyShort: (fd: number, key: image.PropertyKey, value: number) => number;
 export const TestModifyImagePropertyLong: (fd: number, key: image.PropertyKey, value: number) => number;
@@ -57,3 +68,7 @@ export const TestModifyImagePropertyIntArray: (fd: number, key: image.PropertyKe
 export const TestModifyImagePropertyDoubleArray: (fd: number, key: image.PropertyKey, arrayValue: Array<number>) => number;
 export const TestModifyImagePropertyBlob: (fd: number, key: image.PropertyKey, value: ArrayBuffer) => number;
 export const TestModifyImagePropertyError: (type: string) => number;
+export const TestCreateImageRawData: (fd: number) => myRawData;
+export const TestCreateImageRawDataNullptr: () => ErrorCode;
+export const TestGetBufferFromRawDataNullptr: () => ErrorCode;
+export const TestGetBitsPerPixelFromRawDataNullptr: () => ErrorCode;

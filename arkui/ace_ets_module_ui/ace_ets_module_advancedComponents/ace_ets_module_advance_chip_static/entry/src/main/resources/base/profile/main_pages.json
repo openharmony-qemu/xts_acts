@@ -8,6 +8,8 @@
     "MainAbility/pages/Chip/chipSizeTest",
     "MainAbility/pages/Chip/prefixIconTest",
     "MainAbility/pages/Chip/ChipApi1",
+    "MainAbility/pages/Chip/labelOptionsTest",
+    "MainAbility/pages/Chip/localizedLabelMargin",
     "MainAbility/pages/Chip/ChipOptionsLabelTest",
     "MainAbility/pages/Chip/ChipOptionsSuffixIconTest",
     "MainAbility/pages/Chip/ChipOptionsSuffixSymbolTest",
@@ -23,5 +25,7 @@
     "MainAbility/pages/Chip/ChipOptionsFontScaleTest",
     "MainAbility/pages/Chip/ChipOptionsPaddingTest",
     "MainAbility/pages/Chip/ChipOptionsFontSizeTest"
+    "MainAbility/pages/Chip/labelOptionsTest",
+    "MainAbility/pages/Chip/localizedLabelMargin"
   ]
 }

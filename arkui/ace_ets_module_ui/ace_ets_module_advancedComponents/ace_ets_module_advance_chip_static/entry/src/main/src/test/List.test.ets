@@ -21,6 +21,8 @@ import chipTest0010 from './ChipTest/ChipTest0010.test';
 import chipSizeTest from './ChipTest/chipSizeTest.test';
 import prefixIconTest from './ChipTest/prefixIconTest.test';
 import ChipApi1 from './ChipTest/ChipApi1.test';
+import labelOptionsTest from './ChipTest/labelOptionsTest.test';
+import localizedLabelMargin from './ChipTest/localizedLabelMargin.test';
 import ChipOptionsLabelTest from './ChipTest/ChipOptionsLabelTest.test';
 import ChipOptionsSuffixIconTest from './ChipTest/ChipOptionsSuffixIconTest.test';
 import ChipOptionsSuffixSymbolTest from './ChipTest/ChipOptionsSuffixSymbolTest.test';
@@ -45,6 +47,8 @@ export default function testsuite() {
   chipSizeTest();
   prefixIconTest();
   ChipApi1();
+  labelOptionsTest();
+  localizedLabelMargin();
   ChipOptionsLabelTest();
   ChipOptionsSuffixIconTest();
   ChipOptionsSuffixSymbolTest();
