@@ -2218,7 +2218,7 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgName);
         await verify.init(keyPair.pubKey);
         let ret = await verify.verify(null, signData);
-        expect(ret).assertTrue();
+        expect(ret).assertFalse(); // ECC不支持空消息验签
       } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
