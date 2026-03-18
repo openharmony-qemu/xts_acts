@@ -19,7 +19,6 @@ import Utils from './Utils';
 import wifiMg from '@ohos.wifiManager';
 import router from '@ohos.router';
 import { Driver } from '@kit.TestKit';
-import wifiMg from '@ohos.wifiManager';
 import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const  driver: Driver = Driver.create();
@@ -111,6 +110,28 @@ export default function webPageSnapshotTest() {
         let tcName = 'testWebPageSnapshot001';
         let isReturn = false;
         Utils.emitEvent(emitKey, 154080);
+        Utils.registerEvent(tcName, true, 154210, () => {
+          isReturn = true
+        });
+        Utils.waitAndClickComponent(driver, "webWebPageSnapshot", tcName);
+        await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+        done();
+      });
+
+    /**
+     * @tc.name   testWebPageSnapshot002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_WEBPAGESNAPSHOT_0200
+     * @tc.desc   test webPageSnapshot with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebPageSnapshot002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let emitKey = 'testWebPageSnapshot002';
+        let tcName = 'testWebPageSnapshot002';
+        let isReturn = false;
+        Utils.emitEvent(emitKey, 154080);
         Utils.registerEvent(tcName, "null", 154100, () => {
           isReturn = true
         });
@@ -127,10 +148,10 @@ export default function webPageSnapshotTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWebPageSnapshot002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testWebPageSnapshot003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        let emitKey = 'testWebPageSnapshot002';
-        let tcName = 'testWebPageSnapshot002';
+        let emitKey = 'testWebPageSnapshot003';
+        let tcName = 'testWebPageSnapshot003';
         let isReturn = false;
         Utils.emitEvent(emitKey, 154080);
         Utils.registerEvent(tcName, "undefined", 154110, () => {
