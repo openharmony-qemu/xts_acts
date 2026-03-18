@@ -63,7 +63,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Byte = new Byte(127 as byte);
-      let arr: Byte[] = new Byte[127 + 1];
+      let arr: Byte[] = new Byte[127 + 1](0);
       arr[v.toInt()] = v;
       expect(v.toInt()).assertEqual(127);
     });
@@ -78,7 +78,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Short = new Short(0x1ff);
-      let arr: Short[] = new Short[511 + 1];
+      let arr: Short[] = new Short[511 + 1](0);
       arr[v.toInt()] = v;
       expect(arr[v.toInt()]).assertEqual(511);
     });
@@ -93,7 +93,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Int = new Int(129);
-      let arr: Int[] = new Int[129 + 1];
+      let arr: Int[] = new Int[129 + 1](0);
       arr[v.toInt()] = v;
       expect(arr[v.toInt()]).assertEqual(129);
     });
@@ -108,7 +108,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Short = new Short(0x1ff);
-      let arr: Short[] = new Short[511 + 1];
+      let arr: Short[] = new Short[511 + 1](0);
       arr[v.toInt()] = v;
       expect(arr[v.toInt()]).assertEqual(511);
     });
@@ -123,7 +123,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Int = new Int(129);
-      let arr: Int[] = new Int[129 + 1];
+      let arr: Int[] = new Int[129 + 1](0);
       arr[v.toInt()] = v;
       expect(arr[v.toInt()]).assertEqual(129);
     });
@@ -138,7 +138,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: float = 10.0f;
-      let arr: float[] = new float[10 + 1];
+      let arr: float[] = new float[10 + 1](0);
       arr[v.toInt()] = v;
       expect(arr[v.toInt()]).assertEqual(10);
     });
@@ -153,7 +153,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: double = 20.0;
-      let arr: double[] = new double[20 + 1];
+      let arr: double[] = new double[20 + 1](0);
       arr[v.toInt()] = v;
       expect(arr[v.toInt()]).assertEqual(20);
     });
@@ -168,7 +168,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Float = new Float(1.0f);
-      let arr: Float[] = new Float[1 + 1];
+      let arr: Float[] = new Float[1 + 1](0);
       arr[v.toInt()] = v;
       expect(arr[v.toInt()]).assertEqual(1);
     });
@@ -183,7 +183,7 @@ export default function NumericOperatorContextsTest() {
      */
     it("testNumericOperatorContexts0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Double = new Double(2.0);
-      let arr: Double[] = new Double[2 + 1];
+      let arr: Double[] = new Double[2 + 1](0);
       arr[v.toInt()] = v;
       expect(arr[v.toInt()]).assertEqual(2);
     });
