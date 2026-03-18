@@ -89,11 +89,7 @@ struct webUserAgentMetadataPlatformVersion {
                   let result = this.controller.getUserAgentMetadata(userAgent);
                   let platformVersion = result.getPlatformVersion();
                   console.log('emitGetPlatformVersionEmpty ' + platformVersion)
-                  if (platformVersion) {
-                    Utils.emitEvent(true, 174940);
-                  } else {
-                    Utils.emitEvent(false, 174940);
-                  }
+                  Utils.emitEvent('no_error', 174940);
 
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
