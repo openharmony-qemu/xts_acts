@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -164,19 +164,19 @@ export default function XComponentTest() {
 
     /**
      * @tc.number XComponentTest_008
-     * @tc.name xComponentSurfaceRenders
+     * @tc.name xComponentTextureRenders
      * @tc.desc Test XComponent type renders
      */
-    it('xComponentSurfaceRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('XComponentTest execute: xComponentSurfaceRenders START');
+    it('xComponentTextureRenders', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('XComponentTest execute: xComponentTextureRenders START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
-        let node = JSON.parseJsonElement(inspector.getInspectorByKey('xComponentSurface'));
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('xComponentTexture'));
         expect(node !== null).assertTrue();
-        console.info('XComponentTest execute: xComponentSurfaceRenders END');
+        console.info('XComponentTest execute: xComponentTextureRenders END');
         done();
       } catch (error) {
-        console.error('XComponentTest execute: xComponentSurfaceRenders error:' + error);
+        console.error('XComponentTest execute: xComponentTextureRenders error:' + error);
         expect().assertFail();
         done();
       }
