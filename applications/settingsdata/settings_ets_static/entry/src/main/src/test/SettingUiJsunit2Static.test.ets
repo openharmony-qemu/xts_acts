@@ -261,6 +261,40 @@ export default function settingUiJsunit() {
       }
     });
 
+    /**
+     * @tc.name   settings_get_value_callback_key_empty
+     * @tc.number settings_get_value_callback_key_empty
+     * @tc.desc   check getValue value callback key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness35';//关键字
+      let value = 'brightness35';//值
+      let domainName = 'secure';
+      try{
+        settings.setValue(abilityContext!, name, value, domainName)
+          .then((data)=>{
+            console.info("[settings_get_value_callback_key_empty] value is:" + data);
+            settings.getValue(abilityContext!, '', domainName).then(ret => {
+              console.info("[settings_get_value_callback_key_empty] value is:" + ret);
+              expect().assertFail();
+              done();
+            })
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_get_value_callback_key_empty] error is:" + err);
+            expect(err.message).assertEqual("Permission denied");
+            done();
+          })
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_35] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
 
     /**
      * @tc.name   settings_get_value_static_034
@@ -285,6 +319,28 @@ export default function settingUiJsunit() {
       } catch(err){
         console.info("[settings_get_value_034] error is: " + String(err));
         expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_get_value_no_domain_promise_key_empty
+     * @tc.number settings_get_value_no_domain_promise_key_empty
+     * @tc.desc   check getValue no domain promise key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_no_domain_promise_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let value = 'brightness34'
+      try{
+        let result = await settings.getValue(abilityContext!, '');
+        console.info("[settings_get_value_no_domain_promise_key_empty] result is: " + result);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error("[settings_get_value_no_domain_promise_key_empty] error is: " + String(err));
+        expect(err?.message === undefined).assertTrue();
         done();
       }
     });
@@ -347,6 +403,7 @@ export default function settingUiJsunit() {
         done();
       }
     });
+
 
     /**
      * @tc.name   settings_set_value_113
