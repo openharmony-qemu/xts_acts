@@ -529,7 +529,7 @@ export default function geolocationTest_LocErr(){
                     }).catch((error) => {
                         console.info("[lbs_js] SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0400 remove error=" + JSON.stringify(error));
                         if (error.code == 801) {
-                            expect(true).assertTrue();
+                            expect(true).assertEqual(error.code == 801);
                         } else{
                             expect(error.code).assertEqual(3301602);
                         }
