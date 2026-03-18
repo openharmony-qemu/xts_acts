@@ -15,25 +15,13 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_waterFlow_static_NjAbyU7nPUic4UbK-UprsYClvYcgkA6rzQytdRVVC7U=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BA1EF88DFD3A97CA0D40E038E9B6B8883450AFF64EC22648601B904D16E1BC80B7A8A1CC15DCACB",
-          "profile": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_waterFlow_static_NjAbyU7nPUic4UbK-UprsYClvYcgkA6rzQytdRVVC7U=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/kaihong/.ohos/config/openharmony/default_ace_ets_module_waterFlow_static_NjAbyU7nPUic4UbK-UprsYClvYcgkA6rzQytdRVVC7U=.p12",
-          "storePassword": "0000001BAB676166FEAC79741AEC604B14F2A59D7186A18EF88FEE35B0B69B91551A7A76E36025C5EEC345"
-        }
-      }
     ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
         "compatibleSdkVersion": "23",
-        "compileSdkVersion": "23",
+        "compileSdkVersion": "24",
         "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",
         "buildOption": {

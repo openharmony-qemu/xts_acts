@@ -65,18 +65,18 @@ struct TextAreaAttributeIndex {
         TextArea({ placeholder: 'fw Bolder' })
           .fontWeight(FontWeight.Bolder)
           .key('textAreaFontWeightBolder')
-        // fontWeight (int)
+        
         TextArea({ placeholder: 'fw 700' })
           .fontWeight(700)
           .key('textAreaFontWeightInt700')
         TextArea({ placeholder: 'fw 400' })
           .fontWeight(400)
           .key('textAreaFontWeightInt400')
-        // fontWeight (ResourceStr)
+
         TextArea({ placeholder: 'fw bold str' })
           .fontWeight('bold')
           .key('textAreaFontWeightStrBold')
-        // fontWeight (undefined)
+
         TextArea({ placeholder: 'fw undefined' })
           .fontWeight(undefined)
           .key('textAreaFontWeightUndefined')
