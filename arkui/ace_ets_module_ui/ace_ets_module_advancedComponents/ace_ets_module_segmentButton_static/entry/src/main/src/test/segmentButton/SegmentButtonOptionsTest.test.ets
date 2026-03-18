@@ -113,6 +113,7 @@ export default function SegmentButtonOptionsTest() {
       await CommonFunc.sleep(2000);
       AppStorage.delete('SegmentButtonOptions001');
       AppStorage.delete('SegmentButtonOptions002');
+      await CommonFunc.sleep(2000);
       console.info('[SegmentButtonOptionsTest_002] END');
       done();
     });
