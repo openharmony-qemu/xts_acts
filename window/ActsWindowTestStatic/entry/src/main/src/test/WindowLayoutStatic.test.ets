@@ -4416,8 +4416,8 @@ export default function WindowLayoutStaticTest() {
         })
 
         /**
-         * @tc.name   SUB_WINDOW_getWindowStatus_004
-         * @tc.number testGetWindowStatus_allStatus_static_003
+         * @tc.number   SUB_WINDOW_getWindowStatus_004
+         * @tc.name testGetWindowStatus_allStatus_static_003
          * @tc.desc   Test the function value of setWindowTitleMoveEnabled
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
