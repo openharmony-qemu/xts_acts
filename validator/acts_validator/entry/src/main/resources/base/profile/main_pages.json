@@ -44,7 +44,6 @@
     "pages/ArkUI/Progress",
     "pages/ArkUI/Rating",
     "pages/ArkUI/Search",
-    "pages/ArkUI/SegmentButton",
     "pages/ArkUI/SharedTransition",
     "pages/ArkUI/SharedTransitionTo",
     "pages/ArkUI/Swiper",

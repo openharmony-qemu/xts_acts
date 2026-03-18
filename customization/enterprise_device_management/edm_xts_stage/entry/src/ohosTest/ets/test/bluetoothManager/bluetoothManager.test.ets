@@ -70,40 +70,58 @@ export default function bluetoothManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_get_bluetooth_info_0300', Level.LEVEL2, async (done: Function) => {
-      try {
-        let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(null);
-        expect(false).assertTrue();
-      } catch(error) {
-        expect(error.code == 401).assertTrue();
-      }
-      done();
-    })
+     it('test_get_bluetooth_info_0300', Level.LEVEL2, async (done: Function) => {
+       try {
+         let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(null);
+         expect(false).assertTrue();
+       } catch(error) {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+     })
 
     /**
-     * @tc.name   test_get_bluetooth_info_0400
-     * @tc.number SUB_CUSTOMIZATION_EDM_GET_BLUETOOTH_INFO_0400
-     * @tc.desc   test getBluetoothInfo method with super admin
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
+      * @tc.name   test_get_bluetooth_info_0310
+      * @tc.number SUB_CUSTOMIZATION_EDM_GET_BLUETOOTH_INFO_0310
+      * @tc.desc   test getBluetoothInfo method with undefined admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('test_get_bluetooth_info_0310', Level.LEVEL2, async (done: Function) => {
+       try {
+         let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(undefined);
+         expect(false).assertTrue();
+       } catch(error) {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+     })
+    
+    /**
+      * @tc.name   test_get_bluetooth_info_0400
+      * @tc.number SUB_CUSTOMIZATION_EDM_GET_BLUETOOTH_INFO_0400
+      * @tc.desc   test getBluetoothInfo method with super admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
     it('test_get_bluetooth_info_0400', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(SELFWANT);
-        expect(result.name != null).assertTrue();
-        expect(result.state != null).assertTrue();
-        expect(result.connectionState != null).assertTrue();
-        console.log('result.name:' + result.name + ' result.state:' +
-          result.state + ' result.connectionState:' + result.connectionState);
-      } catch(error) {
-        expect(false).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    })
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(SELFWANT);
+         expect(result.name != null).assertTrue();
+         expect(result.state != null).assertTrue();
+         expect(result.connectionState != null).assertTrue();
+         console.log('result.name:' + result.name + ' result.state:' +
+           result.state + ' result.connectionState:' + result.connectionState);
+       } catch(error) {
+         expect(false).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
     
     /**
      * @tc.name   test_add_allowed_bluetooth_devices_0100
@@ -154,16 +172,35 @@ export default function bluetoothManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_add_allowed_bluetooth_devices_0300', Level.LEVEL2, async (done: Function) => {
-      try {
-        let deviceIds: Array<string>  = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
-        bluetoothManager.addAllowedBluetoothDevices(null,deviceIds);
-        expect(false).assertTrue();
-      } catch(error) {
-        expect(error.code == 401).assertTrue();
-      }
-      done();
-    })
+     it('test_add_allowed_bluetooth_devices_0300', Level.LEVEL2, async (done: Function) => {
+       try {
+         let deviceIds: Array<string>  = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
+         bluetoothManager.addAllowedBluetoothDevices(null,deviceIds);
+         expect(false).assertTrue();
+       } catch(error) {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+     })
+
+    /**
+      * @tc.name   test_add_allowed_bluetooth_devices_0310
+      * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_BLUETOOTH_DEVICES_0310
+      * @tc.desc   test addallowedbluetoothdevices method with undefined admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('test_add_allowed_bluetooth_devices_0310', Level.LEVEL2, async (done: Function) => {
+       try {
+         let deviceIds: Array<string>  = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
+         bluetoothManager.addAllowedBluetoothDevices(undefined,deviceIds);
+         expect(false).assertTrue();
+       } catch(error) {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+     })
 
     /**
      * @tc.name   test_add_allowed_bluetooth_devices_0400
@@ -204,7 +241,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.addAllowedBluetoothDevices(SELFWANT,deviceIds);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -250,6 +287,8 @@ export default function bluetoothManagerTest() {
         bluetoothManager.addAllowedBluetoothDevices(SELFWANT, deviceIds);
       } catch(error) {
         expect(false).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
       }
       done();
     })
@@ -349,7 +388,7 @@ export default function bluetoothManagerTest() {
       try {
         bluetoothManager.getAllowedBluetoothDevices(null);
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -411,7 +450,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.removeAllowedBluetoothDevices(null,deviceIds);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -513,7 +552,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.addDisallowedBluetoothDevices(null,deviceIds);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -559,7 +598,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.addDisallowedBluetoothDevices(SELFWANT,deviceIds);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -843,7 +882,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.removeDisallowedBluetoothDevices(null,deviceIds);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -1002,7 +1041,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.turnOnBluetooth(INVALID_WANT);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1108,7 +1147,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.turnOffBluetooth(INVALID_WANT);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1176,7 +1215,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.addDisallowedBluetoothProtocols(null, accountId, protocols);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -1228,7 +1267,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch(error) {
         console.info(' --- test_add_disallowed_bluetooth_protocols_0500 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1296,7 +1335,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.removeDisallowedBluetoothProtocols(null, accountId, protocols);
         expect(false).assertTrue();
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -1318,7 +1357,9 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch(error) {
         console.info(' --- test_remove_disallowed_bluetooth_protocols_0400 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
       }
       done();
     })
@@ -1377,7 +1418,7 @@ export default function bluetoothManagerTest() {
         let accountId: number = 100;
         bluetoothManager.getDisallowedBluetoothProtocols(null, accountId);
       } catch(error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1400,7 +1441,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getBluetoothInfo_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getBluetoothInfo_test_001  -------- END --------');
@@ -1423,7 +1464,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getBluetoothInfo_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getBluetoothInfo_test_002  -------- END --------');
@@ -1446,7 +1487,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedBluetoothDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAllowedBluetoothDevices_test_001  -------- END --------');
@@ -1469,7 +1510,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAllowedBluetoothDevices_test_002  -------- END --------');
@@ -1484,43 +1525,85 @@ export default function bluetoothManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addAllowedBluetoothDevices_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addAllowedBluetoothDevices_test_003  -------- START --------');
-      try {
-        bluetoothManager.addAllowedBluetoothDevices(SELFWANT, null);
-        console.info(' --- addAllowedBluetoothDevices_test_003 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addAllowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
-      }
-      done();
-      console.info(' --- addAllowedBluetoothDevices_test_003  -------- END --------');
-    })
-
+     it("addAllowedBluetoothDevices_test_003", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- addAllowedBluetoothDevices_test_003  -------- START --------');
+       try {
+         bluetoothManager.addAllowedBluetoothDevices(SELFWANT, null);
+         console.info(' --- addAllowedBluetoothDevices_test_003 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- addAllowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- addAllowedBluetoothDevices_test_003  -------- END --------');
+     })
 
     /**
-     * @tc.name   addAllowedBluetoothDevices_test_004
-     * @tc.number addAllowedBluetoothDevices_test_004
-     * @tc.desc   addAllowedBluetoothDevices with undefined parameter deviceIds
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
+      * @tc.name   addAllowedBluetoothDevices_test_004
+      * @tc.number addAllowedBluetoothDevices_test_004
+      * @tc.desc   addAllowedBluetoothDevices with undefined parameter deviceIds
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
     it("addAllowedBluetoothDevices_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addAllowedBluetoothDevices_test_004  -------- START --------');
-      try {
-        bluetoothManager.addAllowedBluetoothDevices(SELFWANT, undefined);
-        console.info(' --- addAllowedBluetoothDevices_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addAllowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
-      }
-      done();
-      console.info(' --- addAllowedBluetoothDevices_test_004  -------- END --------');
-    })
+       console.info(' --- addAllowedBluetoothDevices_test_004  -------- START --------');
+       try {
+         bluetoothManager.addAllowedBluetoothDevices(SELFWANT, undefined);
+         console.info(' --- addAllowedBluetoothDevices_test_004 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- addAllowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- addAllowedBluetoothDevices_test_004  -------- END --------');
+     })
 
+    /**
+      * @tc.name   addAllowedBluetoothDevices_test_005
+      * @tc.number addAllowedBluetoothDevices_test_005
+      * @tc.desc   addAllowedBluetoothDevices with undefined admin and null deviceIds
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it("addAllowedBluetoothDevices_test_005", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- addAllowedBluetoothDevices_test_005  -------- START --------');
+       try {
+         bluetoothManager.addAllowedBluetoothDevices(undefined, null);
+         console.info(' --- addAllowedBluetoothDevices_test_005 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- addAllowedBluetoothDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- addAllowedBluetoothDevices_test_005  -------- END --------');
+     })
+
+    /**
+      * @tc.name   addAllowedBluetoothDevices_test_006
+      * @tc.number addAllowedBluetoothDevices_test_006
+      * @tc.desc   addAllowedBluetoothDevices with undefined admin and undefined deviceIds
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it("addAllowedBluetoothDevices_test_006", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- addAllowedBluetoothDevices_test_006  -------- START --------');
+       try {
+         bluetoothManager.addAllowedBluetoothDevices(undefined, undefined);
+         console.info(' --- addAllowedBluetoothDevices_test_006 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- addAllowedBluetoothDevices_test_006 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- addAllowedBluetoothDevices_test_006  -------- END --------');
+     })
 
     /**
      * @tc.name   removeAllowedBluetoothDevices_test_001
@@ -1538,7 +1621,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedBluetoothDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeAllowedBluetoothDevices_test_001  -------- END --------');
@@ -1561,7 +1644,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeAllowedBluetoothDevices_test_002  -------- END --------');
@@ -1584,7 +1667,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeAllowedBluetoothDevices_test_003  -------- END --------');
@@ -1599,20 +1682,63 @@ export default function bluetoothManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeAllowedBluetoothDevices_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeAllowedBluetoothDevices_test_004  -------- START --------');
-      try {
-        bluetoothManager.removeAllowedBluetoothDevices(SELFWANT, undefined);
-        console.info(' --- removeAllowedBluetoothDevices_test_004 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- removeAllowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
-      }
-      done();
-      console.info(' --- removeAllowedBluetoothDevices_test_004  -------- END --------');
-    })
+     it("removeAllowedBluetoothDevices_test_004", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- removeAllowedBluetoothDevices_test_004  -------- START --------');
+       try {
+         bluetoothManager.removeAllowedBluetoothDevices(SELFWANT, undefined);
+         console.info(' --- removeAllowedBluetoothDevices_test_004 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- removeAllowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- removeAllowedBluetoothDevices_test_004  -------- END --------');
+     })
 
+    /**
+      * @tc.name   removeAllowedBluetoothDevices_test_005
+      * @tc.number removeAllowedBluetoothDevices_test_005
+      * @tc.desc   removeAllowedBluetoothDevices with undefined admin and null deviceIds
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it("removeAllowedBluetoothDevices_test_005", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- removeAllowedBluetoothDevices_test_005  -------- START --------');
+       try {
+         bluetoothManager.removeAllowedBluetoothDevices(SELFWANT, null);
+         console.info(' --- removeAllowedBluetoothDevices_test_005 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- removeAllowedBluetoothDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- removeAllowedBluetoothDevices_test_005  -------- END --------');
+     })
+
+    /**
+      * @tc.name   removeAllowedBluetoothDevices_test_006
+      * @tc.number removeAllowedBluetoothDevices_test_006
+      * @tc.desc   removeAllowedBluetoothDevices with undefined admin and undefined deviceIds
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it("removeAllowedBluetoothDevices_test_006", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- removeAllowedBluetoothDevices_test_006  -------- START --------');
+       try {
+         bluetoothManager.removeAllowedBluetoothDevices(SELFWANT, undefined);
+         console.info(' --- removeAllowedBluetoothDevices_test_006 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- removeAllowedBluetoothDevices_test_006 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- removeAllowedBluetoothDevices_test_006  -------- END --------');
+     })
 
     /**
      * @tc.name   getAllowedBluetoothDevices_test_002
@@ -1630,7 +1756,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAllowedBluetoothDevices_test_002  -------- END --------');
@@ -1653,7 +1779,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- turnOnBluetooth_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- turnOnBluetooth_test_001  -------- END --------');
@@ -1676,7 +1802,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- turnOnBluetooth_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- turnOnBluetooth_test_002  -------- END --------');
@@ -1699,7 +1825,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- turnOffBluetooth_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- turnOffBluetooth_test_001  -------- END --------');
@@ -1722,7 +1848,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- turnOffBluetooth_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- turnOffBluetooth_test_002  -------- END --------');
@@ -1745,7 +1871,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothDevices_test_001  -------- END --------');
@@ -1768,7 +1894,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothDevices_test_002  -------- END --------');
@@ -1791,7 +1917,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothDevices_test_003  -------- END --------');
@@ -1814,7 +1940,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothDevices_test_004  -------- END --------');
@@ -1837,7 +1963,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothDevices_test_001  -------- END --------');
@@ -1860,7 +1986,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothDevices_test_002  -------- END --------');
@@ -1883,7 +2009,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothDevices_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothDevices_test_003  -------- END --------');
@@ -1906,7 +2032,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothDevices_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothDevices_test_004  -------- END --------');
@@ -1929,7 +2055,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothDevices_test_002  -------- END --------');
@@ -1954,7 +2080,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothProtocols_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothProtocols_test_001  -------- END --------');
@@ -1979,7 +2105,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothProtocols_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothProtocols_test_002  -------- END --------');
@@ -2004,7 +2130,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothProtocols_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothProtocols_test_003  -------- END --------');
@@ -2029,7 +2155,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothProtocols_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothProtocols_test_004  -------- END --------');
@@ -2052,7 +2178,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothProtocols_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothProtocols_test_005  -------- END --------');
@@ -2075,7 +2201,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedBluetoothProtocols_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedBluetoothProtocols_test_006  -------- END --------');
@@ -2100,7 +2226,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothProtocols_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothProtocols_test_001  -------- END --------');
@@ -2125,7 +2251,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothProtocols_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothProtocols_test_002  -------- END --------');
@@ -2150,7 +2276,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothProtocols_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothProtocols_test_003  -------- END --------');
@@ -2175,7 +2301,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothProtocols_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothProtocols_test_004  -------- END --------');
@@ -2198,7 +2324,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothProtocols_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothProtocols_test_005  -------- END --------');
@@ -2221,7 +2347,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedBluetoothProtocols_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedBluetoothProtocols_test_006  -------- END --------');
@@ -2244,7 +2370,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothProtocols_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothProtocols_test_001  -------- END --------');
@@ -2267,7 +2393,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothProtocols_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothProtocols_test_002  -------- END --------');
@@ -2290,7 +2416,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothProtocols_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothProtocols_test_003  -------- END --------');
@@ -2313,7 +2439,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothProtocols_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothProtocols_test_004  -------- END --------');
@@ -2335,7 +2461,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getBluetoothInfo_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getBluetoothInfo_test_015  -------- END --------');
@@ -2358,7 +2484,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getBluetoothInfo_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getBluetoothInfo_test_016  -------- END --------');
@@ -2373,19 +2499,20 @@ export default function bluetoothManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("getAllowedBluetoothDevices_test_016", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getAllowedBluetoothDevices_test_016  -------- START --------');
-      try {
-        bluetoothManager.getAllowedBluetoothDevices(undefined);
-        console.info(' --- getAllowedBluetoothDevices_test_016 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- getAllowedBluetoothDevices_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
-      }
-      done();
-      console.info(' --- getAllowedBluetoothDevices_test_016  -------- END --------');
-    })
+     it("getAllowedBluetoothDevices_test_016", Level.LEVEL2, async (done: Function) => {
+       console.info(' --- getAllowedBluetoothDevices_test_016  -------- START --------');
+       try {
+         bluetoothManager.getAllowedBluetoothDevices(undefined);
+         console.info(' --- getAllowedBluetoothDevices_test_016 error is expected, but it done.');
+         expect(false).assertTrue();
+       } catch (error) {
+         console.info(' --- getAllowedBluetoothDevices_test_016 error 401 is expected, actually catch: ' + error.code);
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+       console.info(' --- getAllowedBluetoothDevices_test_016  -------- END --------');
+     })
+
 
 
     /**
@@ -2404,7 +2531,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- turnOnBluetooth_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- turnOnBluetooth_test_015  -------- END --------');
@@ -2427,7 +2554,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- turnOnBluetooth_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- turnOnBluetooth_test_016  -------- END --------');
@@ -2450,7 +2577,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- turnOffBluetooth_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- turnOffBluetooth_test_015  -------- END --------');
@@ -2473,7 +2600,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- turnOffBluetooth_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- turnOffBluetooth_test_016  -------- END --------');
@@ -2496,7 +2623,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothDevices_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothDevices_test_016  -------- END --------');
@@ -2518,7 +2645,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothProtocols_test_029 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothProtocols_test_029  -------- END --------');
@@ -2541,7 +2668,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothProtocols_test_030 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothProtocols_test_030  -------- END --------');
@@ -2564,7 +2691,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothProtocols_test_031 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothProtocols_test_031  -------- END --------');
@@ -2587,7 +2714,7 @@ export default function bluetoothManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedBluetoothProtocols_test_032 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedBluetoothProtocols_test_032  -------- END --------');

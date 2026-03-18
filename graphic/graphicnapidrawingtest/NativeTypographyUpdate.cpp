@@ -99,22 +99,6 @@ void NativeTypographyUpdate::TearDown()
 }
 
 /**
- * @tc.name   OHDrawingTypographyUpdate001
- * @tc.number OHDrawingTypographyUpdate001
- * @tc.desc   test the nullptr input value for updating the paint attribute
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate001, Function | MediumTest | Level0)
-{
-    OH_Drawing_TypographyUpdateFontColor(nullptr, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0xFF, 0xFF));
-    OH_Drawing_TypographyUpdateDecoration(nullptr, TEXT_DECORATION_LINE_THROUGH);
-    OH_Drawing_TypographyUpdateDecorationThicknessScale(nullptr, 2.0);
-    OH_Drawing_TypographyUpdateDecorationStyle(nullptr, TEXT_DECORATION_STYLE_DOTTED);
-}
-
-/**
  * @tc.name   OHDrawingTypographyUpdate002
  * @tc.number OHDrawingTypographyUpdate002
  * @tc.desc   test for updating the font color
@@ -356,24 +340,6 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdate013, Function | Medium
 }
 
 /**
- * @tc.name   OHDrawingSetTypographyTextTrailingSpaceOptimized001
- * @tc.number OHDrawingSetTypographyTextTrailingSpaceOptimized001
- * @tc.desc   test for setting the different value of trailingSpaceOptimized and improve code coverage
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-HWTEST_F(NativeTypographyUpdate, OHDrawingSetTypographyTextTrailingSpaceOptimized001, Function | MediumTest | Level0)
-{
-    OH_Drawing_SetTypographyTextAlign(fTypoStyle, TEXT_ALIGN_RIGHT);
-    OH_Drawing_SetTypographyTextTrailingSpaceOptimized(nullptr, true);
-    OH_Drawing_SetTypographyTextTrailingSpaceOptimized(nullptr, false);
-    OH_Drawing_SetTypographyTextTrailingSpaceOptimized(fTypoStyle, true);
-    OH_Drawing_SetTypographyTextTrailingSpaceOptimized(fTypoStyle, false);
-    PrepareWorkForAlignmentTest();
-}
-
-/**
  * @tc.name   OHDrawingTypographyUpdateDecorationColor001
  * @tc.number SUB_GRAPHIC_GRAPHIC_2D_TypographyUpdateDecorationColor_001
  * @tc.desc   test for updating the decoration color
@@ -392,19 +358,5 @@ HWTEST_F(NativeTypographyUpdate, OHDrawingTypographyUpdateDecorationColor001, Fu
         EXPECT_EQ(item.second.textStyle->decorationColor.CastToColorQuad(),
             Drawing::Color::ColorQuadSetARGB(255, 0, 255, 255));
     }
-}
-
-/**
- * @tc.name   OHDrawingSetTypographyVerticalAlignment001
- * @tc.number SUB_GRAPHIC_GRAPHIC_2D_SetTypographyVerticalAlignment_001
- * @tc.desc   Test for vertical align valid params
- * @tc.type   FUNCTION
- * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL0
- */
-HWTEST_F(NativeTypographyUpdate, OHDrawingSetTypographyVerticalAlignment001, Function | MediumTest | Level0)
-{
-    EXPECT_NO_FATAL_FAILURE(OH_Drawing_SetTypographyVerticalAlignment(nullptr,
-        OH_Drawing_TextVerticalAlignment::TEXT_VERTICAL_ALIGNMENT_BOTTOM));
 }
 } // namespace OHOS

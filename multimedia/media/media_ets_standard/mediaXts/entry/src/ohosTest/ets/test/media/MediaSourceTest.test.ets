@@ -56,7 +56,6 @@ function setMimeType(done: Function, testName: string, mimeType: media.AVMimeTyp
     if (mMediaSource !== undefined) {
       mMediaSource.setMimeType(mimeType);
       console.info(TAG, testName + ' Succeeded in set MimeType.');
-      expect(true).assertTrue();
     }
     done();
   } catch (error) {
@@ -77,7 +76,6 @@ function setMediaResourceLoaderDelegate(done: Function, testName: string) {
     if (mMediaSource !== undefined) {
       mMediaSource.setMediaResourceLoaderDelegate(resourceLoader);
       console.info(TAG, testName + ' Succeeded in set MediaResourceLoaderDelegate.');
-      expect(true).assertTrue();
     }
     done();
   } catch (error) {

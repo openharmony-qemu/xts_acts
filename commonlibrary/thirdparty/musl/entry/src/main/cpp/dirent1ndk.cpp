@@ -246,22 +246,27 @@ static napi_value FdOpenDir(napi_env env, napi_callback_info info)
     int param;
     napi_get_value_int32(env, args[0], &param);
 
-    DIR *fdir;
+    DIR *fdir = nullptr;
     if (param == PARAM_0) {
-        DIR *dir = opendir(PATH);
-        int fd = dirfd(dir);
-        fdir = fdopendir(fd);
-        close(fd);
-        closedir(dir);
+        // 使用 open 获取目录文件描述符（需确保 PATH 是有效目录，例如 "/tmp"）
+        int fd = open(PATH, O_RDONLY | O_DIRECTORY);
+        if (fd >= 0) {
+            fdir = fdopendir(fd);
+            if (fdir == nullptr) {
+                close(fd);  // fdopendir 失败时需手动关闭 fd
+            }
+        }
     } else {
+        // 传入非法文件描述符，预期失败
         fdir = fdopendir(PARAM_UNNORMAL);
     }
+
     int ret;
     if (fdir == nullptr) {
         ret = FAILD;
     } else {
         ret = RETURN_0;
-        closedir(fdir);
+        closedir(fdir);  // 自动关闭内部文件描述符
     }
 
     napi_value result = nullptr;

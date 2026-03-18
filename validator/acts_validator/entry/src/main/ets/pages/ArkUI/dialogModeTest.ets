@@ -170,227 +170,228 @@ struct dialogModeTest {
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
 
-      Column({ space: 10 }) {
-        Column({ space: 5 }) {
-          Text('此用例在非自由子窗口下生效,自由窗口设备（PC端）直接按照失败处理走豁免')
-            .fontSize(20)
-            .fontColor(Color.Red)
+      Scroll() {
+        Column({ space: 10 }) {
+          Column({ space: 5 }) {
+            Text('此用例在非自由子窗口下生效,自由窗口设备（PC端）直接按照失败处理走豁免')
+              .fontSize(20)
+              .fontColor(Color.Red)
 
-          Text('immersiveMode: ' + this.immersiveMode)
-          Button('immersiveMode:DEFAULT')
-            .backgroundColor(this.immersiveMode == 0 ? '#0957f5' : '#259cba')
-            .onClick((event: ClickEvent) => {
-              this.immersiveMode = ImmersiveMode.DEFAULT
-            })
-
-
-          Button('immersiveMode:EXTEND')
-            .backgroundColor(this.immersiveMode == 1 ? '#0957f5' : '#259cba')
-            .onClick((event: ClickEvent) => {
-              this.immersiveMode = ImmersiveMode.EXTEND
-            })
-
-
-          Button('immersiveMode:undefined')
-            .backgroundColor(this.immersiveMode == undefined ? '#0957f5' : '#259cba')
-            .onClick((event: ClickEvent) => {
-              this.immersiveMode = undefined
-            })
-        }
-
-        Column({ space: 5 }) {
-          Text(`showDialog`)
-            .fontSize(15)
-            .backgroundColor(Color.Orange)
-            .margin(3)
-            .padding(3)
-            .borderWidth(1.0)
-            .onClick(() => {
-              this.getUIContext().getPromptAction().showDialog({
-                levelMode: LevelMode.EMBEDDED,
-                immersiveMode: this.immersiveMode,
-
-                showInSubWindow: false,
-                isModal: true,
-                title: 'Title Info',
-                message: 'Message Info',
-                buttons: [
-                  {
-                    text: 'button1',
-                    color: '#000000'
-                  },
-                  {
-                    text: 'button2',
-                    color: '#000000'
-                  }
-                ],
+            Text('immersiveMode: ' + this.immersiveMode)
+            Button('immersiveMode:DEFAULT')
+              .backgroundColor(this.immersiveMode == 0 ? '#0957f5' : '#259cba')
+              .onClick((event: ClickEvent) => {
+                this.immersiveMode = ImmersiveMode.DEFAULT
               })
-            })
 
-          Text(`警告弹窗`)
-            .fontSize(15)
-            .backgroundColor(Color.Orange)
-            .margin(3)
-            .padding(3)
-            .borderWidth(1.0)
-            .onClick(() => {
-              this.getUIContext().showAlertDialog(
-                {
+
+            Button('immersiveMode:EXTEND')
+              .backgroundColor(this.immersiveMode == 1 ? '#0957f5' : '#259cba')
+              .onClick((event: ClickEvent) => {
+                this.immersiveMode = ImmersiveMode.EXTEND
+              })
+
+
+            Button('immersiveMode:undefined')
+              .backgroundColor(this.immersiveMode == undefined ? '#0957f5' : '#259cba')
+              .onClick((event: ClickEvent) => {
+                this.immersiveMode = undefined
+              })
+          }
+
+          Column({ space: 5 }) {
+            Text(`showDialog`)
+              .fontSize(15)
+              .backgroundColor(Color.Orange)
+              .margin(3)
+              .padding(3)
+              .borderWidth(1.0)
+              .onClick(() => {
+                this.getUIContext().getPromptAction().showDialog({
+                  levelMode: LevelMode.EMBEDDED,
+                  immersiveMode: this.immersiveMode,
+
+                  showInSubWindow: false,
+                  isModal: true,
+                  title: 'Title Info',
+                  message: 'Message Info',
+                  buttons: [
+                    {
+                      text: 'button1',
+                      color: '#000000'
+                    },
+                    {
+                      text: 'button2',
+                      color: '#000000'
+                    }
+                  ],
+                })
+              })
+
+            Text(`警告弹窗`)
+              .fontSize(15)
+              .backgroundColor(Color.Orange)
+              .margin(3)
+              .padding(3)
+              .borderWidth(1.0)
+              .onClick(() => {
+                this.getUIContext().showAlertDialog(
+                  {
+                    levelMode: LevelMode.EMBEDDED,
+                    immersiveMode: this.immersiveMode,
+
+                    showInSubWindow: false,
+                    isModal: true,
+
+                    title: 'title',
+                    subtitle: 'subtitle',
+                    message: 'text',
+                    autoCancel: true,
+                    alignment: DialogAlignment.Bottom,
+                    gridCount: 4,
+                    offset: { dx: 0, dy: -20 },
+                    primaryButton: {
+                      value: 'cancel',
+                      action: () => {
+                        console.info('Callback when the first button is clicked')
+                      }
+                    },
+                    secondaryButton: {
+                      enabled: true,
+                      defaultFocus: true,
+                      style: DialogButtonStyle.HIGHLIGHT,
+                      value: 'ok',
+                      action: () => {
+                        console.info('Callback when the second button is clicked')
+                      }
+                    },
+
+                    cancel: () => {
+                      console.info('Closed callbacks')
+                    },
+                  }
+                )
+              })
+
+            Text(`showActionMenu`)
+              .fontSize(15)
+              .backgroundColor(Color.Orange)
+              .margin(3)
+              .padding(3)
+              .borderWidth(1.0)
+              .onClick(() => {
+                this.getUIContext().getPromptAction().showActionMenu({
                   levelMode: LevelMode.EMBEDDED,
                   immersiveMode: this.immersiveMode,
 
                   showInSubWindow: false,
                   isModal: true,
 
-                  title: 'title',
-                  subtitle: 'subtitle',
-                  message: 'text',
+                  title: 'Title Info',
+                  buttons: [
+                    {
+                      text: 'button1',
+                      color: '#000000'
+                    },
+                    {
+                      text: 'button2',
+                      color: '#000000'
+                    }
+                  ],
+                })
+              })
+
+
+            Text(`列表选择弹窗`)
+              .fontSize(15)
+              .backgroundColor(Color.Orange)
+              .margin(3)
+              .padding(3)
+              .borderWidth(1.0)
+              .onClick(() => {
+                this.getUIContext().showActionSheet({
+                  levelMode: LevelMode.EMBEDDED,
+                  immersiveMode: this.immersiveMode,
+                  showInSubWindow: false,
+                  isModal: true,
+
+                  title: 'ActionSheet title',
+                  subtitle: 'ActionSheet subtitle',
+                  message: 'message',
                   autoCancel: true,
-                  alignment: DialogAlignment.Bottom,
-                  gridCount: 4,
-                  offset: { dx: 0, dy: -20 },
-                  primaryButton: {
-                    value: 'cancel',
-                    action: () => {
-                      console.info('Callback when the first button is clicked')
-                    }
-                  },
-                  secondaryButton: {
-                    enabled: true,
+                  confirm: {
                     defaultFocus: true,
-                    style: DialogButtonStyle.HIGHLIGHT,
-                    value: 'ok',
+                    value: 'Confirm button',
                     action: () => {
-                      console.info('Callback when the second button is clicked')
+                      console.log('Get Alert Dialog handled')
                     }
                   },
-
                   cancel: () => {
-                    console.info('Closed callbacks')
+                    console.log('actionSheet canceled')
                   },
+                  alignment: DialogAlignment.Bottom,
+                  offset: { dx: 0, dy: -10 },
+                  sheets: [
+                    {
+                      title: 'apples',
+                      action: () => {
+                        console.log('apples')
+                      }
+                    },
+                    {
+                      title: 'bananas',
+                      action: () => {
+                        console.log('bananas')
+                      }
+                    },
+                    {
+                      title: 'pears',
+                      action: () => {
+                        console.log('pears')
+                      }
+                    }
+                  ],
+                  backgroundColor: Color.Orange,
+                  backgroundBlurStyle: BlurStyle.NONE
+                })
+              })
+
+            Text(`自定义弹窗`)
+              .fontSize(15)
+              .backgroundColor(Color.Orange)
+              .margin(3)
+              .padding(3)
+              .borderWidth(1.0)
+              .onClick(() => {
+                dialogController1 = new CustomDialogController({
+                  builder: CustomDialogExample({}),
+                  levelMode: LevelMode.EMBEDDED,
+                  immersiveMode: this.immersiveMode,
+
+                  showInSubWindow: false,
+                  isModal: true,
+
+                  autoCancel: true,
+
+                  alignment: DialogAlignment.Bottom,
+                  offset: { dx: 0, dy: -20 },
+                  gridCount: 4,
+                  customStyle: false,
+
+                  backgroundColor: Color.Orange,
+                  backgroundBlurStyle: BlurStyle.NONE
+                })
+
+                if (dialogController1 != null) {
+                  dialogController1.open();
                 }
-              )
-            })
-
-          Text(`showActionMenu`)
-            .fontSize(15)
-            .backgroundColor(Color.Orange)
-            .margin(3)
-            .padding(3)
-            .borderWidth(1.0)
-            .onClick(() => {
-              this.getUIContext().getPromptAction().showActionMenu({
-                levelMode: LevelMode.EMBEDDED,
-                immersiveMode: this.immersiveMode,
-
-                showInSubWindow: false,
-                isModal: true,
-
-                title: 'Title Info',
-                buttons: [
-                  {
-                    text: 'button1',
-                    color: '#000000'
-                  },
-                  {
-                    text: 'button2',
-                    color: '#000000'
-                  }
-                ],
               })
-            })
-
-
-          Text(`列表选择弹窗`)
-            .fontSize(15)
-            .backgroundColor(Color.Orange)
-            .margin(3)
-            .padding(3)
-            .borderWidth(1.0)
-            .onClick(() => {
-              this.getUIContext().showActionSheet({
-                levelMode: LevelMode.EMBEDDED,
-                immersiveMode: this.immersiveMode,
-                showInSubWindow: false,
-                isModal: true,
-
-                title: 'ActionSheet title',
-                subtitle: 'ActionSheet subtitle',
-                message: 'message',
-                autoCancel: true,
-                confirm: {
-                  defaultFocus: true,
-                  value: 'Confirm button',
-                  action: () => {
-                    console.log('Get Alert Dialog handled')
-                  }
-                },
-                cancel: () => {
-                  console.log('actionSheet canceled')
-                },
-                alignment: DialogAlignment.Bottom,
-                offset: { dx: 0, dy: -10 },
-                sheets: [
-                  {
-                    title: 'apples',
-                    action: () => {
-                      console.log('apples')
-                    }
-                  },
-                  {
-                    title: 'bananas',
-                    action: () => {
-                      console.log('bananas')
-                    }
-                  },
-                  {
-                    title: 'pears',
-                    action: () => {
-                      console.log('pears')
-                    }
-                  }
-                ],
-                backgroundColor: Color.Orange,
-                backgroundBlurStyle: BlurStyle.NONE
-              })
-            })
-
-          Text(`自定义弹窗`)
-            .fontSize(15)
-            .backgroundColor(Color.Orange)
-            .margin(3)
-            .padding(3)
-            .borderWidth(1.0)
-            .onClick(() => {
-              dialogController1 = new CustomDialogController({
-                builder: CustomDialogExample({}),
-                levelMode: LevelMode.EMBEDDED,
-                immersiveMode: this.immersiveMode,
-
-                showInSubWindow: false,
-                isModal: true,
-
-                autoCancel: true,
-
-                alignment: DialogAlignment.Bottom,
-                offset: { dx: 0, dy: -20 },
-                gridCount: 4,
-                customStyle: false,
-
-                backgroundColor: Color.Orange,
-                backgroundBlurStyle: BlurStyle.NONE
-              })
-
-              if (dialogController1 != null) {
-                dialogController1.open();
-              }
-            })
+          }
         }
+        .backgroundColor(Color.White)
       }
       .height('80%')
-      .width('100%')
-      .backgroundColor(Color.White)
-
+      
       Row() {
         this.PassBtn($r('app.string.btn_fullscreen'), true);
         Button() {

@@ -377,6 +377,125 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       }
       done();
     });
-
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0020
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0020
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0020: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList("", ukeyInfo);
+      } catch (error) {
+        if(error.code != 801){
+        console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0020 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(17500001);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0021
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0021
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0021: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(null, ukeyInfo);
+      } catch (error) {
+        if(error.code != 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0021 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0022
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0022
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0022: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(undefined, ukeyInfo);
+      } catch (error) {
+        if(error.code != 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0022 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0023
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0023
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0023: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, null);
+      } catch (error) {
+        if(error.code != 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0023 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_0024
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_0024
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_getUkeyCertificateList_func_0024: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        await certManager.getUkeyCertificateList(ukeyProvider, undefined);
+      } catch (error) {
+        if(error.code != 801){
+          console.error(`SUB_Security_CertManager_getUkeyCertificateList_func_0024 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500011);
+        }
+      }
+      done();
+    });
   })
 }

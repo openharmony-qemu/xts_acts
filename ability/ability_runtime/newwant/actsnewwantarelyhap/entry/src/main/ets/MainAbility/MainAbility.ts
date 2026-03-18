@@ -15,6 +15,7 @@
 
 import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default class MainAbility extends Ability {
     onCreate(want, launchParam) {
@@ -47,29 +48,32 @@ export default class MainAbility extends Ability {
         console.log("ACTS_NewWant MainAbility onWindowStageDestroy(newwanthapc)")
     }
 
-    onForeground() {
-        setTimeout(() => {
+    async onForeground(): Promise<void> {
+        await eventBusPlus.emit('HapC_MainAbility_onForeground_Success');
             // Ability has brought to foreground
             console.log("ACTS_NewWant MainAbility onForeground(newwanthapc)")
-            if (globalThis.abilityWant.action == 'startHapC') {
+            if (globalThis.abilityWant.action === 'startHapC') {
                 globalThis.hapAAbilityContext.startAbility({
                     bundleName: "com.example.newwanthap",
                     abilityName: "com.example.newwanthapa.SecondAbility",
                     action: "startHapA0600"
-                }, (error, data) => {
-                    console.log('ACTS_NewWant MainAbility onForeground(newwanthapc) - startAbility start HapA: '
-                    + JSON.stringify(error) + ", " + JSON.stringify(data))
+                }, async (error, data) => {
+                    console.log('ACTS_NewWant MainAbility onForeground(newwanthapc) - startAbility start HapA: ' + 
+                    JSON.stringify(error) + ", " + JSON.stringify(data))
+                    await eventBusPlus.onWait('HapA_Second06_onForeground_Success').then(()=>{
+                        globalThis.hapAAbilityContext.moveAbilityToBackground(); 
+                    });
                 })
             }
             commonEvent.publish("onForegroundMain_To_Test_CommonEvent", () => {
                 console.log("ACTS_NewWant Publish CallBack onForegroundMain_To_Test_CommonEvent(newwanthapc)")
             });
-        }, 1000)
     }
 
-    onBackground() {
+    async onBackground(): Promise<void> {
+        await eventBusPlus.emit('HapC_MainAbility_onBackground_Success');
         // Ability has back to background
-        console.log("ACTS_NewWant MainAbility onBackground(newwanthapc)")
+        console.log("ACTS_NewWant MainAbility onBackground(newwanthapc)");
     }
 
     onNewWant(want) {

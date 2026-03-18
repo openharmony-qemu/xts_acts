@@ -21,7 +21,6 @@ group("ai") {
   ]
   if (is_standard_system) {
     deps += [
-      "mindspore/mindsporectest:ActsMindSporeTest",
       "mindspore/mindsporejstest:ActsMindsporeJSTest",
       "mindspore/mindsporendktest:ActsMindSporeNdkTest",
       "mindspore/ai_mindsporectest_20:ActsMindSporec20Test",

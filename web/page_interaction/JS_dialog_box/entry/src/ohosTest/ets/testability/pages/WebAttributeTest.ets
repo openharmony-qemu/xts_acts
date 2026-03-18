@@ -74,7 +74,6 @@ struct WebAttributeTest {
   @State title: string = ''
   @State onRequestSelectedCalled: boolean = false
   @State testConsole: boolean = false
-
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State isRunJSEnd: number = -1;

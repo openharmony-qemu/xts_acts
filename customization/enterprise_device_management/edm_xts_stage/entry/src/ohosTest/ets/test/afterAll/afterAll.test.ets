@@ -90,7 +90,7 @@ export default function afterAllTest() {
         applicationManager.clearUpApplicationData(SELFWANT, INVALID_BUNDLE_NAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-         expect(error.code == 401).assertTrue();
+         expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -111,7 +111,7 @@ export default function afterAllTest() {
         applicationManager.clearUpApplicationData(SELFWANT, SELFHAPNAME, INVALID_APP_INDEX, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-         expect(error.code == 401).assertTrue();
+         expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -132,7 +132,7 @@ export default function afterAllTest() {
         applicationManager.clearUpApplicationData(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, INVALID_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
-         expect(error.code == 401).assertTrue();
+         expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -153,6 +153,69 @@ export default function afterAllTest() {
         applicationManager.clearUpApplicationData(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID);
       } catch (error) {
          expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_clearUpApplicationData_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPLICATIONDATA_007
+     * @tc.desc   test clearUpApplicationData method with invalid user id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_clearUpApplicationData_007", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.clearUpApplicationData(SELFWANT, '', DEFAULT_APP_INDEX, INVALID_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_clearUpApplicationData_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_008
+     * @tc.desc   test clearUpApplicationData method with invalid user id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_clearUpApplicationData_008", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.clearUpApplicationData(SELFWANT, null, DEFAULT_APP_INDEX, INVALID_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_clearUpApplicationData_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_009
+     * @tc.desc   test clearUpApplicationData method with invalid user id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_clearUpApplicationData_009", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.clearUpApplicationData(SELFWANT, undefined, DEFAULT_APP_INDEX, INVALID_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

@@ -580,7 +580,6 @@ export default function WindowPropertiesTest() {
                 exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
                 if (exception.code === 1300002) {
-                    expect(true).assertTrue()
                     done()
                 } else {
                     expect(false).assertTrue();
@@ -771,7 +770,6 @@ export default function WindowPropertiesTest() {
                         try {
                             (win as window.Window).offWindowVisibilityChange();
                             await (win as window.Window).destroyWindow();
-                            expect(true).assertTrue();
                             done();
                         } catch (exception) {
                             await (win as window.Window).destroyWindow();
@@ -877,7 +875,6 @@ export default function WindowPropertiesTest() {
                 windowClass.onWindowVisibilityChange((flag:boolean) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Window visibility changed, isVisible=' + flag);
                 });
-                expect(true).assertTrue();
                 windowClass.offWindowVisibilityChange();
                 done();
             } catch (error) {
@@ -911,7 +908,6 @@ export default function WindowPropertiesTest() {
                 let windowClass:window.Window = await windowStage!.getMainWindow();
                 windowClass.offWindowVisibilityChange();
                 hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed');
-                expect(true).assertTrue();
                 done();
             } catch (error) {
                 error = error as BusinessError;
@@ -1302,7 +1298,6 @@ export default function WindowPropertiesTest() {
                     statusBarContentColor: '#ffffff'
                 }
                 hilog.info(0x0000, '[ANI]',msgStr + 'a:'+ JSON.stringify(a));
-                expect(true).assertTrue();
                 done();
             } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr +
@@ -2100,7 +2095,6 @@ export default function WindowPropertiesTest() {
             try{
                 windowClass.isWindowHighlighted();
                 await windowClass.destroyWindow();
-                expect(true).assertTrue()
                 done();
             } catch(err) {
                 err = err as BusinessError;
@@ -2172,7 +2166,6 @@ export default function WindowPropertiesTest() {
                             expect(err.message!==null).assertTrue();
                             done();
                         } else if(err.code === 1300002){
-                            expect(true).assertTrue();
                             expect(err.message!==null).assertTrue();
                             done();
                         }else {
@@ -2284,7 +2277,6 @@ export default function WindowPropertiesTest() {
 
             try {
                 subWindowClass.setWindowShadowRadius(4)
-                expect(true).assertTrue();
                 hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowShadowRadius.');
                 await subWindowClass.destroyWindow();
                 done()
@@ -2702,7 +2694,6 @@ export default function WindowPropertiesTest() {
                 (subWin! as window.Window).setWindowGrayScale(0).then(() => {
                     console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
                     subWin.destroyWindow();
-                    expect(true).assertTrue();
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined  => {
                     console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
@@ -3114,7 +3105,6 @@ export default function WindowPropertiesTest() {
                     console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + JSON.stringify(err));
                     if (err.code === 801) {
                         expect(err.message !== null).assertTrue();
-                        expect(true).assertTrue()
                     } else {
                         expect(err.code).assertEqual(1300003)
                     }
