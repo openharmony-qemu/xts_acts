@@ -239,5 +239,105 @@ export default function requestCacheDownloadStaticTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_0500
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_0500
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_0500',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_0500 is starting-----------------------");
+      let headers: Record<string, string> = {'Accept': '*/*'};
+      let downloadOptions: cacheDownload.CacheDownloadOptions = {
+        headers: headers,
+      }
+      let text: string = ''.padEnd(8176, 'cacheDownload')
+      let url: string = 'https://gitee' + text + '.com';
+      try {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0500 download success url length: " + url.length);
+        cacheDownload.download(url, downloadOptions);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0500 catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_0600
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_0600
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_0600',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_0600 is starting-----------------------");
+      let text: string = ''.padEnd(8176, 'cacheDownload')
+      let url: string = 'https://gitee' + text + '.com';
+      try {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0600 cancel success url length: " + url.length);
+        cacheDownload.cancel(url);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0600 catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_0700
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_0700
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_0700',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_0700 is starting-----------------------");
+      let num: Long = 1 * 1024 * 1024 * 1024 + 1
+      try {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0700 setMemoryCacheSize success num: " + num);
+        cacheDownload.setMemoryCacheSize(num);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0700 catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_0800
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_0800
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_0800',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_0800 is starting-----------------------");
+      let num: Long = 4294967296 + 1
+      try {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0800 setMemoryCacheSize success num: " + num);
+        cacheDownload.setFileCacheSize(num);
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0800 setMemoryCacheSize setFileCacheSize success" + num);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_0800 catch err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
   });
 }
