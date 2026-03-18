@@ -249,6 +249,7 @@ export default function TLSSocketConnectionsTest() {
           })
           tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
             console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
+            expectTrue(client.clientId != null);
             client.on('message', (value: socket.SocketMessageInfo) => {
               console.info(`${caseName} SocketMessageInfo:${JSON.stringify(value)} `);
               expectTrue(value.message != null);
