@@ -56,6 +56,10 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_textInput_undefined_static:ActsAceEtsModuleTextInputUndefinedStaticTest",
       "ace_ets_module_common_undefined_static:ActsAceEtsModuleCommonUndefinedStaticTest",
       "ace_ets_module_parallel_static:ActsAceEtsModuleParallelStaticTest",
+      "ace_ets_module_column_static:ActsAceEtsModuleParallelStaticTest",
+      "ace_ets_module_measure_static:ActsAceEtsModuleMeasureStaticTest",
+      "ace_ets_module_promptAction_static:ActsAceEtsModulePromptActionStaticTest",
+      "ace_ets_module_uiExtention_static:ActsAceEtsModuleUiExtentionStaticTest",
     ]
   } else {
     deps = [
@@ -109,7 +113,10 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_textArea_undefined_static:ActsAceEtsModuleTextAreaUndefinedStaticTest",
       "ace_ets_module_textInput_undefined_static:ActsAceEtsModuleTextInputUndefinedStaticTest",
       "ace_ets_module_common_undefined_static:ActsAceEtsModuleCommonUndefinedStaticTest",
-      "ace_ets_module_parallel_static:ActsAceEtsModuleParallelStaticTest",
+      "ace_ets_module_column_static:ActsAceEtsModuleParallelStaticTest",
+      "ace_ets_module_measure_static:ActsAceEtsModuleMeasureStaticTest",
+      "ace_ets_module_promptAction_static:ActsAceEtsModulePromptActionStaticTest",
+      "ace_ets_module_uiExtention_static:ActsAceEtsModuleUiExtentionStaticTest",
     ]
   }
 }
