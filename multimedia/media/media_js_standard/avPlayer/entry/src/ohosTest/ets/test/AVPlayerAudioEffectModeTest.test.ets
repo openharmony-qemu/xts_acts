@@ -828,14 +828,14 @@ export default function AVPlayerAudioEffectModeTest() {
       setSource(avPlayer, fileDescriptor);
     });
     /**
-     * @tc.name   SUB_MULTIMEDIA_MEDIA_GET_OUTPUT_DEVICE_CHANGE_0100
-     * @tc.number SUB_MULTIMEDIA_MEDIA_GET_OUTPUT_DEVICE_CHANGE_0100
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_OUTPUT_DEVICE_CHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_OUTPUT_DEVICE_CHANGE_0100
      * @tc.desc   test get max amplitude
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_GET_OUTPUT_DEVICE_CHANGE_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_OUTPUT_DEVICE_CHANGE_0100', Level.LEVEL0, async (done: Function) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
       await media.createAVPlayer().then((video) => {
         if (typeof (video) != 'undefined') {
@@ -853,7 +853,7 @@ export default function AVPlayerAudioEffectModeTest() {
                   break;
               }
             avPlayer.surfaceId = globalThis.value;
-            avPlayer.prepare()
+            avPlayer.prepare();
             break;
           case PREPARED:
               if (!avPlayer) {
