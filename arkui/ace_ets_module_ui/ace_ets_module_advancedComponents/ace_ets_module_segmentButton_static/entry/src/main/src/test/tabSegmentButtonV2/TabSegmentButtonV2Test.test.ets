@@ -14,16 +14,41 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import {
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  it,
+  expect,
+  Level,
+  TestType,
+  Size
+} from "../../../../hypium/index";
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
-  ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import {
+  Component,
+  Driver,
+  Component,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
+import { Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import deviceInfo from "@ohos.deviceInfo"
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function TabSegmentButtonV2Test() {
   describe('TabSegmentButtonV2Test', () => {
