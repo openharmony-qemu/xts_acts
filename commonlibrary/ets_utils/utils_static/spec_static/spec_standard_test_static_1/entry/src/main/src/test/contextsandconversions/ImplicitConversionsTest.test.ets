@@ -5521,5 +5521,466 @@ export default function ImplicitConversionsTest() {
       expect(a.meth(s + Color7.Blue)).assertEqual(145.0);
     });
 
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25800
+     * @tc.name      testImplicitConversions0258
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0258", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      expect(new A207(Color7.Red).fld).assertEqual(0);
+      expect(new A207(Color7.Green + Color7.Blue).fld).assertEqual(201);
+      expect(new A207(s + Color7.Blue + 10).fld).assertEqual(153);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25900
+     * @tc.name      testImplicitConversions0259
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0259", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      expect(((p: number): number => { return p })(Color7.Red)).assertEqual(0.0);
+      expect(((p: int): int => { return p })(Color7.Green + Color7.Blue)).assertEqual(201);
+      expect(((p: int): number => { return p })(s + Color7.Blue + 5)).assertEqual(148.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26000
+     * @tc.name      testImplicitConversions0260
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      let a: A208 = { fld: Color7.Red };
+      expect(a.fld).assertEqual(0);
+      a = { fld: Color7.Blue + Color7.Green };
+      expect(a.fld).assertEqual(201);
+      a = { fld: s + Color7.Blue + 1 };
+      expect(a.fld).assertEqual(144);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26100
+     * @tc.name      testImplicitConversions0261
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0261", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42.0;
+      let v: number[] = [ Color7.Red ];
+      expect(v[0]).assertEqual(0.0);
+      v = [ Color7.Green + Color7.Blue, Color7.Blue + s ];
+      expect(v[0]).assertEqual(201.0);
+      expect(v[1]).assertEqual(143.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26200
+     * @tc.name      testImplicitConversions0262
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0262", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      let v1: number = Color8.Red;
+      expect(v1).assertEqual(0.0);
+      let v2: number = Color8.Green + Color8.Blue;
+      expect(v2).assertEqual(7523377976305298605);
+      let v3: number = s + Color8.Blue + 1;
+      expect(v3).assertEqual(3761688988152649369);
+      const c1: number = Color8.Red;
+      expect(c1).assertEqual(0.0);
+      const c2: number = Color8.Green + Color8.Blue;
+      expect(c2).assertEqual(7523377976305298605);
+      const c3: number = s + Color8.Blue + 1;
+      expect(c3).assertEqual(3761688988152649369);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26300
+     * @tc.name      testImplicitConversions0263
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      let v: number;
+      v = Color8.Red;
+      expect(v).assertEqual(0.0);
+      v = Color8.Green + Color8.Blue;
+      expect(v).assertEqual(7523377976305298605);
+      v = s + Color8.Blue + 1;
+      expect(v).assertEqual(3761688988152649369);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26400
+     * @tc.name      testImplicitConversions0264
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0264", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: long = 42;
+      let union1: string | number;
+      let union2: long | object;
+      let union3: Array<string> | Any | byte;
+      union1 = Color8.Blue;
+      expect(union1).assertEqual(3761688988152649303);
+      expect(union1 instanceof number).assertTrue();
+      union2 = Color8.Red + Color8.Green;
+      expect(union2).assertEqual(3761688988152649302);
+      expect(union2 instanceof long).assertTrue();
+      union3 = Color8.Red + Color8.Blue + s;
+      expect(union3).assertEqual(3761688988152649345);
+      expect(union3 instanceof long).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26500
+     * @tc.name      testImplicitConversions0265
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0265", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      let a: A209 = new A209();
+      expect(a.fld2).assertEqual(7523377976305298605);
+      expect(a.fld3).assertEqual(3761688988152649302);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26600
+     * @tc.name      testImplicitConversions0266
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0266", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      let a: A210 = new A210();
+      a.fld1 = Color8.Red;
+      a.fld2 = Color8.Blue + Color8.Green;
+      a.fld3 = s + Color8.Green + 1;
+      expect(a.fld1).assertEqual(0.0);
+      expect(a.fld2).assertEqual(7523377976305298605);
+      expect(a.fld3).assertEqual(3761688988152649345);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26700
+     * @tc.name      testImplicitConversions0267
+     * @tc.desc      Numeric enumeration conversion to long/number (enum2long_4)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0267", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      expect(foo10(Color8.Red)).assertEqual(1.0);
+      expect(foo10(Color8.Green + Color8.Blue)).assertEqual(7523377976305298606);
+      expect(foo10(s + Color8.Blue + 2)).assertEqual(3761688988152649370);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26800
+     * @tc.name      testImplicitConversions0268
+     * @tc.desc      Numeric enumeration conversion to number (enum2long_5)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0268", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42.0;
+      let a: A211 = new A211();
+      expect(a.meth(Color8.Red)).assertEqual(2.0);
+      expect(a.meth(Color8.Green + Color8.Blue)).assertEqual(7523377976305298000);
+      expect(a.meth(s + Color8.Blue)).assertEqual(3761688988152649370);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_26900
+     * @tc.name      testImplicitConversions0269
+     * @tc.desc      Numeric enumeration conversion to long in constructor (enum2long_6)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0269", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      expect(new A212(Color8.Red).fld).assertEqual(0.0);
+      expect(new A212(Color8.Green + Color8.Blue).fld).assertEqual(7523377976305298605);
+      expect(new A212(s + Color8.Blue + 10).fld).assertEqual(3761688988152649355);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27000
+     * @tc.name      testImplicitConversions0270
+     * @tc.desc      Numeric enumeration conversion in lambda (enum2long_7)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      expect(((p: number): number => { return p })(Color8.Red)).assertEqual(0.0);
+      expect(((p: number): number => { return p })(Color8.Green + Color8.Blue)).assertEqual(7523377976305298605);
+      expect(((p: number): number => { return p })(s + Color8.Blue + 5)).assertEqual(3761688988152649350);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27100
+     * @tc.name      testImplicitConversions0271
+     * @tc.desc      Numeric enumeration conversion in composite object (enum2long_8)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0271", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      let a: A213 = { fld: Color8.Red };
+      expect(a.fld).assertEqual(0.0);
+      a = { fld: Color8.Blue + Color8.Green };
+      expect(a.fld).assertEqual(7523377976305298605);
+      a = { fld: s + Color8.Blue + 1 };
+      expect(a.fld).assertEqual(3761688988152649369);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27200
+     * @tc.name      testImplicitConversions0272
+     * @tc.desc      Numeric enumeration conversion in composite array (enum2long_9)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0272", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42.0;
+      let v: number[] = [Color8.Red];
+      expect(v[0]).assertEqual(0.0);
+      v = [Color8.Green + Color8.Blue, Color8.Blue + s];
+      expect(v[0]).assertEqual(7523377976305298605);
+      expect(v[1]).assertEqual(3761688988152649368);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27300
+     * @tc.name      testImplicitConversions0273
+     * @tc.desc      String enumeration conversion in variable/constant declaration (enum2str_0)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0273", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      let v1: string = Color9.Red;
+      expect(v1).assertEqual("r");
+      let v2: string = Color9.Green + Color9.Blue;
+      expect(v2).assertEqual("gb");
+      let v3: string = s + Color9.Blue + "X";
+      expect(v3).assertEqual("ZbX");
+      const c1: string = Color9.Red;
+      expect(c1).assertEqual("r");
+      const c2: string = Color9.Green + Color9.Blue;
+      expect(c2).assertEqual("gb");
+      const c3: string = s + Color9.Blue + "X";
+      expect(c3).assertEqual("ZbX");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27400
+     * @tc.name      testImplicitConversions0274
+     * @tc.desc      String enumeration conversion in variable assignment (enum2str_1)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0274", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      let v: string;
+      v = Color9.Red;
+      expect(v).assertEqual("r");
+      v = Color9.Green + Color9.Blue;
+      expect(v).assertEqual("gb");
+      v = s + Color9.Blue + "X";
+      expect(v).assertEqual("ZbX");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27500
+     * @tc.name      testImplicitConversions0275
+     * @tc.desc      String enumeration conversion in field declaration (enum2str_2)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0275", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A214 = new A214();
+      expect(a.fld1).assertEqual("r");
+      expect(a.fld2).assertEqual("bg");
+      expect(a.fld3).assertEqual("ZgX");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27600
+     * @tc.name      testImplicitConversions0276
+     * @tc.desc      String enumeration conversion in field assignment (enum2str_3)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0276", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      let a: A215 = new A215();
+      a.fld1 = Color9.Red;
+      expect(a.fld1).assertEqual("r");
+      a.fld2 = Color9.Blue + Color9.Green;
+      expect(a.fld2).assertEqual("bg");
+      a.fld3 = s + Color9.Green + "X";
+      expect(a.fld3).assertEqual("ZgX");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27700
+     * @tc.name      testImplicitConversions0277
+     * @tc.desc      String enumeration conversion in function call (enum2str_4)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0277", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      expect(foo11(Color9.Red)).assertEqual("r!");
+      expect(foo11(Color9.Green + Color9.Blue)).assertEqual("gb!");
+      expect(foo11(s + Color9.Blue + "X")).assertEqual("ZbX!");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27800
+     * @tc.name      testImplicitConversions0278
+     * @tc.desc      String enumeration conversion in method call (enum2str_5)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0278", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      let a: A216 = new A216();
+      expect(a.meth(Color9.Red)).assertEqual("r!");
+      expect(a.meth(Color9.Green + Color9.Blue)).assertEqual("gb!");
+      expect(a.meth(s + Color9.Blue + "X")).assertEqual("ZbX!");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_27900
+     * @tc.name      testImplicitConversions0279
+     * @tc.desc      String enumeration conversion in constructor call (enum2str_6)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0279", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      expect(new A217(Color9.Red).fld).assertEqual("r");
+      expect(new A217(Color9.Green + Color9.Blue).fld).assertEqual("gb");
+      expect(new A217(s + Color9.Blue + "X").fld).assertEqual("ZbX");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_28000
+     * @tc.name      testImplicitConversions0280
+     * @tc.desc      String enumeration conversion in lambda call (enum2str_7)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      expect(((p: string): string => { return p + "!" })(Color9.Red)).assertEqual("r!");
+      expect(((p: string): string => { return p + "!" })(Color9.Green + Color9.Blue)).assertEqual("gb!");
+      expect(((p: string): string => { return p + "!" })(s + Color9.Blue + "X")).assertEqual("ZbX!");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_28100
+     * @tc.name      testImplicitConversions0281
+     * @tc.desc      String enumeration conversion in composite object (enum2str_8)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0281", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      let a: A218 = { fld: Color9.Red };
+      expect(a.fld).assertEqual("r");
+      a = { fld: Color9.Blue + Color9.Green };
+      expect(a.fld).assertEqual("bg");
+      a = { fld: s + Color9.Blue + "!" };
+      expect(a.fld).assertEqual("Zb!");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_28200
+     * @tc.name      testImplicitConversions0282
+     * @tc.desc      String enumeration conversion in composite array (enum2str_9)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0282", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      let v: string;
+      v = Color9.Red;
+      expect(v).assertEqual("r");
+      v = Color9.Green + Color9.Blue;
+      expect(v).assertEqual("gb");
+      v = s + Color9.Blue + "X"
+      expect(v).assertEqual("ZbX");
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_28300
+     * @tc.name      testImplicitConversions0283
+     * @tc.desc      String enumeration conversion to union type (enum2str_10)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0283", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = "Z";
+      let union1: string | number;
+      let union2: float | object
+      let union3: Array<int> | Any | BigInt
+      union1 = Color9.Red;
+      expect(union1).assertEqual("r");
+      expect(union1 instanceof string).assertEqual(true);
+      union2 = Color9.Red + Color9.Blue;
+      expect(union2).assertEqual("rb");
+      expect(union2 instanceof string).assertEqual(true);
+      union3 = Color9.Red + Color9.Blue + s;
+      expect(union3).assertEqual("rbZ");
+      expect(union3 instanceof string).assertEqual(true);
+    });
+
   })
 }
