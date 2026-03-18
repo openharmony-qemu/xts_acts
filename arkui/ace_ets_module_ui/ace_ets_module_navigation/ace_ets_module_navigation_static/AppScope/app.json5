@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.arkui.ace.dialog.select.static",
+    "bundleName": "com.arkui.ace.navigation.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

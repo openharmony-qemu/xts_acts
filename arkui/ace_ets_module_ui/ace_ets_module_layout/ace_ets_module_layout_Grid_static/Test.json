@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsAceEtsModuleDialogSelectStaticTest.hap"
+            "ActsAceEtsModuleLayoutGridStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

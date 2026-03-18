@@ -14,7 +14,13 @@
  * limitations under the License.
  */
 
+import NavDestinationTest from './NavDestinationTest/NavDestination.test';
+import NavigationTest from './NavigationTest/Navigation.test';
+import SwiperControllerTest from './SwiperControllerTest/SwiperController.test';
+
 
 export default function testsuite() {
-
+  NavDestinationTest();
+  NavigationTest();
+  SwiperControllerTest();
 }
