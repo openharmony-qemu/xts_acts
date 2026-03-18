@@ -2635,14 +2635,6 @@ export default function audioFramework() {
       }
     })
 
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100
-@@ -1256,6 +2543,227 @@ export default function audioFramework() {	 
-      }
-    })
-
     /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0200
     * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0200
