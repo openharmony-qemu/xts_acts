@@ -1403,7 +1403,7 @@ function setAVPlayerSeekNullCb(src: string | media.AVFileDescriptor, avPlayer: m
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue()
+    expect(err.code == 401).assertTrue()
   });
 }
 
@@ -1450,11 +1450,11 @@ function setAVPlayerSeekUndefinedCb(src: string | media.AVFileDescriptor, avPlay
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue()
+    expect(err.code == 401).assertTrue()
   });
 }
 
-function setAVPlayerSetVolumNullCb(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null, done: Function) {
+function setAVPlayerSetVolumeNullCb(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null, done: Function) {
   let isSeekContinuousSupported: boolean  = false;
   let unsupportedSeekContinuousErr = false;
   let firstPlay = true;
@@ -1497,11 +1497,11 @@ function setAVPlayerSetVolumNullCb(src: string | media.AVFileDescriptor, avPlaye
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue()
+    expect(err.code == 401).assertTrue()
   });
 }
 
-function setAVPlayerSetVolumUndefinedCb(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null, done: Function) {
+function setAVPlayerSetVolumeUndefinedCb(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null, done: Function) {
   let isSeekContinuousSupported: boolean  = false;
   let unsupportedSeekContinuousErr = false;
   let firstPlay = true;
@@ -1544,7 +1544,7 @@ function setAVPlayerSetVolumUndefinedCb(src: string | media.AVFileDescriptor, av
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except(err.code == 401).assertTrue()
+    expect(err.code == 401).assertTrue()
   });
 }
 
@@ -1571,7 +1571,7 @@ function setAVPlayerSetSpeed01(src: string | media.AVFileDescriptor, avPlayer: m
         break;
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
-        avPlayer.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_75_X);
+        avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_75_X);
         avPlayer?.release();
         break;
       case RELEASED:
@@ -1591,10 +1591,10 @@ function setAVPlayerSetSpeed01(src: string | media.AVFileDescriptor, avPlayer: m
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except().assertFail();
+    expect().assertFail();
     await avPlayer?.release().then(() => {
       avPlayer = null;
-      done;
+      done();
     });
   });
 }
@@ -1622,7 +1622,7 @@ function setAVPlayerSetSpeed02(src: string | media.AVFileDescriptor, avPlayer: m
         break;
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
-        avPlayer.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_50_X);
+        avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_50_X);
         avPlayer?.release();
         break;
       case RELEASED:
@@ -1642,10 +1642,10 @@ function setAVPlayerSetSpeed02(src: string | media.AVFileDescriptor, avPlayer: m
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except().assertFail();
+    expect().assertFail();
     await avPlayer?.release().then(() => {
       avPlayer = null;
-      done;
+      done();
     });
   });
 }
@@ -1673,7 +1673,7 @@ function setAVPlayerSetSpeed03(src: string | media.AVFileDescriptor, avPlayer: m
         break;
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
-        avPlayer.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_50_X);
+        avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_50_X);
         avPlayer?.release();
         break;
       case RELEASED:
@@ -1693,10 +1693,10 @@ function setAVPlayerSetSpeed03(src: string | media.AVFileDescriptor, avPlayer: m
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except().assertFail();
+    expect().assertFail();
     await avPlayer?.release().then(() => {
       avPlayer = null;
-      done;
+      done();
     });
   });
 }
@@ -1724,7 +1724,7 @@ function setAVPlayerSetSpeed04(src: string | media.AVFileDescriptor, avPlayer: m
         break;
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
-        avPlayer.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_3_00_X);
+        avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_3_00_X);
         avPlayer?.release();
         break;
       case RELEASED:
@@ -1744,10 +1744,10 @@ function setAVPlayerSetSpeed04(src: string | media.AVFileDescriptor, avPlayer: m
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except().assertFail();
+    expect().assertFail();
     await avPlayer?.release().then(() => {
       avPlayer = null;
-      done;
+      done();
     });
   });
 }
@@ -1775,7 +1775,7 @@ function setAVPlayerSetSpeed05(src: string | media.AVFileDescriptor, avPlayer: m
         break;
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
-        avPlayer.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_25_X);
+        avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_25_X);
         avPlayer?.release();
         break;
       case RELEASED:
@@ -1795,10 +1795,10 @@ function setAVPlayerSetSpeed05(src: string | media.AVFileDescriptor, avPlayer: m
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except().assertFail();
+    expect().assertFail();
     await avPlayer?.release().then(() => {
       avPlayer = null;
-      done;
+      done();
     });
   });
 }
@@ -1826,7 +1826,7 @@ function setAVPlayerSetSpeed06(src: string | media.AVFileDescriptor, avPlayer: m
         break;
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
-        avPlayer.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_125_X);
+        avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_0_125_X);
         avPlayer?.release();
         break;
       case RELEASED:
@@ -1846,10 +1846,10 @@ function setAVPlayerSetSpeed06(src: string | media.AVFileDescriptor, avPlayer: m
 
   avPlayer?.on('error', async (err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
-    except().assertFail();
+    expect().assertFail();
     await avPlayer?.release().then(() => {
       avPlayer = null;
-      done;
+      done();
     });
   });
 }
@@ -1904,14 +1904,14 @@ async function testAVPlayerSeekUndefined(src: string | media.AVFileDescriptor, a
   });
 }
 
-async function testAVPlayerSetVolumNull(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null,
+async function testAVPlayerSetVolumeNull(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null,
   done: Function) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err, video) => {
     console.info(`case media err: ${err}`)
     console.info('case createAVPlayer success');
     avPlayer = video;
-    setAVPlayerSetVolumNullCb(src, avPlayer, done);
+    setAVPlayerSetVolumeNullCb(src, avPlayer, done);
     setSource(avPlayer, src);
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err.message}`);
@@ -1921,14 +1921,14 @@ async function testAVPlayerSetVolumNull(src: string | media.AVFileDescriptor, av
   });
 }
 
-async function testAVPlayerSetVolumUndefined(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null,
+async function testAVPlayerSetVolumeUndefined(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null,
   done: Function) {
   console.info(`case media source: ${src}`)
   media.createAVPlayer((err, video) => {
     console.info(`case media err: ${err}`)
     console.info('case createAVPlayer success');
     avPlayer = video;
-    setAVPlayerSetVolumUndefinedCb(src, avPlayer, done);
+    setAVPlayerSetVolumeUndefinedCb(src, avPlayer, done);
     setSource(avPlayer, src);
     if (err != null) {
       console.error(`case createAVPlayer error, errMessage is ${err.message}`);
@@ -3278,7 +3278,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_VOLUME_0100', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor_mkv) {
-        testAVPlayerSetVolumNull(fileDescriptor_mkv, avPlayer, done);
+        testAVPlayerSetVolumeNull(fileDescriptor_mkv, avPlayer, done);
       }
     });
     /**
@@ -3291,7 +3291,7 @@ export default function AVPlayerLocalTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_VOLUME_0200', Level.LEVEL0,async (done: Function) => {
       if (fileDescriptor_mkv) {
-        testAVPlayerSetVolumUndefined(fileDescriptor_mkv, avPlayer, done);
+        testAVPlayerSetVolumeUndefined(fileDescriptor_mkv, avPlayer, done);
       }
     });
     /**
