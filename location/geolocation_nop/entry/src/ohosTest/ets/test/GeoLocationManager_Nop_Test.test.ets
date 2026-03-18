@@ -292,7 +292,7 @@ export default function geoLocationManager_nop_test() {
       try {
         geoLocationManager.on('locationChange', requestInfo, locationChange);
         geoLocationManager.off('locationChange', locationChange);
-        expect(locationChange != null).assertTrue;
+        expect(locationChange != null).assertTrue();
         done();
       } catch (err) {
         console.info('---geoLocationManager_nop_test_007  catch ---' + typeof err.code + ',err:' + err.code);
@@ -451,7 +451,7 @@ export default function geoLocationManager_nop_test() {
       try {
         geolocation.on('nmeaMessageChange', nmeaCb);
         geolocation.off('nmeaMessageChange', nmeaCb);
-        expect(nmeaCb != null).assertTrue;
+        expect(nmeaCb != null).assertTrue();
         console.info('---geolocation_nmeaMessageChange_nop_test_005 catch success---');
         done();
       } catch (err) {
@@ -567,7 +567,7 @@ export default function geoLocationManager_nop_test() {
       } catch (err) {
         console.info('---geolocation_getLastLocation_nop_test_011 catch ---' + ", errtype:" + typeof err.code + ", err:" + err.code);
         if (Number(err.code) !== 106) {
-          expect(err).assertfail();
+          expect().assertFail();
           done();
         }
         console.info('---geolocation_getLastLocation_nop_test_011 catch end err ---' + ", errtype:" + typeof err.code + ", err:" + err.code);
@@ -591,7 +591,7 @@ export default function geoLocationManager_nop_test() {
               expect(Number(err.code)).assertEqual(106);
               done();
             } else {
-              expect(false).assertTrue();
+              expect().assertFail();
               done();
             }
           } else {
@@ -602,7 +602,7 @@ export default function geoLocationManager_nop_test() {
         });
       } catch (err) {
         console.info('---geolocation_isLocationEnabled_nop_test_012 catch end---' + err.code + ", errMessage:" + err.message + ", errtype:" + typeof err.code);
-        expect(false).assertTrue();
+        expect().assertFail();
         console.info('geolocation_isLocationEnabled_nop_test_012 end');
         done();
       }
@@ -629,7 +629,7 @@ export default function geoLocationManager_nop_test() {
         });
       } catch (err) {
         console.info('---geolocation_isLocationEnabled_nop_test_013 catch end---' + err.code);
-        expect().assertFalse();
+        expect().assertFail();
         console.info('geolocation_isLocationEnabled_nop_test_013 end');
         done();
       }
@@ -677,7 +677,7 @@ export default function geoLocationManager_nop_test() {
           expect(Number(err.code)).assertEqual(106);
           done();
         } else {
-          expect().assertFalse();
+          expect().assertFail();
           done();
         }
         console.info('geolocation_getAddressesFromLocation_nop_test_014 end');
