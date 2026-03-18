@@ -18,6 +18,11 @@ import { BusinessError } from '@ohos.base';
 import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector'
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext } from '@ohos.arkui.UIContext';
+import {
+  $r,
+  Resource
+} from '@ohos.arkui.component';
 
 export default class CommonFunc {
   public static FONT_FAMILY = 'Verdana';

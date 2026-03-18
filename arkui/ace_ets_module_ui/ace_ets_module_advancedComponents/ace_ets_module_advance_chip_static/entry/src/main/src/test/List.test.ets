@@ -21,6 +21,21 @@ import chipTest0010 from './ChipTest/ChipTest0010.test';
 import chipSizeTest from './ChipTest/chipSizeTest.test';
 import prefixIconTest from './ChipTest/prefixIconTest.test';
 import ChipApi1 from './ChipTest/ChipApi1.test';
+import ChipOptionsLabelTest from './ChipTest/ChipOptionsLabelTest.test';
+import ChipOptionsSuffixIconTest from './ChipTest/ChipOptionsSuffixIconTest.test';
+import ChipOptionsSuffixSymbolTest from './ChipTest/ChipOptionsSuffixSymbolTest.test';
+import ChipOptionsAllowCloseTest from './ChipTest/ChipOptionsAllowCloseTest.test';
+import ChipOptionsCloseOptionsTest from './ChipTest/ChipOptionsCloseOptionsTest.test';
+import ChipOptionsEnabledTest from './ChipTest/ChipOptionsEnabledTest.test';
+import ChipOptionsActivatedBackgroundColorTest from './ChipTest/ChipOptionsActivatedBackgroundColorTest.test';
+import ChipOptionsBorderRadiusTest from './ChipTest/ChipOptionsBorderRadiusTest.test';
+import ChipOptionsSizeTest from './ChipTest/ChipOptionsSizeTest.test';
+import ChipOptionsAccessibilityTest from './ChipTest/ChipOptionsAccessibilityTest.test';
+import ChipOptionsMethodTest from './ChipTest/ChipOptionsMethodTest.test';
+import ChipOptionsDirectionTest from './ChipTest/ChipOptionsDirectionTest.test';
+import ChipOptionsFontScaleTest from './ChipTest/ChipOptionsFontScaleTest.test';
+import ChipOptionsPaddingTest from './ChipTest/ChipOptionsPaddingTest.test';
+import ChipOptionsFontSizeTest from './ChipTest/ChipOptionsFontSizeTest.test';
 
 export default function testsuite() {
   chipGroupIconItemOptionsTest();
@@ -30,4 +45,19 @@ export default function testsuite() {
   chipSizeTest();
   prefixIconTest();
   ChipApi1();
+  ChipOptionsLabelTest();
+  ChipOptionsSuffixIconTest();
+  ChipOptionsSuffixSymbolTest();
+  ChipOptionsAllowCloseTest();
+  ChipOptionsCloseOptionsTest();
+  ChipOptionsEnabledTest();
+  ChipOptionsActivatedBackgroundColorTest();
+  // ChipOptionsBorderRadiusTest();
+  ChipOptionsSizeTest();
+  ChipOptionsAccessibilityTest();
+  ChipOptionsMethodTest();
+  ChipOptionsDirectionTest();
+  ChipOptionsFontScaleTest();
+  ChipOptionsPaddingTest();
+  // ChipOptionsFontSizeTest();
 }
