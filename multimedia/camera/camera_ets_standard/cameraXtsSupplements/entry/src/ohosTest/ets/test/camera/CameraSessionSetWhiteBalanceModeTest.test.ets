@@ -806,7 +806,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mVideoSession.setZoomRatio(null);
             let res = mVideoSession.getZoomRatio();
             console.info(TAG, testName, ' setZoomRatio.');
-            expect(res).assertEqual(1)
+            expect(res).assertEqual(zoomRatioRange[0])
           }else{
             console.info(TAG, testName, "该设备不支持");
           }
@@ -845,7 +845,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mVideoSession.setZoomRatio(undefined);
             let res = mVideoSession.getZoomRatio();
             console.info(TAG, testName, ' setZoomRatio.');
-            expect(res).assertEqual(1)
+            expect(res).assertEqual(zoomRatioRange[0])
           }else{
             console.info(TAG, testName, "该设备不支持");
           }
