@@ -47,7 +47,7 @@ struct componentObserver {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test ComponentObserver - onLayout")
+      Button('Test ComponentObserver - onLayout')
         .id('btnOnLayout')
         .width(300)
         .height(50)
@@ -65,7 +65,7 @@ struct componentObserver {
           }
         })
 
-      Button("Test ComponentObserver - onDraw")
+      Button('Test ComponentObserver - onDraw')
         .id('btnOnDraw')
         .width(300)
         .height(50)
@@ -83,7 +83,7 @@ struct componentObserver {
           }
         })
 
-      Button("Test ComponentObserver - onLayoutChildren")
+      Button('Test ComponentObserver - onLayoutChildren')
         .id('btnOnLayoutChildren')
         .width(300)
         .height(50)
@@ -101,7 +101,7 @@ struct componentObserver {
           }
         })
 
-      Button("Test ComponentObserver - offLayoutChildren")
+      Button('Test ComponentObserver - offLayoutChildren')
         .id('btnOffLayoutChildren')
         .width(300)
         .height(50)

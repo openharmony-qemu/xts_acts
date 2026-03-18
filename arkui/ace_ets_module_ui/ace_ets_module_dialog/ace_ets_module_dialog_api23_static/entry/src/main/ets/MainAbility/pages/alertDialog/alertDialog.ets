@@ -32,7 +32,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 // Custom theme color implementation
 class CustomThemeImpl implements CustomTheme {
-  colors?: CustomColors;
+  public colors?: CustomColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;
@@ -41,8 +41,8 @@ class CustomThemeImpl implements CustomTheme {
 
 // Custom content text and icon theme colors
 class CustomThemeColors implements CustomColors {
-  fontPrimary?: string = '#ffd0a300';
-  iconSecondary?: string = '#ffd000cd';
+  public fontPrimary?: string = '#ffd0a300';
+  public iconSecondary?: string = '#ffd000cd';
 }
 
 @Entry
@@ -181,63 +181,63 @@ struct alertDialog {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test primaryTitle")
+      Button('Test primaryTitle')
         .id('btnAlertDialog1')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController1.open()
         })
-      Button("Test secondaryTitle")
+      Button('Test secondaryTitle')
         .id('btnAlertDialog2')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController2.open()
         })
-      Button("Test content")
+      Button('Test content')
         .id('btnAlertDialog3')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController3.open()
         })
-      Button("Test primaryButton")
+      Button('Test primaryButton')
         .id('btnAlertDialog4')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController4.open()
         })
-      Button("Test secondaryButton")
+      Button('Test secondaryButton')
         .id('btnAlertDialog5')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController5.open()
         })
-      Button("Test theme")
+      Button('Test theme')
         .id('btnAlertDialog6')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController6.open()
         })
-      Button("Test themeColorMode SYSTEM")
+      Button('Test themeColorMode SYSTEM')
         .id('btnAlertDialog7')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController7.open()
         })
-      Button("Test themeColorMode LIGHT")
+      Button('Test themeColorMode LIGHT')
         .id('btnAlertDialog8')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController8.open()
         })
-      Button("Test themeColorMode DARK")
+      Button('Test themeColorMode DARK')
         .id('btnAlertDialog9')
         .width(300)
         .height(50)

@@ -92,7 +92,7 @@ struct otherInterfaces {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test global - sendKeyEvent")
+      Button('Test global - sendKeyEvent')
         .id('btnSendKeyEvent')
         .width(300)
         .height(50)
@@ -116,7 +116,7 @@ struct otherInterfaces {
           }
         })
 
-      Button("Test global - sendMouseEvent")
+      Button('Test global - sendMouseEvent')
         .id('btnSendMouseEvent')
         .width(300)
         .height(50)
@@ -147,7 +147,7 @@ struct otherInterfaces {
           }
         })
 
-      Button("Test CustomTheme - darkColors")
+      Button('Test CustomTheme - darkColors')
         .id('btnCustomThemeDarkColors')
         .width(300)
         .height(50)
@@ -167,7 +167,7 @@ struct otherInterfaces {
           }
         })
 
-      Button("Test Font - registerFont")
+      Button('Test Font - registerFont')
         .id('btnFontRegisterFont')
         .width(300)
         .height(50)

@@ -72,7 +72,7 @@ struct colorModeOptions {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test ColorModeOptions - colorSpace")
+      Button('Test ColorModeOptions - colorSpace')
         .id('btnColorModeColorSpace')
         .width(300)
         .height(50)
@@ -84,7 +84,7 @@ struct colorModeOptions {
           AppStorage.setOrCreate<componentSnapshot.ColorModeOptions>('colorModeOptionsColorSpace', colorModeOptions);
         })
 
-      Button("Test ColorModeOptions - isAuto true")
+      Button('Test ColorModeOptions - isAuto true')
         .id('btnColorModeIsAutoTrue')
         .width(300)
         .height(50)
@@ -96,7 +96,7 @@ struct colorModeOptions {
           AppStorage.setOrCreate<componentSnapshot.ColorModeOptions>('colorModeOptionsIsAutoTrue', colorModeOptions);
         })
 
-      Button("Test ColorModeOptions - isAuto false")
+      Button('Test ColorModeOptions - isAuto false')
         .id('btnColorModeIsAutoFalse')
         .width(300)
         .height(50)
@@ -108,7 +108,7 @@ struct colorModeOptions {
           AppStorage.setOrCreate<componentSnapshot.ColorModeOptions>('colorModeOptionsIsAutoFalse', colorModeOptions);
         })
 
-      Button("Test DynamicRangeModeOptions - HIGH")
+      Button('Test DynamicRangeModeOptions - HIGH')
         .id('btnDynamicRangeModeHigh')
         .width(300)
         .height(50)
@@ -120,7 +120,7 @@ struct colorModeOptions {
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsHigh', dynamicRangeModeOptions);
         })
 
-      Button("Test DynamicRangeModeOptions - CONSTRAINT")
+      Button('Test DynamicRangeModeOptions - CONSTRAINT')
         .id('btnDynamicRangeModeConstraint')
         .width(300)
         .height(50)
@@ -132,7 +132,7 @@ struct colorModeOptions {
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsConstraint', dynamicRangeModeOptions);
         })
 
-      Button("Test DynamicRangeModeOptions - STANDARD")
+      Button('Test DynamicRangeModeOptions - STANDARD')
         .id('btnDynamicRangeModeStandard')
         .width(300)
         .height(50)
@@ -144,7 +144,7 @@ struct colorModeOptions {
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsStandard', dynamicRangeModeOptions);
         })
 
-      Button("Test DynamicRangeModeOptions - isAuto true")
+      Button('Test DynamicRangeModeOptions - isAuto true')
         .id('btnDynamicRangeIsAutoTrue')
         .width(300)
         .height(50)
@@ -156,7 +156,7 @@ struct colorModeOptions {
           AppStorage.setOrCreate<componentSnapshot.DynamicRangeModeOptions>('dynamicRangeModeOptionsIsAutoTrue', dynamicRangeModeOptions);
         })
 
-      Button("Test DynamicRangeModeOptions - isAuto false")
+      Button('Test DynamicRangeModeOptions - isAuto false')
         .id('btnDynamicRangeIsAutoFalse')
         .width(300)
         .height(50)

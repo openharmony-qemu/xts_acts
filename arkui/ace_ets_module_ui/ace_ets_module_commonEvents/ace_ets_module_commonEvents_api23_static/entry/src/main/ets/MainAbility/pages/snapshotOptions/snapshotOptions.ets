@@ -54,7 +54,7 @@ struct snapshotOptions {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test SnapshotOptions - colorMode isAuto true")
+      Button('Test SnapshotOptions - colorMode isAuto true')
         .id('btnSnapshotColorModeIsAutoTrue')
         .width(300)
         .height(50)
@@ -70,7 +70,7 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsColorModeIsAutoTrue', snapshotOptions);
         })
 
-      Button("Test SnapshotOptions - colorMode isAuto false")
+      Button('Test SnapshotOptions - colorMode isAuto false')
         .id('btnSnapshotColorModeIsAutoFalse')
         .width(300)
         .height(50)
@@ -86,7 +86,7 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsColorModeIsAutoFalse', snapshotOptions);
         })
 
-      Button("Test SnapshotOptions - dynamicRangeMode HIGH")
+      Button('Test SnapshotOptions - dynamicRangeMode HIGH')
         .id('btnSnapshotDynamicRangeModeHigh')
         .width(300)
         .height(50)
@@ -102,7 +102,7 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsDynamicRangeModeHigh', snapshotOptions);
         })
 
-      Button("Test SnapshotOptions - dynamicRangeMode CONSTRAINT")
+      Button('Test SnapshotOptions - dynamicRangeMode CONSTRAINT')
         .id('btnSnapshotDynamicRangeModeConstraint')
         .width(300)
         .height(50)
@@ -118,7 +118,7 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsDynamicRangeModeConstraint', snapshotOptions);
         })
 
-      Button("Test SnapshotOptions - dynamicRangeMode STANDARD")
+      Button('Test SnapshotOptions - dynamicRangeMode STANDARD')
         .id('btnSnapshotDynamicRangeModeStandard')
         .width(300)
         .height(50)
@@ -134,7 +134,7 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsDynamicRangeModeStandard', snapshotOptions);
         })
 
-      Button("Test SnapshotOptions - dynamicRangeMode isAuto true")
+      Button('Test SnapshotOptions - dynamicRangeMode isAuto true')
         .id('btnSnapshotDynamicRangeModeIsAutoTrue')
         .width(300)
         .height(50)
@@ -150,7 +150,7 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsDynamicRangeModeIsAutoTrue', snapshotOptions);
         })
 
-      Button("Test SnapshotOptions - dynamicRangeMode isAuto false")
+      Button('Test SnapshotOptions - dynamicRangeMode isAuto false')
         .id('btnSnapshotDynamicRangeModeIsAutoFalse')
         .width(300)
         .height(50)

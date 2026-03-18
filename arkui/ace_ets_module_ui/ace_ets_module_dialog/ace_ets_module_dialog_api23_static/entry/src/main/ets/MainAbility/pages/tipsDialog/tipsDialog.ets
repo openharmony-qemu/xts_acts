@@ -51,7 +51,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 // Custom theme color implementation
 class CustomThemeImpl implements CustomTheme {
-  colors?: CustomColors;
+  public colors?: CustomColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;
@@ -60,8 +60,8 @@ class CustomThemeImpl implements CustomTheme {
 
 // 自定义内容文字及图标主题颜色
 class CustomThemeColors implements CustomColors {
-  fontPrimary?: string = '#ffd0a300';
-  iconSecondary?: string = '#ffd000cd';
+  public fontPrimary?: string = '#ffd0a300';
+  public iconSecondary?: string = '#ffd000cd';
 }
 
 @Entry
@@ -237,56 +237,56 @@ struct tipsDialog {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test imageRes/imageSize/title/content")
+      Button('Test imageRes/imageSize/title/content')
         .id('btnTipsDialog1')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController1.open()
         })
-      Button("Test checkTips/isChecked(true)/checkAction/onCheckedChange")
+      Button('Test checkTips/isChecked(true)/checkAction/onCheckedChange')
         .id('btnTipsDialog2')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController2.open()
         })
-      Button("Test isChecked(false)")
+      Button('Test isChecked(false)')
         .id('btnTipsDialog3')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController3.open()
         })
-      Button("Test themeColorMode SYSTEM")
+      Button('Test themeColorMode SYSTEM')
         .id('btnTipsDialog4')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController4.open();
         })
-      Button("测试 themeColorMode LIGHT")
+      Button('测试 themeColorMode LIGHT')
         .id('btnTipsDialog5')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController5.open();
         })
-      Button("Test themeColorMode DARK")
+      Button('Test themeColorMode DARK')
         .id('btnTipsDialog6')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController6.open();
         })
-      Button("测试 theme CustomTheme")
+      Button('测试 theme CustomTheme')
         .id('btnTipsDialog7')
         .width(300)
         .height(50)
         .onClick(() => {
           this.dialogController7.open()
         })
-      Button("Test primaryButton/secondaryButton")
+      Button('Test primaryButton/secondaryButton')
         .id('btnTipsDialog8')
         .width(300)
         .height(50)

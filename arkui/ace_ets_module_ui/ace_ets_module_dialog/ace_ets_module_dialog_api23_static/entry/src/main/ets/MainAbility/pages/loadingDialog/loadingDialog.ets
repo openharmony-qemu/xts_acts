@@ -33,7 +33,7 @@ import { Router } from '@ohos.arkui.UIContext';
 
 // Custom theme color implementation
 class CustomThemeImpl implements CustomTheme {
-  colors?: CustomColors;
+  public colors?: CustomColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;
@@ -42,8 +42,8 @@ class CustomThemeImpl implements CustomTheme {
 
 // Custom content text and icon theme colors
 class CustomThemeColors implements CustomColors {
-  fontPrimary?: string = '#ffd0a300';
-  iconSecondary?: string = '#ffd000cd';
+  public fontPrimary?: string = '#ffd0a300';
+  public iconSecondary?: string = '#ffd000cd';
 }
 
 @Entry
@@ -112,7 +112,7 @@ struct loadingDialog {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test content")
+      Button('Test content')
         .id('btnLoadingDialog1')
         .width(300)
         .height(50)
@@ -120,7 +120,7 @@ struct loadingDialog {
           AppStorage.setOrCreate<string>('loadingDialogContent', 'Loading...');
           this.dialogController1.open()
         })
-      Button("Test theme")
+      Button('Test theme')
         .id('btnLoadingDialog2')
         .width(300)
         .height(50)
@@ -128,7 +128,7 @@ struct loadingDialog {
           AppStorage.setOrCreate<boolean>('loadingDialogThemeSet', true);
           this.dialogController2.open()
         })
-      Button("Test themeColorMode SYSTEM")
+      Button('Test themeColorMode SYSTEM')
         .id('btnLoadingDialog3')
         .width(300)
         .height(50)
@@ -136,7 +136,7 @@ struct loadingDialog {
           AppStorage.setOrCreate<number>('loadingDialogThemeColorMode', ThemeColorMode.SYSTEM);
           this.dialogController3.open()
         })
-      Button("Test themeColorMode LIGHT")
+      Button('Test themeColorMode LIGHT')
         .id('btnLoadingDialog4')
         .width(300)
         .height(50)
@@ -144,7 +144,7 @@ struct loadingDialog {
           AppStorage.setOrCreate<number>('loadingDialogThemeColorMode', ThemeColorMode.LIGHT);
           this.dialogController4.open()
         })
-      Button("Test themeColorMode DARK")
+      Button('Test themeColorMode DARK')
         .id('btnLoadingDialog5')
         .width(300)
         .height(50)

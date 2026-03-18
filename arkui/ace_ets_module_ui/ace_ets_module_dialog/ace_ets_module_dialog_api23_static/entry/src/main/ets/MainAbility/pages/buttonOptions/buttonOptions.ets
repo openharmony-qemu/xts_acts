@@ -163,42 +163,42 @@ struct ButtonOptions {
 
   build() {
     Column({ space: 20 } as ColumnOptions) {
-      Button("NORMAL + NORMAL")
+      Button('NORMAL + NORMAL')
         .id('btnButtonOptions1')
         .width(240)
         .height(60)
         .onClick(() => {
           this.dialogController1.open()
         })
-      Button("NORMAL + ERROR")
+      Button('NORMAL + ERROR')
         .id('btnButtonOptions2')
         .width(240)
         .height(60)
         .onClick(() => {
           this.dialogController2.open()
         })
-      Button("EMPHASIZED + NORMAL")
+      Button('EMPHASIZED + NORMAL')
         .id('btnButtonOptions3')
         .width(240)
         .height(60)
         .onClick(() => {
           this.dialogController3.open()
         })
-      Button("EMPHASIZED + ERROR")
+      Button('EMPHASIZED + ERROR')
         .id('btnButtonOptions4')
         .width(240)
         .height(60)
         .onClick(() => {
           this.dialogController4.open()
         })
-      Button("TEXTUAL + NORMAL")
+      Button('TEXTUAL + NORMAL')
         .id('btnButtonOptions5')
         .width(240)
         .height(60)
         .onClick(() => {
           this.dialogController5.open()
         })
-      Button("TEXTUAL + ERROR")
+      Button('TEXTUAL + ERROR')
         .id('btnButtonOptions6')
         .width(240)
         .height(60)
