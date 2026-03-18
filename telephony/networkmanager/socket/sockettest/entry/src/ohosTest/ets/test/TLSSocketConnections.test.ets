@@ -251,6 +251,8 @@ export default function TLSSocketConnectionsTest() {
             console.info(`${caseName} clicent:${JSON.stringify(client)}}`);
             client.on('message', (value: socket.SocketMessageInfo) => {
               console.info(`${caseName} SocketMessageInfo:${JSON.stringify(value)} `);
+              expectTrue(value.message != null);
+              expectTrue(value.remoteInfo != null);
             })
             client.send('Hello,client!', async (err: BusinessError) => {
               if (err) {
