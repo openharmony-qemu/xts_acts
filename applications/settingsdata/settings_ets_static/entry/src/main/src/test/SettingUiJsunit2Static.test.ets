@@ -369,7 +369,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_no_domain_promise_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let value = 'brightness34'
       try{
-        settings.setValueSync(abilityContext!, name, 'value');
+        settings.setValueSync(abilityContext!, 'nodomainkey', 'value');
         let result = await settings.getValue(abilityContext!, '');
         console.info("[settings_get_value_no_domain_promise_key_empty] result is: " + result);
         expect().assertFail();
