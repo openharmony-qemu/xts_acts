@@ -44,17 +44,14 @@ struct SymbolGlyphIndex {
   build() {
     Scroll() {
       Column() {
-        // ReplaceEffectType.SEQUENTIAL = 0
         SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
           .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SEQUENTIAL), false)
           .key('symbolGlyphSequential')
 
-        // ReplaceEffectType.CROSS_FADE = 1
         SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
           .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE), false)
           .key('symbolGlyphCrossFade')
 
-        // ReplaceEffectType.SLASH_OVERLAY = 2
         SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
           .symbolEffect(new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SLASH_OVERLAY), false)
           .key('symbolGlyphSlashOverlay')
