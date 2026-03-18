@@ -2598,6 +2598,7 @@ export default function audioFramework() {
         done();
       } catch (err) {
         console.error(`isStreamActive ERROR: ${err}`); 
+        expect(false).assertTrue();
         done(); 
       }
     })
