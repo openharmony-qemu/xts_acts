@@ -15,14 +15,14 @@
 
 'use static';
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../../hypium/index';
+import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
-import Utils from '../../../../ets/MainAbility/common/Utils';
-import CommonFunc from '../../../../ets/MainAbility/common/Common';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
+import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { SaveButtonOnClickResult } from '@ohos.arkui.component';
 
