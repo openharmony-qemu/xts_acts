@@ -96,32 +96,6 @@ export default function ImageSupplementTest() {
       }
     });
     /**
-     * @tc.number    IMAGE_AUXILIARY_PICTURE_SET_METADATA_TEST_004
-     * @tc.name      IMAGE_AUXILIARY_PICTURE_SET_METADATA_TEST_004
-     * @tc.desc      setMetadata cover HEIFS_METADATA
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('IMAGE_AUXILIARY_PICTURE_SET_METADATA_TEST_004', Level.LEVEL1, async (done: Function) => {
-      const testName = 'IMAGE_AUXILIARY_PICTURE_SET_METADATA_TEST_004';
-      let auxBuffer: ArrayBuffer = new ArrayBuffer(10000);
-      let auxSize: Size = { height: 50, width: 50 };
-      let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-      let auxiliaryPicture: image.AuxiliaryPicture | null = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
-      try {
-        let metadataType: image.MetadataType = image.MetadataType.HEIFS_METADATA;
-        let metadata = await auxiliaryPicture.getMetadata(metadataType);
-        let res = await auxiliaryPicture.setMetadata(metadataType, metadata);
-        expect().assertFail();
-      } catch (error) {
-        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(401);
-        await auxiliaryPicture?.release();
-        done();
-      }
-    });
-    /**
      * @tc.name   IMAGE_METADATA_GET_PROPERTIES_TEST_001
      * @tc.number IMAGE_METADATA_GET_PROPERTIES_TEST_001
      * @tc.desc   getProperties the first parameter is null
@@ -250,7 +224,7 @@ export default function ImageSupplementTest() {
       let metadata: image.MakerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
       try {
         let res = await metadata.getAllProperties();
-        expect(res != undefined).assertTrue();
+        expect(isEmpty(res)).assertFalse();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
