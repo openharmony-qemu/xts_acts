@@ -58,6 +58,16 @@ export default function windowKeyBorad() {
         await sleep(1000);
         await input.click();
         await sleep(1000);
+
+        let input2 = await driver.findComponent(ON.id('textInput'));
+        console.info('beforeAll input2: ' + JSON.stringify(input2));
+        await sleep(1000);
+        if(input2){
+          await input2.click();
+          await sleep(1000);
+        }
+        
+
         let text1 = await driver.findComponent(ON.text('同意'));
         console.info('beforeAll text1: ' + JSON.stringify(text1));
         let text2 = await driver.findComponent(ON.text('下一步'));
