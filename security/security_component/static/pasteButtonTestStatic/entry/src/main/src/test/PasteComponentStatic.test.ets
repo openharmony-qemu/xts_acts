@@ -1434,7 +1434,7 @@ export default function pasteComponentStaticTest() {
           console.info('Succeeded in obtaining the window properties.width: ' + properties.windowRect.width);
           let window_width: Int = properties.windowRect.width;
           console.info('====>[Test_Security_Button_StaticPaste_1400] properties.windowRect.width is: ' + window_width);
-          positX = `${(window_width / 2).toInt()}px`;
+          positX = `${Math.trunc(window_width / 2).toFixed(2)}px`;
         }
       } catch (err){
         err = err as BusinessError;
@@ -1483,6 +1483,10 @@ export default function pasteComponentStaticTest() {
         err = err as BusinessError;
         console.error('====>[Test_Security_Button_StaticPaste_1400] change component data error: ' + err.message);
       }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getElement('position').getString('x')).assertEqual(positX);
       await UtilsTest.msSleep(1000);
       try {
         let clickEvent:events_emitter.InnerEvent = {
@@ -1550,7 +1554,7 @@ export default function pasteComponentStaticTest() {
           console.info('Succeeded in obtaining the window properties.width: ' + properties.windowRect.width);
           let window_width: Int = properties.windowRect.width;
           console.info('====>[Test_Security_Button_StaticPaste_1500] properties.windowRect.width is: ' + window_width);
-          positX = `${-(window_width / 2).toInt()}px`;
+          positX = `-${Math.trunc(window_width / 2).toFixed(2)}px`;
         }
       } catch (err) {
         err = err as BusinessError;
@@ -1598,6 +1602,10 @@ export default function pasteComponentStaticTest() {
         err = err as BusinessError;
         console.error('====>[Test_Security_Button_StaticPaste_1500] change component data error: ' + err.message);
       }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getElement('position').getString('x')).assertEqual(positX);
       await UtilsTest.msSleep(1000);
       try {
         let clickEvent:events_emitter.InnerEvent = {
@@ -1663,8 +1671,8 @@ export default function pasteComponentStaticTest() {
         if (data) {
           console.info('====>[Test_Security_Button_StaticPaste_1600] the window data[0].width: ' + data[0].width);
           console.info('====>[Test_Security_Button_StaticPaste_1600] the window data[0].height: ' + data[0].height);
-          button_width = `${data[0].width.toInt() / 3}px`;
-          button_height = `${data[0].height.toInt() / 3}px`;
+          button_width = `${Math.trunc(data[0].width / data[0].densityPixels / 3).toFixed(2)}px`;
+          button_height = `${Math.trunc(data[0].height / data[0].densityPixels / 3).toFixed(2)}px`;
           console.info('====>[Test_Security_Button_StaticPaste_1600] button_width is: ' + button_width);
           console.info('====>[Test_Security_Button_StaticPaste_1600] button_height is: ' + button_height);
         }
@@ -1719,6 +1727,11 @@ export default function pasteComponentStaticTest() {
         err = err as BusinessError;
         console.error('====>[Test_Security_Button_StaticPaste_1600] change component data error: ' + err.message);
       }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keyPaste');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('width')).assertEqual(button_width);
+      expect(obj.getElement('$attrs').getString('height')).assertEqual(button_height);
       await UtilsTest.msSleep(1000);
       try {
         let clickEvent:events_emitter.InnerEvent = {
