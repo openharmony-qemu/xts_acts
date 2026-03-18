@@ -80,7 +80,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_003
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0300
-         * @tc.desc   Get the device brand represented by a string and the return value is not null.
+         * @tc.desc   Get the device brand represented by a string ull.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -105,7 +105,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_004
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0400
-         * @tc.desc   Get the external product family name represented by a string and the return value is not null.
+         * @tc.desc   Get the external product family name re
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -130,7 +130,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_005
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0500
-         * @tc.desc   Get the product series represented by a string and the return value is not null.
+         * @tc.desc   Get the product series represented by a 
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -160,7 +160,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_006
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0600
-         * @tc.desc   Get the internal software sub-model represented by a string and the return value is not null.
+         * @tc.desc   Get the internal software sub-model represented 
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -185,7 +185,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_007
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0700
-         * @tc.desc   Get the internal software sub-model represented by a string and the return value is not null.
+         * @tc.desc   Get the internal software sub-model represented 
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -215,7 +215,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_008
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0800
-         * @tc.desc   Get the hardware version represented by a string and the return value is not null.
+         * @tc.desc   Get the hardware version represented by a string
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -240,7 +240,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_009
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0900
-         * @tc.desc   Get the hardware profile represented by a string and the return value is not null.
+         * @tc.desc   Get the hardware profile represented by a string
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -265,7 +265,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_011
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0120
-         * @tc.desc   Get the bootloader version number represented by a string and the return value is not null.
+         * @tc.desc   Get the bootloader version number represented
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -295,7 +295,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_012
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0130
-         * @tc.desc   Get the instruction set supported by the system and the return value is not null.
+         * @tc.desc   Get the instruction set supported by the system.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -325,7 +325,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_013
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0140
-         * @tc.desc   Get the security patch level represented by a string and the return value is not null.
+         * @tc.desc   Get the security patch level represented
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -355,7 +355,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_014
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0150
-         * @tc.desc   Get the product version represented by a string and the return value is not null.
+         * @tc.desc   Get the product version represented
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -380,7 +380,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_015
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0160
-         * @tc.desc   Get the incremental version represented by a string and the return value is not null.
+         * @tc.desc   Get the incremental version represented
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -410,7 +410,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_016
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0170
-         * @tc.desc   Get the OS release type represented by a string and the return value is not null.
+         * @tc.desc   Get the OS release type represented
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -440,7 +440,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_017
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0180
-         * @tc.desc   Get the operating system full name and the return value is not null.
+         * @tc.desc   Get the operating system full
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -470,7 +470,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_018
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0190
-         * @tc.desc   Get the major (M) version number which the return value is greater than 0.
+         * @tc.desc   Get the major (M) version number
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -501,7 +501,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_019
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0210
-         * @tc.desc   Get the senior version number and the return value is greater than 0.
+         * @tc.desc   Get the senior version number
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -532,7 +532,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_020
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0220
-         * @tc.desc   Get the feature (F) version number which the return value is greater than 0.
+         * @tc.desc   Get the feature (F) version number.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -563,7 +563,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_021
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0230
-         * @tc.desc   Get the build (B) version number which the return value is greater than 0.
+         * @tc.desc   Get the build (B) version numbe
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -594,7 +594,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_022
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0240
-         * @tc.desc   Get the API version number, which return value type is number and return value is greater than 0.
+         * @tc.desc   Get the API version number, which return
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -621,7 +621,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_023
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0250
-         * @tc.desc   Get the first API version number which the return value is greater than 0.
+         * @tc.desc   Get the first API version number.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -648,7 +648,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_024
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0260
-         * @tc.desc   Get the version ID number by a string which the return value is not null.
+         * @tc.desc   Get the version ID number by
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -673,7 +673,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_025
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0270
-         * @tc.desc   Get the different build types of the same baseline code which the return value is not null.
+         * @tc.desc   Get the different build types of
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -703,7 +703,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_026
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0280
-         * @tc.desc   Get the different build user by a string which the return value is not null.
+         * @tc.desc   Get the different build user
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -728,7 +728,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_027
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0290
-         * @tc.desc   Get the build host of the same baseline code by a string and the return value is not null.
+         * @tc.desc   Get the build host of the same
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -753,7 +753,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_028
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0310
-         * @tc.desc   Get the version build time by a string and the return value is not null.
+         * @tc.desc   Get the version build time
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -778,7 +778,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_029
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0320
-         * @tc.desc   Get the version hash by a string and the return value is not null.
+         * @tc.desc   Get the version hash
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -808,7 +808,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_030
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0330
-         * @tc.desc   Get a string representing the device type which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing the
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -828,7 +828,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_031
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0340
-         * @tc.desc   Get a string representing the manufacture which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing 
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -847,7 +847,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_032
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0350
-         * @tc.desc   Get a string representing the external product family name which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing the 
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -866,7 +866,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_034
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0370
-         * @tc.desc   Get a string representing the product series which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing 
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -892,8 +892,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_035
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0380
-         * @tc.desc   Get a string representing the certified model which has a maximum of 32 characters.
-         * @tc.type   FUNCTION
+         * @tc.desc   Get a string representing
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
@@ -911,7 +910,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_036
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0390
-         * @tc.desc   Get a string representing the internal software sub-model which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -937,7 +936,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_037
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0410
-         * @tc.desc   Get a string representing the hardware version which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -956,7 +955,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_038
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0420
-         * @tc.desc   Get a string representing the hardware version which has a maximum of 1000 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -975,7 +974,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_040
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0440
-         * @tc.desc   Get a string representing the version number visible to users which has a maximum of 64 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -994,7 +993,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_041
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0450
-         * @tc.desc   Get a string representing the operating system full name which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1020,7 +1019,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_042
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0460
-         * @tc.desc   Get a string representing the operating system full name which has a maximum of 127 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1039,7 +1038,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_043
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0470
-         * @tc.desc   Get a string representing the different build user of the same baseline code which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1064,7 +1063,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_044
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0480
-         * @tc.desc   Get a string representing the different build host of the same baseline code which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1090,8 +1089,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_045
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0490
-         * @tc.desc   Get a string representing the device type which has at least one characters.
-         * @tc.type   FUNCTION
+         * @tc.desc   Get a string representing
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
@@ -1109,8 +1107,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_046
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0510
-         * @tc.desc   Get a string representing the manufacture which has at least one characters.
-         * @tc.type   FUNCTION
+         * @tc.desc   Get a string representing
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
@@ -1128,7 +1125,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_047
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0520
-         * @tc.desc   Get a string representing the external product family name which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1147,7 +1144,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_048
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0530
-         * @tc.desc   Get a string representing the product series which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1167,7 +1164,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_049
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0540
-         * @tc.desc   Get a string representing the product series which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1193,7 +1190,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_050
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0550
-         * @tc.desc   Get a string representing the certified model which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1212,7 +1209,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_051
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0560
-         * @tc.desc   Get a string representing the internal software sub-model which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1238,7 +1235,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_052
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0570
-         * @tc.desc   Get a string representing the hardware version which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1257,7 +1254,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_053
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0580
-         * @tc.desc   Get a string representing the hardware version which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1276,7 +1273,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_055
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0610
-         * @tc.desc   Get a string representing the version number visible to users which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1296,7 +1293,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_057
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0630
-         * @tc.desc   Get a string representing the version number visible to users which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1322,7 +1319,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_058
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0640
-         * @tc.desc   Get a string representing the operating system full name which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1341,7 +1338,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_059
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0650
-         * @tc.desc   Get a string representing the different build user of the same baseline code which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1360,8 +1357,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_060
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0660
-         * @tc.desc   Get a string representing at least one characters.
-         * @tc.type   FUNCTION
+         * @tc.desc   Get a string representing
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
@@ -1379,7 +1375,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_061
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0670
-         * @tc.desc   Get security pactch tag which format is yy--mm--dd test.
+         * @tc.desc   Get security pactch
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1400,7 +1396,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_0665
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0665
-         * @tc.desc   Get the distributionOSName name represented by an empty string.
+         * @tc.desc   Get the distributionOSName
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1426,7 +1422,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_0666
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0666
-         * @tc.desc   Get the operating system full name and the return value is not null.
+         * @tc.desc   Get the operating system
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1454,7 +1450,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_0667
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0667
-         * @tc.desc   Get a string representing the operating system full name which has a maximum of 32 characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1479,7 +1475,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_0668
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0668
-         * @tc.desc   Get the API version number, which return value type is number and return value is greater than 0.
+         * @tc.desc   Get the API version number
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1505,7 +1501,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_0669
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0669
-         * @tc.desc   Get the OS release type represented by a string and the return value is not null.
+         * @tc.desc   Get the OS release
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1585,7 +1581,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_072
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_072
-         * @tc.desc   Independent Software Vendor (ISV) may distribute OHOS with their own OS api name.
+         * @tc.desc   Independent Software
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -1606,7 +1602,7 @@ export default function deviceInfoTest() {
         /**
          * @tc.name   device_info_test_073
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_073
-         * @tc.desc   Get a string representing the certified model which has at least one characters.
+         * @tc.desc   Get a string representing
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
