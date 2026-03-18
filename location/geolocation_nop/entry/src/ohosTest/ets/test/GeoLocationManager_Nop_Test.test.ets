@@ -569,6 +569,9 @@ export default function geoLocationManager_nop_test() {
         if (Number(err.code) !== 106) {
           expect().assertFail();
           done();
+        } else {
+          expect(Number(err.code)).assertEqual(106);
+          done();
         }
         console.info('---geolocation_getLastLocation_nop_test_011 catch end err ---' + ", errtype:" + typeof err.code + ", err:" + err.code);
       }
