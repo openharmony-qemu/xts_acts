@@ -45,23 +45,6 @@ const int32_t LATENCY_FORMAT = 0;
 const int32_t SAMPLE_FORMAT = 1;
 const int32_t FRAME_SIZE = 240; // 240:FRAME_SIZE value
 uint32_t g_flag = 0;
-const float MAX_AUDIO_VOLUME = 1.0f; // volume range is between 0 to 1.
-const float MIN_AUDIO_VOLUME = 0.0f; // volume range is between 0 to 1.
-const int32_t DURATIONMS = 40; // 40:fade out latency ms
-
-static int32_t AudioRendererOnWriteData(OH_AudioRenderer* capturer,
-    void* userData,
-    void* buffer,
-    int32_t bufferLen)
-{
-    return 0;
-}
-
-static void AudioRendererOnMarkReachedCb(OH_AudioRenderer* renderer, uint32_t samplePos, void* userData)
-{
-    g_flag = samplePos;
-    printf("AudioRendererOnMarkReachedCb samplePos: %d \n", samplePos);
-}
 
 class OHAudioRendererWriteCallbackMock {
 public:
@@ -100,22 +83,6 @@ static int32_t AudioRendererOnWriteDataMock(OH_AudioRenderer* renderer,
     return 0;
 }
 
-static OH_AudioData_Callback_Result OnWriteDataCallbackWithValidData(OH_AudioRenderer* renderer,
-    void* userData,
-    void* buffer,
-    int32_t bufferLen)
-{
-    return AUDIO_DATA_CALLBACK_RESULT_VALID;
-}
-
-static OH_AudioData_Callback_Result OnWriteDataCallbackWithInvalidData(OH_AudioRenderer* renderer,
-    void* userData,
-    void* buffer,
-    int32_t bufferLen)
-{
-    return AUDIO_DATA_CALLBACK_RESULT_INVALID;
-}
-
 struct UserData {
 public:
     enum {
@@ -124,36 +91,6 @@ public:
         WRITE_DATA_CALLBACK_WITH_RESULT
     } writeDataCallbackType;
 };
-
-static int32_t OnWriteDataCbMock(OH_AudioRenderer* renderer,
-    void* userData,
-    void* buffer,
-    int32_t bufferLer)
-{
-    UserData *u = static_cast<UserData*>(userData);
-    u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK;
-    return 0;
-}
-
-static OH_AudioData_Callback_Result OnWriteDataCbWithValidDataMock(OH_AudioRenderer* renderer,
-    void* userData,
-    void* buffer,
-    int32_t bufferLen)
-{
-    UserData *u = static_cast<UserData*>(userData);
-    u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
-    return AUDIO_DATA_CALLBACK_RESULT_VALID;
-}
-
-static OH_AudioData_Callback_Result OnWriteDataCbWithInvalidDataMock(OH_AudioRenderer* renderer,
-    void* userData,
-    void* buffer,
-    int32_t bufferLen)
-{
-    UserData *u = static_cast<UserData*>(userData);
-    u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
-    return AUDIO_DATA_CALLBACK_RESULT_INVALID;
-}
 
 static bool GetCurrentDeviceIsTV()
 {
