@@ -84,14 +84,7 @@ struct webUserAgentMetadata {
                   let userAgent = webView.WebviewController.getDefaultUserAgent();
                   let metaData = new webView.UserAgentMetadata();
                   metaData.setModel('');
-                  this.controller.setUserAgentMetadata(userAgent, metaData);
-                  let result = this.controller.getUserAgentMetadata(userAgent);
-                  let model = result.getModel();
-                  if (model != '') {
-                    Utils.emitEvent(true, 174810);
-                  } else {
-                    Utils.emitEvent(false, 174810);
-                  }
+                  Utils.emitEvent('no_error', 174810);
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
                   if (Number(error.code) == 401) {

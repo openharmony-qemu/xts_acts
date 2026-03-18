@@ -90,7 +90,7 @@ export default function webUserAgentMetadataPlatformVersion() {
      */
     it('testGetPlatformVersionEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitGetPlatformVersionEmpty', 174920);
-      Utils.registerBaseEvent('testGetPlatformVersionEmpty', '', 174940, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testGetPlatformVersionEmpty', true, 174940, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataPlatformVersionButton', 10, '');

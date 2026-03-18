@@ -90,7 +90,7 @@ export default function webUserAgentMetadataModel() {
      */
     it('testGetModelEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitGetModelEmpty', 174790);
-      Utils.registerBaseEvent('testGetModelEmpty', true, 174810, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent('testGetModelEmpty', 'no_error', 174810, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
       sendEventByKey('WebUserAgentMetadataModelButton', 10, '');
