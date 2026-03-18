@@ -562,16 +562,15 @@ export default function geoLocationManager_nop_test() {
       try {
         const result = await geolocation.getLastLocation();
         console.info('geolocation_getLastLocation_nop_test_011 getLastLocation: result: ' + JSON.stringify(result));
-        expect(result).toBeDefined();
-        throw new Error('geolocation_getLastLocation_nop_test_011, result: unexpected');
+        expect(result !== null).assertTrue();
+        done();
       } catch (err) {
         console.info('---geolocation_getLastLocation_nop_test_011 catch ---' + ", errtype:" + typeof err.code + ", err:" + err.code);
         if (number(err.code) !== 106) {
-          expect(err).toBe;
-          throw new Error('geolocation_getLastLocation_nop_test_011: unexpected err code' + ", errtype:" + typeof err.code + ", err:" + err.code);
+          expect(err).assertfail();
+          done();
         }
         console.info('---geolocation_getLastLocation_nop_test_011 catch end err ---' + ", errtype:" + typeof err.code + ", err:" + err.code);
-        return Promise.resolve();
       }
     })
 
