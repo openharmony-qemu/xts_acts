@@ -369,13 +369,14 @@ export default function settingUiJsunit() {
     it('settings_get_value_no_domain_promise_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let value = 'brightness34'
       try{
+        settings.setValueSync(abilityContext!, name, 'value');
         let result = await settings.getValue(abilityContext!, '');
         console.info("[settings_get_value_no_domain_promise_key_empty] result is: " + result);
         expect().assertFail();
         done();
       } catch(err){
         console.error("[settings_get_value_no_domain_promise_key_empty] error is: " + String(err));
-        expect(err?.message === undefined).assertTrue();
+        expect(err.message).assertEqual("Permission denied");
         done();
       }
     });
@@ -482,7 +483,7 @@ export default function settingUiJsunit() {
       try{
         settings.setValue(abilityContext!, '', value, (result) => {
           console.info("[settings_set_value_callback_domain_key_empty] result is:" + result);
-          expect(result === true).assertTrue();
+          expect(result).assertTrue();
           done();
         })
       } catch(err) {
@@ -506,7 +507,7 @@ export default function settingUiJsunit() {
       try{
         settings.setValue(abilityContext!, name, '', (result) => {
           console.info("[settings_set_value_callback_domain_key_empty] result is:" + result);
-          expect(result === false).assertTrue();
+          expect(!result).assertTrue();
           done();
         })
       } catch(err) {
