@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-import SelectTest from './SelectTest/Select.test';
+import DrawableDescriptorTest from './DrawableDescriptorTest/DrawableDescriptor.test';
+import AnimationOptionsTest from './AnimationOptionsTest/AnimationOptions.test';
 
 export default function testsuite() {
-  SelectTest();
+  DrawableDescriptorTest();
+  AnimationOptionsTest();
 }
