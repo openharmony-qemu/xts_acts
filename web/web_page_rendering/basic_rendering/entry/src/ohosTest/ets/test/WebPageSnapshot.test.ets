@@ -19,7 +19,6 @@ import Utils from './Utils';
 import wifiMg from '@ohos.wifiManager';
 import router from '@ohos.router';
 import { Driver } from '@kit.TestKit';
-import wifiMg from '@ohos.wifiManager';
 import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const  driver: Driver = Driver.create();
