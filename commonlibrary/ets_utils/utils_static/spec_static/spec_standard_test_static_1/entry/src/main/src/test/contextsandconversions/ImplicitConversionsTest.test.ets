@@ -3670,5 +3670,1856 @@ export default function ImplicitConversionsTest() {
       expect(a5.d).assertEqual(2147483647);
     });
 
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15400
+     * @tc.name      testImplicitConversions0154
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A21 = new A21();
+      expect(a1.d).assertEqual(0);
+      let a2: A22 = new A22();
+      expect(a2.d).assertEqual(-9223372036854775808);
+      let a3: A23 = new A23();
+      expect(a3.d).assertEqual(9223372036854775807);
+      let a4: A24 = new A24();
+      expect(a4.d).assertEqual(-9223372036854775808);
+      let a5: A25 = new A25();
+      expect(a5.d).assertEqual(9223372036854775807);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15500
+     * @tc.name      testImplicitConversions0155
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A26 = new A26();
+      expect(a1.d).assertEqual(+0.0f);
+      let a2: A27 = new A27();
+      expect(a2.d).assertEqual(-0.0f);
+      let a3: A28 = new A28();
+      expect(a3.d).assertEqual(3.4028234663852886e38f);
+      let a4: A29 = new A29();
+      expect(a4.d).assertEqual(1.401298464324817e-45f);
+      let a5: A30 = new A30();
+      expect(a5.d).assertEqual(-3.4028234663852886e38f);
+      let a6: A31 = new A31();
+      expect(a6.d).assertEqual(-1.401298464324817e-45f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15600
+     * @tc.name      testImplicitConversions0156
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A32 = new A32();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A33 = new A33();
+      expect(a2.d).assertEqual(-0.0);
+      let a3: A34 = new A34();
+      expect(a3.d).assertEqual(3.4028234663852886e38);
+      let a4: A35 = new A35();
+      expect(a4.d).assertEqual(1.401298464324817e-45);
+      let a5: A36 = new A36();
+      expect(a5.d).assertEqual(-3.4028234663852886e38);
+      let a6: A37 = new A37();
+      expect(a6.d).assertEqual(-1.401298464324817e-45);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15700
+     * @tc.name      testImplicitConversions0157
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A38 = new A38();
+      expect(a1.d.charCodeAt(0)).assertEqual(0);  // 使用 charCodeAt 获取 Unicode 数值
+      let a2: A39 = new A39();
+      expect(a2.d.charCodeAt(0)).assertEqual(4095); // Unicode 值 0x0FFF
+      let a3: A40 = new A40();
+      expect(a3.d.charCodeAt(0)).assertEqual(65535); // Unicode 值 0xFFFF
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15800
+     * @tc.name      testImplicitConversions0158
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A41 = new A41();
+      expect(Double.isNaN(a.d)).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_15900
+     * @tc.name      testImplicitConversions0159
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A42 = new A42();
+      expect(a1.d).assertEqual(0);
+      let a2: A43 = new A43();
+      expect(a2.d).assertEqual(-128);
+      let a3: A44 = new A44();
+      expect(a3.d).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16000
+     * @tc.name      testImplicitConversions0160
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A45 = new A45();
+      expect(a1.d).assertEqual(0);
+      let a2: A46 = new A46();
+      expect(a2.d).assertEqual(-128);
+      let a3: A47 = new A47();
+      expect(a3.d).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16100
+     * @tc.name      testImplicitConversions0161
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A48 = new A48();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A49 = new A49();
+      expect(a2.d).assertEqual(-32768.0);
+      let a3: A50 = new A50();
+      expect(a3.d).assertEqual(32767.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16200
+     * @tc.name      testImplicitConversions0162
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A51 = new A51();
+      expect(a1.d).assertEqual(0);
+      let a2: A52 = new A52();
+      expect(a2.d).assertEqual(-2147483648);
+      let a3: A53 = new A53();
+      expect(a3.d).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16300
+     * @tc.name      testImplicitConversions0163
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A54 = new A54();
+      expect(a1.d).assertEqual(0.0f);
+      let a2: A55 = new A55();
+      expect(a2.d).assertEqual(-2147483600.0f);
+      let a3: A56 = new A56();
+      expect(a3.d).assertEqual(2147483600.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16400
+     * @tc.name      testImplicitConversions0164
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A57 = new A57();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A58 = new A58();
+      expect(a2.d).assertEqual(-2147483648.0);
+      let a3: A59 = new A59();
+      expect(a3.d).assertEqual(2147483647.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16500
+     * @tc.name      testImplicitConversions0165
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A60 = new A60();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A61 = new A61();
+      expect(a2.d).assertEqual(-2147483648.0);
+      let a3: A62 = new A62();
+      expect(a3.d).assertEqual(2147483647.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16600
+     * @tc.name      testImplicitConversions0166
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A63 = new A63();
+      expect(a1.d).assertEqual(0.0f);
+      let a2: A64 = new A64();
+      expect(a2.d).assertEqual(-9223372000000000000.0f);
+      let a3: A65 = new A65();
+      expect(a3.d).assertEqual(9223372000000000000.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16700
+     * @tc.name      testImplicitConversions0167
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A66 = new A66();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A67 = new A67();
+      expect(a2.d).assertEqual(-9.223372036854776e+18);
+      let a3: A68 = new A68();
+      expect(a3.d).assertEqual(9.223372036854776e+18);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16800
+     * @tc.name      testImplicitConversions0168
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A69 = new A69();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A70 = new A70();
+      expect(a2.d).assertEqual(-9.223372036854776e+18);
+      let a3: A71 = new A71();
+      expect(a3.d).assertEqual(9.223372036854776e+18);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_16900
+     * @tc.name      testImplicitConversions0169
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A72 = new A72();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A73 = new A73();
+      expect(a2.d).assertEqual(-0.0);
+      let a3: A74 = new A74();
+      expect(a3.d).assertEqual(3.4028234663852886e38);
+      let a4: A75 = new A75();
+      expect(a4.d).assertEqual(1.401298464324817e-45);
+      let a5: A76 = new A76();
+      expect(a5.d).assertEqual(-3.4028234663852886e38);
+      let a6: A77 = new A77();
+      expect(a6.d).assertEqual(-1.401298464324817e-45);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17000
+     * @tc.name      testImplicitConversions0170
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A78 = new A78();
+      expect(a1.d).assertEqual(0);
+      let a2: A79 = new A79();
+      expect(a2.d).assertEqual(1);
+      let a3: A80 = new A80();
+      expect(a3.d).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17100
+     * @tc.name      testImplicitConversions0171
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A81 = new A81();
+      expect(a1.d).assertEqual(0);
+      let a2: A82 = new A82();
+      expect(a2.d).assertEqual(-128);
+      let a3: A83 = new A83();
+      expect(a3.d).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17200
+     * @tc.name      testImplicitConversions0172
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A84 = new A84();
+      expect(a1.d).assertEqual(100);
+      let a2: A85 = new A85();
+      expect(a2.d).assertEqual(200);
+      let a3: A86 = new A86();
+      expect(a3.d).assertEqual(300);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17300
+     * @tc.name      testImplicitConversions0173
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A87 = new A87();
+      expect(a1.d).assertEqual(10.0f);
+      let a2: A88 = new A88();
+      expect(a2.d).assertEqual(20.0f);
+      let a3: A89 = new A89();
+      expect(a3.d).assertEqual(30.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17400
+     * @tc.name      testImplicitConversions0174
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A90 = new A90();
+      expect(a1.d).assertEqual(10001.0);
+      let a2: A91 = new A91();
+      expect(a2.d).assertEqual(10002.0);
+      let a3: A92 = new A92();
+      expect(a3.d).assertEqual(10003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17500
+     * @tc.name      testImplicitConversions0175
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A93 = new A93();
+      expect(a1.d).assertEqual(20001.0);
+      let a2: A94 = new A94();
+      expect(a2.d).assertEqual(20002.0);
+      let a3: A95 = new A95();
+      expect(a3.d).assertEqual(20003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17600
+     * @tc.name      testImplicitConversions0176
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A96 = new A96();
+      expect(a1.d).assertEqual(3000000001.0);
+      let a2: A97 = new A97();
+      expect(a2.d).assertEqual(3000000002.0);
+      let a3: A98 = new A98();
+      expect(a3.d).assertEqual(3000000003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17700
+     * @tc.name      testImplicitConversions0177
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A99 = new A99();
+      expect(a1.d).assertEqual(3000000001.0);
+      let a2: A100 = new A100();
+      expect(a2.d).assertEqual(3000000002.0);
+      let a3: A101 = new A101();
+      expect(a3.d).assertEqual(3000000003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17800
+     * @tc.name      testImplicitConversions0178
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A102 = new A102();
+      expect(a1.d).assertEqual(0.0f);
+      let a2: A103 = new A103();
+      expect(a2.d).assertEqual(-128.0f);
+      let a3: A104 = new A104();
+      expect(a3.d).assertEqual(127.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_17900
+     * @tc.name      testImplicitConversions0179
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A105 = new A105();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A106 = new A106();
+      expect(a2.d).assertEqual(-128.0);
+      let a3: A107 = new A107();
+      expect(a3.d).assertEqual(127.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18000
+     * @tc.name      testImplicitConversions0180
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A108 = new A108();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A109 = new A109();
+      expect(a2.d).assertEqual(-128.0);
+      let a3: A110 = new A110();
+      expect(a3.d).assertEqual(127.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18100
+     * @tc.name      testImplicitConversions0181
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A111 = new A111();
+      expect(a1.d).assertEqual(0);
+      let a2: A112 = new A112();
+      expect(a2.d).assertEqual(-32768);
+      let a3: A113 = new A113();
+      expect(a3.d).assertEqual(32767);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18200
+     * @tc.name      testImplicitConversions0182
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A114 = new A114();
+      expect(a1.d).assertEqual(0);
+      let a2: A115 = new A115();
+      expect(a2.d).assertEqual(-32768);
+      let a3: A116 = new A116();
+      expect(a3.d).assertEqual(32767);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18300
+     * @tc.name      testImplicitConversions0183
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A117 = new A117();
+      expect(a1.d).assertEqual(0.0f);
+      let a2: A118 = new A118();
+      expect(a2.d).assertEqual(-32_768.0f);
+      let a3: A119 = new A119();
+      expect(a3.d).assertEqual(32_767.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18400
+     * @tc.name      testImplicitConversions0184
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a1: A120 = new A120();
+      expect(a1.d).assertEqual(0.0);
+      let a2: A121 = new A121();
+      expect(a2.d).assertEqual(-32768.0);
+      let a3: A122 = new A122();
+      expect(a3.d).assertEqual(32767.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18500
+     * @tc.name      testImplicitConversions0185
+     * @tc.desc      Declaration context, instance field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Double.isNaN(A123.d)).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18600
+     * @tc.name      testImplicitConversions0186
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A124.d).assertEqual(0);
+      expect(A125.d).assertEqual(-128);
+      expect(A126.d).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18700
+     * @tc.name      testImplicitConversions0187
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A127.d).assertEqual(0);
+      expect(A128.d).assertEqual(-128);
+      expect(A129.d).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18800
+     * @tc.name      testImplicitConversions0188
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A130.d).assertEqual(0.0);
+      expect(A131.d).assertEqual(-32768.0);
+      expect(A132.d).assertEqual(32767.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_18900
+     * @tc.name      testImplicitConversions0189
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A133.d).assertEqual(0);
+      expect(A134.d).assertEqual(-2147483648);
+      expect(A135.d).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19000
+     * @tc.name      testImplicitConversions0190
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A136.d).assertEqual(0.0f);
+      expect(A137.d).assertEqual(-2147483600.0f);
+      expect(A138.d).assertEqual(2147483600.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19100
+     * @tc.name      testImplicitConversions0191
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A139.d).assertEqual(0.0);
+      expect(A140.d).assertEqual(-2147483648.0);
+      expect(A141.d).assertEqual(2147483647.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19200
+     * @tc.name      testImplicitConversions0192
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A142.d).assertEqual(0.0);
+      expect(A143.d).assertEqual(-2147483648.0);
+      expect(A144.d).assertEqual(2147483647.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19300
+     * @tc.name      testImplicitConversions0193
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A145.d).assertEqual(0.0f);
+      expect(A146.d).assertEqual(-9223372000000000000.0f);
+      expect(A147.d).assertEqual(9223372000000000000.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19400
+     * @tc.name      testImplicitConversions0194
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A148.d).assertEqual(0.0);
+      expect(A149.d).assertEqual(-9.223372036854776e+18);
+      expect(A150.d).assertEqual(9.223372036854776e+18);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19500
+     * @tc.name      testImplicitConversions0195
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A151.d).assertEqual(0.0);
+      expect(A152.d).assertEqual(-9.223372036854776e+18);
+      expect(A153.d).assertEqual(9.223372036854776e+18);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19600
+     * @tc.name      testImplicitConversions0196
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A154.d).assertEqual(0.0);
+      expect(A155.d).assertEqual(-0.0);
+      expect(A156.d).assertEqual(3.4028234663852886e38);
+      expect(A157.d).assertEqual(1.401298464324817e-45);
+      expect(A158.d).assertEqual(-3.4028234663852886e38);
+      expect(A159.d).assertEqual(-1.401298464324817e-45);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19700
+     * @tc.name      testImplicitConversions0197
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0197", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A160.d).assertEqual(0);
+      expect(A161.d).assertEqual(1);
+      expect(A162.d).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19800
+     * @tc.name      testImplicitConversions0198
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0198", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A163.d).assertEqual(0);
+      expect(A164.d).assertEqual(-128);
+      expect(A165.d).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_19900
+     * @tc.name      testImplicitConversions0199
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0199", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A166.d).assertEqual(100);
+      expect(A167.d).assertEqual(200);
+      expect(A168.d).assertEqual(300);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20000
+     * @tc.name      testImplicitConversions0200
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A169.d).assertEqual(10.0f);
+      expect(A170.d).assertEqual(20.0f);
+      expect(A171.d).assertEqual(30.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20100
+     * @tc.name      testImplicitConversions0201
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A172.d).assertEqual(10001.0);
+      expect(A173.d).assertEqual(10002.0);
+      expect(A174.d).assertEqual(10003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20200
+     * @tc.name      testImplicitConversions0202
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A175.d).assertEqual(20001.0);
+      expect(A176.d).assertEqual(20002.0);
+      expect(A177.d).assertEqual(20003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20300
+     * @tc.name      testImplicitConversions0203
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A178.d).assertEqual(3000000001.0);
+      expect(A179.d).assertEqual(3000000002.0);
+      expect(A180.d).assertEqual(3000000003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20400
+     * @tc.name      testImplicitConversions0204
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A181.d).assertEqual(0.0f);
+      expect(A182.d).assertEqual(-128.0f);
+      expect(A183.d).assertEqual(127.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20500
+     * @tc.name      testImplicitConversions0205
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0205", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A184.d).assertEqual(0.0);
+      expect(A185.d).assertEqual(-128.0);
+      expect(A186.d).assertEqual(127.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20600
+     * @tc.name      testImplicitConversions0206
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0206", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A187.d).assertEqual(0.0);
+      expect(A188.d).assertEqual(-128.0);
+      expect(A189.d).assertEqual(127.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20700
+     * @tc.name      testImplicitConversions0207
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0207", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A190.d).assertEqual(0);
+      expect(A191.d).assertEqual(-32768);
+      expect(A192.d).assertEqual(32767);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20800
+     * @tc.name      testImplicitConversions0208
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0208", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A193.d).assertEqual(0);
+      expect(A194.d).assertEqual(-32768);
+      expect(A195.d).assertEqual(32767);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_20900
+     * @tc.name      testImplicitConversions0209
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0209", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A196.d).assertEqual(0.0f);
+      expect(A197.d).assertEqual(-32_768.0f);
+      expect(A198.d).assertEqual(32_767.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21000
+     * @tc.name      testImplicitConversions0210
+     * @tc.desc      Declaration context, static field declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A199.d).assertEqual(0.0);
+      expect(A200.d).assertEqual(-32768.0);
+      expect(A201.d).assertEqual(32767.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21100
+     * @tc.name      testImplicitConversions0211
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0211", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d1: byte = 0 as byte;
+      expect(d1).assertEqual(0);
+      let d2: byte = Byte.MIN_VALUE;
+      expect(d2).assertEqual(-128);
+      let d3: byte = Byte.MAX_VALUE;
+      expect(d3).assertEqual(127);
+      let d4: byte = -128 as byte;
+      expect(d4).assertEqual(-128);
+      let d5: byte = 127 as byte;
+      expect(d5).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21200
+     * @tc.name      testImplicitConversions0212
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0212", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d1: short = 0;
+      expect(d1).assertEqual(0);
+      let d2: short = Short.MIN_VALUE;
+      expect(d2).assertEqual(-32768);
+      let d3: short = Short.MAX_VALUE;
+      expect(d3).assertEqual(32767);
+      let d4: short = -32768;
+      expect(d4).assertEqual(-32768);
+      let d5: short = 32767;
+      expect(d5).assertEqual(32767);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21300
+     * @tc.name      testImplicitConversions0213
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0213", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d1: int = 0;
+      expect(d1).assertEqual(0);
+      let d2: int = Int.MIN_VALUE;
+      expect(d2).assertEqual(-2147483648);
+      let d3: int = Int.MAX_VALUE;
+      expect(d3).assertEqual(2147483647);
+      let d4: int = -2147483648;
+      expect(d4).assertEqual(-2147483648);
+      let d5: int = 2147483647;
+      expect(d5).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21400
+     * @tc.name      testImplicitConversions0214
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0214", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d1: long = 0;
+      expect(d1).assertEqual(0);
+      let d2: long = Long.MIN_VALUE;
+      expect(d2).assertEqual(-9223372036854775808);
+      let d3: long = Long.MAX_VALUE;
+      expect(d3).assertEqual(9223372036854775807);
+      let d4: long = -9223372036854775808;
+      expect(d4).assertEqual(-9223372036854775808);
+      let d5: long = 9223372036854775807;
+      expect(d5).assertEqual(9223372036854775807);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21500
+     * @tc.name      testImplicitConversions0215
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0215", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d1: float = +0.0f;
+      expect(d1).assertEqual(+0.0f);
+      let d2: float = -0.0f;
+      expect(d2).assertEqual(-0.0f);
+      let d3: float = 3.4028234663852886e38f;
+      expect(d3).assertEqual(3.4028234663852886e38f);
+      let d4: float = 1.401298464324817e-45f;
+      expect(d4).assertEqual(1.401298464324817e-45f);
+      let d5: float = -3.4028234663852886e38f;
+      expect(d5).assertEqual(-3.4028234663852886e38f);
+      let d6: float = -1.401298464324817e-45f;
+      expect(d6).assertEqual(-1.401298464324817e-45f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21600
+     * @tc.name      testImplicitConversions0216
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0216", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d1: double = 0.0;
+      expect(d1).assertEqual(0.0);
+      let d2: double = -0.0;
+      expect(d2).assertEqual(-0.0);
+      let d3: double = 3.4028234663852886e38;
+      expect(d3).assertEqual(3.4028234663852886e38);
+      let d4: double = 1.401298464324817e-45;
+      expect(d4).assertEqual(1.401298464324817e-45);
+      let d5: double = -3.4028234663852886e38;
+      expect(d5).assertEqual(-3.4028234663852886e38);
+      let d6: double = -1.401298464324817e-45;
+      expect(d6).assertEqual(-1.401298464324817e-45);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21700
+     * @tc.name      testImplicitConversions0217
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0217", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d1: string = '\u0000';
+      expect(d1.charCodeAt(0)).assertEqual(0);
+      let d2: string = '\u0FFF';
+      expect(d2.charCodeAt(0)).assertEqual(4095);
+      let d3: string = '\uFFFF';
+      expect(d3.charCodeAt(0)).assertEqual(65535);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21800
+     * @tc.name      testImplicitConversions0218
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0218", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: float = Float.NaN;
+      let d: double = s;
+      expect(Double.isNaN(d)).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_21900
+     * @tc.name      testImplicitConversions0219
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0219", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: byte = 0b0 as byte;
+      let d1: short = s1;
+      expect(d1).assertEqual(0);
+      let s2: byte = Byte.MIN_VALUE;
+      let d2: short = s2;
+      expect(d2).assertEqual(-128);
+      let s3: byte = Byte.MAX_VALUE;
+      let d3: short = s3;
+      expect(d3).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22000
+     * @tc.name      testImplicitConversions0220
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: byte = 0b0 as byte;
+      let d1: int = s1;
+      expect(d1).assertEqual(0);
+      let s2: byte = Byte.MIN_VALUE;
+      let d2: int = s2;
+      expect(d2).assertEqual(-128);
+      let s3: byte = Byte.MAX_VALUE;
+      let d3: int = s3;
+      expect(d3).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22100
+     * @tc.name      testImplicitConversions0221
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0221", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: short = 0;
+      let d1: number = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: short = Short.MIN_VALUE;
+      let d2: number = s2;
+      expect(d2).assertEqual(-32768.0);
+      let s3: short = Short.MAX_VALUE;
+      let d3: number = s3;
+      expect(d3).assertEqual(32767.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22200
+     * @tc.name      testImplicitConversions0222
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0222", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: int = 0;
+      let d1: long = s1;
+      expect(d1).assertEqual(0);
+      let s2: int = Int.MIN_VALUE;
+      let d2: long = s2;
+      expect(d2).assertEqual(-2147483648);
+      let s3: int = Int.MAX_VALUE;
+      let d3: long = s3;
+      expect(d3).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22300
+     * @tc.name      testImplicitConversions0223
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0223", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: int = 0;
+      let d1: float = s1;
+      expect(d1).assertEqual(0.0f);
+      let s2: int = Int.MIN_VALUE;
+      let d2: float = s2;
+      expect(d2).assertEqual(-2147483600.0f);
+      let s3: int = Int.MAX_VALUE;
+      let d3: float = s3;
+      expect(d3).assertEqual(2147483600.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22400
+     * @tc.name      testImplicitConversions0224
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0224", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: int = 0;
+      let d1: double = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: int = Int.MIN_VALUE;
+      let d2: double = s2;
+      expect(d2).assertEqual(-2147483648.0);
+      let s3: int = Int.MAX_VALUE;
+      let d3: double = s3;
+      expect(d3).assertEqual(2147483647.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22500
+     * @tc.name      testImplicitConversions0225
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0225", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: int = 0;
+      let d1: number = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: int = Int.MIN_VALUE;
+      let d2: number = s2;
+      expect(d2).assertEqual(-2147483648.0);
+      let s3: int = Int.MAX_VALUE;
+      let d3: number = s3;
+      expect(d3).assertEqual(2147483647.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22600
+     * @tc.name      testImplicitConversions0226
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0226", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: long = 0;
+      let d1: float = s1;
+      expect(d1).assertEqual(0.0f);
+      let s2: long = Long.MIN_VALUE;
+      let d2: float = s2;
+      expect(d2).assertEqual(-9223372000000000000.0f);
+      let s3: long = Long.MAX_VALUE;
+      let d3: float = s3;
+      expect(d3).assertEqual(9223372000000000000.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22700
+     * @tc.name      testImplicitConversions0227
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0227", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: long = 0;
+      let d1: double = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: long = Long.MIN_VALUE;
+      let d2: double = s2;
+      expect(d2).assertEqual(-9.223372036854776e+18);
+      let s3: long = Long.MAX_VALUE;
+      let d3: double = s3;
+      expect(d3).assertEqual(9.223372036854776e+18);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22800
+     * @tc.name      testImplicitConversions0228
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0228", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: long = 0;
+      let d1: number = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: long = Long.MIN_VALUE;
+      let d2: number = s2;
+      expect(d2).assertEqual(-9.223372036854776e+18);
+      let s3: long = Long.MAX_VALUE;
+      let d3: number = s3;
+      expect(d3).assertEqual(9.223372036854776e+18);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_22900
+     * @tc.name      testImplicitConversions0229
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0229", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: float = +0.0f;
+      let d1: double = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: float = -0.0f;
+      let d2: double = s2;
+      expect(d2).assertEqual(-0.0);
+      let s3: float = 3.4028234663852886e38f;
+      let d3: double = s3;
+      expect(d3).assertEqual(3.4028234663852886e38);
+      let s4: float = 1.401298464324817e-45f;
+      let d4: double = s4;
+      expect(d4).assertEqual(1.401298464324817e-45);
+      let s5: float = -3.4028234663852886e38f;
+      let d5: double = s5;
+      expect(d5).assertEqual(-3.4028234663852886e38);
+      let s6: float = -1.401298464324817e-45f;
+      let d6: double = s6;
+      expect(d6).assertEqual(-1.401298464324817e-45);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23000
+     * @tc.name      testImplicitConversions0230
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: Color = Color.Red;
+      let d1: int = s1;
+      expect(d1).assertEqual(0);
+      let s2: Color = Color.Green;
+      let d2: int = s2;
+      expect(d2).assertEqual(1);
+      let s3: Color = Color.Blue;
+      let d3: int = s3;
+      expect(d3).assertEqual(2);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23100
+     * @tc.name      testImplicitConversions0231
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: byte = 0b0 as byte;
+      let d1: long = s1;
+      expect(d1).assertEqual(0);
+      let s2: byte = Byte.MIN_VALUE;
+      let d2: long = s2;
+      expect(d2).assertEqual(-128);
+      let s3: byte = Byte.MAX_VALUE;
+      let d3: long = s3;
+      expect(d3).assertEqual(127);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23200
+     * @tc.name      testImplicitConversions0232
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0232", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: Color1 = Color1.Red;
+      let d1: long = s1;
+      expect(d1).assertEqual(100);
+      let s2: Color1 = Color1.Green;
+      let d2: long = s2;
+      expect(d2).assertEqual(200);
+      let s3: Color1 = Color1.Blue;
+      let d3: long = s3;
+      expect(d3).assertEqual(300);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23300
+     * @tc.name      testImplicitConversions0233
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0233", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: Color2 = Color2.Red;
+      let d1: float = s1;
+      expect(d1).assertEqual(10.0f);
+      let s2: Color2 = Color2.Green;
+      let d2: float = s2;
+      expect(d2).assertEqual(20.0f);
+      let s3: Color2 = Color2.Blue;
+      let d3: float = s3;
+      expect(d3).assertEqual(30.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23400
+     * @tc.name      testImplicitConversions0234
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0234", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: Color3 = Color3.Red;
+      let d1: double = s1;
+      expect(d1).assertEqual(10001.0);
+      let s2: Color3 = Color3.Green;
+      let d2: double = s2;
+      expect(d2).assertEqual(10002.0);
+      let s3: Color3 = Color3.Blue;
+      let d3: double = s3;
+      expect(d3).assertEqual(10003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23500
+     * @tc.name      testImplicitConversions0235
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0235", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: Color4 = Color4.Red;
+      let d1: number = s1;
+      expect(d1).assertEqual(20001.0);
+      let s2: Color4 = Color4.Green;
+      let d2: number = s2;
+      expect(d2).assertEqual(20002.0);
+      let s3: Color4 = Color4.Blue;
+      let d3: number = s3;
+      expect(d3).assertEqual(20003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23600
+     * @tc.name      testImplicitConversions0236
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0236", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: Color5 = Color5.Red;
+      let d1: double = s1;
+      expect(d1).assertEqual(3000000001.0);
+      let s2: Color5 = Color5.Green;
+      let d2: double = s2;
+      expect(d2).assertEqual(3000000002.0);
+      let s3: Color5 = Color5.Blue;
+      let d3: double = s3;
+      expect(d3).assertEqual(3000000003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23700
+     * @tc.name      testImplicitConversions0237
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0237", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: Color5 = Color5.Red;
+      let d1: number = s1;
+      expect(d1).assertEqual(3000000001.0);
+      let s2: Color5 = Color5.Green;
+      let d2: number = s2;
+      expect(d2).assertEqual(3000000002.0);
+      let s3: Color5 = Color5.Blue;
+      let d3: number = s3;
+      expect(d3).assertEqual(3000000003.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23800
+     * @tc.name      testImplicitConversions0238
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0238", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: byte = 0b0 as byte;
+      let d1: float = s1;
+      expect(d1).assertEqual(0.0f);
+      let s2: byte = Byte.MIN_VALUE;
+      let d2: float = s2;
+      expect(d2).assertEqual(-128.0f);
+      let s3: byte = Byte.MAX_VALUE;
+      let d3: float = s3;
+      expect(d3).assertEqual(127.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_23900
+     * @tc.name      testImplicitConversions0239
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0239", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: byte = 0b0 as byte;
+      let d1: double = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: byte = Byte.MIN_VALUE;
+      let d2: double = s2;
+      expect(d2).assertEqual(-128.0);
+      let s3: byte = Byte.MAX_VALUE;
+      let d3: double = s3;
+      expect(d3).assertEqual(127.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24000
+     * @tc.name      testImplicitConversions0240
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: byte = 0b0 as byte;
+      let d1: number = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: byte = Byte.MIN_VALUE;
+      let d2: number = s2;
+      expect(d2).assertEqual(-128.0);
+      let s3: byte = Byte.MAX_VALUE;
+      let d3: number = s3;
+      expect(d3).assertEqual(127.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24100
+     * @tc.name      testImplicitConversions0241
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0241", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: short = 0;
+      let d1: int = s1;
+      expect(d1).assertEqual(0);
+      let s2: short = Short.MIN_VALUE;
+      let d2: int = s2;
+      expect(d2).assertEqual(-32768);
+      let s3: short = Short.MAX_VALUE;
+      let d3: int = s3;
+      expect(d3).assertEqual(32767);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24200
+     * @tc.name      testImplicitConversions0242
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0242", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: short = 0;
+      let d1: long = s1;
+      expect(d1).assertEqual(0);
+      let s2: short = Short.MIN_VALUE;
+      let d2: long = s2;
+      expect(d2).assertEqual(-32768);
+      let s3: short = Short.MAX_VALUE;
+      let d3: long = s3;
+      expect(d3).assertEqual(32767);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24300
+     * @tc.name      testImplicitConversions0243
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0243", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: short = 0;
+      let d1: float = s1;
+      expect(d1).assertEqual(0.0f);
+      let s2: short = Short.MIN_VALUE;
+      let d2: float = s2;
+      expect(d2).assertEqual(-32_768.0f);
+      let s3: short = Short.MAX_VALUE;
+      let d3: float = s3;
+      expect(d3).assertEqual(32_767.0f);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24400
+     * @tc.name      testImplicitConversions0244
+     * @tc.desc      Declaration context, variable declaration, widening primitive conversion, implicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0244", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s1: short = 0;
+      let d1: double = s1;
+      expect(d1).assertEqual(0.0);
+      let s2: short = Short.MIN_VALUE;
+      let d2: double = s2;
+      expect(d2).assertEqual(-32768.0);
+      let s3: short = Short.MAX_VALUE;
+      let d3: double = s3;
+      expect(d3).assertEqual(32767.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24500
+     * @tc.name      testImplicitConversions0245
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0245", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      let v1: number = Color6.Red;
+      expect(v1).assertEqual(0.0);
+      let v2: number = Color6.Green + Color6.Blue;
+      expect(v2).assertEqual(201.0);
+      let v3: number = s + Color6.Blue + 33;
+      expect(v3).assertEqual(176.0);
+      const c1: number = Color6.Red;
+      expect(c1).assertEqual(0.0);
+      const c2: number = Color6.Green + Color6.Blue;
+      expect(c2).assertEqual(201.0);
+      const c3: number = s + Color6.Blue + 34;
+      expect(c3).assertEqual(177.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24600
+     * @tc.name      testImplicitConversions0246
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0246", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      let v: number;
+      v = Color6.Red;
+      expect(v).assertEqual(0.0);
+      v = Color6.Green + Color6.Blue;
+      expect(v).assertEqual(201.0);
+      v = s + Color6.Blue + 12;
+      expect(v).assertEqual(155.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24700
+     * @tc.name      testImplicitConversions0247
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0247", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42.0;
+      let a: A202 = new A202();
+      expect(a.meth(Color6.Red)).assertEqual(2.0);
+      expect(a.meth(Color6.Green + Color6.Blue)).assertEqual(203.0);
+      expect(a.meth(s + Color6.Blue)).assertEqual(145.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24800
+     * @tc.name      testImplicitConversions0248
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0248", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      let a: A203 = { fld: Color6.Red };
+      expect(a.fld).assertEqual(0.0);
+      a = { fld: Color6.Blue + Color6.Green };
+      expect(a.fld).assertEqual(201.0);
+      a = { fld: s + Color6.Blue + 1 };
+      expect(a.fld).assertEqual(144.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_24900
+     * @tc.name      testImplicitConversions0249
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0249", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42.0;
+      let v: number[] = [ Color6.Red ];
+      expect(v[0]).assertEqual(0.0);
+      v = [ Color6.Green + Color6.Blue, Color6.Blue + s ];
+      expect(v[0]).assertEqual(201.0);
+      expect(v[1]).assertEqual(143.0);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25000
+     * @tc.name      testImplicitConversions0250
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: double = 42.2;
+      let union1: string | number;
+      let union2: int | object;
+      let union3: Array<string> | Any | BigInt;
+      union1 = Color6.Blue;
+      expect(union1).assertEqual(101.0);
+      expect(union1 instanceof number).assertTrue();
+      union2 = Color6.Red + Color6.Green;
+      expect(union2).assertEqual(100.0);
+      expect(union2 instanceof number).assertTrue();
+      union3 = Color6.Red + Color6.Blue + s;
+      expect(union3).assertEqual(143.2);
+      expect(union3 instanceof number).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25100
+     * @tc.name      testImplicitConversions0251
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0251", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42;
+      let v1: number = Color7.Red;
+      expect(v1).assertEqual(0);
+      let v2: number = Color7.Green + Color7.Blue;
+      expect(v2).assertEqual(201);
+      let v3: number = s + Color7.Blue + 33;
+      expect(v3).assertEqual(176);
+      const c1: number = Color7.Red;
+      expect(c1).assertEqual(0);
+      const c2: number = Color7.Green + Color7.Blue;
+      expect(c2).assertEqual(201);
+      const c3: number = s + Color7.Blue + 34;
+      expect(c3).assertEqual(177);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25200
+     * @tc.name      testImplicitConversions0252
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0252", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      let v: number;
+      v = Color7.Red;
+      expect(v).assertEqual(0);
+      v = Color7.Green + Color7.Blue;
+      expect(v).assertEqual(201);
+      v = s + Color7.Blue + 12;
+      expect(v).assertEqual(155);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25300
+     * @tc.name      testImplicitConversions0253
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0253", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      let union1: string | int;
+      let union2: float | object;
+      let union3: Array<string> | Any | double;
+      union1 = Color7.Blue;
+      expect(union1).assertEqual(101);
+      expect(union1 instanceof int).assertTrue();
+      union2 = Color7.Red + Color7.Green;
+      expect(union2).assertEqual(100);
+      expect(union2 instanceof int).assertTrue();
+      union3 = Color7.Red + Color7.Blue + s;
+      expect(union3).assertEqual(143);
+      expect(union3 instanceof int).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25400
+     * @tc.name      testImplicitConversions0254
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0254", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      let a: A204 = new A204();
+      expect(a.fld1).assertEqual(0);
+      expect(a.fld2).assertEqual(201);
+      expect(a.fld3).assertEqual(100);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25500
+     * @tc.name      testImplicitConversions0255
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0255", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      let a: A205 = new A205();
+      a.fld1 = Color7.Red;
+      a.fld2 = Color7.Blue + Color7.Green;
+      a.fld3 = s + Color7.Green + 1;
+      expect(a.fld1).assertEqual(0);
+      expect(a.fld2).assertEqual(201);
+      expect(a.fld3).assertEqual(143);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25600
+     * @tc.name      testImplicitConversions0256
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0256", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: int = 42;
+      expect(foo9(Color7.Red)).assertEqual(1);
+      expect(foo9(Color7.Green + Color7.Blue)).assertEqual(202);
+      expect(foo9(s + Color7.Blue + 2)).assertEqual(146);
+    });
+
+    /**
+     * @tc.number    SUB_IMPLICIT_CONVERSIONS_25700
+     * @tc.name      testImplicitConversions0257
+     * @tc.desc      A value of the numeric enumeration type is converted to one of the following: - Numeric type equal to or larger than the enumeration base type - Union type considering the value type of the enumeration base type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testImplicitConversions0257", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: number = 42.0;
+      let a: A206 = new A206();
+      expect(a.meth(Color7.Red)).assertEqual(2.0);
+      expect(a.meth(Color7.Green + Color7.Blue)).assertEqual(203.0);
+      expect(a.meth(s + Color7.Blue)).assertEqual(145.0);
+    });
+
   })
 }
