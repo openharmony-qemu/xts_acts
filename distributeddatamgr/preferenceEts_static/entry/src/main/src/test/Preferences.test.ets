@@ -524,6 +524,7 @@ export default function preferenceTest() {
           done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Remove preferences from cache success");
+          done();
         }
       })
     })
@@ -741,7 +742,7 @@ export default function preferenceTest() {
         if(err && err.code != 0){
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err)
           expect(false).assertTrue();
-          doen();
+          done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success")
           expect(preferences != null).assertTrue();
@@ -755,6 +756,7 @@ export default function preferenceTest() {
           done();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Delete preferences success")
+          done();
         }
       })
     });
