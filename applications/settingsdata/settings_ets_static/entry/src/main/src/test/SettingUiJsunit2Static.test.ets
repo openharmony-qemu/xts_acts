@@ -297,6 +297,41 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_get_value_callback_domain_empty
+     * @tc.number settings_get_value_callback_domain_empty
+     * @tc.desc   check getValue value callback domain empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_get_value_callback_domain_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness35';//关键字
+      let value = 'brightness35';//值
+      let domainName = 'secure';
+      try{
+        settings.setValue(abilityContext!, name, value, domainName)
+          .then((data)=>{
+            console.info("[settings_get_value_callback_domain_empty] value is:" + data);
+            settings.getValue(abilityContext!, name, '').then(ret => {
+              console.info("[settings_get_value_callback_domain_empty] value is:" + ret);
+              expect().assertFail();
+              done();
+            })
+          })
+          .catch((err: Error)=>{
+            console.info("[settings_get_value_callback_domain_empty] error is:" + err);
+            expect(err.message).assertEqual("Permission denied");
+            done();
+          })
+        done();
+      }catch (err) {
+        console.error("[settings_get_value_callback_domain_empty] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   settings_get_value_static_034
      * @tc.number settings_get_value_static_034
      * @tc.desc   check getValue value
@@ -404,7 +439,6 @@ export default function settingUiJsunit() {
       }
     });
 
-
     /**
      * @tc.name   settings_set_value_113
      * @tc.number settings_set_value_113
@@ -430,6 +464,54 @@ export default function settingUiJsunit() {
       }catch(err){
         console.info("[settings_set_value_113] error is:" + err);
         expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_callback_domain_key_empty
+     * @tc.number settings_set_value_callback_domain_key_empty
+     * @tc.desc   check setValue no domain callback key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_domain_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      try{
+        settings.setValue(abilityContext!, '', value, (result) => {
+          console.info("[settings_set_value_callback_domain_key_empty] result is:" + result);
+          expect(result === true).assertTrue();
+          done();
+        })
+      } catch(err) {
+        console.error("[settings_set_value_callback_domain_key_empty] error is:" + err);
+        expect(err?.code).assertEqual(201);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_set_value_callback_domain_value_empty
+     * @tc.number settings_set_value_callback_domain_value_empty
+     * @tc.desc   check setValue no domain callback value empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_set_value_callback_domain_value_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'brightness113valueempty';//关键字
+      let value = 'brightness113'//值
+      try{
+        settings.setValue(abilityContext!, name, '', (result) => {
+          console.info("[settings_set_value_callback_domain_key_empty] result is:" + result);
+          expect(result === false).assertTrue();
+          done();
+        })
+      } catch(err) {
+        console.error("[settings_set_value_callback_domain_key_empty] error is:" + err);
+        expect(err?.code).assertEqual(201);
         done();
       }
     });
