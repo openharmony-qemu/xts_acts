@@ -32,20 +32,20 @@ const DELAY_AFTER_TEST_MS = 300;
 export default function UIObserverTest() {
   describe('UIObserverTest', () => {
     beforeAll(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] UIObserverTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.uicontext.api23.static", "EntryAbility");
+      console.info('[ARKUI_NEW] UIObserverTest beforeAll start');
+      await UtilsTest.startAbility('com.arkui.ace.uicontext.api23.static', 'EntryAbility');
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] UIObserverTest beforeEach start");
+      console.info('[ARKUI_NEW] UIObserverTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uiObserver/uiObserver',
       };
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
+        const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("[ARKUI_NEW] UIObserverTest state pages: " + JSON.stringify(pages));
+        console.info('[ARKUI_NEW] UIObserverTest state pages: ' + JSON.stringify(pages));
         if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
@@ -54,13 +54,13 @@ export default function UIObserverTest() {
         // Extra delay for page and inspector to stabilize (reduce SIGSEGV race)
         await Utils.sleep(ROUTER_STABILIZE_MS);
       } catch (err) {
-        console.error("[ARKUI_NEW] UIObserverTest replaceUrl error: " + err);
+        console.error('[ARKUI_NEW] UIObserverTest replaceUrl error: ' + err);
         expect().assertFail();
       }
     });
 
     afterEach(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] UIObserverTest afterEach start");
+      console.info('[ARKUI_NEW] UIObserverTest afterEach start');
       // Delay after test before cleanup to avoid tight race with next beforeEach
       await Utils.sleep(DELAY_AFTER_TEST_MS);
       // Clean up AppStorage result keys
@@ -76,16 +76,6 @@ export default function UIObserverTest() {
       if (AppStorage.get<boolean>('uiObserverOffTabChange') != undefined) {
         AppStorage.delete('uiObserverOffTabChange');
       }
-      // onSwiperContentUpdate/offSwiperContentUpdate cases commented out, cleanup kept
-      // if (AppStorage.get<boolean>('uiObserverOnSwiperContentUpdate') != undefined) {
-      //   AppStorage.delete('uiObserverOnSwiperContentUpdate');
-      // }
-      // if (AppStorage.get<boolean>('uiObserverOnSwiperContentUpdateRegistered') != undefined) {
-      //   AppStorage.delete('uiObserverOnSwiperContentUpdateRegistered');
-      // }
-      // if (AppStorage.get<boolean>('uiObserverOffSwiperContentUpdate') != undefined) {
-      //   AppStorage.delete('uiObserverOffSwiperContentUpdate');
-      // }
       if (AppStorage.get<boolean>('uiObserverOnRouterPageSizeChange') != undefined) {
         AppStorage.delete('uiObserverOnRouterPageSizeChange');
       }
@@ -123,7 +113,7 @@ export default function UIObserverTest() {
         AppStorage.delete('uiObserverOffNavDestinationSizeChangeByUniqueId');
       }
       await Utils.sleep(SLEEP_TIME);
-      console.info("[ARKUI_NEW] UIObserverTest afterEach end");
+      console.info('[ARKUI_NEW] UIObserverTest afterEach end');
     });
 
     /**
@@ -193,10 +183,6 @@ export default function UIObserverTest() {
         done();
       }
     });
-
-    // onSwiperContentUpdate/offSwiperContentUpdate cases disabled due to issues
-    // it('uiObserverOnSwiperContentUpdate', ...)
-    // it('uiObserverOffSwiperContentUpdate', ...)
 
     /**
      * @tc.number UIObserverTest_005

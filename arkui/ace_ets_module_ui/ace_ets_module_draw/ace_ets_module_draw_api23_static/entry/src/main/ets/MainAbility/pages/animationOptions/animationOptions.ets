@@ -76,7 +76,7 @@ struct animationOptions {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test AnimationOptions - frameDurations")
+      Button('Test AnimationOptions - frameDurations')
         .id('btnFrameDurations')
         .width(300)
         .height(50)
@@ -92,7 +92,7 @@ struct animationOptions {
           }
         })
 
-      Button("Test AnimationOptions - autoPlay")
+      Button('Test AnimationOptions - autoPlay')
         .id('btnAutoPlay')
         .width(300)
         .height(50)
@@ -108,7 +108,7 @@ struct animationOptions {
           }
         })
 
-      Button("Test AnimationController - start/stop/pause/resume/getStatus")
+      Button('Test AnimationController - start/stop/pause/resume/getStatus')
         .id('btnAnimationController')
         .width(300)
         .height(50)
@@ -138,7 +138,7 @@ struct animationOptions {
               return;
             }
             // Create pixelMaps array
-            let pixelMaps: Array<image.PixelMap> = [pixelMap];
+            let pixelMaps: image.PixelMap[] = [pixelMap];
             // Create AnimationOptions
             let options: AnimationOptions = { duration: 1000, iterations: 1 };
             // Create AnimatedDrawableDescriptor via constructor
@@ -231,7 +231,7 @@ struct animationOptions {
           }
         })
 
-      Button("Test AnimatedDrawableDescriptor - getAnimationController")
+      Button('Test AnimatedDrawableDescriptor - getAnimationController')
         .id('btnGetAnimationController')
         .width(300)
         .height(50)
@@ -246,7 +246,7 @@ struct animationOptions {
               let pixelMap: image.PixelMap | undefined = drawableDescriptor.getPixelMap();
               if (pixelMap) {
                 // Create pixelMaps array
-                let pixelMaps: Array<image.PixelMap> = [pixelMap];
+                let pixelMaps: image.PixelMap[] = [pixelMap];
                 // Create AnimationOptions
                 let options: AnimationOptions = { duration: 1000, iterations: 1 };
                 // Create AnimatedDrawableDescriptor via constructor

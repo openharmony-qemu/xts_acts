@@ -90,7 +90,7 @@ struct drawableDescriptor {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test DrawableDescriptor - getPixelMap")
+      Button('Test DrawableDescriptor - getPixelMap')
         .id('btnGetPixelMap')
         .width(300)
         .height(50)
@@ -117,7 +117,7 @@ struct drawableDescriptor {
           }
         })
 
-      Button("测试 LayeredDrawableDescriptor - getForeground")
+      Button('测试 LayeredDrawableDescriptor - getForeground')
         .id('btnGetForeground')
         .width(300)
         .height(50)
@@ -139,7 +139,7 @@ struct drawableDescriptor {
           }
         })
 
-      Button("Test LayeredDrawableDescriptor - getBackground")
+      Button('Test LayeredDrawableDescriptor - getBackground')
         .id('btnGetBackground')
         .width(300)
         .height(50)
@@ -161,7 +161,7 @@ struct drawableDescriptor {
           }
         })
 
-      Button("Test LayeredDrawableDescriptor - getMask")
+      Button('Test LayeredDrawableDescriptor - getMask')
         .id('btnGetMask')
         .width(300)
         .height(50)
@@ -183,7 +183,7 @@ struct drawableDescriptor {
           }
         })
 
-      Button("Test LayeredDrawableDescriptor - getMaskClipPath")
+      Button('Test LayeredDrawableDescriptor - getMaskClipPath')
         .id('btnGetMaskClipPath')
         .width(300)
         .height(50)
@@ -200,7 +200,7 @@ struct drawableDescriptor {
           }
         })
 
-      Button("Test LayeredDrawableDescriptor - setBlendMode")
+      Button('Test LayeredDrawableDescriptor - setBlendMode')
         .id('btnSetBlendMode')
         .width(300)
         .height(50)

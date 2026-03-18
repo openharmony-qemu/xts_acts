@@ -42,7 +42,7 @@ struct routerTest {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test Router - clear")
+      Button('Test Router - clear')
         .id('btnRouterClear')
         .width(300)
         .height(50)
@@ -58,7 +58,7 @@ struct routerTest {
           }
         })
 
-      Button("Test Router - getStackSize")
+      Button('Test Router - getStackSize')
         .id('btnRouterGetStackSize')
         .width(300)
         .height(50)

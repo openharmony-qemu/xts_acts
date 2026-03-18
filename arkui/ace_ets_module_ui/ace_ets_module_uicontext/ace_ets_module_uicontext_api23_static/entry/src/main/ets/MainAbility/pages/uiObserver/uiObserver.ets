@@ -24,9 +24,8 @@ import {
   Entry,
   Component
 } from '@ohos.arkui.component';
-import { UIContext, UIObserver, SwiperContentInfo } from '@ohos.arkui.UIContext';
+import { UIContext, UIObserver } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import uiObserver from '@ohos.arkui.observer';
 
 @Entry
 @Component
@@ -41,7 +40,7 @@ struct uiObserverTest {
         .textAlign(TextAlign.Center)
         .id('uiObserverTitle')
 
-      Button("onTabChange")
+      Button('onTabChange')
         .id('btnOnTabChange')
         .width(300)
         .height(50)
@@ -63,7 +62,7 @@ struct uiObserverTest {
           }
         })
 
-      Button("offTabChange")
+      Button('offTabChange')
         .id('btnOffTabChange')
         .width(300)
         .height(50)
@@ -79,41 +78,7 @@ struct uiObserverTest {
           }
         })
 
-      // onSwiperContentUpdate/offSwiperContentUpdate cases disabled due to issues
-      // Button("onSwiperContentUpdate")
-      //   .id('btnOnSwiperContentUpdate')
-      //   .width(300)
-      //   .height(50)
-      //   .onClick(() => {
-      //     try {
-      //       let ctx: UIContext = this.getUIContext();
-      //       let obs: UIObserver = ctx.getUIObserver();
-      //       obs.onSwiperContentUpdate((_info: SwiperContentInfo) => {
-      //         AppStorage.setOrCreate<boolean>('uiObserverOnSwiperContentUpdate', true);
-      //       });
-      //       AppStorage.setOrCreate<boolean>('uiObserverOnSwiperContentUpdateRegistered', true);
-      //     } catch (e) {
-      //       console.error('[ARKUI_NEW] onSwiperContentUpdate: ' + e);
-      //       AppStorage.setOrCreate<boolean>('uiObserverOnSwiperContentUpdateRegistered', false);
-      //     }
-      //   })
-      // Button("offSwiperContentUpdate")
-      //   .id('btnOffSwiperContentUpdate')
-      //   .width(300)
-      //   .height(50)
-      //   .onClick(() => {
-      //     try {
-      //       let ctx: UIContext = this.getUIContext();
-      //       let obs: UIObserver = ctx.getUIObserver();
-      //       obs.offSwiperContentUpdate();
-      //       AppStorage.setOrCreate<boolean>('uiObserverOffSwiperContentUpdate', true);
-      //     } catch (e) {
-      //       console.error('[ARKUI_NEW] offSwiperContentUpdate: ' + e);
-      //       AppStorage.setOrCreate<boolean>('uiObserverOffSwiperContentUpdate', false);
-      //     }
-      //   })
-
-      Button("onRouterPageSizeChange")
+      Button('onRouterPageSizeChange')
         .id('btnOnRouterPageSizeChange')
         .width(300)
         .height(50)
@@ -134,7 +99,7 @@ struct uiObserverTest {
           }
         })
 
-      Button("offRouterPageSizeChange")
+      Button('offRouterPageSizeChange')
         .id('btnOffRouterPageSizeChange')
         .width(300)
         .height(50)
@@ -150,7 +115,7 @@ struct uiObserverTest {
           }
         })
 
-      Button("onNavDestinationSizeChange")
+      Button('onNavDestinationSizeChange')
         .id('btnOnNavDestinationSizeChange')
         .width(300)
         .height(50)
@@ -171,7 +136,7 @@ struct uiObserverTest {
           }
         })
 
-      Button("offNavDestinationSizeChange")
+      Button('offNavDestinationSizeChange')
         .id('btnOffNavDestinationSizeChange')
         .width(300)
         .height(50)
@@ -187,7 +152,7 @@ struct uiObserverTest {
           }
         })
 
-      Button("onNavDestinationSizeChangeByUniqueId")
+      Button('onNavDestinationSizeChangeByUniqueId')
         .id('btnOnNavDestinationSizeChangeByUniqueId')
         .width(300)
         .height(50)
@@ -208,7 +173,7 @@ struct uiObserverTest {
           }
         })
 
-      Button("offNavDestinationSizeChangeByUniqueId")
+      Button('offNavDestinationSizeChangeByUniqueId')
         .id('btnOffNavDestinationSizeChangeByUniqueId')
         .width(300)
         .height(50)

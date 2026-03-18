@@ -126,7 +126,7 @@ struct promptActionTest {
 
   build() {
     Column({ space: 15 } as ColumnOptions) {
-      Button("Test PromptAction - openToast")
+      Button('Test PromptAction - openToast')
         .id('btnOpenToast')
         .width(300)
         .height(50)
@@ -143,7 +143,7 @@ struct promptActionTest {
           });
         })
 
-      Button("Test PromptAction - closeToast")
+      Button('Test PromptAction - closeToast')
         .id('btnCloseToast')
         .width(300)
         .height(50)
@@ -163,7 +163,7 @@ struct promptActionTest {
           });
         })
 
-      Button("Test PromptAction - getBottomOrder")
+      Button('Test PromptAction - getBottomOrder')
         .id('btnGetBottomOrder')
         .width(300)
         .height(50)
@@ -184,7 +184,7 @@ struct promptActionTest {
           }
         })
 
-      Button("Test PromptAction - openCustomDialog")
+      Button('Test PromptAction - openCustomDialog')
         .id('btnOpenCustomDialog')
         .width(300)
         .height(50)
@@ -201,7 +201,7 @@ struct promptActionTest {
           });
         })
 
-      Button("Test PromptAction - updateCustomDialog")
+      Button('Test PromptAction - updateCustomDialog')
         .id('btnUpdateCustomDialog')
         .width(300)
         .height(50)
@@ -228,7 +228,7 @@ struct promptActionTest {
           });
         })
 
-      Button("Test PromptAction - openPopup")
+      Button('Test PromptAction - openPopup')
         .id('btnOpenPopup')
         .width(300)
         .height(50)
@@ -246,7 +246,8 @@ struct promptActionTest {
           };
           let targetId = AppStorage.get<number>('targetButtonId');
           let target: TargetInfo = { id: 'targetButton' };
-          console.info('[ARKUI_NEW] openPopup: targetButtonId=' + (targetId !== undefined ? targetId : 'undefined'));
+          console.info(
+            '[ARKUI_NEW] openPopup: targetButtonId=' + (targetId !== undefined ? targetId : 'undefined'));
           promptActionInstance.openPopup(contentNode, target, popupOptions).then(() => {
             console.info('[ARKUI_NEW] openPopup: then resolved');
             AppStorage.setOrCreate<boolean>('promptActionOpenPopup', true);
@@ -256,7 +257,7 @@ struct promptActionTest {
           });
         })
 
-      Button("Test PromptAction - updatePopup")
+      Button('Test PromptAction - updatePopup')
         .id('btnUpdatePopup')
         .width(300)
         .height(50)
@@ -271,7 +272,8 @@ struct promptActionTest {
           };
           let targetId1 = AppStorage.get<number>('targetButtonId');
           let target1: TargetInfo = { id: 'targetButton' };
-          console.info('[ARKUI_NEW] updatePopup: targetButtonId=' + (targetId1 !== undefined ? targetId1 : 'undefined'));
+          console.info(
+            '[ARKUI_NEW] updatePopup: targetButtonId=' + (targetId1 !== undefined ? targetId1 : 'undefined'));
           promptActionInstance.openPopup(contentNode, target1, popupOptions1).then(() => {
             console.info('[ARKUI_NEW] updatePopup: openPopup resolved, calling updatePopup');
             let popupOptions2: PopupCommonOptions = {
@@ -290,7 +292,7 @@ struct promptActionTest {
           });
         })
 
-      Button("Test PromptAction - closePopup")
+      Button('Test PromptAction - closePopup')
         .id('btnClosePopup')
         .width(300)
         .height(50)
@@ -299,7 +301,7 @@ struct promptActionTest {
           AppStorage.setOrCreate<boolean>('promptActionClosePopup', true);
         })
 
-      Button("Test PromptAction - openMenu")
+      Button('Test PromptAction - openMenu')
         .id('btnOpenMenu')
         .width(300)
         .height(50)
@@ -321,7 +323,7 @@ struct promptActionTest {
           });
         })
 
-      Button("Test PromptAction - updateMenu")
+      Button('Test PromptAction - updateMenu')
         .id('btnUpdateMenu')
         .width(300)
         .height(50)
@@ -349,7 +351,7 @@ struct promptActionTest {
         })
 
       // Target element for Popup and Menu
-      Button("Target button")
+      Button('Target button')
         .id('targetButton')
         .width(200)
         .height(50)
