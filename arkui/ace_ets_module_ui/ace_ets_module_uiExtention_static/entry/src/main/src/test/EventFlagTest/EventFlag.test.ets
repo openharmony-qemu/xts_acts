@@ -20,7 +20,7 @@ function getContentByKey(key: string): string {
 export default function EventFlagTest() {
   describe('EventFlagTest', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.select.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.uiextention.static', 'EntryAbility');
     });
 
     beforeEach(async (): Promise<void> => {

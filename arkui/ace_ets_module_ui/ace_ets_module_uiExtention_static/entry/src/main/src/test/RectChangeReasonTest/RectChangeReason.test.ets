@@ -20,7 +20,7 @@ function getContentByKey(key: string): string {
 export default function RectChangeReasonTest() {
   describe('RectChangeReasonTest', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.select.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.uiextention.static', 'EntryAbility');
     });
     beforeEach(async (): Promise<void> => {
       const options: router.RouterOptions = { url: PAGE_URL };

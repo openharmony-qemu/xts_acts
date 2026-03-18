@@ -21,7 +21,7 @@ function getContentByKey(key: string): string {
 export default function MeasureOptionsTest() {
   describe('MeasureOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.select.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.measure.static', 'EntryAbility');
     });
     beforeEach(async (): Promise<void> => {
       const options: router.RouterOptions = { url: PAGE_URL };

@@ -21,7 +21,7 @@ function getContentByKey(key: string): string {
 export default function ColumnBuilderTest() {
   describe('ColumnBuilderTest', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.select.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.column.static', 'EntryAbility');
     });
 
     beforeEach(async (): Promise<void> => {

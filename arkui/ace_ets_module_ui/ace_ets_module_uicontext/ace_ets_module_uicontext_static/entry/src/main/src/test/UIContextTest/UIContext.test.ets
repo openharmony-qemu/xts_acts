@@ -83,7 +83,7 @@ async function waitStatusByAppStorage(key: string, expected: string, timeoutMs: 
 export default function UIContextTest() {
   describe('UIContextTest', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.select.static', 'EntryAbility');
+      await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');
     });
     beforeEach(async (): Promise<void> => {
       await ensurePageReady();
