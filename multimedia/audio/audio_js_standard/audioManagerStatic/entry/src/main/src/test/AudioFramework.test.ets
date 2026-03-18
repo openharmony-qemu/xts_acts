@@ -1434,23 +1434,6 @@ export default function audioFramework() {
       }
     })
 
-
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400
-    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0400
-@@ -166,7 +274,6 @@ export default function audioFramework() {	 
-      try {
-        let data = audioVolumeGroupManager!.getVolumeSync(audio.AudioVolumeType.RINGTONE);
-        console.info(`${TagFrmwk}: Media getVolumeSync : success :${data}`);
-
-        done();
-      } catch (err) {
-        err = err as BusinessError;
-@@ -176,6 +283,333 @@ export default function audioFramework() {	 
-      }
-    })
-
     /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0001
     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0001
@@ -1778,28 +1761,6 @@ export default function audioFramework() {
 
     })
 
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0100
-@@ -189,7 +623,6 @@ export default function audioFramework() {	 
-        let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.MEDIA);
-        if (data == 0) {
-          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-
-          done();
-        } else {
-          console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
-@@ -216,7 +649,7 @@ export default function audioFramework() {	 
-      try {
-        let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.RINGTONE);
-        console.log('getMinVolumeSync success');
-        
-        done();
-      } catch (err) {
-        err = err as BusinessError;
-@@ -227,6 +660,181 @@ export default function audioFramework() {	 
-
-    })
 
     /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0001
@@ -1976,21 +1937,16 @@ export default function audioFramework() {
         done();
       }
     })
+
     /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0100
-@@ -240,10 +848,10 @@ export default function audioFramework() {	 
-        let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          
-        } else if (data == maxVolPc) {
-          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          
-        } else {
-          console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
-          expect(false).assertTrue();
-@@ -269,7 +877,7 @@ export default function audioFramework() {	 
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0005
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0005
+    * @tc.desc   getMaxVolumeSync 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.ALARM);
         console.log('getMaxVolumeSync success');
@@ -1998,8 +1954,10 @@ export default function audioFramework() {
         done();
       } catch (err) {
         err = err as BusinessError;
-@@ -280,6 +888,241 @@ export default function audioFramework() {	 
-
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
     })
 
     /**
@@ -2236,95 +2194,6 @@ export default function audioFramework() {
       }
     })
 
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0400
-    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0400
-@@ -292,7 +1135,7 @@ export default function audioFramework() {	 
-      try {
-        let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.ACCESSIBILITY);
-        console.log('isMuteSync success');
-        
-        done();
-      } catch (err) {
-        err = err as BusinessError;
-@@ -850,7 +1693,7 @@ export default function audioFramework() {	 
-          if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-            cMask != null) {
-            console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            
-          } else {
-            console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
-            expect(false).assertTrue();
-@@ -885,7 +1728,7 @@ export default function audioFramework() {	 
-          if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null
-            && cMask != null) {
-            console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-            
-          } else {
-            console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
-            expect(false).assertTrue();
-@@ -920,7 +1763,7 @@ export default function audioFramework() {	 
-          if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-            cMask != null) {
-            console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-            
-          } else {
-            console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
-            expect(false).assertTrue();
-@@ -954,7 +1797,7 @@ export default function audioFramework() {	 
-          if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-            cMask != null) {
-            console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
-            
-          } else {
-            console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
-            expect(false).assertTrue();
-@@ -988,7 +1831,7 @@ export default function audioFramework() {	 
-          if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-            cMask != null) {
-            console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-            
-          } else {
-            console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
-            expect(false).assertTrue();
-@@ -1022,7 +1865,7 @@ export default function audioFramework() {	 
-          if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-            cMask != null) {
-            console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-            
-          } else {
-            console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
-            expect(false).assertTrue();
-@@ -1048,7 +1891,7 @@ export default function audioFramework() {	 
-      if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-        cMask != null) {
-        console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : PASS`);
-        
-      } else {
-        console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : FAIL`);
-        expect(false).assertTrue();
-@@ -1072,7 +1915,7 @@ export default function audioFramework() {	 
-      if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-        cMask != null) {
-        console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
-        
-      } else {
-        console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
-        expect(false).assertTrue();
-@@ -1095,13 +1938,49 @@ export default function audioFramework() {	 
-      if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-        cMask != null) {
-        console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
-        
-      } else {
-        console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
-        expect(false).assertTrue();
-      }
-      done();
-    })
-
-
     /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001
     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001
@@ -2357,29 +2226,6 @@ export default function audioFramework() {
         }
         done();
       });
-    })
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_DEVICEFALG_STATIC_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_DEVICEFALG_STATIC_0100
-@@ -1148,7 +2027,7 @@ export default function audioFramework() {	 
-      if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-        cMask != null) {
-        console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : PASS`);
-        
-      } else {
-        console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : FAIL`);
-        expect(false).assertTrue();
-@@ -1194,7 +2073,7 @@ export default function audioFramework() {	 
-        console.info(`Fail, error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
-        expect(false).assertTrue();
-      }
-      
-      done();
-    })
-
-@@ -1221,6 +2100,172 @@ export default function audioFramework() {	 
-        done();
     })
 
     /**
@@ -2547,13 +2393,6 @@ export default function audioFramework() {
         done();
     })
 
-
-    /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0100
-@@ -1239,6 +2284,248 @@ export default function audioFramework() {	 
-      }
-    })
 
     /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0200
