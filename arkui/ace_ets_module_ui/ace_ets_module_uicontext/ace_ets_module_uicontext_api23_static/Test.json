@@ -3,14 +3,14 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "com.arkui.ace.uicontext.api24.static",
+        "bundle-name": "com.arkui.ace.uicontext.api23.static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": "180000"
     },
     "kits": [{
         "test-file-name": [
-            "ActsAceEtsModuleUiContextApi24StaticTest.hap"
+            "ActsAceEtsModuleUiContextApi23StaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

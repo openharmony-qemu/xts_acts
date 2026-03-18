@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 
-import SelectTest from './SelectTest/Select.test';
+import RouterTest from './RouterTest/Router.test';
+import PromptActionTestNew from './PromptActionTest/PromptAction.test';
+import UIObserverTest from './UIObserverTest/UIObserver.test';
 
 export default function testsuite() {
-  SelectTest();
+  PromptActionTestNew();
+  UIObserverTest();
+  RouterTest();
 }
