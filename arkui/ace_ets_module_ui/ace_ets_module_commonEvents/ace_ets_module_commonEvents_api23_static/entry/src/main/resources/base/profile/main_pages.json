@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/colorModeOptions/colorModeOptions",
-    "MainAbility/pages/snapshotOptions/snapshotOptions"
+    "MainAbility/pages/snapshotOptions/snapshotOptions",
+    "MainAbility/pages/otherInterfaces/otherInterfaces"
   ]
 }

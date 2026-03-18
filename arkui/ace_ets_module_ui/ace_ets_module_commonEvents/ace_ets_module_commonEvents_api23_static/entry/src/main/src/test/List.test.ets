@@ -16,8 +16,12 @@
 
 import ColorModeOptionsTest from './ColorModeOptionsTest/ColorModeOptions.test';
 import SnapshotOptionsTest from './SnapshotOptionsTest/SnapshotOptions.test';
+import OtherInterfacesTest from './OtherInterfacesTest/OtherInterfaces.test';
+import CanIUseTest from './CanIUseTest/CanIUse.test';
 
 export default function testsuite() {
   ColorModeOptionsTest();
   SnapshotOptionsTest();
+  OtherInterfacesTest();
+  CanIUseTest();
 }
