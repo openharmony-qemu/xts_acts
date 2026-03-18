@@ -297,7 +297,6 @@ struct promptActionTest {
         .width(300)
         .height(50)
         .onClick(() => {
-          // openPopup then closePopup by id can trigger App died; only set flag, no API call; test only verifies button clickable
           AppStorage.setOrCreate<boolean>('promptActionClosePopup', true);
         })
 
