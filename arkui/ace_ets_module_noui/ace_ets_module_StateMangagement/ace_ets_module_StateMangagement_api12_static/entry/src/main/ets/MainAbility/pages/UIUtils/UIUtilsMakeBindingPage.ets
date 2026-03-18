@@ -2,7 +2,7 @@ import { UIUtils, Binding, MutableBinding, Local } from '@ohos.arkui.stateManage
 import { Entry, Column, Text, Button, Builder, ClickEvent, ComponentV2 } from '@kit.ArkUI';
 
 @Builder
-function CustomButton(readOnlyParam: Binding<number>, mutableParam: MutableBinding<number>) {
+function customButton(readOnlyParam: Binding<number>, mutableParam: MutableBinding<number>) {
   Column() {
     Text(`ReadOnly Binding: ${readOnlyParam.value}`)
       .id('ReadOnlyBindingText')
@@ -42,13 +42,12 @@ struct UIUtilsMakeBindingPage {
           this.num2 += 1;
         })
 
-      CustomButton(
+      customButton(
         UIUtils.makeBinding(() => this.num1),
         UIUtils.makeBinding(() => this.num2, (v: number) => {
           this.num2 = v;
         })
       )
-      // CustomButton2()
     }
     .width('100%')
     .height('100%')
