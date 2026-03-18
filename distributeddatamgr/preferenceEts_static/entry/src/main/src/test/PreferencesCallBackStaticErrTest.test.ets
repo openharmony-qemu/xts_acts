@@ -240,7 +240,7 @@ export default function preferenceStaticCallBackTest() {
      */
     it("testPreferencesHasStaticErr0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        mPreferences!.has("", (err:BusinessError<void>, ret:boolean | undefined):void => {
+        mPreferences!.has("", (err:BusinessError<void> | null, ret:boolean | undefined):void => {
           expect(ret).assertEqual(false);
           done();
         });
