@@ -65,8 +65,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: Byte = 0x77 as byte;
-      let d1: Short = s1.toShort();
-      expect(d1).assertEqual(119);
+      let data1: Short = s1.toShort();
+      expect(data1).assertEqual(119);
     });
 
     /**
@@ -79,8 +79,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s2: Byte = 0x77 as byte;
-      let d2: Int = s2.toInt();
-      expect(d2).assertEqual(119);
+      let data2: Int = s2.toInt();
+      expect(data2).assertEqual(119);
     });
 
     /**
@@ -93,8 +93,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s11: Int = 47;
-      let d11: Float = s11.toFloat();
-      expect(d11).assertEqual(47);
+      let data11: Float = s11.toFloat();
+      expect(data11).assertEqual(47);
     });
 
     /**
@@ -107,8 +107,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s12: Int = 47;
-      let d12: Double = s12.toDouble();
-      expect(d12).assertEqual(47);
+      let data12: Double = s12.toDouble();
+      expect(data12).assertEqual(47);
     });
 
     /**
@@ -121,8 +121,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s13: Long = 4;
-      let d13: Float = s13.toFloat();
-      expect(d13).assertEqual(4.0f);
+      let data13: Float = s13.toFloat();
+      expect(data13).assertEqual(4.0f);
     });
 
     /**
@@ -135,8 +135,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s14: Long = 4;
-      let d14: Double = s14.toDouble();
-      expect(d14).assertEqual(4);
+      let data14: Double = s14.toDouble();
+      expect(data14).assertEqual(4);
     });
 
     /**
@@ -149,8 +149,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s15: Float = 0.5f;
-      let d15: Double = s15.toDouble();
-      expect(d15).assertEqual(0.5);
+      let data15: Double = s15.toDouble();
+      expect(data15).assertEqual(0.5);
     });
 
     /**
@@ -163,8 +163,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s3: Byte = 0x77 as byte;
-      let d3: Long = s3.toLong();
-      expect(d3).assertEqual(119);
+      let data3: Long = s3.toLong();
+      expect(data3).assertEqual(119);
     });
 
     /**
@@ -177,8 +177,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s4: Byte = 16 as byte;
-      let d4: Float = s4.toFloat();
-      expect(d4).assertEqual(16.0f);
+      let data4: Float = s4.toFloat();
+      expect(data4).assertEqual(16.0f);
     });
 
     /**
@@ -191,8 +191,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s5: Byte = 16 as byte;
-      let d5: Double = s5.toDouble();
-      expect(d5).assertEqual(16.0);
+      let data5: Double = s5.toDouble();
+      expect(data5).assertEqual(16.0);
     });
 
     /**
@@ -205,8 +205,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s6: Short = 21845;
-      let d6: Int = s6.toInt();
-      expect(d6).assertEqual(21845);
+      let data6: Int = s6.toInt();
+      expect(data6).assertEqual(21845);
     });
 
     /**
@@ -219,8 +219,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s7: Short = 21845;
-      let d7: Long = s7.toLong();
-      expect(d7).assertEqual(21845);
+      let data7: Long = s7.toLong();
+      expect(data7).assertEqual(21845);
     });
 
     /**
@@ -233,8 +233,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s8: Short = 32;
-      let d8: Float = s8.toFloat();
-      expect(d8).assertEqual(32.0f);
+      let data8: Float = s8.toFloat();
+      expect(data8).assertEqual(32.0f);
     });
 
     /**
@@ -247,8 +247,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s9: Short = 32;
-      let d9: Double = s9.toDouble();
-      expect(d9).assertEqual(32.0);
+      let data9: Double = s9.toDouble();
+      expect(data9).assertEqual(32.0);
     });
 
     /**
@@ -261,8 +261,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s10: Int = 303;
-      let d10: Long = s10.toLong();
-      expect(d10).assertEqual(303);
+      let data10: Long = s10.toLong();
+      expect(data10).assertEqual(303);
     });
 
     /**
@@ -275,8 +275,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: Double = Double.NaN;
-      let d1: Byte = Double.toByte(s1);
-      expect(d1).assertEqual(0);
+      let data1: Byte = Double.toByte(s1);
+      expect(data1).assertEqual(0);
     });
 
     /**
@@ -289,8 +289,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s2: Double = Double.NEGATIVE_INFINITY;
-      let d2: Byte = Double.toByte(s2);
-      expect(d2).assertEqual(0);
+      let data2: Byte = Double.toByte(s2);
+      expect(data2).assertEqual(0);
     });
 
     /**
@@ -303,8 +303,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s11: Double = -32769.0;
-      let d11: Byte = Double.toByte(s11);
-      expect(d11).assertEqual(-1);
+      let data11: Byte = Double.toByte(s11);
+      expect(data11).assertEqual(-1);
     });
 
     /**
@@ -317,8 +317,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s19: Double = -2.2250738585072014E-308;
-      let d19: Int = Double.toInt(s19);
-      expect(d19).assertEqual(0);
+      let data19: Int = Double.toInt(s19);
+      expect(data19).assertEqual(0);
     });
 
     /**
@@ -331,8 +331,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s20: Double = -0.0;
-      let d20: Int = Double.toInt(s20);
-      expect(d20).assertEqual(0);
+      let data20: Int = Double.toInt(s20);
+      expect(data20).assertEqual(0);
     });
 
     /**
@@ -345,8 +345,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s21: Double = 0.0;
-      let d21: Int = Double.toInt(s21);
-      expect(d21).assertEqual(0);
+      let data21: Int = Double.toInt(s21);
+      expect(data21).assertEqual(0);
     });
 
     /**
@@ -359,8 +359,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s22: Double = 2.2250738585072014E-308;
-      let d22: Int = Double.toInt(s22);
-      expect(d22).assertEqual(0);
+      let data22: Int = Double.toInt(s22);
+      expect(data22).assertEqual(0);
     });
 
     /**
@@ -373,8 +373,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s23: Double = 1.0;
-      let d23: Int = Double.toInt(s23);
-      expect(d23).assertEqual(1);
+      let data23: Int = Double.toInt(s23);
+      expect(data23).assertEqual(1);
     });
 
     /**
@@ -387,8 +387,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s24: Double = 3.1415926;
-      let d24: Int = Double.toInt(s24);
-      expect(d24).assertEqual(3);
+      let data24: Int = Double.toInt(s24);
+      expect(data24).assertEqual(3);
     });
 
     /**
@@ -401,8 +401,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s25: Double = 126.0;
-      let d25: Int = Double.toInt(s25);
-      expect(d25).assertEqual(126);
+      let data25: Int = Double.toInt(s25);
+      expect(data25).assertEqual(126);
     });
 
     /**
@@ -415,8 +415,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s26: Double = 127.0;
-      let d26: Int = Double.toInt(s26);
-      expect(d26).assertEqual(127);
+      let data26: Int = Double.toInt(s26);
+      expect(data26).assertEqual(127);
     });
 
     /**
@@ -429,8 +429,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s27: Double = 128.0;
-      let d27: Int = Double.toInt(s27);
-      expect(d27).assertEqual(128);
+      let data27: Int = Double.toInt(s27);
+      expect(data27).assertEqual(128);
     });
 
     /**
@@ -443,8 +443,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s28: Double = 32766.0;
-      let d28: Int = Double.toInt(s28);
-      expect(d28).assertEqual(32766);
+      let data28: Int = Double.toInt(s28);
+      expect(data28).assertEqual(32766);
     });
 
     /**
@@ -457,8 +457,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s12: Double = -32768.0;
-      let d12: Byte = Double.toByte(s12);
-      expect(d12).assertEqual(0);
+      let data12: Byte = Double.toByte(s12);
+      expect(data12).assertEqual(0);
     });
 
     /**
@@ -471,8 +471,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s29: Double = 32767.0;
-      let d29: Int = Double.toInt(s29);
-      expect(d29).assertEqual(32767);
+      let data29: Int = Double.toInt(s29);
+      expect(data29).assertEqual(32767);
     });
 
     /**
@@ -485,8 +485,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s30: Double = 32768.0;
-      let d30: Int = Double.toInt(s30);
-      expect(d30).assertEqual(32768);
+      let data30: Int = Double.toInt(s30);
+      expect(data30).assertEqual(32768);
     });
 
     /**
@@ -499,8 +499,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s31: Double = 65534.0;
-      let d31: Int = Double.toInt(s31);
-      expect(d31).assertEqual(65534);
+      let data31: Int = Double.toInt(s31);
+      expect(data31).assertEqual(65534);
     });
 
     /**
@@ -513,8 +513,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s32: Double = 65535.0;
-      let d32: Int = Double.toInt(s32);
-      expect(d32).assertEqual(65535);
+      let data32: Int = Double.toInt(s32);
+      expect(data32).assertEqual(65535);
     });
 
     /**
@@ -527,8 +527,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s33: Double = 65536.0;
-      let d33: Int = Double.toInt(s33);
-      expect(d33).assertEqual(65536);
+      let data33: Int = Double.toInt(s33);
+      expect(data33).assertEqual(65536);
     });
 
     /**
@@ -541,8 +541,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s34: Double = 2.147483646E9;
-      let d34: Int = Double.toInt(s34);
-      expect(d34).assertEqual(2147483646);
+      let data34: Int = Double.toInt(s34);
+      expect(data34).assertEqual(2147483646);
     });
 
     /**
@@ -555,8 +555,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s35: Double = 2.147483647E9;
-      let d35: Int = Double.toInt(s35);
-      expect(d35).assertEqual(2147483647);
+      let data35: Int = Double.toInt(s35);
+      expect(data35).assertEqual(2147483647);
     });
 
     /**
@@ -569,8 +569,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s36: Double = 9.223372036854776E18;
-      let d36: Int = Double.toInt(s36);
-      expect(d36).assertEqual(2147483647);
+      let data36: Int = Double.toInt(s36);
+      expect(data36).assertEqual(2147483647);
     });
 
     /**
@@ -583,8 +583,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s37: Double = 3.4028234663852886E38;
-      let d37: Int = Double.toInt(s37);
-      expect(d37).assertEqual(2147483647);
+      let data37: Int = Double.toInt(s37);
+      expect(data37).assertEqual(2147483647);
     });
 
     /**
@@ -597,8 +597,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s38: Double = 1.7976931348623157E308;
-      let d38: Int = Double.toInt(s38);
-      expect(d38).assertEqual(2147483647);
+      let data38: Int = Double.toInt(s38);
+      expect(data38).assertEqual(2147483647);
     });
 
     /**
@@ -611,8 +611,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s39: Double = Double.POSITIVE_INFINITY;
-      let d39: Int = Double.toInt(s39);
-      expect(d39).assertEqual(2147483647);
+      let data39: Int = Double.toInt(s39);
+      expect(data39).assertEqual(2147483647);
     });
 
     /**
@@ -625,8 +625,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: Double = -4.9E-308;
-      let d1: Int = Double.toInt(s1);
-      expect(d1).assertEqual(0);
+      let data1: Int = Double.toInt(s1);
+      expect(data1).assertEqual(0);
     });
 
     /**
@@ -639,8 +639,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: Double = 4.9E-308;
-      let d1: Int = Double.toInt(s1);
-      expect(d1).assertEqual(0);
+      let data1: Int = Double.toInt(s1);
+      expect(data1).assertEqual(0);
     });
 
     /**
@@ -653,8 +653,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: Double = Double.NaN;
-      let d1: Long = Double.toLong(s1);
-      expect(d1).assertEqual(0);
+      let data1: Long = Double.toLong(s1);
+      expect(data1).assertEqual(0);
     });
 
     /**
@@ -667,8 +667,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s2: Double = Double.NEGATIVE_INFINITY;
-      let d2: Long = Double.toLong(s2);
-      expect(d2).assertEqual(-9223372036854775808);
+      let data2: Long = Double.toLong(s2);
+      expect(data2).assertEqual(-9223372036854775808);
     });
 
     /**
@@ -681,8 +681,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s3: Double = -1.7976931348623157E308;
-      let d3: Long = Double.toLong(s3);
-      expect(d3).assertEqual(-9223372036854775808);
+      let data3: Long = Double.toLong(s3);
+      expect(data3).assertEqual(-9223372036854775808);
     });
 
     /**
@@ -695,8 +695,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s4: Double = -3.4028234663852886E38;
-      let d4: Long = Double.toLong(s4);
-      expect(d4).assertEqual(-9223372036854775808);
+      let data4: Long = Double.toLong(s4);
+      expect(data4).assertEqual(-9223372036854775808);
     });
 
     /**
@@ -709,8 +709,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s5: Double = -9.22337203685478E18;
-      let d5: Long = Double.toLong(s5);
-      expect(d5).assertEqual(-9223372036854775808);
+      let data5: Long = Double.toLong(s5);
+      expect(data5).assertEqual(-9223372036854775808);
     });
 
     /**
@@ -723,8 +723,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s6: Double = -2.147483648E9;
-      let d6: Long = Double.toLong(s6);
-      expect(d6).assertEqual(-2147483648);
+      let data6: Long = Double.toLong(s6);
+      expect(data6).assertEqual(-2147483648);
     });
 
     /**
@@ -737,8 +737,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s7: Double = -2.147483647E9;
-      let d7: Long = Double.toLong(s7);
-      expect(d7).assertEqual(-2147483647);
+      let data7: Long = Double.toLong(s7);
+      expect(data7).assertEqual(-2147483647);
     });
 
     /**
@@ -751,8 +751,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s14: Double = -129.0;
-      let d14: Byte = Double.toByte(s14);
-      expect(d14).assertEqual(127);
+      let data14: Byte = Double.toByte(s14);
+      expect(data14).assertEqual(127);
     });
 
     /**
@@ -765,8 +765,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s8: Double = -65537.0;
-      let d8: Long = Double.toLong(s8);
-      expect(d8).assertEqual(-65537);
+      let data8: Long = Double.toLong(s8);
+      expect(data8).assertEqual(-65537);
     });
 
     /**
@@ -779,8 +779,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s9: Double = -65536.0;
-      let d9: Long = Double.toLong(s9);
-      expect(d9).assertEqual(-65536);
+      let data9: Long = Double.toLong(s9);
+      expect(data9).assertEqual(-65536);
     });
 
     /**
@@ -793,8 +793,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s10: Double = -65535.0;
-      let d10: Long = Double.toLong(s10);
-      expect(d10).assertEqual(-65535);
+      let data10: Long = Double.toLong(s10);
+      expect(data10).assertEqual(-65535);
     });
 
     /**
@@ -807,8 +807,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s11: Double = -32769.0;
-      let d11: Long = Double.toLong(s11);
-      expect(d11).assertEqual(-32769);
+      let data11: Long = Double.toLong(s11);
+      expect(data11).assertEqual(-32769);
     });
 
     /**
@@ -821,8 +821,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s12: Double = -32768.0;
-      let d12: Long = Double.toLong(s12);
-      expect(d12).assertEqual(-32768);
+      let data12: Long = Double.toLong(s12);
+      expect(data12).assertEqual(-32768);
     });
 
     /**
@@ -835,8 +835,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s13: Double = -32767.0;
-      let d13: Long = Double.toLong(s13);
-      expect(d13).assertEqual(-32767);
+      let data13: Long = Double.toLong(s13);
+      expect(data13).assertEqual(-32767);
     });
 
     /**
@@ -849,8 +849,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s14: Double = -129.0;
-      let d14: Long = Double.toLong(s14);
-      expect(d14).assertEqual(-129);
+      let data14: Long = Double.toLong(s14);
+      expect(data14).assertEqual(-129);
     });
 
     /**
@@ -863,8 +863,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s15: Double = -128.0;
-      let d15: Byte = Double.toByte(s15);
-      expect(d15).assertEqual(-128);
+      let data15: Byte = Double.toByte(s15);
+      expect(data15).assertEqual(-128);
     });
 
     /**
@@ -877,8 +877,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s15: Double = -128.0;
-      let d15: Long = Double.toLong(s15);
-      expect(d15).assertEqual(-128);
+      let data15: Long = Double.toLong(s15);
+      expect(data15).assertEqual(-128);
     });
 
     /**
@@ -891,8 +891,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s16: Double = -127.0;
-      let d16: Byte = Double.toByte(s16);
-      expect(d16).assertEqual(-127);
+      let data16: Byte = Double.toByte(s16);
+      expect(data16).assertEqual(-127);
     });
 
     /**
@@ -905,8 +905,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s16: Double = -127.0;
-      let d16: Long = Double.toLong(s16);
-      expect(d16).assertEqual(-127);
+      let data16: Long = Double.toLong(s16);
+      expect(data16).assertEqual(-127);
     });
 
     /**
@@ -919,8 +919,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s17: Double = -3.1415926;
-      let d17: Byte = Double.toByte(s17);
-      expect(d17).assertEqual(-3);
+      let data17: Byte = Double.toByte(s17);
+      expect(data17).assertEqual(-3);
     });
 
     /**
@@ -933,8 +933,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s17: Double = -3.1415926;
-      let d17: Long = Double.toLong(s17);
-      expect(d17).assertEqual(-3);
+      let data17: Long = Double.toLong(s17);
+      expect(data17).assertEqual(-3);
     });
 
     /**
@@ -947,8 +947,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s18: Double = -1.0;
-      let d18: Byte = Double.toByte(s18);
-      expect(d18).assertEqual(-1);
+      let data18: Byte = Double.toByte(s18);
+      expect(data18).assertEqual(-1);
     });
 
     /**
@@ -961,8 +961,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s18: Double = -1.0;
-      let d18: Long = Double.toLong(s18);
-      expect(d18).assertEqual(-1);
+      let data18: Long = Double.toLong(s18);
+      expect(data18).assertEqual(-1);
     });
 
     /**
@@ -975,8 +975,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s19: Double = -2.2250738585072014E-308;
-      let d19: Long = Double.toLong(s19);
-      expect(d19).assertEqual(0);
+      let data19: Long = Double.toLong(s19);
+      expect(data19).assertEqual(0);
     });
 
     /**
@@ -989,8 +989,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s20: Double = -0.0;
-      let d20: Long = Double.toLong(s20);
-      expect(d20).assertEqual(0);
+      let data20: Long = Double.toLong(s20);
+      expect(data20).assertEqual(0);
     });
 
     /**
@@ -1003,8 +1003,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s21: Double = 0.0;
-      let d21: Long = Double.toLong(s21);
-      expect(d21).assertEqual(0);
+      let data21: Long = Double.toLong(s21);
+      expect(data21).assertEqual(0);
     });
 
     /**
@@ -1017,8 +1017,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s22: Double = 2.2250738585072014E-308;
-      let d22: Long = Double.toLong(s22);
-      expect(d22).assertEqual(0);
+      let data22: Long = Double.toLong(s22);
+      expect(data22).assertEqual(0);
     });
 
     /**
@@ -1031,8 +1031,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s23: Double = 1.0;
-      let d23: Long = Double.toLong(s23);
-      expect(d23).assertEqual(1);
+      let data23: Long = Double.toLong(s23);
+      expect(data23).assertEqual(1);
     });
 
     /**
@@ -1045,8 +1045,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s24: Double = 3.1415926;
-      let d24: Long = Double.toLong(s24);
-      expect(d24).assertEqual(3);
+      let data24: Long = Double.toLong(s24);
+      expect(data24).assertEqual(3);
     });
 
     /**
@@ -1059,8 +1059,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s25: Double = 126.0;
-      let d25: Long = Double.toLong(s25);
-      expect(d25).assertEqual(126);
+      let data25: Long = Double.toLong(s25);
+      expect(data25).assertEqual(126);
     });
 
     /**
@@ -1073,8 +1073,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s26: Double = 127.0;
-      let d26: Long = Double.toLong(s26);
-      expect(d26).assertEqual(127);
+      let data26: Long = Double.toLong(s26);
+      expect(data26).assertEqual(127);
     });
 
     /**
@@ -1087,8 +1087,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s27: Double = 128.0;
-      let d27: Long = Double.toLong(s27);
-      expect(d27).assertEqual(128);
+      let data27: Long = Double.toLong(s27);
+      expect(data27).assertEqual(128);
     });
 
     /**
@@ -1101,8 +1101,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s28: Double = 32766.0;
-      let d28: Long = Double.toLong(s28);
-      expect(d28).assertEqual(32766);
+      let data28: Long = Double.toLong(s28);
+      expect(data28).assertEqual(32766);
     });
 
     /**
@@ -1115,8 +1115,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s29: Double = 32767.0;
-      let d29: Long = Double.toLong(s29);
-      expect(d29).assertEqual(32767);
+      let data29: Long = Double.toLong(s29);
+      expect(data29).assertEqual(32767);
     });
 
     /**
@@ -1129,8 +1129,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s30: Double = 32768.0;
-      let d30: Long = Double.toLong(s30);
-      expect(d30).assertEqual(32768);
+      let data30: Long = Double.toLong(s30);
+      expect(data30).assertEqual(32768);
     });
 
     /**
@@ -1143,8 +1143,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s31: Double = 65534.0;
-      let d31: Long = Double.toLong(s31);
-      expect(d31).assertEqual(65534);
+      let data31: Long = Double.toLong(s31);
+      expect(data31).assertEqual(65534);
     });
 
     /**
@@ -1157,8 +1157,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s32: Double = 65535.0;
-      let d32: Long = Double.toLong(s32);
-      expect(d32).assertEqual(65535);
+      let data32: Long = Double.toLong(s32);
+      expect(data32).assertEqual(65535);
     });
 
     /**
@@ -1171,8 +1171,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s33: Double = 65536.0;
-      let d33: Long = Double.toLong(s33);
-      expect(d33).assertEqual(65536);
+      let data33: Long = Double.toLong(s33);
+      expect(data33).assertEqual(65536);
     });
 
     /**
@@ -1185,8 +1185,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s34: Double = 2.147483646E9;
-      let d34: Long = Double.toLong(s34);
-      expect(d34).assertEqual(2147483646);
+      let data34: Long = Double.toLong(s34);
+      expect(data34).assertEqual(2147483646);
     });
 
     /**
@@ -1199,8 +1199,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s35: Double = 2.147483647E9;
-      let d35: Long = Double.toLong(s35);
-      expect(d35).assertEqual(2147483647);
+      let data35: Long = Double.toLong(s35);
+      expect(data35).assertEqual(2147483647);
     });
 
     /**
@@ -1213,8 +1213,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s36: Double = 9.223372036854776E18;
-      let d36: Long = Double.toLong(s36);
-      expect(d36).assertEqual(9223372036854775807);
+      let data36: Long = Double.toLong(s36);
+      expect(data36).assertEqual(9223372036854775807);
     });
 
     /**
@@ -1227,8 +1227,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s37: Double = 3.4028234663852886E38;
-      let d37: Long = Double.toLong(s37);
-      expect(d37).assertEqual(9223372036854775807);
+      let data37: Long = Double.toLong(s37);
+      expect(data37).assertEqual(9223372036854775807);
     });
 
     /**
@@ -1241,8 +1241,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s38: Double = 1.7976931348623157E308;
-      let d38: Long = Double.toLong(s38);
-      expect(d38).assertEqual(9223372036854775807);
+      let data38: Long = Double.toLong(s38);
+      expect(data38).assertEqual(9223372036854775807);
     });
 
     /**
@@ -1255,8 +1255,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s39: Double = Double.POSITIVE_INFINITY;
-      let d39: Long = Double.toLong(s39);
-      expect(d39).assertEqual(9223372036854775807);
+      let data39: Long = Double.toLong(s39);
+      expect(data39).assertEqual(9223372036854775807);
     });
 
     /**
@@ -1269,8 +1269,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: Double = -4.9E-308;
-      let d1: Long = Double.toLong(s1);
-      expect(d1).assertEqual(0);
+      let data1: Long = Double.toLong(s1);
+      expect(data1).assertEqual(0);
     });
 
     /**
@@ -1283,8 +1283,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: Double = 4.9E-308;
-      let d1: Long = Double.toLong(s1);
-      expect(d1).assertEqual(0);
+      let data1: Long = Double.toLong(s1);
+      expect(data1).assertEqual(0);
     });
 
     /**
@@ -1297,8 +1297,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: Double = Double.NEGATIVE_INFINITY;
-      let d1: Float = Double.toFloat(s1);
-      expect(d1).assertEqual(Float.NEGATIVE_INFINITY);
+      let data1: Float = Double.toFloat(s1);
+      expect(data1).assertEqual(Float.NEGATIVE_INFINITY);
     });
 
     /**
@@ -1311,8 +1311,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s2: Double = -1.7976931348623157E308;
-      let d2: Float = Double.toFloat(s2);
-      expect(d2).assertEqual(Float.NEGATIVE_INFINITY);
+      let data2: Float = Double.toFloat(s2);
+      expect(data2).assertEqual(Float.NEGATIVE_INFINITY);
     });
 
     /**
@@ -1325,8 +1325,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s3: Double = -3.4028234663852886E38;
-      let d3: Float = Double.toFloat(s3);
-      expect(d3).assertEqual(-3.4028235E38f);
+      let data3: Float = Double.toFloat(s3);
+      expect(data3).assertEqual(-3.4028235E38f);
     });
 
     /**
@@ -1339,8 +1339,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s4: Double = -9.223372036854776E18;
-      let d4: Float = Double.toFloat(s4);
-      expect(d4).assertEqual(-9.223372E18f);
+      let data4: Float = Double.toFloat(s4);
+      expect(data4).assertEqual(-9.223372E18f);
     });
 
     /**
@@ -1353,8 +1353,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s5: Double = -2.147483648E9;
-      let d5: Float = Double.toFloat(s5);
-      expect(d5).assertEqual(-2.14748365E9f);
+      let data5: Float = Double.toFloat(s5);
+      expect(data5).assertEqual(-2.14748365E9f);
     });
 
     /**
@@ -1367,8 +1367,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s6: Double = -2.147483647E9;
-      let d6: Float = Double.toFloat(s6);
-      expect(d6).assertEqual(-2.14748365E9f);
+      let data6: Float = Double.toFloat(s6);
+      expect(data6).assertEqual(-2.14748365E9f);
     });
 
     /**
@@ -1381,8 +1381,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s18: Double = -1.0;
-      let d18: Byte = Double.toByte(s18);
-      expect(d18).assertEqual(-1);
+      let data18: Byte = Double.toByte(s18);
+      expect(data18).assertEqual(-1);
     });
 
     /**
@@ -1395,8 +1395,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s7: Double = -65537.0;
-      let d7: Float = Double.toFloat(s7);
-      expect(d7).assertEqual(-65537.0f);
+      let data7: Float = Double.toFloat(s7);
+      expect(data7).assertEqual(-65537.0f);
     });
 
     /**
@@ -1409,8 +1409,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s8: Double = -65536.0;
-      let d8: Float = Double.toFloat(s8);
-      expect(d8).assertEqual(-65536.0f);
+      let data8: Float = Double.toFloat(s8);
+      expect(data8).assertEqual(-65536.0f);
     });
 
     /**
@@ -1423,8 +1423,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s9: Double = -65535.0;
-      let d9: Float = Double.toFloat(s9);
-      expect(d9).assertEqual(-65535.0f);
+      let data9: Float = Double.toFloat(s9);
+      expect(data9).assertEqual(-65535.0f);
     });
 
     /**
@@ -1437,8 +1437,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s10: Double = -32769.0;
-      let d10: Float = Double.toFloat(s10);
-      expect(d10).assertEqual(-32769.0f);
+      let data10: Float = Double.toFloat(s10);
+      expect(data10).assertEqual(-32769.0f);
     });
 
     /**
@@ -1451,8 +1451,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s11: Double = -32768.0;
-      let d11: Float = Double.toFloat(s11);
-      expect(d11).assertEqual(-32768.0f);
+      let data11: Float = Double.toFloat(s11);
+      expect(data11).assertEqual(-32768.0f);
     });
 
     /**
@@ -1465,8 +1465,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s12: Double = -32767.0;
-      let d12: Float = Double.toFloat(s12);
-      expect(d12).assertEqual(-32767.0f);
+      let data12: Float = Double.toFloat(s12);
+      expect(data12).assertEqual(-32767.0f);
     });
 
     /**
@@ -1479,8 +1479,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s13: Double = -129.0;
-      let d13: Float = Double.toFloat(s13);
-      expect(d13).assertEqual(-129.0f);
+      let data13: Float = Double.toFloat(s13);
+      expect(data13).assertEqual(-129.0f);
     });
 
     /**
@@ -1493,8 +1493,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s14: Double = -128.0;
-      let d14: Float = Double.toFloat(s14);
-      expect(d14).assertEqual(-128.0f);
+      let data14: Float = Double.toFloat(s14);
+      expect(data14).assertEqual(-128.0f);
     });
 
     /**
@@ -1507,8 +1507,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s15: Double = -127.0;
-      let d15: Float = Double.toFloat(s15);
-      expect(d15).assertEqual(-127.0f);
+      let data15: Float = Double.toFloat(s15);
+      expect(data15).assertEqual(-127.0f);
     });
 
     /**
@@ -1521,8 +1521,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s16: Double = -3.1415926;
-      let d16: Float = Double.toFloat(s16);
-      expect(d16).assertEqual(-3.1415925f);
+      let data16: Float = Double.toFloat(s16);
+      expect(data16).assertEqual(-3.1415925f);
     });
 
     /**
@@ -1535,8 +1535,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s19: Double = -2.2250738585072014E-308;
-      let d19: Byte = Double.toByte(s19);
-      expect(d19).assertEqual(0);
+      let data19: Byte = Double.toByte(s19);
+      expect(data19).assertEqual(0);
     });
 
     /**
@@ -1549,8 +1549,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s17: Double = -1.0;
-      let d17: Float = Double.toFloat(s17);
-      expect(d17).assertEqual(-1.0f);
+      let data17: Float = Double.toFloat(s17);
+      expect(data17).assertEqual(-1.0f);
     });
 
     /**
@@ -1563,8 +1563,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s18: Double = -2.2250738585072014E-308;
-      let d18: Float = Double.toFloat(s18);
-      expect(d18).assertEqual(-0.0f);
+      let data18: Float = Double.toFloat(s18);
+      expect(data18).assertEqual(-0.0f);
     });
 
     /**
@@ -1577,8 +1577,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s19: Double = -0.0;
-      let d19: Float = Double.toFloat(s19);
-      expect(d19).assertEqual(0.0f);
+      let data19: Float = Double.toFloat(s19);
+      expect(data19).assertEqual(0.0f);
     });
 
     /**
@@ -1591,8 +1591,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s20: Double = 0.0;
-      let d20: Float = Double.toFloat(s20);
-      expect(d20).assertEqual(0.0f);
+      let data20: Float = Double.toFloat(s20);
+      expect(data20).assertEqual(0.0f);
     });
 
     /**
@@ -1605,8 +1605,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s21: Double = 2.2250738585072014E-308;
-      let d21: Float = Double.toFloat(s21);
-      expect(d21).assertEqual(0.0f);
+      let data21: Float = Double.toFloat(s21);
+      expect(data21).assertEqual(0.0f);
     });
 
     /**
@@ -1619,8 +1619,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s22: Double = 1.0;
-      let d22: Float = Double.toFloat(s22);
-      expect(d22).assertEqual(1.0f);
+      let data22: Float = Double.toFloat(s22);
+      expect(data22).assertEqual(1.0f);
     });
 
     /**
@@ -1633,8 +1633,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s23: Double = 3.1415926;
-      let d23: Float = Double.toFloat(s23);
-      expect(d23).assertEqual(3.1415925f);
+      let data23: Float = Double.toFloat(s23);
+      expect(data23).assertEqual(3.1415925f);
     });
 
     /**
@@ -1647,8 +1647,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s24: Double = 126.0;
-      let d24: Float = Double.toFloat(s24);
-      expect(d24).assertEqual(126.0f);
+      let data24: Float = Double.toFloat(s24);
+      expect(data24).assertEqual(126.0f);
     });
 
     /**
@@ -1661,8 +1661,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s25: Double = 127.0;
-      let d25: Float = Double.toFloat(s25);
-      expect(d25).assertEqual(127.0f);
+      let data25: Float = Double.toFloat(s25);
+      expect(data25).assertEqual(127.0f);
     });
 
     /**
@@ -1675,8 +1675,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s26: Double = 128.0;
-      let d26: Float = Double.toFloat(s26);
-      expect(d26).assertEqual(128.0f);
+      let data26: Float = Double.toFloat(s26);
+      expect(data26).assertEqual(128.0f);
     });
 
     /**
@@ -1689,8 +1689,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s20: Double = -0.0;
-      let d20: Byte = Double.toByte(s20);
-      expect(d20).assertEqual(0);
+      let data20: Byte = Double.toByte(s20);
+      expect(data20).assertEqual(0);
     });
 
     /**
@@ -1703,8 +1703,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s27: Double = 32766.0;
-      let d27: Float = Double.toFloat(s27);
-      expect(d27).assertEqual(32766.0f);
+      let data27: Float = Double.toFloat(s27);
+      expect(data27).assertEqual(32766.0f);
     });
 
     /**
@@ -1717,8 +1717,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s28: Double = 32767.0;
-      let d28: Float = Double.toFloat(s28);
-      expect(d28).assertEqual(32767.0f);
+      let data28: Float = Double.toFloat(s28);
+      expect(data28).assertEqual(32767.0f);
     });
 
     /**
@@ -1731,8 +1731,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s29: Double = 32768.0;
-      let d29: Float = Double.toFloat(s29);
-      expect(d29).assertEqual(32768.0f);
+      let data29: Float = Double.toFloat(s29);
+      expect(data29).assertEqual(32768.0f);
     });
 
     /**
@@ -1745,8 +1745,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s30: Double = 65534.0;
-      let d30: Float = Double.toFloat(s30);
-      expect(d30).assertEqual(65534.0f);
+      let data30: Float = Double.toFloat(s30);
+      expect(data30).assertEqual(65534.0f);
     });
 
     /**
@@ -1759,8 +1759,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s31: Double = 65535.0;
-      let d31: Float = Double.toFloat(s31);
-      expect(d31).assertEqual(65535.0f);
+      let data31: Float = Double.toFloat(s31);
+      expect(data31).assertEqual(65535.0f);
     });
 
     /**
@@ -1773,8 +1773,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s32: Double = 65536.0;
-      let d32: Float = Double.toFloat(s32);
-      expect(d32).assertEqual(65536.0f);
+      let data32: Float = Double.toFloat(s32);
+      expect(data32).assertEqual(65536.0f);
     });
 
     /**
@@ -1787,8 +1787,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s33: Double = 2.147483646E9;
-      let d33: Float = Double.toFloat(s33);
-      expect(d33).assertEqual(2.14748365E9f);
+      let data33: Float = Double.toFloat(s33);
+      expect(data33).assertEqual(2.14748365E9f);
     });
 
     /**
@@ -1801,8 +1801,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s34: Double = 2.147483647E9;
-      let d34: Float = Double.toFloat(s34);
-      expect(d34).assertEqual(2.14748365E9f);
+      let data34: Float = Double.toFloat(s34);
+      expect(data34).assertEqual(2.14748365E9f);
     });
 
     /**
@@ -1815,8 +1815,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s35: Double = 9.223372036854776E18;
-      let d35: Float = Double.toFloat(s35);
-      expect(d35).assertEqual(9.223372E18f);
+      let data35: Float = Double.toFloat(s35);
+      expect(data35).assertEqual(9.223372E18f);
     });
 
     /**
@@ -1829,8 +1829,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s36: Double = 3.4028234663852886E38;
-      let d36: Float = Double.toFloat(s36);
-      expect(d36).assertEqual(3.4028235E38f);
+      let data36: Float = Double.toFloat(s36);
+      expect(data36).assertEqual(3.4028235E38f);
     });
 
     /**
@@ -1843,8 +1843,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s3: Double = -1.7976931348623157E308;
-      let d3: Byte = Double.toByte(s3);
-      expect(d3).assertEqual(0);
+      let data3: Byte = Double.toByte(s3);
+      expect(data3).assertEqual(0);
     });
 
     /**
@@ -1857,8 +1857,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s21: Double = 0.0;
-      let d21: Byte = Double.toByte(s21);
-      expect(d21).assertEqual(0);
+      let data21: Byte = Double.toByte(s21);
+      expect(data21).assertEqual(0);
     });
 
     /**
@@ -1871,8 +1871,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s37: Double = 1.7976931348623157E308;
-      let d37: Float = Double.toFloat(s37);
-      expect(d37).assertEqual(Float.POSITIVE_INFINITY);
+      let data37: Float = Double.toFloat(s37);
+      expect(data37).assertEqual(Float.POSITIVE_INFINITY);
     });
 
     /**
@@ -1885,8 +1885,8 @@ export default function NumericCastingConversionsTest() {
      */
     it("testNumericCastingConversions0131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s38: Double = Double.POSITIVE_INFINITY;
-      let d38: Float = Double.toFloat(s38);
-      expect(d38).assertEqual(Float.POSITIVE_INFINITY);
+      let data38: Float = Double.toFloat(s38);
+      expect(data38).assertEqual(Float.POSITIVE_INFINITY);
     });
 
   })
