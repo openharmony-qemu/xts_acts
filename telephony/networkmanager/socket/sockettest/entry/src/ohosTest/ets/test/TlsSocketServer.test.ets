@@ -1259,14 +1259,16 @@ export default function TLSSocketServerTest() {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetState0100';
       console.info(`${caseName} test start `);
       await tlsServer.listen(tlsConnectOptions).catch((err:BusinessError) => {
-                    console.info('fail to listen' + err.code.toString());
-                });
+        console.info('fail to listen' + err.code.toString());
+      });
       try {
         tlsServer.getState((err: BusinessError, data: socket.SocketStateBase) => {
           if (err) {
             done();
           }
-          expectTrue(data != null);
+          expectTrue(data.isBound != null);
+          expectTrue(data.isClose != null);
+          expectTrue(data.isConnected != null);
           done();
         })
       } catch (errState) {
@@ -1415,7 +1417,9 @@ export default function TLSSocketServerTest() {
         })
         try {
           await tlsServer.getState().then((data: socket.SocketStateBase) => {
-            expectTrue(data !== null);
+            expectTrue(data.isBound != null);
+            expectTrue(data.isClose != null);
+            expectTrue(data.isConnected != null);
             done();
           }).catch((err: BusinessError) => {
             expectFalse(err != null);
