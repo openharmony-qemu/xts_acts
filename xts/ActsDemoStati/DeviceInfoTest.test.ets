@@ -16,7 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import deviceinfo from '@ohos.deviceInfo'
 
-export default function DeviceInfoTest() {
+export default function deviceInfoTest() {
     describe('DeviceInfoTest', function () {
 
         const MAX_CHARACTERS_NUM_ONE = 33;
@@ -43,8 +43,7 @@ export default function DeviceInfoTest() {
                 console.info('the value of the deviceType is :' + deviceTypeInfo);
                 expect(deviceTypeInfo).assertInstanceOf('String');
 				done();
-            }
-            else {
+            }else {
                 console.info('the return value DeviceType is null or incorrect.');
                 expect().assertFail();
 				done();
@@ -1361,7 +1360,7 @@ export default function DeviceInfoTest() {
         /**
          * @tc.name   device_info_test_060
          * @tc.number SUB_STARTUP_JS_DEVCEINFO_0660
-         * @tc.desc   Get a string representing the different build host of the same baseline code which has at least one characters.
+         * @tc.desc   Get a string representing at least one characters.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
