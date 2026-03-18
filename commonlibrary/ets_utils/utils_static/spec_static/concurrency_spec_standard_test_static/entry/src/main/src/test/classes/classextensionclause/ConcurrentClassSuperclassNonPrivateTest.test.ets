@@ -61,7 +61,7 @@ import {
   testClassSuperclassNonPrivate0032,
   testClassSuperclassNonPrivate0033
 } from './classsuperclassnonprivatetestfunction/ClassSuperclassNonPrivateTestFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

@@ -25,7 +25,7 @@ import {
   DoubleEnumToStringTest001,
   DoubleEnumIndexTest001
 } from './doubleenumfunction/DoubleEnumFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 export async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

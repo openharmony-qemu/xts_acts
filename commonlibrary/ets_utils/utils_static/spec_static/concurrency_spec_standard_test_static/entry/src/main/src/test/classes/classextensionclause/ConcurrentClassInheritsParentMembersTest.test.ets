@@ -56,7 +56,7 @@ import {
   testClassInheritsParentMembers0027,
   testClassInheritsParentMembers0028
 } from './classInheritsparentmemberstestfunction/ClassInheritsParentMembersTestFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

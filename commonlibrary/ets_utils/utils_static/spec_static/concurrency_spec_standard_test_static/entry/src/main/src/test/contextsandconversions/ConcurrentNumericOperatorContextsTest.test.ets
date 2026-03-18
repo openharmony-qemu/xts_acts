@@ -256,7 +256,7 @@ import {
   testNumericOperatorContexts0227,
   testNumericOperatorContexts0228
 } from './numericoperatorcontextstestfunction/NumericOperatorContextsTestFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 enum IntEnum {One = 1, Two, Three}
 

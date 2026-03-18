@@ -39,7 +39,7 @@ import {
   testAttemptInvalidTypeConversion0010,
   testAttemptInvalidTypeConversion0011
 } from './attemptinvalidtypeconversiontestfunction/AttemptInvalidTypeConversionTestFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

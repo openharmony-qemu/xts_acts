@@ -123,7 +123,7 @@ import {
   ExpressionTest0320
 } from './expressiontest2function/ExpressionTest2Func';
 import Utils from './../Util.test.ets';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 export default function expressionTest2() {
   describe('ExpressionTest2', () => {

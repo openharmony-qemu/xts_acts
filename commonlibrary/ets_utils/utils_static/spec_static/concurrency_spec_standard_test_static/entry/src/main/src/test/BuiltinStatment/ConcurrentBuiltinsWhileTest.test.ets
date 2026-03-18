@@ -69,7 +69,7 @@ import {
   builtinsStatementWhileTest4400
 } from './builtinswhiletestfunction/BuiltinsWhileTestFunc';
 
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

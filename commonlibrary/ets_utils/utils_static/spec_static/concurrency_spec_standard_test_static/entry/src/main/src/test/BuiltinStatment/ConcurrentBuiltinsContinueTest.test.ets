@@ -38,7 +38,7 @@ import {
   BuiltinsStatementContinueTest2500,
   BuiltinsStatementContinueTest2600
 } from './builtinscontinuetestfunction/BuiltinsContinueTestFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

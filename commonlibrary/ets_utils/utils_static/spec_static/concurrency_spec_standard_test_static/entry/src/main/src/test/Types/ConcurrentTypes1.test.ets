@@ -33,7 +33,7 @@ import {
   sleep,
   test
 } from './types1function/Types1Func';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 
 export default function SpecTypeTest1() {

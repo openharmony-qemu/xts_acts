@@ -51,7 +51,7 @@ import {
   testClassSuperclassOverride0022,
   testClassSuperclassOverride0023
 } from './classsuperclassoverridetestfunction/ClassSuperclassOverrideTestFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {

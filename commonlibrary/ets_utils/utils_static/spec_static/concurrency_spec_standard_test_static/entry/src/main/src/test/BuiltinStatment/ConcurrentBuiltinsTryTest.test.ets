@@ -75,7 +75,7 @@ import {
 } from './builtinstrytestfunction/BuiltinsTryTestFunc';
 import Utils from '../Util.test';
 
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 // let flag: number = 0
 async function sleep(time: int): Promise<int> {

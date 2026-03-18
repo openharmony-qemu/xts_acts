@@ -30,7 +30,7 @@ import {
   UnionTest015,
   UnionTest016
 } from './unionnormalizationfunction/UnionnormalizationFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 export default function concurrent_UnionTest() {
   describe('concurrent_UnionTest', (): void => {

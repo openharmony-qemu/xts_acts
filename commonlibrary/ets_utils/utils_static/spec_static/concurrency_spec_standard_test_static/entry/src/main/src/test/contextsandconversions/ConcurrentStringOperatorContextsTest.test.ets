@@ -87,7 +87,7 @@ import {
   testStringOperatorContexts0058,
   testStringOperatorContexts0059
 } from './stringoperatorcontextstestfunction/StringOperatorContextsTestFunc';
-let concurrentNum: int = 1
+let concurrentNum: int = 100;
 
 type Foo = () => int;
 
