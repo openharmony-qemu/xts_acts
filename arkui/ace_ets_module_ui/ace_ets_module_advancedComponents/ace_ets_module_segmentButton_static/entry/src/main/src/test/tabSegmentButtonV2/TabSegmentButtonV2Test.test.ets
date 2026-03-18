@@ -29,6 +29,7 @@ export default function TabSegmentButtonV2Test() {
   describe('TabSegmentButtonV2Test', () => {
     beforeAll(async (): Promise<void> => {
       console.info("TabSegmentButtonV2Test beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {

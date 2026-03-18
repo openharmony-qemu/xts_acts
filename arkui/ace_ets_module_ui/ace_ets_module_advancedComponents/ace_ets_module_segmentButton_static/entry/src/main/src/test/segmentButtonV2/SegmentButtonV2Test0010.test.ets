@@ -28,6 +28,7 @@ export default function SegmentButtonV2Test0010() {
   describe('SegmentButtonV2Test0010', () => {
     beforeAll(async (): Promise<void> => {
       console.info("SegmentButtonV2Test0010 beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {
