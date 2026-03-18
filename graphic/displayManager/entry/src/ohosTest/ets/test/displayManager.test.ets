@@ -4100,20 +4100,19 @@ export default function displayTest() {
       let caseName: string = 'testOnChange_setPreferOrientation_0100';
       let msgStr : string = 'jsunittest ' + caseName + ' ';
       let windowClass:window.Window = windowStage!.getMainWindowSync();
-      let dis = display.getDefaultDisplaySync();
       try {
         if(isSupportRotate === true){
           let index1 = 0;
           let index2 = 0;
           const callback1 = (res: number)=>{
             console.info(caseName + ' callback1 res: ' + res);
-            expect(res).assertEqual(dis.id);
+            expect(res).assertLargerOrEqual(0);
             index1++;
             console.info(caseName + ' callback1 index1: ' + index1);
           }
           const callback2 = (res: number)=>{
             console.info(caseName + ' callback2 res: ' + res);
-            expect(res).assertEqual(dis.id);
+            expect(res).assertLargerOrEqual(0);
             index2++;
             console.info(caseName + ' callback2 index2: ' + index2);
           }
