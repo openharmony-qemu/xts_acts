@@ -747,9 +747,10 @@ export default function HasCard2PublicNeedCardTest() {
     it('Telephony_CallManager_Dial_Async_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let CaseName = 'Telephony_CallManager_Dial_Async_0300';
       try {
-        call.dial("", {
+        let dialOptions: call.DialOptions = {
           extras: true
-        }, (err, data) => {
+        }
+        call.dial("", dialOptions, (err, data) => {
           expect(data === undefined).assertTrue();
           console.info(CaseName + " case success" + JSON.stringify(data));
           done();
