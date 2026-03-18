@@ -455,7 +455,7 @@ export default function AVPlayerMediaSource() {
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0100
      * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0100
-     * @tc.desc   Local Video creat Media Source With Url
+     * @tc.desc   Local Video create Media Source With Url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -467,12 +467,12 @@ export default function AVPlayerMediaSource() {
       let mediaSource = media.createMediaSourceWithUrl("", header);
       expect(mediaSource != null).assertTrue();
       expect(mediaSource != undefined).assertTrue()
-      done;
+      done();
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0200
      * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0200
-     * @tc.desc   Local Video creat Media Source With Url
+     * @tc.desc   Local Video create Media Source With Url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -484,12 +484,12 @@ export default function AVPlayerMediaSource() {
       let mediaSource = media.createMediaSourceWithUrl(null, header);
       expect(mediaSource).assertUndefined()
       console.info(' createMediaSourceWithUrl url is null character')
-      done;
+      done();
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0300
      * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0300
-     * @tc.desc   Local Video creat Media Source With Url
+     * @tc.desc   Local Video create Media Source With Url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -501,12 +501,12 @@ export default function AVPlayerMediaSource() {
       let mediaSource = media.createMediaSourceWithUrl(undefined, header);
       expect(mediaSource).assertUndefined()
       console.info(' createMediaSourceWithUrl url is undefined character')
-      done;
+      done();
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0400
      * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0400
-     * @tc.desc   Local Video creat Media Source With Url
+     * @tc.desc   Local Video create Media Source With Url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -518,12 +518,12 @@ export default function AVPlayerMediaSource() {
       let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, null);
       expect(mediaSource != null).assertTrue();
       expect(mediaSource != undefined).assertTrue()
-      done;
+      done();
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0500
      * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_URL_0500
-     * @tc.desc   Local Video creat Media Source With Url
+     * @tc.desc   Local Video create Media Source With Url
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -535,19 +535,19 @@ export default function AVPlayerMediaSource() {
       let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, undefined);
       expect(mediaSource != null).assertTrue();
       expect(mediaSource != undefined).assertTrue()
-      done;
+      done();
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0100
      * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0100
-     * @tc.desc   flv live stream with create Media Source With Stream Data Success
+     * @tc.desc   flv live stream with create Media Source With Stream Data success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0100', Level.LEVEL0, async (done: Function) => {
       let mediaSource = media.createMediaSourceWithStreamData(null);
-      expect(mediaSource).assertUndefined();
+      expect(mediaSource).assertUndefined()
       console.info(' createMediaSourceWithStreamData is null')
       done();
     });
@@ -559,9 +559,9 @@ export default function AVPlayerMediaSource() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_STREAM_DATA_0200', Level.LEVEL0, async (done: Function) => {
       let mediaSource = media.createMediaSourceWithStreamData(undefined);
-      expect(mediaSource).assertUndefined();
+      expect(mediaSource).assertUndefined()
       console.info(' createMediaSourceWithStreamData is undefined')
       done();
     });
