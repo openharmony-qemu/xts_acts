@@ -513,6 +513,7 @@ export default function preferenceTest() {
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success");
           expect(preferences != null).assertTrue();
+          done();
         }
       })
       dataPreferences.removePreferencesFromCache(context!, NAME, (err  : BusinessError | null) : void => {
@@ -740,9 +741,11 @@ export default function preferenceTest() {
         if(err && err.code != 0){
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences err: " + err)
           expect(false).assertTrue();
+          doen();
         }else{
           hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success")
           expect(preferences != null).assertTrue();
+          done();
         }
       })
       dataPreferences.deletePreferences(context!, NAME, (err : BusinessError | null) : void => {
