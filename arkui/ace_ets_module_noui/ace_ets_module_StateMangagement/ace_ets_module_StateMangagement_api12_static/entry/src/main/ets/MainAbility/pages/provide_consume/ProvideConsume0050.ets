@@ -37,7 +37,7 @@ import {
 
 @CustomDialog
 struct CustomDialogExample {
-  @Consume textValue: string
+  @Link textValue: string
   // @Consume inputValue: string
   controller ?: CustomDialogController
 

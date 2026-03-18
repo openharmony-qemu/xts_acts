@@ -48,6 +48,8 @@
     "MainAbility/pages/LazyForEach/LazyForEachInterface",
     "MainAbility/pages/RepeatMixedComponent/RepeatGridBoolean",
     "MainAbility/pages/makeObserved/makeObserved0080",
-    "MainAbility/pages/V1V2Mix/V2ToV1"
+    "MainAbility/pages/V1V2Mix/V2ToV1",
+    "MainAbility/pages/UIUtils/UIUtilsMakeBindingPage",
+    "MainAbility/pages/Consume/ConsumeDefaultValueString"
   ]
 }
