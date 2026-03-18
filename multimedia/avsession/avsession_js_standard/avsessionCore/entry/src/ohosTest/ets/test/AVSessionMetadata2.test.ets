@@ -89,8 +89,8 @@ let playbackState0: avSession.AVPlaybackState = {
 
 
 export default function abilityTest() {
-  describe('AVSessionMetadata', () => {
-    let TAG: string = "[AVSessionMetadata]";
+  describe('AVSessionMetadata2', () => {
+    let TAG: string = "[AVSessionMetadata2]";
     let session: avSession.AVSession | ESObject;
     let controller: avSession.AVSessionController | ESObject;
     let receivedCallback1: boolean = false;
