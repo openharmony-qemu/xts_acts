@@ -15,6 +15,7 @@
 import osAccount from '@ohos.account.osAccount'
 import distributedAccount from '@ohos.account.distributedAccount'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { CreateAccount, RemoveAccount } from './AccountFunc.test';
 
 const TIMEOUT = 1000;
 const ERR_PERMISSION_DENIED = 201;
@@ -656,6 +657,11 @@ export default function ActsOsAccountThirdPartyTest_third_3() {
             }
             osAccountManager.createOsAccount("CheckActived_0900", osAccount.OsAccountType.NORMAL, (err, info) => {
                 console.info("====>create os account err: " + JSON.stringify(err));
+                if (err && err.code === 204) {
+                    console.info("====>Current device need token to use API: createOsAccount");
+                    done();
+                    return;
+                }
                 console.info("====>create os account OsAccountInfo: " + JSON.stringify(info));
                 let id = info.localId;
                 osAccountManager.checkOsAccountActivated(id, (err, data) => {
@@ -689,14 +695,19 @@ export default function ActsOsAccountThirdPartyTest_third_3() {
                 done();
                 return;
             }
+            let options = {
+                shortName: "check1000",
+                disallowedPreinstalledBundles: [],
+                allowedPreinstalledBundles: []
+            }
             try {
-                let info = await osAccountManager.createOsAccount("CheckActived_1000", osAccount.OsAccountType.NORMAL);
+                let info = await CreateAccount("CheckActived_1000", osAccount.OsAccountType.NORMAL, options);
                 console.info("====>create os account OsAccountInfo: " + JSON.stringify(info));
                 let id = info.localId;
                 let data = await osAccountManager.checkOsAccountActivated(id);
                 console.info("====>get data:" + data + " by localId: " + id);
                 expect(data).assertFalse();
-                await osAccountManager.removeOsAccount(id);
+                await RemoveAccount(id);
                 console.info("====>remove localId: " + id + " success");
                 done();
             } catch (err) {
