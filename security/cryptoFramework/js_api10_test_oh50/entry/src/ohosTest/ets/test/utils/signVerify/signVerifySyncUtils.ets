@@ -101,6 +101,7 @@ let ASY_SM2_CIPHER_SPEC = [
 ]
 
 let ECDSA_SPEC = [
+  [["ECC192"], ["SHA1", "SHA224", "SHA256", "SHA384", "SHA512"]],
   [["ECC224"], ["SHA1", "SHA224", "SHA256", "SHA384", "SHA512"]],
   [["ECC256"], ["SHA1", "SHA224", "SHA256", "SHA384", "SHA512"]],
   [["ECC384"], ["SHA1", "SHA224", "SHA256", "SHA384", "SHA512"]],
