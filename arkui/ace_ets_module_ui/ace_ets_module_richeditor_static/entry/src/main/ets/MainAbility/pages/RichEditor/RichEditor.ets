@@ -23,15 +23,9 @@ import {
   Button,
   RichEditor,
   RichEditorController,
-  TextDirection,
-  BuilderNode
+  TextDirection
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-
-@Builder
-function richEditorBuilderSpanNode(): void {
-  Text('builder-span-node')
-}
 
 @Entry
 @Component
@@ -75,12 +69,17 @@ struct RichEditorPage {
     AppStorage.setOrCreate<string>(this.stateKey, snapshot);
   }
 
+  @Builder
+  richEditorBuilderSpanNode(): void {
+    Text('builder-span-node')
+  }
+
   build() {
     Column() {
       Button('toggleGlobalRichEditorOptions')
         .id('toggleGlobalRichEditorOptionsBtn')
         .key('toggleGlobalRichEditorOptionsBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.useControllerA = !this.useControllerA;
           this.syncStateToStorage();
         })
@@ -91,7 +90,7 @@ struct RichEditorPage {
       Button('toggleIncludeFontPadding')
         .id('toggleIncludeFontPaddingBtn')
         .key('toggleIncludeFontPaddingBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.includeFontPaddingValue = !this.includeFontPaddingValue;
           this.syncStateToStorage();
         })
@@ -102,7 +101,7 @@ struct RichEditorPage {
       Button('toggleFallbackLineSpacing')
         .id('toggleFallbackLineSpacingBtn')
         .key('toggleFallbackLineSpacingBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.fallbackLineSpacingValue = !this.fallbackLineSpacingValue;
           this.syncStateToStorage();
         })
@@ -113,7 +112,7 @@ struct RichEditorPage {
       Button('toggleSingleLine')
         .id('toggleSingleLineBtn')
         .key('toggleSingleLineBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.singleLineValue = !this.singleLineValue;
           this.syncStateToStorage();
         })
@@ -124,7 +123,7 @@ struct RichEditorPage {
       Button('toggleCompressLeadingPunctuation')
         .id('toggleCompressLeadingPunctuationBtn')
         .key('toggleCompressLeadingPunctuationBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.compressLeadingPunctuationValue = !this.compressLeadingPunctuationValue;
           this.syncStateToStorage();
         })
@@ -135,7 +134,7 @@ struct RichEditorPage {
       Button('callDeleteBackward')
         .id('callDeleteBackwardBtn')
         .key('callDeleteBackwardBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.getCurrentController().deleteBackward();
           this.deleteBackwardCount++;
           this.syncStateToStorage();
@@ -147,7 +146,7 @@ struct RichEditorPage {
       Button('applyStrokeWidth')
         .id('applyStrokeWidthBtn')
         .key('applyStrokeWidthBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.strokeWidthValue = this.strokeWidthValue === 1 ? 2 : 1;
           this.getCurrentController().setTypingStyle({ strokeWidth: this.strokeWidthValue });
           this.syncStateToStorage();
@@ -159,7 +158,7 @@ struct RichEditorPage {
       Button('applyStrokeColor')
         .id('applyStrokeColorBtn')
         .key('applyStrokeColorBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.strokeColorValue = this.strokeColorValue === '#ff0000' ? '#00ff00' : '#ff0000';
           this.getCurrentController().setTypingStyle({ strokeColor: this.strokeColorValue });
           this.syncStateToStorage();
@@ -171,7 +170,7 @@ struct RichEditorPage {
       Button('readTypingStyleStrokeWidth')
         .id('readTypingStyleStrokeWidthBtn')
         .key('readTypingStyleStrokeWidthBtn')
-        .onClick(() => {
+        .onClick((): void => {
           const result = this.getCurrentController().getTypingStyle();
           if (result != undefined && result.strokeWidth != undefined) {
             this.typingStyleStrokeWidthResultValue = `${result.strokeWidth}`;
@@ -187,7 +186,7 @@ struct RichEditorPage {
       Button('readTypingStyleStrokeColor')
         .id('readTypingStyleStrokeColorBtn')
         .key('readTypingStyleStrokeColorBtn')
-        .onClick(() => {
+        .onClick((): void => {
           const result = this.getCurrentController().getTypingStyle();
           if (result != undefined && result.strokeColor != undefined) {
             this.typingStyleStrokeColorResultValue = `${result.strokeColor}`;
@@ -203,7 +202,7 @@ struct RichEditorPage {
       Button('applyParagraphTextDirection')
         .id('applyParagraphTextDirectionBtn')
         .key('applyParagraphTextDirectionBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.paragraphTextDirectionValue = this.paragraphTextDirectionValue === TextDirection.LTR
             ? TextDirection.RTL : TextDirection.LTR;
           this.getCurrentController().addTextSpan('direction-seed');
@@ -223,7 +222,7 @@ struct RichEditorPage {
         .key('applyAccessibilitySpanOptionsBtn')
         .onClick((): void => {
           this.accessibilitySpanOptionsLevelValue = this.accessibilitySpanOptionsLevelValue === 'yes' ? 'no' : 'yes';
-          this.getCurrentController().addBuilderSpan(richEditorBuilderSpanNode, {
+          this.getCurrentController().addBuilderSpan(this.richEditorBuilderSpanNode, {
             offset: 0,
             accessibilitySpanOptions: {
               accessibilityText: 'builder-span-text',
@@ -240,7 +239,7 @@ struct RichEditorPage {
       Button('toggleSelectedDragPreviewStyle')
         .id('toggleSelectedDragPreviewStyleBtn')
         .key('toggleSelectedDragPreviewStyleBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.selectedDragPreviewColorValue = this.selectedDragPreviewColorValue === '#ff0000' ? '#00ff00' : '#ff0000';
           this.syncStateToStorage();
         })
