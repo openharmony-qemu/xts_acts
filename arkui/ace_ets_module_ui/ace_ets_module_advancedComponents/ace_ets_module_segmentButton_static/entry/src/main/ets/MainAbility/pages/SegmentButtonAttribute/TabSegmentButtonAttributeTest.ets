@@ -140,7 +140,7 @@ struct TabSegmentButtonAttributeIndex {
           buttonMinHeight: LengthMetrics.vp(20),
           buttonPadding: LengthMetrics.vp(30),
           languageDirection: Direction.Auto
-        }).key('TabSegmentButtonV2_02')
+        }).key('TabSegmentButtonV2_03')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)
