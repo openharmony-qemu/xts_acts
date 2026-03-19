@@ -1067,5 +1067,119 @@ export default function httpJsunit() {
         done();
       }
     });
+    /**
+     * @tc.name   NetworkManager_UDPSocket_addMembership_Async_0400
+     * @tc.number NetworkManager_UDPSocket_addMembership_Async_0400
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("NetworkManager_UDPSocket_addMembership_Async_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "NetworkManager_UDPSocket_addMembership_Async_0400";
+      try {
+        multicastSocket.addMembership(undefined, (err, data) => {
+          if (err) {
+            console.log(`${caseName} addMembership failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            done();
+          } else {
+            console.log(`${caseName} addMembership success, data: ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        expect(Number(error.code) === 401).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.name   NetworkManager_UDPSocket_addMembership_Async_0500
+     * @tc.number NetworkManager_UDPSocket_addMembership_Async_0500
+     * @tc.desc   Test addMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("NetworkManager_UDPSocket_addMembership_Async_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "NetworkManager_UDPSocket_addMembership_Async_0500";
+      try {
+        multicastSocket.addMembership(undefined, (err, data) => {
+          if (err) {
+            console.log(`${caseName} addMembership failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            done();
+          } else {
+            console.log(`${caseName} addMembership success, data: ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        expect(Number(error.code) === 401).assertTrue();
+        done();
+      }
+    });
+     /**
+     * @tc.name   NetworkManager_UDPSocket_dropMembership_Async_0400
+     * @tc.number NetworkManager_UDPSocket_dropMembership_Async_0400
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it("NetworkManager_UDPSocket_dropMembership_Async_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "NetworkManager_UDPSocket_dropMembership_Async_0400";
+      try {
+        multicastSocket.dropMembership(undefined, (err, data) => {
+          if (err) {
+            console.log(`${caseName} dropMembership failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            done();
+          } else {
+            console.log(`${caseName} dropMembership success, data: ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        expect(Number(error.code) === 401).assertTrue();
+        done();
+      }
+    });
+    console.log("************* socket Test end*************");
+    /**
+     * @tc.name   NetworkManager_UDPSocket_dropMembership_Async_0500
+     * @tc.number NetworkManager_UDPSocket_dropMembership_Async_0500
+     * @tc.desc   Test dropMembership property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("NetworkManager_UDPSocket_dropMembership_Async_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "NetworkManager_UDPSocket_dropMembership_Async_0500";
+      try {
+        multicastSocket.dropMembership(null, (err, data) => {
+          if (err) {
+            console.log(`${caseName} dropMembership failed, err: ${JSON.stringify(err)}`);
+            expectFalse();
+            done();
+          } else {
+            console.log(`${caseName} dropMembership success, data: ${JSON.stringify(data)}`);
+            expectFalse();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        expect(Number(error.code) === 401).assertTrue();
+        done();
+      }
+    });
+    console.log("************* socket Test end*************");
   });
 }

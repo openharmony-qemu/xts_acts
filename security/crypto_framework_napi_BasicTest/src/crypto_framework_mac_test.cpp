@@ -190,6 +190,9 @@ MacSpec g_macSpec[] = {
     {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA256", .paramType.degistName = "SHA256"},
     {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA384", .paramType.degistName = "SHA384"},
     {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA512", .paramType.degistName = "SHA512"},
+    {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA3-256", .paramType.degistName = "SHA3-256"},
+ 	{.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA3-384", .paramType.degistName = "SHA3-384"},
+ 	{.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA3-512", .paramType.degistName = "SHA3-512"},
     {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SM3", .paramType.degistName = "SM3"},
     {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|MD5", .paramType.degistName = "MD5"},
     {.type = OHTEST_MAC_HMAC, .algoKeyName = "AES256", .paramType.degistName = "SHA256"},
@@ -432,6 +435,25 @@ HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Tes
     EXPECT_EQ(OH_CryptoMac_Init(ctx, key), CRYPTO_PARAMETER_CHECK_FAILED);
 
     OH_CryptoSymKey_Destroy(key);
+    OH_CryptoMac_Destroy(ctx);
+}
+
+/**
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Mac_Test_1000
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_1000
+ * @tc.desc   algorithm is Mac
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Test_1000, TestSize.Level0)
+{
+    MacSpec macInfo = {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA1", .paramType.degistName = "SHA3-224"};
+    OH_CryptoMac *ctx = nullptr;
+
+    EXPECT_EQ(OH_CryptoMac_Create(macInfo.type, &ctx), CRYPTO_SUCCESS);
+    EXPECT_EQ(OHTEST_CryptoHmac_SetParam(ctx, macInfo.paramType.degistName), CRYPTO_PARAMETER_CHECK_FAILED);
+
     OH_CryptoMac_Destroy(ctx);
 }
 
