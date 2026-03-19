@@ -22,7 +22,7 @@ import TabSegmentButtonV2Test from './tabSegmentButtonV2/TabSegmentButtonV2Test.
 import SegmentButtonV2Test0020Test from './segmentButtonV2/SegmentButtonV2Test0020.test';
 import localizedTextPadding from './segmentButton/localizedTextPadding.test';
 import SegmentButtonBorderTest from './segmentButton/SegmentButtonBorderTest.test';
-import segmentButtonDirectionTest from './segmentButton/segmentButtonDirection.test';
+import segmentButtonDirectionTest from './segmentButton/segmentbuttonDirection.test';
 import SegmentBtnItemTest0010 from './segmentButton/SegmentBtnItemTest0010.test';
 
 export default function testsuite() {

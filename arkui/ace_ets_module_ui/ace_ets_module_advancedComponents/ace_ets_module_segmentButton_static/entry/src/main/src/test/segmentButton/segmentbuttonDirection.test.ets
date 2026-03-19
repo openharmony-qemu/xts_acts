@@ -46,7 +46,7 @@ export default function segmentButtonDirectionTest() {
     beforeEach(async (): Promise<void> => {
       console.info("segmentButtonDirectionTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/segmentButton/segmentButtonDirection',
+        url: 'MainAbility/pages/segmentButton/SegmentButtonDirection',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
