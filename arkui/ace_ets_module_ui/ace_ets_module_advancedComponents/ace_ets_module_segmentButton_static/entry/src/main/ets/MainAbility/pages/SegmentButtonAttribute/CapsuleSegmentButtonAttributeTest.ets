@@ -148,7 +148,7 @@ struct CapsuleSegmentButtonAttributeIndex {
           itemFontWeight: undefined,
           itemBorderRadius: undefined,
           itemSelectedBackgroundColor: undefined
-        }).key('TabSegmentButtonV2_02')
+        }).key('TabSegmentButtonV2_03')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)
