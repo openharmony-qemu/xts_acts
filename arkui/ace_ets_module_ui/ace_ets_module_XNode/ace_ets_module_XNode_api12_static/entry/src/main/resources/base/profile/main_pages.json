@@ -76,6 +76,7 @@
     "MainAbility/pages/typeNode/TextInput",
     "MainAbility/pages/typeNode/XComponent1",
     "MainAbility/pages/FrameNode/NodeAdapterTotalNodeCount",
-    "MainAbility/pages/FrameNode/TypedFrameNodeAttribute"
+    "MainAbility/pages/FrameNode/TypedFrameNodeAttribute",
+    "MainAbility/pages/Graphics/DrawContextSize"
   ]
 }

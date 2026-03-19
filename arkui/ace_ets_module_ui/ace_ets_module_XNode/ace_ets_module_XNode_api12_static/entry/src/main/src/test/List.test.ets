@@ -89,6 +89,8 @@ import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.t
 import getAfterRemove from './FrameNodeTest/getAfterRemove.test';
 import NodeAdapterTotalNodeCountTest from './FrameNodeTest/NodeAdapterTotalNodeCountTest.test';
 import TypedFrameNodeAttributeTest from './FrameNodeTest/TypedFrameNodeAttributeTest.test';
+import DrawContextSizeTest from './GraphicsTest/DrawContextSizeTest.test';
+import ColorMetricsColorWithSpaceTest from './GraphicsTest/ColorMetricsColorWithSpaceTest.test';
 
 export default function testsuite() {
   getNumeric();
@@ -166,4 +168,6 @@ export default function testsuite() {
   setMeasureSizeTest();
   NodeAdapterTotalNodeCountTest();
   TypedFrameNodeAttributeTest();
+  DrawContextSizeTest();
+  ColorMetricsColorWithSpaceTest();
 }
