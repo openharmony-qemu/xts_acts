@@ -6,6 +6,10 @@
     "MainAbility/pages/capsuleSegmentButtonV2/SegmentButtonV2Test",
     "MainAbility/pages/segmentButtonV2/SegmentButtonV20010",
     "MainAbility/pages/tabSegmentButtonV2/TabSegmentButtonV2Example",
-    "MainAbility/pages/segmentButtonV2/SegmentButtonV20020"
+    "MainAbility/pages/segmentButtonV2/SegmentButtonV20020",
+    "MainAbility/pages/segmentButton/localizedTextPadding",
+    "MainAbility/pages/segmentButton/SegmentButtonBorder",
+    "MainAbility/pages/segmentButton/segmentButtonDirection",
+    "MainAbility/pages/segmentButton/SegmentBtnItem0010"
   ]
 }
