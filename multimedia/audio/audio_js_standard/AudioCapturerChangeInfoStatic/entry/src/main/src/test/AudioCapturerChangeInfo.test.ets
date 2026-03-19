@@ -772,6 +772,7 @@ export default function audioCapturerChange() {
         expect(false).assertTrue();
         done();
       }
+      done();
     })
 
     /**
@@ -826,6 +827,7 @@ export default function audioCapturerChange() {
       } catch (err) {
         console.info(`${Tag}: ${Tag}: Capturer release :ERROR :` + JSON.stringify(err));
       }
+      done();
     })
 
     /**
@@ -882,6 +884,7 @@ export default function audioCapturerChange() {
       } catch (err) {
         console.info(`${Tag}: ${Tag}: Capturer release:ERROR :${err.message}`);
       }
+      done();
     })
 
     /**
@@ -938,6 +941,7 @@ export default function audioCapturerChange() {
       } catch (err) {
         console.info(`${Tag}: ${Tag}: Capturer release :ERROR :${err.message}`);
       }
+      done();
     })
 
     /**
