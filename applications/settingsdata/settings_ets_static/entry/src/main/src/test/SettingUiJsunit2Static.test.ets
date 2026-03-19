@@ -1743,7 +1743,7 @@ export default function settingUiJsunit() {
         done();
       } catch (err) {
         err = err as Error;
-        console.error("[settings_register_key_empty] error = " + err);
+        console.error("[settings_register_result_false] error = " + err);
         expect().assertFail();
         done();
       }
@@ -1790,6 +1790,7 @@ export default function settingUiJsunit() {
       let name = 'domain_empty2';//关键字
       let domainName = settings.domainName.USER_PROPERTY;
       try{
+        settings.setValueSync(abilityContext!, name, 'testvalue');
         let value = settings.registerKeyObserver(abilityContext!, name, '', (err, ret) => {
           if (err) {
             console.info("[settings_register_domain_empty] error is:" + String(err));
@@ -1802,7 +1803,7 @@ export default function settingUiJsunit() {
       } catch (err) {
         err = err as Error;
         console.error("[settings_register_domain_empty] error = " + err);
-        expect().assertFail();
+        expect(err.message).assertEqual("Permission denied");
         done();
       }
     });
