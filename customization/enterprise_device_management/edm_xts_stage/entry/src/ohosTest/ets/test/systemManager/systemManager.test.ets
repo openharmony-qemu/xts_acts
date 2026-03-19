@@ -3156,4 +3156,121 @@ function testFinishLogCollected() {
     }
     done();
   });
+
+  /**
+   * @tc.name   setOtaUpdatePolicy_test_004_1
+   * @tc.number setOtaUpdatePolicy_test_004_1
+   * @tc.desc   setOtaUpdatePolicy with disableSystemOtaUpdate is false policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("setOtaUpdatePolicy_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setOtaUpdatePolicy_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let policy: systemManager.OtaUpdatePolicy = {
+      "policyType": systemManager.PolicyType.DEFAULT,
+      "version": UPDATE_VERSION,
+      "disableSystemOtaUpdate": false
+    }
+    try {
+      let ret = systemManager.setOtaUpdatePolicy(SELFWANT, policy);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- setOtaUpdatePolicy_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- setOtaUpdatePolicy_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   notifyUpdatePackages_test_004_1
+   * @tc.number notifyUpdatePackages_test_004_1
+   * @tc.desc   notifyUpdatePackages with [] parameter packages
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("notifyUpdatePackages_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- notifyUpdatePackages_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let notify: systemManager.NotifyDescription = {
+      "installTips": "installTips",
+      "installTipsDetail": "installTips detail"
+    }
+    let description: systemManager.PackageDescription = {
+      "notify": notify,
+    }
+    let updatePackageInfo: systemManager.UpdatePackageInfo = {
+      "version": UPDATE_VERSION,
+      "packages": [],
+      "description": description,
+      "authInfo": "invalid authinfo",
+    };
+    await systemManager.notifyUpdatePackages(SELFWANT, updatePackageInfo).then(() => {
+      expect(false).assertTrue();
+    }).catch((error: BusinessError) => {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201004).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    });
+    done();
+    console.info(' --- notifyUpdatePackages_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   addKeyEventPolicies_test_004_1
+   * @tc.number addKeyEventPolicies_test_004_1
+   * @tc.desc   addKeyEventPolicies with [] parameter keyPolicies
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("addKeyEventPolicies_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addKeyEventPolicies_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = systemManager.addKeyEventPolicies(SELFWANT, []);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- addKeyEventPolicies_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- addKeyEventPolicies_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   removeKeyEventPolicies_test_004_1
+   * @tc.number removeKeyEventPolicies_test_004_1
+   * @tc.desc   removeKeyEventPolicies with [] parameter keyCodes
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("removeKeyEventPolicies_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeKeyEventPolicies_test_004  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = systemManager.removeKeyEventPolicies(SELFWANT, []);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- removeKeyEventPolicies_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- removeKeyEventPolicies_test_004_1  -------- END --------');
+  })
+
 }
