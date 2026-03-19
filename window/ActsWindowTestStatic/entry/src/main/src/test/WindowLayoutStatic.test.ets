@@ -26,7 +26,7 @@ import {Driver,ON} from '@ohos.UiTest';
 let domain: int = 0x0000;
 let tag: string = 'WindowLayoutStaticTest';
 
-async function assertMaximizeComponentExist(windowState: number, windowClass?: window.Window) {
+async function assertMaximizeComponentExist(windowState: number, windowClass?: window.Window): Promise<boolean> {
     return new Promise<boolean>(async(resolve, reject)=>{
         let driver = Driver.create()
         if (windowState == 2 || windowState == 1) {
