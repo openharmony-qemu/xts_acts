@@ -1013,6 +1013,7 @@ export default function audioCapturerChange() {
         expect(false).assertTrue();
         done();
       }
+      done();
     })
 
     /**
