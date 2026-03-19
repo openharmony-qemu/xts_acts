@@ -34,6 +34,7 @@ import AddMonitorParentChild from './AddMonitorTest/AddMonitorParentChild.test';
 import AddMonitorTwoDimensionalArray from './AddMonitorTest/AddMonitorTwoDimensionalArray.test';
 import BasicPrefetcherMethods from './Prefetcher/BasicPrefetcherMethods.test';
 import IDataSourcePrefetchingMethods from './Prefetcher/IDataSourcePrefetchingMethods.test';
+import ReuseObjectRawTest from './ReuseObject/ReuseObjectRawTest.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -56,4 +57,5 @@ export default function testsuite() {
   AddMonitorTwoDimensionalArray(); 
   BasicPrefetcherMethods();
   IDataSourcePrefetchingMethods();
+  ReuseObjectRawTest(); 
 }
