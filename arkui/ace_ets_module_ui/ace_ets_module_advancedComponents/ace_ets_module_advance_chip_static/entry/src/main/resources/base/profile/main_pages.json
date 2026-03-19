@@ -24,7 +24,6 @@
     "MainAbility/pages/Chip/ChipOptionsDirectionTest",
     "MainAbility/pages/Chip/ChipOptionsFontScaleTest",
     "MainAbility/pages/Chip/ChipOptionsPaddingTest",
-    "MainAbility/pages/Chip/ChipOptionsFontSizeTest",
-    "MainAbility/pages/Chip/labelOptionsTest"
+    "MainAbility/pages/Chip/ChipOptionsFontSizeTest"
   ]
 }
