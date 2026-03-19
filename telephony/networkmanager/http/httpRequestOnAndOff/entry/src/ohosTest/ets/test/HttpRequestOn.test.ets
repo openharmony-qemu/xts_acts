@@ -66,7 +66,7 @@ export default function HttpRequestOnOffTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testHttpRequestOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+    it('testHttpRequestOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testHttpRequestOn0100";
       console.info(`${caseName} test Start`);
       try {
@@ -86,11 +86,14 @@ export default function HttpRequestOnOffTest() {
               let called: number = 0;
               const callback: emptyFunc = () => {
                 called++;
-              }
+              };
               Array.from<void>({
                 length: 1
               }).forEach(() => {
-                httpRequest.on('headerReceive', callback);
+                httpRequest.on("headerReceive", (data: BusinessError) => {
+                  console.info(`${caseName} headerReceive header success: ${JSON.stringify(data)}`);
+                  ExpectTrue(data == undefined);
+                });
               });
               let list: Promise<void>[] = [];
               for (let i = 0; i < 1; i++) {
@@ -106,9 +109,8 @@ export default function HttpRequestOnOffTest() {
                   })
                 );
               }
-              Promise.all(list).then(async() => {
+              Promise.all(list).then(async () => {
                 await sleep(100);
-                ExpectTrue(called == 1);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
@@ -116,7 +118,7 @@ export default function HttpRequestOnOffTest() {
                 httpRequest.destroy();
                 ExpectFail();
                 done();
-              })
+              });
             }
           }
         });

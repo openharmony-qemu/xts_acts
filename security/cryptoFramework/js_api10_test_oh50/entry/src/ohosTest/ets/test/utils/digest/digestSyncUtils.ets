@@ -30,6 +30,9 @@ const SHA224_MD_SIZE = 28;
 const SHA256_MD_SIZE = 32;
 const SHA384_MD_SIZE = 48;
 const SHA512_MD_SIZE = 64;
+const SHA3_256_MD_SIZE = 32;
+const SHA3_384_MD_SIZE = 48;
+const SHA3_512_MD_SIZE = 64;
 const SM3_MD_SIZE    = 32;
 const MD5_MD_SIZE    = 16;
 
@@ -45,6 +48,12 @@ function getMdSize(algName: string): number {
       return SHA384_MD_SIZE;
     case "SHA512":
       return SHA512_MD_SIZE;
+    case "SHA3-256":
+      return SHA3_256_MD_SIZE;
+    case "SHA3-384":
+      return SHA3_384_MD_SIZE;
+    case "SHA3-512":
+      return SHA3_512_MD_SIZE;
     case "SM3":
       return SM3_MD_SIZE;
     case "MD5":

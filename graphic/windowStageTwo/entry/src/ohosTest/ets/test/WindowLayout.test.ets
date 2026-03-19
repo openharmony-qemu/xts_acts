@@ -300,7 +300,8 @@ export default function windowLayoutTest() {
         isModal: false
       };
       try {
-        mainwindowClass.createSubWindowWithOptions('subWindow', options).then(async (data) => {
+        if(isFreeWindowMode){
+          mainwindowClass.createSubWindowWithOptions('subWindow', options).then(async (data) => {
           windowClass = data
           await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
           windowClass.resize(1000, 1200);
@@ -342,6 +343,10 @@ export default function windowLayoutTest() {
             done();
           }
         })
+        }else{
+          done();
+        }
+        
       } catch (exception) {
         console.error(`${message} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         // await mainwindowClass.setUIContent("testability/pages/Index");

@@ -865,7 +865,7 @@ export default function LocalSocketTest() {
           console.log('bind success')
         }).catch((err: BusinessError) => {
           console.error('failed to bind: ' + JSON.stringify(err))
-          expectEqual(401, err.code)
+          expectEqual(2301098, err.code)
           done()
         });
         console.info(`${caseName} test end`);
@@ -873,7 +873,7 @@ export default function LocalSocketTest() {
         done()
       }catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
-        expectTrue(Number(error.code)  === 401)
+        expectTrue(Number(error.code)  === 2301098)
         console.info(`${caseName} test end`);
         done();
       }

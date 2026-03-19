@@ -77,6 +77,28 @@ export default function sceneNodeTest() {
         node = scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') as Node;
         expect(node != null).assertTrue();
         console.info(msg + " Succeed in scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') ");
+
+        // Cover all Node property fields
+        expect(node!.position != null).assertTrue();
+        console.info(msg + " node.position is not null ");
+        expect(node!.rotation != null).assertTrue();
+        console.info(msg + " node.rotation is not null ");
+        expect(node!.scale != null).assertTrue();
+        console.info(msg + " node.scale is not null ");
+        node!.visible = true;
+        expect(node!.visible).assertTrue();
+        console.info(msg + " node.visible is " + node!.visible);
+        expect(node!.nodeType != null).assertTrue();
+        console.info(msg + " node.nodeType is " + JSON.stringify(node!.nodeType));
+        expect(node!.layerMask != null).assertTrue();
+        console.info(msg + " node.layerMask is not null ");
+        expect(node!.path != null).assertTrue();
+        console.info(msg + " node.path is " + node!.path);
+        expect(node!.parent != null).assertTrue();
+        console.info(msg + " node.parent is not null ");
+        expect(node!.children != null).assertTrue();
+        console.info(msg + " node.children is not null ");
+
         let nullNode: Node | null = scene!.root!.getNodeByPath('Scene/1234/456');
         expect(nullNode).assertNull();
         try {

@@ -68,6 +68,58 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_HMACSync_Func_0101
+     * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0101
+     * @tc.desc   algorithm is HMAC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_HMACSync_Func_0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let keyAlgName: string = "AES256";
+        let messageLen: number = 128;
+        let message: cryptoFramework.DataBlob = await hmacSyncUtils.createData(messageLen);
+        let key: cryptoFramework.SymKey = await hmacSyncUtils.genSymKey(keyAlgName);
+        for(let algName of hmacSyncUtils.H_MAC_SPEC) {
+          let macRes: hmacSyncUtils.macInfo = await hmacSyncUtils.doHmacPromise(algName, message, key);
+          let macLen: number = hmacSyncUtils.getMacSize(algName);
+          expect(macLen).assertEqual(macRes.macObj.getMacLength());
+        }
+      } catch (error) {
+        console.error(`HMAC “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_HMACSync_Func_0102
+     * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0102
+     * @tc.desc   algorithm is HMAC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_HMACSync_Func_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let keyAlgName: string = "AES256";
+        let messageLen: number = 128;
+        let message: cryptoFramework.DataBlob = await hmacSyncUtils.createData(messageLen);
+        let key: cryptoFramework.SymKey = await hmacSyncUtils.genSymKey(keyAlgName);
+        for(let algName of hmacSyncUtils.H_MAC_SPEC) {
+          let macRes: hmacSyncUtils.macInfo = await hmacSyncUtils.doHmacCallback(algName, message, key);
+          let macLen: number = hmacSyncUtils.getMacSize(algName);
+          expect(macLen).assertEqual(macRes.macObj.getMacLength());
+        }
+      } catch (error) {
+        console.error(`HMAC “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
      * @tc.name   SUB_Security_CryptoFramework_HMACSync_Func_0200
      * @tc.number SUB_Security_CryptoFramework_HMACSync_Func_0200
      * @tc.desc   algorithm is HMAC

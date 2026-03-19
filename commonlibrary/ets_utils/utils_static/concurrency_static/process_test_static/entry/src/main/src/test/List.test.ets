@@ -17,11 +17,15 @@ import processTest from "./Process.test";
 import ProcessSupplementSecondTest from './ProcessSupplementSecondTest.test';
 import ProcessInterfacetTest from './ProcessInterfacetTest.test';
 import ProcessSupplementTest from './ProcessSupplementTest.test';
+import stdProcessOnUnhandledPromiseRejectionTest from './StdProcessOnPromiseRejection.test';
+import stdProcessOnUncaughtErrorTest from './StdProcessOnUncaughtError.test';
 
 export default function testsuite() {
   processTest();
   ProcessSupplementTest();
   ProcessInterfacetTest();
   ProcessSupplementSecondTest();
+  stdProcessOnUnhandledPromiseRejectionTest();
+  stdProcessOnUncaughtErrorTest();
 
 }

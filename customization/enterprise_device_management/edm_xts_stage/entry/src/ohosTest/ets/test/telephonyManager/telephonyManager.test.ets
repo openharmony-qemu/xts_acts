@@ -1824,4 +1824,116 @@ function testHangupCalling() {
     }
     done();
   });
+
+  /**
+   * @tc.name   testGetOutgoingCallPolicyNumbers_0100_1
+   * @tc.number testGetOutgoingCallPolicyNumbers_0100_1
+   * @tc.desc   getOutgoingCallPolicyNumbers with TRUST_LIST parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("testGetOutgoingCallPolicyNumbers_0100_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeKeyEventPolicies_test_004  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
+      let numbers: Array<string> = telephonyManager.getOutgoingCallPolicyNumbers(SELFWANT, policy);
+      console.info(' --- testGetOutgoingCallPolicyNumbers_0100_1 numbers:' + numbers[0]);
+      expect(numbers[0] === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- testGetOutgoingCallPolicyNumbers_0100_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- testGetOutgoingCallPolicyNumbers_0100_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   testRemoveIncomingCallPolicyNumbers_0100_1
+   * @tc.number testRemoveIncomingCallPolicyNumbers_0100_1
+   * @tc.desc   getOutgoingCallPolicyNumbers with TRUST_LIST parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("testRemoveIncomingCallPolicyNumbers_0100_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
+      telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, policy, ["13112345678"]);
+      console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_1 error is expected, but it done.');
+    } catch (error) {
+      console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_1 error 801 is expected, actually catch: ' +
+      error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   testRemoveIncomingCallPolicyNumbers_0100_2
+   * @tc.number testRemoveIncomingCallPolicyNumbers_0100_2
+   * @tc.desc   getOutgoingCallPolicyNumbers with [] parameter phoneNumber
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("testRemoveIncomingCallPolicyNumbers_0100_2", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_2  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
+      telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, policy, []);
+      console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_2 error is expected, but it done.');
+    } catch (error) {
+      console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_2 error 9200012 is expected, actually catch: ' +
+      error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- testRemoveIncomingCallPolicyNumbers_0100_2  -------- END --------');
+  })
+
+  /**
+   * @tc.name   testGetIncomingCallPolicyNumbers_0100_1
+   * @tc.number testGetIncomingCallPolicyNumbers_0100_1
+   * @tc.desc   getIncomingCallPolicyNumbers with [] parameter phoneNumber
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("testGetIncomingCallPolicyNumbers_0100_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- testGetIncomingCallPolicyNumbers_0100_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let policy: adminManager.Policy = adminManager.Policy.TRUST_LIST;
+      telephonyManager.getIncomingCallPolicyNumbers(SELFWANT, policy);
+      console.info(' --- testGetIncomingCallPolicyNumbers_0100_1 error is expected, but it done.');
+    } catch (error) {
+      console.info(' --- testGetIncomingCallPolicyNumbers_0100_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- testGetIncomingCallPolicyNumbers_0100_1  -------- END --------');
+  })
+
 }
