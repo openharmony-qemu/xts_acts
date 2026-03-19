@@ -3300,6 +3300,474 @@ export default function globalStageTest() {
       expect(resource.type).assertEqual(10001);
     })
 
+    /**
+     * @tc.number   resourceManager_test_getStringSync_static_0300
+     * @tc.name     resourceManager_test_getStringSync_static_0300
+     * @tc.desc     second input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL2
+     */
+    it('resourceManager_test_getStringSync_static_0300', Level.LEVEL2, () => {
+      let resMgr = res!;
+      let value = resMgr.getStringSync(0x01000023, "");
+      console.log('resourceManager_test_getStringSync_static_0300 value:' + value);
+      expect(value).assertEqual('%');
+    })
+
+    /**
+     * @tc.number   getStringByNameSync_test_static_0400
+     * @tc.name     getStringByNameSync_test_static_0400
+     * @tc.desc     first input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getStringByNameSync_test_static_0400', Level.LEVEL3, () => {
+      try {
+        res!.getStringByNameSync('', 1);
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getStringByNameSync_test_static_0400 error code:' + err.code);
+        expect(err.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getStringByNameSync_test_static_0500
+     * @tc.name     getStringByNameSync_test_static_0500
+     * @tc.desc     second input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getStringByNameSync_test_static_0500', Level.LEVEL3, () => {
+      let resMgr = res!;
+      let value = resMgr.getStringByNameSync('test_stringTwelve', '');
+      console.log('getStringByNameSync_test_static_0500 value:' + value);
+      expect(value).assertEqual('%');
+    })
+
+    /**
+     * @tc.number   getIntPluralStringValueSync_test_static_0100
+     * @tc.name     getIntPluralStringValueSync_test_static_0100
+     * @tc.desc     third input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringValueSync_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringValueSync(0x01000037, 1, '');
+        console.log('getIntPluralStringValueSync_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringValueSync_test_static_0100 error code:' + err.code);
+        expect(err.code).assertEqual(9001007);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringByNameSync_test_static_0100
+     * @tc.name     getIntPluralStringByNameSync_test_static_0100
+     * @tc.desc     first input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringByNameSync_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringByNameSync('', 1, 10);
+        console.log('getIntPluralStringByNameSync_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringByNameSync_test_static_0100 error code:' + err.code);
+        expect(err.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringByNameSync_test_static_0200
+     * @tc.name     getIntPluralStringByNameSync_test_static_0200
+     * @tc.desc     third input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringByNameSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringByNameSync('plural_name', 1, '');
+        console.log('getIntPluralStringByNameSync_test_static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringByNameSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001008);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringValueSync_test_static_0100
+     * @tc.name     getDoublePluralStringValueSync_test_static_0100
+     * @tc.desc     third input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringValueSync_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringValueSync(0x01000037, 1.1, '');
+        console.log('getDoublePluralStringValueSync_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringValueSync_test_static_0100 error code:' + err.code);
+        expect(err.code).assertEqual(9001007);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0100
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0100
+     * @tc.desc     first input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringByNameSync_test_static_0100', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringByNameSync('', 1.1, 10);
+        console.log('getDoublePluralStringByNameSync_test_static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringByNameSync_test_static_0100 error code:' + err.code);
+        expect(err.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringByNameSync_test_static_0200
+     * @tc.name     getDoublePluralStringByNameSync_test_static_0200
+     * @tc.desc     third input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringByNameSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringByNameSync('plural_name', 1.1, '');
+        console.log('getDoublePluralStringByNameSync_test_static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringByNameSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001008);
+      }
+    })
+
+    /**
+     * @tc.number  getRawFileContent_test_static_0300
+     * @tc.name    getRawFileContent_test_static_0300
+     * @tc.desc    input void in callback mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('getRawFileContent_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res.getRawFileContent('', (err: BusinessError<void> | null) => {
+        console.log('getRawFileContent_test_static_0300 error code:' + err?.code);
+        expect(err?.code).assertEqual(9001005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number  getRawFileContent_test_static_0400
+     * @tc.name    getRawFileContent_test_static_0400
+     * @tc.desc    input void in promise mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('getRawFileContent_test_static_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res!.getRawFileContent('').then(() => {
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError
+        console.log('getRawFileContent_test_static_0400 error code:' + error?.code);
+        expect(error.code).assertEqual(9001005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number  getRawFd_test_static_0300
+     * @tc.name    getRawFd_test_static_0300
+     * @tc.desc    input void in callback mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('getRawFd_test_static_0300', Level.LEVEL3, async (): Promise<void> => {
+      res?.getRawFd('', (error: BusinessError<void> | null) => {
+        console.log('getRawFd_test_static_0300 error code:' + error?.code);
+        expect(error?.code).assertEqual(9001005);
+      })
+    })
+
+    /**
+     * @tc.number  getRawFd_test_static_0400
+     * @tc.name    getRawFd_test_static_0400
+     * @tc.desc    input void in promise mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('getRawFd_test_static_0400', Level.LEVEL3, async (): Promise<void> => {
+      res?.getRawFd('').then(() => {
+      }).catch((err: Object | null | undefined) => {
+        let error = err as BusinessError;
+        console.log('getRawFd_test_static_0400 error code:' + error.code);
+        expect(error.code).assertEqual(9001005);
+      })
+    })
+
+    /**
+     * @tc.number  closeRawFd_test_static_0100
+     * @tc.name    closeRawFd_test_static_0100
+     * @tc.desc    input void in callback mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('closeRawFd_test_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.closeRawFd('', (error: BusinessError<void> | null) => {
+        console.log('closeRawFd_test_static_0100 error code:' + error?.code);
+        expect(error?.code).assertEqual(9001005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number  closeRawFd_test_static_0200
+     * @tc.name    closeRawFd_test_static_0200
+     * @tc.desc    input void in promise mode
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('closeRawFd_test_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      res?.closeRawFd('').then((): void => {
+        console.log('closeRawFd_test_static_0200 fail');
+        expect().assertFail();
+        done();
+      }).catch((err: Error): void => {
+        console.log('closeRawFd_test_static_0200 error code:' + err?.code);
+        expect(err?.code).assertEqual(9001005);
+        done();
+      })
+    })
+
+    /**
+     * @tc.number   getRawFdSync_test_static_0200
+     * @tc.name     getRawFdSync_test_static_0200
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getRawFdSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res!.getRawFdSync('');
+      } catch (err) {
+        let error = err as BusinessError;
+        console.log('getRawFdSync_test_static_0200 error code:' + error.code);
+        expect(error.code).assertEqual(9001005);
+      }
+    })
+
+    /**
+     * @tc.number   closeRawFdSync_test_static_0200
+     * @tc.name     closeRawFdSync_test_static_0200
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('closeRawFdSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res!.closeRawFdSync('');
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('closeRawFdSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001005);
+      }
+    })
+
+    /**
+     * @tc.number   getRawFileContentSync_test_static_0200
+     * @tc.name     getRawFileContentSync_test_static_0200
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getRawFileContentSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        res!.getRawFileContentSync('');
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getRawFileContentSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001005);
+      }
+    })
+
+    /**
+     * @tc.number   getMediaByNameSync_test_static_0300
+     * @tc.name     getMediaByNameSync_test_static_0300
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getMediaByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res!.getMediaByNameSync('', 0);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.log('getMediaByNameSync_test_static_0300 error code:' + error.code);
+        expect(error.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getMediaBase64ByNameSync_test_static_0300
+     * @tc.name     getMediaBase64ByNameSync_test_static_0300
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getMediaBase64ByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res!.getMediaBase64ByNameSync('', 0);
+      } catch (err) {
+        let error = err as BusinessError;
+        console.log('getMediaBase64ByNameSync_test_static_0300 error code:' + error.code);
+        expect(error.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getStringArrayByNameSync_test_static_0300
+     * @tc.name     getStringArrayByNameSync_test_static_0300
+     * @tc.desc     input void
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getStringArrayByNameSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        res!.getStringArrayByNameSync('');
+      } catch (err) {
+        let error = err as BusinessError;
+        console.log('getStringArrayByNameSync_test_static_0300 error code:' + error.code);
+        expect(error.code).assertEqual(9001003);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringValueSync_test_static_0200
+     * @tc.name     getIntPluralStringValueSync_test_static_0200
+     * @tc.desc     9001002
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringValueSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringValueSync(0x0100002F, 1, 10);
+        console.log('getIntPluralStringValueSync_test_static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringValueSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001002);
+      }
+    })
+
+    /**
+     * @tc.number   getIntPluralStringValueSync_test_static_0300
+     * @tc.name     getIntPluralStringValueSync_test_static_0300
+     * @tc.desc     9001006
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getIntPluralStringValueSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getIntPluralStringValueSync(0x01000038, 1, 10);
+        console.log('getIntPluralStringValueSync_test_static_0300 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getIntPluralStringValueSync_test_static_0300 error code:' + err.code);
+        expect(err.code).assertEqual(9001006);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringValueSync_test_static_0200
+     * @tc.name     getDoublePluralStringValueSync_test_static_0200
+     * @tc.desc     9001002
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringValueSync_test_static_0200', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringValueSync(0x0100002F, 1.1, 10);
+        console.log('getDoublePluralStringValueSync_test_static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringValueSync_test_static_0200 error code:' + err.code);
+        expect(err.code).assertEqual(9001002);
+      }
+    })
+
+    /**
+     * @tc.number   getDoublePluralStringValueSync_test_static_0300
+     * @tc.name     getDoublePluralStringValueSync_test_static_0300
+     * @tc.desc     9001006
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    LEVEL3
+     */
+    it('getDoublePluralStringValueSync_test_static_0300', Level.LEVEL3, () => {
+      try {
+        let resMgr = res!;
+        let value = resMgr.getDoublePluralStringValueSync(0x01000038, 1.1, 10);
+        console.log('getDoublePluralStringValueSync_test_static_0300 value:' + value);
+        expect(value).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('getDoublePluralStringValueSync_test_static_0300 error code:' + err.code);
+        expect(err.code).assertEqual(9001006);
+      }
+    })
+
     console.log('*************end globalStageTest*************');
   })
 }
