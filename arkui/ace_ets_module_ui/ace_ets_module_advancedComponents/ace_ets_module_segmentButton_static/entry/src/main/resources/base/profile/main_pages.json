@@ -9,6 +9,10 @@
     "MainAbility/pages/SegmentButtonAttribute/CapsuleSegmentButtonAttributeTest",
     "MainAbility/pages/SegmentButtonAttribute/TabSegmentButtonAttributeTest",
     "MainAbility/pages/tabSegmentButtonV2/TabSegmentButtonV2Example",
-    "MainAbility/pages/segmentButtonV2/SegmentButtonV20020"
+    "MainAbility/pages/segmentButtonV2/SegmentButtonV20020",
+    "MainAbility/pages/segmentButton/localizedTextPadding",
+    "MainAbility/pages/segmentButton/SegmentButtonBorder",
+    "MainAbility/pages/segmentButton/SegmentButtonDirection",
+    "MainAbility/pages/segmentButton/SegmentBtnItem0010"
   ]
 }

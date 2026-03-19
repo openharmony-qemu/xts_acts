@@ -23,6 +23,10 @@ import CapsuleSegmentButtonAttributeTest from './SegmentButtonAttribute/CapsuleS
 import TabSegmentButtonAttributeTest from './SegmentButtonAttribute/TabSegmentButtonAttributeTest.test';
 import TabSegmentButtonV2Test from './tabSegmentButtonV2/TabSegmentButtonV2Test.test';
 import SegmentButtonV2Test0020Test from './segmentButtonV2/SegmentButtonV2Test0020.test';
+import localizedTextPadding from './segmentButton/localizedTextPadding.test';
+import SegmentButtonBorderTest from './segmentButton/SegmentButtonBorderTest.test';
+import segmentButtonDirectionTest from './segmentButton/segmentbuttonDirection.test';
+import SegmentBtnItemTest0010 from './segmentButton/SegmentBtnItemTest0010.test';
 
 export default function testsuite() {
   SegmentButtonOptionsTest();
@@ -34,4 +38,8 @@ export default function testsuite() {
   TabSegmentButtonAttributeTest();
   TabSegmentButtonV2Test();
   SegmentButtonV2Test0020Test();
+  localizedTextPadding();
+  SegmentButtonBorderTest();
+  segmentButtonDirectionTest();
+  SegmentBtnItemTest0010();
 }
