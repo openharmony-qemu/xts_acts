@@ -4322,6 +4322,34 @@ export default function WindowPCTest() {
           expect(getStyle.buttonIconSize).assertEqual(setStyle.buttonIconSize);
           expect(getStyle.buttonBackgroundCornerRadius).assertEqual(setStyle.buttonBackgroundCornerRadius);
 
+          let colorMode1: ConfigurationConstant.ColorMode = ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET;
+          let setStyle1: window.DecorButtonStyle = {
+              colorMode: colorMode1
+          };
+          subWin.setDecorButtonStyle(setStyle1);
+          hilog.info(domain, tag, caseName + ' setDecorButtonStyle success');
+
+          await Utils.msSleep(100);
+
+          let getStyle1: window.DecorButtonStyle = subWin.getDecorButtonStyle();
+          hilog.info(domain, tag, caseName + ' getDecorButtonStyle result: ' + JSON.stringify(getStyle1));
+
+          expect(getStyle1.colorMode).assertEqual(-1);
+
+          let colorMode2: ConfigurationConstant.ColorMode = ConfigurationConstant.ColorMode.COLOR_MODE_DARK;
+          let setStyle2: window.DecorButtonStyle = {
+              colorMode: colorMode2
+          };
+          subWin.setDecorButtonStyle(setStyle2);
+          hilog.info(domain, tag, caseName + ' setDecorButtonStyle success');
+
+          await Utils.msSleep(100);
+
+          let getStyle2: window.DecorButtonStyle = subWin.getDecorButtonStyle();
+          hilog.info(domain, tag, caseName + ' getDecorButtonStyle result: ' + JSON.stringify(getStyle2));
+
+          expect(getStyle2.colorMode).assertEqual(0);
+
           await subWin.destroyWindow();
           hilog.info(domain, tag, caseName + ' destroyWindow success');
 
