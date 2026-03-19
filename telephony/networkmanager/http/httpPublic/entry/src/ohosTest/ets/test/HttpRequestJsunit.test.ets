@@ -376,7 +376,7 @@ export default function httpRequestJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.once('headersReceive', async (data) => {
           console.log(caseName + " data: " + JSON.stringify(data));
-          expectTrue(true);
+          expectTrue(data != null);
           await sleep(250);
           httpRequest.destroy();
           console.info(`${caseName}---End`);

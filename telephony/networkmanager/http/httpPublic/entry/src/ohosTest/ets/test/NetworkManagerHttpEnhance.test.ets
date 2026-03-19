@@ -349,24 +349,30 @@ export default function NetworkManagerHttpEnhanceTest() {
      * @tc.level  LEVEL3
      */
     it('testNetworkMgrHTTPOnDataSendProgress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName:string = 'testNetworkMgrHTTPOnDataSendProgress0100';
+      let caseName: string = 'testNetworkMgrHTTPOnDataSendProgress0100';
       console.info(`${caseName}---Start`);
+
       try {
-        httpRequest.on('dataSendProgress', dataSendProgress_on_callback);
+        httpRequest.on("dataSendProgress", (data: http.DataSendProgressInfo) => {
+          console.info(`${caseName} dataSendProgress DataSendProgressInfo success:" + ${JSON.stringify(data)}`);
+          expectTrue(data.sendSize != null);
+          expectTrue(data.totalSize != null);
+        });
+
         httpRequest.request(address_post, httpRequestOptions_post, (err, data) => {
           if (err) {
             console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
             expectFalse();
             console.info(`${caseName}---End`);
             done();
-          }
-          else {
+          } else {
             console.log(`${caseName} on dataSendProgress success, data: ${JSON.stringify(data)}`);
             expectTrue(data.responseCode == 200);
             console.info(`${caseName}---End`);
             done();
           }
-        })
+        });
+
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
         expectFalse();
