@@ -102,7 +102,7 @@ class ContainerTest<T> implements Container<T>{
     index: int = 0;
     length: int = 0;
     constructor(length:int) {
-        this.items = new (T | undefined)[length];
+        this.items = new (T | undefined)[length](undefined);
         this.length = length;
     }
     override add(item: T): void {
