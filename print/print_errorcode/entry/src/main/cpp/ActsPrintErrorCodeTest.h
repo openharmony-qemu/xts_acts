@@ -31,6 +31,9 @@ napi_value OH_Print_StopPrinterDiscovery1(napi_env env, napi_callback_info info)
 napi_value OH_Print_ConnectPrinter1(napi_env env, napi_callback_info info);
 napi_value OH_Print_StartPrintJob1(napi_env env, napi_callback_info info);
 napi_value OH_Print_StartPrintJob2(napi_env env, napi_callback_info info);
+napi_value OH_Print_StartPrintWithJobStateCallback1(napi_env env, napi_callback_info info);
+napi_value OH_Print_StartPrintWithJobStateCallback2(napi_env env, napi_callback_info info);
+napi_value OH_Print_StartPrintWithJobStateCallback3(napi_env env, napi_callback_info info);
 napi_value OH_Print_RegisterPrinterChangeListener1(napi_env env, napi_callback_info info);
 napi_value OH_Print_QueryPrinterList1(napi_env env, napi_callback_info info);
 napi_value OH_Print_QueryPrinterList2(napi_env env, napi_callback_info info);
