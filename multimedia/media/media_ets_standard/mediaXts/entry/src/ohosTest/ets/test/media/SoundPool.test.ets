@@ -6914,7 +6914,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('stopSoundPool_null_callback_001', Level.LEVEL0, async (done: Function) => {
-      await stopSoundPoolCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      try {
+        await stopSoundPoolCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `stopSoundPool_null_callback_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -6926,7 +6932,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('stopSoundPool_null_promise_001', Level.LEVEL0, async (done: Function) => {
-      await stopSoundPoolPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      try {
+        await stopSoundPoolPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `stopSoundPool_null_promise_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -6938,7 +6950,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('setLoop_null_callback_001', Level.LEVEL0, async (done: Function) => {
-      await setLoopNormalCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      try {
+        await setLoopNormalCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `setLoop_null_callback_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -6950,7 +6968,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('setLoop_null_promise_001', Level.LEVEL0, async (done: Function) => {
-      await setLoopNormalPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      try {
+        await setLoopNormalPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `setLoop_null_promise_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -6962,7 +6986,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('setPriority_null_callback_001', Level.LEVEL0, async (done: Function) => {
-      await setPriorityNormalCallbackNull(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
+      try {
+        await setPriorityNormalCallbackNull(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
+      } catch (error) {
+        console.error(TAG, `setPriority_null_callback_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -6974,7 +7004,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('setPriority_null_promise_001', Level.LEVEL0, async (done: Function) => {
-      await setPriorityNormalPromiseNull(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
+      try {
+        await setPriorityNormalPromiseNull(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, 1, done);
+      } catch (error) {
+        console.error(TAG, `setPriority_null_promise_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -6986,7 +7022,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('setRate_null_callback_001', Level.LEVEL0, async (done: Function) => {
-      await setRateNormalCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      try {
+        await setRateNormalCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `setRate_null_callback_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -6998,7 +7040,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('setRate_null_promise_001', Level.LEVEL0, async (done: Function) => {
-      await setRateNormalPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      try {
+        await setRateNormalPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `setRate_null_promise_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -7010,7 +7058,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('setVolume_null_callback_001', Level.LEVEL0, async (done: Function) => {
-      await setVolumeNormalCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, 0.5, 0.5, done);
+      try {
+        await setVolumeNormalCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, 0.5, 0.5, done);
+      } catch (error) {
+        console.error(TAG, `setVolume_null_callback_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -7022,7 +7076,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('setVolume_null_promise_001', Level.LEVEL0, async (done: Function) => {
-      await setVolumeNormalPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, 0.5, 0.5, done);
+      try {
+        await setVolumeNormalPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, 0.5, 0.5, done);
+      } catch (error) {
+        console.error(TAG, `setVolume_null_promise_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -7034,7 +7094,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('unload_null_callback_001', Level.LEVEL0, async (done: Function) => {
-      await unloadSoundPoolCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      try {
+        await unloadSoundPoolCallbackNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `unload_null_callback_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
 
     /**
@@ -7046,7 +7112,13 @@ export default function SoundPoolTest() {
      * @tc.level  LEVEL0
      */
     it('unload_null_promise_001', Level.LEVEL0, async (done: Function) => {
-      await unloadSoundPoolPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      try {
+        await unloadSoundPoolPromiseNull(audio.StreamUsage.STREAM_USAGE_UNKNOWN, 1, done);
+      } catch (error) {
+        console.error(TAG, `unload_null_promise_001 error: ${error}`);
+        expect(false).assertEqual(true);
+        done();
+      }
     })
   })
 }
