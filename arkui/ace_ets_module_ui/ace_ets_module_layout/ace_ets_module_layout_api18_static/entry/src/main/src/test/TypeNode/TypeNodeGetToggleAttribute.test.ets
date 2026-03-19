@@ -64,7 +64,7 @@ export default function TypeNodeGetToggleAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetToggleAttribute_0100
-     * @tc.name  : test getToggleAttribute
+     * @tc.name  : TypeNodeGetToggleAttribute_0100
      * @tc.desc  : Test TypeNode getToggleAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

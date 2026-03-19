@@ -64,7 +64,7 @@ export default function TypeNodeGetButtonAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetButtonAttribute_0100
-     * @tc.name  : test getButtonAttribute
+     * @tc.name  : TypeNodeGetButtonAttribute_0100
      * @tc.desc  : Test TypeNode getButtonAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

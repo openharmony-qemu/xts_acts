@@ -65,7 +65,7 @@ export default function TypeNodeGetColumn() {
     });
     /**
      * @tc.number: TypeNodeGetColumn_0200
-     * @tc.name  : test getColumnAttribute
+     * @tc.name  : TypeNodeGetColumn_0200
      * @tc.desc  : Test TypeNode getColumnAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

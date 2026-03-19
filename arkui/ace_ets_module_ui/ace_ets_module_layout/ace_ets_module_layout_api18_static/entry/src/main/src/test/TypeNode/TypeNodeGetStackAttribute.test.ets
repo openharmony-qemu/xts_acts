@@ -65,7 +65,7 @@ export default function TypeNodeGetStackAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetStackAttribute_0100
-     * @tc.name  : test getStackAttribute
+     * @tc.name  : TypeNodeGetStackAttribute_0100
      * @tc.desc  : Test TypeNode getStackAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

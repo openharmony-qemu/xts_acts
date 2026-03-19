@@ -65,7 +65,7 @@ export default function TypeNodeGetRelativeContainerAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetRelativeContainerAttribute_0100
-     * @tc.name  : test getRelativeContainerAttribute
+     * @tc.name  : TypeNodeGetRelativeContainerAttribute_0100
      * @tc.desc  : Test TypeNode getRelativeContainerAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

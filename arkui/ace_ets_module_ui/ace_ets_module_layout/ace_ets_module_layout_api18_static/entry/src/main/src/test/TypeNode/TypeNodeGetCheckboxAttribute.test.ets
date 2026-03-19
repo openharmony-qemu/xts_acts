@@ -64,7 +64,7 @@ export default function TypeNodeGetCheckboxAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetCheckboxAttribute_0100
-     * @tc.name  : test getCheckboxAttribute
+     * @tc.name  : TypeNodeGetCheckboxAttribute_0100
      * @tc.desc  : Test TypeNode getCheckboxAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

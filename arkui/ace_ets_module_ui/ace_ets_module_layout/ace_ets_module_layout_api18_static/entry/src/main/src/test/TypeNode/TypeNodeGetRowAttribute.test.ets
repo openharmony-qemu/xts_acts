@@ -65,7 +65,7 @@ export default function TypeNodeGetRowAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetRowAttribute_0100
-     * @tc.name  : test getRowAttribute
+     * @tc.name  : TypeNodeGetRowAttribute_0100
      * @tc.desc  : Test TypeNode getRowAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

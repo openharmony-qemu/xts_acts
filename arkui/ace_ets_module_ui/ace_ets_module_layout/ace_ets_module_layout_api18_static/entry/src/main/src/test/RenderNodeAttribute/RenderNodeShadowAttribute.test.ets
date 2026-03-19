@@ -62,7 +62,7 @@ export default function RenderNodeShadowAttributeTest() {
 
     /**
      * @tc.number   RenderNodeShadowAttributeTest_static_0100
-     * @tc.name     Test RenderNode shadowColor property setting
+     * @tc.name     RenderNodeShadowAttributeTest_static_0100
      * @tc.desc     Verify shadowColor attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -84,7 +84,7 @@ export default function RenderNodeShadowAttributeTest() {
 
     /**
      * @tc.number   RenderNodeShadowAttributeTest_static_0200
-     * @tc.name     Test RenderNode shadowOffset property setting
+     * @tc.name     RenderNodeShadowAttributeTest_static_0200
      * @tc.desc     Verify shadowOffset attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -112,7 +112,7 @@ export default function RenderNodeShadowAttributeTest() {
 
     /**
      * @tc.number   RenderNodeShadowAttributeTest_static_0300
-     * @tc.name     Test RenderNode shadowAlpha property setting
+     * @tc.name     RenderNodeShadowAttributeTest_static_0300
      * @tc.desc     Verify shadowAlpha attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -134,7 +134,7 @@ export default function RenderNodeShadowAttributeTest() {
 
     /**
      * @tc.number   RenderNodeShadowAttributeTest_static_0400
-     * @tc.name     Test RenderNode shadowElevation property setting
+     * @tc.name     RenderNodeShadowAttributeTest_static_0400
      * @tc.desc     Verify shadowElevation attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -156,7 +156,7 @@ export default function RenderNodeShadowAttributeTest() {
 
     /**
      * @tc.number   RenderNodeShadowAttributeTest_static_0500
-     * @tc.name     Test RenderNode shadowRadius property setting
+     * @tc.name     RenderNodeShadowAttributeTest_static_0500
      * @tc.desc     Verify shadowRadius attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST

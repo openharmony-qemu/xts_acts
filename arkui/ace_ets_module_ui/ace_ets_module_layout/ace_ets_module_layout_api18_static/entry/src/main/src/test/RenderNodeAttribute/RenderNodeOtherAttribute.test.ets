@@ -62,7 +62,7 @@ export default function RenderNodeOtherAttributeTest() {
 
     /**
      * @tc.number   RenderNodeOtherAttributeTest_static_0100
-     * @tc.name     Test RenderNode shapeMask property setting
+     * @tc.name     RenderNodeOtherAttributeTest_static_0100
      * @tc.desc     Verify shapeMask attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -84,7 +84,7 @@ export default function RenderNodeOtherAttributeTest() {
 
     /**
      * @tc.number   RenderNodeOtherAttributeTest_static_0200
-     * @tc.name     Test RenderNode shapeClip property setting
+     * @tc.name     RenderNodeOtherAttributeTest_static_0200
      * @tc.desc     Verify shapeClip attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -106,7 +106,7 @@ export default function RenderNodeOtherAttributeTest() {
 
     /**
      * @tc.number   RenderNodeOtherAttributeTest_static_0300
-     * @tc.name     Test RenderNode markNodeGroup property setting
+     * @tc.name     RenderNodeOtherAttributeTest_static_0300
      * @tc.desc     Verify markNodeGroup attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -128,7 +128,7 @@ export default function RenderNodeOtherAttributeTest() {
 
     /**
      * @tc.number   RenderNodeOtherAttributeTest_static_0400
-     * @tc.name     Test RenderNode lengthMetricsUnit property setting
+     * @tc.name     RenderNodeOtherAttributeTest_static_0400
      * @tc.desc     Verify lengthMetricsUnit attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST

@@ -64,7 +64,7 @@ export default function TypeNodeGetProgressAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetProgressAttribute_0100
-     * @tc.name  : test getProgressAttribute
+     * @tc.name  : TypeNodeGetProgressAttribute_0100
      * @tc.desc  : Test TypeNode getProgressAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

@@ -64,7 +64,7 @@ export default function TypeNodeGetSliderAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetSliderAttribute_0100
-     * @tc.name  : test getSliderAttribute
+     * @tc.name  : TypeNodeGetSliderAttribute_0100
      * @tc.desc  : Test TypeNode getSliderAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

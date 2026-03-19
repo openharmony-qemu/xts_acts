@@ -65,7 +65,7 @@ export default function TypeNodeGetImageAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetImageAttribute_0100
-     * @tc.name  : test getImageAttribute
+     * @tc.name  : TypeNodeGetImageAttribute_0100
      * @tc.desc  : Test TypeNode getImageAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

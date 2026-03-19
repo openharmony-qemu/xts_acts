@@ -65,7 +65,7 @@ export default function TypeNodeGetFlexAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetFlexAttribute_0100
-     * @tc.name  : test getFlexAttribute
+     * @tc.name  : TypeNodeGetFlexAttribute_0100
      * @tc.desc  : Test TypeNode getFlexAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

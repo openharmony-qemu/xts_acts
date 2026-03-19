@@ -62,7 +62,7 @@ export default function RenderNodeBorderAttributeTest() {
 
     /**
      * @tc.number   RenderNodeBorderAttributeTest_static_0100
-     * @tc.name     Test RenderNode borderStyle property setting
+     * @tc.name     RenderNodeBorderAttributeTest_static_0100
      * @tc.desc     Verify borderStyle attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -84,7 +84,7 @@ export default function RenderNodeBorderAttributeTest() {
 
     /**
      * @tc.number   RenderNodeBorderAttributeTest_static_0200
-     * @tc.name     Test RenderNode borderWidth property setting
+     * @tc.name     RenderNodeBorderAttributeTest_static_0200
      * @tc.desc     Verify borderWidth attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -106,7 +106,7 @@ export default function RenderNodeBorderAttributeTest() {
 
     /**
      * @tc.number   RenderNodeBorderAttributeTest_static_0300
-     * @tc.name     Test RenderNode borderColor property setting
+     * @tc.name     RenderNodeBorderAttributeTest_static_0300
      * @tc.desc     Verify borderColor attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -128,7 +128,7 @@ export default function RenderNodeBorderAttributeTest() {
 
     /**
      * @tc.number   RenderNodeBorderAttributeTest_static_0400
-     * @tc.name     Test RenderNode borderRadius property setting
+     * @tc.name     RenderNodeBorderAttributeTest_static_0400
      * @tc.desc     Verify borderRadius attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -150,7 +150,7 @@ export default function RenderNodeBorderAttributeTest() {
 
     /**
      * @tc.number   RenderNodeBorderAttributeTest_static_0500
-     * @tc.name     Test RenderNode label property setting
+     * @tc.name     RenderNodeBorderAttributeTest_static_0500
      * @tc.desc     Verify label attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST

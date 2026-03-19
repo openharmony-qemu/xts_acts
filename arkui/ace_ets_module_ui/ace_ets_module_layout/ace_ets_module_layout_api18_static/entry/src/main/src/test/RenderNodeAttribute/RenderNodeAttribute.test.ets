@@ -62,7 +62,7 @@ export default function RenderNodeAttributeTest() {
 
     /**
      * @tc.number   RenderNodeAttributeTest_static_0100
-     * @tc.name     Test RenderNode backgroundColor property setting
+     * @tc.name     RenderNodeAttributeTest_static_0100
      * @tc.desc     Verify backgroundColor attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -84,7 +84,7 @@ export default function RenderNodeAttributeTest() {
 
     /**
      * @tc.number   RenderNodeAttributeTest_static_0200
-     * @tc.name     Test RenderNode clipToFrame property setting
+     * @tc.name     RenderNodeAttributeTest_static_0200
      * @tc.desc     Verify clipToFrame attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -106,7 +106,7 @@ export default function RenderNodeAttributeTest() {
 
     /**
      * @tc.number   RenderNodeAttributeTest_static_0300
-     * @tc.name     Test RenderNode opacity property setting
+     * @tc.name     RenderNodeAttributeTest_static_0300
      * @tc.desc     Verify opacity attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -128,7 +128,7 @@ export default function RenderNodeAttributeTest() {
 
     /**
      * @tc.number   RenderNodeAttributeTest_static_0400
-     * @tc.name     Test RenderNode size property setting
+     * @tc.name     RenderNodeAttributeTest_static_0400
      * @tc.desc     Verify size attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -156,7 +156,7 @@ export default function RenderNodeAttributeTest() {
 
     /**
      * @tc.number   RenderNodeAttributeTest_static_0500
-     * @tc.name     Test RenderNode position property setting
+     * @tc.name     RenderNodeAttributeTest_static_0500
      * @tc.desc     Verify position attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -184,7 +184,7 @@ export default function RenderNodeAttributeTest() {
 
     /**
      * @tc.number   RenderNodeAttributeTest_static_0600
-     * @tc.name     Test RenderNode frame property setting
+     * @tc.name     RenderNodeAttributeTest_static_0600
      * @tc.desc     Verify frame attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST

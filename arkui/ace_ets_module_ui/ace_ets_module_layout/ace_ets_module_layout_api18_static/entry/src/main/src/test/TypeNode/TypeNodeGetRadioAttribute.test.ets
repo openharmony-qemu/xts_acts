@@ -64,7 +64,7 @@ export default function TypeNodeGetRadioAttribute() {
     });
     /**
      * @tc.number: TypeNodeGetRadioAttribute_0100
-     * @tc.name  : test getRadioAttribute
+     * @tc.name  : TypeNodeGetRadioAttribute_0100
      * @tc.desc  : Test TypeNode getRadioAttribute functionality
      * @tc.size  : MediumTest
      * @tc.type  : Function

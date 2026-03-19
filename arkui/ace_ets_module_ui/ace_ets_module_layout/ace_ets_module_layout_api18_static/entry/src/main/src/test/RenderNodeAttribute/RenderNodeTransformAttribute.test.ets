@@ -62,7 +62,7 @@ export default function RenderNodeTransformAttributeTest() {
 
     /**
      * @tc.number   RenderNodeTransformAttributeTest_static_0100
-     * @tc.name     Test RenderNode pivot property setting
+     * @tc.name     RenderNodeTransformAttributeTest_static_0100
      * @tc.desc     Verify pivot attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -90,7 +90,7 @@ export default function RenderNodeTransformAttributeTest() {
 
     /**
      * @tc.number   RenderNodeTransformAttributeTest_static_0200
-     * @tc.name     Test RenderNode scale property setting
+     * @tc.name     RenderNodeTransformAttributeTest_static_0200
      * @tc.desc     Verify scale attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -118,7 +118,7 @@ export default function RenderNodeTransformAttributeTest() {
 
     /**
      * @tc.number   RenderNodeTransformAttributeTest_static_0300
-     * @tc.name     Test RenderNode translation property setting
+     * @tc.name     RenderNodeTransformAttributeTest_static_0300
      * @tc.desc     Verify translation attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -146,7 +146,7 @@ export default function RenderNodeTransformAttributeTest() {
 
     /**
      * @tc.number   RenderNodeTransformAttributeTest_static_0400
-     * @tc.name     Test RenderNode rotation property setting
+     * @tc.name     RenderNodeTransformAttributeTest_static_0400
      * @tc.desc     Verify rotation attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
@@ -180,7 +180,7 @@ export default function RenderNodeTransformAttributeTest() {
 
     /**
      * @tc.number   RenderNodeTransformAttributeTest_static_0500
-     * @tc.name     Test RenderNode transform property setting
+     * @tc.name     RenderNodeTransformAttributeTest_static_0500
      * @tc.desc     Verify transform attribute can be set and retrieved correctly
      * @tc.type     FUNCTION
      * @tc.size     SMALLTEST
