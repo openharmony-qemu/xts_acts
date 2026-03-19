@@ -533,8 +533,8 @@ export default function settingUiJsunit() {
       let value = '323445.00';//值
       let domainName = settings.domainName.DEVICE_SHARED;
       try{
-        let value = settings.setValueSync(abilityContext!, name, value, '');
-        console.info("[settings_set_value_sync_domain_domain_empty] value = " + value);
+        let result = settings.setValueSync(abilityContext!, name, value, '');
+        console.info("[settings_set_value_sync_domain_domain_empty] result = " + result);
         expect().assertFail();
         done();
       }catch (err) {
@@ -558,9 +558,9 @@ export default function settingUiJsunit() {
       let domainName = settings.domainName.DEVICE_SHARED;
       try{
         settings.setValueSync(abilityContext!, name, value);
-        let value = settings.setValueSync(abilityContext!, '', '', '');
-        console.info("[settings_set_value_sync_domain_result_false] value = " + value);
-        expect(value).assertFalse();
+        let result = settings.setValueSync(abilityContext!, '', '', '');
+        console.info("[settings_set_value_sync_domain_result_false] value = " + result);
+        expect(result).assertFalse();
         done();
       }catch (err) {
         console.error("[settings_set_value_sync_domain_result_false] error = " + err);
@@ -581,8 +581,8 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness127';//关键字
       let value = '323445.00';//值
       try{
-        let value = settings.setValueSync(abilityContext!, '', value);
-        console.info("[settings_set_value_sync_no_domain_key_empty] value = " + value);
+        let result = settings.setValueSync(abilityContext!, '', value);
+        console.info("[settings_set_value_sync_no_domain_key_empty] value = " + result);
         expect().assertFail();
         done();
       }catch (err) {
@@ -628,9 +628,9 @@ export default function settingUiJsunit() {
       let value = '323445.00';//值
       try{
         settings.setValueSync(abilityContext!, name, value);
-        let value = settings.setValueSync(abilityContext!, '', '');
-        console.info("[settings_set_value_sync_no_domain_result_value] value = " + value);
-        expect(value).assertFalse();
+        let result = settings.setValueSync(abilityContext!, '', '');
+        console.info("[settings_set_value_sync_no_domain_result_value] value = " + result);
+        expect(result).assertFalse();
         done();
       }catch (err) {
         console.error("[settings_set_value_sync_no_domain_result_value] error = " + err);
