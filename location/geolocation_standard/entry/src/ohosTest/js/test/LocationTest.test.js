@@ -2241,14 +2241,27 @@ export default function geolocationTest_geo3() {
         try {
             await geolocation.sendCommand(requestInfo, (err, result) => {
                 if (err) {
-                    console.info('1sendcommand callback_0500 err:' + JSON.stringify(err));
+                    console.info('null 1sendcommand callback_0500 err:' + JSON.stringify(err));
                     expect(true).assertEqual(JSON.stringify(err) != null);
                     done();
                 }
-                console.info('sendcommand callback_0500 result:' + JSON.stringify(result));
+                console.info('null sendcommand callback_0500 result:' + JSON.stringify(result));
             });
         } catch (error) {
-            console.info('2sendcommand callback_0500 err:' + JSON.stringify(error));
+            console.info('null 2sendcommand callback_0500 err:' + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            await geolocation.sendCommand(undefined, (err, result) => {
+                if (err) {
+                    console.info('undefined 1sendcommand callback_0500 err:' + JSON.stringify(err));
+                    expect(true).assertEqual(JSON.stringify(err) != null);
+                    done();
+                }
+                console.info('undefined sendcommand callback_0500 result:' + JSON.stringify(result));
+            });
+        } catch (error) {
+            console.info('undefined 2sendcommand callback_0500 err:' + JSON.stringify(error));
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         done();
@@ -2266,15 +2279,28 @@ export default function geolocationTest_geo3() {
         let requestInfo = null;
         try {
             geolocation.sendCommand(requestInfo).then((result) => {
-                console.info('sendCommand promise_0600 result:' + result);
+                console.info('null sendCommand promise_0600 result:' + result);
                 done();
             }).catch(error => {
-                console.info('1sendcommand promise_0600 err:' + JSON.stringify(error));
+                console.info('null 1sendcommand promise_0600 err:' + JSON.stringify(error));
                 expect(true).assertEqual(JSON.stringify(error) != null);
                 done();
             })
         } catch (error) {
-            console.info('2sendcommand promise_0600 err:' + JSON.stringify(error));
+            console.info('null 2sendcommand promise_0600 err:' + JSON.stringify(error));
+            expect(true).assertEqual(JSON.stringify(error) != null);
+        }
+        try {
+            geolocation.sendCommand(undefined).then((result) => {
+                console.info('undefined sendCommand promise_0600 result:' + result);
+                done();
+            }).catch(error => {
+                console.info('undefined 1sendcommand promise_0600 err:' + JSON.stringify(error));
+                expect(true).assertEqual(JSON.stringify(error) != null);
+                done();
+            })
+        } catch (error) {
+            console.info('undefined 2sendcommand promise_0600 err:' + JSON.stringify(error));
             expect(true).assertEqual(JSON.stringify(error) != null);
         }
         done();
