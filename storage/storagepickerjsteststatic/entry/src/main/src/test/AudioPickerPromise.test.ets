@@ -27,7 +27,7 @@ import { BusinessError } from '@ohos.base';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
-let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("context")! as common.UIAbilityContext;
+let context: common.UIAbilityContext | undefined;
 let windowClass: window.Window;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
@@ -36,6 +36,7 @@ export default function audioPickerPromise() {
     beforeEach(async () => {
       await sleep(500);
       await startAbility('ohos.acts.storage.picker.static', 'EntryAbility');
+      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext")! as common.UIAbilityContext;
       await sleep(500);
       await stopAbility('com.huawei.hmos.filemanager');
       await stopAbility('com.huawei.hms.musicservice');
