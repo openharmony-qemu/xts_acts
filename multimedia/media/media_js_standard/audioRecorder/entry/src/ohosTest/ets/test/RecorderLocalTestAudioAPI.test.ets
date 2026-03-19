@@ -1388,7 +1388,7 @@ export default function RecorderLocalTestAudioAPI() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0100
@@ -1479,7 +1479,7 @@ export default function RecorderLocalTestAudioAPI() {
         console.error(`test error end: `+ error);
       }
     });
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0400
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0400
@@ -1599,7 +1599,7 @@ export default function RecorderLocalTestAudioAPI() {
         console.error(`test error end: `+ error);
       }
     });
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0800
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0800
@@ -1628,7 +1628,7 @@ export default function RecorderLocalTestAudioAPI() {
         console.error(`test error end: `+ error);
       }
     });
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0900
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_0900
@@ -1657,7 +1657,7 @@ export default function RecorderLocalTestAudioAPI() {
         console.error(`test error end: `+ error);
       }
     });
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1000
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1000
@@ -1686,7 +1686,7 @@ export default function RecorderLocalTestAudioAPI() {
         console.error(`test error end: `+ error);
       }
     });
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1001
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1001
@@ -1715,7 +1715,7 @@ export default function RecorderLocalTestAudioAPI() {
         console.error(`test error end: `+ error);
       }
     });
-    
+
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1004
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_CONFIG_PREPARE_API_1004
@@ -1743,6 +1743,50 @@ export default function RecorderLocalTestAudioAPI() {
         expect().assertFail();
         console.error(`test error end: `+ error);
       }
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0001', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on(null, () => {
+            console.info('prepare called');
+          });
+        } catch (err) {
+          console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002
+     * @tc.desc   Reliability Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIORECORDER_NULL_UNDERFINED_0002', Level.LEVEL2, async (done: Function) => {
+      let audioRecorder = await media.createAudioRecorder();
+      if(audioRecorder) {
+        try {
+          audioRecorder.on(undefined, () => {
+            console.info('prepare called');
+          });
+        } catch (err) {
+          console.error('audioRecorderNullUndefinedTest failed.', err.code, err.message);
+          expect().assertFail();
+        }
+      }
+      done();
     });
   })
 }

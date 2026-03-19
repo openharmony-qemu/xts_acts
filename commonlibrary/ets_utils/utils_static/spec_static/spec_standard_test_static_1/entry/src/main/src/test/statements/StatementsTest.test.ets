@@ -1,10 +1,10 @@
-/*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -1390,7 +1390,7 @@ export default function StatementsTest() {
      */
     it("testStatements0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = "";
-      let arr: int[] = new int[0];
+      let arr: int[] = new int[0](0);
       for (let v of arr) res += v;
       expect(res).assertEqual("");
     });
@@ -1405,7 +1405,7 @@ export default function StatementsTest() {
      */
     it("testStatements0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = "";
-      let arr: int[]|null = new int[0];
+      let arr: int[]|null = new int[0](0);
       for (let v of arr) res += v;
       expect(res).assertEqual("");
     });
@@ -1483,7 +1483,7 @@ export default function StatementsTest() {
      */
     it("testStatements0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = "";
-      let arr: Long[] = new Long[3];
+      let arr: Long[] = new Long[3](0);
       for (let i: int = 0; i < 3; i++) arr[i] = new Long(i.toLong());
       for (let i of arr) res += i;
       expect(res).assertEqual("012");
@@ -1544,7 +1544,7 @@ export default function StatementsTest() {
      */
     it("testStatements0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res = "";
-      let arr: int[]|null = (): int[]|null => { return new int[0]; }();
+      let arr: int[]|null = (): int[]|null => { return new int[0](0); }();
       for (let v of arr!) res += v;
       expect(res).assertEqual("");
     });
@@ -1620,7 +1620,7 @@ export default function StatementsTest() {
       let res = "";
       let i = 0;
       i = 0;
-      let array: A1[] = new A1[10];
+      let array: A1[] = new A1[10](new A1());
       let c = 0;
       for (let x of array) c += x.i;
       expect(c).assertEqual(10);

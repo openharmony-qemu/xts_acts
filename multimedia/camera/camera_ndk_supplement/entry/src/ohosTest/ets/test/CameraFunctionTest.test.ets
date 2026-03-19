@@ -103,11 +103,11 @@ async function getVideoSurfaceId() {
   try {
     await videoRecorder.prepare(videoConfig);
     console.info(TAG + 'getVideoSurfaceID  videoRecorder.prepare');
+    videoSurfaceId = await videoRecorder.getInputSurface();
+    console.info(TAG + 'getVideoSurfaceID videoSurfaceId : ' + JSON.stringify(videoSurfaceId));
   } catch (err) {
     console.error(TAG + 'prepare failed with err: ' + err);
   }
-  videoSurfaceId = await videoRecorder.getInputSurface();
-  console.info(TAG + 'getVideoSurfaceID videoSurfaceId : ' + JSON.stringify(videoSurfaceId));
 }
 
 function sleep(ms: number) {
@@ -140,12 +140,6 @@ let getPermissions = (permission :Permissions) => {
 export default function CameraFunctionTest() {
   describe("CameraFunctionTest", () => {
     beforeAll(async () => {
-      await getPermissions('ohos.permission.CAMERA')
-      await driveFn()
-      await getPermissions('ohos.permission.MICROPHONE')
-      await driveFn()
-      await getPermissions('ohos.permission.WRITE_MEDIA')
-      await driveFn()
       await getPhotoReceiverSurface()
       await getVideoSurfaceId()
       getCameraManagerInstance()

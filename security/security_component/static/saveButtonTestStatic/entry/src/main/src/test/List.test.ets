@@ -17,10 +17,12 @@ import saveComponentUserCancelStaticTest from './SaveComponentUserCancelStatic.t
 import saveComponentStaticTest from './SaveComponentStatic.test';
 import saveComponentDescriptionStaticTest from './SaveComponentDescriptionStatic.test';
 import saveComponentScenarioStaticTest from './SaveComponentScenarioStatic.test';
+import saveCompCustomizeStaticTest from './SaveCompCustomizeStatic.test';
 
 export default function testsuite() {
   saveComponentUserCancelStaticTest();
   saveComponentStaticTest();
   saveComponentDescriptionStaticTest();
   saveComponentScenarioStaticTest();
+  saveCompCustomizeStaticTest();
 }

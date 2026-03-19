@@ -117,6 +117,8 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_measure_static:ActsAceEtsModuleMeasureStaticTest",
       "ace_ets_module_promptAction_static:ActsAceEtsModulePromptActionStaticTest",
       "ace_ets_module_uiExtention_static:ActsAceEtsModuleUiExtentionStaticTest",
+      "ace_ets_module_parallel_static:ActsAceEtsModuleParallelStaticTest",
+      "ace_ets_module_common_static:ActsAceEtsModuleCommonStaticTest",
     ]
   }
 }

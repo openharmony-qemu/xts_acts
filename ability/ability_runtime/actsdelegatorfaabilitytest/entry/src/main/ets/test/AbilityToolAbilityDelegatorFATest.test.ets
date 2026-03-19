@@ -25,7 +25,7 @@ const ABILITY_NAME = 'FirstAbility';
 let abilityDelegatorArguments = undefined;
 
 export default function abilityToolAbilityDelegatorFATest() {
-  describe('ActsAbilityToolAbilityDelegatorFATest', function () {
+  describe('ActsAbilityToolAbilityDelegatorFATestAdapt001', function () {
 
     async function sleep(time) {
       return new Promise((resolve) => setTimeout(resolve, time))

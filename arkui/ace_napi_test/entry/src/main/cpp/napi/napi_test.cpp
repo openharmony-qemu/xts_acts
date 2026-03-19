@@ -17986,6 +17986,327 @@ static napi_value NapiThrowBusinessErrorPendingError(napi_env env, napi_callback
     return result;
 }
 
+static napi_value NapiRunScriptPathTest01(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "pages/Xqkdvzms.ets";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest02(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "pages/OpenHarmony_NAPI_测试文件_成功回调与失败.ets";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest03(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "pages/Test：File.ets";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest04(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "/entry/resources/rawfile/NoExistFile.abc";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest05(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "pages/index.ets";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path get value fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest06(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "/entry/resources/rawfile/Size0.abc";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest07(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "entry/resources/rawfile/A.abc";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path is abnormal");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest08(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "entry/resources/rawfile/test.abc";
+    size_t argc = 100;
+    for (size_t n = 0; n < argc; n += 1) { 
+        napi_status status = napi_run_script_path(env, path, &value);
+        NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path status fail");
+        NAPI_ASSERT(env, value != nullptr, "napi_run_script_path get value fail");
+    }
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest09(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "entry/resources/rawfile/test.abc";
+    napi_status status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path fail");
+    NAPI_ASSERT(env, value != nullptr, "napi_run_script_path get value fail");
+
+    path =  "/entry/resources/rawfile/B.abc";
+    status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path ok");
+    NAPI_ASSERT(env, value != nullptr, "napi_run_script_path success");
+
+    path =  "/entry/resources/rawfile/C.abc";
+    status = napi_run_script_path(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_run_script_path ok");
+    NAPI_ASSERT(env, value != nullptr, "napi_run_script_path success");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest10(napi_env env, napi_callback_info info)
+{
+    const char* path =  "/entry/resources/rawfile/A.abc";
+    napi_status status = napi_run_script_path(env, path, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "napi_run_script_path ok");
+
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiRunScriptPathTest11(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "/entry/resources/rawfile/A.abc";
+    napi_status status = napi_run_script_path(nullptr, path, &value);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "napi_run_script_path abnormal");
+    NAPI_ASSERT(env, value == nullptr, "napi_run_script_path abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest01(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "@ohos*/:hilog";
+    napi_status status = napi_load_module(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest02(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+
+    napi_status status = napi_load_module(env, nullptr, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value == nullptr, "napi_load_module value abnormal");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest03(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "@ohos.display";
+    napi_status status = napi_load_module(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest04(napi_env env, napi_callback_info info)
+{
+    const char* path =  "@ohos.hilog";
+    size_t argc = 1000;
+    for (size_t n = 0; n < argc; n += 1) {
+        napi_value value = nullptr;
+        napi_status status = napi_load_module(env, path, &value);
+        NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+        NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+    }
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleTest05(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    const char* path =  "@ohos.hilog";
+    napi_status status = napi_load_module(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+
+    path =  "@ohos.net.statistics";
+    status = napi_load_module(env, path, &value);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module status abnormal");
+    NAPI_ASSERT(env, value != nullptr, "napi_load_module value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest01(napi_env env, napi_callback_info info)
+{
+    napi_value objectUtils = nullptr;
+    napi_status status = 
+        napi_load_module_with_info(env, "pages?/ObjectUtils", "com.acts.ace.napitest/entry_test", &objectUtils);
+    NAPI_ASSERT(env, status != napi_ok, "path is null, napi_load_module_with_info status failed.");
+    NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest02(napi_env env, napi_callback_info info)
+{
+    napi_value objectUtils = nullptr;
+    napi_status status = napi_load_module_with_info(env, nullptr, "com.acts.ace.napitest/entry_test", &objectUtils);
+    NAPI_ASSERT(env, status == napi_ok, "path is null, napi_load_module_with_info status failed.");
+    NAPI_ASSERT(env, objectUtils == nullptr, "napi_load_module_with_info value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest03(napi_env env, napi_callback_info info)
+{
+    napi_value objectUtils = nullptr;
+    napi_status status = 
+        napi_load_module_with_info(env, "pages/ObjectUtils", "com.acts.ace.napitest/entry_test", &objectUtils);
+    NAPI_ASSERT(env, status != napi_ok, "path is null, napi_load_module_with_info status failed.");
+    NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest04(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1000;
+    for (size_t n = 0; n < argc; n += 1) {
+        napi_value objectUtils = nullptr;
+        napi_status status = 
+        napi_load_module_with_info(env, "@ohos.hilog", "com.acts.ace.napitest/entry_test", &objectUtils);
+        NAPI_ASSERT(env, status == napi_ok, "napi_load_module_with_info status abnormal");
+        NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
+    }
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiLoadModuleInfoTest05(napi_env env, napi_callback_info info)
+{
+
+    napi_value objectUtils = nullptr;
+    napi_status status = 
+    napi_load_module_with_info(env, "@ohos.hilog", nullptr, &objectUtils);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module_with_info status abnormal");
+    NAPI_ASSERT(env, objectUtils != nullptr, "napi_load_module_with_info value abnormal");
+
+    napi_value indexModule = nullptr;
+    status = 
+    napi_load_module_with_info(env, "@ohos.display", nullptr, &indexModule);
+    NAPI_ASSERT(env, status == napi_ok, "napi_load_module_with_info status abnormal");
+    NAPI_ASSERT(env, indexModule != nullptr, "napi_load_module_with_info value abnormal");
+    
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -18752,6 +19073,27 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiThrowBusinessError", NapiThrowBusinessError),
         DECLARE_NAPI_FUNCTION("NapiThrowBusinessErrorPar", NapiThrowBusinessErrorPar),
         DECLARE_NAPI_FUNCTION("NapiThrowBusinessErrorPendingError", NapiThrowBusinessErrorPendingError),
+        { "napiRunScriptPathTest01", nullptr, NapiRunScriptPathTest01, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest02", nullptr, NapiRunScriptPathTest02, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest03", nullptr, NapiRunScriptPathTest03, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest04", nullptr, NapiRunScriptPathTest04, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest05", nullptr, NapiRunScriptPathTest05, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest06", nullptr, NapiRunScriptPathTest06, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest07", nullptr, NapiRunScriptPathTest07, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest08", nullptr, NapiRunScriptPathTest08, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest09", nullptr, NapiRunScriptPathTest09, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest10", nullptr, NapiRunScriptPathTest10, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiRunScriptPathTest11", nullptr, NapiRunScriptPathTest11, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiLoadModuleTest01", nullptr, NapiLoadModuleTest01, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleTest02", nullptr, NapiLoadModuleTest02, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "napiLoadModuleTest03", nullptr, NapiLoadModuleTest03, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleTest04", nullptr, NapiLoadModuleTest04, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleTest05", nullptr, NapiLoadModuleTest05, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest01", nullptr, NapiLoadModuleInfoTest01, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest02", nullptr, NapiLoadModuleInfoTest02, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest03", nullptr, NapiLoadModuleInfoTest03, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest04", nullptr, NapiLoadModuleInfoTest04, nullptr, nullptr, nullptr, napi_default, nullptr }, 
+        { "napiLoadModuleInfoTest05", nullptr, NapiLoadModuleInfoTest05, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
 

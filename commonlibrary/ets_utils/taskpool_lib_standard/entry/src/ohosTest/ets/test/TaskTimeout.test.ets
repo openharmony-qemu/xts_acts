@@ -1211,7 +1211,7 @@ export default function TaskTimeoutTest() {
     it('TaskTimeoutTestClass058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let count = 0;
-      let task: taskpool.Task = new taskpool.Task(demoSenddata, 1000);
+      let task: taskpool.Task = new taskpool.Task(demoSenddata, 1200);
       task.onReceiveData(() => {
         count++;
       });

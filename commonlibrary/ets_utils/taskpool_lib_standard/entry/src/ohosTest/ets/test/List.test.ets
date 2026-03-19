@@ -18,6 +18,7 @@ import asyncRunnerTest from './AsyncRunner.test';
 import cancelTest from './Cancel.test';
 import taskTimeoutTest from './TaskTimeout.test';
 import taskTimeout2Test from './TaskTimeout2.test';
+import TaskListeningTest from './TaskListening.test';
 
 export default function testsuite() {
   abilityTest();
@@ -25,4 +26,5 @@ export default function testsuite() {
   cancelTest();
   taskTimeoutTest();
   taskTimeout2Test();
+  TaskListeningTest();
 }

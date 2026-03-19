@@ -80,7 +80,7 @@ struct Page {
             console.info('[addMonitorTest]:clearMonitor success')
           })
         }
-        Divider(undefined)
+        Divider()
       }
     }
     .width('100%')

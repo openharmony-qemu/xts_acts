@@ -81,10 +81,8 @@ async function getPermissions() {
 export default function CameraOutTest() {
   describe("CameraOutTest", () => {
     beforeAll(async () => {
-      await getPermissions()
-      await driveFn();
       await getPhotoReceiverSurface()
-      console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.")
+      console.info(TAG + "beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.")
     })
     beforeEach(async () => {
       console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.")
