@@ -168,14 +168,14 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`RSA PubKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
           keyPair.priKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
         } catch (error) {
           console.error(`RSA PriKey “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+          expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
       } catch (error) {
         console.error(`ECC “${error}“, error code: ${error.code}`);
