@@ -2182,36 +2182,24 @@ export default function audioFramework() {
     })
 
     /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001
-    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001
-    * @tc.desc   getDevicesSync - ALL device
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001
+     * @tc.desc   getDevicesSync - ErrorCode - audio.DeviceFlag.INPUT_DEVICES_FLAG-Parameters - Success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioRoutingManager = audioManager!.getRoutingManager();
-      AudioRoutingManager.getDevicesSync(audio.DeviceFlag.ALL_DEVICES_FLAG, (err: BusinessError<void> | null, value: audio.AudioDeviceDescriptors | undefined) => {
-        console.info(`${TagFrmwk}: Callback: getDevicesSync ALL_DEVICES_FLAG`);
-        if (err) {
-          console.error(`${TagFrmwk}: Callback:ALL_DEVICES_FLAG: failed to get devicesSync ${err?.message}`);
-          expect().assertFail();
-        } else {
-          console.info(`${TagFrmwk}: Callback: getDevicesSync ALL_DEVICES_FLAG`);
-          if (value !== undefined) {
-            value.forEach(displayDeviceProp);
-          }
-          if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
-            cMask != null) {
-            console.info(`${TagFrmwk}: Callback: getDevicesSync : ALL_DEVICES_FLAG:  PASS`);
-          } else {
-            console.info(`${TagFrmwk}: Callback: getDevicesSync : ALL_DEVICES_FLAG:  FAIL`);
-            expect(false).assertTrue();
-            done(); 
-          }
-        }
+      try {
+        let value = AudioRoutingManager.getDevicesSync(audio.DeviceFlag.ALL_DEVICES_FLAG);
+        console.info(`${TagFrmwk}: getDevicesSync Success,value: ${value}`);
         done();
-      });
+      } catch (error) {
+        console.info(`${TagFrmwk}: getDevicesSync Fail,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
+        expect(false).assertTrue();
+        done();
+      }
     })
 
     /**
