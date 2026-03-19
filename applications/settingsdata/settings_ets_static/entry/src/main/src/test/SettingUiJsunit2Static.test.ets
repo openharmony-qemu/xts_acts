@@ -120,22 +120,6 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.name   settings_get_value_sync_no_domain_key_empty
-     * @tc.number settings_get_value_sync_no_domain_key_empty
-     * @tc.desc   check getValueSync value no domain key empty
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_get_value_sync_no_domain_key_empty',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
-      let name = 'settings.screen.brightness20';
-      let value = settings.getValueSync(abilityContext!, '', "test getValueSync");
-      console.info("[settings_get_value_sync_no_domain_key_empty] value is: " + value);
-      expect(value).assertEqual("test getValueSync");
-      done();
-    });
-
-    /**
      * @tc.name   settings_get_value_sync_no_domain_def_empty
      * @tc.number settings_get_value_sync_no_domain_def_empty
      * @tc.desc   check getValueSync value no domain def value empty
@@ -586,8 +570,8 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.name   settings_set_value_sync_domain_domain_empty
-     * @tc.number settings_set_value_sync_domain_domain_empty
+     * @tc.name   settings_set_value_sync_no_domain_key_empty
+     * @tc.number settings_set_value_sync_no_domain_key_empty
      * @tc.desc   check set value sync domain domain empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
