@@ -654,7 +654,100 @@ export default function SocketGetLocalSocketTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1200
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_1200
+     * @tc.desc   test TlsSocket GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1200';
+      console.info(`${caseName} test start`);
+      try {
+        let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
+        let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
 
+        tlsServer.listen(tlsConnectOptions_server).then(() => {
+          tls.bind(bindAddr, (err: BusinessError) => {
+            if (err) {
+              console.info(`${caseName} err: ${JSON.stringify(err)}`);
+              tls.close();
+              ExpectFail();
+              done();
+            } else {
+              tls.connect(tlsConnectOptions_client).then(() => {
+                console.log("connect successfully");
+                tls.getLocalAddress().then((localAddress: socket.NetAddress) => {
+                  tls.close();
+                  expectTrue(localAddress != null);
+                  expectTrue(localAddress.address != null);
+                  expectTrue(localAddress.port != null);
+                  expectTrue(localAddress.family != null);
+                  console.log("Family IP Port: " + JSON.stringify(localAddress));
+                }).catch((err: BusinessError) => {
+                  console.log("TLS Client Get Family IP Port failed, error: " + JSON.stringify(err));
+                  tls.close();
+                  ExpectFail();
+                  done();
+                })
+              }).catch((err: BusinessError) => {
+                tls.close();
+                console.log("connect failed " + JSON.stringify(err));
+                ExpectFail();
+                done();
+              });
+            }
+            done();
+          });
+        })
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest9900
+     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_9900
+     * @tc.desc   test TcpServer GetLocalAddress function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest9900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest9900';
+      console.info(`${caseName} test start`);
+      try {
+        let tcpServer = socket.constructTCPSocketServerInstance()
+        tcpServer.listen(netAddr, (err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+            ExpectFail();
+          } else {
+            tcpServer.getLocalAddress().then((localAddress: socket.NetAddress) => {
+              expectTrue(localAddress != null);
+              expectTrue(localAddress.address != null);
+              expectTrue(localAddress.port != null);
+              expectTrue(localAddress.family != null);
+              console.log("Family IP Port: " + JSON.stringify(localAddress));
+            }).catch((err: BusinessError) => {
+              console.log("TCP Get Family IP Port failed, error: " + JSON.stringify(err));
+            })
+            console.info(`${caseName} success`);
+          }
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        ExpectFail();
+        done();
+      }
+    });
   })
 }
 

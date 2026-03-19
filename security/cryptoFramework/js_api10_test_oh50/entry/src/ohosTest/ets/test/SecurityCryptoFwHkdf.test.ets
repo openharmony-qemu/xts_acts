@@ -654,5 +654,24 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_Hkdf_Func_2300
+     * @tc.number SUB_Security_CryptoFramework_Hkdf_Func_2300
+     * @tc.desc   algorithm is HKDF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_Hkdf_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let kdfAlgName: string = "HKDF|SHA3-224";
+        cryptoFramework.createKdf(kdfAlgName);
+      } catch (error) {
+        console.error(`HKDF “${error}“, error code: ${error.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    });
   });
 }

@@ -17,7 +17,7 @@ import { convertToUint8Array } from '../common/commonUtils';
 
 
 export let digestSpec: string[] = [
-  "SHA1", "SHA224", "SHA256", "SHA384", "SHA512"
+  "SHA1", "SHA224", "SHA256", "SHA384", "SHA512", "SHA3-256", "SHA3-384", "SHA3-512"
 ];
 
 export function JsX963Spec(key: string, info: string, keySize: number,
