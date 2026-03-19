@@ -288,5 +288,81 @@ export default function saveComponentUserCancelStaticTest() {
       let targetBut = '允许';
       await clickSecComponent(TCNAME, driver, targetBut);
     });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_CancelStatic_0300
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_CancelStatic_0300
+     * @tc.desc   Test SaveComponent userCancelEvent is false and Authorization is successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_CancelStatic_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_CancelStatic_0300';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'userEve': false
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySaveCancel');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
+      expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      let targetBut = '允许';
+      await clickSecComponent(TCNAME, driver, targetBut);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_CancelStatic_0400
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_CancelStatic_0400
+     * @tc.desc   Test SaveComponent userCancelEvent is undefined and Authorization is successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_CancelStatic_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_CancelStatic_0400';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'userEve': undefined
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySaveCancel');
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
+      expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      let targetBut = '允许';
+      await clickSecComponent(TCNAME, driver, targetBut);
+    });
   })
 }
