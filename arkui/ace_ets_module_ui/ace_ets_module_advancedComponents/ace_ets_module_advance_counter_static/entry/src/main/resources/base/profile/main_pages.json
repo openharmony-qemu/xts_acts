@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/counter/CounterDirection",
-    "MainAbility/pages/ArrayLike/ArrayLikeString"
+    "MainAbility/pages/ArrayLike/ArrayLikeString",
+    "MainAbility/pages/counter/CounterAttrsPage"
   ]
 }

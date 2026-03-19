@@ -4,6 +4,7 @@
     "pages/saveButtonUserCancel",
     "pages/saveButton",
     "pages/saveDescription",
-    "pages/saveButtonScenario"
+    "pages/saveButtonScenario",
+    "pages/saveButtonCustomize"
   ]
 }

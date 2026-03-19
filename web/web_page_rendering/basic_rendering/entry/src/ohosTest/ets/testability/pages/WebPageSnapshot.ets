@@ -77,13 +77,29 @@ struct WebPageSnapshot {
           switch (this.str) {
             case "testWebPageSnapshot001": {
               try {
-                  this.controller.webPageSnapshot(null,
+                this.controller.webPageSnapshot({ id: "1234", size: { width: 100, height: 100 } }, (error, result) => {
+                  if (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                    Utils.emitEvent(false, 154210)
+                  } else {
+                    console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
+                    Utils.emitEvent(true, 154210)
+                  }
+                });
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                Utils.emitEvent(true, 154210)
+              }
+            }
+            case "testWebPageSnapshot002": {
+              try {
+                  this.controller.webPageSnapshot(undefined,
                     (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
                       if (error) {
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent("null_error", 154100)
                       } else {
-                        console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
+                        console.log('testWebPageSnapshot002 result is :' + JSON.stringify(result));
                         Utils.emitEvent("null", 154100)
                       }
                     });
@@ -91,19 +107,17 @@ struct WebPageSnapshot {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent("null_error", 154100)
               }
-
-
               break;
             }
-            case "testWebPageSnapshot002": {
+            case "testWebPageSnapshot003": {
               try {
-                this.controller.webPageSnapshot(undefined,
+                this.controller.webPageSnapshot(null,
                   (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
                     if (error) {
                       console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                       Utils.emitEvent("undefined_error", 154110)
                     } else {
-                      console.log('testWebPageSnapshot002 result is :' + JSON.stringify(result));
+                      console.log('testWebPageSnapshot003 result is :' + JSON.stringify(result));
                       Utils.emitEvent("undefined", 154110)
                     }
                   });

@@ -76,7 +76,6 @@ export default function TextAreaTest() {
 	    await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
       await button.inputText("hello")
-	    await driver.triggerKey(2047)
       await CommonFunc.sleep(2000);
 	    await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);

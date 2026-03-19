@@ -812,19 +812,35 @@ export default function WindowPropertiesTest() {
             expect(properties.globalDisplayRect!.width).assertLarger(0);
             expect(properties.globalDisplayRect!.height).assertLarger(0);
             expect(properties.isLayoutFullScreen).assertEqual(false);
+            expect(properties.isLayoutFullScreen !== true).assertTrue();
             expect(properties.focusable).assertEqual(true);
+            expect(properties.focusable !== false).assertTrue();
             expect(properties.touchable).assertEqual(true);
+            expect(properties.touchable !== false).assertTrue();
             expect(properties.brightness).assertEqual(-1);
             expect(properties.isKeepScreenOn).assertEqual(false);
+            expect(properties.isKeepScreenOn !== true).assertTrue();
             expect(properties.isPrivacyMode).assertEqual(false);
+            expect(properties.isPrivacyMode !== true).assertTrue();
             expect(properties.isTransparent).assertEqual(false);
+            expect(properties.isTransparent !== true).assertTrue();
             expect(properties.isFullScreen).assertEqual(false);
+            expect(properties.isFullScreen !== true).assertTrue();
             expect(properties.id).assertLarger(0);
             expect(properties.displayId).assertLargerOrEqual(0);
             expect(properties.name !== null).assertTrue();
             // expect(properties.dimBehindValue !== null ).assertTrue();
             // expect(properties.isRoundCorner !== null ).assertTrue();
             expect(properties.type !== null).assertTrue();
+            if (properties.type === window.WindowType.TYPE_FLOAT) {
+                expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
+            } else if (properties.type === window.WindowType.TYPE_DIALOG) {
+                expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
+            } else if (properties.type === window.WindowType.TYPE_MAIN) {
+                expect(32).assertEqual(window.WindowType.TYPE_MAIN);
+            } else {
+                expect(false).assertTrue();
+            }
             done();
             } catch (err) {
             hilog.error(0x0000, '[ANI]', `${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
