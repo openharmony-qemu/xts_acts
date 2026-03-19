@@ -4424,7 +4424,7 @@ export default function WindowLayoutStaticTest() {
                         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         // 判断是否存在最大化 - false
                         // let test = await assertMaximizeComponentExist(windowStatus, windowClass);
-                        if (windowState == 2 || windowState == 1) {
+                        if (windowStatus==2 || windowStatus==1) {
                             await driver.mouseMoveTo({ x: 100, y: 0 })
                         }
                         let test:boolean = true;
