@@ -99,17 +99,15 @@ export default function PointerComplementTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_setPointerStyle_0350";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifSetPointerStyleSuccess = 0;
         try {
           pointer.setPointerStyle(-1, pointer.PointerStyle.CROSS,
             (error: BusinessError<void> | null, data: undefined) => {
               console.log(`${caseName} Set pointer style success ${error}`);
               if (error) {
-                ifSetPointerStyleSuccess++;
-                expect(ifSetPointerStyleSuccess).assertEqual(1);
+                expect(error.code).assertEqual(202);
                 done();
               } else {
-                console.log(`${caseName} Set pointer style fail`);
+                console.log(`${caseName} Set pointer style success`);
                 expect().assertFail();
                 done();
               }
@@ -599,7 +597,7 @@ export default function PointerComplementTest() {
     /**
      * @tc.name   SUB_MMI_Input_Api_Pointer_isPointerVisible_0150
      * @tc.number SUB_MMI_Input_Api_Pointer_isPointerVisible_0150
-     * @tc.desc   Test callback isPointerVisible interface to get the display or hide status of the mouse pointer.
+     * @tc.desc   Test callback isPointerVisible interface to get the status of the mouse pointer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -608,23 +606,29 @@ export default function PointerComplementTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisible_0150";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifIsPointerVisibleSuccess = 0;
         try {
-          pointer.isPointerVisible((error: BusinessError<void> | null, visible: boolean | undefined) => {
-            if (error) {
-              console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error,
-                [`code`, `message`])}`);
-              ifIsPointerVisibleSuccess++;
-              expect().assertFail();
-              done();
-            } else {
-              console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
-              expect(visible).assertInstanceOf('Boolean');
-              done();
-            }
-          });
+          pointer.setPointerVisibleSync(true);
+          console.info(`${caseName} Set pointer visible success`);
+          try {
+            pointer.isPointerVisible((error: BusinessError<void> | null, visible: boolean | undefined) => {
+              if (error) {
+                console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error,
+                  [`code`, `message`])}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
+                expect(visible).assertEqual(true);
+                done();
+              }
+            });
+          } catch (error) {
+            console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          }
         } catch (error) {
-          console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          console.info(`${caseName} Set pointer visible failed, error: ${error.code}`);
           expect().assertFail();
           done();
         }
@@ -643,13 +647,95 @@ export default function PointerComplementTest() {
       async (done: () => void): Promise<void> => {
         let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisible_0250";
         hilog.info(domain, tag, `${caseName} enter`);
-        let ifIsPointerVisibleSuccess = 0;
         try {
-          pointer.isPointerVisible().then((visible: boolean) => {
-            console.log(`Get pointer visible success, visible: ${JSON.stringify(visible)}`);
-            expect(visible).assertInstanceOf('Boolean');
+          pointer.setPointerVisibleSync(true);
+          console.info(`${caseName} Set pointer visible success`);
+          try {
+            pointer.isPointerVisible().then((visible: boolean) => {
+              console.log(`Get pointer visible success, visible: ${JSON.stringify(visible)}`);
+              expect(visible).assertEqual(true);
+              done();
+            });
+          } catch (error) {
+            console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
             done();
-          });
+          }
+        } catch (error) {
+          console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} leave`);
+      });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_isPointerVisible_0350
+     * @tc.number SUB_MMI_Input_Api_Pointer_isPointerVisible_0350
+     * @tc.desc   Test callback isPointerVisible interface to get the status of the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_isPointerVisible_0350", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisible_0350";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          pointer.setPointerVisibleSync(false);
+          console.info(`${caseName} Set pointer visible success`);
+          try {
+            pointer.isPointerVisible((error: BusinessError<void> | null, visible: boolean | undefined) => {
+              if (error) {
+                console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error,
+                  [`code`, `message`])}`);
+                expect().assertFail();
+                done();
+              } else {
+                console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
+                expect(visible).assertEqual(false);
+                done();
+              }
+            });
+          } catch (error) {
+            console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          }
+        } catch (error) {
+          console.info(`${caseName} Set pointer visible failed, error: ${error.code}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} leave`);
+      });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_isPointerVisible_0450
+     * @tc.number SUB_MMI_Input_Api_Pointer_isPointerVisible_0450
+     * @tc.desc   Test callback isPointerVisible interface to get the display or hide status of the mouse pointer(promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_isPointerVisible_0450", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisible_0450";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          pointer.setPointerVisibleSync(false);
+          console.info(`${caseName} Set pointer visible success`);
+          try {
+            pointer.isPointerVisible().then((visible: boolean) => {
+              console.log(`Get pointer visible success, visible: ${JSON.stringify(visible)}`);
+              expect(visible).assertEqual(false);
+              done();
+            });
+          } catch (error) {
+            console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+            expect().assertFail();
+            done();
+          }
         } catch (error) {
           console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           expect().assertFail();
@@ -671,9 +757,38 @@ export default function PointerComplementTest() {
         let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0150";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
+          pointer.setPointerVisibleSync(true);
+          console.info(`${caseName} Set pointer visible success`);
           let visible: boolean = pointer.isPointerVisibleSync();
           console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
-          expect(visible).assertInstanceOf('Boolean');
+          expect(visible).assertEqual(true);
+          done();
+        } catch (error) {
+          console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} leave`);
+      });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0250
+     * @tc.number SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0250
+     * @tc.desc   Test isPointerVisibleSync interface to get the display or hide status of the mouse pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0150";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          pointer.setPointerVisibleSync(false);
+          console.info(`${caseName} Set pointer visible success`);
+          let visible: boolean = pointer.isPointerVisibleSync();
+          console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
+          expect(visible).assertEqual(false);
           done();
         } catch (error) {
           console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
@@ -764,7 +879,7 @@ export default function PointerComplementTest() {
         let windowId: int = 100;
         try {
           pointer.setCustomCursor(windowId, img, -25, 25).then(fnCallBack);
-          console.error(`${caseName} setCustomCursor success222222`);
+          console.error(`${caseName} setCustomCursor success`);
           ifSetCustomCursorSuccess++;
           expect(ifSetCustomCursorSuccess).assertEqual(1);
           done();

@@ -147,6 +147,36 @@ export default function InfraredEmitterComplementTest() {
       });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0750
+     * @tc.number SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0750
+     * @tc.desc   Test transmitInfrared interface to set pattern as []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0650", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0650";
+        hilog.info(domain, tag, `${caseName} enter`);
+        let ifTransmitInfraredSuccess = 0;
+        try {
+          let infraredFrequency: long = 38000;
+          let pattern: Array<long> = [];
+          infraredEmitter.transmitInfrared(infraredFrequency, pattern);
+          console.info(`${caseName} transmitInfrared success.`);
+          ifTransmitInfraredSuccess++;
+          expect(ifTransmitInfraredSuccess).assertEqual(1);
+          done();
+        } catch (error) {
+          error = error as BusinessError;
+          console.info(`${caseName} transmitInfrared failed, error: ${error.code} ${error.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} leave`);
+      });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0150
      * @tc.number SUB_MMI_Input_Api_InfraredEmitter_getInfraredFrequencies_0150
      * @tc.desc   Test interface non null return value
