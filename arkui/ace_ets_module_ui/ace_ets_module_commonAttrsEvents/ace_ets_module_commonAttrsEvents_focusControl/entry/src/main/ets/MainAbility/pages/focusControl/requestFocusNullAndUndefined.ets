@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,11 +22,10 @@ struct FocusControlRequestFocus {
   @State requestFocusEmpty: boolean = false
 
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Text('focusControl requestFocus Test')
-        .fontSize(24)
+        .fontSize(16)
         .fontWeight(FontWeight.Bold)
-        .margin({ top: 20 })
 
       // 测试有效ID
       Row() {
@@ -37,7 +36,6 @@ struct FocusControlRequestFocus {
       .height('10%')
       .justifyContent(FlexAlign.SpaceBetween)
       .key('validResult')
-      .margin({ top: 10 })
 
       // 测试null参数
       Row() {
@@ -151,11 +149,9 @@ struct FocusControlRequestFocus {
         .height('8%')
         .fontSize(16)
         .key('testButton')
-        .margin({ top: 20 })
     }
     .width('100%')
-    .height('100%')
-    .padding(20)
+    .height('90%')
   }
 
   private resetStates(): void {
