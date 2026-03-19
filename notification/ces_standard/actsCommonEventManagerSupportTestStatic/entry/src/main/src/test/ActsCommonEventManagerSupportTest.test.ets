@@ -897,8 +897,8 @@ export default function ActsCommonEventManagerSupportTest() {
     })
 
     /**
-     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4300
-     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4300
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4300
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4300
      * @tc.desc   bluetooth remote device a2dp play state change common event
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -914,8 +914,8 @@ export default function ActsCommonEventManagerSupportTest() {
     })
 
     /**
-     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4400
-     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4400
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4400
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4400
      * @tc.desc   bluetooth remote device sco state change common event
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
