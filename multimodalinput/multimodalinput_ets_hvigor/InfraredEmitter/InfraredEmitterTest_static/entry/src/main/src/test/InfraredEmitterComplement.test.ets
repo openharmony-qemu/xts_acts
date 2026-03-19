@@ -154,9 +154,9 @@ export default function InfraredEmitterComplementTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0650", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0750", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0650";
+        let caseName = "SUB_MMI_Input_Api_InfraredEmitter_transmitInfrared_0750";
         hilog.info(domain, tag, `${caseName} enter`);
         let ifTransmitInfraredSuccess = 0;
         try {

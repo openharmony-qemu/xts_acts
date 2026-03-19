@@ -779,9 +779,9 @@ export default function PointerComplementTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0150";
+        let caseName = "SUB_MMI_Input_Api_Pointer_isPointerVisibleSync_0250";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
           pointer.setPointerVisibleSync(false);
