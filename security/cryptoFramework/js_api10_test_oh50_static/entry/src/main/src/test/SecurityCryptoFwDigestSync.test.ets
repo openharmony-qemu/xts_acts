@@ -161,6 +161,26 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
       done();
     });
 
-
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_DigestSync_Func_0700
+     * @tc.number SUB_Security_CryptoFramework_DigestSync_Func_0700
+     * @tc.desc   algorithm is digest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Security_CryptoFramework_DigestSync_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        for(let algName of digestSyncUtils.DIGEST_SPEC) {
+          let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
+          let data: cryptoFramework.DataBlob = await md.digest();
+          console.error("############ " + algName + ":" + commonUtils.decToHexString(data));
+        }
+      } catch (error) {
+        console.error(`Digest “${error}“, error code: ${error.code}`);
+        expect(null).assertTrue();
+      }
+      done();
+    });
   });
 }

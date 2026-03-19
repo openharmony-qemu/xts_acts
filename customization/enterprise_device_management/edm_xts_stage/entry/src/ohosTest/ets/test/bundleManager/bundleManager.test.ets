@@ -37,6 +37,7 @@ import adminManager from '@ohos.enterprise.adminManager';
 import bundleManager from '@ohos.enterprise.bundleManager';
 import systemparameter from '@ohos.systemparameter';
 import { BmsBundleInfo, BmsBundleResourceInfo, BundleManagerHelper } from './BundleManagerHelper';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function bundleManagerTest() {
   describe('bundleManager_test', () => {
@@ -5375,5 +5376,208 @@ export default function bundleManagerTest() {
       console.info(' --- getInstallationAllowedAppDistributionTypes_test_016  -------- END --------');
     })
 
+    /**
+     * @tc.name   addAllowedInstallBundlesSync_test_006_1
+     * @tc.number addAllowedInstallBundlesSync_test_006_1
+     * @tc.desc   addAllowedInstallBundlesSync with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedInstallBundlesSync_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedInstallBundlesSync_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret = bundleManager.addAllowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
+        error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addAllowedInstallBundlesSync_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeAllowedInstallBundlesSync_test_006_1
+     * @tc.number removeAllowedInstallBundlesSync_test_006_1
+     * @tc.desc   removeAllowedInstallBundlesSync with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedInstallBundlesSync_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedInstallBundlesSync_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret = bundleManager.removeAllowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
+        error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- removeAllowedInstallBundlesSync_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDisallowedInstallBundlesSync_test_006_1
+     * @tc.number addDisallowedInstallBundlesSync_test_006_1
+     * @tc.desc   addDisallowedInstallBundlesSync with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedInstallBundlesSync_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedInstallBundlesSync_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret = bundleManager.addDisallowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
+        error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDisallowedInstallBundlesSync_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeDisallowedInstallBundlesSync_test_006_1
+     * @tc.number removeDisallowedInstallBundlesSync_test_006_1
+     * @tc.desc   removeDisallowedInstallBundlesSync with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedInstallBundlesSync_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedInstallBundlesSync_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret = bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedInstallBundlesSync_test_006_1 done is expected, but error, actually catch:  ' +
+        error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- removeDisallowedInstallBundlesSync_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDisallowedUninstallBundlesSync_test_006_1
+     * @tc.number addDisallowedUninstallBundlesSync_test_006_1
+     * @tc.desc   addDisallowedUninstallBundlesSync with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDisallowedUninstallBundlesSync_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDisallowedUninstallBundlesSync_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret = bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- addDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch: ' +
+        error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDisallowedUninstallBundlesSync_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeDisallowedUninstallBundlesSync_test_006_1
+     * @tc.number removeDisallowedUninstallBundlesSync_test_006_1
+     * @tc.desc   removeDisallowedUninstallBundlesSync with undefined parameter accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDisallowedUninstallBundlesSync_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret = bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch:' +
+        error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   install_test_006_1
+     * @tc.number install_test_006_1
+     * @tc.desc   install with [] parameter path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("install_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- install_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        await bundleManager.install(SELFWANT, [], EDM_INSTALL_PARAM)
+          .then(result => {
+            expect(result === undefined).assertTrue()
+          }).catch((error:BusinessError) => {
+            console.info(' --- removeDisallowedUninstallBundlesSync_test_006_1 done is expected, but error, actually catch:' +
+            error.code);
+            expect(Number(error.code) === 401).assertTrue();
+          })
+      } catch (error) {
+        console.info(' --- install_test_006_1 done is expected, actually catch: ' + error.code);
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- install_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   installMarketApps_test_004_1
+     * @tc.number installMarketApps_test_004_1
+     * @tc.desc   installMarketApps with [] parameter bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("installMarketApps_test_004_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- installMarketApps_test_004_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        bundleManager.installMarketApps(SELFWANT, []);
+        console.info(' --- installMarketApps_test_004_1 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- installMarketApps_test_004_1 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- installMarketApps_test_004_1  -------- END --------');
+    })
   })
 }

@@ -174,7 +174,47 @@ export default function AsyncLockTest() {
             done();
         });
 
+        /**
+         * @tc.number SUB_ASYNC_LOCK_CLASS_0500
+         * @tc.name QueryNonExistentLock001
+         * @tc.desc Test query for non-existent lock returns state with empty arrays
+         * @tc.size SmallTest
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+        it('QueryNonExistentLock001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
+            try {
+                let state: AsyncLockState = AsyncLock.query("nonExistentLock");
+                expect().assertFail();
+            } catch (err) {
+                expect(err instanceof Error).assertTrue();
+            }
+            done();
+        });
 
+        /**
+         * @tc.number SUB_ASYNC_LOCK_CLASS_0600
+         * @tc.name QueryAll001
+         * @tc.desc Test queryAll returns array of all lock states
+         * @tc.size SmallTest
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+        it('QueryAll001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
+            AsyncLock.request("lock1");
+            AsyncLock.request("lock2");
+            AsyncLock.request("lock3");
+
+            let states: AsyncLockState[] = AsyncLock.queryAll();
+            // expect(states instanceof AsyncLockState[]).assertEqual(true);
+            expect(states.length >= 3).assertTrue();
+
+            states.forEach((state: AsyncLockState): void => {
+                expect(state.held.length).assertEqual(0);
+                expect(state.pending.length).assertEqual(0);
+            });
+            done();
+        });
         // ==================== B. lockAsync 基础重载测试 ====================
 
     /**

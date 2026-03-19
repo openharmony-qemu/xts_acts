@@ -9352,5 +9352,178 @@ export default function ConnectionPublicTest() {
           console.info(`${caseName}---End`);
         }
       });
+    
+    /**
+     * @tc.name   testNetworkMgrConnectionConnectionProperties1300
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1300
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionConnectionProperties1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionConnectionProperties1300";
+      console.info(`${caseName} test start `);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getConnectionProperties(netHandle, (error: BusinessError, data: connection.ConnectionProperties) => {
+            if (error) {
+              console.info(`${caseName} getConnectionProperties: BusinessError->${JSON.stringify(error)}`);
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
+            } else {
+              console.info(`${caseName} getConnectionProperties: data->${JSON.stringify(data)}`);
+              let IPv6Address: connection.LinkAddress | undefined = data?.linkAddresses.find((item: connection.LinkAddress) => item.address?.family === 2);
+              let IPv4Address: connection.LinkAddress | undefined = data?.linkAddresses.find((item: connection.LinkAddress) => item.address?.family === 1);
+              if (IPv6Address && IPv4Address) {
+                ExpectTrue(data.isIPv6LinkValid!);
+                ExpectTrue(data.isIPv4LinkValid!);
+              }
+              console.info(`${caseName}---End`);
+              done();
+            }
+          });
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionConnectionProperties1400
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1400
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionConnectionProperties1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionConnectionProperties1400";
+      console.info(`${caseName} test start `);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
+            console.info(`${caseName} getConnectionProperties: success data->${JSON.stringify(data)}`);
+            let IPv6Address: connection.LinkAddress | undefined = data?.linkAddresses.find((item: connection.LinkAddress) => item.address?.family === 2);
+            let IPv4Address: connection.LinkAddress | undefined = data?.linkAddresses.find((item: connection.LinkAddress) => item.address?.family === 1);
+            ExpectTrue(data.isIPv4LinkValid!);
+            if (IPv6Address == undefined && IPv4Address == undefined) {
+              ExpectTrue(data.isIPv6LinkValid === false);
+              ExpectTrue(data.isIPv4LinkValid === false);
+            }
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((error: BusinessError) => {
+            console.info(`${caseName} getConnectionProperties: err->${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          });
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionConnectionProperties1500
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1500
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionConnectionProperties1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionConnectionProperties1500";
+      console.info(`${caseName} test start `);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getConnectionProperties(netHandle, (error: BusinessError, data: connection.ConnectionProperties) => {
+            if (error) {
+              console.info(`${caseName} getConnectionProperties: BusinessError->${JSON.stringify(error)}`);
+              ExpectFail();
+              console.info(`${caseName}---End`);
+              done();
+            } else {
+              console.info(`${caseName} getConnectionProperties: data->${JSON.stringify(data)}`);
+              let IPv4Address: connection.LinkAddress | undefined = data?.linkAddresses.find((item: connection.LinkAddress) => item.address?.family === 1);
+              if (IPv4Address == undefined) {
+                ExpectTrue(data.isIPv4LinkValid === false);
+              }
+              console.info(`${caseName}---End`);
+              done();
+            }
+          });
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionConnectionProperties1600
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1600
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionConnectionProperties1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionConnectionProperties1600";
+      console.info(`${caseName} test start `);
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
+            console.info(`${caseName} getConnectionProperties: success data->${JSON.stringify(data)}`);
+            let IPv6Address: connection.LinkAddress | undefined = data?.linkAddresses.find((item: connection.LinkAddress) => item.address?.family === 2);
+            if (IPv6Address == undefined) {
+              ExpectTrue(data.isIPv6LinkValid === false);
+            }
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((error: BusinessError) => {
+            console.info(`${caseName} getConnectionProperties: err->${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          });
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
   });
 }

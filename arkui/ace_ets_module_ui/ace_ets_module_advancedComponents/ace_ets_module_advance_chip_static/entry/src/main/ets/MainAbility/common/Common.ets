@@ -18,6 +18,11 @@ import { BusinessError } from '@ohos.base';
 import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector'
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext } from '@ohos.arkui.UIContext';
+import {
+  $r,
+  Resource
+} from '@ohos.arkui.component';
 
 export default class CommonFunc {
   public static FONT_FAMILY = 'Verdana';
@@ -77,6 +82,35 @@ export default class CommonFunc {
       "right": CommonFunc.rect_right,
       "bottom": CommonFunc.rect_bottom
     }
+  }
+
+    static getResourceColor(sysColor: Resource) {
+    const UiContext = AppStorage.get<UIContext>('uiContext') as UIContext;
+    let resourceColor = UiContext.getHostContext()!.resourceManager.getColorSync(sysColor.id)
+    let color:string = resourceColor?.toString(16).toUpperCase()
+    if (color.length<8) {
+        color = '0'+color
+    }
+    let newArgb: string = '#' +color
+    console.info("[getResourceColor] current newArgb is: " + newArgb);
+    return newArgb;
+  }
+  static getResourceFloat(sysColor: Resource,unit:string) {
+    const UiContext = AppStorage.get<UIContext>('uiContext') as UIContext;
+    let resourceFloat = UiContext.getHostContext()!.resourceManager.getDouble(sysColor.id)
+    let newResSize:string = ''
+    switch (unit) {
+      case 'vp':
+        newResSize = Math.round(UiContext!.px2vp(resourceFloat))+'.00vp'
+        break;
+      case 'fp':
+        newResSize = Math.round(UiContext!.px2fp(resourceFloat))+'.00fp'
+        break;
+      default:
+        break;
+    }
+    console.info("[getResourceFloat] current newResSize is: " + newResSize);
+    return newResSize;
   }
 
   // static setScreenOrientation(orientation: screen.Orientation) {
