@@ -65,12 +65,12 @@ export default function FrameNodeIsInRenderState() {
     });
 
     /**
-     * @tc.number: FrameNodeIsInRenderState_0100
-     * @tc.name: FrameNodeIsInRenderState_0100
-     * @tc.desc: Test FrameNode isInRenderState functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeIsInRenderState_0100
+     * @tc.name   SUB_ACE_FrameNodeIsInRenderState_0100
+     * @tc.desc   Test FrameNode isInRenderState functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeIsInRenderState_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeIsInRenderState_0100] START');

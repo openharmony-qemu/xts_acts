@@ -67,12 +67,12 @@ export default function AttributeUpdaterUpdateConstructorParams() {
     });
 
     /**
-     * @tc.number: AttributeUpdater_updateConstructorParams_0100
-     * @tc.name  : AttributeUpdater_updateConstructorParams_0100
-     * @tc.desc  : Verify AttributeUpdater's updateConstructorParams method for Text component
-     * @tc.size  : MEDIUMTEST
-     * @tc.type  : FUNCTION
-     * @tc.level : LEVEL0
+     * @tc.number AttributeUpdater_updateConstructorParams_0100
+     * @tc.name   SUB_ACE_AttributeUpdater_updateConstructorParams_0100
+     * @tc.desc   Verify AttributeUpdater's updateConstructorParams method for Text component
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
      */
     it('AttributeUpdater_updateConstructorParams_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[AttributeUpdater_updateConstructorParams_0100] START');

@@ -65,12 +65,12 @@ export default function FrameNodeCreateAnimation() {
     });
 
     /**
-     * @tc.number: FrameNodeCreateAnimation_0100
-     * @tc.name: FrameNodeCreateAnimation_0100
-     * @tc.desc: Test FrameNode createAnimation functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeCreateAnimation_0100
+     * @tc.name   SUB_ACE_FrameNodeCreateAnimation_0100
+     * @tc.desc   Test FrameNode createAnimation functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeCreateAnimation_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeCreateAnimation_0100] START');

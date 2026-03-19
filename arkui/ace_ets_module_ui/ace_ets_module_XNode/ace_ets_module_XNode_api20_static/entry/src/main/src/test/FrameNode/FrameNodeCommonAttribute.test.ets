@@ -65,12 +65,12 @@ export default function FrameNodeCommonAttribute() {
     });
 
     /**
-     * @tc.number: FrameNodeCommonAttribute_0100
-     * @tc.name: FrameNodeCommonAttribute_0100
-     * @tc.desc: Test FrameNode commonAttribute functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeCommonAttribute_0100
+     * @tc.name   SUB_ACE_FrameNodeCommonAttribute_0100
+     * @tc.desc   Test FrameNode commonAttribute functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeCommonAttribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeCommonAttribute_0100] START');

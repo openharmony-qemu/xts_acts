@@ -65,12 +65,12 @@ export default function FrameNodeConvertPositionFromWindow() {
     });
 
     /**
-     * @tc.number: FrameNodeConvertPositionFromWindow_0100
-     * @tc.name: FrameNodeConvertPositionFromWindow_0100
-     * @tc.desc: Test FrameNode convertPositionFromWindow functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeConvertPositionFromWindow_0100
+     * @tc.name   SUB_ACE_FrameNodeConvertPositionFromWindow_0100
+     * @tc.desc   Test FrameNode convertPositionFromWindow functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeConvertPositionFromWindow_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeConvertPositionFromWindow_0100] START');

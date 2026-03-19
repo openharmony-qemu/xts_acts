@@ -65,12 +65,12 @@ export default function FrameNodeConvertPosition() {
     });
 
     /**
-     * @tc.number: FrameNodeConvertPosition_0100
-     * @tc.name: FrameNodeConvertPosition_0100
-     * @tc.desc: Test FrameNode convertPosition functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeConvertPosition_0100
+     * @tc.name   SUB_ACE_FrameNodeConvertPosition_0100
+     * @tc.desc   Test FrameNode convertPosition functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeConvertPosition_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeConvertPosition_0100] START');

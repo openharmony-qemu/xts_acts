@@ -65,12 +65,12 @@ export default function FrameNodeIsOnMainTree() {
     });
 
     /**
-     * @tc.number: FrameNodeIsOnMainTree_0100
-     * @tc.name: FrameNodeIsOnMainTree_0100
-     * @tc.desc: Test FrameNode isOnMainTree functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeIsOnMainTree_0100
+     * @tc.name   SUB_ACE_FrameNodeIsOnMainTree_0100
+     * @tc.desc   Test FrameNode isOnMainTree functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeIsOnMainTree_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeIsOnMainTree_0100] START');

@@ -65,12 +65,12 @@ export default function FrameNodeInvalidateAttributes() {
     });
 
     /**
-     * @tc.number: FrameNodeInvalidateAttributes_0100
-     * @tc.name: FrameNodeInvalidateAttributes_0100
-     * @tc.desc: Test FrameNode invalidateAttributes functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeInvalidateAttributes_0100
+     * @tc.name   SUB_ACE_FrameNodeInvalidateAttributes_0100
+     * @tc.desc   Test FrameNode invalidateAttributes functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeInvalidateAttributes_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeInvalidateAttributes_0100] START');

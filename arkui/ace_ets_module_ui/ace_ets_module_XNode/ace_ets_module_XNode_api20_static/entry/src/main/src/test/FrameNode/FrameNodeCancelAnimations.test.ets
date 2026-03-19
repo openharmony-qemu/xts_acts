@@ -65,12 +65,12 @@ export default function FrameNodeCancelAnimations() {
     });
 
     /**
-     * @tc.number: FrameNodeCancelAnimations_0100
-     * @tc.name: FrameNodeCancelAnimations_0100
-     * @tc.desc: Test FrameNode cancelAnimations functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeCancelAnimations_0100
+     * @tc.name   SUB_ACE_FrameNodeCancelAnimations_0100
+     * @tc.desc   Test FrameNode cancelAnimations functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeCancelAnimations_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeCancelAnimations_0100] START');

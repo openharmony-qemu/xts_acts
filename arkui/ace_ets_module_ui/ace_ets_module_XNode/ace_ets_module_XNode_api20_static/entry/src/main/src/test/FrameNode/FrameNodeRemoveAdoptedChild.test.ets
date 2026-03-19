@@ -65,12 +65,12 @@ export default function FrameNodeRemoveAdoptedChild() {
     });
 
     /**
-     * @tc.number: FrameNodeRemoveAdoptedChild_0100
-     * @tc.name: FrameNodeRemoveAdoptedChild_0100
-     * @tc.desc: Test FrameNode removeAdoptedChild functionality
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number FrameNodeRemoveAdoptedChild_0100
+     * @tc.name   SUB_ACE_FrameNodeRemoveAdoptedChild_0100
+     * @tc.desc   Test FrameNode removeAdoptedChild functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeRemoveAdoptedChild_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeRemoveAdoptedChild_0100] START');

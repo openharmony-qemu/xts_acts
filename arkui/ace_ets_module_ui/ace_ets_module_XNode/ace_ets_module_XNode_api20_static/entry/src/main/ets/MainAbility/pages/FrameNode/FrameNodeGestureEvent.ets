@@ -47,8 +47,7 @@ class MyNodeController extends NodeController {
         })
       )
       return 'GestureEvent success'
-    }
-    catch (e) {
+    }catch (e) {
       console.info(`${TEST_TAG} adoptChild fail: ${JSON.stringify(e)}`);
       return 'GestureEvent false'
     }

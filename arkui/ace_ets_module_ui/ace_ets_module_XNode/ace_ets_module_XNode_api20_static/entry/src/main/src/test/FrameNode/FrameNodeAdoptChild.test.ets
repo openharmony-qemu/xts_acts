@@ -64,12 +64,12 @@ export default function FrameNodeAdoptChild() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number: FrameNodeAdoptChild_0200
-     * @tc.name  : FrameNodeAdoptChild_0200
-     * @tc.desc  : Test FrameNode removeAdoptedChild functionality
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number FrameNodeAdoptChild_0200
+     * @tc.name   SUB_ACE_FrameNodeAdoptChild_0200
+     * @tc.desc   Test FrameNode removeAdoptedChild functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('FrameNodeAdoptChild_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeAdoptChild_0200] START');
