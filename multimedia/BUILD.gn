@@ -231,6 +231,7 @@ group("multimedia") {
       "av_codec/vcodec/ActshevchwhdrcodecTest:ActshevchwhdrcodecHapTest",
       "av_codec/vcodec/ActsMpeg4swdecoderTest:ActsMpeg4swdecoderHapTest",
       "av_codec/vcodec/ActsHdrCodecTest:ActsHdrCodecHapTest",
+      "av_codec/vcodec/ActsSwDecoderTest:ActsSwDecoderHapTest",
     ]
   } else {
     deps += [
