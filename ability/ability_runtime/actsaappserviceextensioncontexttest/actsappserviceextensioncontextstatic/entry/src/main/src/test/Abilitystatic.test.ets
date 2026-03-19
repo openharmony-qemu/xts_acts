@@ -466,6 +466,8 @@ export default function ActsAppServiceExtensionContextStaticTest() {
           }
         })
         hilog.info(DOMAIN, TAG, `connectAppServiceExtensionAbility result: ${connectId}`);
+        expect(connectId).assertEqual(-1);
+        done();
       } catch (err) {
         hilog.info(DOMAIN, TAG, `connectAppServiceExtensionAbility failed: ${(err as BusinessError).code}`);
         expect().assertFail();
