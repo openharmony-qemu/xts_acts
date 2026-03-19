@@ -3483,7 +3483,7 @@ export default function globalStageTest() {
      * @tc.level   Level 3
      */
     it('getRawFileContent_test_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      res.getRawFileContent('', (err: BusinessError<void> | null) => {
+      res!.getRawFileContent('', (err: BusinessError<void> | null) => {
         console.log('getRawFileContent_test_static_0300 error code:' + err?.code);
         expect(err?.code).assertEqual(9001005);
         done();

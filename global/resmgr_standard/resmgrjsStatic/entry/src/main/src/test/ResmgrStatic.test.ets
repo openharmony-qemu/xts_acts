@@ -2803,7 +2803,7 @@ export default function ResmgrTest() {
         let error = err as BusinessError
         console.log('getColorByName_test_static_0170 err.code ' + error.code);
         console.log('getColorByName_test_static_0170 err.message ' + error.message);
-        expect(error.code == 9001006).assertTrue();
+        expect(error.code == 9001003).assertTrue();
         done();
       })
     })
@@ -2905,7 +2905,7 @@ export default function ResmgrTest() {
       try {
         res?.getDoublePluralStringByNameSync('test_cyc', 2.1, 'test');
       } catch (err) {
-        console.log('getDoublePluralStringByNameSync_test_static_0200 error code:' + error.code);
+        console.log('getDoublePluralStringByNameSync_test_static_0200 error code:' + err.code);
         expect(err.code).assertEqual(9001006);
       }
     })
@@ -2922,7 +2922,7 @@ export default function ResmgrTest() {
       try {
         res?.getDoublePluralStringByNameSync('string_format7', 2.1, 'test');
       } catch (err) {
-        console.log('getDoublePluralStringByNameSync_test_static_0300 error code:' + error.code);
+        console.log('getDoublePluralStringByNameSync_test_static_0300 error code:' + err.code);
         expect(err.code).assertEqual(9001008);
       }
     })
