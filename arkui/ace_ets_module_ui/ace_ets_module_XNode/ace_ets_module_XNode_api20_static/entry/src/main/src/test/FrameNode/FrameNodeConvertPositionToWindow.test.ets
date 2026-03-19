@@ -82,7 +82,7 @@ export default function FrameNodeConvertPositionToWindow() {
       await (convertBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('convertResult');
+      let strJson = inspector.getInspectorByKey('convertResultConvertPositionToWindow');
       await CommonFunc.sleep(1000);
       console.info('[FrameNodeConvertPositionToWindow_0100] content: ' +
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));

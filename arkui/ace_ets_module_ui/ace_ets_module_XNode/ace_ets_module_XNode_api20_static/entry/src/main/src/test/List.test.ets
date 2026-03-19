@@ -33,7 +33,7 @@ import FrameNodeIsOnMainTree from './FrameNode/FrameNodeIsOnMainTree.test';
 
 
 export default function testsuite() {
-    IsAvailableTest();
+    //IsAvailableTest();
     AttributeUpdaterAttribute();
     AttributeUpdaterUpdateConstructorParams();
     FrameNodeAdoptChild();

@@ -81,7 +81,7 @@ struct FrameNodeConvertPositionToWindow {
         })
 
       Text(this.convertResult)
-        .id('convertResult')
+        .id('convertResultConvertPositionToWindow')
         .height('5%')
         .fontSize(8)
     }
