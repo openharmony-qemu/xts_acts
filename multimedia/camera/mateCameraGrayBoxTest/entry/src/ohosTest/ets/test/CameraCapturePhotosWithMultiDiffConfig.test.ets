@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import {
   addInputIntoSession,
   addOutputIntoSession,
@@ -32,31 +32,14 @@ import {
   getPhotoOutputFromProfile,
   createPreviewOutputFromProfile,
   setImageColorSpace,
-  createFile,
-  writeFile,
-  readFile,
-  waitForStatus,
+  IsexistMovingPhotoVideo
 } from './CameraCommonAPI'
+
+import {
+  enableMovingPhoto,
+} from './CameraCommonAPI'
+
 import { camera } from '@kit.CameraKit';
-
-// 相机上报能力
-interface CameraInfo {
-  camera: camera.CameraDevice,
-  capability: Array<OutputCapabilityInfo>
-}
-
-interface OutputCapabilityInfo {
-  mode: camera.SceneMode,
-  cameraOutputCapability?: camera.CameraOutputCapability
-}
-
-// 用例需要用到的测试数据
-interface CaseInfo {
-  cameraId: camera.CameraDevice,
-  photoOutputProfile: camera.Profile,
-  previewOutputProfile: camera.Profile,
-  isHdr: boolean,
-}
 
 
 export default function CameraCapturePhotosWithMultiDiffConfig() {
@@ -80,112 +63,120 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
     /**
      * @tc.number    : CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000
-     * @tc.name      : camera_capture_dynamic_photo_with_multi_config_0000
+     * @tc.name      : CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000
      * @tc.desc      : camera capture 1 dynamic photo with multi Different config
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    //相机在不同摄像头、不同照片格式、不同分辨率、不同焦距下拍摄1张动态照片
-    it('camera_capture_dynamic_photo_with_multi_config_0000', 0, async (done: Function) => {
-      let testNum = 'camera_capture_dynamic_photo_with_multi_config_0000'
+    it('CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let testNum = 'CAMERA_CAPTURE_DYNAMIC_PHOTO_WITH_MULTI_CONFIG_0000'
       try {
         //预制条件
         let capturePhotoNum = 1;
         await getPermission();
-        createFile()
-        // 先等待测试数据下发完成
-        await waitForStatus("1");
         let helperInstance = await getHelper();
         let cameraManager = await getCameraManager();
-        // 读取测试数据
-        let testData = await readFile();
-        console.info("testData is: " + JSON.stringify(testData))
-        let caseInfo: CaseInfo = JSON.parse(testData)
-        let cameraId: camera.CameraDevice = caseInfo.cameraId
-        let photoOutputProfile: camera.Profile = caseInfo.photoOutputProfile
-        let previewOutPutProfile: camera.Profile = caseInfo.previewOutputProfile
-        let isHdrImage: boolean = caseInfo.isHdr
-
+        let cameras = getSupportedCameras(cameraManager);
         let fileNames: Array<string> = [];
-        let photoOutput: camera.PhotoOutput | undefined = undefined
-        let cameraInput: camera.CameraInput | undefined = undefined
-        let previewOutPut: camera.PreviewOutput | undefined = undefined
-        let session: ESObject = undefined
-        photoOutput = getPhotoOutputFromProfile(cameraManager, photoOutputProfile)
-        cameraInput = createCameraInput(cameraManager, cameraId);
-        previewOutPut = createPreviewOutputFromProfile(cameraManager, previewOutPutProfile!);
-        await openCamera(cameraInput);
-        session = createAndConfigSession(cameraManager, camera.SceneMode.NORMAL_PHOTO);
-        await addInputIntoSession(session, cameraInput);
-        await addOutputIntoSession(session, previewOutPut);
-        await addOutputIntoSession(session, photoOutput);
-        await commitSessionConfig(session);
-        setImageColorSpace(session, isHdrImage)
-        await startSession(session);
-        setFocusMode(session);
-        await onPreviewOutputFrameStart(previewOutPut!);
-        let zoomRatioRange = getSuppotredZoomRatioRange(session);
-        onCaptureReady(photoOutput);
-        for (let zoomRatio of zoomRatioRange!) {
-          const befortCount = await getAllPhotoAssetsCount();
-          setZoomRatioRange(session, zoomRatioRange!, zoomRatio);
-          //测试过程
-          onPhotoOutputPhotoAssetAvailable(photoOutput, helperInstance);
-          await cameraCaptureRelyOnNum(photoOutput, capturePhotoNum);
-          let assets = await offPhotoOutputPhotoAssetAvailable(photoOutput, capturePhotoNum, fileNames, true)
-          await expectEqualPhotoCount(befortCount, capturePhotoNum);
+        for (let camreId of cameras) {
+          let cameraOutputCapability = getCameraOutputCapability(cameraManager, camreId, camera.SceneMode.NORMAL_PHOTO)
+          for (let photoOutputProfile of cameraOutputCapability?.photoProfiles!) {
+            for (let previewOutPutProfile of cameraOutputCapability?.previewProfiles!) {
+              let photoOutput: camera.PhotoOutput | undefined = undefined
+              let cameraInput: camera.CameraInput | undefined = undefined
+              let previewOutPut: camera.PreviewOutput | undefined = undefined
+              let session: ESObject = undefined
+              for (let isHdrImage of [false, true]) {
+                try {
+                  console.info(`${testNum} photoProfile format is ${photoOutputProfile.format} photoProfile size is ${photoOutputProfile.size}`);
+                  console.info(`${testNum} previewProfile format is ${previewOutPutProfile.format} previewProfile size is ${previewOutPutProfile.size} `);
+                  console.info(`${testNum} camrePosition is ${camreId.cameraPosition} camreType is ${camreId.connectionType}`);
+                  photoOutput = getPhotoOutputFromProfile(cameraManager, photoOutputProfile)
+                  cameraInput = createCameraInput(cameraManager, camreId);
+                  previewOutPut = createPreviewOutputFromProfile(cameraManager, previewOutPutProfile!);
+                  await openCamera(cameraInput);
+                  session = createAndConfigSession(cameraManager, camera.SceneMode.NORMAL_PHOTO);
+
+                  await addInputIntoSession(session, cameraInput);
+                  await addOutputIntoSession(session, previewOutPut);
+                  await addOutputIntoSession(session, photoOutput);
+                  await commitSessionConfig(session);
+                  setImageColorSpace(session, isHdrImage)
+                  await startSession(session);
+                  await onPreviewOutputFrameStart(previewOutPut!);
+                  enableMovingPhoto(photoOutput)
+                  setFocusMode(session);
+
+                  let zoomRatioRange = getSuppotredZoomRatioRange(session);
+                  if (zoomRatioRange != undefined) {
+                    for (let zoomRatio of zoomRatioRange!) {
+                      const befortCount = await getAllPhotoAssetsCount();
+                      setZoomRatioRange(session, zoomRatioRange!, zoomRatio);
+
+                      //测试过程
+                      onPhotoOutputPhotoAssetAvailable(photoOutput, helperInstance);
+                      onCaptureReady(photoOutput);
+                      await cameraCaptureRelyOnNum(photoOutput, capturePhotoNum);
+                      let assets = await offPhotoOutputPhotoAssetAvailable(photoOutput, capturePhotoNum, fileNames, true)
+                      await expectEqualPhotoCount(befortCount, capturePhotoNum);
+                      if (globalThis.isSupportMovingPhoto) {
+                        await IsexistMovingPhotoVideo(assets);
+                      }
+                      await sleep(3000);
+                    }
+                  } else {
+                    //测试过程
+                    const befortCount = await getAllPhotoAssetsCount();
+                    onPhotoOutputPhotoAssetAvailable(photoOutput, helperInstance);
+                    onCaptureReady(photoOutput);
+                    await cameraCaptureRelyOnNum(photoOutput, capturePhotoNum);
+                    let assets = await offPhotoOutputPhotoAssetAvailable(photoOutput, capturePhotoNum, fileNames, true)
+                    await expectEqualPhotoCount(befortCount, capturePhotoNum);
+                    if (globalThis.isSupportMovingPhoto) {
+                      await IsexistMovingPhotoVideo(assets);
+                    }
+                    await sleep(3000);
+                  }
+
+                  //恢复过程
+                  offCaptureReady(photoOutput);
+                  offPreviewOutputFrameStart(previewOutPut!);
+                  stopSession(session);
+                  releaseInPutStream(cameraInput);
+                  releaseOutPutStream(previewOutPut)
+                  releaseOutPutStream(photoOutput)
+                  releaseSession(session)
+                  await sleep(4000);
+                } catch (error) {
+                  if (previewOutPut != undefined) {
+                    offPreviewOutputFrameStart(previewOutPut!);
+                  }
+                  if (photoOutput != undefined) {
+                    offCaptureReady(photoOutput);
+                  }
+                  stopSession(session);
+                  releaseInPutStream(cameraInput);
+                  releaseOutPutStream(previewOutPut)
+                  releaseOutPutStream(photoOutput)
+                  releaseSession(session)
+                  console.error(`${testNum} error is ${error}`)
+                  expect().assertFail();
+                }
+              }
+            }
+          }
         }
-        //恢复过程
-        offCaptureReady(photoOutput);
-        await sleep(2000)
-        offPreviewOutputFrameStart(previewOutPut!);
-        stopSession(session);
-        releaseInPutStream(cameraInput);
-        releaseOutPutStream(previewOutPut)
-        releaseOutPutStream(photoOutput)
-        releaseSession(session)
+        await sleep(3000);
         await helperInstance.release();
         done();
       } catch (error) {
         console.error(`${testNum} error is ${error}`)
-        expect(true).assertFail();
+        expect().assertFail();
         done();
       }
-    })
-
-    /**
-     * @tc.number    : GET_TEST_DATA
-     * @tc.name      : get test data
-     * @tc.desc      : get test data
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 4
-     */
-    //获取用例的测试数据
-    it('GET_TEST_DATA', 4, async (done: Function) => {
-      let data: Array<CameraInfo> = []
-      await getPermission();
-      let cameraManager = await getCameraManager();
-      let cameras = getSupportedCameras(cameraManager);
-      for (let cameraId of cameras) {
-        let cameraInfo: CameraInfo = {
-          camera: cameraId,
-          capability: []
-        }
-        let cameraOutputCapability = getCameraOutputCapability(cameraManager, cameraId, camera.SceneMode.NORMAL_PHOTO)
-        cameraInfo.capability?.push({
-          mode: camera.SceneMode.NORMAL_PHOTO,
-          cameraOutputCapability: cameraOutputCapability
-        })
-        data.push(cameraInfo)
-      }
-      await writeFile(JSON.stringify(data))
-      await waitForStatus("0")
-      done();
     })
   })
 }

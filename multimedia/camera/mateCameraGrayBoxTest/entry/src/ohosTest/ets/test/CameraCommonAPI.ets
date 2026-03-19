@@ -13,18 +13,13 @@ import { buffer, Decimal } from "@kit.ArkTS";
 import { sensor } from '@kit.SensorServiceKit';
 
 // 权限列表
-let permission: Permissions[] = ['ohos.permission.GRANT_SENSITIVE_PERMISSIONS',
-  'ohos.permission.REVOKE_SENSITIVE_PERMISSIONS',
+let permission: Permissions[] = [
   'ohos.permission.CAMERA',
   'ohos.permission.MICROPHONE',
   'ohos.permission.MEDIA_LOCATION',
   'ohos.permission.READ_MEDIA',
-  'ohos.permission.WRITE_MEDIA',
-  'ohos.permission.START_ABILIIES_FROM_BACKGROUND',
-  'ohos.permission.START_INVISIBLE_ABILITY',
-  'ohos.permission.ABILITY_BACKGROUND_COMMUNICATION',
-  'ohos.permission.READ_IMAGEVIDEO',
-  'ohos.permission.WRITE_IMAGEVIDEO'];
+  'ohos.permission.WRITE_MEDIA'
+];
 
 // 接收图片资产的回调函数
 let photoAccessArray: Array<photoAccessHelper.PhotoAsset> = []
@@ -847,7 +842,7 @@ export function getSuppotredZoomRatioRange(photoSession: ESObject) {
   try {
     zoomRatioRange = photoSession.getZoomRatioRange();
     if (zoomRatioRange == undefined) {
-      return [];
+      return undefined;
     }
     if (zoomRatioRange!.length > 1) {
       if (zoomRatioRange![1] > 1) {
@@ -986,7 +981,7 @@ export async function onPreviewOutputFrameStart(previewOutput: camera.PreviewOut
     await sleep(20);
     let previewOutputFrameEndTime = Date.now();
     if (previewOutputFrameEndTime - previewOutputFrameStartTime > 60000) {
-      console.info('预览画面帧输出超时')
+      console.info('预览画面帧输出超时');
       expect().assertFail();
     }
   }
@@ -1185,17 +1180,17 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
     expect().assertFail()
     return;
   }
-  console.info('photoOutPutCallBack photoAssetAvailable photoAsset.uri is ' + photoAsset.uri);
+  console.info('photoAssetAvailableCallback photoAssetAvailable photoAsset.uri is ' + photoAsset.uri);
   let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
     new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
 
   assetChangeRequest.saveCameraPhoto();
   await photoHelper.applyChanges(assetChangeRequest)
   let asset: photoAccessHelper.PhotoAsset = assetChangeRequest.getAsset()
-  console.info('error is asset.uri' + asset.uri);
-  console.info('error is asset.displayName' + asset.displayName);
+  console.info('photoAssetAvailableCallback asset.uri is ' + asset.uri);
+  console.info('photoAssetAvailableCallback asset.displayName is ' + asset.displayName);
   realCapturePhotoNum++;
-  console.info('realCapturePhotoNum is ' + realCapturePhotoNum);
+  console.info('photoAssetAvailableCallback realCapturePhotoNum is ' + realCapturePhotoNum);
   let tmpTime = Date.now();
   if (tmpTime > endTime) {
     endTime = tmpTime;
@@ -1255,8 +1250,17 @@ export async function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.Phot
  * @param { number } increaseAssets 增加的资产数量
  */
 export async function expectEqualPhotoCount(beforeCount: number, increaseAssets: number) {
-  const afterCount = await getAllPhotoAssetsCount();
+  let afterCount = await getAllPhotoAssetsCount();
   try {
+    let startTime = Date.now();
+    while (afterCount < beforeCount + increaseAssets) {
+      await sleep(200);
+      afterCount = await getAllPhotoAssetsCount();
+      if (Date.now() - startTime > 60000) {
+        console.info('拍照出图超时');
+        expect().assertFail();
+      }
+    }
     expect(beforeCount + increaseAssets == afterCount).assertTrue();
     console.info(`afterCount is equal ${beforeCount + increaseAssets}`);
   } catch (error) {
