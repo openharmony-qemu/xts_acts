@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector';
 @Entry
 @Component
 struct ChipGroupItemOptionsPage2 {
-  @State selected_index: Array<int> = [0, 1, 2, 3, 4, 5, 6];
+  @State selectedIndex: Array<int> = [0, 1, 2, 3, 4, 5, 6];
   @State prefixModifierNormal: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_star'));
   @State tex1: string = 'ww'
   build() {
@@ -38,7 +38,7 @@ struct ChipGroupItemOptionsPage2 {
             suffixImageIcon: { src: $r('sys.media.ohos_ic_public_cut'),
               action: () => {
                 console.log('ww')
-              }, accessibilityText: "后缀图标的无障碍文本属性"}  as SuffixImageIconOptions,
+              }, accessibilityText: '后缀图标的无障碍文本属性'}  as SuffixImageIconOptions,
             closeOptions: {fontSize: 22 }, //默认删除图标的无障碍朗读功能属性。
             allowClose: false
           },
@@ -59,7 +59,7 @@ struct ChipGroupItemOptionsPage2 {
             allowClose: true
           },
         ],
-        selectedIndexes: this.selected_index,
+        selectedIndexes: this.selectedIndex,
         multiple: false,
       })
     }
