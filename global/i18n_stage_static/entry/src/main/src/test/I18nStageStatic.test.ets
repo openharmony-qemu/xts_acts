@@ -1160,6 +1160,1152 @@ export default function i18nStageTest() {
       }
     })
 
+    /**
+     * @tc.name system_getDisplayCountry_nullString_test_Static_0100
+     * @tc.number system_getDisplayCountry_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_getDisplayCountry_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.System.getDisplayCountry('', 'en-US', true);
+      let value = overrideResourceManager.updateOverrideConfiguration(undefined);
+      console.log('system_getDisplayCountry_nullString_test_Static_0100 value:' + value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name system_getDisplayCountry_nullString_test_Static_0200
+     * @tc.number system_getDisplayCountry_nullString_test_Static_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_getDisplayCountry_nullString_test_Static_0200', Level.LEVEL3, () => {
+      try {
+        let value: string = i18n.System.getDisplayCountry('zh-Hans-CN', '', true);
+        let value = overrideResourceManager.updateOverrideConfiguration(undefined);
+        console.log('system_getDisplayCountry_nullString_test_Static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('system_getDisplayCountry_nullString_test_Static_0200 code&message:' + e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name system_getDisplayLanguage_nullString_test_Static_0100
+     * @tc.number system_getDisplayLanguage_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_getDisplayLanguage_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.System.getDisplayLanguage('', 'en-US');
+      console.log('system_getDisplayLanguage_nullString_test_Static_0100 value:' + value);
+      expect(value).assertEqual('Unknown language');
+    })
+
+    /**
+     * @tc.name system_getDisplayLanguage_nullString_test_Static_0200
+     * @tc.number system_getDisplayLanguage_nullString_test_Static_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_getDisplayLanguage_nullString_test_Static_0200', Level.LEVEL3, () => {
+      try {
+        let value: string = i18n.System.getDisplayCountry('zh-Hans-CN', '');
+        let value = overrideResourceManager.updateOverrideConfiguration(undefined);
+        console.log('system_getDisplayLanguage_nullString_test_Static_0200 value:' + value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('system_getDisplayLanguage_nullString_test_Static_0200 code&message:' + e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name system_getSystemCountries_nullString_test_Static_0100
+     * @tc.number system_getSystemCountries_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_getSystemCountries_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.System.getSystemCountries('');
+      console.log('system_getSystemCountries_nullString_test_Static_0100 value:' + value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.name system_isSuggested_nullString_test_Static_0100
+     * @tc.number system_isSuggested_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_isSuggested_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.System.isSuggested('', "CN");
+      console.log('system_isSuggested_nullString_test_Static_0100 value:' + value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.name system_isSuggested_nullString_test_Static_0200
+     * @tc.number system_isSuggested_nullString_test_Static_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_isSuggested_nullString_test_Static_0200', Level.LEVEL3, () => {
+      let value: string = i18n.System.isSuggested('zh', "");
+      console.log('system_isSuggested_nullString_test_Static_0200 value:' + value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.name system_setAppPreferredLanguage_nullString_test_Static_0100
+     * @tc.number system_setAppPreferredLanguage_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_setAppPreferredLanguage_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        i18n.System.setAppPreferredLanguage('');
+      } catch (e) {
+        console.log('system_setAppPreferredLanguage_nullString_test_Static_0100 code&message:' + e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name system_getSimplifiedLanguage_nullString_test_Static_0100
+     * @tc.number system_getSimplifiedLanguage_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     *
+     */
+    it('system_getSimplifiedLanguage_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let value: string = i18n.System.getSimplifiedLanguage('');
+        console.log('system_getSimplifiedLanguage_nullString_test_Static_0100 value:' + value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('system_getSimplifiedLanguage_nullString_test_Static_0100 code&message:' + e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name unitConvert_nullString_test_Static_0100
+     * @tc.number unitConvert_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('unitConvert_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.I18NUtil.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+        { unit: '', measureSystem: '' },
+        1000,
+        'zh-CN',
+        'long');
+      console.log('unitConvert_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name unitConvert_nullString_test_Static_0200
+     * @tc.number unitConvert_nullString_test_Static_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('unitConvert_nullString_test_Static_0200', Level.LEVEL3, () => {
+      let value: string = i18n.I18NUtil.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+        { unit: 'meter-per-second', measureSystem: 'SI' },
+        1000,
+        '',
+        'long');
+      console.log('unitConvert_nullString_test_Static_0200 value:', value);
+      expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name unitConvert_nullString_test_Static_0300
+     * @tc.number unitConvert_nullString_test_Static_0300
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('unitConvert_nullString_test_Static_0300', Level.LEVEL3, () => {
+      let value: string = i18n.I18NUtil.unitConvert({ unit: 'meter', measureSystem: 'SI' },
+        { unit: 'meter-per-second', measureSystem: 'SI' },
+        1000,
+        'zh-CN',
+        '');
+      console.log('unitConvert_nullString_test_Static_0300 value:', value);
+      expect(value).assertEqual('1,000米');
+    })
+
+    /**
+     * @tc.name getDateOrder_nullString_test_Static_0100
+     * @tc.number getDateOrder_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getDateOrder_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.I18NUtil.getDateOrder('');
+      console.log('getDateOrder_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('y-LLL-d');
+    })
+
+    /**
+     * @tc.name getTimePeriodName_nullString_test_Static_0100
+     * @tc.number getTimePeriodName_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getTimePeriodName_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let value: string = i18n.I18NUtil.getTimePeriodName(5, '');
+        console.log('getTimePeriodName_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('getTimePeriodName_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name getBestMatchLocale_nullString_test_Static_0100
+     * @tc.number getBestMatchLocale_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getBestMatchLocale_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let value: string = i18n.I18NUtil.getBestMatchLocale("", ['zh-Hans-CN']);
+        console.log('getBestMatchLocale_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('getBestMatchLocale_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name getThreeLetterLanguage_nullString_test_Static_0100
+     * @tc.number getThreeLetterLanguage_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getThreeLetterLanguage_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.I18NUtil.getThreeLetterLanguage('');
+      console.log('getThreeLetterLanguage_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name getThreeLetterRegion_nullString_test_Static_0100
+     * @tc.number getThreeLetterRegion_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getThreeLetterRegion_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.I18NUtil.getThreeLetterRegion('');
+      console.log('getThreeLetterRegion_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name getUnicodeWrappedFilePath_nullString_test_Static_0100
+     * @tc.number getUnicodeWrappedFilePath_nullString_test_Static_0100
+     * @tc.desc with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getUnicodeWrappedFilePath_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let path: string = '';
+        let delimiter: string = '/';
+        let local: Intl.Locale = new Intl.Locale("zh");
+        let value: string = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, local);
+        console.log('getUnicodeWrappedFilePath_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('getUnicodeWrappedFilePath_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name getUnicodeWrappedFilePath_nullString_test_Static_0200
+     * @tc.number getUnicodeWrappedFilePath_nullString_test_Static_0200
+     * @tc.desc with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getUnicodeWrappedFilePath_nullString_test_Static_0200', Level.LEVEL3, () => {
+      try {
+        let path: string = 'data/out/tmp';
+        let delimiter: string = '';
+        let local: Intl.Locale = new Intl.Locale("zh");
+        let value: string = i18n.I18NUtil.getUnicodeWrappedFilePath(path, delimiter, local);
+        console.log('getUnicodeWrappedFilePath_nullString_test_Static_0200 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('getUnicodeWrappedFilePath_nullString_test_Static_0200 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name PhoneNumberFormat_isValidNumber_nullString_test_Static_0100
+     * @tc.number PhoneNumberFormat_isValidNumber_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('PhoneNumberFormat_isValidNumber_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let phoneNumber: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
+      let value: boolean = phoneNumber.isValidNumber('');
+      console.log('PhoneNumberFormat_isValidNumber_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name PhoneNumberFormat_format_nullString_test_Static_0100
+     * @tc.number PhoneNumberFormat_format_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('PhoneNumberFormat_format_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let phoneNumber: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
+      let value: string = phoneNumber.format('');
+      console.log('PhoneNumberFormat_format_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name PhoneNumberFormat_getLocationName_nullString_test_Static_0100
+     * @tc.number PhoneNumberFormat_getLocationName_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('PhoneNumberFormat_getLocationName_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let phoneNumber: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
+      let value: string = phoneNumber.getLocationName('', 'zh-CN');
+      console.log('PhoneNumberFormat_getLocationName_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name PhoneNumberFormat_getLocationName_nullString_test_Static_0200
+     * @tc.number PhoneNumberFormat_getLocationName_nullString_test_Static_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('PhoneNumberFormat_getLocationName_nullString_test_Static_0200', Level.LEVEL3, () => {
+      let phoneNumber: i18n.PhoneNumberFormat = new i18n.PhoneNumberFormat('CN');
+      let value: string = phoneNumber.getLocationName('027-5937411', '');
+      console.log('PhoneNumberFormat_getLocationName_nullString_test_Static_0200 value:', value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name getCalendar_nullString_test_Static_0100
+     * @tc.number getCalendar_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getCalendar_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let calendar: i18n.Calendar = i18n.getCalendar('', 'chinese');
+      let value: string = calendar.getDisplayName('zh');
+      console.log('getCalendar_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('农历');
+    })
+
+    /**
+     * @tc.name getCalendar_nullString_test_Static_0200
+     * @tc.number getCalendar_nullString_test_Static_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getCalendar_nullString_test_Static_0200', Level.LEVEL3, () => {
+      let calendar: i18n.Calendar = i18n.getCalendar('zh', '');
+      let value: string = calendar.getDisplayName('zh');
+      console.log('getCalendar_nullString_test_Static_0200 value:', value);
+      expect(value).assertEqual('公历');
+    })
+
+    /**
+     * @tc.name calendar_setTimeZone_nullString_test_Static_0100
+     * @tc.number calendar_setTimeZone_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('calendar_setTimeZone_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let calendar: i18n.Calendar = i18n.getCalendar('zh');
+      calendar.setTimeZone('');
+      let value: string = calendar.getTimeZone();
+      console.log('calendar_setTimeZone_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('Etc/Unknown');
+    })
+
+    /**
+     * @tc.name calendar_get_nullString_test_Static_0100
+     * @tc.number calendar_get_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('calendar_get_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let calendar: i18n.Calendar = i18n.getCalendar('zh-CN');
+      calendar.set(2021, 11, 11, 8, 0, 0);
+      let value: number = calendar.get('');
+      console.log('calendar_get_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name calendar_getDisplayName_nullString_test_Static_0100
+     * @tc.number calendar_getDisplayName_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('calendar_getDisplayName_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let calendar: i18n.Calendar = i18n.getCalendar('zh', 'chinese');
+      let value: string = calendar.getDisplayName('');
+      console.log('calendar_getDisplayName_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('chinese');
+    })
+
+    /**
+     * @tc.name calendar_isWeekend_undefined_test_Static_0100
+     * @tc.number calendar_isWeekend_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('calendar_isWeekend_undefined_test_Static_0100', Level.LEVEL3, () => {
+      let calendar: i18n.Calendar = i18n.getCalendar('zh');
+      let value: boolean = calendar.isWeekend(undefined);
+      console.log('calendar_isWeekend_undefined_test_Static_0100 value:', value);
+      expect(typeof(value)).assertEqual('boolean');
+    })
+
+    /**
+     * @tc.name calendar_add_nullString_test_Static_0100
+     * @tc.number calendar_add_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('calendar_add_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let calendar: i18n.Calendar = i18n.getCalendar('zh-CN');
+        calendar.set(2021, 11, 11, 8, 0, 0);
+        calendar.add('', 8);
+        let value: number = calendar.get('year');
+        console.log('calendar_add_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('calendar_add_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(e.code).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name isRTL_nullString_test_Static_0100
+     * @tc.number isRTL_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('isRTL_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.isRTL('');
+      console.log('isRTL_nullString_test_Static_0100 value:', value);
+      expect(value).assertFalse();
+    })
+
+    /**
+     * @tc.name getLineInstance_nullString_test_Static_0100
+     * @tc.number getLineInstance_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getLineInstance_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('');
+      iterator.setLineBreakText('123');
+      let value: number = iterator.last();
+      console.log('getLineInstance_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(3);
+    })
+
+    /**
+     * @tc.name next_undefined_test_Static_0100
+     * @tc.number next_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('next_undefined_test_Static_0100', Level.LEVEL3, () => {
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+      iterator.setLineBreakText('123');
+      let value: number = iterator.next(undefined);
+      console.log('next_undefined_test_Static_0100 value:', value);
+      expect(value).assertEqual(3);
+    })
+
+    /**
+     * @tc.name setLineBreakText_nullString_test_Static_0100
+     * @tc.number setLineBreakText_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('setLineBreakText_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let iterator: i18n.BreakIterator = i18n.getLineInstance('en');
+      iterator.setLineBreakText('');
+      let value: number = iterator.last();
+      console.log('setLineBreakText_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(0);
+    })
+
+    /**
+     * @tc.name getInstance_nullString_test_Static_0100
+     * @tc.number getInstance_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getInstance_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let index: i18n.IndexUtil = i18n.getInstance('');
+      let value: string = index.getIndex('z');
+      console.log('getInstance_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('Z');
+    })
+
+    /**
+     * @tc.name getInstance_undefined_test_Static_0100
+     * @tc.number getInstance_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getInstance_undefined_test_Static_0100', Level.LEVEL3, () => {
+      let index: i18n.IndexUtil = i18n.getInstance(undefined);
+      let value: string = index.getIndex('z');
+      console.log('getInstance_undefined_test_Static_0100 value:', value);
+      expect(value).assertEqual('Z');
+    })
+
+    /**
+     * @tc.name addLocale_nullString_test_Static_0100
+     * @tc.number addLocale_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('addLocale_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let index: i18n.IndexUtil = i18n.getInstance('zh');
+      index.addLocale('');
+      let value: string = index.getIndex('a');
+      console.log('addLocale_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('A');
+    })
+
+    /**
+     * @tc.name getIndex_nullString_test_Static_0100
+     * @tc.number getIndex_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getIndex_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let index: i18n.IndexUtil = i18n.getInstance('zh');
+      let value: string = index.getIndex('');
+      console.log('getIndex_nullString_test_Static_0100 value:', value);
+      expect(value != null).assertTrue();
+    })
+
+    /**
+     * @tc.name Unicode_isDigit_nullString_test_Static_0100
+     * @tc.number Unicode_isDigit_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_isDigit_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.Unicode.isDigit('');
+      console.log('Unicode_isDigit_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name Unicode_isSpaceChar_nullString_test_Static_0100
+     * @tc.number Unicode_isSpaceChar_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_isSpaceChar_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.Unicode.isSpaceChar('');
+      console.log('Unicode_isSpaceChar_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name Unicode_isWhitespace_nullString_test_Static_0100
+     * @tc.number Unicode_isWhitespace_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_isWhitespace_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.Unicode.isWhitespace('');
+      console.log('Unicode_isWhitespace_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name Unicode_isRTL_nullString_test_Static_0100
+     * @tc.number Unicode_isRTL_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_isRTL_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.Unicode.isRTL('');
+      console.log('Unicode_isRTL_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name Unicode_isIdeograph_nullString_test_Static_0100
+     * @tc.number Unicode_isIdeograph_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_isIdeograph_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.Unicode.isIdeograph('');
+      console.log('Unicode_isIdeograph_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name Unicode_isLetter_nullString_test_Static_0100
+     * @tc.number Unicode_isLetter_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_isLetter_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.Unicode.isLetter('');
+      console.log('Unicode_isLetter_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name Unicode_isLowerCase_nullString_test_Static_0100
+     * @tc.number Unicode_isLowerCase_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_isLowerCase_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.Unicode.isLowerCase('');
+      console.log('Unicode_isLowerCase_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name Unicode_isUpperCase_nullString_test_Static_0100
+     * @tc.number Unicode_isUpperCase_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_isUpperCase_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: boolean = i18n.Unicode.isUpperCase('');
+      console.log('Unicode_isUpperCase_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name Unicode_getType_nullString_test_Static_0100
+     * @tc.number Unicode_getType_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Unicode_getType_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.Unicode.getType('');
+      console.log('Unicode_getType_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('U_UNASSIGNED');
+    })
+
+    /**
+     * @tc.name getTimeZone_nullString_test_Static_0100
+     * @tc.number getTimeZone_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getTimeZone_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('');
+      let value: string = timeZone.getID();
+      console.log('getTimeZone_nullString_test_Static_0100 value:', value);
+      expect(value.length > 0).assertTrue();
+    })
+
+    /**
+     * @tc.name getTimeZone_undefined_test_Static_0100
+     * @tc.number getTimeZone_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getTimeZone_undefined_test_Static_0100', Level.LEVEL3, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone(undefined);
+      let value: string = timeZone.getID();
+      console.log('getTimeZone_undefined_test_Static_0100 value:', value);
+      expect(value.length > 0).assertTrue();
+    })
+
+    /**
+     * @tc.name getDisplayName_nullString_test_Static_0100
+     * @tc.number getDisplayName_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getDisplayName_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let value: string = timeZone.getDisplayName('');
+      console.log('getDisplayName_nullString_test_Static_0100 value:', value);
+      expect(value.length > 0).assertTrue();
+    })
+
+    /**
+     * @tc.name getDisplayName_nullString_test_Static_0100
+     * @tc.number getDisplayName_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getDisplayName_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let value: string = timeZone.getDisplayName(undefined);
+      console.log('getDisplayName_nullString_test_Static_0100 value:', value);
+      expect(value.length > 0).assertTrue();
+    })
+
+    /**
+     * @tc.name getCityDisplayName_nullString_test_Static_0100
+     * @tc.number getCityDisplayName_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getCityDisplayName_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.TimeZone.getCityDisplayName('', 'zh');
+      console.log('getCityDisplayName_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name getCityDisplayName_nullString_test_Static_0200
+     * @tc.number getCityDisplayName_nullString_test_Static_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getCityDisplayName_nullString_test_Static_0200', Level.LEVEL3, () => {
+      let value: string = i18n.TimeZone.getCityDisplayName('Auckland', '');
+      console.log('getCityDisplayName_nullString_test_Static_0200 value:', value);
+      expect(value != '').assertTrue('');
+    })
+
+    /**
+     * @tc.name getCityDisplayName_nullString_test_Static_0100
+     * @tc.number getCityDisplayName_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getCityDisplayName_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: string = i18n.TimeZone.getTimezoneFromCity('');
+      console.log('getCityDisplayName_nullString_test_Static_0100 value:', value);
+      expect(value != null).assertTrue('');
+    })
+
+    /**
+     * @tc.name nextTransition_undefined_test_Static_0100
+     * @tc.number nextTransition_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('nextTransition_undefined_test_Static_0100', Level.LEVEL3, () => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('America/Tijuana');
+      let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
+      let value: i18n.ZoneOffsetTransition = zoneRules.nextTransition(undefined);
+      console.log('nextTransition_undefined_test_Static_0100 value:', value);
+      expect(JSON.stringify(value)).assertEqual('{}');
+    })
+
+    /**
+     * @tc.name Transliterator_getInstance_nullString_test_Static_0100
+     * @tc.number Transliterator_getInstance_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Transliterator_getInstance_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let value: i18n.Transliterator = i18n.Transliterator.getInstance('');
+      console.log('Transliterator_getInstance_nullString_test_Static_0100 value:', value);
+      expect(value !== null).assertTrue();
+    })
+
+    /**
+     * @tc.name Transliterator_transform_nullString_test_Static_0100
+     * @tc.number Transliterator_transform_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Transliterator_transform_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let trans: i18n.Transliterator = i18n.Transliterator.getInstance('Any-Accents');
+      let value: string = trans.transform('');
+      console.log('Transliterator_transform_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name normalize_nullString_test_Static_0100
+     * @tc.number normalize_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('normalize_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let trans: i18n.Normalizer = i18n.Normalizer.getInstance(i18n.NormalizerMode.NFC);
+      let value: string = trans.normalize('');
+      console.log('normalize_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual('');
+    })
+
+    /**
+     * @tc.name isHoliday_undefined_test_Static_0100
+     * @tc.number isHoliday_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('isHoliday_undefined_test_Static_0100', Level.LEVEL3, () => {
+      let holidayManager = new i18n.HolidayManager('/system/lib/TR.ics');
+      let value: boolean = holidayManager.isHoliday(undefined);
+      console.log('isHoliday_undefined_test_Static_0100 value:', value);
+      expect(value == false).assertTrue();
+    })
+
+    /**
+     * @tc.name getHolidayInfoItemArray_undefined_test_Static_0100
+     * @tc.number getHolidayInfoItemArray_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getHolidayInfoItemArray_undefined_test_Static_0100', Level.LEVEL3, () => {
+      let holidayManager = new i18n.HolidayManager('/system/lib/TR.ics');
+      let value: i18n.HolidayInfoItem[] = holidayManager.getHolidayInfoItemArray(undefined);
+      console.log('getHolidayInfoItemArray_undefined_test_Static_0100 value:', value);
+      expect(value != undefined).assertTrue();
+    })
+
+    /**
+     * @tc.name findEntityInfo_nullString_test_Static_0100
+     * @tc.number findEntityInfo_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('findEntityInfo_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let entityRecognizer = new i18n.EntityRecognizer('zh-CN');
+      let value: i18n.EntityInfoItem[] = entityRecognizer.findEntityInfo('');
+      console.log('findEntityInfo_nullString_test_Static_0100 value:', value);
+      expect(value.length == 0).assertTrue();
+    })
+
+    /**
+     * @tc.name Intl_getSimpleDateTimeFormatByPattern_nullString_test_Static_0100
+     * @tc.number Intl_getSimpleDateTimeFormatByPattern_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Intl_getSimpleDateTimeFormatByPattern_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+        let value: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("", locale);
+        console.log('Intl_getSimpleDateTimeFormatByPattern_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('Intl_getSimpleDateTimeFormatByPattern_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name Intl_getSimpleDateTimeFormatByPattern_undefined_test_Static_0100
+     * @tc.number Intl_getSimpleDateTimeFormatByPattern_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Intl_getSimpleDateTimeFormatByPattern_undefined_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let value: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatByPattern("yMdhms", undefined);
+        console.log('Intl_getSimpleDateTimeFormatByPattern_undefined_test_Static_0100 value:', value);
+        expect(JSON.stringify(value)).assertEqual('{}');
+      } catch (e) {
+        console.log('Intl_getSimpleDateTimeFormatByPattern_undefined_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_nullString_test_Static_0100
+     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Intl_getSimpleDateTimeFormatBySkeleton_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+        let value: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('', locale);
+        console.log('Intl_getSimpleDateTimeFormatBySkeleton_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('Intl_getSimpleDateTimeFormatBySkeleton_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name Intl_getSimpleDateTimeFormatBySkeleton_undefined_test_Static_0100
+     * @tc.number Intl_getSimpleDateTimeFormatBySkeleton_undefined_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Intl_getSimpleDateTimeFormatBySkeleton_undefined_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let value: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", undefined);
+        console.log('Intl_getSimpleDateTimeFormatBySkeleton_undefined_test_Static_0100 value:', value);
+        expect(JSON.stringify(value)).assertEqual('{}');
+      } catch (e) {
+        console.log('Intl_getSimpleDateTimeFormatBySkeleton_undefined_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name Intl_getSimpleNumberFormatBySkeleton_nullString_test_Static_0100
+     * @tc.number Intl_getSimpleNumberFormatBySkeleton_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('Intl_getSimpleNumberFormatBySkeleton_nullString_test_Static_0100', Level.LEVEL3, () => {
+      try {
+        let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+        let value: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('', locale);
+        console.log('Intl_getSimpleNumberFormatBySkeleton_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('Intl_getSimpleNumberFormatBySkeleton_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name getSimpleNumberFormatBySkeleton_undefined_test_Static_0200
+     * @tc.number getSimpleNumberFormatBySkeleton_undefined_test_Static_0200
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('getSimpleNumberFormatBySkeleton_undefined_test_Static_0200', Level.LEVEL3, () => {
+      try {
+        let value: i18n.SimpleNumberFormat = i18n.getSimpleNumberFormatBySkeleton('yMdhms', undefined);
+        console.log('getSimpleNumberFormatBySkeleton_undefined_test_Static_0200 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('getSimpleNumberFormatBySkeleton_undefined_test_Static_0200 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
+    })
+
+    /**
+     * @tc.name StyledDateTimeFormat_format_test_Static_0100
+     * @tc.number StyledDateTimeFormat_format_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('StyledDateTimeFormat_format_test_Static_0100', Level.LEVEL3, () => {
+      let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
+      let date: Date = new Date(2024, 11, 13, 6, 30, 25);
+      let skeletonFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDataTimeFormatBySkeleton('yMdhms', locale);
+      let dateFormatted: string = skeletonFormatter.format(date);
+      console.log('StyledDateTimeFormat_format_test_Static_0100 value:', value);
+      expect(dateFormatted == '2024/12/13 上午6:30:25').assertTrue();
+    })
+
+    /**
+     * @tc.name AdvancedMeasureFormat_format_test_Static_0100
+     * @tc.number AdvancedMeasureFormat_format_test_Static_0100
+     * @tc.desc with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('AdvancedMeasureFormat_format_test_Static_0100', Level.LEVEL3, () => {
+      let numFmt: Intl.NumberFormat = new Intl.NumberFormat("zh-Hans-CN", {style: 'unit', unit: 'fahrenheit'});
+      let advancedMeasureFormat: i18n.AdvancedMeasureFormat = i18n.AdvancedMeasureFormat(numFmt, {
+        unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON
+      });
+      let value: string = advancedMeasureFormat.format(100);
+      console.log('AdvancedMeasureFormat_format_test_Static_0100 value:', value);
+      expect(value).assertTrue('37.778℃');
+    })
+
+    /**
+     * @tc.name collator_compare_nullString_test_Static_0100
+     * @tc.number collator_compare_nullString_test_Static_0100
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('collator_compare_nullString_test_Static_0100', Level.LEVEL3, () => {
+      let coll = new intl.Collator();
+      let value: number = coll.compare('', 'b');
+      console.log('collator_compare_nullString_test_Static_0100 value:', value);
+      expect(value).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name collator_compare_nullString_test_Static_0200
+     * @tc.number collator_compare_nullString_test_Static_0200
+     * @tc.desc with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL3
+     */
+    it('collator_compare_nullString_test_Static_0200', Level.LEVEL3, () => {
+      let coll = new intl.Collator();
+      let value: number = coll.compare('a', '');
+      console.log('collator_compare_nullString_test_Static_0200 value:', value);
+      expect(value).assertEqual(1);
+    })
+
     console.log('*************end i18nStageTest*************');
   })
 }
