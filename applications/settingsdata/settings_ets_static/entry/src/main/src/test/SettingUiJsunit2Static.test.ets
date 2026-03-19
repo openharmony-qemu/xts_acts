@@ -1723,6 +1723,91 @@ export default function settingUiJsunit() {
     });
 
     /**
+     * @tc.name   settings_register_result_false
+     * @tc.number settings_register_result_false
+     * @tc.desc   check registerKeyObserver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_register_result_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness118';//关键字
+      let domainName = settings.domainName.USER_PROPERTY;
+      try{
+        let value = settings.registerKeyObserver(abilityContext!, name, domainName, (err, ret) => {});
+        console.info("[settings_register_result_false] result1 = " + value);
+        await Utils.msSleep(2000);
+        value = settings.registerKeyObserver(abilityContext!, name, domainName, (err, ret) => {});
+        console.info("[settings_register_result_false] result2 = " + value);
+        expect(value).assertFalse();
+        done();
+      } catch (err) {
+        err = err as Error;
+        console.error("[settings_register_key_empty] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_register_key_empty
+     * @tc.number settings_register_key_empty
+     * @tc.desc   check registerKeyObserver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_register_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness118';//关键字
+      let domainName = settings.domainName.USER_PROPERTY;
+      try{
+        let value = settings.registerKeyObserver(abilityContext!, '', domainName, (err, ret) => {
+          if (err) {
+            console.info("[settings_register_key_empty] error is:" + String(err));
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        })
+        expect(value).assertTrue();
+        done();
+      } catch (err) {
+        err = err as Error;
+        console.error("[settings_register_key_empty] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_register_domain_empty
+     * @tc.number settings_register_domain_empty
+     * @tc.desc   check registerKeyObserver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_register_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'domain_empty2';//关键字
+      let domainName = settings.domainName.USER_PROPERTY;
+      try{
+        let value = settings.registerKeyObserver(abilityContext!, name, '', (err, ret) => {
+          if (err) {
+            console.info("[settings_register_domain_empty] error is:" + String(err));
+            expect(err.code).assertEqual(201);
+          }
+          done();
+        })
+        expect(value).assertTrue();
+        done();
+      } catch (err) {
+        err = err as Error;
+        console.error("[settings_register_domain_empty] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   settings_get_value_static_122
      * @tc.number settings_get_value_static_122
      * @tc.desc   check unregisterKeyObserver
@@ -1747,6 +1832,80 @@ export default function settingUiJsunit() {
       }catch (err) {
         console.error("[settings_set_value_122] error = " + err);
         expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_unregister_key_empty
+     * @tc.number settings_unregister_key_empty
+     * @tc.desc   check unregisterKeyObserver key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregister_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        let value = settings.registerKeyObserver(abilityContext!, '', domainName, (err, ret) => {})
+        console.info("[settings_unregister_key_empty] value1 is: " + value);
+        let value2 = settings.unregisterKeyObserver(abilityContext!, '', domainName);
+        console.info("[settings_unregister_key_empty] value2 = " + value2);
+        expect(value2).assertTrue();
+        done();
+      }catch (err) {
+        console.error("[settings_unregister_key_empty] error = " + err);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_unregister_domain_empty
+     * @tc.number settings_unregister_domain_empty
+     * @tc.desc   check unregisterKeyObserver key empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregister_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'unregister_domain_empty';
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        settings.setValueSync(abilityContext!, name, 'testvalue');
+        let value = settings.registerKeyObserver(abilityContext!, name, '', (err, ret) => {})
+        console.info("[settings_unregister_domain_empty] value1 is: " + value);
+        let value2 = settings.unregisterKeyObserver(abilityContext!, name, '');
+        console.info("[settings_unregister_domain_empty] value2 = " + value2);
+        expect(value2).assertTrue();
+        done();
+      } catch (err) {
+        console.error("[settings_unregister_key_empty] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   settings_unregister_result_false
+     * @tc.number settings_unregister_result_false
+     * @tc.desc   check unregisterKeyObserver result false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('settings_unregister_result_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'unregister_result_false';
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        settings.setValueSync(abilityContext!, name, 'testvalue');
+        let value = settings.unregisterKeyObserver(abilityContext!, name, domainName);
+        console.info("[settings_unregister_result_false] value = " + value);
+        expect(value).assertFalse();
+        done();
+      } catch (err) {
+        console.error("[settings_unregister_result_false] error = " + err);
+        expect(err.message).assertEqual("Permission denied");
         done();
       }
     });
