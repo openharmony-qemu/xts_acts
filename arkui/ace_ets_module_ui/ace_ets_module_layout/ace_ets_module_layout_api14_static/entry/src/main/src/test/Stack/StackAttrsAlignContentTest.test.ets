@@ -27,6 +27,8 @@ export default function StackAttrsAlignContentTest() {
     beforeAll(async (): Promise<void> => {
       console.info("StackAttrsAlignContentTest beforeAll start");
       await startAbility("com.arkui.ace.layout.api14.static", "EntryAbility");
+      await CommonFunc.sleep(1000);
+      console.info('StackAttrsAlignContentTest startAbility completed');
     });
 
     beforeEach(async (): Promise<void> => {

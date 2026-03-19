@@ -26,9 +26,9 @@ export default function DrawContextSizeTest() {
   describe('DrawContextSizeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("DrawContextSizeTest beforeAll start");
-      await UtilsTest.msSleep(4000);
       await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.msSleep(1000);
+      console.info('DrawContextSizeTest startAbility completed');
     });
 
     beforeEach(async (): Promise<void> => {
