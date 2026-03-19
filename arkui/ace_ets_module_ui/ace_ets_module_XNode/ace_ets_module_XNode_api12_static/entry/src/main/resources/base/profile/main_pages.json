@@ -74,6 +74,8 @@
     "MainAbility/pages/typeNode/RelativeContainer",
     "MainAbility/pages/typeNode/Swiper",
     "MainAbility/pages/typeNode/TextInput",
-    "MainAbility/pages/typeNode/XComponent1"
+    "MainAbility/pages/typeNode/XComponent1",
+    "MainAbility/pages/FrameNode/NodeAdapterTotalNodeCount",
+    "MainAbility/pages/FrameNode/TypedFrameNodeAttribute"
   ]
 }
