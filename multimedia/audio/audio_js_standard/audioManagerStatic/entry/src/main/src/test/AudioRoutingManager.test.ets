@@ -1207,7 +1207,7 @@ export default function audioRoutingManager() {
     it("SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let rendererInfo: audio.AudioRendererInfo = {
         usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
-        rendererFlags: 0
+        rendererFlags: 0,
         volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
       }
       let routingManager = audio.getAudioManager().getRoutingManager();
