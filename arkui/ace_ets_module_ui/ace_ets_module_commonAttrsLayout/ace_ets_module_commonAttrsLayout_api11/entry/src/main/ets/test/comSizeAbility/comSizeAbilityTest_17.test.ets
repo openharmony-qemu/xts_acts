@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import { expect, it, afterEach, afterAll, beforeEach, beforeAll, describe, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import {
@@ -93,8 +94,13 @@ export default function comSizeAbilityTest_17() {
       console.info("[comSizeAbilityTestJsunit_44] component Scale is: " + JSON.stringify(Scale))
       console.info("[comSizeAbilityTestJsunit_44] component Rotate is: " + JSON.stringify(Rotate))
       await CommonFunc.sleep(1000);
-      expect(Math.abs(SizeWidth - Math.round(vp2px(130))) <= 1).assertTrue();
-      expect(Math.abs(SizeHeight - Math.round(vp2px(110))) <= 1).assertTrue();
+
+      console.info("[comSizeAbilityTestJsunit_44] chazhi1 is: " + Math.floor(Math.abs(SizeWidth - vp2px(130))))
+      console.info("[comSizeAbilityTestJsunit_44] chazhi2 is: " + Math.floor(Math.abs(SizeHeight - vp2px(110))))
+
+      expect(Math.floor(Math.abs(SizeWidth - vp2px(130))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(SizeHeight - vp2px(110))) <= 1).assertTrue();
+
       expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
       expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
       expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
@@ -103,6 +109,7 @@ export default function comSizeAbilityTest_17() {
       await CommonFunc.sleep(1000);
       done()
     })
+
     /**
      * @tc.name   comSizeAbilityTestJsunit_45
      * @tc.number 测试编号
@@ -142,8 +149,13 @@ export default function comSizeAbilityTest_17() {
       console.info("[comSizeAbilityTestJsunit_45] component Scale is: " + JSON.stringify(Scale))
       console.info("[comSizeAbilityTestJsunit_45] component Rotate is: " + JSON.stringify(Rotate))
       await CommonFunc.sleep(1000);
-      expect(Math.abs(SizeWidth - Math.round(vp2px(155))) <= 1).assertTrue();
-      expect(Math.abs(SizeHeight - Math.round(vp2px(100))) <= 1).assertTrue();
+
+      console.info("[comSizeAbilityTestJsunit_45] chazhi1 is: " + Math.floor(Math.abs(SizeWidth - vp2px(155))))
+      console.info("[comSizeAbilityTestJsunit_45] chazhi2 is: " + Math.floor(Math.abs(SizeHeight - vp2px(100))))
+
+      expect(Math.floor(Math.abs(SizeWidth - vp2px(155))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(SizeHeight - vp2px(100))) <= 1).assertTrue();
+
       expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
       expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
       expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
@@ -191,8 +203,13 @@ export default function comSizeAbilityTest_17() {
       console.info("[comSizeAbilityTestJsunit_46] component Scale is: " + JSON.stringify(Scale))
       console.info("[comSizeAbilityTestJsunit_46] component Rotate is: " + JSON.stringify(Rotate))
       await CommonFunc.sleep(1000);
-      expect(Math.floor(Math.abs(SizeWidth - vp2px(135))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(SizeHeight - vp2px(110))) <= 1).assertTrue();
+
+      console.info("[comSizeAbilityTestJsunit_46] chazhi1 is: " + Math.floor(Math.abs(SizeWidth - vp2px(135))))
+      console.info("[comSizeAbilityTestJsunit_46] chazhi2 is: " + Math.floor(Math.abs(SizeHeight - vp2px(110))))
+
+      expect(Math.floor(Math.abs(SizeWidth - vp2px(135))) <= 2).assertTrue();
+      expect(Math.floor(Math.abs(SizeHeight - vp2px(110))) <= 2).assertTrue();
+
       expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
       expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
       expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');

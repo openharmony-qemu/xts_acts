@@ -174,7 +174,7 @@ class Overload {
         return 3 * x;
     }
 
-    overload method {method1, method2, method3}
+    private overload method {method1, method2, method3}
 }
 
 function CreatePartial(a: int): Partial<UnusualTypes> {

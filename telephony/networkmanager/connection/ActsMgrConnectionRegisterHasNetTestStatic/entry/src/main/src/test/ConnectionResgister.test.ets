@@ -37,14 +37,6 @@ const NetCapNET_CAPABILITY_CHECKING_CONNECTIVITY = connection.NetCap.NET_CAPABIL
 
 let netConnOnEvent6 = async (caseName: string,netConn: connection.NetConnection) =>{
     hilog.info(domain, tag, '%{public}s', caseName+ ' : ==  Subscribing to Events start  === ');
-    netConn.on('netAvailable', (value) => {
-        ListenTimes+=1;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netAvailable " + JSON.stringify(value));
-    });
-    netConn.on('netCapabilitiesChange', (value: connection.NetCapabilityInfo) => {
-        ListenTimes+=10;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netCapabilitiesChange " + JSON.stringify(value));
-    });
     netConn.onNetLost((value) => {
         ListenTimes+=100;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
@@ -61,14 +53,6 @@ let netConnOnEvent6 = async (caseName: string,netConn: connection.NetConnection)
 }
 let netConnOnEvent4 =async (caseName: string,netConn: connection.NetConnection) =>{
     hilog.info(domain, tag, '%{public}s', caseName+ ' : ==  Subscribing to Events start  === ');
-    netConn.on('netAvailable', (value) => {
-        ListenTimes+=1;
-        hilog.info(domain, tag, '%{public}s', caseName+" ===on netAvailable " + JSON.stringify(value));
-    });
-    netConn.on('netCapabilitiesChange', (value: connection.NetCapabilityInfo) => {
-        ListenTimes+=10;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netCapabilitiesChange " + JSON.stringify(value));
-    });
     netConn.onNetLost((value) => {
         ListenTimes+=100;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));
@@ -78,14 +62,6 @@ let netConnOnEvent4 =async (caseName: string,netConn: connection.NetConnection) 
 
 let netConnOnEvent3 =async (caseName: string,netConn: connection.NetConnection) =>{
     hilog.info(domain, tag, '%{public}s', caseName+ ": ==  Subscribing to Events start  === ");
-    netConn.on('netAvailable', (value) => {
-        ListenTimes+=1;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netAvailable " + JSON.stringify(value));
-    });
-    netConn.on('netConnectionPropertiesChange', (value) => {
-        ListenTimes+=10;
-        hilog.info(domain, tag, '%{public}s', caseName+ " ===on netConnectionPropertiesChange" + JSON.stringify(value));
-    });
     netConn.onNetLost((value) => {
         ListenTimes+=100;
         hilog.info(domain, tag, '%{public}s', caseName+ " ===on netLost" + JSON.stringify(value));

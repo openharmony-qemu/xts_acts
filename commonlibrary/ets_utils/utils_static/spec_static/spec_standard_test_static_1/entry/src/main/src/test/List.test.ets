@@ -15,6 +15,7 @@
 import AnnotationsTest from "./Annotations/annotations.test";
 import AssignmentLikeContextsTest from "./contextsandconversions/AssignmentLikeContextsTest.test";
 import AttemptInvalidTypeConversionTest from "./contextsandconversions/AttemptInvalidTypeConversionTest.test";
+import ImplicitConversionsTest from "./contextsandconversions/ImplicitConversionsTest.test";
 import NumericOperatorContextsTest from "./contextsandconversions/NumericOperatorContextsTest.test";
 import StringOperatorContextsTest from "./contextsandconversions/StringOperatorContextsTest.test";
 import UndefinedFixVerificationTest from "./undefined/UndefinedFixVerification.test";
@@ -24,6 +25,7 @@ export default function testsuite() {
   AssignmentLikeContextsTest();
   AnnotationsTest();
   AttemptInvalidTypeConversionTest();
+  ImplicitConversionsTest();
   NumericOperatorContextsTest();
   StringOperatorContextsTest();
   UndefinedFixVerificationTest();

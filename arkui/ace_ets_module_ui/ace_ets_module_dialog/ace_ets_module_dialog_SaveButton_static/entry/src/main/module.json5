@@ -43,20 +43,6 @@
           }
         ]
       }
-    ],
-    "requestPermissions": [
-      {"name": "ohos.permission.WRITE_IMAGEVIDEO",
-        "reason": "$string:EntryAbility_desc",
-        "usedScene": {
-          "abilities": ["EntryAbility"]
-        }
-      },
-      {"name": "ohos.permission.CUSTOMIZE_SAVE_BUTTON",
-        "reason": "$string:EntryAbility_desc",
-        "usedScene": {
-          "abilities": ["EntryAbility"]
-        }
-      }
     ]
   }
 }
