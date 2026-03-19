@@ -97,7 +97,6 @@ export default function SegmentBtnItem0010() {
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
-        .getArray("$children")[0]
       console.log("[SegmentBtnItem0010_0100] component btn0 is: ", JSON.stringify(btn0))
       expect(btn0.getElement('$attrs').getString('content')).assertEqual('a');
       expect(btn0.getElement('$attrs').getString('backgroundColor')).assertEqual('#00000000');
@@ -133,7 +132,6 @@ export default function SegmentBtnItem0010() {
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
-        .getArray("$children")[0]
       console.log("[SegmentBtnItem0010_0200] component btn0 is: ", JSON.stringify(btn0))
       expect(btn0.getElement('$attrs').getString('content')).assertEqual('b');
       expect(btn0.getElement('$attrs').getString('fontColor')).assertEqual('#FFF7F7F7');
@@ -148,7 +146,6 @@ export default function SegmentBtnItem0010() {
         .getArray("$children")[1]
         .getArray("$children")[2]
         .getArray("$children")[1]
-        .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
       console.log("[SegmentBtnItem0010_0200_1] component btn1 is: ", JSON.stringify(btn1))
@@ -183,7 +180,6 @@ export default function SegmentBtnItem0010() {
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
-        .getArray("$children")[0]
       console.log("[SegmentBtnItem0010_0300] component btn0 is: ", JSON.stringify(btn0))
       expect(btn0.getElement('$attrs').getString('content')).assertEqual('c');
       expect(btn0.getElement('$attrs').getString('fontSize')).assertEqual('18.00fp');
@@ -196,7 +192,6 @@ export default function SegmentBtnItem0010() {
         .getArray("$children")[2]
         .getArray("$children")[2]
         .getArray("$children")[1]
-        .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
       console.log("[SegmentBtnItem0010_0300_1] component btn1 is: ", JSON.stringify(btn1))
@@ -227,7 +222,6 @@ export default function SegmentBtnItem0010() {
         .getArray("$children")[0]
         .getArray("$children")[3]
         .getArray("$children")[2]
-        .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
