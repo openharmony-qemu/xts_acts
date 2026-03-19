@@ -1091,7 +1091,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
-        expect(error.code === 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
         done();
       }
     });
@@ -1119,7 +1119,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
-        expect(error.code === 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
         done();
       }
     });
@@ -1147,7 +1147,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
-        expect(error.code === 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
         done();
       }
     });
@@ -1176,7 +1176,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
-        expect(error.code === 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
         done();
       }
     });
