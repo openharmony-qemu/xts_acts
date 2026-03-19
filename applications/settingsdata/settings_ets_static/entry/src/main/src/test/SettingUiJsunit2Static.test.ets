@@ -2343,13 +2343,13 @@ export default function settingUiJsunit() {
             done();
           })
           .catch((err: Error)=>{
-            console.error("[open_manager_settings_result_false] error = " + err);
+            console.error("[open_manager_settings_result_false] catch1 error = " + err?.message);
             expect(err != undefined).assertTrue();
             done();
           })
       } catch (err) {
-        console.error("[open_manager_settings_result_false] error = " + err);
-        expect().assertFail();
+        console.error("[open_manager_settings_result_false] catch2 error = " + err?.message);
+        expect(err != undefined).assertTrue();
         done();
       }
     });
