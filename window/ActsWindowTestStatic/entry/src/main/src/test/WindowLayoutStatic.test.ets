@@ -27,7 +27,7 @@ let domain: int = 0x0000;
 let tag: string = 'WindowLayoutStaticTest';
 
 async function assertMaximizeComponentExist(windowState: number, windowClass?: window.Window) {
-    return new Promise<boolean>((resolve, reject)=>{
+    return new Promise<boolean>(async(resolve, reject)=>{
         let driver = Driver.create()
         if (windowState == 2 || windowState == 1) {
             await driver.mouseMoveTo({ x: 100, y: 0 })
