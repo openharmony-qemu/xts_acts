@@ -50,6 +50,7 @@ class Monitor0300Class {
   @Trace person: Monitor0300Person
   @Trace nameChange: string = 'Tom'
   @Trace ageChange: int = 23
+  @Trace paths: string = 'ww'
 
   @Monitor(['person.name'])
   onNameChange(monitor: IMonitor) {
@@ -60,7 +61,7 @@ class Monitor0300Class {
   @Monitor(['person.age'])
   onAgeChange(monitor: IMonitor) {
     this.ageChange = monitor.value<int>()?.now as Int
-
+    this.paths = monitor.value<int>()?.path as string
     console.log('person.age: ' + this.ageChange)
   }
 
@@ -93,6 +94,7 @@ struct Monitor0300 {
         })
       Text(this.info.nameChange).id('tvMonitor03001')
       Text(this.info.ageChange.toString()).id('tvMonitor03002')
+      Text(this.info.paths).id('tvMonitor03003')
     }
   }
 }

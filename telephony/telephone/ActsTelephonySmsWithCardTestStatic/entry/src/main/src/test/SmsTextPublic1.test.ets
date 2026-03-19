@@ -284,15 +284,60 @@ export default function smsTextNoCardPublic() {
         0x01, 0x02, 0x14, 0x23, 0x02, 0xC1, 0x30
       ];
       sms.createMessage(rawArray, '3gpp').then((shortMessage: sms.ShortMessage|undefined) => {
+        expect(shortMessage?.visibleMessageBody == "Aa").assertTrue();
+        expect(shortMessage?.visibleRawAddress.length !== 0).assertTrue();
+        expect(Number(shortMessage?.messageClass) !== -1).assertTrue();
         expect(shortMessage?.protocolId !== -1).assertTrue();
+        expect(shortMessage?.scAddress.length !== 0).assertTrue();
         expect(shortMessage?.scTimestamp !== 0).assertTrue();
+        expect(shortMessage?.isReplaceMessage).assertFalse();
+        expect(shortMessage?.hasReplyPath).assertFalse();
         expect(shortMessage?.pdu == undefined).assertFalse();
         expect(shortMessage?.status !== -1).assertTrue();
+        expect(shortMessage?.isSmsStatusReportMessage).assertTrue();
         done();
       }).catch((err: Error) => {
         let error = err as BusinessError;
         expect().assertFail();
         hilog.info(domain, tag, 'Telephony_SmsMms_createMessage_Promise_static_0300 fail' + JSON.stringify(error));
+        done();
+      });
+    });
+
+    /**
+     * @tc.name    Telephony_SmsMms_createMessage_Async_0100
+     * @tc.number  Telephony_SmsMms_createMessage_Async_0100
+     * @tc.desc    Call interface CreateMessage,
+     *             pass in the PDU(rawArray) in line with the coding specification, the specification is 3GPP,
+     *             shortMessage Don't empty
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('Telephony_SmsMms_createMessage_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let rawArray: Array<int> = [
+        0x08, 0x91, 0x68, 0x31, 0x08, 0x20, 0x00, 0x75, 0xF4, 0x24, 0x0D, 0x91,
+        0x68, 0x81, 0x29, 0x56, 0x29, 0x83, 0xF6, 0x00, 0x00, 0x12, 0x40, 0x80,
+        0x01, 0x02, 0x14, 0x23, 0x02, 0xC1, 0x30
+      ];
+      sms.createMessage(rawArray, '3gpp', (err: BusinessError<void>|null, shortMessage: sms.ShortMessage|undefined) => {
+        if (err) {
+          expect().assertFail();
+          console.log('Telephony_SmsMms_createMessage_Async_0100 fail');
+          done();
+          return;
+        }
+        expect(shortMessage?.visibleMessageBody == "Aa").assertTrue();
+        expect(shortMessage?.visibleRawAddress.length !== 0).assertTrue();
+        expect(Number(shortMessage?.messageClass) !== -1).assertTrue();
+        expect(shortMessage?.protocolId !== -1).assertTrue();
+        expect(shortMessage?.scAddress.length !== 0).assertTrue();
+        expect(shortMessage?.scTimestamp !== 0).assertTrue();
+        expect(shortMessage?.isReplaceMessage).assertFalse();
+        expect(shortMessage?.hasReplyPath).assertFalse();
+        expect(shortMessage?.pdu == undefined).assertFalse();
+        expect(shortMessage?.status !== -1).assertTrue();
+        expect(shortMessage?.isSmsStatusReportMessage).assertTrue();
         done();
       });
     });

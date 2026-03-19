@@ -7,6 +7,8 @@
     "MainAbility/pages/Chip/ChipPage",
     "MainAbility/pages/Chip/chipSizeTest",
     "MainAbility/pages/Chip/prefixIconTest",
-    "MainAbility/pages/Chip/ChipApi1"
+    "MainAbility/pages/Chip/ChipApi1",
+    "MainAbility/pages/Chip/labelOptionsTest",
+    "MainAbility/pages/Chip/localizedLabelMargin"
   ]
 }
