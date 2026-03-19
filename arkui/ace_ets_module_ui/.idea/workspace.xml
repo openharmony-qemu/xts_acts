@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9612dfae-1aba-415e-9288-51a391239c2a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BUILD.gn" beforeDir="false" afterPath="$PROJECT_DIR$/BUILD.gn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ace_ets_module_layout/BUILD.gn" beforeDir="false" afterPath="$PROJECT_DIR$/ace_ets_module_layout/BUILD.gn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ace_ets_module_navigation/BUILD.gn" beforeDir="false" afterPath="$PROJECT_DIR$/ace_ets_module_navigation/BUILD.gn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ace_ets_module_navigation/ace_ets_module_navigation_static/BUILD.gn" beforeDir="false" afterPath="$PROJECT_DIR$/ace_ets_module_navigation/ace_ets_module_navigation_static/BUILD.gn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ace_ets_module_navigation/ace_ets_module_navigation_static/Test.json" beforeDir="false" afterPath="$PROJECT_DIR$/ace_ets_module_navigation/ace_ets_module_navigation_static/Test.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="3B7QGJ3gMWLqQ320zxFWxXTWoyJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "bazel.project.detector.is.bazel.project": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/0318finalpr/xts_acts_final/arkui/ace_ets_module_ui/ace_ets_module_common_api23_static/entry/src/main"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\0318finalpr\xts_acts_final\arkui\ace_ets_module_ui\ace_ets_module_common_api23_static\entry\src\main" />
+      <recent name="D:\0318finalpr\xts_acts_final\arkui\ace_ets_module_ui" />
+      <recent name="D:\0318finalpr\xts_acts_final\arkui\ace_ets_module_ui\ace_ets_module_scroll" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+</project>
