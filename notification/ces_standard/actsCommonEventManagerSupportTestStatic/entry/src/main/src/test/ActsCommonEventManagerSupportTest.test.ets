@@ -896,5 +896,39 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4300
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4300
+     * @tc.desc   bluetooth remote device a2dp play state change common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4300 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_A2DPSOURCE_PLAY_STATE_CHANGE)
+        .assertEqual('usual.event.bluetooth.a2dpsource.PLAY_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4300 END`)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4400
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4400
+     * @tc.desc   bluetooth remote device sco state change common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4400 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_SCO_CONNECT_STATE_CHANGE)
+        .assertEqual('usual.event.bluetooth.SCO_CONNECT_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4400 END`)
+      done()
+    })
+
   })
 }
