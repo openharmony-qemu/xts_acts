@@ -301,8 +301,17 @@ export default function geolocationTest_geo8() {
                 let distance1 = geolocationm.getDistanceBetweenLocations(location1, location2);
                 expect(distance1).assertEqual(0)
             } catch(error) {
-                console.error("getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
-                expect(true).assertEqual(JSON.stringify(error) != null);
+                console.error("null getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
+                expect(error.code).assertEqual(401);
+            }
+            try {
+                let location1 = undefined
+                let location2 = undefined
+                let distance1 = geolocationm.getDistanceBetweenLocations(location1, location2);
+                expect(distance1).assertEqual(0)
+            } catch(error) {
+                console.error("undefined getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
+                expect(error.code).assertEqual(401);
             }
             done();
         })
@@ -319,14 +328,25 @@ export default function geolocationTest_geo8() {
             try {
                 let fenceRequest = null;
                 geolocationm.addBeaconFence(fenceRequest).then((id) => {
-                    console.info("addBeaconFence0100 success, fence id:" + id);
+                    console.info("null addBeaconFence0100 success, fence id:" + id);
                 }).catch((error) => {
-                    console.error('promise, addBeaconFence0100: error=' + JSON.stringify(error));
+                    console.error('null promise, addBeaconFence0100: error=' + JSON.stringify(error));
                     expect(true).assertEqual(JSON.stringify(error) != null);
                 });
             } catch (error) {
-                console.error("addBeaconFence0100: errCode" + error.code + ", errMessage" + error.message);
-                expect(true).assertEqual(JSON.stringify(error) != null);
+                console.error("null addBeaconFence0100: errCode" + error.code + ", errMessage" + error.message);
+                expect(error.code).assertEqual(401);
+            };
+            try {
+                geolocationm.addBeaconFence(undefined).then((id) => {
+                    console.info("undefined addBeaconFence0100 success, fence id:" + id);
+                }).catch((error) => {
+                    console.error('undefined promise, addBeaconFence0100: error=' + JSON.stringify(error));
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                });
+            } catch (error) {
+                console.error("undefined addBeaconFence0100: errCode" + error.code + ", errMessage" + error.message);
+                expect(error.code).assertEqual(401);
             };
         await sleep(1000);
         done();
@@ -344,13 +364,24 @@ export default function geolocationTest_geo8() {
             try {
                 let beacon = null;
                 geolocationm.removeBeaconFence(beacon).then(()=>{
-                    console.info("promise,removeBeaconFence success");
+                    console.info("null promise,removeBeaconFence success");
                 }).catch((error)=>{
-                    console.error("promise,removeBeaconFence:error="+JSON.stringify(error));
+                    console.error("null promise,removeBeaconFence:error="+JSON.stringify(error));
                     expect(true).assertEqual(JSON.stringify(error) != null);
                 });
             } catch (error) {
-                console.error("removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+                console.error("null removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
+                expect(true).assertEqual(JSON.stringify(error) != null);
+            };
+            try {
+                geolocationm.removeBeaconFence(undefined).then(()=>{
+                    console.info("undefined promise,removeBeaconFence success");
+                }).catch((error)=>{
+                    console.error("undefined promise,removeBeaconFence:error="+JSON.stringify(error));
+                    expect(true).assertEqual(JSON.stringify(error) != null);
+                });
+            } catch (error) {
+                console.error("undefined removeBeaconFence: errCode" + error.code + ", errMessage" + error.message);
                 expect(true).assertEqual(JSON.stringify(error) != null);
             };
             await sleep(1000);
@@ -378,12 +409,24 @@ export default function geolocationTest_geo8() {
                     let rssiThreshold = null;
                     let needStartScan = false;
                     geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
-                          console.info("isWlanBssidMatched0100 Wlan Bssid Matched Result:" + res);
+                          console.info("null isWlanBssidMatched0100 Wlan Bssid Matched Result:" + res);
                           expect(res).assertTrue();
                     })
                 } catch (error) {
-                    console.error("[lbs_js] Promise isWlanBssidMatched0100:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
-                    expect(true).assertEqual(JSON.stringify(error) != null);
+                    console.error("[lbs_js] null Promise isWlanBssidMatched0100:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                    expect(Number(error.code)).assertEqual(401);
+                }
+                try {
+                    let wlanBssidArray = undefined;
+                    let rssiThreshold = undefined;
+                    let needStartScan = false;
+                    geolocationm.isWlanBssidMatched(wlanBssidArray, rssiThreshold, needStartScan).then((res) => {
+                          console.info("undefined isWlanBssidMatched0100 Wlan Bssid Matched Result:" + res);
+                          expect(res).assertTrue();
+                    })
+                } catch (error) {
+                    console.error("[lbs_js] undefined Promise isWlanBssidMatched0100:"+ JSON.stringify(error) +"code"+ error.code +"mes"+ error.message);
+                    expect(Number(error.code)).assertEqual(401);
                 }
                 await sleep(1000);
                 done();
