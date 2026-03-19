@@ -29,7 +29,7 @@ let tag: string = 'CommonIgnoreLayoutSafeAreaTest';
 export default function CommonIgnoreLayoutSafeAreaTest() {
   describe('CommonIgnoreLayoutSafeAreaTest', (): void => {
     beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.layout.api14.static", "EntryAbility");
       console.info(domain, tag, 'startAbility completed');
     });
 
