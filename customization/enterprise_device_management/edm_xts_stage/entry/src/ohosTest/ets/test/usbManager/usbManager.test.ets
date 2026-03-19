@@ -1104,7 +1104,7 @@ function testSetUsbStorageDeviceAccessPolicy() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       usbManager.setUsbStorageDeviceAccessPolicy(SELFWANT, usbManager.UsbPolicy.READ_ONLY);
-      let policy:  usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);
+      let policy: usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);
       expect(policy == usbManager.UsbPolicy.READ_ONLY).assertTrue();
     } catch (error) {
       expect(error.code == 9200002).assertTrue();
