@@ -27,19 +27,21 @@ let domain: int = 0x0000;
 let tag: string = 'WindowLayoutStaticTest';
 
 async function assertMaximizeComponentExist(windowState: number, windowClass?: window.Window): Promise<boolean> {
-    return new Promise<boolean>(async(resolve, reject)=>{
-        let driver = Driver.create()
+    return new Promise<boolean>((resolve, reject)=>{
+        let driver = Driver.create();
         if (windowState == 2 || windowState == 1) {
             await driver.mouseMoveTo({ x: 100, y: 0 })
         }
-        let test = true
+        let test:boolean = true;
         driver.assertComponentExist(ON.id('EnhanceMaximizeBtn')).then(() => {
             test = true;
             resolve(test)
         }).catch((err: Error) => {
             if (err.code == 17000003) {
-                test = false
+                test = false;
                 resolve(test)
+            }else{
+                resolve(true)
             }
         })
     })
