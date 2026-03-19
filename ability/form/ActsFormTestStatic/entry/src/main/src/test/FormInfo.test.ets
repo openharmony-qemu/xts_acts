@@ -250,7 +250,10 @@ export default function formInfoTest() {
                 updateDuration: 123,
                 defaultDimension: 123,
                 supportDimensions: {},
-                customizeData: {},
+                customizeData: {
+                    'name': 'name',
+                    'bundleName': 'bundleName'
+                },
                 isDynamic: true,
                 transparencyEnabled: false,
                 supportedShapes: {}
@@ -268,7 +271,7 @@ export default function formInfoTest() {
             expect(123).assertEqual(formInfoFo.defaultDimension);
             expect(formInfo.FormType.JS).assertEqual(formInfoFo.type);
             expect(0).assertEqual(formInfoFo.supportDimensions.length);
-            expect(JSON.stringify(formInfoFo.customizeData)).assertEqual(JSON.stringify(formInfoFo.customizeData));
+            expect('bundleName').assertEqual(formInfoFo.customizeData['bundleName'] as string);
             expect(0).assertEqual(formInfoFo.supportedShapes.length);
             expect(false).assertEqual(formInfoFo.transparencyEnabled as boolean);
             expect(true).assertEqual(formInfoFo.isDynamic as boolean);

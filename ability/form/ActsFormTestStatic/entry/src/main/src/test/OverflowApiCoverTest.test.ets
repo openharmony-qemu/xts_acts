@@ -15,11 +15,15 @@
 
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import formProvider from '@ohos.app.form.formProvider';
+import formInfo from '@ohos.app.form.formInfo';
 import FormEditExtensionAbility from '@ohos.app.form.FormEditExtensionAbility';
-import LiveFormExtensionAbility from '@ohos.app.form.LiveFormExtensionAbility';
+import LiveFormExtensionAbility, { LiveFormInfo } from '@ohos.app.form.LiveFormExtensionAbility';
+import FormExtensionAbility from '@ohos.app.form.FormExtensionAbility';
+import { UIExtensionContentSession } from '@kit.AbilityKit';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 const CODE_OK = 0;
+const ERROR_CODE1 = 401;
 const ERROR_CODE2 = 16500050;
 const ERROR_CODE4 = 16500100;
 const ERROR_CODE5 = 16501000;
@@ -29,7 +33,6 @@ const ERROR_CODE11 = 16000121;
 const ERROR_CODE12 = 16000130;
 const ERROR_CODE13 = 801;
 const ERROR_CODE14 = 16501011;
-
 export default function OverflowApiCoverTest() {
   describe('OverflowApiCoverTest', () => {
 
@@ -239,20 +242,40 @@ export default function OverflowApiCoverTest() {
               "isCreate": true
           }
         }
-        let abilityTest:FormEditExtensionAbility = new FormEditExtensionAbility();
-        abilityTest.context.startSecondPage(module1Want).then((result: common.AbilityResult) => {
+        let feeAbility:FormEditExtensionAbility = new FormEditExtensionAbility();
+        feeAbility.context.startSecondPage(module1Want).then((result: common.AbilityResult) => {
           console.info(`${name} startSecondPage success ${JSON.stringify(result)}`);
         });
         console.info(`${name} startSecondPage end`);
-        abilityTest.context.startUIAbility(module1Want).then(() => {
+        feeAbility.context.startUIAbility(module1Want).then(() => {
           console.info(`${name} startUIAbility success`);
         });
         console.info(`${name} startUIAbility end`);
-        let liveFormAbilityTest:LiveFormExtensionAbility = new LiveFormExtensionAbility();
-        liveFormAbilityTest.context.startAbilityByLiveForm(module1Want).then(() => {
+        let liveFormAbility:LiveFormExtensionAbility = new LiveFormExtensionAbility();
+        liveFormAbility.context.startAbilityByLiveForm(module1Want).then(() => {
           console.info(`${name} startAbilityByLiveForm success`);
         });
         console.info(`${name} startAbilityByLiveForm end`);
+        let infoRect: formInfo.Rect = {
+          left: -30,
+          top: -30,
+          width: 200,
+          height: 200
+        }
+        let liveFormInfo: LiveFormInfo = {
+          formId: 'formId',
+          rect: infoRect,
+          borderRadius: 123
+        }
+        let session: UIExtensionContentSession = new UIExtensionContentSession();
+        liveFormAbility.onLiveFormCreate(liveFormInfo, session);
+        liveFormAbility.onLiveFormDestroy(liveFormInfo);
+        console.info(`${name} onLiveFormCreate onLiveFormDestroy end`);
+        let feAbility:FormExtensionAbility = new FormExtensionAbility();
+        feAbility.context.startAbility(module1Want, () => {
+          console.info(`${name} startAbility success`);
+        });
+        console.info(`${name} startAbility end`);
       } catch (error) {
         console.log(`${name} catch, error, code:${error?.code}, message:${error?.message}`);
         if (error?.code === ERROR_CODE2) {
@@ -275,6 +298,8 @@ export default function OverflowApiCoverTest() {
           expect(error?.code).assertEqual(ERROR_CODE14);
         } else if(error?.code === CODE_OK) {
           expect(error?.code).assertEqual(CODE_OK);
+        } else if(error?.code === ERROR_CODE1) {
+          expect(error?.code).assertEqual(ERROR_CODE1);
         }
       }
       done();
