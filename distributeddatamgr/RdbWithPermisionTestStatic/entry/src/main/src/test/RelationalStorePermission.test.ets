@@ -411,8 +411,7 @@ export default function relationalStorePermissionTest() {
        console.log(TAG + "************* relationalStorePermissionTest0900 end *************");
        done();
      })
-    console.info(TAG + "*************Unit Test End*************");
-  })
+
 
    /**
      * @tc.name   relationalStorePermissionTest1000
@@ -530,4 +529,6 @@ export default function relationalStorePermissionTest() {
       console.log(TAG + "************* relationalStorePermissionTest1200 end *************");
    
     })
+    console.info(TAG + "*************Unit Test End*************");
+  })
 }
