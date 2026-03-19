@@ -23,12 +23,13 @@ import {
   Button,
   RichEditor,
   RichEditorController,
-  TextDirection
+  TextDirection,
+  BuilderNode
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
 @Builder
-function richEditorBuilderSpanNode() {
+function richEditorBuilderSpanNode(): void {
   Text('builder-span-node')
 }
 
@@ -220,9 +221,9 @@ struct RichEditorPage {
       Button('applyAccessibilitySpanOptions')
         .id('applyAccessibilitySpanOptionsBtn')
         .key('applyAccessibilitySpanOptionsBtn')
-        .onClick(() => {
+        .onClick((): void => {
           this.accessibilitySpanOptionsLevelValue = this.accessibilitySpanOptionsLevelValue === 'yes' ? 'no' : 'yes';
-          this.getCurrentController().addBuilderSpan(RichEditorBuilderSpanNode, {
+          this.getCurrentController().addBuilderSpan(richEditorBuilderSpanNode, {
             offset: 0,
             accessibilitySpanOptions: {
               accessibilityText: 'builder-span-text',
