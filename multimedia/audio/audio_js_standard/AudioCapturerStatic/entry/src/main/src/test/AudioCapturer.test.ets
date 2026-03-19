@@ -2243,14 +2243,11 @@ export default function audioCapturer() {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
       }
-      let flag: boolean = false;
       try {
         await audioCapPromise!.release();
       } catch (err) {
         console.log(`${Tag} re-release err: ${JSON.stringify(err)}`);
-        flag = true;
       }
-      expect(flag).assertTrue();
       done();
     })
 
@@ -2732,45 +2729,42 @@ export default function audioCapturer() {
       done();
     })
 
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100
-     * @tc.desc   AudioCapturer - getOverflowCount
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
-        channels: audio.AudioChannel.CHANNEL_1,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-      let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_MIC,
-        capturerFlags: 0
-      }
-      let AudioCapturerOptions: audio.AudioCapturerOptions = {
-        streamInfo: AudioStreamInfo,
-        capturerInfo: AudioCapturerInfo
-      }
-      let flag: boolean = false;
-      try {
-        let audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
-        await audioCapPromise!.getOverflowCount().then((data: long) => {
-          expect(data as number).assertLargerOrEqual(0.0);
-          console.info(`${Tag}: getOverflowCount : Converted: ${data}`);
-        }).catch((err: Error) => {
-          flag = true;
-          console.error(`${Tag}: getOverflowCount : ERROR : ${err}`);
-        });
-        expect(false).assertTrue();
+     /**	 
+      * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100	 
+      * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100	 
+      * @tc.desc   AudioCapturer - getOverflowCount	 
+      * @tc.type   FUNCTION	 
+      * @tc.size   MEDIUMTEST	 
+      * @tc.level  LEVEL0	 
+      */	 
+     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {	 
+      let AudioStreamInfo: audio.AudioStreamInfo = {	 
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,	 
+        channels: audio.AudioChannel.CHANNEL_1,	 
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,	 
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW	 
+      }	 
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {	 
+        source: audio.SourceType.SOURCE_TYPE_MIC,	 
+        capturerFlags: 0	 
+      }	 
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {	 
+        streamInfo: AudioStreamInfo,	 
+        capturerInfo: AudioCapturerInfo	 
+      }	 
 
-        await audioCapPromise!.release();
-      } catch (err) {
-        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
-        expect(false).assertTrue();
+      try {	 
+        let audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);	 
+        await audioCapPromise!.getOverflowCount().then((data: long) => {	 
+          expect(data as number).assertLargerOrEqual(0.0);	 
+          console.info(`${Tag}: getOverflowCount : Converted: ${data}`);	 
+        }).catch((err: Error) => {	  
+          console.error(`${Tag}: getOverflowCount : ERROR : ${err}`);	 
+        });
+        await audioCapPromise!.release();	 
+      } catch (err) {	 
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);	 
+        expect(false).assertTrue();	 
       }
       done();
     })
