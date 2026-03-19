@@ -24,11 +24,11 @@ import {
 import Utils from '../../Util.test';
 
 
-let flag: number = 0
 
 export function builtinsStatementThrow0100() {
   const TAG = 'builtinsStatementThrow0100';
   let error: Error = new Error('');
+  let flag: number = 0
   try {
     throwDivisor(1, 0);
   } catch (err) {
@@ -49,6 +49,7 @@ export function builtinsStatementThrow0100() {
 
 export async function builtinsStatementThrow0300() {
   const TAG = 'builtinsStatementThrow0300';
+  let flag: number = 0
   let error1: Error = new Error('');
   let error2: Error = new Error('');
   try {
@@ -87,6 +88,7 @@ export async function builtinsStatementThrow0300() {
 }
 
 export async function builtinsStatementThrow0400() {
+  let flag: number = 0
   const TAG = 'builtinsStatementThrow0400';
   let error1: Error = new Error('');
   let error2: Error = new Error('');

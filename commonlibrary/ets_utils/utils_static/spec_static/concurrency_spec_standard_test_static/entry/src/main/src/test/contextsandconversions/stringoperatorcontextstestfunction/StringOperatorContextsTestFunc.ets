@@ -1016,11 +1016,11 @@ export function testStringOperatorContexts0058(){
 export function testStringOperatorContexts0059(){
   const TAG = 'testStringOperatorContexts0059';
   let p1: Integral = new Byte(42 as byte);
-        let p2: Integral = new Short((42).toShort());
-        let p3: Integral = new Int((42).toInt());
-        let p4: Integral = new Long((42).toLong());
-        let res = p1 + p2 + "" + p3 + p4;
-        let expected = 42 + 42 + "42" + "42";
+  let p2: Integral = new Short((42).toShort());
+  let p3: Integral = new Int((42).toInt());
+  let p4: Integral = new Long((42).toLong());
+  let res = p1 + p2 + "" + p3 + p4;
+  let expected = 42 + 42 + "42" + "42";
   if(res !== expected){
         console.info(`${TAG} Task execution failed: res: ${res}`);
         throw new Error('res check failed, expected expected');

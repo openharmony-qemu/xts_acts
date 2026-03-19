@@ -246,34 +246,35 @@ export function UnionTest010(): void {
   }
 }
 
-let status: string = "";
 
 function padding(value: Padding | Length | LocalizedPadding) {
   if (value instanceof number) {
-    status = "Length";
+    return "Length";
   }
   if (value instanceof Padding) {
-    status = "Padding";
+    return "Padding";
   }
   if (value instanceof LocalizedPadding) {
-    status = "LocalizedPadding";
+    return "LocalizedPadding";
   }
+  return "";
 }
 
 export function UnionTest011(): void {
+
   let caseName: string = "UnionTest011";
-  padding(1);
-  if (!(status === "Length")) {
+  let status1 = padding(1);
+  if (!(status1 === "Length")) {
     console.info(`${caseName} Task execution failed： status should be 'Length'`);
     throw new Error("Test failed: status === 'Length'");
   }
-  padding({top: 1});
-  if (!(status === "Padding")) {
+  let status2 = padding({top: 1});
+  if (!(status2 === "Padding")) {
     console.info(`${caseName} Task execution failed： status should be 'Padding'`);
     throw new Error("Test failed: status === 'Padding'");
   }
-  padding({top: a_LM});
-  if (!(status === "LocalizedPadding")) {
+  let status3 = padding({top: a_LM});
+  if (!(status3 === "LocalizedPadding")) {
     console.info(`${caseName} Task execution failed： status should be 'LocalizedPadding'`);
     throw new Error("Test failed: status === 'LocalizedPadding'");
   }

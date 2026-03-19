@@ -52,6 +52,58 @@ export function shouldContinue() {
   return count <= 3;
 }
 
+/**
+ * Thread-safe ContinueChecker object
+ * Encapsulates shouldContinue logic, supports high concurrency
+ */
+export class ContinueChecker {
+  private count: number = 0;
+  private maxCount: number = 3;
+
+  constructor(maxCount: number = 3) {
+    this.maxCount = maxCount;
+  }
+
+  /**
+   * Check if should continue
+   * @returns true when call count <= maxCount, otherwise false
+   */
+  check(): boolean {
+    this.count++;
+    return this.count <= this.maxCount;
+  }
+
+  /**
+   * Reset the counter
+   */
+  reset(): void {
+    this.count = 0;
+  }
+
+  /**
+   * Get current call count
+   */
+  getCount(): number {
+    return this.count;
+  }
+
+  /**
+   * Get max call count
+   */
+  getMaxCount(): number {
+    return this.maxCount;
+  }
+}
+
+/**
+ * Create a thread-safe ContinueChecker instance
+ * @param maxCount max call count, default is 3
+ * @returns ContinueChecker instance
+ */
+export function createContinueChecker(maxCount: number = 3): ContinueChecker {
+  return new ContinueChecker(maxCount);
+}
+
 export interface MyObject {
   a: number;
   b: number;

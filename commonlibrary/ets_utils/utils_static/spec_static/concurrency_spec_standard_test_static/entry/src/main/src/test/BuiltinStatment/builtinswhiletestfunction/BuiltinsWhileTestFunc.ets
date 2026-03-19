@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-import { getNumber, MyClass, MyColor, MyObject, shouldContinue } from "../../pages/Utils";
+import { getNumber, MyClass, MyColor, MyObject, shouldContinue, ContinueChecker, createContinueChecker } from "../../pages/Utils";
 
 type MyUnionType = number | string;
 type Direction = 'up' | 'down' | 'left' | 'right';
@@ -233,16 +233,22 @@ export function builtinsStatementWhileTest0900() {
   }
 }
 
-export function builtinsStatementWhileTest1000() {
+export function builtinsStatementWhileTest1000(): void {
   const TAG = 'builtinsStatementWhileTest1000';
   let count1 = 1;
   let count2 = 1;
-  while (shouldContinue()) {
+
+  // Use ContinueChecker object for thread-safe calls
+  const checker = createContinueChecker();
+
+  while (checker.check()) {
     count1++;
   }
+
   do {
     count2++;
-  } while (shouldContinue());
+  } while (checker.check());
+
   if (4 !== count1) {
     console.info(`${TAG} Task execution failed: 4: ${4}`);
     throw new Error('4 check failed, expected count1');
@@ -938,48 +944,24 @@ export function builtinsStatementWhileTest4200() {
   const TAG = 'builtinsStatementWhileTest4200';
   let counter1 = 0;
   while (counter1 < 2) {
-    console.log(`The first loop, the current iteration: ${counter1 + 1}`);
     let counter2 = 0;
     while (counter2 < 2) {
-      console.log(`  The second layer loop, the current iteration: ${counter2 +
-        1}，Outer loop iteration: ${counter1 + 1}`);
       let counter3 = 0;
       while (counter3 < 2) {
-        console.log(`    The third layer loop, the current iteration: ${counter3 +
-          1}，Outer loop iteration: ${counter2 + 1}-${counter1 + 1}`);
         let counter4 = 0;
         while (counter4 < 2) {
-          console.log(`     Fourth layer loop, current iteration: ${counter4 + 1}，Outer loop iteration: ${counter3 +
-            1}-${counter2 + 1}-${counter1 + 1}`);
           let counter5 = 0;
           while (counter5 < 2) {
-            console.log(`        The fifth layer loop, the current iteration: ${counter5 +
-              1}，Outer loop iteration: ${counter4 + 1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
             let counter6 = 0;
             while (counter6 < 2) {
-              console.log(`         Layer 6 loop, current iteration: ${counter6 +
-                1}，Outer loop iteration: ${counter5 + 1}-${counter4 + 1}-${counter3 + 1}-${counter2 +
-                1}-${counter1 + 1}`);
               let counter7 = 0;
               while (counter7 < 2) {
-                console.log(`            Layer 7 loop, current iteration: ${counter7 +
-                  1}，Outer loop iteration: ${counter6 + 1}-${counter5 + 1}-${counter4 + 1}-${counter3 +
-                  1}-${counter2 + 1}-${counter1 + 1}`);
                 let counter8 = 0;
                 while (counter8 < 2) {
-                  console.log(`              Layer 8 loop, current iteration: ${counter8 +
-                    1}，Outer loop iteration: ${counter7 + 1}-${counter6 + 1}-${counter5 + 1}-${counter4 +
-                    1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
                   let counter9 = 0;
                   while (counter9 < 2) {
-                    console.log(`                Layer 9 loop, current iteration: ${counter9 +
-                      1}，Outer loop iteration: ${counter8 + 1}-${counter7 + 1}-${counter6 + 1}-${counter5 +
-                      1}-${counter4 + 1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
                     let counter10 = 0;
                     while (counter10 < 2) {
-                      console.log(`                  Layer 10 loop, current iteration: ${counter10 +
-                        1}，Outer loop iteration: ${counter9 + 1}-${counter8 + 1}-${counter7 + 1}-${counter6 +
-                        1}-${counter5 + 1}-${counter4 + 1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
                       counter10++;
                     }
                     counter9++;
@@ -1010,23 +992,14 @@ export function builtinsStatementWhileTest4300() {
   const TAG = 'builtinsStatementWhileTest4300';
   let counter1: number = 0;
   do {
-    console.log(`The first loop, the current iteration: ${counter1 + 1}`);
     let counter2: number = 0;
     do {
-      console.log(`  The second layer loop, the current iteration: ${counter2 +
-        1}，Outer loop iteration: ${counter1 + 1}`);
       let counter3: number = 0;
       do {
-        console.log(`    The third layer loop, the current iteration: ${counter3 +
-          1}，Outer loop iteration: ${counter2 + 1}-${counter1 + 1}`);
         let counter4: number = 0;
         do {
-          console.log(`     Fourth layer loop, current iteration: ${counter4 + 1}，Outer loop iteration: ${counter3 +
-            1}-${counter2 + 1}-${counter1 + 1}`);
           let counter5: number = 0;
           do {
-            console.log(`       The fifth layer loop, the current iteration: ${counter5 +
-              1}，Outer loop iteration: ${counter4 + 1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
             counter5++;
           } while (counter5 < 2);
           counter4++;
@@ -1047,48 +1020,24 @@ export function builtinsStatementWhileTest4400() {
   const TAG = 'builtinsStatementWhileTest4400';
   let counter1 = 0;
   do {
-    console.log(`The first loop, the current iteration: ${counter1 + 1}`);
     let counter2 = 0;
     do {
-      console.log(`  The second layer loop, the current iteration: ${counter2 +
-        1}，Outer loop iteration: ${counter1 + 1}`);
       let counter3 = 0;
       do {
-        console.log(`    The third layer loop, the current iteration: ${counter3 +
-          1}，Outer loop iteration: ${counter2 + 1}-${counter1 + 1}`);
         let counter4 = 0;
         do {
-          console.log(`      Fourth layer loop, current iteration: ${counter4 +
-            1}，Outer loop iteration: ${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
           let counter5 = 0;
           do {
-            console.log(`        The fifth layer loop, the current iteration: ${counter5 +
-              1}，Outer loop iteration: ${counter4 + 1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
             let counter6 = 0;
             do {
-              console.log(`         Layer 6 loop, current iteration: ${counter6 +
-                1}，Outer loop iteration: ${counter5 + 1}-${counter4 + 1}-${counter3 + 1}-${counter2 +
-                1}-${counter1 + 1}`);
               let counter7 = 0;
               do {
-                console.log(`            Layer 7 loop, current iteration: ${counter7 +
-                  1}，Outer loop iteration: ${counter6 + 1}-${counter5 + 1}-${counter4 + 1}-${counter3 +
-                  1}-${counter2 + 1}-${counter1 + 1}`);
                 let counter8 = 0;
                 do {
-                  console.log(`              Layer 8 loop, current iteration: ${counter8 +
-                    1}，Outer loop iteration: ${counter7 + 1}-${counter6 + 1}-${counter5 + 1}-${counter4 +
-                    1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
                   let counter9 = 0;
                   do {
-                    console.log(`                Layer 9 loop, current iteration: ${counter9 +
-                      1}，Outer loop iteration: ${counter8 + 1}-${counter7 + 1}-${counter6 + 1}-${counter5 +
-                      1}-${counter4 + 1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
                     let counter10 = 0;
                     do {
-                      console.log(`                  Layer 10 loop, current iteration: ${counter10 +
-                        1}，Outer loop iteration: ${counter9 + 1}-${counter8 + 1}-${counter7 + 1}-${counter6 +
-                        1}-${counter5 + 1}-${counter4 + 1}-${counter3 + 1}-${counter2 + 1}-${counter1 + 1}`);
                       counter10++;
                     } while (counter10 < 2);
                     counter9++;
