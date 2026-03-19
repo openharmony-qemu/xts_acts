@@ -248,10 +248,8 @@ struct saveButton {
       if (data['maxLines'] != null) {
         this.maxLines = data['maxLines'] as Int
       }
-      if (data['alignRule_A'] != null) {
-        this.alignRule = data['alignRule_A'] as AlignRuleOption
-      } else if (data['alignRule_L'] != null) {
-        this.alignRule = data['alignRule_L'] as LocalizedAlignRuleOptions
+      if (data['alignRule'] != null) {
+        this.alignRule = data['alignRule'] as LocalizedAlignRuleOptions
       }
       if (data['chainDirection'] != null) {
         this.chainDirection = data['chainDirection'] as Axis
