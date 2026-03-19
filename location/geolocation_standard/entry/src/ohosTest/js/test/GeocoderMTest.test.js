@@ -1261,7 +1261,7 @@ export default function geolocationTest_geo5() {
                 geolocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
                     if (err) {
                         console.info('[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback err is:' + JSON.stringify(err));
-                        expect(err.code).assertEqual(401);
+                        expect(Number(err.code)).assertEqual(401);
                     } else {
                         console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback data is:" + JSON.stringify(data));
                         expect(true).assertEqual((JSON.stringify(data)) != null);
@@ -1269,13 +1269,13 @@ export default function geolocationTest_geo5() {
                  });
             } catch (error) {
                 console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback try error:"+ error);
-                expect(error.code).assertEqual(401);
+                expect(Number(error.code)).assertEqual(401);
             }
             try {
                 geolocationm.getAddressesFromLocation(undefined, (err, data) => {
                     if (err) {
                         console.info('[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback err is:' + JSON.stringify(err));
-                        expect(err.code).assertEqual(401);
+                        expect(Number(err.code)).assertEqual(401);
                     } else {
                         console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback data is:" + JSON.stringify(data));
                         expect(true).assertEqual((JSON.stringify(data)) != null);
@@ -1283,7 +1283,7 @@ export default function geolocationTest_geo5() {
                  });
             } catch (error) {
                 console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback try error:"+ error);
-                expect(error.code).assertEqual(401);
+                expect(Number(error.code)).assertEqual(401);
             }
             await sleep(2000);
         } else {
@@ -1360,7 +1360,7 @@ export default function geolocationTest_geo5() {
                 geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
                     if (err) {
                         console.info('[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 callback err is:' + JSON.stringify(err));
-                        expect(err.code).assertEqual(401);
+                        expect(Number(error.code)).assertEqual(401);
                     }
                     else {
                         console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
@@ -1370,13 +1370,13 @@ export default function geolocationTest_geo5() {
                 });
             } catch (error) {
                 console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
-                expect(error.code).assertEqual(401);
+                expect(Number(error.code)).assertEqual(401);
             }
             try {
                 geolocationm.getAddressesFromLocationName(undefined, (err, data) => {
                     if (err) {
                         console.info('[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 callback err is:' + JSON.stringify(err));
-                        expect(err.code).assertEqual(401);
+                        expect(Number(error.code)).assertEqual(401);
                     }
                     else {
                         console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
@@ -1386,7 +1386,7 @@ export default function geolocationTest_geo5() {
                 });
             } catch (error) {
                 console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
-                expect(error.code).assertEqual(401);
+                expect(Number(error.code)).assertEqual(401);
             }
             await sleep(1000);
         } else {
