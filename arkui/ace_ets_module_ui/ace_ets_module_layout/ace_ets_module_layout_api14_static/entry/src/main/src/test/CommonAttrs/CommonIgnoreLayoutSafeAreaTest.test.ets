@@ -23,12 +23,15 @@ import { LayoutSafeAreaType, LayoutSafeAreaEdge } from '@kit.ArkUI';
 import hilog from '@ohos.hilog';
 import { UtilsTest } from '../Util.test';
 
+let domain: int = 0x0000;
+let tag: string = 'CommonIgnoreLayoutSafeAreaTest';
+
 export default function CommonIgnoreLayoutSafeAreaTest() {
   describe('CommonIgnoreLayoutSafeAreaTest', (): void => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.layout.api14.static", "EntryAbility");
       await CommonFunc.sleep(1000);
-      console.info('CommonIgnoreLayoutSafeAreaTest startAbility completed');
+      console.info(domain, tag, 'startAbility completed');
     });
 
     beforeEach(async (): Promise<void> => {
