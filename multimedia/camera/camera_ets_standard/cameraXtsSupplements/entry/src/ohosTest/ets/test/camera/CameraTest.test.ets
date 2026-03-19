@@ -1061,6 +1061,7 @@ export default function CameraTest() {
           console.info(TAG, testName, colorSpaces, `json is`, JSON.stringify(colorSpaces));
           const isSupported = colorSpaces.includes(format);
           if (isSupported) {
+            // format 要匹配
             mPhotoSession.setColorSpace(format);
             expect(mPhotoSession.getActiveColorSpace()).assertEqual(format);
             console.info(TAG, testName, `setColorSpace success`);
