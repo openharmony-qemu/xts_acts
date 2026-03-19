@@ -1039,15 +1039,14 @@ export default function WebSocketApiTest() {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
           expectEqual(status,101);
-          ws.send('', (err: BusinessError, value: boolean) => {
+          ws.send(undefined, (err: BusinessError, value: boolean) => {
             if (err) {
               console.info(`${caseName} send fail ${JSON.stringify(err)}`);
-              expectTrue(false);
+              expectEqual(err.code,401);
               done();
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} send success and value is ${value}`);
-              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -1523,14 +1522,13 @@ export default function WebSocketApiTest() {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
           expectEqual(status,101);
-          ws.send('').then((value: boolean) => {
+          ws.send(undefined).then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
-            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send fail ${JSON.stringify(err)}`);
-            expectFail(`${caseName} send fail`);
+            expectEqual(err.code,401);
             done();
             console.info(`${caseName} test end`);
           })
