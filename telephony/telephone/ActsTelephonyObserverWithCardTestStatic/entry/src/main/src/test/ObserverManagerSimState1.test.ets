@@ -18,7 +18,13 @@ import observer from '@ohos.telephony.observer';
 import sim from '@ohos.telephony.sim';
 import { BusinessError } from "@ohos.base";
 
-
+const ExpectFail =() =>{
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -357,14 +363,13 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0200';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = -1;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
+        observer.onGetSimActiveState(-1, (data: boolean | undefined) => {
+          console.info(`${caseName} data: ${data}`);
           ExpectFail();
         });
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(error.code == 8300001);
         done();
       }
@@ -383,14 +388,13 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0300';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = 0;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
+        observer.onGetSimActiveState(0, (data: boolean  | undefined) => {
+          console.info(`${caseName} data: ${data}`);
           ExpectTrue(data);
         });
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
         done();
       }
@@ -409,8 +413,7 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0400';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = 1;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
+        observer.onGetSimActiveState(1, (data: boolean  | undefined) => {
           console.info(`${caseName} data: ${data}`);
           ExpectTrue(data);
         });
@@ -435,8 +438,8 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0500';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = 2;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
+
+        observer.onGetSimActiveState(2, (data: boolean  | undefined) => {
           console.info(`${caseName} data: ${data}`);
           ExpectFail();
         });
@@ -461,12 +464,11 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0100';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = 0;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
+        observer.onGetSimActiveState(0, (data: boolean  | undefined) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectTrue(data);
           if (data) {
-            observer.offGetSimActiveState((res: boolean) => {
+            observer.offGetSimActiveState((res: boolean  | undefined)  => {
               console.info(`${caseName} res: ${res}}`);
               ExpectTrue(res);
             });
@@ -497,12 +499,11 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0200';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = 1;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
+        observer.onGetSimActiveState(1, (data: boolean  | undefined)) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectTrue(data);
           if (data) {
-            observer.offGetSimActiveState((res: boolean) => {
+            observer.offGetSimActiveState((res: boolean  | undefined)) => {
               console.info(`${caseName} res: ${res}}`);
               ExpectTrue(res);
             });
@@ -529,8 +530,8 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
       console.info(`${caseName} test start`);
       try {
-        let num: number = 1;
-        observer.offGetSimActiveState((data: boolean) => {
+        let num: int = 1;
+        observer.offGetSimActiveState((data: boolean  | undefined)) => {
           console.info(`${caseName} data: ${data}}`);
           num++;
         });
