@@ -27,6 +27,11 @@ const ITEM_DATE_TIME: string = 'dateTime';
 const ITEM_EYE_COMFORT: string = 'eyeComfort';
 const ITEM_DEFAULT_INPUT_METHOD: string = 'defaultInputMethod';
 
+const VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
+  deviceSettings.SettingsMenu.ACCOUNT_ID,
+  deviceSettings.SettingsMenu.WIFI
+];
+
 export default function deviceSettingsTest() {
   describe('deviceSettings_test', () => {
     /**
@@ -255,6 +260,81 @@ export default function deviceSettingsTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
       try {
         deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.FLOATING_NAVIGATION, 100);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_add_hidden_settings_menu_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_ADD_HIDDEN_SETTINGS_MENU_JS_0100
+     * @tc.desc   test add hidden settings menu with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_add_hidden_settings_menu_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        deviceSettings.addHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_remove_hidden_settings_menu_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_REMOVE_HIDDEN_SETTINGS_MENU_JS_0100
+     * @tc.desc   test remove hidden settings menu with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_remove_hidden_settings_menu_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        deviceSettings.removeHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_get_hidden_settings_menu_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_HIDDEN_SETTINGS_MENU_JS_0100
+     * @tc.desc   test get hidden settings menu with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_get_hidden_settings_menu_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        deviceSettings.getHiddenSettingsMenu(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {

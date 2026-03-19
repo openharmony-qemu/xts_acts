@@ -795,7 +795,11 @@ export default function WebSocketTest() {
           expectTrue(data != null)
           done()
         })
-        ws.off('headerReceive')
+        ws.off('headerReceive', (data) => {
+          console.info(`${caseName} on headerReceive"+${JSON.stringify(data)}`)
+          expectTrue(data != null)
+          done()
+        })
         ws.on('open', (err: BusinessError, value: object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)}  and value is ${JSON.stringify(value)}`)
           const status: number = (value as OutValue).status

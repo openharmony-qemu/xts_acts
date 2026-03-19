@@ -40,9 +40,9 @@ struct CanvasWidthHeightCanvas {
         .height(100)
         .backgroundColor('#ffff00')
         .onReady(() => {
-          let ret:double = this.context.width
+          let ret:double = Math.floor(this.context.width)
           this.context.fillRect(0, 0, ret / 2, 180)
-          let ret1:double = this.context.height
+          let ret1:double = Math.floor(this.context.height)
           this.context.fillRect(0, 0, 180, ret1/ 2)
           console.info('get result:' + ret);
           console.info('get result1:' + ret1);
