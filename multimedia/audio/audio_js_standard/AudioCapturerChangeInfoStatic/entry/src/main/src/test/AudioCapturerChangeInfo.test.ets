@@ -1815,7 +1815,7 @@ export default function audioCapturerChange() {
         channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO_DOWNMIX
       }
       let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE,
+        source: audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION,
         capturerFlags: 0
       }
       let AudioCapturerOptions: audio.AudioCapturerOptions = {
@@ -1883,7 +1883,10 @@ export default function audioCapturerChange() {
         encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
         channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT0
       }
-
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+        capturerFlags: 0
+      }
       let AudioCapturerOptions: audio.AudioCapturerOptions = {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
@@ -3544,7 +3547,7 @@ export default function audioCapturerChange() {
         channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO_DOWNMIX
       }
       let AudioCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_PLAYBACK_CAPTURE,
+        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
         capturerFlags: 0
       }
 

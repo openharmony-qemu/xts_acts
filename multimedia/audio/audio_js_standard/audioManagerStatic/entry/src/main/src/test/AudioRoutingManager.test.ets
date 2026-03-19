@@ -450,7 +450,7 @@ export default function audioRoutingManager() {
         done();
       }
     })
-    
+
     /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0001
     * @tc.number SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0001
@@ -1611,7 +1611,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0001 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0001 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1643,7 +1643,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1674,7 +1674,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0003 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0003 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1705,7 +1705,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0004 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0004 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1736,7 +1736,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0005 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0005 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1767,7 +1767,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0006 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0006 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1797,7 +1797,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0007 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0007 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1828,7 +1828,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0008 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0008 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1859,7 +1859,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0009 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0009 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1889,7 +1889,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0010 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0010 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1919,7 +1919,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0011 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0011 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1950,7 +1950,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0012 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0012 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -1981,7 +1981,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0013 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0013 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -2012,7 +2012,7 @@ export default function audioRoutingManager() {
       let routingManager = audio.getAudioManager().getRoutingManager();
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0014 SUCCESS);
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0014 SUCCESS`);
         console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
@@ -2025,7 +2025,8 @@ export default function audioRoutingManager() {
         done();
       }
     })
-          /**
+    
+    /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0200
     * @tc.number SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0200
     * @tc.desc   Get preferred input device - Sync
