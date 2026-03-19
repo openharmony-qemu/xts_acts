@@ -16,3 +16,4 @@
 export const OH_Print_Init1: () => number;
 export const OH_Print_StartPrinterDiscovery1: () => number;
 export const OH_Print_ConnectPrinter1: () => number;
+export const OH_Print_StartPrintWithJobStateCallback: () => number;

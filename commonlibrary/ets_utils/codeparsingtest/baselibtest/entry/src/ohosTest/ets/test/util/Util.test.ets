@@ -3536,8 +3536,6 @@ export default function utilTest() {
         
         for (let i = 0; i < heapInfos.length; i++) {
           const info = heapInfos[i];
-          expect(info.threadName != null).assertTrue();
-          expect(typeof info.threadName === 'string').assertTrue();
           expect(info.heapType != null).assertTrue();
           expect(typeof info.heapType === 'string').assertTrue();
           expect(info.heapObjectSize != null).assertTrue();
@@ -3546,10 +3544,13 @@ export default function utilTest() {
           
           if (info.heapType === 'local') {
             hasLocalHeap = true;
+            expect(info.threadName != null).assertTrue();
+            expect(typeof info.threadName === 'string').assertTrue();
             expect(info.threadId != null).assertTrue();
             expect(typeof info.threadId === 'number').assertTrue();
           } else if (info.heapType === 'shared') {
             hasSharedHeap = true;
+            expect(info.threadName).assertEqual(undefined);
             expect(info.threadId).assertEqual(undefined);
           }
         }

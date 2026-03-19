@@ -20,6 +20,24 @@ import CustomLayoutUniqueidTest from './CustomLayout/CustomLayoutUniqueidTest.te
 import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test';
 import LayoutPolicyFixAtIdealSizeTest from './LayoutPolicy/LayoutPolicyFixAtIdealSize.test';
 import LayoutPolicyWrapContentTest from './LayoutPolicy/LayoutPolicyWrapContent.test';
+import RenderNodeAttributeTest from './RenderNodeAttribute/RenderNodeAttribute.test';
+import RenderNodeTransformAttributeTest from './RenderNodeAttribute/RenderNodeTransformAttribute.test';
+import RenderNodeShadowAttributeTest from './RenderNodeAttribute/RenderNodeShadowAttribute.test';
+import RenderNodeBorderAttributeTest from './RenderNodeAttribute/RenderNodeBorderAttribute.test';
+import RenderNodeOtherAttributeTest from './RenderNodeAttribute/RenderNodeOtherAttribute.test';
+import TypeNodeGetColumn from './TypeNode/TypeNodeGetColumn.test';
+import TypeNodeGetFlexAttribute from './TypeNode/TypeNodeGetFlexAttribute.test';
+import TypeNodeGetImageAttribute from './TypeNode/TypeNodeGetImageAttribute.test';
+import TypeNodeGetLoadingProgressAttribute from './TypeNode/TypeNodeGetLoadingProgressAttribute.test';
+import TypeNodeGetRelativeContainerAttribute from './TypeNode/TypeNodeGetRelativeContainerAttribute.test';
+import TypeNodeGetRowAttribute from './TypeNode/TypeNodeGetRowAttribute.test';
+import TypeNodeGetStackAttribute from './TypeNode/TypeNodeGetStackAttribute.test';
+import TypeNodeGetProgressAttribute from './TypeNode/TypeNodeGetProgressAttribute.test';
+import TypeNodeGetButtonAttribute from './TypeNode/TypeNodeGetButtonAttribute.test';
+import TypeNodeGetCheckboxAttribute from './TypeNode/TypeNodeGetCheckboxAttribute.test';
+import TypeNodeGetRadioAttribute from './TypeNode/TypeNodeGetRadioAttribute.test';
+import TypeNodeGetSliderAttribute from './TypeNode/TypeNodeGetSliderAttribute.test';
+import TypeNodeGetToggleAttribute from './TypeNode/TypeNodeGetToggleAttribute.test';
 
 export default function testsuite() {
   ColumnSpaceResourceTest();
@@ -28,4 +46,23 @@ export default function testsuite() {
   CustomLayoutUniqueidTest();
   LayoutPolicyFixAtIdealSizeTest();
   LayoutPolicyWrapContentTest();
+  CustomLayoutUniqueidTest();
+  RenderNodeAttributeTest();
+  RenderNodeTransformAttributeTest();
+  RenderNodeShadowAttributeTest();
+  RenderNodeBorderAttributeTest();
+  RenderNodeOtherAttributeTest();
+  TypeNodeGetColumn();
+  TypeNodeGetFlexAttribute();
+  TypeNodeGetImageAttribute();
+  TypeNodeGetLoadingProgressAttribute();
+  TypeNodeGetRelativeContainerAttribute();
+  TypeNodeGetRowAttribute();
+  TypeNodeGetStackAttribute();
+  TypeNodeGetProgressAttribute();
+  TypeNodeGetButtonAttribute();
+  TypeNodeGetCheckboxAttribute();
+  TypeNodeGetRadioAttribute();
+  TypeNodeGetSliderAttribute();
+  TypeNodeGetToggleAttribute();
 }

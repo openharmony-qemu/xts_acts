@@ -19,6 +19,7 @@ let ECDH_SPEC = [
   "ECC_BrainPoolP224r1", "ECC_BrainPoolP224t1", "ECC_BrainPoolP256r1", "ECC_BrainPoolP256t1",
   "ECC_BrainPoolP320r1", "ECC_BrainPoolP320t1", "ECC_BrainPoolP384r1", "ECC_BrainPoolP384t1",
   "ECC_BrainPoolP512r1", "ECC_BrainPoolP512t1", "ECC", "ECC224", "ECC256", "ECC384", "ECC521",
+  "ECC192"
 ]
 
 let X25519_SPEC = ["X25519"]

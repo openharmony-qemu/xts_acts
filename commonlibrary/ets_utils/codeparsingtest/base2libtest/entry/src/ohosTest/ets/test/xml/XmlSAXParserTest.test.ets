@@ -123,8 +123,6 @@ export default function XmlSAXParserTest() {
       
       saxParser.parse(saxHandler);
       inputStream.push(testData);
-      inputStream.read(testData.length);
-      await sleep(100);
       inputStream.push(null);
       await sleep(100);
 
@@ -172,8 +170,6 @@ export default function XmlSAXParserTest() {
       
       saxParser.parse(saxHandler);
       inputStream.push(testData);
-      inputStream.read(testData.length);
-      await sleep(100);
       inputStream.push(null);
       await sleep(100);
 
@@ -216,8 +212,6 @@ export default function XmlSAXParserTest() {
       
       saxParser.parse(saxHandler);
       inputStream.push(testData);
-      inputStream.read(testData.length);
-      await sleep(100);
       inputStream.push(null);
       await sleep(100);
 
@@ -265,8 +259,6 @@ export default function XmlSAXParserTest() {
       
       saxParser.parse(saxHandler);
       inputStream.push(testData);
-      inputStream.read(testData.length);
-      await sleep(100);
       inputStream.push(null);
       await sleep(100);
 
@@ -306,8 +298,6 @@ export default function XmlSAXParserTest() {
       
       saxParser.parse(saxHandler);
       inputStream.push(testData);
-      inputStream.read(testData.length);
-      await sleep(100);
       inputStream.push(null);
       await sleep(100);
 
@@ -350,8 +340,6 @@ export default function XmlSAXParserTest() {
       
       saxParser.parse(saxHandler);
       inputStream.push(testData);
-      inputStream.read(testData.length);
-      await sleep(100);
       inputStream.push(null);
       await sleep(100);
 

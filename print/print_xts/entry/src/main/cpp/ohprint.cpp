@@ -301,4 +301,11 @@ static napi_value CreateStruct()
     printJob->printQuality = Print_Quality::PRINT_QUALITY_DRAFT;
     printJob->documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_AUTO;
     printJob->advancedOptions = str;
+    
+    if (printerInfo) {
+        delete printerInfo;
+    }
+    if (printJob) {
+        delete printJob;
+    }
 }
