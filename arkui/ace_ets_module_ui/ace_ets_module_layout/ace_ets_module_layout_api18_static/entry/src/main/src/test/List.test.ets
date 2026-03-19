@@ -17,6 +17,9 @@ import ColumnSpaceResourceTest from './Column/ColumnSpaceResourceTest.test';
 import FlexSpaceResourceTest from './Flex/FlexSpaceResourceTest.test';
 import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test';
 import CustomLayoutUniqueidTest from './CustomLayout/CustomLayoutUniqueidTest.test';
+import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test';
+import LayoutPolicyFixAtIdealSizeTest from './LayoutPolicy/LayoutPolicyFixAtIdealSize.test';
+import LayoutPolicyWrapContentTest from './LayoutPolicy/LayoutPolicyWrapContent.test';
 import RenderNodeAttributeTest from './RenderNodeAttribute/RenderNodeAttribute.test';
 import RenderNodeTransformAttributeTest from './RenderNodeAttribute/RenderNodeTransformAttribute.test';
 import RenderNodeShadowAttributeTest from './RenderNodeAttribute/RenderNodeShadowAttribute.test';
@@ -40,7 +43,10 @@ export default function testsuite() {
   ColumnSpaceResourceTest();
   FlexSpaceResourceTest();
   RowSpaceResourceTest();
-  CustomLayoutUniqueidTest()
+  CustomLayoutUniqueidTest();
+  LayoutPolicyFixAtIdealSizeTest();
+  LayoutPolicyWrapContentTest();
+  CustomLayoutUniqueidTest();
   RenderNodeAttributeTest();
   RenderNodeTransformAttributeTest();
   RenderNodeShadowAttributeTest();

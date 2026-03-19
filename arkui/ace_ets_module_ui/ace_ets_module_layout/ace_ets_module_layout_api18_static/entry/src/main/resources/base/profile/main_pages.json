@@ -5,6 +5,8 @@
     "MainAbility/pages/Flex/FlexSpaceResourcePage",
     "MainAbility/pages/Row/RowSpaceResourcePage",
     "MainAbility/pages/CustomLayout/CustomLayoutUniqueidPage",
+    "MainAbility/pages/LayoutPolicy/LayoutPolicyFixAtIdealSize",
+    "MainAbility/pages/LayoutPolicy/LayoutPolicyWrapContent",
     "MainAbility/pages/RenderNodeAttribute/RenderNodeAttribute",
     "MainAbility/pages/RenderNodeAttribute/RenderNodeTransformAttribute",
     "MainAbility/pages/RenderNodeAttribute/RenderNodeShadowAttribute",
