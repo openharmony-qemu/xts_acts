@@ -2783,6 +2783,36 @@ export default function VibratorJsTest_misc_9() {
         }
 
         try {
+          vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void => {
+            expect().assertFail();
+          });
+        } catch (err) {
+          expect(err.code === PERMISSION_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          vibrator.startVibration(effect, attribute, (error: BusinessError<void> | null): void => {
+            expect().assertFail();
+          });
+        } catch (err) {
+          expect(err.code === PARAMETER_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          await vibrator.startVibration(effect, attribute);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === PERMISSION_ERROR_CODE).assertTrue();
+        }
+
+        try {
+          await vibrator.startVibration(effect, attribute);
+          expect().assertFail();
+        } catch (err) {
+          expect(err.code === OPERATION_FAIL_CODE).assertTrue();
+        }
+
+        try {
           await vibrator.stopVibration({ deviceId: 1, vibratorId: 3 });
           expect().assertFail();
         } catch (err) {
