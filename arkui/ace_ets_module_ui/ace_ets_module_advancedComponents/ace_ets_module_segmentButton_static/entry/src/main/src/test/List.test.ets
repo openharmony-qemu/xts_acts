@@ -16,6 +16,11 @@
 
 import SegmentButtonOptionsTest from './segmentButton/SegmentButtonOptionsTest.test';
 import SegBtnItemTest0010 from './segmentButton/SegBtnItemTest0010.test';
+import BorderRadiusModeTest from './segmentButton/BorderRadiusMode.test';
+import SegmentButtonItemOptionsArrayPushTest from './segmentButton/SegmentButtonItemOptionsArray1.test';
+import CommonSegmentButtonOptionsTest from './segmentButton/CommonSegmentButtonOptions.test';
+import SegmentButtonItemOptionsTest from './segmentButton/SegmentButtonItemOptions.test';
+import TabSegmentButtonOptionsTest from './segmentButton/TabSegmentButtonOptions.test';
 import MultiSegmentButtonV2PageTest from './segmentButtonV2/MultiSegmentButtonV2PageTest.test';
 import SegmentButtonV2Test from './capsuleSegmentButtonV2/SegmentButtonV2.test';
 import SegmentButtonV2Test0010 from './segmentButtonV2/SegmentButtonV2Test0010.test';
@@ -31,6 +36,11 @@ import SegmentBtnItemTest0010 from './segmentButton/SegmentBtnItemTest0010.test'
 export default function testsuite() {
   SegmentButtonOptionsTest();
   SegBtnItemTest0010();
+  BorderRadiusModeTest();  
+  SegmentButtonItemOptionsArrayPushTest();
+  CommonSegmentButtonOptionsTest();
+  SegmentButtonItemOptionsTest();
+  TabSegmentButtonOptionsTest();
   MultiSegmentButtonV2PageTest();
   SegmentButtonV2Test();
   SegmentButtonV2Test0010();

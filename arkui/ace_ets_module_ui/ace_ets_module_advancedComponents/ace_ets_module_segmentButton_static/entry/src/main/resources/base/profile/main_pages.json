@@ -2,6 +2,10 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/segmentButton/SegmentButtonOptionsDemo",
+    "MainAbility/pages/segmentButton/localizedButtonPadding",
+    "MainAbility/pages/segmentButton/SegmentButtonItemOptionsArray1",
+    "MainAbility/pages/segmentButton/SegmentButtonItemOptions",
+    "MainAbility/pages/segmentButton/TabSegmentButtonOptions",
     "MainAbility/pages/segmentButton/SegBtnItem0010",
     "MainAbility/pages/segmentButtonV2/MultiSegmentButtonV2Page",
     "MainAbility/pages/capsuleSegmentButtonV2/SegmentButtonV2Test",
