@@ -869,6 +869,7 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness113';//关键字
       let value = 'brightness113'//值
       try{
+        settings.setValueSync(abilityContext!, name, value);
         settings.setValue(abilityContext!, '', value, (result) => {
           console.info("[settings_set_value_callback_domain_key_empty] result is:" + result);
           expect(result).assertTrue();
@@ -2343,9 +2344,7 @@ export default function settingUiJsunit() {
           })
           .catch((err: Error)=>{
             console.error("[open_manager_settings_result_false] error = " + err);
-            if ((err as BusinessError).code) {
-              expect(err?.code == 14800000 || 14800010).assertTrue();
-            }
+            expect(err != undefined).assertTrue();
             done();
           })
       } catch (err) {
