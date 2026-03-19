@@ -324,7 +324,7 @@ export default function settingUiJsunit() {
         done();
       } catch(err){
         console.info("[settings_get_value_033] error is: " + String(err));
-        expect(err.message).assertEqual("Permission denied");
+        expect(err?.code).assertEqual(201);
         done();
       }
     });
@@ -388,7 +388,7 @@ export default function settingUiJsunit() {
           })
           .catch((err: Error)=>{
             console.info("[settings_get_value_callback_domain_empty] error is:" + err);
-            expect(err.message).assertEqual("Permission denied");
+            expect(err.code).assertEqual(201);
             done();
           })
         done();
@@ -467,7 +467,7 @@ export default function settingUiJsunit() {
         done();
       }catch (err) {
         console.error("[settings_set_value_127] error = " + err);
-        expect(err.message).assertEqual("Permission denied");
+        expect(err.code).assertEqual(201);
         done();
       }
     });
@@ -694,7 +694,7 @@ export default function settingUiJsunit() {
           })
           .catch((err: Error)=>{
             console.info("[settings_set_value_113] error is:" + err);
-            expect(err.message).assertEqual("Permission denied");
+            expect(err.code).assertEqual(201);
             done();
           })
       }catch(err){
@@ -724,7 +724,7 @@ export default function settingUiJsunit() {
           })
           .catch((err: Error)=>{
             console.info("[settings_set_value_promise_no_domain_key_empty] error is:" + err);
-            expect(err.message).assertEqual("Permission denied");
+            expect(err.code).assertEqual(201);
             done();
           })
       }catch(err){
@@ -2270,7 +2270,7 @@ export default function settingUiJsunit() {
         expect(value2).assertTrue();
         done();
       } catch (err) {
-        console.error("[settings_unregister_key_empty] error = " + err);
+        console.error("[settings_unregister_key_empty] error = " + err?.code + " message: " + err?.message);
         expect(err.message).assertEqual("Permission denied");
         done();
       }
