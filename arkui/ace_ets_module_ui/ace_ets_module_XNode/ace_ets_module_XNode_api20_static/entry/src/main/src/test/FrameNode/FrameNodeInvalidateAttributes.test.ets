@@ -66,7 +66,7 @@ export default function FrameNodeInvalidateAttributes() {
 
     /**
      * @tc.number FrameNodeInvalidateAttributes_0100
-     * @tc.name   SUB_ACE_FrameNodeInvalidateAttributes_0100
+     * @tc.name   FrameNodeInvalidateAttributes_0100
      * @tc.desc   Test FrameNode invalidateAttributes functionality
      * @tc.size   MediumTest
      * @tc.type   Function

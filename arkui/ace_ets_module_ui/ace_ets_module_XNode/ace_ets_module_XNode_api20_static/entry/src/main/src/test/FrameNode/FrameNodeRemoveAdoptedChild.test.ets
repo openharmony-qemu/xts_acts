@@ -66,7 +66,7 @@ export default function FrameNodeRemoveAdoptedChild() {
 
     /**
      * @tc.number FrameNodeRemoveAdoptedChild_0100
-     * @tc.name   SUB_ACE_FrameNodeRemoveAdoptedChild_0100
+     * @tc.name   FrameNodeRemoveAdoptedChild_0100
      * @tc.desc   Test FrameNode removeAdoptedChild functionality
      * @tc.size   MediumTest
      * @tc.type   Function

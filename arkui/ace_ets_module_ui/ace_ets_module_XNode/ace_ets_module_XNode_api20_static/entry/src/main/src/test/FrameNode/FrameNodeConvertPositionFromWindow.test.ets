@@ -66,7 +66,7 @@ export default function FrameNodeConvertPositionFromWindow() {
 
     /**
      * @tc.number FrameNodeConvertPositionFromWindow_0100
-     * @tc.name   SUB_ACE_FrameNodeConvertPositionFromWindow_0100
+     * @tc.name   FrameNodeConvertPositionFromWindow_0100
      * @tc.desc   Test FrameNode convertPositionFromWindow functionality
      * @tc.size   MediumTest
      * @tc.type   Function

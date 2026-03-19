@@ -66,7 +66,7 @@ export default function FrameNodeIsOnMainTree() {
 
     /**
      * @tc.number FrameNodeIsOnMainTree_0100
-     * @tc.name   SUB_ACE_FrameNodeIsOnMainTree_0100
+     * @tc.name   FrameNodeIsOnMainTree_0100
      * @tc.desc   Test FrameNode isOnMainTree functionality
      * @tc.size   MediumTest
      * @tc.type   Function

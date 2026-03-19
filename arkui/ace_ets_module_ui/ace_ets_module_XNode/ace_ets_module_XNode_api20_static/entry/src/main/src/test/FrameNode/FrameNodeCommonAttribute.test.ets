@@ -66,7 +66,7 @@ export default function FrameNodeCommonAttribute() {
 
     /**
      * @tc.number FrameNodeCommonAttribute_0100
-     * @tc.name   SUB_ACE_FrameNodeCommonAttribute_0100
+     * @tc.name   FrameNodeCommonAttribute_0100
      * @tc.desc   Test FrameNode commonAttribute functionality
      * @tc.size   MediumTest
      * @tc.type   Function

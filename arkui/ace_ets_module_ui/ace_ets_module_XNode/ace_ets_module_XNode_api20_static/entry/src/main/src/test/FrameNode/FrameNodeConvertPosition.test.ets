@@ -66,7 +66,7 @@ export default function FrameNodeConvertPosition() {
 
     /**
      * @tc.number FrameNodeConvertPosition_0100
-     * @tc.name   SUB_ACE_FrameNodeConvertPosition_0100
+     * @tc.name   FrameNodeConvertPosition_0100
      * @tc.desc   Test FrameNode convertPosition functionality
      * @tc.size   MediumTest
      * @tc.type   Function

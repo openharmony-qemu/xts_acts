@@ -66,7 +66,7 @@ export default function FrameNodeCancelAnimations() {
 
     /**
      * @tc.number FrameNodeCancelAnimations_0100
-     * @tc.name   SUB_ACE_FrameNodeCancelAnimations_0100
+     * @tc.name   FrameNodeCancelAnimations_0100
      * @tc.desc   Test FrameNode cancelAnimations functionality
      * @tc.size   MediumTest
      * @tc.type   Function

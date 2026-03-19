@@ -65,7 +65,7 @@ export default function FrameNodeAdoptChild() {
     });
     /**
      * @tc.number FrameNodeAdoptChild_0200
-     * @tc.name   SUB_ACE_FrameNodeAdoptChild_0200
+     * @tc.name   FrameNodeAdoptChild_0200
      * @tc.desc   Test FrameNode removeAdoptedChild functionality
      * @tc.size   MediumTest
      * @tc.type   Function

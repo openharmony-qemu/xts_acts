@@ -66,7 +66,7 @@ export default function FrameNodeGestureEvent() {
 
     /**
      * @tc.number FrameNodeGestureEvent_0100
-     * @tc.name   SUB_ACE_FrameNodeGestureEvent_0100
+     * @tc.name   FrameNodeGestureEvent_0100
      * @tc.desc   Test FrameNode gestureEvent functionality
      * @tc.size   MediumTest
      * @tc.type   Function

@@ -68,7 +68,7 @@ export default function AttributeUpdaterUpdateConstructorParams() {
 
     /**
      * @tc.number AttributeUpdater_updateConstructorParams_0100
-     * @tc.name   SUB_ACE_AttributeUpdater_updateConstructorParams_0100
+     * @tc.name   AttributeUpdater_updateConstructorParams_0100
      * @tc.desc   Verify AttributeUpdater's updateConstructorParams method for Text component
      * @tc.size   MEDIUMTEST
      * @tc.type   FUNCTION
