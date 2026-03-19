@@ -302,7 +302,7 @@ export default function geolocationTest_geo8() {
                 expect(distance1).assertEqual(0)
             } catch(error) {
                 console.error("null getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
-                expect(error.code).assertEqual(401);
+                expect(Number(error.code)).assertEqual(401);
             }
             try {
                 let location1 = undefined
@@ -311,7 +311,7 @@ export default function geolocationTest_geo8() {
                 expect(distance1).assertEqual(0)
             } catch(error) {
                 console.error("undefined getDistanceBetweenLocations: errCode" + error.code + ", errMessage" + error.message);
-                expect(error.code).assertEqual(401);
+                expect(Number(error.code)).assertEqual(401);
             }
             done();
         })
@@ -335,7 +335,7 @@ export default function geolocationTest_geo8() {
                 });
             } catch (error) {
                 console.error("null addBeaconFence0100: errCode" + error.code + ", errMessage" + error.message);
-                expect(error.code).assertEqual(401);
+                expect(Number(error.code)).assertEqual(401);
             };
             try {
                 geolocationm.addBeaconFence(undefined).then((id) => {
@@ -346,7 +346,7 @@ export default function geolocationTest_geo8() {
                 });
             } catch (error) {
                 console.error("undefined addBeaconFence0100: errCode" + error.code + ", errMessage" + error.message);
-                expect(error.code).assertEqual(401);
+                expect(Number(error.code)).assertEqual(401);
             };
         await sleep(1000);
         done();
