@@ -134,7 +134,7 @@ export default function SegmentBtnItem0010() {
         .getArray("$children")[0]
       console.log("[SegmentBtnItem0010_0200] component btn0 is: ", JSON.stringify(btn0))
       expect(btn0.getElement('$attrs').getString('content')).assertEqual('b');
-      expect(btn0.getElement('$attrs').getString('fontColor')).assertEqual('#FFF7F7F7');
+      expect(btn0.getElement('$attrs').getString('fontColor')).assertEqual('#FF004AAF');
       expect(btn0.getElement('$attrs').getElement('backgroundBlurStyle').getString('value'))
         .assertEqual('BlurStyle.NONE');
       await CommonFunc.sleep(500);
@@ -183,7 +183,7 @@ export default function SegmentBtnItem0010() {
       console.log("[SegmentBtnItem0010_0300] component btn0 is: ", JSON.stringify(btn0))
       expect(btn0.getElement('$attrs').getString('content')).assertEqual('c');
       expect(btn0.getElement('$attrs').getString('fontSize')).assertEqual('18.00fp');
-      expect(btn0.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Lighter');
+      expect(btn0.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bolder');
       await CommonFunc.sleep(500);
       let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
