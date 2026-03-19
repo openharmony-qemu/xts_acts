@@ -26,26 +26,6 @@ import {Driver,ON} from '@ohos.UiTest';
 let domain: int = 0x0000;
 let tag: string = 'WindowLayoutStaticTest';
 
-async function assertMaximizeComponentExist(windowState: number, windowClass?: window.Window): Promise<boolean> {
-    return new Promise<boolean>(async(resolve, reject)=>{
-        let driver = Driver.create();
-        if (windowState == 2 || windowState == 1) {
-            await driver.mouseMoveTo({ x: 100, y: 0 })
-        }
-        let test:boolean = true;
-        driver.assertComponentExist(ON.id('EnhanceMaximizeBtn')).then(() => {
-            test = true;
-            resolve(test)
-        }).catch((err: Error) => {
-            if (err.code == 17000003) {
-                test = false;
-                resolve(test)
-            }else{
-                resolve(true)
-            }
-        })
-    })
-}
 
 export default function WindowLayoutStaticTest() {
     describe("WindowLayoutStaticTest", (): void => {
@@ -4443,7 +4423,18 @@ export default function WindowLayoutStaticTest() {
                         hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
                         expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         // 判断是否存在最大化 - false
-                        let test = await assertMaximizeComponentExist(windowStatus, windowClass);
+                        // let test = await assertMaximizeComponentExist(windowStatus, windowClass);
+                        if (windowState == 2 || windowState == 1) {
+                            await driver.mouseMoveTo({ x: 100, y: 0 })
+                        }
+                        let test:boolean = true;
+                        driver.assertComponentExist(ON.id('EnhanceMaximizeBtn')).then(() => {
+                            test = true;
+                        }).catch((err: Error) => {
+                            if (err.code == 17000003) {
+                                test = false;
+                            }
+                        })
                         await Utils.msSleep(1000)
                         hilog.info(domain, tag,
                             caseName + `EnhanceMaximizeBtn existence or not: ${test}, expect false`);
