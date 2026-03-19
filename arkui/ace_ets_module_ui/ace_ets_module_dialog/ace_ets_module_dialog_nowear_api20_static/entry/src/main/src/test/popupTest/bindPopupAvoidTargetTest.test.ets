@@ -242,7 +242,7 @@ export default function BindPopupAvoidTargetTest() {
           `[BindPopup_AvoidTargetPopup_0040] + ${buttonRect.left}, ${buttonRect.top}, ${buttonRect.right},
                 ${buttonRect.bottom}`
         );
-        expect(buttonRect.left).assertLargerOrEqual(popupRect.left);
+        expect(popupRect.right).assertLargerOrEqual(buttonRect.left)
         await (button?.click() as Promise<void>);
         console.info('[' + tagName + '] END ===========================');
         done();
