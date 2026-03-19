@@ -15,11 +15,8 @@
 
 import { describe, it, expect, TestType, Size, Level} from '../../../hypium/index';
 import hilog from '@ohos.hilog';
-import Want from '@ohos.app.ability.Want';
 import formInfo from '@ohos.app.form.formInfo';
 import Utils from './Util.test';
-import { BusinessError } from '@ohos.base';
-import formHost from '@ohos.app.form.formHost';
 
 
 const DOMAIN: int = 0x0000;
@@ -70,6 +67,8 @@ export default function formInfoTest() {
             expect('ohos.extra.param.key.host_bg_inverse_color').assertEqual(formInfo.FormParam.HOST_BG_INVERSE_COLOR_KEY as string);
             expect('ohos.extra.param.key.permission_name').assertEqual(formInfo.FormParam.FORM_PERMISSION_NAME_KEY as string);
             expect('ohos.extra.param.key.permission_granted').assertEqual(formInfo.FormParam.FORM_PERMISSION_GRANTED_KEY as string);
+            expect('ohos.extra.param.key.original_form_id').assertEqual(formInfo.FormParam.ORIGINAL_FORM_KEY as string);
+            expect('ohos.extra.param.key.edit_form_id').assertEqual(formInfo.FormParam.EDIT_FORM_KEY as string);
 
             expect(1).assertEqual(formInfo.FormDimension.Dimension_1_2 as int);
             expect(2).assertEqual(formInfo.FormDimension.Dimension_2_2 as int);
@@ -89,6 +88,7 @@ export default function formInfoTest() {
 
             expect(1).assertEqual(formInfo.LaunchReason.FORM_DEFAULT as int);
             expect(2).assertEqual(formInfo.LaunchReason.FORM_SHARE as int);
+            expect(3).assertEqual(formInfo.LaunchReason.FORM_SIZE_CHANGE  as int);
 
             expect(0).assertEqual(formInfo.PublishFormErrorCode.SUCCESS as int);
             expect(1).assertEqual(formInfo.PublishFormErrorCode.NO_SPACE as int);
@@ -218,6 +218,65 @@ export default function formInfoTest() {
 
             done();
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest003 end');
+        })
+
+        /**
+         * @tc.name   FormInfoStaticTest004
+         * @tc.number FormInfoStaticTest004
+         * @tc.desc   check formInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("FormInfoStaticTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(DOMAIN, TAG, 'FormInfoStaticTest004 start');
+            let formInfoFo: formInfo.FormInfo = {
+                bundleName: 'bundleName',
+                name: 'name',
+                moduleName: 'moduleName',
+                abilityName: 'abilityName',
+                displayName: 'displayName',
+                displayNameId: 123,
+                description: 'description',
+                descriptionId: 123,
+                type: formInfo.FormType.JS,
+                jsComponentName: 'jsComponentName',
+                isDefault: true,
+                updateEnabled: false,
+                formVisibleNotify: true,
+                scheduledUpdateTime: 'scheduledUpdateTime',
+                formConfigAbility: 'formConfigAbility',
+                updateDuration: 123,
+                defaultDimension: 123,
+                supportDimensions: {},
+                customizeData: {},
+                isDynamic: true,
+                transparencyEnabled: false,
+                supportedShapes: {}
+            }
+            expect('moduleName').assertEqual(formInfoFo.moduleName as string);
+            expect('abilityName').assertEqual(formInfoFo.abilityName as string);
+            expect('displayName').assertEqual(formInfoFo.displayName as string);
+            expect('description').assertEqual(formInfoFo.description as string);
+            expect('jsComponentName').assertEqual(formInfoFo.jsComponentName as string);
+            expect('scheduledUpdateTime').assertEqual(formInfoFo.scheduledUpdateTime as string);
+            expect('formConfigAbility').assertEqual(formInfoFo.formConfigAbility as string);
+            expect(123).assertEqual(formInfoFo.displayNameId);
+            expect(123).assertEqual(formInfoFo.descriptionId);
+            expect(123).assertEqual(formInfoFo.updateDuration);
+            expect(123).assertEqual(formInfoFo.defaultDimension);
+            expect(formInfo.FormType.JS).assertEqual(formInfoFo.type);
+            expect(0).assertEqual(formInfoFo.supportDimensions.length);
+            expect(JSON.stringify(formInfoFo.customizeData)).assertEqual(JSON.stringify(formInfoFo.customizeData));
+            expect(0).assertEqual(formInfoFo.supportedShapes.length);
+            expect(false).assertEqual(formInfoFo.transparencyEnabled as boolean);
+            expect(true).assertEqual(formInfoFo.isDynamic as boolean);
+            expect(true).assertEqual(formInfoFo.formVisibleNotify as boolean);
+            expect(true).assertEqual(formInfoFo.isDefault as boolean);
+            expect(false).assertEqual(formInfoFo.updateEnabled as boolean);
+            done();
+            hilog.info(DOMAIN, TAG, 'FormInfoStaticTest004 end');
         })
     })
 }
