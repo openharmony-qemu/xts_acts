@@ -63,12 +63,12 @@ export default function TypeNodeGetCheckboxAttribute() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number: TypeNodeGetCheckboxAttribute_0100
-     * @tc.name  : TypeNodeGetCheckboxAttribute_0100
-     * @tc.desc  : Test TypeNode getCheckboxAttribute functionality
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number TypeNodeGetCheckboxAttribute_0100
+     * @tc.name   TypeNodeGetCheckboxAttribute_0100
+     * @tc.desc   Test TypeNode getCheckboxAttribute functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('TypeNodeGetCheckboxAttribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TypeNodeGetCheckboxAttribute_0100] START');

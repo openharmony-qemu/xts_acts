@@ -64,12 +64,12 @@ export default function TypeNodeGetColumn() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number: TypeNodeGetColumn_0200
-     * @tc.name  : TypeNodeGetColumn_0200
-     * @tc.desc  : Test TypeNode getColumnAttribute functionality
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number TypeNodeGetColumn_0200
+     * @tc.name   TypeNodeGetColumn_0200
+     * @tc.desc   Test TypeNode getColumnAttribute functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('TypeNodeGetColumn_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TypeNodeGetColumn_0200] START');

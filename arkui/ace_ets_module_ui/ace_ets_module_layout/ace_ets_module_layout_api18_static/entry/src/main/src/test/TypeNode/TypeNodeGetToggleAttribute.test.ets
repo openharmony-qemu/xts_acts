@@ -63,12 +63,12 @@ export default function TypeNodeGetToggleAttribute() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number: TypeNodeGetToggleAttribute_0100
-     * @tc.name  : TypeNodeGetToggleAttribute_0100
-     * @tc.desc  : Test TypeNode getToggleAttribute functionality
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number TypeNodeGetToggleAttribute_0100
+     * @tc.name   TypeNodeGetToggleAttribute_0100
+     * @tc.desc   Test TypeNode getToggleAttribute functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('TypeNodeGetToggleAttribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TypeNodeGetToggleAttribute_0100] START');

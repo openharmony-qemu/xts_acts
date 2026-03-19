@@ -64,12 +64,12 @@ export default function TypeNodeGetFlexAttribute() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number: TypeNodeGetFlexAttribute_0100
-     * @tc.name  : TypeNodeGetFlexAttribute_0100
-     * @tc.desc  : Test TypeNode getFlexAttribute functionality
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number TypeNodeGetFlexAttribute_0100
+     * @tc.name   TypeNodeGetFlexAttribute_0100
+     * @tc.desc   Test TypeNode getFlexAttribute functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('TypeNodeGetFlexAttribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TypeNodeGetFlexAttribute_0100] START');

@@ -63,12 +63,12 @@ export default function TypeNodeGetSliderAttribute() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number: TypeNodeGetSliderAttribute_0100
-     * @tc.name  : TypeNodeGetSliderAttribute_0100
-     * @tc.desc  : Test TypeNode getSliderAttribute functionality
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number TypeNodeGetSliderAttribute_0100
+     * @tc.name   TypeNodeGetSliderAttribute_0100
+     * @tc.desc   Test TypeNode getSliderAttribute functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('TypeNodeGetSliderAttribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TypeNodeGetSliderAttribute_0100] START');

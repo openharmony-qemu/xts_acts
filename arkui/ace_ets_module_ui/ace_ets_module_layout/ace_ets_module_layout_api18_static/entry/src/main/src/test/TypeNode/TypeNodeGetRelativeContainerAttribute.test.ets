@@ -64,12 +64,12 @@ export default function TypeNodeGetRelativeContainerAttribute() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number: TypeNodeGetRelativeContainerAttribute_0100
-     * @tc.name  : TypeNodeGetRelativeContainerAttribute_0100
-     * @tc.desc  : Test TypeNode getRelativeContainerAttribute functionality
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number TypeNodeGetRelativeContainerAttribute_0100
+     * @tc.name   TypeNodeGetRelativeContainerAttribute_0100
+     * @tc.desc   Test TypeNode getRelativeContainerAttribute functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('TypeNodeGetRelativeContainerAttribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TypeNodeGetRelativeContainerAttribute_0100] START');

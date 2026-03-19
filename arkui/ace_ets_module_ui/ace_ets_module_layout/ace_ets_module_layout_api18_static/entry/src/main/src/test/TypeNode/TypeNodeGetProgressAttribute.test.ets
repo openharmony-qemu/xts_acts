@@ -63,12 +63,12 @@ export default function TypeNodeGetProgressAttribute() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number: TypeNodeGetProgressAttribute_0100
-     * @tc.name  : TypeNodeGetProgressAttribute_0100
-     * @tc.desc  : Test TypeNode getProgressAttribute functionality
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number TypeNodeGetProgressAttribute_0100
+     * @tc.name   TypeNodeGetProgressAttribute_0100
+     * @tc.desc   Test TypeNode getProgressAttribute functionality
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('TypeNodeGetProgressAttribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TypeNodeGetProgressAttribute_0100] START');
