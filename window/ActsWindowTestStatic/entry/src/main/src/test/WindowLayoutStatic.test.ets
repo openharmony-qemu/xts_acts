@@ -4473,7 +4473,7 @@ export default function WindowLayoutStaticTest() {
                             }
                         });
                         await Utils.msSleep(1000)
-                        windowClass.maximize().then(() => {
+                        windowClass.maximize().then(async() => {
                             hilog.info(domain, tag, caseName + 'Succeeded in maximizing the window.');
                             windowStatus = windowClass.getWindowStatus();
                             hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
@@ -4505,7 +4505,7 @@ export default function WindowLayoutStaticTest() {
                             }
                         });
                         await Utils.msSleep(1000)
-                        windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
+                        windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(async() => {
                             hilog.info(domain, tag, caseName + 'Succeeded in maximizing the window.');
                             windowStatus = windowClass.getWindowStatus();
                             hilog.info(domain, tag, caseName + ` windowStatus: ${windowStatus}`);
@@ -4523,7 +4523,7 @@ export default function WindowLayoutStaticTest() {
                             }
                         });
                         // 获取窗口状态 -- 最小化
-                        windowClass.minimize().then(() => {
+                        windowClass.minimize().then(async() => {
                             hilog.info(domain, tag, caseName + 'Succeeded in minimizing the window.');
                             windowStatus = windowClass.getWindowStatus();
                             hilog.info(domain, tag, caseName + `windowStatus: ${windowStatus}`);
