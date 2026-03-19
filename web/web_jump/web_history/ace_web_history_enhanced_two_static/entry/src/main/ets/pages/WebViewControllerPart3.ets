@@ -43,6 +43,7 @@ struct WebViewControllerPart3 {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   controllerOne: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerNull: webview.WebviewController = new webview.WebviewController(undefined);
   controllerTwo: webview.WebviewController = new webview.WebviewController(undefined);
   nativePort: webview.WebMessagePort | null = null;
   message: webview.WebMessageExt = new webview.WebMessageExt();
@@ -122,6 +123,106 @@ struct WebViewControllerPart3 {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(`${error.code}`, 1000831);
+              }
+            }
+            
+            case "testSerializeWebStateErrorCode001": {
+              try {
+                console.log("testSerializeWebStateErrorCode001");
+                this.controller.clearHistory()
+                this.controller.loadUrl("resource://rawfile/index.html")
+                let state = this.controllerNull.serializeWebState()
+                this.controller.clearHistory()
+                Utils.emitEvent(state, 110083)
+              } catch (error) {
+                console.error(`serializeWebState ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 110083)
+              }
+              break;
+            }
+
+            case "testResumeMicrophoneErrorCode001": {
+              try {
+                this.controllerNull.resumeMicrophone();
+              } catch (error) {
+                console.error(`resumeMicrophone ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 120083)
+              }
+              break;
+            }
+
+            case "testPauseMicrophoneErrorCode001": {
+              try {
+                this.controllerNull.pauseMicrophone();
+              } catch (error) {
+                console.error(`PauseMicrophone ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 130083)
+              }
+              break;
+            }
+
+            case "testStopMicrophoneErrorCode001": {
+              try {
+                this.controllerNull.stopMicrophone();
+              } catch (error) {
+                console.error(`StopMicrophone ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 140083)
+              }
+              break;
+            }
+
+            case "testRequestFocusErrorCode001": {
+              try {
+                this.controllerNull.requestFocus();
+              } catch (error) {
+                console.error(`requestFocus ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 150083)
+              }
+              break;
+            }
+
+            case "testGetCustomUserAgentErrorCode001": {
+              try {
+                this.controllerNull.getCustomUserAgent();
+              } catch (error) {
+                console.error(`getCustomUserAgent ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 160083)
+              }
+              break;
+            }
+
+            case "testGetPageHeightErrorCode001": {
+              try {
+                this.controllerNull.getPageHeight();
+              } catch (error) {
+                console.error(`getPageHeight ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 101083)
+              }
+              break;
+            }
+
+            case 'testWebViewGetRenderProcessMode001': {
+              try {
+                webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.MULTIPLE);
+                this.controller.refresh();
+                let mode = webview.WebviewController.getRenderProcessMode();
+                console.log('get Mode===>'+mode)
+                Utils.emitEvent(mode, 108006);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'testWebViewGetRenderProcessMode002': {
+              try {
+                webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.SINGLE);
+                this.controller.refresh();
+                let mode = webview.WebviewController.getRenderProcessMode();
+                console.log('get Mode===>'+mode)
+                Utils.emitEvent(mode, 108003);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }

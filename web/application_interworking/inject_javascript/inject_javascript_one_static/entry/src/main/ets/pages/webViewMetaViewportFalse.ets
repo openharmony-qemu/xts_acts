@@ -22,6 +22,8 @@ import { Callback } from '@ohos.base'
 import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
 import { BusinessError, RecordData } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+
 class StringFields {
   str: string = '';
 }
@@ -81,7 +83,12 @@ struct webViewOnMetaViewportFalse {
                 }
                 break;
               }
-
+              case 'SwitchNextPageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/webViewControllerPart3' })
+                console.log('push URL success')
+              }
             }
           })
       }

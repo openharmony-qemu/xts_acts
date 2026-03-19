@@ -112,6 +112,21 @@ struct WebInitTest {
                 break;
               }
 
+              case 'emitOnce003': {
+                try {
+                  webView.once('', () => {
+                    console.error('webInited =====>')
+                    this.webInit = true
+                  })
+                  Utils.emitEvent(this.webInit, 202603182);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`${error.code}`, 202603182);
+                }
+                break;
+              }
+
               case 'emitonSwitchNextPage': {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();

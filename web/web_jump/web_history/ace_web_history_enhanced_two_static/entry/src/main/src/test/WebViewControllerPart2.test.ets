@@ -47,5 +47,22 @@ export default function webViewControllerPart2() {
         done();
       })
 
+    /**
+     * @tc.name   emitonSwitchNextStaticPage
+     * @tc.number emitonSwitchNextStaticPage00
+     * @tc.desc   test emitonSwitchNextStaticPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitonSwitchNextStaticPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage', 10);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerPart2Button', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
   })
 }

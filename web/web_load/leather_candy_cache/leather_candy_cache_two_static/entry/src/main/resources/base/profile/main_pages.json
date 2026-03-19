@@ -2,6 +2,6 @@
   "src": [
     "pages/ClearPrefetchedResourceTest",
     "pages/InjectOfflineResourcesTest",
-    "pages/PrecompileJavaScriptTest"
+    "pages/WebBlanklessErrorCode"
   ]
 }
