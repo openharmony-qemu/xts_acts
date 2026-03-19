@@ -187,5 +187,88 @@ export default function ActsShortTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 end---');
       })
 
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004
+     * @tc.desc   Test that the getRemainingDelayTime promise function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004 begin---');
+
+        try {
+          let myReason = 'test requestSuspendDelay2';
+          try {
+            let delayInfo = backgroundTaskManager.requestSuspendDelay(myReason, () => {
+              hilog.info(DOMAIN, TAG, '%{public}s',
+                '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004 Request suspension delay will time out.---');
+            })
+            let id: int = delayInfo.requestId;
+            try {
+              backgroundTaskManager.getTransientTaskInfo().then((res: backgroundTaskManager.TransientTaskInfo) => {
+                console.info(`SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004 Operation getTransientTaskInfo succeeded. data: ` + JSON.stringify(res));
+                expect(res.remainingQuota).assertEqual(600000);
+                expect(res.transientTasks.length).assertLarger(0);
+                backgroundTaskManager.cancelSuspendDelay(id);
+                done();
+              }).catch((error :Error) => {
+                console.error(`SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004 Operation getTransientTaskInfo failed. code is ${error.code} message is ${error.message}`);
+                expect(false).assertTrue();
+                done();
+              });
+            } catch (error) {
+              console.error(`SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004 Operation getTransientTaskInfo failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+              expect(false).assertTrue();
+              done();
+            }
+          } catch (error) {
+            hilog.info(DOMAIN, TAG,
+              'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004 requestSuspendDelay failed: %{public}s' +
+              JSON.stringify(error));
+          }
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004 aa error: %{public}s',
+            JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_004 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003
+     * @tc.desc   Test that the getRemainingDelayTime promise function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 begin---');
+
+        try {
+          backgroundTaskManager.getTransientTaskInfo().then((res: backgroundTaskManager.TransientTaskInfo) => {
+            console.info(`SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 Operation getTransientTaskInfo succeeded. data: ` + JSON.stringify(res));
+            expect(res.remainingQuota).assertInstanceOf('Number');
+            expect(res.transientTasks.length === 0).assertTrue();
+            done();
+          }).catch((error :Error) => {
+            console.error(`SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 Operation getTransientTaskInfo failed. code is ${error.code} message is ${error.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 Operation getTransientTaskInfo failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_003 end---');
+      })
+
   })
 }
