@@ -1171,7 +1171,6 @@ export default function i18nStageTest() {
      */
     it('system_getDisplayCountry_nullString_test_Static_0100', Level.LEVEL3, () => {
       let value: string = i18n.System.getDisplayCountry('', 'en-US', true);
-      let value = overrideResourceManager.updateOverrideConfiguration(undefined);
       console.log('system_getDisplayCountry_nullString_test_Static_0100 value:' + value);
       expect(value).assertEqual('');
     })
@@ -1188,7 +1187,6 @@ export default function i18nStageTest() {
     it('system_getDisplayCountry_nullString_test_Static_0200', Level.LEVEL3, () => {
       try {
         let value: string = i18n.System.getDisplayCountry('zh-Hans-CN', '', true);
-        let value = overrideResourceManager.updateOverrideConfiguration(undefined);
         console.log('system_getDisplayCountry_nullString_test_Static_0200 value:' + value);
         expect(value).assertFail();
       } catch (e) {
@@ -1224,7 +1222,6 @@ export default function i18nStageTest() {
     it('system_getDisplayLanguage_nullString_test_Static_0200', Level.LEVEL3, () => {
       try {
         let value: string = i18n.System.getDisplayCountry('zh-Hans-CN', '');
-        let value = overrideResourceManager.updateOverrideConfiguration(undefined);
         console.log('system_getDisplayLanguage_nullString_test_Static_0200 value:' + value);
         expect(value).assertFail();
       } catch (e) {
@@ -1243,7 +1240,7 @@ export default function i18nStageTest() {
      *
      */
     it('system_getSystemCountries_nullString_test_Static_0100', Level.LEVEL3, () => {
-      let value: string = i18n.System.getSystemCountries('');
+      let value: string[] = i18n.System.getSystemCountries('');
       console.log('system_getSystemCountries_nullString_test_Static_0100 value:' + value);
       expect(value != null).assertTrue();
     })
@@ -1258,7 +1255,7 @@ export default function i18nStageTest() {
      *
      */
     it('system_isSuggested_nullString_test_Static_0100', Level.LEVEL3, () => {
-      let value: string = i18n.System.isSuggested('', "CN");
+      let value: boolean = i18n.System.isSuggested('', "CN");
       console.log('system_isSuggested_nullString_test_Static_0100 value:' + value);
       expect(value != null).assertTrue();
     })
@@ -1273,7 +1270,7 @@ export default function i18nStageTest() {
      *
      */
     it('system_isSuggested_nullString_test_Static_0200', Level.LEVEL3, () => {
-      let value: string = i18n.System.isSuggested('zh', "");
+      let value: boolean = i18n.System.isSuggested('zh', "");
       console.log('system_isSuggested_nullString_test_Static_0200 value:' + value);
       expect(value != null).assertTrue();
     })
@@ -2002,21 +1999,21 @@ export default function i18nStageTest() {
     it('getCityDisplayName_nullString_test_Static_0200', Level.LEVEL3, () => {
       let value: string = i18n.TimeZone.getCityDisplayName('Auckland', '');
       console.log('getCityDisplayName_nullString_test_Static_0200 value:', value);
-      expect(value != '').assertTrue('');
+      expect(value != '').assertTrue();
     })
 
     /**
-     * @tc.name getCityDisplayName_nullString_test_Static_0100
-     * @tc.number getCityDisplayName_nullString_test_Static_0100
+     * @tc.name getTimezoneFromCity_nullString_test_Static_0100
+     * @tc.number getTimezoneFromCity_nullString_test_Static_0100
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getCityDisplayName_nullString_test_Static_0100', Level.LEVEL3, () => {
+    it('getTimezoneFromCity_nullString_test_Static_0100', Level.LEVEL3, () => {
       let value: string = i18n.TimeZone.getTimezoneFromCity('');
-      console.log('getCityDisplayName_nullString_test_Static_0100 value:', value);
-      expect(value != null).assertTrue('');
+      console.log('getTimezoneFromCity_nullString_test_Static_0100 value:', value);
+      expect(value != null).assertTrue();
     })
 
     /**
@@ -2252,9 +2249,9 @@ export default function i18nStageTest() {
     it('StyledDateTimeFormat_format_test_Static_0100', Level.LEVEL3, () => {
       let locale: Intl.Locale = new Intl.Locale("zh-Hans-CN");
       let date: Date = new Date(2024, 11, 13, 6, 30, 25);
-      let skeletonFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDataTimeFormatBySkeleton('yMdhms', locale);
+      let skeletonFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMdhms', locale);
       let dateFormatted: string = skeletonFormatter.format(date);
-      console.log('StyledDateTimeFormat_format_test_Static_0100 value:', value);
+      console.log('StyledDateTimeFormat_format_test_Static_0100 value:', dateFormatted);
       expect(dateFormatted == '2024/12/13 上午6:30:25').assertTrue();
     })
 
@@ -2268,12 +2265,12 @@ export default function i18nStageTest() {
      */
     it('AdvancedMeasureFormat_format_test_Static_0100', Level.LEVEL3, () => {
       let numFmt: Intl.NumberFormat = new Intl.NumberFormat("zh-Hans-CN", {style: 'unit', unit: 'fahrenheit'});
-      let advancedMeasureFormat: i18n.AdvancedMeasureFormat = i18n.AdvancedMeasureFormat(numFmt, {
+      let advancedMeasureFormat: i18n.AdvancedMeasureFormat = new i18n.AdvancedMeasureFormat(numFmt, {
         unitUsage: i18n.UnitUsage.TEMPERATURE_PERSON
       });
       let value: string = advancedMeasureFormat.format(100);
       console.log('AdvancedMeasureFormat_format_test_Static_0100 value:', value);
-      expect(value).assertTrue('37.778℃');
+      expect(value).assertEqual('37.778°C');
     })
 
     /**
