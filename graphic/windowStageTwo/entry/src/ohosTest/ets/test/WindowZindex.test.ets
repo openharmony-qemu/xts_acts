@@ -2209,7 +2209,8 @@ export default function windowZindexTest() {
     })
 
     /**
-     * @tc.name   testCreateWindowCallbackwithContextUndefined
+     * @tc.number  testCreateWindowCallbackwithContextUndefined
+     * @tc.name    testCreateWindowCallbackwithContextUndefined
      * @tc.desc   调用createWindow callback接口，ctx设置为undefined，返回1300002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2245,7 +2246,8 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.name   testCreateWindowPromisewithContextUndefined
+     * @tc.number  testCreateWindowPromisewithContextUndefined
+     * @tc.name    testCreateWindowPromisewithContextUndefined
      * @tc.desc   调用createWindow promise接口，ctx设置为undefined，返回1300002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2279,7 +2281,8 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.name   testGetLastWindowCallbackwithContextUndefined
+     * @tc.number  testGetLastWindowCallbackwithContextUndefined
+     * @tc.name    testGetLastWindowCallbackwithContextUndefined
      * @tc.desc   调用getLastWindow callback接口，ctx设置为undefined，返回1300002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2309,7 +2312,8 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.name   testGetLastWindowPromisewithContextUndefined
+     * @tc.number  testGetLastWindowPromisewithContextUndefined
+     * @tc.name    testGetLastWindowPromisewithContextUndefined
      * @tc.desc   调用getLastWindow promise接口，ctx设置为undefined，返回1300002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
