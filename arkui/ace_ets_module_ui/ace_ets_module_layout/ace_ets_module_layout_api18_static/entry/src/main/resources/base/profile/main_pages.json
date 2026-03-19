@@ -4,6 +4,8 @@
     "MainAbility/pages/Column/ColumnSpaceResourcePage",
     "MainAbility/pages/Flex/FlexSpaceResourcePage",
     "MainAbility/pages/Row/RowSpaceResourcePage",
-    "MainAbility/pages/CustomLayout/CustomLayoutUniqueidPage"
+    "MainAbility/pages/CustomLayout/CustomLayoutUniqueidPage",
+    "MainAbility/pages/LayoutPolicy/LayoutPolicyFixAtIdealSize",
+    "MainAbility/pages/LayoutPolicy/LayoutPolicyWrapContent"
   ]
 }
