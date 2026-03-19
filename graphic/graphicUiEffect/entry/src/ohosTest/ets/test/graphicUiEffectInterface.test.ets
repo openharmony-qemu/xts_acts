@@ -126,6 +126,53 @@ export default function graphicUiEffectInterfaceTest() {
         done()
       }
     })
+
+    /**
+     * @tc.name   testHdrBrightnessRatio
+     * @tc.number testHdrBrightnessRatio
+     * @tc.desc   Filter testHdrBrightnessRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHdrBrightnessRatio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msgStr = " =====www data testHdrBrightnessRatio==== "
+      try {
+        let filter : uiEffect.Filter = uiEffect.createFilter()
+        console.log(msgStr + " Succeed in uiEffect.createFilter ")
+        expect(filter !== undefined).assertTrue();
+        try {
+          let ratio = filter.hdrBrightnessRatio(2.0)
+          console.info(msgStr + 'success ratio 111', JSON.stringify(ratio));
+          expect(ratio !== undefined).assertTrue();
+        } catch (err) {
+          console.info(msgStr + 'failed to ratio 111', JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          let ratio = filter.hdrBrightnessRatio(null)
+          console.info(msgStr + 'success ratio 222', JSON.stringify(ratio));
+          expect(ratio).assertUndefined();
+        } catch (err) {
+          console.info(msgStr + 'failed to ratio 222', JSON.stringify(err));
+          expect().assertFail();
+        }
+        try {
+          let ratio = filter.hdrBrightnessRatio(undefined)
+          console.info(msgStr + 'success ratio 333', JSON.stringify(ratio));
+          expect(ratio).assertUndefined();
+        } catch (err) {
+          console.info(msgStr + 'failed to ratio 333', JSON.stringify(err));
+          expect().assertFail();
+        }
+        done()
+      } catch (err) {
+        console.log(msgStr + " Failed in uiEffect.createFilter 444 " + JSON.stringify(err))
+        console.log(msgStr + " Failed in uiEffect.createFilter 444 " + err)
+        expect().assertFail()
+        done()
+      }
+    })
     
   })
 }
