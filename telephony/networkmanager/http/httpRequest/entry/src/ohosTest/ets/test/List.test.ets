@@ -27,8 +27,10 @@ import HttpRequestMaxAutoRedirectsWithInterceptorTest from './HttpRequestRedirec
 import HttpRequestCustomMethodTest from './HttpRequestCustomMethod.test';
 import HttpRequestSniTest from './HttpRequestSni.test';
 import HttpRequestCustomResponseHeaderTest from './HttpRequestCustomResponseHeader.test';
+import HttpInterceptorForSafeCheckTest from './HttpInterceptorForSafeCheck.test';
 
 export default function testsuite() {
+  HttpInterceptorForSafeCheckTest();
   HttpRequestInterceptor();
   HttpRequestMaxAutoRedirectsTest();
   HttpRequestMaxAutoRedirectsWithInterceptorTest();
