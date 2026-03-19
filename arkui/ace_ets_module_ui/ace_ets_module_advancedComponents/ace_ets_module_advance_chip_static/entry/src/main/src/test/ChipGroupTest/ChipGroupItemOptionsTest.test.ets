@@ -228,6 +228,22 @@ export default function chipGroupOptionsTest() {
       let result = JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left');
       expect(result).assertEqual('20.00vp');
       await CommonFunc.sleep(1000);
+
+      let btn1 = tree.getArray("$children")[0]
+        .getArray('$children')[3]
+        .getArray("$children")[0]
+
+      console.info("[chipGroupOptionsTest_static_004] component btn1.attrs.padding.top is: " +
+      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top'));
+      console.info("[chipGroupOptionsTest_static_004] component btn1.attrs.padding.bottom is: " +
+      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom'));
+
+      let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
+      let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
+      expect(result1).assertEqual('20.00vp');
+      expect(result2).assertEqual('20.00vp');
+      await CommonFunc.sleep(1000);
+
       console.info('[chipGroupOptionsTest_static_004] END');
       done();
     });
@@ -255,6 +271,22 @@ export default function chipGroupOptionsTest() {
       let result = JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left');
       expect(result).assertEqual('20.00vp');
       await CommonFunc.sleep(1000);
+
+      let btn1 = tree.getArray("$children")[0]
+        .getArray('$children')[4]
+        .getArray("$children")[0]
+
+      console.info("[chipGroupOptionsTest_static_005] component btn1.attrs.padding.top is: " +
+      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top'));
+      console.info("[chipGroupOptionsTest_static_005] component btn1.attrs.padding.bottom is: " +
+      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom'));
+
+      let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
+      let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
+      expect(result1).assertEqual('20.00vp');
+      expect(result2).assertEqual('20.00vp');
+      await CommonFunc.sleep(1000);
+
       console.info('[chipGroupOptionsTest_static_005] END');
       done();
     });
@@ -282,7 +314,66 @@ export default function chipGroupOptionsTest() {
       let result = JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left');
       expect(result).assertEqual('16.00vp');
       await CommonFunc.sleep(1000);
+
+      let btn1 = tree.getArray("$children")[0]
+        .getArray('$children')[5]
+        .getArray("$children")[0]
+
+      console.info("[chipGroupOptionsTest_static_006] component btn1.attrs.padding.top is: " +
+      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top'));
+      console.info("[chipGroupOptionsTest_static_006] component btn1.attrs.padding.bottom is: " +
+      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom'));
+
+      let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
+      let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
+      expect(result1).assertEqual('14.00vp');
+      expect(result2).assertEqual('14.00vp');
+      await CommonFunc.sleep(1000);
+
       console.info('[chipGroupOptionsTest_static_006] END');
+      done();
+    });
+
+    /**
+     * @tc.number   chipGroupOptionsTest_static_007
+     * @tc.name     chipGroupOptionsTest_static_007
+     * @tc.desc     chipGroupOptionsTest_static_007
+     * @tc.level    Level.LEVEL0
+     */
+    it('chipGroupOptionsTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[chipGroupOptionsTest_static_007] START');
+      await CommonFunc.sleep(1000);
+
+      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+      await CommonFunc.sleep(1000);
+
+      let btn0 = tree.getArray("$children")[0]
+        .getArray('$children')[6]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[chipGroupOptionsTest_static_007] component btn0.attrs.padding.left is: " +
+      JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left'));
+      let result = JSON.parseJsonElement(btn0.getElement('$attrs').getString('padding')).getString('left');
+      expect(result).assertEqual('16.00vp');
+      await CommonFunc.sleep(1000);
+
+      let btn1 = tree.getArray("$children")[0]
+        .getArray('$children')[6]
+        .getArray("$children")[0]
+
+      console.info("[chipGroupOptionsTest_static_007] component btn1.attrs.padding.top is: " +
+      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top'));
+      console.info("[chipGroupOptionsTest_static_007] component btn1.attrs.padding.bottom is: " +
+      JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom'));
+
+      let result1 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('top');
+      let result2 = JSON.parseJsonElement(btn1.getElement('$attrs').getString('padding')).getString('bottom');
+      expect(result1).assertEqual('14.00vp');
+      expect(result2).assertEqual('14.00vp');
+      await CommonFunc.sleep(1000);
+
+      console.info('[chipGroupOptionsTest_static_007] END');
       done();
     });
 

@@ -382,7 +382,7 @@ export default function nfcNDEFTagTest() {
             if (NdefTag != null && NdefTag != undefined) {
                 let ndefTagType = NdefTag.getNdefTagType();
                 console.info("[NFC_test]ndef4 ndefTagType: " + ndefTagType);
-                expect(NfcForumType.NFC_FORUM_TYPE_1).assertEqual(ndefTagType);
+                expect(ndefTagType).assertEqual(NfcForumType.NFC_FORUM_TYPE_1);
             } else {
                 console.info("[NFC_test]NdefTag4 = null & = undefined: ");
                 expect().assertFail();
@@ -402,7 +402,7 @@ export default function nfcNDEFTagTest() {
             if (NdefTag1 != null && NdefTag1 != undefined) {
                 let ndefTagType = NdefTag1.getNdefTagType();
                 console.info("[NFC_test]ndef4 ndefTagType: " + ndefTagType);
-                expect(NfcForumType.NFC_FORUM_TYPE_2).assertEqual(ndefTagType);
+                expect(ndefTagType).assertEqual(NfcForumType.NFC_FORUM_TYPE_2);
             } else {
                 console.info("[NFC_test]NdefTag4 = null & = undefined: ");
                 expect().assertFail();
@@ -422,7 +422,7 @@ export default function nfcNDEFTagTest() {
             if (NdefTag2 != null && NdefTag2 != undefined) {
                 let ndefTagType = NdefTag2.getNdefTagType();
                 console.info("[NFC_test]ndef4 ndefTagType: " + ndefTagType);
-                expect(NfcForumType.NFC_FORUM_TYPE_3).assertEqual(ndefTagType);
+                expect(ndefTagType).assertEqual(NfcForumType.NFC_FORUM_TYPE_3);
             } else {
                 console.info("[NFC_test]NdefTag4 = null & = undefined: ");
                 expect().assertFail();
@@ -442,7 +442,7 @@ export default function nfcNDEFTagTest() {
             if (NdefTag3 != null && NdefTag3 != undefined) {
                 let ndefTagType = NdefTag3.getNdefTagType();
                 console.info("[NFC_test]ndef4 ndefTagType: " + ndefTagType);
-                expect(NfcForumType.NFC_FORUM_TYPE_4).assertEqual(ndefTagType);
+                expect(ndefTagType).assertEqual(NfcForumType.NFC_FORUM_TYPE_4);
             } else {
                 console.info("[NFC_test]NdefTag4 = null & = undefined: ");
                 expect().assertFail();
@@ -462,7 +462,7 @@ export default function nfcNDEFTagTest() {
             if (NdefTag4 != null && NdefTag4 != undefined) {
                 let ndefTagType = NdefTag4.getNdefTagType();
                 console.info("[NFC_test]ndef4 ndefTagType: " + ndefTagType);
-                expect(NfcForumType.MIFARE_CLASSIC).assertEqual(ndefTagType);
+                expect(ndefTagType).assertEqual(NfcForumType.MIFARE_CLASSIC);
             } else {
                 console.info("[NFC_test]NdefTag4 = null & = undefined: ");
                 expect().assertFail();

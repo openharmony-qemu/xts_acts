@@ -1895,67 +1895,67 @@ export default function AssignmentLikeContextsTest() {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_1: Boolean[] = new Boolean[1];
+      let src_1: Boolean[] = new Boolean[1](false);
       let dst_1: Boolean[] = src_1;
       expect(dst_1).assertEqual(src_1);
 
-      let src_2: Byte[] = new Byte[1];
+      let src_2: Byte[] = new Byte[1](0);
       let dst_2: Byte[] = src_2;
       expect(dst_2).assertEqual(src_2);
 
-      let src_3: Char[] = new Char[1];
+      let src_3: Char[] = new Char[1]((0).toChar());
       let dst_3: Char[] = src_3;
       expect(dst_3).assertEqual(src_3);
 
-      let src_4: Short[] = new Short[1];
+      let src_4: Short[] = new Short[1](0);
       let dst_4: Short[] = src_4;
       expect(dst_4).assertEqual(src_4);
 
-      let src_5: Int[] = new Int[1];
+      let src_5: Int[] = new Int[1](0);
       let dst_5: Int[] = src_5;
       expect(dst_5).assertEqual(src_5);
 
-      let src_6: Long[] = new Long[1];
+      let src_6: Long[] = new Long[1](0);
       let dst_6: Long[] = src_6;
       expect(dst_6).assertEqual(src_6);
 
-      let src_7: Float[] = new Float[1];
+      let src_7: Float[] = new Float[1](0);
       let dst_7: Float[] = src_7;
       expect(dst_7).assertEqual(src_7);
 
-      let src_8: Double[] = new Double[1];
+      let src_8: Double[] = new Double[1](0);
       let dst_8: Double[] = src_8;
       expect(dst_8).assertEqual(src_8);
 
-      let src_9: boolean[] = new boolean[1];
+      let src_9: boolean[] = new boolean[1](false);
       let dst_9: boolean[] = src_9;
       expect(dst_9).assertEqual(src_9);
 
-      let src_10: byte[] = new byte[1];
+      let src_10: byte[] = new byte[1](0);
       let dst_10: byte[] = src_10;
       expect(dst_10).assertEqual(src_10);
 
-      let src_11: char[] = new char[1];
+      let src_11: char[] = new char[1]((0).toChar());
       let dst_11: char[] = src_11;
       expect(dst_11).assertEqual(src_11);
 
-      let src_12: short[] = new short[1];
+      let src_12: short[] = new short[1](0);
       let dst_12: short[] = src_12;
       expect(dst_12).assertEqual(src_12);
 
-      let src_13: int[] = new int[1];
+      let src_13: int[] = new int[1](0);
       let dst_13: int[] = src_13;
       expect(dst_13).assertEqual(src_13);
 
-      let src_14: long[] = new long[1];
+      let src_14: long[] = new long[1](0);
       let dst_14: long[] = src_14;
       expect(dst_14).assertEqual(src_14);
 
-      let src_15: float[] = new float[1];
+      let src_15: float[] = new float[1](0);
       let dst_15: float[] = src_15;
       expect(dst_15).assertEqual(src_15);
 
-      let src_16: double[] = new double[1];
+      let src_16: double[] = new double[1](0);
       let dst_16: double[] = src_16;
       expect(dst_16).assertEqual(src_16);
     });
@@ -3201,7 +3201,7 @@ export default function AssignmentLikeContextsTest() {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Object[] = new Object[1];
+      let src: Object[] = new Object[1](new Object());
       let dst: Object = src as Object;
       expect(src).assertEqual(dst); // 引用相等性校验
     });
@@ -3229,31 +3229,31 @@ export default function AssignmentLikeContextsTest() {
      * @tc.level     Level 2
      */
     it("testAssignmentLikeContexts0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src_Byte: Byte[] = new Byte[1];
+      let src_Byte: Byte[] = new Byte[1](0);
       let dst_Byte: Object = src_Byte as Object;
       expect(src_Byte).assertEqual(dst_Byte);
 
-      let src_Short: Short[] = new Short[1];
+      let src_Short: Short[] = new Short[1](0);
       let dst_Short: Object = src_Short as Object;
       expect(src_Short).assertEqual(dst_Short);
 
-      let src_Char: Char[] = new Char[1];
+      let src_Char: Char[] = new Char[1]((0).toChar());
       let dst_Char: Object = src_Char as Object;
       expect(src_Char).assertEqual(dst_Char);
 
-      let src_Int: Int[] = new Int[1];
+      let src_Int: Int[] = new Int[1](0);
       let dst_Int: Object = src_Int as Object;
       expect(src_Int).assertEqual(dst_Int);
 
-      let src_Long: Long[] = new Long[1];
+      let src_Long: Long[] = new Long[1](0);
       let dst_Long: Object = src_Long as Object;
       expect(src_Long).assertEqual(dst_Long);
 
-      let src_Float: Float[] = new Float[1];
+      let src_Float: Float[] = new Float[1](0);
       let dst_Float: Object = src_Float as Object;
       expect(src_Float).assertEqual(dst_Float);
 
-      let src_Double: Double[] = new Double[1];
+      let src_Double: Double[] = new Double[1](0);
       let dst_Double: Object = src_Double as Object;
       expect(src_Double).assertEqual(dst_Double);
     });

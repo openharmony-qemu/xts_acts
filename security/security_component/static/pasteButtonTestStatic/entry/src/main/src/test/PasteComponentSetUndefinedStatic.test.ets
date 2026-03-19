@@ -183,6 +183,29 @@ export default function pasteComponentSetUndefinedStaticTest() {
     });
 
     /**
+     * @tc.name   Test_Security_PasteButton_SetUndefined_0400
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_0400
+     * @tc.desc   Test SecurityComponent offset set undefined is Default and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_PasteButton_SetUndefined_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME = 'Test_Security_PasteButton_SetUndefined_0400';
+      console.info(`====>${TCNAME} START`);
+      let driver = Driver.create();
+      await clickSwitchButton(TCNAME, driver);
+      let strJson: string = inspector.getInspectorByKey('setUndefined3');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getElement('offset').getString('x')).assertEqual('0.00px');
+      expect(obj.getElement('$attrs').getElement('offset').getString('y')).assertEqual('0.00px');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      await clickSecComponent(TCNAME, driver, 0);
+    });
+
+    /**
      * @tc.name   Test_Security_PasteButton_SetUndefined_0500
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_PasteControls_SetUndefined_0500
      * @tc.desc   Test SecurityComponent fontSize set undefined is Default and Authorization is successful

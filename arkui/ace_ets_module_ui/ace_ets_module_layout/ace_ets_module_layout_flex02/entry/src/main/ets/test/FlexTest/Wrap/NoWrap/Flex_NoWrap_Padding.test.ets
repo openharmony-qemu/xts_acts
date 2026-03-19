@@ -76,39 +76,40 @@ export default function flex_NoWrap_PaddingTest() {
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.NoWrap');
 
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi1:'+ Math.floor(Math.abs(firstText.right - secondText.left)))
-      expect(Math.floor(Math.abs(firstText.right - secondText.left)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi2:'+ Math.floor(Math.abs(secondText.right - thirdText.left)))
-      expect(Math.floor(Math.abs(secondText.right - thirdText.left)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi3:'+ Math.floor(Math.abs(firstText.left - flexContainer.left - vp2px(60))))
-      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - vp2px(60))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi4:'+ Math.floor(Math.abs(firstText.top - secondText.top)))
-      expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi5:'+ Math.floor(Math.abs(secondText.top - thirdText.top)))
-      expect(Math.floor(Math.abs(secondText.top - thirdText.top)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi6:'+ Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))))
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi7:'+ Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))))
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi8:'+ Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))))
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi9:'+ Math.floor(Math.abs(firstText.right - firstText.left - vp2px(380) / 3)))
-      expect(Math.floor(Math.abs(firstText.right - firstText.left - vp2px(380) / 3)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi10:'+ Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))))
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi1:' + Math.floor(Math.abs((firstText.right) - (secondText.left))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi2:' + Math.floor(Math.abs((secondText.right) - (thirdText.left))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi3:' + Math.floor(Math.abs((firstText.left - flexContainer.left) - vp2px(60))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi4:' + Math.floor(Math.abs((firstText.top) - (secondText.top))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi5:' + Math.floor(Math.abs((secondText.top) - (thirdText.top))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi6:' + Math.floor(Math.abs((firstText.bottom - firstText.top) - vp2px(50))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi7:' + Math.floor(Math.abs((secondText.bottom - secondText.top) - vp2px(100))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi8:' + Math.floor(Math.abs((thirdText.bottom - thirdText.top) - vp2px(150))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi9:' + Math.floor(Math.abs((firstText.right - firstText.left) - vp2px(380) / 3)));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi10:' + Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi12:' + Math.floor(Math.abs((firstText.right - firstText.left) - (thirdText.right - thirdText.left))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi12:' + Math.floor(Math.abs((flexContainer.right - thirdText.right) - vp2px(60))));
+      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi13:' + Math.floor(Math.abs((thirdText.bottom - flexContainer.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((firstText.right) - (secondText.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.right) - (thirdText.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.left - flexContainer.left) - vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.top) - (secondText.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.top) - (thirdText.top))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - vp2px(380) / 3)) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi11:'+ Math.floor(Math.abs((firstText.right - firstText.left) - (thirdText.right - thirdText.left))))
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi12:'+ Math.floor(Math.abs(flexContainer.right - thirdText.right - vp2px(60))))
-      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - vp2px(60))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingOverflow_chazhi13:'+ Math.floor(Math.abs(thirdText.bottom - flexContainer.bottom - vp2px(10))))
-      expect(Math.floor(Math.abs(thirdText.bottom - flexContainer.bottom - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((flexContainer.right - thirdText.right) - vp2px(60))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - flexContainer.bottom) - vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[testWrapNoWrapFlexPaddingOverflow] END');
-    });
 
+    });
     /**
      * @tc.name   testWrapNoWrapFlexPaddingMeet
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_1600
@@ -134,38 +135,28 @@ export default function flex_NoWrap_PaddingTest() {
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.NoWrap');
 
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi1:'+ Math.floor(Math.abs(firstText.left - flexContainer.left - vp2px(10))))
-      expect(Math.floor(Math.abs(firstText.left - flexContainer.left - vp2px(10))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi2:'+ Math.floor(Math.abs(firstText.right - secondText.left)))
-      expect(Math.floor(Math.abs(firstText.right - secondText.left)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi3:'+ Math.floor(Math.abs(secondText.right - thirdText.left)))
-      expect(Math.floor(Math.abs(secondText.right - thirdText.left)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi4:'+ Math.floor(Math.abs(firstText.top - secondText.top)))
-      expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi5:'+ Math.floor(Math.abs(secondText.top - thirdText.top)))
-      expect(Math.floor(Math.abs(secondText.top - thirdText.top)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi6:'+ Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))))
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi7:'+ Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))))
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi8:'+ Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))))
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi9:'+ Math.floor(Math.abs(firstText.right - firstText.left - vp2px(450) / 3)))
-      expect(Math.floor(Math.abs(firstText.right - firstText.left - vp2px(450) / 3)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi10:'+ Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))))
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
-        .assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi11:'+ Math.floor(Math.abs((firstText.right - firstText.left) - (thirdText.right - thirdText.left))))
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - (thirdText.right - thirdText.left))) <= 1)
-        .assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi12:'+ Math.floor(Math.abs(flexContainer.right - thirdText.right - vp2px(40))))
-      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - vp2px(40))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexPaddingMeet_chazhi13:'+ Math.floor(Math.abs(flexContainer.bottom - thirdText.bottom - vp2px(40))))
-      expect(Math.floor(Math.abs(flexContainer.bottom - thirdText.bottom - vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.left - flexContainer.left)) - (Math.round(vp2px(10)))) <= 1).assertTrue();
+      expect(Math.abs((firstText.right) - (secondText.left)) <= 1).assertTrue();
+      expect(Math.abs((secondText.right) - (thirdText.left)) <= 1).assertTrue();
+      expect(Math.abs((firstText.top) - (secondText.top)) <= 1).assertTrue();
+      expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
 
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(vp2px(150)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(vp2px(450) / 3))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(vp2px(40)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(flexContainer.bottom - thirdText.bottom)) - (Math.round(vp2px(40)))) <= 1)
+        .assertTrue();
       console.info('[testWrapNoWrapFlexPaddingMeet] END');
-    });
 
+    });
     /**
      * @tc.name   testWrapNoWrapFlexMargin
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_1700
@@ -191,47 +182,35 @@ export default function flex_NoWrap_PaddingTest() {
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.NoWrap');
 
-      console.info('testWrapNoWrapFlexMargin_chazhi1:'+ Math.floor(Math.abs(firstText.right - secondText.left)))
-      expect(Math.floor(Math.abs(firstText.right - secondText.left)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi2:'+ Math.floor(Math.abs(secondText.right - thirdText.left)))
-      expect(Math.floor(Math.abs(secondText.right - thirdText.left)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi3:'+ Math.floor(Math.abs(firstText.left - flexContainer.left)))
-      expect(Math.floor(Math.abs(firstText.left - flexContainer.left)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi4:'+ Math.floor(Math.abs(firstText.top - flexContainer.top)))
-      expect(Math.floor(Math.abs(firstText.top - flexContainer.top)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi5:'+ Math.floor(Math.abs(firstText.top - secondText.top)))
-      expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi6:'+ Math.floor(Math.abs(secondText.top - thirdText.top)))
-      expect(Math.floor(Math.abs(secondText.top - thirdText.top)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi7:'+ Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))))
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi8:'+ Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))))
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi9:'+ Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))))
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi10:'+ Math.floor(Math.abs(flexContainer.top - columnContainer.top - vp2px(10))))
-      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - vp2px(10))) <= 1)
+      expect(Math.abs((firstText.right) - (secondText.left)) <= 1).assertTrue();
+      expect(Math.abs((secondText.right) - (thirdText.left)) <= 1).assertTrue();
+      expect(Math.abs((firstText.left) - (flexContainer.left)) <= 1).assertTrue();
+
+      expect(Math.abs((firstText.top) - (flexContainer.top)) <= 1).assertTrue();
+      expect(Math.abs((firstText.top) - (secondText.top)) <= 1).assertTrue();
+      expect(Math.abs((secondText.top) - (thirdText.top)) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(firstText.bottom - firstText.top)) - (Math.round(vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(secondText.bottom - secondText.top)) - (Math.round(vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(thirdText.bottom - thirdText.top)) - (Math.round(vp2px(150)))) <= 1).assertTrue();
+
+      expect(Math.abs((Math.round(flexContainer.top - columnContainer.top)) - (Math.round(vp2px(10)))) <= 1)
         .assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi11:'+ Math.floor(Math.abs((flexContainer.top - columnContainer.top) - (firstText.top - columnContainer.top))))
-      expect(Math.floor(Math.abs((flexContainer.top - columnContainer.top) - (firstText.top - columnContainer.top))) <= 1)
-        .assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi12:'+ Math.floor(Math.abs(firstText.right - firstText.left - vp2px(450) / 3)))
-      expect(Math.floor(Math.abs(firstText.right - firstText.left - vp2px(450) / 3)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi13:'+ Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))))
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
-        .assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi14:'+ Math.floor(Math.abs((firstText.right - firstText.left) - (thirdText.right - thirdText.left))))
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - (thirdText.right - thirdText.left))) <= 1)
-        .assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi15:'+ Math.floor(Math.abs(flexContainer.right - thirdText.right - vp2px(50))))
-      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - vp2px(50))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMargin_chazhi16:'+ Math.floor(Math.abs(flexContainer.bottom - thirdText.bottom - vp2px(50))))
-      expect(Math.floor(Math.abs(flexContainer.bottom - thirdText.bottom - vp2px(50))) <= 1)
+      expect(Math.abs((Math.round(flexContainer.top - columnContainer.top)) - (Math.round(firstText.top - columnContainer.top))) <= 1)
         .assertTrue();
 
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(vp2px(450) / 3))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(secondText.right - secondText.left))) <= 1)
+        .assertTrue();
+      expect(Math.abs((Math.round(firstText.right - firstText.left)) - (Math.round(thirdText.right - thirdText.left))) <= 1)
+        .assertTrue();
+
+      expect(Math.abs((Math.round(flexContainer.right - thirdText.right)) - (Math.round(vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs((Math.round(flexContainer.bottom - thirdText.bottom)) - (Math.round(vp2px(50)))) <= 1)
+        .assertTrue();
       console.info('[testWrapNoWrapFlexMargin] END');
-    });
 
+    });
     /**
      * @tc.name   testWrapNoWrapFlexMarPad
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_1800
@@ -260,40 +239,42 @@ export default function flex_NoWrap_PaddingTest() {
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.NoWrap');
 
-      console.info('testWrapNoWrapFlexMarPad_chazhi1:'+ Math.floor(Math.abs((firstText.top) - (secondText.top))))
+      console.info('testWrapNoWrapFlexMarPad_chazhi1: ' + Math.floor(Math.abs((firstText.top) - (secondText.top))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi2: ' + Math.floor(Math.abs((secondText.top) - (thirdText.top))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi3: ' + Math.floor(Math.abs((firstText.right) - (secondText.left))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi4: ' + Math.floor(Math.abs((secondText.right) - (thirdText.left))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi5: ' + Math.floor(Math.abs((firstText.bottom - firstText.top) - vp2px(50))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi6: ' + Math.floor(Math.abs((secondText.bottom - secondText.top) - vp2px(100))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi7: ' + Math.floor(Math.abs((thirdText.bottom - thirdText.top) - vp2px(150))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi8: ' + Math.floor(Math.abs((flexContainer.top - columnContainer.top) - vp2px(10))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi9: ' + Math.floor(Math.abs((firstText.top - columnContainer.top) - vp2px(40))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi10: ' + Math.floor(Math.abs((firstText.right - firstText.left) - vp2px(440) / 3)));
+      console.info('testWrapNoWrapFlexMarPad_chazhi11: ' + Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi12: ' + Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi13: ' + Math.floor(Math.abs((flexContainer.right - thirdText.right) - vp2px(30))));
+      console.info('testWrapNoWrapFlexMarPad_chazhi14: ' + Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - vp2px(20))));
+
       expect(Math.floor(Math.abs((firstText.top) - (secondText.top))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi2:'+ Math.floor(Math.abs((secondText.top) - (thirdText.top))))
       expect(Math.floor(Math.abs((secondText.top) - (thirdText.top))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi3:'+ Math.floor(Math.abs((firstText.right) - (secondText.left))))
       expect(Math.floor(Math.abs((firstText.right) - (secondText.left))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi4:'+ Math.floor(Math.abs((secondText.right) - (thirdText.left))))
       expect(Math.floor(Math.abs((secondText.right) - (thirdText.left))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi5:'+ Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))))
-      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi6:'+ Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))))
-      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi7:'+ Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))))
-      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi8:'+ Math.floor(Math.abs(flexContainer.top - columnContainer.top - vp2px(10))))
-      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((flexContainer.top - columnContainer.top) - vp2px(10))) <= 1)
         .assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi9:'+ Math.floor(Math.abs(firstText.top - columnContainer.top - vp2px(40))))
-      expect(Math.floor(Math.abs(firstText.top - columnContainer.top - vp2px(40))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi10:'+ Math.floor(Math.abs(firstText.right - firstText.left - vp2px(440) / 3)))
-      expect(Math.floor(Math.abs(firstText.right - firstText.left - vp2px(440) / 3)) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi11:'+ Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))))
+      expect(Math.floor(Math.abs((firstText.top - columnContainer.top) - vp2px(40))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - vp2px(440) / 3)) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi12:'+ Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))))
       expect(Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))) <= 1)
         .assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi13:'+ Math.floor(Math.abs(flexContainer.right - thirdText.right - vp2px(30))))
-      expect(Math.floor(Math.abs(flexContainer.right - thirdText.right - vp2px(30))) <= 1).assertTrue();
-      console.info('testWrapNoWrapFlexMarPad_chazhi14:'+ Math.floor(Math.abs(flexContainer.bottom - thirdText.bottom - vp2px(20))))
-      expect(Math.floor(Math.abs(flexContainer.bottom - thirdText.bottom - vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((flexContainer.right - thirdText.right) - vp2px(30))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - vp2px(20))) <= 1)
+        .assertTrue();
 
       console.info('[testWrapNoWrapFlexMarPad] END');
-    });
 
+    });
   })
 }

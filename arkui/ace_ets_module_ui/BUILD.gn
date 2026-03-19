@@ -113,6 +113,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_textInput_undefined_static:ActsAceEtsModuleTextInputUndefinedStaticTest",
       "ace_ets_module_common_undefined_static:ActsAceEtsModuleCommonUndefinedStaticTest",
       "ace_ets_module_parallel_static:ActsAceEtsModuleParallelStaticTest",
+      "ace_ets_module_common_static:ActsAceEtsModuleCommonStaticTest", 
       "ace_ets_module_textInput_static:ActsAceEtsModuleTextInputStaticTest",
       "ace_ets_module_textPicker_static:ActsAceEtsModuleTextPickerStaticTest",
       "ace_ets_module_units_static:ActsAceEtsModuleUnitsStaticTest",

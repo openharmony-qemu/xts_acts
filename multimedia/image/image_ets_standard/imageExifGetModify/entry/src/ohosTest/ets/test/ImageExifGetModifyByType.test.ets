@@ -23,9 +23,7 @@ import hdrCapability from '@ohos.graphics.hdrCapability';
 import display from '@ohos.display';
 import resourceManager from '@ohos.resourceManager';
 import { 
-  imageExifMetadatakey,
   readAndWriteExifMetadata,
-  imageMakerNoteHwMetadatakey,
   readAndWriteMakerNoteHwMetadata,
   exifReadWriteValidationRules,
   DNGExifReadWriteValidationRules,
@@ -35,14 +33,22 @@ import {
   testExifMetadata,
   testHuaweiMakerNoteMetadata,
   exifWriteExpectedValueRules,
+  dngMetadataMap
 } from './ImagePropertyByType.test'
 
+interface DngRule {
+  key: string;
+  newExpectValue: string | number | number[] | object;
+}
+
 interface ModifyRule1 {
+  key?: string;
   oldExpectValue: string | null | undefined;
   newExpectValue: string | number | Array<number> | ArrayBuffer | boolean | undefined;
 }
 
 interface ModifyRule {
+  key?: string;
   modifyValue: string;
   oldExpectValue: string;
   newExpectValue: string | number | Array<number> | boolean;
@@ -260,8 +266,7 @@ export default function imageExifGetModifyByTypeTest() {
       type: string,
       typeMetadata: string,
       exifMetadataKey: string[],
-      imageMetadatakey: string[],
-      rulesMap: Map<string, ModifyRule | ModifyRule1>
+      rulesMap: Map<string, ModifyRule | ModifyRule1 | DngRule>
     ): Promise<boolean> => {
       let ret: boolean = true;
       const imageSourceApiGet = await getImageSource(fileName, type);
@@ -279,8 +284,7 @@ export default function imageExifGetModifyByTypeTest() {
             console.info(`${testNum} Not meeting the conditions.`);
             return false;
           }
-          let actualValue: string | number | object | number[] | undefined | null | ArrayBuffer = exifValue[typeMetadata]![imageMetadatakey[i]];
-
+          let actualValue: string | number | object | number[] | undefined | null | ArrayBuffer = exifValue[typeMetadata]![rule.key!];
           if (actualValue instanceof ArrayBuffer) {
             if (!compareArrayBuffer(actualValue, expectedValue)) {
               console.info(`${testNum} Verification failed for ArrayBuffer key: ${exifMetadataKey[i]}, Expected: ${JSON.stringify(expectedValue)}, Actual ArrayBuffer length: ${actualValue.byteLength}`);
@@ -356,12 +360,11 @@ export default function imageExifGetModifyByTypeTest() {
       fileName: string,
       type: string,
       typeMetadata: string,
-      exifMetadataKey: string[],
-      imageMetadatakey: string[]
+      exifMetadataKey: string[]
     ): Promise<boolean> => {
       let ret: boolean = true;
       ret = await testModifyAndVerifyEnhanced(testNum, fileName, type, exifMetadataKey);
-      ret = ret && await verifyMetadataProperties(testNum, fileName, type, typeMetadata, exifMetadataKey, imageMetadatakey, exifReadWriteValidationRules);
+      ret = ret && await verifyMetadataProperties(testNum, fileName, type, typeMetadata, exifMetadataKey, exifReadWriteValidationRules);
       return ret;
     }
 
@@ -454,7 +457,6 @@ export default function imageExifGetModifyByTypeTest() {
       type: string,
       typeMetadata: string,
       exifMetadataKey: string[],
-      imageMetadatakey: string[],
       imageMetadata: image.ImageMetadata
     ): Promise<boolean> => {
       let ret: boolean = true;
@@ -471,7 +473,7 @@ export default function imageExifGetModifyByTypeTest() {
         await imageSourceApi?.release();
       }
 
-      ret = await verifyMetadataProperties(testNum, fileName, type, typeMetadata, exifMetadataKey, imageMetadatakey, exifWriteExpectedValueRules);
+      ret = await verifyMetadataProperties(testNum, fileName, type, typeMetadata, exifMetadataKey, exifWriteExpectedValueRules);
       return ret;
     }
 
@@ -812,7 +814,7 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0100"
-      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_jpg_v2.jpg", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey);
+      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_jpg_v2.jpg", "fd", "exifMetadata", readAndWriteExifMetadata);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -832,7 +834,7 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0200"
-      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_png_v2.png", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey);
+      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_png_v2.png", "fd", "exifMetadata", readAndWriteExifMetadata);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -852,7 +854,7 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0300", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0300"
-      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_heic_v2.heic", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey);
+      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_heic_v2.heic", "fd", "exifMetadata", readAndWriteExifMetadata);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -872,7 +874,7 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0400", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0400"
-      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_webp_v2.webp", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey);
+      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_webp_v2.webp", "fd", "exifMetadata", readAndWriteExifMetadata);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -986,20 +988,20 @@ export default function imageExifGetModifyByTypeTest() {
           let expectedValue = rule.newExpectValue;
           let actualValue: string | number | object | number[] | undefined | null | ArrayBuffer;
           if (exifValue.exifMetadata != undefined) {
-            actualValue = exifValue.exifMetadata![imageExifMetadatakey[i]];
+            actualValue = exifValue.exifMetadata![rule.key!];
           }
 
           if (actualValue instanceof ArrayBuffer) {
             if (!compareArrayBuffer(actualValue, expectedValue)) {
-              console.info(`${testTag} Verification failed for ArrayBuffer key: ${imageExifMetadatakey[i]}, Expected: ${JSON.stringify(expectedValue)}, Actual ArrayBuffer length: ${actualValue.byteLength}`);
+              console.info(`${testTag} Verification failed for ArrayBuffer key: ${rule.key}, Expected: ${JSON.stringify(expectedValue)}, Actual ArrayBuffer length: ${actualValue.byteLength}`);
               ret = false;
             }
           } else if (!compareValues(actualValue, expectedValue)) {
-            console.info(`${testTag} Verification failed for key: ${imageExifMetadatakey[i]}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+            console.info(`${testTag} Verification failed for key: ${rule.key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
             ret = false;
           }
         } catch (error) {
-          console.error(`${testTag} Error processing key ${imageExifMetadatakey[i]}: ${error}`);
+          console.error(`${testTag} Error processing key ${rule.key}: ${error}`);
           ret = false;
         } finally {
           await imageSourceApiGet?.release();
@@ -1163,7 +1165,7 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_PROMISE_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_PROMISE_0100"
-      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_jpg_v2.jpg", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata, imageMakerNoteHwMetadatakey);
+      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_jpg_v2.jpg", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1183,7 +1185,7 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_PROMISE_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_PROMISE_0200"
-      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_png_v2.png", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata, imageMakerNoteHwMetadatakey);
+      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_png_v2.png", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1203,7 +1205,7 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_PROMISE_0300", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_PROMISE_0300"
-      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_heic_v2.heic", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata, imageMakerNoteHwMetadatakey);
+      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_heic_v2.heic", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1223,7 +1225,7 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_PROMISE_0400", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HWMETADATA_PROMISE_0400"
-      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_webp_v2.webp", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata, imageMakerNoteHwMetadatakey);
+      let result = await testReadImageMetadata(testTag, "test_exif_readWrite_webp_v2.webp", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1512,7 +1514,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_jpg_v2.jpg", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_jpg_v2.jpg", "fd", "exifMetadata", readAndWriteExifMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1535,7 +1537,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_png_v2.png", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_png_v2.png", "fd", "exifMetadata", readAndWriteExifMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1558,7 +1560,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_heic_v2.heic", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_heic_v2.heic", "fd", "exifMetadata", readAndWriteExifMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1581,7 +1583,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_webp_v2.webp", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_webp_v2.webp", "fd", "exifMetadata", readAndWriteExifMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1604,7 +1606,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_empty_jpg_v2.jpg", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_empty_jpg_v2.jpg", "fd", "exifMetadata", readAndWriteExifMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1627,7 +1629,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_empty_png_v2.png", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_empty_png_v2.png", "fd", "exifMetadata", readAndWriteExifMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1650,7 +1652,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_empty_heic_v2.heic", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_empty_heic_v2.heic", "fd", "exifMetadata", readAndWriteExifMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1673,7 +1675,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_empty_webp_v2.webp", "fd", "exifMetadata", readAndWriteExifMetadata, imageExifMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_empty_webp_v2.webp", "fd", "exifMetadata", readAndWriteExifMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -1751,7 +1753,7 @@ export default function imageExifGetModifyByTypeTest() {
       const imageMetadata: image.ImageMetadata = {
         makerNoteHuaweiMetadata: testHuaweiMakerNoteMetadata
       };
-      let result = await testWriteImageMetadata(testTag, "test_exif_modify_jpg_v2.jpg", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata, imageMakerNoteHwMetadatakey, imageMetadata);
+      let result = await testWriteImageMetadata(testTag, "test_exif_modify_jpg_v2.jpg", "fd", "makerNoteHuaweiMetadata", readAndWriteMakerNoteHwMetadata, imageMetadata);
       console.info(`${testTag} testWriteImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -2418,8 +2420,8 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0100";
-      let result = await verifyMetadataProperties(testTag, "test.dng", "fd", "exifMetadata", readAndWriteExifMetadata,
-        imageExifMetadatakey, DNGExifReadWriteValidationRules);
+      let result = await verifyMetadataProperties(testTag, "test.dng", "fd", "exifMetadata", readAndWriteExifMetadata, 
+        DNGExifReadWriteValidationRules);
       console.info(`${testTag} testReadImageMetadata result is: ${result}`);
       expect(result).assertTrue();
       done();
@@ -2451,20 +2453,20 @@ export default function imageExifGetModifyByTypeTest() {
           let expectedValue = rule.newExpectValue;
           let actualValue: string | number | object | number[] | undefined | null | ArrayBuffer;
           if (exifValue.exifMetadata != undefined) {
-            actualValue = exifValue.exifMetadata![imageExifMetadatakey[i]];
+            actualValue = exifValue.exifMetadata![rule.key!];
           }
 
           if (actualValue instanceof ArrayBuffer) {
             if (!compareArrayBuffer(actualValue, expectedValue)) {
-              console.info(`${testTag} Verification failed for ArrayBuffer key: ${imageExifMetadatakey[i]}, Expected: ${JSON.stringify(expectedValue)}, Actual ArrayBuffer length: ${actualValue.byteLength}`);
+              console.info(`${testTag} Verification failed for ArrayBuffer key: ${rule.key}, Expected: ${JSON.stringify(expectedValue)}, Actual ArrayBuffer length: ${actualValue.byteLength}`);
               ret = false;
             }
           } else if (!compareValues(actualValue, expectedValue)) {
-            console.info(`${testTag} Verification failed for key: ${imageExifMetadatakey[i]}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+            console.info(`${testTag} Verification failed for key: ${rule.key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
             ret = false;
           }
         } catch (error) {
-          console.error(`${testTag} Error processing key ${imageExifMetadatakey[i]}: ${error}`);
+          console.error(`${testTag} Error processing key ${rule.key}: ${error}`);
           ret = false;
         } finally {
           await imageSourceApiGet?.release();
@@ -4281,5 +4283,222 @@ export default function imageExifGetModifyByTypeTest() {
       done();
     });
 
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_0100
+     * @tc.desc        Verify create image raw data from DNG file and create pixel map from raw data
+     *                 1.Create image source from DNG file (test_fake.dng) using uri
+     *                 2.Create image raw data using createImageRawData
+     *                 3.Create new image source from raw data buffer
+     *                 4.Create pixel map from new image source
+     *                 5.Verify pixel map is created successfully with valid dimensions
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_0100";
+      try {
+        const imageSourceApi = await getImageSource("test_fake.dng", "uri");
+        const dngMetadata = await imageSourceApi.createImageRawData();
+        console.info(`${testTag} Created image raw data for DNG file, dngMetadata: ${JSON.stringify(dngMetadata)}`
+                      + ` buffer length = ${dngMetadata.buffer.byteLength},`
+                      + ` bitsPerPixel = ${dngMetadata.bitsPerPixel}`);
+        let dngMetadataArray = new Uint16Array(dngMetadata.buffer);
+        console.info(`${testTag} dngMetadataArray length = ${dngMetadataArray.length}`);
+        const actualNumberArray = Array.from(dngMetadataArray).slice(0, 10);
+        let exceptNumberArray = [0, 0, 32, 512, 4, 64, 0, 6150, 0, 512];
+        let ret = compareValues(actualNumberArray, exceptNumberArray);
+        expect(ret).assertTrue();
+        console.info(`${testTag} dngMetadataArray data match expected values.`);
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_ERROR_0100
+     * @tc.desc        Verify create image raw data from DNG file and create pixel map from raw data
+     *                 1.Create image source from DNG file (test_fake.dng) using uri
+     *                 2.Create image raw data using createImageRawData
+     *                 3.Create new image source from raw data buffer
+     *                 4.Create pixel map from new image source
+     *                 5.Verify pixel map is created successfully with valid dimensions
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_ERROR_0100";
+      try {
+        const imageSourceApi = await getImageSource("fake.dng", "uri");
+        console.info(`${testTag} Created image source for fake.dng file.`);
+        const dngMetadata = await imageSourceApi.createImageRawData();
+        console.info(`${testTag} Created image raw data for fake.dng file, expected to fail.`);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${testTag} Error: code: ${err.code}, message: ${err.message}`);
+        expect(err.code == 7700101).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_ERROR_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_ERROR_0200
+     * @tc.desc        Verify create image raw data from ico file
+     *                 1.Create image source from ico file (test.ico) using uri
+     *                 2.Create image raw data using createImageRawData
+     *                 3.Verify createImageRawData fails with expected error
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_IMAGE_RAW_DATA_ERROR_0200";
+      try {
+        const imageSourceApi = await getImageSource("test.ico", "uri");
+        console.info(`${testTag} Created image source for ico file.`);
+        const dngMetadata = await imageSourceApi.createImageRawData();
+        console.info(`${testTag} Created image raw data for ico file, expected to fail.`);
+        expect().assertFail();
+      } catch (err) {
+        console.error(`${testTag} Error: code: ${err.code}, message: ${err.message}`);
+        expect(err.code == UNSUPPORTED_IMAGE_FORMATS).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0100
+     * @tc.desc        Verify create image raw data from DNG file
+     *                 1.Create image source from DNG file (test_fake.dng) using uri
+     *                 2.Read DNG metadata using readImageMetadata
+     *                 3.Verify DNG raw data properties are read successfully
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0100";
+      try {
+        let keys: string[] = Object.values(image.DngPropertyKey);
+        console.info(`${testTag} DNG metadata keys to read: ${keys}`);
+        const ret = await verifyMetadataProperties(testTag, "test_fake.dng", "uri", "dngMetadata", keys, dngMetadataMap);
+        expect(ret).assertTrue();
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0200
+     * @tc.desc        Verify create image raw data from DNG file
+     *                 1.Create image source from DNG file (test_fake.dng) using uri
+     *                 2.Read DNG metadata using readImageMetadata
+     *                 3.Verify DNG raw data properties are read successfully
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_0200";
+      try {
+        const imageSourceApi = await getImageSource("test_fake.dng", "uri");
+        const imageMetadata = await imageSourceApi.readImageMetadata();
+        console.info(`${testTag} Read DNG image metadataObj: ${imageMetadata.dngMetadata != undefined}`);
+        console.info(`${testTag} DNG image rawDataUniqueID: ${imageMetadata.dngMetadata?.rawDataUniqueID}`);
+        expect(imageMetadata.dngMetadata?.rawDataUniqueID == "CE70B9D6BAA1207B3ABBA6C9FFF84924").assertTrue();
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_ERROR_0100
+     * @tc.desc        Verify create image raw data from DNG file
+     *                 1.Create image source from DNG file using uri
+     *                 2.Read DNG metadata using readImageMetadata
+     *                 3.Verify DNG raw data properties are read successfully
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_DNG_METADATA_ERROR_0100";
+      try {
+        const imageSourceApi = await getImageSource("HW_CAMERA.dng", "uri");
+        const keys: string[] = ["LocalizedCameraModel", "BlackLevelDeltaH"];
+        const imageMetadata = await imageSourceApi.readImageMetadata(keys);
+        console.info(`${testTag} Read DNG image metadata: ${JSON.stringify(imageMetadata)}`);
+        expect().assertFail();
+      } catch (err) {
+        let ret = handleError(testTag, err as GenericError | Array<GenericError>, READ_FAILED);
+        expect(ret).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_DNG_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_DNG_METADATA_0100
+     * @tc.desc        Verify create image raw data from DNG file
+     *                 1.Create image source from DNG file (test_fake.dng) using uri
+     *                 2.Read DNG metadata using readImageMetadataByType
+     *                 3.Verify DNG raw data properties are read successfully
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_DNG_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_DNG_METADATA_0100";
+      try {
+        const imageSourceApi = await getImageSource("test_fake.dng", "uri");
+        const imageMetadata = await imageSourceApi.readImageMetadataByType([image.MetadataType.DNG_METADATA]);
+        console.info(`${testTag} Read DNG image metadataObj: ${imageMetadata.dngMetadata != undefined}`);
+        console.info(`${testTag} DNG image rawDataUniqueID: ${imageMetadata.dngMetadata?.rawDataUniqueID}`);
+        expect(imageMetadata.dngMetadata?.rawDataUniqueID == "CE70B9D6BAA1207B3ABBA6C9FFF84924").assertTrue();
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_DNG_METADATA_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_DNG_METADATA_0200
+     * @tc.desc        Verify create image raw data from DNG file
+     *                 1.Create image source from DNG file (test_fake.dng) using uri
+     *                 2.Read DNG metadata using readImageMetadataByType with specific keys
+     *                 3.Verify DNG raw data properties are read successfully
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_DNG_METADATA_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_DNG_METADATA_0200";
+      try {
+        const imageSourceApi = await getImageSource("test_fake.dng", "uri");
+        const imageMetadata = await imageSourceApi.readImageMetadataByType();
+        console.info(`${testTag} Read DNG image metadataObj: ${imageMetadata.dngMetadata != undefined}`);
+        console.info(`${testTag} DNG image rawDataUniqueID: ${imageMetadata.dngMetadata?.rawDataUniqueID}`);
+        expect(imageMetadata.dngMetadata?.rawDataUniqueID == "CE70B9D6BAA1207B3ABBA6C9FFF84924").assertTrue();
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
   });
 }

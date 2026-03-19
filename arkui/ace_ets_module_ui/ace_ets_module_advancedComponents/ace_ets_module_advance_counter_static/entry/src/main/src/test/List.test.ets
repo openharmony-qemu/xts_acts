@@ -15,8 +15,9 @@
  */
 
 import counterDirectionTest from './counter/counterDirection.test';
-
+import CounterAttrsTest from './counter/CounterAttrsTest.test';
 
 export default function testsuite() {
   counterDirectionTest();
+  CounterAttrsTest();
 }

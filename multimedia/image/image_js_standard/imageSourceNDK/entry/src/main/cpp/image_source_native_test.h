@@ -65,6 +65,10 @@ public:
     static napi_value TestModifyImagePropertyDoubleArray(napi_env env, napi_callback_info info);
     static napi_value TestModifyImagePropertyBlob(napi_env env, napi_callback_info info);
     static napi_value TestModifyImagePropertyError(napi_env env, napi_callback_info info);
+    static napi_value TestCreateImageRawData(napi_env env, napi_callback_info info);
+    static napi_value TestCreateImageRawDataNullptr(napi_env env, napi_callback_info info);
+    static napi_value TestGetBufferFromRawDataNullptr(napi_env env, napi_callback_info info);
+    static napi_value TestGetBitsPerPixelFromRawDataNullptr(napi_env env, napi_callback_info info);
 private:
 };
 } // namespace Media
