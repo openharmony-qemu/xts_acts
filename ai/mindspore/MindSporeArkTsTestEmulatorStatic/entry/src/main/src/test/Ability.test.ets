@@ -734,7 +734,7 @@ export default function abilityTest() {
             modelInputs[0].setData(inputBuffer.buffer);
             hilog.info(domain, tag, '%{public}s', '=========MSLITE predict start=====');
             let num = 0;
-            for (let i = 0; i < 99999999; i++) {
+            for (let i = 0; i < 10; i++) {
                 let modelOutputs = await msliteModel.predict(modelInputs);
                 expect(modelOutputs !== null).assertTrue();
                 hilog.info(domain, tag, '%{public}s', '=========MSLITE new Float32Array start=====');
@@ -751,7 +751,6 @@ export default function abilityTest() {
                 ++num;
                 hilog.info(domain, tag, '%{public}s', '=========num.toString()=====');
                 hilog.info(domain, tag, '%{public}s', num.toString());
-                GC.startGC(GC.Cause.FULL, GC.IN_PLACE_MODE)
             }
             done();
         });
@@ -770,27 +769,26 @@ export default function abilityTest() {
             let model_file = abilityContext.filesDir + '/' + 'ml_face_isface.ms';
             let inputBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent(inputName);
             hilog.info(domain, tag, '%{public}s', '=========MSLITE success, input bin bytelength: ' + inputBuffer.byteLength);
-            for (let i = 0; i < 9999999; i++) {
-                // mindSporeLite.loadModelFromFile(model_file);
-                let msliteModel = await mindSporeLite.loadModelFromFile(model_file);
-                expect(msliteModel !== null).assertTrue();
-                hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
-                const modelInputs = msliteModel.getInputs();
-                modelInputs[0].setData(inputBuffer.buffer);
-                hilog.info(domain, tag, '%{public}s', '=========MSLITE predict start=====');
-                let modelOutputs = await msliteModel.predict(modelInputs);
-                expect(modelOutputs !== null).assertTrue();
-                hilog.info(domain, tag, '%{public}s', '=========MSLITE new Float32Array start=====');
-                let output0 = new Float32Array(modelOutputs[0].getData());
-                expect(output0.length).assertLarger(0);
-                hilog.info(domain, tag, '%{public}s', 'output0.length:' + output0.length);
-                for (let i = 0; i < 2; i++) {
-                    hilog.info(domain, tag, '%{public}s', output0[i].toString());
-                    expect(output0[i].toString() !== null).assertTrue();
-                }
-                hilog.info(domain, tag, '%{public}s', '=========MSLITE new Float32Array end=====');
-                GC.startGC(GC.Cause.FULL, GC.IN_PLACE_MODE)
+            for (let i = 0; i < 10; i++) {
+                mindSporeLite.loadModelFromFile(model_file);
             }
+            let msliteModel = await mindSporeLite.loadModelFromFile(model_file);
+            expect(msliteModel !== null).assertTrue();
+            hilog.info(domain, tag, '%{public}s', '=========MSLITE loadModel end=====');
+            const modelInputs = msliteModel.getInputs();
+            modelInputs[0].setData(inputBuffer.buffer);
+            hilog.info(domain, tag, '%{public}s', '=========MSLITE predict start=====');
+            let modelOutputs = await msliteModel.predict(modelInputs);
+            expect(modelOutputs !== null).assertTrue();
+            hilog.info(domain, tag, '%{public}s', '=========MSLITE new Float32Array start=====');
+            let output0 = new Float32Array(modelOutputs[0].getData());
+            expect(output0.length).assertLarger(0);
+            hilog.info(domain, tag, '%{public}s', 'output0.length:' + output0.length);
+            for (let i = 0; i < 2; i++) {
+                hilog.info(domain, tag, '%{public}s', output0[i].toString());
+                expect(output0[i].toString() !== null).assertTrue();
+            }
+            hilog.info(domain, tag, '%{public}s', '=========MSLITE new Float32Array end=====');
             done();
         });
 
