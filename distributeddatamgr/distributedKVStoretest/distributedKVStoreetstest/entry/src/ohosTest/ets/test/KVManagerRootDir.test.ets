@@ -112,7 +112,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDir=context.databaseDir, /data/storage/el2/database,
          * GetKVStore(dir)， closeKVStore(dir),deleteKVStore(dir),成功
          */
-        it('SingleKv_rootDir_GetKVStore_0100', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0100---------');
             try {
                 g_optionsDir.rootDir = context.databaseDir;
@@ -160,7 +160,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDir!=context.databaseDir,不等于默认路径 /data/storage/el2/data,
          * GetKVStore(dir)， closeKVStore(dir),deleteKVStore(dir),成功
          */
-        it('SingleKv_rootDir_GetKVStore_0101', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0101---------');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -208,7 +208,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDir异常，目录为空，rootDir=''
          * getkv返回401， closekv返回401,  deletekv返回401,成功
          */
-        it('SingleKv_rootDir_GetKVStore_0102', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0102---------');
             try {
                 g_optionsDir.rootDir = '';
@@ -256,7 +256,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  rootDir异常，目录为空，rootDir=' ',getkv返回401， closekv成功,  deletekv返回401
          */
-        it('SingleKv_rootDir_GetKVStore_0103', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0103---------');
             try {
                 g_optionsDir.rootDir = ' ';
@@ -302,7 +302,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  rootDir异常，目录为空，rootDir='/data',getkv返回401， closekv成功,  deletekv返回401
          */
-        it('SingleKv_rootDir_GetKVStore_0104', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0104---------');
             try {
                 g_optionsDir.rootDir = '/data';
@@ -349,7 +349,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDir异常，目录为空，rootDir='/data/storage/el2/database/111/'
          * getkv返回401， closekv成功,  deletekv返回401
          */
-        it('SingleKv_rootDir_GetKVStore_0105', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0105---------');
             try {
                 g_optionsDir.rootDir = '/data/storage/el2/database/111/';
@@ -394,7 +394,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  rootDir异常，rootDir=undefined, getkv返回401， closekv返回401,  deletekv返回401
          */
-        it('SingleKv_rootDir_GetKVStore_0106', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0106---------');
             try {
                 g_optionsDir.rootDir = undefined;
@@ -444,7 +444,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDir= /data/storage/el2/data，GetKVStore(dir)， closeKVStore(dir), deleteKVStore(dir),
          * 第二次deleteKVStore(dir)返回15100004
          */
-        it('SingleKv_rootDir_GetKVStore_0200', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0200---------');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -500,7 +500,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  closekv不存在的目录， closeKVStore(dir)与 GetKVStore(dir)目录不一致
          */
-        it('SingleKv_rootDir_GetKVStore_0201', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0201---------');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -564,7 +564,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  deletekv不存在的目录，deleteKVStore(dir)与 GetKVStore(dir)目录不一致
          */
-        it('SingleKv_rootDir_GetKVStore_0202', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0202---------');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -629,7 +629,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  GetKVStore(dir)，closeKVStore(), deleteKVStore(),
          */
-        it('SingleKv_rootDir_GetKVStore_0203', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0203---------');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -693,7 +693,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  GetKVStore()，closeKVStore(dir), deleteKVStore(dir),
          */
-        it('SingleKv_rootDir_GetKVStore_0204', 0, async (done: Function) => {
+        it('SingleKv_rootDir_GetKVStore_0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + '---------SingleKv_rootDir_GetKVStore_0204---------');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -758,7 +758,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  rootDirBackup默认路径， getkvstoreDir,backupEx(), restoreEx(), deleteBackupEx(),成功
          */
-        it('SingleKv_rootDir_backupEx_0100', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0100');
             try {
                 g_optionsDir.rootDir = g_rootDirDefault;
@@ -831,7 +831,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  rootDirBackup不等于默认路径， getkvstoreDir,backupEx(), restoreEx(), deleteBackupEx(),成功
          */
-        it('SingleKv_rootDir_backupEx_0200', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0200');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -904,7 +904,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  rootDirBackup不等于默认路径， getkvstoreDir, put, get, backupEx(), restoreEx(), deleteBackupEx(),成功
          */
-        it('SingleKv_rootDir_backupEx_0300', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0300');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1029,7 +1029,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  rootDirBackup异常，目录为空，rootDirBackup=''  err=15100000，BackupExDir，RestoreExDir,DeleteBackup
          */
-        it('SingleKv_rootDir_backupEx_0400', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0400');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1108,7 +1108,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDirBackup异常，目录为空，rootDirBackup=' '  err=15100000，
          * BackupExDir，RestoreExDir,DeleteBackup成功
          */
-        it('SingleKv_rootDir_backupEx_0401', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0401');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1186,7 +1186,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDirBackup异常，目录存在但没权限，rootDirBackup=/data, err=15100000，
          * BackupExDir，RestoreExDir, DeleteBackup成功
          */
-        it('SingleKv_rootDir_backupEx_0402', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0402');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1263,7 +1263,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDirBackup异常，目录不存在，rootDirBackup=/data/storage/el2/database/111/, err=15100000，
          * BackupExDir，RestoreExDir, DeleteBackup成功
          */
-        it('SingleKv_rootDir_backupEx_0403', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0403');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1342,7 +1342,7 @@ export default function KVManagerRootDir() {
          * @tc.desc  rootDirBackup异常，rootDirBackup和开库路径不一致，err=15100000，
          * BackupExDir，RestoreExDir, DeleteBackup成功
          */
-        it('SingleKv_rootDir_backupEx_0404', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0404');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1420,7 +1420,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  数据库关闭后，err=15100005，BackupExDir，RestoreExDir, DeleteBackup成功
          */
-        it('SingleKv_rootDir_backupEx_0405', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0405');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1498,7 +1498,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  BackupExDir，DeleteBackup成功，RestoreExDir失败
          */
-        it('SingleKv_rootDir_backupEx_0406', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0406');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1573,7 +1573,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  BackupExDir，closekv，RestoreExDir失败
          */
-        it('SingleKv_rootDir_backupEx_0407', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0407', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0407');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1650,7 +1650,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  BackupExDir，deletekv，RestoreExDir失败
          */
-        it('SingleKv_rootDir_backupEx_0408', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0408', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0408');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1725,7 +1725,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  fileName异常，目录为空，fileName=''  err=15100000，
          */
-        it('SingleKv_rootDir_backupEx_0500', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0500');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1805,7 +1805,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  fileName正常，目录为空，fileName=' '  success，
          */
-        it('SingleKv_rootDir_backupEx_0501', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0501');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1881,7 +1881,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  fileName异常，fileName='*-！@#￥%……&*（）——+= ';  success
          */
-        it('SingleKv_rootDir_backupEx_0502', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0502', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0502');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -1957,7 +1957,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  fileName异常，目录为空，fileName='/<> ?'  err=15100000，
          */
-        it('SingleKv_rootDir_backupEx_0503', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0503', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0503');
             try {
                 g_optionsDir.rootDir = g_rootDir;
@@ -2056,7 +2056,7 @@ export default function KVManagerRootDir() {
          * @tc.level: Level 2
          * @tc.desc  创建两个数据库,设置带有rootDir的options和不带rootDir的options，分别增删改差数据 ，备份，恢复。
          */
-        it('SingleKv_rootDir_backupEx_0600', 0, async (done: Function) => {
+        it('SingleKv_rootDir_backupEx_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             console.info(TAG + ' ------ SingleKv_rootDir_backupEx_0600');
             try {
                 g_optionsDir.rootDir = g_rootDir;
