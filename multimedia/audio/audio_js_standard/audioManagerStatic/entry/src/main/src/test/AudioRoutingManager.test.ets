@@ -2047,7 +2047,7 @@ export default function audioRoutingManager() {
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0200 ERROR: ${e?.message}`);
-        expect(Number(err.code)).assertEqual(6800101);
+        expect(Number(e.code)).assertEqual(6800101);
         done();
       }
     })
