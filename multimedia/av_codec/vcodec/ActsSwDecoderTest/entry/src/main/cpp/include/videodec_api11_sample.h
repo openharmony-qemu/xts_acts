@@ -34,7 +34,8 @@
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_averrors.h>
 
-/** Returned by RunVideoDecSurface when NativeWindow/Surface is unavailable (e.g. no EGL/RS). Test may skip 0400/4000. */
+/** Returned by RunVideoDecSurface when NativeWindow/Surface is unavailable
+ *  (e.g. no EGL/RS). Test may skip 0400/4000. */
 constexpr int32_t AV_ERR_SURFACE_UNAVAILABLE_SKIP = 2;
 /** Returned by RunVideoDec when input file is missing or unreadable (access fails). Test may skip. */
 constexpr int32_t AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP = 3;
@@ -173,6 +174,9 @@ public:
     bool useH264AnnexB = true;
     int enbleBlankFrame = 0;
 private:
+    int32_t PrepareStartDecoderPipeline();
+    bool H264RefillPrereadBuffer();
+    void FinishOutputFuncTestOnEos(uint32_t index, OH_AVBuffer *buffer, OH_AVCodecBufferAttr &attr, bool &runFlag);
     bool ProcessSegmentCopy(unsigned char **pBuffer, uint32_t &bufferSize,
         uint32_t size, uint32_t size1, bool &error);
     bool RefillPrereadBuffer(unsigned char **pBuffer, uint32_t &bufferSize);

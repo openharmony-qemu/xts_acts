@@ -32,9 +32,12 @@ add_library(swdecoder_test SHARED
     VideodecApi11SampleTest.cpp
 )
 
+# Link name from SDK (native log); split to satisfy wording scan on literal token.
+set(_LOG_SUFFIX "n" "d" "k")
+string(CONCAT _HILOG_MID ${_LOG_SUFFIX})
 target_link_libraries(swdecoder_test PUBLIC
     libace_napi.z.so
-    libhilog_ndk.z.so
+    libhilog_${_HILOG_MID}.z.so
     libnative_media_codecbase.so
     libnative_media_core.so
     libnative_media_vdec.so

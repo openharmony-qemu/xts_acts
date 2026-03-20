@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+#include <array>
+#include <cstddef>
 #include <cstdint>
 #include "include/ActsApiTest.h"
 #include "include/ActsFuncTest.h"
@@ -93,6 +95,61 @@ static int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, 
 }
 
 using SwdecRunner = int (*)(int32_t);
+using SwdecCaseFn = int (*)();
+
+// Table-driven dispatch reduces function length and cyclomatic complexity (G.FUD.05 / complexity rules).
+static const std::array<SwdecCaseFn, 30> kSwdecIllegalParaRunners = { {
+    Acts::SwDecoder::VideoSwdecIllegalPara0100, Acts::SwDecoder::VideoSwdecIllegalPara0200,
+    Acts::SwDecoder::VideoSwdecIllegalPara3300, Acts::SwDecoder::VideoSwdecIllegalPara1800,
+    Acts::SwDecoder::VideoSwdecIllegalPara0300, Acts::SwDecoder::VideoSwdecIllegalPara0400,
+    Acts::SwDecoder::VideoSwdecIllegalPara0500, Acts::SwDecoder::VideoSwdecIllegalPara1400,
+    Acts::SwDecoder::VideoSwdecIllegalPara5000, Acts::SwDecoder::VideoSwdecIllegalPara5100,
+    Acts::SwDecoder::VideoSwdecIllegalPara0600, Acts::SwDecoder::VideoSwdecIllegalPara0700,
+    Acts::SwDecoder::VideoSwdecIllegalPara0800, Acts::SwDecoder::VideoSwdecIllegalPara0900,
+    Acts::SwDecoder::VideoSwdecIllegalPara1000, Acts::SwDecoder::VideoSwdecIllegalPara1100,
+    Acts::SwDecoder::VideoSwdecIllegalPara4100, Acts::SwDecoder::VideoSwdecIllegalPara1500,
+    Acts::SwDecoder::VideoSwdecIllegalPara1200, Acts::SwDecoder::VideoSwdecIllegalPara1600,
+    Acts::SwDecoder::VideoSwdecIllegalPara1700, Acts::SwDecoder::VideoSwdecIllegalPara2200,
+    Acts::SwDecoder::VideoSwdecIllegalPara2500, Acts::SwDecoder::VideoSwdecIllegalPara2600,
+    Acts::SwDecoder::VideoSwdecIllegalPara2700, Acts::SwDecoder::VideoSwdecIllegalPara2800,
+    Acts::SwDecoder::VideoSwdecIllegalPara2900, Acts::SwDecoder::VideoSwdecIllegalPara3000,
+    Acts::SwDecoder::VideoSwdecIllegalPara3100, Acts::SwDecoder::VideoSwdecIllegalPara3200,
+} };
+
+static const std::array<SwdecCaseFn, 51> kSwdecCapApiRunners = { {
+    Acts::SwDecoder::VideoSwdecCapApi0100, Acts::SwDecoder::VideoSwdecCapApi0300, Acts::SwDecoder::VideoSwdecCapApi0400,
+    Acts::SwDecoder::VideoSwdecCapApi0500, Acts::SwDecoder::VideoSwdecCapApi0600, Acts::SwDecoder::VideoSwdecCapApi0700,
+    Acts::SwDecoder::VideoSwdecCapApi0800, Acts::SwDecoder::VideoSwdecCapApi0900, Acts::SwDecoder::VideoSwdecCapApi1000,
+    Acts::SwDecoder::VideoSwdecCapApi3100, Acts::SwDecoder::VideoSwdecCapApi3200, Acts::SwDecoder::VideoSwdecCapApi3300,
+    Acts::SwDecoder::VideoSwdecCapApi3400, Acts::SwDecoder::VideoSwdecCapApi3500, Acts::SwDecoder::VideoSwdecCapApi3600,
+    Acts::SwDecoder::VideoSwdecCapApi3700, Acts::SwDecoder::VideoSwdecCapApi3800, Acts::SwDecoder::VideoSwdecCapApi3900,
+    Acts::SwDecoder::VideoSwdecCapApi4000, Acts::SwDecoder::VideoSwdecCapApi4100, Acts::SwDecoder::VideoSwdecCapApi4200,
+    Acts::SwDecoder::VideoSwdecCapApi4300, Acts::SwDecoder::VideoSwdecCapApi4400, Acts::SwDecoder::VideoSwdecCapApi4500,
+    Acts::SwDecoder::VideoSwdecCapApi4600, Acts::SwDecoder::VideoSwdecCapApi4700, Acts::SwDecoder::VideoSwdecCapApi4800,
+    Acts::SwDecoder::VideoSwdecCapApi4900, Acts::SwDecoder::VideoSwdecCapApi5000, Acts::SwDecoder::VideoSwdecCapApi5100,
+    Acts::SwDecoder::VideoSwdecCapApi5200, Acts::SwDecoder::VideoSwdecCapApi5300, Acts::SwDecoder::VideoSwdecCapApi9400,
+    Acts::SwDecoder::VideoSwdecCapApi5400, Acts::SwDecoder::VideoSwdecCapApi5500, Acts::SwDecoder::VideoSwdecCapApi5600,
+    Acts::SwDecoder::VideoSwdecCapApi5700, Acts::SwDecoder::VideoSwdecCapApi5800, Acts::SwDecoder::VideoSwdecCapApi5900,
+    Acts::SwDecoder::VideoSwdecCapApi6000, Acts::SwDecoder::VideoSwdecCapApi6100, Acts::SwDecoder::VideoSwdecCapApi6200,
+    Acts::SwDecoder::VideoSwdecCapApi6300, Acts::SwDecoder::VideoSwdecCapApi6400, Acts::SwDecoder::VideoSwdecCapApi6500,
+    Acts::SwDecoder::VideoSwdecCapApi6600, Acts::SwDecoder::VideoSwdecCapApi6700, Acts::SwDecoder::VideoSwdecCapApi6800,
+    Acts::SwDecoder::VideoSwdecCapApi6900, Acts::SwDecoder::VideoSwdecCapApi7000, Acts::SwDecoder::VideoSwdecCapApi7100,
+} };
+
+static const std::array<SwdecCaseFn, 35> kSwdecStateRunners = { {
+    Acts::SwDecoder::VideoSwdecState0100, Acts::SwDecoder::VideoSwdecState0101, Acts::SwDecoder::VideoSwdecState0200,
+    Acts::SwDecoder::VideoSwdecState0300, Acts::SwDecoder::VideoSwdecState0400, Acts::SwDecoder::VideoSwdecState0500,
+    Acts::SwDecoder::VideoSwdecState0600, Acts::SwDecoder::VideoSwdecState0700, Acts::SwDecoder::VideoSwdecState0800,
+    Acts::SwDecoder::VideoSwdecState0900, Acts::SwDecoder::VideoSwdecState1000, Acts::SwDecoder::VideoSwdecState1100,
+    Acts::SwDecoder::VideoSwdecState1200, Acts::SwDecoder::VideoSwdecState1300, Acts::SwDecoder::VideoSwdecState1400,
+    Acts::SwDecoder::VideoSwdecState1500, Acts::SwDecoder::VideoSwdecState1600, Acts::SwDecoder::VideoSwdecState1700,
+    Acts::SwDecoder::VideoSwdecState1800, Acts::SwDecoder::VideoSwdecState1900, Acts::SwDecoder::VideoSwdecState2000,
+    Acts::SwDecoder::VideoSwdecState2100, Acts::SwDecoder::VideoSwdecState2200, Acts::SwDecoder::VideoSwdecState2300,
+    Acts::SwDecoder::VideoSwdecState2400, Acts::SwDecoder::VideoSwdecState2500, Acts::SwDecoder::VideoSwdecState2600,
+    Acts::SwDecoder::VideoSwdecState2700, Acts::SwDecoder::VideoSwdecState2800, Acts::SwDecoder::VideoSwdecState2900,
+    Acts::SwDecoder::VideoSwdecState3000, Acts::SwDecoder::VideoSwdecState3100, Acts::SwDecoder::VideoSwdecState3200,
+    Acts::SwDecoder::VideoSwdecState3300, Acts::SwDecoder::VideoSwdecState3400,
+} };
 
 struct AsyncTestData {
     napi_async_work asyncWork = nullptr;
@@ -251,70 +308,10 @@ static napi_value SwdecBlankFrameTest(napi_env env, napi_callback_info info)
 // SwdecApiIllegalParaTest: 30 cases (0-29)
 static int DispatchSwdecApiIllegalParaTest(int32_t caseNum)
 {
-    switch (caseNum) {
-        case kIdx0:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0100();
-        case kIdx1:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0200();
-        case kIdx2:
-            return Acts::SwDecoder::VideoSwdecIllegalPara3300();
-        case kIdx3:
-            return Acts::SwDecoder::VideoSwdecIllegalPara1800();
-        case kIdx4:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0300();
-        case kIdx5:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0400();
-        case kIdx6:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0500();
-        case kIdx7:
-            return Acts::SwDecoder::VideoSwdecIllegalPara1400();
-        case kIdx8:
-            return Acts::SwDecoder::VideoSwdecIllegalPara5000();
-        case kIdx9:
-            return Acts::SwDecoder::VideoSwdecIllegalPara5100();
-        case kIdx10:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0600();
-        case kIdx11:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0700();
-        case kIdx12:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0800();
-        case kIdx13:
-            return Acts::SwDecoder::VideoSwdecIllegalPara0900();
-        case kIdx14:
-            return Acts::SwDecoder::VideoSwdecIllegalPara1000();
-        case kIdx15:
-            return Acts::SwDecoder::VideoSwdecIllegalPara1100();
-        case kIdx16:
-            return Acts::SwDecoder::VideoSwdecIllegalPara4100();
-        case kIdx17:
-            return Acts::SwDecoder::VideoSwdecIllegalPara1500();
-        case kIdx18:
-            return Acts::SwDecoder::VideoSwdecIllegalPara1200();
-        case kIdx19:
-            return Acts::SwDecoder::VideoSwdecIllegalPara1600();
-        case kIdx20:
-            return Acts::SwDecoder::VideoSwdecIllegalPara1700();
-        case kIdx21:
-            return Acts::SwDecoder::VideoSwdecIllegalPara2200();
-        case kIdx22:
-            return Acts::SwDecoder::VideoSwdecIllegalPara2500();
-        case kIdx23:
-            return Acts::SwDecoder::VideoSwdecIllegalPara2600();
-        case kIdx24:
-            return Acts::SwDecoder::VideoSwdecIllegalPara2700();
-        case kIdx25:
-            return Acts::SwDecoder::VideoSwdecIllegalPara2800();
-        case kIdx26:
-            return Acts::SwDecoder::VideoSwdecIllegalPara2900();
-        case kIdx27:
-            return Acts::SwDecoder::VideoSwdecIllegalPara3000();
-        case kIdx28:
-            return Acts::SwDecoder::VideoSwdecIllegalPara3100();
-        case kIdx29:
-            return Acts::SwDecoder::VideoSwdecIllegalPara3200();
-        default:
-            return RESULT_ERROR;
+    if (caseNum < 0 || static_cast<size_t>(caseNum) >= kSwdecIllegalParaRunners.size()) {
+        return RESULT_ERROR;
     }
+    return kSwdecIllegalParaRunners[static_cast<size_t>(caseNum)]();
 }
 
 // SwdecApiTest: 12 cases (0-11)
@@ -353,112 +350,10 @@ static int DispatchSwdecApiTest(int32_t caseNum)
 // SwdecCapApiTest: 51 cases (0-50)
 static int DispatchSwdecCapApiTest(int32_t caseNum)
 {
-    switch (caseNum) {
-        case kIdx0:
-            return Acts::SwDecoder::VideoSwdecCapApi0100();
-        case kIdx1:
-            return Acts::SwDecoder::VideoSwdecCapApi0300();
-        case kIdx2:
-            return Acts::SwDecoder::VideoSwdecCapApi0400();
-        case kIdx3:
-            return Acts::SwDecoder::VideoSwdecCapApi0500();
-        case kIdx4:
-            return Acts::SwDecoder::VideoSwdecCapApi0600();
-        case kIdx5:
-            return Acts::SwDecoder::VideoSwdecCapApi0700();
-        case kIdx6:
-            return Acts::SwDecoder::VideoSwdecCapApi0800();
-        case kIdx7:
-            return Acts::SwDecoder::VideoSwdecCapApi0900();
-        case kIdx8:
-            return Acts::SwDecoder::VideoSwdecCapApi1000();
-        case kIdx9:
-            return Acts::SwDecoder::VideoSwdecCapApi3100();
-        case kIdx10:
-            return Acts::SwDecoder::VideoSwdecCapApi3200();
-        case kIdx11:
-            return Acts::SwDecoder::VideoSwdecCapApi3300();
-        case kIdx12:
-            return Acts::SwDecoder::VideoSwdecCapApi3400();
-        case kIdx13:
-            return Acts::SwDecoder::VideoSwdecCapApi3500();
-        case kIdx14:
-            return Acts::SwDecoder::VideoSwdecCapApi3600();
-        case kIdx15:
-            return Acts::SwDecoder::VideoSwdecCapApi3700();
-        case kIdx16:
-            return Acts::SwDecoder::VideoSwdecCapApi3800();
-        case kIdx17:
-            return Acts::SwDecoder::VideoSwdecCapApi3900();
-        case kIdx18:
-            return Acts::SwDecoder::VideoSwdecCapApi4000();
-        case kIdx19:
-            return Acts::SwDecoder::VideoSwdecCapApi4100();
-        case kIdx20:
-            return Acts::SwDecoder::VideoSwdecCapApi4200();
-        case kIdx21:
-            return Acts::SwDecoder::VideoSwdecCapApi4300();
-        case kIdx22:
-            return Acts::SwDecoder::VideoSwdecCapApi4400();
-        case kIdx23:
-            return Acts::SwDecoder::VideoSwdecCapApi4500();
-        case kIdx24:
-            return Acts::SwDecoder::VideoSwdecCapApi4600();
-        case kIdx25:
-            return Acts::SwDecoder::VideoSwdecCapApi4700();
-        case kIdx26:
-            return Acts::SwDecoder::VideoSwdecCapApi4800();
-        case kIdx27:
-            return Acts::SwDecoder::VideoSwdecCapApi4900();
-        case kIdx28:
-            return Acts::SwDecoder::VideoSwdecCapApi5000();
-        case kIdx29:
-            return Acts::SwDecoder::VideoSwdecCapApi5100();
-        case kIdx30:
-            return Acts::SwDecoder::VideoSwdecCapApi5200();
-        case kIdx31:
-            return Acts::SwDecoder::VideoSwdecCapApi5300();
-        case kIdx32:
-            return Acts::SwDecoder::VideoSwdecCapApi9400();
-        case kIdx33:
-            return Acts::SwDecoder::VideoSwdecCapApi5400();
-        case kIdx34:
-            return Acts::SwDecoder::VideoSwdecCapApi5500();
-        case kIdx35:
-            return Acts::SwDecoder::VideoSwdecCapApi5600();
-        case kIdx36:
-            return Acts::SwDecoder::VideoSwdecCapApi5700();
-        case kIdx37:
-            return Acts::SwDecoder::VideoSwdecCapApi5800();
-        case kIdx38:
-            return Acts::SwDecoder::VideoSwdecCapApi5900();
-        case kIdx39:
-            return Acts::SwDecoder::VideoSwdecCapApi6000();
-        case kIdx40:
-            return Acts::SwDecoder::VideoSwdecCapApi6100();
-        case kIdx41:
-            return Acts::SwDecoder::VideoSwdecCapApi6200();
-        case kIdx42:
-            return Acts::SwDecoder::VideoSwdecCapApi6300();
-        case kIdx43:
-            return Acts::SwDecoder::VideoSwdecCapApi6400();
-        case kIdx44:
-            return Acts::SwDecoder::VideoSwdecCapApi6500();
-        case kIdx45:
-            return Acts::SwDecoder::VideoSwdecCapApi6600();
-        case kIdx46:
-            return Acts::SwDecoder::VideoSwdecCapApi6700();
-        case kIdx47:
-            return Acts::SwDecoder::VideoSwdecCapApi6800();
-        case kIdx48:
-            return Acts::SwDecoder::VideoSwdecCapApi6900();
-        case kIdx49:
-            return Acts::SwDecoder::VideoSwdecCapApi7000();
-        case kIdx50:
-            return Acts::SwDecoder::VideoSwdecCapApi7100();
-        default:
-            return RESULT_ERROR;
+    if (caseNum < 0 || static_cast<size_t>(caseNum) >= kSwdecCapApiRunners.size()) {
+        return RESULT_ERROR;
     }
+    return kSwdecCapApiRunners[static_cast<size_t>(caseNum)]();
 }
 
 // SwdecOtherCodecIllegalTest: 3 cases (0-2)
@@ -499,80 +394,10 @@ static napi_value SwdecOtherCodecIllegalTest(napi_env env, napi_callback_info in
 // SwdecStateTest: 35 cases (0-34)
 static int DispatchSwdecStateTest(int32_t caseNum)
 {
-    switch (caseNum) {
-        case kIdx0:
-            return Acts::SwDecoder::VideoSwdecState0100();
-        case kIdx1:
-            return Acts::SwDecoder::VideoSwdecState0101();
-        case kIdx2:
-            return Acts::SwDecoder::VideoSwdecState0200();
-        case kIdx3:
-            return Acts::SwDecoder::VideoSwdecState0300();
-        case kIdx4:
-            return Acts::SwDecoder::VideoSwdecState0400();
-        case kIdx5:
-            return Acts::SwDecoder::VideoSwdecState0500();
-        case kIdx6:
-            return Acts::SwDecoder::VideoSwdecState0600();
-        case kIdx7:
-            return Acts::SwDecoder::VideoSwdecState0700();
-        case kIdx8:
-            return Acts::SwDecoder::VideoSwdecState0800();
-        case kIdx9:
-            return Acts::SwDecoder::VideoSwdecState0900();
-        case kIdx10:
-            return Acts::SwDecoder::VideoSwdecState1000();
-        case kIdx11:
-            return Acts::SwDecoder::VideoSwdecState1100();
-        case kIdx12:
-            return Acts::SwDecoder::VideoSwdecState1200();
-        case kIdx13:
-            return Acts::SwDecoder::VideoSwdecState1300();
-        case kIdx14:
-            return Acts::SwDecoder::VideoSwdecState1400();
-        case kIdx15:
-            return Acts::SwDecoder::VideoSwdecState1500();
-        case kIdx16:
-            return Acts::SwDecoder::VideoSwdecState1600();
-        case kIdx17:
-            return Acts::SwDecoder::VideoSwdecState1700();
-        case kIdx18:
-            return Acts::SwDecoder::VideoSwdecState1800();
-        case kIdx19:
-            return Acts::SwDecoder::VideoSwdecState1900();
-        case kIdx20:
-            return Acts::SwDecoder::VideoSwdecState2000();
-        case kIdx21:
-            return Acts::SwDecoder::VideoSwdecState2100();
-        case kIdx22:
-            return Acts::SwDecoder::VideoSwdecState2200();
-        case kIdx23:
-            return Acts::SwDecoder::VideoSwdecState2300();
-        case kIdx24:
-            return Acts::SwDecoder::VideoSwdecState2400();
-        case kIdx25:
-            return Acts::SwDecoder::VideoSwdecState2500();
-        case kIdx26:
-            return Acts::SwDecoder::VideoSwdecState2600();
-        case kIdx27:
-            return Acts::SwDecoder::VideoSwdecState2700();
-        case kIdx28:
-            return Acts::SwDecoder::VideoSwdecState2800();
-        case kIdx29:
-            return Acts::SwDecoder::VideoSwdecState2900();
-        case kIdx30:
-            return Acts::SwDecoder::VideoSwdecState3000();
-        case kIdx31:
-            return Acts::SwDecoder::VideoSwdecState3100();
-        case kIdx32:
-            return Acts::SwDecoder::VideoSwdecState3200();
-        case kIdx33:
-            return Acts::SwDecoder::VideoSwdecState3300();
-        case kIdx34:
-            return Acts::SwDecoder::VideoSwdecState3400();
-        default:
-            return RESULT_ERROR;
+    if (caseNum < 0 || static_cast<size_t>(caseNum) >= kSwdecStateRunners.size()) {
+        return RESULT_ERROR;
     }
+    return kSwdecStateRunners[static_cast<size_t>(caseNum)]();
 }
 
 static napi_value SwdecStateTest(napi_env env, napi_callback_info info)

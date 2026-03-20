@@ -35,6 +35,7 @@ constexpr uint32_t kHeight1080 = 1080;
 constexpr uint32_t kHeight720 = 720;
 constexpr uint32_t kHeight622 = 622;
 constexpr double kFrameRate30 = 30.0;
+constexpr uint32_t kRepeatStartStopOrFlushBeforeEosCount = 5;
 const char* INP_DIR_720_30 = "/data/storage/el2/base/haps/entry_test/files/1280_720_30_10Mb.h264";
 const char* INP_DIR_1080_30 = "/data/storage/el2/base/haps/entry_test/files/1920_1080_10_30Mb.h264";
 const char* CODEC_NAME_AVC = "OH.Media.Codec.Decoder.Video.AVC";
@@ -302,7 +303,7 @@ int VideoSwdecFunction1200()
     vDecSample->defaultHeight = kHeight1080;
     vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
-    vDecSample->repeatStartStopBeforeEos = 5;
+    vDecSample->repeatStartStopBeforeEos = kRepeatStartStopOrFlushBeforeEosCount;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
         vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
@@ -330,7 +331,7 @@ int VideoSwdecFunction1300()
     vDecSample->defaultHeight = kHeight1080;
     vDecSample->defaultFrameRate = kFrameRate30;
     vDecSample->surfaceOutput = false;
-    vDecSample->repeatStartFlushBeforeEos = 5;
+    vDecSample->repeatStartFlushBeforeEos = kRepeatStartStopOrFlushBeforeEosCount;
     if (vDecSample->CreateVideoDecoder(CODEC_NAME_AVC) != AV_ERR_OK ||
         vDecSample->ConfigureVideoDecoder() != AV_ERR_OK || vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) {
         return -1;
