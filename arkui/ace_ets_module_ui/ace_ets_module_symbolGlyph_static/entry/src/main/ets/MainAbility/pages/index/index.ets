@@ -63,7 +63,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
       }.type(ButtonType.Capsule)
       .margin({
-        top: 20
+        top: '2%'
       } as Margin)
       .backgroundColor('#0D9FFB')
       .onClick((e: ClickEvent) => {

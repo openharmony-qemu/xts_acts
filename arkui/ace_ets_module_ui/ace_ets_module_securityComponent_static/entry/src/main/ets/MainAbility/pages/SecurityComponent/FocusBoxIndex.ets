@@ -78,7 +78,7 @@ struct FocusBoxIndex {
           .key('focusBoxUndefined')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

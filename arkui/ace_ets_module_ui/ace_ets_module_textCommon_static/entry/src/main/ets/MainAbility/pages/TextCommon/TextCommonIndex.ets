@@ -22,19 +22,25 @@ import {
   Text,
   TextArea,
   Scroll,
+  Button,
   Color,
   MaxLinesMode,
   MaxLinesOptions,
   LineSpacingOptions,
-  SelectedDragPreviewStyle
+  SelectedDragPreviewStyle,
+  TextMenuItemId,
+  ColumnOptions
 } from '@ohos.arkui.component';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 import { LengthMetrics } from '@ohos.arkui.node';
 
 @Entry
 @Component
 struct TextCommonIndex {
+  @State mMenuSame: string = 'menu_same_init'
+  @State mMenuDistinct: string = 'menu_distinct_init'
+
   aboutToAppear() {
     try {
       let routerInstance = this.getUIContext().getRouter();
@@ -46,33 +52,58 @@ struct TextCommonIndex {
 
   build() {
     Scroll() {
-      Column() {
+      Column({ space: 4 } as ColumnOptions) {
+        // TextMenuItemId singleton reference test
+        Button(this.mMenuSame)
+          .id('btnTextMenuItemIdSame')
+          .width('90%')
+          .onClick(() => {
+            let a = TextMenuItemId.autoFill;
+            let b = TextMenuItemId.autoFill;
+            this.mMenuSame = 'menu_same:' + (a === b ? 'true' : 'false');
+          })
+        // TextMenuItemId.autoFill !== TextMenuItemId.passwordVault
+        Button(this.mMenuDistinct)
+          .id('btnTextMenuItemIdDistinct')
+          .width('90%')
+          .onClick(() => {
+            let a = TextMenuItemId.autoFill;
+            let b = TextMenuItemId.passwordVault;
+            this.mMenuDistinct = 'menu_distinct:' + (a !== b ? 'true' : 'false');
+          })
+
+        // SelectedDragPreviewStyle.color: Color.Blue
         Text('Drag Preview Blue')
           .selectedDragPreviewStyle({ color: Color.Blue } as SelectedDragPreviewStyle)
           .key('textCommonDragPreviewBlue')
 
+        // SelectedDragPreviewStyle.color: undefined
         Text('Drag Preview Undefined')
           .selectedDragPreviewStyle(undefined)
           .key('textCommonDragPreviewUndef')
 
+        // LineSpacingOptions.onlyBetweenLines = true
         Text('Line Spacing onlyBetweenLines true')
           .lineSpacing(LengthMetrics.vp(8), { onlyBetweenLines: true } as LineSpacingOptions)
           .key('textCommonLineSpacingTrue')
 
+        // LineSpacingOptions.onlyBetweenLines = false
         Text('Line Spacing onlyBetweenLines false')
           .lineSpacing(LengthMetrics.vp(8), { onlyBetweenLines: false } as LineSpacingOptions)
           .key('textCommonLineSpacingFalse')
 
+        // MaxLinesOptions.overflowMode = MaxLinesMode.CLIP (0)
         TextArea({ text: 'line1\nline2\nline3\nline4\nline5' })
           .maxLines(3, { overflowMode: MaxLinesMode.CLIP } as MaxLinesOptions)
           .key('textCommonMaxLinesClip')
 
+        // MaxLinesOptions.overflowMode = MaxLinesMode.SCROLL (1)
         TextArea({ text: 'line1\nline2\nline3\nline4\nline5' })
           .maxLines(3, { overflowMode: MaxLinesMode.SCROLL } as MaxLinesOptions)
           .key('textCommonMaxLinesScroll')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

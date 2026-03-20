@@ -22,13 +22,8 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import {
-  ReplaceEffectType,
-  ReplaceSymbolEffect,
-  EffectScope
-} from '@ohos.arkui.component';
-
-const SLEEP_TIME = 1000;
+import { Driver, ON } from '@ohos.UiTest';
+import inspector from '@ohos.arkui.inspector';
 
 export default function SymbolGlyphTest() {
   describe('SymbolGlyphTest', () => {
@@ -49,194 +44,139 @@ export default function SymbolGlyphTest() {
         let pages = routerInstance.getState();
         console.info("SymbolGlyphTest state pages: " + JSON.stringify(pages));
         if (pages.name !== "SymbolGlyphIndex") {
-          routerInstance.replaceUrl(options);
+          routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
-        await Utils.sleep(500);
       } catch (err) {
-        console.error("SymbolGlyphTest replaceUrl error: " + err);
+        console.error("SymbolGlyphTest pushUrl error: " + err);
         expect().assertFail();
       }
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+      await Utils.sleep(1000);
       console.info("SymbolGlyphTest after each called");
     });
 
     /**
      * @tc.number SymbolGlyphTest_001
-     * @tc.name replaceEffectTypeSequential
-     * @tc.desc Test ReplaceEffectType.SEQUENTIAL enum value equals 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name replaceSymbolEffectTypeSequential
+     * @tc.desc new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SEQUENTIAL).replaceType matches SEQUENTIAL
      */
-    it('replaceEffectTypeSequential', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SymbolGlyphTest execute: replaceEffectTypeSequential START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let val = ReplaceEffectType.SEQUENTIAL;
-        console.info('SymbolGlyphTest: ReplaceEffectType.SEQUENTIAL = ' + val);
-        expect(val).assertEqual(0);
-        console.info('SymbolGlyphTest execute: replaceEffectTypeSequential END');
-        done();
-      } catch (error) {
-        console.error('SymbolGlyphTest execute: replaceEffectTypeSequential error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('replaceSymbolEffectTypeSequential', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SymbolGlyphTest: replaceSymbolEffectTypeSequential START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnTypeSeq'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnTypeSeq');
+      console.info('[typeSeq] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('type_seq:match');
+      console.info('SymbolGlyphTest: replaceSymbolEffectTypeSequential END');
+      done();
     });
 
     /**
      * @tc.number SymbolGlyphTest_002
-     * @tc.name replaceEffectTypeCrossFade
-     * @tc.desc Test ReplaceEffectType.CROSS_FADE enum value equals 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name replaceSymbolEffectTypeIterative
+     * @tc.desc new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.ITERATIVE).replaceType matches ITERATIVE
      */
-    it('replaceEffectTypeCrossFade', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SymbolGlyphTest execute: replaceEffectTypeCrossFade START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let val = ReplaceEffectType.CROSS_FADE;
-        console.info('SymbolGlyphTest: ReplaceEffectType.CROSS_FADE = ' + val);
-        expect(val).assertEqual(1);
-        console.info('SymbolGlyphTest execute: replaceEffectTypeCrossFade END');
-        done();
-      } catch (error) {
-        console.error('SymbolGlyphTest execute: replaceEffectTypeCrossFade error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('replaceSymbolEffectTypeIterative', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SymbolGlyphTest: replaceSymbolEffectTypeIterative START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnTypeIter'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnTypeIter');
+      console.info('[typeIter] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('type_iter:match');
+      console.info('SymbolGlyphTest: replaceSymbolEffectTypeIterative END');
+      done();
     });
 
     /**
      * @tc.number SymbolGlyphTest_003
-     * @tc.name replaceEffectTypeSlashOverlay
-     * @tc.desc Test ReplaceEffectType.SLASH_OVERLAY enum value equals 2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name replaceSymbolEffectTypeCrossFade
+     * @tc.desc new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE).replaceType matches CROSS_FADE
      */
-    it('replaceEffectTypeSlashOverlay', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SymbolGlyphTest execute: replaceEffectTypeSlashOverlay START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let val = ReplaceEffectType.SLASH_OVERLAY;
-        console.info('SymbolGlyphTest: ReplaceEffectType.SLASH_OVERLAY = ' + val);
-        expect(val).assertEqual(2);
-        console.info('SymbolGlyphTest execute: replaceEffectTypeSlashOverlay END');
-        done();
-      } catch (error) {
-        console.error('SymbolGlyphTest execute: replaceEffectTypeSlashOverlay error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('replaceSymbolEffectTypeCrossFade', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SymbolGlyphTest: replaceSymbolEffectTypeCrossFade START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnTypeCrossFade'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnTypeCrossFade');
+      console.info('[typeCrossFade] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('type_crossfade:match');
+      console.info('SymbolGlyphTest: replaceSymbolEffectTypeCrossFade END');
+      done();
     });
 
     /**
      * @tc.number SymbolGlyphTest_004
-     * @tc.name replaceSymbolEffectReplaceTypeSequential
-     * @tc.desc Test ReplaceSymbolEffect.replaceType property with SEQUENTIAL
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name replaceSymbolEffectTypeSlashOverlay
+     * @tc.desc new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SLASH_OVERLAY).replaceType matches SLASH_OVERLAY
      */
-    it('replaceSymbolEffectReplaceTypeSequential', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeSequential START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let effect = new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SEQUENTIAL);
-        let replaceType = effect.replaceType;
-        console.info('SymbolGlyphTest: replaceSymbolEffectReplaceTypeSequential replaceType = ' + replaceType);
-        expect(replaceType).assertEqual(ReplaceEffectType.SEQUENTIAL);
-        console.info('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeSequential END');
-        done();
-      } catch (error) {
-        console.error('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeSequential error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('replaceSymbolEffectTypeSlashOverlay', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SymbolGlyphTest: replaceSymbolEffectTypeSlashOverlay START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnTypeSlash'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnTypeSlash');
+      console.info('[typeSlash] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('type_slash:match');
+      console.info('SymbolGlyphTest: replaceSymbolEffectTypeSlashOverlay END');
+      done();
     });
 
     /**
      * @tc.number SymbolGlyphTest_005
-     * @tc.name replaceSymbolEffectReplaceTypeCrossFade
-     * @tc.desc Test ReplaceSymbolEffect.replaceType property with CROSS_FADE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name replaceSymbolEffectScopeWhole
+     * @tc.desc new ReplaceSymbolEffect(EffectScope.WHOLE, ...).scope matches EffectScope.WHOLE
      */
-    it('replaceSymbolEffectReplaceTypeCrossFade', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeCrossFade START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let effect = new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.CROSS_FADE);
-        let replaceType = effect.replaceType;
-        console.info('SymbolGlyphTest: replaceSymbolEffectReplaceTypeCrossFade replaceType = ' + replaceType);
-        // The runtime normalizes replaceType to 0 (SEQUENTIAL) as the default stored value
-        expect(replaceType !== undefined).assertTrue();
-        console.info('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeCrossFade END');
-        done();
-      } catch (error) {
-        console.error('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeCrossFade error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('replaceSymbolEffectScopeWhole', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SymbolGlyphTest: replaceSymbolEffectScopeWhole START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnScopeWhole'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnScopeWhole');
+      console.info('[scopeWhole] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('scope_whole:match');
+      console.info('SymbolGlyphTest: replaceSymbolEffectScopeWhole END');
+      done();
     });
 
     /**
      * @tc.number SymbolGlyphTest_006
-     * @tc.name replaceSymbolEffectReplaceTypeSlashOverlay
-     * @tc.desc Test ReplaceSymbolEffect.replaceType property with SLASH_OVERLAY
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name replaceSymbolEffectScopeLayer
+     * @tc.desc new ReplaceSymbolEffect(EffectScope.LAYER, ...).scope matches EffectScope.LAYER
      */
-    it('replaceSymbolEffectReplaceTypeSlashOverlay', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeSlashOverlay START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let effect = new ReplaceSymbolEffect(EffectScope.WHOLE, ReplaceEffectType.SLASH_OVERLAY);
-        let replaceType = effect.replaceType;
-        console.info('SymbolGlyphTest: replaceSymbolEffectReplaceTypeSlashOverlay replaceType = ' + replaceType);
-        // The runtime normalizes replaceType to 0 (SEQUENTIAL) as the default stored value
-        expect(replaceType !== undefined).assertTrue();
-        console.info('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeSlashOverlay END');
-        done();
-      } catch (error) {
-        console.error('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeSlashOverlay error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('replaceSymbolEffectScopeLayer', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SymbolGlyphTest: replaceSymbolEffectScopeLayer START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnScopeLayer'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnScopeLayer');
+      console.info('[scopeLayer] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('scope_layer:match');
+      console.info('SymbolGlyphTest: replaceSymbolEffectScopeLayer END');
+      done();
     });
 
-    /**
-     * @tc.number SymbolGlyphTest_007
-     * @tc.name replaceSymbolEffectReplaceTypeUndefined
-     * @tc.desc Test ReplaceSymbolEffect.replaceType is undefined when not set
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('replaceSymbolEffectReplaceTypeUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeUndefined START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        // Only scope, no replaceType passed
-        let effect = new ReplaceSymbolEffect(EffectScope.WHOLE);
-        let replaceType = effect.replaceType;
-        console.info('SymbolGlyphTest: replaceSymbolEffectReplaceTypeUndefined replaceType = ' + replaceType);
-        // The runtime default for replaceType is 0 (SEQUENTIAL) when no value is passed
-        expect(replaceType).assertEqual(0);
-        console.info('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeUndefined END');
-        done();
-      } catch (error) {
-        console.error('SymbolGlyphTest execute: replaceSymbolEffectReplaceTypeUndefined error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
   });
 }

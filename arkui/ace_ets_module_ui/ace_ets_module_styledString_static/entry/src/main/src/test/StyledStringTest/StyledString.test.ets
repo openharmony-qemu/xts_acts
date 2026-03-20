@@ -22,16 +22,8 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import {
-  StyledString,
-  ParagraphStyle,
-  ParagraphStyleInterface,
-  ImageAttachment,
-  ResourceImageAttachmentOptions,
-  TextDirection
-} from '@ohos.arkui.component';
-
-const SLEEP_TIME = 1000;
+import { Driver, ON } from '@ohos.UiTest';
+import inspector from '@ohos.arkui.inspector';
 
 export default function StyledStringTest() {
   describe('StyledStringTest', () => {
@@ -52,256 +44,479 @@ export default function StyledStringTest() {
         let pages = routerInstance.getState();
         console.info("StyledStringTest state pages: " + JSON.stringify(pages));
         if (pages.name !== "StyledStringIndex") {
-          routerInstance.replaceUrl(options);
+          routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
-        await Utils.sleep(500);
       } catch (err) {
-        console.error("StyledStringTest replaceUrl error: " + err);
+        console.error("StyledStringTest pushUrl error: " + err);
         expect().assertFail();
       }
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+      await Utils.sleep(1000);
       console.info("StyledStringTest after each called");
     });
 
     /**
      * @tc.number StyledStringTest_001
-     * @tc.name styledStringLengthBasic
-     * @tc.desc Test StyledString.length with "Hello World" (11 chars)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name styledStringLength
+     * @tc.desc new StyledString("Hello World").length → 11
      */
-    it('styledStringLengthBasic', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: styledStringLengthBasic START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let str = new StyledString("Hello World");
-        let len = str.length;
-        console.info('StyledStringTest: styledStringLengthBasic length = ' + len);
-        expect(len).assertEqual(11);
-        console.info('StyledStringTest execute: styledStringLengthBasic END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: styledStringLengthBasic error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('styledStringLength', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: styledStringLength START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnStrLen'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnStrLen');
+      console.info('[styledStringLength] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('str_len:11');
+      console.info('StyledStringTest: styledStringLength END');
+      done();
     });
 
     /**
      * @tc.number StyledStringTest_002
-     * @tc.name styledStringLengthEmpty
-     * @tc.desc Test StyledString.length with empty string (0 chars)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name styledStringGetString
+     * @tc.desc new StyledString("Hello").getString() → "Hello"
      */
-    it('styledStringLengthEmpty', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: styledStringLengthEmpty START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let str = new StyledString("");
-        let len = str.length;
-        console.info('StyledStringTest: styledStringLengthEmpty length = ' + len);
-        expect(len).assertEqual(0);
-        console.info('StyledStringTest execute: styledStringLengthEmpty END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: styledStringLengthEmpty error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('styledStringGetString', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: styledStringGetString START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnStrGet'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnStrGet');
+      console.info('[styledStringGetString] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('str_get:Hello');
+      console.info('StyledStringTest: styledStringGetString END');
+      done();
     });
 
     /**
      * @tc.number StyledStringTest_003
-     * @tc.name styledStringLengthChinese
-     * @tc.desc Test StyledString.length with Chinese characters "你好" (2 chars)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name styledStringEqualsTrue
+     * @tc.desc StyledString("Hello").equals(StyledString("Hello")) → true
      */
-    it('styledStringLengthChinese', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: styledStringLengthChinese START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let str = new StyledString("你好");
-        let len = str.length;
-        console.info('StyledStringTest: styledStringLengthChinese length = ' + len);
-        expect(len).assertEqual(2);
-        console.info('StyledStringTest execute: styledStringLengthChinese END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: styledStringLengthChinese error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('styledStringEqualsTrue', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: styledStringEqualsTrue START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnStrEqTrue'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnStrEqTrue');
+      console.info('[styledStringEqualsTrue] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('str_eq:match');
+      console.info('StyledStringTest: styledStringEqualsTrue END');
+      done();
     });
 
     /**
      * @tc.number StyledStringTest_004
-     * @tc.name paragraphStyleTextDirectionLTR
-     * @tc.desc Test ParagraphStyle.textDirection (new readonly property) with TextDirection.LTR
-     *          Also validates ParagraphStyleInterface.textDirection input
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name styledStringEqualsFalse
+     * @tc.desc StyledString("Hello").equals(StyledString("World")) → false
      */
-    it('paragraphStyleTextDirectionLTR', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: paragraphStyleTextDirectionLTR START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        // ParagraphStyleInterface.textDirection used as constructor param
-        let options: ParagraphStyleInterface = { textDirection: TextDirection.LTR };
-        let paraStyle = new ParagraphStyle(options);
-        let dir = paraStyle.textDirection;
-        console.info('StyledStringTest: paragraphStyleTextDirectionLTR textDirection = ' + dir);
-        expect(dir).assertEqual(TextDirection.LTR);
-        console.info('StyledStringTest execute: paragraphStyleTextDirectionLTR END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: paragraphStyleTextDirectionLTR error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('styledStringEqualsFalse', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: styledStringEqualsFalse START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnStrEqFalse'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnStrEqFalse');
+      console.info('[styledStringEqualsFalse] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('str_eq2:nomatch');
+      console.info('StyledStringTest: styledStringEqualsFalse END');
+      done();
     });
 
     /**
      * @tc.number StyledStringTest_005
-     * @tc.name paragraphStyleTextDirectionRTL
-     * @tc.desc Test ParagraphStyle.textDirection with TextDirection.RTL
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name styledStringSubStyledString
+     * @tc.desc StyledString("Hello World").subStyledString(0,5).getString() → "Hello"
      */
-    it('paragraphStyleTextDirectionRTL', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: paragraphStyleTextDirectionRTL START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let paraStyle = new ParagraphStyle({
-          textDirection: TextDirection.RTL
-        } as ParagraphStyleInterface);
-        let dir = paraStyle.textDirection;
-        console.info('StyledStringTest: paragraphStyleTextDirectionRTL textDirection = ' + dir);
-        expect(dir).assertEqual(TextDirection.RTL);
-        console.info('StyledStringTest execute: paragraphStyleTextDirectionRTL END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: paragraphStyleTextDirectionRTL error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('styledStringSubStyledString', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: styledStringSubStyledString START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnStrSub'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnStrSub');
+      console.info('[styledStringSubStyledString] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('str_sub:Hello');
+      console.info('StyledStringTest: styledStringSubStyledString END');
+      done();
     });
 
     /**
      * @tc.number StyledStringTest_006
-     * @tc.name paragraphStyleTextDirectionDefault
-     * @tc.desc Test ParagraphStyle.textDirection with TextDirection.DEFAULT
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name mutableStyledStringAppend
+     * @tc.desc MutableStyledString("Hello").appendStyledString(StyledString("XYZ")) → "HelloXYZ"
      */
-    it('paragraphStyleTextDirectionDefault', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: paragraphStyleTextDirectionDefault START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let paraStyle = new ParagraphStyle({
-          textDirection: TextDirection.DEFAULT
-        } as ParagraphStyleInterface);
-        let dir = paraStyle.textDirection;
-        console.info('StyledStringTest: paragraphStyleTextDirectionDefault textDirection = ' + dir);
-        expect(dir).assertEqual(TextDirection.DEFAULT);
-        console.info('StyledStringTest execute: paragraphStyleTextDirectionDefault END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: paragraphStyleTextDirectionDefault error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('mutableStyledStringAppend', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: mutableStyledStringAppend START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnMstrApp'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnMstrApp');
+      console.info('[mutableStyledStringAppend] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('mstr_app:HelloXYZ');
+      console.info('StyledStringTest: mutableStyledStringAppend END');
+      done();
     });
 
     /**
      * @tc.number StyledStringTest_007
-     * @tc.name paragraphStyleTextDirectionUndefined
-     * @tc.desc Test ParagraphStyle.textDirection when not set (should be undefined)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name mutableStyledStringInsert
+     * @tc.desc MutableStyledString("Hello").insertString(0,"Hi") → "HiHello"
      */
-    it('paragraphStyleTextDirectionUndefined', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: paragraphStyleTextDirectionUndefined START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        // Not setting textDirection - should be undefined
-        let paraStyle = new ParagraphStyle({} as ParagraphStyleInterface);
-        let dir = paraStyle.textDirection;
-        console.info('StyledStringTest: paragraphStyleTextDirectionUndefined textDirection = ' + dir);
-        expect(dir === undefined).assertTrue();
-        console.info('StyledStringTest execute: paragraphStyleTextDirectionUndefined END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: paragraphStyleTextDirectionUndefined error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('mutableStyledStringInsert', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: mutableStyledStringInsert START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnMstrIns'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnMstrIns');
+      console.info('[mutableStyledStringInsert] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('mstr_ins:HiHello');
+      console.info('StyledStringTest: mutableStyledStringInsert END');
+      done();
     });
 
     /**
      * @tc.number StyledStringTest_008
-     * @tc.name paragraphStyleTextDirectionAuto
-     * @tc.desc Test ParagraphStyle.textDirection with TextDirection.AUTO (covers all 4 enum values)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name mutableStyledStringReplace
+     * @tc.desc MutableStyledString("Hello").replaceString(0,5,"Hi") → "Hi"
      */
-    it('paragraphStyleTextDirectionAuto', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: paragraphStyleTextDirectionAuto START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let paraStyle = new ParagraphStyle({
-          textDirection: TextDirection.AUTO
-        } as ParagraphStyleInterface);
-        let dir = paraStyle.textDirection;
-        console.info('StyledStringTest: paragraphStyleTextDirectionAuto textDirection = ' + dir);
-        expect(dir).assertEqual(TextDirection.AUTO);
-        console.info('StyledStringTest execute: paragraphStyleTextDirectionAuto END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: paragraphStyleTextDirectionAuto error:' + error);
-        expect().assertFail();
-        done();
-      }
+    it('mutableStyledStringReplace', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: mutableStyledStringReplace START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnMstrRep'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnMstrRep');
+      console.info('[mutableStyledStringReplace] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('mstr_rep:Hi');
+      console.info('StyledStringTest: mutableStyledStringReplace END');
+      done();
     });
 
     /**
      * @tc.number StyledStringTest_009
+     * @tc.name paragraphStyleTextDirectionLTR
+     * @tc.desc ParagraphStyle({textDirection:TextDirection.LTR}).textDirection === TextDirection.LTR
+     */
+    it('paragraphStyleTextDirectionLTR', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: paragraphStyleTextDirectionLTR START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnParaDirLtr'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnParaDirLtr');
+      console.info('[paragraphStyleTextDirectionLTR] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('para_dir_ltr:match');
+      console.info('StyledStringTest: paragraphStyleTextDirectionLTR END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_010
+     * @tc.name paragraphStyleTextDirectionRTL
+     * @tc.desc ParagraphStyle({textDirection:TextDirection.RTL}).textDirection === TextDirection.RTL
+     */
+    it('paragraphStyleTextDirectionRTL', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: paragraphStyleTextDirectionRTL START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnParaDirRtl'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnParaDirRtl');
+      console.info('[paragraphStyleTextDirectionRTL] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('para_dir_rtl:match');
+      console.info('StyledStringTest: paragraphStyleTextDirectionRTL END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_011
+     * @tc.name paragraphStyleTextAlign
+     * @tc.desc ParagraphStyle({textAlign:TextAlign.Center}).textAlign === TextAlign.Center
+     */
+    it('paragraphStyleTextAlign', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: paragraphStyleTextAlign START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnParaAlign'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnParaAlign');
+      console.info('[paragraphStyleTextAlign] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('para_align:match');
+      console.info('StyledStringTest: paragraphStyleTextAlign END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_012
+     * @tc.name paragraphStyleMaxLines
+     * @tc.desc ParagraphStyle({maxLines:3}).maxLines === 3
+     */
+    it('paragraphStyleMaxLines', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: paragraphStyleMaxLines START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnParaMaxLines'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnParaMaxLines');
+      console.info('[paragraphStyleMaxLines] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('para_maxlines:3');
+      console.info('StyledStringTest: paragraphStyleMaxLines END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_013
+     * @tc.name paragraphStyleOverflow
+     * @tc.desc ParagraphStyle({overflow:TextOverflow.Ellipsis}).overflow === TextOverflow.Ellipsis
+     */
+    it('paragraphStyleOverflow', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: paragraphStyleOverflow START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnParaOverflow'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnParaOverflow');
+      console.info('[paragraphStyleOverflow] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('para_overflow:match');
+      console.info('StyledStringTest: paragraphStyleOverflow END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_014
+     * @tc.name paragraphStyleWordBreak
+     * @tc.desc ParagraphStyle({wordBreak:WordBreak.BREAK_WORD}).wordBreak === WordBreak.BREAK_WORD
+     */
+    it('paragraphStyleWordBreak', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: paragraphStyleWordBreak START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnParaWordBreak'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnParaWordBreak');
+      console.info('[paragraphStyleWordBreak] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('para_wordbreak:match');
+      console.info('StyledStringTest: paragraphStyleWordBreak END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_015
+     * @tc.name textStyleFontColor
+     * @tc.desc new TextStyle({fontColor:Color.Red}).fontColor === Color.Red
+     */
+    it('textStyleFontColor', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: textStyleFontColor START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnTstyleColor'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnTstyleColor');
+      console.info('[textStyleFontColor] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('tstyle_color:match');
+      console.info('StyledStringTest: textStyleFontColor END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_016
+     * @tc.name textStyleFontWeight
+     * @tc.desc new TextStyle({fontWeight:FontWeight.Bold}).fontWeight === FontWeight.Bold
+     */
+    it('textStyleFontWeight', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: textStyleFontWeight START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnTstyleWeight'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnTstyleWeight');
+      console.info('[textStyleFontWeight] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('tstyle_weight:match');
+      console.info('StyledStringTest: textStyleFontWeight END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_017
+     * @tc.name decorationStyleUnderline
+     * @tc.desc new DecorationStyle(TextDecorationType.Underline).type === TextDecorationType.Underline
+     */
+    it('decorationStyleUnderline', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: decorationStyleUnderline START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnDecoUnder'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnDecoUnder');
+      console.info('[decorationStyleUnderline] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('deco_under:match');
+      console.info('StyledStringTest: decorationStyleUnderline END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_018
+     * @tc.name decorationStyleLineThrough
+     * @tc.desc new DecorationStyle(TextDecorationType.LineThrough).type === TextDecorationType.LineThrough
+     */
+    it('decorationStyleLineThrough', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: decorationStyleLineThrough START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnDecoThrough'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnDecoThrough');
+      console.info('[decorationStyleLineThrough] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('deco_through:match');
+      console.info('StyledStringTest: decorationStyleLineThrough END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_019
+     * @tc.name baselineOffsetStyle
+     * @tc.desc new BaselineOffsetStyle(LengthMetrics.vp(10)).baselineOffset === 10
+     */
+    it('baselineOffsetStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: baselineOffsetStyle START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnBaseline'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnBaseline');
+      console.info('[baselineOffsetStyle] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('baseline:10');
+      console.info('StyledStringTest: baselineOffsetStyle END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_020
+     * @tc.name letterSpacingStyle
+     * @tc.desc new LetterSpacingStyle(LengthMetrics.vp(2)).letterSpacing === 2
+     */
+    it('letterSpacingStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: letterSpacingStyle START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnLetter'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnLetter');
+      console.info('[letterSpacingStyle] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('letter:2');
+      console.info('StyledStringTest: letterSpacingStyle END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_021
+     * @tc.name lineHeightStyle
+     * @tc.desc new LineHeightStyle(LengthMetrics.vp(24)).lineHeight === 24
+     */
+    it('lineHeightStyle', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: lineHeightStyle START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnLineHeight'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnLineHeight');
+      console.info('[lineHeightStyle] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('lineheight:24');
+      console.info('StyledStringTest: lineHeightStyle END');
+      done();
+    });
+
+    /**
+     * @tc.number StyledStringTest_022
      * @tc.name imageAttachmentResourceValue
-     * @tc.desc Test ImageAttachment.resourceValue (new readonly property) from ResourceImageAttachmentOptions
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.desc new ImageAttachment({resourceValue:'icon.png'}).resourceValue === 'icon.png'
      */
     it('imageAttachmentResourceValue', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('StyledStringTest execute: imageAttachmentResourceValue START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        // Use plain string as ResourceStr (ResourceStr = string | Resource)
-        let attachment = new ImageAttachment({
-          resourceValue: 'app.media.icon'
-        } as ResourceImageAttachmentOptions);
-        let resVal = attachment.resourceValue;
-        console.info('StyledStringTest: imageAttachmentResourceValue resourceValue = ' + resVal);
-        expect(resVal).assertEqual('app.media.icon');
-        console.info('StyledStringTest execute: imageAttachmentResourceValue END');
-        done();
-      } catch (error) {
-        console.error('StyledStringTest execute: imageAttachmentResourceValue error:' + error);
-        expect().assertFail();
-        done();
-      }
+      console.info('StyledStringTest: imageAttachmentResourceValue START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnImgRv'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnImgRv');
+      console.info('[imageAttachmentResourceValue] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('img_rv:icon.png');
+      console.info('StyledStringTest: imageAttachmentResourceValue END');
+      done();
     });
+
+    /**
+     * @tc.number StyledStringTest_023
+     * @tc.name urlStyleUrl
+     * @tc.desc new UrlStyle('https://example.com').url === 'https://example.com'
+     */
+    it('urlStyleUrl', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('StyledStringTest: urlStyleUrl START');
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnUrl'));
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnUrl');
+      console.info('[urlStyleUrl] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('url:https://example.com');
+      console.info('StyledStringTest: urlStyleUrl END');
+      done();
+    });
+
   });
 }

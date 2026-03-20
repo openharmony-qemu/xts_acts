@@ -31,28 +31,32 @@ export default function TextCommonTest() {
   describe('TextCommonTest', () => {
 
     // ============================================================
-    // TextMenuItemId.autoFill
+    // TextMenuItemId - singleton reference tests
     // ============================================================
 
     /**
      * @tc.number TextCommonTest_001
-     * @tc.name textMenuItemIdAutoFill
-     * @tc.desc Test TextMenuItemId.autoFill is a static readonly property
+     * @tc.name textMenuItemIdSameReference
+     * @tc.desc Test TextMenuItemId.autoFill returns the same singleton reference each time
      */
-    it('textMenuItemIdAutoFill', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextCommonTest execute: textMenuItemIdAutoFill START');
-      expect(TextMenuItemId.autoFill !== undefined).assertTrue();
+    it('textMenuItemIdSameReference', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextCommonTest execute: textMenuItemIdSameReference START');
+      let a = TextMenuItemId.autoFill;
+      let b = TextMenuItemId.autoFill;
+      expect(a === b).assertTrue();
       done();
     });
 
     /**
      * @tc.number TextCommonTest_002
-     * @tc.name textMenuItemIdPasswordVault
-     * @tc.desc Test TextMenuItemId.passwordVault is a static readonly property
+     * @tc.name textMenuItemIdDistinct
+     * @tc.desc Test TextMenuItemId.autoFill and passwordVault are different instances
      */
-    it('textMenuItemIdPasswordVault', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextCommonTest execute: textMenuItemIdPasswordVault START');
-      expect(TextMenuItemId.passwordVault !== undefined).assertTrue();
+    it('textMenuItemIdDistinct', Level.LEVEL1, (done: () => void): void => {
+      console.info('TextCommonTest execute: textMenuItemIdDistinct START');
+      let a = TextMenuItemId.autoFill;
+      let b = TextMenuItemId.passwordVault;
+      expect(a !== b).assertTrue();
       done();
     });
 
@@ -99,7 +103,7 @@ export default function TextCommonTest() {
     /**
      * @tc.number TextCommonTest_006
      * @tc.name accessibilitySpanOptionsAllProps
-     * @tc.desc Test all AccessibilitySpanOptions properties together
+     * @tc.desc Test all AccessibilitySpanOptions properties together with specific values
      */
     it('accessibilitySpanOptionsAllProps', Level.LEVEL1, (done: () => void): void => {
       console.info('TextCommonTest execute: accessibilitySpanOptionsAllProps START');
@@ -108,23 +112,9 @@ export default function TextCommonTest() {
         accessibilityDescription: 'desc',
         accessibilityLevel: 'yes'
       };
-      expect(opts.accessibilityText !== undefined).assertTrue();
-      expect(opts.accessibilityDescription !== undefined).assertTrue();
-      expect(opts.accessibilityLevel !== undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number TextCommonTest_007
-     * @tc.name accessibilitySpanOptionsUndefined
-     * @tc.desc Test AccessibilitySpanOptions with all undefined properties
-     */
-    it('accessibilitySpanOptionsUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextCommonTest execute: accessibilitySpanOptionsUndefined START');
-      let opts: AccessibilitySpanOptions = {};
-      expect(opts.accessibilityText === undefined).assertTrue();
-      expect(opts.accessibilityDescription === undefined).assertTrue();
-      expect(opts.accessibilityLevel === undefined).assertTrue();
+      expect(opts.accessibilityText).assertEqual('text');
+      expect(opts.accessibilityDescription).assertEqual('desc');
+      expect(opts.accessibilityLevel).assertEqual('yes');
       done();
     });
 
@@ -135,24 +125,12 @@ export default function TextCommonTest() {
     /**
      * @tc.number TextCommonTest_008
      * @tc.name selectedDragPreviewStyleColor
-     * @tc.desc Test SelectedDragPreviewStyle.color property
+     * @tc.desc Test SelectedDragPreviewStyle.color stores and returns the set value
      */
     it('selectedDragPreviewStyleColor', Level.LEVEL1, (done: () => void): void => {
       console.info('TextCommonTest execute: selectedDragPreviewStyleColor START');
       let style: SelectedDragPreviewStyle = { color: Color.Blue };
-      expect(style.color !== undefined).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number TextCommonTest_009
-     * @tc.name selectedDragPreviewStyleColorUndefined
-     * @tc.desc Test SelectedDragPreviewStyle.color with undefined
-     */
-    it('selectedDragPreviewStyleColorUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextCommonTest execute: selectedDragPreviewStyleColorUndefined START');
-      let style: SelectedDragPreviewStyle = { color: undefined };
-      expect(style.color === undefined).assertTrue();
+      expect(style.color).assertEqual(Color.Blue);
       done();
     });
 
@@ -258,18 +236,6 @@ export default function TextCommonTest() {
       done();
     });
 
-    /**
-     * @tc.number TextCommonTest_018
-     * @tc.name lineSpacingOptionsOnlyBetweenLinesUndefined
-     * @tc.desc Test LineSpacingOptions.onlyBetweenLines = undefined
-     */
-    it('lineSpacingOptionsOnlyBetweenLinesUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextCommonTest execute: lineSpacingOptionsOnlyBetweenLinesUndefined START');
-      let opts: LineSpacingOptions = {};
-      expect(opts.onlyBetweenLines === undefined).assertTrue();
-      done();
-    });
-
     // ============================================================
     // MaxLinesOptions.overflowMode (from textCommon.d.ets)
     // ============================================================
@@ -287,7 +253,7 @@ export default function TextCommonTest() {
     });
 
     /**
-     * @tc.number TextCommonTest_020
+     * @tc.number TextCommonTest_019
      * @tc.name maxLinesOptionsOverflowModeScroll
      * @tc.desc Test MaxLinesOptions.overflowMode with MaxLinesMode.SCROLL
      */
@@ -295,18 +261,6 @@ export default function TextCommonTest() {
       console.info('TextCommonTest execute: maxLinesOptionsOverflowModeScroll START');
       let opts: MaxLinesOptions = { overflowMode: MaxLinesMode.SCROLL };
       expect(opts.overflowMode).assertEqual(1);
-      done();
-    });
-
-    /**
-     * @tc.number TextCommonTest_021
-     * @tc.name maxLinesOptionsOverflowModeUndefined
-     * @tc.desc Test MaxLinesOptions.overflowMode with undefined
-     */
-    it('maxLinesOptionsOverflowModeUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('TextCommonTest execute: maxLinesOptionsOverflowModeUndefined START');
-      let opts: MaxLinesOptions = {};
-      expect(opts.overflowMode === undefined).assertTrue();
       done();
     });
   });

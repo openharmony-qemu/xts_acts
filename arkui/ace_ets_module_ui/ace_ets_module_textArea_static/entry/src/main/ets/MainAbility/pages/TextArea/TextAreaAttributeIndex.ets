@@ -33,6 +33,16 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 import { LengthMetrics } from '@ohos.arkui.node';
 
+@Builder
+function textAreaCustomKeyboardBuilder() {
+  Column() {
+    TextArea({ placeholder: 'Custom Keyboard Row' })
+      .fontSize('12fp')
+      .key('textAreaCustomKbdBuilderContent')
+  }
+  .width('100%')
+}
+
 @Entry
 @Component
 struct TextAreaAttributeIndex {
@@ -65,18 +75,18 @@ struct TextAreaAttributeIndex {
         TextArea({ placeholder: 'fw Bolder' })
           .fontWeight(FontWeight.Bolder)
           .key('textAreaFontWeightBolder')
-        
+        // fontWeight (int)
         TextArea({ placeholder: 'fw 700' })
           .fontWeight(700)
           .key('textAreaFontWeightInt700')
         TextArea({ placeholder: 'fw 400' })
           .fontWeight(400)
           .key('textAreaFontWeightInt400')
-
+        // fontWeight (ResourceStr)
         TextArea({ placeholder: 'fw bold str' })
           .fontWeight('bold')
           .key('textAreaFontWeightStrBold')
-
+        // fontWeight (undefined)
         TextArea({ placeholder: 'fw undefined' })
           .fontWeight(undefined)
           .key('textAreaFontWeightUndefined')
@@ -99,6 +109,9 @@ struct TextAreaAttributeIndex {
         TextArea({ placeholder: 'customKbd undefined' })
           .customKeyboard(undefined)
           .key('textAreaCustomKbdUndefined')
+        TextArea({ placeholder: 'customKbd builder' })
+          .customKeyboard(wrapBuilder(textAreaCustomKeyboardBuilder))
+          .key('textAreaCustomKbdBuilder')
 
         // ---------- lineSpacing ----------
         TextArea({ placeholder: 'lineSpacing 8vp' })
@@ -170,7 +183,7 @@ struct TextAreaAttributeIndex {
           .key('textAreaDirUndefined')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')
