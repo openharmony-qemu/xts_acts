@@ -195,7 +195,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileLossNameEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileLossNameEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -223,7 +225,9 @@ export default function coverageSupplementTest() {
         }
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "modelRunStepInputsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "modelRunStepInputsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -250,7 +254,9 @@ export default function coverageSupplementTest() {
         }
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "modelUpdateWeightsWeightsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "modelUpdateWeightsWeightsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -278,7 +284,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCallbackNormalStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCallbackNormalStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -307,7 +315,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextPrecisionModeEmptyStringStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextPrecisionModeEmptyStringStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -337,7 +347,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferContextPrecisionModeEmptyStringStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferContextPrecisionModeEmptyStringStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -368,7 +380,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextPrecisionModeEmptyStringStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextPrecisionModeEmptyStringStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -401,7 +415,9 @@ export default function coverageSupplementTest() {
           done();
         }
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "modelPredictPromiseInputsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "modelPredictPromiseInputsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -429,7 +445,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "modelResizeInputsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "modelResizeInputsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -459,7 +477,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "modelResizeDimsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "modelResizeDimsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -488,7 +508,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -526,7 +548,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeExtremeStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeExtremeStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -562,7 +586,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -597,7 +623,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPriorityLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPriorityLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -632,7 +660,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPriorityMediumStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPriorityMediumStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -667,7 +697,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPriorityHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPriorityHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -702,7 +734,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtExtensionsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtExtensionsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -742,7 +776,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtExtensionsNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtExtensionsNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -770,7 +806,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextCpuThreadAffinityModeAffinityModeStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextCpuThreadAffinityModeAffinityModeStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -798,7 +836,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextCpuThreadAffinityModeBigLittleStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextCpuThreadAffinityModeBigLittleStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -826,7 +866,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextCpuThreadAffinityModeHybridStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextCpuThreadAffinityModeHybridStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -854,7 +896,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -890,7 +934,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeNoneStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeNoneStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -927,7 +973,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -963,7 +1011,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPriorityLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPriorityLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -999,7 +1049,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPriorityMediumStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPriorityMediumStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1035,7 +1087,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPriorityHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPriorityHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1071,7 +1125,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtExtensionsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtExtensionsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1112,7 +1168,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtExtensionsNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtExtensionsNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1141,7 +1199,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeAffinityModeStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeAffinityModeStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1170,7 +1230,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeBigLittleStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeBigLittleStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1199,7 +1261,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeHybridStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeHybridStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1228,7 +1292,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1257,7 +1323,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityCoreListNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityCoreListNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1294,7 +1362,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeNoneStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeNoneStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1332,7 +1402,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1369,7 +1441,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPriorityLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPriorityLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1406,7 +1480,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPriorityMediumStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPriorityMediumStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1443,7 +1519,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPriorityHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPriorityHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1479,7 +1557,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtExtensionsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtExtensionsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1520,7 +1600,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtExtensionsNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtExtensionsNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1550,7 +1632,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeBigLittleStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeBigLittleStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1579,7 +1663,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeHybridStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeHybridStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1608,7 +1694,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1637,7 +1725,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityCoreListNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityCoreListNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1674,7 +1764,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1712,7 +1804,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeNoneStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeNoneStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1749,7 +1843,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPriorityLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPriorityLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1786,7 +1882,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPriorityMediumStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPriorityMediumStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1823,7 +1921,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPriorityHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPriorityHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1860,7 +1960,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtExtensionsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtExtensionsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1902,7 +2004,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtExtensionsNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtExtensionsNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1930,7 +2034,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityModeAffinityModeStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityModeAffinityModeStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1958,7 +2064,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityModeBigLittleStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityModeBigLittleStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -1986,7 +2094,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityModeHybridStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityModeHybridStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2015,7 +2125,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2044,7 +2156,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityCoreListNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextCpuThreadAffinityCoreListNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2075,7 +2189,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgOptimizationLevelO0Static001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgOptimizationLevelO0Static001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2105,7 +2221,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgOptimizationLevelO2Static001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgOptimizationLevelO2Static001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2133,7 +2251,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgOptimizationLevelO2Static001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgOptimizationLevelO2Static001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2161,7 +2281,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgOptimizationLevelO0Static001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgOptimizationLevelO0Static001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2196,7 +2318,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeNoneStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeNoneStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2231,7 +2355,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeMediumStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeMediumStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2266,7 +2392,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextNnrtPerformanceModeHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2302,7 +2430,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeMediumStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeMediumStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2338,7 +2468,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2374,7 +2506,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeExtremeStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileCallbackContextNnrtPerformanceModeExtremeStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2411,7 +2545,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeMediumStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeMediumStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2448,7 +2584,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2485,7 +2623,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeExtremeStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextNnrtPerformanceModeExtremeStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2522,7 +2662,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeMediumStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeMediumStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2559,7 +2701,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2596,7 +2740,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeExtremeStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPerformanceModeExtremeStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2626,7 +2772,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgOptimizationLevelO3Static001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgOptimizationLevelO3Static001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2653,7 +2801,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgOptimizationLevelAutoStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgOptimizationLevelAutoStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2681,7 +2831,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgOptimizationLevelO3Static001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgOptimizationLevelO3Static001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2709,7 +2861,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgOptimizationLevelAutoStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgOptimizationLevelAutoStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2738,7 +2892,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeBigCoresFirstStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeBigCoresFirstStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2767,7 +2923,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeLittleCoresFirstStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityModeLittleCoresFirstStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2796,7 +2954,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityNoAffinitiesStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextCpuThreadAffinityNoAffinitiesStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2825,7 +2985,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferCallbackContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferCallbackContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2862,7 +3024,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferCallbackContextNnrtExtensionsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferCallbackContextNnrtExtensionsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2892,7 +3056,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeBigCoresFirstStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeBigCoresFirstStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2922,7 +3088,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeLittleCoresFirstStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeLittleCoresFirstStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2952,7 +3120,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityNoAffinitiesStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityNoAffinitiesStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -2982,7 +3152,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3021,7 +3193,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtPerformanceModeHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtPerformanceModeHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3060,7 +3234,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtPerformanceModeLowStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtPerformanceModeLowStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3104,7 +3280,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtPriorityHighStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtPriorityHighStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3143,7 +3321,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPriorityNoneStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextNnrtPriorityNoneStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3181,7 +3361,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtExtensionsEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtExtensionsEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3225,7 +3407,9 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtExtensionsNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdCallbackContextNnrtExtensionsNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3255,7 +3439,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3279,10 +3465,18 @@ export default function coverageSupplementTest() {
         context.target = [];
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
         fs.closeSync(file);
-        expect(msliteModel).assertUndefined();
+        hilog.info(domain, tag, 'msliteModel type: ' + typeof msliteModel);
+        hilog.info(domain, tag, 'msliteModel keys length: ' + Object.keys(msliteModel).length);
+        hilog.info(domain, tag, 'msliteModel stringify: ' + JSON.stringify(msliteModel));
+        expect(msliteModel).not().assertNull();
+        expect(msliteModel).not().assertUndefined();
+        expect(typeof msliteModel).assertEqual("object");
+        expect(Object.keys(msliteModel).length).assertEqual(0);
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextTargetEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextTargetEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
         done();
       }
     });
@@ -3312,7 +3506,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityModeBigCoresFirstStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityModeBigCoresFirstStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3342,7 +3538,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityModeLittleCoresFirstStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityModeLittleCoresFirstStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3372,7 +3570,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityNoAffinitiesStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityNoAffinitiesStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3402,7 +3602,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityCoreListEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3432,7 +3634,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityCoreListNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdContextCpuThreadAffinityCoreListNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3459,7 +3663,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileTrainCfgLossNameEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileTrainCfgLossNameEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3489,7 +3695,9 @@ export default function coverageSupplementTest() {
         expect(Object.keys(msliteModel).length).assertEqual(0);
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextTargetEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileContextTargetEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
         done();
       }
     });
@@ -3518,7 +3726,9 @@ export default function coverageSupplementTest() {
         expect(Object.keys(msliteModel).length).assertEqual(0);
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileModelEmptyStringStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFileModelEmptyStringStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000008);
         done();
       }
     });
@@ -3545,7 +3755,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgLossNameEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgLossNameEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
       done();
@@ -3572,7 +3784,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgLossNameNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferTrainCfgLossNameNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3602,7 +3816,9 @@ export default function coverageSupplementTest() {
         expect(Object.keys(msliteModel).length).assertEqual(0);
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferContextTargetEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromBufferContextTargetEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
         done();
       }
     });
@@ -3631,7 +3847,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgLossNameEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgLossNameEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3659,7 +3877,9 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertUndefined();
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgLossNameNonEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadTrainModelFromFdTrainCfgLossNameNonEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -3688,7 +3908,9 @@ export default function coverageSupplementTest() {
         expect(Object.keys(msliteModel).length).assertEqual(0);
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextTargetEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFileContextTargetEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
         done();
       }
     });
@@ -3719,7 +3941,9 @@ export default function coverageSupplementTest() {
         expect(Object.keys(msliteModel).length).assertEqual(0);
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextTargetEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromBufferContextTargetEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
         done();
       }
     });
@@ -3751,7 +3975,9 @@ export default function coverageSupplementTest() {
         expect(Object.keys(msliteModel).length).assertEqual(0);
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextTargetEmptyArrayStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextTargetEmptyArrayStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
         done();
       }
     });
@@ -3776,13 +4002,201 @@ export default function coverageSupplementTest() {
         };
         let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
         fs.closeSync(file);
+        hilog.info(domain, tag, 'msliteModel type: ' + typeof msliteModel);
+        hilog.info(domain, tag, 'msliteModel keys length: ' + Object.keys(msliteModel).length);
+        hilog.info(domain, tag, 'msliteModel stringify: ' + JSON.stringify(msliteModel));
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
+        expect(typeof msliteModel).assertEqual("object");
+        expect(Object.keys(msliteModel).length).assertLarger(0);
         done();
       } catch (error) {
-        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeAffinityModeStatic001 error: " + JSON.stringify(error));
+        hilog.info(domain, tag, '%{public}s', "loadModelFromFdContextCpuThreadAffinityModeAffinityModeStatic001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
         done();
       }
     });
+
+    /**
+     * @tc.name   loadModelFromFileContextCallbackModelEmptyString001
+     * @tc.number CoverageSupplement2Test_010
+     * @tc.desc   loadModelFromFile Context Callback model empty string test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFileContextCallbackModelEmptyString001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement2Test: loadModelFromFileContextCallbackModelEmptyString001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"]
+        mindSporeLite.loadModelFromFile("", context, (msliteModel: mindSporeLite.Model) => {
+          hilog.info(domain, tag, 'msliteModel type: ' + typeof msliteModel);
+          hilog.info(domain, tag, 'msliteModel keys length: ' + Object.keys(msliteModel).length);
+          hilog.info(domain, tag, 'msliteModel stringify: ' + JSON.stringify(msliteModel));
+          expect(msliteModel).not().assertNull();
+          expect(msliteModel).not().assertUndefined();
+          expect(typeof msliteModel).assertEqual("object");
+          expect(Object.keys(msliteModel).length).assertEqual(0);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "loadModelFromFileContextCallbackModelEmptyString001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000000);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   modelPredictCallbackInputsEmptyArray001
+     * @tc.number CoverageSupplement2Test_066
+     * @tc.desc   Model predict Callback inputs empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelPredictCallbackInputsEmptyArray001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement2Test: modelPredictCallbackInputsEmptyArray001");
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ["cpu"]
+        let model_file = abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
+        mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
+          if (msliteModel !== null) {
+            try {
+              msliteModel.predict([], (modelOutputs: mindSporeLite.MSTensor[]) => {
+                hilog.info(domain, tag, 'modelOutputs type: ' + typeof modelOutputs);
+                hilog.info(domain, tag, 'modelOutputs keys length: ' + Object.keys(modelOutputs).length);
+                hilog.info(domain, tag, 'modelOutputs stringify: ' + JSON.stringify(modelOutputs));
+                expect(modelOutputs).not().assertNull();
+                expect(modelOutputs).not().assertUndefined();
+                expect(typeof modelOutputs).assertEqual("object");
+                expect(Object.keys(modelOutputs).length).assertEqual(0);
+                done();
+              });
+            } catch (error) {
+              hilog.info(domain, tag, "modelPredictCallbackInputsEmptyArray001 predict error: " + error);
+              hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+              expect(false).assertTrue();
+              done();
+            }
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "modelPredictCallbackInputsEmptyArray001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    // 2. loadModelFromFile API 测试 - Callback 版本 - Context 属性覆盖
+    /**
+     * @tc.name   loadModelFromFileCallbackContextTargetEmptyArray001
+     * @tc.number CoverageSupplement3Test_017
+     * @tc.desc   loadModelFromFile Callback Context target empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFileCallbackContextTargetEmptyArray001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement3Test: loadModelFromFileCallbackContextTargetEmptyArray001");
+      try {
+        let model_file = abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let context: mindSporeLite.Context = {};
+        context.target = [];
+        mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
+          hilog.info(domain, tag, 'msliteModel type: ' + typeof msliteModel);
+          hilog.info(domain, tag, 'msliteModel keys length: ' + Object.keys(msliteModel).length);
+          hilog.info(domain, tag, 'msliteModel stringify: ' + JSON.stringify(msliteModel));
+          expect(msliteModel).not().assertNull();
+          expect(msliteModel).not().assertUndefined();
+          expect(typeof msliteModel).assertEqual("object");
+          expect(Object.keys(msliteModel).length).assertEqual(0);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "loadModelFromFileCallbackContextTargetEmptyArray001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
+        done();
+      }
+    });
+
+
+    // 1. loadModelFromBuffer API 测试 - Callback 版本 - Context 属性覆盖
+    /**
+     * @tc.name   loadModelFromBufferContextTargetEmptyArray001
+     * @tc.number CoverageSupplement4Test_001
+     * @tc.desc   loadModelFromBuffer Context target empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromBufferContextTargetEmptyArray001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement4Test: loadModelFromBufferContextTargetEmptyArray001");
+      try {
+        let modelBuffer: Uint8Array = await abilityContext.resourceManager.getRawFileContent('ml_face_isface.ms');
+        let context: mindSporeLite.Context = {};
+        context.target = [];
+        mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context, (msliteModel: mindSporeLite.Model) => {
+          hilog.info(domain, tag, 'msliteModel type: ' + typeof msliteModel);
+          hilog.info(domain, tag, 'msliteModel keys length: ' + Object.keys(msliteModel).length);
+          hilog.info(domain, tag, 'msliteModel stringify: ' + JSON.stringify(msliteModel));
+          expect(msliteModel).not().assertNull();
+          expect(msliteModel).not().assertUndefined();
+          expect(typeof msliteModel).assertEqual("object");
+          expect(Object.keys(msliteModel).length).assertEqual(0);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "loadModelFromBufferContextTargetEmptyArray001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
+        done();
+      }
+    });
+
+    // 3. loadModelFromFd API 测试 - 3 参数 Callback 版本 - Context 属性覆盖
+    /**
+     * @tc.name   loadModelFromFdContextTargetEmptyArray001
+     * @tc.number CoverageSupplement4Test_009
+     * @tc.desc   loadModelFromFd Context target empty array test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('loadModelFromFdContextTargetEmptyArray001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, "CoverageSupplement4Test: loadModelFromFdContextTargetEmptyArray001");
+      try {
+        let model_file = abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
+        let context: mindSporeLite.Context = {};
+        context.target = [];
+        mindSporeLite.loadModelFromFd(file.fd, context, (msliteModel: mindSporeLite.Model) => {
+          fs.closeSync(file);
+          hilog.info(domain, tag, 'msliteModel type: ' + typeof msliteModel);
+          hilog.info(domain, tag, 'msliteModel keys length: ' + Object.keys(msliteModel).length);
+          hilog.info(domain, tag, 'msliteModel stringify: ' + JSON.stringify(msliteModel));
+          expect(msliteModel).not().assertNull();
+          expect(msliteModel).not().assertUndefined();
+          expect(typeof msliteModel).assertEqual("object");
+          expect(Object.keys(msliteModel).length).assertEqual(0);
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "loadModelFromFdContextTargetEmptyArray001 error: " + error);
+        hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
+        expect(error.code).assertEqual(1000001);
+        done();
+      }
+    });
+
   })
 }

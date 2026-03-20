@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsAceEtsModuleNavifationStaticTest.hap"
+            "ActsAceEtsModuleNavigationStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true

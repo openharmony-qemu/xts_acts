@@ -16,8 +16,20 @@
 
 
 import ChainWeight from './ChainWeight/ChainWeight.test'
+import StackAlignContentTest from './Stack/StackAlignContentTest.test';
+import StackAttrsAlignContentTest from './Stack/StackAttrsAlignContentTest.test';
+import RowSpaceTest from './Row/RowSpaceTest.test';
+import CommonIgnoreLayoutSafeAreaTest from './CommonAttrs/CommonIgnoreLayoutSafeAreaTest.test';
+import CommonLayoutGravityTest from './CommonAttrs/CommonLayoutGravityTest.test';
+import CommonWidthHeightTest from './CommonAttrs/CommonWidthHeightTest.test';
 
 
 export default function testsuite() {
   ChainWeight()
+  StackAlignContentTest();
+  StackAttrsAlignContentTest();
+  RowSpaceTest();
+  CommonIgnoreLayoutSafeAreaTest();
+  CommonLayoutGravityTest();
+  CommonWidthHeightTest();
 }
