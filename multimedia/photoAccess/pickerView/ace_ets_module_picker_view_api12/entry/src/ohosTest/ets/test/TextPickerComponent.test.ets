@@ -52,6 +52,7 @@ import {
 } from '@ohos.file.RecentPhotoComponent';
 import { fileUri } from '@kit.CoreFileKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import fs, { ReadOptions, WriteOptions } from '@ohos.file.fs';
 
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
@@ -207,7 +208,7 @@ async function clickUpdatablePickerButton(driver: Driver) {
 
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
-  let btn = await driver.waitForComponent(button('全部相册'), 5000);
+  let btn = await driver.waitForComponent(on.text('全部相册').type('Button'), 5000);
   if (btn === null) {
     console.info("clickAlbumButton findComponent btn fail");
   } else {
@@ -250,7 +251,7 @@ function waitForSelectItemInfo(code: number, timeout = 5000): Promise<ItemInfo> 
 }
 
 async function clickExitBrowserButton(driver: Driver) {
-  const exitButton: Component | null = await driver.waitForComponent(button('退出大图'));
+  const exitButton: Component | null = await driver.waitForComponent(on.text('退出大图').type('Button'), 5000);
   await exitButton!.click();
   console.info('testPicker55: clicked exitBrowser, browser closed');
   await CommonFunc.sleep(800);
@@ -372,8 +373,8 @@ async function savePhoto() {
 }
 
 function readWriteFile(srcUri: string, dstUri: string) {
-  let srcFile = fs.openSync(srcUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-  let destFile = fs.openSync(dstUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let srcFile: fileIo.File = fs.openSync(srcUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let destFile: fileIo.File = fs.openSync(dstUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
   let bufSize = 4096;
   let readSize = 0;
   let buf = new ArrayBuffer(bufSize);
@@ -381,7 +382,7 @@ function readWriteFile(srcUri: string, dstUri: string) {
     offset: readSize,
     length: bufSize
   };
-  let readLen = fs.readSync(srcFile.fd, buf, readOptions);
+  let readLen: number = fs.readSync(srcFile.fd, buf, readOptions);
   console.log(`srcUri: ${srcUri}, dstUri: ${dstUri}, readLen: ${readLen}`);
   while (readLen > 0) {
     readSize += readLen;
@@ -1136,7 +1137,7 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
 
-      let changeNumButton: Component = await driver.waitForComponent(button('选择修改数量'), 5000) ;
+      let changeNumButton: Component = await driver.waitForComponent(on.text('选择修改数量').type('Button'), 5000);
       if (changeNumButton === null) {
         console.info("testPicker15 findComponent changeNumButton fail");
       } else {
@@ -2818,10 +2819,10 @@ export default function TextPicker() {
       await routeToUrl(options);
       await CommonFunc.sleep(1000);
       let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
-      let button: Component = await driver.waitForComponent(button('select photo'), 5000);
-      if (button !== undefined && chooostModeButton !== undefined) {
+      let btn: Component = await driver.waitForComponent(on.text('select photo').type('Button'), 5000);
+      if (btn !== undefined && chooostModeButton !== undefined) {
         await chooostModeButton.click();
-        await button.click();
+        await btn.click();
       } else {
         console.error("testPicker51 can not find button");
         expect(false).assertTrue();
@@ -2831,7 +2832,7 @@ export default function TextPicker() {
       if (checkbox !== undefined && checkbox !== null) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
-        const finishBtn: Component = await driver.waitForComponent(button('完成'));
+        const finishBtn: Component = await driver.waitForComponent(on.text('完成').type('Button'), 5000);
         await finishBtn.click();
         await CommonFunc.sleep(1000);
       }
@@ -3529,8 +3530,8 @@ export default function TextPicker() {
       };
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
-      let button: Component = await driver.waitForComponent(button('select photo'));
-      await button.click();
+      let btn: Component = await driver.waitForComponent(on.text('select photo').type('Button'), 5000);
+      await btn.click();
       console.info('testPicker61 Clicked select button');
       await CommonFunc.sleep(2000);
       router.back();
