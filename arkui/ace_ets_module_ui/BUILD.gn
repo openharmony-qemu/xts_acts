@@ -128,6 +128,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_textInput_static:ActsAceEtsModuleTextInputStaticTest",
       "ace_ets_module_textPicker_static:ActsAceEtsModuleTextPickerStaticTest",
       "ace_ets_module_units_static:ActsAceEtsModuleUnitsStaticTest",
+      "ace_ets_module_canvas_static:ActsAceEtsModuleCanvasStaticTest",
     ]
   }
 }

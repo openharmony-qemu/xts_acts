@@ -15,6 +15,7 @@
     "MainAbility/pages/TextContentControllerBase/TextContentControllerBaseIndex",
     "MainAbility/pages/ScrollableCommonMethod/ScrollableCommonMethodIndex",
     "MainAbility/pages/ScrollResult/ScrollResultIndex",
-    "MainAbility/pages/ChildrenMainSize/ChildrenMainSizeIndex"
+    "MainAbility/pages/ChildrenMainSize/ChildrenMainSizeIndex",
+    "MainAbility/pages/LayoutPolicy/LayoutPolicyIndex"
   ]
 }
