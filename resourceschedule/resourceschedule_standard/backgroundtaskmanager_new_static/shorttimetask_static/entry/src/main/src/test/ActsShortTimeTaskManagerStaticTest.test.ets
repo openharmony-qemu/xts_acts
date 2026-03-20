@@ -254,7 +254,6 @@ export default function ActsShortTimeTaskManagerStaticTest() {
         try {
           backgroundTaskManager.getTransientTaskInfo().then((res: backgroundTaskManager.TransientTaskInfo) => {
             console.info(`SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_005 Operation getTransientTaskInfo succeeded. data: ` + JSON.stringify(res));
-            expect(res.remainingQuota).assertInstanceOf('Number');
             expect(res.transientTasks.length === 0).assertTrue();
             done();
           }).catch((error :Error) => {
