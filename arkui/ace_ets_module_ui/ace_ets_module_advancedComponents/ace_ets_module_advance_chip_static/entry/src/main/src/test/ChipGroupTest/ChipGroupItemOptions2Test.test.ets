@@ -102,7 +102,7 @@ export default function ChipGroupItemOptionsPage2Test() {
         .getArray("$children")[0]
         .getElement('$attrs')
         .getString('src')
-      expect(src1).assertEqual("resource:///16777227.png");
+      expect(src1).assertEqual("resource:///16777230.png");
 
       let height = roots.getArray("$children")[0]
         .getArray("$children")[0]
