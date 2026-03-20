@@ -1110,6 +1110,41 @@ export default function SocketErrorCodeTest01() {
       }
     });
     /**
+     * @tc.name   testSocketErrorCodeTCPSocketServer0900
+     * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0900
+     * @tc.desc   Test TCPSocketConnection send 401 event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSocketErrorCodeTCPSocketServer0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSocketErrorCodeTCPSocketServer0900';
+      let server = socket.constructTCPSocketServerInstance();
+      try {
+        console.info(`${caseName} test start`);
+        server.on('connect', (data) => {
+          console.info(`${caseName} on connect success ${JSON.stringify(data)}`);
+          data.send(undefined,(err,data) => {
+            if(err){
+              console.info(`${caseName} send failed ${JSON.stringify(err)}`);
+              done();
+            } else{
+              console.info(`${caseName} on send data ${JSON.stringify(data)}`);
+              ExpectFail();
+              done();
+            }
+          })
+        });
+        server.off('connect');
+        done();
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectTrue(Number(err.code) === 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+    /**
      * @tc.name   testSocketErrorCodeTCPSocketServer0300
      * @tc.number SUB_Socket_ErrorCode_TCPSocketServer_0300
      * @tc.desc   Test TCPSocketConnection onMessage 401 event
