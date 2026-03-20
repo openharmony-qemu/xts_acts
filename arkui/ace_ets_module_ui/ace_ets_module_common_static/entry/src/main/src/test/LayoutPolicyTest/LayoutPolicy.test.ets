@@ -32,7 +32,7 @@ export default function LayoutPolicyTest() {
     beforeAll(async (): Promise<void> => {
       console.info("LayoutPolicyTest beforeAll start");
       await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.ets.module.common.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.layoutPolicy.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {
@@ -72,9 +72,10 @@ export default function LayoutPolicyTest() {
       console.info('LayoutPolicyTest execute: layoutPolicy_wrapContent_notNull START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
-        let policy = LayoutPolicy.wrapContent;
-        console.info('LayoutPolicyTest: wrapContent = ' + policy);
-        expect(policy != null).assertTrue();
+        let wc = LayoutPolicy.wrapContent;
+        let fi = LayoutPolicy.fixAtIdealSize;
+        console.info('LayoutPolicyTest: wrapContent != fixAtIdealSize = ' + (wc !== fi));
+        expect(wc !== fi).assertEqual(true);
         console.info('LayoutPolicyTest execute: layoutPolicy_wrapContent_notNull END');
         done();
       } catch (error) {
@@ -96,9 +97,10 @@ export default function LayoutPolicyTest() {
       console.info('LayoutPolicyTest execute: layoutPolicy_fixAtIdealSize_notNull START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
-        let policy = LayoutPolicy.fixAtIdealSize;
-        console.info('LayoutPolicyTest: fixAtIdealSize = ' + policy);
-        expect(policy != null).assertTrue();
+        let fi = LayoutPolicy.fixAtIdealSize;
+        let mp = LayoutPolicy.matchParent;
+        console.info('LayoutPolicyTest: fixAtIdealSize != matchParent = ' + (fi !== mp));
+        expect(fi !== mp).assertEqual(true);
         console.info('LayoutPolicyTest execute: layoutPolicy_fixAtIdealSize_notNull END');
         done();
       } catch (error) {
