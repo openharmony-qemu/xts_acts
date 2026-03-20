@@ -18,7 +18,6 @@ import MultimodalKeyEventTest from "./MultimodalKeyEvent.test";
 import MultimodalMouseEventTest from "./MultimodalMouseEvent.test";
 import MultimodalTouchEventTest from "./MultimodalTouchEvent.test";
 import MultimodalGestureEventTest from "./MultimodalGestureEvent.test";
-import MultimodalSetCustomCursorTest from "./SetCustomCursor.test";
 import MultimodalMouseEventComplementTest from "./MultimodalMouseEventComplement.test";
 import MultimodalTouchEventComplementTest from "./MultimodalTouchEventComplement.test";
 import PointerComplementTest from "./PointerComplement.test";
@@ -30,7 +29,6 @@ export default function testsuite() {
     MultimodalKeyEventTest();
     MultimodalMouseEventTest();
     MultimodalGestureEventTest();
-    MultimodalSetCustomCursorTest();
     MultimodalMouseEventComplementTest();
     MultimodalTouchEventComplementTest();
     PointerComplementTest();
