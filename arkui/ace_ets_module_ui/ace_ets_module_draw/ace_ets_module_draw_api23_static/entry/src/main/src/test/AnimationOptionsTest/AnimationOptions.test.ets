@@ -30,32 +30,32 @@ const SLEEP_TIME = 1000;
 export default function AnimationOptionsTest() {
   describe('AnimationOptionsTest', () => {
     beforeAll(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] AnimationOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.draw.api23.static", "EntryAbility");
+      console.info('[ARKUI_NEW] AnimationOptionsTest beforeAll start');
+      await UtilsTest.startAbility('com.arkui.ace.draw.api23.static', 'EntryAbility');
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] AnimationOptionsTest beforeEach start");
+      console.info('[ARKUI_NEW] AnimationOptionsTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/animationOptions/animationOptions',
       };
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
+        const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("[ARKUI_NEW] AnimationOptionsTest state pages: " + JSON.stringify(pages));
+        console.info('[ARKUI_NEW] AnimationOptionsTest state pages: ' + JSON.stringify(pages));
         if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {
-        console.error("[ARKUI_NEW] AnimationOptionsTest replaceUrl error: " + err);
+        console.error('[ARKUI_NEW] AnimationOptionsTest replaceUrl error: ' + err);
         expect().assertFail();
       }
     });
 
     afterEach(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] AnimationOptionsTest afterEach start");
+      console.info('[ARKUI_NEW] AnimationOptionsTest afterEach start');
       // Clean up AppStorage data
       if (AppStorage.get<AnimationOptions>('animationOptionsFrameDurations') != undefined) {
         AppStorage.delete('animationOptionsFrameDurations');
@@ -85,7 +85,7 @@ export default function AnimationOptionsTest() {
         AppStorage.delete('animatedDrawableDescriptorGetControllerWithId');
       }
       await Utils.sleep(SLEEP_TIME);
-      console.info("[ARKUI_NEW] AnimationOptionsTest afterEach end");
+      console.info('[ARKUI_NEW] AnimationOptionsTest afterEach end');
     });
 
     /**

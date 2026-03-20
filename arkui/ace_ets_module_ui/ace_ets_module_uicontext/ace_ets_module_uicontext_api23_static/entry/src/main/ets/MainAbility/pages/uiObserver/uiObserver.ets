@@ -66,7 +66,7 @@ struct uiObserverTest {
           }
         })
 
-      Button("offTabChange")
+      Button('offTabChange')
         .id('btnOffTabChange')
         .width('100%')
         .layoutWeight(1)

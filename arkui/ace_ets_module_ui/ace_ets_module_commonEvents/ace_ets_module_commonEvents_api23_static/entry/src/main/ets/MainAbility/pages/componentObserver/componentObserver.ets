@@ -105,7 +105,7 @@ struct componentObserver {
           }
         })
 
-      Button("Test ComponentObserver - offLayoutChildren")
+      Button('Test ComponentObserver - offLayoutChildren')
         .id('btnOffLayoutChildren')
         .width('100%')
         .constraintSize({ minHeight: 0, maxHeight: '18%' })

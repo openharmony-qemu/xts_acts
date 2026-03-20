@@ -168,7 +168,7 @@ struct drawableDescriptor {
           }
         })
 
-      Button("Test LayeredDrawableDescriptor - getMask")
+      Button('Test LayeredDrawableDescriptor - getMask')
         .id('btnGetMask')
         .width('100%')
         .layoutWeight(1)

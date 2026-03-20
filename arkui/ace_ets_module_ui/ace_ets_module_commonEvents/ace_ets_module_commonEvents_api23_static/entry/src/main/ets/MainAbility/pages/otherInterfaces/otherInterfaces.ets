@@ -152,7 +152,7 @@ struct otherInterfaces {
           }
         })
 
-      Button("Theme")
+      Button('Theme')
         .id('btnCustomThemeDarkColors')
         .width('100%')
         .layoutWeight(1)

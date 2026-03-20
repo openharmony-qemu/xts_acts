@@ -189,10 +189,10 @@ struct SliderIndex {
           .constraintSize({ minHeight: 0, maxHeight: '12%' })
           .showSteps(true, {
             stepsAccessibility: new Map<number, SliderStepItemAccessibility>()
-              .set(1, {text : "123123"} as SliderStepItemAccessibility)
-              .set(2, {text : "Slider无障碍文本"} as SliderStepItemAccessibility)
+              .set(1, {text : '123123'} as SliderStepItemAccessibility)
+              .set(2, {text : 'Slider无障碍文本'} as SliderStepItemAccessibility)
               .set(3, {text : $r('app.string.app_name')} as SliderStepItemAccessibility)
-              .set(4, {text : "!@#$%^&*()"} as SliderStepItemAccessibility)
+              .set(4, {text : '!@#$%^&*()'} as SliderStepItemAccessibility)
           } as SliderShowStepOptions)
           .onChange((value: number) => {
             this.value2 = value;
@@ -212,10 +212,10 @@ struct SliderIndex {
           .constraintSize({ minHeight: 0, maxHeight: '12%' })
           .showSteps(false, {
             stepsAccessibility: new Map<number, SliderStepItemAccessibility>()
-              .set(1, {text : "123123"} as SliderStepItemAccessibility)
-              .set(2, {text : "Slider无障碍文本"} as SliderStepItemAccessibility)
+              .set(1, {text : '123123'} as SliderStepItemAccessibility)
+              .set(2, {text : 'Slider无障碍文本'} as SliderStepItemAccessibility)
               .set(3, {text : $r('app.string.app_name')} as SliderStepItemAccessibility)
-              .set(4, {text : "!@#$%^&*()"} as SliderStepItemAccessibility)
+              .set(4, {text : '!@#$%^&*()'} as SliderStepItemAccessibility)
           } as SliderShowStepOptions)
           .onChange((value: number) => {
             this.value3 = value;

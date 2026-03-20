@@ -145,7 +145,7 @@ struct animationOptions {
               return;
             }
             // 帧动画至少两帧时，部分设备上 getAnimationController() 才非空（单帧常为 undefined，导致 startResult=false）
-            let pixelMaps: Array<image.PixelMap> = [pixelMap, pixelMap];
+            let pixelMaps: image.PixelMap[] = [pixelMap, pixelMap];
             let options: AnimationOptions = { duration: 1000, iterations: 1 };
             let animatedDrawableDescriptor = new AnimatedDrawableDescriptor(pixelMaps, options);
             let controller: AnimationController | undefined = animatedDrawableDescriptor.getAnimationController();
@@ -266,7 +266,7 @@ struct animationOptions {
             if (drawableDescriptor) {
               let pixelMap: image.PixelMap | undefined = drawableDescriptor.getPixelMap();
               if (pixelMap) {
-                let pixelMaps: Array<image.PixelMap> = [pixelMap, pixelMap];
+                let pixelMaps: image.PixelMap[] = [pixelMap, pixelMap];
                 let options: AnimationOptions = { duration: 1000, iterations: 1 };
                 let animatedDrawableDescriptor = new AnimatedDrawableDescriptor(pixelMaps, options);
                 let controller: AnimationController | undefined = animatedDrawableDescriptor.getAnimationController();

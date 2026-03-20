@@ -42,7 +42,7 @@ struct TipsExample {
         .layoutWeight(1)
         .constraintSize({ minHeight: 0, maxHeight: '44%' })
         .fontSize(10)
-        .bindTips("Tips", {
+        .bindTips('Tips', {
           appearingTime: 700,
           disappearingTime: 300,
           appearingTimeWithContinuousOperation: 300,
@@ -57,7 +57,7 @@ struct TipsExample {
         .layoutWeight(1)
         .constraintSize({ minHeight: 0, maxHeight: '44%' })
         .fontSize(10)
-        .bindTips("Tips", {
+        .bindTips('Tips', {
           appearingTime: 700,
           disappearingTime: 300,
           appearingTimeWithContinuousOperation: 300,
