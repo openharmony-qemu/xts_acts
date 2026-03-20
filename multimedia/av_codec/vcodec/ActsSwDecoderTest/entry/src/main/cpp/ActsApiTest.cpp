@@ -1775,11 +1775,9 @@ int VideoSwdecCapApi6700()
         return (-1);
     }
 
-    if (!OH_AVCapability_AreVideoSizeAndFrameRateSupported(
-            capability,
-            DEFAULT_WIDTH,
-            DEFAULT_HEIGHT,
-            DEFAULT_FRAME_RATE)) {
+    const bool isSupported = OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+        capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_FRAME_RATE);
+    if (!isSupported) {
         return -1;
     }
     return SWDEC_SUCCESS;
