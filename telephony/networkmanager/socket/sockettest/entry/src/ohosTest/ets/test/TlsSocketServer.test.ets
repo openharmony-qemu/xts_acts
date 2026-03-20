@@ -2995,7 +2995,7 @@ export default function TLSSocketServerTest() {
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256"
               },
-              ALPNProtocols: ["spdy/1", "http/1.1"]
+              ALPNProtocols: [""]
             };
             tlsServer.listen(tlsConnectOptions2, (err: BusinessError) => {
               if (err) {
