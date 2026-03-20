@@ -3316,19 +3316,19 @@ export default function globalStageTest() {
     })
 
     /**
-     * @tc.number   getStringByNameSync_test_static_0400
-     * @tc.name     getStringByNameSync_test_static_0400
+     * @tc.number   getStringByNameSync_test_static_0600
+     * @tc.name     getStringByNameSync_test_static_0600
      * @tc.desc     first input void
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    LEVEL3
      */
-    it('getStringByNameSync_test_static_0400', Level.LEVEL3, () => {
+    it('getStringByNameSync_test_static_0600', Level.LEVEL3, () => {
       try {
         res!.getStringByNameSync('', 1);
       } catch (err) {
         err = err as BusinessError;
-        console.log('getStringByNameSync_test_static_0400 error code:' + err.code);
+        console.log('getStringByNameSync_test_static_0600 error code:' + err.code);
         expect(err.code).assertEqual(9001003);
       }
     })

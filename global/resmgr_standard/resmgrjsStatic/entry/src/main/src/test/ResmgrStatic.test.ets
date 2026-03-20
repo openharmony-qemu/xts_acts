@@ -996,7 +996,7 @@ export default function ResmgrTest() {
         done();
       })
       /**
-       * @tc.name   getfloatByName_test_static_001
+       * @tc.name   getFloatByName_test_static_001
        * @tc.number SUB_GLOBAL_RESMGR_JS_static_4100
        * @tc.desc   test getDoubleByName with float
        * @tc.type   FUNCTION
