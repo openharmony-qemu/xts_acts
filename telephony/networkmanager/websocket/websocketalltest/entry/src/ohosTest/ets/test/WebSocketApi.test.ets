@@ -1633,7 +1633,7 @@ export default function WebSocketApiTest() {
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send fail ${JSON.stringify(err)}`);
-            expecFail(`${caseName} send fail`);
+            expectFail(`${caseName} send fail`);
             done();
             console.info(`${caseName} test end`);
           })
