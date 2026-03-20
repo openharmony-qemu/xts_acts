@@ -1628,11 +1628,12 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.send('').then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
             console.info(`${caseName} send fail ${JSON.stringify(err)}`);
-            expectEqual(err.code,401);
+            expecFail(`${caseName} send fail`);
             done();
             console.info(`${caseName} test end`);
           })
