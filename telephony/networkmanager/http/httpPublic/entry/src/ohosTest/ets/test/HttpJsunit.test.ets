@@ -897,6 +897,36 @@ export default function httpJsunit() {
       }
     });
     /**
+     * @tc.name   testNetworkMgrUDPSocketDropMembershipPromise0500
+     * @tc.number SUB_NetworkMgr_UDPSocket_DropMembership_Promise_0500
+     * @tc.desc   Test dropMembership401 property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testNetworkMgrUDPSocketDropMembershipPromise0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName:string = "testNetworkMgrUDPSocketDropMembershipPromise0500";
+      console.info(`${caseName}---Start`);
+      try {
+        multicastSocket.dropMembership(null).then((data) => {
+          console.log(`${caseName} dropMembership success, data: ${JSON.stringify(data)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.log(`${caseName} dropMembership failed, err: ${JSON.stringify(err)}`);
+          expectFalse();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
+        expectTrue(error.code == 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    /**
      * @tc.name   testNetworkMgrUDPSocketSetMulticastTTLPromise0400
      * @tc.number SUB_NetworkMgr_UDPSocket_SetMulticastTTL_Promise_0400
      * @tc.desc   Test setMulticastTTL401 property.
