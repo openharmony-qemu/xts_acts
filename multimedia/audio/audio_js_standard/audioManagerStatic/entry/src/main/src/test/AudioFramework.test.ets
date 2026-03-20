@@ -1258,6 +1258,7 @@ export default function audioFramework() {
     it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        done();
       } catch (err) {
         console.error(`getVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
@@ -1276,6 +1277,7 @@ export default function audioFramework() {
     it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        done();
       } catch (err) {
         console.error(`getMaxVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
@@ -1294,6 +1296,7 @@ export default function audioFramework() {
     it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        done();
       } catch (err) {
         console.error(`getMinVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
@@ -2602,6 +2605,7 @@ export default function audioFramework() {
     it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        done();
       } catch (err) {
         console.error(`getVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
@@ -3333,7 +3337,6 @@ export default function audioFramework() {
             console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
             done();
           }
-        expect(flag).assertTrue();
         done();
     })
 

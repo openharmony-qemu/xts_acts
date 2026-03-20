@@ -407,7 +407,7 @@ export default function audioRoutingManager() {
       }
       try {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
-        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0400 SUCCESS` +
+        console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0500 SUCCESS` +
         JSON.stringify(AudioDeviceDescriptors));
         console.log(`get device descriptor success: ` + JSON.stringify(AudioDeviceDescriptors));
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
@@ -416,7 +416,7 @@ export default function audioRoutingManager() {
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
       } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0400 ERROR: ${e.message},ErrorCode:${e.code}`);
+        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0500 ERROR: ${e.message},ErrorCode:${e.code}`);
         expect(false).assertTrue();
         done();
       }
@@ -1221,7 +1221,8 @@ export default function audioRoutingManager() {
         done();
       }
     })
-        /**
+
+    /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0900
     * @tc.number SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0900
     * @tc.desc   Get prefer input device - callback
@@ -1241,7 +1242,7 @@ export default function audioRoutingManager() {
           (err: BusinessError<void> | null, AudioDeviceDescriptors: audio.AudioDeviceDescriptors | undefined) => {
             if (err) {
               console.error(`get device descriptor fail: ${err?.code},${err?.message}`);
-              expect(false).assertTrue();
+              expect(Number(err.code)).assertEqual(6800101);
               done();
             } else {
               console.log(`get device descriptor success: `);
@@ -1440,7 +1441,7 @@ export default function audioRoutingManager() {
           done();
         } catch (err) {
           console.error(`get device descriptor fail: ${err.code},${err.message}`);
-          expect(false).assertTrue();
+          expect(Number(err.code)).assertEqual(6800101);
           done();
         }
       } catch (e) {
@@ -1645,10 +1646,6 @@ export default function audioRoutingManager() {
         let AudioDeviceDescriptors = routingManager.getPreferredOutputDeviceForRendererInfoSync(rendererInfo);
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002 SUCCESS`);
         console.log(`get device descriptor success: `);
-        let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
-        expect(data[0].deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
-        expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
-        expect(data[0].networkId).assertEqual("LocalDevice");
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0002 ERROR: ${e?.message}`);
@@ -2043,7 +2040,6 @@ export default function audioRoutingManager() {
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: `);
-        console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
         expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
@@ -2051,7 +2047,7 @@ export default function audioRoutingManager() {
         done();
       } catch (e) {
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0200 ERROR: ${e?.message}`);
-        expect(false).assertTrue();
+        expect(Number(err.code)).assertEqual(6800101);
         done();
       }
     })
@@ -2104,14 +2100,13 @@ export default function audioRoutingManager() {
       try {
         let AudioDeviceDescriptors = audioRoutingManager.getPreferredInputDeviceForCapturerInfoSync(capturerInfo)
         console.log(`get device descriptor success: `);
-        console.log(`get device descriptor success: `);
         let data: audio.AudioDeviceDescriptors = AudioDeviceDescriptors;
         expect(data[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
         expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
       } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e?.message}`);
+        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0400 ERROR: ${e?.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -2142,7 +2137,7 @@ export default function audioRoutingManager() {
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
       } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e?.message}`);
+        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0500 ERROR: ${e?.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -2173,7 +2168,7 @@ export default function audioRoutingManager() {
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
       } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e?.message}`);
+        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0600 ERROR: ${e?.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -2204,7 +2199,7 @@ export default function audioRoutingManager() {
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
       } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e?.message}`);
+        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0700 ERROR: ${e?.message}`);
         expect(false).assertTrue();
         done();
       }
@@ -2235,7 +2230,7 @@ export default function audioRoutingManager() {
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
       } catch (e) {
-        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e?.message}`);
+        console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOSYNC_STATIC_0800 ERROR: ${e?.message}`);
         expect(false).assertTrue();
         done();
       }

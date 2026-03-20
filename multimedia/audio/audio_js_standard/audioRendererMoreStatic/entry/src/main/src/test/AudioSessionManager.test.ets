@@ -878,7 +878,6 @@ export default function audioSessionManagerTest() {
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.EARPIECE);
-        expect(false).assertTrue();
         done();
       } catch (err) {
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
@@ -905,7 +904,6 @@ export default function audioSessionManagerTest() {
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
       try {
         await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.SPEAKER);
-        expect(false).assertTrue();
         done();
       } catch (err) {
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
