@@ -26,8 +26,9 @@ export default function ColorMetricsColorWithSpaceTest() {
   describe('ColorMetricsColorWithSpaceTest', () => { 
     beforeAll(async (): Promise<void> => {
       console.info("ColorMetricsColorWithSpaceTest beforeEach start");
-      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(2000)
+      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(1000)
+      console.info('ColorMetricsColorWithSpaceTest startAbility completed');
     });
     beforeEach(async () : Promise<void> => {
       console.info("ColorMetricsColorWithSpaceTest beforeEach start");

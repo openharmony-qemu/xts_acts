@@ -26,7 +26,9 @@ export default function RowSpaceTest() {
   describe('RowSpaceTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("RowSpaceTest beforeAll start");
-      await startAbility("com.arkui.ace.layout.api14.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.layout.api14.static", "EntryAbility");
+      await UtilsTest.msSleep(1000);
+      console.info('RowSpaceTest startAbility completed');
     });
 
     beforeEach(async (): Promise<void> => {
