@@ -2990,7 +2990,7 @@ export default function TLSSocketServerTest() {
                 key: pri_key_server,
                 password: '123456',
                 cert: cert_server,
-                protocols: [socket.Protocol.TLSv12],
+                protocols: [socket.Protocol.TLSv13],
                 useRemoteCipherPrefer: true,
                 signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
                 cipherSuite: "AES256-SHA256"
