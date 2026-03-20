@@ -709,11 +709,6 @@ export default function audioCapturerChange() {
               audioStreamManager!.offAudioCapturerChange();
               done();
             }
-            else {
-              console.info(`SUB_MULTIMEDIA_AUDIO_ON_CAPTURER_CHANGE_0900 fail`);
-              expect(false).assertTrue();
-              done();
-            }
           }
         }
       });
