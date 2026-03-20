@@ -23,8 +23,7 @@ import {
   Text,
   XComponent,
   XComponentType,
-  XComponentController,
-  XComponentOptions
+  XComponentController
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -51,16 +50,14 @@ struct XComponentIndex {
           .fontSize(16)
           .key('xComponentPageTitle')
 
-        XComponent({
-          type: XComponentType.TEXTURE,
-          controller: this.xController
-        } as XComponentOptions)
-          .key('xComponentTexture')
-          .height(100)
-          .width(100)
+        // ---------- XComponent with XComponentOptions (SURFACE type) ----------
+        XComponent({ type: XComponentType.SURFACE, controller: this.xController })
+          .key('xComponentSurface')
+          .height('20%')
+          .width('100%')
       }
       .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
+      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
     }
     .width('100%')
     .height('100%')

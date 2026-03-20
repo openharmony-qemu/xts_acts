@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ import {
   TextDirection,
   MarqueeUpdatePolicy,
   TextMarqueeOptions,
-  TextController
+  TextController,
+  SelectionOptions,
+  MenuPolicy
 } from '@ohos.arkui.component';
 import { LengthMetrics } from '@ohos.arkui.node';
 
@@ -86,7 +88,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let fontSize = attrs.getString('fontSize');
         console.info('TextAttributeTest: textFontSizeDouble16 fontSize = ' + fontSize);
-        expect(fontSize != null && fontSize.length > 0).assertTrue();
+        expect(fontSize).assertEqual('16.00fp');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textFontSizeDouble16 error:' + error);
@@ -134,7 +136,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let fontSize = attrs.getString('fontSize');
         console.info('TextAttributeTest: textFontSizeUndefined fontSize = ' + fontSize);
-        expect(fontSize != null && fontSize.length > 0).assertTrue();
+        expect(fontSize).assertEqual('16.00fp');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textFontSizeUndefined error:' + error);
@@ -406,7 +408,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let textDirection = attrs.getString('textDirection');
         console.info('TextAttributeTest: textAttrDirLTR textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('Ltr');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textAttrDirLTR error:' + error);
@@ -430,7 +432,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let textDirection = attrs.getString('textDirection');
         console.info('TextAttributeTest: textAttrDirRTL textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('Rtl');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textAttrDirRTL error:' + error);
@@ -454,7 +456,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let textDirection = attrs.getString('textDirection');
         console.info('TextAttributeTest: textAttrDirDEFAULT textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('No');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textAttrDirDEFAULT error:' + error);
@@ -478,7 +480,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let textDirection = attrs.getString('textDirection');
         console.info('TextAttributeTest: textAttrDirAUTO textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('Auto');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textAttrDirAUTO error:' + error);
@@ -502,7 +504,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let textDirection = attrs.getString('textDirection');
         console.info('TextAttributeTest: textAttrDirUndefined textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('No');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textAttrDirUndefined error:' + error);
@@ -530,7 +532,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let lineSpacing = attrs.getString('lineSpacing');
         console.info('TextAttributeTest: textLineSpacing10vp lineSpacing = ' + lineSpacing);
-        expect(lineSpacing != null && lineSpacing.length > 0).assertTrue();
+        expect(lineSpacing).assertEqual('10.00vp');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textLineSpacing10vp error:' + error);
@@ -554,7 +556,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let lineSpacing = attrs.getString('lineSpacing');
         console.info('TextAttributeTest: textLineSpacingOnlyBetween lineSpacing = ' + lineSpacing);
-        expect(lineSpacing != null && lineSpacing.length > 0).assertTrue();
+        expect(lineSpacing).assertEqual('10.00vp');
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textLineSpacingOnlyBetween error:' + error);
@@ -576,8 +578,8 @@ export default function TextAttributeTest() {
         expect(node != null).assertTrue();
         let attrs = node.getElement('$attrs');
         expect(attrs != null).assertTrue();
-        // lineSpacing(undefined) resets to default - component should be accessible
-        expect(node != null).assertTrue();
+        let lineSpacing = attrs.getString('lineSpacing');
+        console.info('TextAttributeTest: textLineSpacingUndefined lineSpacing = ' + lineSpacing);
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textLineSpacingUndefined error:' + error);
@@ -653,7 +655,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let val = attrs.getString('includeFontPadding');
         console.info('TextAttributeTest: textIncludeFontPaddingUndefined includeFontPadding = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(val === 'true' || val === '1').assertTrue();
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textIncludeFontPaddingUndefined error:' + error);
@@ -729,7 +731,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let val = attrs.getString('fallbackLineSpacing');
         console.info('TextAttributeTest: textFallbackLineSpacingUndefined fallbackLineSpacing = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(val === 'true' || val === '1').assertTrue();
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textFallbackLineSpacingUndefined error:' + error);
@@ -805,7 +807,7 @@ export default function TextAttributeTest() {
         expect(attrs != null).assertTrue();
         let val = attrs.getString('compressLeadingPunctuation');
         console.info('TextAttributeTest: textCompressLeadingPuncUndefined compressLeadingPunctuation = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(val === 'true' || val === 'false').assertTrue();
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textCompressLeadingPuncUndefined error:' + error);
@@ -852,7 +854,6 @@ export default function TextAttributeTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textSelectedDragPreviewUndefined'));
-        expect(node != null).assertTrue();
         expect(node != null).assertTrue();
         done();
       } catch (error) {
@@ -923,9 +924,9 @@ export default function TextAttributeTest() {
           start: true,
           spacing: LengthMetrics.vp(10)
         };
-        let spacing = opts.spacing;
-        console.info('TextAttributeTest: textMarqueeOptionsSpacing spacing = ' + spacing);
-        expect(spacing != null).assertTrue();
+        let spacing = opts.spacing as LengthMetrics;
+        console.info('TextAttributeTest: textMarqueeOptionsSpacing spacing.value = ' + spacing.value);
+        expect(spacing.value).assertEqual(10);
         done();
       } catch (error) {
         console.error('TextAttributeTest execute: textMarqueeOptionsSpacing error:' + error);
@@ -994,16 +995,66 @@ export default function TextAttributeTest() {
       await CommonFunc.sleep(SLEEP_TIME);
       const controller = AppStorage.get<TextController>('textController') as TextController;
       expect(controller != null).assertTrue();
-      // Core assertion: method must exist on the controller instance
       expect(typeof controller.setTextSelection === 'function').assertTrue();
       try {
-        // Call with undefined – verifies the new int|undefined signature is accepted at runtime
         controller.setTextSelection(undefined, undefined);
       } catch (_) {
-        // Acceptable: controller may not be in editing state, but method existence is confirmed above
+        // Acceptable: controller may not be in editing state
       }
       console.info('TextAttributeTest execute: textControllerSetTextSelectionUndefined END');
       done();
+    });
+
+    /**
+     * @tc.number TextAttributeTest_039
+     * @tc.name textControllerSetTextSelectionWithOptions
+     * @tc.desc Test TextController.setTextSelection with SelectionOptions (options?: SelectionOptions)
+     */
+    it('textControllerSetTextSelectionWithOptions', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TextAttributeTest execute: textControllerSetTextSelectionWithOptions START');
+      await CommonFunc.sleep(SLEEP_TIME);
+      const controller = AppStorage.get<TextController>('textController') as TextController;
+      expect(controller != null).assertTrue();
+      expect(typeof controller.setTextSelection === 'function').assertTrue();
+      // Verify SelectionOptions interface with all MenuPolicy enum values
+      let optDefault: SelectionOptions = { menuPolicy: MenuPolicy.DEFAULT };
+      let optHide: SelectionOptions = { menuPolicy: MenuPolicy.HIDE };
+      let optShow: SelectionOptions = { menuPolicy: MenuPolicy.SHOW };
+      expect(optDefault.menuPolicy).assertEqual(MenuPolicy.DEFAULT);
+      expect(optHide.menuPolicy).assertEqual(MenuPolicy.HIDE);
+      expect(optShow.menuPolicy).assertEqual(MenuPolicy.SHOW);
+      try {
+        controller.setTextSelection(0, 5, optDefault);
+      } catch (_) {
+        // Acceptable: controller may not be in editing state
+      }
+      console.info('TextAttributeTest execute: textControllerSetTextSelectionWithOptions END');
+      done();
+    });
+
+    /**
+     * @tc.number TextAttributeTest_040
+     * @tc.name textFontSizeResource
+     * @tc.desc Test TextAttribute.fontSize with Resource type ($r)
+     */
+    it('textFontSizeResource', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TextAttributeTest execute: textFontSizeResource START');
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        let node = JSON.parseJsonElement(inspector.getInspectorByKey('textFontSizeResource'));
+        expect(node != null).assertTrue();
+        let attrs = node.getElement('$attrs');
+        expect(attrs != null).assertTrue();
+        let fontSize = attrs.getString('fontSize');
+        console.info('TextAttributeTest: textFontSizeResource fontSize = ' + fontSize);
+        expect(fontSize != null && fontSize.length > 0).assertTrue();
+        console.info('TextAttributeTest execute: textFontSizeResource END');
+        done();
+      } catch (error) {
+        console.error('TextAttributeTest execute: textFontSizeResource error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   });
 }

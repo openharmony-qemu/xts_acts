@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ export default function TextDirectionTest() {
         let attrs = node.getElement('$attrs');
         let textDirection = attrs.getString('textDirection');
         console.info('TextDirectionTest: textDirectionLTR textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('Ltr');
 
         console.info('TextDirectionTest execute: textDirectionLTR END');
         done();
@@ -131,7 +131,7 @@ export default function TextDirectionTest() {
         let attrs = node.getElement('$attrs');
         let textDirection = attrs.getString('textDirection');
         console.info('TextDirectionTest: textDirectionRTL textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('Rtl');
 
         console.info('TextDirectionTest execute: textDirectionRTL END');
         done();
@@ -166,7 +166,7 @@ export default function TextDirectionTest() {
         let attrs = node.getElement('$attrs');
         let textDirection = attrs.getString('textDirection');
         console.info('TextDirectionTest: textDirectionDEFAULT textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('No');
 
         console.info('TextDirectionTest execute: textDirectionDEFAULT END');
         done();
@@ -201,7 +201,7 @@ export default function TextDirectionTest() {
         let attrs = node.getElement('$attrs');
         let textDirection = attrs.getString('textDirection');
         console.info('TextDirectionTest: textDirectionAUTO textDirection = ' + textDirection);
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        expect(textDirection).assertEqual('Auto');
 
         console.info('TextDirectionTest execute: textDirectionAUTO END');
         done();
@@ -235,8 +235,8 @@ export default function TextDirectionTest() {
         let attrs = node.getElement('$attrs');
         let textDirection = attrs.getString('textDirection');
         console.info('TextDirectionTest: textDirectionUndefined textDirection = ' + textDirection);
-        // undefined resets to default behavior – check attribute is accessible
-        expect(textDirection != null && textDirection.length > 0).assertTrue();
+        // undefined resets to DEFAULT
+        expect(textDirection).assertEqual('No');
 
         console.info('TextDirectionTest execute: textDirectionUndefined END');
         done();

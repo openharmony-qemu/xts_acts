@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -181,7 +181,7 @@ export default function TextInputAttributeTest() {
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputFontWeight400'));
         let fontWeight = node.getElement('$attrs').getString('fontWeight');
         console.info('TextInputAttributeTest: textInputFontWeight400 fontWeight = ' + fontWeight);
-        expect(fontWeight !== null && fontWeight.length > 0).assertTrue();
+        expect(fontWeight).assertEqual('400');
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputFontWeight400 error:' + error);
@@ -202,7 +202,7 @@ export default function TextInputAttributeTest() {
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputFontWeightInt700'));
         let fontWeight = node.getElement('$attrs').getString('fontWeight');
         console.info('TextInputAttributeTest: textInputFontWeightInt700 fontWeight = ' + fontWeight);
-        expect(fontWeight !== null && fontWeight.length > 0).assertTrue();
+        expect(fontWeight).assertEqual('700');
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputFontWeightInt700 error:' + error);
@@ -223,7 +223,7 @@ export default function TextInputAttributeTest() {
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputFontWeightStrBold'));
         let fontWeight = node.getElement('$attrs').getString('fontWeight');
         console.info('TextInputAttributeTest: textInputFontWeightStrBold fontWeight = ' + fontWeight);
-        expect(fontWeight !== null && fontWeight.length > 0).assertTrue();
+        expect(fontWeight).assertEqual('FontWeight.Bold');
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputFontWeightStrBold error:' + error);
@@ -530,7 +530,7 @@ export default function TextInputAttributeTest() {
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputDirLTR'));
         let val = node.getElement('$attrs').getString('textDirection');
         console.info('TextInputAttributeTest: textInputDirLTR val = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(val).assertEqual('Ltr');
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputDirLTR error:' + error);
@@ -551,7 +551,7 @@ export default function TextInputAttributeTest() {
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputDirRTL'));
         let val = node.getElement('$attrs').getString('textDirection');
         console.info('TextInputAttributeTest: textInputDirRTL val = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(val).assertEqual('Rtl');
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputDirRTL error:' + error);
@@ -572,7 +572,7 @@ export default function TextInputAttributeTest() {
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputDirDEFAULT'));
         let val = node.getElement('$attrs').getString('textDirection');
         console.info('TextInputAttributeTest: textInputDirDEFAULT val = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(val).assertEqual('No');
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputDirDEFAULT error:' + error);
@@ -593,7 +593,7 @@ export default function TextInputAttributeTest() {
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('textInputDirAUTO'));
         let val = node.getElement('$attrs').getString('textDirection');
         console.info('TextInputAttributeTest: textInputDirAUTO val = ' + val);
-        expect(val != null && val.length > 0).assertTrue();
+        expect(val).assertEqual('Auto');
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputDirAUTO error:' + error);
@@ -639,6 +639,28 @@ export default function TextInputAttributeTest() {
         done();
       } catch (error) {
         console.error('TextInputAttributeTest execute: textInputGlobalFunction error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number TextInputAttributeTest_026
+     * @tc.name textInputCustomKbdBuilder
+     * @tc.desc Test TextInputAttribute.customKeyboard with CustomBuilder (wrapBuilder variant)
+     */
+    it('textInputCustomKbdBuilder', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('TextInputAttributeTest execute: textInputCustomKbdBuilder START');
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+        let driver = Driver.create();
+        let comp = await driver.findComponent(ON.id('textInputCustomKbdBuilder'));
+        console.info('TextInputAttributeTest: textInputCustomKbdBuilder comp = ' + comp);
+        expect(comp !== null && comp !== undefined).assertTrue();
+        console.info('TextInputAttributeTest execute: textInputCustomKbdBuilder END');
+        done();
+      } catch (error) {
+        console.error('TextInputAttributeTest execute: textInputCustomKbdBuilder error:' + error);
         expect().assertFail();
         done();
       }
