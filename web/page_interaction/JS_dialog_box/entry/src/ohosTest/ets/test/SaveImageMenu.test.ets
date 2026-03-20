@@ -18,7 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { Driver, ON, MouseButton } from "@kit.TestKit";
+import { Driver, ON } from "@kit.TestKit";
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const EVENT_ID_SET_SUITE_KEY = 177008;
@@ -70,14 +70,6 @@ export default function SaveImageMenuJsunit() {
       Utils.emitEvent("SaveImageMenu01", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
       Utils.registerEvent("SaveImageMenu01","image", 20230319, () => { isReturn = true });
-      let webRect = Utils.getComponentRect('WebContextMenuResult');
-      let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
-      let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-      await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-      Utils.sleep(1000);
-      let buttonOne = await driver.findComponent(ON.text('保存图片'));
-      await buttonOne.click();
-
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu01");
       await Utils.waitForExist(() => isReturn, "SaveImageMenu01" + '_returnCheck', true, 1000);
       done();
@@ -95,13 +87,6 @@ export default function SaveImageMenuJsunit() {
       Utils.emitEvent("SaveImageMenu02", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
       Utils.registerEvent("SaveImageMenu02","onLineImage", 20230320, () => { isReturn = true });
-      let webRect = Utils.getComponentRect('WebContextMenuResult');
-      let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
-      let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-      await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-      Utils.sleep(1000);
-      let buttonOne = await driver.findComponent(ON.text('保存图片'));
-      await buttonOne.click();
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu02");
       await Utils.waitForExist(() => isReturn, "SaveImageMenu02" + '_returnCheck', true, 1000);
       done();
@@ -120,13 +105,6 @@ export default function SaveImageMenuJsunit() {
       Utils.emitEvent("SaveImageMenu03", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
       Utils.registerEvent("SaveImageMenu03","canvas", 20230321, () => { isReturn = true });
-      let webRect = Utils.getComponentRect('WebContextMenuResult');
-      let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
-      let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-      await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-      Utils.sleep(1000);
-      let buttonOne = await driver.findComponent(ON.text('保存图片'));
-      await buttonOne.click();
       Utils.waitAndClickComponent(driver, "webSaveImageMenu", "SaveImageMenu03");
       await Utils.waitForExist(() => isReturn, "SaveImageMenu03" + '_returnCheck', true, 1000);
       done();
