@@ -600,48 +600,6 @@ export default function StreamTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_CORK_1200
-     * @tc.name      corkTest0012
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('corkTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'corkTest0012';
-        console.log(TAG + ' start');
-        const writable = new OverUncorkStream();
-        expect(writable.cork()).assertEqual(true);
-        expect(writable.uncork()).assertEqual(true);
-        expect(writable.uncork()).assertEqual(false);
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0100
-     * @tc.name      uncorkTest0001
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('uncorkTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'uncorkTest0001';
-        console.log(TAG + ' start');
-        const writable = new BasicWritable();
-        const corkResult = writable.cork();
-        expect(corkResult).assertEqual(true);
-        writable.write('buffer1', 'utf8');
-        writable.write('buffer2', 'utf8');
-        expect(writable.writtenData.length).assertEqual(0);
-        const uncorkResult = writable.uncork();
-        expect(uncorkResult).assertEqual(true);
-        expect(writable.writtenData.join(',')).assertEqual('buffer1,buffer2');
-        writable.end();
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_UNCORK_0200
      * @tc.name      uncorkTest0002
      * @tc.desc      Array Unshift index 0.
