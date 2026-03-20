@@ -3865,20 +3865,29 @@ export default function TextPicker() {
 
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
       console.info("testPicker67 start");
-
+      let requestPhotoUrisReadPermission = { 
+        authorizedUris: ['file://media/photo/test.jpg'], 
+        invalidUris: [] 
+      } as photoAccessHelper.RequestReadPermissionResult;
       let validUris = ['file://media/photo/test.jpg'];
       phAccessHelper.requestPhotoUrisReadPermissionEx(validUris).then((result) => {
-        console.info("requestPhotoUrisReadPermissionEx valid, result = " + JSON.stringify(result));
+        console.info("testPicker67 requestPhotoUrisReadPermissionEx valid, result = " + JSON.stringify(result));
         if (result) {
           expect(result).not().assertUndefined();
+          expect(requestPhotoUrisReadPermission.authorizedUris).assertEqual(validUris); 
+          expect(requestPhotoUrisReadPermission.invalidUris).assertEqual([]); 
+        } else { 
+          console.error("testPicker67 result should be defined") 
+          expect(false).assertTrue();
         }
       }).catch((error: BusinessError) => {
         console.error("testPicker67 valid case error: " + JSON.stringify(error));
+        expect(error.code).assertEqual(23800301);
       });
 
       let emptyUris: Array<string> = [];
       phAccessHelper.requestPhotoUrisReadPermissionEx(emptyUris).then((result) => {
-        console.info("requestPhotoUrisReadPermissionEx empty, result = " + JSON.stringify(result));
+        console.info("testPicker67 empty case requestPhotoUrisReadPermissionEx empty, result = " + JSON.stringify(result));
         if (result) {
           expect(result).not().assertUndefined();
         }
