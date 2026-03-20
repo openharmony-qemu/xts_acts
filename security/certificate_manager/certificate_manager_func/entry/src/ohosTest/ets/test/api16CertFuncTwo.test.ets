@@ -1444,7 +1444,7 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
-    
+
     /**
      * @tc.name   SUB_Security_CertManager_supportsCACertDialog_0010
      * @tc.number SUB_Security_CertManager_supportsCACertDialog_0010
@@ -1457,12 +1457,12 @@ export default function api16CertFuncTestTwoUnit() {
       console.log("SUB_Security_CertManager_supportsCACertDialog_0010: started ");
       if ((deviceInfo.deviceType != '2in1')&&(systemParameterEnhance.getSync("const.certManager.enableOpenCACertDialog","false")!="true")) {
         console.info("SUB_Security_CertManager_supportsCACertDialog_0010 the device not supports CA dialog");
-        let isSupport: boolean = certificateManagerDialog.supportsCACertDialog();
+        let isSupport: boolean = certManagerDialog.supportsCACertDialog();
         expect(isSupport).assertFalse();
       }
       else{
         console.info("SUB_Security_CertManager_supportsCACertDialog_0010 the device supports CA dialog");
-        let isSupport: boolean = certificateManagerDialog.supportsCACertDialog();
+        let isSupport: boolean = certManagerDialog.supportsCACertDialog();
         expect(isSupport).assertTrue();
       }
       done();
