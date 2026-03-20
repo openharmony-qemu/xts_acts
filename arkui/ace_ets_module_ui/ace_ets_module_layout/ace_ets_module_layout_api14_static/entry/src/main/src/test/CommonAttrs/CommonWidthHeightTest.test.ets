@@ -22,6 +22,7 @@ import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
 import { UtilsTest } from '../Util.test';
 
+
 let domain: int = 0x0000;
 let tag: string = 'CommonWidthHeightTest';
 
@@ -29,7 +30,7 @@ export default function CommonWidthHeightTest() {
   describe('CommonWidthHeightTest', (): void => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.layout.api14.static", "EntryAbility");
-      await CommonFunc.sleep(1000);
+      await UtilsTest.msSleep(1000);
       console.info(domain, tag, 'startAbility completed');
     });
 

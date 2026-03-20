@@ -29,7 +29,7 @@ export default function CommonLayoutGravityTest() {
   describe('CommonLayoutGravityTest', (): void => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.layout.api14.static", "EntryAbility");
-      await CommonFunc.sleep(1000);
+      await UtilsTest.msSleep(1000);
       console.info(domain, tag, 'startAbility completed');
     });
 

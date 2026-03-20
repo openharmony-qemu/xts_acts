@@ -27,7 +27,7 @@ export default function ReuseObjectRawTest() {
   describe('ReuseObjectRawTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ReuseObjectRawTest beforeAll start");
-      await startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");
       await UtilsTest.msSleep(1000);
       console.info('ReuseObjectRawTest startAbility completed');
     });
