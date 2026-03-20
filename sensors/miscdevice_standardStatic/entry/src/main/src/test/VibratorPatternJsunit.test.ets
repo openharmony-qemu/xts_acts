@@ -2858,6 +2858,15 @@ export default function VibratorJsTest_misc_9() {
           expect(err.code === OPERATION_FAIL_CODE).assertTrue();
         }
 
+        let builder1 = new vibrator.VibratorPatternBuilder();
+        try {
+          let pattern = builder1.build();
+          expect(pattern.events.length === 0).assertTrue();
+        } catch (error) {
+          error = error as BusinessError;
+          expect(false).assertTrue();
+        }
+
       } catch (error) {
         hilog.info(domain, tag, TAG + ` catch error ,error.code: ${error.code},error.message: ${error.message}`);
         expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
