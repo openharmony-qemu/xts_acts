@@ -33,14 +33,15 @@ struct ColumnBuilderIndex {
 
   build() {
     Column({ space: 20 } as ColumnOptions) {
-      Text('column_builder_text_1').key('columnBuilderText1');
-      Text('column_builder_text_2').key('columnBuilderText2');
+      Text('column_builder_text_1').key('columnBuilderText1').height('5%');
+      Text('column_builder_text_2').key('columnBuilderText2').height('5%');
       Button('verifyColumnBuilder')
         .id('verifyColumnBuilderBtn')
+        .height('8%')
         .onClick(() => {
           this.columnStatus = 'column_builder_ok';
         });
-      Text(this.columnStatus).key('columnBuilderStatus');
+      Text(this.columnStatus).key('columnBuilderStatus').height('5%');
     }
     .id('columnBuilderRoot')
     .width('100%')

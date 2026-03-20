@@ -39,12 +39,12 @@ struct ResolveStrategyIndex {
 
   build() {
     Column() {
-      Text(this.callingScope).key('resolveStrategyCallingScope');
-      Text(this.lastFocus).key('resolveStrategyLastFocus');
-      Text(this.maxInstanceId).key('resolveStrategyMaxInstanceId');
-      Text(this.unique).key('resolveStrategyUnique');
-      Text(this.lastForeground).key('resolveStrategyLastForeground');
-      Text(this.undefinedValue).key('resolveStrategyUndefined');
+      Text(this.callingScope).key('resolveStrategyCallingScope').height('5%');
+      Text(this.lastFocus).key('resolveStrategyLastFocus').height('5%');
+      Text(this.maxInstanceId).key('resolveStrategyMaxInstanceId').height('5%');
+      Text(this.unique).key('resolveStrategyUnique').height('5%');
+      Text(this.lastForeground).key('resolveStrategyLastForeground').height('5%');
+      Text(this.undefinedValue).key('resolveStrategyUndefined').height('5%');
     }
     .width('100%')
     .height('100%');

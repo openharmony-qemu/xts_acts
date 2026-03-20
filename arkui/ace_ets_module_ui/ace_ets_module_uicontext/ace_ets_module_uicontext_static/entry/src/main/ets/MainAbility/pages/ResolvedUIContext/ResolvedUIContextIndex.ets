@@ -36,6 +36,7 @@ struct ResolvedUIContextIndex {
     Column() {
       Button('resolvedStrategy')
         .id('resolvedStrategyBtn')
+        .height('8%')
         .onClick(() => {
           try {
             let resolved = UIContext.resolveUIContext();
@@ -46,7 +47,7 @@ struct ResolvedUIContextIndex {
           }
         });
 
-      Text(this.strategyStatus).key('resolvedStrategyStatus');
+      Text(this.strategyStatus).key('resolvedStrategyStatus').height('5%');
     }
     .width('100%')
     .height('100%');

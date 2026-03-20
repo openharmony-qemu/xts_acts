@@ -35,6 +35,7 @@ struct MeasureOptionsIndex {
     Column() {
       Button('textContent')
         .id('measureOptionsTextContentBtn')
+        .height('8%')
         .onClick(() => {
           try {
             let measuredWidth = this.getUIContext().getMeasureUtils().measureText({
@@ -45,7 +46,7 @@ struct MeasureOptionsIndex {
             this.textContentStatus = 'textContent_fail';
           }
         });
-      Text(this.textContentStatus).key('measureOptionsTextContentStatus');
+      Text(this.textContentStatus).key('measureOptionsTextContentStatus').height('5%');
     }
     .width('100%')
     .height('100%');
