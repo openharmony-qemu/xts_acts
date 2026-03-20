@@ -64,11 +64,8 @@ export default function ChipGroupItemOptionsPage2Test() {
         console.info("get ChipGroupItemOptionsPage2Test state pages:" + JSON.stringify(pages));
         if (!("ChipGroupItemOptionsPage2" == pages.name)) {
           console.info("get ChipGroupItemOptionsPage2Test pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push ChipGroupItemOptionsPage2Test page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ChipGroupItemOptionsPage2Test page error:" + err);

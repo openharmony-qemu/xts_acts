@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector';
 @Entry
 @Component
 struct ChipGroupItemOptionsPage2 {
-  @State selectedIndex: Array<int> = [0, 1, 2, 3, 4, 5, 6];
+  @State selectedIndex: Array<int> = [0];
   @State prefixModifierNormal: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_star'));
   @State tex1: string = 'ww'
   build() {
