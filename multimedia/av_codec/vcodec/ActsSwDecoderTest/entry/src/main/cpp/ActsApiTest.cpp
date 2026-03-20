@@ -26,8 +26,9 @@ constexpr int SWDEC_SUCCESS = 0;
 constexpr uint32_t DEFAULT_WIDTH = 1920;
 constexpr uint32_t DEFAULT_HEIGHT = 1080;
 constexpr uint32_t DEFAULT_FRAME_RATE = 30;
-constexpr uint32_t kWidth4K = 3840;
-constexpr uint32_t kHeight4K = 2160;
+constexpr uint32_t K_WIDTH_4K = 3840;
+constexpr uint32_t K_HEIGHT_4K = 2160;
+constexpr int32_t MAX_SUPPORTED_INSTANCES_EXPECTED = 64;
 constexpr int PIXFORMAT_NUM = 4;
 const std::string CODEC_NAME = "OH.Media.Codec.Decoder.Video.AVC";
 const std::string INVALID_CODEC_NAME = "avdec_h264";
@@ -62,6 +63,55 @@ static void VdecOutputDataReadyStub(OH_AVCodec* codec,
     (void)data;
     (void)attr;
     (void)userData;
+}
+
+static int32_t Cap7100ConfigureEachSupportedPixelFormat(const int32_t* pixelFormat, uint32_t pixelFormatNum)
+{
+    for (uint32_t i = 0; i < pixelFormatNum; i++) {
+        OH_AVCodec* vdec = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
+        if (!vdec) {
+            return -1;
+        }
+        OH_AVFormat* format = OH_AVFormat_Create();
+        if (!format) {
+            OH_VideoDecoder_Destroy(vdec);
+            return -1;
+        }
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[i]);
+        if (OH_VideoDecoder_Configure(vdec, format) != AV_ERR_OK) {
+            OH_AVFormat_Destroy(format);
+            OH_VideoDecoder_Destroy(vdec);
+            return -1;
+        }
+        OH_AVFormat_Destroy(format);
+        OH_VideoDecoder_Destroy(vdec);
+    }
+    return AV_ERR_OK;
+}
+
+static int32_t Cap7100ExpectInvalidDoubleRgbaRejected()
+{
+    OH_AVCodec* vdec = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
+    if (!vdec) {
+        return SWDEC_SUCCESS;
+    }
+    OH_AVFormat* format = OH_AVFormat_Create();
+    if (!format) {
+        OH_VideoDecoder_Destroy(vdec);
+        return -1;
+    }
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA + AV_PIXEL_FORMAT_RGBA);
+    int r = OH_VideoDecoder_Configure(vdec, format);
+    OH_AVFormat_Destroy(format);
+    OH_VideoDecoder_Destroy(vdec);
+    if (r == AV_ERR_OK) {
+        return -1;
+    }
+    return SWDEC_SUCCESS;
 }
 } // namespace
 
@@ -999,7 +1049,7 @@ int VideoSwdecCapApi0800()
     }
 
     int n = OH_AVCapability_GetMaxSupportedInstances(cap);
-    if ((n) != (64)) {
+    if ((n) != (MAX_SUPPORTED_INSTANCES_EXPECTED)) {
         return (SWDEC_SUCCESS);
     }
 
@@ -1644,7 +1694,7 @@ int VideoSwdecCapApi6200()
         return (-1);
     }
 
-    r = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, kWidth4K, kHeight4K, &range);
+    r = OH_AVCapability_GetVideoFrameRateRangeForSize(capability, K_WIDTH_4K, K_HEIGHT_4K, &range);
     if ((r) != (AV_ERR_OK)) {
         return (-1);
     }
@@ -1801,46 +1851,10 @@ int VideoSwdecCapApi7100()
     if (pixelFormat == nullptr || pixelFormatNum != PIXFORMAT_NUM || r != AV_ERR_OK) {
         return -1;
     }
-    for (uint32_t i = 0; i < pixelFormatNum; i++) {
-        OH_AVCodec* vdec = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
-        if (!vdec) {
-            return -1;
-        }
-        OH_AVFormat* format = OH_AVFormat_Create();
-        if (!format) {
-            OH_VideoDecoder_Destroy(vdec);
-            return -1;
-        }
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, pixelFormat[i]);
-        if (OH_VideoDecoder_Configure(vdec, format) != AV_ERR_OK) {
-            OH_AVFormat_Destroy(format);
-            OH_VideoDecoder_Destroy(vdec);
-            return -1;
-        }
-        OH_AVFormat_Destroy(format);
-        OH_VideoDecoder_Destroy(vdec);
-    }
-    OH_AVCodec* vdec = OH_VideoDecoder_CreateByName(CODEC_NAME.c_str());
-    if (!vdec) {
-        return SWDEC_SUCCESS;
-    }
-    OH_AVFormat* format = OH_AVFormat_Create();
-    if (!format) {
-        OH_VideoDecoder_Destroy(vdec);
+    if (Cap7100ConfigureEachSupportedPixelFormat(pixelFormat, pixelFormatNum) != AV_ERR_OK) {
         return -1;
     }
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_RGBA + AV_PIXEL_FORMAT_RGBA);
-    r = OH_VideoDecoder_Configure(vdec, format);
-    OH_AVFormat_Destroy(format);
-    OH_VideoDecoder_Destroy(vdec);
-    if (r == AV_ERR_OK) {
-        return -1;
-    }
-    return SWDEC_SUCCESS;
+    return Cap7100ExpectInvalidDoubleRgbaRejected();
 }
 
 // ---- Other codec ILLEGAL_PARA (3) ----

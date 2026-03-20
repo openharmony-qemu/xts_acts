@@ -33,7 +33,11 @@ constexpr uint8_t H264_START_CODE_3[] = { 0x00, 0x00, 0x01 };
 constexpr uint8_t H264_START_CODE_4[] = { 0x00, 0x00, 0x00, 0x01 };
 constexpr uint32_t H264_START_CODE_3_LEN = 3;
 constexpr uint32_t H264_START_CODE_4_LEN = 4;
-constexpr uint32_t kH264StartCodeThirdByteOffset = 2;
+constexpr uint32_t K_H264_START_CODE_THIRD_BYTE_OFFSET = 2;
+constexpr int32_t H264_ANNEXB_PATTERN_BYTE_INDEX_1 = 1;
+constexpr int32_t H264_ANNEXB_PATTERN_BYTE_INDEX_2 = 2;
+constexpr int32_t H264_ANNEXB_PATTERN_BYTE_INDEX_3 = 3;
+constexpr int32_t MIN_OUT_FRAMES_BEFORE_INPUT_STREAM_CMD = 2;
 constexpr uint32_t MILLION = 1000000;
 constexpr int32_t THREE = 3;
 constexpr int32_t TEN = 10;
@@ -53,10 +57,10 @@ constexpr int32_t CROP_BOTTOM = 0;
 constexpr int32_t CROP_RIGHT = 1;
 constexpr int32_t DEFAULT_ANGLE = 90;
 // PushData: 0=需重试, 1=本帧已推送, 3=已送 EOS/结束输入循环
-constexpr int32_t kPushDataRetry = 0;
-constexpr int32_t kPushDataOk = 1;
-constexpr int32_t kPushDataEos = 3;
-constexpr uint32_t kUsleepRetryDelayUs = 500;
+constexpr int32_t K_PUSH_DATA_RETRY = 0;
+constexpr int32_t K_PUSH_DATA_OK = 1;
+constexpr int32_t K_PUSH_DATA_EOS = 3;
+constexpr uint32_t K_USLEEP_RETRY_DELAY_US = 500;
 
 SHA512_CTX g_c;
 unsigned char g_md[SHA512_DIGEST_LENGTH];
@@ -81,13 +85,14 @@ static uint32_t FindH264StartCode(const uint8_t* data, uint32_t start, uint32_t 
     *outLen = 0;
     for (uint32_t i = start; i + H264_START_CODE_3_LEN <= endOffset; i++) {
         if (i + H264_START_CODE_4_LEN <= endOffset && data[i] == H264_START_CODE_4[0] &&
-            data[i + 1] == H264_START_CODE_4[1] && data[i + 2] == H264_START_CODE_4[2] &&
-            data[i + 3] == H264_START_CODE_4[3]) {
+            data[i + H264_ANNEXB_PATTERN_BYTE_INDEX_1] == H264_START_CODE_4[1] &&
+            data[i + H264_ANNEXB_PATTERN_BYTE_INDEX_2] == H264_START_CODE_4[2] &&
+            data[i + H264_ANNEXB_PATTERN_BYTE_INDEX_3] == H264_START_CODE_4[3]) {
             *outLen = H264_START_CODE_4_LEN;
             return i;
         }
         if (data[i] == H264_START_CODE_3[0] && data[i + 1] == H264_START_CODE_3[1] &&
-            data[i + kH264StartCodeThirdByteOffset] == H264_START_CODE_3[H264_START_CODE_3_LEN - 1]) {
+            data[i + K_H264_START_CODE_THIRD_BYTE_OFFSET] == H264_START_CODE_3[H264_START_CODE_3_LEN - 1]) {
             *outLen = H264_START_CODE_3_LEN;
             return i;
         }
@@ -143,7 +148,7 @@ void VdecAPI11FormatChanged(OH_AVCodec* codec, OH_AVFormat* format, void* userDa
 
 void VdecAPI11InputDataReady(OH_AVCodec* codec, uint32_t index, OH_AVBuffer* data, void* userData)
 {
-    if (g_decSample->inputCallbackFlush && g_decSample->outCount > 1) {
+    if (g_decSample->inputCallbackFlush && g_decSample->outCount >= MIN_OUT_FRAMES_BEFORE_INPUT_STREAM_CMD) {
         OH_VideoDecoder_Flush(codec);
         cout << "OH_VideoDecoder_Flush end" << endl;
         g_decSample->isRunning_.store(false);
@@ -151,7 +156,7 @@ void VdecAPI11InputDataReady(OH_AVCodec* codec, uint32_t index, OH_AVBuffer* dat
         g_decSample->signal_->outCond_.notify_all();
         return;
     }
-    if (g_decSample->inputCallbackStop && g_decSample->outCount > 1) {
+    if (g_decSample->inputCallbackStop && g_decSample->outCount >= MIN_OUT_FRAMES_BEFORE_INPUT_STREAM_CMD) {
         OH_VideoDecoder_Stop(codec);
         cout << "OH_VideoDecoder_Stop end" << endl;
         g_decSample->isRunning_.store(false);
@@ -168,7 +173,7 @@ void VdecAPI11InputDataReady(OH_AVCodec* codec, uint32_t index, OH_AVBuffer* dat
 
 void VdecAPI11OutputDataReady(OH_AVCodec* codec, uint32_t index, OH_AVBuffer* data, void* userData)
 {
-    if (g_decSample->outputCallbackFlush && g_decSample->outCount > 1) {
+    if (g_decSample->outputCallbackFlush && g_decSample->outCount >= MIN_OUT_FRAMES_BEFORE_INPUT_STREAM_CMD) {
         OH_VideoDecoder_Flush(codec);
         cout << "OH_VideoDecoder_Flush end" << endl;
         g_decSample->isRunning_.store(false);
@@ -176,7 +181,7 @@ void VdecAPI11OutputDataReady(OH_AVCodec* codec, uint32_t index, OH_AVBuffer* da
         g_decSample->signal_->outCond_.notify_all();
         return;
     }
-    if (g_decSample->outputCallbackStop && g_decSample->outCount > 1) {
+    if (g_decSample->outputCallbackStop && g_decSample->outCount >= MIN_OUT_FRAMES_BEFORE_INPUT_STREAM_CMD) {
         OH_VideoDecoder_Stop(codec);
         cout << "OH_VideoDecoder_Stop end" << endl;
         g_decSample->isRunning_.store(false);
@@ -386,17 +391,8 @@ int32_t VDecAPI11Sample::CreateVideoDecoder(string codeName)
     return vdec_ == nullptr ? AV_ERR_UNKNOWN : AV_ERR_OK;
 }
 
-int32_t VDecAPI11Sample::PrepareStartDecoderPipeline()
+int32_t VDecAPI11Sample::PrepareStartDecoderOpenInputFile()
 {
-    isRunning_.store(true);
-    int ret = OH_VideoDecoder_Start(vdec_);
-    if (ret != AV_ERR_OK) {
-        cout << "Failed to start codec" << endl;
-        isRunning_.store(false);
-        ReleaseInFile();
-        Release();
-        return ret;
-    }
     inFile_ = make_unique<ifstream>();
     prereadBuffer_ = std::make_unique<uint8_t[]>(PREREAD_BUFFER_SIZE + START_CODE_SIZE);
     mpegUnit_ = std::make_unique<std::vector<uint8_t>>(MAX_WIDTH * MAX_HEIGHT << 1);
@@ -422,6 +418,20 @@ int32_t VDecAPI11Sample::PrepareStartDecoderPipeline()
         return AV_ERR_INPUT_FILE_UNAVAILABLE_SKIP;
     }
     return AV_ERR_OK;
+}
+
+int32_t VDecAPI11Sample::PrepareStartDecoderPipeline()
+{
+    isRunning_.store(true);
+    int ret = OH_VideoDecoder_Start(vdec_);
+    if (ret != AV_ERR_OK) {
+        cout << "Failed to start codec" << endl;
+        isRunning_.store(false);
+        ReleaseInFile();
+        Release();
+        return ret;
+    }
+    return PrepareStartDecoderOpenInputFile();
 }
 
 int32_t VDecAPI11Sample::StartVideoDecoder()
@@ -578,34 +588,81 @@ bool VDecAPI11Sample::H264RefillPrereadBuffer()
     return true;
 }
 
+bool VDecAPI11Sample::H264AnnexBRefillPrimary()
+{
+    if (pPrereadBuffer_ < prereadBufferSize_) {
+        return false;
+    }
+    if (inFile_->eof()) {
+        mpegUnit_->resize(0);
+        return true;
+    }
+    if (!H264RefillPrereadBuffer()) {
+        return true;
+    }
+    return false;
+}
+
+bool VDecAPI11Sample::H264AnnexBHandleScPastEnd()
+{
+    if (inFile_->eof()) {
+        uint32_t rest = prereadBufferSize_ - pPrereadBuffer_;
+        if (rest > 0 && rest <= MAX_NALU_SIZE) {
+            mpegUnit_->resize(rest);
+            (void)SecureMemcpy(mpegUnit_->data(), rest, prereadBuffer_.get() + pPrereadBuffer_, rest);
+        } else {
+            mpegUnit_->resize(0);
+        }
+        pPrereadBuffer_ = prereadBufferSize_;
+        return true;
+    }
+    if (!H264RefillPrereadBuffer()) {
+        return true;
+    }
+    return false;
+}
+
+bool VDecAPI11Sample::H264AnnexBHandleNextScPastEnd(uint32_t nalStart)
+{
+    if (inFile_->eof()) {
+        uint32_t nalSize = prereadBufferSize_ - nalStart;
+        if (nalSize <= MAX_NALU_SIZE) {
+            mpegUnit_->resize(nalSize);
+            (void)SecureMemcpy(mpegUnit_->data(), nalSize, prereadBuffer_.get() + nalStart, nalSize);
+        } else {
+            mpegUnit_->resize(0);
+        }
+        pPrereadBuffer_ = prereadBufferSize_;
+        return true;
+    }
+    if (!H264RefillPrereadBuffer()) {
+        return true;
+    }
+    return false;
+}
+
+void VDecAPI11Sample::H264AnnexBCopyNalAndFinish(uint32_t nalStart, uint32_t nextSc)
+{
+    uint32_t nalSize = nextSc - nalStart;
+    if (nalSize <= MAX_NALU_SIZE) {
+        mpegUnit_->resize(nalSize);
+        (void)SecureMemcpy(mpegUnit_->data(), nalSize, prereadBuffer_.get() + nalStart, nalSize);
+    } else {
+        mpegUnit_->resize(0);
+    }
+    pPrereadBuffer_ = nextSc;
+}
+
 void VDecAPI11Sample::GetH264AnnexBUnit()
 {
     for (;;) {
-        if (pPrereadBuffer_ >= prereadBufferSize_) {
-            if (inFile_->eof()) {
-                mpegUnit_->resize(0);
-                return;
-            }
-            if (!H264RefillPrereadBuffer()) {
-                return;
-            }
-            continue;
+        if (H264AnnexBRefillPrimary()) {
+            return;
         }
         uint32_t scLen = 0;
         uint32_t scPos = FindH264StartCode(prereadBuffer_.get(), pPrereadBuffer_, prereadBufferSize_, &scLen);
         if (scPos >= prereadBufferSize_) {
-            if (inFile_->eof()) {
-                uint32_t rest = prereadBufferSize_ - pPrereadBuffer_;
-                if (rest > 0 && rest <= MAX_NALU_SIZE) {
-                    mpegUnit_->resize(rest);
-                    (void)SecureMemcpy(mpegUnit_->data(), rest, prereadBuffer_.get() + pPrereadBuffer_, rest);
-                } else {
-                    mpegUnit_->resize(0);
-                }
-                pPrereadBuffer_ = prereadBufferSize_;
-                return;
-            }
-            if (!H264RefillPrereadBuffer()) {
+            if (H264AnnexBHandleScPastEnd()) {
                 return;
             }
             continue;
@@ -614,30 +671,12 @@ void VDecAPI11Sample::GetH264AnnexBUnit()
         uint32_t nextScLen = 0;
         uint32_t nextSc = FindH264StartCode(prereadBuffer_.get(), nalStart, prereadBufferSize_, &nextScLen);
         if (nextSc >= prereadBufferSize_) {
-            if (inFile_->eof()) {
-                uint32_t nalSize = prereadBufferSize_ - nalStart;
-                if (nalSize <= MAX_NALU_SIZE) {
-                    mpegUnit_->resize(nalSize);
-                    (void)SecureMemcpy(mpegUnit_->data(), nalSize, prereadBuffer_.get() + nalStart, nalSize);
-                } else {
-                    mpegUnit_->resize(0);
-                }
-                pPrereadBuffer_ = prereadBufferSize_;
-                return;
-            }
-            if (!H264RefillPrereadBuffer()) {
+            if (H264AnnexBHandleNextScPastEnd(nalStart)) {
                 return;
             }
             continue;
         }
-        uint32_t nalSize = nextSc - nalStart;
-        if (nalSize <= MAX_NALU_SIZE) {
-            mpegUnit_->resize(nalSize);
-            (void)SecureMemcpy(mpegUnit_->data(), nalSize, prereadBuffer_.get() + nalStart, nalSize);
-        } else {
-            mpegUnit_->resize(0);
-        }
-        pPrereadBuffer_ = nextSc;
+        H264AnnexBCopyNalAndFinish(nalStart, nextSc);
         return;
     }
 }
@@ -673,6 +712,51 @@ void VDecAPI11Sample::GetBufferSize()
     mpegUnit_->resize(bufferSize);
 }
 
+void VDecAPI11Sample::InputFuncTest_ApplyRepeatControls()
+{
+    if (repeatStartFlushBeforeEos > 0) {
+        repeatStartFlushBeforeEos--;
+        OH_VideoDecoder_Flush(vdec_);
+        FlushBuffer();
+        OH_VideoDecoder_Start(vdec_);
+    }
+    if (repeatStartStopBeforeEos > 0) {
+        repeatStartStopBeforeEos--;
+        OH_VideoDecoder_Stop(vdec_);
+        FlushBuffer();
+        OH_VideoDecoder_Start(vdec_);
+    }
+}
+
+bool VDecAPI11Sample::InputFuncTest_FinishIterationAfterPush(int ret, uint32_t index, OH_AVBuffer* buffer, bool& flag)
+{
+    if (ret == K_PUSH_DATA_EOS) {
+        inputPushRetryCount_ = 0;
+        flag = false;
+        return false;
+    }
+    if (ret == K_PUSH_DATA_RETRY) {
+        inputPushRetryCount_++;
+        constexpr uint32_t K_MAX_INPUT_PUSH_RETRY = 500U;
+        if (inputPushRetryCount_ > K_MAX_INPUT_PUSH_RETRY) {
+            cout << "Input push retry exceeded (no valid NALU or input anomaly), force EOS" << endl;
+            errCount++;
+            SetEOS(index, buffer);
+            inputPushRetryCount_ = 0;
+            flag = false;
+            return false;
+        }
+        unique_lock<mutex> relock(signal_->inMutex_);
+        signal_->inIdxQueue_.push_front(index);
+        signal_->inBufferQueue_.push_front(buffer);
+        relock.unlock();
+        usleep(K_USLEEP_RETRY_DELAY_US);
+        return true;
+    }
+    inputPushRetryCount_ = 0;
+    return false;
+}
+
 void VDecAPI11Sample::InputFuncTest()
 {
     bool flag = true;
@@ -681,18 +765,7 @@ void VDecAPI11Sample::InputFuncTest()
             flag = false;
             break;
         }
-        if (repeatStartFlushBeforeEos > 0) {
-            repeatStartFlushBeforeEos--;
-            OH_VideoDecoder_Flush(vdec_);
-            FlushBuffer();
-            OH_VideoDecoder_Start(vdec_);
-        }
-        if (repeatStartStopBeforeEos > 0) {
-            repeatStartStopBeforeEos--;
-            OH_VideoDecoder_Stop(vdec_);
-            FlushBuffer();
-            OH_VideoDecoder_Start(vdec_);
-        }
+        InputFuncTest_ApplyRepeatControls();
         uint32_t index;
         unique_lock<mutex> lock(signal_->inMutex_);
         signal_->inCond_.wait(lock, [this]() {
@@ -712,30 +785,12 @@ void VDecAPI11Sample::InputFuncTest()
         lock.unlock();
 
         int ret = PushData(index, buffer);
-        if (ret == kPushDataEos) {
-            inputPushRetryCount_ = 0;
-            flag = false;
-            break;
-        }
-        if (ret == kPushDataRetry) {
-            inputPushRetryCount_++;
-            constexpr uint32_t kMaxInputPushRetry = 500U;
-            if (inputPushRetryCount_ > kMaxInputPushRetry) {
-                cout << "Input push retry exceeded (no valid NALU or input anomaly), force EOS" << endl;
-                errCount++;
-                SetEOS(index, buffer);
-                inputPushRetryCount_ = 0;
-                flag = false;
-                break;
-            }
-            unique_lock<mutex> relock(signal_->inMutex_);
-            signal_->inIdxQueue_.push_front(index);
-            signal_->inBufferQueue_.push_front(buffer);
-            relock.unlock();
-            usleep(kUsleepRetryDelayUs);
+        if (InputFuncTest_FinishIterationAfterPush(ret, index, buffer, flag)) {
             continue;
         }
-        inputPushRetryCount_ = 0;
+        if (!flag) {
+            break;
+        }
 
         if (sleepOnFPS) {
             usleep(MICRO_IN_SECOND / static_cast<int32_t>(defaultFrameRate));
@@ -762,22 +817,23 @@ void VDecAPI11Sample::SyncInputFunc()
             continue;
         }
         int ret = PushData(index, buffer);
-        if (ret == kPushDataEos) {
+        if (ret == K_PUSH_DATA_EOS) {
             flag = false;
             break;
         }
-        if (ret == kPushDataRetry) {
-            int last = kPushDataRetry;
-            constexpr uint32_t kMaxSyncInputPushRetry = 500U;
-            for (uint32_t syncRetry = 0; syncRetry < kMaxSyncInputPushRetry && last == kPushDataRetry; syncRetry++) {
-                usleep(kUsleepRetryDelayUs);
+        if (ret == K_PUSH_DATA_RETRY) {
+            int last = K_PUSH_DATA_RETRY;
+            constexpr uint32_t K_MAX_SYNC_INPUT_PUSH_RETRY = 500U;
+            for (uint32_t syncRetry = 0; syncRetry < K_MAX_SYNC_INPUT_PUSH_RETRY && last == K_PUSH_DATA_RETRY;
+                 syncRetry++) {
+                usleep(K_USLEEP_RETRY_DELAY_US);
                 last = PushData(index, buffer);
             }
-            if (last == kPushDataEos) {
+            if (last == K_PUSH_DATA_EOS) {
                 flag = false;
                 break;
             }
-            if (last == kPushDataRetry) {
+            if (last == K_PUSH_DATA_RETRY) {
                 cout << "Sync input push retry exceeded (no valid NALU or input anomaly), inpDir=" << inpDir << endl;
                 errCount++;
                 SetEOS(index, buffer);
@@ -798,7 +854,7 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer* buffer)
     OH_AVCodecBufferAttr attr;
     if (beforeEosInput && frameCount_ > TEN) {
         SetEOS(index, buffer);
-        return kPushDataEos;
+        return K_PUSH_DATA_EOS;
     }
     if (beforeEosInputInput && frameCount_ > TEN) {
         SecureMemset(&attr, sizeof(OH_AVCodecBufferAttr), 0, sizeof(OH_AVCodecBufferAttr));
@@ -813,7 +869,7 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer* buffer)
     if (inFile_->eof() && finishLastPush) {
         SetEOS(index, buffer);
         mpegUnit_->resize(0);
-        return kPushDataEos;
+        return K_PUSH_DATA_EOS;
     }
     if (useH264AnnexB) {
         GetH264AnnexBUnit();
@@ -823,11 +879,11 @@ int32_t VDecAPI11Sample::PushData(uint32_t index, OH_AVBuffer* buffer)
     bufferSize = mpegUnit_->size();
     if (bufferSize == 0 && inFile_->eof()) {
         SetEOS(index, buffer);
-        return kPushDataEos;
+        return K_PUSH_DATA_EOS;
     }
     if (bufferSize >= ((defaultWidth * defaultHeight * THREE) >> 1)) {
         cout << "read bufferSize abnormal. buffersize = " << bufferSize << endl;
-        return kPushDataEos;
+        return K_PUSH_DATA_EOS;
     }
     return static_cast<int32_t>(SendData(bufferSize, index, buffer));
 }
@@ -863,7 +919,7 @@ uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuf
     if (bufferSize > 0) {
         fileBuffer = new uint8_t[bufferSize];
     } else {
-        return kPushDataRetry;
+        return K_PUSH_DATA_RETRY;
     }
     if (pPrereadBuffer_ == prereadBufferSize_ && inFile_->eof()) {
         finishLastPush = true;
@@ -874,18 +930,18 @@ uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuf
     int32_t size = CheckAndReturnBufferSize(buffer);
     if (size < bufferSize) {
         delete[] fileBuffer;
-        return kPushDataRetry;
+        return K_PUSH_DATA_RETRY;
     }
     uint8_t* avBuffer = OH_AVBuffer_GetAddr(buffer);
     if (avBuffer == nullptr) {
         inFile_->clear();
         inFile_->seekg(0, ios::beg);
         delete[] fileBuffer;
-        return kPushDataRetry;
+        return K_PUSH_DATA_RETRY;
     }
     if (SecureMemcpy(avBuffer, size, fileBuffer, bufferSize) != EOK) {
         delete[] fileBuffer;
-        return kPushDataRetry;
+        return K_PUSH_DATA_RETRY;
     }
     int64_t startPts = GetSystemTimeUs();
     SetAttr(attr, startPts, bufferSize);
@@ -903,7 +959,7 @@ uint32_t VDecAPI11Sample::SendData(uint32_t bufferSize, uint32_t index, OH_AVBuf
     if (inFile_->eof() && finishLastPush && repeatRun) {
         SetRepeat();
     }
-    return kPushDataOk;
+    return K_PUSH_DATA_OK;
 }
 
 void VDecAPI11Sample::CheckOutputDescription()
@@ -1004,6 +1060,32 @@ void VDecAPI11Sample::FinishOutputFuncTestOnEos(uint32_t index,
     runFlag = false;
 }
 
+bool VDecAPI11Sample::OutputFuncTest_WaitAndPop(OH_AVCodecBufferAttr& attr, uint32_t& index, OH_AVBuffer*& buffer)
+{
+    if (!isRunning_.load()) {
+        return false;
+    }
+    unique_lock<mutex> lock(signal_->outMutex_);
+    signal_->outCond_.wait(lock, [this]() {
+        if (!isRunning_.load()) {
+            return true;
+        }
+        return signal_->outIdxQueue_.size() > 0;
+    });
+    if (!isRunning_.load()) {
+        return false;
+    }
+    index = signal_->outIdxQueue_.front();
+    buffer = signal_->outBufferQueue_.front();
+    signal_->outBufferQueue_.pop();
+    signal_->outIdxQueue_.pop();
+    if (OH_AVBuffer_GetBufferAttr(buffer, &attr) != AV_ERR_OK) {
+        errCount = errCount + 1;
+    }
+    lock.unlock();
+    return true;
+}
+
 void VDecAPI11Sample::OutputFuncTest()
 {
     FILE* outFile = nullptr;
@@ -1013,30 +1095,13 @@ void VDecAPI11Sample::OutputFuncTest()
     SHA512_Init(&g_c);
     bool flag = true;
     while (flag) {
-        if (!isRunning_.load()) {
-            flag = false;
-            break;
-        }
         OH_AVCodecBufferAttr attr;
-        unique_lock<mutex> lock(signal_->outMutex_);
-        signal_->outCond_.wait(lock, [this]() {
-            if (!isRunning_.load()) {
-                return true;
-            }
-            return signal_->outIdxQueue_.size() > 0;
-        });
-        if (!isRunning_.load()) {
+        uint32_t index = 0;
+        OH_AVBuffer* buffer = nullptr;
+        if (!OutputFuncTest_WaitAndPop(attr, index, buffer)) {
             flag = false;
             break;
         }
-        uint32_t index = signal_->outIdxQueue_.front();
-        OH_AVBuffer* buffer = signal_->outBufferQueue_.front();
-        signal_->outBufferQueue_.pop();
-        signal_->outIdxQueue_.pop();
-        if (OH_AVBuffer_GetBufferAttr(buffer, &attr) != AV_ERR_OK) {
-            errCount = errCount + 1;
-        }
-        lock.unlock();
         if (attr.flags & AVCODEC_BUFFER_FLAGS_EOS) {
             FinishOutputFuncTestOnEos(index, buffer, attr, flag);
             break;

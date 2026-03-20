@@ -24,57 +24,57 @@
 namespace {
 constexpr int32_t RESULT_ERROR = -1;
 // G.CNS.02: case index constants to avoid magic numbers
-constexpr int kIdx0 = 0;
-constexpr int kIdx1 = 1;
-constexpr int kIdx2 = 2;
-constexpr int kIdx3 = 3;
-constexpr int kIdx4 = 4;
-constexpr int kIdx5 = 5;
-constexpr int kIdx6 = 6;
-constexpr int kIdx7 = 7;
-constexpr int kIdx8 = 8;
-constexpr int kIdx9 = 9;
-constexpr int kIdx10 = 10;
-constexpr int kIdx11 = 11;
-constexpr int kIdx12 = 12;
-constexpr int kIdx13 = 13;
-constexpr int kIdx14 = 14;
-constexpr int kIdx15 = 15;
-constexpr int kIdx16 = 16;
-constexpr int kIdx17 = 17;
-constexpr int kIdx18 = 18;
-constexpr int kIdx19 = 19;
-constexpr int kIdx20 = 20;
-constexpr int kIdx21 = 21;
-constexpr int kIdx22 = 22;
-constexpr int kIdx23 = 23;
-constexpr int kIdx24 = 24;
-constexpr int kIdx25 = 25;
-constexpr int kIdx26 = 26;
-constexpr int kIdx27 = 27;
-constexpr int kIdx28 = 28;
-constexpr int kIdx29 = 29;
-constexpr int kIdx30 = 30;
-constexpr int kIdx31 = 31;
-constexpr int kIdx32 = 32;
-constexpr int kIdx33 = 33;
-constexpr int kIdx34 = 34;
-constexpr int kIdx35 = 35;
-constexpr int kIdx36 = 36;
-constexpr int kIdx37 = 37;
-constexpr int kIdx38 = 38;
-constexpr int kIdx39 = 39;
-constexpr int kIdx40 = 40;
-constexpr int kIdx41 = 41;
-constexpr int kIdx42 = 42;
-constexpr int kIdx43 = 43;
-constexpr int kIdx44 = 44;
-constexpr int kIdx45 = 45;
-constexpr int kIdx46 = 46;
-constexpr int kIdx47 = 47;
-constexpr int kIdx48 = 48;
-constexpr int kIdx49 = 49;
-constexpr int kIdx50 = 50;
+constexpr int K_IDX0 = 0;
+constexpr int K_IDX1 = 1;
+constexpr int K_IDX2 = 2;
+constexpr int K_IDX3 = 3;
+constexpr int K_IDX4 = 4;
+constexpr int K_IDX5 = 5;
+constexpr int K_IDX6 = 6;
+constexpr int K_IDX7 = 7;
+constexpr int K_IDX8 = 8;
+constexpr int K_IDX9 = 9;
+constexpr int K_IDX10 = 10;
+constexpr int K_IDX11 = 11;
+constexpr int K_IDX12 = 12;
+constexpr int K_IDX13 = 13;
+constexpr int K_IDX14 = 14;
+constexpr int K_IDX15 = 15;
+constexpr int K_IDX16 = 16;
+constexpr int K_IDX17 = 17;
+constexpr int K_IDX18 = 18;
+constexpr int K_IDX19 = 19;
+constexpr int K_IDX20 = 20;
+constexpr int K_IDX21 = 21;
+constexpr int K_IDX22 = 22;
+constexpr int K_IDX23 = 23;
+constexpr int K_IDX24 = 24;
+constexpr int K_IDX25 = 25;
+constexpr int K_IDX26 = 26;
+constexpr int K_IDX27 = 27;
+constexpr int K_IDX28 = 28;
+constexpr int K_IDX29 = 29;
+constexpr int K_IDX30 = 30;
+constexpr int K_IDX31 = 31;
+constexpr int K_IDX32 = 32;
+constexpr int K_IDX33 = 33;
+constexpr int K_IDX34 = 34;
+constexpr int K_IDX35 = 35;
+constexpr int K_IDX36 = 36;
+constexpr int K_IDX37 = 37;
+constexpr int K_IDX38 = 38;
+constexpr int K_IDX39 = 39;
+constexpr int K_IDX40 = 40;
+constexpr int K_IDX41 = 41;
+constexpr int K_IDX42 = 42;
+constexpr int K_IDX43 = 43;
+constexpr int K_IDX44 = 44;
+constexpr int K_IDX45 = 45;
+constexpr int K_IDX46 = 46;
+constexpr int K_IDX47 = 47;
+constexpr int K_IDX48 = 48;
+constexpr int K_IDX49 = 49;
+constexpr int K_IDX50 = 50;
 
 static int32_t GetInt32Arg(napi_env env, napi_callback_info info, size_t index, int32_t defaultVal)
 {
@@ -232,29 +232,29 @@ static int DispatchSwdecFuncCreateTest(int32_t caseNum)
 static int DispatchSwdecFuncNdkTest(int32_t caseNum)
 {
     switch (caseNum) {
-        case kIdx0:
+        case K_IDX0:
             return Acts::SwDecoder::VideoSwdecFunction0300();
-        case kIdx1:
+        case K_IDX1:
             return Acts::SwDecoder::VideoSwdecFunction0400();
-        case kIdx2:
+        case K_IDX2:
             return Acts::SwDecoder::VideoSwdecFunction0700();
-        case kIdx3:
+        case K_IDX3:
             return Acts::SwDecoder::VideoSwdecFunction0800();
-        case kIdx4:
+        case K_IDX4:
             return Acts::SwDecoder::VideoSwdecFunction4000();
-        case kIdx5:
+        case K_IDX5:
             return Acts::SwDecoder::VideoSwdecFunction1000();
-        case kIdx6:
+        case K_IDX6:
             return Acts::SwDecoder::VideoSwdecFunction1100();
-        case kIdx7:
+        case K_IDX7:
             return Acts::SwDecoder::VideoSwdecFunction1200();
-        case kIdx8:
+        case K_IDX8:
             return Acts::SwDecoder::VideoSwdecFunction1300();
-        case kIdx9:
+        case K_IDX9:
             return Acts::SwDecoder::VideoSwdecFunction1400();
-        case kIdx10:
+        case K_IDX10:
             return Acts::SwDecoder::VideoSwdecFunction1500();
-        case kIdx11:
+        case K_IDX11:
             return Acts::SwDecoder::VideoSwdecFunction1600();
         default:
             return RESULT_ERROR;
@@ -265,11 +265,11 @@ static int DispatchSwdecFuncNdkTest(int32_t caseNum)
 static int DispatchSwdecSync264Test(int32_t caseNum)
 {
     switch (caseNum) {
-        case kIdx0:
+        case K_IDX0:
             return Acts::SwDecoder::VideoDecodeSyncSw264Func0010();
-        case kIdx1:
+        case K_IDX1:
             return Acts::SwDecoder::VideoDecodeSyncSw264Func0020();
-        case kIdx2:
+        case K_IDX2:
             return Acts::SwDecoder::VideoDecodeSyncSw264Func0040();
         default:
             return RESULT_ERROR;
@@ -318,29 +318,29 @@ static int DispatchSwdecApiIllegalParaTest(int32_t caseNum)
 static int DispatchSwdecApiTest(int32_t caseNum)
 {
     switch (caseNum) {
-        case kIdx0:
+        case K_IDX0:
             return Acts::SwDecoder::VideoSwdecApi0100();
-        case kIdx1:
+        case K_IDX1:
             return Acts::SwDecoder::VideoSwdecApi0200();
-        case kIdx2:
+        case K_IDX2:
             return Acts::SwDecoder::VideoSwdecApi0300();
-        case kIdx3:
+        case K_IDX3:
             return Acts::SwDecoder::VideoSwdecApi0400();
-        case kIdx4:
+        case K_IDX4:
             return Acts::SwDecoder::VideoSwdecApi0500();
-        case kIdx5:
+        case K_IDX5:
             return Acts::SwDecoder::VideoSwdecApi0600();
-        case kIdx6:
+        case K_IDX6:
             return Acts::SwDecoder::VideoSwdecApi0700();
-        case kIdx7:
+        case K_IDX7:
             return Acts::SwDecoder::VideoSwdecApi0800();
-        case kIdx8:
+        case K_IDX8:
             return Acts::SwDecoder::VideoSwdecApi0900();
-        case kIdx9:
+        case K_IDX9:
             return Acts::SwDecoder::VideoSwdecApi1000();
-        case kIdx10:
+        case K_IDX10:
             return Acts::SwDecoder::VideoSwdecApi1100();
-        case kIdx11:
+        case K_IDX11:
             return Acts::SwDecoder::VideoSwdecApi1200();
         default:
             return RESULT_ERROR;
@@ -360,11 +360,11 @@ static int DispatchSwdecCapApiTest(int32_t caseNum)
 static int DispatchSwdecOtherCodecIllegalTest(int32_t caseNum)
 {
     switch (caseNum) {
-        case kIdx0:
+        case K_IDX0:
             return Acts::SwDecoder::VideoMpeg2SwdecIllegalPara0700();
-        case kIdx1:
+        case K_IDX1:
             return Acts::SwDecoder::VideoMpeg4SwdecIllegalPara0700();
-        case kIdx2:
+        case K_IDX2:
             return Acts::SwDecoder::VideoH263SwdecIllegalPara0700();
         default:
             return RESULT_ERROR;

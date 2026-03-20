@@ -204,8 +204,9 @@ int VideoSwdecState0600()
         return -1;
     }
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Stop();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -234,8 +235,9 @@ int VideoSwdecState0700()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Stop();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -264,8 +266,9 @@ int VideoSwdecState0800()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Stop();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -294,8 +297,9 @@ int VideoSwdecState0900()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Flush();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -319,8 +323,9 @@ int VideoSwdecState1000()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Flush();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -349,8 +354,9 @@ int VideoSwdecState1100()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Flush();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -379,8 +385,9 @@ int VideoSwdecState1200()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Flush();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -409,8 +416,9 @@ int VideoSwdecState1300()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Flush();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -444,8 +452,9 @@ int VideoSwdecState1400()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Reset();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -474,8 +483,9 @@ int VideoSwdecState1500()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Reset();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
@@ -504,8 +514,9 @@ int VideoSwdecState1600()
     }
     vDecSample->afterEosDestoryCodec = false;
     vDecSample->WaitForEOS();
-    if (vDecSample->errCount != 0)
+    if (vDecSample->errCount != 0) {
         return SWDEC_SUCCESS; // env skip when decode reports errors
+    }
     ret = vDecSample->Reset();
     if ((ret) != (AV_ERR_OK)) {
         return -1;
