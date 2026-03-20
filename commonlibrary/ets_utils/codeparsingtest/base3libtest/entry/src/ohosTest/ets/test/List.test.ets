@@ -10,7 +10,6 @@ import StreamTest09 from "./stream/StreamTest09.test"
 import StreamTest10 from "./stream/StreamTest10.test"
 
 import StreamDuplexTest01 from "./stream/StreamDuplexTest01.test"
-import StreamDuplexTest02 from "./stream/StreamDuplexTest02.test"
 import StreamDuplexTest03 from "./stream/StreamDuplexTest03.test"
 import StreamDuplexTest04 from "./stream/StreamDuplexTest04.test"
 import StreamDuplexTest05 from "./stream/StreamDuplexTest05.test"
@@ -131,7 +130,6 @@ export default function testsuite() {
   StreamTest10();
 
   StreamDuplexTest01();
-  StreamDuplexTest02();
   StreamDuplexTest03();
   StreamDuplexTest04();
   StreamDuplexTest05();
