@@ -1653,6 +1653,46 @@ export async function expectEqualMovingPhotoVideoNum(originalVideoNum: number, i
   }
 }
 
+/**
+ * @desc 根据用例信息, 生成录像或图片文件的名称
+ * @param { camera.SceneMode } mode 相机模式
+ * @param { camera.CameraDevice } cameraId 相机信息
+ * @param { camera.Profile } videoOrPhotoProfile 录像或者拍照配置
+ * @param { camera.Profile } previewProfile 预览配置
+ */
+export async function generateNameForAsset(
+  mode: camera.SceneMode,
+  cameraId: camera.CameraDevice,
+  videoOrPhotoProfile: camera.Profile,
+  previewProfile: camera.Profile,
+  frameRate?: number
+) {
+  // hdr信息
+  let hdrInfo = "Photo"
+  if (mode == camera.SceneMode.NORMAL_VIDEO) {
+    hdrInfo = "Video"
+  }
+  if (videoOrPhotoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YCRCB_P010 ||
+    videoOrPhotoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YCBCR_P010) {
+    hdrInfo = "Hdr" + hdrInfo
+  }
+  // 镜头信息
+  let cameraInfo = cameraId.cameraId.replace("/", "")
+  // 时间
+  let timeInfo = getDateStringWithTimeStamp(Date.now())
+  // 录像/拍照分辨率
+  let videoOrPhotoInfo = `f${videoOrPhotoProfile.format}_${videoOrPhotoProfile.size.width}x${videoOrPhotoProfile.size.height}`
+  // 预览分辨率
+  let previewInfo = `f${previewProfile.format}_${previewProfile.size.width}x${previewProfile.size.height}`
+  // 帧率
+  let frameRateInfo = ""
+  if (frameRate) {
+    frameRateInfo = `${frameRate.toString().split(".")[0]}fps_`
+  }
+
+  return `${hdrInfo}_${cameraInfo}_${timeInfo}_${frameRateInfo}${videoOrPhotoInfo}_${previewInfo}`
+}
+
 
 
 
