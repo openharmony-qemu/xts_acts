@@ -233,87 +233,78 @@ struct FrameNodeMethodNullUndefinedTest {
   build() {
     Column() {
       Column() {
-        // 自定义节点容器
         NodeContainer(this.myNodeController)
           .width(200)
           .height(100)
       }
-      .height('70%')
+      .height('50%')
 
       Column() {
         Row({space: 2}) {
-          Text(this.count.toString()).key('FrameNodeMethodNullUndefinedTest_text_1')
-          Text(this.content_1).key('FrameNodeMethodNullUndefinedTest_text_2')
-          Text(this.content_2).key('FrameNodeMethodNullUndefinedTest_text_3')
-        }
+          Text(this.count.toString()).key('FrameNodeMethodNullUndefinedTest_text_1').width('30%')
+          Text(this.content_1).key('FrameNodeMethodNullUndefinedTest_text_2').width('30%')
+          Text(this.content_2).key('FrameNodeMethodNullUndefinedTest_text_3').width('30%')
+        }.height('8%')
 
-        // appendChild
         Row() {
-          Text('appendChild').width('30%')
           Button('null')
             .onClick(() => {
               this.myNodeController.appendChild_null();
-            }).width('30%').key('FrameNodeMethodNullUndefinedTest_appendChild_1')
+            }).width('50%').key('FrameNodeMethodNullUndefinedTest_appendChild_1')
           Button('undefined')
             .onClick(() => {
               this.myNodeController.appendChild_undefined();
-            }).width('30%').key('FrameNodeMethodNullUndefinedTest_appendChild_2')
-        }
+            }).width('50%').key('FrameNodeMethodNullUndefinedTest_appendChild_2')
+        }.height('8%')
 
-        // insertChildAfter
         Row() {
-          Text('insertChildAfter').width('20%')
           Button('null_1')
             .onClick(() => {
               this.myNodeController.insertChildAfter_null_1();
-            }).width('20%').key('FrameNodeMethodNullUndefinedTest_insertChildAfter_1')
+            }).width('25%').key('FrameNodeMethodNullUndefinedTest_insertChildAfter_1')
           Button('undefined_1')
             .onClick(() => {
               this.myNodeController.insertChildAfter_undefined_1();
-            }).width('20%').key('FrameNodeMethodNullUndefinedTest_insertChildAfter_2')
+            }).width('25%').key('FrameNodeMethodNullUndefinedTest_insertChildAfter_2')
           Button('null_1')
             .onClick(() => {
               this.myNodeController.insertChildAfter_null_2();
-            }).width('20%').key('FrameNodeMethodNullUndefinedTest_insertChildAfter_3')
+            }).width('25%').key('FrameNodeMethodNullUndefinedTest_insertChildAfter_3')
           Button('undefined_2')
             .onClick(() => {
               this.myNodeController.insertChildAfter_undefined_2();
-            }).width('20%').key('FrameNodeMethodNullUndefinedTest_insertChildAfter_4')
-        }
+            }).width('25%').key('FrameNodeMethodNullUndefinedTest_insertChildAfter_4')
+        }.height('8%')
 
-        // removeChild
         Row() {
-          Text('removeChild').width('30%')
           Button('null')
             .onClick(() => {
               this.myNodeController.removeChild_null();
-            }).width('30%').key('FrameNodeMethodNullUndefinedTest_removeChild_1')
+            }).width('50%').key('FrameNodeMethodNullUndefinedTest_removeChild_1')
           Button('undefined')
             .onClick(() => {
               this.myNodeController.removeChild_undefined();
-            }).width('30%').key('FrameNodeMethodNullUndefinedTest_removeChild_2')
-        }
+            }).width('50%').key('FrameNodeMethodNullUndefinedTest_removeChild_2')
+        }.height('8%')
 
-        // moveTo
         Row() {
-          Text('moveTo').width('20%')
           Button('null_1')
             .onClick(() => {
               this.myNodeController.moveFrameNode_null_1();
-            }).width('20%').key('FrameNodeMethodNullUndefinedTest_moveTo_1')
+            }).width('25%').key('FrameNodeMethodNullUndefinedTest_moveTo_1')
           Button('undefined_1')
             .onClick(() => {
               this.myNodeController.moveFrameNode_undefined_1();
-            }).width('20%').key('FrameNodeMethodNullUndefinedTest_moveTo_2')
+            }).width('25%').key('FrameNodeMethodNullUndefinedTest_moveTo_2')
           Button('null_2')
             .onClick(() => {
               this.myNodeController.moveFrameNode_null_2();
-            }).width('20%').key('FrameNodeMethodNullUndefinedTest_moveTo_3')
+            }).width('25%').key('FrameNodeMethodNullUndefinedTest_moveTo_3')
           Button('undefined_2')
             .onClick(() => {
               this.myNodeController.moveFrameNode_undefined_2();
-            }).width('20%').key('FrameNodeMethodNullUndefinedTest_moveTo_4')
-        }
+            }).width('25%').key('FrameNodeMethodNullUndefinedTest_moveTo_4')
+        }.height('8%')
 
         Row() {
           Button('getChildNumber')
@@ -328,9 +319,9 @@ struct FrameNodeMethodNullUndefinedTest {
             .onClick(() => {
               this.content_2 = this.myNodeController.getIdFrameNodeChild_10();
             }).width('30%').key('FrameNodeMethodNullUndefinedTest_getFrameNodeChildId')
-        }
+        }.height('8%')
       }
-      .height('30%')
+      .height('50%')
 
     }
     .width('100%')
