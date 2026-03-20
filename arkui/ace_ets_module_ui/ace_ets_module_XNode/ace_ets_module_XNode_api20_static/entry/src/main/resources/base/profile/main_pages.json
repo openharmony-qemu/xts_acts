@@ -1,6 +1,22 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/Context/IsAvailableTest"
+    "MainAbility/pages/Context/IsAvailableTest",
+    "MainAbility/pages/AttributeUpdaterAttribute/AttributeUpdaterAttribute",
+    "MainAbility/pages/AttributeUpdaterUpdateConstructorParams/AttributeUpdaterUpdateConstructorParams",
+
+    "MainAbility/pages/FrameNode/FrameNodeAdoptChild",
+    "MainAbility/pages/FrameNode/FrameNodeGestureEvent",
+    "MainAbility/pages/FrameNode/FrameNodeCommonAttribute",
+    "MainAbility/pages/FrameNode/FrameNodeRemoveAdoptedChild",
+    "MainAbility/pages/FrameNode/FrameNodeCreateAnimation",
+    "MainAbility/pages/FrameNode/FrameNodeCancelAnimations",
+    "MainAbility/pages/FrameNode/FrameNodeGetNodePropertyValue",
+    "MainAbility/pages/FrameNode/FrameNodeConvertPosition",
+    "MainAbility/pages/FrameNode/FrameNodeConvertPositionFromWindow",
+    "MainAbility/pages/FrameNode/FrameNodeConvertPositionToWindow",
+    "MainAbility/pages/FrameNode/FrameNodeIsOnMainTree",
+    "MainAbility/pages/FrameNode/FrameNodeInvalidateAttributes",
+    "MainAbility/pages/FrameNode/FrameNodeIsInRenderState"
   ]
 }

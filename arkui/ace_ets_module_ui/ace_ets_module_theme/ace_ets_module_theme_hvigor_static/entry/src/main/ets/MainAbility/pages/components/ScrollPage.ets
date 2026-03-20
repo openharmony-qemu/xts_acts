@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,8 +77,8 @@ export class ScrollKeys {
 @Entry
 @Component
 struct ScrollPage {
-  @StorageLink(scrollThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
-  @StorageLink(scrollThemeSetProperty) themeSet: boolean | undefined = true
+  @StorageLink('ScrollThemeProperty') localTheme: CustomTheme | undefined = redCustomTheme
+  @StorageLink('ScrollThemeSetProperty') themeSet: boolean | undefined = true
   horizontalScrollerSystem: Scroller = new Scroller()
   verticalScrollerSystem: Scroller = new Scroller()
   horizontalScrollerSystemCustomAttrs: Scroller = new Scroller()

@@ -3,6 +3,8 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/index/second",
     "MainAbility/pages/Button/ButtonIndex",
-    "MainAbility/pages/Button/modifier"
+    "MainAbility/pages/Button/modifier",
+    "MainAbility/pages/ArcButton/ArcButtonIndex",
+    "MainAbility/pages/buttonLabelStyle/buttonLabelStyle"
   ]
 }

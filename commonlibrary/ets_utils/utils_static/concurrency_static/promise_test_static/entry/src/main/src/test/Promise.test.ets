@@ -1014,21 +1014,21 @@ export default function PromiseTest() {
           const promise3 = Promise.resolve<Promise<number>>(promiseTest);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let results =
-            await Promise.allSettled<Any | () => number | [number, string] | Promise<number>>([promise1,
+            await Promise.allSettled<Any | (() => number | [number, string] | Promise<number>)>([promise1,
               promise2,
               promise3,
-              promise4]) as Array<PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>> | PromiseRejectedResult>;
-          const result1 = results[0] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
+              promise4]) as Array<PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)> | PromiseRejectedResult>;
+          const result1 = results[0] as PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)>;
           const result2 = result1.value as null;
           const result3 =
-            results[2] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
+            results[2] as PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)>;
           const result4 = result3.value as number;
           expect(result2).assertEqual(null);
           const result: () => number =
-            (results[1] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>).value as () => number;
+            (results[1] as PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)>).value as () => number;
           expect(result()).assertEqual(20);
           expect(result4).assertEqual(30);
-          expect(((results[3] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>).value as [number, string])[1])
+          expect(((results[3] as PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)>).value as [number, string])[1])
             .assertEqual('tupleValue');
         } catch (err) {
           err = err as Error;
@@ -1106,23 +1106,23 @@ export default function PromiseTest() {
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const promise5 = Promise.reject(new Error('Error occurred'));
           let results =
-            await Promise.allSettled<Any | () => number | [number, string] | Promise<number>>([promise1,
+            await Promise.allSettled<Any | (() => number | [number, string] | Promise<number>)>([promise1,
               promise2,
               promise3,
               promise4,
-              promise5]) as Array<PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>> | PromiseRejectedResult>;
-          const result1 = results[0] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
+              promise5]) as Array<PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)> | PromiseRejectedResult>;
+          const result1 = results[0] as PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)>;
           const result2 = result1.value as null;
           const result3 =
-            results[2] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
+            results[2] as PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)>;
           const result4 = result3.value as number;
           expect(result2).assertEqual(null);
           const result: () => number =
-            (results[1] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>).value as () => number;
+            (results[1] as PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)>).value as () => number;
           expect(result()).assertEqual(20);
           expect(result4)
             .assertEqual(30);
-          expect(((results[3] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>).value as [number, string])[1])
+          expect(((results[3] as PromiseFulfilledResult<Any | (() => number | [number, string] | Promise<number>)>).value as [number, string])[1])
             .assertEqual('tupleValue');
           expect((results[4] as PromiseRejectedResult).reason.message).assertEqual('Error occurred');
         } catch (err) {
@@ -1405,7 +1405,7 @@ export default function PromiseTest() {
           const promise4 = Promise.reject(new Error('Error occurred'));
           const promise5 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let result =
-            await Promise.race<Any | () => number | [number, string]>([promise1, promise2, promise3, promise4,
+            await Promise.race<Any | (() => number | [number, string])>([promise1, promise2, promise3, promise4,
               promise5]) as null;
           expect(result).assertEqual(null);
         } catch (err) {
