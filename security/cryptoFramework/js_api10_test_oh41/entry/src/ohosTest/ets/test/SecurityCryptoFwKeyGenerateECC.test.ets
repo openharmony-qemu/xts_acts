@@ -740,7 +740,7 @@ export default function SecurityCryptoFwKeyGenerateECCTestUnit() {
         keyPair.pubKey.getEncodedDer(format);
         expect(null).assertFail();
       } catch (err) {
-        expect(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED).assertEqual(err.code);
+        expect(cryptoFramework.Result.INVALID_PARAMS).assertEqual(err.code);
         console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
       }
       console.log(testNumber + ": success");

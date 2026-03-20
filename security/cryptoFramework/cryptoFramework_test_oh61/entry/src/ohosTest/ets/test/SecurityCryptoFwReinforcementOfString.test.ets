@@ -215,7 +215,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] Reinforcement_Func_1000 ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });
@@ -282,7 +282,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] Reinforcement_Func_1300 ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });
