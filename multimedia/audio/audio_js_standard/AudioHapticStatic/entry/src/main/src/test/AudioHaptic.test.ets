@@ -1811,5 +1811,27 @@ export default function AudioHapticTest() {
       });
       done();
     })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0300
+    * @tc.desc   setStreamUsage_STREAM_USAGE_UNKNOWN
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let setStreamUsage = audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION;
+      try {
+        AudioHapticManager.setStreamUsage(sourceId_Notification, setStreamUsage);
+        console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
+        expect(false).assertTrue();
+        done()
+      } catch (err) {
+        console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done()
+      }
+    })
   })
 }

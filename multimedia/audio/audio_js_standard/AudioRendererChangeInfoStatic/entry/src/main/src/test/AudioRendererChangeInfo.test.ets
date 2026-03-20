@@ -2506,5 +2506,3792 @@ export default function audioCapturerChange() {
       expect(resultFlag).assertTrue();
       done();
     })
+
+  /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0001
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_INVALID,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_UNKNOWN
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+        rendererFlags: 0
+      }
+
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0002
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_11025,
+        channels: audio.AudioChannel.CHANNEL_3,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_U8,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_MONO
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0003
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_12000,
+        channels: audio.AudioChannel.CHANNEL_4,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0004
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
+        channels: audio.AudioChannel.CHANNEL_5,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO_DOWNMIX
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0005
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0005
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_22050,
+        channels: audio.AudioChannel.CHANNEL_6,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0006
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0006
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
+        channels: audio.AudioChannel.CHANNEL_7,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_ALARM,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0007
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0007
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_32000,
+        channels: audio.AudioChannel.CHANNEL_8,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_SURROUND
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0008
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0008
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_64000,
+        channels: audio.AudioChannel.CHANNEL_9,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0009
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0009
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_88200,
+        channels: audio.AudioChannel.CHANNEL_10,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_4POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0010
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0010
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_96000,
+        channels: audio.AudioChannel.CHANNEL_12,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_QUAD
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0011
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0011
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_176400,
+        channels: audio.AudioChannel.CHANNEL_14,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_QUAD_SIDE
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_GAME,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0012
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0012
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT0POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0013
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0013
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_ACN_N3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0014
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0014
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_ACN_SN3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0015
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0015
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_4POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0016
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0016
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0017
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0017
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT0_BACK
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0018
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0018
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT1POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0019
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0019
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT0POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0020
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0020
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0021
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0021
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1_BACK
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0022
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0022
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0023
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0023
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_HEXAGONAL
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0024
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0024
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT1POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0025
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0025
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT0_FRONT
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0026
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0026
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0027
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0027
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1_BACK
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0028
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0028
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1_FRONT
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0029
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0029
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0030
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0030
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT0_FRONT
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0031
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0031
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0032
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0032
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_OCTAGONAL
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0033
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0033
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0034
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0034
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1_WIDE
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0035
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0035
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1_WIDE_BACK
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0036
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0036
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_ACN_N3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0037
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0037
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_ACN_SN3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0038
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0038
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0039
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0039
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1POINT4
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0040
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0040
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0041
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0041
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1POINT4
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0042
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0042
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_10POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0043
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0043
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_9POINT1POINT4
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0044
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0044
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_9POINT1POINT6
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0045
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0045
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_HEXADECAGONAL
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0046
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0046
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_ACN_N3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0047
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0047
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_ACN_SN3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0048
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0048
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0049
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0049
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0050
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0050
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_INVALID,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_UNKNOWN
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+        rendererFlags: 0
+      }
+
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0051
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0051
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_11025,
+        channels: audio.AudioChannel.CHANNEL_3,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_U8,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_MONO
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      let audiorenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0052
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0052
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_12000,
+        channels: audio.AudioChannel.CHANNEL_4,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0053
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0053
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
+        channels: audio.AudioChannel.CHANNEL_5,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO_DOWNMIX
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0054
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0054
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_22050,
+        channels: audio.AudioChannel.CHANNEL_6,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0055
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0055
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
+        channels: audio.AudioChannel.CHANNEL_7,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_ALARM,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0056
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0056
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_32000,
+        channels: audio.AudioChannel.CHANNEL_8,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_SURROUND
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      let audiorenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0057
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0057
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_64000,
+        channels: audio.AudioChannel.CHANNEL_9,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0058
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0058
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_88200,
+        channels: audio.AudioChannel.CHANNEL_10,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_4POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0059
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0059
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_96000,
+        channels: audio.AudioChannel.CHANNEL_12,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_QUAD
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0060
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0060
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_176400,
+        channels: audio.AudioChannel.CHANNEL_14,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_QUAD_SIDE
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0061
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0061
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT0POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_GAME,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0062
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0062
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_ACN_N3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0063
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0063
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_ACN_SN3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0064
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0064
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_4POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0065
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0065
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0066
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0066
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT0_BACK
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0067
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0067
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_2POINT1POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0068
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0068
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT0POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0069
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0069
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0070
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0070
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1_BACK
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0071
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0071
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0072
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0072
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_HEXAGONAL
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0073
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0073
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_3POINT1POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0074
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0074
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT0_FRONT
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0075
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0075
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0076
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0076
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1_BACK
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0077
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0077
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_6POINT1_FRONT
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0078
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0078
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT0
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0079
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0079
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT0_FRONT
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0080
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0080
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0081
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0081
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_OCTAGONAL
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0082
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0082
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0083
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0083
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1_WIDE
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0084
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0084
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1_WIDE_BACK
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0085
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0085
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_ACN_N3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0086
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0086
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_ACN_SN3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0087
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0087
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER2_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0088
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0088
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1POINT4
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0089
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0089
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0090
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0090
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_7POINT1POINT4
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0091
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0091
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_10POINT2
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0092
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0092
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_9POINT1POINT4
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0093
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0093
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_9POINT1POINT6
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0094
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0094
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_HEXADECAGONAL
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0095
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0095
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_ACN_N3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0096
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0096
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_ACN_SN3D
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0097
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0097
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      let audiorenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0098
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0098
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+        rendererFlags: 0
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo,
+      }
+      let audiorenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0099
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0099
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+        rendererFlags: 0,
+        volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo,
+      }
+      let audiorenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0100
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER1_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+        rendererFlags: 0,
+        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo,
+      }
+      let audiorenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0101
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0101
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0,
+        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0102
+    * @tc.number SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0102
+    * @tc.desc   CreateAudioRender
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_RENDER_PROPERTY_STATIC_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_192000,
+        channels: audio.AudioChannel.CHANNEL_16,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_INVALID,
+        channelLayout: audio.AudioChannelLayout.CH_LAYOUT_AMB_ORDER3_FUMA
+      }
+      let AudioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+        rendererFlags: 0,
+        volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
+      }
+      let AudioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: AudioStreamInfo,
+        rendererInfo: AudioRendererInfo 
+      }
+      try {
+        audioRen = await audio.createAudioRenderer(AudioRendererOptions);
+        audioRen!.start();
+        audioRen!.stop();
+        audioRen!.release();
+      } catch (err) {
+        console.info(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        done();
+      }
+      done();
+    })
   })
 }
