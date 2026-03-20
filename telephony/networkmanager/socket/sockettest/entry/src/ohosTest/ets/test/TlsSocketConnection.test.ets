@@ -2281,7 +2281,7 @@ export default function TLSSocketConnectionTest() {
             signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
             cipherSuite: "AES256-SHA256"
           },
-          ALPNProtocols: ["spdy/1", "http/1.1"]
+          ALPNProtocols: ['']
         };
         let tlsClient: socket.TLSSocket = socket.constructTLSSocketInstance();
         let tlsServer: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
@@ -2297,7 +2297,7 @@ export default function TLSSocketConnectionTest() {
             signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
             cipherSuite: "AES256-SHA256"
           },
-          ALPNProtocols: ["spdy/1", "http/1.1"]
+          ALPNProtocols: ['']
         };
         await tlsServer.listen(tlsConnectOptions9).catch((err:BusinessError) => {
           console.info('fail to listen' + err.code.toString());
@@ -2346,6 +2346,55 @@ export default function TLSSocketConnectionTest() {
           expectFail(true);
           done();
         }
+      } catch (err) {
+        expectFail(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketConnectionSend2000
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketConnection_Send_2000
+     * @tc.desc   Do not monitor the service for testing,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrSocketTLSSocketConnectionSend2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTLSSocketConnectionSend2000';
+      console.info(`${caseName} test start `);
+      try {
+        let connOpt2: socket.TLSConnectOptions = {
+          address: addr,
+          secureOptions: {
+            ca: '',
+            cert: cert_client,
+            key: pri_key_client,
+            password: '123456',
+            protocols: [socket.Protocol.TLSv13],
+            useRemoteCipherPrefer: false,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+            isBidirectionalAuthentication : false
+          },
+          ALPNProtocols: ['']
+        };
+        tlsServer.on('connect', (client: socket.TLSSocketConnection) => {
+          client.send('ok', (err: BusinessError) => {
+            if (err) {
+              expectFail(false);
+              done();
+            }
+            expectFail(true);
+            done();
+          });
+        });
+        await tlsClient.bind(addr).then(() => {
+          tlsClient.connect(connOpt2,(err: BusinessError) => {
+            console.error("connect callback error" + err);
+            done();
+          });
+        })
       } catch (err) {
         expectFail(false);
         done();
