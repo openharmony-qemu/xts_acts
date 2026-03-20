@@ -2,11 +2,11 @@
   "description": "Config for ActsMediaCppStandardTest cases",
   "driver": {
     "type": "OHJSUnitTest",
-    "test-timeout": "1000000000",
-    "shell-timeout": "1000000000",
+    "test-timeout": "100000",
+    "shell-timeout": "100000",
     "bundle-name": "com.example.actsmediacppstandardtest",
     "module-name": "entry_test",
-    "testcase-timeout": 1000000000
+    "testcase-timeout": 100000
   },
   "kits": [
     {
