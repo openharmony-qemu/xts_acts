@@ -343,6 +343,60 @@ async function closePickerModel(driver: Driver, time ?: number) {
   await CommonFunc.sleep(time ?? 500);
 }
 
+async function savePhoto() {
+  console.log('savePhoto start');
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+  try {
+    let uri = 'data/storage/el2/base/haps/files/demo.jpg';
+    let fileUriList = [fileUri.getUriFromPath(uri)];
+    let photoCreationConfig: Array<photoAccessHelper.PhotoCreationConfig> = [
+      {
+        title: 'showAssetsCreationDialogTest',
+        fileNameExtension: 'jpg',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+      }
+    ];
+    let result: string[] = [];
+    phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig).then((uris)=>{
+      result = uris;
+      console.log(`savePhoto result = ${JSON.stringify(uris)}`);
+    })
+    await CommonFunc.sleep(3000);
+    await driveFn(); 
+    readWriteFile(uri, result[0]);
+    console.log('savePhoto success');
+  } catch (error) {
+    console.log('savePhoto fail')
+  }
+}
+
+function readWriteFile(srcUri: string, dstUri: string) {
+  let srcFile = fs.openSync(srcUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let destFile = fs.openSync(dstUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let bufSize = 4096;
+  let readSize = 0;
+  let buf = new ArrayBuffer(bufSize);
+  let readOptions: ReadOptions = {
+    offset: readSize,
+    length: bufSize
+  };
+  let readLen = fs.readSync(srcFile.fd, buf, readOptions);
+  console.log(`srcUri: ${srcUri}, dstUri: ${dstUri}, readLen: ${readLen}`);
+  while (readLen > 0) {
+    readSize += readLen;
+    let writeOptions: WriteOptions = {
+      length: readLen
+    };
+    fs.writeSync(destFile.fd, buf, writeOptions);
+    readOptions.offset = readSize;
+    readLen = fs.readSync(srcFile.fd, buf, readOptions);
+  }
+  fs.closeSync(srcFile);
+  fs.closeSync(destFile);
+}
+ 	 
+
 export default function TextPicker() {
   describe('testPicker', () => {
     const isExecutePicker = canIUse('SystemCapability.FileManagement.PhotoAccessHelper.Core');
@@ -360,7 +414,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       if (!isExecuteTestCase) {
         try {
-          driver.triggerCombineKeys(17, 18);
+          await savePhoto();
         } catch (error) {
           console.error(`cannot screenshot, error is: ${JSON.stringify(error)}`);
         }
