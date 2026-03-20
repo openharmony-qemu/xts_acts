@@ -33,6 +33,7 @@ constexpr uint8_t H264_START_CODE_3[] = { 0x00, 0x00, 0x01 };
 constexpr uint8_t H264_START_CODE_4[] = { 0x00, 0x00, 0x00, 0x01 };
 constexpr uint32_t H264_START_CODE_3_LEN = 3;
 constexpr uint32_t H264_START_CODE_4_LEN = 4;
+constexpr uint32_t kH264StartCodeThirdByteOffset = 2;
 constexpr uint32_t MILLION = 1000000;
 constexpr int32_t THREE = 3;
 constexpr int32_t TEN = 10;
@@ -55,6 +56,7 @@ constexpr int32_t DEFAULT_ANGLE = 90;
 constexpr int32_t kPushDataRetry = 0;
 constexpr int32_t kPushDataOk = 1;
 constexpr int32_t kPushDataEos = 3;
+constexpr uint32_t kUsleepRetryDelayUs = 500;
 
 SHA512_CTX g_c;
 unsigned char g_md[SHA512_DIGEST_LENGTH];
@@ -78,12 +80,13 @@ static uint32_t FindH264StartCode(const uint8_t* data, uint32_t start, uint32_t 
 {
     *outLen = 0;
     for (uint32_t i = start; i + H264_START_CODE_3_LEN <= endOffset; i++) {
-        if (i + H264_START_CODE_4_LEN <= endOffset &&
-            data[i] == 0x00 && data[i + 1] == 0x00 && data[i + 2] == 0x00 && data[i + 3] == 0x01) {
+        if (i + H264_START_CODE_4_LEN <= endOffset && data[i] == 0x00 && data[i + 1] == 0x00 && data[i + 2] == 0x00 &&
+            data[i + 3] == 0x01) {
             *outLen = H264_START_CODE_4_LEN;
             return i;
         }
-        if (data[i] == 0x00 && data[i + 1] == 0x00 && data[i + 2] == 0x01) {
+        if (data[i] == H264_START_CODE_3[0] && data[i + 1] == H264_START_CODE_3[1] &&
+            data[i + kH264StartCodeThirdByteOffset] == H264_START_CODE_3[2]) {
             *outLen = H264_START_CODE_3_LEN;
             return i;
         }
@@ -586,12 +589,12 @@ void VDecAPI11Sample::GetH264AnnexBUnit()
                 return;
             }
             if (prereadBufferSize_ >= H264_START_CODE_4_LEN) {
-                (void)SecureMemcpy(prereadBuffer_.get(), H264_START_CODE_4_LEN,
-                    prereadBuffer_.get() + prereadBufferSize_ - H264_START_CODE_4_LEN,
-                    H264_START_CODE_4_LEN);
+                (void)SecureMemcpy(prereadBuffer_.get(),
+                                   H264_START_CODE_4_LEN,
+                                   prereadBuffer_.get() + prereadBufferSize_ - H264_START_CODE_4_LEN,
+                                   H264_START_CODE_4_LEN);
             }
-            inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + H264_START_CODE_4_LEN),
-                PREREAD_BUFFER_SIZE);
+            inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + H264_START_CODE_4_LEN), PREREAD_BUFFER_SIZE);
             streamsize gcount = inFile_->gcount();
             prereadBufferSize_ = H264_START_CODE_4_LEN + static_cast<uint32_t>(gcount);
             pPrereadBuffer_ = 0;
@@ -616,12 +619,12 @@ void VDecAPI11Sample::GetH264AnnexBUnit()
                 return;
             }
             if (prereadBufferSize_ >= H264_START_CODE_4_LEN) {
-                (void)SecureMemcpy(prereadBuffer_.get(), H264_START_CODE_4_LEN,
-                    prereadBuffer_.get() + prereadBufferSize_ - H264_START_CODE_4_LEN,
-                    H264_START_CODE_4_LEN);
+                (void)SecureMemcpy(prereadBuffer_.get(),
+                                   H264_START_CODE_4_LEN,
+                                   prereadBuffer_.get() + prereadBufferSize_ - H264_START_CODE_4_LEN,
+                                   H264_START_CODE_4_LEN);
             }
-            inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + H264_START_CODE_4_LEN),
-                PREREAD_BUFFER_SIZE);
+            inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + H264_START_CODE_4_LEN), PREREAD_BUFFER_SIZE);
             streamsize gcount = inFile_->gcount();
             prereadBufferSize_ = H264_START_CODE_4_LEN + static_cast<uint32_t>(gcount);
             pPrereadBuffer_ = 0;
@@ -647,12 +650,12 @@ void VDecAPI11Sample::GetH264AnnexBUnit()
                 return;
             }
             if (prereadBufferSize_ >= H264_START_CODE_4_LEN) {
-                (void)SecureMemcpy(prereadBuffer_.get(), H264_START_CODE_4_LEN,
-                    prereadBuffer_.get() + prereadBufferSize_ - H264_START_CODE_4_LEN,
-                    H264_START_CODE_4_LEN);
+                (void)SecureMemcpy(prereadBuffer_.get(),
+                                   H264_START_CODE_4_LEN,
+                                   prereadBuffer_.get() + prereadBufferSize_ - H264_START_CODE_4_LEN,
+                                   H264_START_CODE_4_LEN);
             }
-            inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + H264_START_CODE_4_LEN),
-                PREREAD_BUFFER_SIZE);
+            inFile_->read(reinterpret_cast<char*>(prereadBuffer_.get() + H264_START_CODE_4_LEN), PREREAD_BUFFER_SIZE);
             streamsize gcount = inFile_->gcount();
             prereadBufferSize_ = H264_START_CODE_4_LEN + static_cast<uint32_t>(gcount);
             pPrereadBuffer_ = 0;
@@ -802,7 +805,7 @@ void VDecAPI11Sample::SyncInputFunc()
             int last = kPushDataRetry;
             constexpr uint32_t kMaxSyncInputPushRetry = 500U;
             for (uint32_t syncRetry = 0; syncRetry < kMaxSyncInputPushRetry && last == kPushDataRetry; syncRetry++) {
-                usleep(500);
+                usleep(kUsleepRetryDelayUs);
                 last = PushData(index, buffer);
             }
             if (last == kPushDataEos) {
@@ -1056,7 +1059,8 @@ void VDecAPI11Sample::OutputFuncTest()
                 if (renderTimestampNs == 0) {
                     renderTimestampNs = GetSystemTimeUs() * usTimeNum;
                 }
-                renderTimestampNs = renderTimestampNs + (usTimeNum / static_cast<int32_t>(defaultFrameRate) * msTimeNum);
+                renderTimestampNs =
+                    renderTimestampNs + (usTimeNum / static_cast<int32_t>(defaultFrameRate) * msTimeNum);
                 (void)OH_VideoDecoder_RenderOutputBufferAtTime(vdec_, index, renderTimestampNs);
             } else {
                 (void)OH_VideoDecoder_RenderOutputBuffer(vdec_, index);
