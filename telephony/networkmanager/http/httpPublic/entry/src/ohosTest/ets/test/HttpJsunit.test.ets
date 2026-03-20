@@ -1106,7 +1106,7 @@ export default function httpJsunit() {
     it("NetworkManager_UDPSocket_addMembership_Async_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "NetworkManager_UDPSocket_addMembership_Async_0500";
       try {
-        multicastSocket.addMembership(undefined, (err, data) => {
+        multicastSocket.addMembership(null, (err, data) => {
           if (err) {
             console.log(`${caseName} addMembership failed, err: ${JSON.stringify(err)}`);
             expectFalse();
