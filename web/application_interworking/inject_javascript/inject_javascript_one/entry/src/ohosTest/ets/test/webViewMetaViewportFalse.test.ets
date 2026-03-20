@@ -46,7 +46,7 @@ export default function webViewMetaViewportFalse() {
         } catch (err) {
             console.error('push webViewMetaViewportFalse page error:' + err);
         }
-      await driver.waitForComponent(ON.id("webViewMetaViewportFalse"), 10000);
+        await Utils.waitForComponent(driver, 'webViewMetaViewportFalse');
         done()
     });
     
