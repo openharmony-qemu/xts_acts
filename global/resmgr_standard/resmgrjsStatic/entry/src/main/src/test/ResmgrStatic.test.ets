@@ -271,7 +271,7 @@ export default function ResmgrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('getMediaContent_test_static_003', Level.LEVEL0, async (): Promise<void> => {
+    it('getMediaContent_test_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       res?.getMediaContent(0x01000001, (err: BusinessError<void> | null, value: Uint8Array | undefined) => {
         console.log('getMediaContent_test_static_003 length' + value!.length);
         expect(value!.length > 0).assertTrue();
