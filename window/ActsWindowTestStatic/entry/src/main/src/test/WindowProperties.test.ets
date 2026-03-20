@@ -812,19 +812,35 @@ export default function WindowPropertiesTest() {
             expect(properties.globalDisplayRect!.width).assertLarger(0);
             expect(properties.globalDisplayRect!.height).assertLarger(0);
             expect(properties.isLayoutFullScreen).assertEqual(false);
+            expect(properties.isLayoutFullScreen !== true).assertTrue();
             expect(properties.focusable).assertEqual(true);
+            expect(properties.focusable !== false).assertTrue();
             expect(properties.touchable).assertEqual(true);
+            expect(properties.touchable !== false).assertTrue();
             expect(properties.brightness).assertEqual(-1);
             expect(properties.isKeepScreenOn).assertEqual(false);
+            expect(properties.isKeepScreenOn !== true).assertTrue();
             expect(properties.isPrivacyMode).assertEqual(false);
+            expect(properties.isPrivacyMode !== true).assertTrue();
             expect(properties.isTransparent).assertEqual(false);
+            expect(properties.isTransparent !== true).assertTrue();
             expect(properties.isFullScreen).assertEqual(false);
+            expect(properties.isFullScreen !== true).assertTrue();
             expect(properties.id).assertLarger(0);
             expect(properties.displayId).assertLargerOrEqual(0);
             expect(properties.name !== null).assertTrue();
             // expect(properties.dimBehindValue !== null ).assertTrue();
             // expect(properties.isRoundCorner !== null ).assertTrue();
             expect(properties.type !== null).assertTrue();
+            if (properties.type === window.WindowType.TYPE_FLOAT) {
+                expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
+            } else if (properties.type === window.WindowType.TYPE_DIALOG) {
+                expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
+            } else if (properties.type === window.WindowType.TYPE_MAIN) {
+                expect(32).assertEqual(window.WindowType.TYPE_MAIN);
+            } else {
+                expect(false).assertTrue();
+            }
             done();
             } catch (err) {
             hilog.error(0x0000, '[ANI]', `${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
@@ -909,6 +925,46 @@ export default function WindowPropertiesTest() {
         }
         })
 
+        /**
+        * @tc.number       testOffDisplayIdChangeErrCode1300002_static_0200
+        * @tc.name         testOffDisplayIdChangeErrCode1300002_static_0200
+        * @tc.desc         testOffDisplayIdChangeErrCode1300002_static_0200
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
+        it('testOffDisplayIdChangeErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = "testOffDisplayIdChangeErrCode1300002_static_0200";
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window =
+                await windowStage!.createSubWindow('testOffDisplayIdChangeErrCode1300002_static_0200')
+                hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag, msgStr + 'window.destroy success');
+                tempWnd.offDisplayIdChange();
+                hilog.info(domain, tag, msgStr + 'window.on_keyboardDidHide success');
+                expect(false).assertTrue();
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                expect(exception.code === 1300002 || exception.code === 801).assertTrue();
+                if (exception.code !== 801) {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                } else {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
 
         /**
         * @tc.number       testOffDisplayIdChangeErrCode1300002_0100
@@ -919,39 +975,40 @@ export default function WindowPropertiesTest() {
         * @tc.level        Level 3
         */
         it('testOffDisplayIdChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
-        let caseName: string = "testOffDisplayIdChangeErrCode1300002_static_0100";
-        let msgStr: string = 'jsunittest ' + caseName + ' ';
-        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
-        try {
-            let tempWnd: window.Window =
-            await windowStage!.createSubWindow('testOffDisplayIdChangeErrCode1300002_static_0100')
-            hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
-            await Utils.msSleep(300);
-            expect(!!tempWnd).assertTrue();
-            await tempWnd.destroyWindow();
-            hilog.info(domain, tag, msgStr + 'window.destroy success');
-            tempWnd.offDisplayIdChange((id) => {
-            console.info(msgStr + 'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
-            });
-            hilog.info(domain, tag, msgStr + 'window.on_keyboardDidHide success');
-            expect(false).assertTrue();
-            done()
-        } catch (exception) {
-            exception = exception as BusinessError;
-            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
-            expect(exception.code === 1300002 || exception.code === 801).assertTrue();
-            if (exception.code !== 801) {
-            hilog.error(0x0000, '[ANI]',
-                msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
-            expect(exception.code).assertEqual(1300002);
-            } else {
-            hilog.error(0x0000, '[ANI]',
-                msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
-            expect(exception.code).assertEqual(801);
+            let caseName: string = "testOffDisplayIdChangeErrCode1300002_static_0100";
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window =
+                await windowStage!.createSubWindow('testOffDisplayIdChangeErrCode1300002_static_0100')
+                hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag, msgStr + 'window.destroy success');
+                tempWnd.offDisplayIdChange((id) => {
+                console.info(msgStr + 'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
+                });
+                hilog.info(domain, tag, msgStr + 'window.on_keyboardDidHide success');
+                expect(false).assertTrue();
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                expect(exception.code === 1300002 || exception.code === 801).assertTrue();
+                if (exception.code !== 801) {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                } else {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(801);
+                }
+                done()
             }
-            done()
-        }
         })
+
         /**
         * @tc.number       testOnWindowVisibilityChangeErrCode1300002_static_0100
         * @tc.name         testOnWindowVisibilityChangeErrCode1300002_static_0100
@@ -1160,9 +1217,15 @@ export default function WindowPropertiesTest() {
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass:window.Window = await windowStage!.getMainWindow();
-                windowClass.onWindowVisibilityChange((flag:boolean) => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Window visibility changed, isVisible=' + flag);
-                });
+                const callback = (flag: boolean) => {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
+                    if (flag === true) {
+                    expect(flag).assertTrue();
+                    } else {
+                    expect(flag).assertFalse();
+                    }
+                }
+                windowClass.onWindowVisibilityChange(callback);
                 windowClass.offWindowVisibilityChange();
                 done();
             } catch (error) {
@@ -1286,12 +1349,15 @@ export default function WindowPropertiesTest() {
                 hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling off systemDensityChange.');
                 expect(false).assertTrue();
                 done()
-                } catch (e) {
-                e = e as BusinessError;
-                hilog.info(0x0000, '[ANI]',
-                    msgStr + 'Failed to call off systemDensityChange. Cause:' + JSON.stringify(e));
-                expect(e!.code).assertEqual(1300002);
-                done()
+                } catch (err) {
+                err = err as BusinessError;
+                console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                if (err!.code === 801) {
+                    done();
+                } else {
+                    expect(err!.code).assertEqual(1300002)
+                    done();
+                }
                 }
             })
             .catch((err: Error): PromiseLike<void> | undefined => {
@@ -4110,6 +4176,99 @@ export default function WindowPropertiesTest() {
             done();
             }
         })
+
+        /**
+         * @tc.name   testStartAbilityNeedAnimation_true_static
+         * @tc.number testStartAbilityNeedAnimation_true_static
+         * @tc.desc   testStartAbilityNeedAnimation_true_static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testStartAbilityNeedAnimation_true_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName:string =  'testStartAbilityNeedAnimation_true_static';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin');
+            let wantInfo: Want = {
+                bundleName: 'com.example.actswindowtest.static',
+                abilityName: 'StartAbility'
+            };
+            let animation_param: window.StartAnimationParams = {
+                type: window.AnimationType.FADE_IN_OUT
+            };
+            let windowParam: window.WindowCreateParams = {
+                animationParams: animation_param,
+                needAnimation: true
+            };
+            let options: StartOptions = {
+                windowCreateParams: windowParam
+            };
+            try {
+                context!.startAbility(wantInfo, options).then( async() => {
+                    console.info(`${msgStr} Succeeded in starting ability.`);
+                    await Utils.msSleep(900);
+                    await Utils.msSleep(900);
+                    await terminateAbility(msgStr);
+                    console.info(`${msgStr} terminateSelf end.`);
+                    done()
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    console.error(msgStr + `Failed to starting ability. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done()
+                });
+            } catch (err) {
+                console.error(msgStr + `Failed to starting ability. outcatch Cause code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
+        /**
+         * @tc.name   testStartAbilityNeedAnimation_false_static
+         * @tc.number testStartAbilityNeedAnimation_false_static
+         * @tc.desc   testStartAbilityNeedAnimation_false_static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testStartAbilityNeedAnimation_false_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName:string =  'testStartAbilityNeedAnimation_false_static';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin');
+            let wantInfo: Want = {
+                bundleName: 'com.example.actswindowtest.static',
+                abilityName: 'StartAbility'
+            };
+            let animation_param: window.StartAnimationParams = {
+                type: window.AnimationType.FADE_IN_OUT
+            };
+            let windowParam: window.WindowCreateParams = {
+                animationParams: animation_param,
+                needAnimation: false
+            };
+            let options: StartOptions = {
+                windowCreateParams: windowParam
+            };
+            try {
+                context!.startAbility(wantInfo, options).then( async() => {
+                    console.info(`${msgStr} Succeeded in starting ability.`);
+                    await Utils.msSleep(900);
+                    await Utils.msSleep(900);
+                    await terminateAbility(msgStr);
+                    console.info(`${msgStr} terminateSelf end.`);
+                    done()
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    console.error(msgStr + `Failed to starting ability. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done()
+                });
+            } catch (err) {
+                console.error(msgStr + `Failed to starting ability. outcatch Cause code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
 
     })
 

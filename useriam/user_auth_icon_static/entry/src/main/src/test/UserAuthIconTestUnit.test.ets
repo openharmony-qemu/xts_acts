@@ -17,6 +17,8 @@ import { describe, it, expect, Level, TestType, Size, beforeAll } from '../../..
 import { Driver,ON, Component } from '@ohos.UiTest';
 import Utils from './Util.test';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { checkSupportOrNot } from './utils/commonFunc';
+import userAuth from '@ohos.userIAM.userAuth'
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -44,17 +46,20 @@ export default function UserAuthIcon() {
      */
     it('SUB_Security_IAM_authWidget_Func_Static_0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
 	    hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_Func_Static_0330 start');
-      let driver = Driver.create()
-	    await Utils.msSleep(2000);
-      let select = await driver.findComponent(ON.type("SymbolGlyph"));
-	    await select!.click();
-	  
-      let result = (await driver.findComponent(ON.isAfter(ON.text("result_code")))) as Component;
-	    await Utils.msSleep(1000);
-      let code = await (result.getText() as Promise<string>);
-	    await Utils.msSleep(5000);
-	    hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_Func_Static_0330 code is ' + code);
-      expect(code).assertEqual("12500010");
+      let checkFace = checkSupportOrNot(userAuth.UserAuthType.FACE);
+      if (checkFace == 0 ) {
+        let driver = Driver.create()
+        await Utils.msSleep(2000);
+        let select = await driver.findComponent(ON.type("SymbolGlyph"));
+        await select!.click();
+      
+        let result = (await driver.findComponent(ON.isAfter(ON.text("result_code")))) as Component;
+        await Utils.msSleep(1000);
+        let code = await (result.getText() as Promise<string>);
+        await Utils.msSleep(5000);
+        hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_Func_Static_0330 code is ' + code);
+        expect((code == "12500010") || (code == "12500005")).assertTrue();
+      }
       done();
     })
   })

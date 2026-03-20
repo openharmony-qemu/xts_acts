@@ -16,11 +16,11 @@
 
 import { ChipGroup, 	IconOptions, IconGroupSuffix,ChipGroupItemOptions,ChipItemStyle,IconItemOptions, SymbolItemOptions  } from '@ohos.arkui.advanced.ChipGroup';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-import { Entry, Component, Column, Color, $r ,Builder, Button, ClickEvent} from '@ohos.arkui.component';
+import { Entry, Component, Column, Color, $r ,Builder } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { ChipSize } from '@ohos.arkui.advanced.Chip'
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-import inspector from '@ohos.arkui.inspector';
+
 @Entry
 @Component
 struct ChipGroupIconItemOptionsPage {
@@ -30,7 +30,7 @@ struct ChipGroupIconItemOptionsPage {
   @State prefixModifierActivated: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontColor([Color.Red]);
   @State suffixModifierNormal: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi'));
   @State suffixModifierActivated: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')).fontColor([Color.Red]);
-  @State text1: string = 'ww';
+
   @Builder
   ChipGroupSuffix(): void {
     IconGroupSuffix({

@@ -35,7 +35,7 @@ const UNKNOWN = 99;
 const STRING_VALID_CERTIFICATEALIAS = 'test_cert_0.cer';
 const STRING_INVALID_CERTIFICATEALIAS = 'test.txt';
 const STRING_EMPTY_CERTIFICATEALIAS = '';
-const INT_INVALID_ACCOUNTID_RE_SIGNATURE = 101;
+const INT_INVALID_ACCOUNTID_RE_SIGNATURE = 999;
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const OVER_SIZE = MAX_FILE_SIZE + 1;
 
@@ -472,7 +472,7 @@ function testGetSecurityStatus() {
       securityManager.getSecurityStatus(INVALID_WANT, 'patch');
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -555,7 +555,7 @@ function testSetPasswordPolicy() {
       securityManager.setPasswordPolicy(INVALID_WANT, PASSWORD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -576,7 +576,7 @@ function testSetPasswordPolicy() {
       securityManager.setPasswordPolicy(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -639,7 +639,7 @@ function testSetPasswordPolicy() {
     try {
       securityManager.setPasswordPolicy(SELFWANT, OUT_OF_RANGE_PASSWORD_POLICY);
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -701,7 +701,7 @@ function testGetPasswordPolicy() {
       securityManager.getPasswordPolicy(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -788,7 +788,7 @@ function testInstallUserCertificate() {
       await securityManager.installUserCertificate(INVALID_WANT, CERTIFICATE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -874,7 +874,7 @@ function testInstallUserCertificate() {
       await securityManager.installUserCertificate(SELFWANT, CERTIFICATE_INVALID_ALIAS);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -916,7 +916,7 @@ function testInstallUserCertificate() {
       securityManager.installUserCertificate(INVALID_WANT, CERTIFICATE, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -980,7 +980,7 @@ function testInstallUserCertificate() {
       let path: string = securityManager.installUserCertificate(SELFWANT, CERTIFICATE, INT_INVALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1025,7 +1025,7 @@ function testInstallUserCertificate() {
       securityManager.installUserCertificate(SELFWANT, CERTIFICATE_INVALID_ALIAS, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1087,7 +1087,7 @@ function testGetUserCertificates() {
       securityManager.getUserCertificates(INVALID_WANT, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1188,7 +1188,7 @@ function testUninstallUserCertificate() {
       await securityManager.uninstallUserCertificate(INVALID_WANT, 'test');
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1209,7 +1209,7 @@ function testUninstallUserCertificate() {
       await securityManager.uninstallUserCertificate(SELFWANT, '');
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1291,7 +1291,7 @@ function testSetClipboardPolicy() {
       securityManager.setAppClipboardPolicy(null, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1310,7 +1310,7 @@ function testSetClipboardPolicy() {
       securityManager.setAppClipboardPolicy(SELFWANT, null, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1331,7 +1331,7 @@ function testSetClipboardPolicy() {
       securityManager.setAppClipboardPolicy(SELFWANT, TEST_TOKEN_ID, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1480,7 +1480,7 @@ function testGetClipboardPolicy() {
       securityManager.getAppClipboardPolicy(null, TEST_TOKEN_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1538,7 +1538,7 @@ function testGetClipboardPolicy() {
       securityManager.getAppClipboardPolicy(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1603,7 +1603,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1622,7 +1622,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, null, null, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1643,7 +1643,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, null, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1664,7 +1664,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, null, CURRENT_USER_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1685,7 +1685,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, CURRENT_USER_ID, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1729,7 +1729,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, INVALID_BUNDLE_NAME, CURRENT_USER_ID, TEST_CLIPBOARD_POLICY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1822,7 +1822,7 @@ function testSetClipboardPolicyByBundleName() {
       securityManager.setAppClipboardPolicy(SELFWANT, SELFHAPNAME, CURRENT_USER_ID, UNKNOWN);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1888,7 +1888,7 @@ function testGetClipboardPolicyByBundleName() {
       securityManager.getAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1906,7 +1906,7 @@ function testGetClipboardPolicyByBundleName() {
       securityManager.getAppClipboardPolicy(SELFWANT, null, CURRENT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1924,7 +1924,7 @@ function testGetClipboardPolicyByBundleName() {
       securityManager.getAppClipboardPolicy(SELFWANT, SELFHAPNAME, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1990,7 +1990,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(INVALID_WANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2011,7 +2011,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, null, PIXEL_MAP, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2032,7 +2032,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, null, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2053,7 +2053,7 @@ function testSetWatermarkImage() {
       securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2140,7 +2140,7 @@ function testCancelWatermarkImage() {
       securityManager.cancelWatermarkImage(INVALID_WANT, WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2161,7 +2161,7 @@ function testCancelWatermarkImage() {
       securityManager.cancelWatermarkImage(SELFWANT, null, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2182,7 +2182,7 @@ function testCancelWatermarkImage() {
       securityManager.cancelWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2244,7 +2244,7 @@ function testSetPermissionManagedState() {
       securityManager.setPermissionManagedState(null, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2265,7 +2265,7 @@ function testSetPermissionManagedState() {
       securityManager.setPermissionManagedState(SELFWANT, null, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2286,7 +2286,7 @@ function testSetPermissionManagedState() {
       securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2458,7 +2458,7 @@ function testGetPermissionManagedState() {
       securityManager.getPermissionManagedState(null, TEST_APP_INSTANCE, TEST_PERMISSION_1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2479,7 +2479,7 @@ function testGetPermissionManagedState() {
       securityManager.getPermissionManagedState(SELFWANT, null, TEST_PERMISSION_1);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2500,7 +2500,7 @@ function testGetPermissionManagedState() {
       securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2594,7 +2594,7 @@ function testSetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_set_external_source_extensions_policy_0300 error.code = ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2712,7 +2712,7 @@ function testGetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_external_source_extensions_policy_0300 error.code = ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2846,7 +2846,7 @@ function testInstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       });
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3142,7 +3142,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         INVALID_WANT, STRING_VALID_CERTIFICATEALIAS, INT_VALID_ACCOUNTID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3281,7 +3281,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getSecurityStatus_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getSecurityStatus_test_001  -------- END --------');
@@ -3304,7 +3304,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getSecurityStatus_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getSecurityStatus_test_002  -------- END --------');
@@ -3327,7 +3327,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installUserCertificate_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installUserCertificate_test_001  -------- END --------');
@@ -3350,7 +3350,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installUserCertificate_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installUserCertificate_test_002  -------- END --------');
@@ -3373,7 +3373,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installUserCertificate_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installUserCertificate_test_003  -------- END --------');
@@ -3396,7 +3396,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installUserCertificate_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installUserCertificate_test_004  -------- END --------');
@@ -3418,7 +3418,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUserCertificates_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUserCertificates_test_001  -------- END --------');
@@ -3441,7 +3441,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUserCertificates_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUserCertificates_test_002  -------- END --------');
@@ -3464,7 +3464,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUserCertificates_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUserCertificates_test_003  -------- END --------');
@@ -3487,7 +3487,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUserCertificates_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUserCertificates_test_004  -------- END --------');
@@ -3510,7 +3510,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPasswordPolicy_test_001  -------- END --------');
@@ -3533,7 +3533,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPasswordPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPasswordPolicy_test_002  -------- END --------');
@@ -3556,7 +3556,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPasswordPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPasswordPolicy_test_003  -------- END --------');
@@ -3579,7 +3579,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPasswordPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPasswordPolicy_test_004  -------- END --------');
@@ -3602,7 +3602,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getPasswordPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getPasswordPolicy_test_001  -------- END --------');
@@ -3625,7 +3625,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getPasswordPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getPasswordPolicy_test_002  -------- END --------');
@@ -3648,7 +3648,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setAppClipboardPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setAppClipboardPolicy_test_001  -------- END --------');
@@ -3671,7 +3671,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setAppClipboardPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setAppClipboardPolicy_test_002  -------- END --------');
@@ -3694,7 +3694,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setAppClipboardPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setAppClipboardPolicy_test_003  -------- END --------');
@@ -3717,7 +3717,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setAppClipboardPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setAppClipboardPolicy_test_004  -------- END --------');
@@ -3740,7 +3740,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_001  -------- END --------');
@@ -3763,7 +3763,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_002  -------- END --------');
@@ -3786,7 +3786,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_003  -------- END --------');
@@ -3809,7 +3809,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_004  -------- END --------');
@@ -3831,7 +3831,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPermissionManagedState_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPermissionManagedState_test_001  -------- END --------');
@@ -3854,7 +3854,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPermissionManagedState_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPermissionManagedState_test_002  -------- END --------');
@@ -3877,7 +3877,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPermissionManagedState_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPermissionManagedState_test_003  -------- END --------');
@@ -3900,7 +3900,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPermissionManagedState_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPermissionManagedState_test_004  -------- END --------');
@@ -3923,7 +3923,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPermissionManagedState_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPermissionManagedState_test_005  -------- END --------');
@@ -3946,7 +3946,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setPermissionManagedState_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setPermissionManagedState_test_006  -------- END --------');
@@ -3969,7 +3969,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getPermissionManagedState_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getPermissionManagedState_test_001  -------- END --------');
@@ -3992,7 +3992,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getPermissionManagedState_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getPermissionManagedState_test_002  -------- END --------');
@@ -4015,7 +4015,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getPermissionManagedState_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getPermissionManagedState_test_003  -------- END --------');
@@ -4038,7 +4038,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getPermissionManagedState_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getPermissionManagedState_test_004  -------- END --------');
@@ -4061,7 +4061,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setWatermarkImage_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setWatermarkImage_test_001  -------- END --------');
@@ -4084,7 +4084,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setWatermarkImage_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setWatermarkImage_test_002  -------- END --------');
@@ -4107,7 +4107,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setWatermarkImage_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setWatermarkImage_test_003  -------- END --------');
@@ -4130,7 +4130,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setWatermarkImage_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setWatermarkImage_test_004  -------- END --------');
@@ -4153,7 +4153,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setWatermarkImage_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setWatermarkImage_test_005  -------- END --------');
@@ -4176,7 +4176,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setWatermarkImage_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setWatermarkImage_test_006  -------- END --------');
@@ -4199,7 +4199,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- cancelWatermarkImage_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- cancelWatermarkImage_test_001  -------- END --------');
@@ -4222,7 +4222,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- cancelWatermarkImage_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- cancelWatermarkImage_test_002  -------- END --------');
@@ -4245,7 +4245,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- cancelWatermarkImage_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- cancelWatermarkImage_test_003  -------- END --------');
@@ -4268,7 +4268,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- cancelWatermarkImage_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- cancelWatermarkImage_test_004  -------- END --------');
@@ -4291,7 +4291,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setExternalSourceExtensionsPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setExternalSourceExtensionsPolicy_test_001  -------- END --------');
@@ -4314,7 +4314,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setExternalSourceExtensionsPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setExternalSourceExtensionsPolicy_test_002  -------- END --------');
@@ -4337,7 +4337,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getExternalSourceExtensionsPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getExternalSourceExtensionsPolicy_test_001  -------- END --------');
@@ -4360,7 +4360,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getExternalSourceExtensionsPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getExternalSourceExtensionsPolicy_test_002  -------- END --------');
@@ -4383,7 +4383,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installEnterpriseReSignatureCertificate_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installEnterpriseReSignatureCertificate_test_001  -------- END --------');
@@ -4406,7 +4406,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installEnterpriseReSignatureCertificate_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installEnterpriseReSignatureCertificate_test_002  -------- END --------');
@@ -4429,7 +4429,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installEnterpriseReSignatureCertificate_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installEnterpriseReSignatureCertificate_test_003  -------- END --------');
@@ -4452,7 +4452,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installEnterpriseReSignatureCertificate_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installEnterpriseReSignatureCertificate_test_004  -------- END --------');
@@ -4475,7 +4475,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installEnterpriseReSignatureCertificate_test_005 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installEnterpriseReSignatureCertificate_test_005  -------- END --------');
@@ -4498,7 +4498,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- installEnterpriseReSignatureCertificate_test_006 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- installEnterpriseReSignatureCertificate_test_006  -------- END --------');
@@ -4521,7 +4521,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- uninstallEnterpriseReSignatureCertificate_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- uninstallEnterpriseReSignatureCertificate_test_001  -------- END --------');
@@ -4544,7 +4544,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- uninstallEnterpriseReSignatureCertificate_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- uninstallEnterpriseReSignatureCertificate_test_002  -------- END --------');
@@ -4567,7 +4567,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- uninstallEnterpriseReSignatureCertificate_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- uninstallEnterpriseReSignatureCertificate_test_003  -------- END --------');
@@ -4590,7 +4590,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- uninstallEnterpriseReSignatureCertificate_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- uninstallEnterpriseReSignatureCertificate_test_004  -------- END --------');
@@ -4612,7 +4612,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- uninstallUserCertificate_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- uninstallUserCertificate_test_015  -------- END --------');
@@ -4635,7 +4635,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- uninstallUserCertificate_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- uninstallUserCertificate_test_016  -------- END --------');
@@ -4658,7 +4658,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUserCertificates_test_029 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUserCertificates_test_029  -------- END --------');
@@ -4681,7 +4681,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUserCertificates_test_030 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUserCertificates_test_030  -------- END --------');
@@ -4704,7 +4704,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUserCertificates_test_031 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUserCertificates_test_031  -------- END --------');
@@ -4727,7 +4727,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUserCertificates_test_032 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUserCertificates_test_032  -------- END --------');
@@ -4749,7 +4749,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_043 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_043  -------- END --------');
@@ -4772,7 +4772,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_044 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_044  -------- END --------');
@@ -4795,7 +4795,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_045 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_045  -------- END --------');
@@ -4818,7 +4818,7 @@ function testUninstallEnterpriseReSignatureCertificate() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_046 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_046  -------- END --------');

@@ -251,6 +251,72 @@ export default function ActsPrintErrorTest() {
     })
 
     /**
+     * @tc.name   SUB_Oh_Print_StartPrintWithJobStateCallback1_1002
+     * @tc.number SUB_Oh_Print_StartPrintWithJobStateCallback1_1002
+     * @tc.desc   Test OH_Print_StartPrintWithJobStateCallback1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Oh_Print_StartPrintWithJobStateCallback1_1002', Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_Oh_Print_StartPrintWithJobStateCallback1_1002 start====");
+        let result = printerror.OH_Print_StartPrintWithJobStateCallback1();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Oh_Print_StartPrintWithJobStateCallback1_1002 result: " + result);
+        done();
+      } catch (err) {
+        console.error("====>SUB_Oh_Print_StartPrintWithJobStateCallback1_1002 catch err: " + err);
+        expect(1).assertEqual(Success);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Oh_Print_StartPrintWithJobStateCallback2_1003
+     * @tc.number SUB_Oh_Print_StartPrintWithJobStateCallback2_1003
+     * @tc.desc   Test OH_Print_StartPrintWithJobStateCallback2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Oh_Print_StartPrintWithJobStateCallback2_1003', Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_Oh_Print_StartPrintWithJobStateCallback2_1003 start====");
+        let result = printerror.OH_Print_StartPrintWithJobStateCallback2();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Oh_Print_StartPrintWithJobStateCallback2_1003 result: " + result);
+        done();
+      } catch (err) {
+        console.error("====>SUB_Oh_Print_StartPrintWithJobStateCallback2_1003 catch err: " + err);
+        expect(1).assertEqual(Success);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Oh_Print_StartPrintWithJobStateCallback3_1004
+     * @tc.number SUB_Oh_Print_StartPrintWithJobStateCallback3_1004
+     * @tc.desc   Test OH_Print_StartPrintWithJobStateCallback3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Oh_Print_StartPrintWithJobStateCallback3_1004', Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>SUB_Oh_Print_StartPrintWithJobStateCallback3_1004 start====");
+        let result = printerror.OH_Print_StartPrintWithJobStateCallback3();
+        expect(result).assertEqual(Success);
+        console.info("====>SUB_Oh_Print_StartPrintWithJobStateCallback3_1004 result: " + result);
+        done();
+      } catch (err) {
+        console.error("====>SUB_Oh_Print_StartPrintWithJobStateCallback3_1004 catch err: " + err);
+        expect(1).assertEqual(Success);
+        done()
+      }
+    })
+
+    /**
      * @tc.name   SUB_Oh_Print_RegisterPrinterChangeListener1_1100
      * @tc.number SUB_Oh_Print_RegisterPrinterChangeListener1_1100
      * @tc.desc   Test OH_Print_RegisterPrinterChangeListener1.

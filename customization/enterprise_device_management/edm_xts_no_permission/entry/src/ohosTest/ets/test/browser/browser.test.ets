@@ -108,7 +108,7 @@ function testGetManagedBrowserPolicy() {
       browser.getManagedBrowserPolicy(SELFWANT, "");
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -128,7 +128,7 @@ function testGetManagedBrowserPolicy() {
       browser.getManagedBrowserPolicy(INVALID_WANT, SELFHAPNAME);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   })

@@ -19,6 +19,7 @@ import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import systemManager from '@ohos.enterprise.systemManager';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 
 export default function systemManagerTest() {
   describe('systemManager_test', () => {
@@ -41,6 +42,8 @@ export default function systemManagerTest() {
     testGetKeyEventPolicies();
     testStartCollectLog();
     testFinishLogCollected();
+    testSetActivationLockDisabled();
+    testIsActivationLockDisabled();
   })
 }
 
@@ -98,7 +101,7 @@ function testSetNTPSever() {
       systemManager.setNTPServer(INVALID_WANT, '');
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -119,7 +122,7 @@ function testSetNTPSever() {
       systemManager.setNTPServer(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -209,7 +212,7 @@ function testGetNTPSever() {
       systemManager.getNTPServer(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -336,7 +339,7 @@ function testSetOtaUpdatePolicy() {
       systemManager.setOtaUpdatePolicy(SELFWANT, policy);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -388,7 +391,7 @@ function testSetOtaUpdatePolicy() {
       systemManager.setOtaUpdatePolicy(SELFWANT, policy);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -641,7 +644,7 @@ function testGetOtaUpdatePolicy() {
       systemManager.getOtaUpdatePolicy(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -765,7 +768,7 @@ function testNotifyUpdatePackages() {
         expect(false).assertTrue();
       })
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -901,7 +904,7 @@ function testGetUpdateResult() {
         expect(false).assertTrue();
       })
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -938,7 +941,7 @@ function testGetUpdateAuthData() {
     try {
       let authData: string = await systemManager.getUpdateAuthData(INVALID_WANT);
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2249,7 +2252,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setNTPServer_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setNTPServer_test_001  -------- END --------');
@@ -2272,7 +2275,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setNTPServer_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setNTPServer_test_002  -------- END --------');
@@ -2295,7 +2298,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getNTPServer_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getNTPServer_test_001  -------- END --------');
@@ -2318,7 +2321,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getNTPServer_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getNTPServer_test_002  -------- END --------');
@@ -2346,7 +2349,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setOtaUpdatePolicy_test_001  -------- END --------');
@@ -2374,7 +2377,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setOtaUpdatePolicy_test_002  -------- END --------');
@@ -2397,7 +2400,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_003 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setOtaUpdatePolicy_test_003  -------- END --------');
@@ -2420,7 +2423,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- setOtaUpdatePolicy_test_004 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- setOtaUpdatePolicy_test_004  -------- END --------');
@@ -2443,7 +2446,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getOtaUpdatePolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getOtaUpdatePolicy_test_001  -------- END --------');
@@ -2466,7 +2469,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getOtaUpdatePolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getOtaUpdatePolicy_test_002  -------- END --------');
@@ -2506,7 +2509,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- notifyUpdatePackages_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- notifyUpdatePackages_test_001  -------- END --------');
@@ -2546,7 +2549,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- notifyUpdatePackages_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- notifyUpdatePackages_test_002  -------- END --------');
@@ -2569,7 +2572,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- notifyUpdatePackages_test_003 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- notifyUpdatePackages_test_003  -------- END --------');
@@ -2592,7 +2595,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- notifyUpdatePackages_test_004 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- notifyUpdatePackages_test_004  -------- END --------');
@@ -2615,7 +2618,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateResult_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateResult_test_001  -------- END --------');
@@ -2638,7 +2641,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateResult_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateResult_test_002  -------- END --------');
@@ -2661,7 +2664,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateAuthData_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateAuthData_test_001  -------- END --------');
@@ -2684,7 +2687,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateAuthData_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateAuthData_test_002  -------- END --------');
@@ -2711,7 +2714,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- addKeyEventPolicies_test_001  -------- END --------');
@@ -2738,7 +2741,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- addKeyEventPolicies_test_002  -------- END --------');
@@ -2761,7 +2764,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_003 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- addKeyEventPolicies_test_003  -------- END --------');
@@ -2784,7 +2787,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- addKeyEventPolicies_test_004 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- addKeyEventPolicies_test_004  -------- END --------');
@@ -2807,7 +2810,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- removeKeyEventPolicies_test_001  -------- END --------');
@@ -2830,7 +2833,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- removeKeyEventPolicies_test_002  -------- END --------');
@@ -2853,7 +2856,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_003 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- removeKeyEventPolicies_test_003  -------- END --------');
@@ -2876,7 +2879,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- removeKeyEventPolicies_test_004 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- removeKeyEventPolicies_test_004  -------- END --------');
@@ -2899,7 +2902,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getKeyEventPolicies_test_001  -------- END --------');
@@ -2922,7 +2925,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_002 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getKeyEventPolicies_test_002  -------- END --------');
@@ -2944,7 +2947,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getNTPServer_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getNTPServer_test_015  -------- END --------');
@@ -2967,7 +2970,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getNTPServer_test_016 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getNTPServer_test_016  -------- END --------');
@@ -2989,7 +2992,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getOtaUpdatePolicy_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getOtaUpdatePolicy_test_015  -------- END --------');
@@ -3012,7 +3015,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getOtaUpdatePolicy_test_016 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getOtaUpdatePolicy_test_016  -------- END --------');
@@ -3034,7 +3037,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateAuthData_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateAuthData_test_015  -------- END --------');
@@ -3057,7 +3060,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getUpdateAuthData_test_016 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getUpdateAuthData_test_016  -------- END --------');
@@ -3079,7 +3082,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getKeyEventPolicies_test_015  -------- END --------');
@@ -3102,7 +3105,7 @@ function testStartCollectLog() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_016 error 401 is expected, actually catch: ' + error.code);
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
     console.info(' --- getKeyEventPolicies_test_016  -------- END --------');
@@ -3154,6 +3157,311 @@ function testFinishLogCollected() {
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
+    done();
+  });
+
+  /**
+   * @tc.name   setOtaUpdatePolicy_test_004_1
+   * @tc.number setOtaUpdatePolicy_test_004_1
+   * @tc.desc   setOtaUpdatePolicy with disableSystemOtaUpdate is false policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("setOtaUpdatePolicy_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- setOtaUpdatePolicy_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let policy: systemManager.OtaUpdatePolicy = {
+      "policyType": systemManager.PolicyType.DEFAULT,
+      "version": UPDATE_VERSION,
+      "disableSystemOtaUpdate": false
+    }
+    try {
+      let ret = systemManager.setOtaUpdatePolicy(SELFWANT, policy);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- setOtaUpdatePolicy_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- setOtaUpdatePolicy_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   notifyUpdatePackages_test_004_1
+   * @tc.number notifyUpdatePackages_test_004_1
+   * @tc.desc   notifyUpdatePackages with [] parameter packages
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("notifyUpdatePackages_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- notifyUpdatePackages_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let notify: systemManager.NotifyDescription = {
+      "installTips": "installTips",
+      "installTipsDetail": "installTips detail"
+    }
+    let description: systemManager.PackageDescription = {
+      "notify": notify,
+    }
+    let updatePackageInfo: systemManager.UpdatePackageInfo = {
+      "version": UPDATE_VERSION,
+      "packages": [],
+      "description": description,
+      "authInfo": "invalid authinfo",
+    };
+    await systemManager.notifyUpdatePackages(SELFWANT, updatePackageInfo).then(() => {
+      expect(false).assertTrue();
+    }).catch((error: BusinessError) => {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9201004).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    });
+    done();
+    console.info(' --- notifyUpdatePackages_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   addKeyEventPolicies_test_004_1
+   * @tc.number addKeyEventPolicies_test_004_1
+   * @tc.desc   addKeyEventPolicies with [] parameter keyPolicies
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("addKeyEventPolicies_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addKeyEventPolicies_test_004_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = systemManager.addKeyEventPolicies(SELFWANT, []);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- addKeyEventPolicies_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- addKeyEventPolicies_test_004_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   removeKeyEventPolicies_test_004_1
+   * @tc.number removeKeyEventPolicies_test_004_1
+   * @tc.desc   removeKeyEventPolicies with [] parameter keyCodes
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("removeKeyEventPolicies_test_004_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeKeyEventPolicies_test_004  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = systemManager.removeKeyEventPolicies(SELFWANT, []);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- removeKeyEventPolicies_test_004_1 error 801 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- removeKeyEventPolicies_test_004_1  -------- END --------');
+  })
+
+}
+
+function testSetActivationLockDisabled() {
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0001
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0001
+  * @tc.desc   test systemManager setActivationLockDisabled without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0001", Level.LEVEL2, async (done: Function) => {
+    let credential: string = "test";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0002
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0002
+  * @tc.desc   test systemManager setActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    let credential: string = "test";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0003
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0003
+  * @tc.desc   test systemManager setActivationLockDisabled true with credential is null
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let credential: string = "";
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }   
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0004
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0004
+  * @tc.desc   test systemManager setActivationLockDisabled true with Whether the CCM parameter is enabled
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let credential: string = "test";
+    let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
+    await systemManager.setActivationLockDisabled(SELFWANT, true, credential).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+        if (info == "true") {
+          if (Number(error.code) === 801) {
+            expect(Number(error.code) === 801).assertTrue();
+          } else {
+            expect(Number(error.code) === 9201011).assertTrue();
+          }
+        } else {
+          if (Number(error.code) === 801) {
+            expect(Number(error.code) === 801).assertTrue();
+          } else {
+            expect(Number(error.code) === 9201012).assertTrue();
+          }
+        }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_set_activation_lock_disabled_0005
+  * @tc.number SUB_CUSTOMIZATION_EDM_SET_ACTIVATION_LOCK_DISABLED_JS_0005
+  * @tc.desc   test systemManager setActivationLockDisabled false with Whether the CCM parameter is enabled
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_set_activation_lock_disabled_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: string = systemParameterEnhance.getSync("const.pc_security.activation_lock_allow_disable", "");
+    await systemManager.setActivationLockDisabled(SELFWANT, false, "").then(()=>{
+      if (info == "true") {
+        expect(true).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+    }).catch ((error: BusinessError)=> {
+      if (info == "true") {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201012).assertTrue();
+        }
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
+    done();
+  });
+}
+
+function testIsActivationLockDisabled() {
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0001
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0001
+  * @tc.desc   test systemManager IsActivationLockDisabled without admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0001", Level.LEVEL2, async (done: Function) => {
+    await systemManager.isActivationLockDisabled(SELFWANT).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    });
+    done();
+  });
+
+  /**
+  * @tc.name   test_is_activation_lock_disabled_0002
+  * @tc.number SUB_CUSTOMIZATION_EDM_IS_ACTIVATION_LOCK_DISABLED_JS_0002
+  * @tc.desc   test systemManager IsActivationLockDisabled with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_is_activation_lock_disabled_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    await systemManager.isActivationLockDisabled(SELFWANT).then(()=>{
+      expect(false).assertTrue();
+    }).catch ((error: BusinessError)=> {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    }).finally(async () => {
+      await adminManager.disableAdmin(SELFWANT);
+    });
     done();
   });
 }

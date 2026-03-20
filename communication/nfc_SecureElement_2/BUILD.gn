@@ -17,7 +17,7 @@ ohos_js_app_suite("ActsnfcSEServiceTest2") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsnfcSEServiceTest2"
+  hap_name = "ActsNfcSEServiceAdapt001Test"
   part_name = "nfc"
   subsystem_name = "communication"
 }

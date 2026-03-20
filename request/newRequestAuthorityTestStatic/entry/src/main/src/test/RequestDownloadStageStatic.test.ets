@@ -17,7 +17,7 @@ import request from "@ohos.request";
 import fs from '@ohos.file.fs';
 import common from '@ohos.app.ability.common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size  } from "../../../hypium/index";
-
+import fs from '@ohos.file.fs'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -44,6 +44,13 @@ export default function requestDownloadStageStaticUnit() {
         hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         baseContext = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
         hilog.info(domain, tag, '%{public}s', 'baseContext set success');
+        let pathDir: string = baseContext!.cacheDir;
+        let filePath = pathDir + `/test.txt`;
+        let file = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+        let content = ''.padEnd(1 * 1024, 'Hello world');
+        fs.writeSync(file.fd, content);
+        fs.closeSync(file);
+        hilog.info(domain, tag, '%{public}s', '====>beforeAll: text.txt file generate');
         done();
       } catch (err) {
         console.info('====>beforeAll catch err:'+JSON.stringify(err))
@@ -726,6 +733,537 @@ export default function requestDownloadStageStaticUnit() {
       }catch (err) {
         console.info('====>SUB_Request_downloadStage_Supplemental_Static_1200 uploadFile err: ' + JSON.stringify(err.code));
         expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1300
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1300
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_1300 is starting-----------------------");
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test002.hap',
+        description: 'XTS download test!',
+        networkType: request.NETWORK_WIFI,
+        filePath: 'base/SUB_Request_downloadStage_Supplemental_Static_1300',
+        title: 'XTS download test!',
+        background: true,
+        enableMetered: true,
+        enableRoaming: true,
+      }
+      try{
+        let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
+        expect(downloadTask !== undefined).assertEqual(true);
+
+        request.downloadFile(baseContext!, downloadFileConfig, async (err, downloadTask):void => {
+          console.info("====>SUB_Request_downloadStage_Supplemental_Static_1300 downloadTask: " + downloadTask);
+          try{
+            if(err){
+              console.info(`====>SUB_Request_downloadStage_Supplemental_Static_1300 downloadFile error: ${JSON.stringify(err)}`)
+              expect().assertFail();
+            }
+            expect(downloadTask != undefined).assertEqual(true);
+            done();
+          }catch(e){
+            console.info("====>SUB_Request_downloadStage_Supplemental_Static_1300 except error: " + e);
+            done();
+          }
+        });
+
+        let del:boolean = await downloadTask.delete();
+        expect(del === false).assertTrue();
+        downloadTask.onRemove(() => {
+          console.info("====>SUB_Request_downloadStage_Supplemental_Static_1300 onRemove success:");
+          expect(del === true).assertTrue();
+        })
+        downloadTask.delete((err, result) => {
+          if (err) {
+            console.error(`====>Failed to delete the upload task. Code: ${err.code}, message: ${err.message}`);
+            expect(result === false).assertTrue();
+          }
+          console.info('====>Succeeded in deleting the upload task.');
+          expect(result === true).assertTrue();
+        });
+
+        let pause:boolean = await downloadTask.suspend();
+        expect(pause === false).assertTrue();
+        downloadTask.onPause(() => {
+          console.info("====>SUB_Request_downloadStage_Supplemental_Static_1300 onRemove success:");
+          expect(pause === true).assertTrue();
+        })
+        downloadTask.suspend((err, result) => {
+          if (err) {
+            console.error(`====>Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
+            expect(result === false).assertTrue();
+          }
+          console.info('====>Succeeded in pausing the download task.');
+          expect(result === true).assertTrue();
+        });
+
+        let pro:boolean = await downloadTask.restore();
+        expect(pro === false).assertTrue();
+        downloadTask.onProgress((receivedSize: long, totalSize: long) => {
+          console.info("====>SUB_Request_downloadStage_Supplemental_Static_1300 onRemove success:");
+          expect(pause === true).assertTrue();
+        })
+        downloadTask.restore((err, result) => {
+          if (err) {
+            console.error(`====>Failed to pause the download task. Code: ${err.code}, message: ${err.message}`);
+            expect(result === false).assertTrue();
+          }
+          console.info('====>Succeeded in pausing the download task.');
+          expect(result === true).assertTrue();
+        });
+
+        downloadTask.getTaskInfo((err, taskInfo) => {
+          try {
+            if (err) {
+              console.error(`====>SUB_Request_downloadStage_Supplemental_Static_1300: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_1300 in getTaskInfo the download task.');
+            expect(taskInfo!.description !== undefined).assertTrue();
+            expect(taskInfo!.downloadedBytes !== undefined).assertTrue();
+            expect(taskInfo!.downloadId !== undefined).assertTrue();
+            expect(taskInfo!.failedReason !== undefined).assertTrue();
+            expect(taskInfo!.fileName !== undefined).assertTrue();
+            expect(taskInfo!.filePath !== undefined).assertTrue();
+            expect(taskInfo!.pausedReason !== undefined).assertTrue();
+            expect(taskInfo!.status !== undefined).assertTrue();
+            expect(taskInfo!.targetURI !== undefined).assertTrue();
+            expect(taskInfo!.downloadTitle !== undefined).assertTrue();
+            expect(taskInfo!.downloadTotalBytes !== undefined).assertTrue();
+          } catch (err) {
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_1300 getTaskInfo error.');
+          }
+        });
+        done();
+        console.info("====>-----------------------SUB_Request_downloadStage_Supplemental_Static_1300 end-----------------------");
+      } catch(err){
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_1300 except error: ${JSON.stringify(err.code)}`)
+        expect(err.code === 401).assertEqual(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1400
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1400
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_1400 is starting-----------------------");
+      let File1: request.File = {
+        filename: 'request',
+        name: '1300',
+        uri: 'cache/test.txt',
+        type: 'text'
+      }
+
+      let RequestData1: request.RequestData = {
+        name: 'upload',
+        value: 'key'
+      }
+
+      let File2: request.File = {
+        filename: '',
+        name: '',
+        uri: '',
+        type: ''
+      }
+
+      let RequestData2: request.RequestData = {
+        name: '',
+        value: ''
+      }
+
+      let config1: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: { 'Accept': '*/*' },
+        method: "POST",
+        files: [File1],
+        data: [RequestData1],
+      }
+
+      let config2: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: { 'Accept': '*/*' },
+        method: "POST",
+        files: [File2],
+        data: [RequestData2],
+      }
+
+      let config3: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: { 'Accept': '*/*' },
+        method: "POST",
+        files: [],
+        data: [],
+      }
+      try{
+        let uploadTask1: request.UploadTask = await request.uploadFile(baseContext!, config1);
+        expect(uploadTask1 !== undefined).assertEqual(true);
+        let uploadTask2: request.UploadTask = await request.uploadFile(baseContext!, config2);
+        expect(uploadTask2 !== undefined).assertEqual(true);
+
+        request.uploadFile(baseContext!, config2, (err, data) => {
+          if (err) {
+            console.error(`====>SUB_Request_downloadStage_Supplemental_Static_1400 err Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          } else {
+            expect(data !== undefined).assertEqual(true);
+          }
+        });
+
+        request.uploadFile(baseContext!, config3, (err, data) => {
+          if (err) {
+            console.error(`====>SUB_Request_downloadStage_Supplemental_Static_1400 err Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          } else {
+            expect(data !== undefined).assertEqual(true);
+          }
+        });
+
+        let del:boolean = await uploadTask1.delete();
+        expect(del === false).assertTrue();
+        uploadTask1.onProgress((receivedSize: long, totalSize: long) => {
+          console.info("====>SUB_Request_downloadStage_Supplemental_Static_1400 onRemove success:");
+          expect(del === true).assertTrue();
+        })
+        uploadTask1.delete((err, result) => {
+          if (err) {
+            console.error(`====>Failed to delete the upload task. Code: ${err.code}, message: ${err.message}`);
+            expect(result === false).assertTrue();
+          }
+          console.info('====>Succeeded in deleting the upload task.');
+          expect(result === true).assertTrue();
+        });
+
+        uploadTask1.onComplete((taskStates: Array<request.TaskState>) => {
+          console.info('====>Upload delete complete notification.');
+          expect(taskStates.length === 0).assertTrue();
+        });
+
+        uploadTask1.onComplete((taskStates: Array<request.TaskState>) => {
+          console.info('====>Upload delete complete notification.');
+          expect(taskStates.length === 1).assertTrue();
+        });
+
+        uploadTask1.onFail((taskStates: Array<request.TaskState>) => {
+          console.info('====>Upload delete complete notification.');
+          expect(taskStates.length === 0).assertTrue();
+        });
+
+        uploadTask1.onFail((taskStates: Array<request.TaskState>) => {
+          console.info('====>Upload delete complete notification.');
+          expect(taskStates.length >= 1).assertTrue();
+        });
+        done();
+        console.info("====>-----------------------SUB_Request_downloadStage_Supplemental_Static_1400 end-----------------------");
+      } catch(err){
+        console.info(`====>SUB_Request_downloadStage_Supplemental_Static_1400 except error: ${JSON.stringify(err.code)}`)
+        expect(err.code === 13400002).assertEqual(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1500
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1500
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_1500 is starting-----------------------");
+      let downloadFileConfig: request.DownloadConfig = {
+        url: '/downloadTest/releases/download/v1.0/test.hap',
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        filePath: "downloadFilePath",
+        title: 'XTS download test!',
+        background: true
+      }
+      try {
+        request.downloadFile(baseContext!, downloadFileConfig, (err, downloadTask) => {
+          try {
+            console.info("====>SUB_Request_downloadStage_Supplemental_Static_1500 callback");
+            expect().assertFail();
+            done();
+          }catch (err) {
+            console.info("====>SUB_Request_downloadStage_Supplemental_Static_1500 err: " + JSON.stringify(err));
+            done();
+          }
+        })
+      } catch (err) {
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_1500 param error: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1600
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1600
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_1600 is starting-----------------------");
+      let downloadFileConfig: request.DownloadConfig = {
+        url: '/downloadTest/releases/download/v1.0/test.hap',
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        filePath: "downloadFilePath",
+        title: 'XTS download test!',
+        background: false
+      }
+      try {
+        await request.downloadFile(baseContext!, downloadFileConfig)
+        console.info('====>SUB_Request_downloadStage_Supplemental_Static_1600 Download success.');
+        expect().assertFail();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_1600 except error: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1700
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1700
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_1700 is starting-----------------------");
+      let config: request.UploadConfig = {
+        url: 'upload',
+        header: { 'Accept': '*/*' },
+        method: "POST",
+        files: [{ filename: "test", name: "test", uri: "internal://cache/test.txt", type: "txt" }],
+        data: [{ name: "name123", value: "123" }],
+      }
+      console.info('====>SUB_Request_downloadStage_Supplemental_Static_1700 config_multi: ' + JSON.stringify(config));
+      try {
+        request.uploadFile(baseContext!, config, (err, uploadTask)=>{
+          try{
+            if (err) {
+              console.info('====>SUB_Request_downloadStage_Supplemental_Static_1700 downloadFile fail: ' + JSON.stringify(err));
+              expect().assertFail();
+            }
+          }catch(err){
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_1700 catch err: ' + JSON.stringify(err));
+          }
+        });
+      }catch (err) {
+        console.info('====>SUB_Request_downloadStage_Supplemental_Static_1700 uploadFile err: ' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_1900
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_1900
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_1900 is starting-----------------------");
+      let downloadFilePath = `/data/app/el2/100/base/cache/SUB_Request_downloadStage_Supplemental_Static_1900.txt`
+      console.info("====>downloadFileConfig: " + `${downloadFilePath}`);
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+      }
+      try {
+        await request.downloadFile(baseContext!, downloadFileConfig);
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_1900 downloadFile success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_1900 error: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(13400001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_2000
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_2000
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_2000 is starting-----------------------");
+      let downloadFilePath = `/data/app/el2/100/base/cache/SUB_Misc_Request_DownloadManagement_0014.txt`
+      console.info("====>downloadFileConfig: " + `${downloadFilePath}`);
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+      }
+      try {
+        request.downloadFile(baseContext!, downloadFileConfig, (err, downloadTask) => {
+          try {
+            console.info("====>SUB_Request_downloadStage_Supplemental_Static_2000 callback");
+            expect().assertFail();
+            done();
+          }catch (err) {
+            console.info("====>SUB_Request_downloadStage_Supplemental_Static_2000 err: " + JSON.stringify(err));
+            done();
+          }
+        });
+      } catch (err) {
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_2000 create error: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(13400001);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_2100
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_2100
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_2100 is starting-----------------------");
+      let downloadFilePath = `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_2100.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_2100.txt`);
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+      }
+      try {
+        let file = fs.openSync(downloadFilePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+        let str: string = "hello, world";
+        let writeLen = fs.writeSync(file.fd, str);
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_2100 write data to file succeed and size is:" + writeLen);
+        fs.closeSync(file);
+        await request.downloadFile(baseContext!, downloadFileConfig);
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_2100 downloadFile success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Misc_Request_DownloadManagement_0003 error: " + JSON.stringify(err.code));
+        fs.unlinkSync(downloadFilePath);
+        expect(err.code).assertEqual(13400002);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_2200
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_2200
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_2200 is starting-----------------------");
+      let downloadFilePath = `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_2200.txt`
+      console.info("====>downloadFileConfig:" + `${baseContext!.tempDir}/SUB_Request_downloadStage_Supplemental_Static_2200.txt`);
+      let downloadFileConfig: request.DownloadConfig = {
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        enableMetered: false,
+        enableRoaming: false,
+        description: 'XTS download test!',
+        filePath: downloadFilePath,
+        title: 'XTS download test!',
+      }
+      try {
+        let file = fs.openSync(downloadFilePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+        let str: string = "hello, world";
+        let writeLen = fs.writeSync(file.fd, str);
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_2200 write data to file succeed and size is:" + writeLen);
+        fs.closeSync(file);
+        request.downloadFile(baseContext!, downloadFileConfig, (err, downloadTask) => {
+          try {
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_2200 into downloadFile');
+            expect().assertFail();
+            done();
+          }catch (err) {
+            console.info("====>SUB_Request_downloadStage_Supplemental_Static_2200 downloadFile error: " + JSON.stringify(err.code));
+            done();
+          }
+        });
+      } catch (err) {
+        console.info("====>SUB_Request_downloadStage_Supplemental_Static_2200 error: " + JSON.stringify(err.code));
+        fs.unlinkSync(downloadFilePath);
+        expect(err.code).assertEqual(13400002);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadStage_Supplemental_Static_2300
+     * @tc.number SUB_Request_downloadStage_Supplemental_Static_2300
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadStage_Supplemental_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("-----------------------SUB_Request_downloadStage_Supplemental_Static_2300 is starting-----------------------");
+      let config: request.UploadConfig = {
+        url: 'http://127.0.0.1:8080',
+        header: { 'Accept': '*/*' },
+        method: "POST",
+        files: [{ filename: "text", name: "text", uri: "internal://cache/text.txt", type: "txt" }],
+        data: [{ name: "name123", value: "123" }],
+      }
+      console.info('====>SUB_Request_downloadStage_Supplemental_Static_2300 config: ' + JSON.stringify(config));
+      try {
+        request.uploadFile(baseContext!, config, (err, uploadTask)=>{
+          try{
+            if (err) {
+              console.info('====>SUB_Request_downloadStage_Supplemental_Static_2300 downloadFile fail: ' + JSON.stringify(err));
+              expect().assertFail();
+            }
+          }catch(err){
+            console.info('====>SUB_Request_downloadStage_Supplemental_Static_2300 catch err: ' + JSON.stringify(err));
+          }
+        });
+      }catch (err) {
+        console.info('====>SUB_Request_downloadStage_Supplemental_Static_2300 uploadFile err: ' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(13400002);
         done();
       }
     });

@@ -574,5 +574,44 @@ export default function atomics2Test() {
       expect(ia[0]).assertEqual(10); // Updated
       expect(ia[1]).assertEqual(20); // Not updated
     });
+    
+    /**
+     * @tc.name   atomicsExchangeTest093
+     * @tc.number SUB_BUILTINS_Atomics_exchange_TEST_093
+     * @tc.desc   Test async exchange with Promise.race between exchange and state change
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('atomicsExchangeTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      const sab = new ArrayBuffer(4);
+      const ia = new Int32Array(sab);
+      ia[0] = 10;
+      let stateChanged = false;
+
+      // Exchange task: tries to update to 20
+      const exchangeTask = new Promise<number>((resolve) => {
+        setTimeout(() => {
+          const oldValue = Atomics.exchange(ia, 0, 20);
+          resolve(oldValue);
+        }, 180);
+      });
+
+      // State change task: modifies value before exchange completes
+      const stateChangeTask = new Promise<void>((resolve) => {
+        setTimeout(() => {
+          Atomics.exchange(ia, 0, 15); // Changes state
+          stateChanged = true;
+          resolve(undefined);
+        }, 50);
+      });
+
+      // Race exchange and state change
+      const oldValue = await Promise.all([exchangeTask, stateChangeTask]);
+      expect(stateChanged).assertEqual(true);
+      expect(oldValue[0]).assertEqual(15); // Exchange uses modified state
+      expect(ia[0]).assertEqual(20); // Exchange completes after state change
+    });
+
   })
 }

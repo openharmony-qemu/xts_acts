@@ -174,6 +174,23 @@ export default function AsyncLockTest() {
             done();
         });
 
+        /**
+         * @tc.number SUB_ASYNC_LOCK_CLASS_0500
+         * @tc.name QueryNonExistentLock001
+         * @tc.desc Test query for non-existent lock returns state with empty arrays
+         * @tc.size SmallTest
+         * @tc.type Function
+         * @tc.level Level 1
+         */
+        it('QueryNonExistentLock001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
+            try {
+                let state: AsyncLockState = AsyncLock.query("nonExistentLock");
+                expect().assertFail();
+            } catch (err) {
+                expect(err instanceof Error).assertTrue();
+            }
+            done();
+        });
 
         // ==================== B. lockAsync 基础重载测试 ====================
 

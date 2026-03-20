@@ -113,6 +113,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMapSync error 555', JSON.stringify(err));
         expect().assertFail();
       }
+      await pixelMap.release();
       done();
     });
 
@@ -135,11 +136,13 @@ export default function graphicImagePixelMapAPI22() {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
         expect().assertFail();
+        done();
       }catch(err){
         console.info('www data createCroppedAndScaledPixelMapSync error', JSON.stringify(err));
         expect(Number(err.code) == 7600204).assertTrue();
+        await pixelMap.release();
+        done();
       }
-      done();
     });
 
     /**
@@ -162,11 +165,13 @@ export default function graphicImagePixelMapAPI22() {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
         expect().assertFail();
+        done();
       }catch(err){
         console.info('www data createCroppedAndScaledPixelMapSync error', JSON.stringify(err));
         expect(Number(err.code) == 7600201).assertTrue();
+        await pixelMap.release();
+        done();
       }
-      done();
     });
 
     /**
@@ -188,11 +193,13 @@ export default function graphicImagePixelMapAPI22() {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
         expect().assertFail();
+        done();
       }catch(err){
         console.info('www data createCroppedAndScaledPixelMapSync error', JSON.stringify(err));
         expect(Number(err.code) == 7600205).assertTrue();
+        await pixelMap.release();
+        done();
       }
-      done();
     });
 
     /**
@@ -240,6 +247,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMap error 555', JSON.stringify(err));
         expect().assertFail();
       });
+      await pixelMap.release();
       done();
     });
 
@@ -265,6 +273,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMap error', JSON.stringify(err));
         expect(Number(err.code) == 7600204).assertTrue();
       });
+      await pixelMap.release();
       done();
     });
 
@@ -292,6 +301,7 @@ export default function graphicImagePixelMapAPI22() {
           console.info('www data createCroppedAndScaledPixelMap error', JSON.stringify(err));
           expect(Number(err.code) == 7600201).assertTrue();
         });
+        await pixelMap.release();
       } catch(err){
         expect(Number(err.code) == 7600201).assertTrue();
       }
@@ -320,6 +330,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMap error', JSON.stringify(err));
         expect(Number(err.code) == 7600205).assertTrue();
       });
+      await pixelMap.release();
       done();
     });
 

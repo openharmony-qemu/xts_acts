@@ -1592,7 +1592,7 @@ export default function sceneResourcesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMaterialTypeUnlit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+    it('testMaterialTypeUnlit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let msg = "============================testMaterialTypeUnlit";
       console.info(msg + ' begin ');
       try {
@@ -1602,6 +1602,38 @@ export default function sceneResourcesTest() {
         expect(MaterialType.UNLIT != MaterialType.SHADER).assertTrue();
         expect(MaterialType.UNLIT != MaterialType.METALLIC_ROUGHNESS).assertTrue();
         console.info(msg + " MaterialType.UNLIT distinct from other types");
+
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+
+        // 创建UnlitMaterial
+        let unlitMaterial: scene3d.UnlitMaterial = await rf!.createMaterial({ name: "UnlitMaterial" }, MaterialType.UNLIT) as scene3d.UnlitMaterial;
+        expect(unlitMaterial != null).assertTrue();
+        expect(unlitMaterial.materialType).assertEqual(MaterialType.UNLIT);
+
+        // 验证baseColor属性存在
+        expect(unlitMaterial.baseColor != null).assertTrue();
+        console.info(msg + " UnlitMaterial baseColor property exists");
+
+        // 测试baseColor的factor属性
+        let baseColorFactor: Vec4 = {x: 1.0, y: 0.5, z: 0.2, w: 1.0};
+        unlitMaterial.baseColor!.factor = baseColorFactor;
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.x - 1.0)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.y - 0.5)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.z - 0.2)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.w - 1.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set successfully");
+
+        // 测试不同的baseColor值
+        unlitMaterial.baseColor!.factor = {x: 0.0, y: 0.0, z: 0.0, w: 1.0};
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.x - 0.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set to black successfully");
+
+        unlitMaterial.baseColor!.factor = {x: 1.0, y: 1.0, z: 1.0, w: 1.0};
+        expect(Math.abs(unlitMaterial.baseColor!.factor!.x - 1.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set to white successfully");
         
         console.info(msg + " test completed successfully");
         done();

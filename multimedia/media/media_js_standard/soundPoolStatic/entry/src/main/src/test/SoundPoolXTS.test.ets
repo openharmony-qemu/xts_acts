@@ -58,6 +58,54 @@ let audioRendererInfo: audio.AudioRendererInfo = {
   usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
   rendererFlags: 1
 }
+let audioRendererInfo1: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
+  rendererFlags: 1
+}
+let audioRendererInfo2: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT,
+  rendererFlags: 1
+}
+let audioRendererInfo3: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_ALARM,
+  rendererFlags: 1
+}
+let audioRendererInfo4: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE,
+  rendererFlags: 1
+}
+let audioRendererInfo5: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_RINGTONE,
+  rendererFlags: 1
+}
+let audioRendererInfo6: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_NOTIFICATION,
+  rendererFlags: 1
+}
+let audioRendererInfo7: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
+  rendererFlags: 1
+}
+let audioRendererInfo8: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_GAME,
+  rendererFlags: 1
+}
+let audioRendererInfo9: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_AUDIOBOOK,
+  rendererFlags: 1
+}
+let audioRendererInfo10: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_NAVIGATION,
+  rendererFlags: 1
+}
+let audioRendererInfo11: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+  rendererFlags: 1
+}
+let audioRendererInfo12: audio.AudioRendererInfo = {
+  usage: audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION,
+  rendererFlags: 1
+}
 let playParameters: PlayParameters = {
   loop: 0,
   leftVolume: 0.2,
@@ -211,6 +259,319 @@ export default function soundPoolTest() {
       }
       done();
     })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0101
+     * @tc.desc   Function test. Error code: 5400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0101 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo1).then((soundPool_: media.SoundPool | undefined) => {
+          if (!soundPool_) {
+            console.info(`${TAG}: Test createSoundPool with invalid maxStream fail, create success!`);
+          }
+        });
+      } catch (error) {
+        let err: BusinessError = error as BusinessError
+        if (err.code == 5400101) {
+          console.info(`${TAG}: Test createSoundPool with invalid maxStream success, error: [${JSON.stringify(error)}]`);
+        } else {
+          console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+          expectFalse();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0102
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0102
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0102 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo2).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0103
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0103
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0103 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo3).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0104
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0104
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0104 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo4).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0105
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0105
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0105 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo5).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0106
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0106
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0106 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo6).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0107
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0107
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0107 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo7).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0108
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0108
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0108 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo8).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0109
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0109
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0109 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo9).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0110
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0110
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0110 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo10).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0111
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0111
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0111 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo11).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0112
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0112
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_0112 in`);
+      try {
+        await media.createSoundPool(maxStreams, audioRendererInfo12).then((soundPool_: media.SoundPool | undefined) => {
+          if (soundPool_) {
+            console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+            soundPool = soundPool_;
+          } else {
+            console.error(`${TAG}: error! soundPool = undefined`);
+            expectFalse();
+          }
+        });
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
+        expectFalse();
+      }
+      done();
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_static_0200
@@ -252,6 +613,395 @@ export default function soundPoolTest() {
       console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0100 in`);
       try {
         media.createSoundPool(maxStreams, audioRendererInfo, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0101
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0101 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo1, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        let err: BusinessError = error as BusinessError
+        if (err.code == 5400101) {
+          console.info(`${TAG}: Test createSoundPool with invalid maxStream success, error: [${JSON.stringify(error)}]`);
+        } else {
+          console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+          expectFalse();
+        }
+      }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0102
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0102
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0102 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo2, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0103
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0103
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0103 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo3, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0104
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0104
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0104 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo4, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0105
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0105
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0105 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo5, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0106
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0106
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0106 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo6, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0107
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0107
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0107 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo7, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0108
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0108
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0108 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo8, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0109
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0109
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0109 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo9, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0110
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0110
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0110 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo10, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0111
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0111
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0111 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo11, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
+          if (error != null) {
+            console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
+            expectFalse();
+          } else {
+            if (soundPool_) {
+              console.info(`${TAG}: createSoundPool Success, soundPool: ${soundPool_}`);
+              soundPool = soundPool_;
+            } else {
+              console.error(`${TAG}: error! soundPool_ = undefined`);
+              expectFalse();
+            }
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
+        expectFalse();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0112
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0112
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_static_0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_CREATE_AYSNC_0112 in`);
+      try {
+        media.createSoundPool(maxStreams, audioRendererInfo12, (error: BusinessError | null, soundPool_: media.SoundPool | undefined) => {
           if (error != null) {
             console.info(`${TAG}: createSoundPoolCallback error: ${JSON.stringify(error)}`);
             expectFalse();
@@ -5125,6 +5875,24 @@ export default function soundPoolTest() {
         expectFalse();
         done();
       }
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100
+     * @tc.desc   Mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SONUDPOOL_MODE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      expect(Number(media.SoundInterruptMode.NO_INTERRUPT)).assertEqual(0);
+      expect(Number(media.SoundInterruptMode.SAME_SOUND_INTERRUPT)).assertEqual(1);
+      expect(Number(media.FetchResult.FETCH_FAILED)).assertEqual(0);
+      expect(Number(media.FetchResult.FETCH_SUCCEEDED)).assertEqual(1);
+      expect(Number(media.FetchResult.FETCH_CANCELED)).assertEqual(2);
+      expect(Number(media.AVMetricsEventType.AV_METRICS_EVENT_STALLING)).assertEqual(1);
+      expect(string(media.ContainerFormatType.CFT_AAC)).assertEqual('aac');
+      done();
     });
   })
 }

@@ -104,7 +104,7 @@ it('CustomPopupOptions_static_0100', Level.LEVEL0, async (done: () => void): Pro
       expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-       driver?.click(200, 200);
+       driver?.click(2, 2);
       await CommonFunc.sleep(1000);
       console.info('[CustomPopupOptions_0100] END');
       done();

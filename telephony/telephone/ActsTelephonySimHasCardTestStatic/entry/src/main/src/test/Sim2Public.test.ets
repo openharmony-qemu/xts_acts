@@ -259,6 +259,7 @@ export default function Sim2Public() {
       console.info(`${caseName} test start `);
       sim.hasSimCard(0, (err: BusinessError | null, data: boolean | undefined) => {
         if (data) {
+          expect(data).assertTrue();
           console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           sim.getSimState(-1, (err: BusinessError | null, data: sim.SimState | undefined) => {
             if (err?.code === 8300001) {
@@ -361,6 +362,40 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimGetSimStateSync1000
+     * @tc.number SUB_Telephony_Sim_GetSimStateSync_1000
+     * @tc.desc   SIMCard required Get the SIM card status of the specified slot. Use promise for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimGetSimStateSync1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySimGetSimStateSync1000';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError | null, data: boolean | undefined) => {
+        if (data) {
+          console.info(`${caseName} success has card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+          let simsate:sim.SimState=sim.getSimStateSync(0);
+          const simStateAry: number[] = [
+            sim.SimState.SIM_STATE_UNKNOWN,
+            sim.SimState.SIM_STATE_LOCKED,
+            sim.SimState.SIM_STATE_NOT_PRESENT,
+            sim.SimState.SIM_STATE_NOT_READY,
+            sim.SimState.SIM_STATE_LOADED,
+            sim.SimState.SIM_STATE_READY
+          ]  
+          ExpectTrue(simStateAry.includes(simsate));
+          console.info(`${caseName} test end `);
+          done();
+        }else {
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.name   testTelephonySimHasSimCard0100
      * @tc.number SUB_Telephony_Sim_HasSimCard_0100
      * @tc.desc   Obtain whether the SIM card in the specified slot is inserted. Use callback for asynchronous callback.
@@ -400,7 +435,7 @@ export default function Sim2Public() {
       sim.hasSimCard(0).then((data: boolean) => {
         if (data) {
           console.info(`hasSimCard success, promise: data->${JSON.stringify(data)}`);
-          ExpectTrue(true);
+          expect(data).assertTrue();
           console.info(`${caseName} test end `);
           done();
         } else {
@@ -434,7 +469,8 @@ export default function Sim2Public() {
         if (data) {
           console.info(`${caseName} success has  card1: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           sim.getSimAccountInfo(0, (err: BusinessError | null, data: sim.IccAccountInfo | undefined) => {
-            if (data?.simId as int > 0 && data?.slotIndex as int >= 0 && data?.isEsim !== true && data?.isActive !== false && data?.iccId.length as int > 0 && data?.showName.length as int > 0 && data?.showNumber.length as int > 0 ) {
+            if (data?.simId as int
+              > 0 && data?.slotIndex as int >= 0 && data?.isEsim !== true && data?.isActive !== false && data?.iccId.length as int > 0 && data?.showName.length as int > 0 && data?.showNumber.length as int > 0 ) {
               console.info(`${caseName}: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
               ExpectTrue(true);
               console.info(`${caseName} test end `);
@@ -584,7 +620,7 @@ export default function Sim2Public() {
           sim.isSimActive(0, (err: BusinessError| null, data: boolean | undefined) => {
             if (data) {
               console.info(`${caseName}:success, data->${JSON.stringify(data)}`);
-              ExpectTrue(true);
+              expect(data).assertTrue();
               console.info(`${caseName} test end `);
               done();
             } else {
@@ -620,7 +656,7 @@ export default function Sim2Public() {
           sim.isSimActive(0).then((data: boolean) => {
             if (data) {
               console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
-              ExpectTrue(true);
+              expect(data).assertTrue();
               console.info(`${caseName} test end `);
               done();
             } else {
@@ -660,7 +696,7 @@ export default function Sim2Public() {
           let isSimActive: boolean = sim.isSimActiveSync(0);
           if (isSimActive === true) {
             console.info(`${caseName} success:` + isSimActive);
-            ExpectTrue(true);
+            expect(isSimActive).assertTrue();
             console.info(`${caseName} test end `);
             done();
           } else {
@@ -1091,6 +1127,58 @@ export default function Sim2Public() {
         hilog.info(domain, tag, `${caseName} test end`);
         done();
       });
+
+    /**
+     * @tc.name   testTelephonySimGetSimCardType_static_0300
+     * @tc.number SUB_Telephony_Sim_GetSimCardType_0300
+     * @tc.desc   SIMCard required Obtain the SIM card type for the specified slot. Use callback for asynchronous callback..
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimGetSimCardType_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonySimGetSimCardType_static_0300';
+        let type:boolean =false;
+        hilog.info(domain, tag, `${caseName} test start `);
+        sim.hasSimCard(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
+          if (data) {
+            hilog.info(domain, tag,
+              `${caseName} success has card2: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            sim.getCardType(0, (err: BusinessError<void> | null, data: sim.CardType | undefined) => {
+              if (err?.code === 0) {
+                const simStateAry: sim.CardType[] = [
+                  sim.CardType.UNKNOWN_CARD,
+                  sim.CardType.SINGLE_MODE_SIM_CARD,
+                  sim.CardType.SINGLE_MODE_USIM_CARD,
+                  sim.CardType.SINGLE_MODE_RUIM_CARD,
+                  sim.CardType.DUAL_MODE_CG_CARD,
+                  sim.CardType.CT_NATIONAL_ROAMING_CARD,
+                  sim.CardType.CU_DUAL_MODE_CARD,
+                  sim.CardType.DUAL_MODE_TELECOM_LTE_CARD,
+                  sim.CardType.DUAL_MODE_UG_CARD,
+                  sim.CardType.SINGLE_MODE_ISIM_CARD
+                ];
+                if(data != undefined){
+                  hilog.info(domain, tag, `${caseName} , data->${JSON.stringify(data)} `);
+                  let type:boolean =simStateAry.includes(data);
+                  ExpectTrue(type);
+                  done();
+                }
+                
+              }else {
+                ExpectFail();
+                hilog.info(domain, tag, `${caseName} getCardType else test end `);
+                done();
+              }
+            }); 
+        }else {
+          ExpectFail();
+          hilog.info(domain, tag, `${caseName} test end `);
+          done();
+        }
+      });
+    });
 
     /**
      * @tc.name   testTelephonySimGetSimCardType_static_0400
@@ -1544,7 +1632,7 @@ export default function Sim2Public() {
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         }
-      });
+    });
 
     /**
      * @tc.name   testTelephonySimHasOperaterPrivileges_static_1700
@@ -1567,6 +1655,69 @@ export default function Sim2Public() {
                 ExpectFail();
                 hilog.info(domain, tag, `${caseName} test end `);
                 done();
+              }).catch((err: Error) => {
+                let error = err as BusinessError;
+                if (error?.code === 8300001) {
+                  hilog.info(domain, tag,
+                    `${caseName}:Invalid parameter value. err->${JSON.stringify(error)}, data->${JSON.stringify(data)}`);
+                  ExpectTrue(true);
+                  hilog.info(domain, tag, `${caseName} test end `);
+                  done();
+                } else {
+                  hilog.info(domain, tag, `${caseName} failed, promise: err->${JSON.stringify(error)}`);
+                  ExpectFail();
+                  hilog.info(domain, tag, `${caseName} test end `);
+                  done();
+                }
+              });
+            } else {
+              hilog.info(domain, tag, `${caseName}:success has not SimCard1,data->${JSON.stringify(data)}`);
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName} test end `);
+              done();
+            }
+          });
+        } catch (err) {
+          let error = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
+          if (error?.code === PERMISSION_DENIED_CODE) {
+            expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+          } else {
+            expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+    });
+
+    /**
+     * @tc.name   testTelephonySimHasOperaterPrivileges_static_1800
+     * @tc.number SUB_Telephony_Sim_HasOperaterPrivileges_1800
+     * @tc.desc   SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimHasOperaterPrivileges_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonySimHasOperaterPrivileges_static_1800';
+        hilog.info(domain, tag, `${caseName} test start `);
+        try {
+          sim.hasSimCard(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
+            if (data) {
+              hilog.info(domain, tag, `${caseName}:success has  SimCard1,data->${JSON.stringify(data)}`);
+              sim.hasOperatorPrivileges(0).then((data: boolean) => {
+                if (!data) {
+                  hilog.info(domain, tag,
+                    `${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                  expect(!data).assertTrue();
+                  hilog.info(domain, tag, `${caseName} test end `);
+                  done();
+                } else {
+                  ExpectFail();
+                  hilog.info(domain, tag, `${caseName} test end `);
+                  done();
+                }
               }).catch((err: Error) => {
                 let error = err as BusinessError;
                 if (error?.code === 8300001) {
@@ -1669,7 +1820,7 @@ export default function Sim2Public() {
       let hasSimCard: boolean = sim.hasSimCardSync(0);
       if (hasSimCard === true) {
         hilog.info(domain, tag, `${caseName} success has sim card1: ` + hasSimCard);
-        ExpectTrue(true);
+        expect(hasSimCard).assertTrue();
         hilog.info(domain, tag, `${caseName} test end `);
         done();
       } else {

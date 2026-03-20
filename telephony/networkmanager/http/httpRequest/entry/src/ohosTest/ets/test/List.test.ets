@@ -26,12 +26,14 @@ import HttpRequestMaxAutoRedirectsTest from './HttpRequestRedirects.test';
 import HttpRequestMaxAutoRedirectsWithInterceptorTest from './HttpRequestRedirectsInterceptor.test';
 import HttpRequestCustomMethodTest from './HttpRequestCustomMethod.test';
 import HttpRequestSniTest from './HttpRequestSni.test';
+import HttpRequestCustomResponseHeaderTest from './HttpRequestCustomResponseHeader.test';
 
 export default function testsuite() {
   HttpRequestInterceptor();
   HttpRequestMaxAutoRedirectsTest();
   HttpRequestMaxAutoRedirectsWithInterceptorTest();
   HttpRequestCustomMethodTest();
+  HttpRequestCustomResponseHeaderTest();
   if (sim.getMaxSimCount() > 1) {
     HttpRequestGmssl();
     HttpRequestDataCATest();

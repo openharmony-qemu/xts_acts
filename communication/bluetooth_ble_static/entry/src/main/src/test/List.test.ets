@@ -14,6 +14,9 @@
  */
 
 import bluetoothBleTest from "./BluetoothBleStatic.test";
+import bluetoothBleCallbackTest from "./BluetoothBleCallbackStatic.test";
+
 export default function testsuite() {
   bluetoothBleTest();
+  bluetoothBleCallbackTest();
 }

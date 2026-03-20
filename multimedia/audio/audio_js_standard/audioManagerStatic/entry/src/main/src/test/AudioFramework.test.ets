@@ -237,8 +237,10 @@ export default function audioFramework() {
         let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
         if (data == maxVol) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
+          done();
         } else if (data == maxVolPc) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
+          done();
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
           expect(false).assertTrue();
@@ -317,12 +319,14 @@ export default function audioFramework() {
           expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
-          expect(false).assertTrue();          
+          expect(false).assertTrue();
+          done();          
         }
         done();
       } catch (err) {
         console.log('err :' + JSON.stringify(err.message));
-        expect(false).assertTrue();        
+        expect(false).assertTrue();
+        done();         
       }
       done();
     })
@@ -843,9 +847,11 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
+            done();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
             expect(false).assertTrue();
+            done(); 
           }
         }
         done();
@@ -877,9 +883,11 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null
             && cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
+            done();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
+            done(); 
           }
         }
         done();
@@ -911,9 +919,11 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
+            done();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
+            done(); 
           }
         }
         done();
@@ -944,9 +954,11 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  PASS`);
+            done();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : OUTPUT_DEVICES_FLAG :  FAIL`);
             expect(false).assertTrue();
+            done(); 
           }
         }
         done();
@@ -977,9 +989,11 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
+            done();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
+            done(); 
           }
         }
         done();
@@ -1010,9 +1024,11 @@ export default function audioFramework() {
           if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
             cMask != null) {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
+            done();
           } else {
             console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
             expect(false).assertTrue();
+            done(); 
           }
         }
         done();
@@ -1035,9 +1051,11 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : PASS`);
+        done();
       } else {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : FAIL`);
         expect(false).assertTrue();
+        done()
       }
       done();
     })
@@ -1058,9 +1076,11 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  PASS`);
+        done();
       } else {
         console.info(`${TagFrmwk}: Callback: getDevices : INPUT_DEVICES_FLAG:  FAIL`);
         expect(false).assertTrue();
+        done(); 
       }
       done();
     })
@@ -1080,9 +1100,11 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  PASS`);
+        done();
       } else {
         console.info(`${TagFrmwk}: Callback: getDevices : ALL_DEVICES_FLAG:  FAIL`);
         expect(false).assertTrue();
+        done(); 
       }
       done();
     })
@@ -1132,9 +1154,11 @@ export default function audioFramework() {
       if (dTValue != null && dRValue != null && devId > 0 && sRate != null && cCount != null &&
         cMask != null) {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : PASS`);
+        done();
       } else {
         console.info(`${TagFrmwk}: Promise: getDevices:OUTPUT_DEVICES_FLAG : FAIL`);
         expect(false).assertTrue();
+        done(); 
       }
       done();
     })
@@ -1176,6 +1200,7 @@ export default function audioFramework() {
       } catch (error) {
         console.info(`Fail, error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
         expect(false).assertTrue();
+        done();
       }
       done();
     })
@@ -1218,23 +1243,26 @@ export default function audioFramework() {
       } catch (err) {
         console.error(`isStreamActive ERROR: ${err}`);
         expect(false).assertTrue();
+        done();
       }
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100
      * @tc.desc   enable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        done();
       } catch (err) {
         console.error(`getVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
+        done();
       }
     })
 
@@ -1246,12 +1274,14 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        done();
       } catch (err) {
         console.error(`getMaxVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
+        done();
       }
     })
 
@@ -1263,12 +1293,14 @@ export default function audioFramework() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MUSIC);
+        done();
       } catch (err) {
         console.error(`getMinVolumeByStream ERROR: ${err}`);
         expect(false).assertTrue();
+        done();
       }
     })
 
@@ -1308,6 +1340,2148 @@ export default function audioFramework() {
       expect(audio.AudioPrivacyType.PRIVACY_TYPE_SHARED).assertEqual(2);
       await Utils.msSleep(50);
       done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0001
+    * @tc.desc   getVolume
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolume(audio.AudioVolumeType.VOICE_CALL);
+        console.info(`${TagFrmwk}:  getVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0002
+    * @tc.desc   getVolume
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolume(audio.AudioVolumeType.RINGTONE);
+        console.info(`${TagFrmwk}:  getVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0003
+    * @tc.desc   getVolumeSync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolume(audio.AudioVolumeType.ALARM);
+        console.info(`${TagFrmwk}:  getVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0004
+    * @tc.desc   getVolumeSync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolume(audio.AudioVolumeType.ACCESSIBILITY);
+        console.info(`${TagFrmwk}:  getVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0005
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0005
+    * @tc.desc   getVolume
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.info(`${TagFrmwk}:  getVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0001
+    * @tc.desc   getVolumeSync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolumeSync(audio.AudioVolumeType.VOICE_CALL);
+        console.info(`${TagFrmwk}: VOICE_CALL getVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0002
+    * @tc.desc   getVolumeSync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolumeSync(audio.AudioVolumeType.MEDIA);
+        console.info(`${TagFrmwk}: Media getVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0003
+    * @tc.desc   getVolumeSync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolumeSync(audio.AudioVolumeType.ALARM);
+        console.info(`${TagFrmwk}: ALARM getVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0004
+    * @tc.desc   getVolumeSync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolumeSync(audio.AudioVolumeType.ACCESSIBILITY);
+        console.info(`${TagFrmwk}: ACCESSIBILITY getVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0005
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0005
+    * @tc.desc   getVolumeSync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUMESYNC_STATIC_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getVolumeSync(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.info(`${TagFrmwk}: VOICE_ASSISTANT getVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0001
+    * @tc.desc   getMinVolume - VOICE_CALL
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMinVolume(audio.AudioVolumeType.VOICE_CALL);
+        console.info(`${TagFrmwk}: VOICE_CALL getMinVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0002
+    * @tc.desc   getMinVolume - ALARM
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMinVolume(audio.AudioVolumeType.ALARM);
+        console.info(`${TagFrmwk}: ALARM getMinVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0003
+    * @tc.desc   getMinVolume - ACCESSIBILITY
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMinVolume(audio.AudioVolumeType.ACCESSIBILITY);
+        console.info(`${TagFrmwk}: ACCESSIBILITY getMinVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0004
+    * @tc.desc   getMinVolume - VOICE_ASSISTANT
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMinVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.info(`${TagFrmwk}: VOICE_ASSISTANT getMinVolume : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0001
+    * @tc.desc   getMinVolumeSync - VOICE_CALL - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.VOICE_CALL);
+        console.info(`${TagFrmwk}: VOICE_CALL getMinVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0002
+    * @tc.desc   getMinVolumeSync - ALARM - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.ALARM);
+        console.info(`${TagFrmwk}: ALARM getMinVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0003
+    * @tc.desc   getMinVolumeSync - ACCESSIBILITY - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.ACCESSIBILITY);
+        console.info(`${TagFrmwk}: ACCESSIBILITY getMinVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0004
+    * @tc.desc   getMinVolumeSync - VOICE_ASSISTANT - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUMESYNC_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMinVolumeSync(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.info(`${TagFrmwk}: VOICE_ASSISTANT getMinVolumeSync : success :${data}`);
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0001
+    * @tc.desc   getMaxVolume
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMaxVolume(audio.AudioVolumeType.ALARM);
+        console.log('getMaxVolume success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0002
+    * @tc.desc   getMaxVolume
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMaxVolume(audio.AudioVolumeType.VOICE_CALL);
+        console.log('getMaxVolume success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0003
+    * @tc.desc   getMaxVolume
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMaxVolume(audio.AudioVolumeType.ACCESSIBILITY);
+        console.log('getMaxVolume success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0004
+    * @tc.desc   getMaxVolume
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMaxVolume(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.log('getMaxVolume success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0001
+    * @tc.desc   getMaxVolumeSync 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.VOICE_CALL);
+        console.log('getMaxVolumeSync success');
+        
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0002
+    * @tc.desc   getMaxVolumeSync 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.RINGTONE);
+        console.log('getMaxVolumeSync success');
+        
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0003
+    * @tc.desc   getMaxVolumeSync 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.ACCESSIBILITY);
+        console.log('getMaxVolumeSync success');
+        
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0004
+    * @tc.desc   getMaxVolumeSync 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.getMaxVolumeSync(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.log('getMaxVolumeSync success');
+        
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0001
+    * @tc.desc   isMute 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.VOICE_CALL);
+        console.log('isMuteSync success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0002
+    * @tc.desc   isMute 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMute(audio.AudioVolumeType.MEDIA);
+        console.log('isMute success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0003
+    * @tc.desc   isMute 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMute(audio.AudioVolumeType.ALARM);
+        console.log('isMute success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0004
+    * @tc.desc   isMute 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMute(audio.AudioVolumeType.ACCESSIBILITY);
+        console.log('isMute success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0005
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0005
+    * @tc.desc   isMute 
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMute(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.log('isMute success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0006
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0006
+    * @tc.desc   isMute - VOICE_CALL - audio.AudioVolumeType.VOICE_CALL - success
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMute(audio.AudioVolumeType.VOICE_CALL);
+        console.log('isMute success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0001
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0001
+    * @tc.desc   isMuteSync - VOICE_CALL - audio.AudioVolumeType.VOICE_CALL - success
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.VOICE_CALL);
+        console.log('isMuteSync success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0002
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0002
+    * @tc.desc   isMuteSync - RINGTONE - audio.AudioVolumeType.RINGTONE - success
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.RINGTONE);
+        console.log('isMuteSync success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0003
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0003
+    * @tc.desc   isMuteSync - Media - audio.AudioVolumeType.MEDIA - success
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.MEDIA);
+        console.log('isMuteSync success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0004
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0004
+    * @tc.desc   isMuteSync - ALARM - audio.AudioVolumeType.ALARM - success
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.ALARM);
+        console.log('isMuteSync success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0005
+    * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0005
+    * @tc.desc   isMuteSync - VOICE_ASSISTANT - audio.AudioVolumeType.VOICE_ASSISTANT - success
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTESYNC_STATIC_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let data = audioVolumeGroupManager!.isMuteSync(audio.AudioVolumeType.VOICE_ASSISTANT);
+        console.log('isMuteSync success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
+        expect(Number(err.code)).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001
+     * @tc.desc   getDevicesSync - ErrorCode - audio.DeviceFlag.INPUT_DEVICES_FLAG-Parameters - Success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_GETDEVICES_SYNC_STATIC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioRoutingManager = audioManager!.getRoutingManager();
+      try {
+        let value = AudioRoutingManager.getDevicesSync(audio.DeviceFlag.ALL_DEVICES_FLAG);
+        console.info(`${TagFrmwk}: getDevicesSync Success,value: ${value}`);
+        done();
+      } catch (error) {
+        console.info(`${TagFrmwk}: getDevicesSync Fail,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0200
+    * @tc.desc   isAcousticEchoCancelerSupported -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_INVALID);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_INVALID}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          expect(Number(err.code)).assertEqual(6800101);
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0300
+    * @tc.desc   isAcousticEchoCancelerSupported -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_MIC);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_MIC}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0400
+    * @tc.desc   isAcousticEchoCancelerSupported -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0500
+    * @tc.desc   isAcousticEchoCancelerSupported -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0600
+    * @tc.desc   isAcousticEchoCancelerSupported -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0700
+    * @tc.desc   isAcousticEchoCancelerSupported -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_CAMCORDER);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_CAMCORDER}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0800
+    * @tc.desc   isAcousticEchoCancelerSupported -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_UNPROCESSED);
+          console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_UNPROCESSED}, Status: ${isSupportAEC}`);
+          flag = true;
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0200
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0300
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0400
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0500
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_ALARM);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0600
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0700
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0800
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0900
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1000
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1100
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_GAME);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`); 
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1200
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1300
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1400
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_STATIC_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: boolean = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        done();
+      } catch (err) {
+        console.error(`isStreamActive ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0300
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0400
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0500
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0600
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0700
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0800
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0900
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1000
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1100
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1200
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1300
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1400
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        done();
+      } catch (err) {
+        console.error(`getVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0200
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0300
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0400
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0500
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0600
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0700
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0800
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0900
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1000
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1100
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1200
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1300
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1400
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMAXVOLUMNBYSTREAM_STATIC_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMaxVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        done();
+      } catch (err) {
+        console.error(`getMaxVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0200
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_UNKNOWN);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0300
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0400
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0500
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_ALARM);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0600
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0700
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_RINGTONE);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0800
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_NOTIFICATION);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0900
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1000
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_MOVIE);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1100
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_GAME);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1200
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1300
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_NAVIGATION);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue();
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1400
+    * @tc.desc   enable
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_GETMINVOLUMNBYSTREAM_STATIC_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let ret: int = audio.getAudioManager().getVolumeManager().getMinVolumeByStream(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION);
+        done();
+      } catch (err) {
+        console.error(`getMinVolumeByStream ERROR: ${err}`);
+        expect(false).assertTrue(); 
+        done(); 
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0200
+    * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_INVALID);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_INVALID}, Status: ${isSupport}`);
+            flag = true;
+            done();
+          } catch (err) {
+            let error = err as BusinessError;
+            expect(Number(err.code)).assertEqual(6800101);
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+            done();
+          }
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0300
+    * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_MIC);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_MIC}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0400
+    * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0500
+    * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0600
+    * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0700
+    * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_CAMCORDER);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_CAMCORDER}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0800
+    * @tc.desc   isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    async (done: () => void): Promise<void> => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_UNPROCESSED);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_UNPROCESSED}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
     })
   })
 }

@@ -387,6 +387,18 @@ let MODE_CTR_CIPHER_SEPC = [
   [["SM4"], ["0", "128"], ["PKCS5", "PKCS7", "NoPadding"]],
 ]
 
+let WEAK_SYM_CIPHER = [
+  "Blowfish", "RC2", "RC4", "CAST"
+]
+
+let WEAK_MODE_CIPHER = [
+  "ECB", "CBC", "OFB", "CFB"
+]
+
+let WEAK_KEYLEN_CIPHER = [
+  [8, 32, 4], [1, 128, 1], [1, 512, 1], [5, 16, 1]
+]
+
 let ASY_CIPHER_SPEC = [
   [["RSA512"], ["NoPadding", "PKCS1"], ["64", "53"]],
   [["RSA768"], ["NoPadding", "PKCS1"], ["96", "85"]],
@@ -550,4 +562,7 @@ export {
   MODE_GCM_CIPHER_SEPC,
   MODE_CCM_CIPHER_SEPC,
   SM4_GCM_VECTOR,
+  WEAK_SYM_CIPHER,
+  WEAK_MODE_CIPHER,
+  WEAK_KEYLEN_CIPHER
 }

@@ -76,8 +76,8 @@ struct Index {
     Column() {
       Row() {
         Button("web click").key('webcomponent').onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
           this.isReceive = -1;
           console.info('key==>' + this.str);
           switch (this.str) {
@@ -89,7 +89,7 @@ struct Index {
               });
               this.isPageEnd = -1;
               this.controller.refresh();
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 this.controller.runJavaScript({ script: "proxy()" });
 
               break;
@@ -97,7 +97,7 @@ struct Index {
             case "emitDeleteJavaScriptRegister": {
               this.controller.deleteJavaScriptRegister("objName");
               this.controller.runJavaScript({ script: "registerTest()" });
-              await waitForExist(() => this.console,"jsResult",null);
+              await waitForExist(() => this.console,"jsResult",null, 1000);
               const result = await waitForExist(
                 () => this.console !== "web222" ? "ready" : null,
                 this.str,

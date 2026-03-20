@@ -1065,5 +1065,30 @@ export default function api16CertFuncTestUnit() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_Security_CertManager_getCertificateStorePath_0020
+     * @tc.number SUB_Security_CertManager_getCertificateStorePath_0020
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0020 start');
+      let certData: Uint8Array = new Uint8Array();
+      let certBlob: certManager.CertBlob = {
+        certData: certData,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try {
+        await certManager.installUserTrustedCertificate(certBlob);
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0020 failed. code:${error.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    });
+
   })
 }

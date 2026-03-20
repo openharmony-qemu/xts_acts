@@ -140,7 +140,8 @@ ani_boolean Int(ani_env *env, ani_object *obj, ani_int value)
 ani_boolean test_Class_Find_Method_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.FindOverloadedConstructor", &cls), ANI_OK);
+    std::string classname = "entry.src.main.src.ets.ClassOperationsFindMethod.FindOverloadedConstructor";
+    ASSERT_EQ(env->FindClass(classname.c_str(), &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method ctor {};
@@ -148,7 +149,8 @@ ani_boolean test_Class_Find_Method_11([[maybe_unused]] ani_env *env, [[maybe_unu
     ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", ":", &ctor), ANI_OK);
     ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &ctor), ANI_OK);
 
-    ASSERT_EQ(env->FindClass("test.FindConstructorWithDefaultParams", &cls), ANI_OK);
+    classname = "entry.src.main.src.ets.ClassOperationsFindMethod.FindConstructorWithDefaultParams";
+    ASSERT_EQ(env->FindClass(classname.c_str(), &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "C{std.core.Int}C{std.core.Int}:", &ctor), ANI_OK);
@@ -175,7 +177,7 @@ ani_boolean test_Class_Find_Method_15([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.A", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.A", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method method {};
@@ -191,7 +193,7 @@ ani_boolean test_Class_Find_Method_16([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -203,7 +205,7 @@ ani_boolean test_Class_Find_Method_17([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -215,7 +217,7 @@ ani_boolean test_Class_Find_Method_18([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -226,7 +228,7 @@ ani_boolean test_Class_Find_Method_19([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -244,7 +246,7 @@ ani_boolean test_Class_Find_Method_22([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -260,7 +262,7 @@ ani_boolean test_Class_Find_Method_23([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Operations", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.Operations", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -276,7 +278,7 @@ ani_boolean test_Class_Find_Method_24([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_25([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.ClassA", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.ClassA", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method methodA {};
@@ -307,7 +309,7 @@ ani_boolean test_Class_Find_Method_25([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_26([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.ClassA", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.ClassA", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method methodB {};
@@ -327,7 +329,7 @@ ani_boolean test_Class_Find_Method_26([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_27([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.ClassB", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.ClassB", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method methodA {};
@@ -346,7 +348,7 @@ ani_boolean test_Class_Find_Method_27([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_28([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.ClassA", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.ClassA", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method methodA {};
@@ -365,7 +367,7 @@ ani_boolean test_Class_Find_Method_28([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_29([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.BasicCalculator", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.BasicCalculator", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method staticMethod {};
@@ -378,7 +380,7 @@ ani_boolean test_Class_Find_Method_29([[maybe_unused]] ani_env *env, [[maybe_unu
     ASSERT_EQ(multiply, TEST_EXPECTED_VALUE1 * TEST_EXPECTED_VALUE5);
 
     ani_class subCls {};
-    ASSERT_EQ(env->FindClass("test.SubCalculator", &subCls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.SubCalculator", &subCls), ANI_OK);
     ASSERT_NE(subCls, nullptr);
 
     ani_method constructorMethod {};
@@ -415,7 +417,7 @@ ani_boolean test_Class_Find_Method_29([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_31([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.TestA003", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.TestA003", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method constructorMethod {};
@@ -468,7 +470,7 @@ ani_boolean test_Class_Find_Method_31([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_32([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.TestA004", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.TestA004", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method constructorMethod {};
@@ -520,7 +522,7 @@ ani_boolean test_Class_Find_Method_32([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_33([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.TestA005", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.TestA005", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method constructorMethod {};
@@ -549,7 +551,7 @@ ani_boolean test_Class_Find_Method_33([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_34([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Child", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.Child", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method constructorMethod {};
@@ -578,7 +580,7 @@ ani_boolean test_Class_Find_Method_34([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_35([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Student", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.Student", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method constructorMethod {};
@@ -607,11 +609,11 @@ ani_boolean test_Class_Find_Method_35([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_36([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class clsB {};
-    ASSERT_EQ(env->FindClass("test.TestB008", &clsB), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.TestB008", &clsB), ANI_OK);
     ASSERT_NE(clsB, nullptr);
 
     ani_class clsA {};
-    ASSERT_EQ(env->FindClass("test.TestA008", &clsA), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.TestA008", &clsA), ANI_OK);
     ASSERT_NE(clsA, nullptr);
 
     ani_method constructorMethodB {};
@@ -623,7 +625,8 @@ ani_boolean test_Class_Find_Method_36([[maybe_unused]] ani_env *env, [[maybe_unu
     ASSERT_NE(constructorMethodA, nullptr);
 
     ani_method method {};
-    ASSERT_EQ(env->Class_FindMethod(clsB, "int_method", "C{test.TestA008}:i", &method), ANI_OK);
+    std::string classname = "C{entry.src.main.src.ets.ClassOperationsFindMethod.TestA008}:i";
+    ASSERT_EQ(env->Class_FindMethod(clsB, "int_method", classname.c_str(), &method), ANI_OK);
     ASSERT_NE(method, nullptr);
 
     ani_object objectB {};
@@ -645,14 +648,14 @@ ani_boolean test_Class_Find_Method_36([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_37([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.CombineA", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.CombineA", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
     ani_method method {};
     ASSERT_EQ(env->Class_FindMethod(cls, "func", "ii:i", &method), ANI_OK);
     ASSERT_NE(method, nullptr);
 
     ani_class clsB {};
-    ASSERT_EQ(env->FindClass("test.CombineB", &clsB), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.CombineB", &clsB), ANI_OK);
     ASSERT_NE(clsB, nullptr);
     ani_method ctor {};
     ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", ":", &ctor), ANI_OK);
@@ -673,7 +676,7 @@ ani_boolean test_Class_Find_Method_37([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_38([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.AF", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.AF", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
     ani_method method {};
     ASSERT_EQ(env->Class_FindMethod(cls, "func", "ii:i", &method), ANI_OK);
@@ -698,7 +701,7 @@ ani_boolean test_Class_Find_Method_38([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_39([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.CombineC", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.CombineC", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
     ani_method method {};
     ASSERT_EQ(env->Class_FindMethod(cls, "func", "ii:i", &method), ANI_OK);
@@ -723,7 +726,7 @@ ani_boolean test_Class_Find_Method_39([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_40([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.nsa.nsb.A", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.nsa.nsb.A", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
     ani_method method {};
     ASSERT_EQ(env->Class_FindMethod(cls, "func", "ii:i", &method), ANI_OK);
@@ -748,14 +751,14 @@ ani_boolean test_Class_Find_Method_40([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_41([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class baseCls {};
-    ASSERT_EQ(env->FindClass("test.A", &baseCls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.A", &baseCls), ANI_OK);
     ASSERT_NE(baseCls, nullptr);
 
     ani_method method {};
     ASSERT_EQ(env->Class_FindMethod(baseCls, "overloadedBase", nullptr, &method), ANI_AMBIGUOUS);
 
     ani_class cls;
-    ASSERT_EQ(env->FindClass("test.B", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.B", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
     ASSERT_EQ(env->Class_FindMethod(cls, "overloadedBase", nullptr, &method), ANI_AMBIGUOUS);
     ASSERT_EQ(env->Class_FindMethod(cls, "overloaded", nullptr, &method), ANI_AMBIGUOUS);
@@ -765,14 +768,14 @@ ani_boolean test_Class_Find_Method_41([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_42([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class baseCls {};
-    ASSERT_EQ(env->FindClass("test.A", &baseCls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.A", &baseCls), ANI_OK);
     ASSERT_NE(baseCls, nullptr);
 
     ani_static_method method {};
     ASSERT_EQ(env->Class_FindStaticMethod(baseCls, "staticOverloadedBase", nullptr, &method), ANI_AMBIGUOUS);
 
     ani_class cls;
-    ASSERT_EQ(env->FindClass("test.B", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.B", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
     ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticOverloadedBase", nullptr, &method), ANI_AMBIGUOUS);
     ASSERT_EQ(env->Class_FindStaticMethod(cls, "staticOverloaded", nullptr, &method), ANI_AMBIGUOUS);
@@ -782,7 +785,7 @@ ani_boolean test_Class_Find_Method_42([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_43([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.AllFunctions", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.AllFunctions", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method ctor {};
@@ -814,7 +817,7 @@ ani_boolean test_Class_Find_Method_43([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_44([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.MixedFunctions", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.MixedFunctions", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method staticMethod {};
@@ -828,7 +831,7 @@ ani_boolean test_Class_Find_Method_44([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_45([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
 {
     ani_class baseCls {};
-    ASSERT_EQ(env->FindClass("test.NotOverloaded", &baseCls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsFindMethod.NotOverloaded", &baseCls), ANI_OK);
     ASSERT_NE(baseCls, nullptr);
 
     ani_static_method smethod {};

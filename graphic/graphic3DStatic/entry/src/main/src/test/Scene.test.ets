@@ -871,6 +871,12 @@ export default function sceneTest() {
         expect(camera2.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
         console.info(msg + " createCamera with parameters success");
         
+        // Test 3: Create camera with empty string name
+        let camera3 = await rf.createCamera({ name: "" });
+        expect(camera3 != null).assertTrue();
+        expect(camera3.name).assertEqual("");
+        console.info(msg + " createCamera with empty name success");
+        
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -1069,6 +1075,9 @@ export default function sceneTest() {
         expect(camera.msaa).assertTrue();
         expect(camera.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
         console.info(msg + " createCamera with params succeeded");
+
+        expect(camera.effects != null).assertTrue();
+        console.info(msg + " camera.effects != null succeeded");
         
         console.info(msg + " test completed successfully");
         done();
@@ -1262,6 +1271,53 @@ export default function sceneTest() {
         expect(renderConfig != undefined).assertTrue();
         expect(renderConfig != null).assertTrue();
         console.info(msg + " renderConfiguration getter succeeded");
+        
+        // Test default value (should be undefined)
+        expect(renderConfig.shadowResolution).assertUndefined();
+        console.info(msg + " default shadowResolution is undefined as expected");
+
+        // Test setting shadowResolution to different values
+        // Test 1: Set to 2048 x 2048
+        renderConfig.shadowResolution = { x: 2048, y: 2048 };
+        expect(renderConfig.shadowResolution!.x).assertEqual(2048);
+        expect(renderConfig.shadowResolution!.y).assertEqual(2048);
+        console.info(msg + " shadowResolution set to 2048x2048 successfully");
+
+        // Test 2: Set to 512 x 512
+        renderConfig.shadowResolution = { x: 512, y: 512 };
+        expect(renderConfig.shadowResolution!.x).assertEqual(512);
+        expect(renderConfig.shadowResolution!.y).assertEqual(512);
+        console.info(msg + " shadowResolution set to 512x512 successfully");
+
+        // Test 3: Set to 1024 x 1024
+        renderConfig.shadowResolution = { x: 1024, y: 1024 };
+        expect(renderConfig.shadowResolution!.x).assertEqual(1024);
+        expect(renderConfig.shadowResolution!.y).assertEqual(1024);
+        console.info(msg + " shadowResolution set to 1024x1024 successfully");
+
+        // Test 4: Set with floating point values (should truncate to integer)
+        renderConfig.shadowResolution = { x: 1024.7, y: 2048.3 };
+        expect(renderConfig.shadowResolution!.x).assertEqual(1024);
+        expect(renderConfig.shadowResolution!.y).assertEqual(2048);
+        console.info(msg + " shadowResolution truncated floating point values successfully");
+
+        // Test 5: Values greater than 0 should work
+        renderConfig.shadowResolution = { x: 1, y: 1 };
+        expect(renderConfig.shadowResolution!.x).assertEqual(1);
+        expect(renderConfig.shadowResolution!.y).assertEqual(1);
+        console.info(msg + " shadowResolution set to minimum value 1x1 successfully");
+
+        // Test 6: Set to large values
+        renderConfig.shadowResolution = { x: 4096, y: 4096 };
+        expect(renderConfig.shadowResolution!.x).assertEqual(4096);
+        expect(renderConfig.shadowResolution!.y).assertEqual(4096);
+        console.info(msg + " shadowResolution set to large value 4096x4096 successfully");
+
+        // Test 7: Test asymmetric resolution
+        renderConfig.shadowResolution = { x: 2048, y: 1024 };
+        expect(renderConfig.shadowResolution!.x).assertEqual(2048);
+        expect(renderConfig.shadowResolution!.y).assertEqual(1024);
+        console.info(msg + " shadowResolution set to asymmetric 2048x1024 successfully");
         
         console.info(msg + " test completed successfully");
         done();

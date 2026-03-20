@@ -30,9 +30,9 @@ int32_t g_writeSize = g_frameSize;
 const int32_t NUM_ONE = 1;
 const int32_t NUM_TWO = 2;
 const int32_t NUM_THREE = 3;
-const int32_t NUM_FOUR = 4;
-const int32_t NUM_FIVE = 5;
-const int32_t NUM_SIX = 6;
+const int32_t NUM_FOURTEEN = 14;
+const int32_t NUM_FIFTEEN = 15;
+const int32_t NUM_SIXTEEN = 16;
 const int32_t NUM_TEN = 10;
 const int32_t NUM_ELEVEN = 11;
 const int32_t REQUEST_FRAME_SIZE = 4096;
@@ -3515,15 +3515,15 @@ static napi_value AudioSuiteEngine_CreateNode_008(napi_env env, napi_callback_in
     napi_value res;
     OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
     OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
-    OH_AudioNodeBuilder *builders[6] = {nullptr};
-    OH_AudioNode *audioNodes[6] = {nullptr};
-    OH_AudioSuite_Result result[6];
+    OH_AudioNodeBuilder *builders[NUM_SIXTEEN] = {nullptr};
+    OH_AudioNode *audioNodes[NUM_SIXTEEN] = {nullptr};
+    OH_AudioSuite_Result result[NUM_SIXTEEN];
     OH_AudioNode_Type type = static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_EQUALIZER_TEST);
     bool isSupported = IsNodeTypeSupported(type);
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_REALTIME_MODE);
-    for (int i = 0; i < NUM_SIX; ++i) {
+    for (int i = 0; i < NUM_SIXTEEN; ++i) {
         builders[i] = nullptr;
         OH_AudioSuiteNodeBuilder_Create(&builders[i]);
         OH_AudioSuiteNodeBuilder_SetNodeType(builders[i], type);
@@ -3531,10 +3531,11 @@ static napi_value AudioSuiteEngine_CreateNode_008(napi_env env, napi_callback_in
         result[i] = OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builders[i], &audioNodes[i]);
     }
     if (!isSupported ||
-        (result[NUM_FOUR] == AUDIOSUITE_SUCCESS && result[NUM_FIVE] == AUDIOSUITE_ERROR_CREATED_EXCEED_SYSTEM_LIMITS)) {
-        LOG("CreateNode_008 success, createNodeResult6 is:%{public}d", result[NUM_FIVE]);
+        (result[NUM_FOURTEEN] == AUDIOSUITE_SUCCESS &&
+            result[NUM_FIFTEEN] == AUDIOSUITE_ERROR_CREATED_EXCEED_SYSTEM_LIMITS)) {
+        LOG("CreateNode_008 success, createNodeResult6 is:%{public}d", result[NUM_FIFTEEN]);
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
-        for (int i = 0; i < NUM_SIX; ++i) {
+        for (int i = 0; i < NUM_SIXTEEN; ++i) {
             if (builders[i])
                 OH_AudioSuiteNodeBuilder_Destroy(builders[i]);
             if (audioNodes[i])
@@ -3544,10 +3545,10 @@ static napi_value AudioSuiteEngine_CreateNode_008(napi_env env, napi_callback_in
         OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
         return res;
     }
-    LOG("CreateNode_008 fail, createNodeResult5 is:%{public}d, createNodeResult6 is:%{public}d", result[NUM_FOUR],
-        result[NUM_FIVE]);
+    LOG("CreateNode_008 fail, createNodeResult5 is:%{public}d, createNodeResult6 is:%{public}d", result[NUM_FOURTEEN],
+        result[NUM_FIFTEEN]);
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
-    for (int i = 0; i < NUM_SIX; ++i) {
+    for (int i = 0; i < NUM_SIXTEEN; ++i) {
         if (builders[i])
             OH_AudioSuiteNodeBuilder_Destroy(builders[i]);
         if (audioNodes[i])

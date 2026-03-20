@@ -288,6 +288,20 @@ const DOMAIN_FILTER_RULE14: networkManager.DomainFilterRule = {
   logType: networkManager.LogType.NFLOG
 };
 
+const DOMAIN_FILTER_RULE15: networkManager.DomainFilterRule = {
+  domainName: 'www.example.com',
+  direction: networkManager.Direction.INPUT,
+  action: networkManager.Action.ALLOW,
+  logType: networkManager.LogType.NFLOG
+};
+
+const DOMAIN_FILTER_RULE16: networkManager.DomainFilterRule = {
+  domainName: 'www.example.com',
+  direction: networkManager.Direction.OUTPUT,
+  action: networkManager.Action.ALLOW,
+  logType: networkManager.LogType.NFLOG
+};
+
 const ADD_APN_INFO: Record<string, string> = {
   "apn": "TEST_ADD_APN",
   "mcc": "TEST_ADD_MCC",
@@ -337,6 +351,12 @@ const INTERFACE_INVALID_CONFIG: networkManager.InterfaceConfig = {
   "gateway": "192.168.1.1",
   "netMask": "255.255.255.0",
   "dnsServers": "8.8.8.8,bbbbbbb"
+}
+
+const defProxy: connection.HttpProxy = {
+  host: "",
+  port: 0,
+  exclusionList: []
 }
 
 export default function networkManagerTest() {
@@ -430,7 +450,7 @@ function testGetAllNetworkInterfacesSync() {
       networkManager.getAllNetworkInterfacesSync(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -452,6 +472,48 @@ function testGetAllNetworkInterfacesSync() {
       expect(result).not().assertUndefined();
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_all_network_interfaces_sync_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALL_NETWORK_INTERFACES_SYNC_JS_0104
+   * @tc.desc   test networkManager getAllNetworkInterfacesSync with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_all_network_interfaces_sync_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getAllNetworkInterfacesSync(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_all_network_interfaces_sync_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALL_NETWORK_INTERFACES_SYNC_JS_0105
+   * @tc.desc   test networkManager getAllNetworkInterfacesSync with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_all_network_interfaces_sync_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getAllNetworkInterfacesSync(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -513,7 +575,7 @@ function testGetIpAddressSync() {
       networkManager.getIpAddressSync(INVALID_WANT, NETWORK_ETH_LOCAL);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -533,6 +595,111 @@ function testGetIpAddressSync() {
     try {
       let result: string = networkManager.getIpAddressSync(SELFWANT, NETWORK_ETH_LOCAL);
       expect(result !== '').assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_ip_address_sync_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_IP_ADDRESS_SYNC_JS_0104
+   * @tc.desc   test networkManager getIpAddressSync with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_ip_address_sync_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getIpAddressSync(null, NETWORK_ETH_LOCAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_ip_address_sync_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_IP_ADDRESS_SYNC_JS_0105
+   * @tc.desc   test networkManager getIpAddressSync with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_ip_address_sync_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getIpAddressSync(undefined, NETWORK_ETH_LOCAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_ip_address_sync_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_IP_ADDRESS_SYNC_JS_0106
+   * @tc.desc   test networkManager getIpAddressSync with null networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_ip_address_sync_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getIpAddressSync(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_ip_address_sync_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_IP_ADDRESS_SYNC_JS_0107
+   * @tc.desc   test networkManager getIpAddressSync with undefined networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_ip_address_sync_0107", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getIpAddressSync(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_ip_address_sync_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_IP_ADDRESS_SYNC_JS_0108
+   * @tc.desc   test networkManager getIpAddressSync with empty networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_ip_address_sync_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = networkManager.getIpAddressSync(SELFWANT, '');
+      expect(ret == null).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -596,7 +763,7 @@ function testGetMacSync() {
       networkManager.getMacSync(INVALID_WANT, NETWORK_ETH_LOCAL);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -616,6 +783,111 @@ function testGetMacSync() {
     try {
       let result: string = networkManager.getMacSync(SELFWANT, NETWORK_ETH_LOCAL);
       expect(result !== '').assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_mac_sync_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_MAC_SYNC_JS_0104
+   * @tc.desc   test networkManager getMacSync with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_mac_sync_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getMacSync(null, NETWORK_ETH_LOCAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_mac_sync_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_MAC_SYNC_JS_0105
+   * @tc.desc   test networkManager getMacSync with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_mac_sync_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getMacSync(undefined, NETWORK_ETH_LOCAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_mac_sync_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_MAC_SYNC_JS_0106
+   * @tc.desc   test networkManager getMacSync with null networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_mac_sync_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getMacSync(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_mac_sync_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_MAC_SYNC_JS_0107
+   * @tc.desc   test networkManager getMacSync with undefined networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_mac_sync_0107", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getMacSync(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_mac_sync_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_MAC_SYNC_JS_0108
+   * @tc.desc   test networkManager getMacSync with empty networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_mac_sync_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = networkManager.getMacSync(SELFWANT, '');
+      expect(ret == null).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -679,7 +951,7 @@ function testIsNetworkInterfaceDisabledSync() {
       networkManager.isNetworkInterfaceDisabledSync(INVALID_WANT, NETWORK_ETH_LOCAL);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -721,7 +993,112 @@ function testIsNetworkInterfaceDisabledSync() {
       networkManager.isNetworkInterfaceDisabledSync(SELFWANT, NETWORK_ETH_INVALID);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_network_interface_disable_sync_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_NETWORK_INTERFACE_DISABLE_SYNC_JS_0105
+   * @tc.desc   test networkManager isNetworkInterfaceDisabledSync with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_network_interface_disable_sync_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.isNetworkInterfaceDisabledSync(null, NETWORK_ETH_LOCAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_network_interface_disable_sync_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_NETWORK_INTERFACE_DISABLE_SYNC_JS_0106
+   * @tc.desc   test networkManager isNetworkInterfaceDisabledSync with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_network_interface_disable_sync_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.isNetworkInterfaceDisabledSync(undefined, NETWORK_ETH_LOCAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_network_interface_disable_sync_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_NETWORK_INTERFACE_DISABLE_SYNC_JS_0107
+   * @tc.desc   test networkManager isNetworkInterfaceDisabledSync with null networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_network_interface_disable_sync_0107", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.isNetworkInterfaceDisabledSync(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_network_interface_disable_sync_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_NETWORK_INTERFACE_DISABLE_SYNC_JS_0108
+   * @tc.desc   test networkManager isNetworkInterfaceDisabledSync with undefined networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_network_interface_disable_sync_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.isNetworkInterfaceDisabledSync(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_is_network_interface_disable_sync_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_NETWORK_INTERFACE_DISABLE_SYNC_JS_0109
+   * @tc.desc   test networkManager isNetworkInterfaceDisabledSync with empty networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_network_interface_disable_sync_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.isNetworkInterfaceDisabledSync(SELFWANT, '');
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -783,7 +1160,7 @@ function testSetNetworkInterfaceDisabledSync() {
       networkManager.setNetworkInterfaceDisabledSync(INVALID_WANT, NETWORK_ETH_LOCAL, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -804,7 +1181,7 @@ function testSetNetworkInterfaceDisabledSync() {
       networkManager.setNetworkInterfaceDisabledSync(SELFWANT, NETWORK_ETH_INVALID, false);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -847,6 +1224,153 @@ function testSetNetworkInterfaceDisabledSync() {
       expect(networkManager.isNetworkInterfaceDisabledSync(SELFWANT, NETWORK_ETH_LOCAL)).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_network_interface_disable_sync_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0106
+   * @tc.desc   test networkManager setNetworkInterfaceDisabledSync with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_network_interface_disable_sync_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setNetworkInterfaceDisabledSync(null, NETWORK_ETH_LOCAL, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_network_interface_disable_sync_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0107
+   * @tc.desc   test networkManager setNetworkInterfaceDisabledSync with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_network_interface_disable_sync_0107", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setNetworkInterfaceDisabledSync(undefined, NETWORK_ETH_LOCAL, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_network_interface_disable_sync_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0108
+   * @tc.desc   test networkManager setNetworkInterfaceDisabledSync with null networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_network_interface_disable_sync_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setNetworkInterfaceDisabledSync(SELFWANT, null, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_network_interface_disable_sync_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0109
+   * @tc.desc   test networkManager setNetworkInterfaceDisabledSync with undefined networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_network_interface_disable_sync_0109", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setNetworkInterfaceDisabledSync(SELFWANT, undefined, false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_network_interface_disable_sync_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0110
+   * @tc.desc   test networkManager setNetworkInterfaceDisabledSync with empty networkInterface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_network_interface_disable_sync_0110", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setNetworkInterfaceDisabledSync(SELFWANT, '', false);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_network_interface_disable_sync_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0111
+   * @tc.desc   test networkManager setNetworkInterfaceDisabledSync with null disabled
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_network_interface_disable_sync_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setNetworkInterfaceDisabledSync(SELFWANT, NETWORK_ETH_LOCAL, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_network_interface_disable_sync_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_NETWORK_INTERFACE_DISABLE_SYNC_JS_0112
+   * @tc.desc   test networkManager setNetworkInterfaceDisabledSync with undefined disabled
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_network_interface_disable_sync_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setNetworkInterfaceDisabledSync(SELFWANT, NETWORK_ETH_LOCAL, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -908,7 +1432,7 @@ function testSetGlobalProxySync() {
       networkManager.setGlobalProxySync(INVALID_WANT, HTTP_PROXY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -940,6 +1464,120 @@ function testSetGlobalProxySync() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_global_proxy_sync_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_SYNC_JS_0104
+   * @tc.desc   test networkManager setGlobalProxySync with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_sync_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxySync(null, HTTP_PROXY);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_sync_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_SYNC_JS_0105
+   * @tc.desc   test networkManager setGlobalProxySync with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_sync_0105", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxySync(undefined, HTTP_PROXY);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_sync_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_SYNC_JS_0106
+   * @tc.desc   test networkManager setGlobalProxySync with null httpProxy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_sync_0106", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxySync(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_sync_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_SYNC_JS_0107
+   * @tc.desc   test networkManager setGlobalProxySync with undefined httpProxy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_sync_0107", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxySync(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_sync_0103_1
+   * @tc.number test_set_global_proxy_sync_0103_1
+   * @tc.desc   test networkManager setGlobalProxySync success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_global_proxy_sync_0103_1", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let originProxy: connection.HttpProxy = {
+      host: "192.168.1.101",
+      port: 65000,
+      exclusionList: []
+    }
+    try {
+      let defProxy: connection.HttpProxy = networkManager.getGlobalProxySync(SELFWANT);
+      let ret = networkManager.setGlobalProxySync(SELFWANT, originProxy);
+      expect(ret === undefined).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_global_proxy_sync_0103_1 done is expected, but it error, actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      networkManager.setGlobalProxySync(SELFWANT, defProxy);
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+  })
 }
 
 function testGetGlobalProxySync() {
@@ -996,7 +1634,49 @@ function testGetGlobalProxySync() {
       networkManager.getGlobalProxySync(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_global_proxy_sync_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_SYNC_JS_0103
+   * @tc.desc   test networkManager getGlobalProxySync with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_global_proxy_sync_0103", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getGlobalProxySync(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_global_proxy_sync_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_SYNC_JS_0104
+   * @tc.desc   test networkManager getGlobalProxySync with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_global_proxy_sync_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getGlobalProxySync(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1112,7 +1792,7 @@ function testAddFirewallRule() {
       networkManager.addFirewallRule(INVALID_WANT, FIREWALL_RULE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1133,7 +1813,7 @@ function testAddFirewallRule() {
       networkManager.addFirewallRule(INVALID_WANT, FIREWALL_RULE5);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1272,7 +1952,7 @@ function testAddFirewallRule() {
       networkManager.addFirewallRule(INVALID_WANT, FIREWALL_RULE7);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1293,7 +1973,7 @@ function testAddFirewallRule() {
       networkManager.addFirewallRule(INVALID_WANT, FIREWALL_RULE11);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1378,7 +2058,7 @@ function testAddFirewallRule() {
       networkManager.addFirewallRule(INVALID_WANT, FIREWALL_RULE14);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1399,7 +2079,7 @@ function testAddFirewallRule() {
       networkManager.addFirewallRule(INVALID_WANT, FIREWALL_RULE15);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1427,6 +2107,90 @@ function testAddFirewallRule() {
     finally {
       networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE16);
       await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0121
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0121
+   * @tc.desc   test networkManager addFirewallRule with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0121", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addFirewallRule(null, FIREWALL_RULE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0122
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0122
+   * @tc.desc   test networkManager addFirewallRule with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0122", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addFirewallRule(undefined, FIREWALL_RULE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0123
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0123
+   * @tc.desc   test networkManager addFirewallRule with null rule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0123", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addFirewallRule(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0124
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0124
+   * @tc.desc   test networkManager addFirewallRule with undefined rule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0124", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addFirewallRule(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -1486,7 +2250,7 @@ function testRemoveFirewallRule() {
       networkManager.removeFirewallRule(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1507,7 +2271,7 @@ function testRemoveFirewallRule() {
       networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE5);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1632,7 +2396,7 @@ function testRemoveFirewallRule() {
       networkManager.removeFirewallRule(INVALID_WANT, FIREWALL_RULE13);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1653,7 +2417,7 @@ function testRemoveFirewallRule() {
       networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE11);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1778,7 +2542,7 @@ function testRemoveFirewallRule() {
       networkManager.removeFirewallRule(INVALID_WANT, FIREWALL_RULE14);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1799,7 +2563,7 @@ function testRemoveFirewallRule() {
       networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE15);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1869,6 +2633,122 @@ function testRemoveFirewallRule() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0121
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0121
+   * @tc.desc   test networkManager removeFirewallRule with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0121", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeFirewallRule(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0122
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0122
+   * @tc.desc   test networkManager removeFirewallRule with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0122", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeFirewallRule(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0123
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0123
+   * @tc.desc   test networkManager removeFirewallRule with null rule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0123", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeFirewallRule(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0124
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0124
+   * @tc.desc   test networkManager removeFirewallRule with undefined rule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0124", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeFirewallRule(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0120_1
+   * @tc.number test_remove_firewall_rule_0120_1
+   * @tc.desc   test networkManager removeFirewallRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0120_1", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let fireWallRule: networkManager.FirewallRule = {
+      srcAddr: '192.168.1.1-192.168.1.22',
+      destAddr: '192.168.2.1',
+      direction: networkManager.Direction.INPUT
+    }
+    try {
+      networkManager.removeFirewallRule(SELFWANT, fireWallRule);
+      let firewallRules: Array<networkManager.FirewallRule>;
+      firewallRules = networkManager.getFirewallRules(SELFWANT);
+      expect(firewallRules.length == 0).assertTrue();
+    } catch (e) {
+      if (Number(e.code) === 801)
+        expect(Number(e.code) === 801).assertTrue();
+      else
+        expect(Number(e.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done()
+  })
+
 }
 
 function testGetFirewallRules() {
@@ -1925,7 +2805,49 @@ function testGetFirewallRules() {
       networkManager.getFirewallRules(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_firewall_rules_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_FIREWALL_RULES_JS_0103
+   * @tc.desc   test networkManager getFirewallRules with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_firewall_rules_0103", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getFirewallRules(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_firewall_rules_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_FIREWALL_RULES_JS_0104
+   * @tc.desc   test networkManager getFirewallRules with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_firewall_rules_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getFirewallRules(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1987,7 +2909,7 @@ function testAddDomainFilterRule() {
       networkManager.addDomainFilterRule(INVALID_WANT, DOMAIN_FILTER_RULE);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2008,7 +2930,7 @@ function testAddDomainFilterRule() {
       networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE3);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2093,7 +3015,7 @@ function testAddDomainFilterRule() {
       networkManager.addDomainFilterRule(INVALID_WANT, DOMAIN_FILTER_RULE5);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2114,7 +3036,7 @@ function testAddDomainFilterRule() {
       networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE7);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2199,7 +3121,7 @@ function testAddDomainFilterRule() {
       networkManager.addDomainFilterRule(INVALID_WANT, DOMAIN_FILTER_RULE10);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2220,7 +3142,7 @@ function testAddDomainFilterRule() {
       networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE12);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2248,6 +3170,90 @@ function testAddDomainFilterRule() {
     finally {
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE13);
       await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0115
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0115
+   * @tc.desc   test networkManager addDomainFilterRule with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_domain_filter_rule_0115", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(null, DOMAIN_FILTER_RULE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0116
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0116
+   * @tc.desc   test networkManager addDomainFilterRule with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_domain_filter_rule_0116", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(undefined, DOMAIN_FILTER_RULE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0117
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0117
+   * @tc.desc   test networkManager addDomainFilterRule with null rule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_domain_filter_rule_0117", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0118
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0118
+   * @tc.desc   test networkManager addDomainFilterRule with undefined rule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_domain_filter_rule_0118", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -2307,7 +3313,7 @@ function testRemoveDomainFilterRule() {
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE3);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2367,7 +3373,7 @@ function testRemoveDomainFilterRule() {
       networkManager.removeDomainFilterRule(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2454,7 +3460,7 @@ function testRemoveDomainFilterRule() {
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE7);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2514,7 +3520,7 @@ function testRemoveDomainFilterRule() {
       networkManager.removeDomainFilterRule(INVALID_WANT, DOMAIN_FILTER_RULE9);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2601,7 +3607,7 @@ function testRemoveDomainFilterRule() {
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE12);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2661,7 +3667,7 @@ function testRemoveDomainFilterRule() {
       networkManager.removeDomainFilterRule(INVALID_WANT, DOMAIN_FILTER_RULE14);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2685,6 +3691,154 @@ function testRemoveDomainFilterRule() {
       domainFilterRules = networkManager.getDomainFilterRules(SELFWANT);
       expect(domainFilterRules.length == 0).assertTrue();
     } catch (e) {
+      expect(false).assertTrue();
+    }
+    finally {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE9);
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0121
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0121
+   * @tc.desc   test networkManager removeDomainFilterRule with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0121", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeDomainFilterRule(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0122
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0122
+   * @tc.desc   test networkManager removeDomainFilterRule with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0122", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeDomainFilterRule(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0123
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0123
+   * @tc.desc   test networkManager removeDomainFilterRule with null rule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0123", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeDomainFilterRule(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0124
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0124
+   * @tc.desc   test networkManager removeDomainFilterRule with undefined rule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0124", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeDomainFilterRule(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0130
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0130
+   * @tc.desc   test networkManager removeDomainFilterRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0130", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE15);
+      let domainFilterRules1: Array<networkManager.DomainFilterRule>;
+      domainFilterRules1 = networkManager.getDomainFilterRules(SELFWANT);
+      console.log("test_remove_domain_filter_rule_0130  result:" + domainFilterRules1.length)
+      expect(domainFilterRules1.length == 1).assertTrue();
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE15);
+      let domainFilterRules2: Array<networkManager.DomainFilterRule>;
+      domainFilterRules2 = networkManager.getDomainFilterRules(SELFWANT);
+      console.log("test_remove_domain_filter_rule_0130  result:" + domainFilterRules2.length)
+      expect(domainFilterRules2.length == 0).assertTrue();
+    } catch (e) {
+      console.log("test_remove_domain_filter_rule_0130  errornsg:" + e.message + e.code)
+      expect(false).assertTrue();
+    }
+    finally {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE9);
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0140
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0140
+   * @tc.desc   test networkManager removeDomainFilterRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0140", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE16);
+      let domainFilterRules1: Array<networkManager.DomainFilterRule>;
+      domainFilterRules1 = networkManager.getDomainFilterRules(SELFWANT);
+      console.log("test_remove_domain_filter_rule_0140  result:" + domainFilterRules1.length)
+      expect(domainFilterRules1.length == 1).assertTrue();
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE16);
+      let domainFilterRules2: Array<networkManager.DomainFilterRule>;
+      domainFilterRules2 = networkManager.getDomainFilterRules(SELFWANT);
+      console.log("test_remove_domain_filter_rule_0140  result:" + domainFilterRules2.length)
+      expect(domainFilterRules2.length == 0).assertTrue();
+    } catch (e) {
+      console.log("test_remove_domain_filter_rule_0140  errornsg:" + e.message + e.code)
       expect(false).assertTrue();
     }
     finally {
@@ -2749,7 +3903,49 @@ function testGetDomainFilterRules() {
       networkManager.getDomainFilterRules(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_domain_filter_rules_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DOMAIN_FILTER_RULES_JS_0103
+   * @tc.desc   test networkManager getDomainFilterRules with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_domain_filter_rules_0103", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getDomainFilterRules(null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_domain_filter_rules_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DOMAIN_FILTER_RULES_JS_0104
+   * @tc.desc   test networkManager getDomainFilterRules with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_domain_filter_rules_0104", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getDomainFilterRules(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2900,6 +4096,185 @@ function testSetGlobalProxyForAccount() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0105
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0105", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(null, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0106
+   * @tc.desc   test networkManager setGlobalProxyForAccount with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0106", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(undefined, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0107
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null httpProxy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0107", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, null, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0108
+   * @tc.desc   test networkManager setGlobalProxyForAccount with undefined httpProxy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0108", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, undefined, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0109
+   * @tc.desc   test networkManager setGlobalProxyForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0109", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_global_proxy_for_account_0104_1
+   * @tc.number test_set_global_proxy_for_account_0104_1
+   * @tc.desc   test networkManager setGlobalProxyForAccount success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_global_proxy_for_account_0104_1", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let originProxy: connection.HttpProxy = {
+      host: "192.168.1.101",
+      port: 65000,
+      exclusionList: []
+    }
+    try {
+      let defProxy: connection.HttpProxy = networkManager.getGlobalProxyForAccount(SELFWANT, DEFAULT_ACCOUNT_ID);
+      networkManager.setGlobalProxyForAccount(SELFWANT, originProxy, DEFAULT_ACCOUNT_ID);
+    } catch (error) {
+      console.info(' --- test_set_global_proxy_for_account_0104_1 done is expected, but it error, actually catch: ' +
+      error.code);
+      if (Number(error.code) === 801)
+        expect(Number(error.code) === 801).assertTrue();
+      else {
+        expect(Number(error.code) === 401).assertTrue();
+        networkManager.setGlobalProxyForAccount(SELFWANT, defProxy, DEFAULT_ACCOUNT_ID);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
 }
 
 function testGetGlobalProxyForAccount() {
@@ -2974,6 +4349,93 @@ function testGetGlobalProxyForAccount() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       networkManager.getGlobalProxyForAccount(INVALID_WANT, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_global_proxy_for_account_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0103
+   * @tc.desc   test networkManager getGlobalProxyForAccount with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_global_proxy_for_account_0103", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getGlobalProxyForAccount(null, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_global_proxy_for_account_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0104
+   * @tc.desc   test networkManager getGlobalProxyForAccount with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_global_proxy_for_account_0104", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getGlobalProxyForAccount(undefined, DEFAULT_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_global_proxy_for_account_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_GLOBAL_PROXY_FOR_ACCOUNT_JS_0105
+   * @tc.desc   test networkManager getGlobalProxyForAccount with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_global_proxy_for_account_0105", Level.LEVEL2, async (done: Function) => {
+    if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+    }
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.getGlobalProxyForAccount(SELFWANT, null);
       expect(false).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {
@@ -3185,6 +4647,81 @@ function testTurnOnMobileData() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_turnon_mobile_data_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_MOBILE_DATA_JS_0009
+   * @tc.desc   test networkManager turnOnMobileData with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_turnon_mobile_data_0009", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.turnOnMobileData(undefined, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_turnon_mobile_data_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_MOBILE_DATA_JS_0010
+   * @tc.desc   test networkManager turnOnMobileData with null enable
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_turnon_mobile_data_0010", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.turnOnMobileData(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_turnon_mobile_data_0011
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_MOBILE_DATA_JS_0011
+   * @tc.desc   test networkManager turnOnMobileData with undefined enable
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_turnon_mobile_data_0011", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.turnOnMobileData(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testTurnOffMobileData() {
@@ -3283,6 +4820,31 @@ function testTurnOffMobileData() {
       }
     } finally {
        await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_turnoff_mobile_data_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNOFF_MOBILE_DATA_JS_JS_0005
+   * @tc.desc   test networkManager turnOffMobileData with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_turnoff_mobile_data_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.turnOffMobileData(undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
@@ -3424,6 +4986,58 @@ function testAddApn() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_add_apn_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_APN_JS_0006
+   * @tc.desc   test networkManager addApn with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_apn_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addApn(undefined, ADD_APN_INFO);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_add_apn_0006 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_apn_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_APN_JS_0007
+   * @tc.desc   test networkManager addApn with undefined apnInfo
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_apn_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addApn(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_add_apn_0007 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testDeleteApn() {
@@ -3517,6 +5131,84 @@ function testDeleteApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_delete_apn_0004 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_delete_apn_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_EDM_DELETE_APN_JS_0005
+   * @tc.desc   test networkManager deleteApn with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_delete_apn_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.deleteApn(undefined, "0");
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_delete_apn_0005 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_delete_apn_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_DELETE_APN_JS_0006
+   * @tc.desc   test networkManager deleteApn with undefined apnId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_delete_apn_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.deleteApn(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_delete_apn_0006 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_delete_apn_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_DELETE_APN_JS_0007
+   * @tc.desc   test networkManager deleteApn with empty apnId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_delete_apn_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.deleteApn(SELFWANT, '');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test' + '_delete_apn_0007 error 401 or 801 is expected, actually catch: ' + error.code);
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
@@ -3656,6 +5348,110 @@ function testUpdateApn() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_update_apn_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_UPDATE_APN_JS_0006
+   * @tc.desc   test networkManager updateApn with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_update_apn_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.updateApn(undefined, UPDATE_APN_INFO, "0");
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_update_apn_0006 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_update_apn_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_UPDATE_APN_JS_0007
+   * @tc.desc   test networkManager updateApn with undefined apnInfo
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_update_apn_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.updateApn(SELFWANT, undefined, "0");
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_update_apn_0007 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_update_apn_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_UPDATE_APN_JS_0008
+   * @tc.desc   test networkManager updateApn with undefined apnId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_update_apn_0008", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.updateApn(SELFWANT, UPDATE_APN_INFO, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_update_apn_0008 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_update_apn_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_UPDATE_APN_JS_0009
+   * @tc.desc   test networkManager updateApn with empty apnId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_update_apn_0009", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.updateApn(SELFWANT, UPDATE_APN_INFO, '');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_update_apn_0009 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testSetPreferredApn() {
@@ -3749,6 +5545,84 @@ function testSetPreferredApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_set_preferred_apn_0004 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_preferred_apn_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PREFERRED_APN_JS_0005
+   * @tc.desc   test networkManager setPreferredApn with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_preferred_apn_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setPreferredApn(undefined, "0");
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_preferred_apn_0005 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_preferred_apn_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PREFERRED_APN_JS_0006
+   * @tc.desc   test networkManager setPreferredApn with undefined apnId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_preferred_apn_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setPreferredApn(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_preferred_apn_0006 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_preferred_apn_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_PREFERRED_APN_JS_0007
+   * @tc.desc   test networkManager setPreferredApn with empty apnId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_preferred_apn_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setPreferredApn(SELFWANT, '');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_preferred_apn_0007 error 401 or 801 is expected, actually catch: ' + error.code);
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
@@ -3927,6 +5801,84 @@ function testQueryApn() {
       expect(false).assertTrue();
     } catch (error) {
       console.info(' --- test_query_apn_0007 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_query_apn_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_QUERY_APN_JS_0008
+   * @tc.desc   test networkManager queryApn with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_query_apn_0008", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.queryApn(undefined, ADD_APN_INFO);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_query_apn_0008 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_query_apn_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_QUERY_APN_JS_0009
+   * @tc.desc   test networkManager queryApn with undefined apnIdOrInfo
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_query_apn_0009", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.queryApn(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_query_apn_0009 error 401 or 801 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_query_apn_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_QUERY_APN_JS_0010
+   * @tc.desc   test networkManager queryApn with empty apnId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_query_apn_0010", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.queryApn(SELFWANT, '');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_query_apn_0010 error 401 or 801 is expected, actually catch: ' + error.code);
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
@@ -4127,6 +6079,131 @@ function testSetEthernetConfig() {
         expect(Number(error.code) === 801).assertTrue();
       } else {
         expect(Number(error.code) === 9201010).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0009
+   * @tc.desc   test networkManager setEthernetConfig with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0009", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(undefined, "eth0", INTERFACE_STATIC_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0010
+   * @tc.desc   test networkManager setEthernetConfig with null iface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+   it("test_set_ethernet_config_0010", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, null, INTERFACE_STATIC_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0011
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0011
+   * @tc.desc   test networkManager setEthernetConfig with undefined iface
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0011", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, undefined, INTERFACE_STATIC_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0012
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0012
+   * @tc.desc   test networkManager setEthernetConfig with null config
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0012", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "eth0", null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0013
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0013
+   * @tc.desc   test networkManager setEthernetConfig with undefined config
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0013", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "eth0", undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);

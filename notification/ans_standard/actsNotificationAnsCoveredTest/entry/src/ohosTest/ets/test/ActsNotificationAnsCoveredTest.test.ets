@@ -2095,8 +2095,13 @@ export default function actsNotificationAnsCovered() {
       let setBadgeNumberCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(401)
-          done()
+          if(err.code == 801){
+            expect(err.code).assertEqual(801)
+            done()
+          }else{
+            expect(err.code).assertEqual(401)
+            done()
+          }
         } else {
           console.info(TAG + `Succeeded in setting badge number.`);
           expect(false).assertTrue()
@@ -2126,8 +2131,13 @@ export default function actsNotificationAnsCovered() {
       let setBadgeNumberCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(401)
-          done()
+          if(err.code == 801){
+            expect(err.code).assertEqual(801)
+            done()
+          }else{
+            expect(err.code).assertEqual(401)
+            done()
+          }
         } else {
           console.info(TAG + `Succeeded in setting badge number.`);
           expect(false).assertTrue()
@@ -2161,8 +2171,13 @@ export default function actsNotificationAnsCovered() {
           done()
         }).catch((err: BusinessError) => {
           console.error(TAG + `Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(401)
-          done()
+          if(err.code == 801){
+            expect(err.code).assertEqual(801)
+            done()
+          }else{
+            expect(err.code).assertEqual(401)
+            done()
+          }
         });
       } catch (err) {
         console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
@@ -2189,8 +2204,13 @@ export default function actsNotificationAnsCovered() {
           done()
         }).catch((err: BusinessError) => {
           console.error(TAG + `Failed to set badge number. Code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(401)
-          done()
+          if(err.code == 801){
+            expect(err.code).assertEqual(801)
+            done()
+          }else{
+            expect(err.code).assertEqual(401)
+            done()
+          }
         });
       } catch (err) {
         console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);

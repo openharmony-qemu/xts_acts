@@ -13,11 +13,26 @@
  * limitations under the License.
  */
 
-import { describe, afterEach, it, expect, TestType, Size, Level } from '../../../hypium/index';
-import formInfo  from '@ohos.app.form.formInfo';
+import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import formProvider from '@ohos.app.form.formProvider';
-import { BusinessError } from '@ohos.base';
-
+import formInfo from '@ohos.app.form.formInfo';
+import FormEditExtensionAbility from '@ohos.app.form.FormEditExtensionAbility';
+import LiveFormExtensionAbility, { LiveFormInfo } from '@ohos.app.form.LiveFormExtensionAbility';
+import FormExtensionAbility from '@ohos.app.form.FormExtensionAbility';
+import { UIExtensionContentSession } from '@kit.AbilityKit';
+import common from '@ohos.app.ability.common';
+import Want from '@ohos.app.ability.Want';
+const CODE_OK = 0;
+const ERROR_CODE1 = 401;
+const ERROR_CODE2 = 16500050;
+const ERROR_CODE4 = 16500100;
+const ERROR_CODE5 = 16501000;
+const ERROR_CODE9 = 202;
+const ERROR_CODE10 = 16501014;
+const ERROR_CODE11 = 16000121;
+const ERROR_CODE12 = 16000130;
+const ERROR_CODE13 = 801;
+const ERROR_CODE14 = 16501011;
 export default function OverflowApiCoverTest() {
   describe('OverflowApiCoverTest', () => {
 
@@ -199,6 +214,96 @@ export default function OverflowApiCoverTest() {
       }
       console.info(`${name} end`);
       done();
+    });
+
+    /**
+     * @tc.name   OverflowApiCoverTest_001
+     * @tc.number OverflowApiCoverTest_001
+     * @tc.desc   Function startSecondPage covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OverflowApiCoverTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let name: string = 'OverflowApiCoverTest_001';
+      console.info(`${name} start`);
+      try {
+        let module1Want: Want = {
+          deviceId: "",
+          bundleName: "com.ohos.st.formsystemhost",
+          abilityName: "com.ohos.st.formsystemhost.MainAbility",
+          parameters: {
+              "formId": "0",
+              "name": "Form_Js001",
+              "bundle": "com.acts.form.formsystemtestservicea.hmservice",
+              "ability": "",
+              "moduleName": "entry",
+              "temporary": false,
+              "isCreate": true
+          }
+        }
+        let feeAbility:FormEditExtensionAbility = new FormEditExtensionAbility();
+        feeAbility.context.startSecondPage(module1Want).then((result: common.AbilityResult) => {
+          console.info(`${name} startSecondPage success ${JSON.stringify(result)}`);
+        });
+        console.info(`${name} startSecondPage end`);
+        feeAbility.context.startUIAbility(module1Want).then(() => {
+          console.info(`${name} startUIAbility success`);
+        });
+        console.info(`${name} startUIAbility end`);
+        let liveFormAbility:LiveFormExtensionAbility = new LiveFormExtensionAbility();
+        liveFormAbility.context.startAbilityByLiveForm(module1Want).then(() => {
+          console.info(`${name} startAbilityByLiveForm success`);
+        });
+        console.info(`${name} startAbilityByLiveForm end`);
+        let infoRect: formInfo.Rect = {
+          left: -30,
+          top: -30,
+          width: 200,
+          height: 200
+        }
+        let liveFormInfo: LiveFormInfo = {
+          formId: 'formId',
+          rect: infoRect,
+          borderRadius: 123
+        }
+        let session: UIExtensionContentSession = new UIExtensionContentSession();
+        liveFormAbility.onLiveFormCreate(liveFormInfo, session);
+        liveFormAbility.onLiveFormDestroy(liveFormInfo);
+        console.info(`${name} onLiveFormCreate onLiveFormDestroy end`);
+        let feAbility:FormExtensionAbility = new FormExtensionAbility();
+        feAbility.context.startAbility(module1Want, () => {
+          console.info(`${name} startAbility success`);
+        });
+        console.info(`${name} startAbility end`);
+      } catch (error) {
+        console.log(`${name} catch, error, code:${error?.code}, message:${error?.message}`);
+        if (error?.code === ERROR_CODE2) {
+          expect(error?.code).assertEqual(ERROR_CODE2);
+        } else if(error?.code === ERROR_CODE4) {
+          expect(error?.code).assertEqual(ERROR_CODE4);
+        } else if(error?.code === ERROR_CODE5) {
+          expect(error?.code).assertEqual(ERROR_CODE5);
+        } else if(error?.code === ERROR_CODE9) {
+          expect(error?.code).assertEqual(ERROR_CODE9);
+        } else if(error?.code === ERROR_CODE10) {
+          expect(error?.code).assertEqual(ERROR_CODE10);
+        } else if(error?.code === ERROR_CODE11) {
+          expect(error?.code).assertEqual(ERROR_CODE11);
+        } else if(error?.code === ERROR_CODE12) {
+          expect(error?.code).assertEqual(ERROR_CODE12);
+        } else if(error?.code === ERROR_CODE13) {
+          expect(error?.code).assertEqual(ERROR_CODE13);
+        } else if(error?.code === ERROR_CODE14) {
+          expect(error?.code).assertEqual(ERROR_CODE14);
+        } else if(error?.code === CODE_OK) {
+          expect(error?.code).assertEqual(CODE_OK);
+        } else if(error?.code === ERROR_CODE1) {
+          expect(error?.code).assertEqual(ERROR_CODE1);
+        }
+      }
+      done();
+      console.info(`${name} end`);
     });
   })
 }

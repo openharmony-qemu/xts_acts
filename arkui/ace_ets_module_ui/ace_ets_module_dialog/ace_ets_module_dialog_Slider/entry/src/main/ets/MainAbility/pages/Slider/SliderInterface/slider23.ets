@@ -30,7 +30,7 @@ struct Slider23 {
         .id('Slider23')
         .width(300)
         .blockSize({ width: 10, height: 30 })
-        .trackThickness(60)
+        .trackThickness(80)
         .showTips(true)
         .onChange((value: number, mode: SliderChangeMode) => {
           this.outSetValueOne = value

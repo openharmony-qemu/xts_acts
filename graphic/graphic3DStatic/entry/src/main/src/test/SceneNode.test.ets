@@ -77,6 +77,28 @@ export default function sceneNodeTest() {
         node = scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') as Node;
         expect(node != null).assertTrue();
         console.info(msg + " Succeed in scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') ");
+
+        // Cover all Node property fields
+        expect(node!.position != null).assertTrue();
+        console.info(msg + " node.position is not null ");
+        expect(node!.rotation != null).assertTrue();
+        console.info(msg + " node.rotation is not null ");
+        expect(node!.scale != null).assertTrue();
+        console.info(msg + " node.scale is not null ");
+        node!.visible = true;
+        expect(node!.visible).assertTrue();
+        console.info(msg + " node.visible is " + node!.visible);
+        expect(node!.nodeType != null).assertTrue();
+        console.info(msg + " node.nodeType is " + JSON.stringify(node!.nodeType));
+        expect(node!.layerMask != null).assertTrue();
+        console.info(msg + " node.layerMask is not null ");
+        expect(node!.path != null).assertTrue();
+        console.info(msg + " node.path is " + node!.path);
+        expect(node!.parent != null).assertTrue();
+        console.info(msg + " node.parent is not null ");
+        expect(node!.children != null).assertTrue();
+        console.info(msg + " node.children is not null ");
+
         let nullNode: Node | null = scene!.root!.getNodeByPath('Scene/1234/456');
         expect(nullNode).assertNull();
         try {
@@ -838,6 +860,34 @@ export default function sceneNodeTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testCreateGeometryPLANE " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testCreateGeometryEmptyName
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0595
+     * @tc.desc   Test createGeometry with empty string name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateGeometryEmptyName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testCreateGeometryEmptyName";
+      console.info(msg + ' begin ');
+      try {
+        let cubeGeom = new CubeGeometry();
+        expect(cubeGeom != null).assertTrue();
+        cubeGeom.size = { x: 0.5, y: 0.5, z: 0.5 };
+        let meshRes = await rf!.createMesh({ name: "mesh for empty name test" }, cubeGeom);
+        expect(meshRes != null).assertTrue();
+        let geometry = await rf!.createGeometry({ name: "" }, meshRes);
+        expect(geometry != null).assertTrue();
+        console.info(msg + " createGeometry with empty name success");
+        scene?.root?.children.append(geometry);
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCreateGeometryEmptyName " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

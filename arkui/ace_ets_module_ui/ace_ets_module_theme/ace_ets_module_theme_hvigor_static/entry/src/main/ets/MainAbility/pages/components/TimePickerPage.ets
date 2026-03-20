@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ import { StorageLink, StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const timePickerThemeProperty: string = `timePickerThemeProperty`;
 
-export const timePickerThemeSetProperty: string = `timePickerThemeSetProperty`
+export const timePickerThemeSetProperty: string = `timePickerThemeSetProperty`;
 
 export const timePickerIsMilitaryProperty: string = `timePickerIsMilitaryProperty`;
 
@@ -53,9 +53,9 @@ export class TimePickerKeys {
 @Entry
 @Component
 struct TimePickerPage {
-  @StoragePropRef(timePickerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(timePickerIsMilitaryProperty) isMilitary: boolean = false;
-  @StorageLink(timePickerThemeSetProperty) themeSet: boolean = true
+  @StoragePropRef('timePickerThemeProperty') localTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink('timePickerIsMilitaryProperty') isMilitary: boolean = false;
+  @StorageLink('timePickerThemeSetProperty') themeSet: boolean = true
 
   build() {
     Scroll() {

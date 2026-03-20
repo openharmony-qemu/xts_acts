@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import abilityTest from "./Ability.test";
+import coverageSupplementTest from './CoverageSupplement.test';
+
 export default function testsuite() {
+  coverageSupplementTest();
   abilityTest();
 }

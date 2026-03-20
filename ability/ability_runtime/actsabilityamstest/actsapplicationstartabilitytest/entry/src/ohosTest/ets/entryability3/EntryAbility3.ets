@@ -85,6 +85,7 @@ export default class EntryAbility extends UIAbility {
   onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', `${this.TEST_CASE_NAME} Ability onForeground`);
+    globalThis.EntryAbility3 = this.context;
     this.onForegroundFlag = true;
     let commonEventData: commonEventManager.CommonEventPublishData = {
       parameters: {
@@ -132,9 +133,6 @@ export default class EntryAbility extends UIAbility {
     commonEventManager.publish(`${this.TEST_CASE_NAME}_onBackgroundHap_1`, commonEventData, (result) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `${this.TEST_CASE_NAME} onConnect, 50==: ${JSON.stringify(result)}`);
     });
-    setTimeout(() => {
-      this.context.terminateSelf()
-    }, 3000)
   }
 
   sleep(ms: number): Promise<void> {

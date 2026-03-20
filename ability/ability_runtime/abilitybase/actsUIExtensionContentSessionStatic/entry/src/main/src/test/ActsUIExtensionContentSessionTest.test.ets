@@ -36,6 +36,8 @@ const EXT_ABILITY_NAME: string = 'EntryEmbeddedUIExtAbility';
 const WAIT_TIME2000: int = 2000;
 const WAIT_TIME500: int = 500;
 const PARAM_0: int = 0;
+const PARAM_1: int = 1;
+const PARAM_NEGATIVE_1: int = -1;
 const PARAM_FAIL: string = 'fail';
 const PARAM_TRUE: string = 'true';
 const PARAM_FALSE: string = 'false';
@@ -569,41 +571,11 @@ export default function ActsUIExtensionContentSessionTest() {
           hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber success`);
           commonEventManager.subscribe(sub, (err, eventData) => {
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB` + JSON.stringify(eventData));
-            let result: bundle.ExtensionAbilityInfo | null = null;
+            let result: int = PARAM_NEGATIVE_1;
             if (eventData?.parameters?.[TEST_RESULT_KEY]) {
-              result = eventData?.parameters?.[TEST_RESULT_KEY] as bundle.ExtensionAbilityInfo;
+              result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
             }
-            try {
-              if (result) {
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} extensionAbilityInfo: `
-                  + JSON.stringify(result));
-                expect(result.bundleName).assertEqual(BUNDLE_NAME);
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} descriptionId: ${result.descriptionId}`);
-                expect(typeof (result.descriptionId)).assertEqual('long');
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} enabled: ${result.enabled}`);
-                expect(typeof (result.enabled)).assertEqual('boolean');
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} exported: ${result.exported}`);
-                expect(typeof (result.exported)).assertEqual('boolean');
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} extensionAbilityType: ` +
-                  `${result.extensionAbilityType}`);
-                expect(result.extensionAbilityType).assertEqual(bundle.ExtensionAbilityType.EMBEDDED_UI);
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} iconId: ${result.iconId}`);
-                expect(typeof (result.iconId)).assertEqual('long');
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} labelId: ${result.labelId}`);
-                expect(typeof (result.labelId)).assertEqual('long');
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} moduleName: ${result.moduleName}`);
-                expect(result.moduleName).assertEqual(MODULE_NAME);
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} name: ${result.name}`);
-                expect(result.name).assertEqual(EXT_ABILITY_NAME);
-              } else {
-                hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} extensionAbilityInfo is null`);
-                expect().assertFail();
-              }
-            } catch (err) {
-              hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} extensionAbilityInfo failed code:`
-                + `${(err as BusinessError).code}`);
-              expect().assertFail();
-            }
+            expect(result).assertEqual(PARAM_1);
             commonEventManager.publish(EVENT_TERMINATE,() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {
               done();

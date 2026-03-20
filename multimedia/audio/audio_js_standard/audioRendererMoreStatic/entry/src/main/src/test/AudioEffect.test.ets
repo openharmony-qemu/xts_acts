@@ -4109,5 +4109,658 @@ export default function AudioEffectTest() {
         done();
       });
     })
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0200
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_UNKNOWN - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_UNKNOWN)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0300
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_VOICE_COMMUNICATION - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0400
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_VOICE_ASSISTANT - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0500
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_ALARM - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_ALARM)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0600
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_VOICE_MESSAGE - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0700
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_RINGTONE - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_RINGTONE)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0800
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_NOTIFICATION - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_NOTIFICATION)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0900
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_ACCESSIBILITY - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1000
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_MOVIE - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_MOVIE)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1100
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_GAME - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_GAME)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1200
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_AUDIOBOOK - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1300
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_NAVIGATION - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_NAVIGATION)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1400
+    * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - STREAM_USAGE_VIDEO_COMMUNICATION - Sync
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioEffectInfoArray = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION)
+        expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+        expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+        console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1600
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_VOICE_ASSISTANT
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+          expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+          expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+          console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+          done();
+        }).catch((err: Error) => {
+          console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1700
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_ALARM
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_ALARM).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+          expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+          expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+          console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+          done();
+        }).catch((err: Error) => {
+          console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1800
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_VOICE_MESSAGE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+          expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+          expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+          console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+          done();
+        }).catch((err: Error) => {
+          console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1900
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_NOTIFICATION
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_NOTIFICATION).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+          expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+          expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+          console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+          done();
+        }).catch((err: Error) => {
+          console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2000
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_ACCESSIBILITY
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+          expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+          expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+          console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+          done();
+        }).catch((err: Error) => {
+          console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2100
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_GAME
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_GAME).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+          expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+          expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+          console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+          done();
+        }).catch((err: Error) => {
+          console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2200
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_VIDEO_COMMUNICATION
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION).then((audioEffectInfoArray: audio.AudioEffectInfoArray) => {
+          expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+          expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+          console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+          done();
+        }).catch((err: Error) => {
+          console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2300
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_UNKNOWN
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_UNKNOWN, (err: BusinessError<void> | null, audioEffectInfoArray: audio.AudioEffectInfoArray | undefined) => {
+          if (err) {
+            console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+            expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+            console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+            done();
+          }
+        });
+
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2400
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_VOICE_COMMUNICATION
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION, (err: BusinessError<void> | null, audioEffectInfoArray: audio.AudioEffectInfoArray | undefined) => {
+          if (err) {
+            console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+            expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+            console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+            done();
+          }
+        });
+
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2500
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_MOVIE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_MOVIE, (err: BusinessError<void> | null, audioEffectInfoArray: audio.AudioEffectInfoArray | undefined) => {
+          if (err) {
+            console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+            expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+            console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2600
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_AUDIOBOOK
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_AUDIOBOOK, (err: BusinessError<void> | null, audioEffectInfoArray: audio.AudioEffectInfoArray | undefined) => {
+          if (err) {
+            console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+            expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+            console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2700
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_NAVIGATION
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_NAVIGATION, (err: BusinessError<void> | null, audioEffectInfoArray: audio.AudioEffectInfoArray | undefined) => {
+          if (err) {
+            console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+            expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+            console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2800
+    * @tc.desc   GET_AUDIOEFFECTINFOARRY - STREAM_USAGE_VIDEO_COMMUNICATION
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_STATIC_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        audioStreamManager.getAudioEffectInfoArray(audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION, (err: BusinessError<void> | null, audioEffectInfoArray: audio.AudioEffectInfoArray | undefined) => {
+          if (err) {
+            console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            expect(audioEffectInfoArray![0]).assertEqual(audio.AudioEffectMode.EFFECT_NONE);
+            expect(audioEffectInfoArray![1]).assertEqual(audio.AudioEffectMode.EFFECT_DEFAULT);
+            console.info(TAG + `getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
   })
 }

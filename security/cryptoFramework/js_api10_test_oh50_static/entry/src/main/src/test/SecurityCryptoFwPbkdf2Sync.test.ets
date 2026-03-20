@@ -64,6 +64,64 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
     });
 
     /**
+    * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0101
+    * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0101
+    * @tc.desc   algorithm is PBKDF2
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it("SUB_Security_CryptoFramework_pbKdf2_Func_0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let password: string = "hello world";
+      let isKeyString: boolean = false;
+      let salt: string = "0123456789";
+      let keySize: int = 128;
+      let iterations: int = 10000;
+      let algName: string = "PBKDF2";
+      let spec: cryptoFramework.PBKDF2Spec = pbkdf2Utils.getPbkdf2Spec(password, isKeyString, salt, iterations, keySize);
+      try {
+        for (let digest of pbkdf2Utils.KDF_DIGEST_SPEC) {
+          let kdfAlgName: string = algName + "|" + digest;
+          let secret: cryptoFramework.DataBlob = await pbkdf2Utils.generateKdfKeyPromise(kdfAlgName, spec);
+          expect(secret.data.byteLength).assertEqual(keySize);
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+    * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0102
+    * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0102
+    * @tc.desc   algorithm is PBKDF2
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+    it("SUB_Security_CryptoFramework_pbKdf2_Func_0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let password: string = "hello world";
+      let isKeyString: boolean = false;
+      let salt: string = "0123456789";
+      let keySize: int = 128;
+      let iterations: int = 10000;
+      let algName: string = "PBKDF2";
+      let spec: cryptoFramework.PBKDF2Spec = pbkdf2Utils.getPbkdf2Spec(password, isKeyString, salt, iterations, keySize);
+      try {
+        for (let digest of pbkdf2Utils.KDF_DIGEST_SPEC) {
+          let kdfAlgName: string = algName + "|" + digest;
+          let secret: cryptoFramework.DataBlob = await pbkdf2Utils.generateKdfKeyCallback(kdfAlgName, spec);
+          expect(secret.data.byteLength).assertEqual(keySize);
+        }
+      } catch (error) {
+        console.error(`“${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
      * @tc.name   SUB_Security_CryptoFramework_pbKdf2_Func_0200
      * @tc.number SUB_Security_CryptoFramework_pbKdf2_Func_0200
      * @tc.desc   algorithm is PBKDF2

@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
 import statistics from '@ohos.net.statistics';
 import wantAgent from '@ohos.app.ability.wantAgent';
+import commonEventManager from '@ohos.commonEventManager';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -3102,6 +3103,911 @@ export default function requestConfigSavesStaticTest() {
       } catch (err) {
         console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0300 create catch err: " + JSON.stringify(err));
         expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0400
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0400
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0400', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0400 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_downloadConfigSaves_Supplemental_0400.txt',
+        network: request.agent.Network.CELLULAR,
+        overwrite: true,
+        token: 'tokenSession',
+        multipart: false
+      };
+      try {
+
+        let task: request.agent.Task = await request.agent.create(baseContext!, config);
+        task.onProgress((pro: request.agent.Progress) => {
+          expect(pro.extras === undefined).assertTrue();
+        })
+
+        task.onResponse((response: request.agent.HttpResponse) => {
+          expect(response.version !== undefined).assertTrue();
+          expect(response.statusCode !== undefined).assertTrue();
+          expect(response.reason !== undefined).assertTrue();
+          expect(response.headers !== undefined).assertTrue();
+          console.info('====>download task response.');
+        })
+
+        task.onFaultOccur((faults: request.agent.Faults) => {
+          expect(faults.OTHERS !== undefined).assertTrue();
+          expect(faults.DISCONNECTED !== undefined).assertTrue();
+          expect(faults.TIMEOUT !== undefined).assertTrue();
+          expect(faults.PROTOCOL !== undefined).assertTrue();
+          expect(faults.PARAM !== undefined).assertTrue();
+          expect(faults.FSIO !== undefined).assertTrue();
+          expect(faults.DNS !== undefined).assertTrue();
+          expect(faults.TCP !== undefined).assertTrue();
+          expect(faults.SSL !== undefined).assertTrue();
+          expect(faults.REDIRECT !== undefined).assertTrue();
+          expect(faults.LOW_SPEED !== undefined).assertTrue();
+          console.info('====>download task failed.');
+        })
+
+        task.onWait((reason: request.agent.WaitingReason) => {
+          expect(reason.TASK_QUEUE_FULL !== undefined).assertTrue();
+          expect(reason.NETWORK_NOT_MATCH !== undefined).assertTrue();
+          expect(reason.APP_BACKGROUND !== undefined).assertTrue();
+          expect(reason.USER_INACTIVATED !== undefined).assertTrue();
+          console.info('====>download task waiting.');
+        })
+
+        expect(task.tid !== undefined).assertTrue();
+        expect(task.config.action !== undefined).assertTrue();
+
+        let taskInfo1  = await request.agent.getTask(baseContext!, task!.tid);
+        expect(taskInfo1 === undefined).assertTrue();
+        let taskInfo2  = await request.agent.getTask(baseContext!, task!.tid, 'tokenSession');
+        expect(taskInfo2.tid !== undefined).assertTrue();
+        expect(taskInfo2.config !== undefined).assertTrue();
+        expect(taskInfo2.config.action !== undefined).assertTrue();
+        expect(taskInfo2.config.url !== undefined).assertTrue();
+        expect(taskInfo2.config.title !== undefined).assertTrue();
+        expect(taskInfo2.config.description !== undefined).assertTrue();
+        expect(taskInfo2.config.mode !== undefined).assertTrue();
+        expect(taskInfo2.config.overwrite !== undefined).assertTrue();
+        expect(taskInfo2.config.method !== undefined).assertTrue();
+        expect(taskInfo2.config.headers !== undefined).assertTrue();
+        expect(taskInfo2.config.data !== undefined).assertTrue();
+        expect(taskInfo2.config.saveas !== undefined).assertTrue();
+        expect(taskInfo2.config.network !== undefined).assertTrue();
+        expect(taskInfo2.config.metered !== undefined).assertTrue();
+        expect(taskInfo2.config.roaming !== undefined).assertTrue();
+        expect(taskInfo2.config.retry !== undefined).assertTrue();
+        expect(taskInfo2.config.redirect !== undefined).assertTrue();
+        expect(taskInfo2.config.proxy !== undefined).assertTrue();
+        expect(taskInfo2.config.index !== undefined).assertTrue();
+        expect(taskInfo2.config.begins !== undefined).assertTrue();
+        expect(taskInfo2.config.ends !== undefined).assertTrue();
+        expect(taskInfo2.config.gauge !== undefined).assertTrue();
+        expect(taskInfo2.config.precise !== undefined).assertTrue();
+        expect(taskInfo2.config.token !== undefined).assertTrue();
+        expect(taskInfo2.config.priority !== undefined).assertTrue();
+        expect(taskInfo2.config.extras !== undefined).assertTrue();
+        expect(taskInfo2.config.multipart !== undefined).assertTrue();
+        expect(taskInfo2.config.notification !== undefined).assertTrue();
+        expect(taskInfo2.config.minSpeed !== undefined).assertTrue();
+        expect(taskInfo2.config.timeout !== undefined).assertTrue();
+
+        let notification1: request.agent.Notification = {
+          title: 'test',
+          text: 'text'
+        }
+        let notification2: request.agent.Notification = {
+          title: '',
+          text: ''
+        }
+        let groupConfig1: request.agent.GroupConfig = {
+          gauge: false,
+          notification:notification1
+        }
+        let groupConfig2: request.agent.GroupConfig = {
+          gauge: true,
+          notification:notification2
+        }
+        let gid1: string = await request.agent.createGroup(groupConfig1);
+        expect(gid1 !== undefined).assertTrue();
+        let gid2: string = await request.agent.createGroup(groupConfig2);
+        expect(gid2 !== undefined).assertTrue();
+        done();
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0400 create end");
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0400 create catch err: " + JSON.stringify(err.code));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0500
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0500
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0500', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0500 is starting-----------------------");
+      let attachments: Array<request.agent.FormItem> = [{
+        name: "uploadTest",
+        value: {
+          path: "base/test.txt",
+          filename: "test.txt",
+          contentType: 'length',
+          extras:{'Accept': '*/*'},
+        }
+      }];
+      let config: request.agent.Config = {
+        action: request.agent.Action.UPLOAD,
+        url: 'http://127.0.0.1:8080',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        description: 'XTS download test!',
+        network: request.agent.Network.CELLULAR,
+        data: attachments,
+        multipart: true
+      };
+      try {
+        let task = await request.agent.create(baseContext!, config);
+
+        request.agent.create(baseContext!, config, (err, task) => {
+          try {
+            if(err){
+              console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0500 create err: " + JSON.stringify(err));
+              expect().assertFail();
+            }
+            expect(task!.tid !== undefined).assertTrue();
+            expect(task!.config !== undefined).assertTrue();
+            expect(task!.config.action !== undefined).assertTrue();
+            expect(task!.config.url !== undefined).assertTrue();
+            expect(task!.config.title !== undefined).assertTrue();
+            expect(task!.config.description !== undefined).assertTrue();
+            expect(task!.config.mode !== undefined).assertTrue();
+            expect(task!.config.overwrite !== undefined).assertTrue();
+            expect(task!.config.method !== undefined).assertTrue();
+            expect(task!.config.headers !== undefined).assertTrue();
+            expect(task!.config.data !== undefined).assertTrue();
+            expect(task!.config.saveas !== undefined).assertTrue();
+            expect(task!.config.network !== undefined).assertTrue();
+            expect(task!.config.metered !== undefined).assertTrue();
+            expect(task!.config.roaming !== undefined).assertTrue();
+            expect(task!.config.retry !== undefined).assertTrue();
+            expect(task!.config.redirect !== undefined).assertTrue();
+            expect(task!.config.proxy !== undefined).assertTrue();
+            expect(task!.config.index !== undefined).assertTrue();
+            expect(task!.config.begins !== undefined).assertTrue();
+            expect(task!.config.ends !== undefined).assertTrue();
+            expect(task!.config.gauge !== undefined).assertTrue();
+            expect(task!.config.precise !== undefined).assertTrue();
+            expect(task!.config.token !== undefined).assertTrue();
+            expect(task!.config.priority !== undefined).assertTrue();
+            expect(task!.config.extras !== undefined).assertTrue();
+            expect(task!.config.multipart !== undefined).assertTrue();
+            expect(task!.config.notification !== undefined).assertTrue();
+            expect(task!.config.minSpeed !== undefined).assertTrue();
+            expect(task!.config.timeout !== undefined).assertTrue();
+          } catch (err) {
+            console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0500 catch err: " + JSON.stringify(err));
+          }
+        });
+
+        request.agent.show(task.tid, (err, taskInfo) => {
+          if (err) {
+            console.error(`====>Failed to show a upload task err`);
+            expect().assertFail();
+          }
+          expect(taskInfo!.saveas !== undefined).assertTrue();
+          expect(taskInfo!.url !== undefined).assertTrue();
+          expect(taskInfo!.data !== undefined).assertTrue();
+          expect(taskInfo!.tid !== undefined).assertTrue();
+          expect(taskInfo!.title !== undefined).assertTrue();
+          expect(taskInfo!.description !== undefined).assertTrue();
+          expect(taskInfo!.action !== undefined).assertTrue();
+          expect(taskInfo!.mode !== undefined).assertTrue();
+          expect(taskInfo!.priority !== undefined).assertTrue();
+          expect(taskInfo!.mimeType !== undefined).assertTrue();
+          expect(taskInfo!.progress !== undefined).assertTrue();
+          expect(taskInfo!.gauge !== undefined).assertTrue();
+          expect(taskInfo!.ctime !== undefined).assertTrue();
+          expect(taskInfo!.mtime !== undefined).assertTrue();
+          expect(taskInfo!.retry !== undefined).assertTrue();
+          expect(taskInfo!.tries !== undefined).assertTrue();
+          expect(taskInfo!.faults !== undefined).assertTrue();
+          expect(taskInfo!.reason !== undefined).assertTrue();
+          expect(taskInfo!.extras !== undefined).assertTrue();
+          console.info(`====>Succeeded in showing a upload task.`);
+        });
+
+        request.agent.touch(task.tid, "token", (err, taskInfo) => {
+          if (err) {
+            console.error(`====>Failed to touch a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          expect(taskInfo!.saveas !== undefined).assertTrue();
+          expect(taskInfo!.url !== undefined).assertTrue();
+          expect(taskInfo!.data !== undefined).assertTrue();
+          expect(taskInfo!.tid !== undefined).assertTrue();
+          expect(taskInfo!.title !== undefined).assertTrue();
+          expect(taskInfo!.description !== undefined).assertTrue();
+          expect(taskInfo!.action !== undefined).assertTrue();
+          expect(taskInfo!.mode !== undefined).assertTrue();
+          expect(taskInfo!.priority !== undefined).assertTrue();
+          expect(taskInfo!.mimeType !== undefined).assertTrue();
+          expect(taskInfo!.progress !== undefined).assertTrue();
+          expect(taskInfo!.gauge !== undefined).assertTrue();
+          expect(taskInfo!.ctime !== undefined).assertTrue();
+          expect(taskInfo!.mtime !== undefined).assertTrue();
+          expect(taskInfo!.retry !== undefined).assertTrue();
+          expect(taskInfo!.tries !== undefined).assertTrue();
+          expect(taskInfo!.faults !== undefined).assertTrue();
+          expect(taskInfo!.reason !== undefined).assertTrue();
+          expect(taskInfo!.extras !== undefined).assertTrue();
+          console.info(`====>Succeeded in touching a upload task.`);
+        });
+
+        let taskInfo1 = await request.agent.touch(task.tid, "token");
+        expect(taskInfo1.saveas !== undefined).assertTrue();
+        expect(taskInfo1.url !== undefined).assertTrue();
+        expect(taskInfo1.data !== undefined).assertTrue();
+        expect(taskInfo1.tid !== undefined).assertTrue();
+        expect(taskInfo1.title !== undefined).assertTrue();
+        expect(taskInfo1.description !== undefined).assertTrue();
+        expect(taskInfo1.action !== undefined).assertTrue();
+        expect(taskInfo1.mode !== undefined).assertTrue();
+        expect(taskInfo1.priority !== undefined).assertTrue();
+        expect(taskInfo1.mimeType !== undefined).assertTrue();
+        expect(taskInfo1.progress !== undefined).assertTrue();
+        expect(taskInfo1.gauge !== undefined).assertTrue();
+        expect(taskInfo1.ctime !== undefined).assertTrue();
+        expect(taskInfo1.mtime !== undefined).assertTrue();
+        expect(taskInfo1.retry !== undefined).assertTrue();
+        expect(taskInfo1.tries !== undefined).assertTrue();
+        expect(taskInfo1.faults !== undefined).assertTrue();
+        expect(taskInfo1.reason !== undefined).assertTrue();
+        expect(taskInfo1.extras !== undefined).assertTrue();
+        console.info(`====>Succeeded in promise touching a upload task.`);
+
+        request.agent.search((err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect(data!.length === 0).assertTrue();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length >= 1).assertTrue();
+        });
+
+        let time = new Date().getTime();
+        let filter1: request.agent.Filter = {
+          before: time + 1,
+          after: time,
+          state: request.agent.State.REMOVED,
+        };
+        let filter2: request.agent.Filter = {
+          before: time + 1000,
+          after: time -1000,
+        };
+
+        let filter3: request.agent.Filter = {
+          state: request.agent.State.INITIALIZED,
+        };
+        let filter4: request.agent.Filter = {
+          state: request.agent.State.WAITING,
+        };
+        let filter5: request.agent.Filter = {
+          state: request.agent.State.RUNNING,
+        };
+        let filter6: request.agent.Filter = {
+          state: request.agent.State.RETRYING,
+        };
+        let filter7: request.agent.Filter = {
+          state: request.agent.State.PAUSED,
+        };
+        let filter8: request.agent.Filter = {
+          state: request.agent.State.STOPPED,
+        };
+        let filter9: request.agent.Filter = {
+          state: request.agent.State.COMPLETED,
+        };
+        let filter10: request.agent.Filter = {
+          state: request.agent.State.FAILED,
+        };
+        let filter11: request.agent.Filter = {
+          state: request.agent.State.REMOVED,
+        };
+
+        let tasksData1:Array<string>  = await request.agent.search(filter1);
+        expect(tasksData1.length === 0).assertTrue();
+        let tasksData2:Array<string>  = await request.agent.search(filter2);
+        expect(tasksData2.length >= 1).assertTrue();
+        let tasksData3:Array<string>  = await request.agent.search(filter3);
+        expect(tasksData3.length !== 0).assertTrue();
+        let tasksData4:Array<string>  = await request.agent.search(filter4);
+        expect(tasksData4.length !== 0).assertTrue();
+        let tasksData5:Array<string>  = await request.agent.search(filter5);
+        expect(tasksData5.length !== 0).assertTrue();
+        let tasksData6:Array<string>  = await request.agent.search(filter6);
+        expect(tasksData6.length !== 0).assertTrue();
+        let tasksData7:Array<string>  = await request.agent.search(filter7);
+        expect(tasksData7.length !== 0).assertTrue();
+        let tasksData8:Array<string>  = await request.agent.search(filter8);
+        expect(tasksData8.length !== 0).assertTrue();
+        let tasksData9:Array<string>  = await request.agent.search(filter9);
+        expect(tasksData9.length !== 0).assertTrue();
+        let tasksData10:Array<string>  = await request.agent.search(filter10);
+        expect(tasksData10.length !== 0).assertTrue();
+        let tasksData11:Array<string>  = await request.agent.search(filter11);
+        expect(tasksData11.length !== 0).assertTrue();
+        let tasksData12:Array<string>  = await request.agent.search();
+        expect(tasksData12.length > 1).assertTrue();
+
+        request.agent.search((err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect(data!.length === 0).assertTrue();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length >= 1).assertTrue();
+        });
+
+        request.agent.search(filter3, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+        request.agent.search(filter4, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+        request.agent.search(filter5, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+        request.agent.search(filter6, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+        request.agent.search(filter7, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+        request.agent.search(filter8, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+        request.agent.search(filter9, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+        request.agent.search(filter10, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+        request.agent.search(filter11, (err, data) => {
+          if (err) {
+            console.error(`====>Failed to search a upload task, Code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          console.info(`====>Succeeded in searching a upload task. `);
+          expect(data!.length !== 0).assertTrue();
+        });
+
+        let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: ['ohos.request.event.COMPLETE']
+        };
+        try {
+          commonEventManager.createSubscriber(subscribeInfo, (err, commonEventSubscriber) => {
+            if(err) {
+              console.info(`====>Succeeded in creating subscriber.`);
+            }
+            console.error(`====>Failed to create subscriber. Code is ${err!.code}, message is ${err!.message}`);
+          });
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.error(`====>Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
+        }
+        done();
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0500 create end");
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0500 create catch err: " + JSON.stringify(err.code));
+        expect(err.code === 13400001).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0600
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0600
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0600 is starting-----------------------");
+      try{
+        await request.agent.getTask(baseContext!, '', '');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0600 getTask success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0600 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0700
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0700
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0700', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0700 is starting-----------------------");
+      try{
+        await request.agent.remove('');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0700 remove success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0700 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0800
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0800
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0800 is starting-----------------------");
+      try{
+        request.agent.remove('', (err)=>{
+          try{
+            console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0800 into callback");
+            expect().assertFail();
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0800 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0800 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0900
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0900
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0900', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0900 is starting-----------------------");
+      try{
+        await request.agent.show('');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0900 show success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0900 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1000
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1000
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1000', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1000 is starting-----------------------");
+      try{
+        request.agent.show('', (err, taskInfo)=>{
+          try{
+            console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1000 into callback");
+            expect().assertFail();
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1000 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1100
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1100
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1100 is starting-----------------------");
+      try{
+        await request.agent.touch('', '');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1100 touch success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1100 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1200
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1200
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1200 is starting-----------------------");
+      try{
+        request.agent.touch('', '', (err, taskInfo)=>{
+          try{
+            console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1200 into callback");
+            expect().assertFail();
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1200 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1200 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1300
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1300
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1300 is starting-----------------------");
+      try{
+        await request.agent.attachGroup('', []);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1300 attachGroup success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1300 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1400
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1400
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1400', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1400 is starting-----------------------");
+      try{
+        await request.agent.deleteGroup('');
+        console.info("====>SUB_Request_download_Supplemental_3800 deleteGroup success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_3800 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1500
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1500
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1500', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1500 is starting-----------------------");
+      try {
+        await request.agent.getTask(baseContext!, 'task');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1500 getTask success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1500 catch: " + JSON.stringify(err.code));
+        expect(err.code === 21900006);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1600
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1600
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1600', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1600 is starting-----------------------");
+      try {
+        await request.agent.show("12315");
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1600 show success");
+        expect().assertFail();
+      }catch (err) {
+        console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1600 catch err:' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900006);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1700
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1700
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1700', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1700 is starting-----------------------");
+      request.agent.show("12315", (err, taskInfo)=>{
+        try{
+          if(err){
+            console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1700 err:' + JSON.stringify(err.code));
+            expect(err.code).assertEqual(21900006);
+            done();
+          }else{
+            console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1700 failed');
+            expect().assertFail();
+          }
+        }catch(err){
+          console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1700 show throw_err:' + JSON.stringify(err.code));
+          done();
+        };
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1800
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1800
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1800 is starting-----------------------");
+      try {
+        await request.agent.touch('12315', 'downloadTest');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1800 touch success");
+        expect().assertFail();
+      }catch (err) {
+        console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1800 catch err:' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900006);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1900
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1900
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1900', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1900 is starting-----------------------");
+      request.agent.touch('123', 'downloadTest', (err, taskInfo)=>{
+        try{
+          if(err){
+            console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1900 err:' + JSON.stringify(err.code));
+            expect(err.code).assertEqual(21900006);
+            done();
+          }else{
+            console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1900 failed');
+            expect().assertFail();
+          }
+        }catch(err){
+          console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1900 touch throw_err:' + JSON.stringify(err.code));
+          done();
+        };
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_2000
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_2000
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_2000', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_2000 is starting-----------------------");
+      try {
+        await request.agent.attachGroup('123', []);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2000 deleteGroup success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2000 err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900008);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_2100
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_2100
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_2100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_2100 is starting-----------------------");
+      try {
+        await request.agent.deleteGroup('groupConfig');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2100 deleteGroup success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2100 err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900008);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_2200
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_2200
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_2200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_2200 is starting-----------------------");
+      try {
+        let notification: request.agent.Notification = {
+        }
+        let groupConfig: request.agent.GroupConfig = {
+          notification: notification
+        }
+        let gid: string = await request.agent.createGroup(groupConfig)
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2200 createGroup success");
+        await request.agent.attachGroup(gid, ['123456']);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2200 attachGroup success");
+        expect().assertFail();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2200 err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900006);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_2300
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_2300
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_2300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_2300 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        description: 'XTS download test!',
+        saveas: './SUB_Request_downloadConfigSaves_Supplemental_2300.txt',
+        network: request.agent.Network.ANY,
+      };
+      let groupConfig: request.agent.GroupConfig = {
+        gauge: true,
+        notification: {}
+      }
+
+      let task: request.agent.Task | null = null;
+      try {
+        task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 create task success");
+        let gid: string = await request.agent.createGroup(groupConfig)
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 createGroup success");
+        await task.start();
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 task start success");
+        await request.agent.attachGroup(gid, [task.tid]);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 attachGroup success tid: " + task.tid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900007);
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
         done();
       }
     });

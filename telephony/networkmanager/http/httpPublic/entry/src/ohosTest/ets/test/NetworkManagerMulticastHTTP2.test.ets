@@ -27,7 +27,7 @@ let httpRequestOptions_http3:http.HttpRequestOptions = {
         'Content-Type': 'application/json'
     },
     extraData: "MineMine",
-    dnsServers: [""]
+    dnsServers: []
 }
 
 let httpRequestOptions_http3_HTTP1_1:http.HttpRequestOptions = {

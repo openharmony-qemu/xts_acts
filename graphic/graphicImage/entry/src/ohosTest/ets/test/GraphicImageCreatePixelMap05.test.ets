@@ -50,11 +50,12 @@ export default function GraphicImageCreatePixelMap05() {
           console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
           await pixelMap.release();
+          done();
         } catch(err){
           console.info(msgStr + 'failed ', err.code);
           expect().assertFail();
+          done();
         }
-        done();
       })
 
     /**
@@ -364,6 +365,7 @@ export default function GraphicImageCreatePixelMap05() {
         pixelMap.translateSync(30, null);
         pixelMap.translateSync(30, undefined);
         console.info(`${LOG_PREFIX} translateSync001: Succeeded in translating.`);
+        await pixelMap.release();
         done();
       } catch (error) {
         console.error(`${LOG_PREFIX} translateSync001 failed: ${error}`);

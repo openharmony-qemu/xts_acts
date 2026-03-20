@@ -34,8 +34,8 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let dealTime = 2000;
-      let timeout = 1000;
+      let dealTime = 300;
+      let timeout = 100;
       let terminate = false;
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, dealTime);
       let config: taskpool.Configs = {timeout: timeout};
@@ -60,7 +60,7 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let dealTime = 2000;
+      let dealTime = 1200;
       let timeout = 1000;
       let terminate = false;
       let task: taskpool.Task = new taskpool.GenericsTask<[number], number>(timeoutDemo, dealTime);
@@ -83,8 +83,8 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let dealTime = 2000;
-      let timeout = 1000;
+      let dealTime = 500;
+      let timeout = 200;
       let terminate = false;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
       let task: taskpool.Task = new taskpool.Task(timeoutDemo, dealTime);
@@ -112,7 +112,7 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let dealTime = 2000;
+      let dealTime = 1200;
       let timeout = 1000;
       let count = 0;
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -166,9 +166,9 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 3000);
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 200);
       let result = await taskpool.execute(task, {});
-      expect(result).assertEqual(3000);
+      expect(result).assertEqual(200);
       done();
     })
 
@@ -194,7 +194,7 @@ export default function TaskTimeoutTest() {
       expect(result3).assertEqual(500);
 
       let task4: taskpool.Task = new taskpool.Task(timeoutDemo, 600);
-      let result4 = await taskpool.execute(task4, {priority: taskpool.Priority.IDLE});
+      let result4 = await taskpool.execute(task4, {priority: taskpool.Priority.HIGH});
       expect(result4).assertEqual(600);
       done();
     })
@@ -241,9 +241,9 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 3000);
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 200);
       let result = await taskpool.execute(task, {timeout: 0});
-      expect(result).assertEqual(3000);
+      expect(result).assertEqual(200);
       done();
     })
 
@@ -286,7 +286,7 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 2000);
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1200);
       let terminate = false;
       taskpool.execute(task, {timeout: 1000.5}).catch((e:BusinessError) => {
         terminate = true;
@@ -337,9 +337,9 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 2000);
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 200);
       let result = await taskpool.execute(task, {timeout: NaN});
-      expect(result).assertEqual(2000);
+      expect(result).assertEqual(200);
       done();
     })
 
@@ -352,9 +352,9 @@ export default function TaskTimeoutTest() {
      * @tc.level  LEVEL0
      */
     it('TaskTimeoutTestClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 1000);
+      let task: taskpool.Task = new taskpool.Task(timeoutDemo, 100);
       let result = await taskpool.execute(task, {timeout: undefined});
-      expect(result).assertEqual(1000);
+      expect(result).assertEqual(100);
       done();
     })
 
@@ -938,7 +938,7 @@ export default function TaskTimeoutTest() {
      */
     it('TaskTimeoutTestClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
-      let task: taskpool.LongTask = new taskpool.LongTask(timeoutDemo, 3000);
+      let task: taskpool.LongTask = new taskpool.LongTask(timeoutDemo, 1200);
       taskpool.execute(task, {timeout: 1000}).catch((e: BusinessError) => {
         terminate = true;
         expect(e.code).assertEqual(10200058);
@@ -1185,7 +1185,7 @@ export default function TaskTimeoutTest() {
     it('TaskTimeoutTestClass057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let count = 0;
-      let task: taskpool.Task = new taskpool.Task(demoSenddata, 5000);
+      let task: taskpool.Task = new taskpool.Task(demoSenddata, 1500);
       task.onReceiveData(() => {
         count++;
       });
@@ -1211,7 +1211,7 @@ export default function TaskTimeoutTest() {
     it('TaskTimeoutTestClass058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let terminate = false;
       let count = 0;
-      let task: taskpool.Task = new taskpool.Task(demoSenddata, 1000);
+      let task: taskpool.Task = new taskpool.Task(demoSenddata, 1200);
       task.onReceiveData(() => {
         count++;
       });
