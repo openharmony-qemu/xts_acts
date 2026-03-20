@@ -24,5 +24,5 @@ export default function testsuite() {
   NewEAWorkerTest();
   NewEAWorkerTest2();
   EAWorkerPostToMainTest();
-  attachThreadFfrtTest()；
+  attachThreadFfrtTest();
 }
