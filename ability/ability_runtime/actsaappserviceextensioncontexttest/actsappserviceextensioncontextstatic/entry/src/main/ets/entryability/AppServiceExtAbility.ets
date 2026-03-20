@@ -291,7 +291,7 @@ export default class AppServiceExtAbility extends AppServiceExtensionAbility {
       hilog.info(DOMAIN, TAG, `${testCaseName} AppServiceExtAbility Begin`);
       let wantInfo: Want = {
         bundleName: BUNDLE_NAME_RELY,
-        abilityName: 'ServiceExtAbility'
+        abilityName: 'EntryAbility2'
       };
       try {
         this.context.startAbility(wantInfo).then(() => {

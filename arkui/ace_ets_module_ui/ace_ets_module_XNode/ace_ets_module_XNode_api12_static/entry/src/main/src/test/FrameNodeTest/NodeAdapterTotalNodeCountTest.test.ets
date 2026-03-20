@@ -37,6 +37,7 @@ export default function NodeAdapterTotalNodeCountTest() {
     beforeAll(async () => {
       await UtilsTest.startAbility('com.arkui.ace.XNode.api12.static', 'EntryAbility');
       await UtilsTest.msSleep(1000);
+      console.info('NodeAdapterTotalNodeCountTest startAbility completed');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/FrameNode/NodeAdapterTotalNodeCount',
       }

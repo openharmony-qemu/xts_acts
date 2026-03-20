@@ -640,7 +640,7 @@ HWTEST_F(OHCryptoFrameworkSymCipherNapiTest, SUB_Security_CryptoFramework_NAPI_S
 
     EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128|GCM|NoPadding", nullptr), CRYPTO_INVALID_PARAMS);
     EXPECT_EQ(OH_CryptoSymCipher_Create(nullptr, &encCtx), CRYPTO_INVALID_PARAMS);
-    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128|XTS|NoPadding", &encCtx), CRYPTO_NOT_SUPPORTED);
+    EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"AES128|XTSS|NoPadding", &encCtx), CRYPTO_NOT_SUPPORTED);
     EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"aes128|GCM|NoPadding", &encCtx), CRYPTO_NOT_SUPPORTED);
     EXPECT_EQ(OH_CryptoSymCipher_Create((const char *)"RSA512", &encCtx), CRYPTO_INVALID_PARAMS);
 }

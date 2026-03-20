@@ -37,7 +37,7 @@ export default function TypedFrameNodeAttributeTest() {
     beforeAll(async () => {
       await UtilsTest.startAbility('com.arkui.ace.XNode.api12.static', 'EntryAbility');
       await UtilsTest.msSleep(1000);
-      console.info('beforeAll case');
+      console.info('TypedFrameNodeAttributeTest startAbility completed');
     });
 
     beforeEach(async () => {

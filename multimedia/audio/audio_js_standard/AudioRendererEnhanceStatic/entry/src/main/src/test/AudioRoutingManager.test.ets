@@ -354,5 +354,117 @@ export default function AudioRoutingManagerTest() {
       done();
     });
 
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0600
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.MEDIA_INPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0700
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.ALL_MEDIA_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0800
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.CALL_OUTPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0900
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.CALL_INPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_1000
+    * @tc.desc   on - off - availableDeviceChange
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.ALL_CALL_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        done();
+      } catch (error) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
   })
 }

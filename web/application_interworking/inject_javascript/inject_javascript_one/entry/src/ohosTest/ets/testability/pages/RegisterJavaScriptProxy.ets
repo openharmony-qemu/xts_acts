@@ -96,19 +96,19 @@ struct Second {
     Column() {
       Row() {
         Button("web click").key('webcomponenttwo').onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
           this.isReceive = -1;
           console.info('key==>' + this.str);
           switch (this.str) {
             case "emitRegisterJavaScriptProxyTwo": {
               this.isPageEnd = -1;
               this.webviewCtl.loadUrl("resource://rawfile/indexweb.html")
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewCtl.registerJavaScriptProxy(this.testObjtest, "objName", ["test", "toString", "testNumber", "testBool", "webString"]);
               this.isPageEnd = -1;
               this.webviewCtl.refresh();
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.webviewCtl.runJavaScript('htmlTest()', (error, result) => {
                   if (error) {
                     console.info(`run JavaScript error: ` + JSON.stringify(error));

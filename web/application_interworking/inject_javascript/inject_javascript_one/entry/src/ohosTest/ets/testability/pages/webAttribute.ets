@@ -54,8 +54,8 @@ struct webAttribute {
     Column() {
       Row() {
         Button("WebAttribute click").key('WebAttributeButton').onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
           this.isReceive = -1;
           console.info('key==>' + this.str)
           switch (this.str) {

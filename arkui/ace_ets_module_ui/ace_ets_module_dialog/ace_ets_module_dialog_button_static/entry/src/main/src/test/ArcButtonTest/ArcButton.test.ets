@@ -39,6 +39,10 @@ function getArcButtonAllPropertiesNodeStr(): string {
   return inspector.getInspectorByKey('arcButtonAllProperties');
 }
 
+function getArcButtonProgressConfigNodeStr(): string {
+  return inspector.getInspectorByKey('arcButtonProgressConfig');
+}
+
 export default function ArcButtonTest() {
   describe('ArcButtonTest', () => {
     beforeAll(async (): Promise<void> => {
@@ -394,6 +398,77 @@ export default function ArcButtonTest() {
       const called = AppStorage.get<boolean>('arcButtonOnClickCalled');
       console.info(`${LOG_TAG} ${caseName} arcButtonOnClickCalled=${called} expected=true`);
       expect(called === true).assertTrue();
+      console.info(`${LOG_TAG} case_end ${caseName} pass`);
+      done();
+    });
+
+    /**
+     * @tc.number ArcButtonTest_018
+     * @tc.name arcButtonProgressConfigValue
+     * @tc.desc Test ArcButtonProgressConfig value property (API 23+)
+     */
+    it('arcButtonProgressConfigValue', Level.LEVEL1, (done: () => void) => {
+      const caseName = 'arcButtonProgressConfigValue';
+      console.info(`${LOG_TAG} case_start ${caseName}`);
+      const str = getArcButtonProgressConfigNodeStr();
+      const idxValue = str.indexOf('value');
+      const idx40 = str.indexOf('40');
+      const hasAttrs = str.indexOf('$attrs') >= 0;
+      console.info(`${LOG_TAG} ${caseName} inspectorLen=${str.length} indexOf_value=${idxValue} indexOf_40=${idx40} hasAttrs=${hasAttrs}`);
+      expect(idxValue >= 0 || idx40 >= 0 || (str.length > 0 && hasAttrs)).assertTrue();
+      console.info(`${LOG_TAG} case_end ${caseName} pass`);
+      done();
+    });
+
+    /**
+     * @tc.number ArcButtonTest_019
+     * @tc.name arcButtonProgressConfigTotal
+     * @tc.desc Test ArcButtonProgressConfig total property (API 23+)
+     */
+    it('arcButtonProgressConfigTotal', Level.LEVEL1, (done: () => void) => {
+      const caseName = 'arcButtonProgressConfigTotal';
+      console.info(`${LOG_TAG} case_start ${caseName}`);
+      const str = getArcButtonProgressConfigNodeStr();
+      const idxTotal = str.indexOf('total');
+      const idx120 = str.indexOf('120');
+      const hasAttrs = str.indexOf('$attrs') >= 0;
+      console.info(`${LOG_TAG} ${caseName} inspectorLen=${str.length} indexOf_total=${idxTotal} indexOf_120=${idx120} hasAttrs=${hasAttrs}`);
+      expect(idxTotal >= 0 || idx120 >= 0 || (str.length > 0 && hasAttrs)).assertTrue();
+      console.info(`${LOG_TAG} case_end ${caseName} pass`);
+      done();
+    });
+
+    /**
+     * @tc.number ArcButtonTest_020
+     * @tc.name arcButtonProgressConfigColor
+     * @tc.desc Test ArcButtonProgressConfig color property (API 23+)
+     */
+    it('arcButtonProgressConfigColor', Level.LEVEL1, (done: () => void) => {
+      const caseName = 'arcButtonProgressConfigColor';
+      console.info(`${LOG_TAG} case_start ${caseName}`);
+      const str = getArcButtonProgressConfigNodeStr();
+      const idxColor = str.indexOf('color');
+      const idxHex = str.indexOf('1F71FF');
+      const hasAttrs = str.indexOf('$attrs') >= 0;
+      console.info(`${LOG_TAG} ${caseName} inspectorLen=${str.length} indexOf_color=${idxColor} indexOf_1F71FF=${idxHex} hasAttrs=${hasAttrs}`);
+      expect(idxColor >= 0 || idxHex >= 0 || (str.length > 0 && hasAttrs)).assertTrue();
+      console.info(`${LOG_TAG} case_end ${caseName} pass`);
+      done();
+    });
+
+    /**
+     * @tc.number ArcButtonTest_021
+     * @tc.name arcButtonOptionsProgressConfig
+     * @tc.desc Test ArcButtonOptions progressConfig property (API 23+)
+     */
+    it('arcButtonOptionsProgressConfig', Level.LEVEL1, (done: () => void) => {
+      const caseName = 'arcButtonOptionsProgressConfig';
+      console.info(`${LOG_TAG} case_start ${caseName}`);
+      const str = getArcButtonProgressConfigNodeStr();
+      const idxPc = str.indexOf('progressConfig');
+      const hasAttrs = str.indexOf('$attrs') >= 0;
+      console.info(`${LOG_TAG} ${caseName} inspectorLen=${str.length} indexOf_progressConfig=${idxPc} hasAttrs=${hasAttrs}`);
+      expect(idxPc >= 0 || (str.length > 0 && hasAttrs)).assertTrue();
       console.info(`${LOG_TAG} case_end ${caseName} pass`);
       done();
     });

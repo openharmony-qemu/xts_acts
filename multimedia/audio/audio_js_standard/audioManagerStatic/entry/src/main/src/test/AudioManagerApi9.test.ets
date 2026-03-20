@@ -1082,5 +1082,549 @@ export default function audioManagerApi9() {
       }
       done();
     })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0300
+    * @tc.desc   isActive - VOICE_CALL - Promise - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info(`${TagFrmwk}: Promise : isActive VOICE_CALL: NOTE: audio NOT PLAYING as VOICE_CALL for the test case to PASS`);
+      const PROMISE = streamManager!.isActive(audio.AudioVolumeType.VOICE_CALL);
+      try {
+        let data = await PROMISE;
+        if (data == false) {
+          console.info(`${TagFrmwk}: Promise: isActive: VOICE_CALL: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: isActive: VOICE_CALL: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await PROMISE;
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0400
+    * @tc.desc   isActive - VOICE_CALL - Callback - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive VOICE_CALL: NOTE: audio NOT PLAYING as VOICE_CALL for the test case to PASS`);
+      streamManager!.isActive(audio.AudioVolumeType.VOICE_CALL, (err: BusinessError<void> | null, data: boolean | undefined) => {
+        if (err) {
+          console.error(`Callback : VOICE_CALL : isActive: failed  ${err?.message}`);
+          expect().assertFail();
+        } else if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: VOICE_CALL: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: VOICE_CALL: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0500
+    * @tc.desc   isActive - RINGTONE - Promise - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info(`${TagFrmwk}: Promise : isActive RINGTONE: NOTE: audio NOT PLAYING as RINGTONE for the test case to PASS`);
+      const PROMISE = streamManager!.isActive(audio.AudioVolumeType.RINGTONE);
+      try {
+        let data = await PROMISE;
+        if (data == false) {
+          console.info(`${TagFrmwk}: Promise: isActive: RINGTONE: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: isActive: RINGTONE: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await PROMISE;
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0600
+    * @tc.desc   isActive - RINGTONE - Callback - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive RINGTONE: NOTE: audio NOT PLAYING as RINGTONE for the test case to PASS`);
+      streamManager!.isActive(audio.AudioVolumeType.RINGTONE, (err: BusinessError<void> | null, data: boolean | undefined) => {
+        if (err) {
+          console.error(`Callback : RINGTONE : isActive: failed  ${err?.message}`);
+          expect().assertFail();
+        } else if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: RINGTONE: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: RINGTONE: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0700
+    * @tc.desc   isActive - ALARM - Promise - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info(`${TagFrmwk}: Promise : isActive ALARM: NOTE: audio NOT PLAYING as ALARM for the test case to PASS`);
+      const PROMISE = streamManager!.isActive(audio.AudioVolumeType.ALARM);
+      try {
+        let data = await PROMISE;
+        if (data == false) {
+          console.info(`${TagFrmwk}: Promise: isActive: ALARM: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: isActive: ALARM: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await PROMISE;
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0800
+    * @tc.desc   isActive - ALARM - Callback - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive ALARM: NOTE: audio NOT PLAYING as ALARM for the test case to PASS`);
+      streamManager!.isActive(audio.AudioVolumeType.ALARM, (err: BusinessError<void> | null, data: boolean | undefined) => {
+        if (err) {
+          console.error(`Callback : ALARM : isActive: failed  ${err?.message}`);
+          expect().assertFail();
+        } else if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: ALARM: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: ALARM: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0900
+    * @tc.desc   isActive - ACCESSIBILITY - Promise - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info(`${TagFrmwk}: Promise : isActive ACCESSIBILITY: NOTE: audio NOT PLAYING as ACCESSIBILITY for the test case to PASS`);
+      const PROMISE = streamManager!.isActive(audio.AudioVolumeType.ACCESSIBILITY);
+      try {
+        let data = await PROMISE;
+        if (data == false) {
+          console.info(`${TagFrmwk}: Promise: isActive: ACCESSIBILITY: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: isActive: ACCESSIBILITY: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await PROMISE;
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1000
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1000
+    * @tc.desc   isActive - ACCESSIBILITY - Callback - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive ACCESSIBILITY: NOTE: audio NOT PLAYING as ACCESSIBILITY for the test case to PASS`);
+      streamManager!.isActive(audio.AudioVolumeType.ACCESSIBILITY, (err: BusinessError<void> | null, data: boolean | undefined) => {
+        if (err) {
+          console.error(`Callback : ACCESSIBILITY : isActive: failed  ${err?.message}`);
+          expect().assertFail();
+        } else if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: ACCESSIBILITY: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: ACCESSIBILITY: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1100
+    * @tc.desc   isActive - VOICE_ASSISTANT - Promise - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info(`${TagFrmwk}: Promise : isActive VOICE_ASSISTANT: NOTE: audio NOT PLAYING as VOICE_ASSISTANT for the test case to PASS`);
+      const PROMISE = streamManager!.isActive(audio.AudioVolumeType.VOICE_ASSISTANT);
+      try {
+        let data = await PROMISE;
+        if (data == false) {
+          console.info(`${TagFrmwk}: Promise: isActive: VOICE_ASSISTANT: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: isActive: VOICE_ASSISTANT: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await PROMISE;
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1200
+    * @tc.desc   isActive - VOICE_ASSISTANT - Callback - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive VOICE_ASSISTANT: NOTE: audio NOT PLAYING as VOICE_ASSISTANT for the test case to PASS`);
+      streamManager!.isActive(audio.AudioVolumeType.VOICE_ASSISTANT, (err: BusinessError<void> | null, data: boolean | undefined) => {
+        if (err) {
+          console.error(`Callback : VOICE_ASSISTANT : isActive: failed  ${err?.message}`);
+          expect().assertFail();
+        } else if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: VOICE_ASSISTANT: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: VOICE_ASSISTANT: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    })
+
+  /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0200
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0200
+    * @tc.desc   isActive - VOICE_CALL - Sync - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive VOICE_CALL: NOTE: audio NOT PLAYING as VOICE_CALL for the test case to PASS`);
+      try {
+        let data = streamManager!.isActiveSync(audio.AudioVolumeType.VOICE_CALL)
+        if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: VOICE_CALL: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: VOICE_CALL: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (error) {
+        console.error(`Callback : VOICE_CALL : isActive: failed  ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0300
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0300
+    * @tc.desc   isActive - RINGTONE - Sync - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive RINGTONE: NOTE: audio NOT PLAYING as RINGTONE for the test case to PASS`);
+      try {
+        let data = streamManager!.isActiveSync(audio.AudioVolumeType.RINGTONE)
+        if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: RINGTONE: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: RINGTONE: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (error) {
+        console.error(`Callback : RINGTONE : isActive: failed  ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0400
+    * @tc.desc   isActive - ALARM - Sync - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive ALARM: NOTE: audio NOT PLAYING as ALARM for the test case to PASS`);
+      try {
+        let data = streamManager!.isActiveSync(audio.AudioVolumeType.ALARM)
+        if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: ALARM: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: ALARM: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (error) {
+        console.error(`Callback : ALARM : isActive: failed  ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0500
+    * @tc.desc   isActive - ACCESSIBILITY - Sync - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive ACCESSIBILITY: NOTE: audio NOT PLAYING as ACCESSIBILITY for the test case to PASS`);
+      try {
+        let data = streamManager!.isActiveSync(audio.AudioVolumeType.ACCESSIBILITY)
+        if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: ACCESSIBILITY: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: ACCESSIBILITY: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (error) {
+        console.error(`Callback : ACCESSIBILITY : isActive: failed  ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0600
+    * @tc.desc   isActive - VOICE_ASSISTANT - Sync - When stream is NOT playing
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      console.info(`${TagFrmwk}: Callback : isActive VOICE_ASSISTANT: NOTE: audio NOT PLAYING as VOICE_ASSISTANT for the test case to PASS`);
+      try {
+        let data = streamManager!.isActiveSync(audio.AudioVolumeType.VOICE_ASSISTANT)
+        if (data == false) {
+          console.info(`${TagFrmwk}: Callback: isActive: VOICE_ASSISTANT: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Callback: isActive: VOICE_ASSISTANT: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (error) {
+        console.error(`Callback : VOICE_ASSISTANT : isActive: failed  ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+        /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0400
+    * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0400
+    * @tc.desc   Test that no recording stream is currently started
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_RECOGNITION,
+        capturerFlags: 0
+      };
+      try {
+        const isAvailable = streamManager!.isRecordingAvailable(capturerInfo);
+        expect(isAvailable).assertTrue();
+      } catch (error) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0500
+    * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0500
+    * @tc.desc   Test that no recording stream is currently started
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+        capturerFlags: 0
+      };
+      try {
+        const isAvailable = streamManager!.isRecordingAvailable(capturerInfo);
+        expect(isAvailable).assertTrue();
+      } catch (error) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0600
+    * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0600
+    * @tc.desc   Test that no recording stream is currently started
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_VOICE_MESSAGE,
+        capturerFlags: 0
+      };
+      try {
+        const isAvailable = streamManager!.isRecordingAvailable(capturerInfo);
+        expect(isAvailable).assertTrue();
+      } catch (error) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0700
+    * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0700
+    * @tc.desc   Test that no recording stream is currently started
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+        capturerFlags: 0
+      };
+      try {
+        const isAvailable = streamManager!.isRecordingAvailable(capturerInfo);
+        expect(isAvailable).assertTrue();
+      } catch (error) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0800
+    * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0800
+    * @tc.desc   Test that no recording stream is currently started
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      };
+      try {
+        const isAvailable = streamManager!.isRecordingAvailable(capturerInfo);
+        expect(isAvailable).assertTrue();
+      } catch (error) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0900
+    * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0900
+    * @tc.desc   Test that no recording stream is currently started
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_LIVE,
+        capturerFlags: 0
+      };
+      try {
+        const isAvailable = streamManager!.isRecordingAvailable(capturerInfo);
+        expect(isAvailable).assertTrue();
+      } catch (error) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
   })
 }

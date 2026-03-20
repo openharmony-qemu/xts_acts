@@ -6,6 +6,12 @@
     "MainAbility/pages/textPickerDialog/TextPickerOnScrollStop",
     "MainAbility/pages/textPickerDialog/TextPickerOnEnterSelectedArea",
     "MainAbility/pages/textPickerDialog/TextPickerOnAccept",
-    "MainAbility/pages/textPickerDialog/TextPickerOnCancel"
+    "MainAbility/pages/textPickerDialog/TextPickerOnCancel",
+    "MainAbility/pages/textPickerDialog/offset",
+    "MainAbility/pages/textPickerDialog/disappearTextStyle",
+    "MainAbility/pages/textPickerDialog/canLoop",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogBackgroundColor",
+    "MainAbility/pages/textPickerDialog/TextPickerDialog_alignment",
+    "MainAbility/pages/textPickerDialog/TextPickerDialog_hoverModeArea"
   ]
 }

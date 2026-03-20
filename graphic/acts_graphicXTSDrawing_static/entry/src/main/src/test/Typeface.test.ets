@@ -323,6 +323,27 @@ export default function typefaceTest() {
       }
     });
     /**
+     * @tc.name   testTypeFaceMakeFromFileWithArgumentsNullStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0402
+     * @tc.desc   testTypeFaceMakeFromFileWithArgumentsNullStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTypeFaceMakeFromFileWithArgumentsNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testTypeFaceMakeFromFileWithArgumentsNullStatic';
+      try {
+        let typeFaceArgument = new drawing.TypefaceArguments();
+        let mytypeface5 = drawing.Typeface.makeFromFileWithArguments("", typeFaceArgument!);
+        console.info(msg + ` makeFromFileWithArguments mytypeface5 success`);
+        expect(mytypeface5).assertEqual(undefined);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` makeFromFileWithArguments mytypeface5 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
      * @tc.name   testTypeFaceMakeFromCurrentNormalStatic
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0500
      * @tc.desc   testTypeFaceMakeFromCurrentNormalStatic
