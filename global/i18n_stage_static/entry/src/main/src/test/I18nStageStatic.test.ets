@@ -1960,17 +1960,17 @@ export default function i18nStageTest() {
     })
 
     /**
-     * @tc.name getDisplayName_nullString_test_Static_0100
-     * @tc.number getDisplayName_nullString_test_Static_0100
+     * @tc.name getDisplayName_undefined_test_Static_0100
+     * @tc.number getDisplayName_undefined_test_Static_0100
      * @tc.desc with nullString
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL3
      */
-    it('getDisplayName_nullString_test_Static_0100', Level.LEVEL3, () => {
+    it('getDisplayName_undefined_test_Static_0100', Level.LEVEL3, () => {
       let timeZone: i18n.TimeZone = i18n.getTimeZone();
       let value: string = timeZone.getDisplayName(undefined);
-      console.log('getDisplayName_nullString_test_Static_0100 value:', value);
+      console.log('getDisplayName_undefined_test_Static_0100 value:', value);
       expect(value.length > 0).assertTrue();
     })
 
