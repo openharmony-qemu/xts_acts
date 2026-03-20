@@ -1507,7 +1507,7 @@ export default function TLSSocketConnectionTest() {
             useRemoteCipherPrefer: false,
             signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
             cipherSuite: "AES256-SHA256",
-            isBidirectionalAuthentication : false
+            isBidirectionalAuthentication : true
           },
           ALPNProtocols: ["spdy/1", "http/1.1"]
         };
