@@ -1566,7 +1566,7 @@ export default function KVManagerRootDirEntry() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0407
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_Entry_backupEx_0407
          * @tc.name SingleKv_rootDir_backupEx_0407
          * @tc.type: FUNC
          * @tc.size: MediumTest
@@ -1643,7 +1643,7 @@ export default function KVManagerRootDirEntry() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0408
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDirEntry_backupEx_0408
          * @tc.name SingleKv_rootDir_backupEx_0408
          * @tc.type: FUNC
          * @tc.size: MediumTest
