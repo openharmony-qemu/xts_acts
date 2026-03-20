@@ -1776,7 +1776,10 @@ int VideoSwdecCapApi6700()
     }
 
     if (!OH_AVCapability_AreVideoSizeAndFrameRateSupported(
-            capability, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_FRAME_RATE)) {
+            capability,
+            DEFAULT_WIDTH,
+            DEFAULT_HEIGHT,
+            DEFAULT_FRAME_RATE)) {
         return -1;
     }
     return SWDEC_SUCCESS;
