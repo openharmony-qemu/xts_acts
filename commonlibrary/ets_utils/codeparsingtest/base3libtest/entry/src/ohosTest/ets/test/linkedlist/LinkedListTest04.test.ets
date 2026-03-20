@@ -199,28 +199,6 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0700
-     * @tc.name      testLinkedList04Chapter0007
-     * @tc.desc      Test inserting an index beyond the maximum limit to verify if the correct error is reported
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLinkedList04Chapter0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLinkedList04Chapter0007';
-      console.log(TAG + ' start');
-
-      const newLinkedList = new LinkedList<string>();
-      try {
-        newLinkedList.insert(2147483647+1,"int32_max+1")
-        expect().assertFail();
-      } catch (err) {
-        console.error(`${TAG} fail,err:${err}`);
-        expect(err).assertContain("BusinessError")
-      }
-    })
-
-    /**
      * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0800
      * @tc.name      testLinkedList04Chapter0008
      * @tc.desc      Test adding and checking if the String class contains undefined

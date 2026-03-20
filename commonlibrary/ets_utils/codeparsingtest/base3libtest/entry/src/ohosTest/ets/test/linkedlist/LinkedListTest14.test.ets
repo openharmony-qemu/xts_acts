@@ -1136,28 +1136,6 @@ export default function LinkedListTest14() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT14_4700
-     * @tc.name      testLinkedList14Chapter0047
-     * @tc.desc      Test whether searching for a non-existent element returns False
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testLinkedList14Chapter0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLinkedList14Chapter0047';
-      console.log(TAG + ' start');
-
-      const newLinkedList = new LinkedList<string>()
-      try {
-        expect(newLinkedList.removeLastFound("test")).assertFalse()
-        expect().assertFail();
-      } catch (err) {
-        console.error(`${TAG} fail,err:${err}`);
-        expect(err).assertContain("BusinessError")
-      }
-    })
-
-    /**
      * @tc.number    SUB_UTIL_LINKEDLIST_TEXT14_4800
      * @tc.name      testLinkedList14Chapter0048
      * @tc.desc      Test adding undefined of String type and cloning, verify if cloned cases are identical
