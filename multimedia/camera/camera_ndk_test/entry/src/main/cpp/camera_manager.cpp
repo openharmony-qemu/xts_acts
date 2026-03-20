@@ -2826,7 +2826,7 @@ bool NDKCamera::IsTorchLevelControlSupported()
     return ret;
 }
  
-Camera_ErrorCode SetTorchModeOnWithLevel(double level)
+Camera_ErrorCode NDKCamera::SetTorchModeOnWithLevel(double level)
 {
     return OH_CameraManager_SetTorchModeOnWithLevel(cameraManager_, level);
 }
