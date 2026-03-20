@@ -67,7 +67,7 @@ struct componentObserver {
           }
         })
 
-      Button("Test ComponentObserver - onDraw")
+      Button('Test ComponentObserver - onDraw')
         .id('btnOnDraw')
         .width('100%')
         .constraintSize({ minHeight: 0, maxHeight: '18%' })

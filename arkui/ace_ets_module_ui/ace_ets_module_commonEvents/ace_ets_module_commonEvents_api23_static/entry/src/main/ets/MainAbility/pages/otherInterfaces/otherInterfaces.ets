@@ -93,7 +93,7 @@ struct otherInterfaces {
 
   build() {
     Column({ space: 6 } as ColumnOptions) {
-      Button("KeyEvent")
+      Button('KeyEvent')
         .id('btnSendKeyEvent')
         .width('100%')
         .layoutWeight(1)
