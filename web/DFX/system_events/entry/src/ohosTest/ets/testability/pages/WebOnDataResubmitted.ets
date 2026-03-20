@@ -51,9 +51,9 @@ struct WebOnDataResubmitted {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         this.isReceive = 1;
@@ -71,23 +71,22 @@ struct WebOnDataResubmitted {
   build() {
     Column() {
       Row() {
-        Button("web click").onClick(async () => {
+        Button('web click').onClick(async () => {
           this.controller.backward();
         });
 
-        Button("web click").key('WebOnDataResubmittedTestButton').onClick(async () => {
+        Button('web click').key('WebOnDataResubmittedTestButton').onClick(async () => {
           await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           this.isReceive = -1;
 
           switch (this.str) {
-            case "emitOnDataResubmitted": {
+            case 'emitOnDataResubmitted': {
               try {
                 this.isPageEnd =-1;
-                // await Utils.clickComponent(driver, 'WebOnDataResubmittedTestWebView')
                 this.isOnDataResubmittedEnd =-1;
-                Utils.waitAndClickComponent(driver, "WebOnDataResubmittedTestWebView", "this.str");
+                Utils.waitAndClickComponent(driver, 'WebOnDataResubmittedTestWebView', 'this.str');
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.isOnDataResubmittedEnd =-1;
                 this.controller.refresh();
@@ -98,14 +97,14 @@ struct WebOnDataResubmitted {
               }
               break;
             }
-            case "emitDataResubmissionHandlerResend": {
+            case 'emitDataResubmissionHandlerResend': {
               try {
                 this.isPageEnd =-1;
-                this.controller.loadUrl("resource://rawfile/dataSubmit.html");
+                this.controller.loadUrl('resource://rawfile/dataSubmit.html');
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 500);
                 this.title = ''
                 this.isPageEnd =-1;
-                this.controller.runJavaScript("testClick()");
+                this.controller.runJavaScript('testClick()');
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.isPageEnd = -1;
                 this.controller.refresh();
@@ -116,15 +115,15 @@ struct WebOnDataResubmitted {
               }
               break;
             }
-            case "emitDataResubmissionHandlerCancel": {
+            case 'emitDataResubmissionHandlerCancel': {
               try {
                 this.isPageEnd =-1;
-                this.controller.loadUrl("resource://rawfile/dataSubmit.html");
+                this.controller.loadUrl('resource://rawfile/dataSubmit.html');
                 await Utils.waitForExist(()=>this.isPageEnd, 'isPageEnd', 1, 1000);
                 this.title = ''
                 this.resend = false
                 this.isPageEnd =-1;
-                this.controller.runJavaScript("testClick()");
+                this.controller.runJavaScript('testClick()');
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 500);
                 this.isOnDataResubmittedEnd = -1;
                 this.controller.refresh();
