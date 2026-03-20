@@ -117,49 +117,49 @@ struct SaveScrollSearchPage {
 
       Scroll(this.scroller) {
         Column() {
-          Text('scroll-item-1').height(40)
-          Text('scroll-item-2').height(40)
-          Text('scroll-item-3').height(40)
-          Text('scroll-item-4').height(40)
-          Text('scroll-item-5').height(40)
+          Text('scroll-item-1').height('8%')
+          Text('scroll-item-2').height('8%')
+          Text('scroll-item-3').height('8%')
+          Text('scroll-item-4').height('8%')
+          Text('scroll-item-5').height('8%')
         }
       }
       .scrollBarColor(this.scrollBarColorValue)
       .id('scrollBarColorCase')
       .key('scrollBarColorCase')
-      .height(80)
+      .height('20%')
 
       Scroll() {
-        Column() { Text('c').height(20) }
+        Column() { Text('c').height('4%') }
       }
       .scrollBarColor(Color.Blue)
       .id('scrollSbcColor')
       .key('scrollSbcColor')
-      .height(30)
+      .height('8%')
 
       Scroll() {
-        Column() { Text('i').height(20) }
+        Column() { Text('i').height('4%') }
       }
       .scrollBarColor(0xFF0000 as Int)
       .id('scrollSbcInt')
       .key('scrollSbcInt')
-      .height(30)
+      .height('8%')
 
       Scroll() {
-        Column() { Text('r').height(20) }
+        Column() { Text('r').height('4%') }
       }
       .scrollBarColor($r('app.color.color_hello'))
       .id('scrollSbcRes')
       .key('scrollSbcRes')
-      .height(30)
+      .height('8%')
 
       Scroll() {
-        Column() { Text('u').height(20) }
+        Column() { Text('u').height('4%') }
       }
       .scrollBarColor(undefined)
       .id('scrollSbcUndef')
       .key('scrollSbcUndef')
-      .height(30)
+      .height('8%')
     }.width('100%').height('100%')
   }
 }

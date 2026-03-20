@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="562f1253-4990-4cbc-943f-122c41467f8e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/ets/MainAbility/pages/DataPanel/DataPanel.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/ets/MainAbility/pages/datePicker/DatePicker.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/src/test/DataPanelTest/DataPanel.test.ets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/src/test/datePickerTest/DatePicker.test.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_common_api23_static/entry/src/main/ets/MainAbility/pages/Gesture/Gesture.ets" beforeDir="false" afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_common_api23_static/entry/src/main/ets/MainAbility/pages/Gesture/Gesture.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_common_api23_static/entry/src/main/src/test/GestureTest/Gesture.test.ets" beforeDir="false" afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_common_api23_static/entry/src/main/src/test/GestureTest/Gesture.test.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_layout/ace_ets_module_layout_Grid_static/entry/src/main/ets/MainAbility/pages/Grid/Grid.ets" beforeDir="false" afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_layout/ace_ets_module_layout_Grid_static/entry/src/main/ets/MainAbility/pages/Grid/Grid.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_navigation/ace_ets_module_navigation_static/entry/src/main/ets/MainAbility/pages/SwiperController/SwiperController.ets" beforeDir="false" afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_navigation/ace_ets_module_navigation_static/entry/src/main/ets/MainAbility/pages/SwiperController/SwiperController.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/ets/MainAbility/pages/DataPanelDatePicker/DataPanelDatePicker.ets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/resources/base/profile/main_pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/resources/base/profile/main_pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/src/test/DataPanelDatePickerTest/DataPanelDatePicker.test.ets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/src/test/List.test.ets" beforeDir="false" afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/src/test/List.test.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_richeditor_static/entry/src/main/ets/MainAbility/pages/RichEditor/RichEditor.ets" beforeDir="false" afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_richeditor_static/entry/src/main/ets/MainAbility/pages/RichEditor/RichEditor.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_scroll/ace_ets_module_scroll_api23_static/entry/src/main/ets/MainAbility/pages/SaveScrollSearch/SaveScrollSearch.ets" beforeDir="false" afterPath="$PROJECT_DIR$/arkui/ace_ets_module_ui/ace_ets_module_scroll/ace_ets_module_scroll_api23_static/entry/src/main/ets/MainAbility/pages/SaveScrollSearch/SaveScrollSearch.ets" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="3B7Qr2nXMGPl7jyB3OmOkeFinTk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/0318finalpr/xts_acts_final/arkui/ace_ets_module_ui/ace_ets_module_picker/ace_ets_module_picker_datePicker_static/entry/src/main/src/test"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\0318finalpr\xts_acts_final\arkui\ace_ets_module_ui\ace_ets_module_picker\ace_ets_module_picker_datePicker_static\entry\src\main\src\test" />
+      <recent name="D:\0318finalpr\xts_acts_final\arkui\ace_ets_module_ui\ace_ets_module_picker\ace_ets_module_picker_datePicker_static\entry\src\main\ets\MainAbility\pages" />
+      <recent name="D:\0318finalpr\xts_acts_final\arkui\ace_ets_module_ui\ace_ets_module_picker\ace_ets_module_picker_datePicker_static\entry\src\main\src\test\datePickerTest" />
+      <recent name="D:\0318finalpr\xts_acts_final\arkui\ace_ets_module_ui\ace_ets_module_picker\ace_ets_module_picker_datePicker_static\entry\src\main\ets\MainAbility\pages\datePicker" />
+      <recent name="D:\0318finalpr\xts_acts_final\arkui\ace_ets_module_ui\ace_ets_module_common_api23_static\signature" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+</project>

@@ -258,7 +258,7 @@ struct RichEditorPage {
         .id('richEditorCase')
         .key('richEditorCase')
         .width('100%')
-        .height(120)
+        .height('40%')
 
       RichEditor({ controller: this.controllerB })
         .includeFontPadding(undefined)
@@ -269,7 +269,7 @@ struct RichEditorPage {
         .id('richEditorUndefCase')
         .key('richEditorUndefCase')
         .width('100%')
-        .height(60)
+        .height('20%')
     }.width('100%').height('100%')
   }
 }
