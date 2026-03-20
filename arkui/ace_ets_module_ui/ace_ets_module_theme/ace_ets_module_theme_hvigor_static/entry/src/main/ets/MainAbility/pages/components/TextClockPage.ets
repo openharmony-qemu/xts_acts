@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ import { StorageLink } from '@ohos.arkui.stateManagement'
 
 export const textClockThemeProperty = 'TextClockThemeProperty';
 
-export const textClockThemeSetProperty: string = `TextClockThemeSetProperty`
+export const textClockThemeSetProperty: string = `TextClockThemeSetProperty`;
 
 export const textClockFontColor: ResourceColor | undefined = brownCustomTheme.colors?.fontEmphasize
 
@@ -55,8 +55,8 @@ export class TextClockKeys {
 @Entry
 @Component
 struct TextClockPage {
-  @StorageLink(textClockThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(textClockThemeSetProperty) themeSet: boolean = true
+  @StorageLink('TextClockThemeProperty') localTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink('TextClockThemeSetProperty') themeSet: boolean = true
   textClockController: TextClockController = new TextClockController();
   timeZoneOffset: number = 1;
 

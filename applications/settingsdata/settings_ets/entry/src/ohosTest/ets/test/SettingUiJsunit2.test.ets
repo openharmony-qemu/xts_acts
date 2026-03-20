@@ -4353,5 +4353,89 @@ export default function settingUiJsunit() {
           done();
         }
       });
+
+    /**
+     * @tc.name   openNfcSettingsPage_invalid_context
+     * @tc.number openNfcSettingsPage_invalid_context
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openNfcSettingsPage_invalid_context', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openNfcSettingsPage(null);
+        } catch (err) {
+          console.error("[openNfcSettingsPage_invalid_context] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openNfcSettingsPage_invalid_context_undefined
+     * @tc.number openNfcSettingsPage_invalid_context_undefined
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openNfcSettingsPage_invalid_context_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openNfcSettingsPage(undefined);
+        } catch (err) {
+          console.error("[openNfcSettingsPage_invalid_context_undefined] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openNfcSettingsPage_invalid_context_applicationContext
+     * @tc.number openNfcSettingsPage_invalid_context_applicationContext
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openNfcSettingsPage_invalid_context_applicationContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openNfcSettingsPage(mContext?.getApplicationContext());
+        } catch (err) {
+          console.error("[openNfcSettingsPage_invalid_context_applicationContext] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+        done();
+      });
+
+    /**
+     * @tc.name   openNfcSettingsPage_valid_param
+     * @tc.number openNfcSettingsPage_valid_param
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openNfcSettingsPage_valid_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done:Function) => {
+        let code = 0;
+        try {
+          settings.openNfcSettingsPage(mContext);
+        } catch (err) {
+          console.error("[openNfcSettingsPage_valid_param] error = " + err);
+          code = err?.code;
+        }
+        expect(code).assertEqual(0);
+        done();
+      });
   })
 }

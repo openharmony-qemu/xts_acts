@@ -230,6 +230,7 @@ group("multimedia") {
       "av_codec/vcodec/ActsMpeg2SwDecoderTest:ActsMpeg2SwDecoderHapTest",
       "av_codec/vcodec/ActshevchwhdrcodecTest:ActshevchwhdrcodecHapTest",
       "av_codec/vcodec/ActsMpeg4swdecoderTest:ActsMpeg4swdecoderHapTest",
+      "videoProcess/moduletest/ActsImageTest:ActsImageHapTest",
       "av_codec/vcodec/ActsHdrCodecTest:ActsHdrCodecHapTest",
     ]
   } else {

@@ -19,6 +19,7 @@ import WebOnPermissionRequest from './WebOnPermissionRequest.test'
 import webInitTest from './WebInitTest.test'
 import WebPreviewMenuOptions from './WebPreviewMenuOptions.test'
 import WebElementType from  './WebElementType.test'
+import SaveImageMenu from './SaveImageMenu.test'
 
 export default function testsuite() {
   webInitTest()
@@ -28,4 +29,5 @@ export default function testsuite() {
   WebViewEnumAndFontLibrary()
   WebPreviewMenuOptions()
   WebElementType()
+  SaveImageMenu()
 }

@@ -93,7 +93,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_001()
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = VBR;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_20000000; //20000000
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_20000000; //20000000
@@ -122,7 +121,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_002()
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_20000000; //20000000
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_20000000; //20000000
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
@@ -150,7 +148,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_003()
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000; //100000000
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
     vEncSample->defaultBitrateMode = SQR;
@@ -176,7 +173,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_004()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->modeEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -201,7 +197,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_005()
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
@@ -228,7 +223,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_006()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
-    vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
     vEncSample->defaultBitrateMode = SQR;
@@ -254,7 +248,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_007()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
-    vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
@@ -282,7 +275,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_008()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
-    vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->factorEnable = true;
@@ -312,7 +304,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_009()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
-    vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->factorEnable = true;
@@ -346,7 +337,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_010()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
-    vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->factorEnable = true;
@@ -377,7 +367,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_011()
     vEncSample->factorEnable = true;
     vEncSample->maxbiteEnable = true;
     vEncSample->modeEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->defaultMaxBitrate = DEFAULT_MAX_BITRATE_100000000; //100000000
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
     vEncSample->defaultBitrateMode = SQR;
@@ -403,7 +392,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_012()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->modeEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = OHOS::Media::INP_DIR_1080_30;
@@ -428,7 +416,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_013()
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
     vEncSample->factorEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
     vEncSample->defaultSqrFactor = DEFAULT_SQR_FACTOR_32; //32
@@ -455,7 +442,6 @@ int VIDEO_HW_ENCODE_SQR_FUNC_014()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = OUT_DIR;
     vEncSample->setbirate = true;
-    vEncSample->surfInput = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrate = DEFAULT_BITRATE_10000000; //10000000
     vEncSample->defaultBitrateMode = SQR;
