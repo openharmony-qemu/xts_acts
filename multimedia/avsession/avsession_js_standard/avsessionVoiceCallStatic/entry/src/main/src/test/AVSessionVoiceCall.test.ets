@@ -527,7 +527,7 @@ export default function abilityTest() {
                                 let pixelSize: number = pixMap!.getPixelBytesNumber();
                                 console.info(`${TAG}: pixelSize is: ${pixelSize}`);
                                 let readBuffer = new ArrayBuffer(pixelSize);
-                                await pixMap!.readPixelsToBuffer(readBuffer);
+                                waitForCompletion(async () => {await pixMap!.readPixelsToBuffer(readBuffer);})
                                 let bufferArr2 = new Uint8Array(readBuffer);
                                 console.info(`${TAG}: buffer0Size is: ${bufferArr0.length}`);
                                 console.info(`${TAG}: buffer2Size is: ${bufferArr2.length}`);
@@ -609,7 +609,7 @@ export default function abilityTest() {
                     } else {
                         console.info(`${TAG}: setCallMetadataCallback set name successfully`);
                         try{
-                            let data: avSession.CallMetadata = await controller!.getCallMetadata();
+                            let data: avSession.CallMetadata = waitForCompletion(async () => { return await controller!.getCallMetadata();})
                             if (data.name === '12345678') {
                                 console.info(`${TAG}: getCallMetadata get name Successfully`);
                             } else {
@@ -653,7 +653,7 @@ export default function abilityTest() {
                     } else {
                         console.info(`${TAG}: setCallMetadataCallback set phoneNumber successfully`);
                         try{
-                            let data: avSession.CallMetadata = await controller!.getCallMetadata();
+                            let data: avSession.CallMetadata = waitForCompletion(async () => {return await controller!.getCallMetadata();})
                             if (data.phoneNumber === '65432111') {
                                 console.info(`${TAG}: getCallMetadata get phoneNumber Successfully`);
                             } else {
@@ -710,7 +710,7 @@ export default function abilityTest() {
                                 let pixelSize: number = pixMap!.getPixelBytesNumber();
                                 console.info(`${TAG}: pixelSize is: ${pixelSize}`);
                                 let readBuffer = new ArrayBuffer(pixelSize);
-                                await pixMap!.readPixelsToBuffer(readBuffer);
+                                waitForCompletion(async () => {await pixMap!.readPixelsToBuffer(readBuffer);})
                                 let bufferArr2 = new Uint8Array(readBuffer);
                                 console.info(`${TAG}: buffer0Size is: ${bufferArr0.length}`);
                                 console.info(`${TAG}: buffer2Size is: ${bufferArr2.length}`);

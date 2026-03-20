@@ -82,7 +82,7 @@ export default function ActsGetAllWindowStagesStaticTest() {
               try {
                 let EntryAbility1_UIAbilityContext: common.UIAbilityContext =
                   AppStorage.get<common.UIAbilityContext>("EntryAbility1_UIAbilityContext") as common.UIAbilityContext;
-                await EntryAbility1_UIAbilityContext.terminateSelf();
+                waitForCompletion(async () => {await EntryAbility1_UIAbilityContext!.terminateSelf();})
                 hilog.info(0x0000, 'testTag', `EntryAbility1_UIAbilityContext terminateSelf successed`);
               } catch (e) {
                 let err = e as BusinessError;
@@ -154,7 +154,7 @@ export default function ActsGetAllWindowStagesStaticTest() {
               try {
                 let EntryAbility1_UIAbilityContext: common.UIAbilityContext =
                   AppStorage.get<common.UIAbilityContext>("EntryAbility1_UIAbilityContext") as common.UIAbilityContext;
-                await EntryAbility1_UIAbilityContext.terminateSelf();
+                waitForCompletion(async () => {await EntryAbility1_UIAbilityContext!.terminateSelf();})
                 hilog.info(0x0000, 'testTag', `EntryAbility1_UIAbilityContext terminateSelf successed`);
               } catch (e) {
                 let err = e as BusinessError;
@@ -229,7 +229,7 @@ export default function ActsGetAllWindowStagesStaticTest() {
               try {
                 let EntryAbility1_UIAbilityContext: common.UIAbilityContext =
                   AppStorage.get<common.UIAbilityContext>("EntryAbility1_UIAbilityContext") as common.UIAbilityContext;
-                await EntryAbility1_UIAbilityContext.terminateSelf();
+                waitForCompletion(async () => {await EntryAbility1_UIAbilityContext!.terminateSelf();})
                 hilog.info(0x0000, 'testTag', `EntryAbility1_UIAbilityContext terminateSelf successed`);
               } catch (e) {
                 let err = e as BusinessError;

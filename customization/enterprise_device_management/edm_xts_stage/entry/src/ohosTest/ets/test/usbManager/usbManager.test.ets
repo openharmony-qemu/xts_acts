@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium';
-import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import { usbManager } from '@kit.MDMKit';
@@ -176,7 +176,7 @@ function testAddAllowedUsbDevices() {
         usbManager.addAllowedUsbDevices(SELFWANT, devices);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         let ret: Array<usbManager.UsbDeviceId> = usbManager.getAllowedUsbDevices(SELFWANT);
         usbManager.removeAllowedUsbDevices(SELFWANT, ret);
@@ -205,7 +205,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAllowedUsbDevices_test_001  -------- END --------');
@@ -232,7 +232,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAllowedUsbDevices_test_002  -------- END --------');
@@ -255,7 +255,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedUsbDevices_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAllowedUsbDevices_test_003  -------- END --------');
@@ -278,12 +278,33 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addAllowedUsbDevices_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addAllowedUsbDevices_test_004  -------- END --------');
     })
 
+  /**
+   * @tc.name   addAllowedUsbDevices_test_005
+   * @tc.number addAllowedUsbDevices_test_005
+   * @tc.desc   addAllowedUsbDevices with undefined parameter usbDeviceIds
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("addAllowedUsbDevices_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addAllowedUsbDevices_test_005  -------- START --------');
+    try {
+      usbManager.addAllowedUsbDevices(SELFWANT, []);
+      console.info(' --- addAllowedUsbDevices_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addAllowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+    console.info(' --- addAllowedUsbDevices_test_005  -------- END --------');
+  })
 
     /**
      * @tc.name   removeAllowedUsbDevices_test_001
@@ -302,7 +323,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeAllowedUsbDevices_test_001  -------- END --------');
@@ -326,7 +347,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeAllowedUsbDevices_test_002  -------- END --------');
@@ -349,7 +370,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedUsbDevices_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeAllowedUsbDevices_test_003  -------- END --------');
@@ -372,12 +393,33 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeAllowedUsbDevices_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeAllowedUsbDevices_test_004  -------- END --------');
     })
 
+  /**
+   * @tc.name   removeAllowedUsbDevices_test_005
+   * @tc.number removeAllowedUsbDevices_test_005
+   * @tc.desc   removeAllowedUsbDevices with empty parameter usbDeviceIds
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("removeAllowedUsbDevices_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeAllowedUsbDevices_test_005  -------- START --------');
+    try {
+      usbManager.removeAllowedUsbDevices(SELFWANT, []);
+      console.info(' --- removeAllowedUsbDevices_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeAllowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+    console.info(' --- removeAllowedUsbDevices_test_005  -------- END --------');
+  })
 
     /**
      * @tc.name   getAllowedUsbDevices_test_001
@@ -395,7 +437,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAllowedUsbDevices_test_001  -------- END --------');
@@ -418,7 +460,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAllowedUsbDevices_test_002  -------- END --------');
@@ -441,7 +483,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUsbStorageDeviceAccessPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUsbStorageDeviceAccessPolicy_test_001  -------- END --------');
@@ -464,7 +506,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- setUsbStorageDeviceAccessPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- setUsbStorageDeviceAccessPolicy_test_002  -------- END --------');
@@ -487,7 +529,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUsbStorageDeviceAccessPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUsbStorageDeviceAccessPolicy_test_001  -------- END --------');
@@ -510,7 +552,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUsbStorageDeviceAccessPolicy_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUsbStorageDeviceAccessPolicy_test_002  -------- END --------');
@@ -537,7 +579,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedUsbDevices_test_001  -------- END --------');
@@ -564,7 +606,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedUsbDevices_test_002  -------- END --------');
@@ -587,7 +629,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedUsbDevices_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedUsbDevices_test_003  -------- END --------');
@@ -610,11 +652,33 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- addDisallowedUsbDevices_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- addDisallowedUsbDevices_test_004  -------- END --------');
     })
+
+  /**
+   * @tc.name   addDisallowedUsbDevices_test_005
+   * @tc.number addDisallowedUsbDevices_test_005
+   * @tc.desc   addDisallowedUsbDevices with empty parameter usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("addDisallowedUsbDevices_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- addDisallowedUsbDevices_test_005  -------- START --------');
+    try {
+      usbManager.addDisallowedUsbDevices(SELFWANT, []);
+      console.info(' --- addDisallowedUsbDevices_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- addDisallowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+    console.info(' --- addDisallowedUsbDevices_test_004  -------- END --------');
+  })
 
 
     /**
@@ -636,7 +700,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedUsbDevices_test_001  -------- END --------');
@@ -662,7 +726,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedUsbDevices_test_002  -------- END --------');
@@ -685,7 +749,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedUsbDevices_test_003 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedUsbDevices_test_003  -------- END --------');
@@ -708,12 +772,33 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- removeDisallowedUsbDevices_test_004 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- removeDisallowedUsbDevices_test_004  -------- END --------');
     })
 
+  /**
+   * @tc.name   removeDisallowedUsbDevices_test_005
+   * @tc.number removeDisallowedUsbDevices_test_005
+   * @tc.desc   removeDisallowedUsbDevices with empty parameter usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("removeDisallowedUsbDevices_test_005", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- removeDisallowedUsbDevices_test_005  -------- START --------');
+    try {
+      usbManager.removeDisallowedUsbDevices(SELFWANT, []);
+      console.info(' --- removeDisallowedUsbDevices_test_005 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- removeDisallowedUsbDevices_test_005 error 401 is expected, actually catch: ' + error.code);
+      expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+    console.info(' --- removeDisallowedUsbDevices_test_005  -------- END --------');
+  })
 
     /**
      * @tc.name   getDisallowedUsbDevices_test_001
@@ -731,7 +816,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedUsbDevices_test_001  -------- END --------');
@@ -754,7 +839,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedUsbDevices_test_002 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedUsbDevices_test_002  -------- END --------');
@@ -776,7 +861,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedUsbDevices_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAllowedUsbDevices_test_015  -------- END --------');
@@ -799,7 +884,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedUsbDevices_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getAllowedUsbDevices_test_016  -------- END --------');
@@ -821,7 +906,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUsbStorageDeviceAccessPolicy_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUsbStorageDeviceAccessPolicy_test_015  -------- END --------');
@@ -844,7 +929,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getUsbStorageDeviceAccessPolicy_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getUsbStorageDeviceAccessPolicy_test_016  -------- END --------');
@@ -866,7 +951,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedUsbDevices_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedUsbDevices_test_015  -------- END --------');
@@ -889,7 +974,7 @@ function testAddAllowedUsbDevices() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedUsbDevices_test_016 error 401 is expected, actually catch: ' + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
       console.info(' --- getDisallowedUsbDevices_test_016  -------- END --------');
@@ -1064,7 +1149,7 @@ function testSetUsbStorageDeviceAccessPolicy() {
       usbManager.setUsbStorageDeviceAccessPolicy(null, usbManager.UsbPolicy.READ_ONLY);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1126,7 +1211,7 @@ function testGetUsbStorageDeviceAccessPolicy() {
       usbManager.getUsbStorageDeviceAccessPolicy(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1199,7 +1284,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.addDisallowedUsbDevices(null, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -1375,7 +1460,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
@@ -1384,7 +1469,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1408,7 +1493,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
@@ -1417,7 +1502,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1441,7 +1526,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
@@ -1450,7 +1535,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -1490,7 +1575,7 @@ function testAddDisallowedUsbDevices() {
       usbManager.addDisallowedUsbDevices(SELFWANT, devices2);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       let ret2: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret2);
@@ -1781,7 +1866,7 @@ function testRemoveDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(null, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });
@@ -2040,7 +2125,7 @@ function testRemoveDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
@@ -2049,7 +2134,7 @@ function testRemoveDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2073,7 +2158,7 @@ function testRemoveDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
@@ -2082,7 +2167,7 @@ function testRemoveDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2106,7 +2191,7 @@ function testRemoveDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
@@ -2115,7 +2200,7 @@ function testRemoveDisallowedUsbDevices() {
       usbManager.removeDisallowedUsbDevices(SELFWANT, devices);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2188,7 +2273,7 @@ function testGetDisallowedUsbDevices() {
       usbManager.getDisallowedUsbDevices(null);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   });

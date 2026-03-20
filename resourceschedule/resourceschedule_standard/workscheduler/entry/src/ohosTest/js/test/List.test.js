@@ -15,8 +15,10 @@
 import WorkSchedulerJsTest from './WorkScheduler.test.js'
 import WorkSchedulerPerformanceTest from './WorkSchedulerJs.performance.js'
 import WorkSchedulerMgrApiTest from './WorkSchedulerMgrJs.test.js'
+import WorkSchedulerMgrNewTest from './WorkSchedulerMgrNew.test.js'
 export default function testsuite() {
 WorkSchedulerJsTest()
 WorkSchedulerPerformanceTest()
 WorkSchedulerMgrApiTest()
+WorkSchedulerMgrNewTest()
 }

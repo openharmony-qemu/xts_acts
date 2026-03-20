@@ -43,6 +43,8 @@ struct WebPageSnapshot {
   @State imageAccess: boolean = true;
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -60,6 +62,7 @@ struct WebPageSnapshot {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -69,35 +72,41 @@ struct WebPageSnapshot {
       Row() {
         Button("web click").key('webWebPageSnapshot').onClick(async () => {
           console.info("key==>" + this.str)
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           switch (this.str) {
             case "testWebPageSnapshot001": {
               try {
-                this.controller.webPageSnapshot(null, (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
-                  if (error) {
-                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent("null_error", 154100)
-                  } else {
-                    console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
-                    Utils.emitEvent("null_error", 154100)
-                  }
-                });
+                  this.controller.webPageSnapshot(null,
+                    (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
+                      if (error) {
+                        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                        Utils.emitEvent("null_error", 154100)
+                      } else {
+                        console.log('testWebPageSnapshot001 result is :' + JSON.stringify(result));
+                        Utils.emitEvent("null", 154100)
+                      }
+                    });
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent("null_error", 154100)
               }
+
+
               break;
             }
             case "testWebPageSnapshot002": {
               try {
-                this.controller.webPageSnapshot(undefined, (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
-                  if (error) {
-                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                    Utils.emitEvent("undefined_error", 154110)
-                  } else {
-                    console.log('testWebPageSnapshot002 result is :' + JSON.stringify(result));
-                    Utils.emitEvent("undefined", 154110)
-                  }
-                });
+                this.controller.webPageSnapshot(undefined,
+                  (error: business_error.BusinessError, result: web_webview.SnapshotResult) => {
+                    if (error) {
+                      console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                      Utils.emitEvent("undefined_error", 154110)
+                    } else {
+                      console.log('testWebPageSnapshot002 result is :' + JSON.stringify(result));
+                      Utils.emitEvent("undefined", 154110)
+                    }
+                  });
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent("undefined_error", 154110)
@@ -117,30 +126,12 @@ struct WebPageSnapshot {
         .databaseAccess(this.databaseAccess)
         .userAgent(this.userAgent)
         .overScrollMode(OverScrollMode.NEVER)
-
-      Web({ src: $rawfile('indexTwo.html'), controller: this.controllerTwo })
-        .id('2')
-        .key('web2')
-        .javaScriptAccess(this.javaScriptAccess)
-        .fileAccess(this.fileAccess)
-        .imageAccess(this.imageAccess)
-        .domStorageAccess(this.domStorageAccess)
-        .onlineImageAccess(this.onlineImageAccess)
-        .databaseAccess(this.databaseAccess)
-        .userAgent(this.userAgent2)
-
-      Web({ src: $rawfile('indexThree.html'), controller: this.controllerThree })
-        .id('3')
-        .key('web3')
-        .javaScriptAccess(this.javaScriptAccess)
-        .fileAccess(this.fileAccess)
-        .imageAccess(this.imageAccess)
-        .domStorageAccess(this.domStorageAccess)
-        .onlineImageAccess(this.onlineImageAccess)
-        .databaseAccess(this.databaseAccess)
-        .userAgent(this.userAgentAll)
-        .userAgent(this.userAgent)
-        .userAgent(this.userAgent2)
+        .onPageEnd((event) => {
+          if (event) {
+            this.isPageEnd = 1;
+            console.log("onPageEnd==> event.url:" + event.url)
+          }
+        })
+       }
     }
   }
-}

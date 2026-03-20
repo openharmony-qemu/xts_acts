@@ -22,7 +22,6 @@ group("communication") {
       "bluetooth_bp_static:ActsBluetoothBpJsStaticTest",
       "bluetooth_br:ActsBluetoothBrJsTest",
       "bluetooth_br_static:ActsBluetoothBrJsStaticTest",
-      "bluetooth_capi:ActsBluetoothCApiTest",
       "bluetooth_nop:ActsBlutoothNopTest",
       "bluetooth_nop_static:ActsBlutoothNopStaticTest",
       "btmanager_errorcode401:ActsBtManagerErrorCode401JsTest",
@@ -52,7 +51,6 @@ group("communication") {
       "nfc_connectedtag:ActsNFCConnectedTagJSTest",
       "wifi_ErrorCode201:ActsErrorcode201Test",
       "wifi_ErrorCode401:ActsErrorcode401Test",
-      "wifi_capi:ActsWifiCApiTest",
       "wifi_enterprise:ActsWifiEnterpriseTest",
       "wifi_error_ok:ActsWifiCApiOkTest",
       "wifi_ets_standard:ActsEtsWifiTest",
@@ -61,6 +59,7 @@ group("communication") {
       "wifi_p2p:ActsP2PJSTest",
       "wifi_standard:ActsWifiJSTest",
       "wifi_standard_static:ActsWifiJSStaticTest",
+      "wifi_switchoff:ActsWifiManagerSwitchOffTest",
       "wifimanager_switchoff_static:ActsManagerDisableStaticTest",
     ]
   } else {

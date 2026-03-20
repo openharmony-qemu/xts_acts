@@ -30,9 +30,9 @@ export default function nltypesNdkTest() {
      * @tc.desc   test catopen
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslNltypesCatopen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslNltypesCatopen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = nltypes.catOpen();
       expect(result).assertEqual(resultTrue);

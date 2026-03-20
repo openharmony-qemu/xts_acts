@@ -1748,14 +1748,14 @@ export default function StringPrototypeSplitBasicTest() {
     });
 
     /**
-     * @tc.name   StringPrototypeSplit_ArraySeparator_002
+     * @tc.name   StringPrototypeSplit_ArraySeparator_002Adapt001
      * @tc.number SUB_BUILTINS_STRING_SPLIT_TYPECONV_0200
      * @tc.desc   Test split with empty array as separator (converts to empty string)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('StringPrototypeSplit_ArraySeparator_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringPrototypeSplit_ArraySeparator_002Adapt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const testResult = testEmptyArraySeparator();
       expect(testResult.result.length).assertEqual(testResult.expectedLength);
       expect(testResult.result[0]).assertEqual("t");
@@ -1765,14 +1765,14 @@ export default function StringPrototypeSplitBasicTest() {
     });
 
     /**
-     * @tc.name   StringPrototypeSplit_ZeroNumberSeparator_003
+     * @tc.name   StringPrototypeSplit_ZeroNumberSeparator_003Adapt001
      * @tc.number SUB_BUILTINS_STRING_SPLIT_TYPECONV_0300
      * @tc.desc   Test split with number 0 as separator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('StringPrototypeSplit_ZeroNumberSeparator_003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringPrototypeSplit_ZeroNumberSeparator_003Adapt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const testResult = testZeroNumberSeparator();
       expect(testResult.result.length).assertEqual(testResult.expectedLength);
       expect(testResult.result[0]).assertEqual(testResult.expectedValues[0]);
@@ -1780,14 +1780,14 @@ export default function StringPrototypeSplitBasicTest() {
     });
 
     /**
-     * @tc.name   StringPrototypeSplit_NegativeNumberSeparator_004
+     * @tc.name   StringPrototypeSplit_NegativeNumberSeparator_004Adapt001
      * @tc.number SUB_BUILTINS_STRING_SPLIT_TYPECONV_0400
      * @tc.desc   Test split with negative number as separator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
-    it('StringPrototypeSplit_NegativeNumberSeparator_004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('StringPrototypeSplit_NegativeNumberSeparator_004Adapt001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const testResult = testNegativeNumberSeparator();
       expect(testResult.result.length).assertEqual(testResult.expectedLength);
       expect(testResult.result[0]).assertEqual(testResult.expectedValues[0]);

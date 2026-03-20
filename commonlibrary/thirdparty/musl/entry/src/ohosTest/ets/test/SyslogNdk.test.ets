@@ -30,9 +30,9 @@ export default function syslogNdkTest() {
      * @tc.desc   test setlogmask
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSyslogSetlogmask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSyslogSetlogmask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let a: number = syslog.setlogmask();
       expect(a).assertEqual(0);
       done()
@@ -43,9 +43,9 @@ export default function syslogNdkTest() {
      * @tc.desc   test openlog
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslSyslogOpenlog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslSyslogOpenlog001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data: number = syslog.openlog();
 
       console.info("Test NAPI data = \"" + data + "\"");

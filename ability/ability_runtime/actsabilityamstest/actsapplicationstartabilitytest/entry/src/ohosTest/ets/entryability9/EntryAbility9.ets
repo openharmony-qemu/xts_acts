@@ -18,6 +18,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@kit.BasicServicesKit';
+import eventBusPlus from '../lib/EventBusPlus';
 
 export default class EntryAbility extends UIAbility {
   private onCreateFlag = false;
@@ -36,10 +37,11 @@ export default class EntryAbility extends UIAbility {
     this.onCreateFlag = true;
   }
 
-  onDestroy(): void {
+  async onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
     this.onDestroyFlag = true;
+    await eventBusPlus.emit('abilitytest_EntryAbility9_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -70,6 +72,7 @@ export default class EntryAbility extends UIAbility {
   onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
+    globalThis.EntryAbility9 = this.context;
     this.onForegroundFlag = true;
 
     let commonEventData: commonEventManager.CommonEventPublishData = {
@@ -123,9 +126,6 @@ export default class EntryAbility extends UIAbility {
     commonEventManager.publish(`${this.TEST_CASE_NAME}_onBackgroundHap_1`, commonEventData, (result) => {
       hilog.info(0x0000, 'testTag', '%{public}s', `onConnect, 50==: ${JSON.stringify(result)}`);
     });
-    setTimeout(() => {
-      this.context.terminateSelf();
-    }, 2000)
   }
 
   sleep(ms: number): Promise<void> {

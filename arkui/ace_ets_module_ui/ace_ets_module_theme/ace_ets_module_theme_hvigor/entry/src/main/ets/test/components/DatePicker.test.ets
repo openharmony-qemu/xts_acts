@@ -87,7 +87,7 @@ export default function datePickerThemeTest() {
     });
 
     /**
-     * @tc.name   ActsDatePickerThemeColors_0100
+     * @tc.name   `ActsDatePickerThemeColors_0100`
      * @tc.number ActsDatePickerThemeColors_0100
      * @tc.desc   check system colors values of the DatePicker component
      * @tc.type   FUNCTION
@@ -104,7 +104,7 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDatePickerThemeColors_0200
+     * @tc.name   `ActsDatePickerThemeColors_0200`
      * @tc.number ActsDatePickerThemeColors_0200
      * @tc.desc   check custom colors values of the DatePicker component
      * @tc.type   FUNCTION
@@ -122,7 +122,7 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDatePickerThemeColors_0300
+     * @tc.name   `ActsDatePickerThemeColors_0300`
      * @tc.number ActsDatePickerThemeColors_0300
      * @tc.desc   check custom colors values of the DatePicker component after change
      * @tc.type   FUNCTION
@@ -141,7 +141,7 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDatePickerThemeColors_0400
+     * @tc.name   `ActsDatePickerThemeColors_0400`
      * @tc.number ActsDatePickerThemeColors_0400
      * @tc.desc   check system colors values of the DatePicker component after reset
      * @tc.type   FUNCTION
@@ -160,7 +160,7 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDatePickerThemeColors_0500
+     * @tc.name   `ActsDatePickerThemeColors_0500`
      * @tc.number ActsDatePickerThemeColors_0500
      * @tc.desc   check system colors values of the DatePicker component
      * @tc.type   FUNCTION
@@ -178,7 +178,7 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDatePickerThemeColors_0600
+     * @tc.name   `ActsDatePickerThemeColors_0600`
      * @tc.number ActsDatePickerThemeColors_0600
      * @tc.desc   check custom colors values of the DatePicker component
      * @tc.type   FUNCTION
@@ -197,7 +197,7 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDatePickerThemeColors_0700
+     * @tc.name   `ActsDatePickerThemeColors_0700`
      * @tc.number ActsDatePickerThemeColors_0700
      * @tc.desc   check custom colors values of the DatePicker component
      * @tc.type   FUNCTION
@@ -216,7 +216,7 @@ export default function datePickerThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.name   ActsDatePickerThemeColors_0800
+     * @tc.name   `ActsDatePickerThemeColors_0800`
      * @tc.number ActsDatePickerThemeColors_0800
      * @tc.desc   check system colors values of the DatePicker component
      * @tc.type   FUNCTION

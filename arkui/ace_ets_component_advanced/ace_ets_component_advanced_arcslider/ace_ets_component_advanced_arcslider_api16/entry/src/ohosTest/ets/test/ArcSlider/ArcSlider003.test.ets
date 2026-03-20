@@ -23,7 +23,7 @@ interface optionsObj {
 }
 
 export default function ArcSlider003() {
-    describe('ArcSlider', () => {
+    describe('ArcSliderAdapt003', () => {
         beforeAll(async () => {
             console.info("beforeAll case");
         });

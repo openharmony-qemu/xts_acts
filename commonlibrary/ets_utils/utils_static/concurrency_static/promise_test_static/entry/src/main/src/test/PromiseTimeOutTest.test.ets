@@ -46,7 +46,7 @@ export default function PromiseTimeOutTest() {
      * @tc.desc async lazy import taskPool three nest
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTimeOutTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void):Promise<void> => {
       const caseName = 'PromiseTimeOutTest0100';
@@ -69,7 +69,7 @@ export default function PromiseTimeOutTest() {
      * @tc.desc async lazy import taskPool three nest
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTimeOutTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void):Promise<void> => {
       const caseName = 'PromiseTimeOutTest0200';
@@ -93,7 +93,7 @@ export default function PromiseTimeOutTest() {
      * @tc.desc async lazy import taskPool three nest
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTimeOutTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void):Promise<void> => {
       const caseName = 'PromiseTimeOutTest0300';
@@ -123,7 +123,7 @@ export default function PromiseTimeOutTest() {
      * @tc.desc async lazy import taskPool three nest
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level Level 1
      */
     it('PromiseTimeOutTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: () => void):Promise<void> => {
       const caseName = 'PromiseTimeOutTest0400';

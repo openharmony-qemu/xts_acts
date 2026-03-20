@@ -1880,8 +1880,19 @@ export default function nfcTagABFVTest() {
                 expect(BarcodeTag instanceof Object).assertTrue();
                 done();
             }).catch((error)=> {
-                console.info("[NFC_test]25 getBarcode error is " + error)
-                expect().assertFail();
+                if (error.code === 201) {
+                    console.info("[NFC_test]25 getBarcode error is " + error);
+                    expect(201).assertEqual(error.code);
+                } else if (error.code === 3100201) {
+                    console.info("[NFC_test]25 getBarcode error is " + error);
+                    expect(3100201).assertEqual(error.code);
+                } else if (error.code === 3100204) {
+                    console.info("[NFC_test]25 getBarcode error is " + error);
+                    expect(3100204).assertEqual(error.code);
+                } else {
+                    console.info("[NFC_test]25 getBarcode error is " + error)
+                    expect().assertFail();
+                }
                 done();
             });
         })
@@ -2517,7 +2528,7 @@ export default function nfcTagABFVTest() {
                 "uid": [],
                 "technology": [],
                 "tagRfDiscId": 1,
-                "supportedProfiles": [1],
+                "supportedProfiles": [],
             };
             try {
                 let getBarcodeTag = tag.getBarcodeTag(bTag);

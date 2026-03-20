@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import mediaquery from '@system.mediaquery';
 
 export default function mediaqueryTest() {
-    describe('mediaqueryTest', function() {
+    describe('mediaqueryTestAdapt001', function() {
         let testResult;
         let test;
         beforeAll(function() {

@@ -1052,7 +1052,7 @@ export default function abilityTest() {
         commonEventManager.subscribe(sub, (err, commonEventData) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} subscribe callback result: ${JSON.stringify(err)}`);
           hilog.info(0x0000, 'testTag', `${tcNumber} subscribe callback commonEventData: ${JSON.stringify(commonEventData)}`);
-          expect(commonEventData.parameters?.result).assertEqual(200);
+          expect(commonEventData.parameters?.result).assertEqual(401);
           commonEventManager.unsubscribe(subscriber);
           done();
         });
@@ -1102,7 +1102,7 @@ export default function abilityTest() {
         commonEventManager.subscribe(sub, (err, commonEventData) => {
           hilog.info(0x0000, 'testTag', `${tcNumber} subscribe callback result: ${JSON.stringify(err)}`);
           hilog.info(0x0000, 'testTag', `${tcNumber} subscribe callback commonEventData: ${JSON.stringify(commonEventData)}`);
-          expect(commonEventData.parameters?.result).assertEqual(200);
+          expect(commonEventData.parameters?.result).assertEqual(401);
           commonEventManager.unsubscribe(subscriber);
           done();
         });

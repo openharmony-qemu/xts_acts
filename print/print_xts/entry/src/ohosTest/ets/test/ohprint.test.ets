@@ -136,5 +136,31 @@ export default function oHPrintTest() {
       let result: number = await entry.oHPrintStartPrintByNative(context);
       expect(result).assertEqual(0);
     });
+
+    /**
+     * @tc.name   testOHPrint010
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_010
+     * @tc.desc   test oHPrintCreateEnum1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHPrint010', Level.LEVEL1, async () => {
+      let result: number = await entry.oHPrintCreateEnum1();
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   testOHPrint011
+     * @tc.number SUB_PRINT_FWK_OH_PRINT_TEST_011
+     * @tc.desc   test oHPrintCreateEnum2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHPrint011', Level.LEVEL1, async () => {
+      let result: number = await entry.oHPrintCreateEnum2();
+      expect(result).assertEqual(0);
+    });
   })
 }

@@ -30,9 +30,9 @@ export default function muslPtraceNdkTest() {
      * @tc.desc   ptrace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslPtracePtrace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslPtracePtrace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result:number = ptrace.ptrace();
       expect(result).assertEqual(0);
       done()

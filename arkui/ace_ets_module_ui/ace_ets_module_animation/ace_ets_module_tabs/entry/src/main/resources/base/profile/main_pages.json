@@ -77,6 +77,12 @@
         "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStyleIdNullUndefined",
         "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStyleIndicatorNullUndefined",
         "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStyleLabelStyleNullUndefined",
-        "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStylePaddingNullUndefined"
+        "MainAbility/pages/TabContentNullUndefined/TabContentSubTabBarStylePaddingNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentBottomTabBarStyleIconStyleNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentBottomTabBarStyleIdNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentBottomTabBarStyleLabelStyleNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentBottomTabBarStylePaddingNullUndefined",
+        "MainAbility/pages/TabContentNullUndefined/TabContentBottomTabBarStyleVerticalAlignNullUndefined",
+        "MainAbility/pages/animationCurveNullUndefined/animationCurveNullUndefined"
     ]
 }

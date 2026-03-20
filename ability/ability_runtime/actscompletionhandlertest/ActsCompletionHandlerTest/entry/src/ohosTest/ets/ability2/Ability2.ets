@@ -18,17 +18,17 @@ import hilog from '@ohos.hilog';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
-import eventBus from '../lib/EventBus';
 
 export default class Ability2 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    globalThis.ability2Context = this.context;
+    setTimeout(()=>{
+      this.context.terminateSelf();
+    }, 500)
   }
 
   onDestroy(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-    eventBus.emit('Ability2_onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -52,7 +52,6 @@ export default class Ability2 extends UIAbility {
   onForeground(): void {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
-    eventBus.emit('Ability2_onForeground');
   }
 
   onBackground(): void {

@@ -50,12 +50,18 @@ const NOT_EXIST_WANT: Want = {
 
 const AUTOSTARTAPP1: Want = {
   bundleName: "com.edm.acts.normal",
-  abilityName: "TestAbility"
+  abilityName: "TestAbility",
+  parameters: {
+    isHiddenStart: false
+  }
 };
 
 const AUTOSTARTAPP2: Want = {
   bundleName: "com.example.extensionzerotest",
-  abilityName: "com.example.extensionzerotest.MainAbility"
+  abilityName: "com.example.extensionzerotest.MainAbility",
+  parameters: {
+    isHiddenStart: false
+  }
 };
 const SELFHAPNAME = "com.edm.acts.normal"
 const COMPANYNAME2 = "company2"

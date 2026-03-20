@@ -32,9 +32,9 @@ export default function muslIfNdkTest() {
      * @tc.desc   test if_freenameindex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIf_If_Freenameindex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIf_If_Freenameindex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = If.ifFreeNameIndex();
       expect(result).assertEqual(0)
       done()
@@ -46,9 +46,9 @@ export default function muslIfNdkTest() {
      * @tc.desc   test if_nameindex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslIf_If_Nameindex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslIf_If_Nameindex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = If.ifNameIndex();
       expect(result).assertEqual(0)
       done()

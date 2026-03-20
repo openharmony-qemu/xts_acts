@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -220,7 +220,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(6);
+      const arr: (number | undefined)[] = new Array<number | undefined>(6, (i) => undefined);
       arr[2] = 5;
       arr[5] = 10;
       const index: number = arr.findIndex((x: number | undefined): boolean => x === 10);
@@ -883,7 +883,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(6);
+      const arr: (number | undefined)[] = new Array<number | undefined>(6, (i) => undefined);
       arr[2] = 5;
       arr[5] = 10;
       const index: number = arr.findIndex((x: number | undefined) => x === 10);
@@ -899,7 +899,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = new Array<number>(1000);
+      const arr: (number | undefined)[] = new Array<number | undefined>(1000, (i) => undefined);
       arr[999] = 1;
       const index: number = arr.findIndex((x: number | undefined) => x === 1);
       expect(index).assertEqual(999);
@@ -1121,7 +1121,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(5);
+      const arr: (number | undefined)[] = new Array<number | undefined>(5, (i) => undefined);
       arr[3] = 7;
       arr.fill(5, 0, 2);
       const index: number = arr.findIndex(x => x === 7);
@@ -1189,7 +1189,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(6);
+      const arr: (number | undefined)[] = new Array<number | undefined>(6, (i) => undefined);
       arr[5] = undefined;
       const index: number = arr.findIndex((x: number | undefined) => x !== undefined);
       expect(index).assertEqual(-1);
@@ -1528,7 +1528,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: (number | undefined)[] = new Array<number | undefined>(4);
+      const arr: (number | undefined)[] = new Array<number | undefined>(4, (i) => undefined);
       arr[0] = 1;
       arr[3] = 4;
       const result: number = arr.findIndex((x: number | undefined) => x === 4);
@@ -1561,7 +1561,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = new Array<number>(5).fill(3);
+      const arr: number[] = Array.create<number>(5, 3);
       const result: number = arr.findIndex((x: number) => x === 3);
       expect(result).assertEqual(0);
     });
@@ -1693,7 +1693,7 @@ export default function ArrayFindIndexTest() {
      * @tc.level  LEVEL2
      */
     it("testArrayFindIndex0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: int[] = new Array<int>(5).fill(2).map((x: int, i: int) => x + i);
+      const arr: int[] = Array.create<int>(5, 2).map((x: int, i: int) => x + i);
       const result: int = arr.findIndex((x: int) => x === 4);
       expect(result).assertEqual(2);
     });

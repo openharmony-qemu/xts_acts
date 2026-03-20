@@ -30,9 +30,9 @@ export default function timexNdk1Test() {
      * @tc.desc   test the normal condition of AdjTimex_time64_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimexAdjtimexTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimexAdjtimexTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(timex1.AdjTimex_time64_One()).assertEqual(1);
       done()
     });
@@ -43,9 +43,9 @@ export default function timexNdk1Test() {
      * @tc.desc   test the abnormal condition of AdjTimex_time64_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimexAdjtimexTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimexAdjtimexTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(timex1.AdjTimex_time64_Two()).assertEqual(1);
       done()
     });
@@ -56,9 +56,9 @@ export default function timexNdk1Test() {
      * @tc.desc   test the normal condition of AdjTimex_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimexAdjtimex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimexAdjtimex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(timex1.AdjTimex_One()).assertEqual(1);
       done()
     });
@@ -69,9 +69,9 @@ export default function timexNdk1Test() {
      * @tc.desc   test the abnormal condition of AdjTimex_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimexAdjtimex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimexAdjtimex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(timex1.AdjTimex_Two()).assertEqual(1);
       done()
     });
@@ -82,9 +82,9 @@ export default function timexNdk1Test() {
      * @tc.desc   test the normal condition of Clock_adjTime64_One
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockAdjtime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockAdjtime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(timex1.Clock_adjTime64_One()).assertEqual(1);
       done()
     });
@@ -95,9 +95,9 @@ export default function timexNdk1Test() {
      * @tc.desc   test the abnormal condition of Clock_adjTime64_Two
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockAdjtime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockAdjtime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(timex1.Clock_adjTime64_Two()).assertEqual(1);
       done()
     });
@@ -108,9 +108,9 @@ export default function timexNdk1Test() {
      * @tc.desc   test the abnormal condition of Clock_adjTime64_Three
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockAdjtime64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockAdjtime64003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
      expect(timex1.Clock_adjTime64_Three()).assertEqual(1);
       done()
     });
@@ -121,9 +121,9 @@ export default function timexNdk1Test() {
      * @tc.desc   test the abnormal condition of Clock_adjTime64_Four
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTimeClockAdjtime64004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTimeClockAdjtime64004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(timex1.Clock_adjTime64_Four()).assertEqual(1);
       done()
     });

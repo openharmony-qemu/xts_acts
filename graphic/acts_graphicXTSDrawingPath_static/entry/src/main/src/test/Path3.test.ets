@@ -519,6 +519,16 @@ export default function drawingTsPath3Test() {
         expect().assertFail();
       }
       try {
+        let result: boolean;
+        result = path.getSegment(false, 10.0, 20.0, true, dstPath)
+        console.info(msg + " 1 getSegment-----result:  "+ result);
+        expect(result).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `1 test getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
         let result2: boolean;
         result2 = path.getSegment(true, 20.0, 10.0, true, dstPath)
         console.info(msg + " getSegment 2 -----result2:  "+ result2);
@@ -526,6 +536,16 @@ export default function drawingTsPath3Test() {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `test getSegment 2. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
+        let result3: boolean;
+        result3 = path.getSegment(true, 20.0, 10.0, false, dstPath)
+        console.info(msg + " getSegment 3 -----result2:  "+ result3);
+        expect(result3).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `test getSegment 3. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
     })

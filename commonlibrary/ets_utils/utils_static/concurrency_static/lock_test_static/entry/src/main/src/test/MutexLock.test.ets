@@ -99,9 +99,9 @@ export default function MutexLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
-    it('MutexTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('MutexTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest002';
         console.info(`${TAG} test start`);
@@ -202,9 +202,9 @@ export default function MutexLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 2
      */
-    it('MutexTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('MutexTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'MutexTest004';
         console.info(`${TAG} test start`);
@@ -233,7 +233,7 @@ export default function MutexLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('MutexTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -260,7 +260,7 @@ export default function MutexLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('MutexTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -305,7 +305,7 @@ export default function MutexLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('MutexTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -355,7 +355,7 @@ export default function MutexLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('MutexTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {
@@ -406,7 +406,7 @@ export default function MutexLockTest() {
      * @tc.desc test
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 0
+     * @tc.level Level 1
      */
     it('MutexTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: () => void): Promise<void> => {

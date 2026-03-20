@@ -1238,23 +1238,26 @@ export default function SingleKvStoreReturnValue() {
             console.error(TAG+' getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           });
           kvStoreS4!.getSecurityLevel((err: BusinessError | null, data: factory.SecurityLevel | undefined) => {
-            console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data!) + ',err=' + err);
-            expect(data).assertEqual(factory.SecurityLevel.S4);
-
-            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-              console.info(TAG + '  Succeeded closeKVStore S4');
-              await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-                console.info(TAG + '  Succeeded deleteKVStore S4');
-                console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
-                done();
+            waitForCompletion(async () => {
+              console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data!) + ',err=' + err);
+              expect(data).assertEqual(factory.SecurityLevel.S4);
+              await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+                waitForCompletion(async () => {
+                  console.info(TAG + '  Succeeded closeKVStore S4');
+                  await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+                    console.info(TAG + '  Succeeded deleteKVStore S4');
+                    console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
+                    done();
+                  }).catch((err: Error) => {
+                    console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+                    done();
+                  });
+                })
               }).catch((err: Error) => {
-                console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+                console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
                 done();
               });
-            }).catch((err: Error) => {
-              console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
-              done();
-            });
+            })
           });
 
         } catch (e) {

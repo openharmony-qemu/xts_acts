@@ -28,7 +28,7 @@
     "MainAbility/pages/Rating/ratingAdvanced/rating05",
     "MainAbility/pages/Rating/RatingContentModifier",
     "MainAbility/pages/Rating/ratingNode",
-    "MainAbility/pages/Rating/ratingOnChangeModifier"
-    
+    "MainAbility/pages/Rating/ratingOnChangeModifier",
+    "MainAbility/pages/Rating/RatingNull"
   ]
 }

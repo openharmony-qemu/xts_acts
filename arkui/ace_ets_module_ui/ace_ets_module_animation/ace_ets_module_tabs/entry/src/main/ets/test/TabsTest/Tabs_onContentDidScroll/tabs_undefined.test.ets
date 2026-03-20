@@ -44,7 +44,7 @@ export default function tabs_undefinedTest() {
     });
 
     /**
-     * @tc.name   tabs_undefined_0010
+     * @tc.name   tabs_undefined_0100
      * @tc.number tabs_undefined_0010
      * @tc.desc   The Tabs page scrolling triggers the onContentDidScroll callback.
      * @tc.type   FUNCTION

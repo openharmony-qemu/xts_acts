@@ -35,6 +35,7 @@ import TextCommonTextComputing7 from './MeasureTest/TextCommonTextComputing7.tes
 import TextCommonTextComputing8 from './MeasureTest/TextCommonTextComputing8.test';
 import TextCommonTextComputing9 from './MeasureTest/TextCommonTextComputing9.test';
 import TextGetParagraphsTest from './MeasureTest/TextGetParagraphsTest.test';
+import MeasureTextTest from './MeasureTest/MeasureText.test';
 
 import BindSelectionMenuTest from './BindSelectionMenuTest.test';
 import KeyboardAvoidModeTest from './KeyboardAvoidMode.test';
@@ -65,6 +66,8 @@ import TypeNodeTest from './TypeNode.test';
 import MagnifierTest from './Magnifier.test';
 import MeasureUtilsTest from './MeasureUtils.test';
 import TextMenuControllerTest from './TextMenuController.test';
+import UIContextFontRegisterFontTest from './UIContext/UIContextFontRegisterFont.test';
+import TextMethodsNull2Test from './TextTest/TextMethodsNull2.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -92,6 +95,7 @@ export default function testsuite() {
   TextCommonTextComputing8() 
   TextCommonTextComputing9() 
   TextGetParagraphsTest()
+  MeasureTextTest()
   BindSelectionMenuTest()
   KeyboardAvoidModeTest()
   ResourceModifierTest()
@@ -117,4 +121,6 @@ export default function testsuite() {
   MagnifierTest();
   MeasureUtilsTest();
   TextMenuControllerTest();
+  UIContextFontRegisterFontTest();
+  TextMethodsNull2Test();
 }

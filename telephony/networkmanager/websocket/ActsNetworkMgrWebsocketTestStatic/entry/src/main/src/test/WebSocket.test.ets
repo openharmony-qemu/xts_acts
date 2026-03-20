@@ -60,6 +60,7 @@ export default function WebSocketTest() {
         let ws: webSocket.WebSocket= webSocket.createWebSocket();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test ');
         ws.connect(availableWebSocketAddress, {}, (err: BusinessError<void> | null, value: boolean | undefined) => {
+          waitForCompletion(async () => {
           if (err && err.code != 0) {
             hilog.info(domain, tag, '%{public}s', caseName +'  connect fail  error  is '+JSON.stringify(err));
             ExpectFail();
@@ -72,6 +73,7 @@ export default function WebSocketTest() {
             done();
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           }
+          })
         });
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));

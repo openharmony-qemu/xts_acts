@@ -45,9 +45,9 @@ export default function JsonElement1Test() {
      * @tc.desc   test JsonElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JsonElementTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('JsonElementTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const longElem = new jsonx.JsonElement();
         longElem.setLong(123456789);
         expect(longElem.asLong()).assertEqual(123456789);
@@ -62,9 +62,9 @@ export default function JsonElement1Test() {
      * @tc.desc   test JsonElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JsonElementTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('JsonElementTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const longElem = jsonx.JsonElement.createLong(42);
         expect(longElem.asLong()).assertEqual(42);
         const bigintElem = jsonx.JsonElement.createBigInt(1000000000000000000000000n);
@@ -77,9 +77,9 @@ export default function JsonElement1Test() {
      * @tc.desc   test JsonElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JsonElementTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('JsonElementTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const intElem = jsonx.JsonElement.createInteger(30)
         let longValue = intElem.asLong()
         expect(longValue).assertEqual(30);
@@ -95,9 +95,9 @@ export default function JsonElement1Test() {
      * @tc.desc   test JsonElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JsonElementTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('JsonElementTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const objectElem = new jsonx.JsonElement({} as Record<string, jsonx.JsonElement>);
         objectElem.setElement("name", jsonx.JsonElement.createString("John Doe"));
         objectElem.setElement("age", jsonx.JsonElement.createLong(30));
@@ -116,9 +116,9 @@ export default function JsonElement1Test() {
      * @tc.desc   test JsonElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JsonElementTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('JsonElementTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         let str = '9007199254740991'  // Double.MAX_SAFE_INTEGER
         let opt: jsonx.ParseOptions = {bigIntMode: jsonx.BigIntMode.PARSE_AS_BIGINT} as jsonx.ParseOptions;
         let elem = JSON.parseJsonElement(str, opt)
@@ -159,9 +159,9 @@ export default function JsonElement1Test() {
      * @tc.desc   test JsonElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JsonElementTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('JsonElementTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         let str = '9223372036854775807'  // Double.MAX_SAFE_INTEGER
         let opt: jsonx.ParseOptions = {bigIntMode: jsonx.BigIntMode.ALWAYS_PARSE_AS_BIGINT} as jsonx.ParseOptions;
         let elem = JSON.parseJsonElement(str, opt)
@@ -186,9 +186,9 @@ export default function JsonElement1Test() {
      * @tc.desc   test JsonElement
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('JsonElementTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('JsonElementTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         let str = '9007199254740991'  // Double.MAX_SAFE_INTEGER
         let opt: jsonx.ParseOptions = {bigIntMode: jsonx.BigIntMode.DEFAULT} as jsonx.ParseOptions;
         let elem = JSON.parseJsonElement(str, opt)

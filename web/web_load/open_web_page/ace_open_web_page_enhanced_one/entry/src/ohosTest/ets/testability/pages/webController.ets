@@ -154,6 +154,380 @@ struct webController {
               break;
             }
 
+            case "testLoadData002": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:'',
+                  mimeType: "text/html",
+                  encoding: "UTF-8"
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200730)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200730)
+              }
+              break;
+            }
+
+            case "testLoadData003": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:null,
+                  mimeType: "text/html",
+                  encoding: "UTF-8"
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200740)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200740)
+              }
+              break;
+            }
+
+            case "testLoadData004": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:undefined,
+                  mimeType: "text/html",
+                  encoding: "UTF-8"
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200750)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200750)
+              }
+              break;
+            }
+
+            case "testLoadData005": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "",
+                  encoding: "UTF-8"
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200760)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200760)
+              }
+              break;
+            }
+
+            case "testLoadData006": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: null,
+                  encoding: "UTF-8"
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200770)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200770)
+              }
+              break;
+            }
+
+            case "testLoadData007": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: undefined,
+                  encoding: "UTF-8"
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200780)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200780)
+              }
+              break;
+            }
+
+            case "testLoadData008": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: ""
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200790)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200790)
+              }
+              break;
+            }
+
+            case "testLoadData009": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: null
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200800)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200800)
+              }
+              break;
+            }
+
+            case "testLoadData010": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: undefined
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200810)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200810)
+              }
+              break;
+            }
+
+            case "testLoadData011": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: 'UTF-8',
+                  baseUrl:''
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200820)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200820)
+              }
+              break;
+            }
+
+            case "testLoadData012": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: 'UTF-8',
+                  baseUrl:null
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200830)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200830)
+              }
+              break;
+            }
+
+            case "testLoadData013": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: 'UTF-8',
+                  baseUrl:undefined
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200840)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200840)
+              }
+              break;
+            }
+
+            case "testLoadData014": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: 'UTF-8',
+                  historyUrl:''
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200850)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200850)
+              }
+              break;
+            }
+
+            case "testLoadData015": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: 'UTF-8',
+                  historyUrl:null
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200860)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200860)
+              }
+              break;
+            }
+
+            case "testLoadData016": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadData({
+                  data:"<html>" +
+                    "<head>" +
+                    "<title>LoadData</title>" +
+                    "</head>" +
+                    "<body bgcolor=\"white\">Source:<pre>source</pre</body>" +
+                    "<script>function getTitle(){return document.title}" +
+                    "</script>" +
+                    "</html>",
+                  mimeType: "text/html",
+                  encoding: 'UTF-8',
+                  historyUrl:undefined
+                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadDataIsPageEnd', 1, 1000);
+                this.controller.runJavaScript({ script: "getTitle()", callback: (res) => {
+                  Utils.emitEvent(res, 200870)
+                } })
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 200870)
+              }
+              break;
+            }
           }
         })
       }

@@ -95,7 +95,23 @@ export default function blurModeTest() {
       done();
     })
 
-
+    /**
+     * @tc.name   blurMode03
+     * @tc.number SUB_ACE_BASIC_ETS_BLURONKEYBOARDHIDEMODE_API_003
+     * @tc.desc   blurMode03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('blurMode03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+      emitKey="blurMode03";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent("blurMode03", true, 178230, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "blurOnKeyboardHideMode01",emitKey);
+      await Utils.waitForExist(() => isReturn, "blurMode03" + '_returnCheck', true, 1000);
+      done();
+    })
 
   })
 }

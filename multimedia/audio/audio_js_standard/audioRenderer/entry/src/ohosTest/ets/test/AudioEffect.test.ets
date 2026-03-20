@@ -420,6 +420,28 @@ export default function AudioEffectTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0001
+     * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - VOICE_COMMUNICATION - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let audioEffectInfoArray:ESObject = audioStreamManager.getAudioEffectInfoArraySync(audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION)
+        expect(audioEffectInfoArray[0]).assertEqual(0);
+        expect(audioEffectInfoArray[1]).assertEqual(1);
+        console.log(`${TAG} getAudioEffectInfoArray success:${JSON.stringify(audioEffectInfoArray)}`);
+        done();
+      } catch (err) {
+        console.error(`${TAG} getAudioEffectInfoArray :ERROR: ${err}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0200
      * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0200
      * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - Null_Parameter - 401 - Sync

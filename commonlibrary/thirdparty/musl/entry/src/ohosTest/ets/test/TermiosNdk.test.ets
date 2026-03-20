@@ -30,9 +30,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test tcdrain
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosTcdrain001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosTcdrain001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c:number = termios.tcdrain(0);
       expect(c).assertEqual(-1);
       done()
@@ -44,9 +44,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test tcflow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosTcflow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosTcflow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c:number = termios.tcflow(0);
       expect(c).assertEqual(-1);
       done()
@@ -57,9 +57,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test tcflush
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosTcflush001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosTcflush001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c:number = termios.tcflush(0);
       expect(c).assertEqual(-1);
       done()
@@ -71,9 +71,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test tcgetattr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosTcgetattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosTcgetattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c:number = termios.tcgetattr(0);
       expect(c).assertEqual(-1);
       done()
@@ -85,9 +85,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test tcgetsid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosTcgetsid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosTcgetsid001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c:number = termios.tcgetsid(0);
       expect(c).assertEqual(-1);
       done()
@@ -99,9 +99,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test tcsendbreak
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosTcsendbreak001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosTcsendbreak001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c:number = termios.tcsendbreak(0);
       expect(c).assertEqual(-1);
       done()
@@ -113,9 +113,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test tcsetattr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosTcsetattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosTcsetattr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let c:number = termios.tcsetattr(0);
       expect(c).assertEqual(-1);
       done()
@@ -127,9 +127,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test cfsetispeed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosCfsetispeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosCfsetispeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = termios.cfsetispeed();
       expect(result).assertEqual(resultTrue);
@@ -142,9 +142,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test cfsetospeed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosCfsetospeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosCfsetospeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = termios.cfsetospeed();
       expect(result).assertEqual(resultTrue);
@@ -157,9 +157,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test cfsetspeed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosCfsetspeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosCfsetspeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 0;
       let result: number = termios.cfsetspeed();
       expect(result).assertEqual(resultTrue);
@@ -172,9 +172,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test cfgetispeed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosCfgetispeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosCfgetispeed001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = termios.cfgetispeed();
       expect(result).assertEqual(resultTrue);
@@ -187,9 +187,9 @@ export default function termiosNdkTest() {
      * @tc.desc   test cfmakeraw
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testMuslTermiosCfmakeraw001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testMuslTermiosCfmakeraw001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resultTrue = 1;
       let result: number = termios.cfmakeraw();
       expect(result).assertEqual(resultTrue);

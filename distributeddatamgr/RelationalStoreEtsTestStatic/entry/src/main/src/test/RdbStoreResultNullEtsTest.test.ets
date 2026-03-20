@@ -1576,7 +1576,7 @@ export default function RdbStoreResultNullEtsTest() {
               }else{
                 console.info(tag +`Insert is successful, rowId = ${rowId}`);
                 expect(rowId).assertEqual(1);
-                await rdbStore!.close();
+                waitForCompletion(async () => {await rdbStore!.close();})
                 console.info(tag +`close succsee`);
                 rdbStore!.executeSql("SELECT * FROM test where data1 = ?", ['hello world'], (err) => {
                   if (err) {

@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -102,15 +102,15 @@ export default function taskPoolAsyncRunnerAbility2() {
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3100
-     * @tc.name taskPoolAsyncRunnerAbility3100
-     * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('taskPoolAsyncRunnerAbility3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+     /**
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3100
+      * @tc.name taskPoolAsyncRunnerAbility3100
+      * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 10 times
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
+      */
+    it('taskPoolAsyncRunnerAbility3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log('taskPoolAsyncRunnerAbility3100: begin');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -143,14 +143,14 @@ export default function taskPoolAsyncRunnerAbility2() {
       })
 
     /**
-     * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3200
-     * @tc.name taskPoolAsyncRunnerAbility3200
-     * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 5 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('taskPoolAsyncRunnerAbility3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ABILITY_3200
+      * @tc.name taskPoolAsyncRunnerAbility3200
+      * @tc.desc Create two tasks with Uint8ClampedArray parameters and Uint8ClampedArray return values, and execute them 5 times,error
+      * @tc.size MediumTest
+      * @tc.type Function
+      * @tc.level Level 0
+      */
+    it('taskPoolAsyncRunnerAbility3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (): Promise<void> => {
         console.log('taskPoolAsyncRunnerAbility3200: begin');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -441,8 +441,8 @@ export default function taskPoolAsyncRunnerAbility2() {
         console.log('taskPoolAsyncRunnerAbility4100: begin');
         let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
 
-        let bitVector1: Array<boolean> = new Array<boolean>(5).fill(false);
-        let bitVector2: Array<boolean> = new Array<boolean>(6).fill(false);
+        let bitVector1: Array<boolean> = Array.create<boolean>(5, false);
+        let bitVector2: Array<boolean> = Array.create<boolean>(6, false);
 
         let Count1: number = 0;
         let Count2: number = 0;

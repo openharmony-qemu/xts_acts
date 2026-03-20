@@ -749,7 +749,7 @@ export default function UDMFApiDataAllTest() {
               if (unifiedDataRecord.getType() == uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP.toString()) {
                 let obj:uniformDataStruct.PixelMap = entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo:image.ImageInfo = await obj.pixelMap.getImageInfo();
+                  let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await obj.pixelMap.getImageInfo();})
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -797,7 +797,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -950,7 +950,7 @@ export default function UDMFApiDataAllTest() {
               if (unifiedDataRecord.getType() == uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP.toString()) {
                 let obj:uniformDataStruct.PixelMap = entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo:image.ImageInfo = await obj.pixelMap.getImageInfo();
+                  let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await obj.pixelMap.getImageInfo();})
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -999,7 +999,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1);})
       }).catch((err) => {
         expect().assertFail();
         done()
@@ -1187,7 +1187,7 @@ export default function UDMFApiDataAllTest() {
                 let obj: uniformDataStruct.PixelMap =
                   entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo: image.ImageInfo = await obj.pixelMap.getImageInfo();
+                  let imageInfo: image.ImageInfo = waitForCompletion(async () => {return await obj.pixelMap.getImageInfo();})
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -1243,7 +1243,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async () => {await unifiedDataChannel.deleteData(options1);})
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -1412,7 +1412,7 @@ export default function UDMFApiDataAllTest() {
               if (unifiedDataRecord.getType() == uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP.toString()) {
                 let obj:uniformDataStruct.PixelMap = entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo:image.ImageInfo = await obj.pixelMap.getImageInfo();
+                  let imageInfo:image.ImageInfo = waitForCompletion(async () => {return await obj.pixelMap.getImageInfo();})
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -1461,7 +1461,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async () => {await unifiedDataChannel.deleteData(options1);})
       }).catch((err) => {
         expect().assertFail();
         done();
@@ -1676,7 +1676,7 @@ export default function UDMFApiDataAllTest() {
               if (unifiedDataRecord.getType() == uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP.toString()) {
                 let obj:uniformDataStruct.PixelMap = entries[uniformTypeDescriptor.UniformDataType.OPENHARMONY_PIXEL_MAP] as uniformDataStruct.PixelMap;
                 if (obj != undefined) {
-                  let imageInfo:image.ImageInfo = await obj.pixelMap.getImageInfo();
+                  let imageInfo:image.ImageInfo = waitForCompletion(async () => { return await obj.pixelMap.getImageInfo();})
                   expect(obj.uniformDataType).assertEqual(pixelMap.uniformDataType);
                   expect(imageInfo.size.height).assertEqual(opt.size.height);
                   expect(imageInfo.size.width).assertEqual(opt.size.width);
@@ -1732,7 +1732,7 @@ export default function UDMFApiDataAllTest() {
           expect().assertFail();
           done();
         });
-        await unifiedDataChannel.deleteData(options1);
+        waitForCompletion(async () => { await unifiedDataChannel.deleteData(options1); })
       }).catch((err) => {
         expect().assertFail();
         done();

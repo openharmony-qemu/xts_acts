@@ -27,6 +27,7 @@ group("builtin_static") {
       "builtin007_standard_test_static:ActsBuiltin7StaticTest",
       "builtin008_standard_test_static:ActsBuiltin8StaticTest",
       "builtin009_standard_test_static:ActsBuiltin9StaticTest",
+      "builtin010_standard_test_static:ActsBuiltin10StaticTest",
       "date_standard_test_static:ActsDateStaticTest",
       "intl_standard_test_static:ActsIntlStaticTest",
       "number_standard_test_static:ActsNumberStaticTest",
@@ -38,6 +39,7 @@ group("builtin_static") {
       "base_standard_test_static:ActsBaseStaticTest",
       "dataview_standard_test_static:ActsDataviewStaticTest",
       "builtinsupply_standard_test_static:ActsBuiltinsupplyStaticTest",
+      "builtinsarraytest_standard_test_static:ActsBuiltinsArrayTestStaticTest",
       "map_standard_test_static:ActsMapStaticTest",
       "set_standard_test_static:ActsSetStaticTest",
     ]

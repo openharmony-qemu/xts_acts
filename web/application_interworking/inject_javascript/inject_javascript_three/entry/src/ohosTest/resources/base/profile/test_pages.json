@@ -13,6 +13,8 @@
       "testability/pages/WebJavaScriptOnDocumentStartSpecial",
       "testability/pages/WebJavaScriptOnDocumentEndSpecial",
       "testability/pages/WebJavaScriptProxySpecial",
-      "testability/pages/WebJavaScriptAccessSpecial"
+      "testability/pages/WebJavaScriptAccessSpecial",
+      "testability/pages/WebRunJavaScriptOnHeadEndEmptyArray",
+      "testability/pages/WebRunJavaScriptOnDocumentStartEmptyArray"
   ]
 }

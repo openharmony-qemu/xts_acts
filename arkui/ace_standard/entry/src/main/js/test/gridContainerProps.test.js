@@ -18,7 +18,7 @@ import { describe, beforeAll, afterAll, it, expect, Level } from '@ohos/hypium';
 
 
 export default function gridContainerPropsJsTest() {
-    describe('gridContainerPropsJsTest', function() {
+    describe('gridContainerPropsJsTestAdapt001', function() {
 
         async function sleep(time) {
             return new Promise((resolve, reject) => {

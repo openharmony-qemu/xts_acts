@@ -1780,8 +1780,8 @@ export default function ArrayBlockingQueuetest() {
          */
         it("ArrayBlockingQueueConstructorWith_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const oneElementArray = new Array<Int>(42);
-                const queue = new containers.ArrayBlockingQueue<int>(1, oneElementArray);
+                const oneElementArray = Array.create<Int | undefined>(42, undefined);
+                const queue = new containers.ArrayBlockingQueue<int | undefined>(1, oneElementArray);
                 expect(queue.isEmpty()).assertTrue();
                 expect(queue.size).assertEqual(0);
                 expect(queue.getFirst()).assertUndefined();
@@ -2016,7 +2016,7 @@ export default function ArrayBlockingQueuetest() {
         it("ArrayBlockingQueuePerformance_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = 100;
-                const numbers: Array<int> = new Array<int>(10);
+                const numbers: Array<int> = Array.create<int>(10, 0);
                 for (let i = 0; i < totalCount; i++) {
                     numbers.push(i);
                 }
@@ -2044,7 +2044,7 @@ export default function ArrayBlockingQueuetest() {
         it("ArrayBlockingQueuePerformance_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = 100;
-                const numbers: Array<int> = new Array<int>(100);
+                const numbers: Array<int> = Array.create<int>(100, 0);
                 for (let i = 0; i < totalCount; i++) {
                     numbers.push(i);
                 }

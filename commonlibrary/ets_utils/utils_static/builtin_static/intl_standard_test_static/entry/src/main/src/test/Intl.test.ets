@@ -27,7 +27,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let datefmt = new Intl.DateTimeFormat('en-GB');
             expect(datefmt !== null).assertTrue();
         })
@@ -40,7 +40,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let datefmt = new Intl.DateTimeFormat();
             expect(datefmt !== null).assertTrue();
         })
@@ -53,7 +53,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let newDate = new Date((24. * 60 * 60 * 1000).toLong() * (52 * 365 + 9 * 30 + 23));
             let options: Intl.DateTimeFormatOptions =
             {
@@ -73,7 +73,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let options: Intl.DateTimeFormatOptions =
             {
                 year: "2-digit", month: "2-digit", day: "2-digit",
@@ -92,7 +92,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let options: Intl.DateTimeFormatOptions =
             {
                 year: "numeric", month: "long", day: "numeric",
@@ -112,7 +112,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let swissLocales = ["de-CH", "fr-CH", "it-CH", "rm-CH"];
             let options: Intl.DateTimeFormatOptions =
             {
@@ -133,7 +133,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let options: Intl.DateTimeFormatOptions =
                 { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
             let intlObj = new Intl.DateTimeFormat("th-TH-u-nu-thai-ca-chinese", options).format;
@@ -149,7 +149,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
             let intlObj = new Intl.DateTimeFormat("en-GB", options).format;
             console.log("intlDateTimeFormatTest008::" + intlObj(newDate));
@@ -164,7 +164,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let options: Intl.DateTimeFormatOptions =
                 { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
             let intlObj = new Intl.DateTimeFormat("aa", options).format;
@@ -180,7 +180,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let options: Intl.DateTimeFormatOptions =
                 { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
             let intlObj = new Intl.DateTimeFormat("aa", options).format;
@@ -196,7 +196,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
             let intlObj = new Intl.DateTimeFormat(['ban', 'zh'], options).format;
             console.log("intlDateTimeFormatTest011::" + intlObj(newDate));
@@ -211,7 +211,7 @@ export default function etsIntlFunTest() {
          * @tc.type      Function
          * @tc.level     Level 0
         */
-        it('testIntlDateTimeFormat012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        it('testIntlDateTimeFormat012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             let options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" };
             let intlObj = new Intl.DateTimeFormat(['en', 'zh'], options).format;
             console.log("intlDateTimeFormatTest012::" + intlObj(newDate));

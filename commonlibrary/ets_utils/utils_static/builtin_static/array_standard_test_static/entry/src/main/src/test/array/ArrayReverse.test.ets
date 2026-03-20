@@ -51,8 +51,8 @@ export default function ArrayReverseTest() {
      * @tc.level Level 2
      */
     it('testArrayReverse0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1);
-      arr[0] = 1;
+      const arr = new Array<number>();
+      arr.push(1);
       const result = arr.reverse();
       expect(arr).assertDeepEquals([1] as Array<number>);
       expect(result).assertDeepEquals([1] as Array<number>);

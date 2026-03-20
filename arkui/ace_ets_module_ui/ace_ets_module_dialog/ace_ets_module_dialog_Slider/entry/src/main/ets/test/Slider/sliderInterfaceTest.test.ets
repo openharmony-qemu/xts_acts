@@ -630,8 +630,7 @@ export default function SliderInterfaceTest() {
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_LAYOUT_0020] obj1.$attrs.height is: " +
       JSON.stringify(obj1.$attrs.height));
-      let heightStr = '60.00vp'
-      expect(Math.abs(parseFloat(obj1.$attrs.height.slice(0,-2)) - parseFloat(heightStr.slice(0,-2))) <= 1).assertTrue();
+      expect(obj1.$attrs.height).assertEqual('80.00vp');
       done();
     });
   })

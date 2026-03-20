@@ -381,6 +381,32 @@ export default function fileIOStreamWrite() {
     });
 
     /**
+     * @tc.name   fileIO_test_stream_write_sync_static_013
+     * @tc.number SUB_DF_FILEIO_STREAM_WRITE_SYNC_1300
+     * @tc.desc   Test the writeSync() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_stream_write_sync_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_stream_write_sync_static_013');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let sr = fs.createStreamSync(fpath, 'r+');
+        expect(sr !== null).assertTrue();
+        let bytesWritten = sr.writeSync("",  {offset: 1});
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_013 bytesWritten ' + bytesWritten);
+        expect(bytesWritten === 0).assertTrue();
+        sr.closeSync();
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_013 has failed for ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_stream_write_async_static_000
      * @tc.number SUB_DF_FILEIO_STREAM_WRITE_ASYNC_0000
      * @tc.desc   Test the write() interface of class Stream. Promise.
@@ -1035,6 +1061,89 @@ export default function fileIOStreamWrite() {
         });
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_021 has failed for ' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_stream_write_async_static_022
+     * @tc.number SUB_DF_FILEIO_STREAM_WRITE_ASYNC_2200
+     * @tc.desc   Test the write() interface of class Stream. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_stream_write_async_static_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_stream_write_async_static_022');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let sr = fs.createStreamSync(fpath, 'r+');
+        expect(sr !== null).assertTrue();
+        let bytesWritten = await sr.write("", { encoding: 'utf-8' });
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_022 bytesWritten ' + bytesWritten);
+        expect(bytesWritten === 0).assertTrue();
+        sr.closeSync();
+        fs.unlinkSync(fpath);
+        done();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_022 has failed for ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_stream_write_async_static_023
+     * @tc.number SUB_DF_FILEIO_STREAM_WRITE_ASYNC_2300
+     * @tc.desc   Test the write() interface of class Stream. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_stream_write_async_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_stream_write_async_static_023');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let sr = fs.createStreamSync(fpath, 'r+');
+        expect(sr !== null).assertTrue();
+        sr.write("", (err: BusinessError | null, bytesWritten: long | undefined) => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_023 bytesWritten ' + bytesWritten);
+          expect(bytesWritten === 0).assertTrue();
+          sr.closeSync();
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_023 has failed for ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_stream_write_async_static_024
+     * @tc.number SUB_DF_FILEIO_STREAM_WRITE_ASYNC_2400
+     * @tc.desc   Test the write() interface of class Stream. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_stream_write_async_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
+      let fpath = await Utils.nextFileName('fileIO_test_stream_write_async_static_024');
+      expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let sr = fs.createStreamSync(fpath, 'r+');
+        expect(sr !== null).assertTrue();
+        sr.write("", { encoding: 'utf-8' }, (err: BusinessError | null, bytesWritten: long | undefined) => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_024 bytesWritten ' + bytesWritten);
+          expect(bytesWritten === 0).assertTrue();
+          sr.closeSync();
+          fs.unlinkSync(fpath);
+          done();
+        });
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_024 has failed for ' + e.code);
         expect(false).assertTrue();
       }
     });

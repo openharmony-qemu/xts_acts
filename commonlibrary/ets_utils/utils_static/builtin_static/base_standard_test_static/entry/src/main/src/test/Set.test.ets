@@ -13,9 +13,9 @@ export default function SetTest() {
      * @tc.desc Test the function of the interface SetPrototypeAdd.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testSetPrototypeAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
+    it('testSetPrototypeAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
       , (): void => {
         const TAG = "testSetPrototypeAdd0001";
         try {
@@ -34,9 +34,9 @@ export default function SetTest() {
      * @tc.desc Test the function of the interface SetPrototypeAdd.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testSetPrototypeAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testSetPrototypeAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testSetPrototypeAdd0002";
         try {
@@ -55,9 +55,9 @@ export default function SetTest() {
      * @tc.desc Test the function of the interface SetPrototypeAdd.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testSetPrototypeAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testSetPrototypeAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testSetPrototypeAdd0003";
         try {
@@ -81,9 +81,9 @@ export default function SetTest() {
      * @tc.desc Test the function of the interface SetPrototypeAdd.
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL0
      */
-    it('testSetPrototypeAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testSetPrototypeAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (): void => {
         const TAG = "testSetPrototypeAdd0004";
         try {

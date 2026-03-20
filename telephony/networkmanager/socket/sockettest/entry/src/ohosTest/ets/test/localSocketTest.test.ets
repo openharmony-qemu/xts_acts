@@ -114,7 +114,7 @@ export default function LocalSocketTest() {
         done()
       }catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
-        expectTrue(error.code == 401)
+        expectTrue(Number(error.code)  == 401)
         console.info(`${caseName} test end`);
         done();
       }
@@ -814,9 +814,70 @@ export default function LocalSocketTest() {
         done();
       }
     });
-
-
-
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketBind0300
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0300
+     * @tc.desc   test localSocket Bind function (401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketBind0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketBind0300';
+      console.info(`${caseName} test start`);
+      try {
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        await client.bind(null).then(() => {
+          console.log('bind success')
+          expectFail()
+        }).catch((err: BusinessError) => {
+          console.error('failed to bind: ' + JSON.stringify(err))
+          expectEqual(401, err.code)
+          done()
+        });
+        console.info(`${caseName} test end`);
+        client.close()
+        done()
+      }catch (error) {
+        console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
+        expectTrue(Number(error.code) === 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+      /**
+     * @tc.name   testNetworkMgrSocketLocalSocketBind0400
+     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0400
+     * @tc.desc   test localSocket Bind function (401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketBind0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketBind0400';
+      console.info(`${caseName} test start`);
+      try {
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let addr: socket.LocalAddress = {
+          address : ''
+        }
+        await client.bind(addr).then(() => {
+          console.log('bind success')
+        }).catch((err: BusinessError) => {
+          console.error('failed to bind: ' + JSON.stringify(err))
+          expectEqual(401, err.code)
+          done()
+        });
+        console.info(`${caseName} test end`);
+        client.close()
+        done()
+      }catch (error) {
+        console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
+        expectTrue(Number(error.code)  === 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
   });
 }
 

@@ -1210,13 +1210,13 @@ export default function imageReadImageMetadataTestSupp() {
      */
     it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_054';
-      const imageSourceApi = await getImageSource('test_exif_readWrite_jpg_v2.jpg');
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
         await imageSourceApi.readImageMetadata().then((metaData: image.ImageMetadata) => {
           if (metaData != undefined && metaData.exifMetadata != undefined &&
             metaData.makerNoteHuaweiMetadata != undefined) {
-            console.info(TAG, testName, " HwMnoteIsXmageSupported: " + metaData.makerNoteHuaweiMetadata.focusMode);
-            expect(Number(metaData.makerNoteHuaweiMetadata.focusMode)).assertEqual(7);
+            console.info(TAG, testName, " SUCCEED " ,metaData.heifsMetadata?.heifsDelayTime);
+            expect(metaData.heifsMetadata?.heifsDelayTime).assertUndefined();
           }
         }).catch((error: BusinessError) => {
           console.error(TAG, testName, `ReadImageMetadata failed error.code is ${error.code}, error.message is ${error.message}`);
@@ -1229,6 +1229,159 @@ export default function imageReadImageMetadataTestSupp() {
       await imageSourceApi.release();
       done();
     })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_055
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_055
+     * @tc.desc   readImageMetadata cover null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_055', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_055';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        await imageSourceApi.readImageMetadata(null,0).then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_056
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_056
+     * @tc.desc   readImageMetadata cover undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_056', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_056';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        await imageSourceApi.readImageMetadata(undefined,0).then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_057
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_057
+     * @tc.desc   readImageMetadata cover null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_057', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_057';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
+        await imageSourceApi.readImageMetadata(propertyKeys,null).then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_058
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_058
+     * @tc.desc   readImageMetadata cover undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_058', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_058';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let propertyKeys = ["ImageWidth", "HwMnoteIsXmageSupported"];
+        await imageSourceApi.readImageMetadata(propertyKeys,undefined).then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_059
+     * @tc.number SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_059
+     * @tc.desc   readImageMetadata cover []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_059', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_READ_IMAGE_METADATA_Supp_059';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        await imageSourceApi.readImageMetadata([],0).then((metaData: image.ImageMetadata) => {
+          if (metaData != undefined && metaData.exifMetadata != undefined &&
+            metaData.makerNoteHuaweiMetadata != undefined) {
+            console.error(TAG, testName, "Expected to fail but succeeded with metaData:", metaData);
+            expect(metaData != null).assertTrue();
+          }
+        }).catch((error: BusinessError) => {
+          console.error(TAG, testName, `ReadImageMetadata failed: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        })
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+      await imageSourceApi.release();
+      done();
+    })
+
 
   })
 }

@@ -231,7 +231,7 @@ export default function rdbStoreAttachErrorTest() {
             }
 
              try {
-                let number = await store.attach(dataBaseDir + "rdbstore1.db", "", 1);
+                let number = await store.attach(dataBaseDir + "rdbstore1.db", undefined, 1);
                 expect(1).assertEqual(number);
             } catch(e) {
                 console.log("testRdbStoreAttach0032 err: failed, err: code=" + e.code + " message=" + e.message);
@@ -270,7 +270,7 @@ export default function rdbStoreAttachErrorTest() {
             }
 
              try {
-                let number = await store.attach(dataBaseDir + "rdbstore1.db", "", 1);
+                let number = await store.attach(dataBaseDir + "rdbstore1.db", undefined, 1);
                 expect(1).assertEqual(number);
             } catch(e) {
                 console.log("testRdbStoreAttach0033 err: failed, err: code=" + e.code + " message=" + e.message);
@@ -293,7 +293,7 @@ export default function rdbStoreAttachErrorTest() {
             await store.executeSql(CREATE_TABLE_TEST);
            
             try{
-                let number = await store.attach(context, STORE_CONFIG_S2, "attachDB");
+                let number = await store.attach(context, STORE_CONFIG_S2, "attachDB", 1);
                 expect(1).assertEqual(number);
             }catch(e) {
                 if(e.code === "801"){
@@ -325,7 +325,7 @@ export default function rdbStoreAttachErrorTest() {
             await store.executeSql(CREATE_TABLE_TEST);
            
             try{
-            let number = await store.attach(context, STORE_CONFIG_S3, "attachDB");
+            let number = await store.attach(context, STORE_CONFIG_S3, "attachDB", 1);
             expect(1).assertEqual(number);
             }catch(e) {
                 if(e.code === "801"){
@@ -356,7 +356,7 @@ export default function rdbStoreAttachErrorTest() {
             await store.executeSql(CREATE_TABLE_TEST);
            
             try{
-            let number = await store.attach(context, STORE_CONFIG_S4, "attachDB");
+            let number = await store.attach(context, STORE_CONFIG_S4, "attachDB", 1);
             expect(1).assertEqual(number);
             }catch(e) {
                 if(e.code === "801"){
