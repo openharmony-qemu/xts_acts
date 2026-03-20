@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -186,13 +186,6 @@ const driver = Driver.create();
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/LocalImage.html");
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                  let webRect = Utils.getComponentRect('WebContextMenuResult');
-                  let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
-                  let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-                  await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-                  Utils.sleep(1000);
-                  let buttonOne = await driver.findComponent(ON.text('保存图片'));
-                  await buttonOne.click();
                   break;
                 }
 
@@ -201,13 +194,6 @@ const driver = Driver.create();
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/online.html");
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                  let webRect = Utils.getComponentRect('WebContextMenuResult');
-                  let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
-                  let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-                  await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-                  Utils.sleep(1000);
-                  let buttonOne = await driver.findComponent(ON.text('保存图片'));
-                  await buttonOne.click();
                   break;
                 }
 
@@ -216,14 +202,6 @@ const driver = Driver.create();
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/canvas.html");
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                  let webRect = Utils.getComponentRect('WebContextMenuResult');
-                  let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
-                  let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-                  await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-                  Utils.sleep(1000);
-                  let buttonOne = await driver.findComponent(ON.text('保存图片'));
-                  await buttonOne.click();
-                  Utils.sleep(3000);
                   break;
                 }
 
